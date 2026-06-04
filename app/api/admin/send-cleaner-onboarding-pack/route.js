@@ -165,6 +165,19 @@ export async function POST(request) {
       replyTo: process.env.WMC_REPLY_TO_EMAIL || "info@westmidlandscleaner.co.uk"
     });
 
+    if (!emailResult?.sent) {
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            emailResult?.error ||
+            "Email provider did not confirm the cleaner onboarding pack email was sent.",
+          emailResult
+        },
+        { status: 500 }
+      );
+    }
+
     const note = `Cleaner onboarding pack email sent to ${cleanerEmail} at ${new Date().toISOString()}.`;
     const existingNotes = cleanText(application.admin_notes);
 
