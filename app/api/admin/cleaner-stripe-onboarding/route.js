@@ -5,7 +5,9 @@ import { sendWmcEmail } from "../../../../lib/wmcEmails";
 
 export const runtime = "nodejs";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = process.env.STRIPE_SECRET_KEY
+  ? new Stripe(process.env.STRIPE_SECRET_KEY)
+  : null;
 
 function cleanText(value) {
   return String(value || "").trim();
