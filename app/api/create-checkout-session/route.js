@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { supabaseAdmin } from "../../../lib/supabaseAdmin";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = process.env.STRIPE_SECRET_KEY
+  ? new Stripe(process.env.STRIPE_SECRET_KEY)
+  : null;
 
 function normaliseUkPhone(value) {
   let phone = String(value || "").trim();
@@ -52,7 +54,7 @@ function getSiteUrl() {
 
 export async function POST(request) {
   try {
-    if (!process.env.STRIPE_SECRET_KEY) {
+    if (!stripe) {
       return NextResponse.json(
         { error: "Stripe secret key is missing in Vercel environment variables." },
         { status: 500 }
