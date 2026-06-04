@@ -709,7 +709,7 @@ export default function AdminCleanerApplicationsPage() {
         "Cleaner onboarding pack email sent. Ask the cleaner to read, sign once at the end, save as PDF and email it back to info@westmidlandscleaner.co.uk."
       );
 
-      await loadApplications();
+      setMessage("Cleaner onboarding pack email sent.");
     } catch (error) {
       setOnboardingPackMessage(
         application.id,
@@ -1217,6 +1217,50 @@ export default function AdminCleanerApplicationsPage() {
                           Document links are private signed links and may expire after 7 days. The proof of
                           address upload is shown as “proof of address”.
                         </p>
+                      </div>
+
+                      <div className="card miniCard" style={{ marginTop: 18 }}>
+                        <h3>Cleaner onboarding pack</h3>
+                        <p>
+                          After you approve and save this cleaner application, send the WMC
+                          Self-Employed Cleaner Partner Onboarding Pack. The cleaner must read it,
+                          sign once at the end, save it as a PDF and email it back to WMC.
+                        </p>
+
+                        {application.application_status === "approved" ? (
+                          <div className="actionRow">
+                            <button
+                              type="button"
+                              className="btn btnPrimary"
+                              onClick={() => sendCleanerOnboardingPack(application)}
+                              disabled={onboardingPackLoadingId === application.id}
+                            >
+                              {onboardingPackLoadingId === application.id
+                                ? "Sending pack..."
+                                : "Send onboarding pack"}
+                            </button>
+
+                            <a
+                              href="/documents/wmc-self-employed-cleaner-partner-onboarding-pack.html"
+                              className="btn btnSecondary"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Preview pack
+                            </a>
+                          </div>
+                        ) : (
+                          <div className="warningBox">
+                            Save this cleaner application as Approved before sending the onboarding
+                            pack.
+                          </div>
+                        )}
+
+                        {onboardingPackMessages[application.id] && (
+                          <div className="notice" style={{ marginTop: 12 }}>
+                            {onboardingPackMessages[application.id]}
+                          </div>
+                        )}
                       </div>
 
                       <div className="card miniCard" style={{ marginTop: 18 }}>
