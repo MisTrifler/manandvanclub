@@ -17,7 +17,7 @@ export default function DriverDashboard() {
         </div>
         <nav className="flex-1 p-4 space-y-2">
           <Link href="#" className="flex items-center gap-3 p-3 bg-white/10 rounded-lg"><LayoutDashboard size={20} /> Overview</Link>
-          <Link href="#" className="flex items-center gap-3 p-3 hover:bg-white/5 rounded-lg"><List size={20} /> Available Leads</Link>
+          <Link href="#" className="flex items-center gap-3 p-3 hover:bg-white/5 rounded-lg"><List size={20} /> Available Jobs</Link>
           <Link href="#" className="flex items-center gap-3 p-3 hover:bg-white/5 rounded-lg"><Wallet size={20} /> My Balance</Link>
           <Link href="#" className="flex items-center gap-3 p-3 hover:bg-white/5 rounded-lg"><Bell size={20} /> Notifications</Link>
           <Link href="#" className="flex items-center gap-3 p-3 hover:bg-white/5 rounded-lg"><Settings size={20} /> Account</Link>
@@ -37,11 +37,11 @@ export default function DriverDashboard() {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <div className="bg-white p-6 rounded-xl border border-border">
-            <div className="text-text-secondary text-sm mb-1">Leads Today</div>
+            <div className="text-text-secondary text-sm mb-1">Jobs Available Today</div>
             <div className="text-3xl font-bold">12</div>
           </div>
           <div className="bg-white p-6 rounded-xl border border-border">
-            <div className="text-text-secondary text-sm mb-1">Accepted (June)</div>
+            <div className="text-text-secondary text-sm mb-1">Unlocked (June)</div>
             <div className="text-3xl font-bold">45</div>
           </div>
           <div className="bg-white p-6 rounded-xl border border-border">
@@ -52,7 +52,7 @@ export default function DriverDashboard() {
 
         {/* Lead Feed */}
         <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-          Available Leads Near You
+          Available Jobs Near You
           <span className="bg-accent text-white text-xs px-2 py-1 rounded-full">New</span>
         </h2>
         
@@ -73,14 +73,14 @@ export default function DriverDashboard() {
                   <div className="font-bold">{lead.date}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-text-secondary uppercase tracking-wider mb-1 font-bold">Lead Fee</div>
+                  <div className="text-xs text-text-secondary uppercase tracking-wider mb-1 font-bold">To Unlock</div>
                   <div className="font-bold text-accent">{lead.fee}</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-4 w-full md:w-auto">
                 <div className="text-xs text-red-500 font-bold hidden lg:block">Expires in {lead.expires}</div>
-                <button className="btn-orange text-sm flex-1 md:flex-none">Accept Lead</button>
+                <button className="btn-orange text-sm flex-1 md:flex-none">Unlock Job</button>
                 <button className="p-2 border border-border rounded-lg hover:bg-gray-50"><ChevronRight size={20} /></button>
               </div>
             </div>

@@ -18,12 +18,12 @@ export default function ForBusinesses() {
             <div className="lg:w-1/2">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Get More Moving Jobs</h1>
               <p className="text-xl text-gray-300 mb-8">
-                Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just quality leads.
+                Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just quality job enquiries.
               </p>
               <div className="space-y-4">
                 {[
                   "New customer enquiries daily",
-                  "Only pay for accepted leads (£8–£35)",
+                  "Only pay for jobs you choose to unlock",
                   "No monthly contracts — ever",
                   "Control your service area and job types",
                   "Build a verified review profile"
@@ -97,8 +97,8 @@ export default function ForBusinesses() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Transparent Lead Pricing</h2>
-            <p className="text-text-secondary">You only pay when you choose to accept a lead. No hidden fees.</p>
+            <h2 className="text-3xl font-bold mb-4">Transparent Pricing</h2>
+            <p className="text-text-secondary">You only pay when you choose to unlock a job. No hidden fees.</p>
           </div>
 
           <div className="border border-border rounded-xl overflow-hidden shadow-sm">
@@ -107,7 +107,7 @@ export default function ForBusinesses() {
                 <tr>
                   <th className="p-4 md:p-6 font-bold text-primary">Move Type</th>
                   <th className="p-4 md:p-6 font-bold text-primary hidden md:table-cell">Description</th>
-                  <th className="p-4 md:p-6 font-bold text-primary text-right">Lead Fee</th>
+                  <th className="p-4 md:p-6 font-bold text-primary text-right">To Unlock Job</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">

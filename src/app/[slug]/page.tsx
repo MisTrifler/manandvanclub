@@ -46,29 +46,29 @@ export default function CityPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="bg-background">
-      <section className="bg-primary text-white py-20 relative overflow-hidden">
+      <section className="bg-white border-b border-border py-12 md:py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="lg:w-1/2">
               <div className="flex items-center gap-2 text-accent mb-6">
                 <MapPin size={24} />
                 <span className="font-bold uppercase tracking-widest text-sm">Local Experts in {data.name}</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">Man and Van {data.name}</h1>
-              <p className="text-xl text-gray-300 leading-relaxed mb-10">{data.intro}</p>
+              <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-primary">Man and Van {data.name}</h1>
+              <p className="text-xl text-text-secondary leading-relaxed mb-10">{data.intro}</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div className="flex flex-col gap-2">
                   <span className="text-accent font-bold text-3xl">45+</span>
-                  <span className="text-sm text-gray-400">Vetted Movers</span>
+                  <span className="text-sm text-text-secondary font-medium uppercase tracking-wider">Vetted Movers</span>
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="text-accent font-bold text-3xl">£85+</span>
-                  <span className="text-sm text-gray-400">Average Rate</span>
+                  <span className="text-sm text-text-secondary font-medium uppercase tracking-wider">Average Rate</span>
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="text-accent font-bold text-3xl">4.9/5</span>
-                  <span className="text-sm text-gray-400">Local Rating</span>
+                  <span className="text-sm text-text-secondary font-medium uppercase tracking-wider">Local Rating</span>
                 </div>
               </div>
             </div>

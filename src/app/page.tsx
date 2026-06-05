@@ -23,25 +23,17 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative min-h-[700px] flex items-center py-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&q=80&w=2000" 
-            alt="Man loading a van" 
-            fill 
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-primary/55" />
-        </div>
-
+      <section className="relative min-h-[600px] flex items-center py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2 text-white">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-8 leading-[1.1]">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="lg:w-1/2 text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-primary">
                 Compare Local Man & Van Services in Minutes
               </h1>
-              <ul className="space-y-5 mb-10">
+              <p className="text-xl text-text-secondary mb-8 max-w-xl">
+                Get up to 5 quotes from vetted local movers. Compare prices, reviews and availability in minutes.
+              </p>
+              <ul className="space-y-4 mb-8">
                 {[
                   "Compare up to 5 movers",
                   "Fixed and hourly pricing available",
@@ -49,20 +41,36 @@ export default function Home() {
                   "No obligation — completely free",
                   "UK-wide coverage"
                 ].map((b) => (
-                  <li key={b} className="flex items-center gap-4">
-                    <div className="bg-success rounded-full p-1.5 shrink-0">
-                      <Check size={16} className="text-white" />
+                  <li key={b} className="flex items-center gap-3">
+                    <div className="bg-success rounded-full p-1 shrink-0">
+                      <Check size={14} className="text-white" />
                     </div>
-                    <span className="font-bold text-xl">{b}</span>
+                    <span className="font-bold text-lg text-primary/80">{b}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="lg:w-1/2 w-full max-w-xl">
+            <div className="lg:w-1/2 w-full max-w-xl relative">
               <QuoteForm />
+              {/* Trust Badge below form */}
+              <div className="mt-4 flex items-center justify-center gap-6 text-sm text-text-secondary font-medium">
+                <span className="flex items-center gap-1"><Shield size={16} className="text-success" /> SSL Secure</span>
+                <span className="flex items-center gap-1"><Check size={16} className="text-success" /> GDPR Compliant</span>
+                <span className="flex items-center gap-1"><Star size={16} className="text-accent fill-accent" /> 4.8★ Rated</span>
+              </div>
             </div>
           </div>
+        </div>
+        
+        {/* Background Decorative Image - Subtle and not overlapping text */}
+        <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full opacity-10 lg:opacity-20 pointer-events-none">
+          <Image 
+            src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&q=80&w=2000" 
+            alt="Van background" 
+            fill 
+            className="object-cover"
+          />
         </div>
       </section>
 
