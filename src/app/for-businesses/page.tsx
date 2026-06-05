@@ -93,44 +93,23 @@ export default function ForBusinesses() {
         </div>
       </section>
 
-      {/* Pricing Table */}
+      {/* Pricing Table Section - Restricted to Logged In / Verified */}
       <section className="py-24 bg-white border-t border-border">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Professional Pricing</h2>
-            <p className="text-text-secondary">Information for registered man and van operators.</p>
-          </div>
-
-          <details className="group border border-border rounded-xl overflow-hidden bg-gray-50 shadow-sm cursor-pointer">
-            <summary className="p-6 font-bold text-primary flex justify-between items-center group-open:bg-white transition-colors list-none">
-              <span>View Driver Pay-Per-Job Pricing</span>
-              <span className="bg-primary text-white text-xs px-3 py-1 rounded-full uppercase tracking-widest font-black">View Rates</span>
-            </summary>
-            
-            <div className="bg-white border-t border-border">
-              <table className="w-full text-left">
-                <thead className="bg-gray-50 border-b border-border">
-                  <tr>
-                    <th className="p-4 md:p-6 font-bold text-primary text-sm uppercase tracking-wider">Move Type</th>
-                    <th className="p-4 md:p-6 font-bold text-primary hidden md:table-cell text-sm uppercase tracking-wider">Details</th>
-                    <th className="p-4 md:p-6 font-bold text-primary text-right text-sm uppercase tracking-wider">To Unlock Job</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {leadFees.map((row) => (
-                    <tr key={row.type} className="hover:bg-gray-50 transition-colors">
-                      <td className="p-4 md:p-6 font-bold text-primary">{row.type}</td>
-                      <td className="p-4 md:p-6 text-text-secondary hidden md:table-cell">{row.items}</td>
-                      <td className="p-4 md:p-6 text-right font-black text-accent">{row.fee}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className="p-6 bg-gray-50 text-xs text-text-secondary italic">
-                * Rates are fixed and only charged when you choose to access customer contact details.
-              </div>
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="bg-gray-50 border-2 border-dashed border-border rounded-3xl p-12">
+            <ShieldCheck size={48} className="text-accent mx-auto mb-6" />
+            <h2 className="text-3xl font-bold mb-4 text-primary">View Driver Pricing</h2>
+            <p className="text-text-secondary mb-8 max-w-md mx-auto leading-relaxed">
+              To protect the marketplace and ensure quality, driver pay-per-job rates are only visible to verified professional moving companies.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="#signup" className="btn-orange px-10 py-4 font-black uppercase tracking-wider">Apply to Join</Link>
+              <Link href="/login" className="btn-outline px-10 py-4 font-black uppercase tracking-wider">Driver Login</Link>
             </div>
-          </details>
+            <p className="mt-6 text-xs text-text-secondary font-medium italic">
+              Verification usually takes less than 24 hours.
+            </p>
+          </div>
         </div>
       </section>
 
