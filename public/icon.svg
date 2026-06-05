@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="WMC logo">
-  <rect width="512" height="512" fill="#ffffff"/>
-  <g transform="translate(56 184)">
-    <path d="M0 0h58l42 120L145 0h48l45 120L280 0h58L260 168h-55l-36-96-36 96H78L0 0Z" fill="#06264a"/>
-    <path d="M120 0h78l-39 82L120 0Z" fill="#17c9be"/>
-    <path d="M352 168c-50 0-88-36-88-84s38-84 88-84c33 0 61 15 76 39l-43 28c-7-12-19-20-34-20-22 0-38 16-38 37s16 37 38 37c15 0 27-8 34-20l43 28c-15 24-43 39-76 39Z" fill="#17c9be"/>
-  </g>
-</svg>
