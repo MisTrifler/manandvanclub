@@ -10,8 +10,8 @@ export default function Home() {
     { t: "Tell us about your move", d: "Fill in your collection and delivery postcodes and move details." },
     { t: "See an estimated price", d: "We calculate a typical price range for your move instantly." },
     { t: "Confirm you're happy", d: "Only once you agree the price looks right do we proceed." },
-    { t: "Get matched", d: "Up to 5 vetted local man & van companies receive your details." },
-    { t: "Choose the best quote", d: "Compare responses, reviews and availability. Book the one you like best." },
+    { t: "Matched Local Mover", d: "Verified local movers are notified about your move request." },
+    { t: "Mover contacts you directly", d: "Compare responses, reviews and availability. Book the one you like best." },
   ];
 
   const reviews = [
@@ -43,7 +43,7 @@ export default function Home() {
                 UK's #1 Mover Marketplace
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-8xl font-black mb-8 leading-[1.05] text-primary tracking-tight">
-                Compare <span className="text-accent italic">Local</span> Man & Van Services
+                Find <span className="text-accent italic">Trusted</span> Local Movers
               </h1>
               <p className="text-xl md:text-2xl text-text-secondary mb-10 max-w-xl font-medium leading-relaxed">
                 Get up to 5 confirmed quotes from vetted local movers. Save up to 35% on your move today.

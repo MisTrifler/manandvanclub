@@ -19,12 +19,12 @@ export default function ForBusinesses() {
             <div className="lg:w-1/2">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Get More Moving Jobs</h1>
               <p className="text-xl text-gray-300 mb-8">
-                Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just quality job enquiries.
+                Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just exclusive customer introductions.
               </p>
               <div className="space-y-4">
                 {[
                   "New customer enquiries daily",
-                  "Only pay for jobs you choose to unlock",
+                  "Unlock verified move requests",
                   "No monthly contracts — ever",
                   "Control your service area and job types",
                   "Build a verified review profile"

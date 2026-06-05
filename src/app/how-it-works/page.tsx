@@ -21,12 +21,12 @@ export default function HowItWorks() {
     },
     {
       title: "Get matched with local movers",
-      desc: "Up to 5 vetted local man & van companies receive your details and provide real, confirmed quotes.",
+      desc: "Matching movers are notified and the first approved mover can unlock the request.",
       icon: <Truck className="w-8 h-8" />
     },
     {
       title: "Choose the best quote",
-      desc: "Compare responses, reviews, and availability in your dashboard. Book the one you like best with no obligation.",
+      desc: "Once unlocked, your matched mover contacts you directly to arrange the move.",
       icon: <Star className="w-8 h-8" />
     }
   ];
