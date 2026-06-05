@@ -1,8 +1,0 @@
-{
-  "crons": [
-    {
-      "path": "/api/admin/auto-provider-payouts",
-      "schedule": "0 9 * * *"
-    }
-  ]
-}
