@@ -1,0 +1,1 @@
+Updated homepage positioning and started simplification of marketplace messaging. Further backend work (Stripe, OTP, exclusive locking) still required.

@@ -40,10 +40,10 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="lg:w-1/2 text-left">
               <div className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-black uppercase tracking-widest mb-6">
-                UK's #1 Mover Marketplace
+                UK-Wide Customer Introduction Marketplace
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-8xl font-black mb-8 leading-[1.05] text-primary tracking-tight">
-                Find <span className="text-accent italic">Trusted</span> Local Movers
+                Get Matched With <span className="text-accent italic">Local</span> Movers
               </h1>
               <p className="text-xl md:text-2xl text-text-secondary mb-10 max-w-xl font-medium leading-relaxed">
                 Get up to 5 confirmed quotes from vetted local movers. Save up to 35% on your move today.
