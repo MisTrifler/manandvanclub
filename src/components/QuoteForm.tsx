@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ChevronRight, Loader2, CheckCircle2, Info } from "lucide-react";
+import { ChevronRight, Loader2, CheckCircle2, Info, ChevronLeft } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -18,8 +18,8 @@ const formSchema = z.object({
   propertyType: z.string().min(1, "Required"),
   numRooms: z.string().min(1, "Required"),
   specialItems: z.array(z.string()).optional(),
-  packingService: z.string(),
-  loadingHelp: z.string(),
+  packingService: z.enum(["Yes", "No", "Not sure"]),
+  loadingHelp: z.enum(["Yes", "No"]),
   firstName: z.string().min(2, "Required").optional(),
   lastName: z.string().min(2, "Required").optional(),
   email: z.string().email("Invalid email").optional(),
@@ -33,7 +33,7 @@ export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
 
-  const { register, handleSubmit, watch, formState: { errors }, trigger } = useForm<FormData>({
+  const { register, handleSubmit, watch, formState: { errors }, trigger, setValue } = useForm<FormData>({
     defaultValues: {
       specialItems: [],
       packingService: "No",
@@ -43,7 +43,6 @@ export default function QuoteForm() {
 
   const calculateEstimate = (data: FormData) => {
     // Logic from prompt:
-    // Base price by property size
     const basePrices: Record<string, [number, number]> = {
       "Studio flat": [80, 130],
       "1-bed flat": [80, 130],
@@ -67,7 +66,9 @@ export default function QuoteForm() {
       "American fridge": [40, 60],
       "Hot tub": [100, 200],
       "Pool table": [80, 150],
-      "Safe": [50, 100]
+      "Safe": [50, 100],
+      "Washing machine": [15, 30],
+      "Fridge freezer": [15, 30]
     };
 
     data.specialItems?.forEach(item => {
@@ -83,7 +84,6 @@ export default function QuoteForm() {
       max *= 1.25;
     }
 
-    // Final range adjustment (prompt says display as min * 0.85 and max * 1.15)
     return {
       min: Math.round(min * 0.85),
       max: Math.round(max * 1.15)
@@ -91,11 +91,10 @@ export default function QuoteForm() {
   };
 
   const onNextStep = async () => {
-    const fieldsToValidate = step === 1 
-      ? ["collectionPostcode", "deliveryPostcode", "moveDate", "propertyType", "numRooms"] as const
-      : [];
+    let fields: any[] = [];
+    if (step === 1) fields = ["collectionPostcode", "deliveryPostcode", "moveDate", "propertyType", "numRooms", "packingService", "loadingHelp"];
     
-    const isValid = await trigger(fieldsToValidate as any);
+    const isValid = await trigger(fields);
     if (isValid) {
       if (step === 1) {
         setEstimate(calculateEstimate(watch()));
@@ -106,166 +105,171 @@ export default function QuoteForm() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     setIsSubmitting(false);
-    setStep(4); // Success screen
+    setStep(4);
   };
 
   return (
     <div className="bg-white rounded-xl shadow-2xl border border-border overflow-hidden" id="quote-form">
-      {/* Progress Bar */}
       {step < 4 && (
         <div className="bg-gray-50 border-b border-border px-6 py-3">
           <div className="flex justify-between items-center mb-2">
             <span className="text-xs font-bold text-primary uppercase tracking-wider">Step {step} of 3</span>
-            <span className="text-xs text-text-secondary">{Math.round((step / 3) * 100)}% Complete</span>
-          </div>
-          <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-accent transition-all duration-500 ease-out" 
-              style={{ width: `${(step / 3) * 100}%` }}
-            />
+            <div className="flex gap-1">
+              {[1, 2, 3].map(i => (
+                <div key={i} className={cn("h-1.5 w-8 rounded-full transition-colors", i <= step ? "bg-accent" : "bg-gray-200")} />
+              ))}
+            </div>
           </div>
         </div>
       )}
 
       <div className="p-6 md:p-8">
         {step === 1 && (
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-primary">Tell us about your move</h2>
+          <div className="space-y-5">
+            <h2 className="text-2xl font-bold text-primary">Get Your Free Quotes</h2>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-text-primary">Collection Postcode</label>
-                <input 
-                  {...register("collectionPostcode")}
-                  placeholder="e.g. SW1A 1AA"
-                  className={cn("w-full p-3 border rounded-md focus:ring-2 focus:ring-accent outline-none", errors.collectionPostcode ? "border-red-500" : "border-border")}
-                />
-                {errors.collectionPostcode && <p className="text-red-500 text-xs">{errors.collectionPostcode.message}</p>}
+              <div className="space-y-1">
+                <label className="text-sm font-bold text-text-primary">Collection Postcode</label>
+                <input {...register("collectionPostcode")} placeholder="e.g. SW1A 1AA" className={cn("w-full p-3 border rounded-md outline-none focus:border-accent", errors.collectionPostcode ? "border-red-500" : "border-border")} />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-text-primary">Delivery Postcode</label>
-                <input 
-                  {...register("deliveryPostcode")}
-                  placeholder="e.g. M1 1AE"
-                  className={cn("w-full p-3 border rounded-md focus:ring-2 focus:ring-accent outline-none", errors.deliveryPostcode ? "border-red-500" : "border-border")}
-                />
-                {errors.deliveryPostcode && <p className="text-red-500 text-xs">{errors.deliveryPostcode.message}</p>}
+              <div className="space-y-1">
+                <label className="text-sm font-bold text-text-primary">Delivery Postcode</label>
+                <input {...register("deliveryPostcode")} placeholder="e.g. M1 1AE" className={cn("w-full p-3 border rounded-md outline-none focus:border-accent", errors.deliveryPostcode ? "border-red-500" : "border-border")} />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-semibold text-text-primary">Move Date</label>
-              <input 
-                type="date"
-                {...register("moveDate")}
-                className="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-accent outline-none"
-              />
+            <div className="space-y-1">
+              <label className="text-sm font-bold text-text-primary">Move Date</label>
+              <input type="date" {...register("moveDate")} className="w-full p-3 border border-border rounded-md outline-none focus:border-accent" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-text-primary">Property Type</label>
-                <select 
-                  {...register("propertyType")}
-                  className="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-accent outline-none bg-white"
-                >
-                  <option value="">Select type...</option>
+              <div className="space-y-1">
+                <label className="text-sm font-bold text-text-primary">Property Type</label>
+                <select {...register("propertyType")} className="w-full p-3 border border-border rounded-md bg-white">
+                  <option value="">Select...</option>
                   <option value="Studio flat">Studio flat</option>
                   <option value="1-bed flat">1-bed flat</option>
                   <option value="2-bed flat">2-bed flat</option>
+                  <option value="3-bed flat">3-bed flat</option>
                   <option value="1-bed house">1-bed house</option>
                   <option value="2-bed house">2-bed house</option>
                   <option value="3-bed house">3-bed house</option>
                   <option value="4-bed house">4-bed house</option>
+                  <option value="5+ bed house">5+ bed house</option>
                   <option value="Office">Office</option>
+                  <option value="Storage unit">Storage unit</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-text-primary">Rooms being moved</label>
-                <select 
-                  {...register("numRooms")}
-                  className="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-accent outline-none bg-white"
-                >
-                  <option value="1">1 Room</option>
-                  <option value="2">2 Rooms</option>
-                  <option value="3">3 Rooms</option>
-                  <option value="4">4 Rooms</option>
-                  <option value="5+">5+ Rooms</option>
+              <div className="space-y-1">
+                <label className="text-sm font-bold text-text-primary">Number of Rooms</label>
+                <select {...register("numRooms")} className="w-full p-3 border border-border rounded-md bg-white">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5+">5+</option>
                 </select>
               </div>
             </div>
 
+            <div className="space-y-3">
+              <label className="text-sm font-bold text-text-primary block">Large items requiring special handling?</label>
+              <div className="grid grid-cols-2 gap-2">
+                {["Piano", "Washing machine", "Fridge freezer", "American fridge", "Hot tub", "Pool table", "Safe"].map(item => (
+                  <label key={item} className="flex items-center gap-2 text-sm cursor-pointer hover:bg-gray-50 p-1 rounded">
+                    <input type="checkbox" value={item} {...register("specialItems")} className="accent-accent" />
+                    {item}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-text-primary block">Packing service needed?</label>
+                <div className="flex gap-4">
+                  {["Yes", "No", "Not sure"].map(opt => (
+                    <label key={opt} className="flex items-center gap-1 text-sm cursor-pointer">
+                      <input type="radio" value={opt} {...register("packingService")} className="accent-accent" /> {opt}
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-text-primary block">Loading help needed?</label>
+                <div className="flex gap-4">
+                  {["Yes", "No"].map(opt => (
+                    <label key={opt} className="flex items-center gap-1 text-sm cursor-pointer">
+                      <input type="radio" value={opt} {...register("loadingHelp")} className="accent-accent" /> {opt}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <button onClick={onNextStep} className="btn-orange w-full flex items-center justify-center gap-2 text-lg py-4">
-              Get Instant Estimate <ChevronRight size={20} />
+              Get My Free Quotes →
             </button>
           </div>
         )}
 
         {step === 2 && estimate && (
-          <div className="space-y-8 py-4">
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold text-primary">Your Instant Estimate</h2>
-              <p className="text-text-secondary">Based on your details, local man & van companies typically charge:</p>
-              
-              <div className="bg-orange-50 border-2 border-accent/20 rounded-2xl p-8 my-6">
-                <span className="text-5xl md:text-6xl font-extrabold text-accent">£{estimate.min} – £{estimate.max}</span>
-                <p className="text-sm text-accent/80 font-medium mt-2">This is an estimate. Real quotes may vary.</p>
-              </div>
+          <div className="space-y-6 text-center py-4">
+            <h2 className="text-2xl font-bold text-primary">Your Instant Estimate</h2>
+            <p className="text-text-secondary">Based on your move details, local man & van companies typically charge:</p>
+            
+            <div className="bg-orange-50 border-2 border-accent/20 rounded-2xl p-8">
+              <span className="text-5xl font-extrabold text-accent">£{estimate.min} – £{estimate.max}</span>
+              <p className="text-sm text-accent/80 font-medium mt-2">This is an estimate only. Your confirmed quotes may vary.</p>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-start gap-3 text-sm text-text-secondary">
-                <Info size={18} className="text-primary shrink-0 mt-0.5" />
-                <p>Only once you agree the price looks right do we match you with local movers.</p>
-              </div>
-              
+            <div className="space-y-4 pt-4">
               <button onClick={onNextStep} className="btn-orange w-full text-lg py-4">
                 Yes, send me real quotes →
               </button>
-              <button onClick={() => setStep(1)} className="w-full text-text-secondary text-sm font-medium hover:underline">
-                Edit my details
+              <button onClick={() => setStep(1)} className="flex items-center justify-center gap-1 w-full text-text-secondary text-sm font-medium hover:underline">
+                <ChevronLeft size={16} /> Edit my details
               </button>
             </div>
           </div>
         )}
 
         {step === 3 && (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <h2 className="text-2xl font-bold text-primary">Final Step: Contact Details</h2>
-            <p className="text-text-secondary -mt-4">Where should we send your quotes?</p>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            <h2 className="text-2xl font-bold text-primary">Nearly there!</h2>
+            <p className="text-text-secondary">Enter your contact details to receive your confirmed quotes.</p>
             
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-text-primary">First Name</label>
+              <div className="space-y-1">
+                <label className="text-sm font-bold">First Name</label>
                 <input {...register("firstName")} className="w-full p-3 border border-border rounded-md" required />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-text-primary">Last Name</label>
+              <div className="space-y-1">
+                <label className="text-sm font-bold">Last Name</label>
                 <input {...register("lastName")} className="w-full p-3 border border-border rounded-md" required />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-semibold text-text-primary">Email Address</label>
-              <input type="email" {...register("email")} className="w-full p-3 border border-border rounded-md" required />
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-semibold text-text-primary">Mobile Number</label>
+            <div className="space-y-1">
+              <label className="text-sm font-bold">Mobile Number</label>
               <input type="tel" {...register("phone")} className="w-full p-3 border border-border rounded-md" required />
             </div>
 
-            <div className="bg-gray-50 p-4 rounded-md text-xs text-text-secondary">
-              By clicking below, you agree to our Terms & Privacy Policy. Your details are only shared with up to 5 vetted movers.
+            <div className="space-y-1">
+              <label className="text-sm font-bold">Email Address</label>
+              <input type="email" {...register("email")} className="w-full p-3 border border-border rounded-md" required />
             </div>
 
-            <button 
-              type="submit" 
-              disabled={isSubmitting}
-              className="btn-orange w-full flex items-center justify-center gap-2 text-lg py-4"
-            >
+            <div className="bg-blue-50 p-4 rounded-lg text-[11px] text-primary/70 leading-relaxed">
+              Your details are only shared with vetted local movers. We never sell your data. By clicking below you agree to our Terms & Privacy Policy.
+            </div>
+
+            <button type="submit" disabled={isSubmitting} className="btn-orange w-full flex items-center justify-center gap-2 text-lg py-4">
               {isSubmitting ? <Loader2 className="animate-spin" /> : "Submit and get my quotes"}
             </button>
           </form>
@@ -274,16 +278,14 @@ export default function QuoteForm() {
         {step === 4 && (
           <div className="text-center py-10 space-y-6">
             <div className="flex justify-center">
-              <div className="bg-green-100 p-4 rounded-full">
-                <CheckCircle2 size={64} className="text-green-600" />
-              </div>
+              <CheckCircle2 size={80} className="text-success" />
             </div>
-            <h2 className="text-3xl font-bold text-primary">Request Received!</h2>
+            <h2 className="text-3xl font-bold text-primary">Success!</h2>
             <p className="text-lg text-text-secondary max-w-sm mx-auto">
-              We've sent your request to vetted movers in your area. Most customers receive their first quotes within 30 minutes.
+              Your request has been sent to local movers. You'll receive your first quotes via email and SMS shortly.
             </p>
             <div className="pt-4">
-              <Link href="/" className="btn-outline">Back to Homepage</Link>
+              <a href="/" className="btn-outline">Return Home</a>
             </div>
           </div>
         )}
@@ -291,5 +293,3 @@ export default function QuoteForm() {
     </div>
   );
 }
-
-import Link from "next/link";
