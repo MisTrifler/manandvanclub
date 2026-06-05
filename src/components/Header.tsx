@@ -25,15 +25,18 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-border sticky top-0 z-40">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-primary p-2 rounded-lg group-hover:bg-accent transition-colors">
-              <span className="text-white font-black text-xl leading-none">M&V</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="bg-primary px-3 py-2.5 rounded-xl group-hover:bg-accent transition-all duration-300 transform group-hover:scale-105 group-hover:rotate-3 shadow-lg">
+              <span className="text-white font-black text-2xl leading-none tracking-tighter">M&V</span>
             </div>
-            <span className="text-xl font-extrabold text-primary tracking-tighter">
-              MAN<span className="text-accent">&</span>VAN<span className="text-primary/70"> CLUB</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-black text-primary tracking-tighter leading-none">
+                MAN<span className="text-accent">&</span>VAN
+              </span>
+              <span className="text-xs font-black text-accent tracking-[0.3em] uppercase mt-1 leading-none">Club</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

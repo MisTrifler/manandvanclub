@@ -23,53 +23,66 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center py-12 md:py-20 bg-white overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 bg-white overflow-hidden">
+        {/* Abstract Background Design - Modern & Light */}
+        <div className="absolute top-0 right-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-[70%] h-[120%] bg-[#F9F9F7] rounded-l-[100px] transform rotate-3" />
+          <div className="absolute top-[20%] right-[5%] w-[40%] h-[60%] opacity-20">
+             <img 
+              src="https://images.unsplash.com/photo-1549194388-2469d59ec142?auto=format&fit=crop&q=80&w=1500" 
+              alt="" 
+              className="w-full h-full object-contain grayscale"
+            />
+          </div>
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <div className="lg:w-1/2 text-left bg-white/80 lg:bg-transparent p-4 rounded-xl backdrop-blur-sm lg:backdrop-blur-none">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight text-[#1B2D4F]">
-                Compare Local Man & Van Services in Minutes
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="lg:w-1/2 text-left">
+              <div className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-black uppercase tracking-widest mb-6">
+                UK's #1 Mover Marketplace
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-8xl font-black mb-8 leading-[1.05] text-primary tracking-tight">
+                Compare <span className="text-accent italic">Local</span> Man & Van Services
               </h1>
-              <p className="text-xl text-text-secondary mb-8 max-w-xl font-medium">
-                Get up to 5 quotes from vetted local movers. Compare prices, reviews and availability in minutes.
+              <p className="text-xl md:text-2xl text-text-secondary mb-10 max-w-xl font-medium leading-relaxed">
+                Get up to 5 confirmed quotes from vetted local movers. Save up to 35% on your move today.
               </p>
-              <ul className="space-y-4 mb-8">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                 {[
-                  "Compare up to 5 movers",
-                  "Fixed and hourly pricing available",
-                  "Vetted and reviewed local providers",
-                  "No obligation — completely free",
-                  "UK-wide coverage"
+                  "Fixed Price Quotes",
+                  "Vetted & Insured",
+                  "No Booking Fees",
+                  "Nationwide Coverage"
                 ].map((b) => (
-                  <li key={b} className="flex items-center gap-3">
-                    <div className="bg-[#2E7D32] rounded-full p-1 shrink-0">
-                      <Check size={14} className="text-white" />
+                  <div key={b} className="flex items-center gap-3 bg-white border border-border/50 p-3 rounded-xl shadow-sm">
+                    <div className="bg-success/10 rounded-full p-1.5 shrink-0">
+                      <Check size={18} className="text-success" />
                     </div>
-                    <span className="font-bold text-lg text-[#1B2D4F]/80">{b}</span>
-                  </li>
+                    <span className="font-bold text-primary/80">{b}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
             
-            <div className="lg:w-1/2 w-full max-w-xl relative">
-              <QuoteForm />
-              {/* Trust Badge below form */}
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-text-secondary font-bold">
-                <span className="flex items-center gap-1"><Shield size={16} className="text-success" /> SSL Secure</span>
-                <span className="flex items-center gap-1"><Check size={16} className="text-success" /> GDPR Compliant</span>
-                <span className="flex items-center gap-1"><Star size={16} className="text-accent fill-accent" /> 4.8★ Rated</span>
+            <div className="lg:w-1/2 w-full max-w-xl">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-accent/5 rounded-[2rem] blur-2xl group-hover:bg-accent/10 transition-all duration-500" />
+                <QuoteForm />
+              </div>
+              
+              {/* Trust Section below form */}
+              <div className="mt-8 flex flex-col items-center gap-4">
+                <div className="flex items-center gap-8 text-sm text-text-secondary font-black uppercase tracking-wider">
+                  <span className="flex items-center gap-2"><Shield size={20} className="text-success" /> SSL Secure</span>
+                  <span className="flex items-center gap-2"><Star size={20} className="text-accent fill-accent" /> 4.8/5 Rating</span>
+                </div>
+                <div className="h-px w-24 bg-border" />
+                <div className="text-xs text-text-secondary font-medium">Trusted by 14,000+ UK households</div>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Background Image - Simplified and Forced Visible */}
-        <div className="absolute right-0 top-0 w-full lg:w-3/5 h-full z-0 opacity-30 pointer-events-none">
-          <img 
-            src="https://images.unsplash.com/photo-1549194388-2469d59ec142?auto=format&fit=crop&q=80&w=1500" 
-            alt="" 
-            className="w-full h-full object-cover object-center grayscale mix-blend-multiply"
-          />
         </div>
       </section>
 
