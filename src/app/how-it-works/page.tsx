@@ -25,7 +25,7 @@ export default function HowItWorks() {
       icon: <Truck className="w-8 h-8" />
     },
     {
-      title: "Choose the best quote",
+      title: "Matched Local Mover",
       desc: "Once unlocked, your matched mover contacts you directly to arrange the move.",
       icon: <Star className="w-8 h-8" />
     }
@@ -38,7 +38,7 @@ export default function HowItWorks() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">How Man & Van Club Works</h1>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            We've simplified the process of finding a reliable man and van. No more endless phone calls or hidden fees.
+            Submit a request, verify your details and get matched with a local mover.
           </p>
         </div>
       </section>

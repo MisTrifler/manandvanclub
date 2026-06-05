@@ -4,10 +4,17 @@ import { CheckCircle2, TrendingUp, Map, ShieldCheck, Wallet } from "lucide-react
 
 export default function ForBusinesses() {
   const leadFees = [
+    { type: '£0–£100 Move Value', items: 'Customer Introduction Fee', fee: '£7' },
+    { type: '£101–£200 Move Value', items: 'Customer Introduction Fee', fee: '£14' },
+    { type: '£201–£300 Move Value', items: 'Customer Introduction Fee', fee: '£28' },
+    { type: '£301–£500 Move Value', items: 'Customer Introduction Fee', fee: '£50' },
+    { type: '£501+ Move Value', items: 'Customer Introduction Fee', fee: '£89' },
+/* old data
     { type: "Small move", items: "1–2 items / single room", fee: "£8" },
     { type: "Medium move", items: "1–2 bedroom flat or house", fee: "£15" },
     { type: "Large move", items: "3+ bedrooms", fee: "£25" },
     { type: "Long distance", items: "50+ miles", fee: "£35" },
+  */
   ];
 
   return (

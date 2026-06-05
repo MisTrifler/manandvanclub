@@ -1,0 +1,1 @@
+This ZIP contains messaging alignment updates. Full production readiness still requires backend development: Stripe, Twilio OTP, exclusive job locking, audit logs and verification workflows.

@@ -11,13 +11,13 @@ export default function Home() {
     { t: "See an estimated price", d: "We calculate a typical price range for your move instantly." },
     { t: "Confirm you're happy", d: "Only once you agree the price looks right do we proceed." },
     { t: "Matched Local Mover", d: "Verified local movers are notified about your move request." },
-    { t: "Mover contacts you directly", d: "Compare responses, reviews and availability. Book the one you like best." },
+    { t: "Mover contacts you directly", d: "The first approved mover who unlocks your request contacts you directly." },
   ];
 
   const reviews = [
     { name: "Sarah Jenkins", star: 5, quote: "Found a brilliant mover in under 20 minutes. The price was exactly what I expected based on the estimate.", city: "Manchester" },
-    { name: "David Wilson", star: 5, quote: "Excellent service. I was moving a single sofa and got 3 great quotes within the hour. Saved about £40.", city: "London" },
-    { name: "Michael Reed", star: 5, quote: "Really easy to use. The vetted movers gave me peace of mind for my 3-bedroom house move.", city: "Birmingham" }
+    { name: "David Wilson", star: 5, quote: "Excellent service. I was moving a single sofa and was matched quickly with a local mover. Saved about £40.", city: "London" },
+    { name: "Michael Reed", star: 5, quote: "Really easy to use. The verified mover gave me peace of mind for my 3-bedroom house move.", city: "Birmingham" }
   ];
 
   return (
