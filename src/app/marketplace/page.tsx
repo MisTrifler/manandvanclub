@@ -51,9 +51,9 @@ export default function DriverDashboard() {
         </div>
 
         {/* Lead Feed */}
-        <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+        <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-primary">
           Available Jobs Near You
-          <span className="bg-accent text-white text-xs px-2 py-1 rounded-full">New</span>
+          <span className="bg-accent text-white text-xs px-2 py-1 rounded-full uppercase tracking-widest font-black">Driver Feed</span>
         </h2>
         
         <div className="space-y-4">
@@ -62,15 +62,15 @@ export default function DriverDashboard() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1">
                 <div>
                   <div className="text-xs text-text-secondary uppercase tracking-wider mb-1 font-bold">Type</div>
-                  <div className="font-bold">{lead.type}</div>
+                  <div className="font-bold text-primary">{lead.type}</div>
                 </div>
                 <div>
                   <div className="text-xs text-text-secondary uppercase tracking-wider mb-1 font-bold">Route</div>
-                  <div className="font-bold">{lead.from} → {lead.to}</div>
+                  <div className="font-bold text-primary">{lead.from} → {lead.to}</div>
                 </div>
                 <div>
                   <div className="text-xs text-text-secondary uppercase tracking-wider mb-1 font-bold">Date</div>
-                  <div className="font-bold">{lead.date}</div>
+                  <div className="font-bold text-primary">{lead.date}</div>
                 </div>
                 <div>
                   <div className="text-xs text-text-secondary uppercase tracking-wider mb-1 font-bold">To Unlock</div>
@@ -79,9 +79,8 @@ export default function DriverDashboard() {
               </div>
               
               <div className="flex items-center gap-4 w-full md:w-auto">
-                <div className="text-xs text-red-500 font-bold hidden lg:block">Expires in {lead.expires}</div>
-                <button className="btn-orange text-sm flex-1 md:flex-none">Unlock Job</button>
-                <button className="p-2 border border-border rounded-lg hover:bg-gray-50"><ChevronRight size={20} /></button>
+                <div className="text-xs text-red-500 font-bold hidden lg:block italic">Expires in {lead.expires}</div>
+                <button className="btn-orange text-sm flex-1 md:flex-none py-3 px-8 font-black uppercase tracking-wide">Unlock Job</button>
               </div>
             </div>
           ))}

@@ -10,9 +10,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <span className="text-2xl font-bold text-white mb-6 block">
-              MAN<span className="text-accent">&</span>VAN<span className="opacity-70"> CLUB</span>
-            </span>
+            <Link href="/" className="flex items-center gap-2 mb-6 group">
+              <div className="bg-white/10 p-1.5 rounded group-hover:bg-accent transition-colors">
+                <span className="text-white font-black text-sm leading-none">M&V</span>
+              </div>
+              <span className="text-xl font-bold text-white tracking-tighter">
+                MAN<span className="text-accent">&</span>VAN<span className="opacity-70"> CLUB</span>
+              </span>
+            </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               The UK's trusted marketplace for comparing and booking local man & van services. Fast, free, and fully vetted.
             </p>

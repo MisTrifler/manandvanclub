@@ -23,14 +23,14 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center py-12 md:py-20 bg-white">
+      <section className="relative min-h-[600px] flex items-center py-12 md:py-20 bg-white overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <div className="lg:w-1/2 text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-primary">
+            <div className="lg:w-1/2 text-left bg-white/80 lg:bg-transparent p-4 rounded-xl backdrop-blur-sm lg:backdrop-blur-none">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight text-[#1B2D4F]">
                 Compare Local Man & Van Services in Minutes
               </h1>
-              <p className="text-xl text-text-secondary mb-8 max-w-xl">
+              <p className="text-xl text-text-secondary mb-8 max-w-xl font-medium">
                 Get up to 5 quotes from vetted local movers. Compare prices, reviews and availability in minutes.
               </p>
               <ul className="space-y-4 mb-8">
@@ -42,10 +42,10 @@ export default function Home() {
                   "UK-wide coverage"
                 ].map((b) => (
                   <li key={b} className="flex items-center gap-3">
-                    <div className="bg-success rounded-full p-1 shrink-0">
+                    <div className="bg-[#2E7D32] rounded-full p-1 shrink-0">
                       <Check size={14} className="text-white" />
                     </div>
-                    <span className="font-bold text-lg text-primary/80">{b}</span>
+                    <span className="font-bold text-lg text-[#1B2D4F]/80">{b}</span>
                   </li>
                 ))}
               </ul>
@@ -54,7 +54,7 @@ export default function Home() {
             <div className="lg:w-1/2 w-full max-w-xl relative">
               <QuoteForm />
               {/* Trust Badge below form */}
-              <div className="mt-4 flex items-center justify-center gap-6 text-sm text-text-secondary font-medium">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-text-secondary font-bold">
                 <span className="flex items-center gap-1"><Shield size={16} className="text-success" /> SSL Secure</span>
                 <span className="flex items-center gap-1"><Check size={16} className="text-success" /> GDPR Compliant</span>
                 <span className="flex items-center gap-1"><Star size={16} className="text-accent fill-accent" /> 4.8★ Rated</span>
@@ -63,13 +63,12 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Background Decorative Image - Subtle and not overlapping text */}
-        <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full opacity-10 lg:opacity-20 pointer-events-none">
-          <Image 
-            src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&q=80&w=2000" 
-            alt="Van background" 
-            fill 
-            className="object-cover"
+        {/* Background Image - Simplified and Forced Visible */}
+        <div className="absolute right-0 top-0 w-full lg:w-3/5 h-full z-0 opacity-30 pointer-events-none">
+          <img 
+            src="https://images.unsplash.com/photo-1549194388-2469d59ec142?auto=format&fit=crop&q=80&w=1500" 
+            alt="" 
+            className="w-full h-full object-cover object-center grayscale mix-blend-multiply"
           />
         </div>
       </section>

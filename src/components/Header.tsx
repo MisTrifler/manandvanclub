@@ -27,9 +27,12 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-primary tracking-tight">
-              MAN<span className="text-accent">&</span>VAN<span className="text-primary/80"> CLUB</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="bg-primary p-2 rounded-lg group-hover:bg-accent transition-colors">
+              <span className="text-white font-black text-xl leading-none">M&V</span>
+            </div>
+            <span className="text-xl font-extrabold text-primary tracking-tighter">
+              MAN<span className="text-accent">&</span>VAN<span className="text-primary/70"> CLUB</span>
             </span>
           </Link>
 
