@@ -43,29 +43,45 @@ export async function POST(req: Request) {
 
     if (process.env.RESEND_API_KEY) {
       if (status === "approved") {
-        await resend.emails.send({
-          from: "Man and Van Club <support@manandvanclub.co.uk>",
-          to: [driver.email],
-          subject: "Approved: Welcome to the Man and Van Club Network!",
-          html: `
-            <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
-              <h2 style="color: #0F172A;">Congratulations</h2>
-              <p>Hi ${driver.contact_name},</p>
-              <p>Your application to join <strong>Man and Van Club</strong> has been approved.</p>
-              <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin: 20px 0;">
-                <h3 style="margin-top: 0; color: #F97316;">What happens now?</h3>
-                <ul style="padding-left: 20px; color: #475569;">
-                  <li><strong>Live Alerts:</strong> You will now receive new job alert emails when a customer in your area submits a request.</li>
-                  <li><strong>Exclusive Leads:</strong> These leads are one-to-one. The first mover to unlock the lead gets exclusive access.</li>
-                  <li><strong>No Bidding:</strong> Once you unlock a lead, the customer’s real phone and email will be sent to you instantly.</li>
-                </ul>
-              </div>
-              <p>We are pleased to welcome ${driver.company_name} to the network.</p>
-              <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
-              <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
-            </div>
-          `,
+        // Check if user already exists
+        const { data: { users } } = await supabaseAdmin.auth.admin.listUsers();
+        const existingUser = users.find(u => u.email === driver.email);
+
+        if (!existingUser) {
+          await supabaseAdmin.auth.admin.createUser({
+            email: driver.email,
+            email_confirm: true,
+          });
+        }
+
+        // Generate magic link
+        const { data: linkData } = await supabaseAdmin.auth.admin.generateLink({
+          type: "magiclink",
+          email: driver.email,
         });
+
+        const magicLink = linkData?.properties?.action_link;
+
+        if (magicLink) {
+          await resend.emails.send({
+            from: "Man and Van Club <support@manandvanclub.co.uk>",
+            to: [driver.email],
+            subject: "Login to Man and Van Club",
+            html: `
+              <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
+                <h2 style="color: #0F172A;">Welcome to Man and Van Club</h2>
+                <p>Hi ${driver.contact_name},</p>
+                <p>Your account has been approved. Click below to log in:</p>
+                <a href="${magicLink}" style="display:inline-block; background:#F97316; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; margin:20px 0;">
+                  Log in with Magic Link
+                </a>
+                <p style="color:#64748B; font-size:13px;">This link expires in 24 hours.</p>
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
+                <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
+              </div>
+            `,
+          });
+        }
       }
 
       if (status === "rejected") {
