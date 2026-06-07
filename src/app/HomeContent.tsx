@@ -283,9 +283,9 @@ export default function HomeContent() {
       {/* Final CTA */}
       <section className="py-20 bg-primary text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">Ready To Find Your Trusted Local Mover?</h2>
-          <p className="text-xl text-white/70 mb-8 max-w-md mx-auto">Submit your details and get matched with a suitable mover. No spam, no bidding wars, just one direct introduction.</p>
-          <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto">Ready To Find Your Trusted Local Mover?</h2>
+          <p className="text-lg md:text-xl text-white/70 mb-8 max-w-lg mx-auto leading-relaxed">Submit your details and get matched with a suitable mover. No spam, no bidding wars, just one direct introduction.</p>
+          <Link href="#quote-form" className="btn-orange px-10 md:px-14 py-5 md:py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3">
             Get Matched Now <ArrowUpRight size={20} />
           </Link>
         </div>
