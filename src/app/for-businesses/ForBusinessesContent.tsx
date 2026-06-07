@@ -41,7 +41,7 @@ export default function ForBusinessesContent() {
                 <span className="text-white"> Business</span>
               </h1>
               <p className="text-xl text-gray-300 mb-10 max-w-xl font-medium leading-relaxed">
-                Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just quality job enquiries.
+                Join vetted man and van drivers earning more with Man and Van Club. No monthly contracts, just quality job enquiries across England, starting in Birmingham.
               </p>
               <div className="space-y-4">
                 {[
@@ -70,7 +70,7 @@ export default function ForBusinessesContent() {
               <div className="space-y-4">
                 <h2 className="text-4xl font-black uppercase tracking-tight text-primary leading-none">Apply to Join</h2>
                 <p className="text-text-secondary font-medium text-lg leading-relaxed">
-                  Join the UK's most exclusive network of professional independent movers.
+                  Join England-focused network of professional independent movers.
                 </p>
               </div>
               

@@ -45,7 +45,7 @@ export const SERVICES: Service[] = [
   },
   { 
     t: "Long Distance Moves", 
-    d: "Anywhere in the UK, any distance", 
+    d: "Anywhere in England, any distance", 
     i: "🇬🇧", 
     h: "/long-distance-removals", 
     img: "https://images.unsplash.com/photo-1516542003828-597ca0b61640?q=80&w=800&auto=format&fit=crop" 

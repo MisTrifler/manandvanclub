@@ -95,7 +95,7 @@ export default function AboutContent() {
          <div className="container mx-auto px-4 max-w-4xl text-center space-y-8 relative z-10">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Our Mission</h2>
             <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
-              Man & Van Club exists because finding a trustworthy local mover shouldn't be a lottery. We built an exclusive introduction marketplace that gives customers one verified professional — not a flood of competing quotes — and gives movers quality leads without the race to the bottom on price.
+              Man and Van Club exists because finding a trustworthy local mover shouldn't be a lottery. We built an exclusive introduction marketplace that gives customers one verified professional — not a flood of competing quotes — and gives movers quality leads without the race to the bottom on price.
             </p>
          </div>
       </section>

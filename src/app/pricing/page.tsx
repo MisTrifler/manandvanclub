@@ -3,8 +3,8 @@ import { ShieldCheck, ArrowUpRight, Zap, CheckCircle2 } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Driver Introduction Pricing | Man & Van Club",
-  description: "Transparent pay-per-introduction pricing for UK movers. No monthly contracts. Pay only for the customers you choose to unlock.",
+  title: "Driver Introduction Pricing | Man and Van Club",
+  description: "Transparent pay-per-introduction pricing for movers in England. No monthly contracts. Pay only for the customers you choose to unlock.",
 };
 
 export default function PricingPage() {

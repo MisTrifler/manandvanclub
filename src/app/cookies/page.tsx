@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | Man & Van Club",
-  description: "Learn how we use cookies to improve your experience at Man & Van Club.",
+  title: "Cookie Policy | Man and Van Club",
+  description: "Learn how we use cookies to improve your experience at Man and Van Club.",
 };
 
 export default function CookiePolicy() {
@@ -13,7 +13,7 @@ export default function CookiePolicy() {
         <h1 className="text-4xl font-black text-primary uppercase tracking-tighter mb-8">Cookie Policy</h1>
         
         <p className="text-lg text-text-secondary mb-8">
-          This policy explains how Man & Van Club uses "cookies" to recognize your browser and capture and remember certain information.
+          This policy explains how Man and Van Club uses "cookies" to recognize your browser and capture and remember certain information.
         </p>
 
         <div className="space-y-12">

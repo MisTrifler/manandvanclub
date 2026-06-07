@@ -70,7 +70,7 @@ export default function ApplyToJoinContent() {
           <div className="space-y-4">
             <h2 className="text-4xl font-black uppercase tracking-tight text-primary">Application Sent</h2>
             <p className="text-text-secondary font-medium leading-relaxed">
-              Thanks for applying to Man & Van Club! Our team will review your insurance and details. You'll hear from us within 24-48 hours.
+              Thanks for applying to Man and Van Club. Our team will review your insurance and details. You'll hear from us within 24-48 hours.
             </p>
           </div>
                   <Link href="/" className="btn-orange w-full block py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-accent/20">
@@ -98,7 +98,7 @@ export default function ApplyToJoinContent() {
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/3 space-y-8">
             <h1 className="text-5xl font-black text-primary uppercase tracking-tighter leading-none">Mover <span className="text-accent italic">Application</span></h1>
-            <p className="text-text-secondary font-medium leading-relaxed">Join the UK's most exclusive moving network. We only accept verified, insured professionals.</p>
+            <p className="text-text-secondary font-medium leading-relaxed">Join our England-focused moving network. We only accept verified, insured professionals.</p>
             
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-primary/60 font-black uppercase tracking-widest text-[10px]">
@@ -139,7 +139,7 @@ export default function ApplyToJoinContent() {
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                    <div className="space-y-2">
                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Primary Coverage Area</label>
-                     <input name="coverageArea" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all shadow-inner" placeholder="e.g. London" required />
+                     <input name="coverageArea" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all shadow-inner" placeholder="e.g. Birmingham" required />
                    </div>
                    <div className="space-y-2">
                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Work Radius</label>

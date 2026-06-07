@@ -34,9 +34,9 @@ const STEPS = [
 ];
 
 const TESTIMONIALS = [
-  { name: "Sarah T.", city: "London", quote: "I was nervous about trusting a stranger with my belongings but Man & Van Club matched me with a brilliant local mover within hours." },
+  { name: "Sarah T.", city: "London", quote: "I was nervous about trusting a stranger with my belongings but Man and Van Club matched me with a brilliant local mover within hours." },
   { name: "James R.", city: "Manchester", quote: "Compared to other sites where you get bombarded with 10 quotes at once, this was completely different. One mover, one call, job done." },
-  { name: "Priya K.", city: "Birmingham", quote: "Used Man & Van Club for my flat move. The mover was on time, careful with my furniture, and professional throughout." }
+  { name: "Priya K.", city: "Birmingham", quote: "Used Man and Van Club for my flat move. The mover was on time, careful with my furniture, and professional throughout." }
 ];
 
 export default function HomeContent() {

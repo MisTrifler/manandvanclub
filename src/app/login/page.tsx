@@ -32,7 +32,7 @@ export default function LoginPage() {
             <div className="bg-primary px-3 py-2 rounded-xl">
               <span className="text-white font-black text-xl leading-none">M&V</span>
             </div>
-            <span className="text-2xl font-black text-primary tracking-tighter uppercase">Man & Van Club</span>
+            <span className="text-2xl font-black text-primary tracking-tighter uppercase">Man and Van Club</span>
           </Link>
         </div>
 

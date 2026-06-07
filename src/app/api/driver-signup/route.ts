@@ -35,14 +35,14 @@ export async function POST(req: Request) {
     if (process.env.RESEND_API_KEY) {
       try {
         await resend.emails.send({
-          from: 'Man & Van Club <support@manandvanclub.co.uk>',
+          from: 'Man and Van Club <support@manandvanclub.co.uk>',
           to: [data.email],
           subject: 'Action Required: Verify Your Man and Van Club Application',
           replyTo: 'support@manandvanclub.co.uk',
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; line-height: 1.6; color: #0F172A;">
               <p>Dear Applicant,</p>
-              <p>Thank you for applying to join <strong>Man & Van Club</strong>.</p>
+              <p>Thank you for applying to join <strong>Man and Van Club</strong>.</p>
               <p>We have successfully received your application and it is currently under review by our team.</p>
               <p>To complete the verification process and avoid any delays in approving your account, <strong>please reply to this email with copies of the following documents:</strong></p>
               <ul style="list-style-type: disc; padding-left: 20px;">
@@ -54,16 +54,16 @@ export async function POST(req: Request) {
               <p>Once verification is complete, we will notify you of the outcome and provide access to your driver account if approved.</p>
               <p>If you have any questions, please reply to this email and a member of our team will be happy to assist.</p>
               <p>Kind regards,</p>
-              <p><strong>Man & Van Club</strong><br />Driver Approval Team</p>
+              <p><strong>Man and Van Club</strong><br />Driver Approval Team</p>
               <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
-              <p style="font-size: 11px; color: #94A3B8; text-align: center;">© 2026 Man & Van Club Ltd. Company number pending registration.</p>
+              <p style="font-size: 11px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
             </div>
           `
         });
 
         // 3. Notification to YOU (Admin)
         await resend.emails.send({
-          from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
+          from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
           to: ['support@manandvanclub.co.uk'],
           subject: `New Mover App: ${data.companyName}`,
           text: `New driver application from ${data.contactName} (${data.companyName}). Area: ${data.coverageArea}`

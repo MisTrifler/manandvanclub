@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     if (process.env.RESEND_API_KEY) {
       await resend.emails.send({
-        from: 'Man & Van Club <support@manandvanclub.co.uk>',
+        from: 'Man and Van Club <support@manandvanclub.co.uk>',
         to: ['support@manandvanclub.co.uk'],
         subject: `New Contact Form Submission: ${subject || 'General Enquiry'}`,
         html: `
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
             <hr />
             <p style="white-space: pre-wrap;">${message}</p>
             <hr />
-            <p style="font-size: 12px; color: #94A3B8;">© 2026 Man & Van Club Ltd</p>
+            <p style="font-size: 12px; color: #94A3B8;">© 2026 Man and Van Club</p>
           </div>
         `
       });
