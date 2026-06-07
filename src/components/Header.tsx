@@ -36,10 +36,6 @@ export default function Header() {
       <div className="hidden lg:block bg-primary text-white py-2 border-b border-white/5">
         <div className="container mx-auto px-4 flex justify-between items-center text-[9px] font-black uppercase tracking-[0.2em]">
           <div className="flex gap-6">
-            <a href="tel:07943617386" className="flex items-center gap-2 hover:text-accent transition-colors">
-              <Phone size={10} className="text-accent" />
-              <span>07943 617386</span>
-            </a>
             <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
               <Mail size={10} className="text-accent" />
               <span>support@manandvanclub.co.uk</span>
