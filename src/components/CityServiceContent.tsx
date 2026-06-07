@@ -2,7 +2,7 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight } from "lucide-react";
+import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CityServiceContent({ data, faqItems }: { data: any, faqItems: any[] }) {
