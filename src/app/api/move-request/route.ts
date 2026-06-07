@@ -43,7 +43,7 @@ export async function POST(req: Request) {
           from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
           to: [data.email],
           subject: `${otp} is your Man & Van Club verification code`,
-          reply_to: 'support@manandvanclub.co.uk',
+          replyTo: 'support@manandvanclub.co.uk',
           html: `
             <!DOCTYPE html>
             <html>
