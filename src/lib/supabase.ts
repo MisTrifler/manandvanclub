@@ -1,8 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
-// Use Service Role Key for server-side operations
-// v1.6.1: Force refresh for environment variables
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder';
+// v1.6.2: Aggressive key detection
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+if (!supabaseKey) {
+  console.error("CRITICAL: No Supabase Key found in environment variables.");
+}
+
+export const supabase = createClient(supabaseUrl, supabaseKey || 'placeholder');
