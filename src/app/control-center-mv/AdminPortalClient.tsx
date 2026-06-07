@@ -39,10 +39,6 @@ type Driver = {
 type DashboardResponse = {
   leads: Lead[];
   drivers: Driver[];
-  details?: {
-    leads?: string | null;
-    drivers?: string | null;
-  };
 };
 
 export default function AdminPortalClient() {
@@ -52,6 +48,7 @@ export default function AdminPortalClient() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [actionLoadingId, setActionLoadingId] = useState<string | null>(null);
 
   async function fetchData() {
@@ -72,12 +69,7 @@ export default function AdminPortalClient() {
       const result = await response.json();
 
       if (!response.ok) {
-        const detailText = result.details
-          ? [result.details.leads, result.details.drivers].filter(Boolean).join(" | ")
-          : "";
-        throw new Error(
-          detailText ? `${result.error || "Failed to load admin data."} ${detailText}` : (result.error || result.message || "Failed to load admin data."),
-        );
+        throw new Error(result.error || result.message || "Failed to load admin data.");
       }
 
       const data = result as DashboardResponse;
@@ -97,6 +89,7 @@ export default function AdminPortalClient() {
   async function updateDriverStatus(driverId: string, status: "approved" | "rejected" | "pending") {
     setActionLoadingId(driverId);
     setError(null);
+    setSuccessMessage(null);
 
     try {
       const response = await fetch("/api/admin/approve-driver", {
@@ -110,6 +103,17 @@ export default function AdminPortalClient() {
       if (!response.ok) {
         throw new Error(result.error || result.message || "Failed to update driver status.");
       }
+
+      // Show success message
+      const driver = drivers.find(d => d.id === driverId);
+      if (status === "approved" && driver?.email) {
+        setSuccessMessage(`Driver approved. Magic link sent to ${driver.email}`);
+      } else if (status === "rejected") {
+        setSuccessMessage("Driver application rejected.");
+      }
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setSuccessMessage(null), 5000);
 
       await fetchData();
     } catch (err: any) {
@@ -208,6 +212,12 @@ export default function AdminPortalClient() {
           </div>
         )}
 
+        {successMessage && (
+          <div className="p-5 bg-green-50 border-2 border-green-100 rounded-[2rem] text-green-700 font-bold text-sm">
+            {successMessage}
+          </div>
+        )}
+
         <div className="bg-white rounded-[3rem] border border-border shadow-2xl overflow-hidden">
           {loading ? (
             <div className="p-20 flex flex-col items-center justify-center gap-4">
@@ -273,8 +283,8 @@ export default function AdminPortalClient() {
                               driver.status === "approved"
                                 ? "text-success"
                                 : driver.status === "rejected"
-                                  ? "text-red-500"
-                                  : "text-amber-500"
+                                ? "text-red-500"
+                                : "text-amber-500"
                             }`}
                           >
                             {driver.status || "pending"}
