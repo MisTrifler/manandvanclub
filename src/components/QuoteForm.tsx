@@ -243,6 +243,7 @@ export default function QuoteForm() {
             <CheckCircle2 size={48} className="text-success mx-auto" />
             <h2 className="text-3xl font-black text-primary uppercase">You're All Set</h2>
             <p className="text-text-secondary">Your move request has been successfully submitted.</p>
+            <p className="text-text-secondary text-sm">Our team is now reviewing your details and matching you with a suitable local mover.</p>
 
             <div className="text-left bg-gray-50/50 rounded-2xl p-6 border border-border">
               <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-4">What Happens Next</h3>
