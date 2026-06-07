@@ -151,7 +151,6 @@ export default function ContactContent() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }
