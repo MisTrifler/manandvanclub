@@ -3,11 +3,52 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import { Check, X, User, MapPin, Phone, Mail, Clock, Shield, Zap, Loader2, Search, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function AdminPortal() {
+interface Lead {
+  id: string;
+  first_name: string;
+  email: string;
+  collection_postcode: string;
+  delivery_postcode: string;
+  move_type: string;
+  is_verified: boolean;
+  locked_by?: string;
+  created_at: string;
+}
+
+interface Driver {
+  id: string;
+  company_name: string;
+  contact_name: string;
+  phone: string;
+  email: string;
+  coverage_area: string;
+  radius: string;
+  status: string;
+  applied_at: string;
+}
+
+export default function AdminPortalWrapper() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#F9F9F7] flex items-center justify-center">
+        <Loader2 className="animate-spin text-accent" size={48} />
+      </div>
+    }>
+      <AdminPortal />
+    </Suspense>
+  );
+}
+
+function AdminPortal() {
+  const searchParams = useSearchParams();
+  const adminKey = searchParams.get("key");
+
   const [activeTab, setActiveTab] = useState<"leads" | "drivers">("leads");
-  const [leads, setLeads] = useState<any[]>([]);
-  const [drivers, setDrivers] = useState<any[]>([]);
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [drivers, setDrivers] = useState<Driver[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
@@ -39,8 +80,19 @@ export default function AdminPortal() {
     d.email?.toLowerCase().includes(search.toLowerCase())
   );
 
+  if (adminKey !== "MV2026") {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center p-4">
+        <div className="text-center space-y-4">
+          <Shield size={48} className="mx-auto text-primary/10" />
+          <p className="font-black text-primary/20 uppercase tracking-[0.4em] text-xs">Unauthorized Access</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-[#F9F9F7] p-4 lg:p-12 font-sans">
+    <div className="min-h-screen bg-[#F9F9F7] p-4 lg:p-12 font-sans selection:bg-accent selection:text-white">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -179,7 +231,7 @@ export default function AdminPortal() {
   );
 }
 
-function StatCard({ label, value, icon }: { label: string, value: number, icon: any }) {
+function StatCard({ label, value, icon }: { label: string, value: number, icon: React.ReactNode }) {
   return (
     <div className="bg-white p-8 rounded-[2.5rem] border border-border shadow-sm space-y-4">
       <div className="text-accent">{icon}</div>
