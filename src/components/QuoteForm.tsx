@@ -151,21 +151,30 @@ export default function QuoteForm() {
               <h2 className="text-3xl lg:text-4xl font-black text-primary uppercase">Start Your Move</h2>
             </div>
             <div className="space-y-3">
-              <input {...register("collectionPostcode")} placeholder="Collection Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-              <input {...register("deliveryPostcode")} placeholder="Delivery Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-              <input 
-                type="date" 
-                {...register("moveDate")} 
-                min={today}
-                className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" 
-              />
-              {errors.moveDate && <p className="text-red-500 text-xs font-bold">{errors.moveDate.message}</p>}
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection</label>
+                <input {...register("collectionPostcode")} placeholder="Collection Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+              </div>
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery</label>
+                <input {...register("deliveryPostcode")} placeholder="Delivery Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+              </div>
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
+                <input 
+                  type="date" 
+                  {...register("moveDate")} 
+                  min={today}
+                  className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" 
+                />
+                {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
+              </div>
             </div>
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
           </div>
         )}
 
-        {/* STEP 2 */}
+        {/* Other steps remain the same */}
         {step === 2 && (
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Move Type</h2>
@@ -179,7 +188,6 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* STEP 3 */}
         {step === 3 && estimate && (
           <div className="space-y-8 text-center py-4">
             <div className="bg-primary text-white p-10 rounded-[2.5rem] shadow-xl">
@@ -191,7 +199,6 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* STEP 4 */}
         {step === 4 && (
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Your Details</h2>
@@ -206,7 +213,6 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* STEP 5 - OTP */}
         {step === 5 && (
           <div className="space-y-8 text-center">
             <h2 className="text-3xl font-black text-primary uppercase">Verify Your Email</h2>
@@ -232,7 +238,6 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* STEP 6 - Success */}
         {step === 6 && (
           <div className="text-center py-6 space-y-6">
             <CheckCircle2 size={48} className="text-success mx-auto" />
