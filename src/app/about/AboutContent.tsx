@@ -1,6 +1,7 @@
 "use client";
 import { ShieldCheck, Star, Users, Globe, ArrowUpRight, Phone, Mail, Zap, Clock, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutContent() {
   const breadcrumbSchema = {

@@ -14,13 +14,9 @@ export default function HowItWorksContent() {
     ]
   };
 
-  return (
-    <div className="bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      {/* Hero */}
+  const steps = [
+    {
+      title: "Tell us about your move",
       desc: "Fill in your collection and delivery postcodes, move date, and property details. It takes less than 60 seconds.",
       icon: <Search className="w-8 h-8" />,
       image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1000&auto=format&fit=crop"
@@ -53,6 +49,11 @@ export default function HowItWorksContent() {
 
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      
       {/* Hero */}
       <section className="bg-[#F9F9F7] py-24 border-b border-border overflow-hidden relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent opacity-5 rounded-full -mr-32 -mt-32" />
@@ -128,8 +129,6 @@ export default function HowItWorksContent() {
           </div>
         </div>
       </section>
-
-      {/* Trust Quote - REMOVED FAKE TESTIMONIAL */}
 
       {/* CTA */}
       <section className="py-32 bg-white text-center">

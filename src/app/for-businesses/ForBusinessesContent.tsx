@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { CheckCircle2, TrendingUp, Map, ShieldCheck, Wallet, ArrowUpRight, Loader2, Zap } from "lucide-react";
+import { CheckCircle2, TrendingUp, Map, ShieldCheck, Wallet, ArrowUpRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ForBusinessesContent() {

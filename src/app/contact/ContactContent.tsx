@@ -1,11 +1,24 @@
 "use client";
-import { Mail, MessageCircle, Clock, MapPin, ArrowUpRight, Phone } from "lucide-react";
+import { Mail, Clock, MapPin, ArrowUpRight, Phone } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ContactContent() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.manandvanclub.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.manandvanclub.co.uk/contact" }
+    ]
+  };
+
   return (
     <div className="bg-[#F9F9F7] min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-32 overflow-hidden relative border-b border-white/5">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
@@ -65,7 +78,7 @@ export default function ContactContent() {
                     <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Message</label>
                     <textarea className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all h-48 shadow-inner" placeholder="Tell us more about your enquiry..." required></textarea>
                   </div>
-                  <button className="btn-orange px-14 py-6 rounded-2xl font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3">
+                  <button type="button" className="btn-orange px-14 py-6 rounded-2xl font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3">
                     Send Message <ArrowUpRight size={24} />
                   </button>
                 </form>
@@ -90,7 +103,7 @@ export default function ContactContent() {
                 </div>
               ))}
 
-              <div className="bg-primary p-12 rounded-[3rem] text-white space-y-6 relative overflow-hidden">
+              <div className="bg-primary p-12 rounded-[3rem] text-white space-y-6 relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full -mr-16 -mt-16" />
                 <h3 className="text-2xl font-black uppercase tracking-tighter leading-none">Need Help Faster?</h3>
                 <p className="text-gray-400 font-medium text-sm leading-relaxed">Check our detailed process guide to see how we verify and match you with movers.</p>
