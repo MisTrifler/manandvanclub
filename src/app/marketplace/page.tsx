@@ -29,7 +29,7 @@ export default async function MarketplacePage() {
   // Check if user is an approved driver
   const { data: driver } = await supabase
     .from('driver_applications')
-    .select('id, status, email')
+    .select('id, status, email, coverage_area')
     .eq('email', session.user.email)
     .single();
 
@@ -44,5 +44,18 @@ export default async function MarketplacePage() {
     );
   }
 
-  return <DriverMarketplaceClient userEmail={session.user.email} />;
+  // Fetch real unlocked leads
+  const { data: leads } = await supabase
+    .from('move_requests')
+    .select('*')
+    .eq('is_verified', true)
+    .neq('status', 'locked')
+    .order('created_at', { ascending: false });
+
+  return (
+    <DriverMarketplaceClient 
+      userEmail={session.user.email} 
+      leads={leads || []} 
+    />
+  );
 }
