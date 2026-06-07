@@ -5,9 +5,22 @@ import { Search, Calculator, CheckCircle, Truck, Star, ShieldCheck, Zap } from "
 import { motion } from "framer-motion";
 
 export default function HowItWorksContent() {
-  const steps = [
-    {
-      title: "Tell us about your move",
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.manandvanclub.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://www.manandvanclub.co.uk/how-it-works" }
+    ]
+  };
+
+  return (
+    <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {/* Hero */}
       desc: "Fill in your collection and delivery postcodes, move date, and property details. It takes less than 60 seconds.",
       icon: <Search className="w-8 h-8" />,
       image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1000&auto=format&fit=crop"
