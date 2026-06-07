@@ -4,8 +4,21 @@ import { CheckCircle2, TrendingUp, Map, ShieldCheck, Wallet, ArrowUpRight, Loade
 import { motion } from "framer-motion";
 
 export default function ForBusinessesContent() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.manandvanclub.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "Join as a Driver", "item": "https://www.manandvanclub.co.uk/for-businesses" }
+    ]
+  };
+
   return (
     <div className="bg-[#F9F9F7] min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="bg-primary text-white py-32 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
