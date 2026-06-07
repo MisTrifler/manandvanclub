@@ -11,6 +11,7 @@ import {
   Phone,
   Star,
   Shield,
+  ShieldCheck,
   Zap,
   ChevronRight
 } from "lucide-react";
