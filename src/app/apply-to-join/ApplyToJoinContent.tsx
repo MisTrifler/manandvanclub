@@ -3,12 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Loader2, ArrowLeft, ShieldCheck, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Mover Application | Join Man & Van Club Network",
-  description: "Apply to join the UK's most exclusive network of professional independent movers. Verified, insured, and exclusively matched.",
-};
 
 export default function ApplyToJoinContent() {
   const breadcrumbSchema = {
