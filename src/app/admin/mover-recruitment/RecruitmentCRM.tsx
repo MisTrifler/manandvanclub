@@ -374,8 +374,8 @@ export default function RecruitmentCRM() {
   }, [updateCompany]);
 
   // Unique filter values
-  const uniqueCities = useMemo(() => [...new Set(companies.map((c) => c.city))].sort(), [companies]);
-  const uniqueCounties = useMemo(() => [...new Set(companies.map((c) => c.county))].sort(), [companies]);
+  const uniqueCities = useMemo(() => Array.from(new Set(companies.map((c) => c.city))).sort(), [companies]);
+  const uniqueCounties = useMemo(() => Array.from(new Set(companies.map((c) => c.county))).sort(), [companies]);
 
   // Auth placeholder
   if (!isAdmin) {
