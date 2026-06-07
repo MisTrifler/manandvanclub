@@ -1,16 +1,11 @@
 "use client";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ChevronRight, Loader2, CheckCircle2, Mail, ShieldCheck, MapPin, Zap, Lock, Check } from "lucide-react";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { ChevronRight, Loader2, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
 
 const formSchema = z.object({
   collectionPostcode: z.string().min(5, "Invalid postcode"),
@@ -39,9 +34,15 @@ export default function QuoteForm() {
 
   const calculateEstimate = (data: FormData) => {
     const moveTypeBase: Record<string, [number, number]> = {
-      "Single Item": [50, 80], "Furniture Collection": [60, 100], "Studio Flat": [80, 130],
-      "1 Bed Flat": [100, 160], "2 Bed House": [180, 280], "3 Bed House": [300, 450],
-      "4+ Bed House": [500, 850], "Office Move": [200, 500], "Other": [100, 300]
+      "Single Item": [50, 80],
+      "Furniture Collection": [60, 100],
+      "Studio Flat": [80, 130],
+      "1 Bed Flat": [100, 160],
+      "2 Bed House": [180, 280],
+      "3 Bed House": [300, 450],
+      "4+ Bed House": [500, 850],
+      "Office Move": [200, 500],
+      "Other": [100, 300]
     };
     const range = moveTypeBase[data.moveType] || [100, 200];
     return { min: range[0], max: range[1] };
@@ -52,7 +53,7 @@ export default function QuoteForm() {
     if (step === 1) fields = ["collectionPostcode", "deliveryPostcode", "moveDate"];
     if (step === 2) fields = ["moveType"];
     if (step === 4) fields = ["firstName", "phone", "email"];
-    
+
     const isValid = await trigger(fields);
     if (isValid) {
       if (step === 2) {
@@ -73,11 +74,15 @@ export default function QuoteForm() {
     newOtp[index] = value;
     setOtp(newOtp);
     setOtpError(null);
-    if (value && index < 3) document.getElementById(`otp-${index + 1}`)?.focus();
+    if (value && index < 3) {
+      document.getElementById(`otp-${index + 1}`)?.focus();
+    }
   };
 
   const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Backspace" && !otp[index] && index > 0) document.getElementById(`otp-${index - 1}`)?.focus();
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      document.getElementById(`otp-${index - 1}`)?.focus();
+    }
   };
 
   const handleFinalSubmit = async (data: FormData) => {
@@ -101,7 +106,10 @@ export default function QuoteForm() {
 
   const handleVerifyOTP = async () => {
     const code = otp.join("");
-    if (code.length < 4) { setOtpError("Required"); return; }
+    if (code.length < 4) {
+      setOtpError("Please enter the full code");
+      return;
+    }
     setIsSubmitting(true);
     try {
       const response = await fetch('/api/verify-otp', {
@@ -109,10 +117,10 @@ export default function QuoteForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ requestId, otp: code }),
       });
-      if (!response.ok) throw new Error('Failed');
+      if (!response.ok) throw new Error('Verification failed');
       setStep(6);
     } catch (error: any) {
-      setOtpError("Invalid Code");
+      setOtpError("Invalid code. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -124,34 +132,36 @@ export default function QuoteForm() {
         <div className="bg-gray-50/50 px-6 py-3 border-b border-border flex justify-end">
           <div className="flex gap-1.5">
             {[1, 2, 3, 4, 5].map(i => (
-              <div key={i} className={cn("h-1 w-6 lg:w-8 rounded-full transition-all", i <= step ? "bg-accent" : "bg-gray-200")} />
+              <div key={i} className={`h-1 w-6 lg:w-8 rounded-full transition-all ${i <= step ? "bg-accent" : "bg-gray-200"}`} />
             ))}
           </div>
         </div>
       )}
 
       <div className="p-6 lg:p-8">
+        {/* Step 1 */}
         {step === 1 && (
           <div className="space-y-6">
-            <div className="space-y-1">
+            <div>
               <p className="text-[9px] font-black uppercase text-accent">Step 1 — Details</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-primary uppercase">Start Move</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-primary uppercase">Start Your Move</h2>
             </div>
             <div className="space-y-3">
               <input {...register("collectionPostcode")} placeholder="Collection Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
               <input {...register("deliveryPostcode")} placeholder="Delivery Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
               <input type="date" {...register("moveDate")} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
             </div>
-            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest transition-all">Continue</button>
+            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
           </div>
         )}
 
+        {/* Step 2 */}
         {step === 2 && (
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Move Type</h2>
             <div className="grid grid-cols-1 gap-2 max-h-[300px] overflow-y-auto pr-2">
               {["Single Item", "Studio Flat", "1 Bed Flat", "2 Bed House", "3 Bed House", "4+ Bed House", "Office Move", "Other"].map(type => (
-                <button key={type} onClick={() => { setValue("moveType", type); onNextStep(); }} className={cn("p-4 text-left rounded-xl border-2 border-border font-bold text-sm uppercase", watch("moveType") === type ? "border-accent bg-accent/5" : "")}>
+                <button key={type} onClick={() => { setValue("moveType", type); onNextStep(); }} className="p-4 text-left rounded-xl border-2 border-border font-bold text-sm uppercase hover:border-accent">
                   {type}
                 </button>
               ))}
@@ -159,62 +169,68 @@ export default function QuoteForm() {
           </div>
         )}
 
+        {/* Step 3 */}
         {step === 3 && estimate && (
           <div className="space-y-8 text-center py-4">
             <div className="bg-primary text-white p-10 rounded-[2.5rem] shadow-xl">
-               <p className="text-[10px] font-black uppercase opacity-40 mb-2">Estimate</p>
-               <p className="text-5xl font-black tracking-tighter">£{estimate.min}–{estimate.max}</p>
+              <p className="text-[10px] font-black uppercase opacity-40 mb-2">Estimated Value</p>
+              <p className="text-5xl font-black tracking-tighter">£{estimate.min}–{estimate.max}</p>
             </div>
-            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest shadow-xl">Verified Match</button>
+            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
             <button onClick={() => setStep(2)} className="text-[10px] font-black uppercase opacity-30">Back</button>
           </div>
         )}
 
+        {/* Step 4 */}
         {step === 4 && (
           <div className="space-y-6">
-            <h2 className="text-3xl font-black text-primary uppercase text-center">Contact</h2>
+            <h2 className="text-3xl font-black text-primary uppercase text-center">Your Details</h2>
             <div className="space-y-3">
-              <input {...register("firstName")} placeholder="Name" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-              <input {...register("phone")} placeholder="Mobile" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-              <input {...register("email")} placeholder="Email" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+              <input {...register("firstName")} placeholder="First Name" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+              <input {...register("phone")} placeholder="UK Mobile" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+              <input {...register("email")} placeholder="Email Address" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
             </div>
             <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest disabled:opacity-50">
-              {isSubmitting ? <Loader2 className="animate-spin" /> : "Verify Now"}
+              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
             </button>
           </div>
         )}
 
+        {/* Step 5 - OTP */}
         {step === 5 && (
           <div className="space-y-8 text-center">
-            <h2 className="text-3xl font-black text-primary uppercase">Verify</h2>
+            <h2 className="text-3xl font-black text-primary uppercase">Verify Your Email</h2>
             <div className="flex justify-center gap-3">
               {otp.map((digit, i) => (
-                <input key={i} id={`otp-${i}`} type="text" inputMode="numeric" maxLength={1} value={digit} onChange={(e) => handleOtpChange(i, e.target.value)} onKeyDown={(e) => handleKeyDown(i, e)} className={cn("w-12 h-16 bg-gray-50 border-2 rounded-xl text-center text-3xl font-black outline-none", otpError ? "border-red-500" : "border-border focus:border-accent")} />
+                <input
+                  key={i}
+                  id={`otp-${i}`}
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleOtpChange(i, e.target.value)}
+                  onKeyDown={(e) => handleKeyDown(i, e)}
+                  className="w-12 h-16 bg-gray-50 border-2 rounded-xl text-center text-3xl font-black outline-none border-border focus:border-accent"
+                />
               ))}
             </div>
+            {otpError && <p className="text-red-500 text-sm">{otpError}</p>}
             <button onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">
-              {isSubmitting ? <Loader2 className="animate-spin" /> : "Confirm"}
+              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Confirm Verification"}
             </button>
           </div>
         )}
 
+        {/* Step 6 - Success */}
         {step === 6 && (
           <div className="text-center py-6 space-y-6">
             <CheckCircle2 size={48} className="text-success mx-auto" />
-            <h2 className="text-3xl font-black text-primary uppercase">Success</h2>
-            <div className="bg-[#F9F9F7] p-6 rounded-2xl text-left text-xs font-bold text-primary/70 space-y-2 uppercase">
-              <p>✓ One mover only</p>
-              <p>✓ Direct contact shortly</p>
-            </div>
-            <Link href="/" className="btn-outline w-full block py-4 font-black uppercase text-xs rounded-xl">Home</Link>
+            <h2 className="text-3xl font-black text-primary uppercase">Request Submitted</h2>
+            <p className="text-text-secondary">Your move request has been verified and sent to approved movers.</p>
+            <Link href="/" className="btn-outline w-full block py-4 font-black uppercase text-xs rounded-xl">Return Home</Link>
           </div>
         )}
-      </div>
-
-      <div className="bg-gray-50 p-3 border-t border-border flex justify-center gap-6 text-[8px] font-black uppercase text-primary/30">
-        <span>✓ Secure</span>
-        <span>✓ England</span>
-        <span>✓ 1-to-1 Match</span>
       </div>
     </div>
   );
