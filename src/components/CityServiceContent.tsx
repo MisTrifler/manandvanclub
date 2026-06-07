@@ -150,6 +150,20 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                 ))}
               </div>
 
+              {/* Sidebar Content moved into main flow for better visibility on mobile/desktop conversion */}
+              <div className="bg-primary p-12 rounded-[3.5rem] text-white space-y-8 relative overflow-hidden shadow-2xl">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full -mr-16 -mt-16" />
+                 <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-none italic">Ready to start?</h3>
+                 <p className="text-gray-400 font-medium text-lg leading-relaxed">It takes less than 60 seconds to find the best local movers in {data.name}.</p>
+                 <Link href="#quote-form" className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 shadow-2xl shadow-accent/20 hover:scale-105 transition-all">
+                    Get Matched Now <ArrowUpRight size={22} />
+                 </Link>
+                 <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-white/40">
+                   <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Fully Insured</span>
+                   <span className="flex items-center gap-1.5"><Zap size={14} className="text-accent"/> 1-to-1 Match</span>
+                 </div>
+               </div>
+
               <div className="space-y-10">
                 <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Popular Areas</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
@@ -162,17 +176,8 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
               </div>
             </div>
 
-            {/* Sidebar Sticky CTA */}
+            {/* Vetting info remains in sidebar */}
             <aside className="space-y-8 lg:sticky lg:top-32">
-               <div className="bg-primary p-10 lg:p-12 rounded-[3rem] text-white space-y-8 relative overflow-hidden shadow-2xl">
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full -mr-16 -mt-16" />
-                 <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tighter leading-none">Ready to start?</h3>
-                 <p className="text-gray-400 font-medium text-sm leading-relaxed">It takes less than 60 seconds to find the best local movers in {data.name}.</p>
-                 <Link href="#quote-form" className="btn-orange w-full py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center justify-center gap-2 shadow-xl shadow-accent/20 hover:scale-105 transition-all">
-                    Get Matched Now <ChevronRight size={14} />
-                 </Link>
-               </div>
-
                <div className="bg-[#F9F9F7] p-10 rounded-[2.5rem] border border-border/50 space-y-6">
                   <ShieldCheck size={28} className="text-accent" />
                   <p className="text-primary font-black uppercase tracking-tighter leading-tight text-sm">
