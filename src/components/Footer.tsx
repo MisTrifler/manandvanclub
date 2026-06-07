@@ -21,17 +21,6 @@ export default function Footer() {
             <p className="text-gray-400 mb-6 leading-relaxed">
               A marketplace connecting customers with independent local movers. Find verified local professionals for your move.
             </p>
-            <div className="flex gap-4">
-              <span className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
-                <Facebook size={20} />
-              </span>
-              <span className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
-                <Instagram size={20} />
-              </span>
-              <span className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
-                <Twitter size={20} />
-              </span>
-            </div>
           </div>
 
           {/* Links 1 */}
