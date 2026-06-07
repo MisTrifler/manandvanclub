@@ -51,6 +51,7 @@ function AdminPortal() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [debugError, setDebugError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchData();
@@ -58,24 +59,28 @@ function AdminPortal() {
 
   async function fetchData() {
     setLoading(true);
+    setDebugError(null);
     try {
+      // Fetch Leads
       const { data: leadsData, error: leadsError } = await supabase
         .from("move_requests")
-        .select("*")
-        .order("id", { ascending: false }); // Using ID as fallback for order
+        .select("*");
       
+      // Fetch Drivers
       const { data: driversData, error: driversError } = await supabase
         .from("driver_applications")
-        .select("*")
-        .order("id", { ascending: false });
+        .select("*");
 
-      if (leadsError) console.error("Leads Fetch Error:", leadsError);
-      if (driversError) console.error("Drivers Fetch Error:", driversError);
+      if (leadsError) {
+        setDebugError(`Leads Error: ${leadsError.message} (${leadsError.code})`);
+      } else if (driversError) {
+        setDebugError(`Drivers Error: ${driversError.message} (${driversError.code})`);
+      }
 
       setLeads(leadsData || []);
       setDrivers(driversData || []);
-    } catch (err) {
-      console.error("Unexpected Fetch Error:", err);
+    } catch (err: any) {
+      setDebugError(`Critical Error: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -153,6 +158,13 @@ function AdminPortal() {
              onChange={(e) => setSearch(e.target.value)}
            />
         </div>
+
+        {/* Debug Error Area */}
+        {debugError && (
+          <div className="mb-8 p-6 bg-red-50 border-2 border-red-100 rounded-[2rem] text-red-600 font-black uppercase tracking-widest text-[10px]">
+            DEBUG: {debugError}
+          </div>
+        )}
 
         {/* Table Area */}
         <div className="bg-white rounded-[3rem] border border-border shadow-2xl overflow-hidden">
