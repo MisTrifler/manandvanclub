@@ -30,6 +30,48 @@ export default function QuoteForm() {
   const [requestId, setRequestId] = useState<string | null>(null);
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [otpError, setOtpError] = useState<string | null>(null);
+  const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
+
+  const { register, handleSubmit, watch, trigger, setValue, formState: { errors } } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      moveType: "",
+    }
+  });
+
+  const calculateEstimate = (data: FormData) => {
+    const moveTypeBase: Record<string, [number, number]> = {
+      "Single Item": [50, 80],
+      "Furniture Collection": [60, 100],
+      "Studio Flat": [80, 130],
+      "1 Bed Flat": [100, 160],
+      "2 Bed House": [180, 280],
+      "3 Bed House": [300, 450],
+      "4+ Bed House": [500, 850],
+      "Office Move": [200, 500],
+      "Other": [100, 300]
+    };
+    const range = moveTypeBase[data.moveType] || [100, 200];
+    return { min: range[0], max: range[1] };
+  };
+
+  const onNextStep = async () => {
+    let fields: (keyof FormData)[] = [];
+    if (step === 1) fields = ["collectionPostcode", "deliveryPostcode", "moveDate"];
+    if (step === 2) fields = ["moveType"];
+    if (step === 4) fields = ["firstName", "phone", "email"];
+    
+    const isValid = await trigger(fields);
+    if (isValid) {
+      if (step === 2) setEstimate(calculateEstimate(watch()));
+      if (step === 4) {
+        // CALL THE REAL API
+        handleFinalSubmit(watch());
+      } else {
+        setStep(step + 1);
+      }
+    }
+  };
 
   const handleOtpChange = (index: number, value: string) => {
     if (value.length > 1) value = value.slice(-1);
