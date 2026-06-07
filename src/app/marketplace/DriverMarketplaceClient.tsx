@@ -26,7 +26,7 @@ export default function DriverMarketplaceClient({ userEmail, leads }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           requestId: lead.id,
-          fee: 35.99, // You can make this dynamic later
+          fee: 35.99,
           businessName: userEmail,
         }),
       });
@@ -34,7 +34,7 @@ export default function DriverMarketplaceClient({ userEmail, leads }: Props) {
       const { url } = await response.json();
       if (url) window.location.href = url;
     } catch (error) {
-      alert("Error initiating checkout.");
+      alert("Error initiating checkout. Please try again.");
     } finally {
       setLoadingId(null);
     }
