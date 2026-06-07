@@ -132,7 +132,7 @@ export default function Header() {
             </div>
 
             <Link href="/for-businesses" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
-              For Movers
+              Join Us
             </Link>
             <Link href="/about" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
               About
@@ -184,7 +184,7 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/for-businesses" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>For Movers</Link>
+          <Link href="/for-businesses" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>Join Us</Link>
           <Link href="/about" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>About Us</Link>
           
           <div className="flex flex-col gap-3 pt-4 border-t border-border">

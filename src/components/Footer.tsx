@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Links 3 */}
           <div>
-            <h4 className="font-bold text-lg mb-6">For Businesses</h4>
+            <h4 className="font-bold text-lg mb-6">Join Us</h4>
             <ul className="space-y-4 text-text-secondary">
               <li><Link href="/for-businesses" className="hover:text-accent transition-colors">Join as a Driver</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Introduction Marketplace</Link></li>
