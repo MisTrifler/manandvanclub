@@ -37,7 +37,11 @@ export default function ForBusinesses() {
               className="lg:w-1/2 space-y-8"
             >
               <div className="inline-block bg-accent/20 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">Mover Network</div>
-              <h1 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">Grow Your <span className="text-accent italic">Moving</span> Business</h1>
+              <h1 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">
+                <span className="text-white">Grow Your </span>
+                <span className="text-accent italic">Moving</span>
+                <span className="text-white"> Business</span>
+              </h1>
               <p className="text-xl text-gray-300 mb-10 max-w-xl font-medium leading-relaxed">
                 Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just quality job enquiries.
               </p>

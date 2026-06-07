@@ -23,10 +23,12 @@ export async function POST(req: Request) {
       ]);
 
     if (error) {
+      console.error('Supabase Driver Signup Error:', error);
       if (error.code === '23505') {
         return NextResponse.json({ error: 'This email has already applied.' }, { status: 400 });
       }
-      throw error;
+      // Return specific error details to help debug
+      return NextResponse.json({ error: 'Database error', details: error.message, code: error.code }, { status: 500 });
     }
 
     // 2. Send Confirmation Email to Driver
