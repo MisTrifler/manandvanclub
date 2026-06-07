@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
-import { supabase } from '@/lib/supabase';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 import { resend } from '@/lib/resend';
 import { headers } from 'next/headers';
 
@@ -21,19 +21,32 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Webhook Error' }, { status: 400 });
   }
 
-  // Handle the checkout.session.completed event
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as any;
     const { requestId, businessName } = session.metadata;
 
+    const supabaseAdmin = getSupabaseAdmin();
+
     try {
-      // 1. Mark the job as 'locked' so no one else can buy it
-      const { data: moveRequest, error: updateError } = await supabase
+      // Check if lead is already locked
+      const { data: existing } = await supabaseAdmin
         .from('move_requests')
-        .update({ 
+        .select('status, locked_by')
+        .eq('id', requestId)
+        .single();
+
+      if (existing?.status === 'locked') {
+        console.log(`Lead ${requestId} already locked by ${existing.locked_by}`);
+        return NextResponse.json({ received: true });
+      }
+
+      // Lock the lead
+      const { data: moveRequest, error: updateError } = await supabaseAdmin
+        .from('move_requests')
+        .update({
           status: 'locked',
           locked_by: businessName,
-          locked_at: new Date().toISOString()
+          locked_at: new Date().toISOString(),
         })
         .eq('id', requestId)
         .select()
@@ -41,16 +54,16 @@ export async function POST(req: Request) {
 
       if (updateError) throw updateError;
 
-      // 2. Send the Customer's REAL details to the Driver
+      // Send customer details to driver
       await resend.emails.send({
         from: 'Man and Van Club <leads@manandvanclub.co.uk>',
-        to: [session.customer_details.email], // Driver's email from Stripe
+        to: [session.customer_details.email],
         subject: `JOB UNLOCKED: ${moveRequest.first_name}'s Contact Details`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 2px solid #F97316; padding: 30px; border-radius: 20px;">
             <h2 style="color: #0F172A; text-transform: uppercase;">Lead Unlocked Successfully</h2>
             <p>Hi ${businessName},</p>
-            <p>You have successfully unlocked the contact details for this customer. Please contact them immediately to provide your quote.</p>
+            <p>You have successfully unlocked the contact details for this customer.</p>
             
             <div style="background: #F8FAFC; padding: 25px; border-radius: 12px; margin: 25px 0; border: 1px solid #E2E8F0;">
               <h3 style="margin-top: 0; color: #F97316;">Customer Details</h3>
@@ -59,32 +72,28 @@ export async function POST(req: Request) {
               <p style="font-size: 18px; margin: 5px 0;"><strong>Email:</strong> <a href="mailto:${moveRequest.email}">${moveRequest.email}</a></p>
             </div>
 
-            <div style="background: #FFF7ED; padding: 20px; border-radius: 12px; border: 1px solid #FFEDD5;">
-              <p style="margin: 0; font-size: 13px; color: #9A3412;"><strong>Pro Tip:</strong> Customers are 70% more likely to book if you call them within the first 15 minutes of unlocking.</p>
-            </div>
-
+            <p style="font-size: 13px; color: #9A3412;"><strong>Tip:</strong> Contact the customer quickly for higher conversion.</p>
             <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
             <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
           </div>
-        `
+        `,
       });
 
-      // 3. Optional: Notify the Customer they've been matched
+      // Notify customer
       await resend.emails.send({
         from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
         to: [moveRequest.email],
-        subject: `You've been matched! ${businessName} will contact you shortly`,
+        subject: `You've been matched with ${businessName}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto;">
             <h2>Great news!</h2>
             <p>Hi ${moveRequest.first_name},</p>
-            <p>A professional mover from <strong>${businessName}</strong> has accepted your request for your move on ${moveRequest.move_date}.</p>
-            <p>They will be in touch shortly via phone or email to provide your exclusive quote.</p>
-            <hr />
+            <p><strong>${businessName}</strong> has unlocked your move request.</p>
+            <p>They will contact you shortly.</p>
             <p style="font-size: 12px; color: #64748B;">You are under no obligation to accept their quote.</p>
             <p style="font-size: 12px; color: #94A3B8;">© 2026 Man and Van Club</p>
           </div>
-        `
+        `,
       });
 
     } catch (err: any) {
