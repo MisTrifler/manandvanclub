@@ -239,7 +239,7 @@ function AdminPortal() {
                       <tr key={driver.id} className="hover:bg-gray-50/50 transition-colors">
                         <td className="p-8">
                           <p className="font-black text-primary uppercase tracking-tight">{driver.company_name}</p>
-                          <span className={`text-[9px] font-black uppercase tracking-widest ${driver.status === 'approved' ? 'text-success' : 'text-amber-500'}`}>
+                          <span className={`text-[9px] font-black uppercase tracking-widest ${driver.status === 'approved' ? 'text-success' : driver.status === 'rejected' ? 'text-red-500' : 'text-amber-500'}`}>
                             {driver.status}
                           </span>
                         </td>
