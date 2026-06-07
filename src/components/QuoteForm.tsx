@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ChevronRight, Loader2, CheckCircle2 } from "lucide-react";
+import { Loader2, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 const formSchema = z.object({
@@ -46,6 +46,10 @@ export default function QuoteForm() {
     };
     const range = moveTypeBase[data.moveType] || [100, 200];
     return { min: range[0], max: range[1] };
+  };
+
+  const goToStep = (newStep: number) => {
+    setStep(newStep);
   };
 
   const onNextStep = async () => {
@@ -139,7 +143,7 @@ export default function QuoteForm() {
       )}
 
       <div className="p-6 lg:p-8">
-        {/* Step 1 */}
+        {/* STEP 1 */}
         {step === 1 && (
           <div className="space-y-6">
             <div>
@@ -155,7 +159,7 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* Step 2 */}
+        {/* STEP 2 */}
         {step === 2 && (
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Move Type</h2>
@@ -169,7 +173,7 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* Step 3 */}
+        {/* STEP 3 */}
         {step === 3 && estimate && (
           <div className="space-y-8 text-center py-4">
             <div className="bg-primary text-white p-10 rounded-[2.5rem] shadow-xl">
@@ -181,7 +185,7 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* Step 4 */}
+        {/* STEP 4 */}
         {step === 4 && (
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Your Details</h2>
@@ -196,7 +200,7 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* Step 5 - OTP */}
+        {/* STEP 5 - OTP */}
         {step === 5 && (
           <div className="space-y-8 text-center">
             <h2 className="text-3xl font-black text-primary uppercase">Verify Your Email</h2>
@@ -222,7 +226,7 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* Step 6 - Success */}
+        {/* STEP 6 - Success */}
         {step === 6 && (
           <div className="text-center py-6 space-y-6">
             <CheckCircle2 size={48} className="text-success mx-auto" />
