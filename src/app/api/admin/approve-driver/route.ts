@@ -31,14 +31,14 @@ export async function POST(req: Request) {
     if (process.env.RESEND_API_KEY) {
       if (status === 'approved') {
         await resend.emails.send({
-          from: 'Man & Van Club <support@manandvanclub.co.uk>',
+          from: 'Man and Van Club <support@manandvanclub.co.uk>',
           to: [driver.email],
-          subject: 'Approved: Welcome to the Man & Van Club Network!',
+          subject: 'Approved: Welcome to the Man and Van Club Network!',
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
               <h2 style="color: #0F172A;">CONGRATULATIONS!</h2>
               <p>Hi ${driver.contact_name},</p>
-              <p>Your application to join **Man & Van Club** has been **OFFICIALLY APPROVED**.</p>
+              <p>Your application to join **Man and Van Club** has been **OFFICIALLY APPROVED**.</p>
               
               <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin: 20px 0;">
                 <h3 style="margin-top: 0; color: #F97316;">What happens now?</h3>
@@ -52,20 +52,20 @@ export async function POST(req: Request) {
               <p>We are excited to have ${driver.company_name} in our network.</p>
               
               <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
-              <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man & Van Club Ltd. All rights reserved.</p>
+              <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club. All rights reserved.</p>
             </div>
           `
         });
       } else if (status === 'rejected') {
         await resend.emails.send({
-          from: 'Man & Van Club <support@manandvanclub.co.uk>',
+          from: 'Man and Van Club <support@manandvanclub.co.uk>',
           to: [driver.email],
-          subject: 'Update regarding your application - Man & Van Club',
+          subject: 'Update regarding your application - Man and Van Club',
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
               <h2 style="color: #0F172A;">Application Update</h2>
               <p>Hi ${driver.contact_name},</p>
-              <p>Thank you for your interest in joining the Man & Van Club mover network.</p>
+              <p>Thank you for your interest in joining the Man and Van Club mover network.</p>
               <p>We have carefully reviewed your application for **${driver.company_name}**. Unfortunately, we are unable to approve your application at this time.</p>
               
               <p style="color: #475569; line-height: 1.6;">
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
               <p>We wish you the best of luck with your business.</p>
               
               <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
-              <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man & Van Club Ltd</p>
+              <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
             </div>
           `
         });

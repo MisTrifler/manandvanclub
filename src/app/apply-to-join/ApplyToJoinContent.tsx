@@ -73,9 +73,12 @@ export default function ApplyToJoinContent() {
               Thanks for applying to Man & Van Club! Our team will review your insurance and details. You'll hear from us within 24-48 hours.
             </p>
           </div>
-          <Link href="/" className="btn-orange w-full block py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-accent/20">
+                  <Link href="/" className="btn-orange w-full block py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-accent/20">
             Return Home
           </Link>
+          <p className="text-[10px] text-text-secondary uppercase font-bold tracking-widest opacity-40">
+            © 2026 Man and Van Club
+          </p>
         </motion.div>
       </div>
     );

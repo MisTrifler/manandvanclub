@@ -43,9 +43,8 @@ export async function POST(req: Request) {
       throw updateError;
     }
 
-    // 3. Find Matching Drivers and Notify them
+    // 3. Send Notification Engine
     try {
-      // Get the move request details to find the location
       const { data: moveRequest } = await supabase
         .from('move_requests')
         .select('*')
@@ -53,18 +52,15 @@ export async function POST(req: Request) {
         .single();
 
       if (moveRequest) {
-        // Find approved drivers in that area
         const { data: matchingDrivers } = await supabase
           .from('driver_applications')
           .select('email, contact_name')
           .eq('status', 'approved'); 
-          // Note: For launch, we'll email all approved drivers. 
-          // Later we can filter by .ilike('coverage_area', `%${moveRequest.collection_postcode.split(' ')[0]}%`)
 
         if (matchingDrivers && matchingDrivers.length > 0) {
           for (const driver of matchingDrivers) {
             await resend.emails.send({
-              from: 'Man & Van Club <leads@manandvanclub.co.uk>',
+              from: 'Man and Van Club <leads@manandvanclub.co.uk>',
               to: [driver.email],
               subject: `New Move Request: ${moveRequest.move_type} in ${moveRequest.collection_postcode}`,
               html: `
@@ -82,7 +78,7 @@ export async function POST(req: Request) {
                      style="display: block; background: #F97316; color: white; padding: 15px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px;">
                     Unlock Lead Details Now
                   </a>
-                  <p style="font-size: 12px; color: #94A3B8; margin-top: 20px;">© 2026 Man & Van Club Ltd</p>
+                  <p style="font-size: 12px; color: #94A3B8; margin-top: 20px;">© 2026 Man and Van Club</p>
                 </div>
               `
             });

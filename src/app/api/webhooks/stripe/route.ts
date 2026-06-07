@@ -43,7 +43,7 @@ export async function POST(req: Request) {
 
       // 2. Send the Customer's REAL details to the Driver
       await resend.emails.send({
-        from: 'Man & Van Club <leads@manandvanclub.co.uk>',
+        from: 'Man and Van Club <leads@manandvanclub.co.uk>',
         to: [session.customer_details.email], // Driver's email from Stripe
         subject: `JOB UNLOCKED: ${moveRequest.first_name}'s Contact Details`,
         html: `
@@ -64,14 +64,14 @@ export async function POST(req: Request) {
             </div>
 
             <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
-            <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man & Van Club Ltd</p>
+            <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
           </div>
         `
       });
 
       // 3. Optional: Notify the Customer they've been matched
       await resend.emails.send({
-        from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
+        from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
         to: [moveRequest.email],
         subject: `You've been matched! ${businessName} will contact you shortly`,
         html: `
@@ -82,6 +82,7 @@ export async function POST(req: Request) {
             <p>They will be in touch shortly via phone or email to provide your exclusive quote.</p>
             <hr />
             <p style="font-size: 12px; color: #64748B;">You are under no obligation to accept their quote.</p>
+            <p style="font-size: 12px; color: #94A3B8;">© 2026 Man and Van Club</p>
           </div>
         `
       });

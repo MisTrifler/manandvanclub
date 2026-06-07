@@ -61,8 +61,7 @@ export default function Footer() {
         {/* Legal & Badges */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col gap-2 text-sm text-text-secondary">
-            <span>© {currentYear} Man & Van Club Ltd.</span>
-            <span>Company number pending registration</span>
+            <span>© {currentYear} Man and Van Club</span>
             <div className="flex flex-wrap gap-6 mt-2">
               <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-primary">Terms & Conditions</Link>

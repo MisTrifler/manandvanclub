@@ -40,9 +40,9 @@ export async function POST(req: Request) {
         console.log('Attempting to send OTP email to:', data.email);
         
         const { data: emailResponse, error: emailError } = await resend.emails.send({
-          from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
+          from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
           to: [data.email],
-          subject: `${otp} is your Man & Van Club verification code`,
+          subject: `${otp} is your Man and Van Club verification code`,
           replyTo: 'support@manandvanclub.co.uk',
           html: `
             <!DOCTYPE html>
@@ -97,7 +97,7 @@ export async function POST(req: Request) {
                       <tr>
                         <td style="padding: 32px; text-align: center;">
                           <p style="margin: 0 0 8px 0; color: #94A3B8; font-size: 12px; font-weight: 600;">
-                            &copy; 2026 Man & Van Club Ltd. All rights reserved.
+                            &copy; 2026 Man and Van Club. All rights reserved.
                           </p>
                           <p style="margin: 0; color: #CBD5E1; font-size: 11px;">
                             You received this email because a move request was started with this address. 
