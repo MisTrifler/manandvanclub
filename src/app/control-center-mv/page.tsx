@@ -58,11 +58,27 @@ function AdminPortal() {
 
   async function fetchData() {
     setLoading(true);
-    const { data: leadsData } = await supabase.from("move_requests").select("*").order("created_at", { ascending: false });
-    const { data: driversData } = await supabase.from("driver_applications").select("*").order("applied_at", { ascending: false });
-    setLeads(leadsData || []);
-    setDrivers(driversData || []);
-    setLoading(false);
+    try {
+      const { data: leadsData, error: leadsError } = await supabase
+        .from("move_requests")
+        .select("*")
+        .order("id", { ascending: false }); // Using ID as fallback for order
+      
+      const { data: driversData, error: driversError } = await supabase
+        .from("driver_applications")
+        .select("*")
+        .order("id", { ascending: false });
+
+      if (leadsError) console.error("Leads Fetch Error:", leadsError);
+      if (driversError) console.error("Drivers Fetch Error:", driversError);
+
+      setLeads(leadsData || []);
+      setDrivers(driversData || []);
+    } catch (err) {
+      console.error("Unexpected Fetch Error:", err);
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function updateDriverStatus(id: string, status: string) {
