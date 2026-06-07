@@ -43,7 +43,10 @@ export default function ApplyToJoinContent() {
       });
 
       const result = await res.json();
-      if (!res.ok) throw new Error(result.error || "Submission failed");
+      if (!res.ok) {
+        const errorMsg = result.details ? `${result.error}: ${result.details}` : (result.error || "Submission failed");
+        throw new Error(errorMsg);
+      }
 
       setSubmitted(true);
     } catch (err: any) {
