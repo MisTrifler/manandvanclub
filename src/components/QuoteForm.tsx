@@ -154,8 +154,7 @@ export default function QuoteForm() {
     <div className="relative z-20 bg-white rounded-[2rem] shadow-[0_40px_80px_-16px_rgba(0,0,0,0.1)] border border-border overflow-hidden" id="quote-form">
       {/* Progress */}
       {step < 6 && (
-        <div className="bg-gray-50/50 px-8 py-6 flex items-center justify-between border-b border-border">
-          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 italic">In-Progress</span>
+        <div className="bg-gray-50/50 px-8 py-6 flex items-center justify-end border-b border-border">
           <div className="flex gap-2">
             {[1, 2, 3, 4, 5].map(i => (
               <div key={i} className={cn("h-1.5 w-10 rounded-full transition-all duration-1000", i <= step ? "bg-accent" : "bg-gray-200")} />
@@ -168,6 +167,7 @@ export default function QuoteForm() {
         {step === 1 && (
           <div className="space-y-10">
             <div className="space-y-3">
+              <p className="text-[10px] font-black uppercase tracking-widest text-accent mb-2">Step 1 of 3 — Tell us about your move</p>
               <h2 className="text-4xl font-black text-primary tracking-tighter leading-none uppercase">Start Your Move</h2>
               <p className="text-text-secondary font-bold text-lg">Verified local movers ready to help.</p>
             </div>
@@ -190,9 +190,14 @@ export default function QuoteForm() {
                 {errors.moveDate && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.moveDate.message}</p>}
               </div>
             </div>
-            <button onClick={onNextStep} className="btn-orange w-full py-6 rounded-[1.5rem] flex items-center justify-center gap-3 text-xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-accent/30 hover:scale-[1.02] active:scale-95 transition-all">
-              Continue <ChevronRight size={24} />
-            </button>
+            <div className="space-y-4">
+              <button onClick={onNextStep} className="btn-orange w-full py-6 rounded-[1.5rem] flex items-center justify-center gap-3 text-xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-accent/30 hover:scale-[1.02] active:scale-95 transition-all">
+                Continue <ChevronRight size={24} />
+              </button>
+              <p className="text-[10px] text-center font-bold text-text-secondary uppercase tracking-widest opacity-60">
+                No payment required at this stage. Your details stay private until you approve your match.
+              </p>
+            </div>
           </div>
         )}
 

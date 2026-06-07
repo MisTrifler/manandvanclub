@@ -6,8 +6,50 @@ import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight } f
 import { motion } from "framer-motion";
 
 export default function CityServiceContent({ data, faqItems }: { data: any, faqItems: any[] }) {
+  const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
+  
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.manandvanclub.co.uk"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": data.name,
+        "item": currentUrl
+      }
+    ]
+  };
+
   return (
     <div className="bg-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="bg-[#F9F9F7] py-32 border-b border-border overflow-hidden relative">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
            <div className="absolute inset-0 grid grid-cols-6 gap-4">
@@ -23,11 +65,19 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
               className="lg:w-1/2 space-y-10"
             >
               <div className="inline-flex items-center gap-3 bg-accent/10 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-accent/20">
-                <MapPin size={16} />
-                Local Experts in {data.name}
+                {data.badge ? data.badge : (
+                  <>
+                    <MapPin size={16} />
+                    Local Experts in {data.name}
+                  </>
+                )}
               </div>
               <h1 className="text-6xl md:text-8xl font-black text-primary uppercase tracking-tighter leading-[0.9]">
-                Man and Van <span className="text-accent">{data.name}</span>
+                {data.h1 ? data.h1 : (
+                  <>
+                    Man and Van <span className="text-accent">{data.name}</span>
+                  </>
+                )}
               </h1>
               <p className="text-xl md:text-2xl text-text-secondary font-medium leading-relaxed max-w-xl">
                 {data.intro}
@@ -66,7 +116,9 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 items-start">
             <div className="lg:col-span-2 space-y-20">
               <div className="space-y-8">
-                 <h2 className="text-5xl font-black text-primary uppercase tracking-tight leading-none">Moving in {data.name} Made Simple</h2>
+                 <h2 className="text-5xl font-black text-primary uppercase tracking-tight leading-none">
+                   {data.h1 ? data.name + " Made Simple" : `Moving in ${data.name} Made Simple`}
+                 </h2>
                  <p className="text-xl text-text-secondary font-medium leading-relaxed">{data.knowledge}</p>
                  <p className="text-xl text-text-secondary font-medium leading-relaxed">
                    Whether you are moving a single item from Facebook Marketplace or a large family home, our network makes it easy to get exclusively matched with a local professional in seconds. We take the stress out of moving by doing the vetting for you.

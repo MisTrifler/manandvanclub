@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | Man & Van Club",
+  description: "Terms and conditions for using the Man & Van Club marketplace.",
+};
 
 export default function Terms() {
   return (

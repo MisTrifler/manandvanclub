@@ -22,15 +22,15 @@ export default function Footer() {
               A marketplace connecting customers with independent local movers. Find verified local professionals for your move.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
+              <span className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
                 <Facebook size={20} />
-              </Link>
-              <Link href="#" className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
+              </span>
+              <span className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
                 <Instagram size={20} />
-              </Link>
-              <Link href="#" className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
+              </span>
+              <span className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
                 <Twitter size={20} />
-              </Link>
+              </span>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6">For Businesses</h4>
             <ul className="space-y-4 text-gray-400">
               <li><Link href="/for-businesses" className="hover:text-accent transition-colors">Join as a Driver</Link></li>
-              <li><Link href="/marketplace" className="hover:text-accent transition-colors">introduction marketplace</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Introduction Marketplace</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Driver Pricing</Link></li>
               <li><Link href="/login" className="hover:text-accent transition-colors">Driver Login</Link></li>
             </ul>
@@ -72,7 +72,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col gap-2 text-sm text-gray-400">
             <span>© {currentYear} Man & Van Club Ltd.</span>
-            <span>Company Number: 12345678</span>
+            <span>Company number pending registration</span>
             <div className="flex flex-wrap gap-6 mt-2">
               <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white">Terms & Conditions</Link>

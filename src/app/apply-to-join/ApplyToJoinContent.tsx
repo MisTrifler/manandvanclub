@@ -3,8 +3,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Loader2, ArrowLeft, ShieldCheck, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { Metadata } from "next";
 
-export default function ApplyToJoinPage() {
+export const metadata: Metadata = {
+  title: "Mover Application | Join Man & Van Club Network",
+  description: "Apply to join the UK's most exclusive network of professional independent movers. Verified, insured, and exclusively matched.",
+};
+
+export default function ApplyToJoinContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -143,6 +149,12 @@ export default function ApplyToJoinPage() {
                     </div>
                  </div>
 
+                 <div className="space-y-2">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-primary/30 text-center">
+                       You will need to provide proof of goods-in-transit insurance and public liability insurance during onboarding.
+                    </p>
+                 </div>
+
                  {error && (
                    <div className="bg-red-50 border border-red-100 p-4 rounded-xl text-red-600 text-[10px] font-black uppercase tracking-widest">
                      Error: {error}
@@ -157,6 +169,24 @@ export default function ApplyToJoinPage() {
                    {isSubmitting ? <Loader2 className="animate-spin" size={24} /> : "Submit Application →"}
                  </button>
                </form>
+            </div>
+
+            {/* What Happens Next (E2) */}
+            <div className="mt-20 space-y-12">
+               <h2 className="text-3xl font-black text-primary uppercase tracking-tight text-center">What Happens Next</h2>
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {[
+                    { t: "We review your application", d: "Our team checks your details within 24 hours to ensure you meet our network standards.", i: "01" },
+                    { t: "We verify your insurance", d: "You'll be asked to upload your insurance documents through our secure portal.", i: "02" },
+                    { t: "You get access to live jobs", d: "Once approved, you can start unlocking move requests in your chosen area immediately.", i: "03" }
+                  ].map((step, i) => (
+                    <div key={i} className="bg-white p-8 rounded-3xl border border-border/50 space-y-4 shadow-sm">
+                       <div className="text-accent font-black text-xl italic tracking-tighter">Step {step.i}</div>
+                       <h3 className="font-black text-primary uppercase tracking-tight text-sm">{step.t}</h3>
+                       <p className="text-text-secondary font-medium text-xs leading-relaxed">{step.d}</p>
+                    </div>
+                  ))}
+               </div>
             </div>
           </div>
         </div>

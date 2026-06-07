@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Man & Van Club",
+  description: "Learn how we collect, use, and protect your personal data at Man & Van Club.",
+};
 
 export default function PrivacyPolicy() {
   return (

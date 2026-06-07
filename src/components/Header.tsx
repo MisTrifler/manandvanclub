@@ -1,10 +1,18 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowUpRight, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [areasOpen, setAreasOpen] = useState(false);
 
   const services = [
     { name: "House Removals", href: "/house-removals" },
@@ -24,8 +32,34 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-border sticky top-0 z-[100] transition-all">
+      {/* Top Info Bar */}
+      <div className="hidden lg:block bg-primary text-white py-3 border-b border-white/5">
+        <div className="container mx-auto px-4 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em]">
+          <div className="flex gap-8">
+            <a href="tel:07943617386" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Phone size={12} className="text-accent" />
+              <span>07943 617386</span>
+            </a>
+            <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Mail size={12} className="text-accent" />
+              <span>support@manandvanclub.co.uk</span>
+            </a>
+          </div>
+          <div className="flex gap-8">
+            <div className="flex items-center gap-2">
+              <MapPin size={12} className="text-accent" />
+              <span>UK-Wide Service</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock size={12} className="text-accent" />
+              <span>Mon–Sun: 8 AM – 10 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-28 lg:h-32">
+        <div className="flex justify-between items-center h-24 lg:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4 group">
             <div className="bg-primary p-3 rounded-2xl group-hover:bg-accent transition-all duration-500 shadow-xl group-hover:scale-110 group-hover:rotate-6">
@@ -46,10 +80,22 @@ export default function Header() {
             </Link>
             
             <div className="relative group">
-              <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
-                Services <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
+              <button 
+                onClick={() => setServicesOpen(!servicesOpen)}
+                onBlur={() => setTimeout(() => setServicesOpen(false), 200)}
+                className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors"
+                aria-expanded={servicesOpen}
+                aria-controls="services-menu"
+              >
+                Services <ChevronDown size={14} className={cn("transition-transform", servicesOpen ? "rotate-180" : "")} />
               </button>
-              <div className="absolute top-full -left-4 w-64 bg-white border border-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all p-3 z-50 mt-4">
+              <div 
+                id="services-menu"
+                className={cn(
+                  "absolute top-full -left-4 w-64 bg-white border border-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl transition-all p-3 z-50 mt-4",
+                  servicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                )}
+              >
                 <div className="grid grid-cols-1 gap-1">
                   {services.map((s) => (
                     <Link key={s.href} href={s.href} className="flex items-center justify-between px-5 py-4 hover:bg-accent/5 rounded-xl text-[10px] font-black uppercase tracking-widest text-primary/60 hover:text-accent group/item transition-all">
@@ -62,10 +108,22 @@ export default function Header() {
             </div>
 
             <div className="relative group">
-              <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
-                Areas <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
+              <button 
+                onClick={() => setAreasOpen(!areasOpen)}
+                onBlur={() => setTimeout(() => setAreasOpen(false), 200)}
+                className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors"
+                aria-expanded={areasOpen}
+                aria-controls="areas-menu"
+              >
+                Areas <ChevronDown size={14} className={cn("transition-transform", areasOpen ? "rotate-180" : "")} />
               </button>
-              <div className="absolute top-full -left-4 w-56 bg-white border border-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all p-3 z-50 mt-4">
+              <div 
+                id="areas-menu"
+                className={cn(
+                  "absolute top-full -left-4 w-56 bg-white border border-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl transition-all p-3 z-50 mt-4",
+                  areasOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                )}
+              >
                  <div className="grid grid-cols-1 gap-1">
                   {cities.map((c) => (
                     <Link key={c.href} href={c.href} className="flex items-center justify-between px-5 py-4 hover:bg-accent/5 rounded-xl text-[10px] font-black uppercase tracking-widest text-primary/60 hover:text-accent group/item transition-all">
@@ -104,18 +162,39 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-border shadow-xl p-4 flex flex-col gap-4">
-          <Link href="/how-it-works" className="font-semibold p-2">How It Works</Link>
-          <div className="p-2">
-            <span className="font-semibold block mb-2">Services</span>
-            <div className="grid grid-cols-2 gap-2 pl-2">
-              {services.map(s => <Link key={s.href} href={s.href} className="text-sm">{s.name}</Link>)}
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-border shadow-xl p-6 flex flex-col gap-6 max-h-[80vh] overflow-y-auto">
+          <Link href="/how-it-works" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>How It Works</Link>
+          
+          <div className="p-2 space-y-4">
+            <span className="font-black uppercase tracking-widest text-[10px] text-primary/40 block">Services</span>
+            <div className="grid grid-cols-1 gap-4 pl-2">
+              {services.map(s => (
+                <Link key={s.href} href={s.href} className="text-sm font-bold text-primary flex justify-between items-center" onClick={() => setIsOpen(false)}>
+                  {s.name} <ArrowUpRight size={14} className="text-accent"/>
+                </Link>
+              ))}
             </div>
           </div>
-          <Link href="/for-businesses" className="font-semibold p-2">For Businesses</Link>
-          <Link href="/about" className="font-semibold p-2">About Us</Link>
-          <Link href="/login" className="btn-outline w-full">Driver Login</Link>
-          <Link href="/#quote-form" className="btn-orange w-full" onClick={() => setIsOpen(false)}>Get Started</Link>
+
+          <div className="p-2 space-y-4">
+            <span className="font-black uppercase tracking-widest text-[10px] text-primary/40 block">Areas</span>
+            <div className="grid grid-cols-2 gap-4 pl-2">
+              {cities.map(c => (
+                <Link key={c.href} href={c.href} className="text-sm font-bold text-primary" onClick={() => setIsOpen(false)}>
+                  {c.name}
+                </Link>
+              ))}
+              <Link href="/areas" className="text-sm font-black text-accent col-span-2 mt-2" onClick={() => setIsOpen(false)}>View All Areas →</Link>
+            </div>
+          </div>
+
+          <Link href="/for-businesses" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>For Movers</Link>
+          <Link href="/about" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>About Us</Link>
+          
+          <div className="flex flex-col gap-3 pt-4 border-t border-border">
+            <Link href="/login" className="bg-gray-50 text-primary py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Driver Login</Link>
+            <Link href="/#quote-form" className="btn-orange py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Get Matched</Link>
+          </div>
         </div>
       )}
     </header>
