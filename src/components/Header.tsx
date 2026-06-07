@@ -59,22 +59,22 @@ export default function Header() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20 lg:h-24">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="bg-primary p-2.5 rounded-xl group-hover:bg-accent transition-all duration-500 shadow-xl group-hover:scale-105">
-              <span className="text-white font-black text-2xl leading-none tracking-tighter">M&V</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="bg-primary p-2 rounded-xl group-hover:bg-accent transition-all duration-500 shadow-lg group-hover:scale-105">
+              <span className="text-white font-black text-xl leading-none tracking-tighter">M&V</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-black text-primary tracking-tighter leading-none uppercase">
+              <span className="text-xl font-black text-primary tracking-tighter leading-none uppercase">
                 Man<span className="text-accent">&</span>Van
               </span>
-              <span className="text-[9px] font-black text-accent tracking-[0.4em] uppercase mt-1 leading-none">The Club</span>
+              <span className="text-[8px] font-black text-accent tracking-[0.4em] uppercase mt-0.5 leading-none">The Club</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-8">
             <Link href="/how-it-works" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
               How It Works
             </Link>

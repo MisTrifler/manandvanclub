@@ -120,61 +120,61 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col w-full">
       {/* ── Hero Section ─────────────────────────────────────────────────── */}
-      <section id="quote-form" className="relative min-h-[calc(100vh-100px)] lg:min-h-[calc(100vh-130px)] flex items-center pt-8 lg:pt-0 pb-12 bg-white overflow-hidden">
+      <section id="quote-form" className="relative min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-100px)] flex items-center pt-4 lg:pt-0 pb-8 bg-white overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-0 right-0 w-full h-full z-0 pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] w-[75%] h-[120%] bg-[#F9F9F7] rounded-l-[300px] transform rotate-2 shadow-2xl shadow-gray-100" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-24">
+          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16">
             {/* Left — Copy */}
             <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:w-1/2 text-left order-2 lg:order-1">
-              <div className="hidden lg:inline-flex items-center bg-accent/10 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-6 border border-accent/20">
-                <span className="w-2 h-2 bg-accent rounded-full animate-ping mr-3" />
+              <div className="hidden lg:inline-flex items-center bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] mb-4 border border-accent/20">
+                <span className="w-1.5 h-1.5 bg-accent rounded-full animate-ping mr-2" />
                 UK's #1 Removal Marketplace
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-6 leading-[0.95] text-primary tracking-tighter uppercase">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 lg:mb-4 leading-[0.95] text-primary tracking-tighter uppercase">
                 Your Move. One Vetted Mover. <span className="text-accent">Exclusively Yours.</span>
               </h1>
 
-              <p className="text-base lg:text-lg text-text-secondary mb-6 lg:mb-8 max-w-xl font-medium leading-relaxed">
+              <p className="text-sm lg:text-base text-text-secondary mb-4 lg:mb-6 max-w-lg font-medium leading-relaxed">
                 Submit your move details and get introduced to a single verified 
                 local professional — no bidding wars, no spam calls.
               </p>
 
-              <div className="hidden lg:grid grid-cols-2 gap-3 mb-8">
+              <div className="hidden lg:grid grid-cols-2 gap-2 mb-6">
                 {[
-                  { icon: <Shield size={20} className="text-accent" />, label: "UK-Wide Network" },
-                  { icon: <Zap size={20} className="text-accent" />, label: "1-to-1 Exclusive Match" },
-                  { icon: <ShieldCheck size={20} className="text-accent" />, label: "Verified & Insured Movers" },
-                  { icon: <Star size={20} className="text-accent" />, label: "Free to Submit" },
+                  { icon: <Shield size={16} className="text-accent" />, label: "UK-Wide Network" },
+                  { icon: <Zap size={16} className="text-accent" />, label: "1-to-1 Exclusive Match" },
+                  { icon: <ShieldCheck size={16} className="text-accent" />, label: "Verified & Insured Movers" },
+                  { icon: <Star size={16} className="text-accent" />, label: "Free to Submit" },
                 ].map((badge) => (
-                  <div key={badge.label} className="flex items-center gap-3 bg-[#F9F9F7] rounded-2xl px-4 py-3 border border-border">
+                  <div key={badge.label} className="flex items-center gap-2 bg-[#F9F9F7] rounded-xl px-3 py-2 border border-border">
                     {badge.icon}
-                    <span className="text-[11px] font-black uppercase tracking-widest text-primary">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-primary">
                       {badge.label}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-6 lg:gap-8">
-                <div className="space-y-0.5">
-                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter">UK-Wide</div>
-                  <div className="text-[9px] font-black uppercase tracking-widest text-primary/40">Nationwide Coverage</div>
+              <div className="flex flex-wrap items-center gap-4 lg:gap-6">
+                <div className="space-y-0">
+                  <div className="text-xl lg:text-2xl font-black text-primary tracking-tighter uppercase leading-none">UK-Wide</div>
+                  <div className="text-[8px] font-black uppercase tracking-widest text-primary/40">Nationwide Coverage</div>
                 </div>
-                <div className="h-8 lg:h-12 w-px bg-border hidden sm:block" />
-                <div className="space-y-0.5">
-                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter">Verified</div>
-                  <div className="text-[9px] font-black uppercase tracking-widest text-primary/40">ID-Checked Movers</div>
+                <div className="h-6 lg:h-10 w-px bg-border hidden sm:block" />
+                <div className="space-y-0">
+                  <div className="text-xl lg:text-2xl font-black text-primary tracking-tighter uppercase leading-none">Verified</div>
+                  <div className="text-[8px] font-black uppercase tracking-widest text-primary/40">ID-Checked Movers</div>
                 </div>
               </div>
             </motion.div>
 
             {/* Right — Quote Form */}
-            <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={2} className="lg:w-1/2 w-full max-w-xl relative z-20 order-1 lg:order-2">
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={2} className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2">
               <QuoteForm />
             </motion.div>
           </div>

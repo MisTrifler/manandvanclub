@@ -50,36 +50,32 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="bg-[#F9F9F7] py-32 border-b border-border overflow-hidden relative">
+      <section className="bg-[#F9F9F7] py-16 lg:py-24 border-b border-border overflow-hidden relative">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
            <div className="absolute inset-0 grid grid-cols-6 gap-4">
               {[...Array(24)].map((_, i) => <div key={i} className="border border-primary/20 h-32 w-full" />)}
            </div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-24">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="lg:w-1/2 space-y-10"
+              className="lg:w-1/2 space-y-6 lg:space-y-10"
             >
-              <div className="inline-flex items-center gap-3 bg-accent/10 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-accent/20">
-                {data.badge ? data.badge : (
-                  <>
-                    <MapPin size={16} />
-                    Local Experts in {data.name}
-                  </>
-                )}
+              <div className="inline-flex items-center gap-2 lg:gap-3 bg-accent/10 text-accent px-4 lg:px-5 py-1.5 lg:py-2 rounded-full text-[8px] lg:text-[10px] font-black uppercase tracking-[0.3em] border border-accent/20">
+                <MapPin size={14} />
+                {data.badge ? data.badge : `Local Experts in ${data.name}`}
               </div>
-              <h1 className="text-6xl md:text-8xl font-black text-primary uppercase tracking-tighter leading-[0.9]">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">
                 {data.h1 ? data.h1 : (
                   <>
                     Man and Van <span className="text-accent">{data.name}</span>
                   </>
                 )}
               </h1>
-              <p className="text-xl md:text-2xl text-text-secondary font-medium leading-relaxed max-w-xl">
+              <p className="text-lg lg:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
                 {data.intro}
               </p>
               
