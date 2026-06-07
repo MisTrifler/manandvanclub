@@ -55,21 +55,21 @@ export default function HomeContent() {
       d: "Moving your whole home to a new address", 
       i: "🏠", 
       h: "/house-removals", 
-      img: "https://images.unsplash.com/photo-1603398938378-e54e4444a83d?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1583947581924-860bda6a26df?q=80&w=800" 
     },
     { 
       t: "Flat Moves", 
       d: "Specialist flat and apartment moving", 
       i: "🏢", 
       h: "/flat-removals", 
-      img: "https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1599423300746-b62533397364?q=80&w=800" 
     },
     { 
       t: "Student Moves", 
       d: "Affordable moves to and from university", 
       i: "🎓", 
       h: "/student-removals", 
-      img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800" 
     },
     { 
       t: "Office Relocations", 
@@ -90,7 +90,7 @@ export default function HomeContent() {
       d: "We collect so you don't have to", 
       i: "📱", 
       h: "/facebook-marketplace-collection", 
-      img: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1556742521-9713bf2728be?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Long Distance Moves", 
@@ -104,7 +104,7 @@ export default function HomeContent() {
       d: "Need it moved today? We can help", 
       i: "⚡", 
       h: "/same-day-man-and-van", 
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1600518464441-9154a4da21b5?q=80&w=800&auto=format&fit=crop" 
     },
   ];
 
@@ -228,7 +228,7 @@ export default function HomeContent() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s, i) => (
-              <Link key={i} href={s.h} className="group bg-[#F9F9F7] rounded-[2.5rem] overflow-hidden border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
+              <Link key={i} href={s.h} className="group bg-[#F9F9F7] rounded-[2.5rem] overflow-hidden border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full" onClick={() => window.scrollTo(0,0)}>
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image src={s.img} alt={s.t} fill unoptimized className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                   <div className="absolute top-5 left-5 bg-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl shadow-lg">{s.i}</div>
