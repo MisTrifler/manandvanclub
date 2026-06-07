@@ -182,6 +182,8 @@ export default function RecruitmentCRM() {
   const [activeTab, setActiveTab] = useState<"info" | "history" | "notes">("info");
   const [currentPage, setCurrentPage] = useState(1);
   const perPage = 10;
+  const [emailSending, setEmailSending] = useState<string | null>(null);
+  const [emailSent, setEmailSent] = useState<string | null>(null);
 
   // Load data
   useEffect(() => {
@@ -372,6 +374,36 @@ export default function RecruitmentCRM() {
   const quickStatus = useCallback((companyId: string, newStatus: Status) => {
     updateCompany(companyId, { status: newStatus });
   }, [updateCompany]);
+
+  // Send recruitment email
+  const sendRecruitmentEmail = useCallback(async (company: Company) => {
+    setEmailSending(company.id);
+    setEmailSent(null);
+    try {
+      const res = await fetch('/api/send-recruitment-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: company.email,
+          businessName: company.businessName,
+          contactName: company.contactName,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed');
+      setEmailSent(company.id);
+      // Log the contact automatically
+      logContact(company.id, {
+        method: 'Email',
+        notes: 'Sent recruitment email via CRM with why-join and apply-to-join links.',
+        outcome: 'Recruitment email sent successfully',
+      });
+    } catch (err: any) {
+      alert(`Error sending email: ${err.message}`);
+    } finally {
+      setEmailSending(null);
+    }
+  }, [logContact]);
 
   // Unique filter values
   const uniqueCities = useMemo(() => Array.from(new Set(companies.map((c) => c.city))).sort(), [companies]);
@@ -849,16 +881,54 @@ export default function RecruitmentCRM() {
                         <InfoField label="Email" value={selectedCompany.email} isLink={`mailto:${selectedCompany.email}`} />
                         <InfoField label="Website" value={selectedCompany.website || "—"} isLink={selectedCompany.website ? `https://${selectedCompany.website}` : undefined} />
                       </div>
-                      <div className="space-y-4">
-                        <InfoField label="City" value={selectedCompany.city} />
-                        <InfoField label="County" value={selectedCompany.county} />
-                        <InfoField label="Coverage Area" value={selectedCompany.coverageArea} />
-                        <InfoField label="Date Added" value={selectedCompany.dateAdded} />
-                        <InfoField label="Last Contact" value={selectedCompany.lastContactDate || "—"} />
-                        <InfoField label="Next Follow-Up" value={selectedCompany.nextFollowUpDate || "—"} />
-                      </div>
-                      <div className="md:col-span-2">
-                        <div className="text-[10px] font-black uppercase tracking-widest text-primary/40 mb-2">Status</div>
+                        <div className="space-y-4">
+                          <InfoField label="City" value={selectedCompany.city} />
+                          <InfoField label="County" value={selectedCompany.county} />
+                          <InfoField label="Coverage Area" value={selectedCompany.coverageArea} />
+                          <InfoField label="Date Added" value={selectedCompany.dateAdded} />
+                          <InfoField label="Last Contact" value={selectedCompany.lastContactDate || "—"} />
+                          <InfoField label="Next Follow-Up" value={selectedCompany.nextFollowUpDate || "—"} />
+                        </div>
+
+                        {/* Send Recruitment Email */}
+                        <div className="md:col-span-2">
+                          <div className="bg-[#F9F9F7] rounded-2xl p-4 border border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+                                <Send size={18} />
+                              </div>
+                              <div>
+                                <div className="text-sm font-bold text-primary">Send Recruitment Email</div>
+                                <div className="text-xs text-text-secondary">Send why-join and apply links to {selectedCompany.email}</div>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              {emailSent === selectedCompany.id && (
+                                <span className="text-xs font-bold text-green-600 flex items-center gap-1">
+                                  <CheckCircle2 size={14} /> Sent
+                                </span>
+                              )}
+                              <button
+                                onClick={() => sendRecruitmentEmail(selectedCompany)}
+                                disabled={emailSending === selectedCompany.id}
+                                className="btn-orange px-5 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] inline-flex items-center gap-2 disabled:opacity-50"
+                              >
+                                {emailSending === selectedCompany.id ? (
+                                  <span className="flex items-center gap-2">
+                                    <span className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" /> Sending...
+                                  </span>
+                                ) : (
+                                  <span className="flex items-center gap-2">
+                                    <Mail size={14} /> Send Email
+                                  </span>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="md:col-span-2">
+                          <div className="text-[10px] font-black uppercase tracking-widest text-primary/40 mb-2">Status</div>
                         <div className="flex flex-wrap gap-2">
                           {STATUSES.map((s) => (
                             <button
