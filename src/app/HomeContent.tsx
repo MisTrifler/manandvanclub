@@ -55,49 +55,49 @@ export default function HomeContent() {
       d: "Moving your whole home to a new address", 
       i: "🏠", 
       h: "/house-removals", 
-      img: "https://images.unsplash.com/photo-1600518464441-9154a4da21b5?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1583947581924-860bda6a26df?q=80&w=800" 
     },
     { 
       t: "Flat Moves", 
       d: "Specialist flat and apartment moving", 
       i: "🏢", 
       h: "/flat-removals", 
-      img: "https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=800" 
     },
     { 
       t: "Student Moves", 
       d: "Affordable moves to and from university", 
       i: "🎓", 
       h: "/student-removals", 
-      img: "https://images.unsplash.com/photo-1603398938378-e54e4444a83d?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800" 
     },
     { 
       t: "Office Relocations", 
       d: "Desks, equipment and everything in between", 
       i: "💼", 
       h: "/office-removals", 
-      img: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800" 
     },
     { 
       t: "Furniture Collection", 
       d: "Single items from shops or private sellers", 
       i: "🛋️", 
       h: "/furniture-delivery", 
-      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800" 
     },
     { 
       t: "Facebook Marketplace", 
       d: "We collect so you don't have to", 
       i: "📱", 
       h: "/facebook-marketplace-collection", 
-      img: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1556742521-9713bf2728be?q=80&w=800" 
     },
     { 
       t: "Long Distance Moves", 
       d: "Anywhere in the UK, any distance", 
       i: "🇬🇧", 
       h: "/long-distance-removals", 
-      img: "https://images.unsplash.com/photo-1501700489910-fb2163b6bc63?auto=format&fit=crop&q=80&w=800" 
+      img: "https://images.unsplash.com/photo-1516542003828-597ca0b61640?q=80&w=800" 
     },
     { 
       t: "Same Day Man & Van", 
@@ -119,31 +119,32 @@ export default function HomeContent() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Hero Section */}
-      <section id="quote-form" className="relative min-h-[95vh] flex items-center pt-24 pb-20 bg-white overflow-hidden">
+      {/* ── Hero Section ─────────────────────────────────────────────────── */}
+      <section id="quote-form" className="relative min-h-[calc(100vh-100px)] lg:min-h-[calc(100vh-130px)] flex items-center pt-8 lg:pt-0 pb-12 bg-white overflow-hidden">
+        {/* Background Accents */}
         <div className="absolute top-0 right-0 w-full h-full z-0 pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] w-[75%] h-[120%] bg-[#F9F9F7] rounded-l-[300px] transform rotate-2 shadow-2xl shadow-gray-100" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:w-1/2 text-left">
-              <div className="inline-flex items-center bg-accent/10 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-accent/20">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-24">
+            {/* Left — Copy */}
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:w-1/2 text-left order-2 lg:order-1">
+              <div className="hidden lg:inline-flex items-center bg-accent/10 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-6 border border-accent/20">
                 <span className="w-2 h-2 bg-accent rounded-full animate-ping mr-3" />
                 UK's #1 Removal Marketplace
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.95] text-primary tracking-tighter uppercase">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-6 leading-[0.95] text-primary tracking-tighter uppercase">
                 Your Move. One Vetted Mover. <span className="text-accent">Exclusively Yours.</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-xl font-medium leading-relaxed">
+              <p className="text-base lg:text-lg text-text-secondary mb-6 lg:mb-8 max-w-xl font-medium leading-relaxed">
                 Submit your move details and get introduced to a single verified 
-                local professional — no bidding wars, no spam calls, no sharing 
-                your details with multiple companies.
+                local professional — no bidding wars, no spam calls.
               </p>
 
-              <div className="grid grid-cols-2 gap-3 mb-10">
+              <div className="hidden lg:grid grid-cols-2 gap-3 mb-8">
                 {[
                   { icon: <Shield size={20} className="text-accent" />, label: "UK-Wide Network" },
                   { icon: <Zap size={20} className="text-accent" />, label: "1-to-1 Exclusive Match" },
@@ -159,20 +160,21 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-8">
-                <div className="space-y-1">
-                  <div className="text-3xl font-black text-primary tracking-tighter">UK-Wide</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Nationwide Coverage</div>
+              <div className="flex flex-wrap items-center gap-6 lg:gap-8">
+                <div className="space-y-0.5">
+                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter">UK-Wide</div>
+                  <div className="text-[9px] font-black uppercase tracking-widest text-primary/40">Nationwide Coverage</div>
                 </div>
-                <div className="h-12 w-px bg-border hidden sm:block" />
-                <div className="space-y-1">
-                  <div className="text-3xl font-black text-primary tracking-tighter">Verified</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">ID-Checked Movers</div>
+                <div className="h-8 lg:h-12 w-px bg-border hidden sm:block" />
+                <div className="space-y-0.5">
+                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter">Verified</div>
+                  <div className="text-[9px] font-black uppercase tracking-widest text-primary/40">ID-Checked Movers</div>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={2} className="lg:w-1/2 w-full max-w-xl relative z-20">
+            {/* Right — Quote Form */}
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={2} className="lg:w-1/2 w-full max-w-xl relative z-20 order-1 lg:order-2">
               <QuoteForm />
             </motion.div>
           </div>
@@ -228,7 +230,7 @@ export default function HomeContent() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s, i) => (
-              <Link key={i} href={s.h} className="group bg-[#F9F9F7] rounded-[2.5rem] overflow-hidden border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
+              <Link key={i} href={s.h} className="group bg-[#F9F9F7] rounded-[2.5rem] overflow-hidden border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full" onClick={() => window.scrollTo(0,0)}>
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image src={s.img} alt={s.t} fill unoptimized className="object-cover group-hover:scale-110 transition-transform duration-1000" />
                   <div className="absolute top-5 left-5 bg-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl shadow-lg">{s.i}</div>

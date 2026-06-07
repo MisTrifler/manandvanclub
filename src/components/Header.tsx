@@ -33,25 +33,25 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-border sticky top-0 z-[100] transition-all">
       {/* Top Info Bar */}
-      <div className="hidden lg:block bg-primary text-white py-3 border-b border-white/5">
-        <div className="container mx-auto px-4 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em]">
-          <div className="flex gap-8">
+      <div className="hidden lg:block bg-primary text-white py-2 border-b border-white/5">
+        <div className="container mx-auto px-4 flex justify-between items-center text-[9px] font-black uppercase tracking-[0.2em]">
+          <div className="flex gap-6">
             <a href="tel:07943617386" className="flex items-center gap-2 hover:text-accent transition-colors">
-              <Phone size={12} className="text-accent" />
+              <Phone size={10} className="text-accent" />
               <span>07943 617386</span>
             </a>
             <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
-              <Mail size={12} className="text-accent" />
+              <Mail size={10} className="text-accent" />
               <span>support@manandvanclub.co.uk</span>
             </a>
           </div>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             <div className="flex items-center gap-2">
-              <MapPin size={12} className="text-accent" />
+              <MapPin size={10} className="text-accent" />
               <span>UK-Wide Service</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock size={12} className="text-accent" />
+              <Clock size={10} className="text-accent" />
               <span>Mon–Sun: 8 AM – 10 PM</span>
             </div>
           </div>
@@ -59,17 +59,17 @@ export default function Header() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-24 lg:h-28">
+        <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-4 group">
-            <div className="bg-primary p-3 rounded-2xl group-hover:bg-accent transition-all duration-500 shadow-xl group-hover:scale-110 group-hover:rotate-6">
-              <span className="text-white font-black text-3xl leading-none tracking-tighter">M&V</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="bg-primary p-2.5 rounded-xl group-hover:bg-accent transition-all duration-500 shadow-xl group-hover:scale-105">
+              <span className="text-white font-black text-2xl leading-none tracking-tighter">M&V</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-3xl font-black text-primary tracking-tighter leading-none uppercase">
+              <span className="text-2xl font-black text-primary tracking-tighter leading-none uppercase">
                 Man<span className="text-accent">&</span>Van
               </span>
-              <span className="text-[10px] font-black text-accent tracking-[0.4em] uppercase mt-2 leading-none">The Club</span>
+              <span className="text-[9px] font-black text-accent tracking-[0.4em] uppercase mt-1 leading-none">The Club</span>
             </div>
           </Link>
 
