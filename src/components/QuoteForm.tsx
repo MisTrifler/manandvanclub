@@ -7,10 +7,14 @@ import * as z from "zod";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
+const today = new Date().toISOString().split("T")[0];
+
 const formSchema = z.object({
   collectionPostcode: z.string().min(5, "Invalid postcode"),
   deliveryPostcode: z.string().min(5, "Invalid postcode"),
-  moveDate: z.string().min(1, "Required"),
+  moveDate: z.string().min(1, "Required").refine((date) => date >= today, {
+    message: "Date cannot be in the past",
+  }),
   moveType: z.string().min(1, "Required"),
   firstName: z.string().min(2, "Required").optional(),
   phone: z.string().regex(/^(?:0|(?:\+44))7\d{9}$/, "Invalid UK mobile number").optional(),
@@ -46,10 +50,6 @@ export default function QuoteForm() {
     };
     const range = moveTypeBase[data.moveType] || [100, 200];
     return { min: range[0], max: range[1] };
-  };
-
-  const goToStep = (newStep: number) => {
-    setStep(newStep);
   };
 
   const onNextStep = async () => {
@@ -153,7 +153,13 @@ export default function QuoteForm() {
             <div className="space-y-3">
               <input {...register("collectionPostcode")} placeholder="Collection Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
               <input {...register("deliveryPostcode")} placeholder="Delivery Postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-              <input type="date" {...register("moveDate")} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+              <input 
+                type="date" 
+                {...register("moveDate")} 
+                min={today}
+                className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" 
+              />
+              {errors.moveDate && <p className="text-red-500 text-xs font-bold">{errors.moveDate.message}</p>}
             </div>
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
           </div>
