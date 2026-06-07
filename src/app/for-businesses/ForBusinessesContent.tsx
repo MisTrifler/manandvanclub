@@ -36,12 +36,12 @@ export default function ForBusinessesContent() {
             >
               <div className="inline-block bg-accent/20 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">Mover Network</div>
               <h1 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">
-                <span className="text-white">Grow Your </span>
-                <span className="text-accent italic">Moving</span>
-                <span className="text-white"> Business</span>
+                <span className="text-white">Join a Network Built </span>
+                <span className="text-accent italic">Around Exclusive</span>
+                <span className="text-white"> Customer Enquiries</span>
               </h1>
               <p className="text-xl text-gray-300 mb-10 max-w-xl font-medium leading-relaxed">
-                Join vetted man and van drivers earning more with Man and Van Club. No monthly contracts, just quality job enquiries across England, starting in Birmingham.
+                Receive customer enquiries without competing against multiple movers. No monthly contracts, just quality job enquiries across England, starting in Birmingham.
               </p>
               <div className="space-y-4">
                 {[
@@ -70,7 +70,7 @@ export default function ForBusinessesContent() {
               <div className="space-y-4">
                 <h2 className="text-4xl font-black uppercase tracking-tight text-primary leading-none">Apply to Join</h2>
                 <p className="text-text-secondary font-medium text-lg leading-relaxed">
-                  Join England-focused network of professional independent movers.
+                  Join a network built around exclusive customer enquiries. No competing against multiple movers.
                 </p>
               </div>
               

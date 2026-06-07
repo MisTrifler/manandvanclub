@@ -23,6 +23,14 @@ export default function ApplyToJoinContent() {
       email: formData.get("email"),
       coverageArea: formData.get("coverageArea"),
       radius: formData.get("radius"),
+      capacity: formData.get("capacity"),
+      serviceHouse: formData.get("serviceHouse") === "on",
+      serviceFlat: formData.get("serviceFlat") === "on",
+      serviceStudent: formData.get("serviceStudent") === "on",
+      serviceFurniture: formData.get("serviceFurniture") === "on",
+      serviceOffice: formData.get("serviceOffice") === "on",
+      serviceSingle: formData.get("serviceSingle") === "on",
+      serviceLongDistance: formData.get("serviceLongDistance") === "on",
       hasInsurance: formData.get("insurance") === "on",
     };
 
@@ -79,19 +87,24 @@ export default function ApplyToJoinContent() {
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/3 space-y-8">
             <h1 className="text-5xl font-black text-primary uppercase tracking-tighter leading-none">
-              Mover <span className="text-accent italic">Application</span>
+              Why Join <span className="text-accent italic">Man and Van Club?</span>
             </h1>
             <p className="text-text-secondary font-medium leading-relaxed">
-              Join England's most exclusive moving network. We only accept verified, insured professionals.
+              Join a network built around exclusive customer enquiries. What's in it for you?
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-primary/60 font-black uppercase tracking-widest text-[10px]">
-                <ShieldCheck size={16} className="text-accent" /> Verified Status
-              </div>
-              <div className="flex items-center gap-3 text-primary/60 font-black uppercase tracking-widest text-[10px]">
-                <Zap size={16} className="text-accent" /> Exclusive Matches
-              </div>
+              {[
+                { icon: <Zap size={16} className="text-accent" />, text: "Exclusive lead opportunities" },
+                { icon: <ShieldCheck size={16} className="text-accent" />, text: "No competing against multiple movers" },
+                { icon: <Zap size={16} className="text-accent" />, text: "Direct customer contact" },
+                { icon: <ShieldCheck size={16} className="text-accent" />, text: "Choose your own service area" },
+                { icon: <Zap size={16} className="text-accent" />, text: "Grow your business on your terms" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 text-primary/60 font-black uppercase tracking-widest text-[10px]">
+                  {item.icon} {item.text}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -123,7 +136,7 @@ export default function ApplyToJoinContent() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Primary Coverage Area</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Main Service Area</label>
                     <input name="coverageArea" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all" placeholder="e.g. Birmingham" required />
                   </div>
                   <div className="space-y-2">
@@ -136,6 +149,37 @@ export default function ApplyToJoinContent() {
                       <option>England-wide</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="space-y-4">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Service Types</label>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 bg-gray-50 p-5 rounded-2xl border border-transparent">
+                    {[
+                      { name: "serviceHouse", label: "House Removals" },
+                      { name: "serviceFlat", label: "Flat Moves" },
+                      { name: "serviceStudent", label: "Student Moves" },
+                      { name: "serviceFurniture", label: "Furniture Collection" },
+                      { name: "serviceOffice", label: "Office Moves" },
+                      { name: "serviceSingle", label: "Single Item Delivery" },
+                      { name: "serviceLongDistance", label: "Long Distance Moves" },
+                    ].map((service) => (
+                      <label key={service.name} className="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name={service.name} className="h-5 w-5 accent-accent rounded cursor-pointer" />
+                        <span className="text-sm font-bold text-primary/80">{service.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">How many jobs can you typically handle per week?</label>
+                  <select name="capacity" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all cursor-pointer" required>
+                    <option value="">Select capacity</option>
+                    <option>1–5</option>
+                    <option>6–10</option>
+                    <option>11–20</option>
+                    <option>20+</option>
+                  </select>
                 </div>
 
                 <div className="bg-[#F9F9F7] p-6 rounded-2xl border border-border">
@@ -153,6 +197,9 @@ export default function ApplyToJoinContent() {
                 <div className="space-y-2">
                   <p className="text-[10px] font-black uppercase tracking-widest text-primary/30 text-center">
                     You will need to provide proof of goods-in-transit insurance and public liability insurance during onboarding.
+                  </p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-accent/70 text-center">
+                    We carefully review every application before granting access to customer enquiries.
                   </p>
                 </div>
 
