@@ -3,8 +3,8 @@ import { MapPin, ArrowUpRight, ShieldCheck, Globe } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Areas We Cover | Man & Van UK | Man & Van Club",
-  description: "Man & Van Club covers the whole of the UK. Find your area and get exclusively matched with a vetted local mover near you.",
+  title: "Areas We Cover | Man and Van England | Man and Van Club",
+  description: "Man and Van Club covers key areas across England, mainly focused on Birmingham. Find your area and get matched with a vetted local mover.",
 };
 
 const regions = [
@@ -23,16 +23,16 @@ const regions = [
     ]
   },
   {
-    name: "Midlands",
+    name: "Midlands (Main Focus)",
     cities: [
       { name: "Birmingham", href: "/man-and-van-birmingham" },
+      { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
+      { name: "Walsall", href: "/man-and-van-walsall" },
       { name: "Coventry", href: "/#quote-form" },
       { name: "Leicester", href: "/#quote-form" },
-      { name: "Nottingham", href: "/#quote-form" },
+      { name: "Nottingham", href: "/man-and-van-nottingham" },
       { name: "Derby", href: "/#quote-form" },
-      { name: "Wolverhampton", href: "/#quote-form" },
-      { name: "Stoke-on-Trent", href: "/#quote-form" },
-      { name: "Worcester", href: "/#quote-form" }
+      { name: "Stoke-on-Trent", href: "/#quote-form" }
     ]
   },
   {
@@ -82,25 +82,6 @@ const regions = [
       { name: "Bournemouth", href: "/#quote-form" },
       { name: "Cheltenham", href: "/#quote-form" }
     ]
-  },
-  {
-    name: "Scotland",
-    cities: [
-      { name: "Edinburgh", href: "/#quote-form" },
-      { name: "Glasgow", href: "/#quote-form" },
-      { name: "Aberdeen", href: "/#quote-form" },
-      { name: "Dundee", href: "/#quote-form" },
-      { name: "Inverness", href: "/#quote-form" }
-    ]
-  },
-  {
-    name: "Wales",
-    cities: [
-      { name: "Cardiff", href: "/#quote-form" },
-      { name: "Swansea", href: "/#quote-form" },
-      { name: "Newport", href: "/#quote-form" },
-      { name: "Wrexham", href: "/#quote-form" }
-    ]
   }
 ];
 
@@ -141,13 +122,13 @@ export default function AreasPage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto space-y-8">
             <span className="inline-block bg-accent/10 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-accent/20">
-              UK Coverage
+              England Coverage
             </span>
             <h1 className="text-6xl md:text-8xl font-black text-primary uppercase tracking-tighter leading-[0.9]">
-              Areas <span className="text-accent">We Cover</span>
+              Areas <span className="text-accent italic">We Cover</span>
             </h1>
             <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto font-medium leading-relaxed">
-              Man & Van Club matches customers with vetted local movers across the whole of the UK. Select your area below to find local professionals ready to help with your move.
+              Man and Van Club matches customers with vetted local movers across key areas in England, with a primary focus on Birmingham.
             </p>
           </div>
         </div>
@@ -156,7 +137,7 @@ export default function AreasPage() {
       {/* Regions Grid */}
       <section className="py-32">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {regions.map((region, i) => (
               <div key={i} className="space-y-8">
                 <h2 className="text-xl font-black text-primary uppercase tracking-tight border-b-4 border-accent pb-4 inline-block">{region.name}</h2>
@@ -183,7 +164,7 @@ export default function AreasPage() {
         <div className="container mx-auto px-4 text-center space-y-10">
           <h2 className="text-4xl md:text-6xl font-black text-primary uppercase tracking-tighter leading-none">Don't see your area?</h2>
           <p className="text-xl text-text-secondary font-medium max-w-xl mx-auto leading-relaxed">
-            We cover all UK postcodes. Submit your move details and we'll match you with the nearest available mover.
+            We are expanding across England. Submit your move details and we'll match you with the nearest available mover in our network.
           </p>
           <Link href="/#quote-form" className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3">
              Get Matched Now <ArrowUpRight size={24} />

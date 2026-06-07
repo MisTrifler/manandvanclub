@@ -129,7 +129,7 @@ export default function ContactContent() {
               {[
                 { t: "Email Us", d: "support@manandvanclub.co.uk", i: <Mail size={32} />, href: "mailto:support@manandvanclub.co.uk" },
                 { t: "Response Time", d: "Within 2 business hours", i: <Clock size={32} /> },
-                { t: "Location", d: "UK-Wide Coverage", i: <MapPin size={32} /> }
+                { t: "Location", d: "England Coverage", i: <MapPin size={32} /> }
               ].map((item, i) => (
                 <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-border/50 shadow-sm hover:shadow-xl transition-all group">
                    <div className="text-accent mb-6 bg-accent/5 w-fit p-4 rounded-2xl group-hover:bg-accent group-hover:text-white transition-colors">{item.i}</div>

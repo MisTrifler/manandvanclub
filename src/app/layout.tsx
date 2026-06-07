@@ -18,8 +18,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Find Trusted Local Movers Near You | Man & Van Club",
-  description: "Get exclusively matched with vetted local movers. Verified move requests and secure introductions.",
+  title: "Find Trusted Local Movers Near You | Man and Van Club",
+  description: "Get exclusively matched with a vetted local mover in England, mainly Birmingham. No bidding wars, no spam — one verified professional for your move.",
   icons: {
     icon: [
       { url: '/favicon.ico' },

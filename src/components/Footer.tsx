@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-text-secondary mb-6 leading-relaxed">
-              A marketplace connecting customers with independent local movers. Find verified local professionals for your move.
+              A marketplace connecting customers with independent local movers in England, mainly Birmingham. Find verified local professionals for your move.
             </p>
           </div>
 

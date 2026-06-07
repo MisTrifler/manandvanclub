@@ -137,7 +137,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                 {[
                   { t: "Fixed & Hourly", d: "Choose the pricing model that works best for your budget.", i: <Clock size={28} /> },
                   { t: "Fully Vetted", d: "Every driver is reviewed and verified by our team.", i: <ShieldCheck size={28} /> },
-                  { t: "Full UK Insurance", d: "Your items are covered during transit as standard.", i: <CheckCircle2 size={28} /> },
+                  { t: "Full Insurance", d: "Your items are covered during transit as standard.", i: <CheckCircle2 size={28} /> },
                   { t: "Local Knowledge", d: "Our movers know every shortcut and parking quirk.", i: <Users size={28} /> }
                 ].map(f => (
                   <div key={f.t} className="bg-[#F9F9F7] p-10 rounded-[2.5rem] border border-border/50 space-y-6 group hover:bg-white hover:shadow-2xl transition-all duration-500">

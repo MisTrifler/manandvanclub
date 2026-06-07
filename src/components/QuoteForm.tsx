@@ -213,7 +213,7 @@ export default function QuoteForm() {
 
       <div className="bg-gray-50 p-3 border-t border-border flex justify-center gap-6 text-[8px] font-black uppercase text-primary/30">
         <span>✓ Secure</span>
-        <span>✓ UK-Wide</span>
+        <span>✓ England</span>
         <span>✓ 1-to-1 Match</span>
       </div>
     </div>

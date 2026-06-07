@@ -77,7 +77,7 @@ export default function HomeContent() {
             >
               <div className="hidden lg:inline-flex items-center bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-4 border border-primary/20">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse mr-2" />
-                UK's #1 Removal Marketplace
+                England's Emerging Removal Marketplace
               </div>
 
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 lg:mb-5 leading-[0.95] text-primary tracking-tighter uppercase">
@@ -86,16 +86,16 @@ export default function HomeContent() {
 
               <p className="text-base lg:text-lg text-text-secondary mb-6 lg:mb-8 max-w-lg font-medium leading-relaxed">
                 Submit your move details and get introduced to a single verified 
-                local professional — no bidding wars, no spam calls, just quality service.
+                local professional in England — starting in Birmingham. No bidding wars, no spam calls.
               </p>
 
               {/* Pro Max Trust Badges (Compact) */}
               <div className="hidden lg:grid grid-cols-2 gap-3 mb-8">
                 {[
-                  { icon: <Shield size={18} />, label: "UK-Wide Network" },
+                  { icon: <Shield size={18} />, label: "England Network" },
                   { icon: <Zap size={18} />, label: "1-to-1 Match" },
                   { icon: <ShieldCheck size={18} />, label: "Vetted Movers" },
-                  { icon: <Star size={18} />, label: "5-Star Rated" },
+                  { icon: <Star size={18} />, label: "Birmingham Focus" },
                 ].map((badge) => (
                   <div key={badge.label} className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-2.5 border border-border shadow-sm">
                     <span className="text-accent">{badge.icon}</span>
@@ -106,8 +106,8 @@ export default function HomeContent() {
 
               <div className="flex flex-wrap items-center gap-6 lg:gap-10">
                 <div className="space-y-0">
-                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter uppercase leading-none">UK-WIDE</div>
-                  <div className="text-[8px] font-black uppercase tracking-widest text-primary/30">Coverage Area</div>
+                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter uppercase leading-none">England</div>
+                  <div className="text-[8px] font-black uppercase tracking-widest text-primary/30">Mainly Birmingham</div>
                 </div>
                 <div className="h-10 w-px bg-border hidden sm:block" />
                 <div className="space-y-0">
@@ -141,7 +141,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 text-center items-center">
             {[
-              { v: "UK-WIDE", l: "Coverage across England, Scotland & Wales" },
+              { v: "ENGLAND", l: "Focused local coverage starting in Birmingham" },
               { v: "60 SECONDS", l: "Average time to submit move request" },
               { v: "1-TO-1", l: "Exclusive match — only one mover sees you" }
             ].map((stat, i) => (
@@ -199,7 +199,7 @@ export default function HomeContent() {
             <div className="lg:w-2/3 text-left space-y-10 relative z-10">
               <div className="inline-block bg-white/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.4em]">Professional Network</div>
               <h2 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase">Are You <span className="text-accent italic">A Mover?</span></h2>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-xl font-medium leading-relaxed opacity-80">Join the UK's leading exclusive introduction marketplace. Get direct access to verified move requests.</p>
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-xl font-medium leading-relaxed opacity-80">Join England's emerging exclusive introduction marketplace. Get direct access to verified move requests starting in Birmingham.</p>
               <Link href="/for-businesses" className="btn-orange text-lg px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/40 inline-flex items-center gap-4 hover:scale-105 transition-all">
                 Join as a Driver <ArrowUpRight size={24} />
               </Link>

@@ -44,7 +44,7 @@ export default function Header() {
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
               <MapPin size={10} className="text-accent" />
-              <span>UK-Wide Service</span>
+              <span>England Focused Service</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={10} className="text-accent" />

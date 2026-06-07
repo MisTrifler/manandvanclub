@@ -37,10 +37,10 @@ export default function AboutContent() {
               Our Story
             </span>
             <h1 className="text-6xl md:text-8xl font-black text-primary uppercase tracking-tighter leading-[0.9]">
-              Reinventing <span className="text-accent">Local</span> Matching
+              Reinventing <span className="text-accent italic">Local</span> Matching
             </h1>
             <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto font-medium leading-relaxed">
-              We've built the UK's most transparent network for local moving connections. No bidding wars, just quality introductions.
+              We've built England's most transparent network for local moving connections, starting right here in Birmingham. No bidding wars, just quality introductions.
             </p>
           </motion.div>
         </div>
@@ -54,10 +54,10 @@ export default function AboutContent() {
                <div className="space-y-6">
                   <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight leading-none">Why We Built The Network</h2>
                   <p className="text-xl text-text-secondary font-medium leading-relaxed">
-                    Moving is one of life's most stressful events. We found that the process of finding a reliable "man with a van" was often confusing, with opaque pricing and a total lack of trust. 
+                    Moving is one of life's most stressful events. We found that the process of finding a reliable "man with a van" in England was often confusing, with opaque pricing and a total lack of trust. 
                   </p>
                   <p className="text-xl text-text-secondary font-medium leading-relaxed">
-                    We created Man & Van Club to change that. Our mission is to provide transparency, reliability, and ease of use to both customers and professional movers.
+                    We created Man and Van Club to change that. Our mission is to provide transparency, reliability, and ease of use to both customers and professional movers across England.
                   </p>
                </div>
 
@@ -65,7 +65,7 @@ export default function AboutContent() {
                   {[
                     { t: "Verified", d: "ID and phone vetting for every mover joining the platform.", i: <ShieldCheck /> },
                     { t: "Exclusive", d: "1-to-1 matching for premium service quality.", i: <Star /> },
-                    { t: "UK-Wide", d: "Connecting households and businesses in major cities.", i: <Globe /> },
+                    { t: "England-Wide", d: "Connecting households and businesses, starting in Birmingham.", i: <Globe /> },
                     { t: "Transparent", d: "Clear marketplace model for customers and movers.", i: <Users /> }
                   ].map((item, i) => (
                     <div key={i} className="bg-[#F9F9F7] p-8 rounded-3xl border border-border/50 space-y-4 group hover:bg-white hover:shadow-2xl transition-all duration-500">
@@ -130,7 +130,7 @@ export default function AboutContent() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             {[
-              { l: "UK-Wide Coverage", v: "100%", i: <Globe size={24}/> },
+              { l: "England Coverage", v: "Focus", i: <Globe size={24}/> },
               { l: "Submission Process", v: "60s", i: <Zap size={24}/> },
               { l: "Mover Matching", v: "1-to-1", i: <Users size={24}/> },
               { l: "Verification", v: "24h", i: <ShieldCheck size={24}/> }
