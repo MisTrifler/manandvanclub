@@ -154,48 +154,48 @@ export default function QuoteForm() {
     <div className="relative z-20 bg-white rounded-2xl lg:rounded-[2rem] shadow-[0_40px_80px_-16px_rgba(0,0,0,0.1)] border border-border overflow-hidden" id="quote-form">
       {/* Progress */}
       {step < 6 && (
-        <div className="bg-gray-50/50 px-6 lg:px-8 py-3 lg:py-4 flex items-center justify-end border-b border-border">
+        <div className="bg-gray-50/50 px-6 lg:px-8 py-2.5 lg:py-3.5 flex items-center justify-end border-b border-border">
           <div className="flex gap-1.5 lg:gap-2">
             {[1, 2, 3, 4, 5].map(i => (
-              <div key={i} className={cn("h-1 lg:h-1.5 w-6 lg:w-10 rounded-full transition-all duration-1000", i <= step ? "bg-accent" : "bg-gray-200")} />
+              <div key={i} className={cn("h-1 lg:h-1.5 w-6 lg:w-8 rounded-full transition-all duration-1000", i <= step ? "bg-accent" : "bg-gray-200")} />
             ))}
           </div>
         </div>
       )}
 
-      <div className="p-6 lg:p-10">
+      <div className="p-6 lg:p-8">
         {step === 1 && (
-          <div className="space-y-6 lg:space-y-10">
-            <div className="space-y-2">
-              <p className="text-[8px] lg:text-[10px] font-black uppercase tracking-widest text-accent">Step 1 of 3 — Tell us about your move</p>
+          <div className="space-y-6 lg:space-y-8">
+            <div className="space-y-1.5">
+              <p className="text-[8px] lg:text-[9px] font-black uppercase tracking-widest text-accent">Step 1 — Move Details</p>
               <h2 className="text-3xl lg:text-4xl font-black text-primary tracking-tighter leading-none uppercase">Start Your Move</h2>
-              <p className="text-text-secondary font-bold text-sm lg:text-lg">Verified local movers ready to help.</p>
+              <p className="text-text-secondary font-bold text-xs lg:text-base">Verified local movers ready to help.</p>
             </div>
-            <div className="space-y-4 lg:space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+            <div className="space-y-4 lg:space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
                 <div className="space-y-1">
-                  <label className="text-[8px] lg:text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection</label>
-                  <input {...register("collectionPostcode")} placeholder="e.g. SW1A 1AA" className="w-full p-4 lg:p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl lg:rounded-[1.25rem] outline-none font-black text-base lg:text-lg transition-all shadow-inner" />
-                  {errors.collectionPostcode && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.collectionPostcode.message}</p>}
+                  <label className="text-[8px] lg:text-[9px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection</label>
+                  <input {...register("collectionPostcode")} placeholder="e.g. SW1A 1AA" className="w-full p-4 lg:p-4.5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl lg:rounded-[1rem] outline-none font-black text-sm lg:text-lg transition-all shadow-inner" />
+                  {errors.collectionPostcode && <p className="text-red-500 text-[9px] font-black ml-1 uppercase tracking-widest">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div className="space-y-1">
-                  <label className="text-[8px] lg:text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery</label>
-                  <input {...register("deliveryPostcode")} placeholder="e.g. M1 1AE" className="w-full p-4 lg:p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl lg:rounded-[1.25rem] outline-none font-black text-base lg:text-lg transition-all shadow-inner" />
-                  {errors.deliveryPostcode && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.deliveryPostcode.message}</p>}
+                  <label className="text-[8px] lg:text-[9px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery</label>
+                  <input {...register("deliveryPostcode")} placeholder="e.g. M1 1AE" className="w-full p-4 lg:p-4.5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl lg:rounded-[1rem] outline-none font-black text-sm lg:text-lg transition-all shadow-inner" />
+                  {errors.deliveryPostcode && <p className="text-red-500 text-[9px] font-black ml-1 uppercase tracking-widest">{errors.deliveryPostcode.message}</p>}
                 </div>
               </div>
               <div className="space-y-1">
-                <label className="text-[8px] lg:text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
-                <input type="date" {...register("moveDate")} className="w-full p-4 lg:p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl lg:rounded-[1.25rem] outline-none font-black text-base lg:text-lg transition-all shadow-inner" />
-                {errors.moveDate && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.moveDate.message}</p>}
+                <label className="text-[8px] lg:text-[9px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
+                <input type="date" {...register("moveDate")} className="w-full p-4 lg:p-4.5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl lg:rounded-[1rem] outline-none font-black text-sm lg:text-lg transition-all shadow-inner" />
+                {errors.moveDate && <p className="text-red-500 text-[9px] font-black ml-1 uppercase tracking-widest">{errors.moveDate.message}</p>}
               </div>
             </div>
             <div className="space-y-3">
-              <button onClick={onNextStep} className="btn-orange w-full py-4 lg:py-6 rounded-xl lg:rounded-[1.5rem] flex items-center justify-center gap-3 text-lg lg:text-xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-accent/30 hover:scale-[1.02] active:scale-95 transition-all">
-                Continue <ChevronRight size={24} />
+              <button onClick={onNextStep} className="btn-orange w-full py-4 lg:py-5 rounded-xl lg:rounded-[1.25rem] flex items-center justify-center gap-3 text-lg lg:text-xl font-black uppercase tracking-[0.2em] shadow-xl shadow-accent/20 hover:scale-[1.01] active:scale-95 transition-all">
+                Continue <ChevronRight size={20} />
               </button>
-              <p className="text-[8px] lg:text-[10px] text-center font-bold text-text-secondary uppercase tracking-widest opacity-60">
-                No payment required at this stage. Details stay private until match.
+              <p className="text-[8px] lg:text-[9px] text-center font-bold text-text-secondary uppercase tracking-widest opacity-50">
+                No payment required. Your details stay private.
               </p>
             </div>
           </div>
