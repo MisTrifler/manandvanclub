@@ -49,44 +49,29 @@ export default function ContactContent() {
   };
 
   return (
-    <div className="bg-[#F9F9F7] min-h-screen">
+    <div className="bg-[#F9F9F7] min-h-screen pt-20 pb-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      {/* Hero */}
-      <section className="bg-primary text-white py-32 overflow-hidden relative border-b border-white/5">
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-           <div className="absolute inset-0 grid grid-cols-6 gap-4">
-              {[...Array(24)].map((_, i) => <div key={i} className="border border-white/20 h-32 w-full" />)}
-           </div>
+      
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto mb-16 space-y-4">
+          <div className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-accent/20">
+            Support Centre
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black text-primary uppercase tracking-tighter leading-none">
+            Contact <span className="text-accent italic">Us</span>
+          </h1>
+          <p className="text-lg text-text-secondary font-medium max-w-xl leading-relaxed">
+            Have a question about your move or want to join as a mover? Our team is ready to help.
+          </p>
         </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto space-y-8"
-          >
-            <span className="inline-block bg-accent/20 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
-              Support
-            </span>
-            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">
-              Get In <span className="text-accent">Touch</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed">
-              Have a question about your move or want to join as a mover? Our team is ready to help.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
-      <section className="py-32">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-20">
-            {/* Form */}
-            <div className="lg:w-2/3">
-              <div className="bg-white p-12 md:p-20 rounded-[3rem] shadow-2xl border border-border/50 relative overflow-hidden">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          {/* Form */}
+          <div className="lg:w-2/3">
+            <div className="bg-white p-10 md:p-14 rounded-[3rem] shadow-2xl border border-border/50 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-5 rounded-full -mr-16 -mt-16" />
                 
                 {submitted ? (
