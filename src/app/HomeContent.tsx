@@ -249,7 +249,7 @@ export default function HomeContent() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 bg-[#F9F9F7]">
+      <section className="py-32 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-6xl font-black text-primary uppercase tracking-tighter mb-20">What Our Customers Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -258,11 +258,11 @@ export default function HomeContent() {
               { name: "James R.", city: "Manchester", quote: "Compared to other sites where you get bombarded with 10 quotes at once, this was completely different. One mover, one call, job done." },
               { name: "Priya K.", city: "Birmingham", quote: "Used Man & Van Club for my flat move. The mover was on time, careful with my furniture, and professional throughout." }
             ].map((r, i) => (
-              <div key={i} className="bg-white p-10 rounded-[3rem] border border-border/50 space-y-6 shadow-sm">
+              <div key={i} className="bg-[#F9F9F7] p-10 rounded-[3rem] border border-border/50 space-y-6 shadow-sm">
                 <div className="flex gap-1 text-accent">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <p className="text-lg text-text-secondary font-medium italic">"{r.quote}"</p>
+                <p className="text-lg text-primary/80 font-medium italic">"{r.quote}"</p>
                 <div className="pt-4 border-t border-border/50">
                   <p className="font-black text-primary uppercase tracking-tighter">{r.name}</p>
                   <p className="text-[10px] font-black uppercase tracking-widest text-primary/30">{r.city}</p>
@@ -274,12 +274,12 @@ export default function HomeContent() {
       </section>
 
       {/* Driver CTA */}
-      <section className="py-32 bg-primary text-white overflow-hidden relative">
+      <section className="py-32 bg-white border-t border-border overflow-hidden relative">
         <div className="container mx-auto px-4">
-          <div className="bg-white/5 rounded-[4rem] p-12 lg:p-24 border border-white/5 flex flex-col lg:flex-row items-center justify-between gap-16 relative overflow-hidden">
+          <div className="bg-[#F9F9F7] rounded-[4rem] p-12 lg:p-24 border border-border flex flex-col lg:flex-row items-center justify-between gap-16 relative overflow-hidden">
             <div className="lg:w-2/3 text-left space-y-10 relative z-10">
-              <h2 className="text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter uppercase">Are You A Mover?</h2>
-              <p className="text-xl text-gray-300 max-w-xl font-medium">Join the UK's leading exclusive customer introduction marketplace. Get direct access to verified move requests.</p>
+              <h2 className="text-5xl md:text-7xl font-black text-primary leading-[0.9] tracking-tighter uppercase">Are You A Mover?</h2>
+              <p className="text-xl text-text-secondary max-w-xl font-medium">Join the UK's leading exclusive customer introduction marketplace. Get direct access to verified move requests.</p>
               <Link href="/for-businesses" className="btn-orange text-base px-12 py-5 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/40 inline-flex items-center gap-3">
                 Join as a Driver <ArrowUpRight size={22} />
               </Link>
