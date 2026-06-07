@@ -1,124 +1,167 @@
 import Link from "next/link";
-import { ShieldCheck, ArrowUpRight, Zap, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, ArrowUpRight, Zap, CheckCircle2, Gift } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Driver Introduction Pricing | Man and Van Club",
-  description: "Transparent pay-per-introduction pricing for movers in England. No monthly contracts. Pay only for the customers you choose to unlock.",
+  title: "Driver Pricing | Man and Van Club",
+  description: "Only pay for exclusive leads you choose to unlock. No subscriptions. First lead free.",
 };
 
 export default function PricingPage() {
-  const fees = [
-    { type: "Small / single item", fee: "From £2.99" },
-    { type: "1-bed flat/house", fee: "From £5.99" },
-    { type: "2–3 bed house", fee: "From £17.99" },
-    { type: "Large / long distance", fee: "From £35.99" },
+  const pricingTiers = [
+    { value: "£50 – £100", fee: "£4.99" },
+    { value: "£101 – £200", fee: "£9.99" },
+    { value: "£201 – £300", fee: "£14.99" },
+    { value: "£301 – £500", fee: "£24.99" },
+    { value: "£501 – £800", fee: "£39.99" },
+    { value: "£801+", fee: "£69.99" },
   ];
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.manandvanclub.co.uk"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Pricing",
-        "item": "https://www.manandvanclub.co.uk/pricing"
-      }
-    ]
-  };
 
   return (
     <div className="bg-white min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <section className="bg-[#F9F9F7] py-32 border-b border-border overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-           <div className="absolute inset-0 grid grid-cols-6 gap-4">
-              {[...Array(24)].map((_, i) => <div key={i} className="border border-primary/20 h-32 w-full" />)}
-           </div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <h1 className="text-6xl md:text-8xl font-black text-primary uppercase tracking-tighter leading-[0.9]">
-              Driver <span className="text-accent">Introduction</span> Pricing
-            </h1>
-            <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto font-medium leading-relaxed">
-              No monthly fees. No bidding wars. Pay only per verified customer introduction you choose to accept.
-            </p>
+      {/* Hero */}
+      <section className="bg-[#F9F9F7] py-20 border-b border-border">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.3em] mb-6">
+            <Gift size={14} /> Launch Offer
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-black text-primary uppercase tracking-tighter leading-none mb-6">
+            Only Pay for Exclusive Leads<br />You Choose to Unlock
+          </h1>
+          
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-8">
+            No subscriptions. No contracts. No bidding wars.<br />
+            Every lead is offered to one mover only.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/apply-to-join" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm">
+              Get Your First Lead Free
+            </Link>
+            <Link href="#pricing" className="bg-white border border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-gray-50">
+              View Pricing
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="py-32">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            <div className="space-y-12">
-              <h2 className="text-4xl font-black text-primary uppercase tracking-tight">How It Works</h2>
-              <div className="space-y-8">
+      {/* First Lead Free */}
+      <section className="py-16 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <div className="inline-flex items-center gap-3 bg-success/10 text-success px-6 py-3 rounded-2xl mb-6">
+            <Gift size={24} />
+            <span className="font-black text-lg">Your First Lead is Completely Free</span>
+          </div>
+          <p className="text-text-secondary text-lg max-w-xl mx-auto">
+            Try the platform risk-free and see how our exclusive lead system works before spending a penny.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing Table */}
+      <section id="pricing" className="py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter mb-4">Simple, Transparent Pricing</h2>
+            <p className="text-text-secondary">Pay only when you choose to unlock a lead.</p>
+          </div>
+
+          <div className="bg-white border border-border rounded-3xl overflow-hidden shadow-xl">
+            <div className="grid grid-cols-2 border-b border-border bg-gray-50 px-8 py-5 text-sm font-black uppercase tracking-widest text-primary/50">
+              <div>Job Value</div>
+              <div className="text-right">Unlock Fee</div>
+            </div>
+            
+            {pricingTiers.map((tier, index) => (
+              <div key={index} className="grid grid-cols-2 px-8 py-6 border-b border-border last:border-0 hover:bg-gray-50 transition-colors">
+                <div className="font-bold text-primary">{tier.value}</div>
+                <div className="text-right font-black text-accent text-xl">{tier.fee}</div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-text-secondary mt-6 font-medium">
+            On a £1,000 move, you keep over 93% of the job value.
+          </p>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="py-16 bg-[#F9F9F7] border-y border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h3 className="text-2xl font-black text-primary uppercase tracking-tight mb-8 text-center">What's Included When You Unlock</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {[
+              "Exclusive customer lead",
+              "Customer name, phone & email",
+              "Collection & delivery details",
+              "Move date and job information",
+              "No competing movers",
+              "Instant lead delivery"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3 bg-white p-5 rounded-2xl border border-border">
+                <CheckCircle2 className="text-success shrink-0" size={20} />
+                <span className="font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Refund Policy */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Refunds */}
+            <div>
+              <h3 className="text-xl font-black text-primary uppercase tracking-tight mb-6">Refund Policy</h3>
+              <div className="space-y-3 text-sm text-text-secondary">
+                <p className="font-medium">Refunds available where:</p>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Customer contact details are invalid</li>
+                  <li>Duplicate lead supplied</li>
+                  <li>Technical charging error</li>
+                </ul>
+                <p className="text-xs mt-4">Refund requests must be submitted within 48 hours with evidence.</p>
+              </div>
+            </div>
+
+            {/* No Refunds */}
+            <div>
+              <h3 className="text-xl font-black text-primary uppercase tracking-tight mb-6">No Refunds For</h3>
+              <div className="grid grid-cols-1 gap-2 text-sm">
                 {[
-                  { t: "Apply and get verified", d: "Join our network of professional movers for free. We vet every driver to maintain quality." },
-                  { t: "Live move requests", d: "View active requests in your chosen coverage area directly from your dashboard." },
-                  { t: "Choose what to unlock", d: "You only pay for the jobs you want. No forced assignments or monthly contracts." },
-                  { t: "Exclusive details", d: "Once unlocked, the customer's details are yours exclusively. No other mover can access them." }
-                ].map((step, i) => (
-                  <div key={i} className="flex gap-6">
-                    <div className="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center font-black shrink-0">{i+1}</div>
-                    <div className="space-y-1">
-                      <h3 className="font-bold text-primary uppercase tracking-tight">{step.t}</h3>
-                      <p className="text-text-secondary text-sm leading-relaxed">{step.d}</p>
-                    </div>
+                  "Customer does not answer",
+                  "Customer declines a quote",
+                  "Customer books another mover",
+                  "Customer cancels the move",
+                  "Mover chooses not to quote",
+                  "Mover cannot secure the booking"
+                ].map((item, i) => (
+                  <div key={i} className="bg-red-50 text-red-600 px-4 py-3 rounded-xl text-sm font-medium">
+                    {item}
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="bg-[#F9F9F7] p-10 md:p-14 rounded-[3rem] border border-border/50 space-y-10 shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full -mr-16 -mt-16" />
-               <h2 className="text-3xl font-black text-primary uppercase tracking-tight">Introduction Fees</h2>
-               <div className="space-y-4">
-                 {fees.map((f, i) => (
-                   <div key={i} className="flex justify-between items-center py-4 border-b border-border/50 last:border-0">
-                     <span className="font-bold text-primary uppercase tracking-tight text-sm">{f.type}</span>
-                     <span className="font-black text-accent">{f.fee}</span>
-                   </div>
-                 ))}
-               </div>
-               <p className="text-[10px] text-text-secondary font-black uppercase tracking-widest leading-relaxed">
-                 * Exact pricing is confirmed during onboarding. Fees are competitive and benchmarked against the local moving market.
-               </p>
-               <div className="pt-6 flex flex-col sm:flex-row gap-4">
-                 <Link href="/for-businesses" className="btn-orange flex-1 py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center">
-                    Apply to Join
-                 </Link>
-                 <Link href="/login" className="bg-primary text-white flex-1 py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center hover:bg-accent transition-colors">
-                    Driver Login
-                 </Link>
-               </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-32 bg-[#F9F9F7] border-t border-border">
-        <div className="container mx-auto px-4 text-center space-y-12">
-          <div className="inline-flex items-center gap-3 bg-accent/10 text-accent px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-accent/20">
-            <ShieldCheck size={16} /> Verified Mover Network
+      {/* Trust & CTA */}
+      <section className="py-20 bg-primary text-white">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.3em] mb-8">
+            Why Movers Choose Us
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-primary uppercase tracking-tighter">Grow your moving business today</h2>
-          <div className="flex flex-wrap justify-center gap-8 text-primary/40 font-black uppercase tracking-widest text-[10px]">
-            <span className="flex items-center gap-2"><Zap size={14} className="text-accent"/> No Bidding Wars</span>
-            <span className="flex items-center gap-2"><CheckCircle2 size={14} className="text-accent"/> Exclusive Introductions</span>
-            <span className="flex items-center gap-2"><ArrowUpRight size={14} className="text-accent"/> High Conversion</span>
-          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-12">No monthly fees.<br />No long-term contracts.<br />Just quality leads.</h2>
+
+          <Link href="/apply-to-join" className="btn-orange px-14 py-6 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
+            Get Your First Lead Free <ArrowUpRight size={20} />
+          </Link>
         </div>
       </section>
     </div>
