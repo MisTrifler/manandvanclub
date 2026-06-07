@@ -334,19 +334,23 @@ export default function QuoteForm() {
               <CheckCircle2 size={64} />
             </div>
             <div className="space-y-4">
-              <h2 className="text-5xl font-black text-primary tracking-tighter uppercase leading-none">Request Active</h2>
+              <h2 className="text-5xl font-black text-primary tracking-tighter uppercase leading-none">Request Submitted</h2>
               <p className="text-xl text-text-secondary font-bold max-w-sm mx-auto leading-relaxed">
-                Your email has been verified and your request is now live in our exclusive mover network.
+                Your email has been verified and your move request is now active.
               </p>
             </div>
             <div className="bg-[#F9F9F7] p-10 rounded-[3rem] border border-border/50 text-left space-y-6 shadow-inner">
                <div className="flex items-start gap-5">
                  <div className="bg-accent text-white rounded-full p-2 mt-1 shrink-0 shadow-lg shadow-accent/20"><Check size={16} strokeWidth={4}/></div>
-                 <p className="text-lg font-black text-primary leading-tight uppercase tracking-tighter">Exclusive Match: <span className="text-text-secondary font-medium normal-case text-base">Only ONE mover can see your request.</span></p>
+                 <p className="text-lg font-black text-primary leading-tight uppercase tracking-tighter">Exclusive Matching: <span className="text-text-secondary font-medium normal-case text-base">Your request will be offered to one approved mover only.</span></p>
                </div>
                <div className="flex items-start gap-5">
                  <div className="bg-accent text-white rounded-full p-2 mt-1 shrink-0 shadow-lg shadow-accent/20"><Check size={16} strokeWidth={4}/></div>
-                 <p className="text-lg font-black text-primary leading-tight uppercase tracking-tighter">Verified Mover: <span className="text-text-secondary font-medium normal-case text-base">A local pro will contact you within minutes.</span></p>
+                 <p className="text-lg font-black text-primary leading-tight uppercase tracking-tighter">Verified Mover: <span className="text-text-secondary font-medium normal-case text-base">An approved local mover will contact you shortly.</span></p>
+               </div>
+               <div className="flex items-start gap-5">
+                 <div className="bg-accent text-white rounded-full p-2 mt-1 shrink-0 shadow-lg shadow-accent/20"><Check size={16} strokeWidth={4}/></div>
+                 <p className="text-lg font-black text-primary leading-tight uppercase tracking-tighter">No Obligation: <span className="text-text-secondary font-medium normal-case text-base">You're free to accept or decline any quote provided.</span></p>
                </div>
             </div>
             <div className="pt-8">
