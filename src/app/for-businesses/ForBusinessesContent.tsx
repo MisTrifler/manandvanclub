@@ -95,6 +95,26 @@ export default function ForBusinessesContent() {
         </div>
       </section>
 
+      {/* Insurance Verification */}
+      <section className="py-20 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="bg-[#F9F9F7] border border-border rounded-[2.5rem] p-12 md:p-16 text-center space-y-6">
+            <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto text-primary">
+              <ShieldCheck size={36} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tighter">Insurance Verification Required</h2>
+            <div className="space-y-4 text-text-secondary leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg font-medium">
+                As part of our onboarding process, applicants must provide proof of valid <span className="text-primary font-bold">Goods in Transit Insurance</span> and <span className="text-primary font-bold">Public Liability Insurance</span>.
+              </p>
+              <p className="text-sm">
+                Every application is reviewed manually. Only approved businesses receive access to customer enquiries and platform features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Table Section - Restricted to Logged In / Verified */}
       <section className="py-32 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
