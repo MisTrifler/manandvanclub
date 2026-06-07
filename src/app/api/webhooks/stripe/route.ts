@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     const supabaseAdmin = getSupabaseAdmin();
 
     try {
-      // Check if lead is already locked
+      // Check if already locked
       const { data: existing } = await supabaseAdmin
         .from('move_requests')
         .select('status, locked_by')
@@ -36,7 +36,6 @@ export async function POST(req: Request) {
         .single();
 
       if (existing?.status === 'locked') {
-        console.log(`Lead ${requestId} already locked by ${existing.locked_by}`);
         return NextResponse.json({ received: true });
       }
 
@@ -54,44 +53,63 @@ export async function POST(req: Request) {
 
       if (updateError) throw updateError;
 
-      // Send customer details to driver
+      // === EMAIL TO DRIVER ===
       await resend.emails.send({
         from: 'Man and Van Club <leads@manandvanclub.co.uk>',
         to: [session.customer_details.email],
-        subject: `JOB UNLOCKED: ${moveRequest.first_name}'s Contact Details`,
+        subject: `Lead Unlocked: ${moveRequest.first_name} - ${moveRequest.collection_postcode} → ${moveRequest.delivery_postcode}`,
         html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 2px solid #F97316; padding: 30px; border-radius: 20px;">
-            <h2 style="color: #0F172A; text-transform: uppercase;">Lead Unlocked Successfully</h2>
-            <p>Hi ${businessName},</p>
-            <p>You have successfully unlocked the contact details for this customer.</p>
+          <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
+            <div style="text-align: center; margin-bottom: 30px;">
+              <span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span>
+            </div>
             
-            <div style="background: #F8FAFC; padding: 25px; border-radius: 12px; margin: 25px 0; border: 1px solid #E2E8F0;">
-              <h3 style="margin-top: 0; color: #F97316;">Customer Details</h3>
-              <p style="font-size: 18px; margin: 5px 0;"><strong>Name:</strong> ${moveRequest.first_name}</p>
-              <p style="font-size: 18px; margin: 5px 0;"><strong>Phone:</strong> <a href="tel:${moveRequest.phone}">${moveRequest.phone}</a></p>
-              <p style="font-size: 18px; margin: 5px 0;"><strong>Email:</strong> <a href="mailto:${moveRequest.email}">${moveRequest.email}</a></p>
+            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Lead Unlocked Successfully</h2>
+            
+            <p style="color: #475569; font-size: 16px;">Hi ${businessName},</p>
+            <p style="color: #475569; font-size: 16px;">You have unlocked the following lead:</p>
+            
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
+              <p style="margin: 0 0 8px 0;"><strong>Customer:</strong> ${moveRequest.first_name}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> <a href="tel:${moveRequest.phone}" style="color: #F97316;">${moveRequest.phone}</a></p>
+              <p style="margin: 0 0 8px 0;"><strong>Email:</strong> <a href="mailto:${moveRequest.email}" style="color: #F97316;">${moveRequest.email}</a></p>
+              <p style="margin: 0 0 8px 0;"><strong>Route:</strong> ${moveRequest.collection_postcode} → ${moveRequest.delivery_postcode}</p>
+              <p style="margin: 0;"><strong>Date:</strong> ${moveRequest.move_date}</p>
             </div>
 
-            <p style="font-size: 13px; color: #9A3412;"><strong>Tip:</strong> Contact the customer quickly for higher conversion.</p>
-            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
-            <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
+            <div style="background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 16px; margin: 24px 0;">
+              <strong style="color: #92400E;">Pro Tip:</strong> 
+              <span style="color: #92400E;">Contact the customer within the first 15 minutes for the highest chance of securing the job.</span>
+            </div>
+
+            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">© 2026 Man and Van Club</p>
           </div>
         `,
       });
 
-      // Notify customer
+      // === EMAIL TO CUSTOMER ===
       await resend.emails.send({
         from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
         to: [moveRequest.email],
-        subject: `You've been matched with ${businessName}`,
+        subject: `${businessName} has unlocked your move request`,
         html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: auto;">
-            <h2>Great news!</h2>
-            <p>Hi ${moveRequest.first_name},</p>
-            <p><strong>${businessName}</strong> has unlocked your move request.</p>
-            <p>They will contact you shortly.</p>
-            <p style="font-size: 12px; color: #64748B;">You are under no obligation to accept their quote.</p>
-            <p style="font-size: 12px; color: #94A3B8;">© 2026 Man and Van Club</p>
+          <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
+            <div style="text-align: center; margin-bottom: 30px;">
+              <span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span>
+            </div>
+            
+            <h2 style="color: #0F172A; font-size: 24px;">Great news!</h2>
+            
+            <p style="color: #475569; font-size: 16px;">Hi ${moveRequest.first_name},</p>
+            <p style="color: #475569; font-size: 16px;"><strong>${businessName}</strong> has unlocked your move request and will contact you shortly.</p>
+            
+            <div style="background: #F0FDF4; border-left: 4px solid #22C55E; padding: 16px; margin: 24px 0;">
+              <p style="margin: 0; color: #166534; font-size: 15px;">
+                You are under no obligation to accept their quote. Take your time and compare if needed.
+              </p>
+            </div>
+
+            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">© 2026 Man and Van Club</p>
           </div>
         `,
       });
