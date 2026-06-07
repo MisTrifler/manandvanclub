@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
-import { Search, Calculator, CheckCircle, Truck, Star, ShieldCheck, Zap } from "lucide-react";
+import { Search, Calculator, CheckCircle, Zap, Truck, ArrowUpRight, ShieldCheck, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HowItWorksContent() {
@@ -16,135 +15,140 @@ export default function HowItWorksContent() {
 
   const steps = [
     {
-      title: "Tell us about your move",
-      desc: "Fill in your collection and delivery postcodes, move date, and property details. It takes less than 60 seconds.",
-      icon: <Search className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1000&auto=format&fit=crop"
+      title: "Details",
+      desc: "Enter your postcodes and move date in under 60 seconds.",
+      icon: <Search className="w-6 h-6" />,
     },
     {
-      title: "See an estimated price",
-      desc: "We calculate a typical price range for your move instantly based on previous similar marketplace data.",
-      icon: <Calculator className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1586762522814-11df9043743d?q=80&w=1000&auto=format&fit=crop"
+      title: "Estimate",
+      desc: "See a typical price range instantly for your specific move.",
+      icon: <Calculator className="w-6 h-6" />,
     },
     {
-      title: "Confirm you're happy",
-      desc: "Only once you agree the price looks right do we proceed. Your contact details are hidden until this step.",
-      icon: <CheckCircle className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1454165833968-5170e99a136b?q=80&w=1000&auto=format&fit=crop"
+      title: "Confirm",
+      desc: "Verify your request. Your details stay private until match.",
+      icon: <CheckCircle className="w-6 h-6" />,
     },
     {
-      title: "Get matched with local movers",
-      desc: "Matching movers are notified about your request. The first available mover will accept your job exclusively.",
-      icon: <Zap className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop"
+      title: "Match",
+      desc: "An approved local mover accepts your job exclusively.",
+      icon: <Zap className="w-6 h-6" />,
     },
     {
-      title: "Matched Local Mover",
-      desc: "Once matched, your mover will contact you directly to confirm the final details and arrange your move.",
-      icon: <Truck className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1600518464441-9154a4da21b5?q=80&w=1000&auto=format&fit=crop"
+      title: "Move",
+      desc: "Your mover contacts you to finalize and carry out the move.",
+      icon: <Truck className="w-6 h-6" />,
     }
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] },
+    }),
+  };
+
   return (
-    <div className="bg-white">
+    <div className="bg-white min-h-[calc(100vh-80px)] flex flex-col selection:bg-accent selection:text-white overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       
-      {/* Hero */}
-      <section className="bg-[#F9F9F7] py-24 border-b border-border overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent opacity-5 rounded-full -mr-32 -mt-32" />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-6">
-              Exclusive Process
-            </span>
-            <h1 className="text-5xl md:text-7xl font-black text-primary mb-8 uppercase tracking-tighter">
-              How Man & Van Club Works
-            </h1>
-            <p className="text-xl text-text-secondary max-w-2xl mx-auto font-medium leading-relaxed">
-              We've simplified the customer-mover connection. No more bidding wars, just exclusive introductions to vetted local experts.
-            </p>
-          </motion.div>
+      {/* ── Main Section (One Screen Fit) ── */}
+      <section className="flex-1 relative flex items-center py-12 lg:py-0">
+        {/* Decorative Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-full h-full bg-[#F9F9F7] rounded-bl-[100px] lg:rounded-bl-[300px] transform translate-x-1/4 -translate-y-1/4 opacity-50" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -ml-32 -mb-32" />
         </div>
-      </section>
 
-      {/* Steps */}
-      <section className="py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto space-y-40">
-            {steps.map((step, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className={`flex flex-col md:flex-row gap-16 lg:gap-24 items-center ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
-              >
-                <div className="md:w-1/2 space-y-8">
-                  <div className="bg-accent/10 w-24 h-24 rounded-3xl flex items-center justify-center text-accent shadow-xl shadow-accent/5">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            
+            {/* Header */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp}
+              className="text-center mb-12 lg:mb-20 space-y-4"
+            >
+              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-accent/20">
+                <ShieldCheck size={12} />
+                Exclusive Matching Process
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary uppercase tracking-tighter leading-none">
+                How It <span className="text-accent italic">Works</span>
+              </h1>
+              <p className="text-base lg:text-lg text-text-secondary max-w-xl mx-auto font-medium leading-relaxed">
+                We've stripped away the complexity. No bidding wars, no spam calls, just five simple steps to a stress-free move.
+              </p>
+            </motion.div>
+
+            {/* Compact Steps Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8 mb-12 lg:mb-20 relative">
+              {/* Connector Line (Desktop) */}
+              <div className="hidden md:block absolute top-12 left-10 right-10 h-px bg-border/60 z-0" />
+              
+              {steps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  custom={i + 1}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                  className="relative z-10 flex flex-col items-center text-center group"
+                >
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-[2rem] border-2 border-border/50 flex items-center justify-center text-accent shadow-sm group-hover:border-accent group-hover:shadow-xl group-hover:shadow-accent/5 transition-all duration-500 mb-6 bg-gradient-to-br from-white to-gray-50/50">
                     {step.icon}
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-6">
-                      <span className="text-7xl font-black text-primary/5 tracking-tighter">{i + 1}</span>
-                      <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight leading-none">{step.title}</h2>
-                    </div>
-                    <p className="text-xl text-text-secondary leading-relaxed font-medium">
-                      {step.desc}
-                    </p>
-                  </div>
-                  {i === 3 && (
-                    <div className="bg-success/5 border border-success/10 p-6 rounded-2xl flex items-start gap-4">
-                       <ShieldCheck className="text-success shrink-0" size={24} />
-                       <p className="text-sm font-bold text-primary italic uppercase tracking-tighter">Only ONE mover can unlock your details to provide service.</p>
-                    </div>
-                  )}
-                </div>
-                <div className="md:w-1/2 w-full">
-                  <div className="relative group">
-                    <div className="absolute -inset-4 bg-accent/5 rounded-[3rem] blur-2xl group-hover:bg-accent/10 transition-all duration-700" />
-                    <div className="relative aspect-[4/3] bg-gray-100 rounded-[2.5rem] overflow-hidden border border-border shadow-2xl">
-                      <Image 
-                        src={step.image} 
-                        alt={step.title} 
-                        fill
-                        unoptimized
-                        className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-xl flex items-center justify-center text-xs font-black shadow-lg">
+                      0{i + 1}
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  <h3 className="font-black text-primary uppercase tracking-tight text-sm mb-2 group-hover:text-accent transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-[11px] text-text-secondary font-medium leading-relaxed max-w-[160px]">
+                    {step.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp}
+              custom={7}
+              className="text-center"
+            >
+              <div className="inline-block p-2 bg-[#F9F9F7] rounded-[2.5rem] border border-border/50 shadow-inner">
+                <Link 
+                  href="/#quote-form" 
+                  className="btn-orange inline-flex items-center gap-4 px-12 py-6 rounded-[2rem] font-black uppercase tracking-[0.2em] text-sm shadow-2xl shadow-accent/40 hover:scale-105 transition-all active:scale-95"
+                >
+                  Start Your Move Request <ArrowUpRight size={20} />
+                </Link>
+              </div>
+              <p className="mt-6 text-[10px] font-black text-primary/30 uppercase tracking-[0.3em] flex items-center justify-center gap-4">
+                <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent" /> Fully Insured</span>
+                <span className="flex items-center gap-1.5"><Zap size={14} className="text-accent" /> 1-to-1 Match</span>
+              </p>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-32 bg-white text-center">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-accent/5 rounded-[4rem] p-16 md:p-24 border border-accent/10 max-w-5xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-6xl font-black text-primary mb-8 uppercase tracking-tighter">Ready to find your mover?</h2>
-            <p className="text-xl text-text-secondary mb-12 max-w-xl mx-auto font-medium">Join our verified network and get matched exclusively with local movers.</p>
-            <Link href="/#quote-form" className="btn-orange text-xl px-16 py-6 rounded-[2rem] font-black uppercase tracking-[0.2em] shadow-2xl shadow-accent/40 hover:scale-105 active:scale-95 transition-all">Get Started Now →</Link>
-          </motion.div>
-        </div>
-      </section>
+      {/* Mobile Sticky CTA (Matches Homepage) */}
+      <div className="fixed bottom-0 left-0 right-0 z-[100] lg:hidden bg-white/80 backdrop-blur-xl border-t border-border shadow-[0_-10px_40px_rgba(0,0,0,0.1)] px-4 py-4 flex gap-4">
+        <Link href="/#quote-form" className="flex-1 btn-orange py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] text-center flex items-center justify-center gap-2 shadow-xl shadow-accent/20">
+          <Zap size={16} fill="currentColor" /> Get Started
+        </Link>
+      </div>
     </div>
   );
 }
