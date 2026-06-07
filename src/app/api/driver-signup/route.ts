@@ -37,8 +37,8 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: 'Man & Van Club <support@manandvanclub.co.uk>',
           to: [data.email],
-          subject: 'Action Required: Verify Your Man & Van Club Application',
-          reply_to: 'support@manandvanclub.co.uk',
+          subject: 'Action Required: Verify Your Man and Van Club Application',
+          replyTo: 'support@manandvanclub.co.uk',
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; line-height: 1.6; color: #0F172A;">
               <p>Dear Applicant,</p>
