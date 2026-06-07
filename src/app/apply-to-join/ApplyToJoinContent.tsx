@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 };
 
 export default function ApplyToJoinContent() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.manandvanclub.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "For Businesses", "item": "https://www.manandvanclub.co.uk/for-businesses" },
+      { "@type": "ListItem", "position": 3, "name": "Apply to Join", "item": "https://www.manandvanclub.co.uk/apply-to-join" }
+    ]
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -76,6 +86,10 @@ export default function ApplyToJoinContent() {
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] py-20 px-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <Link href="/for-businesses" className="inline-flex items-center gap-2 text-primary/40 font-black uppercase tracking-widest text-[10px] hover:text-accent transition-colors mb-12">
           <ArrowLeft size={14} /> Back to Information
