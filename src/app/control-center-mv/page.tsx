@@ -87,8 +87,23 @@ function AdminPortal() {
   }
 
   async function updateDriverStatus(id: string, status: string) {
-    const { error } = await supabase.from("driver_applications").update({ status }).eq("id", id);
-    if (!error) fetchData();
+    setLoading(true);
+    try {
+      const res = await fetch("/api/admin/approve-driver", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ driverId: id, status }),
+      });
+      if (res.ok) fetchData();
+      else {
+        const error = await res.json();
+        setDebugError(`Action Failed: ${error.message}`);
+      }
+    } catch (err: any) {
+      setDebugError(`Critical Action Error: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
   }
 
   const filteredLeads = leads.filter(l => 
