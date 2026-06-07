@@ -55,56 +55,56 @@ export default function HomeContent() {
       d: "Moving your whole home to a new address", 
       i: "🏠", 
       h: "/house-removals", 
-      img: "https://images.unsplash.com/photo-1583947581924-860bda6a26df?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1600518464441-9154a4da21b5?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Flat Moves", 
       d: "Specialist flat and apartment moving", 
       i: "🏢", 
       h: "/flat-removals", 
-      img: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Student Moves", 
       d: "Affordable moves to and from university", 
       i: "🎓", 
       h: "/student-removals", 
-      img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1603398938378-e54e4444a83d?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Office Relocations", 
       d: "Desks, equipment and everything in between", 
       i: "💼", 
       h: "/office-removals", 
-      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Furniture Collection", 
       d: "Single items from shops or private sellers", 
       i: "🛋️", 
       h: "/furniture-delivery", 
-      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Facebook Marketplace", 
       d: "We collect so you don't have to", 
       i: "📱", 
       h: "/facebook-marketplace-collection", 
-      img: "https://images.unsplash.com/photo-1556742521-9713bf2728be?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Long Distance Moves", 
       d: "Anywhere in the UK, any distance", 
       i: "🇬🇧", 
       h: "/long-distance-removals", 
-      img: "https://images.unsplash.com/photo-1516542003828-597ca0b61640?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1501700489910-fb2163b6bc63?auto=format&fit=crop&q=80&w=800" 
     },
     { 
       t: "Same Day Man & Van", 
       d: "Need it moved today? We can help", 
       i: "⚡", 
       h: "/same-day-man-and-van", 
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" 
     },
   ];
 
