@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Facebook, Instagram, Twitter, ShieldCheck, CheckCircle2, Mail, Phone, MapPin, Lock } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,8 +19,25 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-text-secondary mb-6 leading-relaxed">
-              A marketplace connecting customers with independent local movers in England, mainly Birmingham. Find verified local professionals for your move.
+              A marketplace connecting customers with independent local movers across the UK. We match you with one suitable mover directly.
             </p>
+            <div className="space-y-3 text-sm text-text-secondary">
+              <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <Mail size={14} className="text-accent" /> support@manandvanclub.co.uk
+              </a>
+              <div className="flex items-center gap-2">
+                <Phone size={14} className="text-accent" /> 07943 617 386
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin size={14} className="text-accent" /> England, UK
+              </div>
+            </div>
+            <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-border text-xs text-text-secondary">
+              <div className="flex items-center gap-2 mb-1 font-bold text-primary">
+                <Lock size={14} className="text-green-600" /> GDPR Compliant
+              </div>
+              <p>Your data is handled securely and never sold or shared beyond your matched mover.</p>
+            </div>
           </div>
 
           {/* Links 1 */}
@@ -66,6 +83,7 @@ export default function Footer() {
               <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-primary">Terms & Conditions</Link>
               <Link href="/cookies" className="hover:text-primary">Cookie Policy</Link>
+              <Link href="/privacy" className="hover:text-primary">GDPR Statement</Link>
             </div>
           </div>
 

@@ -4,33 +4,55 @@ import Link from "next/link";
 import {
   CheckCircle2,
   ArrowUpRight,
-  Star,
   Shield,
   ShieldCheck,
   Zap,
+  Lock,
+  ClipboardList,
+  Search,
+  UserCheck,
+  Phone,
+  CalendarCheck,
+  Eye,
+  Handshake,
+  MessageCircle,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import { motion } from "framer-motion";
 import { SERVICES } from "@/constants/services";
-
-const CITIES = [
-  "London", "Birmingham", "Manchester", "Leeds",
-  "Bristol", "Liverpool", "Nottingham", "Sheffield",
-  "Glasgow", "Cardiff", "Edinburgh", "Leicester",
-];
+import FAQ from "@/components/FAQ";
 
 const STEPS = [
-  { t: "Tell us about your move", d: "Fill in your collection and delivery postcodes and move details." },
-  { t: "See an estimated price", d: "We calculate a typical price range for your move instantly." },
-  { t: "Confirm you're happy", d: "Only once you agree the price looks right do we proceed." },
-  { t: "Matched with a local mover", d: "Verified local movers are notified about your move request." },
-  { t: "Mover contacts you directly", d: "The first approved mover who unlocks your request contacts you." },
+  { t: "Submit your moving details", d: "Tell us where you are moving from and to, your preferred date, and a few details about your move.", icon: <ClipboardList size={24} /> },
+  { t: "We identify a suitable mover", d: "Our team reviews your requirements and identifies a mover in your area with availability and the right capacity.", icon: <Search size={24} /> },
+  { t: "Your enquiry is offered exclusively", d: "Your enquiry is introduced to one mover at a time. We do not share your details with multiple companies.", icon: <UserCheck size={24} /> },
+  { t: "The mover contacts you directly", d: "The matched mover will contact you directly to discuss your move, confirm details, and provide a quote.", icon: <Phone size={24} /> },
+  { t: "Arrange your move", d: "If you are happy to proceed, you arrange the move directly with your mover. No middlemen, no hidden fees.", icon: <CalendarCheck size={24} /> },
 ];
 
-const TESTIMONIALS = [
-  { name: "Sarah T.", city: "London", quote: "I was nervous about trusting a stranger with my belongings but Man and Van Club matched me with a brilliant local mover within hours." },
-  { name: "James R.", city: "Manchester", quote: "Compared to other sites where you get bombarded with 10 quotes at once, this was completely different. One mover, one call, job done." },
-  { name: "Priya K.", city: "Birmingham", quote: "Used Man and Van Club for my flat move. The mover was on time, careful with my furniture, and professional throughout." }
+const FAQ_ITEMS = [
+  { q: "How does matching work?", a: "When you submit your moving details, we review your requirements including location, move size, and date. We then identify a suitable mover from our network and introduce your enquiry to them exclusively. You deal directly with the mover from that point onward." },
+  { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+  { q: "Is there any obligation?", a: "No. Submitting an enquiry is completely free and without obligation. If the matched mover is not suitable, or if you decide not to proceed, you are under no obligation to book." },
+  { q: "How quickly will I be contacted?", a: "We aim to have your matched mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements." },
+  { q: "Are movers vetted?", a: "We aim to connect customers with reliable moving professionals. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote." },
+  { q: "What happens after I submit my enquiry?", a: "After submitting your enquiry, you will receive a confirmation. Our team reviews your requirements and identifies a suitable mover. Your details are introduced to that mover exclusively. The mover contacts you directly to discuss your move and provide a quote." },
+  { q: "Do I need to pay to submit an enquiry?", a: "No. Submitting an enquiry through Man and Van Club is completely free for customers. There is no charge to get matched with a mover. You only pay the mover directly if you choose to book their services." },
+];
+
+const WHY_CHOOSE = [
+  { t: "One Mover, Not Multiple Quotes", d: "We introduce you to one suitable mover instead of bombarding you with competing quotes.", icon: <Shield size={24} /> },
+  { t: "No Spam Calls", d: "Your details are shared with one mover only. No endless sales calls or marketing emails.", icon: <Phone size={24} /> },
+  { t: "Direct Communication", d: "Speak directly with your matched mover. No call centres, no intermediaries, no confusion.", icon: <MessageCircle size={24} /> },
+  { t: "Exclusive Lead Matching", d: "Your enquiry is offered exclusively. We do not sell or distribute your details widely.", icon: <Lock size={24} /> },
+  { t: "Simple Moving Process", d: "Submit your details once. We handle the matching. You handle the move.", icon: <Zap size={24} /> },
+];
+
+const COMMITMENTS = [
+  { t: "Transparent Matching", d: "We clearly explain how we match you with a mover and what happens to your details.", icon: <Eye size={24} /> },
+  { t: "Vetted Movers", d: "We aim to connect customers with reliable moving professionals who meet our standards.", icon: <ShieldCheck size={24} /> },
+  { t: "Simple Process", d: "No comparing multiple quotes. Submit once and let us handle the matching.", icon: <Zap size={24} /> },
+  { t: "Direct Communication", d: "Speak directly with your matched mover. No call centres or intermediaries.", icon: <Handshake size={24} /> },
 ];
 
 export default function HomeContent() {
@@ -58,23 +80,24 @@ export default function HomeContent() {
               className="lg:w-1/2 text-left order-2 lg:order-1"
             >
               <div className="hidden lg:inline-flex items-center bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-primary/20">
-                UK's Most Trusted Removal Marketplace
+                UK-Wide Moving Service
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-5 leading-[0.95] text-primary tracking-tighter">
-                Get Matched with One Trusted Local Mover.<br />No Spam. No Bidding Wars.
+                Find Your Trusted Local Mover Without Comparing Endless Quotes
               </h1>
 
               <p className="text-lg lg:text-xl text-text-secondary mb-6 max-w-xl font-medium leading-relaxed">
-                Submit your move details and get introduced to a single verified local professional across the UK. Fast, fair, and exclusive.
+                Get matched with one vetted mover who contacts you directly. No spam, no bidding wars, and no unnecessary phone calls.
               </p>
 
               <div className="hidden lg:flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: <Shield size={16} />, label: "UK-Wide Network" },
-                  { icon: <Zap size={16} />, label: "1-to-1 Exclusive Match" },
-                  { icon: <ShieldCheck size={16} />, label: "Vetted & Insured Movers" },
-                  { icon: <Star size={16} />, label: "5-Star Rated Service" },
+                  { icon: <Shield size={16} />, label: "One Trusted Local Mover" },
+                  { icon: <Phone size={16} />, label: "No Spam Calls" },
+                  { icon: <Zap size={16} />, label: "No Bidding Wars" },
+                  { icon: <CheckCircle2 size={16} />, label: "UK-Wide Coverage" },
+                  { icon: <Lock size={16} />, label: "Secure Enquiry Process" },
                 ].map((badge, index) => (
                   <div key={index} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-border px-4 py-2 rounded-full text-sm font-bold text-primary/80">
                     <span className="text-accent">{badge.icon}</span>
@@ -90,8 +113,8 @@ export default function HomeContent() {
                 </div>
                 <div className="h-8 w-px bg-border" />
                 <div>
-                  <div className="font-black text-primary text-2xl tracking-tighter">60 SECONDS</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">To Get Matched</div>
+                  <div className="font-black text-primary text-2xl tracking-tighter">NO OBLIGATION</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Free Enquiry</div>
                 </div>
               </div>
             </motion.div>
@@ -104,10 +127,25 @@ export default function HomeContent() {
               className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2"
             >
               <div className="mb-3 text-center lg:text-left">
-                <p className="text-[11px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than 60 seconds • No payment required</p>
+                <p className="text-[11px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
               </div>
               <QuoteForm />
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Strip */}
+      <section className="bg-white border-y border-border py-6">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm font-bold text-primary/70">
+            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> Exclusive Matching</span>
+            <span className="hidden md:block w-px h-4 bg-border" />
+            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> Vetted Movers</span>
+            <span className="hidden md:block w-px h-4 bg-border" />
+            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> UK Coverage</span>
+            <span className="hidden md:block w-px h-4 bg-border" />
+            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> No Obligation</span>
           </div>
         </div>
       </section>
@@ -121,13 +159,37 @@ export default function HomeContent() {
               <p className="text-sm text-white/60 mt-1">Coverage across England, Scotland & Wales</p>
             </div>
             <div className="border-y md:border-y-0 md:border-x border-white/20 py-8 md:py-0">
-              <div className="text-4xl font-black tracking-tighter text-accent">60 SECONDS</div>
-              <p className="text-sm text-white/60 mt-1">Average time to submit your request</p>
+              <div className="text-4xl font-black tracking-tighter text-accent">NO OBLIGATION</div>
+              <p className="text-sm text-white/60 mt-1">Submit your details without commitment</p>
             </div>
             <div>
               <div className="text-4xl font-black tracking-tighter text-accent">1-TO-1</div>
               <p className="text-sm text-white/60 mt-1">Exclusive match — only one mover sees you</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Man and Van Club */}
+      <section className="py-20 bg-[#F9F9F7]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why Choose Man and Van Club?</h2>
+            <p className="text-text-secondary mt-3">A smarter, simpler way to find a mover.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {WHY_CHOOSE.map((item, i) => (
+              <div key={i} className="group bg-white rounded-3xl border border-border p-8 hover:shadow-xl transition-all flex flex-col h-full">
+                <div className="mb-4 text-accent">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-2xl">
+                    {item.icon}
+                  </div>
+                </div>
+                <h3 className="font-black text-xl text-primary tracking-tight mb-3">{item.t}</h3>
+                <p className="text-sm text-text-secondary flex-1">{item.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -140,12 +202,14 @@ export default function HomeContent() {
             <p className="text-text-secondary mt-3">Simple. Fair. Exclusive.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {STEPS.map((step, i) => (
               <div key={i} className="text-center">
-                <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center font-black text-xl mx-auto mb-5 shadow-lg">{i + 1}</div>
+                <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
+                  {step.icon}
+                </div>
                 <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-2">{step.t}</h3>
-                <p className="text-text-secondary text-sm">{step.d}</p>
+                <p className="text-text-secondary text-sm leading-relaxed">{step.d}</p>
               </div>
             ))}
           </div>
@@ -181,36 +245,48 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Our Commitment */}
       <section className="py-20 bg-white border-y border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">What Our Customers Say</h2>
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Our Commitment</h2>
+            <p className="text-text-secondary mt-3">How we build trust through transparency and simplicity.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((r, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {COMMITMENTS.map((item, i) => (
               <div key={i} className="bg-[#F9F9F7] p-8 rounded-3xl border border-border">
                 <div className="flex text-accent mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center">
+                    {item.icon}
+                  </div>
                 </div>
-                <p className="text-primary/80 italic">"{r.quote}"</p>
-                <div className="mt-6 pt-4 border-t border-border/60 text-sm">
-                  <span className="font-black">{r.name}</span> — {r.city}
-                </div>
+                <h3 className="font-black text-primary text-lg mb-2">{item.t}</h3>
+                <p className="text-primary/80 text-sm">{item.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-20 bg-[#F9F9F7]">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Frequently Asked Questions</h2>
+            <p className="text-text-secondary mt-3">Everything you need to know about our matching service.</p>
+          </div>
+          <FAQ items={FAQ_ITEMS} />
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20 bg-primary text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">Ready to Get Matched?</h2>
-          <p className="text-xl text-white/70 mb-8 max-w-md mx-auto">It takes less than 60 seconds to find your local mover.</p>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">Ready To Find Your Trusted Local Mover?</h2>
+          <p className="text-xl text-white/70 mb-8 max-w-md mx-auto">Submit your details and get matched with a suitable mover. No spam, no bidding wars, just one direct introduction.</p>
           <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3">
-            Start Your Move <ArrowUpRight size={20} />
+            Get Matched Now <ArrowUpRight size={20} />
           </Link>
         </div>
       </section>
