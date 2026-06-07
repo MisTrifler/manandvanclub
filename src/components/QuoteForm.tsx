@@ -241,8 +241,33 @@ export default function QuoteForm() {
         {step === 6 && (
           <div className="text-center py-6 space-y-6">
             <CheckCircle2 size={48} className="text-success mx-auto" />
-            <h2 className="text-3xl font-black text-primary uppercase">Request Submitted</h2>
-            <p className="text-text-secondary">Your move request has been verified and sent to approved movers.</p>
+            <h2 className="text-3xl font-black text-primary uppercase">You're All Set</h2>
+            <p className="text-text-secondary">Your move request has been successfully submitted.</p>
+
+            <div className="text-left bg-gray-50/50 rounded-2xl p-6 border border-border">
+              <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-4">What Happens Next</h3>
+              <ol className="space-y-3 text-sm text-primary/80">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">1</span>
+                  We review your move requirements
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">2</span>
+                  We identify a suitable mover
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">3</span>
+                  Your enquiry is offered exclusively
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">4</span>
+                  The mover contacts you directly
+                </li>
+              </ol>
+            </div>
+
+            <p className="text-sm font-bold text-accent tracking-tight">No spam. No bidding wars. Just one trusted mover.</p>
+
             <Link href="/" className="btn-outline w-full block py-4 font-black uppercase text-xs rounded-xl">Return Home</Link>
           </div>
         )}
