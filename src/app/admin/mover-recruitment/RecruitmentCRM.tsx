@@ -9,7 +9,7 @@ import {
   Trash2, Eye, X, ArrowLeft, Star, ShieldCheck,
   AlertCircle, TrendingUp, Users, Check, ChevronLeft,
   ChevronRight, Send, MoreHorizontal, Zap, Lock,
-  WhatsApp, NotebookPen, Bell, BarChart3
+  Bell, BarChart3
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
