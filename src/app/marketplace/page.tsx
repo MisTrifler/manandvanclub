@@ -29,7 +29,7 @@ export default async function MarketplacePage() {
   // Check if user is an approved driver
   const { data: driver } = await supabase
     .from('driver_applications')
-    .select('id, status, email, coverage_area')
+    .select('id, status, email')
     .eq('email', session.user.email)
     .single();
 
@@ -44,12 +44,12 @@ export default async function MarketplacePage() {
     );
   }
 
-  // Fetch real unlocked leads
+  // Only fetch verified + unlocked leads
   const { data: leads } = await supabase
     .from('move_requests')
     .select('*')
     .eq('is_verified', true)
-    .neq('status', 'locked')
+    .neq('status', 'locked')   // <-- Important: hide already paid leads
     .order('created_at', { ascending: false });
 
   return (
