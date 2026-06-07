@@ -31,30 +31,35 @@ export async function POST(req: Request) {
 
     // 2. Send Confirmation Email to Driver
     if (process.env.RESEND_API_KEY) {
-      await resend.emails.send({
-        from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
-        to: [data.email],
-        subject: 'Application Received - Man & Van Club',
-        html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: auto;">
-            <h2 style="color: #0F172A;">Application Under Review</h2>
-            <p>Hi ${data.contactName},</p>
-            <p>Thank you for applying to join the Man & Van Club mover network.</p>
-            <p>Our team manually reviews every application to ensure the highest quality for our customers. This usually takes <strong>24-48 hours</strong>.</p>
-            <p>Once approved, you will receive an email with instructions on how to access the job feed.</p>
-            <hr />
-            <p style="font-size: 12px; color: #64748B;">© 2026 Man & Van Club Ltd</p>
-          </div>
-        `
-      });
+      try {
+        await resend.emails.send({
+          from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
+          to: [data.email],
+          subject: 'Application Received - Man & Van Club',
+          html: `
+            <div style="font-family: sans-serif; max-width: 600px; margin: auto;">
+              <h2 style="color: #0F172A;">Application Under Review</h2>
+              <p>Hi ${data.contactName},</p>
+              <p>Thank you for applying to join the Man & Van Club mover network.</p>
+              <p>Our team manually reviews every application to ensure the highest quality for our customers. This usually takes <strong>24-48 hours</strong>.</p>
+              <p>Once approved, you will receive an email with instructions on how to access the job feed.</p>
+              <hr />
+              <p style="font-size: 12px; color: #64748B;">© 2026 Man & Van Club Ltd</p>
+            </div>
+          `
+        });
 
-      // 3. Optional: Send Notification to YOU (Admin)
-      await resend.emails.send({
-        from: 'System <no-reply@manandvanclub.co.uk>',
-        to: ['support@manandvanclub.co.uk'],
-        subject: `New Mover App: ${data.company_name}`,
-        text: `New driver application from ${data.contactName} (${data.companyName}). Area: ${data.coverageArea}`
-      });
+        // 3. Notification to YOU (Admin)
+        await resend.emails.send({
+          from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
+          to: ['support@manandvanclub.co.uk'],
+          subject: `New Mover App: ${data.companyName}`,
+          text: `New driver application from ${data.contactName} (${data.companyName}). Area: ${data.coverageArea}`
+        });
+      } catch (emailErr) {
+        console.error('Non-blocking Email Error:', emailErr);
+        // We don't return error here because the DB insert was successful
+      }
     }
 
     return NextResponse.json({ success: true });
