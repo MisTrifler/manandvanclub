@@ -5,12 +5,16 @@ import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
 export const dynamic = "force-dynamic";
 
-function sortByNewest<T extends { created_at?: string; applied_at?: string; id?: string }>(rows: T[]) {
+function sortByNewest<T extends { created_at?: string; applied_at?: string; id?: string | number }>(rows: T[]) {
   return [...rows].sort((a, b) => {
     const aDate = a.created_at || a.applied_at || "";
     const bDate = b.created_at || b.applied_at || "";
-    if (aDate && bDate) return new Date(bDate).getTime() - new Date(aDate).getTime();
-    return String(b.id || "").localeCompare(String(a.id || ""));
+
+    if (aDate && bDate) {
+      return new Date(bDate).getTime() - new Date(aDate).getTime();
+    }
+
+    return String(b.id ?? "").localeCompare(String(a.id ?? ""), undefined, { numeric: true });
   });
 }
 
@@ -25,12 +29,8 @@ export async function GET() {
     const supabaseAdmin = getSupabaseAdmin();
 
     const [leadsResult, driversResult] = await Promise.all([
-      supabaseAdmin
-        .from("move_requests")
-        .select("id, first_name, email, collection_postcode, delivery_postcode, move_type, is_verified, locked_by, created_at"),
-      supabaseAdmin
-        .from("driver_applications")
-        .select("id, company_name, contact_name, phone, email, coverage_area, radius, status, applied_at"),
+      supabaseAdmin.from("move_requests").select("*"),
+      supabaseAdmin.from("driver_applications").select("*"),
     ]);
 
     if (leadsResult.error || driversResult.error) {

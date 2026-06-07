@@ -14,31 +14,35 @@ import {
 
 type Lead = {
   id: string;
-  first_name: string;
-  email: string;
-  collection_postcode: string;
-  delivery_postcode: string;
-  move_type: string;
-  is_verified: boolean;
+  first_name?: string;
+  email?: string;
+  collection_postcode?: string;
+  delivery_postcode?: string;
+  move_type?: string;
+  is_verified?: boolean;
   locked_by?: string;
   created_at?: string;
 };
 
 type Driver = {
   id: string;
-  company_name: string;
-  contact_name: string;
-  phone: string;
-  email: string;
-  coverage_area: string;
-  radius: string;
-  status: string;
+  company_name?: string;
+  contact_name?: string;
+  phone?: string;
+  email?: string;
+  coverage_area?: string;
+  radius?: string;
+  status?: string;
   applied_at?: string;
 };
 
 type DashboardResponse = {
   leads: Lead[];
   drivers: Driver[];
+  details?: {
+    leads?: string | null;
+    drivers?: string | null;
+  };
 };
 
 export default function AdminPortalClient() {
@@ -68,7 +72,12 @@ export default function AdminPortalClient() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || result.message || "Failed to load admin data.");
+        const detailText = result.details
+          ? [result.details.leads, result.details.drivers].filter(Boolean).join(" | ")
+          : "";
+        throw new Error(
+          detailText ? `${result.error || "Failed to load admin data."} ${detailText}` : (result.error || result.message || "Failed to load admin data."),
+        );
       }
 
       const data = result as DashboardResponse;
@@ -121,7 +130,7 @@ export default function AdminPortalClient() {
     return leads.filter((lead) =>
       [lead.first_name, lead.email, lead.collection_postcode, lead.delivery_postcode, lead.move_type]
         .filter(Boolean)
-        .some((value) => value.toLowerCase().includes(term)),
+        .some((value) => value!.toLowerCase().includes(term)),
     );
   }, [leads, search]);
 
@@ -131,7 +140,7 @@ export default function AdminPortalClient() {
     return drivers.filter((driver) =>
       [driver.company_name, driver.email, driver.contact_name, driver.coverage_area, driver.phone]
         .filter(Boolean)
-        .some((value) => value.toLowerCase().includes(term)),
+        .some((value) => value!.toLowerCase().includes(term)),
     );
   }, [drivers, search]);
 
@@ -194,7 +203,7 @@ export default function AdminPortalClient() {
         </div>
 
         {error && (
-          <div className="p-5 bg-red-50 border-2 border-red-100 rounded-[2rem] text-red-600 font-bold text-sm">
+          <div className="p-5 bg-red-50 border-2 border-red-100 rounded-[2rem] text-red-600 font-bold text-sm break-words">
             {error}
           </div>
         )}
@@ -234,13 +243,13 @@ export default function AdminPortalClient() {
                       <tr key={lead.id} className="hover:bg-gray-50/50 transition-colors">
                         <td className="p-8">
                           <p className="font-black text-primary uppercase tracking-tight">{lead.first_name || "Unnamed"}</p>
-                          <p className="text-xs text-text-secondary font-medium break-all">{lead.email}</p>
+                          <p className="text-xs text-text-secondary font-medium break-all">{lead.email || "—"}</p>
                         </td>
                         <td className="p-8">
                           <div className="flex items-center gap-2 text-xs font-bold text-primary italic">
-                            {lead.collection_postcode} <ArrowUpRight size={12} /> {lead.delivery_postcode}
+                            {lead.collection_postcode || "—"} <ArrowUpRight size={12} /> {lead.delivery_postcode || "—"}
                           </div>
-                          <p className="text-[10px] text-text-secondary uppercase tracking-widest mt-1">{lead.move_type}</p>
+                          <p className="text-[10px] text-text-secondary uppercase tracking-widest mt-1">{lead.move_type || "—"}</p>
                         </td>
                         <td className="p-8">
                           <span
@@ -258,7 +267,7 @@ export default function AdminPortalClient() {
                     filteredDrivers.map((driver) => (
                       <tr key={driver.id} className="hover:bg-gray-50/50 transition-colors">
                         <td className="p-8">
-                          <p className="font-black text-primary uppercase tracking-tight">{driver.company_name}</p>
+                          <p className="font-black text-primary uppercase tracking-tight">{driver.company_name || "Unnamed"}</p>
                           <span
                             className={`text-[9px] font-black uppercase tracking-widest ${
                               driver.status === "approved"
@@ -268,17 +277,17 @@ export default function AdminPortalClient() {
                                   : "text-amber-500"
                             }`}
                           >
-                            {driver.status}
+                            {driver.status || "pending"}
                           </span>
                         </td>
                         <td className="p-8">
-                          <p className="text-xs font-bold text-primary">{driver.coverage_area}</p>
-                          <p className="text-[10px] text-text-secondary uppercase tracking-widest">{driver.radius}</p>
+                          <p className="text-xs font-bold text-primary">{driver.coverage_area || "—"}</p>
+                          <p className="text-[10px] text-text-secondary uppercase tracking-widest">{driver.radius || "—"}</p>
                         </td>
                         <td className="p-8 text-xs">
-                          <p className="font-bold text-primary">{driver.contact_name}</p>
-                          <p className="text-text-secondary font-medium">{driver.phone}</p>
-                          <p className="text-text-secondary font-medium break-all">{driver.email}</p>
+                          <p className="font-bold text-primary">{driver.contact_name || "—"}</p>
+                          <p className="text-text-secondary font-medium">{driver.phone || "—"}</p>
+                          <p className="text-text-secondary font-medium break-all">{driver.email || "—"}</p>
                         </td>
                         <td className="p-8">
                           {driver.status === "pending" ? (
