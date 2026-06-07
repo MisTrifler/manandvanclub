@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   CheckCircle2,
@@ -46,23 +45,12 @@ export default function HomeContent() {
 
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
-      {/* ========== HERO SECTION (10/10) ========== */}
+      {/* Hero Section */}
       <section id="quote-form" className="relative lg:min-h-[calc(100vh-80px)] flex items-center pt-4 lg:pt-0 pb-10 lg:pb-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero-mover-bg.png"
-            alt="Professional movers loading a van"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-white/85 lg:bg-white/75 backdrop-blur-[2px]" />
-        </div>
+        <div className="absolute inset-0 z-0 bg-[#F9F9F7]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-            
-            {/* Left Content */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -70,7 +58,6 @@ export default function HomeContent() {
               className="lg:w-1/2 text-left order-2 lg:order-1"
             >
               <div className="hidden lg:inline-flex items-center bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-primary/20">
-                <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse mr-2" />
                 UK's Most Trusted Removal Marketplace
               </div>
 
@@ -82,7 +69,6 @@ export default function HomeContent() {
                 Submit your move details and get introduced to a single verified local professional across the UK. Fast, fair, and exclusive.
               </p>
 
-              {/* Trust Badges */}
               <div className="hidden lg:flex flex-wrap gap-3 mb-8">
                 {[
                   { icon: <Shield size={16} />, label: "UK-Wide Network" },
@@ -110,7 +96,6 @@ export default function HomeContent() {
               </div>
             </motion.div>
 
-            {/* Quote Form */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -123,7 +108,6 @@ export default function HomeContent() {
               </div>
               <QuoteForm />
             </motion.div>
-
           </div>
         </div>
       </section>
@@ -168,7 +152,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services - No Images */}
       <section className="py-20 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-12">
@@ -180,13 +164,16 @@ export default function HomeContent() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s, i) => (
-              <Link key={i} href={s.h} className="group bg-white rounded-3xl overflow-hidden border border-border hover:shadow-xl transition-all">
-                <div className="relative aspect-[4/3]">
-                  <Image src={s.img} alt={s.t} fill unoptimized className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <Link key={i} href={s.h} className="group bg-white rounded-3xl border border-border p-8 hover:shadow-xl transition-all flex flex-col h-full">
+                <div className="mb-4 text-accent">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-2xl">
+                    {s.i}
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-black text-xl text-primary tracking-tight">{s.t}</h3>
-                  <p className="text-sm text-text-secondary mt-2">{s.d}</p>
+                <h3 className="font-black text-xl text-primary tracking-tight mb-3">{s.t}</h3>
+                <p className="text-sm text-text-secondary flex-1">{s.d}</p>
+                <div className="pt-4 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-accent transition-colors">
+                  Learn More →
                 </div>
               </Link>
             ))}
