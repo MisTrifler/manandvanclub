@@ -125,8 +125,7 @@ export default function HomeContent() {
               custom={1} 
               className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2"
             >
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-accent/5 rounded-[3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+              <div>
                 <QuoteForm />
               </div>
             </motion.div>
