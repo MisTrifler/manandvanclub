@@ -27,46 +27,30 @@ export default function QuoteForm() {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
-  const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
+  const [requestId, setRequestId] = useState<string | null>(null);
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [otpError, setOtpError] = useState<string | null>(null);
 
-  const { register, handleSubmit, watch, trigger, setValue, formState: { errors } } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      moveType: "",
+  const handleOtpChange = (index: number, value: string) => {
+    if (value.length > 1) value = value.slice(-1);
+    if (!/^\d*$/.test(value)) return;
+
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+    setOtpError(null);
+
+    // Auto-focus next
+    if (value && index < 3) {
+      const nextInput = document.getElementById(`otp-${index + 1}`);
+      nextInput?.focus();
     }
-  });
-
-  const calculateEstimate = (data: FormData) => {
-    const moveTypeBase: Record<string, [number, number]> = {
-      "Single Item": [50, 80],
-      "Furniture Collection": [60, 100],
-      "Studio Flat": [80, 130],
-      "1 Bed Flat": [100, 160],
-      "2 Bed House": [180, 280],
-      "3 Bed House": [300, 450],
-      "4+ Bed House": [500, 850],
-      "Office Move": [200, 500],
-      "Other": [100, 300]
-    };
-    const range = moveTypeBase[data.moveType] || [100, 200];
-    return { min: range[0], max: range[1] };
   };
 
-  const onNextStep = async () => {
-    let fields: (keyof FormData)[] = [];
-    if (step === 1) fields = ["collectionPostcode", "deliveryPostcode", "moveDate"];
-    if (step === 2) fields = ["moveType"];
-    if (step === 4) fields = ["firstName", "phone", "email"];
-    
-    const isValid = await trigger(fields);
-    if (isValid) {
-      if (step === 2) setEstimate(calculateEstimate(watch()));
-      if (step === 4) {
-        // CALL THE REAL API
-        handleFinalSubmit(watch());
-      } else {
-        setStep(step + 1);
-      }
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      const prevInput = document.getElementById(`otp-${index - 1}`);
+      prevInput?.focus();
     }
   };
 
@@ -79,11 +63,12 @@ export default function QuoteForm() {
         body: JSON.stringify(data),
       });
       
+      const result = await response.json();
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.details || errorData.message || 'Failed to save request');
+        throw new Error(result.details || result.message || 'Failed to save request');
       }
       
+      setRequestId(result.id);
       setStep(5); // Go to verification step
     } catch (error: any) {
       alert(`Submission Error: ${error.message}`);
@@ -93,11 +78,34 @@ export default function QuoteForm() {
   };
 
   const handleVerifyOTP = async () => {
+    const code = otp.join("");
+    if (code.length < 4) {
+      setOtpError("Please enter the full 4-digit code");
+      return;
+    }
+
     setIsSubmitting(true);
-    // In a real production app, you would verify the code via API here
-    await new Promise(r => setTimeout(r, 1500)); 
-    setIsSubmitting(false);
-    setStep(6);
+    setOtpError(null);
+    
+    try {
+      const response = await fetch('/api/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ requestId, otp: code }),
+      });
+
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.error || 'Verification failed');
+      }
+
+      setStep(6);
+    } catch (error: any) {
+      setOtpError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -242,10 +250,28 @@ export default function QuoteForm() {
             </div>
             
             <div className="flex justify-center gap-4">
-              {[1, 2, 3, 4].map(i => (
-                <input key={i} maxLength={1} className="w-16 h-24 bg-gray-50 border-3 border-border focus:border-accent rounded-[1.5rem] text-center text-4xl font-black outline-none transition-all focus:bg-white shadow-inner" />
+              {otp.map((digit, i) => (
+                <input 
+                  key={i}
+                  id={`otp-${i}`}
+                  type="text"
+                  inputMode="numeric"
+                  autoComplete="one-time-code"
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleOtpChange(i, e.target.value)}
+                  onKeyDown={(e) => handleKeyDown(i, e)}
+                  className={cn(
+                    "w-16 h-24 bg-gray-50 border-3 rounded-[1.5rem] text-center text-4xl font-black outline-none transition-all shadow-inner",
+                    otpError ? "border-red-500 bg-red-50" : "border-border focus:border-accent focus:bg-white"
+                  )} 
+                />
               ))}
             </div>
+
+            {otpError && (
+              <p className="text-red-500 text-xs font-black uppercase tracking-widest">{otpError}</p>
+            )}
 
             <div className="space-y-8">
                <button onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 text-lg shadow-2xl shadow-accent/20 transition-all hover:scale-105 active:scale-95">

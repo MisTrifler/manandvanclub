@@ -6,7 +6,10 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    // 1. Save move request to Supabase
+    // 1. Generate OTP
+    const otp = Math.floor(1000 + Math.random() * 9000).toString();
+
+    // 2. Save move request to Supabase
     const { data: request, error } = await supabase
       .from('move_requests')
       .insert([
@@ -18,7 +21,9 @@ export async function POST(req: Request) {
           delivery_postcode: data.deliveryPostcode,
           move_date: data.moveDate,
           move_type: data.moveType,
-          status: 'pending'
+          status: 'pending',
+          otp_code: otp,
+          is_verified: false
         }
       ])
       .select()
@@ -29,20 +34,83 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Database Error', details: error.message }, { status: 500 });
     }
 
-    // 2. Send Email
+    // 3. Send Email with OTP
     try {
       if (process.env.RESEND_API_KEY) {
-        console.log('Attempting to send email to:', data.email);
+        console.log('Attempting to send OTP email to:', data.email);
         
         const { data: emailResponse, error: emailError } = await resend.emails.send({
-          from: 'no-reply@manandvanclub.co.uk', // Ensure this matches your Resend verified domain
+          from: 'Man & Van Club <no-reply@manandvanclub.co.uk>',
           to: [data.email],
-          subject: 'Move Request Received - Man & Van Club',
+          subject: `${otp} is your Man & Van Club verification code`,
+          reply_to: 'support@manandvanclub.co.uk',
           html: `
-            <h1>Move Request Received</h1>
-            <p>Hi ${data.firstName},</p>
-            <p>We have received your move request for ${data.moveDate}.</p>
-            <p>Our team will be in touch shortly.</p>
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Verify your move</title>
+            </head>
+            <body style="margin: 0; padding: 0; background-color: #F9F9F7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F9F9F7; padding: 40px 20px;">
+                <tr>
+                  <td align="center">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #E2E8F0;">
+                      <!-- Header -->
+                      <tr>
+                        <td style="padding: 40px 40px 20px 40px; text-align: center;">
+                          <div style="background-color: #0F172A; display: inline-block; padding: 12px 20px; border-radius: 12px; margin-bottom: 24px;">
+                            <span style="color: #ffffff; font-weight: 900; font-size: 24px; letter-spacing: -1px;">M&V</span>
+                          </div>
+                          <h1 style="margin: 0; color: #0F172A; font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px;">Verify Your Move</h1>
+                        </td>
+                      </tr>
+                      
+                      <!-- Body -->
+                      <tr>
+                        <td style="padding: 0 40px 40px 40px; text-align: center;">
+                          <p style="margin: 0 0 24px 0; color: #475569; font-size: 18px; line-height: 1.6; font-weight: 500;">
+                            Hi ${data.firstName},<br>
+                            To protect your move request and ensure exclusive matching, please enter the following 4-digit code:
+                          </p>
+                          
+                          <div style="background-color: #F8FAFC; border: 2px dashed #E2E8F0; border-radius: 16px; padding: 32px; margin-bottom: 32px;">
+                            <span style="color: #F97316; font-size: 56px; font-weight: 900; letter-spacing: 12px; font-family: 'Courier New', Courier, monospace;">${otp}</span>
+                          </div>
+                          
+                          <p style="margin: 0 0 32px 0; color: #64748B; font-size: 14px; line-height: 1.6;">
+                            This code is for your move from <strong>${data.collectionPostcode}</strong> to <strong>${data.deliveryPostcode}</strong> on ${data.moveDate}.
+                          </p>
+                          
+                          <div style="border-top: 1px solid #E2E8F0; padding-top: 32px;">
+                            <p style="margin: 0; color: #94A3B8; font-size: 12px; line-height: 1.6; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+                              Verified Mover Network &bull; Secure Connection
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <!-- Footer -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px;">
+                      <tr>
+                        <td style="padding: 32px; text-align: center;">
+                          <p style="margin: 0 0 8px 0; color: #94A3B8; font-size: 12px; font-weight: 600;">
+                            &copy; 2026 Man & Van Club Ltd. All rights reserved.
+                          </p>
+                          <p style="margin: 0; color: #CBD5E1; font-size: 11px;">
+                            You received this email because a move request was started with this address. 
+                            If you didn't request this, you can ignore this email.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </body>
+            </html>
           `,
         });
 
