@@ -5,15 +5,10 @@ import Link from "next/link";
 import {
   CheckCircle2,
   ArrowUpRight,
-  Mail,
-  MapPin,
-  Clock,
-  Phone,
   Star,
   Shield,
   ShieldCheck,
   Zap,
-  ChevronRight
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import { motion } from "framer-motion";
@@ -51,8 +46,8 @@ export default function HomeContent() {
 
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
-      {/* Hero Section */}
-      <section id="quote-form" className="relative lg:min-h-[calc(100vh-80px)] flex items-center pt-4 lg:pt-0 pb-6 lg:pb-12 overflow-hidden">
+      {/* ========== HERO SECTION (10/10) ========== */}
+      <section id="quote-form" className="relative lg:min-h-[calc(100vh-80px)] flex items-center pt-4 lg:pt-0 pb-10 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero-mover-bg.png"
@@ -61,57 +56,61 @@ export default function HomeContent() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-white/80 lg:bg-white/70 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-white/85 lg:bg-white/75 backdrop-blur-[2px]" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            
+            {/* Left Content */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
               animate="visible"
               className="lg:w-1/2 text-left order-2 lg:order-1"
             >
-              <div className="hidden lg:inline-flex items-center bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-4 border border-primary/20">
+              <div className="hidden lg:inline-flex items-center bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-primary/20">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse mr-2" />
-                UK's Trusted Removal Marketplace
+                UK's Most Trusted Removal Marketplace
               </div>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 lg:mb-5 leading-[0.95] text-primary tracking-tighter uppercase">
-                Your Move. One Vetted Mover. <span className="text-accent italic">Exclusively Yours.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-5 leading-[0.95] text-primary tracking-tighter">
+                Get Matched with One Trusted Local Mover.<br />No Spam. No Bidding Wars.
               </h1>
 
-              <p className="text-base lg:text-lg text-text-secondary mb-6 lg:mb-8 max-w-lg font-medium leading-relaxed">
-                Submit your move details and get introduced to a single verified local professional across the UK. No bidding wars, no spam calls.
+              <p className="text-lg lg:text-xl text-text-secondary mb-6 max-w-xl font-medium leading-relaxed">
+                Submit your move details and get introduced to a single verified local professional across the UK. Fast, fair, and exclusive.
               </p>
 
-              <div className="hidden lg:grid grid-cols-2 gap-3 mb-8">
+              {/* Trust Badges */}
+              <div className="hidden lg:flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: <Shield size={18} />, label: "UK-Wide Network" },
-                  { icon: <Zap size={18} />, label: "1-to-1 Match" },
-                  { icon: <ShieldCheck size={18} />, label: "Vetted Movers" },
-                  { icon: <Star size={18} />, label: "5-Star Rated" },
+                  { icon: <Shield size={16} />, label: "UK-Wide Network" },
+                  { icon: <Zap size={16} />, label: "1-to-1 Exclusive Match" },
+                  { icon: <ShieldCheck size={16} />, label: "Vetted & Insured Movers" },
+                  { icon: <Star size={16} />, label: "5-Star Rated Service" },
                 ].map((badge, index) => (
-                  <div key={index} className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-2.5 border border-border shadow-sm">
+                  <div key={index} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-border px-4 py-2 rounded-full text-sm font-bold text-primary/80">
                     <span className="text-accent">{badge.icon}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-primary/70">{badge.label}</span>
+                    {badge.label}
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-6 lg:gap-10">
-                <div className="space-y-0">
-                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter uppercase leading-none">UK-Wide</div>
-                  <div className="text-[8px] font-black uppercase tracking-widest text-primary/30">Nationwide Coverage</div>
+              <div className="flex items-center gap-6 text-sm">
+                <div>
+                  <div className="font-black text-primary text-2xl tracking-tighter">UK-WIDE</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Coverage</div>
                 </div>
-                <div className="h-10 w-px bg-border hidden sm:block" />
-                <div className="space-y-0">
-                  <div className="text-2xl lg:text-3xl font-black text-primary tracking-tighter uppercase leading-none">VERIFIED</div>
-                  <div className="text-[8px] font-black uppercase tracking-widest text-primary/30">ID-Checked</div>
+                <div className="h-8 w-px bg-border" />
+                <div>
+                  <div className="font-black text-primary text-2xl tracking-tighter">60 SECONDS</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">To Get Matched</div>
                 </div>
               </div>
             </motion.div>
 
+            {/* Quote Form */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -119,76 +118,75 @@ export default function HomeContent() {
               custom={1}
               className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2"
             >
-              <div>
-                <QuoteForm />
+              <div className="mb-3 text-center lg:text-left">
+                <p className="text-[11px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than 60 seconds • No payment required</p>
               </div>
+              <QuoteForm />
             </motion.div>
+
           </div>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-primary py-10 lg:py-14 border-y border-white/5 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 text-center items-center">
-            {[
-              { v: "UK-WIDE", l: "Coverage across England, Scotland & Wales" },
-              { v: "60 SECONDS", l: "Average time to submit move request" },
-              { v: "1-TO-1", l: "Exclusive match — only one mover sees you" },
-            ].map((stat, i) => (
-              <div key={i} className="space-y-2 group">
-                <div className="text-3xl lg:text-4xl font-black text-accent tracking-tighter group-hover:scale-105 transition-transform duration-500">{stat.v}</div>
-                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white/30 max-w-[200px] mx-auto leading-relaxed">{stat.l}</p>
-              </div>
-            ))}
+      <section className="bg-primary py-10 lg:py-14 border-y border-white/5">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center text-white">
+            <div>
+              <div className="text-4xl font-black tracking-tighter text-accent">UK-WIDE</div>
+              <p className="text-sm text-white/60 mt-1">Coverage across England, Scotland & Wales</p>
+            </div>
+            <div className="border-y md:border-y-0 md:border-x border-white/20 py-8 md:py-0">
+              <div className="text-4xl font-black tracking-tighter text-accent">60 SECONDS</div>
+              <p className="text-sm text-white/60 mt-1">Average time to submit your request</p>
+            </div>
+            <div>
+              <div className="text-4xl font-black tracking-tighter text-accent">1-TO-1</div>
+              <p className="text-sm text-white/60 mt-1">Exclusive match — only one mover sees you</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-[#F9F9F7] border-y border-border">
-        <div className="container mx-auto px-4">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter leading-tight">How It Works</h2>
-            <p className="text-lg text-text-secondary font-medium mt-4">From request to mover in minutes. No phone calls required.</p>
-          </motion.div>
+      <section className="py-20 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
+            <p className="text-text-secondary mt-3">Simple. Fair. Exclusive.</p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {STEPS.map((step, i) => (
-              <div key={i} className="relative flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-lg">{i + 1}</div>
-                <h3 className="font-black text-primary uppercase tracking-tight text-sm mb-2">{step.t}</h3>
-                <p className="text-text-secondary text-xs font-medium">{step.d}</p>
+              <div key={i} className="text-center">
+                <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center font-black text-xl mx-auto mb-5 shadow-lg">{i + 1}</div>
+                <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-2">{step.t}</h3>
+                <p className="text-text-secondary text-sm">{step.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-white">
+      {/* Services */}
+      <section className="py-20 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+          <div className="flex justify-between items-end mb-12">
             <div>
-              <div className="inline-block bg-primary/5 text-primary/40 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-4">Our Services</div>
-              <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter leading-none">Smart Solutions For Every Move</h2>
+              <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Smart Solutions For Every Move</h2>
             </div>
-            <Link href="/areas" className="text-accent font-black uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all">View all areas <ArrowUpRight size={16} /></Link>
+            <Link href="/areas" className="text-accent font-black text-sm flex items-center gap-1 hover:gap-2 transition-all">View all areas <ArrowUpRight size={16} /></Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s, i) => (
-              <Link key={i} href={s.h} className="group bg-[#F9F9F7] rounded-[2.5rem] overflow-hidden border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image src={s.img} alt={s.t} fill unoptimized className="object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  <div className="absolute top-5 left-5 bg-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl shadow-lg group-hover:bg-accent group-hover:text-white transition-colors">{s.i}</div>
+              <Link key={i} href={s.h} className="group bg-white rounded-3xl overflow-hidden border border-border hover:shadow-xl transition-all">
+                <div className="relative aspect-[4/3]">
+                  <Image src={s.img} alt={s.t} fill unoptimized className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
-                <div className="p-6 space-y-3 flex flex-col flex-1">
-                  <h3 className="font-black text-lg text-primary uppercase tracking-tight">{s.t}</h3>
-                  <p className="text-text-secondary text-sm font-medium leading-relaxed flex-1">{s.d}</p>
-                  <div className="pt-2 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-accent transition-colors">
-                    Learn More <ArrowUpRight size={14} />
-                  </div>
+                <div className="p-6">
+                  <h3 className="font-black text-xl text-primary tracking-tight">{s.t}</h3>
+                  <p className="text-sm text-text-secondary mt-2">{s.d}</p>
                 </div>
               </Link>
             ))}
@@ -197,63 +195,38 @@ export default function HomeContent() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-[#F9F9F7] border-y border-border/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 space-y-4">
-            <div className="inline-block bg-primary/5 text-primary/40 px-4 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.4em]">Testimonials</div>
-            <h2 className="text-4xl md:text-6xl font-black text-primary uppercase tracking-tighter">What Customers Say</h2>
+      <section className="py-20 bg-white border-y border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">What Our Customers Say</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((r, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-10 lg:p-12 rounded-[3rem] border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="flex gap-1 text-accent mb-6">
+              <div key={i} className="bg-[#F9F9F7] p-8 rounded-3xl border border-border">
+                <div className="flex text-accent mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <p className="text-lg text-primary/80 font-medium italic leading-relaxed">"{r.quote}"</p>
-                <div className="pt-6 mt-6 border-t border-border/50">
-                  <p className="font-black text-primary uppercase tracking-tighter">{r.name}</p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/30">{r.city}</p>
+                <p className="text-primary/80 italic">"{r.quote}"</p>
+                <div className="mt-6 pt-4 border-t border-border/60 text-sm">
+                  <span className="font-black">{r.name}</span> — {r.city}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Driver CTA */}
-      <section className="py-20 bg-primary text-white overflow-hidden relative">
+      {/* Final CTA */}
+      <section className="py-20 bg-primary text-white text-center">
         <div className="container mx-auto px-4">
-          <div className="bg-white/5 rounded-[4rem] p-12 lg:p-20 border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden">
-            <div className="lg:w-2/3 text-left space-y-8 relative z-10">
-              <div className="inline-block bg-white/10 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">Professional Network</div>
-              <h2 className="text-5xl md:text-6xl font-black leading-[0.9] tracking-tighter uppercase">Are You A Mover?</h2>
-              <p className="text-xl text-gray-300 max-w-xl font-medium">Join the UK's leading exclusive introduction marketplace. Get direct access to verified move requests.</p>
-              <Link href="/for-businesses" className="btn-orange text-base px-10 py-5 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/40 inline-flex items-center gap-3 hover:scale-105 transition-all">
-                Join as a Driver <ArrowUpRight size={20} />
-              </Link>
-            </div>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">Ready to Get Matched?</h2>
+          <p className="text-xl text-white/70 mb-8 max-w-md mx-auto">It takes less than 60 seconds to find your local mover.</p>
+          <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3">
+            Start Your Move <ArrowUpRight size={20} />
+          </Link>
         </div>
       </section>
-
-      {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-[100] lg:hidden bg-white/80 backdrop-blur-xl border-t border-border shadow-[0_-10px_40px_rgba(0,0,0,0.1)] px-4 py-4 flex gap-4">
-        <Link href="#quote-form" className="flex-1 btn-orange py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] text-center flex items-center justify-center gap-2 shadow-xl shadow-accent/20">
-          <Zap size={16} fill="currentColor" /> Get a Quote
-        </Link>
-        <a href="tel:07943617386" className="flex-1 bg-primary text-white py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] text-center flex items-center justify-center gap-2 shadow-xl shadow-black/20">
-          <Phone size={16} fill="currentColor" /> Call Us
-        </a>
-      </div>
-      <div className="h-24 lg:hidden" />
     </div>
   );
 }
