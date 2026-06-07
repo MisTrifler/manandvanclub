@@ -18,10 +18,6 @@ import {
 import QuoteForm from "@/components/QuoteForm";
 import { motion } from "framer-motion";
 
-function cn(...inputs: string[]) {
-  return inputs.filter(Boolean).join(" ");
-}
-
 export default function HomeContent() {
 
   const cities = [
@@ -59,28 +55,28 @@ export default function HomeContent() {
       d: "Moving your whole home to a new address", 
       i: "🏠", 
       h: "/house-removals", 
-      img: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?q=80&w=800&auto=format&fit=crop" 
     },
     { 
       t: "Flat Moves", 
       d: "Specialist flat and apartment moving", 
       i: "🏢", 
       h: "/flat-removals", 
-      img: "https://images.unsplash.com/photo-1599423300746-b62533397364?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=800&auto=format&fit=crop" 
     },
     { 
       t: "Student Moves", 
       d: "Affordable moves to and from university", 
       i: "🎓", 
       h: "/student-removals", 
-      img: "https://images.unsplash.com/photo-1541339907198-e08759dfc3ef?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" 
     },
     { 
       t: "Office Relocations", 
       d: "Desks, equipment and everything in between", 
       i: "💼", 
       h: "/office-removals", 
-      img: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" 
     },
     { 
       t: "Furniture Collection", 
@@ -94,7 +90,7 @@ export default function HomeContent() {
       d: "We collect so you don't have to", 
       i: "📱", 
       h: "/facebook-marketplace-collection", 
-      img: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" 
     },
     { 
       t: "Long Distance Moves", 
@@ -108,7 +104,7 @@ export default function HomeContent() {
       d: "Need it moved today? We can help", 
       i: "⚡", 
       h: "/same-day-man-and-van", 
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" 
+      img: "https://images.unsplash.com/photo-1600518464441-9154a4da21b5?q=80&w=800&auto=format&fit=crop" 
     },
   ];
 
@@ -125,12 +121,14 @@ export default function HomeContent() {
     <div className="flex flex-col w-full">
       {/* ── Hero Section ─────────────────────────────────────────────────── */}
       <section id="quote-form" className="relative min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-100px)] flex items-center pt-4 lg:pt-0 pb-8 bg-white overflow-hidden">
+        {/* Background Accents */}
         <div className="absolute top-0 right-0 w-full h-full z-0 pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] w-[75%] h-[120%] bg-[#F9F9F7] rounded-l-[300px] transform rotate-2 shadow-2xl shadow-gray-100" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16">
+            {/* Left — Copy */}
             <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:w-1/2 text-left order-2 lg:order-1">
               <div className="hidden lg:inline-flex items-center bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-4 border border-accent/20">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full animate-ping mr-2" />
@@ -175,6 +173,7 @@ export default function HomeContent() {
               </div>
             </motion.div>
 
+            {/* Right — Quote Form */}
             <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={2} className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2">
               <QuoteForm />
             </motion.div>
@@ -239,6 +238,9 @@ export default function HomeContent() {
                 <div className="p-6 space-y-3 flex flex-col flex-1">
                   <h3 className="font-black text-lg text-primary uppercase tracking-tight">{s.t}</h3>
                   <p className="text-text-secondary text-sm font-medium flex-1">{s.d}</p>
+                  <div className="pt-2 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-accent transition-colors">
+                    Learn More <ArrowUpRight size={14} />
+                  </div>
                 </div>
               </Link>
             ))}
