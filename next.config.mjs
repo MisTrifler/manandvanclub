@@ -1,5 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      },
+    ],
+  },
   async redirects() {
     return [
       {
@@ -22,7 +35,6 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
-      // Generic catch-all for any other cleaning related pages if necessary
     ];
   },
 };

@@ -5,19 +5,25 @@ export default function Terms() {
     <div className="bg-white min-h-screen py-20">
       <div className="container mx-auto px-4 max-w-4xl prose prose-slate">
         <h1>Terms & Conditions</h1>
-        <p className="lead">Last Updated: June 5, 2026</p>
+        <p className="lead">Last Updated: June 6, 2026</p>
         
         <h2>1. For Customers</h2>
-        <p>Man & Van Club is a comparison platform. We are not a removal company and do not provide moving services directly. When you book a mover through our platform, your contract is directly with the mover, not Man & Van Club.</p>
+        <p>Man & Van Club is an exclusive customer introduction marketplace. We are not a removals company and do not provide moving services directly. Our platform connects customers with independent local movers.</p>
         
-        <h2>2. Quote Estimates</h2>
-        <p>The instant estimate shown on our website is for guidance only. Final quotes provided by individual movers may vary based on specific job requirements.</p>
+        <h2>2. Our Process</h2>
+        <ol>
+           <li>Customer submits a move request.</li>
+           <li>Man & Van Club verifies the request (including email/phone validation).</li>
+           <li>The request is made available to a limited number of local movers in our network.</li>
+           <li>The first mover to purchase the introduction receives exclusive access to the customer details.</li>
+           <li>The matched mover contacts the customer directly to provide a service.</li>
+        </ol>
 
-        <h2>3. For Businesses (Drivers)</h2>
-        <p>Movers must be fully insured for Goods in Transit and Public Liability. Lead fees are non-refundable unless the customer provided invalid contact details.</p>
+        <h2>3. For Businesses (Movers)</h2>
+        <p>Movers must be fully insured and verified before accessing the marketplace. Introduction fees are non-refundable unless the customer details provided are invalid.</p>
 
-        <h2>4. Lead Marketplace Fees</h2>
-        <p>Leads are charged at a flat rate based on the move type (Small: £8, Medium: £15, Large: £25, Long Distance: £35). Fees are deducted from the driver's account balance upon lead acceptance.</p>
+        <h2>4. Exclusive Introduction Fees</h2>
+        <p>Introductions are charged at a fixed rate based on the estimated move value. Fees are deducted from the driver's account balance upon unlocking a job.</p>
 
         <div className="mt-12 pt-8 border-t border-border">
           <Link href="/" className="btn-outline">Back to Home</Link>

@@ -1,32 +1,44 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
-import { CheckCircle2, TrendingUp, Map, ShieldCheck, Wallet } from "lucide-react";
+import { CheckCircle2, TrendingUp, Map, ShieldCheck, Wallet, ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ForBusinesses() {
   const leadFees = [
-    { type: '£0–£100 Move Value', items: 'Customer Introduction Fee', fee: '£7' },
-    { type: '£101–£200 Move Value', items: 'Customer Introduction Fee', fee: '£14' },
-    { type: '£201–£300 Move Value', items: 'Customer Introduction Fee', fee: '£28' },
-    { type: '£301–£500 Move Value', items: 'Customer Introduction Fee', fee: '£50' },
-    { type: '£501+ Move Value', items: 'Customer Introduction Fee', fee: '£89' },
-/* old data
-    { type: "Small move", items: "1–2 items / single room", fee: "£8" },
-    { type: "Medium move", items: "1–2 bedroom flat or house", fee: "£15" },
-    { type: "Large move", items: "3+ bedrooms", fee: "£25" },
-    { type: "Long distance", items: "50+ miles", fee: "£35" },
-  */
+    { type: '£50–£60 Move Value', items: 'Exclusive introduction', fee: '£2.99' },
+    { type: '£61–£100 Move Value', items: 'Exclusive introduction', fee: '£5.99' },
+    { type: '£101–£200 Move Value', items: 'Exclusive introduction', fee: '£9.99' },
+    { type: '£201–£300 Move Value', items: 'Exclusive introduction', fee: '£17.99' },
+    { type: '£301–£400 Move Value', items: 'Exclusive introduction', fee: '£26.99' },
+    { type: '£401–£500 Move Value', items: 'Exclusive introduction', fee: '£35.99' },
+    { type: '£501–£600 Move Value', items: 'Exclusive introduction', fee: '£44.99' },
+    { type: '£601–£700 Move Value', items: 'Exclusive introduction', fee: '£53.99' },
+    { type: '£701–£800 Move Value', items: 'Exclusive introduction', fee: '£62.99' },
+    { type: '£801–£900 Move Value', items: 'Exclusive introduction', fee: '£71.99' },
+    { type: '£1000+ Move Value', items: 'Exclusive introduction', fee: '£90.99' },
   ];
 
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-[#F9F9F7] min-h-screen">
       {/* Hero */}
-      <section className="bg-primary text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Get More Moving Jobs</h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just exclusive customer introductions.
+      <section className="bg-primary text-white py-32 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+           <div className="absolute inset-0 grid grid-cols-6 gap-4">
+              {[...Array(24)].map((_, i) => <div key={i} className="border border-white/20 h-32 w-full" />)}
+           </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="lg:w-1/2 space-y-8"
+            >
+              <div className="inline-block bg-accent/20 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">Mover Network</div>
+              <h1 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">Grow Your <span className="text-accent italic">Moving</span> Business</h1>
+              <p className="text-xl text-gray-300 mb-10 max-w-xl font-medium leading-relaxed">
+                Join hundreds of man & van drivers earning more with Man & Van Club. No monthly contracts, just quality job enquiries.
               </p>
               <div className="space-y-4">
                 {[
@@ -36,44 +48,51 @@ export default function ForBusinesses() {
                   "Control your service area and job types",
                   "Build a verified review profile"
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle2 size={20} className="text-accent" />
-                    <span className="font-medium">{item}</span>
+                  <div key={item} className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
+                    <CheckCircle2 size={24} className="text-accent" />
+                    <span className="font-bold text-sm uppercase tracking-widest">{item}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Signup Form */}
-            <div className="lg:w-1/2 w-full max-w-lg bg-white p-8 rounded-2xl shadow-xl text-text-primary">
-              <h2 className="text-2xl font-bold mb-6">Apply to Join</h2>
-              <form className="space-y-4">
-                <div className="space-y-1">
-                  <label className="text-sm font-semibold">Company Name / Trading Name</label>
-                  <input className="w-full p-3 border border-border rounded-md" placeholder="e.g. Swift Moves Ltd" required />
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:w-1/2 w-full max-w-xl bg-white p-10 md:p-14 rounded-[3rem] shadow-2xl text-text-primary relative overflow-hidden"
+              id="signup"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-5 rounded-full -mr-16 -mt-16" />
+              <h2 className="text-3xl font-black mb-8 uppercase tracking-tight text-primary">Apply to Join</h2>
+              <form className="space-y-6">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Company Name</label>
+                  <input className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl outline-none font-bold transition-all" placeholder="e.g. Swift Moves Ltd" required />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <label className="text-sm font-semibold">Contact Name</label>
-                    <input className="w-full p-3 border border-border rounded-md" required />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Contact Name</label>
+                    <input className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl outline-none font-bold transition-all" required />
                   </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-semibold">Mobile Number</label>
-                    <input className="w-full p-3 border border-border rounded-md" required />
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Mobile Number</label>
+                    <input className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl outline-none font-bold transition-all" required />
                   </div>
                 </div>
-                <div className="space-y-1">
-                  <label className="text-sm font-semibold">Email Address</label>
-                  <input type="email" className="w-full p-3 border border-border rounded-md" required />
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Email Address</label>
+                  <input type="email" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl outline-none font-bold transition-all" required />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <label className="text-sm font-semibold">Coverage Area</label>
-                    <input className="w-full p-3 border border-border rounded-md" placeholder="e.g. Manchester" required />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Coverage Area</label>
+                    <input className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl outline-none font-bold transition-all" placeholder="e.g. Manchester" required />
                   </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-semibold">Radius (miles)</label>
-                    <select className="w-full p-3 border border-border rounded-md bg-white">
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Radius</label>
+                    <select className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-xl outline-none font-bold transition-all">
                       <option>10 miles</option>
                       <option>25 miles</option>
                       <option>50 miles</option>
@@ -81,78 +100,67 @@ export default function ForBusinesses() {
                     </select>
                   </div>
                 </div>
-                <div className="space-y-1">
-                  <label className="text-sm font-semibold">Vehicle Type</label>
-                  <select className="w-full p-3 border border-border rounded-md bg-white">
-                    <option>Transit Van</option>
-                    <option>Luton Van</option>
-                    <option>Luton with Tail Lift</option>
-                    <option>Multiple Vehicles</option>
-                  </select>
+                <div className="flex items-start gap-3 pt-2">
+                  <input type="checkbox" className="mt-1 accent-accent h-4 w-4 cursor-pointer" required />
+                  <span className="text-[10px] font-bold text-text-secondary leading-normal uppercase tracking-wider select-none">I confirm I am fully insured for goods in transit and public liability.</span>
                 </div>
-                <div className="flex items-start gap-2 pt-2">
-                  <input type="checkbox" className="mt-1" required />
-                  <span className="text-xs text-text-secondary">I confirm I am fully insured for goods in transit and public liability.</span>
-                </div>
-                <button type="submit" className="btn-orange w-full py-4 text-lg">Apply to Join →</button>
+                <button type="submit" className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-accent/20 transition-all hover:scale-[1.02] active:scale-95">Apply to Join →</button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Pricing Table Section - Restricted to Logged In / Verified */}
-      <section className="py-24 bg-white border-t border-border">
+      <section className="py-32 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="bg-gray-50 border-2 border-dashed border-border rounded-3xl p-12">
-            <ShieldCheck size={48} className="text-accent mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-4 text-primary">View Driver Pricing</h2>
-            <p className="text-text-secondary mb-8 max-w-md mx-auto leading-relaxed">
-              To protect the marketplace and ensure quality, driver pay-per-job rates are only visible to verified professional moving companies.
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#F9F9F7] border-2 border-dashed border-border rounded-[3rem] p-16 md:p-24 shadow-inner"
+          >
+            <ShieldCheck size={64} className="text-accent mx-auto mb-8" />
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-primary uppercase tracking-tighter leading-none">View Driver Pricing</h2>
+            <p className="text-xl text-text-secondary mb-12 max-w-md mx-auto leading-relaxed font-medium">
+              To protect the network and ensure quality, driver pay-per-job rates are only visible to verified professional moving companies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#signup" className="btn-orange px-10 py-4 font-black uppercase tracking-wider">Apply to Join</Link>
-              <Link href="/login" className="btn-outline px-10 py-4 font-black uppercase tracking-wider">Driver Login</Link>
+              <Link href="#signup" className="btn-orange px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-accent/20 transition-all">Apply to Join</Link>
+              <Link href="/login" className="bg-primary text-white hover:bg-accent px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-black/10 transition-all">Driver Login</Link>
             </div>
-            <p className="mt-6 text-xs text-text-secondary font-medium italic">
-              Verification usually takes less than 24 hours.
+            <p className="mt-10 text-[10px] text-text-secondary font-black uppercase tracking-[0.3em] opacity-40">
+              * Verification usually takes less than 24 hours.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-24 bg-background">
+      <section className="py-32 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="card text-center space-y-4">
-              <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto text-accent">
-                <TrendingUp size={32} />
-              </div>
-              <h3 className="font-bold text-xl">Grow Fast</h3>
-              <p className="text-sm text-text-secondary">Access a steady stream of new customers looking for moves in your area today.</p>
-            </div>
-            <div className="card text-center space-y-4">
-              <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto text-accent">
-                <Wallet size={32} />
-              </div>
-              <h3 className="font-bold text-xl">Pay Per Lead</h3>
-              <p className="text-sm text-text-secondary">Stop wasting money on marketing. Only pay when you actually get the customer's details.</p>
-            </div>
-            <div className="card text-center space-y-4">
-              <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto text-accent">
-                <Map size={32} />
-              </div>
-              <h3 className="font-bold text-xl">Full Control</h3>
-              <p className="text-sm text-text-secondary">Choose exactly where you work and the types of jobs you want to accept.</p>
-            </div>
-            <div className="card text-center space-y-4">
-              <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto text-accent">
-                <ShieldCheck size={32} />
-              </div>
-              <h3 className="font-bold text-xl">Verified Reputation</h3>
-              <p className="text-sm text-text-secondary">Every review you collect stays with your profile, helping you win more jobs over time.</p>
-            </div>
+            {[
+              { t: "Grow Fast", d: "Access a stream of active move requests in your service area today.", i: <TrendingUp /> },
+              { t: "Exclusive Access", d: "Stop bidding against multiple companies. Once you unlock a customer, they are yours exclusively.", i: <Wallet /> },
+              { t: "Full Control", d: "Choose exactly where you work and the types of jobs you want to accept.", i: <Map /> },
+              { t: "Verified Status", d: "Build your professional reputation within our exclusive logistics network.", i: <ShieldCheck /> },
+            ].map((item, i) => (
+              <motion.div 
+                key={item.t} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-12 rounded-[2.5rem] text-center space-y-6 border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 group"
+              >
+                <div className="bg-[#F9F9F7] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto text-accent group-hover:bg-accent group-hover:text-white transition-colors shadow-lg shadow-black/5">
+                  {item.i}
+                </div>
+                <h3 className="font-black text-xl text-primary uppercase tracking-tight">{item.t}</h3>
+                <p className="text-sm text-text-secondary font-medium leading-relaxed">{item.d}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

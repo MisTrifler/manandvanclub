@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
         </ul>
 
         <h2>2. How We Use Your Data</h2>
-        <p>We use your data primarily to match you with local moving companies. By submitting a quote request, you agree that we may share your details with up to 5 vetted local movers so they can provide you with accurate quotes.</p>
+        <p>We use your data primarily to match you with a local moving company. By submitting a move request, you agree that we may share your details with ONE vetted local mover who has exclusively purchased the introduction to your request.</p>
 
         <h2>3. Data Retention</h2>
         <p>We store your data securely and only for as long as necessary to fulfill the purpose of your request or as required by UK law.</p>

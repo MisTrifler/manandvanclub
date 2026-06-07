@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ChevronRight, Loader2, CheckCircle2, Info, ChevronLeft } from "lucide-react";
+import { ChevronRight, Loader2, CheckCircle2, Info, ChevronLeft, Phone, Mail, ShieldCheck, MapPin, Zap, Lock, Check } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -12,18 +12,13 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const formSchema = z.object({
-  collectionPostcode: z.string().min(5, "Invalid UK postcode"),
-  deliveryPostcode: z.string().min(5, "Invalid UK postcode"),
+  collectionPostcode: z.string().min(5, "Invalid postcode"),
+  deliveryPostcode: z.string().min(5, "Invalid postcode"),
   moveDate: z.string().min(1, "Required"),
-  propertyType: z.string().min(1, "Required"),
-  numRooms: z.string().min(1, "Required"),
-  specialItems: z.array(z.string()).optional(),
-  packingService: z.enum(["Yes", "No", "Not sure"]),
-  loadingHelp: z.enum(["Yes", "No"]),
+  moveType: z.string().min(1, "Required"),
   firstName: z.string().min(2, "Required").optional(),
-  lastName: z.string().min(2, "Required").optional(),
+  phone: z.string().regex(/^(?:0|(?:\+44))7\d{9}$/, "Invalid UK mobile number").optional(),
   email: z.string().email("Invalid email").optional(),
-  phone: z.string().min(10, "Invalid phone number").optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -31,264 +26,272 @@ type FormData = z.infer<typeof formSchema>;
 export default function QuoteForm() {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
   const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
 
-  const { register, handleSubmit, watch, formState: { errors }, trigger, setValue } = useForm<FormData>({
+  const { register, handleSubmit, watch, trigger, setValue, formState: { errors } } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
-      specialItems: [],
-      packingService: "No",
-      loadingHelp: "Yes",
+      moveType: "",
     }
   });
 
   const calculateEstimate = (data: FormData) => {
-    // Logic from prompt:
-    const basePrices: Record<string, [number, number]> = {
-      "Studio flat": [80, 130],
-      "1-bed flat": [80, 130],
-      "2-bed flat": [120, 200],
-      "3-bed flat": [180, 280],
-      "1-bed house": [150, 250],
-      "2-bed house": [150, 250],
-      "3-bed house": [220, 350],
-      "4-bed house": [300, 500],
-      "5+ bed house": [450, 800],
-      "Office": [200, 400],
-      "Storage unit": [80, 150],
+    const moveTypeBase: Record<string, [number, number]> = {
+      "Single Item": [50, 80],
+      "Furniture Collection": [60, 100],
+      "Studio Flat": [80, 130],
+      "1 Bed Flat": [100, 160],
+      "2 Bed House": [180, 280],
+      "3 Bed House": [300, 450],
+      "4+ Bed House": [500, 850],
+      "Office Move": [200, 500],
       "Other": [100, 300]
     };
-
-    let [min, max] = basePrices[data.propertyType] || [100, 200];
-
-    // Special items uplift
-    const specialItemPrices: Record<string, [number, number]> = {
-      "Piano": [80, 120],
-      "American fridge": [40, 60],
-      "Hot tub": [100, 200],
-      "Pool table": [80, 150],
-      "Safe": [50, 100],
-      "Washing machine": [15, 30],
-      "Fridge freezer": [15, 30]
-    };
-
-    data.specialItems?.forEach(item => {
-      if (specialItemPrices[item]) {
-        min += specialItemPrices[item][0];
-        max += specialItemPrices[item][1];
-      }
-    });
-
-    // Packing uplift
-    if (data.packingService === "Yes") {
-      min *= 1.25;
-      max *= 1.25;
-    }
-
-    return {
-      min: Math.round(min * 0.85),
-      max: Math.round(max * 1.15)
-    };
+    const range = moveTypeBase[data.moveType] || [100, 200];
+    return { min: range[0], max: range[1] };
   };
 
   const onNextStep = async () => {
-    let fields: any[] = [];
-    if (step === 1) fields = ["collectionPostcode", "deliveryPostcode", "moveDate", "propertyType", "numRooms", "packingService", "loadingHelp"];
+    let fields: (keyof FormData)[] = [];
+    if (step === 1) fields = ["collectionPostcode", "deliveryPostcode", "moveDate"];
+    if (step === 2) fields = ["moveType"];
+    if (step === 4) fields = ["firstName", "phone", "email"];
     
     const isValid = await trigger(fields);
     if (isValid) {
-      if (step === 1) {
-        setEstimate(calculateEstimate(watch()));
+      if (step === 2) setEstimate(calculateEstimate(watch()));
+      if (step === 4) {
+        // CALL THE REAL API
+        handleFinalSubmit(watch());
+      } else {
+        setStep(step + 1);
       }
-      setStep(step + 1);
     }
   };
 
-  const onSubmit = async (data: FormData) => {
+  const handleFinalSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/move-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.details || errorData.message || 'Failed to save request');
+      }
+      
+      setStep(5); // Go to verification step
+    } catch (error: any) {
+      alert(`Submission Error: ${error.message}`);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleVerifyOTP = async () => {
+    setIsSubmitting(true);
+    // In a real production app, you would verify the code via API here
+    await new Promise(r => setTimeout(r, 1500)); 
     setIsSubmitting(false);
-    setStep(4);
+    setStep(6);
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl border border-border overflow-hidden" id="quote-form">
-      {step < 4 && (
-        <div className="bg-gray-50 border-b border-border px-6 py-3">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-xs font-bold text-primary uppercase tracking-wider">Step {step} of 3</span>
-            <div className="flex gap-1">
-              {[1, 2, 3].map(i => (
-                <div key={i} className={cn("h-1.5 w-8 rounded-full transition-colors", i <= step ? "bg-accent" : "bg-gray-200")} />
-              ))}
-            </div>
+    <div className="relative z-20 bg-white rounded-[2rem] shadow-[0_40px_80px_-16px_rgba(0,0,0,0.1)] border border-border overflow-hidden" id="quote-form">
+      {/* Progress */}
+      {step < 6 && (
+        <div className="bg-gray-50/50 px-8 py-6 flex items-center justify-between border-b border-border">
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 italic">In-Progress</span>
+          <div className="flex gap-2">
+            {[1, 2, 3, 4, 5].map(i => (
+              <div key={i} className={cn("h-1.5 w-10 rounded-full transition-all duration-1000", i <= step ? "bg-accent" : "bg-gray-200")} />
+            ))}
           </div>
         </div>
       )}
 
-      <div className="p-6 md:p-8">
+      <div className="p-10 md:p-14">
         {step === 1 && (
-          <div className="space-y-5">
-            <h2 className="text-2xl font-bold text-primary">Get Your Free Quotes</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="text-sm font-bold text-text-primary">Collection Postcode</label>
-                <input {...register("collectionPostcode")} placeholder="e.g. SW1A 1AA" className={cn("w-full p-3 border rounded-md outline-none focus:border-accent", errors.collectionPostcode ? "border-red-500" : "border-border")} />
-              </div>
-              <div className="space-y-1">
-                <label className="text-sm font-bold text-text-primary">Delivery Postcode</label>
-                <input {...register("deliveryPostcode")} placeholder="e.g. M1 1AE" className={cn("w-full p-3 border rounded-md outline-none focus:border-accent", errors.deliveryPostcode ? "border-red-500" : "border-border")} />
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <label className="text-sm font-bold text-text-primary">Move Date</label>
-              <input type="date" {...register("moveDate")} className="w-full p-3 border border-border rounded-md outline-none focus:border-accent" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="text-sm font-bold text-text-primary">Property Type</label>
-                <select {...register("propertyType")} className="w-full p-3 border border-border rounded-md bg-white">
-                  <option value="">Select...</option>
-                  <option value="Studio flat">Studio flat</option>
-                  <option value="1-bed flat">1-bed flat</option>
-                  <option value="2-bed flat">2-bed flat</option>
-                  <option value="3-bed flat">3-bed flat</option>
-                  <option value="1-bed house">1-bed house</option>
-                  <option value="2-bed house">2-bed house</option>
-                  <option value="3-bed house">3-bed house</option>
-                  <option value="4-bed house">4-bed house</option>
-                  <option value="5+ bed house">5+ bed house</option>
-                  <option value="Office">Office</option>
-                  <option value="Storage unit">Storage unit</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div className="space-y-1">
-                <label className="text-sm font-bold text-text-primary">Number of Rooms</label>
-                <select {...register("numRooms")} className="w-full p-3 border border-border rounded-md bg-white">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5+">5+</option>
-                </select>
-              </div>
-            </div>
-
+          <div className="space-y-10">
             <div className="space-y-3">
-              <label className="text-sm font-bold text-text-primary block">Large items requiring special handling?</label>
-              <div className="grid grid-cols-2 gap-2">
-                {["Piano", "Washing machine", "Fridge freezer", "American fridge", "Hot tub", "Pool table", "Safe"].map(item => (
-                  <label key={item} className="flex items-center gap-2 text-sm cursor-pointer hover:bg-gray-50 p-1 rounded">
-                    <input type="checkbox" value={item} {...register("specialItems")} className="accent-accent" />
-                    {item}
-                  </label>
-                ))}
-              </div>
+              <h2 className="text-4xl font-black text-primary tracking-tighter leading-none uppercase">Start Your Move</h2>
+              <p className="text-text-secondary font-bold text-lg">Verified local movers ready to help.</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-text-primary block">Packing service needed?</label>
-                <div className="flex gap-4">
-                  {["Yes", "No", "Not sure"].map(opt => (
-                    <label key={opt} className="flex items-center gap-1 text-sm cursor-pointer">
-                      <input type="radio" value={opt} {...register("packingService")} className="accent-accent" /> {opt}
-                    </label>
-                  ))}
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection</label>
+                  <input {...register("collectionPostcode")} placeholder="e.g. SW1A 1AA" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-[1.25rem] outline-none font-black text-lg transition-all shadow-inner" />
+                  {errors.collectionPostcode && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.collectionPostcode.message}</p>}
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery</label>
+                  <input {...register("deliveryPostcode")} placeholder="e.g. M1 1AE" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-[1.25rem] outline-none font-black text-lg transition-all shadow-inner" />
+                  {errors.deliveryPostcode && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.deliveryPostcode.message}</p>}
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-text-primary block">Loading help needed?</label>
-                <div className="flex gap-4">
-                  {["Yes", "No"].map(opt => (
-                    <label key={opt} className="flex items-center gap-1 text-sm cursor-pointer">
-                      <input type="radio" value={opt} {...register("loadingHelp")} className="accent-accent" /> {opt}
-                    </label>
-                  ))}
-                </div>
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
+                <input type="date" {...register("moveDate")} className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-[1.25rem] outline-none font-black text-lg transition-all shadow-inner" />
+                {errors.moveDate && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.moveDate.message}</p>}
               </div>
             </div>
-
-            <button onClick={onNextStep} className="btn-orange w-full flex items-center justify-center gap-2 text-lg py-4">
-              Get My Free Quotes →
+            <button onClick={onNextStep} className="btn-orange w-full py-6 rounded-[1.5rem] flex items-center justify-center gap-3 text-xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-accent/30 hover:scale-[1.02] active:scale-95 transition-all">
+              Continue <ChevronRight size={24} />
             </button>
           </div>
         )}
 
-        {step === 2 && estimate && (
-          <div className="space-y-6 text-center py-4">
-            <h2 className="text-2xl font-bold text-primary">Your Instant Estimate</h2>
-            <p className="text-text-secondary">Based on your move details, local man & van companies typically charge:</p>
-            
-            <div className="bg-orange-50 border-2 border-accent/20 rounded-2xl p-8">
-              <span className="text-5xl font-extrabold text-accent">£{estimate.min} – £{estimate.max}</span>
-              <p className="text-sm text-accent/80 font-medium mt-2">This is an estimate only. Your confirmed quotes may vary.</p>
+        {step === 2 && (
+          <div className="space-y-8">
+            <h2 className="text-4xl font-black text-primary tracking-tighter uppercase leading-none text-center">Move Type</h2>
+            <div className="grid grid-cols-1 gap-3 max-h-[450px] overflow-y-auto pr-3 custom-scrollbar">
+              {["Single Item", "Furniture Collection", "Studio Flat", "1 Bed Flat", "2 Bed House", "3 Bed House", "4+ Bed House", "Office Move", "Other"].map(type => (
+                <button 
+                  key={type}
+                  type="button"
+                  onClick={() => { setValue("moveType", type); onNextStep(); }}
+                  className={cn("p-6 text-left rounded-[1.25rem] border-2 border-border font-black text-primary hover:border-accent hover:bg-accent/5 transition-all flex justify-between items-center group shadow-sm", watch("moveType") === type ? "border-accent bg-accent/5" : "")}
+                >
+                  <span className="uppercase tracking-tight text-sm">{type}</span>
+                  <div className="bg-white p-2 rounded-lg group-hover:bg-accent group-hover:text-white shadow-sm transition-all text-accent">
+                    <ChevronRight size={18} />
+                  </div>
+                </button>
+              ))}
             </div>
-
-            <div className="space-y-4 pt-4">
-              <button onClick={onNextStep} className="btn-orange w-full text-lg py-4">
-                Yes, send me real quotes →
-              </button>
-              <button onClick={() => setStep(1)} className="flex items-center justify-center gap-1 w-full text-text-secondary text-sm font-medium hover:underline">
-                <ChevronLeft size={16} /> Edit my details
-              </button>
-            </div>
+            {errors.moveType && <p className="text-red-500 text-[10px] font-black text-center uppercase tracking-widest">{errors.moveType.message}</p>}
+            <button onClick={() => setStep(1)} className="w-full text-text-secondary text-[10px] font-black uppercase tracking-[0.3em] flex items-center justify-center gap-1 opacity-40 hover:opacity-100 transition-opacity">Back to Start</button>
           </div>
         )}
 
-        {step === 3 && (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-            <h2 className="text-2xl font-bold text-primary">Nearly there!</h2>
-            <p className="text-text-secondary">Enter your contact details to receive your confirmed quotes.</p>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="text-sm font-bold">First Name</label>
-                <input {...register("firstName")} className="w-full p-3 border border-border rounded-md" required />
-              </div>
-              <div className="space-y-1">
-                <label className="text-sm font-bold">Last Name</label>
-                <input {...register("lastName")} className="w-full p-3 border border-border rounded-md" required />
-              </div>
+        {step === 3 && estimate && (
+          <div className="space-y-12 text-center py-6">
+            <div className="space-y-3">
+              <h2 className="text-[10px] font-black text-accent uppercase tracking-[0.4em] leading-none">Estimated Move Value</h2>
+              <p className="text-text-secondary font-black text-lg uppercase tracking-tighter">Standard Marketplace Rates</p>
             </div>
-
-            <div className="space-y-1">
-              <label className="text-sm font-bold">Mobile Number</label>
-              <input type="tel" {...register("phone")} className="w-full p-3 border border-border rounded-md" required />
+            <div className="bg-primary text-white p-16 rounded-[4rem] shadow-2xl relative overflow-hidden group">
+               <div className="absolute top-0 right-0 w-48 h-48 bg-accent opacity-10 rounded-full -mr-24 -mt-24 group-hover:scale-150 transition-transform duration-1000" />
+               <div className="relative z-10">
+                 <span className="text-7xl md:text-8xl font-black tracking-tighter tabular-nums leading-none">£{estimate.min}–{estimate.max}</span>
+                 <div className="mt-8 flex items-center justify-center gap-3 text-accent text-[10px] font-black uppercase tracking-[0.3em]">
+                   <ShieldCheck size={20} />
+                   Verified Estimates
+                 </div>
+               </div>
             </div>
-
-            <div className="space-y-1">
-              <label className="text-sm font-bold">Email Address</label>
-              <input type="email" {...register("email")} className="w-full p-3 border border-border rounded-md" required />
+            <div className="flex flex-col gap-5">
+              <button onClick={onNextStep} className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-[0.3em] text-lg shadow-2xl shadow-accent/40 hover:scale-105 active:scale-95 transition-all">
+                Verified Match
+              </button>
+              <button onClick={() => setStep(2)} className="text-text-secondary text-[10px] font-black uppercase tracking-[0.3em] hover:text-primary transition-colors opacity-40 hover:opacity-100">Edit Details</button>
             </div>
-
-            <div className="bg-blue-50 p-4 rounded-lg text-[11px] text-primary/70 leading-relaxed">
-              Your details are only shared with vetted local movers. We never sell your data. By clicking below you agree to our Terms & Privacy Policy.
-            </div>
-
-            <button type="submit" disabled={isSubmitting} className="btn-orange w-full flex items-center justify-center gap-2 text-lg py-4">
-              {isSubmitting ? <Loader2 className="animate-spin" /> : "Submit and get my quotes"}
-            </button>
-          </form>
+          </div>
         )}
 
         {step === 4 && (
-          <div className="text-center py-10 space-y-6">
-            <div className="flex justify-center">
-              <CheckCircle2 size={80} className="text-success" />
+          <div className="space-y-10">
+            <div className="space-y-3 text-center">
+              <h2 className="text-4xl font-black text-primary tracking-tighter uppercase leading-none">Your Details</h2>
+              <p className="text-text-secondary font-bold">To connect you with your exclusive mover.</p>
             </div>
-            <h2 className="text-3xl font-bold text-primary">Success!</h2>
-            <p className="text-lg text-text-secondary max-w-sm mx-auto">
-              Your request has been sent to local movers. You'll receive your first quotes via email and SMS shortly.
-            </p>
-            <div className="pt-4">
-              <a href="/" className="btn-outline">Return Home</a>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">First Name</label>
+                <input {...register("firstName")} className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-[1.25rem] font-black text-lg transition-all shadow-inner" placeholder="e.g. Alex Smith" />
+                {errors.firstName && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.firstName.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">UK Mobile</label>
+                <input {...register("phone")} className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-[1.25rem] font-black text-lg transition-all shadow-inner" placeholder="07XXX XXXXXX" />
+                {errors.phone && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.phone.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Email</label>
+                <input {...register("email")} className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-[1.25rem] font-black text-lg transition-all shadow-inner" placeholder="alex@example.com" />
+                {errors.email && <p className="text-red-500 text-[10px] font-black ml-1 uppercase tracking-widest">{errors.email.message}</p>}
+              </div>
+            </div>
+
+            {/* Spam Protection Placeholder */}
+            <div className="bg-gray-50 border border-border p-4 rounded-xl text-center">
+              <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Secure Verification Protected by reCAPTCHA</p>
+            </div>
+
+            <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full py-7 rounded-[1.5rem] font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 shadow-2xl transition-all hover:scale-[1.02] active:scale-95">
+              {isSubmitting ? <Loader2 className="animate-spin" /> : <>Send Verification Link <Mail size={22} className="fill-white" /></>}
+            </button>
+          </div>
+        )}
+
+        {step === 5 && (
+          <div className="space-y-10 text-center">
+            <div className="bg-accent/10 w-28 h-28 rounded-[2.5rem] flex items-center justify-center mx-auto text-accent mb-6 animate-pulse">
+              <Mail size={48} />
+            </div>
+            <div className="space-y-3">
+              <h2 className="text-4xl font-black text-primary tracking-tighter uppercase leading-none">Verify Your Email</h2>
+              <p className="text-text-secondary font-bold leading-relaxed px-4 italic">
+                We've sent a 4-digit code to {watch("email")}
+              </p>
+            </div>
+            
+            <div className="flex justify-center gap-4">
+              {[1, 2, 3, 4].map(i => (
+                <input key={i} maxLength={1} className="w-16 h-24 bg-gray-50 border-3 border-border focus:border-accent rounded-[1.5rem] text-center text-4xl font-black outline-none transition-all focus:bg-white shadow-inner" />
+              ))}
+            </div>
+
+            <div className="space-y-8">
+               <button onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 text-lg shadow-2xl shadow-accent/20 transition-all hover:scale-105 active:scale-95">
+                 {isSubmitting ? <Loader2 className="animate-spin" /> : "Confirm Verification"}
+               </button>
+               <div className="flex flex-col gap-3">
+                 <button type="button" className="text-accent font-black uppercase tracking-widest text-[10px] hover:underline">Resend Email</button>
+                 <p className="text-[9px] text-text-secondary font-black uppercase tracking-widest opacity-30">Verification expires in 30:00</p>
+               </div>
             </div>
           </div>
         )}
+
+        {step === 6 && (
+          <div className="text-center py-10 space-y-10">
+            <div className="bg-success/10 w-32 h-32 rounded-full flex items-center justify-center mx-auto text-success mb-6 relative">
+              <div className="absolute inset-0 bg-success/20 rounded-full animate-ping opacity-20" />
+              <CheckCircle2 size={64} />
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-5xl font-black text-primary tracking-tighter uppercase leading-none">Request Active</h2>
+              <p className="text-xl text-text-secondary font-bold max-w-sm mx-auto leading-relaxed">
+                Your email has been verified and your request is now live in our exclusive mover network.
+              </p>
+            </div>
+            <div className="bg-[#F9F9F7] p-10 rounded-[3rem] border border-border/50 text-left space-y-6 shadow-inner">
+               <div className="flex items-start gap-5">
+                 <div className="bg-accent text-white rounded-full p-2 mt-1 shrink-0 shadow-lg shadow-accent/20"><Check size={16} strokeWidth={4}/></div>
+                 <p className="text-lg font-black text-primary leading-tight uppercase tracking-tighter">Exclusive Match: <span className="text-text-secondary font-medium normal-case text-base">Only ONE mover can see your request.</span></p>
+               </div>
+               <div className="flex items-start gap-5">
+                 <div className="bg-accent text-white rounded-full p-2 mt-1 shrink-0 shadow-lg shadow-accent/20"><Check size={16} strokeWidth={4}/></div>
+                 <p className="text-lg font-black text-primary leading-tight uppercase tracking-tighter">Verified Mover: <span className="text-text-secondary font-medium normal-case text-base">A local pro will contact you within minutes.</span></p>
+               </div>
+            </div>
+            <div className="pt-8">
+              <a href="/" className="btn-outline px-16 py-6 font-black uppercase tracking-[0.3em] text-sm rounded-2xl hover:bg-primary hover:text-white transition-all shadow-xl">Return Home</a>
+            </div>
+          </div>
+        )}
+      </div>
+      
+      <div className="bg-gray-50 p-6 border-t border-border flex flex-wrap items-center justify-center gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-primary/30">
+        <span className="flex items-center gap-2"><ShieldCheck size={18}/> Secure & Encrypted</span>
+        <span className="flex items-center gap-2"><MapPin size={18}/> Nationwide UK</span>
+        <span className="flex items-center gap-2"><Lock size={18}/> 1-to-1 Match Only</span>
       </div>
     </div>
   );

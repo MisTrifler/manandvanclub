@@ -17,8 +17,17 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Compare Trusted Man & Van Companies Near You | Man & Van Club",
-  description: "Get up to 5 quotes from vetted local movers. Compare prices, reviews and availability in minutes.",
+  title: "Find Trusted Local Movers Near You | Man & Van Club",
+  description: "Get exclusively matched with vetted local movers. Verified move requests and secure introductions.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -34,9 +43,9 @@ export default function RootLayout({
         <Footer />
         
         {/* Mobile Sticky CTA */}
-        <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-border z-50">
-          <a href="/#quote-form" className="btn-orange w-full block">
-            Get Free Quotes
+        <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-border z-[200]">
+          <a href="/#quote-form" className="btn-orange w-full block py-4 text-xs font-black uppercase tracking-[0.2em] rounded-xl shadow-2xl">
+            Get Matched Now
           </a>
         </div>
       </body>

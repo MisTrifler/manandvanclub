@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              The UK's trusted marketplace for comparing and booking local man & van services. Fast, free, and fully vetted.
+              A marketplace connecting customers with independent local movers. Find verified local professionals for your move.
             </p>
             <div className="flex gap-4">
               <Link href="#" className="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors">
@@ -38,10 +38,9 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">For Customers</h4>
             <ul className="space-y-4 text-gray-400">
-              <li><Link href="/#quote-form" className="hover:text-accent transition-colors">Get Free Quotes</Link></li>
+              <li><Link href="/#quote-form" className="hover:text-accent transition-colors">Get Started</Link></li>
               <li><Link href="/how-it-works" className="hover:text-accent transition-colors">How It Works</Link></li>
               <li><Link href="/areas" className="hover:text-accent transition-colors">Areas We Cover</Link></li>
-              <li><Link href="/reviews" className="hover:text-accent transition-colors">Customer Reviews</Link></li>
             </ul>
           </div>
 
@@ -62,7 +61,7 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6">For Businesses</h4>
             <ul className="space-y-4 text-gray-400">
               <li><Link href="/for-businesses" className="hover:text-accent transition-colors">Join as a Driver</Link></li>
-              <li><Link href="/marketplace" className="hover:text-accent transition-colors">Lead Marketplace</Link></li>
+              <li><Link href="/marketplace" className="hover:text-accent transition-colors">introduction marketplace</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Driver Pricing</Link></li>
               <li><Link href="/login" className="hover:text-accent transition-colors">Driver Login</Link></li>
             </ul>
@@ -71,11 +70,14 @@ export default function Footer() {
 
         {/* Legal & Badges */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+          <div className="flex flex-col gap-2 text-sm text-gray-400">
             <span>© {currentYear} Man & Van Club Ltd.</span>
-            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white">Terms & Conditions</Link>
-            <Link href="/cookies" className="hover:text-white">Cookie Policy</Link>
+            <span>Company Number: 12345678</span>
+            <div className="flex flex-wrap gap-6 mt-2">
+              <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white">Terms & Conditions</Link>
+              <Link href="/cookies" className="hover:text-white">Cookie Policy</Link>
+            </div>
           </div>
 
           <div className="flex items-center gap-4">
