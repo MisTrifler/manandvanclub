@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-import { Check, X, User, MapPin, Phone, Mail, Clock, Shield, Zap, Loader2, Search } from "lucide-react";
+import { Check, X, User, MapPin, Phone, Mail, Clock, Shield, Zap, Loader2, Search, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function AdminPortal() {
