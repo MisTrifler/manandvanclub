@@ -7,22 +7,15 @@ import {
   ArrowUpRight,
   Shield,
   ShieldCheck,
-  Zap,
   Lock,
   ClipboardList,
   Search,
   UserCheck,
   Phone,
-  Eye,
-  Handshake,
-  PhoneOff,
   BadgeCheck,
-  Users,
-  Star,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import { motion } from "framer-motion";
-import { SERVICES } from "@/constants/services";
 import FAQ from "@/components/FAQ";
 
 const STEPS = [
@@ -37,17 +30,18 @@ const FAQ_ITEMS = [
   { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
   { q: "Is there any obligation?", a: "No. Submitting an enquiry is completely free and without obligation. If the matched mover is not suitable, or if you decide not to proceed, you are under no obligation to book." },
   { q: "How quickly will I be contacted?", a: "We aim to have your matched mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements." },
-  { q: "Are movers vetted?", a: "We aim to connect customers with reliable moving professionals. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote." },
+  { q: "Are movers vetted?", a: "We help connect customers with movers who have completed our application and verification process. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote." },
   { q: "What happens after I submit my enquiry?", a: "After submitting your enquiry, you will receive a confirmation. Our team reviews your requirements and identifies a suitable mover. Your details are introduced to that mover exclusively. The mover contacts you directly to discuss your move and provide a quote." },
   { q: "Do I need to pay to submit an enquiry?", a: "No. Submitting an enquiry through Man and Van Club is completely free for customers. There is no charge to get matched with a mover. You only pay the mover directly if you choose to book their services." },
 ];
 
 const WHY_CHOOSE = [
-  { t: "Trusted Local Movers", d: "We help connect customers with movers who have completed our application and verification process.", icon: <Users size={24} /> },
-  { t: "Less Time Comparing Companies", d: "Tell us about your move and we'll help connect you with a suitable mover.", icon: <Search size={24} /> },
-  { t: "Reduced Spam Calls", d: "Your details are not shared with numerous moving companies.", icon: <PhoneOff size={24} /> },
+  { t: "Verified Businesses", d: "We help connect customers with movers who have completed our application and verification process.", icon: <ShieldCheck size={24} /> },
   { t: "Secure Enquiry Process", d: "Your information is handled securely throughout the matching process.", icon: <Lock size={24} /> },
+  { t: "Direct Communication", d: "Speak directly with your matched mover. No call centres or intermediaries.", icon: <Phone size={24} /> },
+  { t: "Exclusive Matching", d: "Your enquiry is offered to one mover at a time. No competing companies.", icon: <Shield size={24} /> },
   { t: "Free Enquiry", d: "Submitting a move request is free and carries no obligation.", icon: <CheckCircle2 size={24} /> },
+  { t: "Transparent Process", d: "We clearly explain how we match you with a mover and what happens to your details.", icon: <Search size={24} /> },
 ];
 
 const VERIFICATION_CHECKS = [
@@ -56,13 +50,6 @@ const VERIFICATION_CHECKS = [
   "Goods in Transit Insurance",
   "Public Liability Insurance",
   "Service Area Verification",
-];
-
-const COMMITMENTS = [
-  { t: "Transparent Matching", d: "We clearly explain how we match you with a mover and what happens to your details.", icon: <Eye size={24} /> },
-  { t: "Vetted Movers", d: "We aim to connect customers with reliable moving professionals who meet our standards.", icon: <ShieldCheck size={24} /> },
-  { t: "Simple Process", d: "No comparing multiple quotes. Submit once and let us handle the matching.", icon: <Zap size={24} /> },
-  { t: "Direct Communication", d: "Speak directly with your matched mover. No call centres or intermediaries.", icon: <Handshake size={24} /> },
 ];
 
 const TRUST_BADGES = [
@@ -84,7 +71,7 @@ export default function HomeContent() {
 
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
-      {/* Hero Section */}
+      {/* ──────────────────── Hero Section ──────────────────── */}
       <section id="quote-form" className="relative overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-80px)]">
 
@@ -95,7 +82,6 @@ export default function HomeContent() {
             animate="visible"
             className="lg:w-1/2 relative flex flex-col justify-center order-2 lg:order-1"
           >
-            {/* Background image — confined to left panel only */}
             <div className="absolute inset-0">
               <Image
                 src="/images/hero-moving.jpg"
@@ -104,11 +90,9 @@ export default function HomeContent() {
                 className="object-cover object-[center_30%]"
                 priority
               />
-              {/* Smart gradient overlay: 80% left, 65% middle, 40% right edge */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#1B2D4F]/80 via-[#1B2D4F]/65 to-[#1B2D4F]/40" />
             </div>
 
-            {/* Text content — sits directly on the image, no boxes or cards */}
             <div className="relative z-10 p-4 py-10 lg:p-12 lg:pl-16 text-white">
               <div className="hidden lg:inline-flex items-center bg-white/20 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-white/30">
                 Verified UK Movers
@@ -129,7 +113,6 @@ export default function HomeContent() {
                 Get matched with a suitable local mover who contacts you directly. No endless quote comparisons or unnecessary sales calls.
               </p>
 
-              {/* Trust badges — highly visible on the image */}
               <div className="flex flex-wrap gap-3 mb-5">
                 {TRUST_BADGES.map((badge, index) => (
                   <div
@@ -142,7 +125,6 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              {/* Verification message */}
               <div className="flex items-start gap-2 mb-8">
                 <ShieldCheck size={14} className="text-white/70 mt-0.5 flex-shrink-0" />
                 <p className="text-sm text-white/80 font-medium leading-relaxed">
@@ -182,55 +164,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* SEO Supporting Text */}
-      <section className="bg-white border-b border-border py-8">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <p className="text-sm text-text-secondary leading-relaxed">
-            Man and Van Club helps connect customers with suitable local movers for house removals, flat moves, furniture collection, office relocations and long-distance moves across the UK.
-          </p>
-        </div>
-      </section>
-
-      {/* Trust Strip */}
-      <section className="bg-white border-y border-border py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm font-bold text-primary/70">
-            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> Exclusive Matching</span>
-            <span className="hidden md:block w-px h-4 bg-border" />
-            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> Vetted Movers</span>
-            <span className="hidden md:block w-px h-4 bg-border" />
-            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> UK Coverage</span>
-            <span className="hidden md:block w-px h-4 bg-border" />
-            <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-accent" /> No Obligation</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Customers Choose Man and Van Club */}
-      <section className="py-20 bg-[#F9F9F7]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why Customers Choose Man and Van Club</h2>
-            <p className="text-text-secondary mt-3">A simpler, more trustworthy way to find a mover.</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {WHY_CHOOSE.map((item, i) => (
-              <div key={i} className="group bg-white rounded-3xl border border-border p-8 hover:shadow-xl transition-all flex flex-col h-full">
-                <div className="mb-4 text-accent">
-                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-2xl">
-                    {item.icon}
-                  </div>
-                </div>
-                <h3 className="font-black text-xl text-primary tracking-tight mb-3">{item.t}</h3>
-                <p className="text-sm text-text-secondary flex-1">{item.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
+      {/* ──────────────────── How It Works ──────────────────── */}
       <section className="py-20 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-14">
@@ -252,8 +186,32 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* What We Check */}
+      {/* ──────────────────── Why Customers Choose ──────────────────── */}
       <section className="py-20 bg-[#F9F9F7]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why Customers Choose Man and Van Club</h2>
+            <p className="text-text-secondary mt-3">A simpler, more trustworthy way to find a mover.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {WHY_CHOOSE.map((item, i) => (
+              <div key={i} className="group bg-white rounded-3xl border border-border p-8 hover:shadow-xl transition-all flex flex-col h-full">
+                <div className="mb-4 text-accent">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-2xl">
+                    {item.icon}
+                  </div>
+                </div>
+                <h3 className="font-black text-xl text-primary tracking-tight mb-3">{item.t}</h3>
+                <p className="text-sm text-text-secondary flex-1">{item.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────── We Verify Businesses ──────────────────── */}
+      <section className="py-20 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">We Verify Businesses Before They Join</h2>
@@ -273,86 +231,18 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Customer Reviews — Placeholder */}
-      <section className="py-20 bg-white border-y border-border">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Customer Reviews</h2>
-            <p className="text-text-secondary mt-3">Real feedback from people who have used our service.</p>
-          </div>
-
-          <div className="bg-[#F9F9F7] rounded-3xl border border-border p-12 text-center">
-            <div className="flex justify-center gap-1 mb-4">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} size={20} className="text-border fill-border" />
-              ))}
-            </div>
-            <p className="text-sm text-text-secondary font-medium">
-              Customer reviews will appear here as our network continues to grow.
-            </p>
-            <p className="text-xs text-primary/40 mt-2 font-bold uppercase tracking-widest">
-              Reviews Component Ready For Future Use
-            </p>
-          </div>
-
-          {/* Review card design preview — hidden until reviews are available */}
-          <div className="hidden">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-white rounded-3xl border border-border p-8">
-                <div className="flex gap-1 mb-3">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} size={14} className="text-accent fill-accent" />
-                  ))}
-                </div>
-                <p className="text-sm text-primary/80 mb-4">"Review text will go here."</p>
-                <div className="text-xs font-bold text-primary/40 uppercase tracking-widest">Name, Location</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services - No Images */}
+      {/* ──────────────────── Popular Moving Services ──────────────────── */}
       <section className="py-20 bg-[#F9F9F7]">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Smart Solutions For Every Move</h2>
-            </div>
-            <Link href="/areas-covered" className="text-accent font-black text-sm flex items-center gap-1 hover:gap-2 transition-all">View all areas <ArrowUpRight size={16} /></Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICES.map((s, i) => (
-              <Link key={i} href={s.h} className="group bg-white rounded-3xl border border-border p-8 hover:shadow-xl transition-all flex flex-col h-full">
-                <div className="mb-4 text-accent">
-                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
-                    {s.i}
-                  </div>
-                </div>
-                <h3 className="font-black text-xl text-primary tracking-tight mb-3">{s.t}</h3>
-                <p className="text-sm text-text-secondary flex-1">{s.d}</p>
-                <div className="pt-4 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-accent transition-colors">
-                  Learn More →
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Moving Services — SEO keyword section */}
-      <section className="py-20 bg-white border-y border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-black text-primary uppercase tracking-tighter">Popular Moving Services</h2>
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Popular Moving Services</h2>
             <p className="text-text-secondary mt-3 text-sm">Find the right service for your move.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
             {[
               { label: "House Removals", href: "/house-removals" },
-              { label: "Flat Removals", href: "/flat-removals" },
+              { label: "Flat Moves", href: "/flat-removals" },
               { label: "Office Relocations", href: "/office-removals" },
               { label: "Student Moves", href: "/student-removals" },
               { label: "Furniture Collection", href: "/furniture-delivery" },
@@ -362,7 +252,7 @@ export default function HomeContent() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="text-center bg-[#F9F9F7] rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+                className="text-center bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
               >
                 <span className="text-sm font-black text-primary uppercase tracking-tight">{service.label}</span>
               </Link>
@@ -371,11 +261,11 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Popular Areas We Cover — Local SEO section */}
-      <section className="py-20 bg-[#F9F9F7]">
+      {/* ──────────────────── Popular Areas We Cover ──────────────────── */}
+      <section className="py-20 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-black text-primary uppercase tracking-tighter">Popular Areas We Cover</h2>
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Popular Areas We Cover</h2>
             <p className="text-text-secondary mt-3 text-sm">Local man and van services across the UK.</p>
           </div>
 
@@ -395,7 +285,7 @@ export default function HomeContent() {
               <Link
                 key={loc.slug}
                 href={`/${loc.slug}`}
-                className="text-center bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+                className="text-center bg-[#F9F9F7] rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
               >
                 <span className="text-sm font-black text-primary uppercase tracking-tight">{loc.name}</span>
               </Link>
@@ -410,31 +300,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Our Commitment */}
-      <section className="py-20 bg-white border-y border-border">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Our Commitment</h2>
-            <p className="text-text-secondary mt-3">How we build trust through transparency and simplicity.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {COMMITMENTS.map((item, i) => (
-              <div key={i} className="bg-[#F9F9F7] p-8 rounded-3xl border border-border">
-                <div className="flex text-accent mb-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                </div>
-                <h3 className="font-black text-primary text-lg mb-2">{item.t}</h3>
-                <p className="text-primary/80 text-sm">{item.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
+      {/* ──────────────────── FAQ ──────────────────── */}
       <section className="py-20 bg-[#F9F9F7]">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
@@ -445,14 +311,24 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-[#F9F9F7] text-center border-t border-border">
+      {/* ──────────────────── Final CTA ──────────────────── */}
+      <section className="py-20 bg-white text-center border-b border-border">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">Ready To Find Your Trusted Local Mover?</h2>
-          <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">Submit your details and get matched with a suitable mover. No spam, just one direct introduction.</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">Ready To Get Matched With A Local Mover?</h2>
+          <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">Submit your move details and we will help connect you with a suitable mover.</p>
           <Link href="#quote-form" className="btn-orange px-10 md:px-14 py-5 md:py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3">
             Get Matched Now <ArrowUpRight size={20} />
           </Link>
+        </div>
+      </section>
+
+      {/* ──────────────────── SEO Content Block ──────────────────── */}
+      <section className="py-16 bg-[#F9F9F7] border-b border-border">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter mb-4">Man and Van Services Across the UK</h2>
+          <p className="text-sm text-text-secondary leading-relaxed">
+            Man and Van Club helps connect customers with suitable movers for house removals, flat moves, office relocations, furniture collections, student moves and long-distance removals across the UK.
+          </p>
         </div>
       </section>
     </div>
