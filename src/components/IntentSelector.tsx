@@ -18,7 +18,7 @@ export default function IntentSelector({ onSelect }: { onSelect: (intent: Intent
       <div className="space-y-6">
         <div className="text-center lg:text-left">
           <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">What Type of Move?</h2>
-          <p className="text-sm text-text-secondary mt-2">Select the option that matches your needs. We will ask the right questions for your move.</p>
+          <p className="text-sm text-text-secondary mt-2">Pick the move that fits you best — we'll handle the details.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-3">
