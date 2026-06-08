@@ -134,7 +134,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { t: "Exclusive Opportunities", d: "Customer enquiries are offered to one mover at a time.", icon: <Lock size={24} /> },
-              { t: "No Bidding Wars", d: "Avoid competing against multiple companies for the same customer.", icon: <XCircle size={24} /> },
+              { t: "No Competing Movers", d: "Avoid competing against multiple companies for the same customer.", icon: <XCircle size={24} /> },
               { t: "Direct Communication", d: "Contact customers directly once you unlock an enquiry.", icon: <Phone size={24} /> },
               { t: "Choose What You Want", d: "Only unlock enquiries that suit your business.", icon: <Eye size={24} /> },
               { t: "Transparent Pricing", d: "Simple lead fees with no hidden charges.", icon: <CheckCircle2 size={24} /> },

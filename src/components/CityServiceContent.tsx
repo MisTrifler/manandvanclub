@@ -422,7 +422,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               Looking For A Mover In {data.name}?
             </h2>
             <p className="text-xl text-text-secondary font-medium leading-relaxed">
-              Tell us about your move and we'll help connect you with a suitable local mover. No spam, no bidding wars, just one direct introduction.
+              Tell us about your move and we'll help connect you with a suitable local mover. No spam, just one direct introduction.
             </p>
             <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3 text-lg">
               Get Matched <ArrowRight size={24} />

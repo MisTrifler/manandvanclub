@@ -41,7 +41,7 @@ export async function POST(req: Request) {
                         <p style="color:#1B2D4F;font-size:18px;font-weight:700;margin:0 0 20px 0;">Hi ${contactName || 'there'},</p>
                         <p style="color:#555555;font-size:15px;line-height:1.7;margin:0 0 24px 0;">
                           Thanks for your interest in joining <strong style="color:#1B2D4F;">Man and Van Club</strong>.
-                          We connect verified movers with exclusive customer enquiries — no shared leads, no bidding wars.
+                          We connect verified movers with exclusive customer enquiries — no shared leads, just direct opportunities.
                         </p>
                         <p style="color:#555555;font-size:15px;line-height:1.7;margin:0 0 32px 0;">
                           Here's everything you need to get started:

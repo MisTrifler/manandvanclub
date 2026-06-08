@@ -17,7 +17,7 @@ export default function AboutContent() {
             Reinventing Local Matching
           </h1>
           <p className="text-xl text-text-secondary">
-            We've built England's most transparent network for local moving connections. No bidding wars, just quality introductions.
+            We've built a UK-wide network for local moving connections. Just quality introductions, no unnecessary calls.
           </p>
         </div>
       </section>

@@ -45,7 +45,7 @@ export default function HowItWorksContent() {
             How It Works
           </h1>
           <p className="text-xl text-text-secondary">
-            We've removed the stress, the spam, and the bidding wars. Here's how we connect you with one trusted local mover — exclusively.
+            We've removed the stress and unnecessary calls. Here's how we connect you with one trusted local mover — exclusively.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function HowItWorksContent() {
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-black uppercase tracking-widest">
             <div className="flex items-center gap-2"><ShieldCheck size={18} className="text-accent" /> Fully Insured Movers</div>
             <div className="flex items-center gap-2"><Zap size={18} className="text-accent" /> 1-to-1 Exclusive Matches</div>
-            <div className="flex items-center gap-2"><CheckCircle size={18} className="text-accent" /> No Bidding Wars</div>
+            <div className="flex items-center gap-2"><CheckCircle size={18} className="text-accent" /> No Competing Movers</div>
           </div>
         </div>
       </section>
