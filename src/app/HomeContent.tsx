@@ -118,7 +118,8 @@ export default function HomeContent() {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black mb-5 lg:mb-6 leading-[1.05] tracking-tighter max-w-[550px]"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
-                Man and Van Services Near You
+                <span className="text-accent">Man and Van</span>{' '}
+                <span className="text-white">Services Near You</span>
               </h1>
 
               <p
