@@ -113,6 +113,13 @@ export default function ApplyToJoinContent() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-5 rounded-full -mr-16 -mt-16" />
 
               <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="space-y-2 pb-2 border-b border-border">
+                  <h2 className="text-3xl font-black uppercase tracking-tight text-primary leading-none">Apply to Join</h2>
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
+                    Takes under 60 seconds to complete
+                  </p>
+                </div>
+
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Company Name</label>
                   <input name="companyName" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all shadow-inner" placeholder="e.g. Swift Moves Ltd" required />
