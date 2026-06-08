@@ -16,6 +16,15 @@ export interface LocationPageData {
   localBusinessSchema: Record<string, any>;
   breadcrumbSchema: Record<string, any>;
   faqSchema: Record<string, any>;
+  // NEW: rich content sections
+  areasWeCover: string[];
+  localMovingInfo: string;
+  popularMoves: { from: string; to: string; slug?: string }[];
+  localLandmarks: string[];
+  trustPoints: { icon: string; label: string }[];
+  verificationChecks: string[];
+  movingChecklist: string[];
+  regionCities: { name: string; slug: string }[];
 }
 
 const SERVICE_LINKS = [
@@ -28,6 +37,125 @@ const SERVICE_LINKS = [
   { title: "Same Day Moves", href: "/same-day-man-and-van" },
 ];
 
+const TRUST_POINTS = [
+  { icon: "ClipboardCheck", label: "Free Enquiry" },
+  { icon: "PhoneOff", label: "No Multiple Sales Calls" },
+  { icon: "UserCheck", label: "Exclusive Matching Process" },
+  { icon: "Lock", label: "Secure Enquiry Process" },
+  { icon: "MapPin", label: "Local Mover Coverage" },
+];
+
+const VERIFICATION_CHECKS = [
+  "Business Details",
+  "Contact Information",
+  "Goods in Transit Insurance",
+  "Public Liability Insurance",
+  "Service Area Verification",
+];
+
+const MOVING_CHECKLIST = [
+  "Confirm moving date",
+  "Prepare packing materials",
+  "Label boxes clearly",
+  "Arrange parking if required",
+  "Notify utility providers",
+  "Take meter readings",
+  "Update your address",
+];
+
+// Popular move destinations by region (for generic generation)
+function getPopularMovesForRegion(loc: LocationData): { from: string; to: string; slug?: string }[] {
+  const majorCities: Record<string, { to: string; slug: string }[]> = {
+    "West Midlands": [
+      { to: "London", slug: "london" },
+      { to: "Manchester", slug: "manchester" },
+      { to: "Leeds", slug: "leeds" },
+      { to: "Bristol", slug: "bristol" },
+      { to: "Wolverhampton", slug: "wolverhampton" },
+    ],
+    "Greater London": [
+      { to: "Birmingham", slug: "birmingham" },
+      { to: "Manchester", slug: "manchester" },
+      { to: "Bristol", slug: "bristol" },
+      { to: "Leeds", slug: "leeds" },
+      { to: "Brighton", slug: "" },
+    ],
+    "Greater Manchester": [
+      { to: "London", slug: "london" },
+      { to: "Birmingham", slug: "birmingham" },
+      { to: "Leeds", slug: "leeds" },
+      { to: "Liverpool", slug: "liverpool" },
+      { to: "Sheffield", slug: "" },
+    ],
+    "West Yorkshire": [
+      { to: "London", slug: "london" },
+      { to: "Manchester", slug: "manchester" },
+      { to: "Birmingham", slug: "birmingham" },
+      { to: "Leeds", slug: "leeds" },
+      { to: "Newcastle", slug: "" },
+    ],
+    "Merseyside": [
+      { to: "London", slug: "london" },
+      { to: "Manchester", slug: "manchester" },
+      { to: "Birmingham", slug: "birmingham" },
+      { to: "Leeds", slug: "leeds" },
+      { to: "Chester", slug: "" },
+    ],
+    "South West": [
+      { to: "London", slug: "london" },
+      { to: "Birmingham", slug: "birmingham" },
+      { to: "Manchester", slug: "manchester" },
+      { to: "Cardiff", slug: "cardiff" },
+      { to: "Exeter", slug: "" },
+    ],
+  };
+
+  const region = loc.region;
+  const destinations = majorCities[region] || majorCities["West Midlands"];
+  return destinations.slice(0, 5).map((d) => ({
+    from: loc.name,
+    to: d.to,
+    slug: d.slug,
+  }));
+}
+
+function generateAreasWeCover(loc: LocationData): string[] {
+  // Combine nearbyAreas + areas, take up to 12 unique
+  const combined = [...new Set([...loc.nearbyAreas, ...loc.areas])];
+  return combined.slice(0, 12);
+}
+
+function generateLocalMovingInfo(loc: LocationData): string {
+  const considerations = loc.movingConsiderations;
+  const roads = loc.majorRoads.slice(0, 3).join(", ");
+  const properties = loc.propertyTypes.slice(0, 3).join(", ");
+
+  let info = `Moving in ${loc.name} requires local knowledge. `;
+
+  if (loc.hasStudentAreas && loc.studentAreas) {
+    info += `With student areas like ${loc.studentAreas.slice(0, 2).join(" and ")}, peak moving periods align with academic term dates. `;
+  }
+
+  if (loc.businessDistricts) {
+    info += `Business relocations in ${loc.businessDistricts.slice(0, 2).join(" and ")} often need evening or weekend slots to minimise disruption. `;
+  }
+
+  info += `Our movers know the ${roads} corridors and understand access challenges for ${properties} properties. `;
+
+  if (considerations.length > 0) {
+    info += `Common moving considerations in ${loc.name} include ${considerations.slice(0, 3).join("; ")}. `;
+  }
+
+  info += `Whether you are moving within ${loc.name} or relocating to a neighbouring town, our network connects you with movers who understand the local landscape."`;
+
+  return info;
+}
+
+function generateLocalLandmarks(loc: LocationData): string[] {
+  // Use nearbyAreas as "landmarks" - these are genuine local areas
+  return loc.nearbyAreas.slice(0, 6);
+}
+
 function generateCostAnswer(loc: LocationData): string {
   const base = loc.region === "Greater London" ? 60 : loc.region === "South West" ? 55 : 50;
   const rangeLow = loc.region === "Greater London" ? 350 : loc.region === "South West" ? 300 : 280;
@@ -39,8 +167,33 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
   const faq: { q: string; a: string }[] = [];
 
   faq.push({
+    q: `Do you cover all areas of ${loc.name}?`,
+    a: `Yes. Our ${loc.name} network covers ${loc.areas.slice(0, 5).join(", ")} and surrounding areas. Whether you are in the town centre or the outskirts, we can match you with a suitable local mover.`,
+  });
+
+  faq.push({
     q: `How much does a man and van cost in ${loc.name}?`,
     a: generateCostAnswer(loc),
+  });
+
+  faq.push({
+    q: `Can I find a mover for a same-day move in ${loc.name}?`,
+    a: `Same-day moves are often possible in ${loc.name} depending on availability. Submit your request and we will match you with the nearest available mover.`,
+  });
+
+  faq.push({
+    q: `Will multiple movers contact me?`,
+    a: `No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies.`,
+  });
+
+  faq.push({
+    q: `Is the enquiry free?`,
+    a: `Yes. Submitting an enquiry through Man and Van Club is completely free for customers. There is no charge to get matched with a mover. You only pay the mover directly if you choose to book their services.`,
+  });
+
+  faq.push({
+    q: `How quickly will I be contacted?`,
+    a: `We aim to have your matched mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements.`,
   });
 
   if (loc.nearbyAreas.length > 0) {
@@ -50,11 +203,6 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
       a: `Yes. Our ${loc.name} network covers ${loc.nearbyAreas.slice(0, 5).join(", ")} and most of the surrounding areas.`,
     });
   }
-
-  faq.push({
-    q: `Can I get a same-day move in ${loc.name}?`,
-    a: "Same-day moves are often possible depending on availability. Submit your request and we'll match you with the nearest available mover.",
-  });
 
   if (loc.hasStudentAreas && loc.studentAreas && loc.studentAreas.length > 0) {
     faq.push({
@@ -72,10 +220,17 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
 
   faq.push({
     q: `Are your ${loc.name} movers insured?`,
-    a: "Yes, every mover on our platform carries full Goods in Transit and Public Liability insurance. We verify this before they join the network.",
+    a: `Yes, every mover on our platform carries full Goods in Transit and Public Liability insurance. We verify this before they join the network.`,
   });
 
   return faq;
+}
+
+function getRegionCities(loc: LocationData): { name: string; slug: string }[] {
+  return LOCATIONS.filter((l) => l.region === loc.region && l.slug !== loc.slug).map((l) => ({
+    name: l.name,
+    slug: l.slug,
+  }));
 }
 
 export function getLocationPageData(slug: string): LocationPageData | null {
@@ -161,6 +316,15 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     localBusinessSchema,
     breadcrumbSchema,
     faqSchema,
+    // NEW sections
+    areasWeCover: generateAreasWeCover(loc),
+    localMovingInfo: generateLocalMovingInfo(loc),
+    popularMoves: getPopularMovesForRegion(loc),
+    localLandmarks: generateLocalLandmarks(loc),
+    trustPoints: TRUST_POINTS,
+    verificationChecks: VERIFICATION_CHECKS,
+    movingChecklist: MOVING_CHECKLIST,
+    regionCities: getRegionCities(loc),
   };
 }
 

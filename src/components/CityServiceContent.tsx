@@ -2,7 +2,7 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap } from "lucide-react";
+import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap, CheckCircle, Lock, PhoneOff, UserCheck, ClipboardCheck, Truck, Package, Route, Building, GraduationCap, Sofa, ArrowRight, ListChecks } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CityServiceContent({ data, faqItems }: { data: any, faqItems: any[] }) {
@@ -127,6 +127,8 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 items-start">
 
             <div className="lg:col-span-2 space-y-16 lg:space-y-24">
+
+              {/* ── Moving in [Location] Made Simple ── */}
               <div className="space-y-8">
                  <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight leading-none">
                    {data.h1 ? data.name + " Made Simple" : `Moving in ${data.name} Made Simple`}
@@ -139,6 +141,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                  </div>
               </div>
 
+              {/* ── Feature Cards ── */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 {[
                   { t: "Fixed & Hourly", d: "Choose the pricing model that works best for your budget.", i: <Clock size={28} /> },
@@ -156,7 +159,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                 ))}
               </div>
 
-              {/* CTA Card — light background for readability */}
+              {/* ── CTA Card ── */}
               <div className="bg-white p-12 rounded-[3.5rem] text-primary space-y-8 relative overflow-hidden shadow-2xl border border-border">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -mr-16 -mt-16" />
                  <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-none italic">Ready to start?</h3>
@@ -170,6 +173,143 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                  </div>
                </div>
 
+              {/* ── Areas We Cover Near [Location] ── */}
+              {data.areasWeCover && data.areasWeCover.length > 0 && (
+                <div className="space-y-10">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Areas We Cover Near {data.name}</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {data.areasWeCover.map((area: string) => {
+                      const slug = area.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+                      const hasPage = data.nearbyLocations?.some((l: any) => l.slug === slug || l.name.toLowerCase() === area.toLowerCase());
+                      return hasPage ? (
+                        <Link
+                          key={area}
+                          href={`/man-and-van-${slug}`}
+                          className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                        >
+                          <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{area}</span>
+                          <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
+                        </Link>
+                      ) : (
+                        <div key={area} className="bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 text-center font-black text-primary uppercase text-[10px] tracking-widest">
+                          {area}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* ── Moving in [Location] ── */}
+              {data.localMovingInfo && (
+                <div className="space-y-8">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Moving in {data.name}</h3>
+                  <div className="bg-[#F9F9F7] p-10 lg:p-12 rounded-[2.5rem] border border-border/50 space-y-6">
+                    <p className="text-lg text-text-secondary font-medium leading-relaxed">{data.localMovingInfo}</p>
+                    {data.popularMoves && data.popularMoves.length > 0 && (
+                      <div className="pt-4">
+                        <h4 className="text-sm font-black uppercase tracking-widest text-primary/40 mb-4">Popular Moving Routes From {data.name}</h4>
+                        <div className="flex flex-wrap gap-3">
+                          {data.popularMoves.map((move: any, i: number) => (
+                            move.slug ? (
+                              <Link
+                                key={i}
+                                href={`/man-and-van-${move.slug}`}
+                                className="group flex items-center gap-2 bg-white px-5 py-3 rounded-xl border border-border/50 hover:border-accent hover:shadow-md transition-all duration-300"
+                              >
+                                <Route size={14} className="text-accent" />
+                                <span className="text-xs font-black text-primary uppercase tracking-widest group-hover:text-accent transition-colors">{move.from} to {move.to}</span>
+                              </Link>
+                            ) : (
+                              <span key={i} className="flex items-center gap-2 bg-white px-5 py-3 rounded-xl border border-border/50 text-xs font-black text-primary/50 uppercase tracking-widest">
+                                <Route size={14} className="text-primary/30" />
+                                {move.from} to {move.to}
+                              </span>
+                            )
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* ── Serving [Location] & Surrounding Areas ── */}
+              {data.localLandmarks && data.localLandmarks.length > 0 && (
+                <div className="space-y-8">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Serving {data.name} & Surrounding Areas</h3>
+                  <p className="text-lg text-text-secondary font-medium leading-relaxed">
+                    Our {data.name} movers regularly work across the area and its neighbouring districts. From {data.localLandmarks.slice(0, 3).join(", ")} to the wider {data.region} area, we connect you with professionals who know the local roads, parking restrictions, and the best routes for your move.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {data.localLandmarks.map((landmark: string, i: number) => {
+                      const slug = landmark.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+                      const hasPage = data.nearbyLocations?.some((l: any) => l.slug === slug || l.name.toLowerCase() === landmark.toLowerCase());
+                      return hasPage ? (
+                        <Link key={i} href={`/man-and-van-${slug}`} className="bg-white px-5 py-3 rounded-xl border border-border/50 hover:border-accent hover:text-accent transition-all text-xs font-black uppercase tracking-widest text-primary">
+                          {landmark}
+                        </Link>
+                      ) : (
+                        <span key={i} className="bg-white px-5 py-3 rounded-xl border border-border/50 text-xs font-black uppercase tracking-widest text-primary">
+                          {landmark}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* ── Why Customers Use Man and Van Club ── */}
+              <div className="space-y-8">
+                <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Why Customers Use Man and Van Club</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { icon: <ClipboardCheck size={24} />, label: "Free Enquiry" },
+                    { icon: <PhoneOff size={24} />, label: "No Multiple Sales Calls" },
+                    { icon: <UserCheck size={24} />, label: "Exclusive Matching Process" },
+                    { icon: <Lock size={24} />, label: "Secure Enquiry Process" },
+                    { icon: <MapPin size={24} />, label: "Local Mover Coverage" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-4 bg-[#F9F9F7] p-6 rounded-2xl border border-border/50">
+                      <div className="text-accent">{item.icon}</div>
+                      <span className="font-black text-primary uppercase text-xs tracking-widest">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── What We Check ── */}
+              <div className="space-y-8">
+                <h3 className="text-3xl font-black text-primary uppercase tracking-tight">What We Check</h3>
+                <p className="text-lg text-text-secondary font-medium leading-relaxed">
+                  Applications are reviewed before movers receive access to customer enquiries. We verify businesses to help maintain a reliable network.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {data.verificationChecks?.map((check: string, i: number) => (
+                    <div key={i} className="flex items-center gap-4 bg-white p-6 rounded-2xl border border-border/50 shadow-sm">
+                      <CheckCircle size={20} className="text-green-600 flex-shrink-0" />
+                      <span className="font-bold text-primary text-sm">{check}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── Before Your Move Checklist ── */}
+              <div className="space-y-8">
+                <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Before Your Move</h3>
+                <div className="bg-[#F9F9F7] p-10 lg:p-12 rounded-[2.5rem] border border-border/50">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {data.movingChecklist?.map((item: string, i: number) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">{i + 1}</span>
+                        <span className="text-sm font-medium text-text-secondary leading-relaxed">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* ── Popular Areas ── */}
               <div className="space-y-10">
                 <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Popular Areas</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
@@ -181,10 +321,10 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                 </div>
               </div>
 
-              {/* Nearby Locations — Internal Linking */}
+              {/* ── Nearby Locations — Internal Linking ── */}
               {data.nearbyLocations && data.nearbyLocations.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Nearby Areas We Cover</h3>
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Nearby Locations</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {data.nearbyLocations.map((loc: { slug: string; name: string }) => (
                       <Link
@@ -200,10 +340,10 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                 </div>
               )}
 
-              {/* Service Links — Internal Linking */}
+              {/* ── Service Links — Internal Linking ── */}
               {data.serviceLinks && data.serviceLinks.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Services in {data.name}</h3>
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Services Available in {data.name}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {data.serviceLinks.map((service: { title: string; href: string }) => (
                       <Link
@@ -218,9 +358,29 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                   </div>
                 </div>
               )}
+
+              {/* ── Region Cities ── */}
+              {data.regionCities && data.regionCities.length > 0 && (
+                <div className="space-y-10">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">More Locations in {data.region}</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {data.regionCities.slice(0, 12).map((city: { name: string; slug: string }) => (
+                      <Link
+                        key={city.slug}
+                        href={`/man-and-van-${city.slug}`}
+                        className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                      >
+                        <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{city.name}</span>
+                        <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
             </div>
 
-            {/* Vetting info remains in sidebar */}
+            {/* Sidebar */}
             <aside className="space-y-8 lg:sticky lg:top-32">
                <div className="bg-[#F9F9F7] p-10 rounded-[2.5rem] border border-border/50 space-y-6">
                   <ShieldCheck size={28} className="text-accent" />
@@ -230,7 +390,6 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                   <p className="text-xs text-text-secondary font-medium leading-relaxed">We manually check move requests to ensure a high quality marketplace for both customers and movers.</p>
                </div>
 
-               {/* Coverage info */}
                <div className="bg-white p-10 rounded-[2.5rem] border border-border/50 space-y-6">
                   <MapPin size={28} className="text-accent" />
                   <p className="text-primary font-black uppercase tracking-tighter leading-tight text-sm">
@@ -249,6 +408,23 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter">Your Questions Answered</h2>
             </div>
             <FAQ items={faqItems} />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Bottom CTA ── */}
+      <section className="bg-[#F9F9F7] py-24 lg:py-32 border-t border-border">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary uppercase tracking-tighter leading-none">
+              Looking For A Mover In {data.name}?
+            </h2>
+            <p className="text-xl text-text-secondary font-medium leading-relaxed">
+              Tell us about your move and we'll help connect you with a suitable local mover. No spam, no bidding wars, just one direct introduction.
+            </p>
+            <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3 text-lg">
+              Get Matched <ArrowRight size={24} />
+            </Link>
           </div>
         </div>
       </section>
