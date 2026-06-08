@@ -67,7 +67,6 @@ const COMMITMENTS = [
 
 const TRUST_BADGES = [
   { icon: <Shield size={16} />, label: "One Trusted Local Mover" },
-  { icon: <PhoneOff size={16} />, label: "Reduced Spam Calls" },
   { icon: <BadgeCheck size={16} />, label: "Verified Business Network" },
   { icon: <Lock size={16} />, label: "Secure Enquiry Process" },
   { icon: <CheckCircle2 size={16} />, label: "Free Enquiry" },
@@ -106,7 +105,7 @@ export default function HomeContent() {
                 priority
               />
               {/* Dark navy overlay: 55-75% opacity range */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1B2D4F]/75 via-[#1B2D4F]/65 to-[#1B2D4F]/55" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1B2D4F]/80 via-[#1B2D4F]/75 to-[#1B2D4F]/70" />
             </div>
 
             {/* Text content */}
@@ -124,7 +123,7 @@ export default function HomeContent() {
               </p>
 
               {/* Trust badges — visible on all breakpoints, wrap cleanly */}
-              <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex flex-wrap gap-3 mb-4">
                 {TRUST_BADGES.map((badge, index) => (
                   <div
                     key={index}
@@ -135,6 +134,10 @@ export default function HomeContent() {
                   </div>
                 ))}
               </div>
+
+              <p className="text-xs text-white/60 font-bold tracking-wider uppercase mb-8">
+                Applications are reviewed before movers receive access to customer enquiries.
+              </p>
 
               <div className="flex items-center gap-6 text-sm">
                 <div>
@@ -172,7 +175,7 @@ export default function HomeContent() {
       <section className="bg-white border-b border-border py-8">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <p className="text-sm text-text-secondary leading-relaxed">
-            Man and Van Club helps connect customers with suitable local movers for house removals, flat moves, furniture collection, office relocations and long-distance moves across England, Scotland and Wales.
+            Man and Van Club helps connect customers with suitable local movers for house removals, flat moves, furniture collection, office relocations and long-distance moves across the UK.
           </p>
         </div>
       </section>
