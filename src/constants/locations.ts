@@ -379,6 +379,24 @@ export const LOCATIONS: LocationData[] = [
   // GREATER LONDON (24 locations)
   // ──────────────────────────────────────────
   {
+    slug: "london",
+    name: "London",
+    region: "Greater London",
+    county: "Greater London",
+    nearbyAreas: ["Shoreditch", "Clapham", "Islington", "Hackney", "Camden", "Greenwich", "Wandsworth", "Richmond", "Brixton", "Fulham", "Hampstead", "Wimbledon"],
+    majorRoads: ["M25", "A40", "A12", "A13", "A2", "A3", "A4", "North Circular"],
+    propertyTypes: ["Victorian terraces", "modern apartments", "Georgian townhouses", "post-war semis"],
+    hasStudentAreas: true,
+    studentAreas: ["Shoreditch", "Camden", "Brixton", "Kingston"],
+    businessDistricts: ["City of London", "Canary Wharf", "Shoreditch", "Westminster"],
+    movingConsiderations: ["ULEZ and Congestion Charge zones", "Red Route restrictions", "limited parking in central boroughs", "M25 orbital traffic"],
+    intro: "Moving in London comes with its own rules — Congestion Charge, ULEZ, Red Routes, and difficult parking. Our London movers know how to work within these restrictions and get the job done efficiently across every borough.",
+    knowledge: "From moving into a flat in Shoreditch to relocating a family home in Clapham or Richmond, our vetted London movers understand the realities of moving in the capital. They know which buildings require lift bookings, where parking is realistically possible, and how to plan around the busiest times of day.",
+    badge: "London's Trusted Movers",
+    areas: ["Shoreditch", "Clapham", "Islington", "Hackney", "Camden", "Greenwich", "Wandsworth", "Richmond", "Brixton", "Fulham", "Hampstead", "Wimbledon"],
+    nearbyLocations: ["croydon", "bromley", "wembley", "ealing", "enfield", "barnet", "kingston", "stratford"]
+  },
+  {
     slug: "croydon",
     name: "Croydon",
     region: "Greater London",
