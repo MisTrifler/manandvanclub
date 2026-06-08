@@ -104,50 +104,63 @@ export default function HomeContent() {
                 className="object-cover object-[center_30%]"
                 priority
               />
-              {/* Dark navy overlay: 55-75% opacity range */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1B2D4F]/80 via-[#1B2D4F]/75 to-[#1B2D4F]/70" />
+              {/* Gradient overlay: left-to-right, 80-85% left, 70% middle, 50% right */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1B2D4F]/85 via-[#1B2D4F]/70 to-[#1B2D4F]/50" />
             </div>
 
             {/* Text content */}
-            <div className="relative z-10 p-4 py-10 lg:p-12 lg:pl-16 text-white">
-              <div className="hidden lg:inline-flex items-center bg-white/20 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-white/30">
-                UK-Wide Moving Service
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-5 leading-[0.95] text-white tracking-tighter">
-                Man and Van Services Near You
-              </h1>
-
-              <p className="text-base sm:text-lg lg:text-xl text-white/80 mb-6 max-w-xl font-medium leading-relaxed">
-                Get matched with a suitable local mover who contacts you directly. No endless quote comparisons or unnecessary sales calls.
-              </p>
-
-              {/* Trust badges — visible on all breakpoints, wrap cleanly */}
-              <div className="flex flex-wrap gap-3 mb-4">
-                {TRUST_BADGES.map((badge, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-sm font-bold text-primary/80"
-                  >
-                    <span className="text-accent">{badge.icon}</span>
-                    {badge.label}
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-xs text-white/60 font-bold tracking-wider uppercase mb-8">
-                Applications are reviewed before movers receive access to customer enquiries.
-              </p>
-
-              <div className="flex items-center gap-6 text-sm">
-                <div>
-                  <div className="font-black text-white text-2xl tracking-tighter">UK-WIDE</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Coverage</div>
+            <div className="relative z-10 p-4 py-10 lg:p-12 lg:pl-16">
+              {/* Premium content panel: semi-transparent navy with soft blur */}
+              <div className="bg-[#1B2D4F]/75 backdrop-blur-md rounded-3xl p-5 lg:p-10 max-w-[620px] text-white">
+                <div className="hidden lg:inline-flex items-center bg-white/20 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-white/30">
+                  UK-Wide Moving Service
                 </div>
-                <div className="h-8 w-px bg-white/30" />
-                <div>
-                  <div className="font-black text-white text-2xl tracking-tighter">NO OBLIGATION</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Free Enquiry</div>
+
+                <h1
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black mb-5 lg:mb-6 leading-[1.05] tracking-tighter max-w-[580px]"
+                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
+                >
+                  Man and Van Services Near You
+                </h1>
+
+                <p
+                  className="text-base sm:text-lg lg:text-xl text-white mb-7 max-w-[550px] font-medium leading-relaxed"
+                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
+                >
+                  Get matched with a suitable local mover who contacts you directly. No endless quote comparisons or unnecessary sales calls.
+                </p>
+
+                {/* Trust badges — highly visible against darker image */}
+                <div className="flex flex-wrap gap-3 mb-5">
+                  {TRUST_BADGES.map((badge, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-bold text-primary/80"
+                    >
+                      <span className="text-accent">{badge.icon}</span>
+                      {badge.label}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Verification message — prominent with icon */}
+                <div className="flex items-start gap-2 mb-8">
+                  <ShieldCheck size={14} className="text-white/70 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-white/80 font-medium leading-relaxed">
+                    Applications are reviewed before movers receive access to customer enquiries.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-6 text-sm">
+                  <div>
+                    <div className="font-black text-white text-2xl tracking-tighter">UK-WIDE</div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Coverage</div>
+                  </div>
+                  <div className="h-8 w-px bg-white/30" />
+                  <div>
+                    <div className="font-black text-white text-2xl tracking-tighter">NO OBLIGATION</div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Free Enquiry</div>
+                  </div>
                 </div>
               </div>
             </div>
