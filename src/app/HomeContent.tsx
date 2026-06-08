@@ -13,14 +13,11 @@ import {
   Search,
   UserCheck,
   Phone,
-  CalendarCheck,
   Eye,
   Handshake,
-  MessageCircle,
   PhoneOff,
   BadgeCheck,
   Users,
-  ClipboardCheck,
   Star,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
@@ -82,7 +79,17 @@ export default function HomeContent() {
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
       {/* Hero Section */}
       <section id="quote-form" className="relative lg:min-h-[calc(100vh-80px)] flex items-center pt-4 lg:pt-0 pb-10 lg:pb-16 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-[#F9F9F7]" />
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-moving.jpg"
+            alt="Professional movers loading a Luton van for a residential house move"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-[#F9F9F7]/90 lg:bg-gradient-to-r lg:from-[#F9F9F7] lg:via-[#F9F9F7]/95 lg:to-[#F9F9F7]/30" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
@@ -130,18 +137,6 @@ export default function HomeContent() {
                   <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Free Enquiry</div>
                 </div>
               </div>
-
-              {/* Hero Image — Desktop only in hero, mobile shown below form */}
-              <div className="hidden lg:block rounded-2xl overflow-hidden border border-border shadow-lg">
-                <Image
-                  src="/images/hero-moving.jpg"
-                  alt="Professional movers loading a Luton van for a residential house move"
-                  width={600}
-                  height={340}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
             </motion.div>
 
             <motion.div
@@ -155,18 +150,6 @@ export default function HomeContent() {
                 <p className="text-[11px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
               </div>
               <QuoteForm />
-
-              {/* Mobile hero image — shown below form on mobile */}
-              <div className="lg:hidden mt-6 rounded-2xl overflow-hidden border border-border shadow-lg">
-                <Image
-                  src="/images/hero-moving.jpg"
-                  alt="Professional movers loading a Luton van for a residential house move"
-                  width={600}
-                  height={340}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
             </motion.div>
           </div>
         </div>
