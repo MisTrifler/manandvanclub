@@ -156,15 +156,15 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                 ))}
               </div>
 
-              {/* Sidebar Content moved into main flow for better visibility on mobile/desktop conversion */}
-              <div className="bg-primary p-12 rounded-[3.5rem] text-white space-y-8 relative overflow-hidden shadow-2xl">
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full -mr-16 -mt-16" />
+              {/* CTA Card — light background for readability */}
+              <div className="bg-white p-12 rounded-[3.5rem] text-primary space-y-8 relative overflow-hidden shadow-2xl border border-border">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -mr-16 -mt-16" />
                  <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-none italic">Ready to start?</h3>
-                 <p className="text-gray-400 font-medium text-lg leading-relaxed">It takes less than 60 seconds to find the best local movers in {data.name}.</p>
+                 <p className="text-text-secondary font-medium text-lg leading-relaxed">It takes less than 60 seconds to find the best local movers in {data.name}.</p>
                  <Link href="#quote-form" className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 shadow-2xl shadow-accent/20 hover:scale-105 transition-all">
                     Get Matched Now <ArrowUpRight size={22} />
                  </Link>
-                 <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-white/40">
+                 <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
                    <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Fully Insured</span>
                    <span className="flex items-center gap-1.5"><Zap size={14} className="text-accent"/> 1-to-1 Match</span>
                  </div>

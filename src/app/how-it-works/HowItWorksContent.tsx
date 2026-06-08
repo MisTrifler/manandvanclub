@@ -75,7 +75,7 @@ export default function HowItWorksContent() {
       </section>
 
       {/* Trust Banner */}
-      <section className="bg-primary py-12 text-white">
+      <section className="bg-[#F9F9F7] py-12 text-primary">
         <div className="container mx-auto px-4 text-center">
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-black uppercase tracking-widest">
             <div className="flex items-center gap-2"><ShieldCheck size={18} className="text-accent" /> Fully Insured Movers</div>

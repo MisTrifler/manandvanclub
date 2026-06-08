@@ -52,10 +52,10 @@ export default function AboutContent() {
       </section>
 
       {/* Our Mission */}
-      <section className="bg-primary py-16 text-white">
+      <section className="bg-[#F9F9F7] py-16 text-primary">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-4xl font-black uppercase tracking-tighter mb-6">Our Mission</h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-text-secondary">
             Man and Van Club exists because finding a trustworthy local mover shouldn't be a lottery. We built an exclusive introduction marketplace that gives customers one verified professional — not a flood of competing quotes.
           </p>
         </div>
