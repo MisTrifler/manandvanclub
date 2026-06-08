@@ -206,26 +206,6 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="bg-white py-10 lg:py-14 border-y border-border">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-            <div>
-              <div className="text-4xl font-black tracking-tighter text-primary">UK-WIDE</div>
-              <p className="text-sm text-text-secondary mt-1">Nationwide coverage across the UK</p>
-            </div>
-            <div className="border-y md:border-y-0 md:border-x border-border py-8 md:py-0">
-              <div className="text-4xl font-black tracking-tighter text-primary">NO OBLIGATION</div>
-              <p className="text-sm text-text-secondary mt-1">Submit your details without commitment</p>
-            </div>
-            <div>
-              <div className="text-4xl font-black tracking-tighter text-primary">1-TO-1</div>
-              <p className="text-sm text-text-secondary mt-1">Exclusive match — only one mover sees you</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Why Customers Choose Man and Van Club */}
       <section className="py-20 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
