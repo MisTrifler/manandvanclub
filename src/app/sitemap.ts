@@ -1,26 +1,21 @@
 import { MetadataRoute } from 'next';
+import { LOCATIONS } from '@/constants/locations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.manandvanclub.co.uk';
 
-  const cities = [
-    "london", "birmingham", "manchester", "leeds", "bristol", 
-    "liverpool", "nottingham", "sheffield", "glasgow", "cardiff", 
-    "edinburgh", "wolverhampton", "walsall", "leicester", "coventry"
-  ];
-  
-  const services = [
-    "house-removals", "flat-removals", "student-removals", 
-    "office-removals", "furniture-delivery", "same-day-man-and-van", 
-    "long-distance-removals", "facebook-marketplace-collection"
-  ];
-
-  const cityUrls = cities.map(city => ({
-    url: `${baseUrl}/man-and-van-${city}`,
+  const locationUrls = LOCATIONS.map(loc => ({
+    url: `${baseUrl}/man-and-van-${loc.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
+
+  const services = [
+    "house-removals", "flat-removals", "student-removals",
+    "office-removals", "furniture-delivery", "same-day-man-and-van",
+    "long-distance-removals", "facebook-marketplace-collection"
+  ];
 
   const serviceUrls = services.map(service => ({
     url: `${baseUrl}/${service}`,
@@ -30,8 +25,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const staticUrls = [
-    '', '/how-it-works', '/for-businesses', '/about', 
-    '/areas', '/pricing', '/contact', '/apply-to-join'
+    '', '/how-it-works', '/for-businesses', '/about',
+    '/areas-covered', '/pricing', '/contact', '/apply-to-join',
+    '/why-join', '/for-movers', '/terms', '/privacy', '/cookies'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -39,5 +35,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : 0.6,
   }));
 
-  return [...staticUrls, ...cityUrls, ...serviceUrls];
+  return [...staticUrls, ...locationUrls, ...serviceUrls];
 }

@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 
 export default function CityServiceContent({ data, faqItems }: { data: any, faqItems: any[] }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
-  
+
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] } }
   };
-  
-  const faqSchema = {
+
+  const faqSchema = data.faqSchema || {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqItems.map(item => ({
@@ -26,7 +26,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
     }))
   };
 
-  const breadcrumbSchema = {
+  const breadcrumbSchema = data.breadcrumbSchema || {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
@@ -47,6 +47,12 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
 
   return (
     <div className="bg-white min-h-screen selection:bg-accent selection:text-white">
+      {data.localBusinessSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data.localBusinessSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -55,7 +61,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      
+
       {/* ── Hero Section (Optimized) ── */}
       <section className="bg-[#F9F9F7] py-16 lg:py-0 lg:h-[calc(100vh-100px)] flex items-center border-b border-border overflow-hidden relative">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
@@ -63,10 +69,10 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
               {[...Array(24)].map((_, i) => <div key={i} className="border border-primary/20 h-32 w-full" />)}
            </div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
-            <motion.div 
+            <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeUp}
@@ -76,7 +82,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                 <MapPin size={12} />
                 {data.badge ? data.badge : `Local Experts in ${data.name}`}
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">
                 {data.h1 ? data.h1 : (
                   <>
@@ -84,11 +90,11 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                   </>
                 )}
               </h1>
-              
+
               <p className="text-base lg:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
                 {data.intro}
               </p>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4">
                 {[
                   { v: "Verified", l: "Network" },
@@ -103,7 +109,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -119,7 +125,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
       <section className="py-24 lg:py-32">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 items-start">
-            
+
             <div className="lg:col-span-2 space-y-16 lg:space-y-24">
               <div className="space-y-8">
                  <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight leading-none">
@@ -174,6 +180,44 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                   ))}
                 </div>
               </div>
+
+              {/* Nearby Locations — Internal Linking */}
+              {data.nearbyLocations && data.nearbyLocations.length > 0 && (
+                <div className="space-y-10">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Nearby Areas We Cover</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {data.nearbyLocations.map((loc: { slug: string; name: string }) => (
+                      <Link
+                        key={loc.slug}
+                        href={`/man-and-van-${loc.slug}`}
+                        className="group flex items-center justify-between bg-[#F9F9F7] p-6 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                      >
+                        <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{loc.name}</span>
+                        <ArrowUpRight size={16} className="text-primary/30 group-hover:text-accent transition-colors" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Service Links — Internal Linking */}
+              {data.serviceLinks && data.serviceLinks.length > 0 && (
+                <div className="space-y-10">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Services in {data.name}</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {data.serviceLinks.map((service: { title: string; href: string }) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="group flex items-center justify-between bg-white p-6 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                      >
+                        <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{service.title}</span>
+                        <ArrowUpRight size={16} className="text-primary/30 group-hover:text-accent transition-colors" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Vetting info remains in sidebar */}
@@ -184,6 +228,15 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
                     Verified Move Platform
                   </p>
                   <p className="text-xs text-text-secondary font-medium leading-relaxed">We manually check move requests to ensure a high quality marketplace for both customers and movers.</p>
+               </div>
+
+               {/* Coverage info */}
+               <div className="bg-white p-10 rounded-[2.5rem] border border-border/50 space-y-6">
+                  <MapPin size={28} className="text-accent" />
+                  <p className="text-primary font-black uppercase tracking-tighter leading-tight text-sm">
+                    UK-Wide Coverage
+                  </p>
+                  <p className="text-xs text-text-secondary font-medium leading-relaxed">We cover {data.name} and surrounding areas with a network of vetted local movers ready to help.</p>
                </div>
             </aside>
 

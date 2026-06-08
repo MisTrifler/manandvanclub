@@ -35,6 +35,11 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/areas',
+        destination: '/areas-covered',
+        permanent: true,
+      },
     ];
   },
 };
