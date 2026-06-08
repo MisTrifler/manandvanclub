@@ -97,7 +97,7 @@ export default function HomeContent() {
                   { icon: <Phone size={16} />, label: "No Spam Calls" },
                   { icon: <Zap size={16} />, label: "No Bidding Wars" },
                   { icon: <CheckCircle2 size={16} />, label: "UK-Wide Coverage" },
-                  { icon: <Lock size={16} />, label: "Secure Enquiry Process" },
+                  { icon: <Lock size={16} />, label: "Secure & GDPR Compliant" },
                 ].map((badge, index) => (
                   <div key={index} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-border px-4 py-2 rounded-full text-sm font-bold text-primary/80">
                     <span className="text-accent">{badge.icon}</span>

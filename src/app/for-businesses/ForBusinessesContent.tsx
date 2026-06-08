@@ -126,7 +126,7 @@ export default function ForBusinessesContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/apply-to-join" className="btn-orange px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-accent/20 transition-all">Apply to Join</Link>
-              <Link href="/login" className="bg-primary text-white hover:bg-accent px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-black/10 transition-all">Driver Login</Link>
+              <Link href="/login" className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl transition-all">Driver Login</Link>
             </div>
             <p className="mt-10 text-[10px] text-text-secondary font-black uppercase tracking-[0.3em] opacity-40">
               * Verification usually takes less than 24 hours.

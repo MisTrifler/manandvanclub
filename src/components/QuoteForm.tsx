@@ -177,6 +177,7 @@ export default function QuoteForm() {
                 { icon: <Clock size={12} />, text: "Takes less than 60 seconds" },
                 { icon: <BadgeCheck size={12} />, text: "No payment required" },
                 { icon: <Shield size={12} />, text: "No obligation" },
+                { icon: <Lock size={12} />, text: "Secure & GDPR Compliant" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-1.5 bg-accent/5 text-accent px-2.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider">
                   {item.icon} {item.text}
@@ -225,9 +226,9 @@ export default function QuoteForm() {
         {/* STEP 3 */}
         {step === 3 && estimate && (
           <div className="space-y-8 text-center py-4">
-            <div className="bg-primary text-white p-10 rounded-[2.5rem] shadow-xl">
-              <p className="text-[10px] font-black uppercase opacity-40 mb-2">Estimated Value</p>
-              <p className="text-5xl font-black tracking-tighter">£{estimate.min}–{estimate.max}</p>
+            <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-border">
+              <p className="text-[10px] font-black uppercase text-primary/40 mb-2">Estimated Value</p>
+              <p className="text-5xl font-black tracking-tighter text-primary">£{estimate.min}–{estimate.max}</p>
             </div>
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
             <button onClick={() => setStep(2)} className="text-[10px] font-black uppercase opacity-30">Back</button>
@@ -239,12 +240,14 @@ export default function QuoteForm() {
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Your Details</h2>
 
-            {/* Phone reassurance */}
-            <div className="bg-accent/5 border border-accent/10 rounded-xl p-4 flex items-start gap-3">
-              <Lock size={16} className="text-accent mt-0.5 flex-shrink-0" />
+            {/* Privacy & GDPR reassurance */}
+            <div className="bg-green-50/50 border border-green-200/50 rounded-xl p-4 flex items-start gap-3">
+              <Lock size={16} className="text-green-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold text-primary">We do not sell your details to multiple movers.</p>
-                <p className="text-[10px] text-text-secondary mt-0.5">Your enquiry is introduced through our exclusive matching process.</p>
+                <p className="text-xs font-bold text-primary flex items-center gap-1.5">
+                  <span className="inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">Secure & GDPR Compliant</span>
+                </p>
+                <p className="text-[10px] text-text-secondary mt-1.5 leading-relaxed">Your enquiry is handled securely and is not distributed to numerous moving companies. Information is only shared as required to facilitate the matching process.</p>
               </div>
             </div>
 
