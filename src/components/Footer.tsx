@@ -15,7 +15,7 @@ export default function Footer() {
                 <span className="text-white font-black text-sm leading-none">M&V</span>
               </div>
               <span className="text-xl font-bold text-primary tracking-tighter uppercase">
-                MAN<span className="text-accent">&</span>VAN<span className="opacity-40"> CLUB</span>
+                Man<span className="text-accent">&</span>Van <span className="opacity-40">Club</span>
               </span>
             </Link>
             <p className="text-text-secondary mb-6 leading-relaxed">
@@ -29,7 +29,7 @@ export default function Footer() {
                 <Phone size={14} className="text-accent" /> 07943 617 386
               </div>
               <div className="flex items-center gap-2">
-                <MapPin size={14} className="text-accent" /> England, UK
+                <MapPin size={14} className="text-accent" /> UK-Wide Coverage
               </div>
             </div>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-border text-xs text-text-secondary">

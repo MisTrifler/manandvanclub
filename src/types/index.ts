@@ -1,7 +1,9 @@
+import { ReactNode } from "react";
+
 export interface Service {
   t: string;
   d: string;
-  i: string;
+  i: ReactNode;
   h: string;
   img: string;
 }

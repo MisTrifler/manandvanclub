@@ -44,7 +44,7 @@ export default function Header() {
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
               <MapPin size={10} className="text-accent" />
-              <span>England Focused Service</span>
+              <span>UK-Wide Coverage</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={10} className="text-accent" />
@@ -65,7 +65,7 @@ export default function Header() {
               <span className="text-xl font-black text-primary tracking-tighter leading-none uppercase">
                 Man<span className="text-accent">&</span>Van
               </span>
-              <span className="text-[8px] font-black text-accent tracking-[0.4em] uppercase mt-0.5 leading-none">The Club</span>
+              <span className="text-[8px] font-black text-accent tracking-[0.4em] uppercase mt-0.5 leading-none">Club</span>
             </div>
           </Link>
 
@@ -141,16 +141,21 @@ export default function Header() {
 
           {/* CTAs */}
           <div className="hidden lg:flex items-center gap-6">
-            <Link href="/login" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors px-4">
+            <Link href="/login" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors px-4" aria-label="Driver login portal">
               Driver Login
             </Link>
-            <Link href="/#quote-form" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95">
+            <Link href="/#quote-form" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95" aria-label="Get matched with a local mover">
               Get Matched
             </Link>
           </div>
 
           {/* Mobile Toggle */}
-          <button className="lg:hidden p-2 text-primary" onClick={() => setIsOpen(!isOpen)}>
+          <button 
+            className="lg:hidden p-2 text-primary" 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>

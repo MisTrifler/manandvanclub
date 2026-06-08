@@ -156,7 +156,7 @@ export default function HomeContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
             <div>
               <div className="text-4xl font-black tracking-tighter text-primary">UK-WIDE</div>
-              <p className="text-sm text-text-secondary mt-1">Coverage across England, Scotland & Wales</p>
+              <p className="text-sm text-text-secondary mt-1">Nationwide coverage across the UK</p>
             </div>
             <div className="border-y md:border-y-0 md:border-x border-border py-8 md:py-0">
               <div className="text-4xl font-black tracking-tighter text-primary">NO OBLIGATION</div>
@@ -230,7 +230,7 @@ export default function HomeContent() {
             {SERVICES.map((s, i) => (
               <Link key={i} href={s.h} className="group bg-white rounded-3xl border border-border p-8 hover:shadow-xl transition-all flex flex-col h-full">
                 <div className="mb-4 text-accent">
-                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
                     {s.i}
                   </div>
                 </div>

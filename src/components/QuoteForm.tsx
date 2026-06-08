@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Loader2, CheckCircle2 } from "lucide-react";
+import { Loader2, CheckCircle2, Shield, Lock, Clock, BadgeCheck } from "lucide-react";
 import Link from "next/link";
 
 const today = new Date().toISOString().split("T")[0];
@@ -22,6 +22,8 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
+
+const TOTAL_STEPS = 5;
 
 export default function QuoteForm() {
   const [step, setStep] = useState(1);
@@ -130,13 +132,32 @@ export default function QuoteForm() {
     }
   };
 
+  const getStepTitle = () => {
+    switch (step) {
+      case 1: return "Moving Details";
+      case 2: return "Move Type";
+      case 3: return "Estimated Price";
+      case 4: return "Your Details";
+      case 5: return "Verify Email";
+      default: return "";
+    }
+  };
+
   return (
     <div className="bg-white rounded-2xl lg:rounded-[2rem] border border-border overflow-hidden shadow-2xl" id="quote-form">
       {step < 6 && (
-        <div className="bg-gray-50/50 px-6 py-3 border-b border-border flex justify-end">
+        <div className="bg-gray-50/50 px-6 py-4 border-b border-border">
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
+              Step {step} of {TOTAL_STEPS}: {getStepTitle()}
+            </p>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
+              {Math.round((step / TOTAL_STEPS) * 100)}% Complete
+            </p>
+          </div>
           <div className="flex gap-1.5">
-            {[1, 2, 3, 4, 5].map(i => (
-              <div key={i} className={`h-1 w-6 lg:w-8 rounded-full transition-all ${i <= step ? "bg-accent" : "bg-gray-200"}`} />
+            {Array.from({ length: TOTAL_STEPS }, (_, i) => i + 1).map(i => (
+              <div key={i} className={`h-1.5 flex-1 rounded-full transition-all ${i <= step ? "bg-accent" : "bg-gray-200"}`} />
             ))}
           </div>
         </div>
@@ -147,9 +168,22 @@ export default function QuoteForm() {
         {step === 1 && (
           <div className="space-y-6">
             <div>
-              <p className="text-[9px] font-black uppercase text-accent">Step 1 — Details</p>
               <h2 className="text-3xl lg:text-4xl font-black text-primary uppercase">Start Your Move</h2>
             </div>
+
+            {/* Form reassurance */}
+            <div className="flex flex-wrap gap-2">
+              {[
+                { icon: <Clock size={12} />, text: "Takes less than 60 seconds" },
+                { icon: <BadgeCheck size={12} />, text: "No payment required" },
+                { icon: <Shield size={12} />, text: "No obligation" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-1.5 bg-accent/5 text-accent px-2.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider">
+                  {item.icon} {item.text}
+                </div>
+              ))}
+            </div>
+
             <div className="space-y-3">
               <div>
                 <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection</label>
@@ -174,13 +208,13 @@ export default function QuoteForm() {
           </div>
         )}
 
-        {/* Other steps remain the same */}
+        {/* STEP 2 */}
         {step === 2 && (
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Move Type</h2>
             <div className="grid grid-cols-1 gap-2 max-h-[300px] overflow-y-auto pr-2">
               {["Single Item", "Studio Flat", "1 Bed Flat", "2 Bed House", "3 Bed House", "4+ Bed House", "Office Move", "Other"].map(type => (
-                <button key={type} onClick={() => { setValue("moveType", type); onNextStep(); }} className="p-4 text-left rounded-xl border-2 border-border font-bold text-sm uppercase hover:border-accent">
+                <button key={type} onClick={() => { setValue("moveType", type); onNextStep(); }} className="p-4 text-left rounded-xl border-2 border-border font-bold text-sm uppercase hover:border-accent transition-colors">
                   {type}
                 </button>
               ))}
@@ -188,6 +222,7 @@ export default function QuoteForm() {
           </div>
         )}
 
+        {/* STEP 3 */}
         {step === 3 && estimate && (
           <div className="space-y-8 text-center py-4">
             <div className="bg-primary text-white p-10 rounded-[2.5rem] shadow-xl">
@@ -199,9 +234,20 @@ export default function QuoteForm() {
           </div>
         )}
 
+        {/* STEP 4 */}
         {step === 4 && (
           <div className="space-y-6">
             <h2 className="text-3xl font-black text-primary uppercase text-center">Your Details</h2>
+
+            {/* Phone reassurance */}
+            <div className="bg-accent/5 border border-accent/10 rounded-xl p-4 flex items-start gap-3">
+              <Lock size={16} className="text-accent mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs font-bold text-primary">We do not sell your details to multiple movers.</p>
+                <p className="text-[10px] text-text-secondary mt-0.5">Your enquiry is introduced through our exclusive matching process.</p>
+              </div>
+            </div>
+
             <div className="space-y-3">
               <input {...register("firstName")} placeholder="First Name" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
               <input {...register("phone")} placeholder="UK Mobile" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
@@ -213,9 +259,11 @@ export default function QuoteForm() {
           </div>
         )}
 
+        {/* STEP 5 */}
         {step === 5 && (
           <div className="space-y-8 text-center">
             <h2 className="text-3xl font-black text-primary uppercase">Verify Your Email</h2>
+            <p className="text-sm text-text-secondary">Enter the 4-digit code sent to your email</p>
             <div className="flex justify-center gap-3">
               {otp.map((digit, i) => (
                 <input
@@ -228,6 +276,7 @@ export default function QuoteForm() {
                   onChange={(e) => handleOtpChange(i, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(i, e)}
                   className="w-12 h-16 bg-gray-50 border-2 rounded-xl text-center text-3xl font-black outline-none border-border focus:border-accent"
+                  aria-label={`Digit ${i + 1} of 4`}
                 />
               ))}
             </div>
@@ -238,6 +287,7 @@ export default function QuoteForm() {
           </div>
         )}
 
+        {/* STEP 6 - Success */}
         {step === 6 && (
           <div className="text-center py-6 space-y-6">
             <CheckCircle2 size={48} className="text-success mx-auto" />

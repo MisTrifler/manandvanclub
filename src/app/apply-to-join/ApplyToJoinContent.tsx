@@ -233,7 +233,7 @@ export default function ApplyToJoinContent() {
                 {[
                   { step: "01", title: "We review your application", desc: "Our team checks your details within 24 hours." },
                   { step: "02", title: "We verify your insurance", desc: "You'll be asked to upload your insurance documents." },
-                  { step: "03", title: "You get access to live jobs", desc: "Once approved, you can start unlocking leads immediately." },
+                  { step: "03", title: "Receive Approval & Platform Access", desc: "Approved movers receive login details and access to available customer enquiries." },
                 ].map((item, i) => (
                   <div key={i} className="bg-white p-8 rounded-3xl border border-border/50 space-y-4 shadow-sm">
                     <div className="text-accent font-black text-xl italic tracking-tighter">Step {item.step}</div>
