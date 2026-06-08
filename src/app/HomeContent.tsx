@@ -65,6 +65,14 @@ const COMMITMENTS = [
   { t: "Direct Communication", d: "Speak directly with your matched mover. No call centres or intermediaries.", icon: <Handshake size={24} /> },
 ];
 
+const TRUST_BADGES = [
+  { icon: <Shield size={16} />, label: "One Trusted Local Mover" },
+  { icon: <PhoneOff size={16} />, label: "Reduced Spam Calls" },
+  { icon: <BadgeCheck size={16} />, label: "Verified Business Network" },
+  { icon: <Lock size={16} />, label: "Secure Enquiry Process" },
+  { icon: <CheckCircle2 size={16} />, label: "Free Enquiry" },
+];
+
 export default function HomeContent() {
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
@@ -78,80 +86,85 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
       {/* Hero Section */}
-      <section id="quote-form" className="relative lg:min-h-[calc(100vh-80px)] flex items-center pt-4 lg:pt-0 pb-10 lg:pb-16 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-moving.jpg"
-            alt="Professional movers loading a Luton van for a residential house move"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-[#F9F9F7]/90 lg:bg-gradient-to-r lg:from-[#F9F9F7] lg:via-[#F9F9F7]/95 lg:to-[#F9F9F7]/30" />
-        </div>
+      <section id="quote-form" className="relative overflow-hidden">
+        <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-80px)]">
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="lg:w-1/2 text-left order-2 lg:order-1"
-            >
-              <div className="hidden lg:inline-flex items-center bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-primary/20">
+          {/* LEFT PANEL — Image + Text */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="lg:w-1/2 relative flex flex-col justify-center order-2 lg:order-1"
+          >
+            {/* Background image — confined to left panel only */}
+            <div className="absolute inset-0">
+              <Image
+                src="/images/hero-moving.jpg"
+                alt="Professional movers loading a Luton van for a residential house move"
+                fill
+                className="object-cover object-[center_30%]"
+                priority
+              />
+              {/* Dark navy overlay: 55-75% opacity range */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1B2D4F]/75 via-[#1B2D4F]/65 to-[#1B2D4F]/55" />
+            </div>
+
+            {/* Text content */}
+            <div className="relative z-10 p-4 py-10 lg:p-12 lg:pl-16 text-white">
+              <div className="hidden lg:inline-flex items-center bg-white/20 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-white/30">
                 UK-Wide Moving Service
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-5 leading-[0.95] text-primary tracking-tighter">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-5 leading-[0.95] text-white tracking-tighter">
                 Find Your Trusted Local Mover Without Comparing Endless Quotes
               </h1>
 
-              <p className="text-lg lg:text-xl text-text-secondary mb-6 max-w-xl font-medium leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-white/80 mb-6 max-w-xl font-medium leading-relaxed">
                 Get matched with a suitable local mover through our exclusive matching process. Avoid spending hours comparing companies or dealing with unnecessary sales calls.
               </p>
 
-              <div className="hidden lg:flex flex-wrap gap-3 mb-8">
-                {[
-                  { icon: <Shield size={16} />, label: "One Trusted Local Mover" },
-                  { icon: <PhoneOff size={16} />, label: "Reduced Spam Calls" },
-                  { icon: <BadgeCheck size={16} />, label: "Verified Business Network" },
-                  { icon: <Lock size={16} />, label: "Secure Enquiry Process" },
-                  { icon: <CheckCircle2 size={16} />, label: "Free Enquiry" },
-                ].map((badge, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-border px-4 py-2 rounded-full text-sm font-bold text-primary/80">
+              {/* Trust badges — visible on all breakpoints, wrap cleanly */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                {TRUST_BADGES.map((badge, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-sm font-bold text-primary/80"
+                  >
                     <span className="text-accent">{badge.icon}</span>
                     {badge.label}
                   </div>
                 ))}
               </div>
 
-              <div className="flex items-center gap-6 text-sm mb-8">
+              <div className="flex items-center gap-6 text-sm">
                 <div>
-                  <div className="font-black text-primary text-2xl tracking-tighter">UK-WIDE</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Coverage</div>
+                  <div className="font-black text-white text-2xl tracking-tighter">UK-WIDE</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Coverage</div>
                 </div>
-                <div className="h-8 w-px bg-border" />
+                <div className="h-8 w-px bg-white/30" />
                 <div>
-                  <div className="font-black text-primary text-2xl tracking-tighter">NO OBLIGATION</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Free Enquiry</div>
+                  <div className="font-black text-white text-2xl tracking-tighter">NO OBLIGATION</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Free Enquiry</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={1}
-              className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2 lg:sticky lg:top-24"
-            >
+          {/* RIGHT PANEL — Clean white, form only */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            className="lg:w-1/2 w-full bg-white order-1 lg:order-2 flex flex-col justify-center pt-4 lg:pt-0 pb-4 lg:pb-0 px-4 lg:px-12"
+          >
+            <div className="w-full max-w-lg mx-auto lg:mx-0">
               <div className="mb-3 text-center lg:text-left">
                 <p className="text-[11px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
               </div>
               <QuoteForm />
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
