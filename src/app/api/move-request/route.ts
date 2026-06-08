@@ -21,6 +21,7 @@ export async function POST(req: Request) {
           delivery_postcode: data.deliveryPostcode,
           move_date: data.moveDate,
           move_type: data.moveType,
+          details: data.details || null,
           status: 'pending',
           otp_code: otp,
           is_verified: false

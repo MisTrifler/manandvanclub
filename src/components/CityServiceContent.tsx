@@ -5,7 +5,7 @@ import FAQ from "@/components/FAQ";
 import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap, CheckCircle, Lock, PhoneOff, UserCheck, ClipboardCheck, Truck, Package, Route, Building, GraduationCap, Sofa, ArrowRight, ListChecks } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function CityServiceContent({ data, faqItems }: { data: any, faqItems: any[] }) {
+export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: string }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
 
   const fadeUp = {
@@ -115,7 +115,7 @@ export default function CityServiceContent({ data, faqItems }: { data: any, faqI
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:w-1/2 w-full max-w-lg relative z-20"
             >
-              <QuoteForm />
+              <QuoteForm intent={formIntent} />
             </motion.div>
           </div>
         </div>

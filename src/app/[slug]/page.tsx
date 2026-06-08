@@ -17,6 +17,7 @@ const serviceSlugs = [
 const servicePageData: Record<string, any> = {
   "house-removals": {
     name: "House Removals",
+    formIntent: "house",
     title: "House Removals | Professional Home Moving Services | Man and Van Club",
     description: "Professional house removals across England. Get matched with a vetted local mover for your full home move. Fixed or hourly pricing, fully insured.",
     badge: "Home Moving Experts",
@@ -31,6 +32,7 @@ const servicePageData: Record<string, any> = {
   },
   "flat-removals": {
     name: "Flat Removals",
+    formIntent: "house",
     title: "Flat Removals | Apartment & Flat Moving Specialists | Man and Van Club",
     description: "Expert flat and apartment removals across England. Our vetted movers understand lift access, parking restrictions, and tight staircases.",
     badge: "Flat Moving Specialists",
@@ -45,6 +47,7 @@ const servicePageData: Record<string, any> = {
   },
   "student-removals": {
     name: "Student Removals",
+    formIntent: "student",
     title: "Student Removals | Affordable University Moves | Man and Van Club",
     description: "Affordable student removals across England. Moving to or from university halls or shared houses? Get matched with a vetted local mover.",
     badge: "Student Moving Specialists",
@@ -59,6 +62,7 @@ const servicePageData: Record<string, any> = {
   },
   "office-removals": {
     name: "Office Removals",
+    formIntent: "office",
     title: "Office Removals | Business Relocation Services | Man and Van Club",
     description: "Professional office removals and business relocations across England. Minimise downtime with vetted local movers who understand commercial moves.",
     badge: "Business Relocation Experts",
@@ -73,6 +77,7 @@ const servicePageData: Record<string, any> = {
   },
   "furniture-delivery": {
     name: "Furniture Collection",
+    formIntent: "single-item",
     title: "Furniture Collection & Delivery | Single Item Movers | Man and Van Club",
     description: "Single-item furniture collection and delivery across England. From eBay purchases to shop collections, get matched with a reliable local mover.",
     badge: "Furniture Delivery Experts",
@@ -87,6 +92,7 @@ const servicePageData: Record<string, any> = {
   },
   "same-day-man-and-van": {
     name: "Same Day Man & Van",
+    formIntent: "general",
     title: "Same Day Man & Van | Emergency Moves | Man and Van Club",
     description: "Need a mover today? Same-day man and van services across England. Get matched with an available local mover for urgent moves.",
     badge: "Same-Day Specialists",
@@ -101,6 +107,7 @@ const servicePageData: Record<string, any> = {
   },
   "long-distance-removals": {
     name: "Long Distance Moves",
+    formIntent: "general",
     title: "Long Distance Removals | UK-Wide Moving Services | Man and Van Club",
     description: "Long distance removals across the UK. Moving from Birmingham to London, Manchester to Bristol, or anywhere in between? Get matched with a vetted mover.",
     badge: "UK-Wide Movers",
@@ -115,6 +122,7 @@ const servicePageData: Record<string, any> = {
   },
   "facebook-marketplace-collection": {
     name: "Facebook Marketplace Collection",
+    formIntent: "single-item",
     title: "Facebook Marketplace Collection & Delivery | Man and Van Club",
     description: "Collection and delivery for Facebook Marketplace purchases across England. Get matched with a local mover who can collect and deliver your purchases safely.",
     badge: "Marketplace Collection",
@@ -184,7 +192,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const serviceData = servicePageData[slug];
   if (serviceData) {
     const serviceDataWithSlug = { ...serviceData, slug };
-    return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} />;
+    return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} formIntent={serviceData.formIntent} />;
   }
 
   // Fallback for unknown slugs — redirect home
