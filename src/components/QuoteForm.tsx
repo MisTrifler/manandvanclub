@@ -800,7 +800,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </ol>
             </div>
 
-            <p className="text-sm font-bold text-accent tracking-tight">No spam. No bidding wars. Just one trusted mover.</p>
+            <p className="text-sm font-bold text-accent tracking-tight">No spam. Just one trusted mover.</p>
 
             <Link href="/" className="btn-outline w-full block py-4 font-black uppercase text-xs rounded-xl">Return Home</Link>
           </div>
