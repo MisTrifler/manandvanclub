@@ -170,7 +170,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
     const isValid = await trigger(fields);
     if (isValid) {
-      if (step === (hasEstimate ? 3 : 2)) {
+      if (step === 1 && hasEstimate) {
+        // Pre-calculate estimate before showing step 2 so it renders immediately
+        setEstimate(calculateEstimate(watch()));
+        setStep(2);
+      } else if (step === (hasEstimate ? 3 : 2)) {
         handleFinalSubmit(watch());
       } else {
         setStep(step + 1);
@@ -687,7 +691,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         )}
 
         {/* ──────────────────── STEP 2: Estimate (skip for single-item) ──────────────────── */}
-        {step === 2 && hasEstimate && estimate && (
+        {step === 2 && hasEstimate && (
           <div className="space-y-8 text-center py-4">
             <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-border">
               <p className="text-[10px] font-black uppercase text-primary/40 mb-2">
@@ -697,7 +701,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 {activeIntent === "general" && "Estimated Move Cost"}
                 {activeIntent === "storage" && "Estimated Storage Collection Cost"}
               </p>
-              <p className="text-5xl font-black tracking-tighter text-primary">£{estimate.min}–{estimate.max}</p>
+              <p className="text-5xl font-black tracking-tighter text-primary">
+                {estimate ? `£${estimate.min}–${estimate.max}` : "£—"}
+              </p>
               <p className="text-xs text-text-secondary mt-3 font-medium">This is an estimate based on the details you provided. The matched mover will provide a confirmed quote.</p>
             </div>
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
