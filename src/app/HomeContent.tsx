@@ -223,7 +223,7 @@ export default function HomeContent() {
             <div>
               <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Smart Solutions For Every Move</h2>
             </div>
-            <Link href="/areas" className="text-accent font-black text-sm flex items-center gap-1 hover:gap-2 transition-all">View all areas <ArrowUpRight size={16} /></Link>
+            <Link href="/areas-covered" className="text-accent font-black text-sm flex items-center gap-1 hover:gap-2 transition-all">View all areas <ArrowUpRight size={16} /></Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

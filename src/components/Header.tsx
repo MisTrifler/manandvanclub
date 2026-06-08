@@ -185,7 +185,7 @@ export default function Header() {
                   {c.name}
                 </Link>
               ))}
-              <Link href="/areas" className="text-sm font-black text-accent col-span-2 mt-2" onClick={() => setIsOpen(false)}>View All Areas →</Link>
+              <Link href="/areas-covered" className="text-sm font-black text-accent col-span-2 mt-2" onClick={() => setIsOpen(false)}>View All Areas →</Link>
             </div>
           </div>
 

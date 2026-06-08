@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="space-y-4 text-text-secondary">
               <li><Link href="/#quote-form" className="hover:text-accent transition-colors">Get Started</Link></li>
               <li><Link href="/how-it-works" className="hover:text-accent transition-colors">How It Works</Link></li>
-              <li><Link href="/areas" className="hover:text-accent transition-colors">Areas We Cover</Link></li>
+              <li><Link href="/areas-covered" className="hover:text-accent transition-colors">Areas We Cover</Link></li>
               <li><Link href="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
             </ul>
           </div>
