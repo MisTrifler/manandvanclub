@@ -21,7 +21,8 @@ export async function POST(req: Request) {
           delivery_postcode: data.deliveryPostcode,
           move_date: data.moveDate,
           move_type: data.moveType,
-          details: data.details || null,
+          // Note: details JSON is available in data.details — add a `details` column
+          // to Supabase or use a text field to store service-specific form fields
           status: 'pending',
           otp_code: otp,
           is_verified: false
