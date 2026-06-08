@@ -133,9 +133,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         "3": [300, 450],
         "4+": [500, 850],
       };
-      return map[data.bedrooms] || base[activeIntent];
+      const result = map[data.bedrooms] || base[activeIntent];
+      return { min: result[0], max: result[1] };
     }
-    return base[activeIntent || "general"];
+    const result = base[activeIntent || "general"];
+    return { min: result[0], max: result[1] };
   };
 
   const onNextStep = async () => {
