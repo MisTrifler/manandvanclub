@@ -55,7 +55,8 @@ export function detectIntent(
     }
 
     // Check all query param keys and values
-    for (const [key, value] of searchParams.entries()) {
+    const entries = Array.from(searchParams.entries());
+    for (const [key, value] of entries) {
       const lowerKey = key.toLowerCase();
       const lowerValue = value.toLowerCase();
       if (KEYWORD_TO_INTENT[lowerKey]) return KEYWORD_TO_INTENT[lowerKey];
