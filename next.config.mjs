@@ -40,6 +40,11 @@ const nextConfig = {
         destination: '/areas-covered',
         permanent: true,
       },
+      {
+        source: '/join',
+        destination: '/apply-to-join',
+        permanent: true,
+      },
     ];
   },
 };

@@ -11,10 +11,110 @@ import {
   BadgeCheck,
   Zap,
   ArrowUpRight,
-  Star,
-  Phone,
+  ArrowRight,
+  Shield,
   TrendingUp,
+  Phone,
+  Wallet,
+  ClipboardCheck,
+  MapPin,
+  Truck,
+  Package,
+  Calendar,
+  PoundSterling,
+  Lock,
+  Eye,
+  HelpCircle,
+  Star,
+  Clock,
+  CheckCircle,
+  UserCheck,
+  PhoneOff,
+  FileCheck,
+  Landmark,
+  Bus,
+  GraduationCap,
+  Sofa,
+  Building2,
+  Home,
+  Route,
+  Clock3,
 } from "lucide-react";
+import FAQ from "@/components/FAQ";
+
+const FAQ_ITEMS = [
+  { q: "Do I need a subscription?", a: "No. You only pay when you choose to unlock an enquiry. There are no monthly fees, no recurring charges, and no long-term contracts." },
+  { q: "How do enquiries work?", a: "When a customer submits a move request, we review and match it to a suitable mover in the area. Approved movers can view the enquiry details and choose whether to unlock it. Each enquiry is offered to one mover at a time." },
+  { q: "Are enquiries shared with multiple movers?", a: "No. The platform is designed around exclusive enquiry opportunities. Each enquiry is offered to one mover at a time, so you are not competing against multiple companies for the same customer." },
+  { q: "How do I get approved?", a: "Applications are reviewed manually. You must provide proof of Goods in Transit Insurance and Public Liability Insurance as part of the onboarding process. Verification usually takes less than 24 hours." },
+  { q: "Can I choose my coverage area?", a: "Yes. You can set your preferred service area within your account. You will only see enquiries that match your location and job type preferences." },
+  { q: "How quickly are applications reviewed?", a: "Most applications are reviewed within 24 hours. Once approved, you can immediately start viewing available enquiries in your service area." },
+];
+
+const COMPARISON_ROWS = [
+  { left: "Shared Leads", right: "Exclusive Enquiry Opportunities" },
+  { left: "Multiple Competitors", right: "Reduced Competition" },
+  { left: "Price Wars", right: "Direct Customer Contact" },
+  { left: "Unclear Costs", right: "Transparent Lead Fees" },
+  { left: "Complex Process", right: "Simple Process" },
+];
+
+const BENEFIT_CARDS = [
+  { t: "Exclusive Enquiry Opportunities", d: "Customer enquiries are offered to one mover at a time. No competing against multiple companies for the same lead.", icon: <Lock size={24} /> },
+  { t: "Direct Customer Contact", d: "Once you unlock an enquiry, you receive full customer contact details to arrange the move directly.", icon: <Phone size={24} /> },
+  { t: "Transparent Pricing", d: "Clear lead fees based on job value. No hidden charges, no subscriptions, no monthly contracts.", icon: <Wallet size={24} /> },
+  { t: "Flexible Growth", d: "Choose which enquiries to unlock. Set your coverage area and grow at your own pace.", icon: <TrendingUp size={24} /> },
+  { t: "No Monthly Subscription", d: "Pay only when you unlock an enquiry. No recurring fees, no minimum commitments, no lock-in contracts.", icon: <Zap size={24} /> },
+  { t: "Simple Application Process", d: "Apply online, verify your insurance, and get approved within 24 hours. Start accessing enquiries immediately.", icon: <ClipboardCheck size={24} /> },
+];
+
+const HOW_IT_WORKS_STEPS = [
+  { t: "Submit Application", d: "Complete the online application with your business details and service areas.", icon: <ClipboardList size={24} /> },
+  { t: "Insurance Verification", d: "Provide proof of Goods in Transit and Public Liability insurance.", icon: <ShieldCheck size={24} /> },
+  { t: "Approval", d: "Our team reviews your application manually, usually within 24 hours.", icon: <BadgeCheck size={24} /> },
+  { t: "Access Enquiries", d: "Log in to view available customer enquiries in your service area.", icon: <Eye size={24} /> },
+  { t: "Contact Customers Directly", d: "Unlock enquiries that suit you and contact customers directly to arrange the move.", icon: <Phone size={24} /> },
+];
+
+const COVERAGE_LOCATIONS = [
+  { name: "Birmingham", href: "/man-and-van-birmingham" },
+  { name: "Manchester", href: "/man-and-van-manchester" },
+  { name: "Leeds", href: "/man-and-van-leeds" },
+  { name: "Liverpool", href: "/man-and-van-liverpool" },
+  { name: "Bristol", href: "/man-and-van-bristol" },
+  { name: "Coventry", href: "/man-and-van-coventry" },
+  { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
+  { name: "Walsall", href: "/man-and-van-walsall" },
+  { name: "Nottingham", href: "/man-and-van-nottingham" },
+  { name: "Leicester", href: "" },
+];
+
+const VERIFICATION_CHECKS = [
+  "Business Verification",
+  "Contact Verification",
+  "Goods in Transit Insurance",
+  "Public Liability Insurance",
+  "Manual Review Process",
+];
+
+const SAMPLE_ENQUIRIES = [
+  {
+    type: "House Move",
+    location: "Birmingham",
+    property: "2 Bedroom Property",
+    date: "Flexible",
+    fee: "£24.99",
+    icon: <Home size={20} />,
+  },
+  {
+    type: "Furniture Collection",
+    location: "Wolverhampton",
+    property: "Single Item",
+    date: "This Week",
+    fee: "£9.99",
+    icon: <Sofa size={20} />,
+  },
+];
 
 export default function WhyJoinContent() {
   const fadeUp = {
@@ -26,9 +126,27 @@ export default function WhyJoinContent() {
     }),
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white bg-white">
-      {/* Hero Section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* ── Hero ── */}
       <section className="relative bg-white py-20 lg:py-28 border-b border-border">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -47,122 +165,44 @@ export default function WhyJoinContent() {
               <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
                 Most lead generation websites sell enquiries to multiple businesses. We take a different approach. Customer enquiries are offered exclusively, helping reduce wasted spend and unnecessary competition.
               </p>
-              <Link
-                href="/apply-to-join"
-                className="btn-orange inline-flex items-center gap-3 px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl shadow-accent/20 hover:scale-105 active:scale-95 transition-all"
-              >
-                Apply to Join <ArrowUpRight size={20} />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/apply-to-join"
+                  className="btn-orange inline-flex items-center gap-3 px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl shadow-accent/20 hover:scale-105 active:scale-95 transition-all"
+                >
+                  Apply to Join <ArrowUpRight size={20} />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="bg-white border-2 border-primary text-primary px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3 hover:bg-primary hover:text-white transition-all"
+                >
+                  View Pricing <ArrowUpRight size={20} />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why We're Different */}
+      {/* ── Benefits Section ── */}
       <section className="py-20 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why We're Different</h2>
-            <p className="text-text-secondary mt-3">See how we compare to traditional lead generation websites.</p>
-          </div>
-          <div className="max-w-5xl mx-auto bg-white rounded-[2.5rem] border border-border p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {/* Traditional */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 pb-4 border-b border-border">
-                  <div className="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center text-red-500">
-                    <XCircle size={24} />
-                  </div>
-                  <h3 className="text-xl font-black text-primary uppercase tracking-tight">Traditional Lead Sites</h3>
-                </div>
-                <ul className="space-y-4">
-                  {[
-                    "Multiple companies receive the same enquiry",
-                    "High competition",
-                    "Lower conversion rates",
-                    "Race to the lowest price",
-                    "Shared leads",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-primary/70 font-medium text-sm">
-                      <XCircle size={18} className="text-red-400 mt-0.5 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* Divider */}
-              <div className="hidden md:block w-px bg-border self-stretch justify-self-center" />
-              {/* Man and Van Club */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 pb-4 border-b border-border">
-                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
-                    <CheckCircle2 size={24} />
-                  </div>
-                  <h3 className="text-xl font-black text-primary uppercase tracking-tight">Man and Van Club</h3>
-                </div>
-                <ul className="space-y-4">
-                  {[
-                    "Exclusive enquiry opportunities",
-                    "Reduced competition",
-                    "Direct customer contact",
-                    "Transparent lead fees",
-                    "Simple process",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-primary/70 font-medium text-sm">
-                      <CheckCircle2 size={18} className="text-accent mt-0.5 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 bg-white border-b border-border">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
-            <p className="text-text-secondary mt-3">From application to your first exclusive enquiry.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            {[
-              { t: "Apply to Join", d: "Submit your business details and service areas.", icon: <ClipboardList size={24} /> },
-              { t: "Business Verification", d: "We review your company details and service coverage.", icon: <Search size={24} /> },
-              { t: "Insurance Verification", d: "Provide proof of Goods in Transit and Public Liability insurance.", icon: <ShieldCheck size={24} /> },
-              { t: "Account Approval", d: "Once verified, your account is approved for the platform.", icon: <BadgeCheck size={24} /> },
-              { t: "Access Enquiries", d: "Start unlocking exclusive customer enquiries in your area.", icon: <Zap size={24} /> },
-            ].map((step, i) => (
-              <div key={i} className="text-center">
-                <div className="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
-                  {step.icon}
-                </div>
-                <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-2">{step.t}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{step.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who Can Join */}
-      <section className="py-20 bg-[#F9F9F7]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Who Can Join</h2>
-            <p className="text-text-secondary mt-3">We maintain high standards to ensure quality for our customers.</p>
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why Movers Join Man and Van Club</h2>
+            <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
+              Designed for professional movers who want quality customer enquiries without competing against multiple companies.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { t: "Professional Movers", d: "Established moving businesses with experience.", icon: <Star size={24} /> },
-              { t: "Goods in Transit Insurance", d: "Valid insurance covering customer belongings.", icon: <ShieldCheck size={24} /> },
-              { t: "Public Liability Insurance", d: "Protection for you and your customers.", icon: <BadgeCheck size={24} /> },
-              { t: "Reliable Customer Service", d: "Professional, punctual, and communicative.", icon: <Phone size={24} /> },
-              { t: "Commitment to Professionalism", d: "Uphold high standards on every job.", icon: <TrendingUp size={24} /> },
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-border flex items-start gap-4">
+            {BENEFIT_CARDS.map((item, i) => (
+              <motion.div
+                key={item.t}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-3xl border border-border flex items-start gap-4 hover:shadow-lg transition-all"
+              >
                 <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent flex-shrink-0">
                   {item.icon}
                 </div>
@@ -170,27 +210,226 @@ export default function WhyJoinContent() {
                   <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-1">{item.t}</h3>
                   <p className="text-text-secondary text-sm">{item.d}</p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Comparison Section ── */}
+      <section className="py-20 bg-white border-b border-border">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why We're Different</h2>
+            <p className="text-text-secondary mt-3">See how we compare to traditional lead generation websites.</p>
+          </div>
+          <div className="max-w-5xl mx-auto bg-[#F9F9F7] rounded-[2.5rem] border border-border p-6 md:p-10">
+            {/* Header row */}
+            <div className="grid grid-cols-2 gap-4 md:gap-8 pb-6 border-b border-border">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center text-red-500">
+                  <XCircle size={20} />
+                </div>
+                <h3 className="text-lg font-black text-primary uppercase tracking-tight">Traditional Lead Sites</h3>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+                  <CheckCircle2 size={20} />
+                </div>
+                <h3 className="text-lg font-black text-primary uppercase tracking-tight">Man and Van Club</h3>
+              </div>
+            </div>
+            {/* Comparison rows */}
+            <div className="divide-y divide-border">
+              {COMPARISON_ROWS.map((row, i) => (
+                <div key={i} className="grid grid-cols-2 gap-4 md:gap-8 py-6">
+                  <div className="flex items-center gap-3">
+                    <XCircle size={18} className="text-red-400 flex-shrink-0" />
+                    <span className="text-sm font-medium text-primary/70">{row.left}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 size={18} className="text-accent flex-shrink-0" />
+                    <span className="text-sm font-bold text-primary">{row.right}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── How It Works ── */}
+      <section className="py-20 bg-[#F9F9F7] border-b border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
+            <p className="text-text-secondary mt-3">From application to your first exclusive enquiry.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {HOW_IT_WORKS_STEPS.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-3xl border border-border text-center space-y-5 hover:shadow-lg transition-all"
+              >
+                <div className="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                  {step.icon}
+                </div>
+                <div className="space-y-2">
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">Step {i + 1}</span>
+                  <h3 className="font-black text-primary text-sm uppercase tracking-tight">{step.t}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{step.d}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Coverage Section ── */}
+      <section className="py-20 bg-white border-b border-border">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Growing Across England</h2>
+            <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
+              We are actively expanding our network of approved movers across England. New areas are added regularly as demand grows.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+            {COVERAGE_LOCATIONS.map((loc) => (
+              loc.href ? (
+                <Link
+                  key={loc.name}
+                  href={loc.href}
+                  className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-md transition-all"
+                >
+                  <span className="flex items-center gap-2">
+                    <MapPin size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
+                    <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{loc.name}</span>
+                  </span>
+                  <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
+                </Link>
+              ) : (
+                <div key={loc.name} className="flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50">
+                  <span className="flex items-center gap-2">
+                    <MapPin size={14} className="text-primary/30" />
+                    <span className="font-black text-primary uppercase text-[10px] tracking-widest">{loc.name}</span>
+                  </span>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Lead Example Section ── */}
+      <section className="py-20 bg-[#F9F9F7] border-b border-border">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Sample Enquiries</h2>
+            <p className="text-text-secondary mt-3">Examples of the type of customer enquiries available on the platform.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {SAMPLE_ENQUIRIES.map((enquiry, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-3xl border border-border space-y-6 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                    {enquiry.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-black text-primary text-sm uppercase tracking-tight">{enquiry.type}</h3>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">{enquiry.location}</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between py-3 border-b border-border">
+                    <span className="text-xs font-medium text-text-secondary">Property</span>
+                    <span className="text-xs font-black text-primary uppercase">{enquiry.property}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3 border-b border-border">
+                    <span className="text-xs font-medium text-text-secondary">Moving Date</span>
+                    <span className="text-xs font-black text-primary uppercase">{enquiry.date}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3">
+                    <span className="text-xs font-medium text-text-secondary">Lead Fee</span>
+                    <span className="text-lg font-black text-accent">{enquiry.fee}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-text-secondary mt-8 font-medium max-w-xl mx-auto">
+            <span className="font-black text-primary">Sample Enquiries</span> — for illustration purposes only. Actual enquiries vary based on location, move size, and customer requirements.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Verified Network / Trust Section ── */}
+      <section className="py-20 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter mb-4">Verified Network</h2>
+            <p className="text-text-secondary max-w-2xl mx-auto leading-relaxed">
+              Applications are reviewed before movers receive access to customer enquiries. We verify businesses to help maintain a reliable network.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {VERIFICATION_CHECKS.map((check, i) => (
+              <div key={i} className="flex items-center gap-4 bg-[#F9F9F7] p-6 rounded-2xl border border-border/50">
+                <CheckCircle size={20} className="text-green-600 flex-shrink-0" />
+                <span className="font-bold text-primary text-sm">{check}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Application CTA */}
-      <section className="py-20 bg-white border-t border-border text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">
-            Ready to Join?
-          </h2>
-          <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">
-            Applications are reviewed manually before approval.
-          </p>
-          <Link
-            href="/apply-to-join"
-            className="btn-orange inline-flex items-center gap-3 px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl shadow-accent/20 hover:scale-105 active:scale-95 transition-all"
-          >
-            Apply to Join <ArrowUpRight size={20} />
-          </Link>
+      {/* ── FAQ ── */}
+      <section className="py-20 bg-[#F9F9F7] border-b border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter mb-3">Frequently Asked Questions</h2>
+            <p className="text-text-secondary">Common questions about joining the platform.</p>
+          </div>
+          <FAQ items={FAQ_ITEMS} />
+        </div>
+      </section>
+
+      {/* ── Strong CTA ── */}
+      <section className="py-20 bg-white text-center border-t border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none text-primary uppercase">
+              Ready to Join?
+            </h2>
+            <p className="text-xl text-text-secondary font-medium leading-relaxed max-w-xl mx-auto">
+              Apply today and start accessing customer enquiry opportunities. No subscription, no monthly fees — just quality leads.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/apply-to-join"
+                className="btn-orange inline-flex items-center gap-3 px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl shadow-accent/20 hover:scale-105 active:scale-95 transition-all"
+              >
+                Apply to Join <ArrowRight size={20} />
+              </Link>
+              <Link
+                href="/pricing"
+                className="bg-white border-2 border-primary text-primary px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3 hover:bg-primary hover:text-white transition-all"
+              >
+                View Pricing <ArrowUpRight size={20} />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

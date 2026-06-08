@@ -38,7 +38,7 @@ export default function ForBusinessesContent() {
               <p className="text-xl text-text-secondary mb-10 max-w-xl font-medium leading-relaxed">
                 Receive customer enquiries without competing against multiple movers. No monthly contracts, just quality job enquiries across England, starting in Birmingham.
               </p>
-              <div className="space-y-4">
+                <div className="space-y-4">
                 {[
                   "New customer enquiries daily",
                   "Unlock verified move requests",
@@ -51,6 +51,13 @@ export default function ForBusinessesContent() {
                     <span className="font-bold text-sm uppercase tracking-widest text-primary">{item}</span>
                   </div>
                 ))}
+              </div>
+
+              <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6 mt-6">
+                <p className="text-sm font-bold text-primary mb-3">Want to learn more about how the platform works?</p>
+                <Link href="/why-join" className="inline-flex items-center gap-2 text-accent font-black uppercase text-xs tracking-widest hover:underline">
+                  Why Join Man and Van Club <ArrowUpRight size={14} />
+                </Link>
               </div>
             </motion.div>
 

@@ -60,10 +60,10 @@ export default function PricingPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/apply-to-join" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-2">
-              Get Your First Lead Free <ArrowUpRight size={16} />
+              Apply Now <ArrowUpRight size={16} />
             </Link>
-            <Link href="#pricing" className="bg-white border border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-gray-50 inline-flex items-center gap-2">
-              View Pricing
+            <Link href="/why-join" className="bg-white border border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-gray-50 inline-flex items-center gap-2">
+              Why Join <ArrowUpRight size={16} />
             </Link>
           </div>
         </div>
@@ -297,10 +297,10 @@ export default function PricingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/apply-to-join" className="btn-orange px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3 shadow-2xl shadow-accent/20 hover:scale-105 active:scale-95 transition-all">
-              Apply to Join <ArrowUpRight size={20} />
+              Apply Now <ArrowUpRight size={20} />
             </Link>
-            <Link href="/for-businesses" className="bg-white border-2 border-primary text-primary px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3 hover:bg-primary hover:text-white transition-all">
-              Learn More <ArrowUpRight size={20} />
+            <Link href="/why-join" className="bg-white border-2 border-primary text-primary px-14 py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3 hover:bg-primary hover:text-white transition-all">
+              Why Join <ArrowUpRight size={20} />
             </Link>
           </div>
         </div>
