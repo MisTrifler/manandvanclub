@@ -121,7 +121,7 @@ function getPopularMovesForRegion(loc: LocationData): { from: string; to: string
 
 function generateAreasWeCover(loc: LocationData): string[] {
   // Combine nearbyAreas + areas, take up to 12 unique
-  const combined = [...new Set([...loc.nearbyAreas, ...loc.areas])];
+  const combined = Array.from(new Set([...loc.nearbyAreas, ...loc.areas]));
   return combined.slice(0, 12);
 }
 
