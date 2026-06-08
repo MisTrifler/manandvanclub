@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">5. How do we protect your information?</h2>
             <p>Our website is scanned on a regular basis for security holes and known vulnerabilities in order to make your visit to our site as safe as possible. We use regular Malware Scanning.</p>
-            <p className="mt-4">Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit information you supply is encrypted via Secure Socket Layer (SSL) technology.</p>
+            <p className="mt-4">Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit information you supply is encrypted via Transport Layer Security (TLS) technology.</p>
             <p className="mt-4"><strong>Payments:</strong> Payments are securely processed by Stripe or other approved payment providers. We do not store complete payment card details.</p>
           </section>
 

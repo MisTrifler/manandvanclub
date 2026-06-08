@@ -90,7 +90,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1 text-xs text-text-secondary">
               <ShieldCheck size={16} className="text-green-600" />
-              <span>SSL Secure</span>
+              <span>Secure Encrypted Connection</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-text-secondary">
               <CheckCircle2 size={16} className="text-green-600" />
