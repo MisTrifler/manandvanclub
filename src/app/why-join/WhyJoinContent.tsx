@@ -65,52 +65,56 @@ export default function WhyJoinContent() {
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why We're Different</h2>
             <p className="text-text-secondary mt-3">See how we compare to traditional lead generation websites.</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Traditional */}
-            <div className="bg-white p-10 rounded-[2.5rem] border border-border space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center text-red-500">
-                  <XCircle size={24} />
+          <div className="max-w-5xl mx-auto bg-white rounded-[2.5rem] border border-border p-8 md:p-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* Traditional */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 pb-4 border-b border-border">
+                  <div className="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center text-red-500">
+                    <XCircle size={24} />
+                  </div>
+                  <h3 className="text-xl font-black text-primary uppercase tracking-tight">Traditional Lead Sites</h3>
                 </div>
-                <h3 className="text-xl font-black text-primary uppercase tracking-tight">Traditional Lead Sites</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Multiple companies receive the same enquiry",
+                    "High competition",
+                    "Lower conversion rates",
+                    "Race to the lowest price",
+                    "Shared leads",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-primary/70 font-medium text-sm">
+                      <XCircle size={18} className="text-red-400 mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4">
-                {[
-                  "Multiple companies receive the same enquiry",
-                  "High competition",
-                  "Lower conversion rates",
-                  "Race to the lowest price",
-                  "Shared leads",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-primary/70 font-medium text-sm">
-                    <XCircle size={18} className="text-red-400 mt-0.5 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Man and Van Club */}
-            <div className="bg-white p-10 rounded-[2.5rem] border-2 border-accent space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
-                  <CheckCircle2 size={24} />
+              {/* Divider */}
+              <div className="hidden md:block w-px bg-border self-stretch justify-self-center" />
+              {/* Man and Van Club */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 pb-4 border-b border-border">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                    <CheckCircle2 size={24} />
+                  </div>
+                  <h3 className="text-xl font-black text-primary uppercase tracking-tight">Man and Van Club</h3>
                 </div>
-                <h3 className="text-xl font-black text-primary uppercase tracking-tight">Man and Van Club</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Exclusive enquiry opportunities",
+                    "Reduced competition",
+                    "Direct customer contact",
+                    "Transparent lead fees",
+                    "Simple process",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-primary/70 font-medium text-sm">
+                      <CheckCircle2 size={18} className="text-accent mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4">
-                {[
-                  "Exclusive enquiry opportunities",
-                  "Reduced competition",
-                  "Direct customer contact",
-                  "Transparent lead fees",
-                  "Simple process",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-primary/70 font-medium text-sm">
-                    <CheckCircle2 size={18} className="text-accent mt-0.5 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
