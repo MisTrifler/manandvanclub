@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   CheckCircle2,
   ArrowUpRight,
@@ -16,6 +17,11 @@ import {
   Eye,
   Handshake,
   MessageCircle,
+  PhoneOff,
+  BadgeCheck,
+  Users,
+  ClipboardCheck,
+  Star,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import { motion } from "framer-motion";
@@ -23,11 +29,10 @@ import { SERVICES } from "@/constants/services";
 import FAQ from "@/components/FAQ";
 
 const STEPS = [
-  { t: "Submit your moving details", d: "Tell us where you are moving from and to, your preferred date, and a few details about your move.", icon: <ClipboardList size={24} /> },
-  { t: "We identify a suitable mover", d: "Our team reviews your requirements and identifies a mover in your area with availability and the right capacity.", icon: <Search size={24} /> },
-  { t: "Your enquiry is offered exclusively", d: "Your enquiry is introduced to one mover at a time. We do not share your details with multiple companies.", icon: <UserCheck size={24} /> },
-  { t: "The mover contacts you directly", d: "The matched mover will contact you directly to discuss your move, confirm details, and provide a quote.", icon: <Phone size={24} /> },
-  { t: "Arrange your move", d: "If you are happy to proceed, you arrange the move directly with your mover. No middlemen, no hidden fees.", icon: <CalendarCheck size={24} /> },
+  { t: "Submit Your Move Details", d: "Tell us where you are moving from and to, your preferred date, and a few details about your move.", icon: <ClipboardList size={24} /> },
+  { t: "We Review Your Request", d: "Our team reviews your requirements to understand your move size, route, and any specific needs.", icon: <Search size={24} /> },
+  { t: "We Match A Suitable Mover", d: "We identify a mover in your area with availability, the right capacity, and relevant experience.", icon: <UserCheck size={24} /> },
+  { t: "The Mover Contacts You Directly", d: "Your matched mover will contact you by phone or email to discuss your move and provide a quote.", icon: <Phone size={24} /> },
 ];
 
 const FAQ_ITEMS = [
@@ -41,11 +46,19 @@ const FAQ_ITEMS = [
 ];
 
 const WHY_CHOOSE = [
-  { t: "One Mover, Not Multiple Quotes", d: "We introduce you to one suitable mover instead of bombarding you with competing quotes.", icon: <Shield size={24} /> },
-  { t: "No Spam Calls", d: "Your details are shared with one mover only. No endless sales calls or marketing emails.", icon: <Phone size={24} /> },
-  { t: "Direct Communication", d: "Speak directly with your matched mover. No call centres, no intermediaries, no confusion.", icon: <MessageCircle size={24} /> },
-  { t: "Exclusive Lead Matching", d: "Your enquiry is offered exclusively. We do not sell or distribute your details widely.", icon: <Lock size={24} /> },
-  { t: "Simple Moving Process", d: "Submit your details once. We handle the matching. You handle the move.", icon: <Zap size={24} /> },
+  { t: "Trusted Local Movers", d: "We help connect customers with movers who have completed our application and verification process.", icon: <Users size={24} /> },
+  { t: "Less Time Comparing Companies", d: "Tell us about your move and we'll help connect you with a suitable mover.", icon: <Search size={24} /> },
+  { t: "Reduced Spam Calls", d: "Your details are not shared with numerous moving companies.", icon: <PhoneOff size={24} /> },
+  { t: "Secure Enquiry Process", d: "Your information is handled securely throughout the matching process.", icon: <Lock size={24} /> },
+  { t: "Free Enquiry", d: "Submitting a move request is free and carries no obligation.", icon: <CheckCircle2 size={24} /> },
+];
+
+const VERIFICATION_CHECKS = [
+  "Business Details Verification",
+  "Contact Information Verification",
+  "Goods in Transit Insurance",
+  "Public Liability Insurance",
+  "Service Area Verification",
 ];
 
 const COMMITMENTS = [
@@ -72,7 +85,7 @@ export default function HomeContent() {
         <div className="absolute inset-0 z-0 bg-[#F9F9F7]" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -88,16 +101,16 @@ export default function HomeContent() {
               </h1>
 
               <p className="text-lg lg:text-xl text-text-secondary mb-6 max-w-xl font-medium leading-relaxed">
-                Get matched with one vetted mover who contacts you directly. No spam, no bidding wars, and no unnecessary phone calls.
+                Get matched with a suitable local mover through our exclusive matching process. Avoid spending hours comparing companies or dealing with unnecessary sales calls.
               </p>
 
               <div className="hidden lg:flex flex-wrap gap-3 mb-8">
                 {[
                   { icon: <Shield size={16} />, label: "One Trusted Local Mover" },
-                  { icon: <Phone size={16} />, label: "No Spam Calls" },
-                  { icon: <Zap size={16} />, label: "No Bidding Wars" },
-                  { icon: <CheckCircle2 size={16} />, label: "UK-Wide Coverage" },
-                  { icon: <Lock size={16} />, label: "Secure & GDPR Compliant" },
+                  { icon: <PhoneOff size={16} />, label: "Reduced Spam Calls" },
+                  { icon: <BadgeCheck size={16} />, label: "Verified Business Network" },
+                  { icon: <Lock size={16} />, label: "Secure Enquiry Process" },
+                  { icon: <CheckCircle2 size={16} />, label: "Free Enquiry" },
                 ].map((badge, index) => (
                   <div key={index} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-border px-4 py-2 rounded-full text-sm font-bold text-primary/80">
                     <span className="text-accent">{badge.icon}</span>
@@ -106,7 +119,7 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-6 text-sm">
+              <div className="flex items-center gap-6 text-sm mb-8">
                 <div>
                   <div className="font-black text-primary text-2xl tracking-tighter">UK-WIDE</div>
                   <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Coverage</div>
@@ -117,6 +130,18 @@ export default function HomeContent() {
                   <div className="text-[10px] font-black uppercase tracking-widest text-primary/40">Free Enquiry</div>
                 </div>
               </div>
+
+              {/* Hero Image — Desktop only in hero, mobile shown below form */}
+              <div className="hidden lg:block rounded-2xl overflow-hidden border border-border shadow-lg">
+                <Image
+                  src="/images/hero-moving.jpg"
+                  alt="Professional movers loading a Luton van for a residential house move"
+                  width={600}
+                  height={340}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
             </motion.div>
 
             <motion.div
@@ -124,12 +149,24 @@ export default function HomeContent() {
               initial="hidden"
               animate="visible"
               custom={1}
-              className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2"
+              className="lg:w-1/2 w-full max-w-lg relative z-20 order-1 lg:order-2 lg:sticky lg:top-24"
             >
               <div className="mb-3 text-center lg:text-left">
                 <p className="text-[11px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
               </div>
               <QuoteForm />
+
+              {/* Mobile hero image — shown below form on mobile */}
+              <div className="lg:hidden mt-6 rounded-2xl overflow-hidden border border-border shadow-lg">
+                <Image
+                  src="/images/hero-moving.jpg"
+                  alt="Professional movers loading a Luton van for a residential house move"
+                  width={600}
+                  height={340}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -170,12 +207,12 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Why Choose Man and Van Club */}
+      {/* Why Customers Choose Man and Van Club */}
       <section className="py-20 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why Choose Man and Van Club?</h2>
-            <p className="text-text-secondary mt-3">A smarter, simpler way to find a mover.</p>
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why Customers Choose Man and Van Club</h2>
+            <p className="text-text-secondary mt-3">A simpler, more trustworthy way to find a mover.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -199,10 +236,10 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
-            <p className="text-text-secondary mt-3">Simple. Fair. Exclusive.</p>
+            <p className="text-text-secondary mt-3">Simple, transparent, and designed around your needs.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {STEPS.map((step, i) => (
               <div key={i} className="text-center">
                 <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
@@ -212,6 +249,66 @@ export default function HomeContent() {
                 <p className="text-text-secondary text-sm leading-relaxed">{step.d}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Check */}
+      <section className="py-20 bg-[#F9F9F7]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">We Verify Businesses Before They Join</h2>
+            <p className="text-text-secondary mt-3">Applications are reviewed before movers receive access to customer enquiries.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {VERIFICATION_CHECKS.map((check, i) => (
+              <div key={i} className="bg-white rounded-2xl border border-border p-6 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 size={16} className="text-success" />
+                </div>
+                <span className="text-sm font-bold text-primary">{check}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Reviews — Placeholder */}
+      <section className="py-20 bg-white border-y border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Customer Reviews</h2>
+            <p className="text-text-secondary mt-3">Real feedback from people who have used our service.</p>
+          </div>
+
+          <div className="bg-[#F9F9F7] rounded-3xl border border-border p-12 text-center">
+            <div className="flex justify-center gap-1 mb-4">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star key={star} size={20} className="text-border fill-border" />
+              ))}
+            </div>
+            <p className="text-sm text-text-secondary font-medium">
+              Customer reviews will appear here as our network continues to grow.
+            </p>
+            <p className="text-xs text-primary/40 mt-2 font-bold uppercase tracking-widest">
+              Reviews Component Ready For Future Use
+            </p>
+          </div>
+
+          {/* Review card design preview — hidden until reviews are available */}
+          <div className="hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div className="bg-white rounded-3xl border border-border p-8">
+                <div className="flex gap-1 mb-3">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} size={14} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <p className="text-sm text-primary/80 mb-4">"Review text will go here."</p>
+                <div className="text-xs font-bold text-primary/40 uppercase tracking-widest">Name, Location</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
