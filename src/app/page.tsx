@@ -2,7 +2,7 @@ import HomeContent from "./HomeContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Find Trusted Local Movers Near You | Man and Van Club",
+  title: "Man and Van Services Near You | Man and Van Club",
   description: "Get matched with a suitable local mover through our exclusive matching process. Verified business network, secure enquiries, and no obligation. Nationwide coverage across the UK.",
 };
 

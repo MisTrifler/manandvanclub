@@ -116,11 +116,11 @@ export default function HomeContent() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-5 leading-[0.95] text-white tracking-tighter">
-                Find Your Trusted Local Mover Without Comparing Endless Quotes
+                Man and Van Services Near You
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-white/80 mb-6 max-w-xl font-medium leading-relaxed">
-                Get matched with a suitable local mover through our exclusive matching process. Avoid spending hours comparing companies or dealing with unnecessary sales calls.
+                Get matched with a suitable local mover who contacts you directly. No endless quote comparisons or unnecessary sales calls.
               </p>
 
               {/* Trust badges — visible on all breakpoints, wrap cleanly */}
@@ -165,6 +165,15 @@ export default function HomeContent() {
               <QuoteForm />
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* SEO Supporting Text */}
+      <section className="bg-white border-b border-border py-8">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-sm text-text-secondary leading-relaxed">
+            Man and Van Club helps connect customers with suitable local movers for house removals, flat moves, furniture collection, office relocations and long-distance moves across England, Scotland and Wales.
+          </p>
         </div>
       </section>
 
@@ -334,6 +343,75 @@ export default function HomeContent() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Moving Services — SEO keyword section */}
+      <section className="py-20 bg-white border-y border-border">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-black text-primary uppercase tracking-tighter">Popular Moving Services</h2>
+            <p className="text-text-secondary mt-3 text-sm">Find the right service for your move.</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+            {[
+              { label: "House Removals", href: "/house-removals" },
+              { label: "Flat Removals", href: "/flat-removals" },
+              { label: "Office Relocations", href: "/office-removals" },
+              { label: "Student Moves", href: "/student-removals" },
+              { label: "Furniture Collection", href: "/furniture-delivery" },
+              { label: "Long Distance Moves", href: "/long-distance-removals" },
+              { label: "Same Day Moves", href: "/same-day-man-and-van" },
+            ].map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="text-center bg-[#F9F9F7] rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+              >
+                <span className="text-sm font-black text-primary uppercase tracking-tight">{service.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Areas We Cover — Local SEO section */}
+      <section className="py-20 bg-[#F9F9F7]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-black text-primary uppercase tracking-tighter">Popular Areas We Cover</h2>
+            <p className="text-text-secondary mt-3 text-sm">Local man and van services across the UK.</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { name: "Birmingham", slug: "man-and-van-birmingham" },
+              { name: "London", slug: "man-and-van-london" },
+              { name: "Manchester", slug: "man-and-van-manchester" },
+              { name: "Leeds", slug: "man-and-van-leeds" },
+              { name: "Liverpool", slug: "man-and-van-liverpool" },
+              { name: "Bristol", slug: "man-and-van-bristol" },
+              { name: "Wolverhampton", slug: "man-and-van-wolverhampton" },
+              { name: "Walsall", slug: "man-and-van-walsall" },
+              { name: "Coventry", slug: "man-and-van-coventry" },
+              { name: "Dudley", slug: "man-and-van-dudley" },
+            ].map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/${loc.slug}`}
+                className="text-center bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+              >
+                <span className="text-sm font-black text-primary uppercase tracking-tight">{loc.name}</span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/areas-covered" className="text-accent font-black text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+              View all 93 areas <ArrowUpRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
