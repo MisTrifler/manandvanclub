@@ -27,16 +27,9 @@ export default function WhyJoinContent() {
   };
 
   return (
-    <div className="flex flex-col w-full selection:bg-accent selection:text-white">
+    <div className="flex flex-col w-full selection:bg-accent selection:text-white bg-white">
       {/* Hero Section */}
-      <section className="relative bg-primary text-white py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          <div className="absolute inset-0 grid grid-cols-6 gap-4">
-            {[...Array(24)].map((_, i) => (
-              <div key={i} className="border border-white/20 h-32 w-full" />
-            ))}
-          </div>
-        </div>
+      <section className="relative bg-white py-20 lg:py-28 border-b border-border">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -45,13 +38,13 @@ export default function WhyJoinContent() {
               animate="visible"
               className="space-y-8"
             >
-              <div className="inline-block bg-accent/20 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
+              <div className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
                 Mover Network
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.95]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.95] text-primary">
                 Get Exclusive Customer Enquiries Without Competing Against Other Movers
               </h1>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
                 Most lead generation websites sell enquiries to multiple businesses. We take a different approach. Customer enquiries are offered exclusively, helping reduce wasted spend and unnecessary competition.
               </p>
               <Link
@@ -97,12 +90,12 @@ export default function WhyJoinContent() {
               </ul>
             </div>
             {/* Man and Van Club */}
-            <div className="bg-primary p-10 rounded-[2.5rem] text-white space-y-6">
+            <div className="bg-white p-10 rounded-[2.5rem] border-2 border-accent space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-accent/20 rounded-2xl flex items-center justify-center text-accent">
+                <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
                   <CheckCircle2 size={24} />
                 </div>
-                <h3 className="text-xl font-black uppercase tracking-tight">Man and Van Club</h3>
+                <h3 className="text-xl font-black text-primary uppercase tracking-tight">Man and Van Club</h3>
               </div>
               <ul className="space-y-4">
                 {[
@@ -112,7 +105,7 @@ export default function WhyJoinContent() {
                   "Transparent lead fees",
                   "Simple process",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/80 font-medium text-sm">
+                  <li key={i} className="flex items-start gap-3 text-primary/70 font-medium text-sm">
                     <CheckCircle2 size={18} className="text-accent mt-0.5 flex-shrink-0" />
                     {item}
                   </li>
@@ -139,7 +132,7 @@ export default function WhyJoinContent() {
               { t: "Access Enquiries", d: "Start unlocking exclusive customer enquiries in your area.", icon: <Zap size={24} /> },
             ].map((step, i) => (
               <div key={i} className="text-center">
-                <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
+                <div className="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
                   {step.icon}
                 </div>
                 <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-2">{step.t}</h3>
@@ -180,12 +173,12 @@ export default function WhyJoinContent() {
       </section>
 
       {/* Application CTA */}
-      <section className="py-20 bg-primary text-white text-center">
+      <section className="py-20 bg-white border-t border-border text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-accent">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">
             Ready to Join?
           </h2>
-          <p className="text-lg md:text-xl text-white/70 mb-8 max-w-lg mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">
             Applications are reviewed manually before approval.
           </p>
           <Link

@@ -151,20 +151,20 @@ export default function HomeContent() {
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-primary py-10 lg:py-14 border-y border-white/5">
+      <section className="bg-white py-10 lg:py-14 border-y border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center text-white">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
             <div>
-              <div className="text-4xl font-black tracking-tighter text-accent">UK-WIDE</div>
-              <p className="text-sm text-white/60 mt-1">Coverage across England, Scotland & Wales</p>
+              <div className="text-4xl font-black tracking-tighter text-primary">UK-WIDE</div>
+              <p className="text-sm text-text-secondary mt-1">Coverage across England, Scotland & Wales</p>
             </div>
-            <div className="border-y md:border-y-0 md:border-x border-white/20 py-8 md:py-0">
-              <div className="text-4xl font-black tracking-tighter text-accent">NO OBLIGATION</div>
-              <p className="text-sm text-white/60 mt-1">Submit your details without commitment</p>
+            <div className="border-y md:border-y-0 md:border-x border-border py-8 md:py-0">
+              <div className="text-4xl font-black tracking-tighter text-primary">NO OBLIGATION</div>
+              <p className="text-sm text-text-secondary mt-1">Submit your details without commitment</p>
             </div>
             <div>
-              <div className="text-4xl font-black tracking-tighter text-accent">1-TO-1</div>
-              <p className="text-sm text-white/60 mt-1">Exclusive match — only one mover sees you</p>
+              <div className="text-4xl font-black tracking-tighter text-primary">1-TO-1</div>
+              <p className="text-sm text-text-secondary mt-1">Exclusive match — only one mover sees you</p>
             </div>
           </div>
         </div>
@@ -281,10 +281,10 @@ export default function HomeContent() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-primary text-white text-center">
+      <section className="py-20 bg-[#F9F9F7] text-center border-t border-border">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-accent">Ready To Find Your Trusted Local Mover?</h2>
-          <p className="text-lg md:text-xl text-white/70 mb-8 max-w-lg mx-auto leading-relaxed">Submit your details and get matched with a suitable mover. No spam, no bidding wars, just one direct introduction.</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">Ready To Find Your Trusted Local Mover?</h2>
+          <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">Submit your details and get matched with a suitable mover. No spam, no bidding wars, just one direct introduction.</p>
           <Link href="#quote-form" className="btn-orange px-10 md:px-14 py-5 md:py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3">
             Get Matched Now <ArrowUpRight size={20} />
           </Link>

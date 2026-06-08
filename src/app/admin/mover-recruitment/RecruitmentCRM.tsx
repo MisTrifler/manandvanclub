@@ -464,7 +464,7 @@ export default function RecruitmentCRM() {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-primary text-white py-6 border-b border-white/10">
+      <div className="bg-white py-6 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {[
@@ -478,8 +478,8 @@ export default function RecruitmentCRM() {
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="text-accent text-xs mb-1">{s.icon}</div>
-                <div className="text-2xl font-black tracking-tighter">{s.value}</div>
-                <div className="text-[9px] font-black uppercase tracking-widest text-white/50">{s.label}</div>
+                <div className="text-2xl font-black tracking-tighter text-primary">{s.value}</div>
+                <div className="text-[9px] font-black uppercase tracking-widest text-text-secondary">{s.label}</div>
               </div>
             ))}
           </div>
