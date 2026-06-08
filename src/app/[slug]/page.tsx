@@ -1,5 +1,6 @@
 import CityServiceContent from "@/components/CityServiceContent";
 import { getLocationPageData, getAllLocationPageSlugs } from "@/lib/location-content";
+import { type IntentType } from "@/lib/intent-detection";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -192,7 +193,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const serviceData = servicePageData[slug];
   if (serviceData) {
     const serviceDataWithSlug = { ...serviceData, slug };
-    return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} formIntent={serviceData.formIntent} />;
+    return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} formIntent={serviceData.formIntent as IntentType} />;
   }
 
   // Fallback for unknown slugs — redirect home

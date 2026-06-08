@@ -5,7 +5,9 @@ import FAQ from "@/components/FAQ";
 import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap, CheckCircle, Lock, PhoneOff, UserCheck, ClipboardCheck, Truck, Package, Route, Building, GraduationCap, Sofa, ArrowRight, ListChecks } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: string }) {
+import { type IntentType } from "@/lib/intent-detection";
+
+export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: IntentType }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
 
   const fadeUp = {
