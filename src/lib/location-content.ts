@@ -109,6 +109,13 @@ function getPopularMovesForRegion(loc: LocationData): { from: string; to: string
       { to: "Cardiff", slug: "cardiff" },
       { to: "Exeter", slug: "" },
     ],
+    "East Midlands": [
+      { to: "Birmingham", slug: "birmingham" },
+      { to: "London", slug: "london" },
+      { to: "Manchester", slug: "manchester" },
+      { to: "Leeds", slug: "leeds" },
+      { to: "Leicester", slug: "" },
+    ],
   };
 
   const region = loc.region;
