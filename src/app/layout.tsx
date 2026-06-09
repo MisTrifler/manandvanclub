@@ -51,8 +51,7 @@ const organizationSchema = {
   },
   "email": "support@manandvanclub.co.uk",
   "sameAs": [
-    "https://www.facebook.com/manandvanclub",
-    "https://www.linkedin.com/company/manandvanclub"
+    "https://www.facebook.com/manandvanclub"
   ]
 };
 
