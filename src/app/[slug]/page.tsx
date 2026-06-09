@@ -1,5 +1,6 @@
 import CityServiceContent from "@/components/CityServiceContent";
 import { getLocationPageData, getAllLocationPageSlugs } from "@/lib/location-content";
+import { getEnhancedLocalBusinessSchema } from "@/lib/enhanced-schemas";
 import { type IntentType } from "@/lib/intent-detection";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
@@ -156,6 +157,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
       title: locData.title,
       description: locData.description,
+      alternates: {
+        canonical: `https://www.manandvanclub.co.uk/${slug}`,
+      },
     };
   }
 
@@ -164,12 +168,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
       title: serviceData.title,
       description: serviceData.description,
+      alternates: {
+        canonical: `https://www.manandvanclub.co.uk/${slug}`,
+      },
     };
   }
 
   return {
     title: "Man and Van Club",
     description: "Professional man and van services across the UK.",
+    alternates: {
+      canonical: `https://www.manandvanclub.co.uk/${slug}`,
+    },
   };
 }
 
@@ -187,7 +197,12 @@ export default function Page({ params }: { params: { slug: string } }) {
   const locData = getLocationPageData(locationKey);
 
   if (locData) {
-    return <CityServiceContent data={locData} faqItems={locData.faq} />;
+    // Override with enhanced LocalBusiness schema for approved priority cities
+    const enhancedSchema = getEnhancedLocalBusinessSchema(locationKey);
+    const enhancedData = enhancedSchema
+      ? { ...locData, localBusinessSchema: enhancedSchema }
+      : locData;
+    return <CityServiceContent data={enhancedData} faqItems={locData.faq} />;
   }
 
   const serviceData = servicePageData[slug];

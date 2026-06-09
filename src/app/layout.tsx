@@ -20,6 +20,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Find Trusted Local Movers Across the UK | Man and Van Club",
   description: "Get matched with a suitable local mover across the UK. No spam, just one direct introduction.",
+  metadataBase: new URL('https://www.manandvanclub.co.uk'),
+  alternates: {
+    canonical: 'https://www.manandvanclub.co.uk',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -31,6 +35,27 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Man and Van Club",
+  "url": "https://www.manandvanclub.co.uk",
+  "logo": "https://www.manandvanclub.co.uk/icon.png",
+  "description": "A marketplace connecting customers with verified independent local movers across the UK through an exclusive matching process.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+44-7943-617-386",
+    "contactType": "customer support",
+    "availableLanguage": "English",
+    "areaServed": "GB"
+  },
+  "email": "support@manandvanclub.co.uk",
+  "sameAs": [
+    "https://www.facebook.com/manandvanclub",
+    "https://www.linkedin.com/company/manandvanclub"
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,6 +64,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${poppins.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

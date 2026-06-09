@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms & Conditions | Man and Van Club",
   description: "Terms and conditions for using the Man and Van Club marketplace.",
+  alternates: {
+    canonical: 'https://www.manandvanclub.co.uk/terms',
+  },
 };
 
 export default function Terms() {

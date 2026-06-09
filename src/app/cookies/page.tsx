@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Cookie Policy | Man and Van Club",
   description: "Learn how we use cookies to improve your experience at Man and Van Club.",
+  alternates: {
+    canonical: 'https://www.manandvanclub.co.uk/cookies',
+  },
 };
 
 export default function CookiePolicy() {

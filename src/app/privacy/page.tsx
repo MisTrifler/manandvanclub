@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Man and Van Club",
   description: "Our commitment to protecting your personally identifiable information at Man and Van Club.",
+  alternates: {
+    canonical: 'https://www.manandvanclub.co.uk/privacy',
+  },
 };
 
 export default function PrivacyPolicy() {

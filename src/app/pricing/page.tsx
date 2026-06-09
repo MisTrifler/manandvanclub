@@ -6,6 +6,9 @@ import FAQ from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "Driver Pricing | Man and Van Club",
   description: "Simple, transparent lead pricing. Only pay for exclusive leads you choose to unlock. No subscriptions. No contracts. First lead free.",
+  alternates: {
+    canonical: 'https://www.manandvanclub.co.uk/pricing',
+  },
 };
 
 const FAQ_ITEMS = [
