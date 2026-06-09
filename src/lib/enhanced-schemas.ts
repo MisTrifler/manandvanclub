@@ -208,6 +208,32 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
   },
+  nottingham: {
+    ...baseSchema,
+    name: "Man and Van Club — Nottingham",
+    description:
+      "Professional man and van services in Nottingham. Verified local movers covering West Bridgford, Beeston, Arnold, Carlton, Lenton, Hucknall and surrounding areas. Exclusive matching with vetted professionals.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-nottingham",
+    areaServed: {
+      "@type": "City",
+      name: "Nottingham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Midlands"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "West Bridgford" },
+        { "@type": "Neighborhood", name: "Beeston" },
+        { "@type": "Neighborhood", name: "Arnold" },
+        { "@type": "Neighborhood", name: "Carlton" },
+        { "@type": "Neighborhood", name: "Lenton" },
+        { "@type": "Neighborhood", name: "Hucknall" },
+        { "@type": "Neighborhood", name: "Clifton" },
+        { "@type": "Neighborhood", name: "Mansfield" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery", "Office Relocations"]
+  },
   walsall: {
     ...baseSchema,
     name: "Man and Van Club — Walsall",

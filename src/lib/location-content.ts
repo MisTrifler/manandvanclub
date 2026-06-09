@@ -1,4 +1,5 @@
 import { LocationData, getLocationBySlug, LOCATIONS } from "@/constants/locations";
+import { customLocationContentOverrides } from "./custom-location-content";
 
 export interface LocationPageData {
   name: string;
@@ -301,7 +302,7 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     serviceType: "Moving Services",
   };
 
-  return {
+  const baseData = {
     name: loc.name,
     title: `Man and Van ${loc.name} | Local Movers Who Know the Area | Man and Van Club`,
     description: `Professional man and van services in ${loc.name}. Local movers who understand ${loc.nearbyAreas.slice(0, 3).join(", ")} and surrounding areas. Get matched with a vetted professional today.`,
@@ -326,6 +327,14 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     movingChecklist: MOVING_CHECKLIST,
     regionCities: getRegionCities(loc),
   };
+
+  // Merge custom content overrides for priority cities (prevents doorway-page penalties)
+  const customOverride = customLocationContentOverrides[loc.slug];
+  if (customOverride) {
+    return { ...baseData, ...customOverride };
+  }
+
+  return baseData;
 }
 
 export function getAllLocationPageSlugs(): string[] {

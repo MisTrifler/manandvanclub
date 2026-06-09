@@ -1492,6 +1492,27 @@ export const LOCATIONS: LocationData[] = [
     areas: ["City Centre", "Cheltenham", "Stroud", "Tewkesbury", "Stonehouse", "Brockworth", "Quedgeley"],
     nearbyLocations: ["cheltenham", "bristol", "stroud", "tewkesbury", "swindon"]
   },
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS (Nottingham)
+  // ──────────────────────────────────────────
+  {
+    slug: "nottingham",
+    name: "Nottingham",
+    region: "East Midlands",
+    county: "Nottinghamshire",
+    nearbyAreas: ["West Bridgford", "Beeston", "Arnold", "Carlton", "Hucknall", "Clifton", "Mansfield", "Lenton"],
+    majorRoads: ["A52", "A60", "M1"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "modern apartments"],
+    hasStudentAreas: true,
+    studentAreas: ["Lenton", "Dunkirk"],
+    businessDistricts: ["City Centre", "BioCity", "Nottingham Science Park"],
+    movingConsiderations: ["narrow city centre streets", "tram line restrictions", "hilly Park Estate roads", "M1 traffic"],
+    intro: "Nottingham is a vibrant East Midlands city famous for Robin Hood, the Lace Market, and two major universities. From the Victorian terraces of the Meadows to the modern apartments around the canal and the student areas of Lenton, Nottingham moves require local knowledge.",
+    knowledge: "Our Nottingham team regularly moves families between the city centre, West Bridgford, and Beeston. They understand the narrow streets of the Lace Market, the tram line restrictions, the steep roads around the Park Estate, and the best routes along the A52 and M1.",
+    badge: "Nottingham's Local Experts",
+    areas: ["City Centre", "West Bridgford", "Beeston", "Arnold", "Carlton", "Hucknall", "Clifton", "Lenton"],
+    nearbyLocations: []
+  },
 ];
 
 export const LOCATION_SLUGS = LOCATIONS.map((l) => l.slug);
