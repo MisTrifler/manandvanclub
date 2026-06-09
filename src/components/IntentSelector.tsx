@@ -4,11 +4,11 @@ import { Building2, Home, GraduationCap, Sofa, Package, Boxes, ArrowRight } from
 import { type IntentType } from "@/lib/intent-detection";
 
 const INTENT_OPTIONS = [
-  { id: "office" as IntentType, label: "Office Relocation", icon: Building2, description: "Move your business, desks, IT equipment & furniture" },
-  { id: "house" as IntentType, label: "House or Flat Move", icon: Home, description: "Move your home, from studio to 4+ bedrooms" },
-  { id: "student" as IntentType, label: "Student Move", icon: GraduationCap, description: "Move to or from university accommodation" },
-  { id: "single-item" as IntentType, label: "Single Item or Furniture", icon: Sofa, description: "Deliver a sofa, bed, table or any single item" },
   { id: "general" as IntentType, label: "Man and Van Hire", icon: Package, description: "Small moves, van hire with driver or general help" },
+  { id: "single-item" as IntentType, label: "Single Item or Furniture", icon: Sofa, description: "Deliver a sofa, bed, table or any single item" },
+  { id: "student" as IntentType, label: "Student Move", icon: GraduationCap, description: "Move to or from university accommodation" },
+  { id: "house" as IntentType, label: "House or Flat Move", icon: Home, description: "Move your home, from studio to 4+ bedrooms" },
+  { id: "office" as IntentType, label: "Office Relocation", icon: Building2, description: "Move your business, desks, IT equipment & furniture" },
   { id: "storage" as IntentType, label: "Storage Collection", icon: Boxes, description: "Collect from or deliver to a storage unit" },
 ];
 
