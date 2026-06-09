@@ -50,9 +50,8 @@ const organizationSchema = {
     "areaServed": "GB"
   },
   "email": "support@manandvanclub.co.uk",
-  "sameAs": [
-    "https://www.facebook.com/manandvanclub"
-  ]
+    "sameAs": []
+  
 };
 
 export default function RootLayout({
