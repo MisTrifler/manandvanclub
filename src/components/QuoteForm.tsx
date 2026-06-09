@@ -203,6 +203,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const handleFinalSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
+      // Capture the originating page URL for conversion attribution
+      const sourcePage = typeof window !== "undefined" ? window.location.pathname : "";
+
       // Build details object for service-specific fields
       const details: Record<string, any> = {};
       if (activeIntent === "office") {
@@ -238,6 +241,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
       const payload = {
         ...data,
+        sourcePage,
         details: Object.keys(details).length > 0 ? details : undefined,
       };
 
