@@ -80,11 +80,11 @@ export function detectIntent(
 
 export function getIntentLabel(intent: IntentType): string {
   const labels: Record<IntentType, string> = {
-    "office": "Office Relocation",
-    "house": "House or Flat Move",
+    "office": "Office Move",
+    "house": "Moving Home",
     "student": "Student Move",
-    "single-item": "Single Item Delivery",
-    "general": "Man and Van Hire",
+    "single-item": "Furniture Delivery",
+    "general": "Man & Van Service",
     "storage": "Storage Collection",
   };
   return labels[intent] || "General Move";
@@ -93,11 +93,11 @@ export function getIntentLabel(intent: IntentType): string {
 export function getMoveTypeLabel(intent: IntentType): string {
   const labels: Record<IntentType, string> = {
     "office": "Office Move",
-    "house": "House Move",
+    "house": "Home Move",
     "student": "Student Move",
-    "single-item": "Single Item / Furniture",
-    "general": "General Move",
-    "storage": "Storage Move",
+    "single-item": "Furniture Delivery",
+    "general": "Man & Van Service",
+    "storage": "Storage Collection",
   };
   return labels[intent] || "General Move";
 }

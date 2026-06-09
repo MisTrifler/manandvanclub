@@ -1,47 +1,91 @@
 "use client";
 
-import { Building2, Home, GraduationCap, Sofa, Package, Boxes, ArrowRight } from "lucide-react";
 import { type IntentType } from "@/lib/intent-detection";
 
 const INTENT_OPTIONS = [
-  { id: "general" as IntentType, label: "Man and Van Hire", icon: Package, description: "Small moves, van hire with driver or general help" },
-  { id: "single-item" as IntentType, label: "Single Item or Furniture", icon: Sofa, description: "Deliver a sofa, bed, table or any single item" },
-  { id: "student" as IntentType, label: "Student Move", icon: GraduationCap, description: "Move to or from university accommodation" },
-  { id: "house" as IntentType, label: "House or Flat Move", icon: Home, description: "Move your home, from studio to 4+ bedrooms" },
-  { id: "office" as IntentType, label: "Office Relocation", icon: Building2, description: "Move your business, desks, IT equipment & furniture" },
-  { id: "storage" as IntentType, label: "Storage Collection", icon: Boxes, description: "Collect from or deliver to a storage unit" },
+  {
+    id: "house" as IntentType,
+    label: "Moving Home",
+    emoji: "🏠",
+    description: "Move a house, flat, apartment or studio of any size.",
+  },
+  {
+    id: "single-item" as IntentType,
+    label: "Furniture Delivery",
+    emoji: "🛋️",
+    description: "Sofas, beds, wardrobes, appliances and single-item deliveries.",
+  },
+  {
+    id: "general" as IntentType,
+    label: "Man & Van Service",
+    emoji: "🚐",
+    description: "Flexible help for small moves, multiple items, Facebook Marketplace purchases and general transport.",
+  },
+  {
+    id: "office" as IntentType,
+    label: "Office Move",
+    emoji: "🏢",
+    description: "Business relocations, office furniture, IT equipment and commercial moves.",
+  },
+  {
+    id: "storage" as IntentType,
+    label: "Storage Collection",
+    emoji: "📦",
+    description: "Collect from or deliver to a storage unit.",
+  },
+  {
+    id: "student" as IntentType,
+    label: "Student Move",
+    emoji: "🎓",
+    description: "Moving to or from university halls, student accommodation or shared housing.",
+  },
 ];
 
-export default function IntentSelector({ onSelect }: { onSelect: (intent: IntentType) => void }) {
+export default function IntentSelector({
+  onSelect,
+}: {
+  onSelect: (intent: IntentType) => void;
+}) {
   return (
-    <div className="bg-white rounded-2xl lg:rounded-[2rem] border border-border overflow-hidden shadow-2xl p-6 lg:p-8" id="quote-form">
+    <div
+      className="bg-white rounded-2xl lg:rounded-[2rem] border border-border overflow-hidden shadow-2xl p-6 lg:p-8"
+      id="quote-form"
+    >
       <div className="space-y-6">
         <div className="text-center lg:text-left">
-          <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">What Type of Move?</h2>
-          <p className="text-sm text-text-secondary mt-2">Pick the move that fits you best — we'll handle the details.</p>
+          <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">
+            What Do You Need Help With?
+          </h2>
+          <p className="text-sm text-text-secondary mt-2">
+            Choose the option that best matches your move and we&apos;ll ask the
+            right questions.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
           {INTENT_OPTIONS.map((option) => (
             <button
               key={option.id}
               onClick={() => onSelect(option.id)}
-              className="flex items-center gap-4 p-4 rounded-xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all text-left group"
+              className="flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl border-2 border-border bg-white hover:border-accent hover:shadow-lg hover:bg-accent/5 transition-all duration-200 active:scale-[0.98] group h-full"
             >
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-accent/10 transition-colors">
-                <option.icon size={24} className="text-primary group-hover:text-accent" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="font-black text-primary uppercase text-sm tracking-tight">{option.label}</h3>
-                <p className="text-xs text-text-secondary mt-0.5">{option.description}</p>
-              </div>
-              <ArrowRight size={18} className="text-primary/20 group-hover:text-accent transition-colors flex-shrink-0" />
+              <span className="text-4xl mb-3" aria-hidden="true">
+                {option.emoji}
+              </span>
+              <h3 className="font-black text-primary uppercase text-sm tracking-tight mb-1">
+                {option.label}
+              </h3>
+              <p className="text-xs text-text-secondary leading-relaxed">
+                {option.description}
+              </p>
             </button>
           ))}
         </div>
 
         <p className="text-xs text-text-secondary text-center lg:text-left font-medium">
-          Not sure? Choose <span className="text-primary font-bold">Man and Van Hire</span> and we will help you figure it out.
+          Not sure which option to choose? Select{" "}
+          <span className="text-primary font-bold">Man & Van Service</span> and
+          we&apos;ll guide you.
         </p>
       </div>
     </div>

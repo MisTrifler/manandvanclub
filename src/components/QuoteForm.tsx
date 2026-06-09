@@ -52,6 +52,7 @@ const formSchema = z.object({
   storageFacility: z.string().optional(),
   storageUnitSize: z.string().optional(),
   storageItems: z.string().optional(),
+  storageDirection: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -104,6 +105,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       houseLiftAccess: "no",
       officeLiftAccess: "yes",
       additionalHelpers: "no",
+      storageDirection: "",
     }
   });
 
@@ -156,7 +158,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       } else if (activeIntent === "single-item") {
         fields.push("itemType");
       } else if (activeIntent === "storage") {
-        fields.push("storageFacility", "storageUnitSize");
+        fields.push("storageFacility", "storageUnitSize", "storageDirection");
       }
     } else if (step === 2 && hasEstimate) {
       // Estimate step — auto-calculated, no validation needed
@@ -237,6 +239,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         details.storageFacility = data.storageFacility;
         details.storageUnitSize = data.storageUnitSize;
         details.storageItems = data.storageItems;
+        details.storageDirection = data.storageDirection;
       }
 
       const payload = {
@@ -332,18 +335,18 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <div>
                 <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">
                   {activeIntent === "office" && "Your Office Move"}
-                  {activeIntent === "house" && "Your Home Move"}
+                  {activeIntent === "house" && "Your Moving Home Details"}
                   {activeIntent === "student" && "Your Student Move"}
-                  {activeIntent === "single-item" && "Your Item Delivery"}
-                  {activeIntent === "general" && "Your Move Details"}
+                  {activeIntent === "single-item" && "Your Furniture Delivery"}
+                  {activeIntent === "general" && "Your Man & Van Service"}
                   {activeIntent === "storage" && "Your Storage Collection"}
                 </h2>
                 <p className="text-xs text-text-secondary mt-1 font-medium">
                   {activeIntent === "office" && "Tell us about your business relocation"}
                   {activeIntent === "house" && "Tell us about your home move"}
                   {activeIntent === "student" && "Tell us about your university move"}
-                  {activeIntent === "single-item" && "Tell us about the item you need delivered"}
-                  {activeIntent === "general" && "Tell us about your move"}
+                  {activeIntent === "single-item" && "Tell us about the furniture you need delivered"}
+                  {activeIntent === "general" && "Tell us about your move — big or small"}
                   {activeIntent === "storage" && "Tell us about your storage collection"}
                 </p>
               </div>
@@ -525,12 +528,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "student" && (
               <div className="space-y-3">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">University</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Which University?</label>
                   <input {...register("university")} placeholder="e.g. University of Birmingham" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.university && <p className="text-red-500 text-xs font-bold mt-1">{errors.university.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Accommodation Type</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Where Are You Staying?</label>
                   <select {...register("accommodationType")} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
                     <option value="">Select</option>
                     <option value="University Halls">University Halls</option>
@@ -551,7 +554,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   </div>
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Small Furniture Items</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Any Small Furniture?</label>
                   <select {...register("smallFurnitureItems")} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
                     <option value="">Select option</option>
                     <option value="None">None — only boxes and bags</option>
@@ -561,17 +564,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   </select>
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Collection postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving From (Postcode)</label>
+                  <input {...register("collectionPostcode")} placeholder="Current postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="Delivery postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving To (Postcode)</label>
+                  <input {...register("deliveryPostcode")} placeholder="New postcode" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">When Do You Need to Move?</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -653,6 +656,16 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "storage" && (
               <div className="space-y-3">
                 <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Direction</label>
+                  <select {...register("storageDirection")} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select direction</option>
+                    <option value="To storage">To storage — moving items into a unit</option>
+                    <option value="From storage">From storage — collecting items out</option>
+                    <option value="Between units">Between units — moving from one storage unit to another</option>
+                  </select>
+                  {errors.storageDirection && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageDirection.message}</p>}
+                </div>
+                <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Facility Name</label>
                   <input {...register("storageFacility")} placeholder="e.g. Big Yellow Storage" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.storageFacility && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageFacility.message}</p>}
@@ -700,9 +713,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-border">
               <p className="text-[10px] font-black uppercase text-primary/40 mb-2">
                 {activeIntent === "office" && "Estimated Office Move Cost"}
-                {activeIntent === "house" && "Estimated House Move Cost"}
+                {activeIntent === "house" && "Estimated Home Move Cost"}
                 {activeIntent === "student" && "Estimated Student Move Cost"}
-                {activeIntent === "general" && "Estimated Move Cost"}
+                {activeIntent === "general" && "Estimated Man & Van Cost"}
                 {activeIntent === "storage" && "Estimated Storage Collection Cost"}
               </p>
               <p className="text-5xl font-black tracking-tighter text-primary">
@@ -779,7 +792,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           <div className="text-center py-6 space-y-6">
             <CheckCircle2 size={48} className="text-success mx-auto" />
             <h2 className="text-3xl font-black text-primary uppercase">You're All Set</h2>
-            <p className="text-text-secondary">Your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "delivery" : "move"} request has been successfully submitted.</p>
+            <p className="text-text-secondary">Your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} request has been successfully submitted.</p>
             <p className="text-text-secondary text-sm">Our team is now reviewing your details and matching you with a suitable local mover.</p>
 
             <div className="text-left bg-gray-50/50 rounded-2xl p-6 border border-border">
@@ -787,7 +800,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <ol className="space-y-3 text-sm text-primary/80">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">1</span>
-                  We review your {activeIntent === "office" ? "office move" : "move"} requirements
+                  We review your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} requirements
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">2</span>
