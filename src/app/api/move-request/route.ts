@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 import { resend } from '@/lib/resend';
 
+const SENDER_ADDRESS = 'Man and Van Club <support@manandvanclub.co.uk>';
+
 export async function POST(req: Request) {
   try {
     const data = await req.json();
@@ -39,11 +41,13 @@ export async function POST(req: Request) {
 
     // 3. Send Email with OTP
     try {
-      if (process.env.RESEND_API_KEY) {
+      if (!process.env.RESEND_API_KEY) {
+        console.warn('RESEND_API_KEY missing — email not sent');
+      } else {
         console.log('Attempting to send OTP email to:', data.email);
-        
+
         const { data: emailResponse, error: emailError } = await resend.emails.send({
-          from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
+          from: SENDER_ADDRESS,
           to: [data.email],
           subject: `${otp} is your Man and Van Club verification code`,
           replyTo: 'support@manandvanclub.co.uk',
@@ -64,12 +68,12 @@ export async function POST(req: Request) {
                       <tr>
                         <td style="padding: 40px 40px 20px 40px; text-align: center;">
                           <div style="background-color: #0F172A; display: inline-block; padding: 12px 20px; border-radius: 12px; margin-bottom: 24px;">
-                            <span style="color: #ffffff; font-weight: 900; font-size: 24px; letter-spacing: -1px;">M&V</span>
+                            <span style="color: #ffffff; font-weight: 900; font-size: 24px; letter-spacing: -1px;">M&amp;V</span>
                           </div>
                           <h1 style="margin: 0; color: #0F172A; font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px;">Verify Your Move</h1>
                         </td>
                       </tr>
-                      
+
                       <!-- Body -->
                       <tr>
                         <td style="padding: 0 40px 40px 40px; text-align: center;">
@@ -77,15 +81,15 @@ export async function POST(req: Request) {
                             Hi ${data.firstName},<br>
                             To protect your move request and ensure exclusive matching, please enter the following 4-digit code:
                           </p>
-                          
+
                           <div style="background-color: #F8FAFC; border: 2px dashed #E2E8F0; border-radius: 16px; padding: 32px; margin-bottom: 32px;">
                             <span style="color: #F97316; font-size: 56px; font-weight: 900; letter-spacing: 12px; font-family: 'Courier New', Courier, monospace;">${otp}</span>
                           </div>
-                          
+
                           <p style="margin: 0 0 32px 0; color: #64748B; font-size: 14px; line-height: 1.6;">
                             This code is for your move from <strong>${data.collectionPostcode}</strong> to <strong>${data.deliveryPostcode}</strong> on ${data.moveDate}.
                           </p>
-                          
+
                           <div style="border-top: 1px solid #E2E8F0; padding-top: 32px;">
                             <p style="margin: 0; color: #94A3B8; font-size: 12px; line-height: 1.6; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
                               Verified Mover Network &bull; Secure Connection
@@ -94,7 +98,7 @@ export async function POST(req: Request) {
                         </td>
                       </tr>
                     </table>
-                    
+
                     <!-- Footer -->
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px;">
                       <tr>
@@ -103,7 +107,7 @@ export async function POST(req: Request) {
                             &copy; 2026 Man and Van Club. All rights reserved.
                           </p>
                           <p style="margin: 0; color: #CBD5E1; font-size: 11px;">
-                            You received this email because a move request was started with this address. 
+                            You received this email because a move request was started with this address.
                             If you didn't request this, you can ignore this email.
                           </p>
                         </td>
@@ -118,18 +122,24 @@ export async function POST(req: Request) {
         });
 
         if (emailError) {
-          console.error('Resend API returned an error:', emailError);
+          console.error('Resend API Error — name:', emailError.name);
+          console.error('Resend API Error — message:', emailError.message);
+          console.error('Resend API Error — full object:', JSON.stringify(emailError, null, 2));
         } else {
           console.log('Email successfully sent! ID:', emailResponse?.id);
         }
       }
     } catch (emailError: any) {
-      console.error('Unexpected error in email logic:', emailError);
+      console.error('Unexpected error in email logic — name:', emailError.name);
+      console.error('Unexpected error in email logic — message:', emailError.message);
+      console.error('Unexpected error in email logic — full object:', emailError);
     }
 
     return NextResponse.json({ id: request.id });
   } catch (error: any) {
-    console.error('General API Error:', error);
+    console.error('General API Error — name:', error.name);
+    console.error('General API Error — message:', error.message);
+    console.error('General API Error — full object:', error);
     return NextResponse.json({ error: 'Server Error', message: error.message }, { status: 500 });
   }
 }
