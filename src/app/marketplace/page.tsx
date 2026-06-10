@@ -1,61 +1,48 @@
-import { createServerClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
-import DriverMarketplaceClient from './DriverMarketplaceClient';
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
+import DriverMarketplaceClient from "./DriverMarketplaceClient";
+
+export const dynamic = "force-dynamic";
 
 export default async function MarketplacePage() {
   const cookieStore = cookies();
+  const token = cookieStore.get(DRIVER_COOKIE_NAME)?.value;
+  const driverEmail = isValidDriverSession(token);
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value;
-        },
-      },
-    }
-  );
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  if (!session || !session.user.email) {
-    redirect('/login?next=/marketplace');
+  if (!driverEmail) {
+    redirect("/login?next=/marketplace");
   }
 
   // Check if user is an approved driver
-  const { data: driver } = await supabase
-    .from('driver_applications')
-    .select('id, status, email')
-    .eq('email', session.user.email)
+  const supabaseAdmin = getSupabaseAdmin();
+  const { data: driver } = await supabaseAdmin
+    .from("driver_applications")
+    .select("id, status, email")
+    .eq("email", driverEmail)
     .single();
 
-  if (!driver || driver.status !== 'approved') {
+  if (!driver || driver.status !== "approved") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
         <div className="text-center space-y-4">
           <h1 className="text-2xl font-black text-primary">Access Denied</h1>
-          <p className="text-text-secondary">Your account is not approved for the marketplace yet.</p>
+          <p className="text-text-secondary">
+            Your account is not approved for the marketplace yet.
+          </p>
         </div>
       </div>
     );
   }
 
   // Only fetch verified + unlocked leads
-  const { data: leads } = await supabase
-    .from('move_requests')
-    .select('*')
-    .eq('is_verified', true)
-    .neq('status', 'locked')   // <-- Important: hide already paid leads
-    .order('created_at', { ascending: false });
+  const { data: leads } = await supabaseAdmin
+    .from("move_requests")
+    .select("*")
+    .eq("is_verified", true)
+    .neq("status", "locked")
+    .order("created_at", { ascending: false });
 
-  return (
-    <DriverMarketplaceClient 
-      userEmail={session.user.email} 
-      leads={leads || []} 
-    />
-  );
+  return <DriverMarketplaceClient userEmail={driverEmail} leads={leads || []} />;
 }

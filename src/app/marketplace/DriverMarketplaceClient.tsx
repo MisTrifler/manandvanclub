@@ -19,6 +19,11 @@ interface Props {
 export default function DriverMarketplaceClient({ userEmail, leads }: Props) {
   const [loadingId, setLoadingId] = useState<string | null>(null);
 
+  const handleLogout = async () => {
+    await fetch("/api/driver/logout", { method: "POST" });
+    window.location.href = "/login";
+  };
+
   const handleUnlock = async (lead: Lead) => {
     if (!lead.move_type) return;
     
@@ -48,8 +53,18 @@ export default function DriverMarketplaceClient({ userEmail, leads }: Props) {
   return (
     <div className="min-h-screen bg-[#F9F9F7] p-8">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-black text-primary mb-2">Marketplace</h1>
-        <p className="text-text-secondary mb-8">Welcome, {userEmail}</p>
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h1 className="text-4xl font-black text-primary mb-2">Marketplace</h1>
+            <p className="text-text-secondary">Welcome, {userEmail}</p>
+          </div>
+          <button
+            onClick={handleLogout}
+            className="text-xs font-black uppercase tracking-widest text-primary/60 hover:text-accent transition-colors"
+          >
+            Log Out
+          </button>
+        </div>
 
         {leads.length === 0 ? (
           <div className="bg-white p-12 rounded-3xl border border-border text-center">
