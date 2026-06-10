@@ -301,8 +301,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         background: 'rgba(255,255,255,0.96)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        borderRadius: '28px',
-        boxShadow: '0 25px 80px rgba(0,0,0,0.20)',
+        borderRadius: '24px',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.15)',
         overflow: 'hidden',
       }}
     >
@@ -310,11 +310,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           Fallback: no intent detected → show selector
           ────────────────────────────────────────── */}
       {!activeIntent && (
-        <div className="px-10 pt-10 pb-10">
+        <div className="px-5 pt-6 pb-6 lg:px-10 lg:pt-10 lg:pb-10">
           <h2
             className="uppercase tracking-tighter"
             style={{
-              fontSize: '42px',
+              fontSize: 'clamp(28px, 5vw, 42px)',
               fontWeight: 800,
               color: '#0F172A',
               lineHeight: 1.1,
@@ -331,11 +331,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
       {activeIntent && (<>
       {/* Form title */}
-      <div className="px-10 pt-10 pb-2">
+      <div className="px-5 pt-6 pb-2 lg:px-10 lg:pt-10">
         <h2
           className="uppercase tracking-tighter"
           style={{
-            fontSize: '42px',
+            fontSize: 'clamp(28px, 5vw, 42px)',
             fontWeight: 800,
             color: '#0F172A',
             lineHeight: 1.1,
@@ -348,7 +348,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
       {/* Progress bar */}
       {step < TOTAL_STEPS && (
-        <div className="bg-gray-50/50 px-10 py-4 border-b border-border">
+        <div className="bg-gray-50/50 px-5 py-3 lg:px-10 lg:py-4 border-b border-border">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               {INTENT_ICONS[activeIntent] && (
@@ -370,7 +370,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         </div>
       )}
 
-      <div className="px-10 pb-10">
+      <div className="px-5 pb-6 lg:px-10 lg:pb-10">
         {/* ──────────────────── STEP 1: Service Details ──────────────────── */}
         {step === 1 && (
           <div className="space-y-4">

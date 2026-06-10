@@ -72,7 +72,7 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
       {/* ──────────────────── Hero Section ──────────────────── */}
-      <section id="quote-form" className="relative flex items-center lg:min-h-[calc(100vh-80px)]">
+      <section id="quote-form" className="relative flex items-start lg:items-center min-h-[calc(100dvh-80px)] lg:min-h-[calc(100vh-80px)]">
         {/* Full-width background image */}
         <div className="absolute inset-0">
           <Image
@@ -82,41 +82,41 @@ export default function HomeContent() {
             className="object-cover object-center"
             priority
           />
-          {/* Directional gradient overlay — above image, below content */}
+          {/* Global subtle overlay — keeps image visible, improves contrast */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(90deg, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0.55) 35%, rgba(15,23,42,0.25) 70%, rgba(15,23,42,0.10) 100%)'
+              background: 'linear-gradient(90deg, rgba(10,20,40,0.35) 0%, rgba(10,20,40,0.20) 50%, rgba(10,20,40,0.10) 100%)',
             }}
           />
         </div>
 
-        {/* Content container */}
-        <div className="relative z-10 max-w-[1800px] mx-auto w-full flex flex-col lg:flex-row items-center">
-          {/* LEFT PANEL — Glass panel with headline, subheadline, badges */}
+        {/* Content container — centered on desktop, top-aligned on mobile */}
+        <div className="relative z-10 max-w-[1800px] mx-auto w-full flex flex-col lg:flex-row lg:items-start lg:gap-12 p-4 py-8 lg:py-20 lg:px-12">
+          {/* LEFT PANEL — Premium glass content panel */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="lg:w-[55%] p-6 py-12 lg:py-20 lg:px-16"
+            className="w-full lg:w-[46%]"
           >
             <div
               className="text-white"
               style={{
-                background: 'rgba(15,23,42,0.45)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.15)',
+                background: 'rgba(15,23,42,0.55)',
+                backdropFilter: 'blur(18px)',
+                WebkitBackdropFilter: 'blur(18px)',
+                border: '1px solid rgba(255,255,255,0.12)',
                 borderRadius: '24px',
-                padding: '40px',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.30)',
-                maxWidth: '800px',
+                padding: 'clamp(20px, 2.5vw, 32px)',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.15)',
+                maxWidth: '720px',
               }}
             >
               <h1
-                className="font-black tracking-tighter max-w-[700px]"
+                className="font-black tracking-tighter"
                 style={{
-                  fontSize: '72px',
+                  fontSize: 'clamp(32px, 5.5vw, 72px)',
                   fontWeight: 800,
                   lineHeight: '0.95',
                 }}
@@ -126,9 +126,9 @@ export default function HomeContent() {
               </h1>
 
               <p
-                className="mt-6 max-w-[700px] font-medium"
+                className="mt-4 lg:mt-5 font-medium"
                 style={{
-                  fontSize: '24px',
+                  fontSize: 'clamp(16px, 2vw, 28px)',
                   lineHeight: '1.5',
                   color: 'rgba(255,255,255,0.95)',
                 }}
@@ -137,27 +137,31 @@ export default function HomeContent() {
               </p>
 
               <p
-                className="mt-4 max-w-[700px] font-medium"
+                className="mt-3 font-medium"
                 style={{
-                  fontSize: '20px',
+                  fontSize: 'clamp(15px, 1.6vw, 20px)',
                   lineHeight: '1.6',
                   color: 'rgba(255,255,255,0.95)',
+                  maxWidth: '600px',
                 }}
               >
                 Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
               </p>
 
-              <div className="flex flex-wrap gap-3 mt-8">
+              <div className="flex flex-wrap gap-2.5 mt-5 lg:mt-7">
                 {TRUST_BADGES.map((badge, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-2 rounded-full font-bold text-primary/80"
+                    className="flex items-center gap-2 rounded-full font-bold text-primary/80 transition-all duration-200 hover:-translate-y-0.5"
                     style={{
-                      background: 'rgba(255,255,255,0.95)',
+                      background: 'rgba(255,255,255,0.92)',
+                      backdropFilter: 'blur(4px)',
+                      WebkitBackdropFilter: 'blur(4px)',
+                      border: '1px solid rgba(255,255,255,0.30)',
                       borderRadius: '999px',
-                      padding: '12px 18px',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.12)',
-                      fontSize: '14px',
+                      padding: '10px 16px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                      fontSize: '13px',
                     }}
                   >
                     <span className="text-accent">{badge.icon}</span>
@@ -166,23 +170,23 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-4 mt-8 text-sm lg:text-base">
+              <div className="flex items-center gap-4 mt-5 lg:mt-7 text-xs lg:text-sm">
                 <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
                 <span className="text-white/40">|</span>
                 <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
                 <span className="text-white/40">|</span>
-                <span className="flex items-center gap-1.5"><ShieldCheck size={16} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
+                <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
               </div>
             </div>
           </motion.div>
 
-          {/* RIGHT PANEL — Form card */}
+          {/* RIGHT PANEL — Premium floating form card */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={1}
-            className="lg:w-[45%] w-full p-6 lg:py-16 lg:px-12 flex items-center justify-center"
+            className="w-full lg:w-[46%] mt-6 lg:mt-0"
           >
             <div className="w-full">
               <QuoteForm />

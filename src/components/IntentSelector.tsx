@@ -27,12 +27,12 @@ export default function IntentSelector({
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-2 lg:gap-3">
           {INTENT_OPTIONS.map((option) => (
             <button
               key={option.id}
               onClick={() => onSelect(option.id)}
-              className="flex flex-col items-center text-center p-4 sm:p-5 rounded-[18px] transition-all duration-200 ease-out active:scale-[0.97] group"
+              className="flex flex-col items-center text-center p-3 sm:p-4 lg:p-5 rounded-[18px] transition-all duration-200 ease-out active:scale-[0.97] group"
               style={{
                 background: '#FFFFFF',
                 border: '1px solid rgba(15,23,42,0.08)',
