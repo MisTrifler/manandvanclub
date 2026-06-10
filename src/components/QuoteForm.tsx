@@ -297,12 +297,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   return (
     <div
       id="quote-form"
+      className="bg-white"
       style={{
-        background: 'rgba(255,255,255,0.96)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        borderRadius: '24px',
-        boxShadow: '0 20px 60px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.15)',
+        borderRadius: '28px',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
         overflow: 'hidden',
       }}
     >

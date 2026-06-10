@@ -32,25 +32,27 @@ export default function IntentSelector({
             <button
               key={option.id}
               onClick={() => onSelect(option.id)}
-              className="flex flex-col items-center text-center p-3 sm:p-4 lg:p-5 rounded-[18px] transition-all duration-200 ease-out active:scale-[0.97] group"
+              className="flex flex-col items-center text-center p-3 sm:p-4 lg:p-5 rounded-[18px] transition-all duration-200 ease-out active:scale-[0.97]"
               style={{
                 background: '#FFFFFF',
-                border: '1px solid rgba(15,23,42,0.08)',
-                boxShadow: '0 6px 18px rgba(0,0,0,0.08)',
+                border: '1px solid rgba(15,23,42,0.06)',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 12px 28px rgba(0,0,0,0.15)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.10)';
+                e.currentTarget.style.borderColor = 'rgba(249,115,22,0.25)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 6px 18px rgba(0,0,0,0.08)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.06)';
+                e.currentTarget.style.borderColor = 'rgba(15,23,42,0.06)';
               }}
             >
-              <span className="text-3xl mb-2" aria-hidden="true">
+              <span className="text-2xl sm:text-3xl mb-1.5 lg:mb-2" aria-hidden="true">
                 {option.emoji}
               </span>
-              <span className="font-black text-primary uppercase text-sm tracking-tight leading-tight">
+              <span className="font-black text-primary uppercase text-[11px] sm:text-sm tracking-tight leading-tight">
                 {option.label}
               </span>
             </button>

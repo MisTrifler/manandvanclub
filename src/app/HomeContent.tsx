@@ -82,113 +82,99 @@ export default function HomeContent() {
             className="object-cover object-center"
             priority
           />
-          {/* Global subtle overlay — keeps image visible, improves contrast */}
+          {/* Premium directional overlay — image visible, text readable */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(90deg, rgba(10,20,40,0.35) 0%, rgba(10,20,40,0.20) 50%, rgba(10,20,40,0.10) 100%)',
+              background: 'linear-gradient(90deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.50) 25%, rgba(15,23,42,0.20) 50%, rgba(15,23,42,0.05) 75%, rgba(15,23,42,0.00) 100%)',
             }}
           />
         </div>
 
-        {/* Content container — centered on desktop, top-aligned on mobile */}
-        <div className="relative z-10 max-w-[1800px] mx-auto w-full flex flex-col lg:flex-row lg:items-start lg:gap-12 p-4 py-8 lg:py-20 lg:px-12">
-          {/* LEFT PANEL — Premium glass content panel */}
+        {/* Content container — both panels share the same visual environment */}
+        <div className="relative z-10 max-w-[1800px] mx-auto w-full flex flex-col lg:flex-row lg:items-start lg:gap-10 xl:gap-14 p-4 py-6 sm:py-8 lg:py-12 xl:py-16 lg:px-10 xl:px-14">
+          {/* LEFT PANEL — Content directly on image, no heavy card */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="w-full lg:w-[46%]"
+            className="w-full lg:w-[50%] xl:w-[48%] text-white"
           >
-            <div
-              className="text-white"
+            <h1
+              className="font-black tracking-tighter"
               style={{
-                background: 'rgba(15,23,42,0.55)',
-                backdropFilter: 'blur(18px)',
-                WebkitBackdropFilter: 'blur(18px)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: '24px',
-                padding: 'clamp(20px, 2.5vw, 32px)',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.15)',
-                maxWidth: '720px',
+                fontSize: 'clamp(36px, 5.5vw, 80px)',
+                fontWeight: 800,
+                lineHeight: '0.95',
+                textShadow: '0 2px 12px rgba(0,0,0,0.35)',
               }}
             >
-              <h1
-                className="font-black tracking-tighter"
-                style={{
-                  fontSize: 'clamp(32px, 5.5vw, 72px)',
-                  fontWeight: 800,
-                  lineHeight: '0.95',
-                }}
-              >
-                <span className="text-accent">Man and Van</span>{' '}
-                <span className="text-white">Services Near You</span>
-              </h1>
+              <span className="text-accent">Man and Van</span>{' '}
+              <span className="text-white">Services Near You</span>
+            </h1>
 
-              <p
-                className="mt-4 lg:mt-5 font-medium"
-                style={{
-                  fontSize: 'clamp(16px, 2vw, 28px)',
-                  lineHeight: '1.5',
-                  color: 'rgba(255,255,255,0.95)',
-                }}
-              >
-                Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
-              </p>
+            <p
+              className="mt-4 lg:mt-5 font-semibold lg:font-bold"
+              style={{
+                fontSize: 'clamp(17px, 1.8vw, 26px)',
+                lineHeight: '1.45',
+                color: 'rgba(255,255,255,0.95)',
+                textShadow: '0 2px 8px rgba(0,0,0,0.30)',
+              }}
+            >
+              Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
+            </p>
 
-              <p
-                className="mt-3 font-medium"
-                style={{
-                  fontSize: 'clamp(15px, 1.6vw, 20px)',
-                  lineHeight: '1.6',
-                  color: 'rgba(255,255,255,0.95)',
-                  maxWidth: '600px',
-                }}
-              >
-                Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
-              </p>
+            <p
+              className="mt-3 font-medium"
+              style={{
+                fontSize: 'clamp(15px, 1.4vw, 20px)',
+                lineHeight: '1.55',
+                color: 'rgba(255,255,255,0.92)',
+                maxWidth: '600px',
+                textShadow: '0 1px 6px rgba(0,0,0,0.25)',
+              }}
+            >
+              Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
+            </p>
 
-              <div className="flex flex-wrap gap-2.5 mt-5 lg:mt-7">
-                {TRUST_BADGES.map((badge, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 rounded-full font-bold text-primary/80 transition-all duration-200 hover:-translate-y-0.5"
-                    style={{
-                      background: 'rgba(255,255,255,0.92)',
-                      backdropFilter: 'blur(4px)',
-                      WebkitBackdropFilter: 'blur(4px)',
-                      border: '1px solid rgba(255,255,255,0.30)',
-                      borderRadius: '999px',
-                      padding: '10px 16px',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                      fontSize: '13px',
-                    }}
-                  >
-                    <span className="text-accent">{badge.icon}</span>
-                    {badge.label}
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-2.5 mt-5 lg:mt-6">
+              {TRUST_BADGES.map((badge, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 rounded-full font-bold text-primary/85 transition-all duration-200 hover:-translate-y-0.5 cursor-default"
+                  style={{
+                    background: 'rgba(255,255,255,0.95)',
+                    borderRadius: '999px',
+                    padding: '10px 16px',
+                    boxShadow: '0 4px 14px rgba(0,0,0,0.10)',
+                    fontSize: '13px',
+                  }}
+                >
+                  <span className="text-accent">{badge.icon}</span>
+                  {badge.label}
+                </div>
+              ))}
+            </div>
 
-              <div className="flex items-center gap-4 mt-5 lg:mt-7 text-xs lg:text-sm">
-                <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
-                <span className="text-white/40">|</span>
-                <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
-                <span className="text-white/40">|</span>
-                <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
-              </div>
+            <div className="flex items-center gap-4 mt-5 lg:mt-6 text-xs lg:text-sm">
+              <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
+              <span className="text-white/40">|</span>
+              <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
+              <span className="text-white/40">|</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
             </div>
           </motion.div>
 
-          {/* RIGHT PANEL — Premium floating form card */}
+          {/* RIGHT PANEL — Clean white conversion card */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={1}
-            className="w-full lg:w-[46%] mt-6 lg:mt-0"
+            className="w-full lg:w-[50%] xl:w-[48%] mt-6 lg:mt-0"
           >
-            <div className="w-full">
+            <div className="w-full lg:max-w-[580px] lg:ml-auto">
               <QuoteForm />
             </div>
           </motion.div>
