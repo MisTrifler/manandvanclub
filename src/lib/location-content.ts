@@ -1,5 +1,6 @@
 import { LocationData, getLocationBySlug, LOCATIONS } from "@/constants/locations";
 import { customLocationContentOverrides } from "./custom-location-content";
+import { getRouteInfo, type RouteInfo } from "./google-maps-routes";
 
 export interface LocationPageData {
   name: string;
@@ -20,7 +21,7 @@ export interface LocationPageData {
   // NEW: rich content sections
   areasWeCover: string[];
   localMovingInfo: string;
-  popularMoves: { from: string; to: string; slug?: string }[];
+  popularMoves: { from: string; to: string; slug?: string; routeInfo: RouteInfo }[];
   localLandmarks: string[];
   trustPoints: { icon: string; label: string }[];
   verificationChecks: string[];
@@ -65,7 +66,7 @@ const MOVING_CHECKLIST = [
 ];
 
 // Popular move destinations by region (for generic generation)
-function getPopularMovesForRegion(loc: LocationData): { from: string; to: string; slug?: string }[] {
+function getPopularMovesForRegion(loc: LocationData): { from: string; to: string; slug?: string; routeInfo: RouteInfo }[] {
   const majorCities: Record<string, { to: string; slug: string }[]> = {
     "West Midlands": [
       { to: "London", slug: "london" },
@@ -124,6 +125,7 @@ function getPopularMovesForRegion(loc: LocationData): { from: string; to: string
     from: loc.name,
     to: d.to,
     slug: d.slug,
+    routeInfo: getRouteInfo(loc.name, d.to),
   }));
 }
 

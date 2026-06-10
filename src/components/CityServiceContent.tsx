@@ -2,10 +2,11 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap, CheckCircle, Lock, PhoneOff, UserCheck, ClipboardCheck, Truck, Package, Route, Building, GraduationCap, Sofa, ArrowRight, ListChecks } from "lucide-react";
+import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap, CheckCircle, Lock, PhoneOff, UserCheck, ClipboardCheck, Truck, Package, Route, Building, GraduationCap, Sofa, ArrowRight, ListChecks, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { type IntentType } from "@/lib/intent-detection";
+import { getGoogleMapsRouteUrl } from "@/lib/google-maps-routes";
 
 export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: IntentType }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
@@ -211,24 +212,49 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                     {data.popularMoves && data.popularMoves.length > 0 && (
                       <div className="pt-4">
                         <h4 className="text-sm font-black uppercase tracking-widest text-primary/40 mb-4">Popular Moving Routes From {data.name}</h4>
-                        <div className="flex flex-wrap gap-3">
-                          {data.popularMoves.map((move: any, i: number) => (
-                            move.slug ? (
-                              <Link
-                                key={i}
-                                href={`/man-and-van-${move.slug}`}
-                                className="group flex items-center gap-2 bg-white px-5 py-3 rounded-xl border border-border/50 hover:border-accent hover:shadow-md transition-all duration-300"
-                              >
-                                <Route size={14} className="text-accent" />
-                                <span className="text-xs font-black text-primary uppercase tracking-widest group-hover:text-accent transition-colors">{move.from} to {move.to}</span>
-                              </Link>
-                            ) : (
-                              <span key={i} className="flex items-center gap-2 bg-white px-5 py-3 rounded-xl border border-border/50 text-xs font-black text-primary/50 uppercase tracking-widest">
-                                <Route size={14} className="text-primary/30" />
-                                {move.from} to {move.to}
-                              </span>
-                            )
-                          ))}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {data.popularMoves.map((move: any, i: number) => {
+                            const mapsUrl = getGoogleMapsRouteUrl(move.from, move.to);
+                            return (
+                              <div key={i} className="group bg-white rounded-xl border border-border/50 hover:border-accent hover:shadow-md transition-all duration-300 overflow-hidden">
+                                {/* Primary content row */}
+                                <div className="flex items-center justify-between px-4 py-3">
+                                  <div className="flex items-center gap-2">
+                                    <MapPin size={14} className="text-accent flex-shrink-0" />
+                                    <div>
+                                      <span className="text-xs font-black text-primary uppercase tracking-widest block">
+                                        {move.from} <span className="text-primary/40">→</span> {move.to}
+                                      </span>
+                                      {move.routeInfo?.distance && (
+                                        <span className="text-[10px] font-bold text-primary/50 block mt-0.5">
+                                          {move.routeInfo.distance} • {move.routeInfo.duration}
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                  {move.slug && (
+                                    <Link
+                                      href={`/man-and-van-${move.slug}`}
+                                      className="text-[10px] font-black uppercase tracking-widest text-accent hover:text-primary transition-colors flex-shrink-0"
+                                    >
+                                      View Page
+                                    </Link>
+                                  )}
+                                </div>
+                                {/* Google Maps CTA */}
+                                <a
+                                  href={mapsUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center justify-center gap-1.5 bg-[#F9F9F7] px-4 py-2.5 border-t border-border/30 text-[10px] font-black uppercase tracking-widest text-primary/60 hover:text-accent hover:bg-accent/5 transition-colors"
+                                >
+                                  <Route size={12} />
+                                  View Route on Map
+                                  <ExternalLink size={10} />
+                                </a>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
