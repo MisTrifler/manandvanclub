@@ -80,7 +80,7 @@ export default function HomeContent() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="lg:w-1/2 relative flex flex-col justify-center order-2 lg:order-1"
+            className="lg:w-[45%] relative flex flex-col justify-center order-2 lg:order-1"
           >
             <div className="absolute inset-0">
               <Image
@@ -93,13 +93,9 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#1B2D4F]/80 via-[#1B2D4F]/65 to-[#1B2D4F]/40" />
             </div>
 
-            <div className="relative z-10 p-4 py-8 lg:p-6 lg:pl-8 text-white">
-              <div className="hidden lg:inline-flex items-center bg-white/20 text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.3em] mb-3 border border-white/30">
-                Verified UK Movers
-              </div>
-
+            <div className="relative z-10 p-4 py-6 lg:py-5 lg:px-8 text-white">
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-black mb-2 lg:mb-3 leading-[1.05] tracking-tighter max-w-[550px]"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] font-black mb-1 lg:mb-1.5 leading-[1.05] tracking-tighter max-w-[600px]"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
                 <span className="text-accent">Man and Van</span>{' '}
@@ -107,18 +103,24 @@ export default function HomeContent() {
               </h1>
 
               <p
-                className="text-sm lg:text-base text-white/90 mb-3 max-w-[500px] font-medium leading-snug"
+                className="text-xs lg:text-sm text-white/80 mb-1.5 max-w-[600px] font-medium leading-snug"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
-                Get matched with one verified local mover.<br className="hidden sm:block" />
-                No comparison sites. No endless quotes. No sales calls.
+                Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-3">
+              <p
+                className="text-sm lg:text-base text-white mb-2 max-w-[600px] font-medium leading-snug"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
+              >
+                Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
+              </p>
+
+              <div className="flex flex-wrap gap-1.5 mb-2">
                 {TRUST_BADGES.map((badge, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm border border-white/30 px-3 py-1.5 rounded-full text-[11px] font-bold text-primary/80"
+                    className="flex items-center gap-1 bg-white/90 backdrop-blur-sm border border-white/30 px-2.5 py-1 rounded-full text-[10px] font-bold text-primary/80"
                   >
                     <span className="text-accent">{badge.icon}</span>
                     {badge.label}
@@ -126,21 +128,12 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-4 text-xs">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-black text-white text-sm tracking-tighter">UK-WIDE</span>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-white/50">Coverage</span>
-                </div>
-                <div className="h-4 w-px bg-white/30" />
-                <div className="flex items-center gap-1.5">
-                  <span className="font-black text-white text-sm tracking-tighter">NO OBLIGATION</span>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-white/50">Free Enquiry</span>
-                </div>
-                <div className="h-4 w-px bg-white/30" />
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck size={12} className="text-white/70" />
-                  <span className="text-[10px] text-white/80 font-medium">Vetted Movers</span>
-                </div>
+              <div className="flex items-center gap-3 text-[10px]">
+                <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
+                <span className="text-white/40">|</span>
+                <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
+                <span className="text-white/40">|</span>
+                <span className="flex items-center gap-1"><ShieldCheck size={10} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
               </div>
             </div>
           </motion.div>
@@ -151,9 +144,9 @@ export default function HomeContent() {
             initial="hidden"
             animate="visible"
             custom={1}
-            className="lg:w-1/2 w-full bg-white order-1 lg:order-2 flex flex-col justify-center pt-3 lg:pt-2 pb-3 lg:pb-2 px-4 lg:px-6"
+            className="lg:w-[55%] w-full bg-white order-1 lg:order-2 flex flex-col justify-center pt-3 lg:pt-2 pb-3 lg:pb-2 px-4 lg:px-6"
           >
-            <div className="w-full max-w-lg mx-auto lg:mx-0">
+            <div className="w-full max-w-xl mx-auto lg:mx-0">
               <div className="mb-2 text-center lg:text-left">
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
               </div>
