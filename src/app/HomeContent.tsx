@@ -73,14 +73,14 @@ export default function HomeContent() {
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
       {/* ──────────────────── Hero Section ──────────────────── */}
       <section id="quote-form" className="relative">
-        <div className="flex flex-col lg:flex-row">
+        <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row lg:min-h-[calc(100vh-80px)]">
 
           {/* LEFT PANEL — Image + Text */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="lg:w-[45%] relative flex flex-col justify-center order-2 lg:order-1"
+            className="lg:w-[55%] relative flex flex-col justify-center order-2 lg:order-1"
           >
             <div className="absolute inset-0">
               <Image
@@ -93,9 +93,9 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#1B2D4F]/80 via-[#1B2D4F]/65 to-[#1B2D4F]/40" />
             </div>
 
-            <div className="relative z-10 p-4 py-6 lg:py-5 lg:px-8 text-white">
+            <div className="relative z-10 p-6 py-8 lg:py-12 lg:px-12 text-white">
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] font-black mb-1 lg:mb-1.5 leading-[1.05] tracking-tighter max-w-[600px]"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black mb-2 lg:mb-3 leading-[1.1] tracking-tighter max-w-[700px]"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
                 <span className="text-accent">Man and Van</span>{' '}
@@ -103,24 +103,24 @@ export default function HomeContent() {
               </h1>
 
               <p
-                className="text-xs lg:text-sm text-white/80 mb-1.5 max-w-[600px] font-medium leading-snug"
+                className="text-sm lg:text-base text-white/80 mb-2 max-w-[700px] font-medium leading-snug"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
                 Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
               </p>
 
               <p
-                className="text-sm lg:text-base text-white mb-2 max-w-[600px] font-medium leading-snug"
+                className="text-base lg:text-lg text-white mb-3 max-w-[700px] font-medium leading-snug"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
                 Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
               </p>
 
-              <div className="flex flex-wrap gap-1.5 mb-2">
+              <div className="flex flex-wrap gap-2 mb-3">
                 {TRUST_BADGES.map((badge, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-1 bg-white/90 backdrop-blur-sm border border-white/30 px-2.5 py-1 rounded-full text-[10px] font-bold text-primary/80"
+                    className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm border border-white/30 px-3 py-1.5 rounded-full text-xs font-bold text-primary/80"
                   >
                     <span className="text-accent">{badge.icon}</span>
                     {badge.label}
@@ -128,12 +128,12 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-3 text-[10px]">
+              <div className="flex items-center gap-3 text-xs lg:text-sm">
                 <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
                 <span className="text-white/40">|</span>
                 <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
                 <span className="text-white/40">|</span>
-                <span className="flex items-center gap-1"><ShieldCheck size={10} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
+                <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
               </div>
             </div>
           </motion.div>
@@ -144,11 +144,11 @@ export default function HomeContent() {
             initial="hidden"
             animate="visible"
             custom={1}
-            className="lg:w-[55%] w-full bg-white order-1 lg:order-2 flex flex-col justify-center pt-3 lg:pt-2 pb-3 lg:pb-2 px-4 lg:px-6"
+            className="lg:w-[45%] w-full bg-white order-1 lg:order-2 flex flex-col justify-center p-6 lg:py-10 lg:px-10"
           >
-            <div className="w-full max-w-xl mx-auto lg:mx-0">
-              <div className="mb-2 text-center lg:text-left">
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
+            <div className="w-full">
+              <div className="mb-3 text-center lg:text-left">
+                <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
               </div>
               <QuoteForm />
             </div>
@@ -157,7 +157,7 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── How It Works ──────────────────── */}
-      <section className="py-20 bg-white border-b border-border">
+      <section className="py-16 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
@@ -179,7 +179,7 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Why Customers Choose ──────────────────── */}
-      <section className="py-20 bg-[#F9F9F7]">
+      <section className="py-16 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why Customers Choose Man and Van Club</h2>
@@ -203,7 +203,7 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── We Verify Businesses ──────────────────── */}
-      <section className="py-20 bg-white border-b border-border">
+      <section className="py-16 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">We Verify Businesses Before They Join</h2>
@@ -224,7 +224,7 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Popular Moving Services ──────────────────── */}
-      <section className="py-20 bg-[#F9F9F7]">
+      <section className="py-16 bg-[#F9F9F7]">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Popular Moving Services</h2>
@@ -254,7 +254,7 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Popular Areas We Cover ──────────────────── */}
-      <section className="py-20 bg-white border-b border-border">
+      <section className="py-16 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Popular Areas We Cover</h2>
@@ -293,7 +293,7 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── FAQ ──────────────────── */}
-      <section className="py-20 bg-[#F9F9F7]">
+      <section className="py-16 bg-[#F9F9F7]">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Frequently Asked Questions</h2>
@@ -304,7 +304,7 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Final CTA ──────────────────── */}
-      <section className="py-20 bg-white text-center border-b border-border">
+      <section className="py-16 bg-white text-center border-b border-border">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">Ready To Get Matched With A Local Mover?</h2>
           <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">Submit your move details and we will help connect you with a suitable mover.</p>

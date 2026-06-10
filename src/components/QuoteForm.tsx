@@ -305,7 +305,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     <div className="bg-white rounded-2xl lg:rounded-[2rem] border border-border overflow-hidden shadow-2xl" id="quote-form">
       {/* Progress bar */}
       {step < TOTAL_STEPS && (
-        <div className="bg-gray-50/50 px-4 py-3 border-b border-border">
+        <div className="bg-gray-50/50 px-6 py-4 border-b border-border">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               {INTENT_ICONS[activeIntent] && (
@@ -327,13 +327,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         </div>
       )}
 
-      <div className="p-4 lg:p-6">
+      <div className="p-6 lg:p-8">
         {/* ──────────────────── STEP 1: Service Details ──────────────────── */}
         {step === 1 && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-xl lg:text-2xl font-black text-primary uppercase tracking-tighter">
+                <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">
                   {activeIntent === "office" && "Your Office Move"}
                   {activeIntent === "house" && "Your Moving Home Details"}
                   {activeIntent === "student" && "Your Student Move"}
@@ -341,7 +341,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {activeIntent === "general" && "Your Man & Van Service"}
                   {activeIntent === "storage" && "Your Storage Collection"}
                 </h2>
-                <p className="text-xs text-text-secondary mt-1 font-medium">
+                <p className="text-sm text-text-secondary mt-1 font-medium">
                   {activeIntent === "office" && "Tell us about your business relocation"}
                   {activeIntent === "house" && "Tell us about your home move"}
                   {activeIntent === "student" && "Tell us about your university move"}
@@ -361,14 +361,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             </div>
 
             {/* Form reassurance */}
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {[
-                { icon: <Clock size={11} />, text: "Under 60 seconds" },
-                { icon: <BadgeCheck size={11} />, text: "No payment" },
-                { icon: <Shield size={11} />, text: "No obligation" },
-                { icon: <Lock size={11} />, text: "GDPR secure" },
+                { icon: <Clock size={13} />, text: "Under 60 seconds" },
+                { icon: <BadgeCheck size={13} />, text: "No payment" },
+                { icon: <Shield size={13} />, text: "No obligation" },
+                { icon: <Lock size={13} />, text: "GDPR secure" },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-1 bg-accent/5 text-accent px-2 py-1 rounded-full text-[9px] font-black uppercase tracking-wider">
+                <div key={i} className="flex items-center gap-1.5 bg-accent/5 text-accent px-2.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider">
                   {item.icon} {item.text}
                 </div>
               ))}
