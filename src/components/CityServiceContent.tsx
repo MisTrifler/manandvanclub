@@ -225,7 +225,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                                       <span className="text-xs font-black text-primary uppercase tracking-widest block">
                                         {move.from} <span className="text-primary/40">→</span> {move.to}
                                       </span>
-                                      {move.routeInfo?.distance && (
+                                      {move.routeInfo?.distance && move.routeInfo.distance.trim() !== "" && (
                                         <span className="text-[10px] font-bold text-primary/50 block mt-0.5">
                                           {move.routeInfo.distance} • {move.routeInfo.duration}
                                         </span>
@@ -307,47 +307,53 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               </div>
 
               {/* ── What We Check ── */}
-              <div className="space-y-8">
-                <h3 className="text-3xl font-black text-primary uppercase tracking-tight">What We Check</h3>
-                <p className="text-lg text-text-secondary font-medium leading-relaxed">
-                  Applications are reviewed before movers receive access to customer enquiries. We verify businesses to help maintain a reliable network.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {data.verificationChecks?.map((check: string, i: number) => (
-                    <div key={i} className="flex items-center gap-4 bg-white p-6 rounded-2xl border border-border/50 shadow-sm">
-                      <CheckCircle size={20} className="text-green-600 flex-shrink-0" />
-                      <span className="font-bold text-primary text-sm">{check}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* ── Before Your Move Checklist ── */}
-              <div className="space-y-8">
-                <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Before Your Move</h3>
-                <div className="bg-[#F9F9F7] p-10 lg:p-12 rounded-[2.5rem] border border-border/50">
+              {data.verificationChecks && data.verificationChecks.length > 0 && (
+                <div className="space-y-8">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">What We Check</h3>
+                  <p className="text-lg text-text-secondary font-medium leading-relaxed">
+                    Applications are reviewed before movers receive access to customer enquiries. We verify businesses to help maintain a reliable network.
+                  </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {data.movingChecklist?.map((item: string, i: number) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">{i + 1}</span>
-                        <span className="text-sm font-medium text-text-secondary leading-relaxed">{item}</span>
+                    {data.verificationChecks.map((check: string, i: number) => (
+                      <div key={i} className="flex items-center gap-4 bg-white p-6 rounded-2xl border border-border/50 shadow-sm">
+                        <CheckCircle size={20} className="text-green-600 flex-shrink-0" />
+                        <span className="font-bold text-primary text-sm">{check}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
+              )}
+
+              {/* ── Before Your Move Checklist ── */}
+              {data.movingChecklist && data.movingChecklist.length > 0 && (
+                <div className="space-y-8">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Before Your Move</h3>
+                  <div className="bg-[#F9F9F7] p-10 lg:p-12 rounded-[2.5rem] border border-border/50">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {data.movingChecklist.map((item: string, i: number) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">{i + 1}</span>
+                          <span className="text-sm font-medium text-text-secondary leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* ── Popular Areas ── */}
-              <div className="space-y-10">
-                <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Popular Areas</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
-                  {data.areas.map((area: string) => (
-                    <div key={area} className="bg-gray-50/50 p-6 rounded-2xl text-center font-black text-primary/60 border border-border/30 hover:border-accent hover:text-accent transition-all cursor-default uppercase text-[9px] tracking-widest">
-                      {area}
-                    </div>
-                  ))}
+              {data.areas && data.areas.length > 0 && (
+                <div className="space-y-10">
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Popular Areas</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
+                    {data.areas.map((area: string) => (
+                      <div key={area} className="bg-gray-50/50 p-6 rounded-2xl text-center font-black text-primary/60 border border-border/30 hover:border-accent hover:text-accent transition-all cursor-default uppercase text-[9px] tracking-widest">
+                        {area}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* ── Nearby Locations — Internal Linking ── */}
               {data.nearbyLocations && data.nearbyLocations.length > 0 && (
@@ -430,13 +436,15 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
           </div>
 
           {/* FAQ Section */}
-          <div className="pt-24 lg:pt-32 mt-24 lg:mt-32 border-t border-border">
-            <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20 space-y-4">
-               <div className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.4em]">Help Centre</div>
-               <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter">Your Questions Answered</h2>
+          {faqItems && faqItems.length > 0 && (
+            <div className="pt-24 lg:pt-32 mt-24 lg:mt-32 border-t border-border">
+              <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20 space-y-4">
+                 <div className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.4em]">Help Centre</div>
+                 <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter">Your Questions Answered</h2>
+              </div>
+              <FAQ items={faqItems} />
             </div>
-            <FAQ items={faqItems} />
-          </div>
+          )}
         </div>
       </section>
 

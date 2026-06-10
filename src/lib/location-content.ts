@@ -156,7 +156,7 @@ function generateLocalMovingInfo(loc: LocationData): string {
     info += `Common moving considerations in ${loc.name} include ${considerations.slice(0, 3).join("; ")}. `;
   }
 
-  info += `Whether you are moving within ${loc.name} or relocating to a neighbouring town, our network connects you with movers who understand the local landscape."`;
+  info += `Whether you are moving within ${loc.name} or relocating to a neighbouring town, our network connects you with movers who understand the local landscape.`;
 
   return info;
 }
