@@ -302,7 +302,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   }
 
   return (
-    <div className="bg-white rounded-2xl lg:rounded-[2rem] border border-border overflow-hidden shadow-2xl" id="quote-form">
+    <div className="bg-white rounded-[24px] border border-border overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]" id="quote-form">
       {/* Progress bar */}
       {step < TOTAL_STEPS && (
         <div className="bg-gray-50/50 px-6 py-4 border-b border-border">

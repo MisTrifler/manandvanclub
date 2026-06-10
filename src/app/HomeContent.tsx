@@ -53,10 +53,10 @@ const VERIFICATION_CHECKS = [
 ];
 
 const TRUST_BADGES = [
-  { icon: <Shield size={16} />, label: "One Trusted Local Mover" },
-  { icon: <BadgeCheck size={16} />, label: "Verified Business Network" },
-  { icon: <Lock size={16} />, label: "Secure Enquiry Process" },
-  { icon: <CheckCircle2 size={16} />, label: "Free Enquiry" },
+  { icon: <Shield size={20} />, label: "One Trusted Local Mover" },
+  { icon: <BadgeCheck size={20} />, label: "Verified Business Network" },
+  { icon: <Lock size={20} />, label: "Secure Enquiry Process" },
+  { icon: <CheckCircle2 size={20} />, label: "Free Enquiry" },
 ];
 
 export default function HomeContent() {
@@ -72,79 +72,78 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
       {/* ──────────────────── Hero Section ──────────────────── */}
-      <section id="quote-form" className="relative">
-        <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row lg:min-h-[calc(100vh-80px)]">
+      <section id="quote-form" className="relative flex items-center lg:min-h-[calc(100vh-80px)]">
+        {/* Full-width background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-moving.jpg"
+            alt="Professional movers loading a Luton van for a residential house move"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-slate-900/50" />
+        </div>
 
-          {/* LEFT PANEL — Image + Text */}
+        {/* Content container */}
+        <div className="relative z-10 max-w-[1800px] mx-auto w-full flex flex-col lg:flex-row items-center">
+          {/* LEFT PANEL — Headline, subheadline, badges */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="lg:w-[55%] relative flex flex-col justify-center order-2 lg:order-1"
+            className="lg:w-[55%] p-6 py-12 lg:py-20 lg:px-16 text-white"
           >
-            <div className="absolute inset-0">
-              <Image
-                src="/images/hero-moving.jpg"
-                alt="Professional movers loading a Luton van for a residential house move"
-                fill
-                className="object-cover object-[center_30%]"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1B2D4F]/80 via-[#1B2D4F]/65 to-[#1B2D4F]/40" />
+            <h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 lg:mb-5 leading-[1.05] tracking-tighter max-w-[800px]"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
+            >
+              <span className="text-accent">Man and Van</span>{' '}
+              <span className="text-white">Services Near You</span>
+            </h1>
+
+            <p
+              className="text-base lg:text-lg text-white/90 mb-3 max-w-[700px] font-medium leading-relaxed"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
+            >
+              Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
+            </p>
+
+            <p
+              className="text-lg lg:text-xl text-white mb-6 lg:mb-8 max-w-[700px] font-medium leading-relaxed"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
+            >
+              Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-6 lg:mb-8">
+              {TRUST_BADGES.map((badge, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-bold text-primary/80"
+                >
+                  <span className="text-accent">{badge.icon}</span>
+                  {badge.label}
+                </div>
+              ))}
             </div>
 
-            <div className="relative z-10 p-6 py-8 lg:py-12 lg:px-12 text-white">
-              <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black mb-2 lg:mb-3 leading-[1.1] tracking-tighter max-w-[700px]"
-                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
-              >
-                <span className="text-accent">Man and Van</span>{' '}
-                <span className="text-white">Services Near You</span>
-              </h1>
-
-              <p
-                className="text-sm lg:text-base text-white/80 mb-2 max-w-[700px] font-medium leading-snug"
-                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
-              >
-                Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
-              </p>
-
-              <p
-                className="text-base lg:text-lg text-white mb-3 max-w-[700px] font-medium leading-snug"
-                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
-              >
-                Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-3">
-                {TRUST_BADGES.map((badge, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm border border-white/30 px-3 py-1.5 rounded-full text-xs font-bold text-primary/80"
-                  >
-                    <span className="text-accent">{badge.icon}</span>
-                    {badge.label}
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-3 text-xs lg:text-sm">
-                <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
-                <span className="text-white/40">|</span>
-                <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
-                <span className="text-white/40">|</span>
-                <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
-              </div>
+            <div className="flex items-center gap-4 text-sm lg:text-base">
+              <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
+              <span className="text-white/40">|</span>
+              <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
+              <span className="text-white/40">|</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck size={16} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
             </div>
           </motion.div>
 
-          {/* RIGHT PANEL — Clean white, form only */}
+          {/* RIGHT PANEL — Form card */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={1}
-            className="lg:w-[45%] w-full bg-white order-1 lg:order-2 flex flex-col justify-center p-6 lg:py-10 lg:px-10"
+            className="lg:w-[45%] w-full p-6 lg:py-16 lg:px-12 flex items-center justify-center"
           >
             <div className="w-full">
               <div className="mb-3 text-center lg:text-left">

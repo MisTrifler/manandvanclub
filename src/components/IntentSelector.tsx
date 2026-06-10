@@ -18,8 +18,7 @@ export default function IntentSelector({
 }) {
   return (
     <div
-      className="bg-white rounded-2xl lg:rounded-[2rem] border border-border overflow-hidden shadow-2xl p-6 lg:p-8"
-      id="quote-form"
+      className="p-6 lg:p-8"
     >
       <div className="space-y-3">
         <div className="text-center lg:text-left">
