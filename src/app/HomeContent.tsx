@@ -72,8 +72,8 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
       {/* ──────────────────── Hero Section ──────────────────── */}
-      <section id="quote-form" className="relative overflow-hidden">
-        <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-80px)]">
+      <section id="quote-form" className="relative">
+        <div className="flex flex-col lg:flex-row">
 
           {/* LEFT PANEL — Image + Text */}
           <motion.div
@@ -93,13 +93,13 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#1B2D4F]/80 via-[#1B2D4F]/65 to-[#1B2D4F]/40" />
             </div>
 
-            <div className="relative z-10 p-4 py-10 lg:p-12 lg:pl-16 text-white">
-              <div className="hidden lg:inline-flex items-center bg-white/20 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-5 border border-white/30">
+            <div className="relative z-10 p-4 py-8 lg:p-6 lg:pl-8 text-white">
+              <div className="hidden lg:inline-flex items-center bg-white/20 text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.3em] mb-3 border border-white/30">
                 Verified UK Movers
               </div>
 
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black mb-5 lg:mb-6 leading-[1.05] tracking-tighter max-w-[550px]"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-black mb-2 lg:mb-3 leading-[1.05] tracking-tighter max-w-[550px]"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
                 <span className="text-accent">Man and Van</span>{' '}
@@ -107,17 +107,18 @@ export default function HomeContent() {
               </h1>
 
               <p
-                className="text-base sm:text-lg lg:text-xl text-white mb-7 max-w-[500px] font-medium leading-relaxed"
+                className="text-sm lg:text-base text-white/90 mb-3 max-w-[500px] font-medium leading-snug"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
               >
-                Get matched with a suitable local mover who contacts you directly. No endless quote comparisons or unnecessary sales calls.
+                Get matched with one verified local mover.<br className="hidden sm:block" />
+                No comparison sites. No endless quotes. No sales calls.
               </p>
 
-              <div className="flex flex-wrap gap-3 mb-5">
+              <div className="flex flex-wrap gap-2 mb-3">
                 {TRUST_BADGES.map((badge, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-bold text-primary/80"
+                    className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm border border-white/30 px-3 py-1.5 rounded-full text-[11px] font-bold text-primary/80"
                   >
                     <span className="text-accent">{badge.icon}</span>
                     {badge.label}
@@ -125,22 +126,20 @@ export default function HomeContent() {
                 ))}
               </div>
 
-              <div className="flex items-start gap-2 mb-8">
-                <ShieldCheck size={14} className="text-white/70 mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-white/80 font-medium leading-relaxed">
-                  Applications are reviewed before movers receive access to customer enquiries.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-6 text-sm">
-                <div>
-                  <div className="font-black text-white text-2xl tracking-tighter">UK-WIDE</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Coverage</div>
+              <div className="flex items-center gap-4 text-xs">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-black text-white text-sm tracking-tighter">UK-WIDE</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-white/50">Coverage</span>
                 </div>
-                <div className="h-8 w-px bg-white/30" />
-                <div>
-                  <div className="font-black text-white text-2xl tracking-tighter">NO OBLIGATION</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-white/50">Free Enquiry</div>
+                <div className="h-4 w-px bg-white/30" />
+                <div className="flex items-center gap-1.5">
+                  <span className="font-black text-white text-sm tracking-tighter">NO OBLIGATION</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-white/50">Free Enquiry</span>
+                </div>
+                <div className="h-4 w-px bg-white/30" />
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck size={12} className="text-white/70" />
+                  <span className="text-[10px] text-white/80 font-medium">Vetted Movers</span>
                 </div>
               </div>
             </div>
@@ -152,11 +151,11 @@ export default function HomeContent() {
             initial="hidden"
             animate="visible"
             custom={1}
-            className="lg:w-1/2 w-full bg-white order-1 lg:order-2 flex flex-col justify-center pt-4 lg:pt-0 pb-4 lg:pb-0 px-4 lg:px-12"
+            className="lg:w-1/2 w-full bg-white order-1 lg:order-2 flex flex-col justify-center pt-3 lg:pt-2 pb-3 lg:pb-2 px-4 lg:px-6"
           >
             <div className="w-full max-w-lg mx-auto lg:mx-0">
-              <div className="mb-3 text-center lg:text-left">
-                <p className="text-[11px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
+              <div className="mb-2 text-center lg:text-left">
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
               </div>
               <QuoteForm />
             </div>

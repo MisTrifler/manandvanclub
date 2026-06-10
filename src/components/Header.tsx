@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-border sticky top-0 z-[100] transition-all">
       {/* Top Info Bar */}
-      <div className="hidden lg:block bg-primary text-white py-2 border-b border-white/5">
+      <div className="hidden lg:block bg-primary text-white py-1 border-b border-white/5">
         <div className="container mx-auto px-4 flex justify-between items-center text-[9px] font-black uppercase tracking-[0.2em]">
           <div className="flex gap-6">
             <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
@@ -55,7 +55,7 @@ export default function Header() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-14 lg:h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-primary p-2 rounded-xl group-hover:bg-accent transition-all duration-500 shadow-lg group-hover:scale-105">
@@ -163,7 +163,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-border shadow-xl p-6 flex flex-col gap-6 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden absolute top-14 left-0 w-full bg-white border-b border-border shadow-xl p-6 flex flex-col gap-6 max-h-[80vh] overflow-y-auto">
           <Link href="/how-it-works" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>How It Works</Link>
           
           <div className="p-2 space-y-4">

@@ -305,8 +305,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     <div className="bg-white rounded-2xl lg:rounded-[2rem] border border-border overflow-hidden shadow-2xl" id="quote-form">
       {/* Progress bar */}
       {step < TOTAL_STEPS && (
-        <div className="bg-gray-50/50 px-6 py-4 border-b border-border">
-          <div className="flex items-center justify-between mb-3">
+        <div className="bg-gray-50/50 px-4 py-3 border-b border-border">
+          <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               {INTENT_ICONS[activeIntent] && (
                 <span className="text-accent">{INTENT_ICONS[activeIntent]}</span>
@@ -327,13 +327,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         </div>
       )}
 
-      <div className="p-6 lg:p-8">
+      <div className="p-4 lg:p-6">
         {/* ──────────────────── STEP 1: Service Details ──────────────────── */}
         {step === 1 && (
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">
+                <h2 className="text-xl lg:text-2xl font-black text-primary uppercase tracking-tighter">
                   {activeIntent === "office" && "Your Office Move"}
                   {activeIntent === "house" && "Your Moving Home Details"}
                   {activeIntent === "student" && "Your Student Move"}
@@ -361,14 +361,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             </div>
 
             {/* Form reassurance */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {[
-                { icon: <Clock size={12} />, text: "Takes less than 60 seconds" },
-                { icon: <BadgeCheck size={12} />, text: "No payment required" },
-                { icon: <Shield size={12} />, text: "No obligation" },
-                { icon: <Lock size={12} />, text: "Secure & GDPR Compliant" },
+                { icon: <Clock size={11} />, text: "Under 60 seconds" },
+                { icon: <BadgeCheck size={11} />, text: "No payment" },
+                { icon: <Shield size={11} />, text: "No obligation" },
+                { icon: <Lock size={11} />, text: "GDPR secure" },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-1.5 bg-accent/5 text-accent px-2.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider">
+                <div key={i} className="flex items-center gap-1 bg-accent/5 text-accent px-2 py-1 rounded-full text-[9px] font-black uppercase tracking-wider">
                   {item.icon} {item.text}
                 </div>
               ))}
@@ -709,8 +709,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
         {/* ──────────────────── STEP 2: Estimate (skip for single-item) ──────────────────── */}
         {step === 2 && hasEstimate && (
-          <div className="space-y-8 text-center py-4">
-            <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-border">
+          <div className="space-y-6 text-center py-2">
+            <div className="bg-white p-6 rounded-[2rem] shadow-xl border-2 border-border">
               <p className="text-[10px] font-black uppercase text-primary/40 mb-2">
                 {activeIntent === "office" && "Estimated Office Move Cost"}
                 {activeIntent === "house" && "Estimated Home Move Cost"}
@@ -730,17 +730,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
         {/* ──────────────────── Step 3 (or 2 for single-item): Contact Details ──────────────────── */}
         {(step === (hasEstimate ? 3 : 2)) && (
-          <div className="space-y-6">
-            <h2 className="text-3xl font-black text-primary uppercase text-center">Your Details</h2>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-black text-primary uppercase text-center">Your Details</h2>
 
             {/* Privacy & GDPR reassurance */}
-            <div className="bg-green-50/50 border border-green-200/50 rounded-xl p-4 flex items-start gap-3">
-              <Lock size={16} className="text-green-600 mt-0.5 flex-shrink-0" />
+            <div className="bg-green-50/50 border border-green-200/50 rounded-xl p-3 flex items-start gap-2">
+              <Lock size={14} className="text-green-600 mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-xs font-bold text-primary flex items-center gap-1.5">
                   <span className="inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">Secure & GDPR Compliant</span>
                 </p>
-                <p className="text-[10px] text-text-secondary mt-1.5 leading-relaxed">Your enquiry is handled securely and is not distributed to numerous moving companies. Information is only shared as required to facilitate the matching process.</p>
+                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely and shared only with your matched mover.</p>
               </div>
             </div>
 
@@ -761,8 +761,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
         {/* ──────────────────── Step 4 (or 3 for single-item): OTP ──────────────────── */}
         {(step === (hasEstimate ? 4 : 3)) && (
-          <div className="space-y-8 text-center">
-            <h2 className="text-3xl font-black text-primary uppercase">Verify Your Email</h2>
+          <div className="space-y-6 text-center">
+            <h2 className="text-2xl font-black text-primary uppercase">Verify Your Email</h2>
             <p className="text-sm text-text-secondary">Enter the 4-digit code sent to your email</p>
             <div className="flex justify-center gap-3">
               {otp.map((digit, i) => (
@@ -789,14 +789,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
         {/* ──────────────────── Step 5 (or 4 for single-item): Success ──────────────────── */}
         {step === TOTAL_STEPS && (
-          <div className="text-center py-6 space-y-6">
-            <CheckCircle2 size={48} className="text-success mx-auto" />
-            <h2 className="text-3xl font-black text-primary uppercase">You're All Set</h2>
+          <div className="text-center py-4 space-y-4">
+            <CheckCircle2 size={40} className="text-success mx-auto" />
+            <h2 className="text-2xl font-black text-primary uppercase">You're All Set</h2>
             <p className="text-text-secondary">Your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} request has been successfully submitted.</p>
             <p className="text-text-secondary text-sm">Our team is now reviewing your details and matching you with a suitable local mover.</p>
 
-            <div className="text-left bg-gray-50/50 rounded-2xl p-6 border border-border">
-              <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-4">What Happens Next</h3>
+            <div className="text-left bg-gray-50/50 rounded-2xl p-4 border border-border">
+              <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-3">What Happens Next</h3>
               <ol className="space-y-3 text-sm text-primary/80">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">1</span>
