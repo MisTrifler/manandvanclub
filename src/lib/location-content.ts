@@ -18,6 +18,8 @@ export interface LocationPageData {
   localBusinessSchema: Record<string, any>;
   breadcrumbSchema: Record<string, any>;
   faqSchema: Record<string, any>;
+  region: string;
+  pageType: "location";
   // NEW: rich content sections
   areasWeCover: string[];
   localMovingInfo: string;
@@ -335,6 +337,8 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     verificationChecks: VERIFICATION_CHECKS,
     movingChecklist: MOVING_CHECKLIST,
     regionCities: getRegionCities(loc),
+    region: loc.region,
+    pageType: "location" as const,
   };
 
   // Merge custom content overrides for priority cities (prevents doorway-page penalties)

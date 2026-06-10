@@ -50,8 +50,25 @@ const organizationSchema = {
     "areaServed": "GB"
   },
   "email": "support@manandvanclub.co.uk",
-    "sameAs": []
-  
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "serviceArea": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "knowsAbout": [
+    "Man and van services",
+    "House removals",
+    "Flat removals",
+    "Student removals",
+    "Office removals",
+    "Furniture delivery",
+    "Same-day man and van services",
+    "Long distance removals"
+  ],
+  "sameAs": []
 };
 
 export default function RootLayout({

@@ -10,16 +10,21 @@ import { getGoogleMapsRouteUrl } from "@/lib/google-maps-routes";
 
 export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: IntentType }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
+  const isServicePage = data.pageType === "service";
+  const isLocationPage = data.pageType === "location";
 
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] } }
   };
 
-  const faqSchema = data.faqSchema || {
+  const safeFaqItems = Array.isArray(faqItems) ? faqItems : [];
+  const hasValidFaq = safeFaqItems.length > 0;
+
+  const faqSchema = data.faqSchema || (hasValidFaq ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
+    "mainEntity": safeFaqItems.map(item => ({
       "@type": "Question",
       "name": item.q,
       "acceptedAnswer": {
@@ -27,7 +32,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
         "text": item.a
       }
     }))
-  };
+  } : null);
 
   const breadcrumbSchema = data.breadcrumbSchema || {
     "@context": "https://schema.org",
@@ -56,10 +61,12 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
           dangerouslySetInnerHTML={{ __html: JSON.stringify(data.localBusinessSchema) }}
         />
       )}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -134,7 +141,11 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Moving in [Location] Made Simple ── */}
               <div className="space-y-8">
                  <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight leading-none">
-                   {data.h1 ? data.name + " Made Simple" : `Moving in ${data.name} Made Simple`}
+                   {isServicePage
+                     ? `${data.name} Made Simple`
+                     : data.h1
+                       ? `${data.name} Made Simple`
+                       : `Moving in ${data.name} Made Simple`}
                  </h2>
                  <p className="text-lg lg:text-xl text-text-secondary font-medium leading-relaxed">{data.knowledge}</p>
                  <div className="bg-primary/5 p-8 lg:p-12 rounded-[2.5rem] border border-border/40">
@@ -166,7 +177,11 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               <div className="bg-white p-12 rounded-[3.5rem] text-primary space-y-8 relative overflow-hidden shadow-2xl border border-border">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -mr-16 -mt-16" />
                  <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-none italic">Ready to start?</h3>
-                 <p className="text-text-secondary font-medium text-lg leading-relaxed">It takes less than 60 seconds to find the best local movers in {data.name}.</p>
+                 <p className="text-text-secondary font-medium text-lg leading-relaxed">
+                   {isServicePage
+                     ? `It takes less than 60 seconds to get matched with a vetted mover for ${data.name.toLowerCase()}.`
+                     : `It takes less than 60 seconds to find the best local movers in ${data.name}.`}
+                 </p>
                  <Link href="#quote-form" className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 shadow-2xl shadow-accent/20 hover:scale-105 transition-all">
                     Get Matched Now <ArrowUpRight size={22} />
                  </Link>
@@ -267,7 +282,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 <div className="space-y-8">
                   <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Serving {data.name} & Surrounding Areas</h3>
                   <p className="text-lg text-text-secondary font-medium leading-relaxed">
-                    Our {data.name} movers regularly work across the area and its neighbouring districts. From {data.localLandmarks.slice(0, 3).join(", ")} to the wider {data.region} area, we connect you with professionals who know the local roads, parking restrictions, and the best routes for your move.
+                    Our {data.name} movers regularly work across the area and its neighbouring districts. From {data.localLandmarks.slice(0, 3).join(", ")} to {data.region ? `the wider ${data.region} area` : "the wider local area"}, we connect you with professionals who know the local roads, parking restrictions, and the best routes for your move.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     {data.localLandmarks.map((landmark: string, i: number) => {
@@ -396,7 +411,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Region Cities ── */}
               {data.regionCities && data.regionCities.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">More Locations in {data.region}</h3>
+                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">{data.region ? `More Locations in ${data.region}` : "More Nearby Locations"}</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {data.regionCities.slice(0, 12).map((city: { name: string; slug: string }) => (
                       <Link
@@ -429,14 +444,18 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   <p className="text-primary font-black uppercase tracking-tighter leading-tight text-sm">
                     UK-Wide Coverage
                   </p>
-                  <p className="text-xs text-text-secondary font-medium leading-relaxed">We cover {data.name} and surrounding areas with a network of vetted local movers ready to help.</p>
+                  <p className="text-xs text-text-secondary font-medium leading-relaxed">
+                    {isServicePage
+                      ? `We provide ${data.name.toLowerCase()} across the UK through a network of vetted local movers.`
+                      : `We cover ${data.name} and surrounding areas with a network of vetted local movers ready to help.`}
+                  </p>
                </div>
             </aside>
 
           </div>
 
           {/* FAQ Section */}
-          {faqItems && faqItems.length > 0 && (
+          {safeFaqItems.length > 0 && (
             <div className="pt-24 lg:pt-32 mt-24 lg:mt-32 border-t border-border">
               <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20 space-y-4">
                  <div className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.4em]">Help Centre</div>
@@ -453,10 +472,14 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary uppercase tracking-tighter leading-none">
-              Looking For A Mover In {data.name}?
+              {isServicePage
+                ? `Need ${data.name}?`
+                : `Looking For A Mover In ${data.name}?`}
             </h2>
             <p className="text-xl text-text-secondary font-medium leading-relaxed">
-              Tell us about your move and we'll help connect you with a suitable local mover. No spam, just one direct introduction.
+              {isServicePage
+                ? `Tell us what you need and we will connect you with a suitable vetted mover for ${data.name.toLowerCase()}. No spam, just one direct introduction.`
+                : "Tell us about your move and we'll help connect you with a suitable local mover. No spam, just one direct introduction."}
             </p>
             <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3 text-lg">
               Get Matched <ArrowRight size={24} />

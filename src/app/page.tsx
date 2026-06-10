@@ -2,8 +2,9 @@ import HomeContent from "./HomeContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Man and Van Services Near You | Man and Van Club",
-  description: "Get matched with a suitable local mover through our exclusive matching process. Verified business network, secure enquiries, and no obligation. Nationwide coverage across the UK.",
+  title: "Man and Van Club | Get Matched With Verified Local Movers",
+  description:
+    "Man and Van Club connects customers with verified local movers across the UK. Get matched for house removals, flat moves, office relocations, student moves, furniture delivery and same-day man and van services.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',
   },

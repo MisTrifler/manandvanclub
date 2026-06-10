@@ -207,7 +207,11 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   const serviceData = servicePageData[slug];
   if (serviceData) {
-    const serviceDataWithSlug = { ...serviceData, slug };
+    const serviceDataWithSlug = {
+      ...serviceData,
+      slug,
+      pageType: "service" as const,
+    };
     return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} formIntent={serviceData.formIntent as IntentType} />;
   }
 
