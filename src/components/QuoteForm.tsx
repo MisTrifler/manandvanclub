@@ -242,9 +242,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         details.storageDirection = data.storageDirection;
       }
 
+      const estimatePrice = estimate
+        ? `£${estimate.min}–£${estimate.max}`
+        : undefined;
+
       const payload = {
         ...data,
         sourcePage,
+        estimatedPrice: estimatePrice,
         details: Object.keys(details).length > 0 ? details : undefined,
       };
 

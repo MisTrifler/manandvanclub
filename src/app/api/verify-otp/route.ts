@@ -4,6 +4,39 @@ import { resend } from '@/lib/resend';
 
 const SENDER_ADDRESS = 'Man and Van Club <support@manandvanclub.co.uk>';
 
+// ── Helpers ───────────────────────────────────────────────
+
+function formatMoveDate(dateString: string | null | undefined): string {
+  if (!dateString) return 'To be confirmed';
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return dateString;
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
+function formatServiceName(raw: string | null | undefined): string {
+  if (!raw) return 'Move';
+  const map: Record<string, string> = {
+    'Office Move': 'Office move',
+    'Home Move': 'Home move',
+    'Student Move': 'Student move',
+    'Furniture Delivery': 'Furniture delivery',
+    'Man & Van Service': 'Man and van service',
+    'Storage Collection': 'Storage collection',
+  };
+  return map[raw] || raw.toLowerCase();
+}
+
+function formatEstimate(raw: string | null | undefined): string | null {
+  if (!raw || raw.trim() === '' || raw === 'null' || raw === 'undefined') return null;
+  return raw;
+}
+
+// ── Route ─────────────────────────────────────────────────
+
 export async function POST(req: Request) {
   try {
     const { requestId, otp } = await req.json();
@@ -15,7 +48,7 @@ export async function POST(req: Request) {
     // 1. Check if OTP matches — select all fields needed for confirmation email
     const { data: request, error: fetchError } = await supabase
       .from('move_requests')
-      .select('id, first_name, email, move_type, collection_postcode, delivery_postcode, move_date, otp_code, is_verified')
+      .select('id, first_name, email, move_type, collection_postcode, delivery_postcode, move_date, estimated_price, otp_code, is_verified')
       .eq('id', requestId)
       .single();
 
@@ -55,15 +88,25 @@ export async function POST(req: Request) {
         console.log('Sending customer confirmation email to:', request.email);
 
         const firstName = request.first_name || 'there';
-        const moveType = request.move_type || 'Move';
+        const serviceName = formatServiceName(request.move_type);
         const collection = request.collection_postcode || 'your collection address';
         const delivery = request.delivery_postcode || 'your delivery address';
-        const moveDate = request.move_date || 'your chosen date';
+        const moveDate = formatMoveDate(request.move_date);
+        const estimatedPrice = formatEstimate(request.estimated_price);
+
+        // Build price section if estimate exists
+        const priceSection = estimatedPrice
+          ? `<p style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Estimated guide price</p>
+             <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; font-weight: 500;">${estimatedPrice}</p>
+             <p style="margin: 0 0 24px 0; color: #64748B; font-size: 12px; line-height: 1.6; font-style: italic;">
+               This estimate is based on the details provided and is not a confirmed quote. Your matched mover will confirm the final price before booking.
+             </p>`
+          : '';
 
         const { data: confirmResponse, error: confirmError } = await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [request.email],
-          subject: 'Your Man and Van Club request has been received',
+          subject: 'Your Man and Van Club request is confirmed',
           replyTo: 'support@manandvanclub.co.uk',
           html: `
             <!DOCTYPE html>
@@ -96,28 +139,32 @@ export async function POST(req: Request) {
                           </p>
 
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">
-                            Your <strong>${moveType}</strong> request has been successfully submitted.
+                            Thanks for submitting your request. Your details have been passed to a vetted local man and van provider.
+                          </p>
+
+                          <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">
+                            They will contact you directly to confirm availability, timing and final price.
                           </p>
 
                           <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px; margin-bottom: 32px; text-align: left;">
+                            <p style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Service</p>
+                            <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; font-weight: 500;">${serviceName}</p>
+
                             <p style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Route</p>
                             <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; font-weight: 500;">${collection} to ${delivery}</p>
 
-                            <p style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Move Date</p>
-                            <p style="margin: 0; color: #475569; font-size: 16px; font-weight: 500;">${moveDate}</p>
-                          </div>
+                            <p style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Move date</p>
+                            <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; font-weight: 500;">${moveDate}</p>
 
-                          <p style="margin: 0 0 16px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">What happens next</p>
-
-                          <div style="text-align: left; margin-bottom: 32px;">
-                            <p style="margin: 0 0 12px 0; color: #475569; font-size: 14px; line-height: 1.6;">1. We review your move requirements.</p>
-                            <p style="margin: 0 0 12px 0; color: #475569; font-size: 14px; line-height: 1.6;">2. We identify a suitable local mover.</p>
-                            <p style="margin: 0 0 12px 0; color: #475569; font-size: 14px; line-height: 1.6;">3. Your enquiry is offered exclusively.</p>
-                            <p style="margin: 0 0 12px 0; color: #475569; font-size: 14px; line-height: 1.6;">4. The mover contacts you directly.</p>
+                            ${priceSection}
                           </div>
 
                           <p style="margin: 0 0 32px 0; color: #64748B; font-size: 14px; line-height: 1.6;">
-                            <strong>No spam. Just one trusted mover.</strong>
+                            <strong>No spam. No multiple sales calls. Just one trusted local mover.</strong>
+                          </p>
+
+                          <p style="margin: 0 0 32px 0; color: #64748B; font-size: 14px; line-height: 1.6;">
+                            Need to update your request? Reply to this email or contact <a href="mailto:support@manandvanclub.co.uk" style="color: #F97316; text-decoration: none;">support@manandvanclub.co.uk</a>.
                           </p>
 
                           <div style="border-top: 1px solid #E2E8F0; padding-top: 32px;">

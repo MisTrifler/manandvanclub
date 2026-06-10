@@ -24,6 +24,7 @@ export async function POST(req: Request) {
           move_date: data.moveDate,
           move_type: data.moveType,
           source_page: data.sourcePage || '',
+          estimated_price: data.estimatedPrice || null,
           // Note: details JSON is available in data.details — add a `details` column
           // to Supabase or use a text field to store service-specific form fields
           status: 'pending',
