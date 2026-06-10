@@ -82,58 +82,97 @@ export default function HomeContent() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-slate-900/50" />
+          {/* Directional gradient overlay — above image, below content */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(90deg, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0.55) 35%, rgba(15,23,42,0.25) 70%, rgba(15,23,42,0.10) 100%)'
+            }}
+          />
         </div>
 
         {/* Content container */}
         <div className="relative z-10 max-w-[1800px] mx-auto w-full flex flex-col lg:flex-row items-center">
-          {/* LEFT PANEL — Headline, subheadline, badges */}
+          {/* LEFT PANEL — Glass panel with headline, subheadline, badges */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="lg:w-[55%] p-6 py-12 lg:py-20 lg:px-16 text-white"
+            className="lg:w-[55%] p-6 py-12 lg:py-20 lg:px-16"
           >
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 lg:mb-5 leading-[1.05] tracking-tighter max-w-[800px]"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
+            <div
+              className="text-white"
+              style={{
+                background: 'rgba(15,23,42,0.45)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: '24px',
+                padding: '40px',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.30)',
+                maxWidth: '800px',
+              }}
             >
-              <span className="text-accent">Man and Van</span>{' '}
-              <span className="text-white">Services Near You</span>
-            </h1>
+              <h1
+                className="font-black tracking-tighter max-w-[700px]"
+                style={{
+                  fontSize: '72px',
+                  fontWeight: 800,
+                  lineHeight: '0.95',
+                }}
+              >
+                <span className="text-accent">Man and Van</span>{' '}
+                <span className="text-white">Services Near You</span>
+              </h1>
 
-            <p
-              className="text-base lg:text-lg text-white/90 mb-3 max-w-[700px] font-medium leading-relaxed"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
-            >
-              Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
-            </p>
+              <p
+                className="mt-6 max-w-[700px] font-medium"
+                style={{
+                  fontSize: '24px',
+                  lineHeight: '1.5',
+                  color: 'rgba(255,255,255,0.95)',
+                }}
+              >
+                Serving London, Birmingham, Manchester, Leeds, Liverpool, Bristol and locations across the UK.
+              </p>
 
-            <p
-              className="text-lg lg:text-xl text-white mb-6 lg:mb-8 max-w-[700px] font-medium leading-relaxed"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.35)' }}
-            >
-              Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
-            </p>
+              <p
+                className="mt-4 max-w-[700px] font-medium"
+                style={{
+                  fontSize: '20px',
+                  lineHeight: '1.6',
+                  color: 'rgba(255,255,255,0.95)',
+                }}
+              >
+                Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
+              </p>
 
-            <div className="flex flex-wrap gap-3 mb-6 lg:mb-8">
-              {TRUST_BADGES.map((badge, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-bold text-primary/80"
-                >
-                  <span className="text-accent">{badge.icon}</span>
-                  {badge.label}
-                </div>
-              ))}
-            </div>
+              <div className="flex flex-wrap gap-3 mt-8">
+                {TRUST_BADGES.map((badge, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 rounded-full font-bold text-primary/80"
+                    style={{
+                      background: 'rgba(255,255,255,0.95)',
+                      borderRadius: '999px',
+                      padding: '12px 18px',
+                      boxShadow: '0 8px 20px rgba(0,0,0,0.12)',
+                      fontSize: '14px',
+                    }}
+                  >
+                    <span className="text-accent">{badge.icon}</span>
+                    {badge.label}
+                  </div>
+                ))}
+              </div>
 
-            <div className="flex items-center gap-4 text-sm lg:text-base">
-              <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
-              <span className="text-white/40">|</span>
-              <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
-              <span className="text-white/40">|</span>
-              <span className="flex items-center gap-1.5"><ShieldCheck size={16} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
+              <div className="flex items-center gap-4 mt-8 text-sm lg:text-base">
+                <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
+                <span className="text-white/40">|</span>
+                <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
+                <span className="text-white/40">|</span>
+                <span className="flex items-center gap-1.5"><ShieldCheck size={16} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
+              </div>
             </div>
           </motion.div>
 
@@ -146,9 +185,6 @@ export default function HomeContent() {
             className="lg:w-[45%] w-full p-6 lg:py-16 lg:px-12 flex items-center justify-center"
           >
             <div className="w-full">
-              <div className="mb-3 text-center lg:text-left">
-                <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50">Takes less than a minute • No payment required</p>
-              </div>
               <QuoteForm />
             </div>
           </motion.div>

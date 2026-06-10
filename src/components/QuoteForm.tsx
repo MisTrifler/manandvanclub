@@ -294,18 +294,61 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     return "";
   };
 
-  // ──────────────────────────────────────────
-  // Fallback: no intent detected → show selector
-  // ──────────────────────────────────────────
-  if (!activeIntent) {
-    return <IntentSelector onSelect={(intent) => { setSelectedIntent(intent); setStep(1); }} />;
-  }
-
   return (
-    <div className="bg-white rounded-[24px] border border-border overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]" id="quote-form">
+    <div
+      id="quote-form"
+      style={{
+        background: 'rgba(255,255,255,0.96)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        borderRadius: '28px',
+        boxShadow: '0 25px 80px rgba(0,0,0,0.20)',
+        overflow: 'hidden',
+      }}
+    >
+      {/* ──────────────────────────────────────────
+          Fallback: no intent detected → show selector
+          ────────────────────────────────────────── */}
+      {!activeIntent && (
+        <div className="px-10 pt-10 pb-10">
+          <h2
+            className="uppercase tracking-tighter"
+            style={{
+              fontSize: '42px',
+              fontWeight: 800,
+              color: '#0F172A',
+              lineHeight: 1.1,
+            }}
+          >
+            Get Matched
+          </h2>
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • No payment required</p>
+          <div className="mt-6">
+            <IntentSelector onSelect={(intent) => { setSelectedIntent(intent); setStep(1); }} />
+          </div>
+        </div>
+      )}
+
+      {activeIntent && (<>
+      {/* Form title */}
+      <div className="px-10 pt-10 pb-2">
+        <h2
+          className="uppercase tracking-tighter"
+          style={{
+            fontSize: '42px',
+            fontWeight: 800,
+            color: '#0F172A',
+            lineHeight: 1.1,
+          }}
+        >
+          Get Matched
+        </h2>
+        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • No payment required</p>
+      </div>
+
       {/* Progress bar */}
       {step < TOTAL_STEPS && (
-        <div className="bg-gray-50/50 px-6 py-4 border-b border-border">
+        <div className="bg-gray-50/50 px-10 py-4 border-b border-border">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               {INTENT_ICONS[activeIntent] && (
@@ -327,7 +370,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         </div>
       )}
 
-      <div className="p-6 lg:p-8">
+      <div className="px-10 pb-10">
         {/* ──────────────────── STEP 1: Service Details ──────────────────── */}
         {step === 1 && (
           <div className="space-y-4">
@@ -823,6 +866,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           </div>
         )}
       </div>
+      </>)}
     </div>
   );
 }
