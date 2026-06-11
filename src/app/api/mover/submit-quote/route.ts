@@ -5,6 +5,7 @@ import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { resend } from "@/lib/resend";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds, normaliseQuoteAmount } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
+import { leadIsAvailable, leadMatchesDriverArea, leadMatchesDriverServices } from "@/lib/marketplace-matching";
 import { escapeHtml, escapeHtmlWithLineBreaks } from "@/lib/html";
 import {
   formatUKPostcode,
@@ -51,7 +52,7 @@ export async function POST(req: Request) {
 
     const { data: driver } = await supabaseAdmin
       .from("driver_applications")
-      .select("id, email, contact_name, status")
+      .select("*")
       .eq("email", driverEmail)
       .single();
 
@@ -93,6 +94,20 @@ export async function POST(req: Request) {
     const status = lead.status || "";
     if (status && !ALLOWED_QUOTE_STATUSES.has(status)) {
       return NextResponse.json({ error: "This request is not available for quoting." }, { status: 409 });
+    }
+
+    // Full server-side availability check: verified, available, unquoted,
+    // unpaid, future move date — cannot be bypassed by sending a raw requestId.
+    if (!leadIsAvailable(lead)) {
+      return NextResponse.json({ error: "This request is no longer available for quoting." }, { status: 409 });
+    }
+
+    // Driver must be approved for this area and service type.
+    if (!leadMatchesDriverArea(lead, driver) || !leadMatchesDriverServices(lead, driver)) {
+      return NextResponse.json(
+        { error: "This enquiry is not available for your approved service area or service type." },
+        { status: 403 }
+      );
     }
 
     const bookingDeposit = calculateBookingDeposit(quoteAmount);

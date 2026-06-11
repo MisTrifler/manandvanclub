@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
+import { leadIsAvailableToDriver, type DriverProfile } from "@/lib/marketplace-matching";
 import DriverMarketplaceClient from "./DriverMarketplaceClient";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +23,7 @@ export default async function MarketplacePage() {
   const supabaseAdmin = getSupabaseAdmin();
   const { data: driver } = await supabaseAdmin
     .from("driver_applications")
-    .select("id, contact_name, status, email")
+    .select("*")
     .eq("email", driverEmail)
     .single();
 
@@ -37,18 +38,52 @@ export default async function MarketplacePage() {
     );
   }
 
-  const { data: rawLeads } = await supabaseAdmin
-    .from("move_requests")
-    .select("id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details, status, quoted_by, quote_amount, quoted_at, quote_expires_at, booking_fee, booking_fee_paid, customer_details_released_at, declined_reason")
-    .eq("is_verified", true)
-    .not("status", "eq", "pending")
-    .not("status", "eq", "locked")
-    .not("status", "eq", "cancelled")
-    .order("created_at", { ascending: false });
-
   const currentMoverEmail = normaliseEmail(driverEmail);
+  const driverProfile: DriverProfile = driver;
 
-  const leads = (rawLeads || []).map((lead: any) => {
+  // ── Server-side queries ────────────────────────────────────────────
+  // 1. Candidate available leads: verified, unowned, unpaid, active
+  //    statuses only. Area/service/date filtering applied below before
+  //    anything is sent to the browser.
+  // 2. Driver-owned leads: only rows quoted by THIS driver. Another
+  //    mover's quoted/booked/declined jobs are never fetched.
+  const [{ data: candidateLeads }, { data: ownLeads }] = await Promise.all([
+    supabaseAdmin
+      .from("move_requests")
+      .select("id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details, status, quoted_by, quote_amount, quoted_at, quote_expires_at, booking_fee, booking_fee_paid, customer_details_released_at, declined_reason, is_verified")
+      .eq("is_verified", true)
+      .in("status", ["available", "verified", "active"])
+      .is("quoted_by", null)
+      .is("quote_amount", null)
+      .or("booking_fee_paid.is.null,booking_fee_paid.eq.false")
+      .is("customer_details_released_at", null)
+      .order("created_at", { ascending: false }),
+    supabaseAdmin
+      .from("move_requests")
+      .select("id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details, status, quoted_by, quote_amount, quoted_at, quote_expires_at, booking_fee, booking_fee_paid, customer_details_released_at, declined_reason, is_verified")
+      .eq("is_verified", true)
+      .ilike("quoted_by", driverEmail)
+      .order("created_at", { ascending: false }),
+  ]);
+
+  // Restrictive availability: status rules + future move date + driver
+  // approved area + driver approved service types.
+  const availableForDriver = (candidateLeads || []).filter((lead: any) =>
+    leadIsAvailableToDriver(lead, driverProfile)
+  );
+
+  const mine = (ownLeads || []).filter(
+    (lead: any) => normaliseEmail(lead.quoted_by) === currentMoverEmail
+  );
+
+  const seen = new Set<string>();
+  const combined = [...mine, ...availableForDriver].filter((lead: any) => {
+    if (seen.has(lead.id)) return false;
+    seen.add(lead.id);
+    return true;
+  });
+
+  const leads = combined.map((lead: any) => {
     const isQuotedMover = normaliseEmail(lead.quoted_by) === currentMoverEmail;
     const detailsReleased =
       lead.status === "booked" &&
@@ -69,11 +104,11 @@ export default async function MarketplacePage() {
       created_at: lead.created_at,
       details: lead.details,
       status: lead.status,
-      quoted_by: lead.quoted_by,
-      quote_amount: lead.quote_amount,
-      quoted_at: lead.quoted_at,
-      quote_expires_at: lead.quote_expires_at,
-      booking_fee: lead.booking_fee,
+      quoted_by: isQuotedMover ? lead.quoted_by : undefined,
+      quote_amount: isQuotedMover ? lead.quote_amount : undefined,
+      quoted_at: isQuotedMover ? lead.quoted_at : undefined,
+      quote_expires_at: isQuotedMover ? lead.quote_expires_at : undefined,
+      booking_fee: isQuotedMover ? lead.booking_fee : undefined,
       booking_fee_paid: lead.booking_fee_paid,
       customer_details_released_at: detailsReleased ? lead.customer_details_released_at : undefined,
       declined_reason: isQuotedMover ? lead.declined_reason : undefined,

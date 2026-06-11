@@ -163,10 +163,14 @@ export default function DriverMarketplaceClient({
   const isMyDeclined = (lead: Lead) =>
     isQuotedByMe(lead) && lead.status === "declined";
 
-  const isTakenByOther = (lead: Lead) => {
-    if (!lead.quoted_by) return false;
-    if (isQuotedByMe(lead)) return false;
-    return lead.status === "booked" || lead.status === "quoted";
+  const isMyCompleted = (lead: Lead) =>
+    isQuotedByMe(lead) && (lead.status === "completed" || lead.status === "cancelled");
+
+  const isPastDate = (lead: Lead) => {
+    if (!lead.move_date) return false;
+    const d = new Date(lead.move_date);
+    if (Number.isNaN(d.getTime())) return false;
+    return d.toISOString().slice(0, 10) < new Date().toISOString().slice(0, 10);
   };
 
   const isAvailable = (lead: Lead) =>
@@ -175,9 +179,28 @@ export default function DriverMarketplaceClient({
 
   const availableLeads = leads.filter((l) => isAvailable(l));
   const myQuoted = leads.filter((l) => isMyQuoted(l));
-  const myBooked = leads.filter((l) => isMyBooked(l));
+  const myBookedAll = leads.filter((l) => isMyBooked(l));
+  const myBooked = myBookedAll.filter((l) => !isPastDate(l));
   const myDeclined = leads.filter((l) => isMyDeclined(l));
-  const takenByOther = leads.filter((l) => isTakenByOther(l));
+  // My History: past confirmed bookings + completed/cancelled + declined quotes.
+  // All belong to the logged-in driver only (server never sends other movers' jobs).
+  const myHistory = [
+    ...myBookedAll.filter((l) => isPastDate(l)),
+    ...leads.filter((l) => isMyCompleted(l)),
+    ...myDeclined,
+  ];
+
+  // ── Earnings summary (driver collects quote minus deposit) ──────────
+  const moverBalance = (lead: Lead) => {
+    const quote = Number(lead.quote_amount || 0);
+    if (!Number.isFinite(quote) || quote <= 0) return 0;
+    const deposit = lead.booking_fee != null ? Number(lead.booking_fee) : calculateBookingDeposit(quote);
+    return calculateRemainingMoverBalance(quote, deposit);
+  };
+  const confirmedEarnings = [...myBookedAll, ...leads.filter((l) => isQuotedByMe(l) && l.status === "completed")]
+    .reduce((sum, l) => sum + moverBalance(l), 0);
+  const pendingQuotedValue = myQuoted.reduce((sum, l) => sum + moverBalance(l), 0);
+  const declinedQuotedValue = myDeclined.reduce((sum, l) => sum + moverBalance(l), 0);
 
   const renderLeadCard = (lead: Lead, showQuoteForm: boolean) => {
     const moveTypeLabel = formatMoveType(lead.move_type);
@@ -198,8 +221,8 @@ export default function DriverMarketplaceClient({
         ? "declined"
         : isMyQuoted(lead)
           ? "quoted"
-          : isTakenByOther(lead)
-            ? "taken"
+          : isMyCompleted(lead)
+            ? "completed"
             : "available";
 
     return (
@@ -302,6 +325,15 @@ export default function DriverMarketplaceClient({
             <div className="flex items-center gap-2 mb-2">
               <Home size={16} className="text-primary/40 flex-shrink-0" />
               <p className="text-sm text-text-secondary font-medium">{accessNote}</p>
+            </div>
+          )}
+
+          {/* Income breakdown for the driver's own jobs */}
+          {isQuotedByMe(lead) && Number(lead.quote_amount || 0) > 0 && (
+            <div className="mt-4 bg-primary/5 rounded-xl border border-border/60 p-3 space-y-1">
+              <div className="flex justify-between text-xs"><span className="text-text-secondary">Mover total quote</span><strong>{formatPounds(Number(lead.quote_amount))}</strong></div>
+              <div className="flex justify-between text-xs"><span className="text-text-secondary">Booking deposit</span><strong>{formatPounds(lead.booking_fee != null ? Number(lead.booking_fee) : calculateBookingDeposit(Number(lead.quote_amount)))}</strong></div>
+              <div className="flex justify-between text-xs"><span className="text-text-secondary">{cardStatus === "declined" ? "Value not earned" : "Customer pays you"}</span><strong>{formatPounds(moverBalance(lead))}</strong></div>
             </div>
           )}
 
@@ -459,11 +491,11 @@ export default function DriverMarketplaceClient({
             </div>
           )}
 
-          {cardStatus === "taken" && (
+          {cardStatus === "completed" && (
             <div className="flex items-center gap-2">
-              <ShieldCheck size={16} className="text-primary/30" />
-              <p className="text-sm font-bold text-primary/50">
-                Another mover has already submitted a quote for this request.
+              <CheckCircle2 size={16} className="text-primary/40" />
+              <p className="text-sm font-bold text-primary/60">
+                {lead.status === "cancelled" ? "This booking was cancelled." : "This job is completed."}
               </p>
             </div>
           )}
@@ -506,12 +538,39 @@ export default function DriverMarketplaceClient({
           </p>
         </div>
 
+        {/* Earnings summary */}
+        {(confirmedEarnings > 0 || pendingQuotedValue > 0 || declinedQuotedValue > 0) && (
+          <div className="bg-white rounded-2xl border border-border p-4 md:p-5 mb-6">
+            <h2 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-1">
+              Earnings Summary
+            </h2>
+            <p className="text-xs text-text-secondary mb-4">
+              Based on the remaining balance paid to you by customers.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-green-50 border border-green-100 rounded-xl p-4">
+                <p className="text-[10px] font-black uppercase tracking-widest text-green-700/70">Confirmed earnings</p>
+                <p className="text-2xl font-black text-green-700 tracking-tighter">{formatPounds(confirmedEarnings)}</p>
+              </div>
+              <div className="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                <p className="text-[10px] font-black uppercase tracking-widest text-amber-700/70">Pending quotes</p>
+                <p className="text-2xl font-black text-amber-700 tracking-tighter">{formatPounds(pendingQuotedValue)}</p>
+              </div>
+              <div className="bg-gray-50 border border-border rounded-xl p-4">
+                <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Declined quotes (not earned)</p>
+                <p className="text-2xl font-black text-primary/50 tracking-tighter">{formatPounds(declinedQuotedValue)}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Customer-confirmed bookings */}
         {myBooked.length > 0 && (
           <div className="mb-6">
-            <h2 className="text-sm font-black uppercase tracking-widest text-green-600 mb-3">
-              Customer-Confirmed Bookings
+            <h2 className="text-sm font-black uppercase tracking-widest text-green-600 mb-1">
+              Confirmed Bookings
             </h2>
+            <p className="text-xs text-text-secondary mb-3">Customers who accepted your quote and paid the deposit.</p>
             <div className="grid grid-cols-1 gap-5">
               {myBooked.map((lead) => renderLeadCard(lead, false))}
             </div>
@@ -521,23 +580,12 @@ export default function DriverMarketplaceClient({
         {/* Quotes pending customer response */}
         {myQuoted.length > 0 && (
           <div className="mb-6">
-            <h2 className="text-sm font-black uppercase tracking-widest text-amber-600 mb-3">
-              Quotes Waiting for Customer
+            <h2 className="text-sm font-black uppercase tracking-widest text-amber-600 mb-1">
+              My Quotes
             </h2>
+            <p className="text-xs text-text-secondary mb-3">Quotes you have sent and are waiting for the customer to accept or decline.</p>
             <div className="grid grid-cols-1 gap-5">
               {myQuoted.map((lead) => renderLeadCard(lead, false))}
-            </div>
-          </div>
-        )}
-
-        {/* Declined quotes */}
-        {myDeclined.length > 0 && (
-          <div className="mb-6">
-            <h2 className="text-sm font-black uppercase tracking-widest text-red-600 mb-3">
-              Customer Declined Quotes
-            </h2>
-            <div className="grid grid-cols-1 gap-5">
-              {myDeclined.map((lead) => renderLeadCard(lead, false))}
             </div>
           </div>
         )}
@@ -545,9 +593,10 @@ export default function DriverMarketplaceClient({
         {/* Available enquiries */}
         {availableLeads.length > 0 && (
           <div className="mb-6">
-            <h2 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-3">
+            <h2 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-1">
               Available Enquiries
             </h2>
+            <p className="text-xs text-text-secondary mb-3">Jobs you can quote for, matched to your approved service area and service types.</p>
             <div className="grid grid-cols-1 gap-5">
               {availableLeads.map((lead) =>
                 renderLeadCard(lead, quotingId === lead.id)
@@ -556,22 +605,23 @@ export default function DriverMarketplaceClient({
           </div>
         )}
 
-        {/* Taken by other movers */}
-        {takenByOther.length > 0 && (
+        {/* My History: past bookings, completed work and declined quotes — this driver only */}
+        {myHistory.length > 0 && (
           <div className="mb-6">
-            <h2 className="text-sm font-black uppercase tracking-widest text-primary/30 mb-3">
-              Already Quoted
+            <h2 className="text-sm font-black uppercase tracking-widest text-primary/40 mb-1">
+              My History
             </h2>
+            <p className="text-xs text-text-secondary mb-3">Track your previous quotes, confirmed jobs and completed work.</p>
             <div className="grid grid-cols-1 gap-5">
-              {takenByOther.map((lead) => renderLeadCard(lead, false))}
+              {myHistory.map((lead) => renderLeadCard(lead, false))}
             </div>
           </div>
         )}
 
-        {leads.length === 0 && (
+        {availableLeads.length === 0 && myQuoted.length === 0 && myBooked.length === 0 && myHistory.length === 0 && (
           <div className="bg-white p-12 rounded-3xl border border-border text-center">
             <p className="text-lg text-text-secondary">
-              No active enquiries available right now.
+              No enquiries available in your service area right now.
             </p>
             <p className="text-sm text-text-secondary/60 mt-2">
               Check back later — new requests come in throughout the day.

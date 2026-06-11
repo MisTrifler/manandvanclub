@@ -7,20 +7,39 @@ export async function POST(req: Request) {
     const data = await req.json();
 
     // 1. Insert into driver_applications
-    const { error } = await supabase
+    const baseRecord = {
+      company_name: data.companyName,
+      contact_name: data.contactName,
+      phone: data.phone,
+      email: data.email,
+      coverage_area: data.coverageArea,
+      radius: data.radius,
+      has_insurance: data.hasInsurance,
+      status: 'pending'
+    };
+
+    const serviceFields = {
+      service_house: data.serviceHouse === true,
+      service_flat: data.serviceFlat === true,
+      service_student: data.serviceStudent === true,
+      service_furniture: data.serviceFurniture === true,
+      service_office: data.serviceOffice === true,
+      service_single: data.serviceSingle === true,
+      service_long_distance: data.serviceLongDistance === true,
+    };
+
+    let { error } = await supabase
       .from('driver_applications')
-      .insert([
-        {
-          company_name: data.companyName,
-          contact_name: data.contactName,
-          phone: data.phone,
-          email: data.email,
-          coverage_area: data.coverageArea,
-          radius: data.radius,
-          has_insurance: data.hasInsurance,
-          status: 'pending'
-        }
-      ]);
+      .insert([{ ...baseRecord, ...serviceFields }]);
+
+    // Fallback for environments where the service-type migration has not
+    // been applied yet: retry without the service columns.
+    if (error && (error.code === '42703' || error.code === 'PGRST204')) {
+      console.warn('Driver signup: service columns missing, inserting without them. Apply migration 20260612_driver_service_types.sql.');
+      ({ error } = await supabase
+        .from('driver_applications')
+        .insert([baseRecord]));
+    }
 
     if (error) {
       console.error('Supabase Driver Signup Error:', error);
