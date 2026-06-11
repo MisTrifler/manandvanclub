@@ -28,7 +28,7 @@ const STEPS = [
 const FAQ_ITEMS = [
   { q: "How does matching work?", a: "Submit your move details for free. Approved movers see anonymised details and may submit a total quote. You receive one quote review link, pay a booking deposit only if you accept, and that deposit is deducted from the mover quote." },
   { q: "Will multiple movers contact me?", a: "No. Your details are not shared with multiple companies. They are only released to the mover whose quote you accept." },
-  { q: "Is there any obligation?", a: "No. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote, and that deposit is deducted from the total quote." },
+  { q: "Is there any obligation?", a: "No. You can request a quote for free and decide whether you want to go ahead once your mover quote is ready." },
   { q: "How quickly will I receive a quote?", a: "A vetted mover can review your request and send a quote if they can help. Once you accept and pay the booking deposit, the mover receives your details and contacts you directly. You pay the remaining balance on moving day." },
   { q: "Are movers vetted?", a: "We help connect customers with movers who have completed our application and verification process. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote." },
   { q: "What happens after I submit my request?", a: "After submitting your request, your contact details remain protected. A vetted local mover can review anonymised details and send a quote. You choose whether to accept or decline." },
