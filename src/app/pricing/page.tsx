@@ -117,7 +117,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { t: "Protected Details", d: "Customer contact details are hidden until a quote is accepted and the booking deposit is paid.", icon: <Lock size={24} /> },
-              { t: "No Weak Paid Leads", d: "Movers submit quotes without paying for enquiries that customers may not accept.", icon: <Users size={24} /> },
+              { t: "Movers Quote For Free", d: "Movers submit quotes without paying for enquiries that customers may not accept.", icon: <Users size={24} /> },
               { t: "Customer-Confirmed", d: "The mover receives details only after the customer has shown real intent.", icon: <ShieldCheck size={24} /> },
               { t: "Balance Paid Directly", d: "The remaining balance is paid directly to the mover on moving day.", icon: <Banknote size={24} /> },
             ].map((item) => (
