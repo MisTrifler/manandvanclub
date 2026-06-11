@@ -10,7 +10,7 @@
 // the area, the job is NOT shown.
 // ─────────────────────────────────────────────────────────────────────
 
-import { LOCATIONS } from "/home/user/repo/src/constants/locations";
+import { LOCATIONS } from "@/constants/locations";
 
 export const AVAILABLE_STATUSES = new Set(["available", "verified", "active"]);
 
