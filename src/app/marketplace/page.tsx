@@ -19,7 +19,7 @@ export default async function MarketplacePage() {
   const supabaseAdmin = getSupabaseAdmin();
   const { data: driver } = await supabaseAdmin
     .from("driver_applications")
-    .select("id, status, email")
+    .select("id, contact_name, status, email")
     .eq("email", driverEmail)
     .single();
 
@@ -39,10 +39,10 @@ export default async function MarketplacePage() {
   // Only fetch verified + unlocked leads
   const { data: leads } = await supabaseAdmin
     .from("move_requests")
-    .select("*")
+    .select("id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details")
     .eq("is_verified", true)
     .neq("status", "locked")
     .order("created_at", { ascending: false });
 
-  return <DriverMarketplaceClient userEmail={driverEmail} leads={leads || []} />;
+  return <DriverMarketplaceClient userEmail={driverEmail} driverName={driver.contact_name || driver.email} leads={leads || []} />;
 }
