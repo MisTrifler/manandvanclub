@@ -5,6 +5,7 @@ import { resend } from '@/lib/resend';
 import { headers } from 'next/headers';
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
 import { escapeHtml } from '@/lib/html';
+import { parseStoredQuoteOptions } from '@/lib/quote-options';
 import {
   formatUKPostcode,
   formatDisplayDate,
@@ -62,7 +63,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
   try {
     const { data: existing } = await supabaseAdmin
       .from('move_requests')
-      .select('id, status, booking_fee_paid, booking_fee_stripe_session_id, customer_details_released_at, quoted_by, email, first_name, phone, collection_postcode, delivery_postcode, move_date, move_type, quote_amount, booking_fee, admin_notes')
+      .select('*')
       .eq('id', requestId)
       .single();
 
@@ -86,7 +87,42 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
       return;
     }
 
-    const quoteAmount = normaliseQuoteAmount(existing.quote_amount);
+    // Structured quote options: when present, the selected option is the
+    // source of truth. quote_amount must match the selected option's
+    // totalPrice; otherwise leave for admin review (no details release).
+    const storedOptions = parseStoredQuoteOptions(existing.quote_options);
+    const selectedOption = parseStoredQuoteOptions(
+      existing.selected_quote_option ? [existing.selected_quote_option] : []
+    )[0] || null;
+
+    if (storedOptions.length > 0) {
+      if (!selectedOption) {
+        const note = `Stripe payment requires admin review: no selected quote option recorded for session ${session.id}. Customer details were not released.`;
+        console.warn('[webhook] customer_booking_deposit: selected option missing; booking left for admin review');
+        await supabaseAdmin
+          .from('move_requests')
+          .update({
+            booking_fee_stripe_session_id: session.id,
+            admin_notes: `${existing.admin_notes ? `${existing.admin_notes}\n` : ''}${note}`,
+          })
+          .eq('id', requestId);
+        return;
+      }
+      if (Math.round(Number(existing.quote_amount) * 100) !== Math.round(selectedOption.totalPrice * 100)) {
+        const note = `Stripe payment requires admin review: quote_amount (£${existing.quote_amount}) does not match selected option price (£${selectedOption.totalPrice}) for session ${session.id}. Customer details were not released.`;
+        console.warn('[webhook] customer_booking_deposit: quote amount mismatch with selected option; booking left for admin review');
+        await supabaseAdmin
+          .from('move_requests')
+          .update({
+            booking_fee_stripe_session_id: session.id,
+            admin_notes: `${existing.admin_notes ? `${existing.admin_notes}\n` : ''}${note}`,
+          })
+          .eq('id', requestId);
+        return;
+      }
+    }
+
+    const quoteAmount = normaliseQuoteAmount(selectedOption ? selectedOption.totalPrice : existing.quote_amount);
     const bookingDeposit = calculateBookingDeposit(quoteAmount);
     const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
     const expectedPence = toStripePence(bookingDeposit);
@@ -175,6 +211,8 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
               <p style="margin: 0 0 8px 0;">${escapeHtml(moveType)}</p>
               <p style="margin: 0 0 8px 0;">${escapeHtml(colPostcode)} to ${escapeHtml(delPostcode)}</p>
               <p style="margin: 0 0 20px 0;">${escapeHtml(moveDate)}</p>
+              ${selectedOption ? `<p style="margin: 0 0 8px 0;"><strong>Selected option:</strong> ${escapeHtml(selectedOption.serviceLabel)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Van:</strong> ${escapeHtml(selectedOption.vanLabel)}</p>` : ''}
               <p style="margin: 0 0 8px 0;"><strong>Your total quote:</strong> ${formatPounds(quoteAmount)}</p>
               <p style="margin: 0 0 8px 0;"><strong>Deposit paid to secure booking:</strong> ${formatPounds(bookingDeposit)}</p>
               <p style="margin: 0;"><strong>Customer pays you on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
@@ -202,6 +240,8 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
             <p style="color: #475569; font-size: 16px;">Your booking is secured and your details have been released to the mover.</p>
             <p style="color: #475569; font-size: 16px;">The mover will contact you directly to confirm timing, access and payment method.</p>
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
+              ${selectedOption ? `<p style="margin: 0 0 8px 0;"><strong>Selected option:</strong> ${escapeHtml(selectedOption.serviceLabel)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Van:</strong> ${escapeHtml(selectedOption.vanLabel)}</p>` : ''}
               <p style="margin: 0 0 8px 0;"><strong>Mover total quote:</strong> ${formatPounds(quoteAmount)}</p>
               <p style="margin: 0 0 8px 0;"><strong>Booking deposit paid:</strong> ${formatPounds(bookingDeposit)}</p>
               <p style="margin: 0 0 8px 0;"><strong>Pay mover on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>

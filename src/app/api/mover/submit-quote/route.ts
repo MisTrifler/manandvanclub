@@ -3,10 +3,11 @@ import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { cookies } from "next/headers";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { resend } from "@/lib/resend";
-import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds, normaliseQuoteAmount } from "@/lib/booking-fee";
+import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
 import { leadIsAvailable, leadMatchesDriverArea, leadMatchesDriverServices } from "@/lib/marketplace-matching";
-import { escapeHtml, escapeHtmlWithLineBreaks } from "@/lib/html";
+import { validateQuoteOptions, STANDARD_QUOTE_ASSUMPTION, type QuoteOption } from "@/lib/quote-options";
+import { escapeHtml } from "@/lib/html";
 import {
   formatUKPostcode,
   formatDisplayDate,
@@ -30,12 +31,6 @@ async function generateUniqueCustomerQuoteToken(supabaseAdmin: ReturnType<typeof
     if (!data) return token;
   }
   throw new Error("Could not generate a unique customer quote token.");
-}
-
-function cleanQuoteMessage(value: unknown): string | null {
-  const message = String(value || "").trim();
-  if (!message) return null;
-  return message.slice(0, 1000);
 }
 
 export async function POST(req: Request) {
@@ -62,8 +57,30 @@ export async function POST(req: Request) {
 
     const body = await req.json();
     const requestId = String(body.requestId || "").trim();
-    const quoteAmount = normaliseQuoteAmount(body.quoteAmount);
-    const quoteMessage = cleanQuoteMessage(body.quoteMessage);
+
+    // Free-text driver messages are no longer allowed: they could contain
+    // phone numbers, emails or company names before the deposit is paid.
+    const rawMessage = String(body.quoteMessage || "").trim();
+    if (rawMessage) {
+      return NextResponse.json(
+        { error: "Free-text quote messages are not allowed. Please use the structured quote options." },
+        { status: 400 }
+      );
+    }
+
+    let quoteOptions;
+    try {
+      // Legacy single-amount payloads (quoteAmount only) are mapped to one
+      // structured option so an out-of-date client doesn't hard-fail.
+      const rawOptions = Array.isArray(body.quoteOptions) && body.quoteOptions.length > 0
+        ? body.quoteOptions
+        : body.quoteAmount != null
+          ? [{ serviceLevel: "one_man_loading", vanSize: "suitable_van", totalPrice: Number(body.quoteAmount) }]
+          : [];
+      quoteOptions = validateQuoteOptions(rawOptions);
+    } catch (validationError: any) {
+      return NextResponse.json({ error: validationError?.message || "Invalid quote options." }, { status: 400 });
+    }
 
     if (!requestId) {
       return NextResponse.json({ error: "Missing requestId" }, { status: 400 });
@@ -110,27 +127,26 @@ export async function POST(req: Request) {
       );
     }
 
-    const bookingDeposit = calculateBookingDeposit(quoteAmount);
-    const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
     const quoteToken = await generateUniqueCustomerQuoteToken(supabaseAdmin);
     const now = new Date();
     const quotedAt = now.toISOString();
     const quoteExpiresAt = new Date(now.getTime() + QUOTE_EXPIRY_HOURS * 60 * 60 * 1000).toISOString();
 
-    const { data: updatedLead, error: updateError } = await supabaseAdmin
+    const updatePayload: Record<string, any> = {
+      quote_options: quoteOptions,
+      quote_message: null,
+      quoted_by: driverEmail,
+      quoted_at: quotedAt,
+      quote_expires_at: quoteExpiresAt,
+      customer_quote_token: quoteToken,
+      customer_quote_token_created_at: quotedAt,
+      booking_fee_paid: false,
+      status: "quoted",
+    };
+
+    let { data: updatedLead, error: updateError } = await supabaseAdmin
       .from("move_requests")
-      .update({
-        quote_amount: quoteAmount,
-        quote_message: quoteMessage,
-        quoted_by: driverEmail,
-        quoted_at: quotedAt,
-        quote_expires_at: quoteExpiresAt,
-        booking_fee: bookingDeposit,
-        customer_quote_token: quoteToken,
-        customer_quote_token_created_at: quotedAt,
-        booking_fee_paid: false,
-        status: "quoted",
-      })
+      .update(updatePayload)
       .eq("id", requestId)
       .eq("is_verified", true)
       .in("status", ["available", "verified", "active"])
@@ -139,6 +155,36 @@ export async function POST(req: Request) {
       .or("booking_fee_paid.is.null,booking_fee_paid.eq.false")
       .select("*")
       .single();
+
+    // Fallback for environments where the quote_options migration has not
+    // been applied yet: store the first option as a legacy single quote.
+    if (updateError && (updateError.code === "42703" || updateError.code === "PGRST204")) {
+      console.warn("[submit-quote] quote_options columns missing; falling back to legacy single quote. Apply migration 20260612_quote_options.sql.");
+      const first = quoteOptions[0];
+      const legacyDeposit = calculateBookingDeposit(first.totalPrice);
+      ({ data: updatedLead, error: updateError } = await supabaseAdmin
+        .from("move_requests")
+        .update({
+          quote_amount: first.totalPrice,
+          quote_message: null,
+          quoted_by: driverEmail,
+          quoted_at: quotedAt,
+          quote_expires_at: quoteExpiresAt,
+          booking_fee: legacyDeposit,
+          customer_quote_token: quoteToken,
+          customer_quote_token_created_at: quotedAt,
+          booking_fee_paid: false,
+          status: "quoted",
+        })
+        .eq("id", requestId)
+        .eq("is_verified", true)
+        .in("status", ["available", "verified", "active"])
+        .is("quoted_by", null)
+        .is("quote_amount", null)
+        .or("booking_fee_paid.is.null,booking_fee_paid.eq.false")
+        .select("*")
+        .single());
+    }
 
     if (updateError || !updatedLead) {
       console.error("[submit-quote] Quote update failed or request changed state.");
@@ -154,10 +200,23 @@ export async function POST(req: Request) {
       const delPostcode = formatUKPostcode(updatedLead.delivery_postcode);
       const moveDate = formatDisplayDate(updatedLead.move_date);
       const reviewUrl = `${process.env.NEXT_PUBLIC_URL || "https://www.manandvanclub.co.uk"}/quote-review/${quoteToken}`;
-      const messageHtml = quoteMessage
-        ? `<p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Mover message</p>
-           <p style="margin:0 0 24px;color:#475569;font-size:16px;line-height:1.6;font-style:italic;">${escapeHtmlWithLineBreaks(quoteMessage)}</p>`
-        : "";
+
+      // Platform-generated option cards. No driver-written text is included.
+      const optionsHtml = quoteOptions
+        .map((option: QuoteOption, index: number) => {
+          const deposit = calculateBookingDeposit(option.totalPrice);
+          const balance = calculateRemainingMoverBalance(option.totalPrice, deposit);
+          return `
+            <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:18px;margin-bottom:12px;text-align:left;">
+              <p style="margin:0 0 4px;color:#0F172A;font-size:15px;font-weight:900;">Option ${index + 1}: ${escapeHtml(option.serviceLabel)}</p>
+              <p style="margin:0 0 10px;color:#64748B;font-size:13px;line-height:1.5;">${escapeHtml(option.serviceDescription)}</p>
+              <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Van:</strong> ${escapeHtml(option.vanLabel)}</p>
+              <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Total quote:</strong> ${formatPounds(option.totalPrice)}</p>
+              <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Booking deposit:</strong> ${formatPounds(deposit)}</p>
+              <p style="margin:0;color:#475569;font-size:14px;"><strong>Pay on moving day:</strong> ${formatPounds(balance)}</p>
+            </div>`;
+        })
+        .join("");
 
       const { error: emailError } = await resend.emails.send({
         from: SENDER_ADDRESS,
@@ -176,27 +235,22 @@ export async function POST(req: Request) {
                 </td></tr>
                 <tr><td style="padding:0 40px 40px;text-align:center;">
                   <p style="margin:0 0 24px;color:#475569;font-size:18px;line-height:1.6;">Hi ${escapeHtml(updatedLead.first_name || "there")},</p>
-                  <p style="margin:0 0 24px;color:#475569;font-size:16px;line-height:1.6;">A vetted local mover has reviewed your request and provided a quote.</p>
-                  <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:24px;margin-bottom:32px;text-align:left;">
-                    <p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Mover total quote</p>
-                    <p style="margin:0 0 16px;color:#0F172A;font-size:32px;font-weight:900;">${formatPounds(quoteAmount)}</p>
-                    <p style="margin:0 0 8px;color:#475569;font-size:15px;line-height:1.6;"><strong>Booking deposit to secure quote:</strong> ${formatPounds(bookingDeposit)}</p>
-                    <p style="margin:0 0 8px;color:#475569;font-size:15px;line-height:1.6;"><strong>Pay mover on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
-                    <p style="margin:0 0 24px;color:#475569;font-size:15px;line-height:1.6;"><strong>Total move cost:</strong> ${formatPounds(quoteAmount)}</p>
-                    ${messageHtml}
+                  <p style="margin:0 0 24px;color:#475569;font-size:16px;line-height:1.6;">Your mover has provided quote options. Choose the one that suits your move best.</p>
+                  <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:18px;margin-bottom:24px;text-align:left;">
+                    ${optionsHtml}
+                    <p style="margin:12px 0 0;color:#94A3B8;font-size:12px;line-height:1.6;">${escapeHtml(STANDARD_QUOTE_ASSUMPTION)}</p>
+                  </div>
+                  <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:18px;margin-bottom:24px;text-align:left;">
                     <p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Move details</p>
                     <p style="margin:0 0 8px;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveType)}</p>
                     <p style="margin:0 0 8px;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(colPostcode || "—")} to ${escapeHtml(delPostcode || "—")}</p>
                     <p style="margin:0;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveDate || "—")}</p>
                   </div>
                   <div style="background:#F0FDF4;border-left:4px solid #22C55E;padding:16px;margin-bottom:32px;text-align:left;">
-                    <p style="margin:0;color:#166534;font-size:15px;line-height:1.6;"><strong>Booking deposit:</strong> ${formatPounds(bookingDeposit)}</p>
-                    <p style="margin:8px 0 0;color:#166534;font-size:14px;line-height:1.6;">Pay the booking deposit today to secure this quote and release your details to the mover.</p>
-                    <p style="margin:8px 0 0;color:#166534;font-size:14px;line-height:1.6;">Your booking deposit is deducted from the mover’s quote, so your total move cost stays at ${formatPounds(quoteAmount)}. You pay the remaining balance directly to the mover on moving day.</p>
+                    <p style="margin:0;color:#166534;font-size:14px;line-height:1.6;">Pay the booking deposit on the option you choose to secure your booking and release your details to the mover. The deposit is deducted from that option's quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.</p>
                   </div>
-                  <p style="margin:0 0 24px;color:#64748B;font-size:14px;line-height:1.6;">This quote is based on the details provided. It may only change if the move details were incomplete, inaccurate or later changed.</p>
-                  <a href="${reviewUrl}" style="display:inline-block;background:#F97316;color:#fff;padding:16px 32px;text-align:center;text-decoration:none;font-weight:900;border-radius:12px;font-size:16px;">Review Your Quote</a>
-                  <p style="margin:24px 0 0;color:#94A3B8;font-size:12px;line-height:1.6;">If you do not want to proceed, you can decline the quote on the review page.</p>
+                  <a href="${reviewUrl}" style="display:inline-block;background:#F97316;color:#fff;padding:16px 32px;text-align:center;text-decoration:none;font-weight:900;border-radius:12px;font-size:16px;">Review Your Quote Options</a>
+                  <p style="margin:24px 0 0;color:#94A3B8;font-size:12px;line-height:1.6;">If you do not want to proceed, you can decline on the review page.</p>
                 </td></tr>
               </table>
               <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width:600px;"><tr><td style="padding:32px;text-align:center;"><p style="margin:0;color:#94A3B8;font-size:12px;font-weight:600;">Man and Van Club</p><p style="margin:0;color:#CBD5E1;font-size:11px;">support@manandvanclub.co.uk</p></td></tr></table>
@@ -210,7 +264,7 @@ export async function POST(req: Request) {
       }
     }
 
-    return NextResponse.json({ success: true, bookingDeposit, remainingMoverBalance, quoteExpiresAt });
+    return NextResponse.json({ success: true, quoteOptions, quoteExpiresAt });
   } catch (error: any) {
     console.error("[submit-quote] Server error:", error?.message || "Unknown error");
     return NextResponse.json({ error: error?.message || "Server error" }, { status: 500 });

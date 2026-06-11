@@ -7,6 +7,7 @@ import {
   formatMoveType,
 } from "@/lib/formatting";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, formatPounds } from "@/lib/booking-fee";
+import { parseStoredQuoteOptions } from "@/lib/quote-options";
 import {
   CheckCircle2,
   MapPin,
@@ -53,7 +54,7 @@ export default async function BookingConfirmedPage({
   const supabaseAdmin = getSupabaseAdmin();
   const { data: lead } = await supabaseAdmin
     .from("move_requests")
-    .select("first_name, move_type, collection_postcode, delivery_postcode, move_date, quote_amount, booking_fee, estimated_price, quoted_by, booking_fee_paid, status, customer_details_released_at")
+    .select("*")
     .eq("id", requestId)
     .single();
 
@@ -81,6 +82,9 @@ export default async function BookingConfirmedPage({
   const quoteAmount = normaliseQuoteAmount(lead.quote_amount || 0);
   const bookingDeposit = lead.booking_fee ? Number(lead.booking_fee) : calculateBookingDeposit(quoteAmount);
   const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
+  const selectedOption = parseStoredQuoteOptions(
+    lead.selected_quote_option ? [lead.selected_quote_option] : []
+  )[0] || null;
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] p-6 md:p-8">
@@ -130,6 +134,18 @@ export default async function BookingConfirmedPage({
             </div>
 
             <div className="border-t border-border pt-6 space-y-4">
+              {selectedOption && (
+                <>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-text-secondary">Selected option</span>
+                    <span className="font-bold text-primary">{selectedOption.serviceLabel}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-text-secondary">Van</span>
+                    <span className="font-bold text-primary">{selectedOption.vanLabel}</span>
+                  </div>
+                </>
+              )}
               <div className="flex items-center justify-between py-2">
                 <span className="text-sm text-text-secondary">Mover total quote</span>
                 <span className="font-bold text-primary">{formatPounds(quoteAmount)}</span>

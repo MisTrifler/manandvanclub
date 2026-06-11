@@ -10,6 +10,7 @@ import {
   type MoveDetails,
 } from "@/lib/formatting";
 import { calculateBookingFee, normaliseQuoteAmount } from "@/lib/booking-fee";
+import { parseStoredQuoteOptions } from "@/lib/quote-options";
 import QuoteReviewClient from "./QuoteReviewClient";
 
 export const dynamic = "force-dynamic";
@@ -49,7 +50,7 @@ export default async function QuoteReviewPage({ params }: Props) {
 
   const { data: lead } = await supabaseAdmin
     .from("move_requests")
-    .select("id, first_name, move_type, collection_postcode, delivery_postcode, move_date, estimated_price, details, quote_amount, quote_message, quoted_by, quoted_at, quote_expires_at, booking_fee, booking_fee_paid, status, customer_quote_token")
+    .select("*")
     .eq("customer_quote_token", token)
     .single();
 
@@ -69,7 +70,11 @@ export default async function QuoteReviewPage({ params }: Props) {
     return <MessagePage title="Quote Expired" message="This quote has expired. Please submit a new request or contact support." />;
   }
 
-  if (lead.status !== "quoted" || !lead.quote_amount || !lead.quoted_by) {
+  // Structured options are the primary path; legacy single quotes
+  // (quote_amount, no quote_options) are mapped to one display option.
+  const quoteOptions = parseStoredQuoteOptions(lead.quote_options);
+
+  if (lead.status !== "quoted" || !lead.quoted_by || (quoteOptions.length === 0 && !lead.quote_amount)) {
     return <MessagePage title="Quote Pending" message="A mover is reviewing your request. You will receive an email once a quote is ready." />;
   }
 
@@ -77,14 +82,39 @@ export default async function QuoteReviewPage({ params }: Props) {
   const colPostcode = formatUKPostcode(lead.collection_postcode);
   const delPostcode = formatUKPostcode(lead.delivery_postcode);
   const moveDate = formatDisplayDate(lead.move_date);
-  const quoteAmount = normaliseQuoteAmount(lead.quote_amount);
-  const bookingFee = lead.booking_fee ? Number(lead.booking_fee) : calculateBookingFee(quoteAmount);
   const details = (lead.details || null) as MoveDetails | null;
   const detailSummary = [
     getMoveSummary(lead.move_type, details),
     getItemSummary(details),
     getAccessNote(details),
   ].filter(Boolean);
+
+  // Build the option list for the client. Legacy quotes become a single
+  // option; legacy quote_message is intentionally never shown to the
+  // customer (it may contain mover contact details).
+  const displayOptions = (quoteOptions.length > 0
+    ? quoteOptions
+    : [{
+        id: "legacy",
+        serviceLevel: "one_man_loading" as const,
+        serviceLabel: "Mover quote",
+        serviceDescription: "Your mover has provided a single quote for this move.",
+        vanSize: "suitable_van" as const,
+        vanLabel: "Suitable van provided",
+        totalPrice: normaliseQuoteAmount(lead.quote_amount),
+      }]
+  ).map((option) => {
+    const deposit = calculateBookingFee(option.totalPrice);
+    return {
+      id: option.id,
+      serviceLabel: option.serviceLabel,
+      serviceDescription: option.serviceDescription,
+      vanLabel: option.vanLabel,
+      totalPrice: option.totalPrice,
+      bookingDeposit: deposit,
+      remainingBalance: Math.max(0, Math.round((option.totalPrice - deposit) * 100) / 100),
+    };
+  });
 
   return (
     <QuoteReviewClient
@@ -96,9 +126,7 @@ export default async function QuoteReviewPage({ params }: Props) {
       moveDate={moveDate}
       estimatedPrice={lead.estimated_price || ""}
       detailSummary={detailSummary}
-      quoteAmount={quoteAmount}
-      quoteMessage={lead.quote_message || ""}
-      bookingFee={bookingFee}
+      options={displayOptions}
       quoteExpiresAt={lead.quote_expires_at || ""}
     />
   );

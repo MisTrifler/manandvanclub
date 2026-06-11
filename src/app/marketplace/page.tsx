@@ -50,7 +50,7 @@ export default async function MarketplacePage() {
   const [{ data: candidateLeads }, { data: ownLeads }] = await Promise.all([
     supabaseAdmin
       .from("move_requests")
-      .select("id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details, status, quoted_by, quote_amount, quoted_at, quote_expires_at, booking_fee, booking_fee_paid, customer_details_released_at, declined_reason, is_verified")
+      .select("*")
       .eq("is_verified", true)
       .in("status", ["available", "verified", "active"])
       .is("quoted_by", null)
@@ -60,7 +60,7 @@ export default async function MarketplacePage() {
       .order("created_at", { ascending: false }),
     supabaseAdmin
       .from("move_requests")
-      .select("id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details, status, quoted_by, quote_amount, quoted_at, quote_expires_at, booking_fee, booking_fee_paid, customer_details_released_at, declined_reason, is_verified")
+      .select("*")
       .eq("is_verified", true)
       .ilike("quoted_by", driverEmail)
       .order("created_at", { ascending: false }),
@@ -106,6 +106,8 @@ export default async function MarketplacePage() {
       status: lead.status,
       quoted_by: isQuotedMover ? lead.quoted_by : undefined,
       quote_amount: isQuotedMover ? lead.quote_amount : undefined,
+      quote_options: isQuotedMover ? lead.quote_options : undefined,
+      selected_quote_option: isQuotedMover ? lead.selected_quote_option : undefined,
       quoted_at: isQuotedMover ? lead.quoted_at : undefined,
       quote_expires_at: isQuotedMover ? lead.quote_expires_at : undefined,
       booking_fee: isQuotedMover ? lead.booking_fee : undefined,

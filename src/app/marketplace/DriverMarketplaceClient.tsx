@@ -51,6 +51,8 @@ interface Lead {
   status?: string;
   quoted_by?: string;
   quote_amount?: number;
+  quote_options?: Array<{ id: string; serviceLabel?: string; vanLabel?: string; totalPrice: number }> | null;
+  selected_quote_option?: { id: string; serviceLabel?: string; vanLabel?: string; totalPrice: number } | null;
   quoted_at?: string;
   booking_fee?: number;
   booking_fee_paid?: boolean;
@@ -64,6 +66,36 @@ interface Props {
   driverName: string;
   leads: Lead[];
 }
+
+// ── Structured quote options (no free-text driver messages) ──────────
+const SERVICE_LEVEL_CHOICES = [
+  { value: "transport_only", label: "Transport only", description: "Customer loads and unloads. Driver provides van and transport only." },
+  { value: "one_man_loading", label: "1 man and van", description: "Driver helps with loading, transport and unloading." },
+  { value: "two_men_loading", label: "2 men and van", description: "Two movers help with loading, transport and unloading." },
+  { value: "two_men_luton", label: "2 men and Luton van", description: "Two movers, Luton van, loading and unloading included." },
+] as const;
+
+const VAN_SIZE_CHOICES = [
+  { value: "small_van", label: "Small van" },
+  { value: "medium_van", label: "Medium van" },
+  { value: "luton_van", label: "Luton van" },
+  { value: "suitable_van", label: "Suitable van provided" },
+] as const;
+
+interface DraftOption {
+  serviceLevel: string;
+  vanSize: string;
+  totalPrice: string;
+}
+
+const DEFAULT_DRAFT_OPTION: DraftOption = {
+  serviceLevel: "one_man_loading",
+  vanSize: "suitable_van",
+  totalPrice: "",
+};
+
+const STANDARD_QUOTE_ASSUMPTION =
+  "This quote is based on the move details provided. The price may change if the item list, access, parking, waiting time, distance, or move date changes.";
 
 const MOVE_TYPE_ICONS: Record<string, React.ReactNode> = {
   "Office Move": <Building2 size={16} />,
@@ -82,14 +114,8 @@ export default function DriverMarketplaceClient({
 }: Props) {
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [quotingId, setQuotingId] = useState<string | null>(null);
-  const [quoteAmount, setQuoteAmount] = useState<string>("");
-  const [quoteMessage, setQuoteMessage] = useState<string>("");
   const [quoteError, setQuoteError] = useState<string | null>(null);
-
-  const previewQuoteAmount = Number.parseFloat(quoteAmount);
-  const hasValidPreviewAmount = Number.isFinite(previewQuoteAmount) && previewQuoteAmount > 0 && previewQuoteAmount <= 10000;
-  const previewBookingDeposit = hasValidPreviewAmount ? calculateBookingDeposit(previewQuoteAmount) : 0;
-  const previewRemainingBalance = hasValidPreviewAmount ? calculateRemainingMoverBalance(previewQuoteAmount, previewBookingDeposit) : 0;
+  const [draftOptions, setDraftOptions] = useState<DraftOption[]>([DEFAULT_DRAFT_OPTION]);
 
   const handleLogout = async () => {
     await fetch("/api/driver/logout", { method: "POST" });
@@ -98,9 +124,20 @@ export default function DriverMarketplaceClient({
 
   const startQuote = (leadId: string) => {
     setQuotingId(leadId);
-    setQuoteAmount("");
-    setQuoteMessage("");
+    setDraftOptions([{ ...DEFAULT_DRAFT_OPTION }]);
     setQuoteError(null);
+  };
+
+  const updateDraftOption = (index: number, patch: Partial<DraftOption>) => {
+    setDraftOptions((prev) => prev.map((o, i) => (i === index ? { ...o, ...patch } : o)));
+  };
+
+  const addDraftOption = () => {
+    setDraftOptions((prev) => (prev.length >= 3 ? prev : [...prev, { ...DEFAULT_DRAFT_OPTION }]));
+  };
+
+  const removeDraftOption = (index: number) => {
+    setDraftOptions((prev) => (prev.length <= 1 ? prev : prev.filter((_, i) => i !== index)));
   };
 
   const cancelQuote = () => {
@@ -109,15 +146,32 @@ export default function DriverMarketplaceClient({
   };
 
   const submitQuote = async (lead: Lead) => {
-    const amount = parseFloat(quoteAmount);
-    if (!amount || amount <= 0 || Number.isNaN(amount)) {
-      setQuoteError("Please enter a valid quote amount greater than £0.");
+    // Validate all draft options before sending
+    const parsedOptions = [];
+    for (let i = 0; i < draftOptions.length; i += 1) {
+      const draft = draftOptions[i];
+      const amount = parseFloat(draft.totalPrice);
+      if (!amount || Number.isNaN(amount) || amount < 10) {
+        setQuoteError(`Option ${i + 1}: please enter a total price of at least £10.`);
+        return;
+      }
+      if (amount > 10000) {
+        setQuoteError(`Option ${i + 1}: total price must not exceed £10,000.`);
+        return;
+      }
+      parsedOptions.push({
+        serviceLevel: draft.serviceLevel,
+        vanSize: draft.vanSize,
+        totalPrice: amount,
+      });
+    }
+
+    const combos = new Set(parsedOptions.map((o) => `${o.serviceLevel}|${o.vanSize}`));
+    if (combos.size !== parsedOptions.length) {
+      setQuoteError("Each option must have a different service level and van size combination.");
       return;
     }
-    if (amount > 10000) {
-      setQuoteError("Quote amount must not exceed £10,000.");
-      return;
-    }
+
     setLoadingId(lead.id);
     setQuoteError(null);
 
@@ -127,8 +181,7 @@ export default function DriverMarketplaceClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           requestId: lead.id,
-          quoteAmount: amount,
-          quoteMessage: quoteMessage.trim() || undefined,
+          quoteOptions: parsedOptions,
         }),
       });
 
@@ -191,10 +244,28 @@ export default function DriverMarketplaceClient({
   ];
 
   // ── Earnings summary (driver collects quote minus deposit) ──────────
+  // Booked/completed jobs use the selected option price (stored in
+  // quote_amount at acceptance). Pending multi-option quotes use the
+  // lowest option as the conservative pending value.
+  const leadQuoteValue = (lead: Lead): number => {
+    const direct = Number(lead.quote_amount || 0);
+    if (Number.isFinite(direct) && direct > 0) return direct;
+    if (lead.selected_quote_option?.totalPrice) return Number(lead.selected_quote_option.totalPrice);
+    const opts = (lead.quote_options || []).map((o) => Number(o.totalPrice)).filter((v) => Number.isFinite(v) && v > 0);
+    if (opts.length > 0) return Math.min(...opts);
+    return 0;
+  };
+
+  const leadOptionRange = (lead: Lead): string | null => {
+    const opts = (lead.quote_options || []).map((o) => Number(o.totalPrice)).filter((v) => Number.isFinite(v) && v > 0);
+    if (opts.length < 2) return null;
+    return `${formatPounds(Math.min(...opts))}–${formatPounds(Math.max(...opts))}`;
+  };
+
   const moverBalance = (lead: Lead) => {
-    const quote = Number(lead.quote_amount || 0);
+    const quote = leadQuoteValue(lead);
     if (!Number.isFinite(quote) || quote <= 0) return 0;
-    const deposit = lead.booking_fee != null ? Number(lead.booking_fee) : calculateBookingDeposit(quote);
+    const deposit = lead.booking_fee != null && Number(lead.booking_fee) > 0 ? Number(lead.booking_fee) : calculateBookingDeposit(quote);
     return calculateRemainingMoverBalance(quote, deposit);
   };
   const confirmedEarnings = [...myBookedAll, ...leads.filter((l) => isQuotedByMe(l) && l.status === "completed")]
@@ -329,10 +400,17 @@ export default function DriverMarketplaceClient({
           )}
 
           {/* Income breakdown for the driver's own jobs */}
-          {isQuotedByMe(lead) && Number(lead.quote_amount || 0) > 0 && (
+          {isQuotedByMe(lead) && leadQuoteValue(lead) > 0 && (
             <div className="mt-4 bg-primary/5 rounded-xl border border-border/60 p-3 space-y-1">
-              <div className="flex justify-between text-xs"><span className="text-text-secondary">Mover total quote</span><strong>{formatPounds(Number(lead.quote_amount))}</strong></div>
-              <div className="flex justify-between text-xs"><span className="text-text-secondary">Booking deposit</span><strong>{formatPounds(lead.booking_fee != null ? Number(lead.booking_fee) : calculateBookingDeposit(Number(lead.quote_amount)))}</strong></div>
+              {lead.selected_quote_option?.serviceLabel && (
+                <div className="flex justify-between text-xs"><span className="text-text-secondary">Selected option</span><strong>{lead.selected_quote_option.serviceLabel}</strong></div>
+              )}
+              {cardStatus === "quoted" && leadOptionRange(lead) ? (
+                <div className="flex justify-between text-xs"><span className="text-text-secondary">Pending quote options</span><strong>{leadOptionRange(lead)}</strong></div>
+              ) : (
+                <div className="flex justify-between text-xs"><span className="text-text-secondary">Mover total quote</span><strong>{formatPounds(leadQuoteValue(lead))}</strong></div>
+              )}
+              <div className="flex justify-between text-xs"><span className="text-text-secondary">Booking deposit</span><strong>{formatPounds(lead.booking_fee != null && Number(lead.booking_fee) > 0 ? Number(lead.booking_fee) : calculateBookingDeposit(leadQuoteValue(lead)))}</strong></div>
               <div className="flex justify-between text-xs"><span className="text-text-secondary">{cardStatus === "declined" ? "Value not earned" : "Customer pays you"}</span><strong>{formatPounds(moverBalance(lead))}</strong></div>
             </div>
           )}
@@ -364,41 +442,95 @@ export default function DriverMarketplaceClient({
           {cardStatus === "available" && showQuoteForm && (
             <div className="space-y-3">
               <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 block mb-1">
-                  Your total quote (£)
-                </label>
-                <input
-                  type="number"
-                  step="0.01"
-                  min="1"
-                  value={quoteAmount}
-                  onChange={(e) => setQuoteAmount(e.target.value)}
-                  placeholder="e.g. 300.00"
-                  className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent"
-                />
-                <p className="text-xs text-text-secondary/70 mt-2 leading-relaxed">
-                  Enter the total price you want the customer to see. The customer pays a deposit to secure the booking, and that deposit is deducted from your total quote. You collect the remaining balance directly from the customer on moving day.
+                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 mb-1">Quote Options</p>
+                <p className="text-xs text-text-secondary/80 leading-relaxed mb-3">
+                  Offer up to 3 clear options. Do not include phone numbers, emails, company names or contact details. Customer and mover details are shared only after the customer pays the booking deposit.
                 </p>
-                {hasValidPreviewAmount && (
-                  <div className="mt-3 bg-primary/5 rounded-xl border border-border/60 p-3 space-y-1">
-                    <div className="flex justify-between text-xs"><span className="text-text-secondary">Your total quote</span><strong>{formatPounds(previewQuoteAmount)}</strong></div>
-                    <div className="flex justify-between text-xs"><span className="text-text-secondary">Customer deposit paid today</span><strong>{formatPounds(previewBookingDeposit)}</strong></div>
-                    <div className="flex justify-between text-xs"><span className="text-text-secondary">Customer pays you on moving day</span><strong>{formatPounds(previewRemainingBalance)}</strong></div>
+              </div>
+
+              {draftOptions.map((draft, index) => {
+                const amount = parseFloat(draft.totalPrice);
+                const validAmount = Number.isFinite(amount) && amount >= 10 && amount <= 10000;
+                const deposit = validAmount ? calculateBookingDeposit(amount) : 0;
+                const balance = validAmount ? calculateRemainingMoverBalance(amount, deposit) : 0;
+                const serviceChoice = SERVICE_LEVEL_CHOICES.find((c) => c.value === draft.serviceLevel);
+                return (
+                  <div key={index} className="bg-white border border-border rounded-xl p-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-accent">Option {index + 1}</p>
+                      {draftOptions.length > 1 && (
+                        <button
+                          onClick={() => removeDraftOption(index)}
+                          className="text-[10px] font-black uppercase tracking-widest text-red-400 hover:text-red-600 transition-colors"
+                        >
+                          Remove option
+                        </button>
+                      )}
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 ml-1 block mb-1">Service level</label>
+                      <select
+                        value={draft.serviceLevel}
+                        onChange={(e) => updateDraftOption(index, { serviceLevel: e.target.value })}
+                        className="w-full p-3 bg-gray-50 border border-border rounded-xl font-bold text-sm outline-none focus:border-accent appearance-none"
+                      >
+                        {SERVICE_LEVEL_CHOICES.map((choice) => (
+                          <option key={choice.value} value={choice.value}>{choice.label}</option>
+                        ))}
+                      </select>
+                      {serviceChoice && (
+                        <p className="text-[11px] text-text-secondary/70 mt-1 ml-1">{serviceChoice.description}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 ml-1 block mb-1">Van size</label>
+                      <select
+                        value={draft.vanSize}
+                        onChange={(e) => updateDraftOption(index, { vanSize: e.target.value })}
+                        className="w-full p-3 bg-gray-50 border border-border rounded-xl font-bold text-sm outline-none focus:border-accent appearance-none"
+                      >
+                        {VAN_SIZE_CHOICES.map((choice) => (
+                          <option key={choice.value} value={choice.value}>{choice.label}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 ml-1 block mb-1">Total price (£)</label>
+                      <input
+                        type="number"
+                        step="0.01"
+                        min="10"
+                        max="10000"
+                        value={draft.totalPrice}
+                        onChange={(e) => updateDraftOption(index, { totalPrice: e.target.value })}
+                        placeholder="e.g. 300.00"
+                        className="w-full p-3 bg-gray-50 border border-border rounded-xl font-bold text-sm outline-none focus:border-accent"
+                      />
+                    </div>
+                    {validAmount && (
+                      <div className="bg-primary/5 rounded-xl border border-border/60 p-3 space-y-1">
+                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Total quote</span><strong>{formatPounds(amount)}</strong></div>
+                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Booking deposit</span><strong>{formatPounds(deposit)}</strong></div>
+                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Customer pays you on moving day</span><strong>{formatPounds(balance)}</strong></div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-              <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 block mb-1">
-                  Message to customer (optional)
-                </label>
-                <textarea
-                  value={quoteMessage}
-                  onChange={(e) => setQuoteMessage(e.target.value)}
-                  placeholder="Hi, I can complete this move on the requested date. This quote includes loading, transport and unloading."
-                  rows={3}
-                  className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent resize-none"
-                />
-              </div>
+                );
+              })}
+
+              {draftOptions.length < 3 && (
+                <button
+                  onClick={addDraftOption}
+                  className="w-full py-2.5 rounded-xl border border-dashed border-border font-black uppercase tracking-widest text-xs text-primary/50 hover:text-accent hover:border-accent/40 transition-colors"
+                >
+                  + Add another option
+                </button>
+              )}
+
+              <p className="text-[11px] text-text-secondary/70 leading-relaxed">
+                {STANDARD_QUOTE_ASSUMPTION}
+              </p>
+
               {quoteError && (
                 <div className="rounded-xl border border-red-100 bg-red-50 p-3 text-red-600 text-sm font-bold">
                   {quoteError}
@@ -414,7 +546,7 @@ export default function DriverMarketplaceClient({
                     <Loader2 className="animate-spin" size={16} />
                   ) : (
                     <>
-                      Send Total Quote
+                      Send quote options
                       <ArrowRight size={16} />
                     </>
                   )}

@@ -12,6 +12,16 @@ import {
 } from "lucide-react";
 import { formatPounds } from "@/lib/booking-fee";
 
+interface DisplayOption {
+  id: string;
+  serviceLabel: string;
+  serviceDescription: string;
+  vanLabel: string;
+  totalPrice: number;
+  bookingDeposit: number;
+  remainingBalance: number;
+}
+
 interface Props {
   token: string;
   firstName: string;
@@ -21,11 +31,12 @@ interface Props {
   moveDate: string;
   estimatedPrice: string;
   detailSummary: string[];
-  quoteAmount: number;
-  quoteMessage: string;
-  bookingFee: number;
+  options: DisplayOption[];
   quoteExpiresAt: string;
 }
+
+const STANDARD_QUOTE_ASSUMPTION =
+  "This quote is based on the move details provided. The price may change if the item list, access, parking, waiting time, distance, or move date changes.";
 
 const DECLINE_REASONS = [
   "Price too high",
@@ -44,20 +55,16 @@ export default function QuoteReviewClient({
   moveDate,
   estimatedPrice,
   detailSummary,
-  quoteAmount,
-  quoteMessage,
-  bookingFee,
+  options,
   quoteExpiresAt,
 }: Props) {
-  const [loading, setLoading] = useState(false);
+  const [loadingOptionId, setLoadingOptionId] = useState<string | null>(null);
   const [declining, setDeclining] = useState(false);
   const [showDeclineReasons, setShowDeclineReasons] = useState(false);
   const [declineReason, setDeclineReason] = useState("Price too high");
   const [error, setError] = useState<string | null>(null);
 
-  const bookingDeposit = bookingFee;
-  const remainingMoverBalance = Math.max(0, Math.round((quoteAmount - bookingDeposit) * 100) / 100);
-  const totalCustomerCost = quoteAmount;
+  const loading = loadingOptionId !== null;
 
   const expiryText = useMemo(() => {
     if (!quoteExpiresAt) return "";
@@ -71,21 +78,21 @@ export default function QuoteReviewClient({
     });
   }, [quoteExpiresAt]);
 
-  const handleAccept = async () => {
-    setLoading(true);
+  const handleAccept = async (optionId: string) => {
+    setLoadingOptionId(optionId);
     setError(null);
     try {
       const res = await fetch("/api/customer/accept-quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({ token, selectedQuoteOptionId: optionId }),
       });
 
       const data = await res.json().catch(() => ({ error: "Something went wrong" }));
 
       if (!res.ok) {
         setError(data.error || "Quote is no longer available");
-        setLoading(false);
+        setLoadingOptionId(null);
         return;
       }
 
@@ -95,10 +102,10 @@ export default function QuoteReviewClient({
       }
 
       setError("Stripe checkout could not be started. Please try again.");
-      setLoading(false);
+      setLoadingOptionId(null);
     } catch {
       setError("Something went wrong. Please try again.");
-      setLoading(false);
+      setLoadingOptionId(null);
     }
   };
 
@@ -135,7 +142,7 @@ export default function QuoteReviewClient({
             <span className="text-white font-black text-xl leading-none">M&amp;V</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-primary tracking-tighter uppercase">
-            Your mover quote is ready
+            {options.length > 1 ? "Your mover quote options are ready" : "Your mover quote is ready"}
           </h1>
           <p className="text-text-secondary mt-3 max-w-xl mx-auto">
             Hi {firstName || "there"}, a vetted local mover has reviewed your request. No spam, no endless calls.
@@ -144,45 +151,61 @@ export default function QuoteReviewClient({
 
         <div className="bg-white rounded-3xl border border-border overflow-hidden mb-6 shadow-sm">
           <div className="p-5 md:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="bg-primary/5 rounded-2xl p-5 border border-border/50">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-1">Mover total quote</p>
-                <p className="text-4xl font-black text-primary tracking-tighter">{formatPounds(quoteAmount)}</p>
-                <p className="text-xs text-text-secondary mt-2">This is your total move cost.</p>
-              </div>
+            <p className="text-sm text-text-secondary mb-5">
+              Your mover has provided the following {options.length > 1 ? "options" : "quote"}. Choose the one that suits your move best. Your booking deposit is deducted from the option you accept.
+            </p>
 
-              <div className="bg-accent/10 rounded-2xl p-5 border border-accent/20">
-                <p className="text-[10px] font-black uppercase tracking-widest text-accent mb-1">Booking deposit</p>
-                <p className="text-4xl font-black text-primary tracking-tighter">{formatPounds(bookingDeposit)}</p>
-                <p className="text-xs text-text-secondary mt-2">Pay today to secure this quote.</p>
-              </div>
+            <div className="space-y-4 mb-6">
+              {options.map((option, index) => (
+                <div key={option.id} className="rounded-2xl border-2 border-border hover:border-accent/50 transition-colors overflow-hidden">
+                  <div className="p-5">
+                    <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-accent mb-1">
+                          {options.length > 1 ? `Option ${index + 1}` : "Mover quote"}
+                        </p>
+                        <p className="text-xl font-black text-primary tracking-tight">{option.serviceLabel}</p>
+                        <p className="text-sm text-text-secondary mt-1">{option.serviceDescription}</p>
+                        <p className="text-xs text-text-secondary mt-2"><strong className="text-primary/70">Van:</strong> {option.vanLabel}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Total quote</p>
+                        <p className="text-3xl font-black text-primary tracking-tighter">{formatPounds(option.totalPrice)}</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-50 rounded-xl p-3 border border-border/60 mb-4">
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs text-text-secondary">Mover total quote</span>
+                        <span className="text-sm font-bold text-primary">{formatPounds(option.totalPrice)}</span>
+                      </div>
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs text-text-secondary">Booking deposit (pay today)</span>
+                        <span className="text-sm font-bold text-primary">{formatPounds(option.bookingDeposit)}</span>
+                      </div>
+                      <div className="flex items-center justify-between py-2 border-t border-dashed border-border">
+                        <span className="text-xs font-black text-primary">Pay mover on moving day</span>
+                        <span className="font-black text-primary">{formatPounds(option.remainingBalance)}</span>
+                      </div>
+                      <div className="flex items-center justify-between py-1">
+                        <span className="text-xs text-text-secondary">Total move cost</span>
+                        <span className="text-sm font-bold text-primary">{formatPounds(option.totalPrice)}</span>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => handleAccept(option.id)}
+                      disabled={loading || declining}
+                      className="btn-orange w-full py-3.5 rounded-xl flex items-center justify-center gap-2 font-black uppercase tracking-widest text-sm disabled:opacity-50"
+                    >
+                      {loadingOptionId === option.id ? <Loader2 className="animate-spin" size={18} /> : <>Accept this option <ArrowRight size={16} /></>}
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="bg-gray-50 rounded-2xl p-4 border border-border/60 mb-6">
-              <div className="flex items-center justify-between py-2">
-                <span className="text-sm text-text-secondary">Mover total quote</span>
-                <span className="font-bold text-primary">{formatPounds(quoteAmount)}</span>
-              </div>
-              <div className="flex items-center justify-between py-2">
-                <span className="text-sm text-text-secondary">Booking deposit paid today</span>
-                <span className="font-bold text-primary">{formatPounds(bookingDeposit)}</span>
-              </div>
-              <div className="flex items-center justify-between py-3 border-t border-dashed border-border">
-                <span className="text-sm font-black text-primary">Pay mover on moving day</span>
-                <span className="font-black text-primary text-xl">{formatPounds(remainingMoverBalance)}</span>
-              </div>
-              <div className="flex items-center justify-between py-2">
-                <span className="text-sm text-text-secondary">Total move cost</span>
-                <span className="font-bold text-primary">{formatPounds(totalCustomerCost)}</span>
-              </div>
-            </div>
-
-            {quoteMessage && (
-              <div className="bg-white rounded-2xl border border-border p-4 mb-6">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/40 mb-2">Mover message</p>
-                <p className="text-sm text-text-secondary italic leading-relaxed">&ldquo;{quoteMessage}&rdquo;</p>
-              </div>
-            )}
+            <p className="text-xs text-text-secondary/80 mb-6">{STANDARD_QUOTE_ASSUMPTION}</p>
 
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
@@ -249,10 +272,7 @@ export default function QuoteReviewClient({
 
             <div className="bg-amber-50 border border-amber-200/50 rounded-xl p-4 mb-6">
               <p className="text-sm text-amber-800 font-medium">
-                Pay the booking deposit today to secure this quote and release your details to the mover. Your booking deposit is deducted from the mover’s quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.
-              </p>
-              <p className="text-sm text-amber-700/80 mt-2">
-                This quote is based on the move details provided. It may only change if the details were incomplete, inaccurate or later changed.
+                Pay the booking deposit on your chosen option to secure your booking and release your details to the mover. The deposit is deducted from that option&apos;s quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.
               </p>
             </div>
 
@@ -277,14 +297,6 @@ export default function QuoteReviewClient({
             )}
 
             <div className="flex flex-col gap-3">
-              <button
-                onClick={handleAccept}
-                disabled={loading || declining}
-                className="btn-orange w-full py-4 rounded-xl flex items-center justify-center gap-2 font-black uppercase tracking-widest text-sm disabled:opacity-50"
-              >
-                {loading ? <Loader2 className="animate-spin" size={18} /> : <>Pay deposit and secure booking <ArrowRight size={16} /></>}
-              </button>
-
               {!showDeclineReasons ? (
                 <button
                   onClick={() => setShowDeclineReasons(true)}
