@@ -195,7 +195,7 @@ export default function ApplyToJoinContent() {
                     <div className="space-y-1">
                       <p className="text-xs font-black uppercase tracking-tight text-primary">Insurance Confirmation</p>
                       <p className="text-[10px] text-text-secondary font-medium leading-relaxed uppercase tracking-wider">
-                        I confirm I can provide Goods in Transit and Public Liability insurance details during onboarding.
+                        I confirm I hold valid Goods in Transit and Public Liability insurance and can provide evidence during onboarding.
                       </p>
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export default function ApplyToJoinContent() {
 
                 <div className="space-y-2">
                   <p className="text-[10px] font-black uppercase tracking-widest text-primary/30 text-center">
-                    You will need to provide proof of goods-in-transit insurance and public liability insurance during onboarding.
+                    You must provide valid Goods in Transit and Public Liability insurance before your application can be approved.
                   </p>
                   <p className="text-[10px] font-black uppercase tracking-widest text-accent/70 text-center">
                     We carefully review every application before granting access to customer enquiries.

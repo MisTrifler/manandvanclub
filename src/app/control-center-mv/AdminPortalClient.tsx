@@ -34,6 +34,7 @@ type Driver = {
   radius?: string;
   status?: string;
   applied_at?: string;
+  has_insurance?: boolean;
 };
 
 type DashboardResponse = {
@@ -87,6 +88,15 @@ export default function AdminPortalClient() {
   }, []);
 
   async function updateDriverStatus(driverId: string, status: "approved" | "rejected" | "pending") {
+    if (status === "approved") {
+      const driver = drivers.find((d) => d.id === driverId);
+      if (driver && !driver.has_insurance) {
+        const proceed = window.confirm(
+          "Insurance is required before approval, and this mover has NOT confirmed Goods in Transit and Public Liability insurance. Approve anyway?"
+        );
+        if (!proceed) return;
+      }
+    }
     setActionLoadingId(driverId);
     setError(null);
     setSuccessMessage(null);
@@ -298,6 +308,9 @@ export default function AdminPortalClient() {
                           <p className="font-bold text-primary">{driver.contact_name || "—"}</p>
                           <p className="text-text-secondary font-medium">{driver.phone || "—"}</p>
                           <p className="text-text-secondary font-medium break-all">{driver.email || "—"}</p>
+                          <p className={`text-[9px] font-black uppercase tracking-widest mt-1 ${driver.has_insurance ? "text-success" : "text-red-500"}`}>
+                            {driver.has_insurance ? "Insurance confirmed" : "Insurance NOT confirmed — required before approval"}
+                          </p>
                         </td>
                         <td className="p-8">
                           {driver.status === "pending" ? (

@@ -236,7 +236,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">We Verify Businesses Before They Join</h2>
-            <p className="text-text-secondary mt-3">Applications are reviewed before movers receive access to customer enquiries.</p>
+            <p className="text-text-secondary mt-3">Applications are reviewed before movers receive access to enquiries. Movers must provide Goods in Transit and Public Liability insurance before approval.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">

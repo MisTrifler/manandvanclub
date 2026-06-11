@@ -232,7 +232,7 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
 
   faq.push({
     q: `Are your ${loc.name} movers insured?`,
-    a: `Yes, every mover on our platform carries full Goods in Transit and Public Liability insurance. We verify this before they join the network.`,
+    a: `Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. We recommend confirming the details of cover with your mover before moving day.`,
   });
 
   return faq;

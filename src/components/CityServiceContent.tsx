@@ -160,7 +160,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 {[
                   { t: "Fixed & Hourly", d: "Choose the pricing model that works best for your budget.", i: <Clock size={28} /> },
                   { t: "Fully Vetted", d: "Every driver is reviewed and verified by our team.", i: <ShieldCheck size={28} /> },
-                  { t: "Insurance Details Requested", d: "Approved movers are asked to provide insurance details during onboarding.", i: <CheckCircle2 size={28} /> },
+                  { t: "Insurance Required", d: "Movers must provide valid Goods in Transit and Public Liability insurance before they can be approved.", i: <CheckCircle2 size={28} /> },
                   { t: "Local Knowledge", d: "Our movers know every shortcut and parking quirk.", i: <Users size={28} /> }
                 ].map(f => (
                   <div key={f.t} className="bg-[#F9F9F7] p-10 rounded-[2.5rem] border border-border/50 space-y-6 group hover:bg-white hover:shadow-2xl transition-all duration-500">
@@ -186,7 +186,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                     Get Matched Now <ArrowUpRight size={22} />
                  </Link>
                  <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
-                   <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Insurance Details Requested</span>
+                   <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Insurance Required</span>
                    <span className="flex items-center gap-1.5"><Zap size={14} className="text-accent"/> 1-to-1 Match</span>
                  </div>
                </div>
