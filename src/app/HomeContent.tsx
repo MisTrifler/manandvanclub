@@ -135,7 +135,7 @@ export default function HomeContent() {
                 textShadow: '0 1px 6px rgba(0,0,0,0.25)',
               }}
             >
-              Get matched with one verified local mover. No comparison sites. No endless sales calls. Free to submit — booking deposit only if you accept a mover quote. The deposit is deducted from the quote.
+              Get your free quote. Secure your booking with a deposit and pay the rest on moving day. Plans changed? We understand moving is chaotic.
             </p>
 
             <div className="flex flex-wrap gap-2.5 mt-5 lg:mt-6">
