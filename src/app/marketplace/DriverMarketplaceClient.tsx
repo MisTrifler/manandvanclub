@@ -345,7 +345,7 @@ export default function DriverMarketplaceClient({
                   className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent"
                 />
                 <p className="text-xs text-text-secondary/70 mt-2 leading-relaxed">
-                  Enter the total price you want the customer to see. The booking deposit is deducted from this total quote.
+                  Enter the total price you want the customer to see. The customer pays a deposit to secure the booking, and that deposit is deducted from your total quote. You collect the remaining balance directly from the customer on moving day.
                 </p>
                 {hasValidPreviewAmount && (
                   <div className="mt-3 bg-primary/5 rounded-xl border border-border/60 p-3 space-y-1">

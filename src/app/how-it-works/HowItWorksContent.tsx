@@ -44,7 +44,7 @@ export default function HowItWorksContent() {
             How It Works
           </h1>
           <p className="text-xl text-text-secondary">
-            One vetted local mover. No spam. No multiple sales calls. Your details stay protected until you accept a mover quote.
+            One verified local mover. No spam. No endless calls. Your details stay protected until you accept a mover quote.
           </p>
         </div>
       </section>
@@ -107,7 +107,7 @@ export default function HowItWorksContent() {
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-black uppercase tracking-widest">
             <div className="flex items-center gap-2"><ShieldCheck size={18} className="text-accent" /> Vetted Movers</div>
             <div className="flex items-center gap-2"><Zap size={18} className="text-accent" /> Customer-Confirmed Bookings</div>
-            <div className="flex items-center gap-2"><CheckCircle size={18} className="text-accent" /> No Multiple Sales Calls</div>
+            <div className="flex items-center gap-2"><CheckCircle size={18} className="text-accent" /> No Endless Calls</div>
           </div>
         </div>
       </section>

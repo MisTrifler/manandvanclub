@@ -53,7 +53,7 @@ export async function POST(req: Request) {
                             <td style="background:#1B2D4F;border-radius:16px;padding:24px;text-align:center;">
                               <p style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 12px 0;text-transform:uppercase;letter-spacing:0.1em;">Why Join Man and Van Club?</p>
                               <p style="color:#ffffff;font-size:13px;line-height:1.6;margin:0 0 16px 0;opacity:0.85;">
-                                See how customer-confirmed requests work and what makes us different from noisy comparison sites.
+                                See how customer-confirmed requests work and what makes us different from lead-selling platforms.
                               </p>
                               <a href="https://www.manandvanclub.co.uk/why-join" style="display:inline-block;background:#F5781E;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:12px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">View Benefits →</a>
                             </td>

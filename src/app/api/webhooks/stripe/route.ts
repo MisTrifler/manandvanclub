@@ -193,13 +193,13 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
         to: [bookedRequest.email],
-        subject: 'Your quote is secured',
+        subject: 'Your booking is secured',
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
             <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
-            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Quote Is Secured</h2>
+            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Booking Is Secured</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(bookedRequest.first_name || 'there')},</p>
-            <p style="color: #475569; font-size: 16px;">Your quote is secured and your details have been released to the mover.</p>
+            <p style="color: #475569; font-size: 16px;">Your booking is secured and your details have been released to the mover.</p>
             <p style="color: #475569; font-size: 16px;">The mover will contact you directly to confirm timing, access and payment method.</p>
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
               <p style="margin: 0 0 8px 0;"><strong>Mover total quote:</strong> ${formatPounds(quoteAmount)}</p>

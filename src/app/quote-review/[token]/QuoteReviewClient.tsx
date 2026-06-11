@@ -138,7 +138,7 @@ export default function QuoteReviewClient({
             Your mover quote is ready
           </h1>
           <p className="text-text-secondary mt-3 max-w-xl mx-auto">
-            Hi {firstName || "there"}, a vetted local mover has reviewed your request. No spam, no multiple sales calls.
+            Hi {firstName || "there"}, a vetted local mover has reviewed your request. No spam, no endless calls.
           </p>
         </div>
 
@@ -268,7 +268,7 @@ export default function QuoteReviewClient({
 
             <div className="bg-white border border-border rounded-xl p-4 mb-6">
               <p className="text-xs text-text-secondary leading-relaxed">
-                The booking deposit is refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement. It is not normally refundable if you cancel after accepting the quote, provide incorrect move details, change the job, or book another mover elsewhere. This does not affect your statutory rights.
+                The booking deposit is refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement. It is not normally refundable if you cancel after accepting the quote, provide incorrect move details, materially change the job, or book another mover elsewhere. This does not affect your statutory rights.
               </p>
             </div>
 
@@ -282,7 +282,7 @@ export default function QuoteReviewClient({
                 disabled={loading || declining}
                 className="btn-orange w-full py-4 rounded-xl flex items-center justify-center gap-2 font-black uppercase tracking-widest text-sm disabled:opacity-50"
               >
-                {loading ? <Loader2 className="animate-spin" size={18} /> : <>Pay deposit and secure quote <ArrowRight size={16} /></>}
+                {loading ? <Loader2 className="animate-spin" size={18} /> : <>Pay deposit and secure booking <ArrowRight size={16} /></>}
               </button>
 
               {!showDeclineReasons ? (

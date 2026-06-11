@@ -166,7 +166,8 @@ export async function POST(req: Request) {
                     <p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Mover total quote</p>
                     <p style="margin:0 0 16px;color:#0F172A;font-size:32px;font-weight:900;">${formatPounds(quoteAmount)}</p>
                     <p style="margin:0 0 8px;color:#475569;font-size:15px;line-height:1.6;"><strong>Booking deposit to secure quote:</strong> ${formatPounds(bookingDeposit)}</p>
-                    <p style="margin:0 0 24px;color:#475569;font-size:15px;line-height:1.6;"><strong>Pay mover on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
+                    <p style="margin:0 0 8px;color:#475569;font-size:15px;line-height:1.6;"><strong>Pay mover on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
+                    <p style="margin:0 0 24px;color:#475569;font-size:15px;line-height:1.6;"><strong>Total move cost:</strong> ${formatPounds(quoteAmount)}</p>
                     ${messageHtml}
                     <p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Move details</p>
                     <p style="margin:0 0 8px;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveType)}</p>

@@ -91,7 +91,7 @@ export default async function BookingConfirmedPage({
           </div>
           <h1 className="text-3xl font-black text-primary tracking-tighter mb-2">Quote Secured</h1>
           <p className="text-text-secondary">
-            Your quote is secured and your details have been released to the mover.
+            Your booking is secured and your details have been released to the mover.
           </p>
           <p className="text-text-secondary mt-2">
             The mover will contact you directly to confirm timing, access and payment method.

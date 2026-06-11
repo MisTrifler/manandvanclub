@@ -160,7 +160,7 @@ export async function POST(req: Request) {
                           </div>
 
                           <p style="margin: 0 0 32px 0; color: #64748B; font-size: 14px; line-height: 1.6;">
-                            <strong>No spam. No multiple sales calls. Just one trusted local mover.</strong>
+                            <strong>No spam. No endless calls. Just one verified local mover.</strong>
                           </p>
 
                           <p style="margin: 0 0 32px 0; color: #64748B; font-size: 14px; line-height: 1.6;">

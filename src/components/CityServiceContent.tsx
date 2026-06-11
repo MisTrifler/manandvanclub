@@ -308,7 +308,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     { icon: <ClipboardCheck size={24} />, label: "Free To Submit" },
-                    { icon: <PhoneOff size={24} />, label: "No Multiple Sales Calls" },
+                    { icon: <PhoneOff size={24} />, label: "No Endless Calls" },
                     { icon: <UserCheck size={24} />, label: "Customer-Confirmed Process" },
                     { icon: <Lock size={24} />, label: "Secure Enquiry Process" },
                     { icon: <MapPin size={24} />, label: "Local Mover Coverage" },

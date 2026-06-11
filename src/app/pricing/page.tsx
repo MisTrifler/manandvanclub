@@ -36,7 +36,7 @@ export default function PricingPage() {
             <CreditCard size={14} /> Booking deposit pricing
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-primary uppercase tracking-tighter leading-none mb-6">
-            Simple Booking Deposit Pricing
+            Booking Deposit Pricing
           </h1>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-8">
             Customers submit requests for free. Approved movers submit total quotes for free. The booking deposit is paid only after the customer accepts a mover quote, and it is deducted from that quote.
@@ -47,7 +47,7 @@ export default function PricingPage() {
               "Movers submit total quotes for free",
               "Customers only pay after seeing a quote",
               "Deposit deducted from mover quote",
-              "No spam or multiple sales calls",
+              "No spam or endless calls",
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 bg-white border border-border px-4 py-2 rounded-full text-sm font-bold text-primary/80">
                 <CheckCircle2 size={14} className="text-accent" />

@@ -43,7 +43,7 @@ const SERVICE_LINKS = [
 
 const TRUST_POINTS = [
   { icon: "ClipboardCheck", label: "Free To Submit" },
-  { icon: "PhoneOff", label: "No Multiple Sales Calls" },
+  { icon: "PhoneOff", label: "No Endless Calls" },
   { icon: "UserCheck", label: "Customer-Confirmed Process" },
   { icon: "Lock", label: "Secure Enquiry Process" },
   { icon: "MapPin", label: "Local Mover Coverage" },

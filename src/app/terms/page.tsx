@@ -52,7 +52,7 @@ export default function Terms() {
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">5. Refunds and Cancellations</h2>
           <p>The booking deposit is refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement.</p>
           <p>The booking deposit is also refundable for duplicate payments, technical charging errors, or where customer details were not released after a successful booking deposit payment.</p>
-          <p>The booking deposit is not normally refundable if you cancel after accepting the quote, provide incorrect move details, change the job, or book another mover elsewhere.</p>
+          <p>The booking deposit is not normally refundable if you cancel after accepting the quote, provide incorrect move details, materially change the job, or book another mover elsewhere.</p>
           <p>This does not affect your statutory rights.</p>
         </section>
 

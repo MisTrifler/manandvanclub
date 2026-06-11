@@ -55,7 +55,7 @@ const COMPARISON_ROWS = [
   { left: "Shared Customers", right: "Customer-Confirmed Opportunities" },
   { left: "Multiple Competitors", right: "Reduced Competition" },
   { left: "Price Wars", right: "Direct Customer Contact" },
-  { left: "Unclear Costs", right: "Transparent Transparent Deposits" },
+  { left: "Unclear Costs", right: "Transparent Deposits" },
   { left: "Complex Process", right: "Simple Process" },
 ];
 
@@ -163,7 +163,7 @@ export default function WhyJoinContent() {
                 Get Customer-Confirmed Move Requests Without Spammy Competition
               </h1>
               <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-                Most comparison websites send customers to multiple businesses. We take a different approach: customer details stay protected and are released only after a customer accepts a mover quote.
+                Many lead platforms send customer details to multiple businesses. We take a different approach: customer details stay protected and are released only after a customer accepts a mover quote.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -221,7 +221,7 @@ export default function WhyJoinContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why We're Different</h2>
-            <p className="text-text-secondary mt-3">See how we compare to noisy comparison websites.</p>
+            <p className="text-text-secondary mt-3">See how we compare to traditional lead-selling platforms.</p>
           </div>
           <div className="max-w-5xl mx-auto bg-[#F9F9F7] rounded-[2.5rem] border border-border p-6 md:p-10">
             {/* Header row */}
