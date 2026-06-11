@@ -37,3 +37,16 @@ export function formatPounds(amount: number): string {
     maximumFractionDigits: Number.isInteger(value) ? 0 : 2,
   }).format(value);
 }
+
+
+// Customer-facing language now calls this a booking deposit.
+// We keep calculateBookingFee for backwards compatibility with existing internal fields.
+export function calculateBookingDeposit(quoteAmount: number): number {
+  return calculateBookingFee(quoteAmount);
+}
+
+export function calculateRemainingMoverBalance(quoteAmount: number, bookingDeposit?: number): number {
+  const amount = normaliseQuoteAmount(quoteAmount);
+  const deposit = bookingDeposit ?? calculateBookingDeposit(amount);
+  return Math.max(0, Math.round((amount - deposit) * 100) / 100);
+}

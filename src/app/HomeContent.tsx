@@ -22,25 +22,25 @@ const STEPS = [
   { t: "Submit Your Move Details", d: "Tell us where you are moving from and to, your preferred date, and a few details about your move.", icon: <ClipboardList size={24} /> },
   { t: "We Review Your Request", d: "Our team reviews your requirements to understand your move size, route, and any specific needs.", icon: <Search size={24} /> },
   { t: "A Vetted Mover Sends a Quote", d: "Approved local movers can review anonymised move details and submit a quote if they can help.", icon: <UserCheck size={24} /> },
-  { t: "Accept or Decline Securely", d: "You receive a secure quote review link. Your contact details are released only if you accept the quote and pay the booking fee.", icon: <Phone size={24} /> },
+  { t: "Accept or Decline Securely", d: "You receive a secure quote review link. Your details are released only if you accept the quote and pay the booking deposit, which is deducted from the mover quote.", icon: <Phone size={24} /> },
 ];
 
 const FAQ_ITEMS = [
-  { q: "How does matching work?", a: "Submit your move details for free. Approved movers see anonymised details and may submit a quote. You receive one quote review link and your details are released only if you accept the quote and pay the booking fee." },
+  { q: "How does matching work?", a: "Submit your move details for free. Approved movers see anonymised details and may submit a total quote. You receive one quote review link, pay a booking deposit only if you accept, and that deposit is deducted from the mover quote." },
   { q: "Will multiple movers contact me?", a: "No. Your details are not shared with multiple companies. They are only released to the mover whose quote you accept." },
-  { q: "Is there any obligation?", a: "No. It is free to submit your move request. You only pay a booking fee if you accept a mover quote." },
-  { q: "How quickly will I receive a quote?", a: "A vetted mover can review your request and send a quote if they can help. Once you accept and pay the booking fee, the mover receives your details and contacts you directly." },
+  { q: "Is there any obligation?", a: "No. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote, and that deposit is deducted from the total quote." },
+  { q: "How quickly will I receive a quote?", a: "A vetted mover can review your request and send a quote if they can help. Once you accept and pay the booking deposit, the mover receives your details and contacts you directly. You pay the remaining balance on moving day." },
   { q: "Are movers vetted?", a: "We help connect customers with movers who have completed our application and verification process. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote." },
   { q: "What happens after I submit my request?", a: "After submitting your request, your contact details remain protected. A vetted local mover can review anonymised details and send a quote. You choose whether to accept or decline." },
-  { q: "Do I need to pay to submit a move request?", a: "No. It is free to submit your move request. You only pay a booking fee if you accept a mover quote. The mover’s quoted price is paid directly to the mover." },
+  { q: "Do I need to pay to submit a move request?", a: "No. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote, and that deposit is deducted from the total quote. The remaining balance is paid directly to the mover on moving day." },
 ];
 
 const WHY_CHOOSE = [
   { t: "Verified Businesses", d: "We help connect customers with movers who have completed our application and verification process.", icon: <ShieldCheck size={24} /> },
   { t: "Secure Enquiry Process", d: "Your information is handled securely throughout the matching process.", icon: <Lock size={24} /> },
-  { t: "Direct Communication", d: "After you accept a quote and pay the booking fee, your mover contacts you directly.", icon: <Phone size={24} /> },
+  { t: "Direct Communication", d: "After you accept a quote and pay the booking deposit, your mover contacts you directly and you pay the remaining balance on moving day.", icon: <Phone size={24} /> },
   { t: "One Mover Process", d: "Your details are not shared with multiple companies or sales teams.", icon: <Shield size={24} /> },
-  { t: "Free To Submit", d: "Submitting a move request is free. Booking fee only if you accept a mover quote.", icon: <CheckCircle2 size={24} /> },
+  { t: "Free To Submit", d: "Submitting a move request is free. Booking deposit only if you accept a mover quote, and it is deducted from the quote.", icon: <CheckCircle2 size={24} /> },
   { t: "Transparent Process", d: "We clearly explain how we match you with a mover and what happens to your details.", icon: <Search size={24} /> },
 ];
 
@@ -135,7 +135,7 @@ export default function HomeContent() {
                 textShadow: '0 1px 6px rgba(0,0,0,0.25)',
               }}
             >
-              Get matched with one verified local mover. No comparison sites. No endless sales calls. Free to submit — booking fee only if you accept a mover quote.
+              Get matched with one verified local mover. No comparison sites. No endless sales calls. Free to submit — booking deposit only if you accept a mover quote. The deposit is deducted from the quote.
             </p>
 
             <div className="flex flex-wrap gap-2.5 mt-5 lg:mt-6">
@@ -186,7 +186,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
-            <p className="text-text-secondary mt-3">Free to submit, with a booking fee only if you accept a mover quote.</p>
+            <p className="text-text-secondary mt-3">Free to submit, with a booking deposit only if you accept a mover quote. The deposit is deducted from the quote.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

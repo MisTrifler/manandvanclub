@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Why Join Man and Van Club | Customer-Confirmed Move Requests",
-  description: "Join Man and Van Club as an approved mover. Submit quotes for anonymised customer requests and receive details after a customer-confirmed booking fee payment.",
+  description: "Join Man and Van Club as an approved mover. Submit quotes for anonymised customer requests and receive details after a customer-confirmed booking deposit payment, which is deducted from the mover quote.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk/why-join',
   },

@@ -325,7 +325,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           >
             Get Matched
           </h2>
-          <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Booking fee only if quote accepted</p>
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Deposit only if quote accepted</p>
           <div className="mt-6">
             <IntentSelector onSelect={(intent) => { setSelectedIntent(intent); setStep(1); }} />
           </div>
@@ -346,7 +346,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         >
           Get Matched
         </h2>
-        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Booking fee only if quote accepted</p>
+        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Deposit only if quote accepted</p>
       </div>
 
       {/* Progress bar */}
@@ -786,7 +786,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <p className="text-xs font-bold text-primary flex items-center gap-1.5">
                   <span className="inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">Secure & GDPR Compliant</span>
                 </p>
-                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely. Details are released only if you accept a mover quote and pay the booking fee.</p>
+                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely. Details are released only if you accept a mover quote and pay the booking deposit. The deposit is deducted from the mover quote.</p>
               </div>
             </div>
 
@@ -858,7 +858,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">4</span>
-                  If you accept, you pay a booking fee and the mover contacts you directly
+                  If you accept, you pay a booking deposit deducted from the quote and the mover contacts you directly
                 </li>
               </ol>
             </div>

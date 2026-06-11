@@ -34,6 +34,7 @@ import {
   Eye,
   FileText,
 } from "lucide-react";
+import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 
 interface Lead {
   id: string;
@@ -84,6 +85,11 @@ export default function DriverMarketplaceClient({
   const [quoteAmount, setQuoteAmount] = useState<string>("");
   const [quoteMessage, setQuoteMessage] = useState<string>("");
   const [quoteError, setQuoteError] = useState<string | null>(null);
+
+  const previewQuoteAmount = Number.parseFloat(quoteAmount);
+  const hasValidPreviewAmount = Number.isFinite(previewQuoteAmount) && previewQuoteAmount > 0 && previewQuoteAmount <= 10000;
+  const previewBookingDeposit = hasValidPreviewAmount ? calculateBookingDeposit(previewQuoteAmount) : 0;
+  const previewRemainingBalance = hasValidPreviewAmount ? calculateRemainingMoverBalance(previewQuoteAmount, previewBookingDeposit) : 0;
 
   const handleLogout = async () => {
     await fetch("/api/driver/logout", { method: "POST" });
@@ -316,7 +322,7 @@ export default function DriverMarketplaceClient({
           {/* Privacy notice */}
           <div className="mt-4 bg-blue-50/50 border border-blue-100/50 rounded-xl p-3">
             <p className="text-xs text-blue-700/80 font-medium">
-              Customer name, phone and email are hidden until the customer accepts your quote and pays the booking fee.
+              Customer name, phone and email are hidden until the customer accepts your total quote and pays the booking deposit.
             </p>
           </div>
         </div>
@@ -327,7 +333,7 @@ export default function DriverMarketplaceClient({
             <div className="space-y-3">
               <div>
                 <label className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 block mb-1">
-                  Your quote amount (£)
+                  Your total quote (£)
                 </label>
                 <input
                   type="number"
@@ -335,9 +341,19 @@ export default function DriverMarketplaceClient({
                   min="1"
                   value={quoteAmount}
                   onChange={(e) => setQuoteAmount(e.target.value)}
-                  placeholder="e.g. 120.00"
+                  placeholder="e.g. 300.00"
                   className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent"
                 />
+                <p className="text-xs text-text-secondary/70 mt-2 leading-relaxed">
+                  Enter the total price you want the customer to see. The booking deposit is deducted from this total quote.
+                </p>
+                {hasValidPreviewAmount && (
+                  <div className="mt-3 bg-primary/5 rounded-xl border border-border/60 p-3 space-y-1">
+                    <div className="flex justify-between text-xs"><span className="text-text-secondary">Your total quote</span><strong>{formatPounds(previewQuoteAmount)}</strong></div>
+                    <div className="flex justify-between text-xs"><span className="text-text-secondary">Customer deposit paid today</span><strong>{formatPounds(previewBookingDeposit)}</strong></div>
+                    <div className="flex justify-between text-xs"><span className="text-text-secondary">Customer pays you on moving day</span><strong>{formatPounds(previewRemainingBalance)}</strong></div>
+                  </div>
+                )}
               </div>
               <div>
                 <label className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 block mb-1">
@@ -366,7 +382,7 @@ export default function DriverMarketplaceClient({
                     <Loader2 className="animate-spin" size={16} />
                   ) : (
                     <>
-                      Send Quote to Customer
+                      Send Total Quote
                       <ArrowRight size={16} />
                     </>
                   )}
@@ -386,7 +402,7 @@ export default function DriverMarketplaceClient({
               <div className="flex items-center gap-2">
                 <Banknote size={16} className="text-primary/40" />
                 <p className="text-xs text-text-secondary/70 font-medium">
-                  Submit your quote for free
+                  Submit your total quote. The customer pays a booking deposit to secure the booking, and pays you the remaining balance on moving day.
                 </p>
               </div>
               <button
@@ -403,7 +419,7 @@ export default function DriverMarketplaceClient({
             <div className="flex items-center gap-2">
               <FileText size={16} className="text-amber-500" />
               <p className="text-sm font-bold text-amber-700">
-                Quote sent — waiting for customer. Customer details will only be released if they accept and pay the booking fee.
+                Quote sent — waiting for customer. Customer details will only be released if they accept and pay the booking deposit.
               </p>
             </div>
           )}
@@ -413,7 +429,7 @@ export default function DriverMarketplaceClient({
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-green-500" />
                 <p className="text-sm font-bold text-green-700">
-                  The customer has accepted your quote and paid the booking fee. Their contact details are now available.
+                  The customer accepted your quote and paid the booking deposit. Their contact details are now available.
                 </p>
               </div>
               <a
@@ -424,7 +440,7 @@ export default function DriverMarketplaceClient({
                 View Customer Details
               </a>
               <p className="text-xs text-text-secondary/70">
-                The customer pays your quoted move price directly to you.
+                The booking deposit is deducted from your total quote. Collect the remaining balance from the customer on moving day.
               </p>
             </div>
           )}
@@ -486,7 +502,7 @@ export default function DriverMarketplaceClient({
         <div className="bg-white rounded-2xl border border-border p-4 md:p-5 mb-6">
           <p className="text-sm text-text-secondary leading-relaxed">
             Man &amp; Van Club provides <strong className="text-primary">verified customer enquiries</strong>.
-            Submit your quote for free. Customer details are released only after the customer accepts your quote and pays the booking fee. Final price and availability are agreed directly between you and the customer.
+            Submit your total quote for free. The customer pays a booking deposit to secure the booking, and that deposit is deducted from your total quote. You collect the remaining balance directly from the customer on moving day.
           </p>
         </div>
 

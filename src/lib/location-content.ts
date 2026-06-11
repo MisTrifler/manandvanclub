@@ -200,7 +200,7 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
 
   faq.push({
     q: `Is it free to submit a move request?`,
-    a: `Yes. It is free to submit your move request. You only pay a booking fee if you accept a mover quote. The booking fee is separate from the mover’s quote, and you pay the mover’s quoted price directly to the mover.`,
+    a: `Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover’s quote, and you pay the remaining balance directly to the mover on moving day.`,
   });
 
   faq.push({

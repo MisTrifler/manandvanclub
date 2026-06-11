@@ -12,7 +12,7 @@ import {
   getMoveSummary,
   type MoveDetails,
 } from "@/lib/formatting";
-import { formatPounds } from "@/lib/booking-fee";
+import { calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import {
   CheckCircle2,
   Phone,
@@ -121,7 +121,7 @@ export default async function SuccessPage({
     normaliseEmail(lead.locked_by) === normaliseEmail(driverEmail);
 
   if (!isNewCustomerBooking && !isLegacyLockedLead) {
-    return <MessagePage title="Booking Details Unavailable" message="Customer details are only available to the quoted mover after the customer has accepted and paid the booking fee." />;
+    return <MessagePage title="Booking Details Unavailable" message="Customer details are only available to the quoted mover after the customer has accepted the quote and paid the booking deposit." />;
   }
 
   const moveType = formatMoveType(lead.move_type);
@@ -135,6 +135,8 @@ export default async function SuccessPage({
     getAccessNote(details),
   ].filter(Boolean);
   const quoteAmount = Number(lead.quote_amount || 0);
+  const bookingDeposit = Number(lead.booking_fee || 0);
+  const remainingMoverBalance = quoteAmount > 0 && bookingDeposit > 0 ? calculateRemainingMoverBalance(quoteAmount, bookingDeposit) : 0;
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] p-6 md:p-8">
@@ -144,7 +146,7 @@ export default async function SuccessPage({
             <CheckCircle2 size={48} className="mx-auto text-green-600" />
           </div>
           <h1 className="text-3xl font-black text-primary tracking-tighter mb-2">Customer-Confirmed Booking</h1>
-          <p className="text-text-secondary">The customer has accepted your quote and paid the booking fee. Please contact them as soon as possible to confirm timing, access and payment method.</p>
+          <p className="text-text-secondary">The customer accepted your quote and paid the booking deposit. Please contact them as soon as possible to confirm timing, access and payment method.</p>
         </div>
 
         <div className="bg-white rounded-2xl border border-border overflow-hidden">
@@ -164,11 +166,11 @@ export default async function SuccessPage({
 
               {detailSummary.length > 0 && <div className="flex items-start gap-3"><div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5"><ClipboardList size={18} className="text-primary/60" /></div><div><p className="text-xs font-black uppercase tracking-widest text-primary/40">Move Details</p><ul className="text-sm text-text-secondary mt-1 space-y-1">{detailSummary.map((item) => <li key={item}>• {item}</li>)}</ul></div></div>}
 
-              {quoteAmount > 0 && <div className="flex items-center gap-3"><div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0"><Banknote size={18} className="text-primary/60" /></div><div><p className="text-xs font-black uppercase tracking-widest text-primary/40">Your quote</p><p className="font-bold text-primary">{formatPounds(quoteAmount)}</p></div></div>}
+              {quoteAmount > 0 && <div className="flex items-center gap-3"><div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0"><Banknote size={18} className="text-primary/60" /></div><div><p className="text-xs font-black uppercase tracking-widest text-primary/40">Your total quote</p><p className="font-bold text-primary">{formatPounds(quoteAmount)}</p>{bookingDeposit > 0 && <p className="text-xs text-text-secondary mt-1">Deposit paid: {formatPounds(bookingDeposit)} • Collect on moving day: {formatPounds(remainingMoverBalance)}</p>}</div></div>}
             </div>
 
             <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 mt-8">
-              <p className="text-sm text-amber-800 font-medium"><strong>Reminder:</strong> The customer pays your quoted move price directly to you. Please contact them as soon as possible to confirm timing, access and payment method.</p>
+              <p className="text-sm text-amber-800 font-medium"><strong>Reminder:</strong> The booking deposit is deducted from your total quote. Collect the remaining balance from the customer on moving day, unless you agree another payment method with them.</p>
             </div>
           </div>
 

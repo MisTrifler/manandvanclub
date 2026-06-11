@@ -43,7 +43,7 @@ import {
 import FAQ from "@/components/FAQ";
 
 const FAQ_ITEMS = [
-  { q: "Do I need a subscription?", a: "No. Approved movers submit quotes for free. Customer details are released only when the customer accepts a quote and pays the booking fee." },
+  { q: "Do I need a subscription?", a: "No. Approved movers submit quotes for free. Customer details are released only when the customer accepts a quote and pays the booking deposit, which is deducted from your quote." },
   { q: "How do enquiries work?", a: "When a customer submits a move request, we review and match it to a suitable mover in the area. Approved movers can view the enquiry details and choose whether to quote for it. Each enquiry is offered to one mover at a time." },
   { q: "Are enquiries shared with multiple movers?", a: "No. The platform is designed around one customer-confirmed quote at a time, so customers are not spammed by multiple companies." },
   { q: "How do I get approved?", a: "Applications are reviewed manually. You must provide proof of Goods in Transit Insurance and Public Liability Insurance as part of the onboarding process. Verification usually takes less than 24 hours." },
@@ -55,13 +55,13 @@ const COMPARISON_ROWS = [
   { left: "Shared Customers", right: "Customer-Confirmed Opportunities" },
   { left: "Multiple Competitors", right: "Reduced Competition" },
   { left: "Price Wars", right: "Direct Customer Contact" },
-  { left: "Unclear Costs", right: "Transparent Booking Fees" },
+  { left: "Unclear Costs", right: "Transparent Transparent Deposits" },
   { left: "Complex Process", right: "Simple Process" },
 ];
 
 const BENEFIT_CARDS = [
   { t: "Customer-Confirmed Opportunities", d: "Customer enquiries are offered through a one-mover process. Customers are not spammed by multiple companies.", icon: <Lock size={24} /> },
-  { t: "Direct Customer Contact", d: "Customer details are released after the customer accepts your quote and pays the booking fee.", icon: <Phone size={24} /> },
+  { t: "Direct Customer Contact", d: "Customer details are released after the customer accepts your quote and pays the booking deposit, which is deducted from your quote.", icon: <Phone size={24} /> },
   { t: "Transparent Pricing", d: "Approved movers submit quotes for free. Customer details are released only after customer acceptance.", icon: <Wallet size={24} /> },
   { t: "Flexible Growth", d: "Choose which enquiries to quote for. Set your coverage area and grow at your own pace.", icon: <TrendingUp size={24} /> },
   { t: "No Monthly Subscription", d: "No subscriptions, no minimum commitments, and no payment to submit quotes in the main marketplace flow.", icon: <Zap size={24} /> },
@@ -73,7 +73,7 @@ const HOW_IT_WORKS_STEPS = [
   { t: "Insurance Verification", d: "Provide proof of Goods in Transit and Public Liability insurance.", icon: <ShieldCheck size={24} /> },
   { t: "Approval", d: "Our team reviews your application manually, usually within 24 hours.", icon: <BadgeCheck size={24} /> },
   { t: "Access Enquiries", d: "Log in to view available customer enquiries in your service area.", icon: <Eye size={24} /> },
-  { t: "Contact Customers Directly", d: "Submit quotes for enquiries that suit you. Customer details are released after the customer accepts and pays the booking fee.", icon: <Phone size={24} /> },
+  { t: "Contact Customers Directly", d: "Submit quotes for enquiries that suit you. Customer details are released after the customer accepts and pays the booking deposit, which is deducted from your quote.", icon: <Phone size={24} /> },
 ];
 
 const COVERAGE_LOCATIONS = [
@@ -361,7 +361,7 @@ export default function WhyJoinContent() {
                     <span className="text-xs font-black text-primary uppercase">{enquiry.date}</span>
                   </div>
                   <div className="flex items-center justify-between py-3">
-                    <span className="text-xs font-medium text-text-secondary">Booking Fee</span>
+                    <span className="text-xs font-medium text-text-secondary">Booking Deposit</span>
                     <span className="text-lg font-black text-accent">{enquiry.fee}</span>
                   </div>
                 </div>

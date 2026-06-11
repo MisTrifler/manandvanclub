@@ -3,7 +3,7 @@ import { stripe } from '@/lib/stripe';
 import { getSupabaseAdmin } from '@/lib/supabase-admin';
 import { resend } from '@/lib/resend';
 import { headers } from 'next/headers';
-import { calculateBookingFee, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
+import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
 import { escapeHtml } from '@/lib/html';
 import {
   formatUKPostcode,
@@ -39,8 +39,8 @@ export async function POST(req: Request) {
 
     const metadata = session.metadata || {};
 
-    if (metadata.paymentType === 'customer_booking_fee') {
-      await handleCustomerBookingFee(session, metadata);
+    if (metadata.paymentType === 'customer_booking_deposit' || metadata.paymentType === 'customer_booking_fee') {
+      await handleCustomerBookingDeposit(session, metadata);
     } else {
       await handleLegacyDriverPayment(session, metadata);
     }
@@ -49,11 +49,11 @@ export async function POST(req: Request) {
   return NextResponse.json({ received: true });
 }
 
-async function handleCustomerBookingFee(session: any, metadata: any) {
+async function handleCustomerBookingDeposit(session: any, metadata: any) {
   const requestId = metadata.requestId;
 
   if (!requestId) {
-    console.error('[webhook] customer_booking_fee: missing requestId');
+    console.error('[webhook] customer_booking_deposit: missing requestId');
     return;
   }
 
@@ -67,39 +67,40 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
       .single();
 
     if (!existing) {
-      console.error('[webhook] customer_booking_fee: request not found');
+      console.error('[webhook] customer_booking_deposit: request not found');
       return;
     }
 
     if (existing.booking_fee_paid === true && existing.status === 'booked' && existing.customer_details_released_at) {
-      console.log('[webhook] customer_booking_fee: already processed');
+      console.log('[webhook] customer_booking_deposit: already processed');
       return;
     }
 
     if (existing.status !== 'quoted') {
-      console.warn('[webhook] customer_booking_fee: request not in quoted state, skipping');
+      console.warn('[webhook] customer_booking_deposit: request not in quoted state, skipping');
       return;
     }
 
     if (!existing.quoted_by || !existing.quote_amount) {
-      console.warn('[webhook] customer_booking_fee: quote incomplete, skipping');
+      console.warn('[webhook] customer_booking_deposit: quote incomplete, skipping');
       return;
     }
 
     const quoteAmount = normaliseQuoteAmount(existing.quote_amount);
-    const bookingFee = calculateBookingFee(quoteAmount);
-    const expectedPence = toStripePence(bookingFee);
+    const bookingDeposit = calculateBookingDeposit(quoteAmount);
+    const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
+    const expectedPence = toStripePence(bookingDeposit);
     const actualPence = typeof session.amount_total === 'number' ? session.amount_total : null;
 
     if (actualPence === null || actualPence < expectedPence) {
       const note = actualPence === null
         ? `Stripe payment requires admin review: amount_total missing for session ${session.id}.`
-        : `Stripe payment under expected booking fee: expected ${expectedPence}p, received ${actualPence}p, session ${session.id}. Customer details were not released.`;
-      console.warn('[webhook] customer_booking_fee: payment amount unsafe; booking left for admin review');
+        : `Stripe payment under expected booking deposit: expected ${expectedPence}p, received ${actualPence}p, session ${session.id}. Customer details were not released.`;
+      console.warn('[webhook] customer_booking_deposit: payment amount unsafe; booking left for admin review');
       await supabaseAdmin
         .from('move_requests')
         .update({
-          booking_fee: bookingFee,
+          booking_fee: bookingDeposit,
           booking_fee_stripe_session_id: session.id,
           admin_notes: `${existing.admin_notes ? `${existing.admin_notes}\n` : ''}${note}`,
         })
@@ -108,7 +109,7 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
     }
 
     if (actualPence > expectedPence) {
-      console.warn('[webhook] customer_booking_fee: Stripe amount higher than expected; processing with server-calculated booking fee');
+      console.warn('[webhook] customer_booking_deposit: Stripe amount higher than expected; processing with server-calculated booking deposit');
     }
 
     const now = new Date().toISOString();
@@ -117,7 +118,7 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
       .from('move_requests')
       .update({
         status: 'booked',
-        booking_fee: bookingFee,
+        booking_fee: bookingDeposit,
         booking_fee_paid: true,
         booking_fee_paid_at: now,
         booking_fee_stripe_session_id: session.id,
@@ -132,7 +133,7 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
       .single();
 
     if (updateError || !bookedRequest) {
-      console.warn('[webhook] customer_booking_fee: booking update skipped; likely duplicate or changed state');
+      console.warn('[webhook] customer_booking_deposit: booking update skipped; likely duplicate or changed state');
       return;
     }
 
@@ -164,7 +165,7 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
             <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
             <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer-Confirmed Booking</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(driverName)},</p>
-            <p style="color: #475569; font-size: 16px;">The customer has accepted your quote and paid the booking fee.</p>
+            <p style="color: #475569; font-size: 16px;">The customer accepted your quote and paid the booking deposit to secure the booking.</p>
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
               <p style="margin: 0 0 8px 0;"><strong>Customer details:</strong></p>
               <p style="margin: 0 0 8px 0;"><strong>Name:</strong> ${escapeHtml(bookedRequest.first_name || '—')}</p>
@@ -174,12 +175,14 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
               <p style="margin: 0 0 8px 0;">${escapeHtml(moveType)}</p>
               <p style="margin: 0 0 8px 0;">${escapeHtml(colPostcode)} to ${escapeHtml(delPostcode)}</p>
               <p style="margin: 0 0 20px 0;">${escapeHtml(moveDate)}</p>
-              <p style="margin: 0;"><strong>Your quote:</strong> ${formatPounds(quoteAmount)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Your total quote:</strong> ${formatPounds(quoteAmount)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Deposit paid to secure booking:</strong> ${formatPounds(bookingDeposit)}</p>
+              <p style="margin: 0;"><strong>Customer pays you on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
             </div>
             <div style="background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 16px; margin: 24px 0;">
               <strong style="color: #92400E;">Next step:</strong><span style="color: #92400E;"> Please contact the customer as soon as possible to confirm timing, access and payment method.</span>
             </div>
-            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The customer pays your quoted move price directly to you.</p>
+            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The customer has paid the booking deposit to secure your quote. This deposit is deducted from your total quote. You should collect the remaining balance directly from the customer on moving day, unless you agree another payment method with them.</p>
             <p style="color: #64748B; font-size: 14px; margin-top: 10px;">Man and Van Club<br />support@manandvanclub.co.uk</p>
           </div>
         `,
@@ -190,29 +193,30 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
         to: [bookedRequest.email],
-        subject: 'Your booking is confirmed',
+        subject: 'Your quote is secured',
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
             <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
-            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Booking Is Confirmed</h2>
+            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Quote Is Secured</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(bookedRequest.first_name || 'there')},</p>
-            <p style="color: #475569; font-size: 16px;">Your booking fee has been paid and your details have been released to the mover.</p>
+            <p style="color: #475569; font-size: 16px;">Your quote is secured and your details have been released to the mover.</p>
             <p style="color: #475569; font-size: 16px;">The mover will contact you directly to confirm timing, access and payment method.</p>
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
-              <p style="margin: 0 0 8px 0;"><strong>Mover quote:</strong> ${formatPounds(quoteAmount)}</p>
-              <p style="margin: 0 0 8px 0;"><strong>Booking fee paid:</strong> ${formatPounds(bookingFee)}</p>
-              <p style="margin: 0;"><strong>Remaining move cost:</strong> ${formatPounds(quoteAmount)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Mover total quote:</strong> ${formatPounds(quoteAmount)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Booking deposit paid:</strong> ${formatPounds(bookingDeposit)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Pay mover on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
+              <p style="margin: 0;"><strong>Total move cost:</strong> ${formatPounds(quoteAmount)}</p>
             </div>
-            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The remaining move cost is paid directly to the mover.</p>
+            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">Your booking deposit is deducted from the mover’s quote. You pay the remaining balance directly to the mover on moving day.</p>
             <p style="color: #64748B; font-size: 14px; margin-top: 10px;">Man and Van Club<br />support@manandvanclub.co.uk</p>
           </div>
         `,
       });
     }
 
-    console.log('[webhook] customer_booking_fee: processed successfully');
+    console.log('[webhook] customer_booking_deposit: processed successfully');
   } catch (err: any) {
-    console.error('[webhook] customer_booking_fee error:', err.message);
+    console.error('[webhook] customer_booking_deposit error:', err.message);
   }
 }
 

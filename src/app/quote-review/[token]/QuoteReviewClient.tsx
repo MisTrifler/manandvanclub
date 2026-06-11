@@ -55,7 +55,9 @@ export default function QuoteReviewClient({
   const [declineReason, setDeclineReason] = useState("Price too high");
   const [error, setError] = useState<string | null>(null);
 
-  const totalCustomerCost = quoteAmount + bookingFee;
+  const bookingDeposit = bookingFee;
+  const remainingMoverBalance = Math.max(0, Math.round((quoteAmount - bookingDeposit) * 100) / 100);
+  const totalCustomerCost = quoteAmount;
 
   const expiryText = useMemo(() => {
     if (!quoteExpiresAt) return "";
@@ -144,30 +146,34 @@ export default function QuoteReviewClient({
           <div className="p-5 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="bg-primary/5 rounded-2xl p-5 border border-border/50">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-1">Mover quote</p>
+                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-1">Mover total quote</p>
                 <p className="text-4xl font-black text-primary tracking-tighter">{formatPounds(quoteAmount)}</p>
-                <p className="text-xs text-text-secondary mt-2">Paid directly to the mover after booking.</p>
+                <p className="text-xs text-text-secondary mt-2">This is your total move cost.</p>
               </div>
 
               <div className="bg-accent/10 rounded-2xl p-5 border border-accent/20">
-                <p className="text-[10px] font-black uppercase tracking-widest text-accent mb-1">Booking fee</p>
-                <p className="text-4xl font-black text-primary tracking-tighter">{formatPounds(bookingFee)}</p>
-                <p className="text-xs text-text-secondary mt-2">Paid now to confirm this accepted quote.</p>
+                <p className="text-[10px] font-black uppercase tracking-widest text-accent mb-1">Booking deposit</p>
+                <p className="text-4xl font-black text-primary tracking-tighter">{formatPounds(bookingDeposit)}</p>
+                <p className="text-xs text-text-secondary mt-2">Pay today to secure this quote.</p>
               </div>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-4 border border-border/60 mb-6">
               <div className="flex items-center justify-between py-2">
-                <span className="text-sm text-text-secondary">Mover quote</span>
+                <span className="text-sm text-text-secondary">Mover total quote</span>
                 <span className="font-bold text-primary">{formatPounds(quoteAmount)}</span>
               </div>
               <div className="flex items-center justify-between py-2">
-                <span className="text-sm text-text-secondary">Booking fee paid to Man &amp; Van Club</span>
-                <span className="font-bold text-primary">{formatPounds(bookingFee)}</span>
+                <span className="text-sm text-text-secondary">Booking deposit paid today</span>
+                <span className="font-bold text-primary">{formatPounds(bookingDeposit)}</span>
               </div>
               <div className="flex items-center justify-between py-3 border-t border-dashed border-border">
-                <span className="text-sm font-black text-primary">Total customer cost</span>
-                <span className="font-black text-primary text-xl">{formatPounds(totalCustomerCost)}</span>
+                <span className="text-sm font-black text-primary">Pay mover on moving day</span>
+                <span className="font-black text-primary text-xl">{formatPounds(remainingMoverBalance)}</span>
+              </div>
+              <div className="flex items-center justify-between py-2">
+                <span className="text-sm text-text-secondary">Total move cost</span>
+                <span className="font-bold text-primary">{formatPounds(totalCustomerCost)}</span>
               </div>
             </div>
 
@@ -243,7 +249,7 @@ export default function QuoteReviewClient({
 
             <div className="bg-amber-50 border border-amber-200/50 rounded-xl p-4 mb-6">
               <p className="text-sm text-amber-800 font-medium">
-                The booking fee confirms your accepted quote and releases your contact details only to this mover. It is separate from the mover’s quote. You pay the mover’s quoted price directly to the mover.
+                Pay the booking deposit today to secure this quote and release your details to the mover. Your booking deposit is deducted from the mover’s quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.
               </p>
               <p className="text-sm text-amber-700/80 mt-2">
                 This quote is based on the move details provided. It may only change if the details were incomplete, inaccurate or later changed.
@@ -253,16 +259,16 @@ export default function QuoteReviewClient({
             <div className="bg-green-50 border border-green-100 rounded-xl p-4 mb-6">
               <p className="text-sm text-green-800 font-bold mb-2">What happens next?</p>
               <ol className="text-sm text-green-800/80 space-y-1 list-decimal pl-5">
-                <li>Pay the booking fee.</li>
+                <li>Pay the booking deposit today.</li>
                 <li>Your contact details are released only to this mover.</li>
                 <li>The mover contacts you to confirm timing, access and payment method.</li>
-                <li>You pay the mover directly for the move.</li>
+                <li>You pay the remaining balance directly to the mover on moving day.</li>
               </ol>
             </div>
 
             <div className="bg-white border border-border rounded-xl p-4 mb-6">
               <p className="text-xs text-text-secondary leading-relaxed">
-                The booking fee is refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement. It is not normally refundable if you cancel after accepting the quote, provide incorrect move details, change the job, or book another mover elsewhere. This does not affect your statutory rights.
+                The booking deposit is refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement. It is not normally refundable if you cancel after accepting the quote, provide incorrect move details, change the job, or book another mover elsewhere. This does not affect your statutory rights.
               </p>
             </div>
 
@@ -276,7 +282,7 @@ export default function QuoteReviewClient({
                 disabled={loading || declining}
                 className="btn-orange w-full py-4 rounded-xl flex items-center justify-center gap-2 font-black uppercase tracking-widest text-sm disabled:opacity-50"
               >
-                {loading ? <Loader2 className="animate-spin" size={18} /> : <>Accept quote and pay booking fee <ArrowRight size={16} /></>}
+                {loading ? <Loader2 className="animate-spin" size={18} /> : <>Pay deposit and secure quote <ArrowRight size={16} /></>}
               </button>
 
               {!showDeclineReasons ? (

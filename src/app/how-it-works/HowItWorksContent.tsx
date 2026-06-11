@@ -23,12 +23,12 @@ export default function HowItWorksContent() {
     },
     {
       title: "Accept or Decline Securely",
-      desc: "You receive a secure quote review link. Your contact details are not released unless you accept the quote and pay the booking fee.",
+      desc: "You receive a secure quote review link. Your contact details are not released unless you accept the quote and pay the booking deposit. The deposit is deducted from the mover quote.",
       icon: <CreditCard className="w-8 h-8" />,
     },
     {
       title: "Mover Contacts You Directly",
-      desc: "After the booking fee is paid, your details are released only to that mover. You pay the mover’s quoted price directly to the mover.",
+      desc: "After the booking deposit is paid, your details are released only to that mover. You pay the remaining balance directly to the mover on moving day.",
       icon: <Truck className="w-8 h-8" />,
     },
   ];
@@ -90,8 +90,8 @@ export default function HowItWorksContent() {
               "See anonymised local requests",
               "Submit a mover quote for free",
               "Customer accepts or declines",
-              "Details released after booking fee is paid",
-              "Customer pays you directly for the move",
+              "Details released after deposit is paid",
+              "Customer pays you the remaining balance",
             ].map((item, index) => (
               <div key={item} className="bg-white border border-border rounded-2xl p-5 text-center">
                 <div className="w-8 h-8 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-3 text-xs font-black">{index + 1}</div>

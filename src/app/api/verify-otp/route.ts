@@ -245,7 +245,7 @@ export async function POST(req: Request) {
                         <p><strong>Date:</strong> ${moveRequest.move_date}</p>
                         <p><strong>Type:</strong> ${moveRequest.move_type}</p>
                       </div>
-                      <p>A verified mover can submit a free quote for this request. Customer details are only released after the customer accepts a quote and pays the booking fee.</p>
+                      <p>A verified mover can submit a free quote for this request. Customer details are only released after the customer accepts a quote and pays the booking deposit.</p>
                       <a href="https://www.manandvanclub.co.uk/marketplace"
                          style="display: block; background: #F97316; color: white; padding: 15px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px;">
                         View Request in Marketplace

@@ -3,7 +3,7 @@ import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { cookies } from "next/headers";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { resend } from "@/lib/resend";
-import { calculateBookingFee, formatPounds, normaliseQuoteAmount } from "@/lib/booking-fee";
+import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds, normaliseQuoteAmount } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
 import { escapeHtml, escapeHtmlWithLineBreaks } from "@/lib/html";
 import {
@@ -95,7 +95,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "This request is not available for quoting." }, { status: 409 });
     }
 
-    const bookingFee = calculateBookingFee(quoteAmount);
+    const bookingDeposit = calculateBookingDeposit(quoteAmount);
+    const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
     const quoteToken = await generateUniqueCustomerQuoteToken(supabaseAdmin);
     const now = new Date();
     const quotedAt = now.toISOString();
@@ -109,7 +110,7 @@ export async function POST(req: Request) {
         quoted_by: driverEmail,
         quoted_at: quotedAt,
         quote_expires_at: quoteExpiresAt,
-        booking_fee: bookingFee,
+        booking_fee: bookingDeposit,
         customer_quote_token: quoteToken,
         customer_quote_token_created_at: quotedAt,
         booking_fee_paid: false,
@@ -162,8 +163,10 @@ export async function POST(req: Request) {
                   <p style="margin:0 0 24px;color:#475569;font-size:18px;line-height:1.6;">Hi ${escapeHtml(updatedLead.first_name || "there")},</p>
                   <p style="margin:0 0 24px;color:#475569;font-size:16px;line-height:1.6;">A vetted local mover has reviewed your request and provided a quote.</p>
                   <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:24px;margin-bottom:32px;text-align:left;">
-                    <p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Mover quote</p>
-                    <p style="margin:0 0 24px;color:#0F172A;font-size:32px;font-weight:900;">${formatPounds(quoteAmount)}</p>
+                    <p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Mover total quote</p>
+                    <p style="margin:0 0 16px;color:#0F172A;font-size:32px;font-weight:900;">${formatPounds(quoteAmount)}</p>
+                    <p style="margin:0 0 8px;color:#475569;font-size:15px;line-height:1.6;"><strong>Booking deposit to secure quote:</strong> ${formatPounds(bookingDeposit)}</p>
+                    <p style="margin:0 0 24px;color:#475569;font-size:15px;line-height:1.6;"><strong>Pay mover on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
                     ${messageHtml}
                     <p style="margin:0 0 12px;color:#0F172A;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Move details</p>
                     <p style="margin:0 0 8px;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveType)}</p>
@@ -171,9 +174,9 @@ export async function POST(req: Request) {
                     <p style="margin:0;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveDate || "—")}</p>
                   </div>
                   <div style="background:#F0FDF4;border-left:4px solid #22C55E;padding:16px;margin-bottom:32px;text-align:left;">
-                    <p style="margin:0;color:#166534;font-size:15px;line-height:1.6;"><strong>Booking fee:</strong> ${formatPounds(bookingFee)}</p>
-                    <p style="margin:8px 0 0;color:#166534;font-size:14px;line-height:1.6;">To accept this quote and release your details to the mover, pay the booking fee.</p>
-                    <p style="margin:8px 0 0;color:#166534;font-size:14px;line-height:1.6;">The booking fee is separate from the mover’s quote. You pay the mover’s quoted price directly to the mover.</p>
+                    <p style="margin:0;color:#166534;font-size:15px;line-height:1.6;"><strong>Booking deposit:</strong> ${formatPounds(bookingDeposit)}</p>
+                    <p style="margin:8px 0 0;color:#166534;font-size:14px;line-height:1.6;">Pay the booking deposit today to secure this quote and release your details to the mover.</p>
+                    <p style="margin:8px 0 0;color:#166534;font-size:14px;line-height:1.6;">Your booking deposit is deducted from the mover’s quote, so your total move cost stays at ${formatPounds(quoteAmount)}. You pay the remaining balance directly to the mover on moving day.</p>
                   </div>
                   <p style="margin:0 0 24px;color:#64748B;font-size:14px;line-height:1.6;">This quote is based on the details provided. It may only change if the move details were incomplete, inaccurate or later changed.</p>
                   <a href="${reviewUrl}" style="display:inline-block;background:#F97316;color:#fff;padding:16px 32px;text-align:center;text-decoration:none;font-weight:900;border-radius:12px;font-size:16px;">Review Your Quote</a>
@@ -191,7 +194,7 @@ export async function POST(req: Request) {
       }
     }
 
-    return NextResponse.json({ success: true, bookingFee, quoteExpiresAt });
+    return NextResponse.json({ success: true, bookingDeposit, remainingMoverBalance, quoteExpiresAt });
   } catch (error: any) {
     console.error("[submit-quote] Server error:", error?.message || "Unknown error");
     return NextResponse.json({ error: error?.message || "Server error" }, { status: 500 });

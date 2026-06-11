@@ -12,7 +12,7 @@ export default function QuoteCancelledPage({
       <div className="max-w-md text-center space-y-6">
         <h1 className="text-3xl font-black text-primary tracking-tighter">Payment Not Completed</h1>
         <p className="text-text-secondary leading-relaxed">
-          Your booking fee payment was not completed. Your details have not been released to the mover. If you change your mind, you can return to the quote review page and try again.
+          Your booking deposit payment was not completed. Your details have not been released to the mover. If you change your mind, you can return to the quote review page and try again.
         </p>
         <div className="flex flex-col gap-3">
           {searchParams?.token && (

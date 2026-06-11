@@ -7,7 +7,7 @@ export default function PaymentCancel() {
           Your payment was not completed and you have not been charged.
         </p>
         <p className="text-sm text-text-secondary/70">
-          Customers pay a booking fee only after accepting a mover quote. Movers submit quotes for free.
+          Customers pay a booking deposit only after accepting a mover quote. The deposit is deducted from the mover quote. Movers submit quotes for free.
         </p>
         <a href="/marketplace" className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm">
           Back to Marketplace

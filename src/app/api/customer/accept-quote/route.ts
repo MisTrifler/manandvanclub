@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
-import { calculateBookingFee, normaliseQuoteAmount, toStripePence } from "@/lib/booking-fee";
+import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence } from "@/lib/booking-fee";
 
 function isExpired(expiresAt?: string | null) {
   if (!expiresAt) return false;
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     }
 
     if (lead.booking_fee_paid === true) {
-      return NextResponse.json({ error: "Booking fee has already been paid" }, { status: 409 });
+      return NextResponse.json({ error: "Booking deposit has already been paid" }, { status: 409 });
     }
 
     if (isExpired(lead.quote_expires_at)) {
@@ -53,7 +53,8 @@ export async function POST(req: Request) {
     }
 
     const quoteAmount = normaliseQuoteAmount(lead.quote_amount);
-    const bookingFee = calculateBookingFee(quoteAmount);
+    const bookingDeposit = calculateBookingDeposit(quoteAmount);
+    const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
     const siteUrl = process.env.NEXT_PUBLIC_URL || "https://www.manandvanclub.co.uk";
 
     const session = await stripe.checkout.sessions.create({
@@ -63,11 +64,11 @@ export async function POST(req: Request) {
           price_data: {
             currency: "gbp",
             product_data: {
-              name: "Booking Fee",
+              name: "Booking Deposit",
               description:
-                "Accept your mover quote and release your details to the mover. The remaining move cost is paid directly to the mover.",
+                "Secure your accepted mover quote. This deposit is deducted from the mover’s total quote, and you pay the remaining balance directly to the mover on moving day.",
             },
-            unit_amount: toStripePence(bookingFee),
+            unit_amount: toStripePence(bookingDeposit),
           },
           quantity: 1,
         },
@@ -77,10 +78,12 @@ export async function POST(req: Request) {
       cancel_url: `${siteUrl}/quote-review/${token}`,
       customer_email: lead.email || undefined,
       metadata: {
-        paymentType: "customer_booking_fee",
+        paymentType: "customer_booking_deposit",
         requestId: lead.id,
         quoteAmount: quoteAmount.toString(),
-        bookingFee: bookingFee.toString(),
+        bookingDeposit: bookingDeposit.toString(),
+        bookingFee: bookingDeposit.toString(), // legacy compatibility
+        remainingMoverBalance: remainingMoverBalance.toString(),
         quotedBy: lead.quoted_by || "",
         customerEmail: lead.email || "",
       },
@@ -89,7 +92,7 @@ export async function POST(req: Request) {
     await supabaseAdmin
       .from("move_requests")
       .update({
-        booking_fee: bookingFee,
+        booking_fee: bookingDeposit,
         booking_fee_stripe_session_id: session.id,
       })
       .eq("id", lead.id)

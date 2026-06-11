@@ -6,7 +6,7 @@ import {
   formatDisplayDate,
   formatMoveType,
 } from "@/lib/formatting";
-import { calculateBookingFee, normaliseQuoteAmount, formatPounds } from "@/lib/booking-fee";
+import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, formatPounds } from "@/lib/booking-fee";
 import {
   CheckCircle2,
   MapPin,
@@ -40,7 +40,7 @@ export default async function BookingConfirmedPage({
 
   const metadata = stripeSession.metadata || {};
 
-  if (metadata.paymentType !== "customer_booking_fee") {
+  if ((metadata.paymentType !== "customer_booking_deposit" && metadata.paymentType !== "customer_booking_fee")) {
     notFound();
   }
 
@@ -79,7 +79,8 @@ export default async function BookingConfirmedPage({
   const delPostcode = formatUKPostcode(lead.delivery_postcode);
   const moveDate = formatDisplayDate(lead.move_date);
   const quoteAmount = normaliseQuoteAmount(lead.quote_amount || 0);
-  const bookingFee = lead.booking_fee ? Number(lead.booking_fee) : calculateBookingFee(quoteAmount);
+  const bookingDeposit = lead.booking_fee ? Number(lead.booking_fee) : calculateBookingDeposit(quoteAmount);
+  const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] p-6 md:p-8">
@@ -88,9 +89,9 @@ export default async function BookingConfirmedPage({
           <div className="text-success text-5xl mb-4">
             <CheckCircle2 size={48} className="mx-auto text-green-600" />
           </div>
-          <h1 className="text-3xl font-black text-primary tracking-tighter mb-2">Booking Confirmed</h1>
+          <h1 className="text-3xl font-black text-primary tracking-tighter mb-2">Quote Secured</h1>
           <p className="text-text-secondary">
-            Your booking fee has been paid and your details have been released to the mover.
+            Your quote is secured and your details have been released to the mover.
           </p>
           <p className="text-text-secondary mt-2">
             The mover will contact you directly to confirm timing, access and payment method.
@@ -130,21 +131,25 @@ export default async function BookingConfirmedPage({
 
             <div className="border-t border-border pt-6 space-y-4">
               <div className="flex items-center justify-between py-2">
-                <span className="text-sm text-text-secondary">Mover quote</span>
+                <span className="text-sm text-text-secondary">Mover total quote</span>
                 <span className="font-bold text-primary">{formatPounds(quoteAmount)}</span>
               </div>
               <div className="flex items-center justify-between py-2">
-                <span className="text-sm text-text-secondary">Booking fee paid</span>
-                <span className="font-bold text-primary">{formatPounds(bookingFee)}</span>
+                <span className="text-sm text-text-secondary">Booking deposit paid</span>
+                <span className="font-bold text-primary">{formatPounds(bookingDeposit)}</span>
               </div>
               <div className="flex items-center justify-between py-3 border-t border-dashed border-border">
-                <span className="text-sm font-bold text-primary">Remaining move cost</span>
-                <span className="font-black text-primary text-xl">{formatPounds(quoteAmount)}</span>
+                <span className="text-sm font-bold text-primary">Pay mover on moving day</span>
+                <span className="font-black text-primary text-xl">{formatPounds(remainingMoverBalance)}</span>
+              </div>
+              <div className="flex items-center justify-between py-2">
+                <span className="text-sm text-text-secondary">Total move cost</span>
+                <span className="font-bold text-primary">{formatPounds(quoteAmount)}</span>
               </div>
             </div>
 
             <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 mt-6">
-              <p className="text-sm text-amber-800 font-medium"><strong>Reminder:</strong> The remaining move cost is paid directly to the mover.</p>
+              <p className="text-sm text-amber-800 font-medium"><strong>Reminder:</strong> Your booking deposit is deducted from the mover’s quote. You pay the remaining balance directly to the mover on moving day.</p>
             </div>
           </div>
 

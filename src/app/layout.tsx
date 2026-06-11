@@ -28,7 +28,7 @@ const organizationSchema = {
   "name": "Man and Van Club",
   "url": "https://www.manandvanclub.co.uk",
   "logo": "https://www.manandvanclub.co.uk/icon.png",
-  "description": "A marketplace connecting customers with verified independent local movers across the UK through a customer-confirmed booking fee process.",
+  "description": "A marketplace connecting customers with verified independent local movers across the UK through a customer-confirmed booking deposit process.",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+44-7943-617-386",
