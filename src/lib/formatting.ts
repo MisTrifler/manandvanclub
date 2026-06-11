@@ -87,6 +87,8 @@ export interface MoveDetails {
   storageUnitSize?: string;
   storageItems?: string;
   packingRequired?: string;
+  accessNotes?: string;
+  notes?: string;
 }
 
 export function getMoveSummary(moveType?: string, details?: MoveDetails | null): string {
@@ -140,6 +142,12 @@ export function getAccessNote(details?: MoveDetails | null): string {
   }
   if (details.packingRequired) {
     notes.push(details.packingRequired === "yes" ? "Packing required" : "");
+  }
+  if (details.accessNotes) {
+    notes.push(details.accessNotes);
+  }
+  if (details.notes) {
+    notes.push(details.notes);
   }
 
   return notes.filter(Boolean).join(" • ");

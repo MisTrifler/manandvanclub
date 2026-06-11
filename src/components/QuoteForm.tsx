@@ -23,36 +23,30 @@ const formSchema = z.object({
   firstName: z.string().min(2, "Required").optional(),
   phone: z.string().regex(/^(?:0|(?:\+44))7\d{9}$/, "Invalid UK mobile number").optional(),
   email: z.string().email("Invalid email").optional(),
-  // Office-specific
-  businessName: z.string().optional(),
-  officeSize: z.string().optional(),
+  // Office-specific (officeSize required for office intent, enforced via trigger)
+  officeSize: z.string().min(1, "Please select office size"),
   numberOfDesks: z.string().optional(),
-  itEquipment: z.string().optional(),
-  filingCabinets: z.string().optional(),
-  meetingRoomFurniture: z.string().optional(),
-  officeLiftAccess: z.string().optional(),
-  // House-specific
-  bedrooms: z.string().optional(),
-  propertyType: z.string().optional(),
-  packingRequired: z.string().optional(),
-  floorLevel: z.string().optional(),
-  houseLiftAccess: z.string().optional(),
+  // House-specific (required for house intent, enforced via trigger)
+  bedrooms: z.string().min(1, "Please select bedrooms"),
+  propertyType: z.string().min(1, "Please select property type"),
+  accessNotes: z.string().optional(),
   // Student-specific
-  university: z.string().optional(),
-  accommodationType: z.string().optional(),
+  accommodationArea: z.string().optional(),
   numberOfBoxes: z.string().optional(),
   suitcases: z.string().optional(),
   smallFurnitureItems: z.string().optional(),
-  // Single-item-specific
-  itemType: z.string().optional(),
+  // Single-item-specific (required for single-item intent, enforced via trigger)
+  itemType: z.string().min(1, "Please select an item"),
   // General
   numberOfItems: z.string().optional(),
   additionalHelpers: z.string().optional(),
-  // Storage-specific
+  // Storage-specific (size + direction required for storage intent, via trigger)
   storageFacility: z.string().optional(),
-  storageUnitSize: z.string().optional(),
+  storageUnitSize: z.string().min(1, "Please select a rough amount"),
   storageItems: z.string().optional(),
-  storageDirection: z.string().optional(),
+  storageDirection: z.string().min(1, "Please select a direction"),
+  // Shared optional notes
+  notes: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -101,10 +95,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       moveDate: "",
       collectionPostcode: "",
       deliveryPostcode: "",
-      packingRequired: "no",
-      houseLiftAccess: "no",
-      officeLiftAccess: "yes",
-      additionalHelpers: "no",
+      additionalHelpers: "",
       storageDirection: "",
     }
   });
@@ -138,6 +129,31 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       const result = map[data.bedrooms] || base[activeIntent];
       return { min: result[0], max: result[1] };
     }
+
+    // Office: adjust based on office size
+    if (activeIntent === "office" && data.officeSize) {
+      const map: Record<string, [number, number]> = {
+        "Small office": [200, 450],
+        "Medium office": [400, 900],
+        "Large office": [800, 1800],
+        "Warehouse / Industrial": [600, 1500],
+      };
+      const result = map[data.officeSize] || base[activeIntent];
+      return { min: result[0], max: result[1] };
+    }
+
+    // Storage: adjust based on rough amount
+    if (activeIntent === "storage" && data.storageUnitSize) {
+      const map: Record<string, [number, number]> = {
+        "Few items": [60, 150],
+        "Half van": [120, 250],
+        "Full van": [200, 400],
+        "Unsure": [120, 350],
+      };
+      const result = map[data.storageUnitSize] || base[activeIntent];
+      return { min: result[0], max: result[1] };
+    }
+
     const result = base[activeIntent || "general"];
     return { min: result[0], max: result[1] };
   };
@@ -150,15 +166,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       fields = ["collectionPostcode", "deliveryPostcode", "moveDate", "moveType"];
       // Intent-specific required fields
       if (activeIntent === "office") {
-        fields.push("businessName", "officeSize");
+        fields.push("officeSize");
       } else if (activeIntent === "house") {
         fields.push("bedrooms", "propertyType");
-      } else if (activeIntent === "student") {
-        fields.push("university", "accommodationType");
       } else if (activeIntent === "single-item") {
         fields.push("itemType");
       } else if (activeIntent === "storage") {
-        fields.push("storageFacility", "storageUnitSize", "storageDirection");
+        fields.push("storageUnitSize", "storageDirection");
       }
     } else if (step === 2 && hasEstimate) {
       // Estimate step — auto-calculated, no validation needed
@@ -208,39 +222,31 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       // Capture the originating page URL for conversion attribution
       const sourcePage = typeof window !== "undefined" ? window.location.pathname : "";
 
-      // Build details object for service-specific fields
+      // Build details object for service-specific fields (empty optionals omitted)
       const details: Record<string, any> = {};
       if (activeIntent === "office") {
-        details.businessName = data.businessName;
         details.officeSize = data.officeSize;
-        details.numberOfDesks = data.numberOfDesks;
-        details.itEquipment = data.itEquipment;
-        details.filingCabinets = data.filingCabinets;
-        details.meetingRoomFurniture = data.meetingRoomFurniture;
-        details.liftAccess = data.officeLiftAccess;
+        if (data.numberOfDesks) details.numberOfDesks = data.numberOfDesks;
       } else if (activeIntent === "house") {
         details.bedrooms = data.bedrooms;
         details.propertyType = data.propertyType;
-        details.packingRequired = data.packingRequired;
-        details.floorLevel = data.floorLevel;
-        details.liftAccess = data.houseLiftAccess;
+        if (data.accessNotes) details.accessNotes = data.accessNotes;
       } else if (activeIntent === "student") {
-        details.university = data.university;
-        details.accommodationType = data.accommodationType;
-        details.numberOfBoxes = data.numberOfBoxes;
-        details.suitcases = data.suitcases;
-        details.smallFurnitureItems = data.smallFurnitureItems;
+        if (data.accommodationArea) details.accommodationType = data.accommodationArea;
+        if (data.numberOfBoxes) details.numberOfBoxes = data.numberOfBoxes;
+        if (data.suitcases) details.suitcases = data.suitcases;
+        if (data.smallFurnitureItems) details.smallFurnitureItems = data.smallFurnitureItems;
       } else if (activeIntent === "single-item") {
         details.itemType = data.itemType;
       } else if (activeIntent === "general") {
-        details.numberOfItems = data.numberOfItems;
-        details.additionalHelpers = data.additionalHelpers;
+        if (data.numberOfItems) details.numberOfItems = data.numberOfItems;
+        if (data.additionalHelpers) details.additionalHelpers = data.additionalHelpers;
       } else if (activeIntent === "storage") {
-        details.storageFacility = data.storageFacility;
+        if (data.storageFacility) details.storageFacility = data.storageFacility;
         details.storageUnitSize = data.storageUnitSize;
-        details.storageItems = data.storageItems;
         details.storageDirection = data.storageDirection;
       }
+      if (data.notes) details.notes = data.notes;
 
       const estimatePrice = estimate
         ? `£${estimate.min}–£${estimate.max}`
@@ -388,9 +394,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {activeIntent === "storage" && "Your Storage Collection"}
                 </h2>
                 <p className="text-sm text-text-secondary mt-1 font-medium">
-                  {activeIntent === "office" && "Tell us about your business relocation"}
+                  {activeIntent === "office" && "Tell us about your office move"}
                   {activeIntent === "house" && "Tell us about your home move"}
-                  {activeIntent === "student" && "Tell us about your university move"}
+                  {activeIntent === "student" && "Tell us about your student move"}
                   {activeIntent === "single-item" && "Tell us about the furniture you need delivered"}
                   {activeIntent === "general" && "Tell us about your move — big or small"}
                   {activeIntent === "storage" && "Tell us about your storage collection"}
@@ -410,8 +416,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             <div className="flex flex-wrap gap-2">
               {[
                 { icon: <Clock size={13} />, text: "Under 60 seconds" },
-                { icon: <BadgeCheck size={13} />, text: "Free to submit" },
-                { icon: <Shield size={13} />, text: "No obligation" },
+                { icon: <BadgeCheck size={13} />, text: "Free quote" },
+                { icon: <Shield size={13} />, text: "Deposit if you book" },
                 { icon: <Lock size={13} />, text: "GDPR secure" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-1.5 bg-accent/5 text-accent px-2.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider">
@@ -424,58 +430,19 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "office" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Business Name</label>
-                  <input {...register("businessName")} placeholder="Your company name" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  {errors.businessName && <p className="text-red-500 text-xs font-bold mt-1">{errors.businessName.message}</p>}
-                </div>
-                <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Office Size</label>
                   <select {...register("officeSize")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
                     <option value="">Select office size</option>
-                    <option value="Small (1–10 staff)">Small (1–10 staff)</option>
-                    <option value="Medium (11–50 staff)">Medium (11–50 staff)</option>
-                    <option value="Large (50+ staff)">Large (50+ staff)</option>
-                    <option value="Warehouse / Industrial">Warehouse / Industrial</option>
+                    <option value="Small office">Small office</option>
+                    <option value="Medium office">Medium office</option>
+                    <option value="Large office">Large office</option>
+                    <option value="Warehouse / Industrial">Warehouse / industrial</option>
                   </select>
                   {errors.officeSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.officeSize.message}</p>}
                 </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Desks</label>
-                    <input {...register("numberOfDesks")} type="number" placeholder="Approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Filing Cabinets</label>
-                    <input {...register("filingCabinets")} type="number" placeholder="Number" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  </div>
-                </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">IT Equipment to Move</label>
-                  <select {...register("itEquipment")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select option</option>
-                    <option value="Desktops only">Desktops only</option>
-                    <option value="Desktops + Monitors">Desktops + Monitors</option>
-                    <option value="Servers / Network equipment">Servers / Network equipment</option>
-                    <option value="Minimal IT">Minimal IT</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Meeting Room Furniture</label>
-                  <select {...register("meetingRoomFurniture")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select option</option>
-                    <option value="None">None</option>
-                    <option value="1–2 tables & chairs">1–2 tables & chairs</option>
-                    <option value="3+ tables & chairs">3+ tables & chairs</option>
-                    <option value="Full boardroom">Full boardroom</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Lift Access</label>
-                  <select {...register("officeLiftAccess")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="yes">Yes — lift available</option>
-                    <option value="no">No — stairs only</option>
-                    <option value="ground">Ground floor only</option>
-                  </select>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Approx Desks / Items (Optional)</label>
+                  <input {...register("numberOfDesks")} type="number" placeholder="Optional, approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
@@ -525,32 +492,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   </div>
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Packing Required?</label>
-                  <select {...register("packingRequired")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="no">No — I'll pack everything</option>
-                    <option value="yes">Yes — I need packing help</option>
-                    <option value="partial">Partial — some items only</option>
-                  </select>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Floor Level</label>
-                    <select {...register("floorLevel")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="Ground">Ground</option>
-                      <option value="1st">1st Floor</option>
-                      <option value="2nd">2nd Floor</option>
-                      <option value="3rd+">3rd+ Floor</option>
-                      <option value="Basement">Basement</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Lift Access?</label>
-                    <select {...register("houseLiftAccess")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="no">No — stairs only</option>
-                      <option value="yes">Yes — lift available</option>
-                      <option value="ground">Ground floor</option>
-                    </select>
-                  </div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Access Notes (Optional)</label>
+                  <input {...register("accessNotes")} placeholder="Optional, e.g. stairs, lift, parking, narrow entrance" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
@@ -574,20 +517,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "student" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Which University?</label>
-                  <input {...register("university")} placeholder="e.g. University of Birmingham" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  {errors.university && <p className="text-red-500 text-xs font-bold mt-1">{errors.university.message}</p>}
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Where Are You Staying?</label>
-                  <select {...register("accommodationType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select</option>
-                    <option value="University Halls">University Halls</option>
-                    <option value="Shared House">Shared House</option>
-                    <option value="Private Studio">Private Studio</option>
-                    <option value="Private Flat">Private Flat</option>
-                  </select>
-                  {errors.accommodationType && <p className="text-red-500 text-xs font-bold mt-1">{errors.accommodationType.message}</p>}
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Student Accommodation or Area (Optional)</label>
+                  <input {...register("accommodationArea")} placeholder="Optional, e.g. halls, shared house, Selly Oak" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <div>
@@ -688,8 +619,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Additional Helpers Required?</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Extra Help Needed? (Optional)</label>
                   <select {...register("additionalHelpers")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Optional — the mover can advise</option>
                     <option value="no">No — driver only</option>
                     <option value="yes">Yes — need extra helper</option>
                     <option value="unsure">Unsure — advise me</option>
@@ -712,24 +644,19 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {errors.storageDirection && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageDirection.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Facility Name</label>
-                  <input {...register("storageFacility")} placeholder="e.g. Big Yellow Storage" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  {errors.storageFacility && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageFacility.message}</p>}
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Unit Size</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Rough Amount</label>
                   <select {...register("storageUnitSize")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select unit size</option>
-                    <option value="Small (locker to 25 sq ft)">Small (locker to 25 sq ft)</option>
-                    <option value="Medium (50–100 sq ft)">Medium (50–100 sq ft)</option>
-                    <option value="Large (150+ sq ft)">Large (150+ sq ft)</option>
-                    <option value="Unsure">Unsure — need help estimating</option>
+                    <option value="">Select rough amount</option>
+                    <option value="Few items">Few items</option>
+                    <option value="Half van">Half van</option>
+                    <option value="Full van">Full van</option>
+                    <option value="Unsure">Unsure</option>
                   </select>
                   {errors.storageUnitSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageUnitSize.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Items to Collect</label>
-                  <textarea {...register("storageItems")} placeholder="Brief description of items in storage (e.g. furniture, boxes, appliances)" rows={3} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none resize-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Facility / Notes (Optional)</label>
+                  <input {...register("storageFacility")} placeholder="Optional, e.g. Big Yellow Storage" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
@@ -748,6 +675,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
               </div>
             )}
+
+            {/* Shared optional notes — all move types */}
+            <div>
+              <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Anything Else the Mover Should Know? (Optional)</label>
+              <input {...register("notes")} placeholder="Optional, e.g. stairs, parking, fragile items, narrow access" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+            </div>
 
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
           </div>
