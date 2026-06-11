@@ -71,11 +71,25 @@ export async function POST(req: Request) {
       );
     }
 
+    // Exclusive quoting: another mover's quote blocks this one
+    if (
+      lead.status === "quoted" &&
+      lead.quoted_by &&
+      lead.quoted_by.toLowerCase() !== driverEmail.toLowerCase()
+    ) {
+      return NextResponse.json(
+        { error: "Another mover has already submitted a quote for this request" },
+        { status: 409 }
+      );
+    }
+
     // 6. Calculate booking fee server-side
     const bookingFee = calculateBookingFee(quoteAmount);
 
-    // 7. Save quote
-    const { error: updateError } = await supabaseAdmin
+    // 7. Save quote with an optimistic lock:
+    //    - never overwrite booked / locked / declined requests
+    //    - never overwrite another mover's quote (same mover may re-send)
+    const { data: updatedRows, error: updateError } = await supabaseAdmin
       .from("move_requests")
       .update({
         quote_amount: quoteAmount,
@@ -86,33 +100,23 @@ export async function POST(req: Request) {
         status: "quoted",
       })
       .eq("id", requestId)
-      .eq("status", "active") // optimistic lock: only update if still active
-      .or("status.eq.verified,status.eq.pending,status.is.null"); // also accept active/verified/null for safety
+      .not("status", "in", "(booked,locked,declined)")
+      .or(`status.is.null,status.neq.quoted,quoted_by.eq."${driverEmail.replace(/"/g, "")}"`)
+      .select("id");
 
-    // Handle optimistic-lock failure
     if (updateError) {
       console.error("[submit-quote] Update error:", updateError);
-      // Try again without strict status filter in case status was already changed
-      const { error: retryError } = await supabaseAdmin
-        .from("move_requests")
-        .update({
-          quote_amount: quoteAmount,
-          quote_message: quoteMessage || null,
-          quoted_by: driverEmail,
-          quoted_at: new Date().toISOString(),
-          booking_fee: bookingFee,
-          status: "quoted",
-        })
-        .eq("id", requestId)
-        .not("status", "in", "(booked,locked,declined)");
+      return NextResponse.json(
+        { error: "Failed to submit quote. Please try again." },
+        { status: 500 }
+      );
+    }
 
-      if (retryError) {
-        console.error("[submit-quote] Retry update error:", retryError);
-        return NextResponse.json(
-          { error: "Failed to submit quote. Request may have been updated by another mover." },
-          { status: 409 }
-        );
-      }
+    if (!updatedRows || updatedRows.length === 0) {
+      return NextResponse.json(
+        { error: "This request is no longer available. It may have been taken by another mover." },
+        { status: 409 }
+      );
     }
 
     // 8. Send quote email to customer

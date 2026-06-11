@@ -1,8 +1,16 @@
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 import { resend } from '@/lib/resend';
+import { ADMIN_COOKIE_NAME, isValidAdminSession } from '@/lib/admin-auth';
 
 export async function POST(req: Request) {
   try {
+    // Admin-only: this endpoint sends branded outbound emails and must not be public
+    const token = cookies().get(ADMIN_COOKIE_NAME)?.value;
+    if (!isValidAdminSession(token)) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { email, businessName, contactName } = await req.json();
 
     if (!email || !email.includes('@')) {

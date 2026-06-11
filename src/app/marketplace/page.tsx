@@ -47,11 +47,28 @@ export default async function MarketplacePage() {
     .not("status", "eq", "declined")
     .order("created_at", { ascending: false });
 
+  // Privacy: customer contact details are only released to the mover whose
+  // quote was accepted AND after the booking fee has been paid. Strip PII
+  // from everything else before it leaves the server.
+  const sanitizedLeads = (leads || []).map((lead) => {
+    const isReleasedToThisDriver =
+      lead.status === "booked" &&
+      lead.booking_fee_paid &&
+      lead.quoted_by?.toLowerCase() === driverEmail.toLowerCase();
+
+    if (isReleasedToThisDriver) {
+      return lead;
+    }
+
+    const { first_name, email, phone, ...safe } = lead;
+    return { ...safe, first_name: undefined, email: undefined, phone: undefined };
+  });
+
   return (
     <DriverMarketplaceClient
       userEmail={driverEmail}
       driverName={driver.contact_name || driver.email}
-      leads={leads || []}
+      leads={sanitizedLeads}
     />
   );
 }
