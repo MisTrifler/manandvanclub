@@ -200,12 +200,12 @@ export default function QuoteReviewClient({
                     >
                       {loadingOptionId === option.id ? <Loader2 className="animate-spin" size={18} /> : <>Accept this option <ArrowRight size={16} /></>}
                     </button>
+
+                    <p className="text-[11px] text-text-secondary/70 mt-3 leading-relaxed">{STANDARD_QUOTE_ASSUMPTION}</p>
                   </div>
                 </div>
               ))}
             </div>
-
-            <p className="text-xs text-text-secondary/80 mb-6">{STANDARD_QUOTE_ASSUMPTION}</p>
 
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
