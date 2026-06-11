@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
+import { stripe } from "@/lib/stripe";
 import {
   formatUKPostcode,
   formatDisplayDate,
@@ -22,7 +23,7 @@ export const dynamic = "force-dynamic";
 export default async function SuccessPage({
   searchParams,
 }: {
-  searchParams?: { requestId?: string };
+  searchParams?: { session_id?: string; requestId?: string };
 }) {
   const cookieStore = cookies();
   const token = cookieStore.get(DRIVER_COOKIE_NAME)?.value;
@@ -45,9 +46,11 @@ export default async function SuccessPage({
     redirect("/login");
   }
 
-  const requestId = searchParams?.requestId;
+  const sessionId = searchParams?.session_id;
+  const fallbackRequestId = searchParams?.requestId;
 
-  if (!requestId) {
+  // If no Stripe session_id is present, show generic success (details sent to email)
+  if (!sessionId) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
         <div className="max-w-md text-center space-y-6">
@@ -55,6 +58,95 @@ export default async function SuccessPage({
           <h1 className="text-3xl font-black text-primary">Payment Successful</h1>
           <p className="text-text-secondary">
             Your payment was successful. The customer’s contact details have been sent to your email.
+          </p>
+          <a
+            href="/marketplace"
+            className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm"
+          >
+            Back to Marketplace
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  // Retrieve the Stripe session server-side to verify payment and ownership
+  let stripeSession;
+  try {
+    stripeSession = await stripe.checkout.sessions.retrieve(sessionId);
+  } catch (err) {
+    console.error("Failed to retrieve Stripe session:", err);
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
+        <div className="max-w-md text-center space-y-6">
+          <h1 className="text-3xl font-black text-primary">Unable to Confirm Payment</h1>
+          <p className="text-text-secondary">
+            We could not verify your payment session. Please check your email or contact support.
+          </p>
+          <a
+            href="/marketplace"
+            className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm"
+          >
+            Back to Marketplace
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  if (stripeSession.payment_status !== "paid") {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
+        <div className="max-w-md text-center space-y-6">
+          <h1 className="text-3xl font-black text-primary">Payment Not Completed</h1>
+          <p className="text-text-secondary">
+            This payment session has not been completed. If you were charged, please contact support.
+          </p>
+          <a
+            href="/marketplace"
+            className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm"
+          >
+            Back to Marketplace
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  const metadata = stripeSession.metadata || {};
+  const requestId = metadata.requestId || fallbackRequestId;
+  const metadataDriverEmail = metadata.driverEmail;
+
+  if (!requestId) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
+        <div className="max-w-md text-center space-y-6">
+          <h1 className="text-3xl font-black text-primary">Payment Successful</h1>
+          <p className="text-text-secondary">
+            Your payment was successful. The customer details have been sent to your email.
+          </p>
+          <a
+            href="/marketplace"
+            className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm"
+          >
+            Back to Marketplace
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  // Verify the logged-in driver matches the Stripe session metadata
+  if (
+    metadataDriverEmail &&
+    metadataDriverEmail.toLowerCase() !== driverEmail.toLowerCase()
+  ) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
+        <div className="max-w-md text-center space-y-6">
+          <h1 className="text-3xl font-black text-primary">Lead Details Unavailable</h1>
+          <p className="text-text-secondary">
+            Lead details unavailable. Please contact support if you believe this is a mistake.
           </p>
           <a
             href="/marketplace"
@@ -78,7 +170,6 @@ export default async function SuccessPage({
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
         <div className="max-w-md text-center space-y-6">
-          <div className="text-success text-6xl">✓</div>
           <h1 className="text-3xl font-black text-primary">Payment Successful</h1>
           <p className="text-text-secondary">
             Your payment was successful. The customer details have been sent to your email.
@@ -94,6 +185,31 @@ export default async function SuccessPage({
     );
   }
 
+  // Verify lead ownership: must be locked and locked by this driver
+  if (
+    lead.status !== "locked" ||
+    (lead.locked_by &&
+      lead.locked_by.toLowerCase() !== driverEmail.toLowerCase())
+  ) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
+        <div className="max-w-md text-center space-y-6">
+          <h1 className="text-3xl font-black text-primary">Lead Details Unavailable</h1>
+          <p className="text-text-secondary">
+            Lead details unavailable. Please contact support if you believe this is a mistake.
+          </p>
+          <a
+            href="/marketplace"
+            className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm"
+          >
+            Back to Marketplace
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  // Safe to display customer contact details
   const moveType = formatMoveType(lead.move_type);
   const colPostcode = formatUKPostcode(lead.collection_postcode);
   const delPostcode = formatUKPostcode(lead.delivery_postcode);

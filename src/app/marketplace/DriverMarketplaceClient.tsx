@@ -81,7 +81,6 @@ export default function DriverMarketplaceClient({
   const handleUnlock = async (lead: Lead) => {
     if (!lead.move_type) return;
 
-    const fee = calculateIntroductionFee(lead.move_type);
     setLoadingId(lead.id);
 
     try {
@@ -90,10 +89,21 @@ export default function DriverMarketplaceClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           requestId: lead.id,
-          fee: fee,
-          businessName: userEmail,
         }),
       });
+
+      if (response.status === 409) {
+        alert("This lead is no longer available. Please refresh the marketplace.");
+        setLoadingId(null);
+        return;
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: "Unknown error" }));
+        alert(errorData.error || "Error initiating checkout. Please try again.");
+        setLoadingId(null);
+        return;
+      }
 
       const { url } = await response.json();
       if (url) window.location.href = url;
@@ -154,7 +164,7 @@ export default function DriverMarketplaceClient({
               const moveTypeIcon =
                 MOVE_TYPE_ICONS[lead.move_type || ""] || <Package size={16} />;
               const fee = lead.move_type
-                ? calculateIntroductionFee(lead.move_type)
+                ? calculateIntroductionFee(lead.move_type, lead.details)
                 : 0;
               const colPostcode = formatUKPostcode(
                 lead.collection_postcode

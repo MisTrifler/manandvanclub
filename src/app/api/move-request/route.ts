@@ -12,27 +12,51 @@ export async function POST(req: Request) {
     const otp = Math.floor(1000 + Math.random() * 9000).toString();
 
     // 2. Save move request to Supabase
-    const { data: request, error } = await supabase
+    const insertPayload: Record<string, any> = {
+      first_name: data.firstName,
+      email: data.email,
+      phone: data.phone,
+      collection_postcode: data.collectionPostcode,
+      delivery_postcode: data.deliveryPostcode,
+      move_date: data.moveDate,
+      move_type: data.moveType,
+      source_page: data.sourcePage || '',
+      estimated_price: data.estimatedPrice || null,
+      status: 'pending',
+      otp_code: otp,
+      is_verified: false
+    };
+
+    // Only include details if the migration has been applied.
+    // If the column is missing, the insert will be retried without it.
+    if (data.details != null) {
+      insertPayload.details = data.details;
+    }
+
+    let request: any;
+    let error: any;
+
+    const insertResult = await supabase
       .from('move_requests')
-      .insert([
-        {
-          first_name: data.firstName,
-          email: data.email,
-          phone: data.phone,
-          collection_postcode: data.collectionPostcode,
-          delivery_postcode: data.deliveryPostcode,
-          move_date: data.moveDate,
-          move_type: data.moveType,
-          source_page: data.sourcePage || '',
-          estimated_price: data.estimatedPrice || null,
-          details: data.details || null,
-          status: 'pending',
-          otp_code: otp,
-          is_verified: false
-        }
-      ])
+      .insert([insertPayload])
       .select()
       .single();
+
+    request = insertResult.data;
+    error = insertResult.error;
+
+    // Retry without details if the column does not exist (PostgreSQL code 42703 = undefined_column)
+    if (error && error.code === '42703' && data.details != null) {
+      console.warn('Details column missing (code 42703), retrying insert without details');
+      delete insertPayload.details;
+      const retryResult = await supabase
+        .from('move_requests')
+        .insert([insertPayload])
+        .select()
+        .single();
+      request = retryResult.data;
+      error = retryResult.error;
+    }
 
     if (error) {
       console.error('Supabase Error:', error);

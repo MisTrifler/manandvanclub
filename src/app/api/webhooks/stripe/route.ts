@@ -23,7 +23,13 @@ export async function POST(req: Request) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as any;
-    const { requestId, businessName } = session.metadata;
+    const metadata = session.metadata || {};
+    const { requestId, driverEmail } = metadata;
+
+    if (!requestId || !driverEmail) {
+      console.error('Stripe webhook: missing requestId or driverEmail in metadata');
+      return NextResponse.json({ error: 'Missing metadata' }, { status: 400 });
+    }
 
     const supabaseAdmin = getSupabaseAdmin();
 
@@ -31,20 +37,26 @@ export async function POST(req: Request) {
       // Check if already locked
       const { data: existing } = await supabaseAdmin
         .from('move_requests')
-        .select('status, locked_by')
+        .select('status, locked_by, id')
         .eq('id', requestId)
         .single();
 
       if (existing?.status === 'locked') {
-        return NextResponse.json({ received: true });
+        // Duplicate payment scenario: do not overwrite, do not reveal details, log for review
+        console.warn(
+          `Duplicate payment detected for request ${requestId}. ` +
+          `Already locked by ${existing.locked_by}. ` +
+          `Driver: ${driverEmail}. Session: ${session.id}`
+        );
+        return NextResponse.json({ received: true, warning: 'Lead already locked — duplicate payment logged for manual review' });
       }
 
-      // Lock the lead
+      // Lock the lead to the driver who paid
       const { data: moveRequest, error: updateError } = await supabaseAdmin
         .from('move_requests')
         .update({
           status: 'locked',
-          locked_by: businessName,
+          locked_by: driverEmail,
           locked_at: new Date().toISOString(),
         })
         .eq('id', requestId)
@@ -55,8 +67,8 @@ export async function POST(req: Request) {
 
       // === EMAIL TO DRIVER ===
       await resend.emails.send({
-        from: 'Man and Van Club <leads@manandvanclub.co.uk>',
-        to: [session.customer_details.email],
+        from: 'Man and Van Club <support@manandvanclub.co.uk>',
+        to: [driverEmail],
         subject: `Lead Unlocked: ${moveRequest.first_name} - ${moveRequest.collection_postcode} → ${moveRequest.delivery_postcode}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
@@ -66,7 +78,7 @@ export async function POST(req: Request) {
             
             <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Lead Unlocked Successfully</h2>
             
-            <p style="color: #475569; font-size: 16px;">Hi ${businessName},</p>
+            <p style="color: #475569; font-size: 16px;">Hi there,</p>
             <p style="color: #475569; font-size: 16px;">You have unlocked the following lead:</p>
             
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
@@ -89,9 +101,9 @@ export async function POST(req: Request) {
 
       // === EMAIL TO CUSTOMER ===
       await resend.emails.send({
-        from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
+        from: 'Man and Van Club <support@manandvanclub.co.uk>',
         to: [moveRequest.email],
-        subject: `${businessName} has unlocked your move request`,
+        subject: `A mover has unlocked your move request`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
             <div style="text-align: center; margin-bottom: 30px;">
@@ -101,7 +113,7 @@ export async function POST(req: Request) {
             <h2 style="color: #0F172A; font-size: 24px;">Great news!</h2>
             
             <p style="color: #475569; font-size: 16px;">Hi ${moveRequest.first_name},</p>
-            <p style="color: #475569; font-size: 16px;"><strong>${businessName}</strong> has unlocked your move request and will contact you shortly.</p>
+            <p style="color: #475569; font-size: 16px;"><strong>A mover</strong> has unlocked your move request and will contact you shortly.</p>
             
             <div style="background: #F0FDF4; border-left: 4px solid #22C55E; padding: 16px; margin: 24px 0;">
               <p style="margin: 0; color: #166534; font-size: 15px;">
