@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { resend } from "@/lib/resend";
 import { hashLoginCode } from "@/lib/driver-auth";
 
@@ -18,57 +18,81 @@ export async function POST(req: Request) {
     const body = await req.json();
     const email = String(body.email || "").toLowerCase().trim();
 
+    console.log("[send-login-code] Request received for:", email);
+
     if (!email || !email.includes("@")) {
+      console.log("[send-login-code] Invalid email, returning generic response");
       return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
     }
 
+    const supabaseAdmin = getSupabaseAdmin();
+
     // 1. Check if driver exists and is approved
-    const { data: driver, error: driverError } = await supabase
+    const { data: driver, error: driverError } = await supabaseAdmin
       .from("driver_applications")
       .select("id, contact_name, email, status")
       .eq("email", email)
       .single();
 
+    if (driverError) {
+      console.log("[send-login-code] Driver lookup error:", driverError.message, "| email:", email);
+    }
+
     if (driverError || !driver || driver.status !== "approved") {
-      // Always return generic response — do not reveal account status
+      console.log("[send-login-code] Driver not found or not approved. email:", email, "status:", driver?.status);
       return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
     }
 
+    console.log("[send-login-code] Driver approved:", driver.email, "id:", driver.id);
+
     // 2. Rate limiting: check email rate
     const sinceEmail = new Date(Date.now() - 15 * 60 * 1000).toISOString();
-    const { count: emailCount } = await supabase
+    const { count: emailCount, error: emailCountError } = await supabaseAdmin
       .from("driver_login_codes")
       .select("*", { count: "exact", head: true })
       .eq("email", email)
       .gte("created_at", sinceEmail);
 
+    if (emailCountError) {
+      console.error("[send-login-code] Email rate limit query error:", emailCountError);
+    }
+
     if (emailCount && emailCount >= RATE_LIMIT_EMAIL) {
-      console.warn("Rate limit exceeded for email:", email);
+      console.warn("[send-login-code] Rate limit exceeded for email:", email, "count:", emailCount);
       return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
     }
 
     // 3. Rate limiting: check IP rate
     const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
     const sinceIp = new Date(Date.now() - 15 * 60 * 1000).toISOString();
-    const { count: ipCount } = await supabase
+    const { count: ipCount, error: ipCountError } = await supabaseAdmin
       .from("driver_login_codes")
       .select("*", { count: "exact", head: true })
       .eq("request_ip", ip)
       .gte("created_at", sinceIp);
 
+    if (ipCountError) {
+      console.error("[send-login-code] IP rate limit query error:", ipCountError);
+    }
+
     if (ipCount && ipCount >= RATE_LIMIT_IP) {
-      console.warn("Rate limit exceeded for IP:", ip);
+      console.warn("[send-login-code] Rate limit exceeded for IP:", ip, "count:", ipCount);
       return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
     }
 
     // 4. Invalidate any existing unused codes for this driver
     const now = new Date().toISOString();
-    await supabase
+    const { error: invalidateError } = await supabaseAdmin
       .from("driver_login_codes")
       .update({ used_at: now })
       .eq("driver_id", driver.id)
       .is("used_at", null)
       .gt("expires_at", now);
+
+    if (invalidateError) {
+      console.error("[send-login-code] Failed to invalidate old codes:", invalidateError);
+      // Non-blocking: continue anyway
+    }
 
     // 5. Generate 6-digit code and hash it
     const code = Math.floor(100000 + Math.random() * 900000).toString();
@@ -77,33 +101,53 @@ export async function POST(req: Request) {
 
     const userAgent = req.headers.get("user-agent") || "";
 
-    const { error: insertError } = await supabase
+    // Truncate to safe lengths in case DB columns are limited
+    const safeIp = ip.slice(0, 255);
+    const safeUserAgent = userAgent.slice(0, 500);
+
+    const insertPayload: Record<string, any> = {
+      driver_id: driver.id,
+      email: email,
+      code_hash: codeHash,
+      expires_at: expiresAt,
+      used_at: null,
+      attempt_count: 0,
+      request_ip: safeIp,
+      user_agent: safeUserAgent,
+    };
+
+    let { error: insertError } = await supabaseAdmin
       .from("driver_login_codes")
-      .insert({
-        driver_id: driver.id,
-        email: email,
-        code_hash: codeHash,
-        expires_at: expiresAt,
-        used_at: null,
-        attempt_count: 0,
-        request_ip: ip,
-        user_agent: userAgent,
-      });
+      .insert(insertPayload);
+
+    // If insert failed because of missing columns (e.g. request_ip / user_agent),
+    // retry without the optional fields.
+    if (insertError && insertError.code === "42703") {
+      console.warn("[send-login-code] Missing column on insert (42703), retrying without optional fields:", insertError.message);
+      delete insertPayload.request_ip;
+      delete insertPayload.user_agent;
+      const retry = await supabaseAdmin.from("driver_login_codes").insert(insertPayload);
+      insertError = retry.error;
+    }
 
     if (insertError) {
-      console.error("Driver login code insert error:", insertError);
+      console.error("[send-login-code] driver_login_codes insert error:", insertError);
       return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
     }
 
+    console.log("[send-login-code] Code stored in DB for", email);
+
     // 6. Send email via Resend
     if (!process.env.RESEND_API_KEY) {
-      console.warn("RESEND_API_KEY missing — driver login code not sent");
+      console.warn("[send-login-code] RESEND_API_KEY missing — driver login code not sent");
       return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
     }
 
     const driverName = driver.contact_name || "Driver";
 
-    const { error: emailError } = await resend.emails.send({
+    console.log("[send-login-code] Sending email to", email, "via Resend...");
+
+    const { data: emailData, error: emailError } = await resend.emails.send({
       from: SENDER_ADDRESS,
       to: [email],
       subject: "Your Man and Van Club login code",
@@ -157,14 +201,14 @@ export async function POST(req: Request) {
     });
 
     if (emailError) {
-      console.error("Driver login code email error:", emailError);
+      console.error("[send-login-code] Resend email error:", emailError);
     } else {
-      console.log("Driver login code sent to", email);
+      console.log("[send-login-code] Resend email sent successfully. ID:", emailData?.id);
     }
 
     return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
   } catch (error: any) {
-    console.error("Send login code error:", error);
+    console.error("[send-login-code] Unhandled error:", error?.message || error);
     return NextResponse.json(GENERIC_RESPONSE, { status: 200 });
   }
 }
