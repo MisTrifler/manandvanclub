@@ -8,42 +8,51 @@ export function getDriverSecret() {
 }
 
 function signDriverValue(email: string) {
-  const value = `${email}.${DRIVER_SESSION_MARKER}`;
+  const value = `${email}|${DRIVER_SESSION_MARKER}`;
   return createHmac("sha256", getDriverSecret()).update(value).digest("hex");
 }
 
-// Base64url-encode the email so dots (and other special chars) never break token parsing
-function encodeEmail(email: string): string {
-  return Buffer.from(email).toString("base64url");
+function base64UrlEncode(value: string): string {
+  return Buffer.from(value, "utf8").toString("base64url");
 }
 
-function decodeEmail(encoded: string): string {
-  return Buffer.from(encoded, "base64url").toString("utf-8");
+function base64UrlDecode(value: string): string {
+  return Buffer.from(value, "base64url").toString("utf8");
 }
 
 export function createDriverSessionToken(email: string) {
-  const encoded = encodeEmail(email);
-  return `${encoded}.${DRIVER_SESSION_MARKER}.${signDriverValue(email)}`;
+  const normalizedEmail = email.toLowerCase().trim();
+  const encodedEmail = base64UrlEncode(normalizedEmail);
+  const signature = signDriverValue(normalizedEmail);
+  return `${encodedEmail}|${DRIVER_SESSION_MARKER}|${signature}`;
 }
 
 export function isValidDriverSession(token?: string | null): string | false {
   if (!token) return false;
 
-  const parts = token.split(".");
+  const parts = token.split("|");
   if (parts.length !== 3) return false;
 
-  const [encoded, marker, signature] = parts;
+  const [encodedEmail, marker, signature] = parts;
   if (marker !== DRIVER_SESSION_MARKER) return false;
-  if (!encoded || !signature) return false;
+  if (!encodedEmail || !signature) return false;
+
+  let email: string;
+  try {
+    email = base64UrlDecode(encodedEmail).toLowerCase().trim();
+  } catch {
+    return false;
+  }
+
+  if (!email) return false;
+
+  const expected = signDriverValue(email);
+  const sigBuffer = Buffer.from(signature);
+  const expectedBuffer = Buffer.from(expected);
+
+  if (sigBuffer.length !== expectedBuffer.length) return false;
 
   try {
-    const email = decodeEmail(encoded);
-    const expected = signDriverValue(email);
-    const sigBuffer = Buffer.from(signature);
-    const expectedBuffer = Buffer.from(expected);
-
-    if (sigBuffer.length !== expectedBuffer.length) return false;
-
     if (timingSafeEqual(sigBuffer, expectedBuffer)) {
       return email;
     }
