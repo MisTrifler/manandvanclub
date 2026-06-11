@@ -36,7 +36,7 @@ export default function Footer() {
               <div className="flex items-center gap-2 mb-1 font-bold text-primary">
                 <Lock size={14} className="text-green-600" /> GDPR Compliant
               </div>
-              <p>Your data is handled securely and never sold or shared beyond your matched mover.</p>
+              <p>Your data is handled securely and never sold or shared beyond your mover.</p>
             </div>
           </div>
 

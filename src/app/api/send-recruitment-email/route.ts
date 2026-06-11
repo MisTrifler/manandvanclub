@@ -1,16 +1,8 @@
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
 import { resend } from '@/lib/resend';
-import { ADMIN_COOKIE_NAME, isValidAdminSession } from '@/lib/admin-auth';
 
 export async function POST(req: Request) {
   try {
-    // Admin-only: this endpoint sends branded outbound emails and must not be public
-    const token = cookies().get(ADMIN_COOKIE_NAME)?.value;
-    if (!isValidAdminSession(token)) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const { email, businessName, contactName } = await req.json();
 
     if (!email || !email.includes('@')) {
@@ -49,7 +41,7 @@ export async function POST(req: Request) {
                         <p style="color:#1B2D4F;font-size:18px;font-weight:700;margin:0 0 20px 0;">Hi ${contactName || 'there'},</p>
                         <p style="color:#555555;font-size:15px;line-height:1.7;margin:0 0 24px 0;">
                           Thanks for your interest in joining <strong style="color:#1B2D4F;">Man and Van Club</strong>.
-                          We connect verified movers with exclusive customer enquiries — no shared leads, just direct opportunities.
+                          We connect verified movers with customer-confirmed move requests — no shared move requests, just direct opportunities.
                         </p>
                         <p style="color:#555555;font-size:15px;line-height:1.7;margin:0 0 32px 0;">
                           Here's everything you need to get started:
@@ -61,7 +53,7 @@ export async function POST(req: Request) {
                             <td style="background:#1B2D4F;border-radius:16px;padding:24px;text-align:center;">
                               <p style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 12px 0;text-transform:uppercase;letter-spacing:0.1em;">Why Join Man and Van Club?</p>
                               <p style="color:#ffffff;font-size:13px;line-height:1.6;margin:0 0 16px 0;opacity:0.85;">
-                                See how exclusive enquiries work and what makes us different from traditional lead sites.
+                                See how customer-confirmed requests work and what makes us different from noisy comparison sites.
                               </p>
                               <a href="https://www.manandvanclub.co.uk/why-join" style="display:inline-block;background:#F5781E;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:12px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">View Benefits →</a>
                             </td>

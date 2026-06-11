@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import { stripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
@@ -7,15 +6,12 @@ import {
   formatDisplayDate,
   formatMoveType,
 } from "@/lib/formatting";
+import { calculateBookingFee, normaliseQuoteAmount, formatPounds } from "@/lib/booking-fee";
 import {
   CheckCircle2,
   MapPin,
   CalendarDays,
   ArrowRight,
-  Tag,
-  Phone,
-  Mail,
-  User,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -39,10 +35,15 @@ export default async function BookingConfirmedPage({
   }
 
   if (stripeSession.payment_status !== "paid") {
-    redirect("/quote-cancelled?session_id=" + sessionId);
+    redirect("/quote-cancelled?session_id=" + encodeURIComponent(sessionId));
   }
 
   const metadata = stripeSession.metadata || {};
+
+  if (metadata.paymentType !== "customer_booking_fee") {
+    notFound();
+  }
+
   const requestId = metadata.requestId;
 
   if (!requestId) {
@@ -52,16 +53,14 @@ export default async function BookingConfirmedPage({
   const supabaseAdmin = getSupabaseAdmin();
   const { data: lead } = await supabaseAdmin
     .from("move_requests")
-    .select(
-      "first_name, move_type, collection_postcode, delivery_postcode, move_date, quote_amount, booking_fee, estimated_price, quoted_by, booking_fee_paid, status"
-    )
+    .select("first_name, move_type, collection_postcode, delivery_postcode, move_date, quote_amount, booking_fee, estimated_price, quoted_by, booking_fee_paid, status, customer_details_released_at")
     .eq("id", requestId)
     .single();
 
-  if (!lead || !lead.booking_fee_paid) {
+  if (!lead || !lead.booking_fee_paid || lead.status !== "booked") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7] p-6">
-        <div className="max-w-md text-center space-y-6">
+        <div className="max-w-md text-center space-y-6 bg-white border border-border rounded-3xl p-8 shadow-sm">
           <div className="text-success text-5xl mb-4">
             <CheckCircle2 size={48} className="mx-auto text-green-600" />
           </div>
@@ -69,12 +68,7 @@ export default async function BookingConfirmedPage({
           <p className="text-text-secondary">
             Your payment was successful. We are confirming your booking details. You will receive an email confirmation shortly.
           </p>
-          <a
-            href="/"
-            className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm"
-          >
-            Return Home
-          </a>
+          <a href="/" className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm">Return Home</a>
         </div>
       </div>
     );
@@ -84,8 +78,8 @@ export default async function BookingConfirmedPage({
   const colPostcode = formatUKPostcode(lead.collection_postcode);
   const delPostcode = formatUKPostcode(lead.delivery_postcode);
   const moveDate = formatDisplayDate(lead.move_date);
-  const quoteAmount = lead.quote_amount || 0;
-  const bookingFee = lead.booking_fee || 0;
+  const quoteAmount = normaliseQuoteAmount(lead.quote_amount || 0);
+  const bookingFee = lead.booking_fee ? Number(lead.booking_fee) : calculateBookingFee(quoteAmount);
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] p-6 md:p-8">
@@ -94,19 +88,18 @@ export default async function BookingConfirmedPage({
           <div className="text-success text-5xl mb-4">
             <CheckCircle2 size={48} className="mx-auto text-green-600" />
           </div>
-          <h1 className="text-3xl font-black text-primary tracking-tighter mb-2">
-            Booking Confirmed
-          </h1>
+          <h1 className="text-3xl font-black text-primary tracking-tighter mb-2">Booking Confirmed</h1>
           <p className="text-text-secondary">
-            Your booking fee has been paid and your details have been released to the mover. The mover will contact you directly to confirm timing, access and payment method.
+            Your booking fee has been paid and your details have been released to the mover.
+          </p>
+          <p className="text-text-secondary mt-2">
+            The mover will contact you directly to confirm timing, access and payment method.
           </p>
         </div>
 
         <div className="bg-white rounded-2xl border border-border overflow-hidden">
           <div className="p-6 md:p-8">
-            <h2 className="text-xl font-black text-primary tracking-tight mb-6">
-              Move Details
-            </h2>
+            <h2 className="text-xl font-black text-primary tracking-tight mb-6">Booking Summary</h2>
 
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
@@ -116,9 +109,7 @@ export default async function BookingConfirmedPage({
                 <div>
                   <p className="text-xs font-black uppercase tracking-widest text-primary/40">Route</p>
                   <p className="font-bold text-primary">
-                    {colPostcode || "—"}
-                    <span className="text-primary/30 mx-2">→</span>
-                    {delPostcode || "—"}
+                    {colPostcode || "—"}<span className="text-primary/30 mx-2">→</span>{delPostcode || "—"}
                   </p>
                   <p className="text-sm text-text-secondary">{moveType}</p>
                 </div>
@@ -140,32 +131,26 @@ export default async function BookingConfirmedPage({
             <div className="border-t border-border pt-6 space-y-4">
               <div className="flex items-center justify-between py-2">
                 <span className="text-sm text-text-secondary">Mover quote</span>
-                <span className="font-bold text-primary">£{quoteAmount.toFixed(2)}</span>
+                <span className="font-bold text-primary">{formatPounds(quoteAmount)}</span>
               </div>
               <div className="flex items-center justify-between py-2">
                 <span className="text-sm text-text-secondary">Booking fee paid</span>
-                <span className="font-bold text-primary">£{bookingFee.toFixed(2)}</span>
+                <span className="font-bold text-primary">{formatPounds(bookingFee)}</span>
               </div>
               <div className="flex items-center justify-between py-3 border-t border-dashed border-border">
                 <span className="text-sm font-bold text-primary">Remaining move cost</span>
-                <span className="font-black text-primary text-xl">£{quoteAmount.toFixed(2)}</span>
+                <span className="font-black text-primary text-xl">{formatPounds(quoteAmount)}</span>
               </div>
             </div>
 
             <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 mt-6">
-              <p className="text-sm text-amber-800 font-medium">
-                <strong>Reminder:</strong> The remaining move cost is paid directly to the mover. The mover will contact you shortly to confirm timing and payment method.
-              </p>
+              <p className="text-sm text-amber-800 font-medium"><strong>Reminder:</strong> The remaining move cost is paid directly to the mover.</p>
             </div>
           </div>
 
           <div className="border-t border-border p-4 md:p-5 bg-gray-50/50">
-            <a
-              href="/"
-              className="btn-orange w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-black uppercase tracking-widest text-sm"
-            >
-              Return Home
-              <ArrowRight size={16} />
+            <a href="/" className="btn-orange w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-black uppercase tracking-widest text-sm">
+              Return Home <ArrowRight size={16} />
             </a>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Man and Van Club | Get Matched With Verified Local Movers",
   description:
-    "Man and Van Club connects customers with verified local movers across the UK. Get matched for house removals, flat moves, office relocations, student moves, furniture delivery and same-day man and van services.",
+    "Man and Van Club connects customers with verified local movers across the UK. Request quotes for house removals, flat moves, office relocations, student moves, furniture delivery and same-day man and van services.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',
   },
@@ -23,34 +23,42 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How does matching work?",
+      "name": "Is it free to submit a move request?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "When you submit your moving details, we review your requirements including location, move size, and date. We then identify a suitable mover from our network and introduce your enquiry to them exclusively. You deal directly with the mover from that point onward."
+        "text": "Yes. It is free to submit your move request. You only pay a booking fee if you accept a mover quote."
       }
     },
     {
       "@type": "Question",
-      "name": "Will multiple movers contact me?",
+      "name": "What is the booking fee?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies."
+        "text": "The booking fee confirms your accepted quote and releases your contact details only to that mover. It is separate from the mover’s quote."
       }
     },
     {
       "@type": "Question",
-      "name": "Is there any obligation?",
+      "name": "Do I pay the mover separately?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Submitting an enquiry is completely free and without obligation. If the matched mover is not suitable, or if you decide not to proceed, you are under no obligation to book."
+        "text": "Yes. You pay the mover’s quoted price directly to the mover."
       }
     },
     {
       "@type": "Question",
-      "name": "How quickly will I be contacted?",
+      "name": "Will lots of companies contact me?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We aim to have your matched mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements."
+        "text": "No. Your details are not shared with multiple companies. They are only released to the mover whose quote you accept."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the mover quote fixed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The quote is based on the details you provide. It may only change if your move details were incomplete, inaccurate or later changed."
       }
     },
     {
@@ -58,23 +66,7 @@ const faqSchema = {
       "name": "Are movers vetted?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We help connect customers with movers who have completed our application and verification process. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens after I submit my enquiry?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "After submitting your enquiry, you will receive a confirmation. Our team reviews your requirements and identifies a suitable mover. Your details are introduced to that mover exclusively. The mover contacts you directly to discuss your move and provide a quote."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to pay to submit an enquiry?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Submitting an enquiry through Man and Van Club is completely free for customers. There is no charge to get matched with a mover. You only pay the mover directly if you choose to book their services."
+        "text": "We help connect customers with movers who have completed our application and verification process. Customers should still confirm insurance cover and final details directly with their mover before booking."
       }
     }
   ]
@@ -89,7 +81,7 @@ export default function Home() {
     "telephone": "07943617386",
     "email": "support@manandvanclub.co.uk",
     "areaServed": "GB",
-    "description": "Marketplace connecting customers with verified local movers across the UK via exclusive one-to-one introductions. Secure, transparent, and free to enquire.",
+    "description": "Marketplace connecting customers with verified local movers across the UK through a secure customer-confirmed booking process. Free to submit, with a booking fee only if a mover quote is accepted.",
     "priceRange": "££",
     "openingHours": "Mo-Su 08:00-22:00"
   };

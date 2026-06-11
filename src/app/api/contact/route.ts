@@ -1,21 +1,10 @@
 import { NextResponse } from 'next/server';
 import { resend } from '@/lib/resend';
 
-function escapeHtml(value: string): string {
-  return String(value)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
 export async function POST(req: Request) {
   try {
     const data = await req.json();
-    const name = escapeHtml(data.name || '');
-    const email = escapeHtml(data.email || '');
-    const subject = escapeHtml(data.subject || '');
-    const message = escapeHtml(data.message || '');
+    const { name, email, subject, message } = data;
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });

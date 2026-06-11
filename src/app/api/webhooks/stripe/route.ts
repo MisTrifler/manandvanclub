@@ -3,6 +3,8 @@ import { stripe } from '@/lib/stripe';
 import { getSupabaseAdmin } from '@/lib/supabase-admin';
 import { resend } from '@/lib/resend';
 import { headers } from 'next/headers';
+import { calculateBookingFee, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
+import { escapeHtml } from '@/lib/html';
 import {
   formatUKPostcode,
   formatDisplayDate,
@@ -30,14 +32,17 @@ export async function POST(req: Request) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as any;
-    const metadata = session.metadata || {};
-    const paymentType = metadata.paymentType || 'driver_lead_unlock'; // default for legacy sessions
 
-    if (paymentType === 'customer_booking_fee') {
+    if (session.payment_status !== 'paid') {
+      return NextResponse.json({ received: true, skipped: 'payment_not_paid' });
+    }
+
+    const metadata = session.metadata || {};
+
+    if (metadata.paymentType === 'customer_booking_fee') {
       await handleCustomerBookingFee(session, metadata);
     } else {
-      // Legacy driver-paid lead unlock flow
-      await handleDriverLeadUnlock(session, metadata);
+      await handleLegacyDriverPayment(session, metadata);
     }
   }
 
@@ -46,7 +51,6 @@ export async function POST(req: Request) {
 
 async function handleCustomerBookingFee(session: any, metadata: any) {
   const requestId = metadata.requestId;
-  const token = metadata.token;
 
   if (!requestId) {
     console.error('[webhook] customer_booking_fee: missing requestId');
@@ -56,124 +60,176 @@ async function handleCustomerBookingFee(session: any, metadata: any) {
   const supabaseAdmin = getSupabaseAdmin();
 
   try {
-    // 1. Fetch the move request
     const { data: existing } = await supabaseAdmin
       .from('move_requests')
-      .select('status, booking_fee_paid, quoted_by, email, first_name, phone, collection_postcode, delivery_postcode, move_date, move_type, quote_amount, booking_fee')
+      .select('id, status, booking_fee_paid, booking_fee_stripe_session_id, customer_details_released_at, quoted_by, email, first_name, phone, collection_postcode, delivery_postcode, move_date, move_type, quote_amount, booking_fee, admin_notes')
       .eq('id', requestId)
       .single();
 
     if (!existing) {
-      console.error('[webhook] customer_booking_fee: request not found', requestId);
+      console.error('[webhook] customer_booking_fee: request not found');
       return;
     }
 
-    // 2. Idempotency: already paid
-    if (existing.booking_fee_paid) {
-      console.log('[webhook] customer_booking_fee: already paid, skipping', requestId);
+    if (existing.booking_fee_paid === true && existing.status === 'booked' && existing.customer_details_released_at) {
+      console.log('[webhook] customer_booking_fee: already processed');
       return;
     }
 
-    // 3. Must be quoted
     if (existing.status !== 'quoted') {
-      console.warn('[webhook] customer_booking_fee: status is not quoted', requestId, existing.status);
+      console.warn('[webhook] customer_booking_fee: request not in quoted state, skipping');
       return;
     }
 
-    // 4. Update request to booked
-    await supabaseAdmin
+    if (!existing.quoted_by || !existing.quote_amount) {
+      console.warn('[webhook] customer_booking_fee: quote incomplete, skipping');
+      return;
+    }
+
+    const quoteAmount = normaliseQuoteAmount(existing.quote_amount);
+    const bookingFee = calculateBookingFee(quoteAmount);
+    const expectedPence = toStripePence(bookingFee);
+    const actualPence = typeof session.amount_total === 'number' ? session.amount_total : null;
+
+    if (actualPence === null || actualPence < expectedPence) {
+      const note = actualPence === null
+        ? `Stripe payment requires admin review: amount_total missing for session ${session.id}.`
+        : `Stripe payment under expected booking fee: expected ${expectedPence}p, received ${actualPence}p, session ${session.id}. Customer details were not released.`;
+      console.warn('[webhook] customer_booking_fee: payment amount unsafe; booking left for admin review');
+      await supabaseAdmin
+        .from('move_requests')
+        .update({
+          booking_fee: bookingFee,
+          booking_fee_stripe_session_id: session.id,
+          admin_notes: `${existing.admin_notes ? `${existing.admin_notes}\n` : ''}${note}`,
+        })
+        .eq('id', requestId);
+      return;
+    }
+
+    if (actualPence > expectedPence) {
+      console.warn('[webhook] customer_booking_fee: Stripe amount higher than expected; processing with server-calculated booking fee');
+    }
+
+    const now = new Date().toISOString();
+
+    const { data: bookedRequest, error: updateError } = await supabaseAdmin
       .from('move_requests')
       .update({
         status: 'booked',
+        booking_fee: bookingFee,
         booking_fee_paid: true,
-        booking_fee_paid_at: new Date().toISOString(),
+        booking_fee_paid_at: now,
         booking_fee_stripe_session_id: session.id,
-        customer_accepted_quote_at: new Date().toISOString(),
-        customer_details_released_at: new Date().toISOString(),
+        customer_accepted_quote_at: now,
+        customer_details_released_at: now,
       })
-      .eq('id', requestId);
+      .eq('id', requestId)
+      .eq('status', 'quoted')
+      .is('customer_details_released_at', null)
+      .or('booking_fee_paid.is.null,booking_fee_paid.eq.false')
+      .select('*')
+      .single();
 
-    // 5. Email mover with customer details
-    if (existing.quoted_by && process.env.RESEND_API_KEY) {
-      const moveType = formatMoveType(existing.move_type);
-      const colPostcode = formatUKPostcode(existing.collection_postcode);
-      const delPostcode = formatUKPostcode(existing.delivery_postcode);
-      const moveDate = formatDisplayDate(existing.move_date);
+    if (updateError || !bookedRequest) {
+      console.warn('[webhook] customer_booking_fee: booking update skipped; likely duplicate or changed state');
+      return;
+    }
 
+    if (!process.env.RESEND_API_KEY) {
+      console.warn('[webhook] RESEND_API_KEY missing — booking emails not sent');
+      return;
+    }
+
+    const moveType = formatMoveType(bookedRequest.move_type);
+    const colPostcode = formatUKPostcode(bookedRequest.collection_postcode);
+    const delPostcode = formatUKPostcode(bookedRequest.delivery_postcode);
+    const moveDate = formatDisplayDate(bookedRequest.move_date);
+
+    const { data: driver } = await supabaseAdmin
+      .from('driver_applications')
+      .select('contact_name, email')
+      .eq('email', bookedRequest.quoted_by)
+      .single();
+
+    const driverName = driver?.contact_name || 'there';
+
+    if (bookedRequest.quoted_by) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
-        to: [existing.quoted_by],
+        to: [bookedRequest.quoted_by],
         subject: `Customer-confirmed booking: ${colPostcode} to ${delPostcode}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-            <div style="text-align: center; margin-bottom: 30px;">
-              <span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span>
-            </div>
+            <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
             <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer-Confirmed Booking</h2>
-            <p style="color: #475569; font-size: 16px;">Hi there,</p>
+            <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(driverName)},</p>
             <p style="color: #475569; font-size: 16px;">The customer has accepted your quote and paid the booking fee.</p>
-
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
-              <p style="margin: 0 0 8px 0;"><strong>Customer name:</strong> ${existing.first_name || '—'}</p>
-              <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> <a href="tel:${existing.phone}" style="color: #F97316;">${existing.phone}</a></p>
-              <p style="margin: 0 0 8px 0;"><strong>Email:</strong> <a href="mailto:${existing.email}" style="color: #F97316;">${existing.email}</a></p>
-              <p style="margin: 0 0 8px 0;"><strong>Route:</strong> ${colPostcode} to ${delPostcode}</p>
-              <p style="margin: 0 0 8px 0;"><strong>Date:</strong> ${moveDate}</p>
-              <p style="margin: 0;"><strong>Your quote:</strong> £${(existing.quote_amount || 0).toFixed(2)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Customer details:</strong></p>
+              <p style="margin: 0 0 8px 0;"><strong>Name:</strong> ${escapeHtml(bookedRequest.first_name || '—')}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> <a href="tel:${escapeHtml(bookedRequest.phone || '')}" style="color: #F97316;">${escapeHtml(bookedRequest.phone || '—')}</a></p>
+              <p style="margin: 0 0 20px 0;"><strong>Email:</strong> <a href="mailto:${escapeHtml(bookedRequest.email || '')}" style="color: #F97316;">${escapeHtml(bookedRequest.email || '—')}</a></p>
+              <p style="margin: 0 0 8px 0;"><strong>Move details:</strong></p>
+              <p style="margin: 0 0 8px 0;">${escapeHtml(moveType)}</p>
+              <p style="margin: 0 0 8px 0;">${escapeHtml(colPostcode)} to ${escapeHtml(delPostcode)}</p>
+              <p style="margin: 0 0 20px 0;">${escapeHtml(moveDate)}</p>
+              <p style="margin: 0;"><strong>Your quote:</strong> ${formatPounds(quoteAmount)}</p>
             </div>
-
             <div style="background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 16px; margin: 24px 0;">
-              <strong style="color: #92400E;">Next step:</strong>
-              <span style="color: #92400E;">Contact the customer as soon as possible to confirm timing, access and payment method.</span>
+              <strong style="color: #92400E;">Next step:</strong><span style="color: #92400E;"> Please contact the customer as soon as possible to confirm timing, access and payment method.</span>
             </div>
-
-            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The customer will pay the move cost directly to you.</p>
-            <p style="color: #64748B; font-size: 14px; margin-top: 10px;">© 2026 Man and Van Club</p>
+            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The customer pays your quoted move price directly to you.</p>
+            <p style="color: #64748B; font-size: 14px; margin-top: 10px;">Man and Van Club<br />support@manandvanclub.co.uk</p>
           </div>
         `,
       });
     }
 
-    // 6. Email customer confirmation
-    if (existing.email && process.env.RESEND_API_KEY) {
+    if (bookedRequest.email) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
-        to: [existing.email],
+        to: [bookedRequest.email],
         subject: 'Your booking is confirmed',
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-            <div style="text-align: center; margin-bottom: 30px;">
-              <span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span>
-            </div>
+            <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
             <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Booking Is Confirmed</h2>
-            <p style="color: #475569; font-size: 16px;">Hi ${existing.first_name || 'there'},</p>
+            <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(bookedRequest.first_name || 'there')},</p>
             <p style="color: #475569; font-size: 16px;">Your booking fee has been paid and your details have been released to the mover.</p>
             <p style="color: #475569; font-size: 16px;">The mover will contact you directly to confirm timing, access and payment method.</p>
-
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
-              <p style="margin: 0 0 8px 0;"><strong>Mover quote:</strong> £${(existing.quote_amount || 0).toFixed(2)}</p>
-              <p style="margin: 0 0 8px 0;"><strong>Booking fee paid:</strong> £${(existing.booking_fee || 0).toFixed(2)}</p>
-              <p style="margin: 0;"><strong>Remaining move cost:</strong> £${(existing.quote_amount || 0).toFixed(2)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Mover quote:</strong> ${formatPounds(quoteAmount)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Booking fee paid:</strong> ${formatPounds(bookingFee)}</p>
+              <p style="margin: 0;"><strong>Remaining move cost:</strong> ${formatPounds(quoteAmount)}</p>
             </div>
-
             <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The remaining move cost is paid directly to the mover.</p>
-            <p style="color: #64748B; font-size: 14px; margin-top: 10px;">© 2026 Man and Van Club</p>
+            <p style="color: #64748B; font-size: 14px; margin-top: 10px;">Man and Van Club<br />support@manandvanclub.co.uk</p>
           </div>
         `,
       });
     }
 
-    console.log('[webhook] customer_booking_fee: processed successfully', requestId);
+    console.log('[webhook] customer_booking_fee: processed successfully');
   } catch (err: any) {
     console.error('[webhook] customer_booking_fee error:', err.message);
   }
 }
 
-async function handleDriverLeadUnlock(session: any, metadata: any) {
-  const { requestId, driverEmail } = metadata;
+async function handleLegacyDriverPayment(session: any, metadata: any) {
+  const requestId = metadata.requestId;
+  const resolvedDriverEmail =
+    metadata.driverEmail ||
+    metadata.businessName ||
+    session.customer_details?.email;
 
-  if (!requestId || !driverEmail) {
-    console.error('[webhook] driver_lead_unlock: missing requestId or driverEmail');
+  if (!requestId) {
+    console.error('[webhook] legacy driver payment: missing requestId');
+    return;
+  }
+
+  if (!resolvedDriverEmail) {
+    console.warn('[webhook] legacy driver payment: missing driver identity; details not released');
     return;
   }
 
@@ -187,10 +243,7 @@ async function handleDriverLeadUnlock(session: any, metadata: any) {
       .single();
 
     if (existing?.status === 'locked') {
-      console.warn(
-        `[webhook] driver_lead_unlock: duplicate payment for request ${requestId}. ` +
-        `Already locked by ${existing.locked_by}. Driver: ${driverEmail}. Session: ${session.id}`
-      );
+      console.warn('[webhook] legacy driver payment: duplicate payment detected');
       return;
     }
 
@@ -198,7 +251,7 @@ async function handleDriverLeadUnlock(session: any, metadata: any) {
       .from('move_requests')
       .update({
         status: 'locked',
-        locked_by: driverEmail,
+        locked_by: resolvedDriverEmail,
         locked_at: new Date().toISOString(),
       })
       .eq('id', requestId)
@@ -207,53 +260,29 @@ async function handleDriverLeadUnlock(session: any, metadata: any) {
 
     if (updateError) throw updateError;
 
-    // Email driver
+    if (!process.env.RESEND_API_KEY) {
+      console.warn('[webhook] RESEND_API_KEY missing — legacy emails not sent');
+      return;
+    }
+
     await resend.emails.send({
       from: SENDER_ADDRESS,
-      to: [driverEmail],
-      subject: `Lead Unlocked: ${moveRequest.first_name} - ${moveRequest.collection_postcode} → ${moveRequest.delivery_postcode}`,
+      to: [resolvedDriverEmail],
+      subject: `Legacy customer details: ${escapeHtml(moveRequest.collection_postcode)} to ${escapeHtml(moveRequest.delivery_postcode)}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-          <div style="text-align: center; margin-bottom: 30px;">
-            <span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span>
-          </div>
-          <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Lead Unlocked Successfully</h2>
-          <p style="color: #475569; font-size: 16px;">Hi there,</p>
-          <p style="color: #475569; font-size: 16px;">You have unlocked the following lead:</p>
+          <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer Details</h2>
           <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
-            <p style="margin: 0 0 8px 0;"><strong>Customer:</strong> ${moveRequest.first_name}</p>
-            <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> <a href="tel:${moveRequest.phone}" style="color: #F97316;">${moveRequest.phone}</a></p>
-            <p style="margin: 0 0 8px 0;"><strong>Email:</strong> <a href="mailto:${moveRequest.email}" style="color: #F97316;">${moveRequest.email}</a></p>
-            <p style="margin: 0 0 8px 0;"><strong>Route:</strong> ${moveRequest.collection_postcode} → ${moveRequest.delivery_postcode}</p>
-            <p style="margin: 0;"><strong>Date:</strong> ${moveRequest.move_date}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Customer:</strong> ${escapeHtml(moveRequest.first_name)}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> ${escapeHtml(moveRequest.phone)}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Email:</strong> ${escapeHtml(moveRequest.email)}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Route:</strong> ${escapeHtml(moveRequest.collection_postcode)} to ${escapeHtml(moveRequest.delivery_postcode)}</p>
+            <p style="margin: 0;"><strong>Date:</strong> ${escapeHtml(moveRequest.move_date)}</p>
           </div>
-          <p style="color: #64748B; font-size: 14px; margin-top: 30px;">© 2026 Man and Van Club</p>
         </div>
       `,
     });
-
-    // Email customer
-    await resend.emails.send({
-      from: SENDER_ADDRESS,
-      to: [moveRequest.email],
-      subject: `A mover has unlocked your move request`,
-      html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-          <div style="text-align: center; margin-bottom: 30px;">
-            <span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span>
-          </div>
-          <h2 style="color: #0F172A; font-size: 24px;">Great news!</h2>
-          <p style="color: #475569; font-size: 16px;">Hi ${moveRequest.first_name},</p>
-          <p style="color: #475569; font-size: 16px;"><strong>A mover</strong> has unlocked your move request and will contact you shortly.</p>
-          <div style="background: #F0FDF4; border-left: 4px solid #22C55E; padding: 16px; margin: 24px 0;">
-            <p style="margin: 0; color: #166534; font-size: 15px;">You are under no obligation to accept their quote. Take your time and compare if needed.</p>
-          </div>
-          <p style="color: #64748B; font-size: 14px; margin-top: 30px;">© 2026 Man and Van Club</p>
-        </div>
-      `,
-    });
-
   } catch (err: any) {
-    console.error('[webhook] driver_lead_unlock error:', err.message);
+    console.error('[webhook] legacy driver payment error:', err.message);
   }
 }

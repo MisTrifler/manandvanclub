@@ -5,6 +5,8 @@
 :root {
   --background: #f9f9f7;
   --foreground: #1a1a1a;
+  --font-dm-sans: Arial, Helvetica, sans-serif;
+  --font-poppins: Arial, Helvetica, sans-serif;
 }
 
 body {

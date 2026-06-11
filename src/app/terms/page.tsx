@@ -14,12 +14,13 @@ export default function Terms() {
     <div className="bg-white min-h-screen py-20 text-primary/80">
       <div className="container mx-auto px-4 max-w-4xl prose prose-slate">
         <h1 className="text-4xl font-black text-primary uppercase tracking-tighter mb-8">Terms & Conditions</h1>
-        <p className="lead italic">Last Updated: June 7, 2026</p>
-        
+        <p className="lead italic">Last Updated: June 11, 2026</p>
+
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">1. Our Service</h2>
           <p><strong>Man and Van Club</strong> is an introduction marketplace only. We provide a platform that connects customers with independent local movers. <strong>Man and Van Club does not provide moving services directly.</strong></p>
-          <p>By using this website, you acknowledge that any moving contract exists solely between the customer and the mover. Man and Van Club is not a party to any agreement entered into between customers and movers.</p>
+          <p>Customers can submit move details for free. Approved movers can review anonymised move details and submit a mover quote. If a customer accepts a mover quote, the customer pays Man and Van Club a booking fee and their contact details are released only to that quoted mover.</p>
+          <p>Any moving contract exists solely between the customer and the mover. Man and Van Club is not a party to any agreement entered into between customers and movers.</p>
         </section>
 
         <section className="mt-12 space-y-6">
@@ -30,25 +31,39 @@ export default function Terms() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">3. For Businesses (Movers)</h2>
-          <p>Movers must be fully insured and verified before accessing the marketplace. <strong>Payments are securely processed by Stripe or other approved payment providers. We do not store complete payment card details.</strong></p>
-          
-          <h3 className="text-xl font-bold text-primary uppercase">Lead Fee Refund Rules</h3>
-          <p>Refunds for lead fees are only available where:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Customer contact details are invalid</li>
-            <li>Duplicate lead supplied</li>
-            <li>Technical charging error</li>
-          </ul>
-          <p>No refund is available because:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Customer does not answer</li>
-            <li>Customer declines a quote</li>
-            <li>Customer books another mover</li>
-            <li>Customer cancels</li>
-            <li>Mover cannot secure the booking</li>
-            <li>Mover chooses not to quote</li>
-          </ul>
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">3. Booking Fee Rules for Customers</h2>
+          <p>You only pay a booking fee if you accept a mover quote.</p>
+          <p><strong>The booking fee is separate from the mover’s quote.</strong></p>
+          <p><strong>You pay the mover’s quoted price directly to the mover.</strong></p>
+          <p>The booking fee confirms your accepted quote and releases your contact details only to that mover.</p>
+        </section>
+
+        <section className="mt-12 space-y-6">
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">4. Rules for Movers</h2>
+          <p>Movers must be approved before accessing the marketplace. Applications may include checks on business details, contact details, service areas and insurance documents.</p>
+          <p><strong>Movers submit quotes for free.</strong></p>
+          <p>Customer details are released only after the customer accepts a quote and pays the booking fee.</p>
+          <p>Movers are expected to honour quotes based on the details provided.</p>
+          <p>The quote may only change if the move details provided were incomplete, inaccurate or later changed.</p>
+        </section>
+
+        <section className="mt-12 space-y-6">
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">5. Refunds and Cancellations</h2>
+          <p>The booking fee is refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement.</p>
+          <p>The booking fee is also refundable for duplicate payments, technical charging errors, or where customer details were not released after a successful booking fee payment.</p>
+          <p>The booking fee is not normally refundable if you cancel after accepting the quote, provide incorrect move details, change the job, or book another mover elsewhere.</p>
+          <p>This does not affect your statutory rights.</p>
+        </section>
+
+        <section className="mt-12 space-y-6">
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">6. Limitation of Liability</h2>
+          <p>Man and Van Club is not responsible for the physical moving service provided by independent movers. Customers and movers are responsible for confirming final timings, access, inventory, insurance, payment method and any other move-specific details directly with each other.</p>
+          <p>Nothing in these terms limits or excludes liability where it would be unlawful to do so.</p>
+        </section>
+
+        <section className="mt-12 space-y-6">
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">7. Contact</h2>
+          <p>If you have questions about these terms, booking fees, refunds or a move request, contact us at <a href="mailto:support@manandvanclub.co.uk">support@manandvanclub.co.uk</a>.</p>
         </section>
 
         <div className="mt-16 pt-8 border-t border-border">

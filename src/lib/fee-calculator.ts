@@ -1,3 +1,5 @@
+// Legacy helper retained for compatibility. The current customer-paid model uses
+// src/lib/booking-fee.ts as the source of truth.
 export function calculateIntroductionFee(moveType: string, details?: any): number {
   const estimatedValues: Record<string, number> = {
     "Single Item": 75,
@@ -29,11 +31,8 @@ export function calculateIntroductionFee(moveType: string, details?: any): numbe
     case "Storage Collection":
       value = 500;
       if (details?.storageUnitSize) {
-        if (details.storageUnitSize.includes("Small")) {
-          value = 250;
-        } else if (details.storageUnitSize.includes("Large")) {
-          value = 700;
-        }
+        if (details.storageUnitSize.includes("Small")) value = 250;
+        else if (details.storageUnitSize.includes("Large")) value = 700;
       }
       break;
     case "Home Move":
@@ -50,11 +49,9 @@ export function calculateIntroductionFee(moveType: string, details?: any): numbe
       value = estimatedValues[moveType] || 400;
   }
 
-  if (value <= 100) return 4.99;
-  if (value <= 200) return 9.99;
-  if (value <= 300) return 14.99;
-  if (value <= 500) return 24.99;
-  if (value <= 700) return 34.99;
-  if (value <= 1000) return 44.99;
-  return 59.99;
+  if (value <= 100) return 10;
+  if (value <= 250) return 15;
+  if (value <= 500) return 25;
+  if (value <= 1000) return 35;
+  return 50;
 }

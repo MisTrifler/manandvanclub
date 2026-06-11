@@ -21,7 +21,7 @@ const servicePageData: Record<string, any> = {
     name: "House Removals",
     formIntent: "house",
     title: "House Removals | Professional Home Moving Services | Man and Van Club",
-    description: "Professional house removals across England. Get matched with a vetted local mover for your full home move. Fixed or hourly pricing, fully insured.",
+    description: "Professional house removals across England. Get matched with a vetted local mover for your full home move. Fixed or hourly pricing, insurance details requested.",
     badge: "Home Moving Experts",
     intro: "Moving your entire home? Our network of vetted local movers specialises in house removals of every size. From one-bedroom flats to large family homes, we match you with a professional who has the right vehicle and experience.",
     knowledge: "Every house removal is different. Our movers know how to handle tight staircases, large furniture, and fragile items. They bring protective blankets, straps, and trolleys as standard. You get a single point of contact from start to finish — no call centres, no confusion.",
@@ -83,7 +83,7 @@ const servicePageData: Record<string, any> = {
     title: "Furniture Collection & Delivery | Single Item Movers | Man and Van Club",
     description: "Single-item furniture collection and delivery across England. From eBay purchases to shop collections, get matched with a reliable local mover.",
     badge: "Furniture Delivery Experts",
-    intro: "Need a single item collected and delivered? Whether it's a sofa from a shop, a dining table from an eBay seller, or a wardrobe from a friend, our furniture collection service is fast, affordable, and fully insured.",
+    intro: "Need a single item collected and delivered? Whether it's a sofa from a shop, a dining table from an eBay seller, or a wardrobe from a friend, our furniture collection service is fast, affordable, and insurance details requested.",
     knowledge: "Our furniture collection specialists handle everything from small parcels to large wardrobes. They bring blankets, straps, and trolleys to protect your items. You can book same-day or scheduled slots depending on availability.",
     areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "eBay Purchases"],
     faq: [
@@ -114,7 +114,7 @@ const servicePageData: Record<string, any> = {
     description: "Long distance removals across the UK. Moving from Birmingham to London, Manchester to Bristol, or anywhere in between? Get matched with a vetted mover.",
     badge: "UK-Wide Movers",
     intro: "Moving across the country? Our long-distance removal service connects you with movers who regularly travel between cities. Whether it's a single load or a full house move, you get a dedicated driver and transparent pricing.",
-    knowledge: "Long-distance moves require careful planning. Our movers calculate routes, fuel costs, and driving time accurately. They provide clear fixed-price quotes so there are no surprises. Every long-distance move is fully insured.",
+    knowledge: "Long-distance moves require careful planning. Our movers calculate routes, fuel costs, and driving time accurately. They provide clear fixed-price quotes so there are no surprises. Every long-distance move is insurance details requested.",
     areas: ["City to City", "Cross-Country", "England to Scotland", "England to Wales", "Regional Moves", "Multi-Drop"],
     faq: [
       { q: "How much does a long-distance move cost?", a: "Long-distance pricing depends on mileage, volume, and whether it's a return or one-way journey. Typical city-to-city moves start from £250." },
@@ -128,7 +128,7 @@ const servicePageData: Record<string, any> = {
     title: "Facebook Marketplace Collection & Delivery | Man and Van Club",
     description: "Collection and delivery for Facebook Marketplace purchases across England. Get matched with a local mover who can collect and deliver your purchases safely.",
     badge: "Marketplace Collection",
-    intro: "Bought something on Facebook Marketplace and need it collected? Our marketplace collection service connects you with a local mover who can pick up your purchase and deliver it to your door. Fast, affordable, and fully insured.",
+    intro: "Bought something on Facebook Marketplace and need it collected? Our marketplace collection service connects you with a local mover who can pick up your purchase and deliver it to your door. Fast, affordable, and insurance details requested.",
     knowledge: "Facebook Marketplace purchases often need quick collection. Our movers offer flexible slots and can often collect within 24–48 hours. They bring the right vehicle size for sofas, beds, tables, and appliances.",
     areas: ["Sofas", "Beds", "Tables", "Appliances", "Wardrobes", "Miscellaneous Items"],
     faq: [

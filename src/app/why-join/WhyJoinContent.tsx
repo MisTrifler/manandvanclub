@@ -43,28 +43,28 @@ import {
 import FAQ from "@/components/FAQ";
 
 const FAQ_ITEMS = [
-  { q: "Do I need a subscription?", a: "No. You only pay when you choose to unlock an enquiry. There are no monthly fees, no recurring charges, and no long-term contracts." },
-  { q: "How do enquiries work?", a: "When a customer submits a move request, we review and match it to a suitable mover in the area. Approved movers can view the enquiry details and choose whether to unlock it. Each enquiry is offered to one mover at a time." },
-  { q: "Are enquiries shared with multiple movers?", a: "No. The platform is designed around exclusive enquiry opportunities. Each enquiry is offered to one mover at a time, so you are not competing against multiple companies for the same customer." },
+  { q: "Do I need a subscription?", a: "No. Approved movers submit quotes for free. Customer details are released only when the customer accepts a quote and pays the booking fee." },
+  { q: "How do enquiries work?", a: "When a customer submits a move request, we review and match it to a suitable mover in the area. Approved movers can view the enquiry details and choose whether to quote for it. Each enquiry is offered to one mover at a time." },
+  { q: "Are enquiries shared with multiple movers?", a: "No. The platform is designed around one customer-confirmed quote at a time, so customers are not spammed by multiple companies." },
   { q: "How do I get approved?", a: "Applications are reviewed manually. You must provide proof of Goods in Transit Insurance and Public Liability Insurance as part of the onboarding process. Verification usually takes less than 24 hours." },
   { q: "Can I choose my coverage area?", a: "Yes. You can set your preferred service area within your account. You will only see enquiries that match your location and job type preferences." },
   { q: "How quickly are applications reviewed?", a: "Most applications are reviewed within 24 hours. Once approved, you can immediately start viewing available enquiries in your service area." },
 ];
 
 const COMPARISON_ROWS = [
-  { left: "Shared Leads", right: "Exclusive Enquiry Opportunities" },
+  { left: "Shared Customers", right: "Customer-Confirmed Opportunities" },
   { left: "Multiple Competitors", right: "Reduced Competition" },
   { left: "Price Wars", right: "Direct Customer Contact" },
-  { left: "Unclear Costs", right: "Transparent Lead Fees" },
+  { left: "Unclear Costs", right: "Transparent Booking Fees" },
   { left: "Complex Process", right: "Simple Process" },
 ];
 
 const BENEFIT_CARDS = [
-  { t: "Exclusive Enquiry Opportunities", d: "Customer enquiries are offered to one mover at a time. No competing against multiple companies for the same lead.", icon: <Lock size={24} /> },
-  { t: "Direct Customer Contact", d: "Once you unlock an enquiry, you receive full customer contact details to arrange the move directly.", icon: <Phone size={24} /> },
-  { t: "Transparent Pricing", d: "Clear lead fees based on job value. No hidden charges, no subscriptions, no monthly contracts.", icon: <Wallet size={24} /> },
-  { t: "Flexible Growth", d: "Choose which enquiries to unlock. Set your coverage area and grow at your own pace.", icon: <TrendingUp size={24} /> },
-  { t: "No Monthly Subscription", d: "Pay only when you unlock an enquiry. No recurring fees, no minimum commitments, no lock-in contracts.", icon: <Zap size={24} /> },
+  { t: "Customer-Confirmed Opportunities", d: "Customer enquiries are offered through a one-mover process. Customers are not spammed by multiple companies.", icon: <Lock size={24} /> },
+  { t: "Direct Customer Contact", d: "Customer details are released after the customer accepts your quote and pays the booking fee.", icon: <Phone size={24} /> },
+  { t: "Transparent Pricing", d: "Approved movers submit quotes for free. Customer details are released only after customer acceptance.", icon: <Wallet size={24} /> },
+  { t: "Flexible Growth", d: "Choose which enquiries to quote for. Set your coverage area and grow at your own pace.", icon: <TrendingUp size={24} /> },
+  { t: "No Monthly Subscription", d: "No subscriptions, no minimum commitments, and no payment to submit quotes in the main marketplace flow.", icon: <Zap size={24} /> },
   { t: "Simple Application Process", d: "Apply online, verify your insurance, and get approved within 24 hours. Start accessing enquiries immediately.", icon: <ClipboardCheck size={24} /> },
 ];
 
@@ -73,7 +73,7 @@ const HOW_IT_WORKS_STEPS = [
   { t: "Insurance Verification", d: "Provide proof of Goods in Transit and Public Liability insurance.", icon: <ShieldCheck size={24} /> },
   { t: "Approval", d: "Our team reviews your application manually, usually within 24 hours.", icon: <BadgeCheck size={24} /> },
   { t: "Access Enquiries", d: "Log in to view available customer enquiries in your service area.", icon: <Eye size={24} /> },
-  { t: "Contact Customers Directly", d: "Unlock enquiries that suit you and contact customers directly to arrange the move.", icon: <Phone size={24} /> },
+  { t: "Contact Customers Directly", d: "Submit quotes for enquiries that suit you. Customer details are released after the customer accepts and pays the booking fee.", icon: <Phone size={24} /> },
 ];
 
 const COVERAGE_LOCATIONS = [
@@ -103,7 +103,7 @@ const SAMPLE_ENQUIRIES = [
     location: "Birmingham",
     property: "2 Bedroom Property",
     date: "Flexible",
-    fee: "£24.99",
+    fee: "£25",
     icon: <Home size={20} />,
   },
   {
@@ -111,7 +111,7 @@ const SAMPLE_ENQUIRIES = [
     location: "Wolverhampton",
     property: "Single Item",
     date: "This Week",
-    fee: "£9.99",
+    fee: "£10",
     icon: <Sofa size={20} />,
   },
 ];
@@ -160,10 +160,10 @@ export default function WhyJoinContent() {
                 Mover Network
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.95] text-primary">
-                Get Exclusive Customer Enquiries Without Competing Against Other Movers
+                Get Customer-Confirmed Move Requests Without Spammy Competition
               </h1>
               <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-                Most lead generation websites sell enquiries to multiple businesses. We take a different approach. Customer enquiries are offered exclusively, helping reduce wasted spend and unnecessary competition.
+                Most comparison websites send customers to multiple businesses. We take a different approach: customer details stay protected and are released only after a customer accepts a mover quote.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -221,7 +221,7 @@ export default function WhyJoinContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Why We're Different</h2>
-            <p className="text-text-secondary mt-3">See how we compare to traditional lead generation websites.</p>
+            <p className="text-text-secondary mt-3">See how we compare to noisy comparison websites.</p>
           </div>
           <div className="max-w-5xl mx-auto bg-[#F9F9F7] rounded-[2.5rem] border border-border p-6 md:p-10">
             {/* Header row */}
@@ -230,7 +230,7 @@ export default function WhyJoinContent() {
                 <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center text-red-500">
                   <XCircle size={20} />
                 </div>
-                <h3 className="text-lg font-black text-primary uppercase tracking-tight">Traditional Lead Sites</h3>
+                <h3 className="text-lg font-black text-primary uppercase tracking-tight">Traditional Customer Sites</h3>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
@@ -263,7 +263,7 @@ export default function WhyJoinContent() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
-            <p className="text-text-secondary mt-3">From application to your first exclusive enquiry.</p>
+            <p className="text-text-secondary mt-3">From application to your first customer-confirmed opportunity.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {HOW_IT_WORKS_STEPS.map((step, i) => (
@@ -325,7 +325,7 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-      {/* ── Lead Example Section ── */}
+      {/* ── Customer Example Section ── */}
       <section className="py-20 bg-[#F9F9F7] border-b border-border">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
@@ -361,7 +361,7 @@ export default function WhyJoinContent() {
                     <span className="text-xs font-black text-primary uppercase">{enquiry.date}</span>
                   </div>
                   <div className="flex items-center justify-between py-3">
-                    <span className="text-xs font-medium text-text-secondary">Lead Fee</span>
+                    <span className="text-xs font-medium text-text-secondary">Booking Fee</span>
                     <span className="text-lg font-black text-accent">{enquiry.fee}</span>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ export default function WhyJoinContent() {
               Ready to Join?
             </h2>
             <p className="text-xl text-text-secondary font-medium leading-relaxed max-w-xl mx-auto">
-              Apply today and start accessing customer enquiry opportunities. No subscription, no monthly fees — just quality leads.
+              Apply today and start accessing customer enquiry opportunities. No subscription, no monthly fees — just quality move requests.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

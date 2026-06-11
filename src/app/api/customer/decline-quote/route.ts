@@ -4,9 +4,10 @@ import { getSupabaseAdmin } from "@/lib/supabase-admin";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { token } = body;
+    const token = typeof body.token === "string" ? body.token.trim() : "";
+    const reason = typeof body.reason === "string" ? body.reason.slice(0, 200) : null;
 
-    if (!token || typeof token !== "string") {
+    if (!token) {
       return NextResponse.json({ error: "Missing token" }, { status: 400 });
     }
 
@@ -14,7 +15,7 @@ export async function POST(req: Request) {
 
     const { data: lead } = await supabaseAdmin
       .from("move_requests")
-      .select("id, status, customer_declined_quote_at")
+      .select("id, status, booking_fee_paid")
       .eq("customer_quote_token", token)
       .single();
 
@@ -22,11 +23,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Quote not found" }, { status: 404 });
     }
 
-    if (lead.status === "booked" || lead.status === "declined") {
-      return NextResponse.json(
-        { error: "Quote already resolved" },
-        { status: 409 }
-      );
+    if (lead.booking_fee_paid === true || lead.status === "booked") {
+      return NextResponse.json({ error: "This quote has already been accepted" }, { status: 409 });
     }
 
     await supabaseAdmin
@@ -34,15 +32,14 @@ export async function POST(req: Request) {
       .update({
         status: "declined",
         customer_declined_quote_at: new Date().toISOString(),
+        declined_reason: reason,
       })
-      .eq("id", lead.id);
+      .eq("id", lead.id)
+      .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, message: "Quote declined. Your details have not been released to the mover." });
   } catch (error: any) {
-    console.error("[decline-quote] Error:", error?.message || error);
-    return NextResponse.json(
-      { error: error?.message || "Server error" },
-      { status: 500 }
-    );
+    console.error("[customer/decline-quote] Error:", error?.message || error);
+    return NextResponse.json({ error: error?.message || "Internal error" }, { status: 500 });
   }
 }

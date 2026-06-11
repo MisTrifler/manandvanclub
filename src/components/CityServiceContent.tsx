@@ -150,7 +150,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                  <p className="text-lg lg:text-xl text-text-secondary font-medium leading-relaxed">{data.knowledge}</p>
                  <div className="bg-primary/5 p-8 lg:p-12 rounded-[2.5rem] border border-border/40">
                    <p className="text-lg lg:text-xl text-primary font-medium leading-relaxed italic">
-                     "Whether you are moving a single item or a full house relocation, our network makes it easy to get exclusively matched with a local professional in seconds. We handle the vetting so you can focus on your move."
+                     "Whether you are moving a single item or a full house relocation, our network makes it easy to request a quote from a local professional while keeping your details protected. We handle the vetting so you can focus on your move."
                    </p>
                  </div>
               </div>
@@ -160,7 +160,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 {[
                   { t: "Fixed & Hourly", d: "Choose the pricing model that works best for your budget.", i: <Clock size={28} /> },
                   { t: "Fully Vetted", d: "Every driver is reviewed and verified by our team.", i: <ShieldCheck size={28} /> },
-                  { t: "Full Insurance", d: "Your items are covered during transit as standard.", i: <CheckCircle2 size={28} /> },
+                  { t: "Insurance Details Requested", d: "Approved movers are asked to provide insurance details during onboarding.", i: <CheckCircle2 size={28} /> },
                   { t: "Local Knowledge", d: "Our movers know every shortcut and parking quirk.", i: <Users size={28} /> }
                 ].map(f => (
                   <div key={f.t} className="bg-[#F9F9F7] p-10 rounded-[2.5rem] border border-border/50 space-y-6 group hover:bg-white hover:shadow-2xl transition-all duration-500">
@@ -180,13 +180,13 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                  <p className="text-text-secondary font-medium text-lg leading-relaxed">
                    {isServicePage
                      ? `It takes less than 60 seconds to get matched with a vetted mover for ${data.name.toLowerCase()}.`
-                     : `It takes less than 60 seconds to find the best local movers in ${data.name}.`}
+                     : `It takes less than 60 seconds to request a quote from a vetted local mover in ${data.name}.`}
                  </p>
                  <Link href="#quote-form" className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 shadow-2xl shadow-accent/20 hover:scale-105 transition-all">
                     Get Matched Now <ArrowUpRight size={22} />
                  </Link>
                  <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
-                   <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Fully Insured</span>
+                   <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Insurance Details Requested</span>
                    <span className="flex items-center gap-1.5"><Zap size={14} className="text-accent"/> 1-to-1 Match</span>
                  </div>
                </div>
@@ -307,9 +307,9 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Why Customers Use Man and Van Club</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
-                    { icon: <ClipboardCheck size={24} />, label: "Free Enquiry" },
+                    { icon: <ClipboardCheck size={24} />, label: "Free To Submit" },
                     { icon: <PhoneOff size={24} />, label: "No Multiple Sales Calls" },
-                    { icon: <UserCheck size={24} />, label: "Exclusive Matching Process" },
+                    { icon: <UserCheck size={24} />, label: "Customer-Confirmed Process" },
                     { icon: <Lock size={24} />, label: "Secure Enquiry Process" },
                     { icon: <MapPin size={24} />, label: "Local Mover Coverage" },
                   ].map((item, i) => (
@@ -478,8 +478,8 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
             </h2>
             <p className="text-xl text-text-secondary font-medium leading-relaxed">
               {isServicePage
-                ? `Tell us what you need and we will connect you with a suitable vetted mover for ${data.name.toLowerCase()}. No spam, just one direct introduction.`
-                : "Tell us about your move and we'll help connect you with a suitable local mover. No spam, just one direct introduction."}
+                ? `Tell us what you need and we will connect you with a suitable vetted mover for ${data.name.toLowerCase()}. No spam, just one customer-confirmed process.`
+                : "Tell us about your move and we'll help connect you with a suitable local mover. No spam, just one customer-confirmed process."}
             </p>
             <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3 text-lg">
               Get Matched <ArrowRight size={24} />

@@ -325,7 +325,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           >
             Get Matched
           </h2>
-          <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • No payment required</p>
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Booking fee only if quote accepted</p>
           <div className="mt-6">
             <IntentSelector onSelect={(intent) => { setSelectedIntent(intent); setStep(1); }} />
           </div>
@@ -346,7 +346,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         >
           Get Matched
         </h2>
-        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • No payment required</p>
+        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Booking fee only if quote accepted</p>
       </div>
 
       {/* Progress bar */}
@@ -410,7 +410,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             <div className="flex flex-wrap gap-2">
               {[
                 { icon: <Clock size={13} />, text: "Under 60 seconds" },
-                { icon: <BadgeCheck size={13} />, text: "No payment" },
+                { icon: <BadgeCheck size={13} />, text: "Free to submit" },
                 { icon: <Shield size={13} />, text: "No obligation" },
                 { icon: <Lock size={13} />, text: "GDPR secure" },
               ].map((item, i) => (
@@ -767,7 +767,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <p className="text-5xl font-black tracking-tighter text-primary">
                 {estimate ? `£${estimate.min}–${estimate.max}` : "£—"}
               </p>
-              <p className="text-xs text-text-secondary mt-3 font-medium">This is an estimate based on the details you provided. The matched mover will provide a confirmed quote.</p>
+              <p className="text-xs text-text-secondary mt-3 font-medium">This is an estimate based on the details you provided. A vetted mover can review your request and send a quote if they can help.</p>
             </div>
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
             <button onClick={() => setStep(1)} className="text-[10px] font-black uppercase opacity-30">Back</button>
@@ -786,7 +786,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <p className="text-xs font-bold text-primary flex items-center gap-1.5">
                   <span className="inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">Secure & GDPR Compliant</span>
                 </p>
-                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely and shared only with your matched mover.</p>
+                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely. Details are released only if you accept a mover quote and pay the booking fee.</p>
               </div>
             </div>
 

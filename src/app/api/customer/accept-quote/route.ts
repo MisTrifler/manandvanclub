@@ -1,56 +1,59 @@
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
-import { calculateBookingFee } from "@/lib/booking-fee";
+import { calculateBookingFee, normaliseQuoteAmount, toStripePence } from "@/lib/booking-fee";
+
+function isExpired(expiresAt?: string | null) {
+  if (!expiresAt) return false;
+  const expiry = new Date(expiresAt).getTime();
+  return Number.isFinite(expiry) && expiry <= Date.now();
+}
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { token } = body;
+    const token = typeof body.token === "string" ? body.token.trim() : "";
 
-    if (!token || typeof token !== "string") {
+    if (!token) {
       return NextResponse.json({ error: "Missing token" }, { status: 400 });
     }
 
     const supabaseAdmin = getSupabaseAdmin();
 
-    // 1. Fetch request by secure token
-    const { data: lead } = await supabaseAdmin
+    const { data: lead, error: fetchError } = await supabaseAdmin
       .from("move_requests")
       .select("*")
       .eq("customer_quote_token", token)
       .single();
 
-    if (!lead) {
+    if (fetchError || !lead) {
       return NextResponse.json({ error: "Quote not found" }, { status: 404 });
     }
 
-    // 2. Guard: must be quoted, not already booked, not declined
     if (lead.status !== "quoted") {
-      return NextResponse.json(
-        { error: "Quote is no longer available" },
-        { status: 409 }
-      );
+      return NextResponse.json({ error: "Quote is no longer available" }, { status: 409 });
     }
 
-    if (lead.booking_fee_paid) {
-      return NextResponse.json(
-        { error: "Booking fee has already been paid" },
-        { status: 409 }
-      );
+    if (!lead.quote_amount || !lead.quoted_by) {
+      return NextResponse.json({ error: "Quote is incomplete" }, { status: 400 });
     }
 
-    if (!lead.quote_amount || lead.quote_amount <= 0) {
-      return NextResponse.json(
-        { error: "Invalid quote amount" },
-        { status: 400 }
-      );
+    if (lead.booking_fee_paid === true) {
+      return NextResponse.json({ error: "Booking fee has already been paid" }, { status: 409 });
     }
 
-    // 3. Calculate booking fee server-side
-    const bookingFee = calculateBookingFee(lead.quote_amount);
+    if (isExpired(lead.quote_expires_at)) {
+      await supabaseAdmin
+        .from("move_requests")
+        .update({ status: "expired" })
+        .eq("id", lead.id)
+        .eq("status", "quoted")
+        .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
+      return NextResponse.json({ error: "This quote has expired" }, { status: 409 });
+    }
 
-    // 4. Create Stripe Checkout session for the CUSTOMER booking fee
+    const quoteAmount = normaliseQuoteAmount(lead.quote_amount);
+    const bookingFee = calculateBookingFee(quoteAmount);
     const siteUrl = process.env.NEXT_PUBLIC_URL || "https://www.manandvanclub.co.uk";
 
     const session = await stripe.checkout.sessions.create({
@@ -61,41 +64,44 @@ export async function POST(req: Request) {
             currency: "gbp",
             product_data: {
               name: "Booking Fee",
-              description: `Accept your mover quote and release your details to the mover. The remaining move cost is paid directly to the mover.`,
+              description:
+                "Accept your mover quote and release your details to the mover. The remaining move cost is paid directly to the mover.",
             },
-            unit_amount: Math.round(bookingFee * 100), // pence
+            unit_amount: toStripePence(bookingFee),
           },
           quantity: 1,
         },
       ],
       mode: "payment",
       success_url: `${siteUrl}/booking-confirmed?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/quote-cancelled?token=${token}`,
+      cancel_url: `${siteUrl}/quote-review/${token}`,
+      customer_email: lead.email || undefined,
       metadata: {
         paymentType: "customer_booking_fee",
         requestId: lead.id,
-        token: lead.customer_quote_token,
-        quoteAmount: lead.quote_amount.toString(),
+        quoteAmount: quoteAmount.toString(),
         bookingFee: bookingFee.toString(),
         quotedBy: lead.quoted_by || "",
         customerEmail: lead.email || "",
       },
     });
 
-    // 5. Store Stripe session ID so the webhook can match it
     await supabaseAdmin
       .from("move_requests")
       .update({
+        booking_fee: bookingFee,
         booking_fee_stripe_session_id: session.id,
       })
-      .eq("id", lead.id);
+      .eq("id", lead.id)
+      .eq("status", "quoted")
+      .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
 
     return NextResponse.json({ url: session.url });
   } catch (error: any) {
     console.error("[customer/accept-quote] Error:", error?.message || error);
     return NextResponse.json(
       { error: error?.message || "Internal error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

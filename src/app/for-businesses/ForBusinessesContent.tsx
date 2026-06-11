@@ -41,7 +41,7 @@ export default function ForBusinessesContent() {
                 <div className="space-y-4">
                 {[
                   "New customer enquiries daily",
-                  "Unlock verified move requests",
+                  "Submit quotes for verified move requests",
                   "No monthly contracts — ever",
                   "Control your service area and job types",
                   "Build a verified review profile"
@@ -72,7 +72,7 @@ export default function ForBusinessesContent() {
               <div className="space-y-4">
                 <h2 className="text-4xl font-black uppercase tracking-tight text-primary leading-none">Apply to Join</h2>
                 <p className="text-text-secondary font-medium text-lg leading-relaxed">
-                  Join a network built around exclusive customer enquiries. No competing against multiple movers.
+                  Join a network built around customer-confirmed move requests. Customers are not spammed by multiple movers.
                 </p>
               </div>
               
@@ -127,7 +127,7 @@ export default function ForBusinessesContent() {
             className="bg-[#F9F9F7] border-2 border-dashed border-border rounded-[3rem] p-16 md:p-24 shadow-inner"
           >
             <ShieldCheck size={64} className="text-accent mx-auto mb-8" />
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-primary uppercase tracking-tighter leading-none">View Driver Pricing</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-primary uppercase tracking-tighter leading-none">View Booking Fee Pricing</h2>
             <p className="text-xl text-text-secondary mb-12 max-w-md mx-auto leading-relaxed font-medium">
               To protect the network and ensure quality, driver pay-per-job rates are only visible to verified professional moving companies.
             </p>
@@ -148,7 +148,7 @@ export default function ForBusinessesContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { t: "Grow Fast", d: "Access a stream of active move requests in your service area today.", i: <TrendingUp /> },
-              { t: "Exclusive Access", d: "Stop bidding against multiple companies. Once you unlock a customer, they are yours exclusively.", i: <Wallet /> },
+              { t: "Exclusive Access", d: "Stop bidding against multiple companies. Once you receive customer details after booking fee payment, they are yours exclusively.", i: <Wallet /> },
               { t: "Full Control", d: "Choose exactly where you work and the types of jobs you want to accept.", i: <Map /> },
               { t: "Verified Status", d: "Build your professional reputation within our exclusive logistics network.", i: <ShieldCheck /> },
             ].map((item, i) => (

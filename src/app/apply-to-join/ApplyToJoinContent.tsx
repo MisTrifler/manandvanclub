@@ -90,12 +90,12 @@ export default function ApplyToJoinContent() {
               Why Join <span className="text-accent italic">Man and Van Club?</span>
             </h1>
             <p className="text-text-secondary font-medium leading-relaxed">
-              Join a network built around exclusive customer enquiries. What's in it for you?
+              Join a network built around customer-confirmed move requests. What's in it for you?
             </p>
 
             <div className="space-y-4">
               {[
-                { icon: <Zap size={16} className="text-accent" />, text: "Exclusive lead opportunities" },
+                { icon: <Zap size={16} className="text-accent" />, text: "Customer-confirmed booking opportunities" },
                 { icon: <ShieldCheck size={16} className="text-accent" />, text: "No competing against multiple movers" },
                 { icon: <Zap size={16} className="text-accent" />, text: "Direct customer contact" },
                 { icon: <ShieldCheck size={16} className="text-accent" />, text: "Choose your own service area" },
@@ -195,7 +195,7 @@ export default function ApplyToJoinContent() {
                     <div className="space-y-1">
                       <p className="text-xs font-black uppercase tracking-tight text-primary">Insurance Confirmation</p>
                       <p className="text-[10px] text-text-secondary font-medium leading-relaxed uppercase tracking-wider">
-                        I confirm I am fully insured for goods in transit and public liability.
+                        I confirm I am insurance details requested for goods in transit and public liability.
                       </p>
                     </div>
                   </div>

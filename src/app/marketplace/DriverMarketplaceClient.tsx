@@ -51,7 +51,11 @@ interface Lead {
   quoted_by?: string;
   quote_amount?: number;
   quoted_at?: string;
+  booking_fee?: number;
   booking_fee_paid?: boolean;
+  customer_details_released_at?: string;
+  declined_reason?: string;
+  quote_expires_at?: string;
 }
 
 interface Props {
@@ -104,6 +108,10 @@ export default function DriverMarketplaceClient({
       setQuoteError("Please enter a valid quote amount greater than £0.");
       return;
     }
+    if (amount > 10000) {
+      setQuoteError("Quote amount must not exceed £10,000.");
+      return;
+    }
     setLoadingId(lead.id);
     setQuoteError(null);
 
@@ -134,22 +142,35 @@ export default function DriverMarketplaceClient({
     }
   };
 
+  const isQuotedByMe = (lead: Lead) =>
+    lead.quoted_by?.toLowerCase() === userEmail.toLowerCase();
+
   const isMyQuoted = (lead: Lead) =>
-    lead.quoted_by?.toLowerCase() === userEmail.toLowerCase() && lead.status === "quoted";
+    isQuotedByMe(lead) && lead.status === "quoted";
 
   const isMyBooked = (lead: Lead) =>
-    lead.quoted_by?.toLowerCase() === userEmail.toLowerCase() && lead.status === "booked";
+    isQuotedByMe(lead) &&
+    lead.status === "booked" &&
+    lead.booking_fee_paid === true &&
+    Boolean(lead.customer_details_released_at);
+
+  const isMyDeclined = (lead: Lead) =>
+    isQuotedByMe(lead) && lead.status === "declined";
 
   const isTakenByOther = (lead: Lead) => {
     if (!lead.quoted_by) return false;
-    if (lead.status === "booked") return true;
-    if (lead.status === "quoted" && lead.quoted_by.toLowerCase() !== userEmail.toLowerCase()) return true;
-    return false;
+    if (isQuotedByMe(lead)) return false;
+    return lead.status === "booked" || lead.status === "quoted";
   };
 
-  const availableLeads = leads.filter((l) => l.status === "active" || l.status === "verified" || l.status === null || l.status === "");
+  const isAvailable = (lead: Lead) =>
+    !lead.quoted_by &&
+    (lead.status === "available" || lead.status === "active" || lead.status === "verified" || lead.status === null || lead.status === "");
+
+  const availableLeads = leads.filter((l) => isAvailable(l));
   const myQuoted = leads.filter((l) => isMyQuoted(l));
   const myBooked = leads.filter((l) => isMyBooked(l));
+  const myDeclined = leads.filter((l) => isMyDeclined(l));
   const takenByOther = leads.filter((l) => isTakenByOther(l));
 
   const renderLeadCard = (lead: Lead, showQuoteForm: boolean) => {
@@ -167,11 +188,13 @@ export default function DriverMarketplaceClient({
 
     const cardStatus = isMyBooked(lead)
       ? "booked"
-      : isMyQuoted(lead)
-        ? "quoted"
-        : isTakenByOther(lead)
-          ? "taken"
-          : "available";
+      : isMyDeclined(lead)
+        ? "declined"
+        : isMyQuoted(lead)
+          ? "quoted"
+          : isTakenByOther(lead)
+            ? "taken"
+            : "available";
 
     return (
       <div
@@ -181,7 +204,9 @@ export default function DriverMarketplaceClient({
             ? "border-green-300"
             : cardStatus === "quoted"
               ? "border-amber-300"
-              : "border-border"
+              : cardStatus === "declined"
+                ? "border-red-200"
+                : "border-border"
         }`}
       >
         <div className="p-5 md:p-6">
@@ -217,6 +242,12 @@ export default function DriverMarketplaceClient({
               <span className="inline-flex items-center gap-1 bg-amber-50 text-amber-600 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
                 <FileText size={12} />
                 Quote sent
+              </span>
+            )}
+            {cardStatus === "declined" && (
+              <span className="inline-flex items-center gap-1 bg-red-50 text-red-600 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                <FileText size={12} />
+                Customer declined quote
               </span>
             )}
             {submitted && (
@@ -355,7 +386,7 @@ export default function DriverMarketplaceClient({
               <div className="flex items-center gap-2">
                 <Banknote size={16} className="text-primary/40" />
                 <p className="text-xs text-text-secondary/70 font-medium">
-                  Submit your quote — no payment required
+                  Submit your quote for free
                 </p>
               </div>
               <button
@@ -372,7 +403,7 @@ export default function DriverMarketplaceClient({
             <div className="flex items-center gap-2">
               <FileText size={16} className="text-amber-500" />
               <p className="text-sm font-bold text-amber-700">
-                Quote sent. The customer can now accept the quote and pay the booking fee. Customer details will be released if they accept.
+                Quote sent — waiting for customer. Customer details will only be released if they accept and pay the booking fee.
               </p>
             </div>
           )}
@@ -393,8 +424,22 @@ export default function DriverMarketplaceClient({
                 View Customer Details
               </a>
               <p className="text-xs text-text-secondary/70">
-                Final payment for the move is arranged directly between you and the customer.
+                The customer pays your quoted move price directly to you.
               </p>
+            </div>
+          )}
+
+          {cardStatus === "declined" && (
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <FileText size={16} className="text-red-500" />
+                <p className="text-sm font-bold text-red-700">
+                  Customer declined quote. Your quote was not accepted and customer details were not released.
+                </p>
+              </div>
+              {lead.declined_reason && (
+                <p className="text-xs text-text-secondary/70">Reason: {lead.declined_reason}</p>
+              )}
             </div>
           )}
 
@@ -465,6 +510,18 @@ export default function DriverMarketplaceClient({
             </h2>
             <div className="grid grid-cols-1 gap-5">
               {myQuoted.map((lead) => renderLeadCard(lead, false))}
+            </div>
+          </div>
+        )}
+
+        {/* Declined quotes */}
+        {myDeclined.length > 0 && (
+          <div className="mb-6">
+            <h2 className="text-sm font-black uppercase tracking-widest text-red-600 mb-3">
+              Customer Declined Quotes
+            </h2>
+            <div className="grid grid-cols-1 gap-5">
+              {myDeclined.map((lead) => renderLeadCard(lead, false))}
             </div>
           </div>
         )}

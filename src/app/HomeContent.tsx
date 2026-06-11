@@ -21,26 +21,26 @@ import FAQ from "@/components/FAQ";
 const STEPS = [
   { t: "Submit Your Move Details", d: "Tell us where you are moving from and to, your preferred date, and a few details about your move.", icon: <ClipboardList size={24} /> },
   { t: "We Review Your Request", d: "Our team reviews your requirements to understand your move size, route, and any specific needs.", icon: <Search size={24} /> },
-  { t: "We Match A Suitable Mover", d: "We identify a mover in your area with availability, the right capacity, and relevant experience.", icon: <UserCheck size={24} /> },
-  { t: "The Mover Contacts You Directly", d: "Your matched mover will contact you by phone or email to discuss your move and provide a quote.", icon: <Phone size={24} /> },
+  { t: "A Vetted Mover Sends a Quote", d: "Approved local movers can review anonymised move details and submit a quote if they can help.", icon: <UserCheck size={24} /> },
+  { t: "Accept or Decline Securely", d: "You receive a secure quote review link. Your contact details are released only if you accept the quote and pay the booking fee.", icon: <Phone size={24} /> },
 ];
 
 const FAQ_ITEMS = [
-  { q: "How does matching work?", a: "When you submit your moving details, we review your requirements including location, move size, and date. We then identify a suitable mover from our network and introduce your enquiry to them exclusively. You deal directly with the mover from that point onward." },
-  { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
-  { q: "Is there any obligation?", a: "No. Submitting an enquiry is completely free and without obligation. If the matched mover is not suitable, or if you decide not to proceed, you are under no obligation to book." },
-  { q: "How quickly will I be contacted?", a: "We aim to have your matched mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements." },
+  { q: "How does matching work?", a: "Submit your move details for free. Approved movers see anonymised details and may submit a quote. You receive one quote review link and your details are released only if you accept the quote and pay the booking fee." },
+  { q: "Will multiple movers contact me?", a: "No. Your details are not shared with multiple companies. They are only released to the mover whose quote you accept." },
+  { q: "Is there any obligation?", a: "No. It is free to submit your move request. You only pay a booking fee if you accept a mover quote." },
+  { q: "How quickly will I receive a quote?", a: "A vetted mover can review your request and send a quote if they can help. Once you accept and pay the booking fee, the mover receives your details and contacts you directly." },
   { q: "Are movers vetted?", a: "We help connect customers with movers who have completed our application and verification process. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote." },
-  { q: "What happens after I submit my enquiry?", a: "After submitting your enquiry, you will receive a confirmation. Our team reviews your requirements and identifies a suitable mover. Your details are introduced to that mover exclusively. The mover contacts you directly to discuss your move and provide a quote." },
-  { q: "Do I need to pay to submit an enquiry?", a: "No. Submitting an enquiry through Man and Van Club is completely free for customers. There is no charge to get matched with a mover. You only pay the mover directly if you choose to book their services." },
+  { q: "What happens after I submit my request?", a: "After submitting your request, your contact details remain protected. A vetted local mover can review anonymised details and send a quote. You choose whether to accept or decline." },
+  { q: "Do I need to pay to submit a move request?", a: "No. It is free to submit your move request. You only pay a booking fee if you accept a mover quote. The mover’s quoted price is paid directly to the mover." },
 ];
 
 const WHY_CHOOSE = [
   { t: "Verified Businesses", d: "We help connect customers with movers who have completed our application and verification process.", icon: <ShieldCheck size={24} /> },
   { t: "Secure Enquiry Process", d: "Your information is handled securely throughout the matching process.", icon: <Lock size={24} /> },
-  { t: "Direct Communication", d: "Speak directly with your matched mover. No call centres or intermediaries.", icon: <Phone size={24} /> },
-  { t: "Exclusive Matching", d: "Your enquiry is offered to one mover at a time. No competing companies.", icon: <Shield size={24} /> },
-  { t: "Free Enquiry", d: "Submitting a move request is free and carries no obligation.", icon: <CheckCircle2 size={24} /> },
+  { t: "Direct Communication", d: "After you accept a quote and pay the booking fee, your mover contacts you directly.", icon: <Phone size={24} /> },
+  { t: "One Mover Process", d: "Your details are not shared with multiple companies or sales teams.", icon: <Shield size={24} /> },
+  { t: "Free To Submit", d: "Submitting a move request is free. Booking fee only if you accept a mover quote.", icon: <CheckCircle2 size={24} /> },
   { t: "Transparent Process", d: "We clearly explain how we match you with a mover and what happens to your details.", icon: <Search size={24} /> },
 ];
 
@@ -56,7 +56,7 @@ const TRUST_BADGES = [
   { icon: <Shield size={20} />, label: "One Trusted Local Mover" },
   { icon: <BadgeCheck size={20} />, label: "Verified Business Network" },
   { icon: <Lock size={20} />, label: "Secure Enquiry Process" },
-  { icon: <CheckCircle2 size={20} />, label: "Free Enquiry" },
+  { icon: <CheckCircle2 size={20} />, label: "Free To Submit" },
 ];
 
 export default function HomeContent() {
@@ -135,7 +135,7 @@ export default function HomeContent() {
                 textShadow: '0 1px 6px rgba(0,0,0,0.25)',
               }}
             >
-              Get matched with one verified local mover. No comparison sites. No endless quotes. No sales calls.
+              Get matched with one verified local mover. No comparison sites. No endless sales calls. Free to submit — booking fee only if you accept a mover quote.
             </p>
 
             <div className="flex flex-wrap gap-2.5 mt-5 lg:mt-6">
@@ -160,7 +160,7 @@ export default function HomeContent() {
             <div className="flex items-center gap-4 mt-5 lg:mt-6 text-xs lg:text-sm">
               <span className="font-black text-white tracking-tighter">UK-WIDE COVERAGE</span>
               <span className="text-white/40">|</span>
-              <span className="font-black text-white tracking-tighter">NO OBLIGATION</span>
+              <span className="font-black text-white tracking-tighter">FREE TO SUBMIT</span>
               <span className="text-white/40">|</span>
               <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-white/70" /><span className="text-white/80">Vetted Movers</span></span>
             </div>
@@ -186,7 +186,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
-            <p className="text-text-secondary mt-3">Simple, transparent, and designed around your needs.</p>
+            <p className="text-text-secondary mt-3">Free to submit, with a booking fee only if you accept a mover quote.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

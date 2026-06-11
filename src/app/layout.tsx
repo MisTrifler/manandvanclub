@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
-import { DM_Sans, Poppins } from "next/font/google";
 import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-dm-sans"
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-poppins"
-});
 
 export const metadata: Metadata = {
   title: "Find Trusted Local Movers Across the UK | Man and Van Club",
@@ -41,7 +28,7 @@ const organizationSchema = {
   "name": "Man and Van Club",
   "url": "https://www.manandvanclub.co.uk",
   "logo": "https://www.manandvanclub.co.uk/icon.png",
-  "description": "A marketplace connecting customers with verified independent local movers across the UK through an exclusive matching process.",
+  "description": "A marketplace connecting customers with verified independent local movers across the UK through a customer-confirmed booking fee process.",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+44-7943-617-386",
@@ -78,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${poppins.variable} antialiased`}>
+      <body className="antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

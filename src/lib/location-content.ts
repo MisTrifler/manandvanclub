@@ -42,9 +42,9 @@ const SERVICE_LINKS = [
 ];
 
 const TRUST_POINTS = [
-  { icon: "ClipboardCheck", label: "Free Enquiry" },
+  { icon: "ClipboardCheck", label: "Free To Submit" },
   { icon: "PhoneOff", label: "No Multiple Sales Calls" },
-  { icon: "UserCheck", label: "Exclusive Matching Process" },
+  { icon: "UserCheck", label: "Customer-Confirmed Process" },
   { icon: "Lock", label: "Secure Enquiry Process" },
   { icon: "MapPin", label: "Local Mover Coverage" },
 ];
@@ -199,13 +199,13 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
   });
 
   faq.push({
-    q: `Is the enquiry free?`,
-    a: `Yes. Submitting an enquiry through Man and Van Club is completely free for customers. There is no charge to get matched with a mover. You only pay the mover directly if you choose to book their services.`,
+    q: `Is it free to submit a move request?`,
+    a: `Yes. It is free to submit your move request. You only pay a booking fee if you accept a mover quote. The booking fee is separate from the mover’s quote, and you pay the mover’s quoted price directly to the mover.`,
   });
 
   faq.push({
     q: `How quickly will I be contacted?`,
-    a: `We aim to have your matched mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements.`,
+    a: `We aim to have your mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements.`,
   });
 
   if (loc.nearbyAreas.length > 0) {

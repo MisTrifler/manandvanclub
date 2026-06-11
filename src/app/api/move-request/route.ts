@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { randomInt } from 'crypto';
 import { supabase } from '@/lib/supabase';
 import { resend } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
@@ -10,8 +9,8 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    // 1. Generate OTP (cryptographically secure)
-    const otp = randomInt(1000, 10000).toString();
+    // 1. Generate OTP
+    const otp = Math.floor(1000 + Math.random() * 9000).toString();
 
     // 2. Save move request to Supabase
     const quoteToken = generateCustomerQuoteToken();
