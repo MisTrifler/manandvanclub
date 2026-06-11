@@ -39,6 +39,7 @@ export default function LoginPage() {
       });
 
       const data = await res.json();
+      console.log("Send login code response:", data);
 
       // Always show the same generic message regardless of what happened
       if (data.success) {
@@ -95,6 +96,7 @@ export default function LoginPage() {
       });
 
       const data = await res.json();
+      console.log("Verify login code response:", data);
 
       if (data.success) {
         window.location.href = "/marketplace";
@@ -102,7 +104,8 @@ export default function LoginPage() {
         setError(data.message || "Invalid or expired code. Please request a new one.");
       }
     } catch (err: any) {
-      setError("Invalid or expired code. Please request a new one.");
+      console.error("Verify login code error:", err);
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }

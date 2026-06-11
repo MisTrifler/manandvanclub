@@ -12,8 +12,18 @@ function signDriverValue(email: string) {
   return createHmac("sha256", getDriverSecret()).update(value).digest("hex");
 }
 
+// Base64url-encode the email so dots (and other special chars) never break token parsing
+function encodeEmail(email: string): string {
+  return Buffer.from(email).toString("base64url");
+}
+
+function decodeEmail(encoded: string): string {
+  return Buffer.from(encoded, "base64url").toString("utf-8");
+}
+
 export function createDriverSessionToken(email: string) {
-  return `${email}.${DRIVER_SESSION_MARKER}.${signDriverValue(email)}`;
+  const encoded = encodeEmail(email);
+  return `${encoded}.${DRIVER_SESSION_MARKER}.${signDriverValue(email)}`;
 }
 
 export function isValidDriverSession(token?: string | null): string | false {
@@ -22,17 +32,18 @@ export function isValidDriverSession(token?: string | null): string | false {
   const parts = token.split(".");
   if (parts.length !== 3) return false;
 
-  const [email, marker, signature] = parts;
+  const [encoded, marker, signature] = parts;
   if (marker !== DRIVER_SESSION_MARKER) return false;
-  if (!email || !signature) return false;
-
-  const expected = signDriverValue(email);
-  const sigBuffer = Buffer.from(signature);
-  const expectedBuffer = Buffer.from(expected);
-
-  if (sigBuffer.length !== expectedBuffer.length) return false;
+  if (!encoded || !signature) return false;
 
   try {
+    const email = decodeEmail(encoded);
+    const expected = signDriverValue(email);
+    const sigBuffer = Buffer.from(signature);
+    const expectedBuffer = Buffer.from(expected);
+
+    if (sigBuffer.length !== expectedBuffer.length) return false;
+
     if (timingSafeEqual(sigBuffer, expectedBuffer)) {
       return email;
     }
