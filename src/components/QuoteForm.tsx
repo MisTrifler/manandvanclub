@@ -839,7 +839,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             <CheckCircle2 size={40} className="text-success mx-auto" />
             <h2 className="text-2xl font-black text-primary uppercase">You're All Set</h2>
             <p className="text-text-secondary">Your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} request has been successfully submitted.</p>
-            <p className="text-text-secondary text-sm">Our team is now reviewing your details and matching you with a suitable local mover.</p>
+            <p className="text-text-secondary text-sm">A vetted local mover will review your details and submit a quote if they can help.</p>
 
             <div className="text-left bg-gray-50/50 rounded-2xl p-4 border border-border">
               <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-3">What Happens Next</h3>
@@ -850,20 +850,20 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">2</span>
-                  We identify a suitable mover
+                  A vetted mover reviews your request and submits a quote
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">3</span>
-                  Your enquiry is offered exclusively
+                  You receive the quote by email and can accept or decline
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">4</span>
-                  The mover contacts you directly
+                  If you accept, you pay a booking fee and the mover contacts you directly
                 </li>
               </ol>
             </div>
 
-            <p className="text-sm font-bold text-accent tracking-tight">No spam. Just one trusted mover.</p>
+            <p className="text-sm font-bold text-accent tracking-tight">No spam. Just one trusted mover quote.</p>
 
             <Link href="/" className="btn-outline w-full block py-4 font-black uppercase text-xs rounded-xl">Return Home</Link>
           </div>

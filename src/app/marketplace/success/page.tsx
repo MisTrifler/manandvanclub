@@ -185,12 +185,18 @@ export default async function SuccessPage({
     );
   }
 
-  // Verify lead ownership: must be locked and locked by this driver
-  if (
-    lead.status !== "locked" ||
-    (lead.locked_by &&
-      lead.locked_by.toLowerCase() !== driverEmail.toLowerCase())
-  ) {
+  // Verify lead ownership: legacy locked or new booked model
+  const isOwner =
+    lead.status === "locked" &&
+    lead.locked_by &&
+    lead.locked_by.toLowerCase() === driverEmail.toLowerCase();
+
+  const isBooked =
+    lead.status === "booked" &&
+    lead.quoted_by &&
+    lead.quoted_by.toLowerCase() === driverEmail.toLowerCase();
+
+  if (!isOwner && !isBooked) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
         <div className="max-w-md text-center space-y-6">
@@ -224,10 +230,10 @@ export default async function SuccessPage({
             <CheckCircle2 size={48} className="mx-auto text-green-600" />
           </div>
           <h1 className="text-3xl font-black text-primary tracking-tighter mb-2">
-            Exclusive Lead Unlocked
+            Customer-Confirmed Booking
           </h1>
           <p className="text-text-secondary">
-            You now have access to the customer’s contact details. An email with the full details has also been sent to your inbox.
+            The customer has accepted your quote and paid the booking fee. Their contact details are now available below.
           </p>
         </div>
 
@@ -336,7 +342,7 @@ export default async function SuccessPage({
             {/* Reminder */}
             <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 mt-8">
               <p className="text-sm text-amber-800 font-medium">
-                <strong>Reminder:</strong> Final price and availability are agreed directly with the customer. This enquiry is not a guaranteed booking.
+                <strong>Reminder:</strong> The remaining move cost is paid directly to you by the customer. Please contact them as soon as possible to confirm timing and payment method.
               </p>
             </div>
           </div>

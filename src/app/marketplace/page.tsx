@@ -15,7 +15,6 @@ export default async function MarketplacePage() {
     redirect("/login?next=/marketplace");
   }
 
-  // Check if user is an approved driver
   const supabaseAdmin = getSupabaseAdmin();
   const { data: driver } = await supabaseAdmin
     .from("driver_applications")
@@ -36,13 +35,23 @@ export default async function MarketplacePage() {
     );
   }
 
-  // Only fetch verified + unlocked leads
+  // Fetch all verified requests that are not legacy-locked or pending
   const { data: leads } = await supabaseAdmin
     .from("move_requests")
-    .select("id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details")
+    .select(
+      "id, first_name, email, phone, collection_postcode, delivery_postcode, move_date, move_type, estimated_price, created_at, details, status, quoted_by, quote_amount, quoted_at, booking_fee_paid"
+    )
     .eq("is_verified", true)
-    .neq("status", "locked")
+    .not("status", "eq", "locked")
+    .not("status", "eq", "pending")
+    .not("status", "eq", "declined")
     .order("created_at", { ascending: false });
 
-  return <DriverMarketplaceClient userEmail={driverEmail} driverName={driver.contact_name || driver.email} leads={leads || []} />;
+  return (
+    <DriverMarketplaceClient
+      userEmail={driverEmail}
+      driverName={driver.contact_name || driver.email}
+      leads={leads || []}
+    />
+  );
 }

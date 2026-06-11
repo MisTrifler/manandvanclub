@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 import { resend } from '@/lib/resend';
+import { generateCustomerQuoteToken } from '@/lib/customer-token';
 
 const SENDER_ADDRESS = 'Man and Van Club <support@manandvanclub.co.uk>';
 
@@ -12,6 +13,8 @@ export async function POST(req: Request) {
     const otp = Math.floor(1000 + Math.random() * 9000).toString();
 
     // 2. Save move request to Supabase
+    const quoteToken = generateCustomerQuoteToken();
+
     const insertPayload: Record<string, any> = {
       first_name: data.firstName,
       email: data.email,
@@ -22,6 +25,7 @@ export async function POST(req: Request) {
       move_type: data.moveType,
       source_page: data.sourcePage || '',
       estimated_price: data.estimatedPrice || null,
+      customer_quote_token: quoteToken,
       status: 'pending',
       otp_code: otp,
       is_verified: false

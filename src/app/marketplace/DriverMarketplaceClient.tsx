@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 import {
-  calculateIntroductionFee,
-} from "@/lib/fee-calculator";
-import {
   formatUKPostcode,
   formatDisplayDate,
   formatMoveType,
@@ -31,9 +28,11 @@ import {
   Sofa,
   Truck,
   Warehouse,
-  Phone,
-  Mail,
-  User,
+  CheckCircle2,
+  Loader2,
+  Banknote,
+  Eye,
+  FileText,
 } from "lucide-react";
 
 interface Lead {
@@ -48,6 +47,11 @@ interface Lead {
   estimated_price?: string;
   created_at?: string;
   details?: MoveDetails | null;
+  status?: string;
+  quoted_by?: string;
+  quote_amount?: number;
+  quoted_at?: string;
+  booking_fee_paid?: boolean;
 }
 
 interface Props {
@@ -72,52 +76,345 @@ export default function DriverMarketplaceClient({
   leads,
 }: Props) {
   const [loadingId, setLoadingId] = useState<string | null>(null);
+  const [quotingId, setQuotingId] = useState<string | null>(null);
+  const [quoteAmount, setQuoteAmount] = useState<string>("");
+  const [quoteMessage, setQuoteMessage] = useState<string>("");
+  const [quoteError, setQuoteError] = useState<string | null>(null);
 
   const handleLogout = async () => {
     await fetch("/api/driver/logout", { method: "POST" });
     window.location.href = "/login";
   };
 
-  const handleUnlock = async (lead: Lead) => {
-    if (!lead.move_type) return;
+  const startQuote = (leadId: string) => {
+    setQuotingId(leadId);
+    setQuoteAmount("");
+    setQuoteMessage("");
+    setQuoteError(null);
+  };
 
+  const cancelQuote = () => {
+    setQuotingId(null);
+    setQuoteError(null);
+  };
+
+  const submitQuote = async (lead: Lead) => {
+    const amount = parseFloat(quoteAmount);
+    if (!amount || amount <= 0 || Number.isNaN(amount)) {
+      setQuoteError("Please enter a valid quote amount greater than £0.");
+      return;
+    }
     setLoadingId(lead.id);
+    setQuoteError(null);
 
     try {
-      const response = await fetch("/api/checkout", {
+      const res = await fetch("/api/mover/submit-quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           requestId: lead.id,
+          quoteAmount: amount,
+          quoteMessage: quoteMessage.trim() || undefined,
         }),
       });
 
-      if (response.status === 409) {
-        alert("This lead is no longer available. Please refresh the marketplace.");
+      const data = await res.json().catch(() => ({ error: "Unknown error" }));
+
+      if (!res.ok) {
+        setQuoteError(data.error || "Failed to submit quote. Please try again.");
         setLoadingId(null);
         return;
       }
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: "Unknown error" }));
-        alert(errorData.error || "Error initiating checkout. Please try again.");
-        setLoadingId(null);
-        return;
-      }
-
-      const { url } = await response.json();
-      if (url) window.location.href = url;
-    } catch (error) {
-      alert("Error initiating checkout. Please try again.");
-    } finally {
+      // Refresh page to show updated status
+      window.location.reload();
+    } catch (err: any) {
+      setQuoteError("Something went wrong. Please try again.");
       setLoadingId(null);
     }
+  };
+
+  const isMyQuoted = (lead: Lead) =>
+    lead.quoted_by?.toLowerCase() === userEmail.toLowerCase() && lead.status === "quoted";
+
+  const isMyBooked = (lead: Lead) =>
+    lead.quoted_by?.toLowerCase() === userEmail.toLowerCase() && lead.status === "booked";
+
+  const isTakenByOther = (lead: Lead) => {
+    if (!lead.quoted_by) return false;
+    if (lead.status === "booked") return true;
+    if (lead.status === "quoted" && lead.quoted_by.toLowerCase() !== userEmail.toLowerCase()) return true;
+    return false;
+  };
+
+  const availableLeads = leads.filter((l) => l.status === "active" || l.status === "verified" || l.status === null || l.status === "");
+  const myQuoted = leads.filter((l) => isMyQuoted(l));
+  const myBooked = leads.filter((l) => isMyBooked(l));
+  const takenByOther = leads.filter((l) => isTakenByOther(l));
+
+  const renderLeadCard = (lead: Lead, showQuoteForm: boolean) => {
+    const moveTypeLabel = formatMoveType(lead.move_type);
+    const moveTypeIcon = MOVE_TYPE_ICONS[lead.move_type || ""] || <Package size={16} />;
+    const colPostcode = formatUKPostcode(lead.collection_postcode);
+    const delPostcode = formatUKPostcode(lead.delivery_postcode);
+    const moveDate = formatDisplayDate(lead.move_date);
+    const submitted = relativeTime(lead.created_at);
+    const urgent = isUrgent(lead.move_date);
+    const moveSummary = getMoveSummary(lead.move_type, lead.details);
+    const itemSummary = getItemSummary(lead.details);
+    const accessNote = getAccessNote(lead.details);
+    const hasEstimate = lead.estimated_price && lead.estimated_price.trim() !== "";
+
+    const cardStatus = isMyBooked(lead)
+      ? "booked"
+      : isMyQuoted(lead)
+        ? "quoted"
+        : isTakenByOther(lead)
+          ? "taken"
+          : "available";
+
+    return (
+      <div
+        key={lead.id}
+        className={`bg-white rounded-2xl border overflow-hidden ${
+          cardStatus === "booked"
+            ? "border-green-300"
+            : cardStatus === "quoted"
+              ? "border-amber-300"
+              : "border-border"
+        }`}
+      >
+        <div className="p-5 md:p-6">
+          {/* Top row: type + badges */}
+          <div className="flex flex-wrap items-center gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-primary/5 text-primary px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+              {moveTypeIcon}
+              {moveTypeLabel}
+            </span>
+            {hasEstimate && (
+              <span className="inline-flex items-center gap-1 bg-accent/10 text-accent px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                <Tag size={12} />
+                Customer estimate shown
+              </span>
+            )}
+            <span className="inline-flex items-center gap-1 bg-primary/5 text-primary/70 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+              <ShieldCheck size={12} />
+              Verified enquiry
+            </span>
+            {urgent && (
+              <span className="inline-flex items-center gap-1 bg-red-50 text-red-600 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                <Flame size={12} />
+                Move soon
+              </span>
+            )}
+            {cardStatus === "booked" && (
+              <span className="inline-flex items-center gap-1 bg-green-50 text-green-600 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                <CheckCircle2 size={12} />
+                Customer-confirmed booking
+              </span>
+            )}
+            {cardStatus === "quoted" && (
+              <span className="inline-flex items-center gap-1 bg-amber-50 text-amber-600 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                <FileText size={12} />
+                Quote sent
+              </span>
+            )}
+            {submitted && (
+              <span className="inline-flex items-center gap-1 text-primary/40 px-3 py-1.5 rounded-lg text-xs font-black tracking-widest">
+                <Clock size={12} />
+                {submitted}
+              </span>
+            )}
+          </div>
+
+          {/* Route */}
+          <div className="flex items-center gap-2 mb-3">
+            <MapPin size={18} className="text-accent flex-shrink-0" />
+            <p className="text-lg md:text-xl font-black text-primary tracking-tight">
+              {colPostcode || "Unknown"}
+              <span className="text-primary/30 mx-2">→</span>
+              {delPostcode || "Unknown"}
+            </p>
+          </div>
+
+          {/* Date */}
+          {moveDate && (
+            <div className="flex items-center gap-2 mb-3">
+              <CalendarDays size={16} className="text-primary/40 flex-shrink-0" />
+              <p className="text-sm text-text-secondary font-medium">
+                Move date: {moveDate}
+              </p>
+            </div>
+          )}
+
+          {moveSummary && (
+            <div className="flex items-center gap-2 mb-2">
+              <Boxes size={16} className="text-primary/40 flex-shrink-0" />
+              <p className="text-sm text-text-secondary font-medium">{moveSummary}</p>
+            </div>
+          )}
+
+          {itemSummary && (
+            <div className="flex items-center gap-2 mb-2">
+              <Package size={16} className="text-primary/40 flex-shrink-0" />
+              <p className="text-sm text-text-secondary font-medium">{itemSummary}</p>
+            </div>
+          )}
+
+          {accessNote && (
+            <div className="flex items-center gap-2 mb-2">
+              <Home size={16} className="text-primary/40 flex-shrink-0" />
+              <p className="text-sm text-text-secondary font-medium">{accessNote}</p>
+            </div>
+          )}
+
+          {hasEstimate && (
+            <div className="mt-4 bg-primary/5 rounded-xl p-3 border border-border/50">
+              <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-1">
+                Customer guide price
+              </p>
+              <p className="text-2xl font-black text-primary tracking-tighter">
+                {lead.estimated_price}
+              </p>
+              <p className="text-xs text-text-secondary mt-1">
+                Guide only. Final price agreed directly with the customer.
+              </p>
+            </div>
+          )}
+
+          {/* Privacy notice */}
+          <div className="mt-4 bg-blue-50/50 border border-blue-100/50 rounded-xl p-3">
+            <p className="text-xs text-blue-700/80 font-medium">
+              Customer name, phone and email are hidden until the customer accepts your quote and pays the booking fee.
+            </p>
+          </div>
+        </div>
+
+        {/* Action area */}
+        <div className="border-t border-border bg-gray-50/50 p-4 md:p-5">
+          {cardStatus === "available" && showQuoteForm && (
+            <div className="space-y-3">
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 block mb-1">
+                  Your quote amount (£)
+                </label>
+                <input
+                  type="number"
+                  step="0.01"
+                  min="1"
+                  value={quoteAmount}
+                  onChange={(e) => setQuoteAmount(e.target.value)}
+                  placeholder="e.g. 120.00"
+                  className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent"
+                />
+              </div>
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 block mb-1">
+                  Message to customer (optional)
+                </label>
+                <textarea
+                  value={quoteMessage}
+                  onChange={(e) => setQuoteMessage(e.target.value)}
+                  placeholder="Hi, I can complete this move on the requested date. This quote includes loading, transport and unloading."
+                  rows={3}
+                  className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent resize-none"
+                />
+              </div>
+              {quoteError && (
+                <div className="rounded-xl border border-red-100 bg-red-50 p-3 text-red-600 text-sm font-bold">
+                  {quoteError}
+                </div>
+              )}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => submitQuote(lead)}
+                  disabled={loadingId === lead.id}
+                  className="btn-orange flex-1 py-3 rounded-xl font-black uppercase tracking-widest text-sm disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {loadingId === lead.id ? (
+                    <Loader2 className="animate-spin" size={16} />
+                  ) : (
+                    <>
+                      Send Quote to Customer
+                      <ArrowRight size={16} />
+                    </>
+                  )}
+                </button>
+                <button
+                  onClick={cancelQuote}
+                  className="px-4 py-3 rounded-xl border border-border font-bold text-sm text-primary/60 hover:bg-white transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+
+          {cardStatus === "available" && !showQuoteForm && (
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <Banknote size={16} className="text-primary/40" />
+                <p className="text-xs text-text-secondary/70 font-medium">
+                  Submit your quote — no payment required
+                </p>
+              </div>
+              <button
+                onClick={() => startQuote(lead.id)}
+                className="btn-orange px-6 py-3 rounded-xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2"
+              >
+                Submit Quote
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          )}
+
+          {cardStatus === "quoted" && (
+            <div className="flex items-center gap-2">
+              <FileText size={16} className="text-amber-500" />
+              <p className="text-sm font-bold text-amber-700">
+                Quote sent. The customer can now accept the quote and pay the booking fee. Customer details will be released if they accept.
+              </p>
+            </div>
+          )}
+
+          {cardStatus === "booked" && (
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-green-500" />
+                <p className="text-sm font-bold text-green-700">
+                  The customer has accepted your quote and paid the booking fee. Their contact details are now available.
+                </p>
+              </div>
+              <a
+                href={`/marketplace/success?requestId=${lead.id}`}
+                className="btn-orange w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-black uppercase tracking-widest text-sm"
+              >
+                <Eye size={16} />
+                View Customer Details
+              </a>
+              <p className="text-xs text-text-secondary/70">
+                Final payment for the move is arranged directly between you and the customer.
+              </p>
+            </div>
+          )}
+
+          {cardStatus === "taken" && (
+            <div className="flex items-center gap-2">
+              <ShieldCheck size={16} className="text-primary/30" />
+              <p className="text-sm font-bold text-primary/50">
+                Another mover has already submitted a quote for this request.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    );
   };
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] p-6 md:p-8">
       <div className="max-w-5xl mx-auto">
-        {/* ── Header ─────────────────────────── */}
+        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div>
             <h1 className="text-3xl md:text-4xl font-black text-primary tracking-tighter">
@@ -129,7 +426,7 @@ export default function DriverMarketplaceClient({
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold text-primary/60 bg-white border border-border px-3 py-1.5 rounded-xl">
-              {leads.length} available
+              {availableLeads.length} available
             </span>
             <button
               onClick={handleLogout}
@@ -140,219 +437,74 @@ export default function DriverMarketplaceClient({
           </div>
         </div>
 
-        {/* ── Disclaimer ─────────────────────── */}
+        {/* Disclaimer */}
         <div className="bg-white rounded-2xl border border-border p-4 md:p-5 mb-6">
           <p className="text-sm text-text-secondary leading-relaxed">
-            Man &amp; Van Club provides <strong className="text-primary">verified customer enquiries</strong>, not guaranteed bookings. Final price and availability are agreed directly between you and the customer.
+            Man &amp; Van Club provides <strong className="text-primary">verified customer enquiries</strong>.
+            Submit your quote for free. Customer details are released only after the customer accepts your quote and pays the booking fee. Final price and availability are agreed directly between you and the customer.
           </p>
         </div>
 
-        {/* ── Leads ──────────────────────────── */}
-        {leads.length === 0 ? (
-          <div className="bg-white p-12 rounded-3xl border border-border text-center">
-            <p className="text-lg text-text-secondary">
-              No active leads available right now.
-            </p>
-            <p className="text-sm text-text-secondary/60 mt-2">
-              Check back later — new enquiries come in throughout the day.
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 gap-5">
-            {leads.map((lead) => {
-              const moveTypeLabel = formatMoveType(lead.move_type);
-              const moveTypeIcon =
-                MOVE_TYPE_ICONS[lead.move_type || ""] || <Package size={16} />;
-              const fee = lead.move_type
-                ? calculateIntroductionFee(lead.move_type, lead.details)
-                : 0;
-              const colPostcode = formatUKPostcode(
-                lead.collection_postcode
-              );
-              const delPostcode = formatUKPostcode(lead.delivery_postcode);
-              const moveDate = formatDisplayDate(lead.move_date);
-              const submitted = relativeTime(lead.created_at);
-              const urgent = isUrgent(lead.move_date);
-              const moveSummary = getMoveSummary(
-                lead.move_type,
-                lead.details
-              );
-              const itemSummary = getItemSummary(lead.details);
-              const accessNote = getAccessNote(lead.details);
-              const hasEstimate =
-                lead.estimated_price && lead.estimated_price.trim() !== "";
-
-              return (
-                <div
-                  key={lead.id}
-                  className="bg-white rounded-2xl border border-border overflow-hidden"
-                >
-                  {/* Card body */}
-                  <div className="p-5 md:p-6">
-                    {/* Top row: type + badges */}
-                    <div className="flex flex-wrap items-center gap-2 mb-4">
-                      <span className="inline-flex items-center gap-1.5 bg-primary/5 text-primary px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
-                        {moveTypeIcon}
-                        {moveTypeLabel}
-                      </span>
-                      {hasEstimate && (
-                        <span className="inline-flex items-center gap-1 bg-accent/10 text-accent px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
-                          <Tag size={12} />
-                          Customer estimate shown
-                        </span>
-                      )}
-                      <span className="inline-flex items-center gap-1 bg-primary/5 text-primary/70 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
-                        <ShieldCheck size={12} />
-                        Exclusive lead
-                      </span>
-                      {urgent && (
-                        <span className="inline-flex items-center gap-1 bg-red-50 text-red-600 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
-                          <Flame size={12} />
-                          Move soon
-                        </span>
-                      )}
-                      {submitted && (
-                        <span className="inline-flex items-center gap-1 text-primary/40 px-3 py-1.5 rounded-lg text-xs font-black tracking-widest">
-                          <Clock size={12} />
-                          {submitted}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Route */}
-                    <div className="flex items-center gap-2 mb-3">
-                      <MapPin size={18} className="text-accent flex-shrink-0" />
-                      <p className="text-lg md:text-xl font-black text-primary tracking-tight">
-                        {colPostcode || "Unknown"}
-                        <span className="text-primary/30 mx-2">→</span>
-                        {delPostcode || "Unknown"}
-                      </p>
-                    </div>
-
-                    {/* Date */}
-                    {moveDate && (
-                      <div className="flex items-center gap-2 mb-3">
-                        <CalendarDays
-                          size={16}
-                          className="text-primary/40 flex-shrink-0"
-                        />
-                        <p className="text-sm text-text-secondary font-medium">
-                          Move date: {moveDate}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Move summary (bedrooms, property type, office size) */}
-                    {moveSummary && (
-                      <div className="flex items-center gap-2 mb-2">
-                        <Boxes
-                          size={16}
-                          className="text-primary/40 flex-shrink-0"
-                        />
-                        <p className="text-sm text-text-secondary font-medium">
-                          {moveSummary}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Item summary */}
-                    {itemSummary && (
-                      <div className="flex items-center gap-2 mb-2">
-                        <Package
-                          size={16}
-                          className="text-primary/40 flex-shrink-0"
-                        />
-                        <p className="text-sm text-text-secondary font-medium">
-                          {itemSummary}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Access notes */}
-                    {accessNote && (
-                      <div className="flex items-center gap-2 mb-2">
-                        <Home
-                          size={16}
-                          className="text-primary/40 flex-shrink-0"
-                        />
-                        <p className="text-sm text-text-secondary font-medium">
-                          {accessNote}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Customer guide price */}
-                    {hasEstimate && (
-                      <div className="mt-4 bg-primary/5 rounded-xl p-3 border border-border/50">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-1">
-                          Customer guide price
-                        </p>
-                        <p className="text-2xl font-black text-primary tracking-tighter">
-                          {lead.estimated_price}
-                        </p>
-                        <p className="text-xs text-text-secondary mt-1">
-                          Guide only. Final price agreed directly with the customer.
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* ── Fee + Action ─────────────────── */}
-                  <div className="border-t border-border bg-gray-50/50 p-4 md:p-5">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div>
-                        <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-0.5">
-                          Exclusive intro fee
-                        </p>
-                        <p className="text-2xl font-black text-accent tracking-tighter">
-                          £{fee}
-                        </p>
-                        <p className="text-xs text-text-secondary/70 mt-0.5">
-                          Pay once to view customer contact details.
-                        </p>
-                      </div>
-
-                      <button
-                        onClick={() => handleUnlock(lead)}
-                        disabled={loadingId === lead.id}
-                        className="btn-orange w-full md:w-auto px-6 py-3 rounded-xl font-black uppercase tracking-widest text-sm disabled:opacity-50 flex items-center justify-center gap-2"
-                      >
-                        {loadingId === lead.id ? (
-                          "Processing..."
-                        ) : (
-                          <>
-                            Accept Exclusive Lead
-                            <ArrowRight size={16} />
-                          </>
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+        {/* Customer-confirmed bookings */}
+        {myBooked.length > 0 && (
+          <div className="mb-6">
+            <h2 className="text-sm font-black uppercase tracking-widest text-green-600 mb-3">
+              Customer-Confirmed Bookings
+            </h2>
+            <div className="grid grid-cols-1 gap-5">
+              {myBooked.map((lead) => renderLeadCard(lead, false))}
+            </div>
           </div>
         )}
 
-        {/* ── Lead Credit Policy ─────────────── */}
-        <div className="mt-8 bg-white rounded-2xl border border-border p-5 md:p-6">
-          <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-3">
-            Lead Credit Policy
-          </h3>
-          <p className="text-sm text-text-secondary leading-relaxed mb-2">
-            If an enquiry is fake, duplicated, unreachable, outside your approved area, or contains clearly incorrect details, contact{" "}
-            <a
-              href="mailto:support@manandvanclub.co.uk"
-              className="text-accent font-bold hover:underline"
-            >
-              support@manandvanclub.co.uk
-            </a>{" "}
-            and we’ll review it for a lead credit.
-          </p>
-          <p className="text-sm text-text-secondary/70 leading-relaxed">
-            Customer choosing not to proceed after receiving your quote does not automatically make the enquiry invalid.
-          </p>
-        </div>
+        {/* Quotes pending customer response */}
+        {myQuoted.length > 0 && (
+          <div className="mb-6">
+            <h2 className="text-sm font-black uppercase tracking-widest text-amber-600 mb-3">
+              Quotes Waiting for Customer
+            </h2>
+            <div className="grid grid-cols-1 gap-5">
+              {myQuoted.map((lead) => renderLeadCard(lead, false))}
+            </div>
+          </div>
+        )}
+
+        {/* Available enquiries */}
+        {availableLeads.length > 0 && (
+          <div className="mb-6">
+            <h2 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-3">
+              Available Enquiries
+            </h2>
+            <div className="grid grid-cols-1 gap-5">
+              {availableLeads.map((lead) =>
+                renderLeadCard(lead, quotingId === lead.id)
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Taken by other movers */}
+        {takenByOther.length > 0 && (
+          <div className="mb-6">
+            <h2 className="text-sm font-black uppercase tracking-widest text-primary/30 mb-3">
+              Already Quoted
+            </h2>
+            <div className="grid grid-cols-1 gap-5">
+              {takenByOther.map((lead) => renderLeadCard(lead, false))}
+            </div>
+          </div>
+        )}
+
+        {leads.length === 0 && (
+          <div className="bg-white p-12 rounded-3xl border border-border text-center">
+            <p className="text-lg text-text-secondary">
+              No active enquiries available right now.
+            </p>
+            <p className="text-sm text-text-secondary/60 mt-2">
+              Check back later — new requests come in throughout the day.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

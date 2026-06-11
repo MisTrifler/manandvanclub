@@ -139,11 +139,11 @@ export async function POST(req: Request) {
                           </p>
 
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">
-                            Thanks for submitting your request. Your details have been passed to a vetted local man and van provider.
+                            Your request has been received. A vetted local mover will review the details and provide a quote if they can help.
                           </p>
 
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">
-                            They will contact you directly to confirm availability, timing and final price.
+                            You will receive an email when a mover sends a quote. There is no obligation to accept.
                           </p>
 
                           <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px; margin-bottom: 32px; text-align: left;">
@@ -245,10 +245,10 @@ export async function POST(req: Request) {
                         <p><strong>Date:</strong> ${moveRequest.move_date}</p>
                         <p><strong>Type:</strong> ${moveRequest.move_type}</p>
                       </div>
-                      <p>This is an <strong>exclusive lead</strong>. Only the first mover to unlock it will get the customer details.</p>
-                      <a href="https://www.manandvanclub.co.uk/marketplace?id=${requestId}"
+                      <p>A verified mover can submit a free quote for this request. Customer details are only released after the customer accepts a quote and pays the booking fee.</p>
+                      <a href="https://www.manandvanclub.co.uk/marketplace"
                          style="display: block; background: #F97316; color: white; padding: 15px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px;">
-                        Unlock Lead Details Now
+                        View Request in Marketplace
                       </a>
                       <p style="font-size: 12px; color: #94A3B8; margin-top: 20px;">© 2026 Man and Van Club</p>
                     </div>
