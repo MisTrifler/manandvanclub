@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowUpRight, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -10,9 +11,56 @@ function cn(...inputs: ClassValue[]) {
 }
 
 export default function Header() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
+  const [driverLoggedIn, setDriverLoggedIn] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function checkDriverSession() {
+      try {
+        const res = await fetch("/api/driver/session", {
+          cache: "no-store",
+          credentials: "same-origin",
+        });
+        const data = await res.json();
+        if (!cancelled) {
+          setDriverLoggedIn(Boolean(data.loggedIn));
+        }
+      } catch {
+        if (!cancelled) {
+          setDriverLoggedIn(false);
+        }
+      }
+    }
+
+    checkDriverSession();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [pathname]);
+
+  const handleDriverLogout = async () => {
+    try {
+      await fetch("/api/driver/logout", {
+        method: "POST",
+        credentials: "same-origin",
+      });
+    } finally {
+      setDriverLoggedIn(false);
+      setIsOpen(false);
+      if (pathname?.startsWith("/marketplace")) {
+        router.push("/login");
+      } else {
+        router.refresh();
+      }
+    }
+  };
 
   const services = [
     { name: "House Removals", href: "/house-removals" },
@@ -140,10 +188,26 @@ export default function Header() {
           </nav>
 
           {/* CTAs */}
-          <div className="hidden lg:flex items-center gap-6">
-            <Link href="/login" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors px-4" aria-label="Driver login portal">
-              Driver Login
-            </Link>
+          <div className="hidden lg:flex items-center gap-4">
+            {driverLoggedIn ? (
+              <>
+                <Link href="/marketplace" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors px-4" aria-label="Driver marketplace">
+                  Marketplace
+                </Link>
+                <button
+                  type="button"
+                  onClick={handleDriverLogout}
+                  className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 hover:text-accent transition-colors px-2"
+                  aria-label="Log out of driver account"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link href="/login" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors px-4" aria-label="Driver login portal">
+                Driver Login
+              </Link>
+            )}
             <Link href="/#quote-form" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95" aria-label="Get matched with a local mover">
               Get Matched
             </Link>
@@ -193,7 +257,14 @@ export default function Header() {
           <Link href="/about" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>About Us</Link>
           
           <div className="flex flex-col gap-3 pt-4 border-t border-border">
-            <Link href="/login" className="bg-gray-50 text-primary py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Driver Login</Link>
+            {driverLoggedIn ? (
+              <>
+                <Link href="/marketplace" className="bg-gray-50 text-primary py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Marketplace</Link>
+                <button type="button" onClick={handleDriverLogout} className="bg-white border border-border text-primary/60 py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center">Logout</button>
+              </>
+            ) : (
+              <Link href="/login" className="bg-gray-50 text-primary py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Driver Login</Link>
+            )}
             <Link href="/#quote-form" className="btn-orange py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Get Matched</Link>
           </div>
         </div>
