@@ -14,22 +14,47 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { driverId, status } = await req.json();
+    const { driverId, status, action } = await req.json();
+
+    const supabaseAdmin = getSupabaseAdmin();
+
+    // Admin marks insurance as verified after documents were emailed to
+    // support@manandvanclub.co.uk and manually checked.
+    if (action === "verify_insurance") {
+      if (!driverId) {
+        return NextResponse.json({ error: "Invalid data" }, { status: 400 });
+      }
+      const { error: verifyError } = await supabaseAdmin
+        .from("driver_applications")
+        .update({ insurance_verified: true, insurance_verified_at: new Date().toISOString() })
+        .eq("id", driverId);
+      if (verifyError) {
+        return NextResponse.json({ error: verifyError.message }, { status: 500 });
+      }
+      return NextResponse.json({ success: true, insuranceVerified: true });
+    }
 
     if (!driverId || !status || !ALLOWED_STATUSES.has(status)) {
       return NextResponse.json({ error: "Invalid data" }, { status: 400 });
     }
 
-    const supabaseAdmin = getSupabaseAdmin();
-
     const { data: driver, error: fetchError } = await supabaseAdmin
       .from("driver_applications")
-      .select("id, company_name, contact_name, email")
+      .select("*")
       .eq("id", driverId)
       .single();
 
     if (fetchError || !driver) {
       return NextResponse.json({ error: "Driver not found" }, { status: 404 });
+    }
+
+    // Hard server-side block: approval requires admin-verified insurance.
+    // has_insurance (applicant checkbox) is NOT sufficient. No override.
+    if (status === "approved" && driver.insurance_verified !== true) {
+      return NextResponse.json(
+        { error: "Cannot approve mover until Goods in Transit and Public Liability insurance documents have been received and verified." },
+        { status: 403 }
+      );
     }
 
     const { error: updateError } = await supabaseAdmin

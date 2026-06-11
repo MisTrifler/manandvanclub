@@ -107,7 +107,7 @@ export default function ForBusinessesContent() {
             <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tighter">Insurance Verification Required</h2>
             <div className="space-y-4 text-text-secondary leading-relaxed max-w-2xl mx-auto">
               <p className="text-lg font-medium">
-                As part of our onboarding process, applicants must provide proof of valid <span className="text-primary font-bold">Goods in Transit Insurance</span> and <span className="text-primary font-bold">Public Liability Insurance</span>.
+                As part of our onboarding process, applicants must email proof of valid <span className="text-primary font-bold">Goods in Transit Insurance</span> and <span className="text-primary font-bold">Public Liability Insurance</span> to <a href="mailto:support@manandvanclub.co.uk" className="text-accent font-bold">support@manandvanclub.co.uk</a>. Applications cannot be approved until these documents have been received and checked.
               </p>
               <p className="text-sm">
                 Every application is reviewed manually. Only approved businesses receive access to customer enquiries and platform features.

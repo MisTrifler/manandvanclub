@@ -44,13 +44,13 @@ export async function POST(req: Request) {
               <p>Dear Applicant,</p>
               <p>Thank you for applying to join <strong>Man and Van Club</strong>.</p>
               <p>We have successfully received your application and it is currently under review by our team.</p>
-              <p>To complete the verification process and avoid any delays in approving your account, <strong>please reply to this email with copies of the following documents:</strong></p>
+              <p>To complete your application, please email your Goods in Transit and Public Liability insurance documents to <a href="mailto:support@manandvanclub.co.uk">support@manandvanclub.co.uk</a>. <strong>You can simply reply to this email with copies of the following documents:</strong></p>
               <ul style="list-style-type: disc; padding-left: 20px;">
                 <li>Public Liability Insurance Certificate (minimum £1 million cover recommended)</li>
                 <li>Goods in Transit Insurance Certificate (where applicable)</li>
               </ul>
               <p>Please ensure that all insurance documents are valid, current, and issued in the same company or trading name used on your application. We are unable to approve applications where the insurance details do not match the business information provided.</p>
-              <p>Your application will remain pending until the required documents have been received and verified.</p>
+              <p>Your application cannot be approved until these documents have been received and checked.</p>
               <p>Once verification is complete, we will notify you of the outcome and provide access to your driver account if approved.</p>
               <p>If you have any questions, please reply to this email and a member of our team will be happy to assist.</p>
               <p>Kind regards,</p>

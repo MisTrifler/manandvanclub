@@ -46,7 +46,7 @@ const FAQ_ITEMS = [
   { q: "Do I need a subscription?", a: "No. Approved movers submit quotes for free. Customer details are released only when the customer accepts a quote and pays the booking deposit, which is deducted from your quote." },
   { q: "How do enquiries work?", a: "When a customer submits a move request, we review and match it to a suitable mover in the area. Approved movers can view the enquiry details and choose whether to quote for it. Each enquiry is offered to one mover at a time." },
   { q: "Are enquiries shared with multiple movers?", a: "No. The platform is designed around one customer-confirmed quote at a time, so customers are not spammed by multiple companies." },
-  { q: "How do I get approved?", a: "Applications are reviewed manually. You must provide valid Goods in Transit and Public Liability insurance before your application can be approved. Verification usually takes less than 24 hours." },
+  { q: "How do I get approved?", a: "Applications are reviewed manually. You must email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk before your application can be approved. Verification usually takes less than 24 hours once your documents are received." },
   { q: "Can I choose my coverage area?", a: "Yes. You can set your preferred service area within your account. You will only see enquiries that match your location and job type preferences." },
   { q: "How quickly are applications reviewed?", a: "Most applications are reviewed within 24 hours. Once approved, you can immediately start viewing available enquiries in your service area." },
 ];
@@ -65,11 +65,11 @@ const BENEFIT_CARDS = [
   { t: "Transparent Pricing", d: "Approved movers submit quotes for free. Customer details are released only after customer acceptance.", icon: <Wallet size={24} /> },
   { t: "Flexible Growth", d: "Choose which enquiries to quote for. Set your coverage area and grow at your own pace.", icon: <TrendingUp size={24} /> },
   { t: "No Monthly Subscription", d: "No subscriptions, no minimum commitments, and no payment to submit quotes in the main marketplace flow.", icon: <Zap size={24} /> },
-  { t: "Simple Application Process", d: "Apply online and provide your insurance documents. Insurance is required before approval, which usually takes less than 24 hours.", icon: <ClipboardCheck size={24} /> },
+  { t: "Simple Application Process", d: "Apply online, then email your insurance documents to support@manandvanclub.co.uk. Insurance documents must be emailed before approval.", icon: <ClipboardCheck size={24} /> },
 ];
 
 const HOW_IT_WORKS_STEPS = [
-  { t: "Apply to Join", d: "Submit your business details and insurance information for review. You must provide valid Goods in Transit and Public Liability insurance before your application can be approved.", icon: <ClipboardList size={24} /> },
+  { t: "Apply to Join", d: "Submit your business details, then email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk. Your application cannot be approved until your documents are received.", icon: <ClipboardList size={24} /> },
   { t: "View Anonymised Move Requests", d: "Approved movers can view local move requests without seeing the customer’s contact details.", icon: <Eye size={24} /> },
   { t: "Submit Your Total Quote", d: "Enter the total price you want the customer to see. The booking deposit is deducted from your quote.", icon: <BadgeCheck size={24} /> },
   { t: "Customer Accepts or Declines", d: "The customer receives a secure quote review link and chooses whether to proceed.", icon: <ShieldCheck size={24} /> },

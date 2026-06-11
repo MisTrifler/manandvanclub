@@ -35,6 +35,8 @@ type Driver = {
   status?: string;
   applied_at?: string;
   has_insurance?: boolean;
+  insurance_verified?: boolean;
+  insurance_verified_at?: string;
 };
 
 type DashboardResponse = {
@@ -87,14 +89,36 @@ export default function AdminPortalClient() {
     fetchData();
   }, []);
 
+  async function markInsuranceVerified(driverId: string) {
+    setActionLoadingId(driverId);
+    setError(null);
+    setSuccessMessage(null);
+    try {
+      const response = await fetch("/api/admin/approve-driver", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ driverId, action: "verify_insurance" }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.error || "Failed to mark insurance verified.");
+        return;
+      }
+      setSuccessMessage("Insurance marked as verified. The mover can now be approved.");
+      await fetchData();
+    } catch {
+      setError("Failed to mark insurance verified.");
+    } finally {
+      setActionLoadingId(null);
+    }
+  }
+
   async function updateDriverStatus(driverId: string, status: "approved" | "rejected" | "pending") {
     if (status === "approved") {
       const driver = drivers.find((d) => d.id === driverId);
-      if (driver && !driver.has_insurance) {
-        const proceed = window.confirm(
-          "Insurance is required before approval, and this mover has NOT confirmed Goods in Transit and Public Liability insurance. Approve anyway?"
-        );
-        if (!proceed) return;
+      if (driver && driver.insurance_verified !== true) {
+        setError("Cannot approve mover until insurance documents have been received and marked verified.");
+        return;
       }
     }
     setActionLoadingId(driverId);
@@ -308,9 +332,23 @@ export default function AdminPortalClient() {
                           <p className="font-bold text-primary">{driver.contact_name || "—"}</p>
                           <p className="text-text-secondary font-medium">{driver.phone || "—"}</p>
                           <p className="text-text-secondary font-medium break-all">{driver.email || "—"}</p>
-                          <p className={`text-[9px] font-black uppercase tracking-widest mt-1 ${driver.has_insurance ? "text-success" : "text-red-500"}`}>
-                            {driver.has_insurance ? "Insurance confirmed" : "Insurance NOT confirmed — required before approval"}
+                          <p className={`text-[9px] font-black uppercase tracking-widest mt-1 ${driver.insurance_verified ? "text-success" : "text-amber-600"}`}>
+                            {driver.insurance_verified ? "Insurance verified" : "Insurance status: pending email verification"}
                           </p>
+                          {!driver.insurance_verified && (
+                            <>
+                              <p className="text-[9px] text-text-secondary font-medium mt-1 normal-case tracking-normal">
+                                Mover must email Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk.
+                              </p>
+                              <button
+                                onClick={() => markInsuranceVerified(driver.id)}
+                                disabled={actionLoadingId === driver.id}
+                                className="mt-2 px-3 py-1.5 bg-primary text-white rounded-lg text-[9px] font-black uppercase tracking-widest hover:bg-primary/80 transition-colors disabled:opacity-50"
+                              >
+                                {actionLoadingId === driver.id ? "..." : "Mark insurance verified"}
+                              </button>
+                            </>
+                          )}
                         </td>
                         <td className="p-8">
                           {driver.status === "pending" ? (

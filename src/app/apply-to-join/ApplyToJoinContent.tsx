@@ -66,7 +66,11 @@ export default function ApplyToJoinContent() {
           <div className="space-y-4">
             <h2 className="text-4xl font-black uppercase tracking-tight text-primary">Application Sent</h2>
             <p className="text-text-secondary font-medium leading-relaxed">
-              Thank you for applying to Man and Van Club. Our team will review your details and be in touch within 24–48 hours.
+              Thank you for applying to Man and Van Club. To complete your application, please email your Goods in Transit and Public Liability insurance documents to{" "}
+              <a href="mailto:support@manandvanclub.co.uk" className="text-accent font-bold">support@manandvanclub.co.uk</a>.
+            </p>
+            <p className="text-text-secondary font-medium leading-relaxed">
+              We will review your application once your insurance documents have been received.
             </p>
           </div>
           <Link href="/" className="btn-orange w-full block py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-accent/20">
@@ -195,7 +199,7 @@ export default function ApplyToJoinContent() {
                     <div className="space-y-1">
                       <p className="text-xs font-black uppercase tracking-tight text-primary">Insurance Confirmation</p>
                       <p className="text-[10px] text-text-secondary font-medium leading-relaxed uppercase tracking-wider">
-                        I confirm I hold valid Goods in Transit and Public Liability insurance and can provide evidence during onboarding.
+                        I understand that my application cannot be approved until I email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk.
                       </p>
                     </div>
                   </div>
@@ -203,7 +207,7 @@ export default function ApplyToJoinContent() {
 
                 <div className="space-y-2">
                   <p className="text-[10px] font-black uppercase tracking-widest text-primary/30 text-center">
-                    You must provide valid Goods in Transit and Public Liability insurance before your application can be approved.
+                    Insurance is required before approval. You must email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk before your application can be approved.
                   </p>
                   <p className="text-[10px] font-black uppercase tracking-widest text-accent/70 text-center">
                     We carefully review every application before granting access to customer enquiries.
@@ -232,8 +236,8 @@ export default function ApplyToJoinContent() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   { step: "01", title: "We review your application", desc: "Our team checks your details within 24 hours." },
-                  { step: "02", title: "We verify your insurance", desc: "You'll be asked to upload your insurance documents." },
-                  { step: "03", title: "Receive Approval & Platform Access", desc: "Approved movers receive login details and access to available customer enquiries." },
+                  { step: "02", title: "Email your insurance documents", desc: "Email your Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk. We check them manually." },
+                  { step: "03", title: "Receive Approval & Platform Access", desc: "Once your insurance is verified, approved movers receive login details and access to available customer enquiries." },
                 ].map((item, i) => (
                   <div key={i} className="bg-white p-8 rounded-3xl border border-border/50 space-y-4 shadow-sm">
                     <div className="text-accent font-black text-xl italic tracking-tighter">Step {item.step}</div>
