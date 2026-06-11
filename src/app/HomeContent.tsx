@@ -253,14 +253,14 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Popular Moving Services ──────────────────── */}
-      <section className="py-16 bg-[#F9F9F7]">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-10">
+      <section className="py-16 bg-[#F9F9F7] border-b border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-8">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Popular Moving Services</h2>
-            <p className="text-text-secondary mt-3 text-sm">Find the right service for your move.</p>
+            <p className="text-text-secondary mt-2 text-sm">Find the right service for your move.</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
             {[
               { label: "House Removals", href: "/house-removals" },
               { label: "Flat Moves", href: "/flat-removals" },
@@ -273,7 +273,7 @@ export default function HomeContent() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="text-center bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+                className="flex items-center justify-center text-center bg-white rounded-2xl border border-border px-4 py-5 min-h-[76px] w-[calc(50%-0.5rem)] sm:w-[200px] hover:border-accent hover:shadow-md transition-all"
               >
                 <span className="text-sm font-black text-primary uppercase tracking-tight">{service.label}</span>
               </Link>
@@ -284,13 +284,13 @@ export default function HomeContent() {
 
       {/* ──────────────────── Popular Areas We Cover ──────────────────── */}
       <section className="py-16 bg-white border-b border-border">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-10">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-8">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">Popular Areas We Cover</h2>
-            <p className="text-text-secondary mt-3 text-sm">Local man and van services across the UK.</p>
+            <p className="text-text-secondary mt-2 text-sm">Local man and van services across the UK.</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
             {[
               { name: "Birmingham", slug: "man-and-van-birmingham" },
               { name: "London", slug: "man-and-van-london" },
@@ -306,7 +306,7 @@ export default function HomeContent() {
               <Link
                 key={loc.slug}
                 href={`/${loc.slug}`}
-                className="text-center bg-[#F9F9F7] rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+                className="flex items-center justify-center text-center bg-[#F9F9F7] rounded-2xl border border-border px-4 py-5 min-h-[76px] w-[calc(50%-0.5rem)] sm:w-[200px] hover:border-accent hover:shadow-md transition-all"
               >
                 <span className="text-sm font-black text-primary uppercase tracking-tight">{loc.name}</span>
               </Link>
