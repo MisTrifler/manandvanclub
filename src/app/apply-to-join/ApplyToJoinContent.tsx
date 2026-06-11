@@ -195,7 +195,7 @@ export default function ApplyToJoinContent() {
                     <div className="space-y-1">
                       <p className="text-xs font-black uppercase tracking-tight text-primary">Insurance Confirmation</p>
                       <p className="text-[10px] text-text-secondary font-medium leading-relaxed uppercase tracking-wider">
-                        I confirm I am insurance details requested for goods in transit and public liability.
+                        I confirm I can provide Goods in Transit and Public Liability insurance details during onboarding.
                       </p>
                     </div>
                   </div>

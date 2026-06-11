@@ -37,7 +37,7 @@ export default function AboutContent() {
               {[
                 { t: "Verified", d: "ID and phone vetting for every mover." },
                 { t: "Exclusive", d: "1-to-1 matching for premium quality." },
-                { t: "England-Wide", d: "Connecting customers across the country." },
+                { t: "UK-Wide", d: "Connecting customers across England, Scotland and Wales." },
                 { t: "Transparent", d: "Clear marketplace model for everyone." },
               ].map((item, i) => (
                 <div key={i} className="bg-[#F9F9F7] p-8 rounded-3xl border border-border/50">

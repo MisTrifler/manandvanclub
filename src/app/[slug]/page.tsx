@@ -21,7 +21,7 @@ const servicePageData: Record<string, any> = {
     name: "House Removals",
     formIntent: "house",
     title: "House Removals | Professional Home Moving Services | Man and Van Club",
-    description: "Professional house removals across England. Get matched with a vetted local mover for your full home move. Fixed or hourly pricing, insurance details requested.",
+    description: "Professional house removals across England. Get matched with a vetted local mover for your full home move. Fixed or hourly pricing, with insurance details requested from every mover.",
     badge: "Home Moving Experts",
     intro: "Moving your entire home? Our network of vetted local movers specialises in house removals of every size. From one-bedroom flats to large family homes, we match you with a professional who has the right vehicle and experience.",
     knowledge: "Every house removal is different. Our movers know how to handle tight staircases, large furniture, and fragile items. They bring protective blankets, straps, and trolleys as standard. You get a single point of contact from start to finish — no call centres, no confusion.",
@@ -29,7 +29,7 @@ const servicePageData: Record<string, any> = {
     faq: [
       { q: "How much does a house removal cost?", a: "Prices vary based on volume and distance. A typical 2-bedroom house move starts around £300. Use our form for an accurate estimate." },
       { q: "Do movers dismantle and reassemble furniture?", a: "Most movers offer this service. Mention it when you fill out the form so we can match you with a mover who provides dismantling." },
-      { q: "Are my belongings insured during the move?", a: "Yes. Every mover on our platform carries Goods in Transit and Public Liability insurance." }
+      { q: "Are my belongings insured during the move?", a: "We request Goods in Transit and Public Liability insurance details from every mover during onboarding. We recommend confirming cover details directly with your mover before moving day." }
     ]
   },
   "flat-removals": {
@@ -83,13 +83,13 @@ const servicePageData: Record<string, any> = {
     title: "Furniture Collection & Delivery | Single Item Movers | Man and Van Club",
     description: "Single-item furniture collection and delivery across England. From eBay purchases to shop collections, get matched with a reliable local mover.",
     badge: "Furniture Delivery Experts",
-    intro: "Need a single item collected and delivered? Whether it's a sofa from a shop, a dining table from an eBay seller, or a wardrobe from a friend, our furniture collection service is fast, affordable, and insurance details requested.",
+    intro: "Need a single item collected and delivered? Whether it's a sofa from a shop, a dining table from an eBay seller, or a wardrobe from a friend, our furniture collection service is fast and affordable, with insurance details requested from every mover.",
     knowledge: "Our furniture collection specialists handle everything from small parcels to large wardrobes. They bring blankets, straps, and trolleys to protect your items. You can book same-day or scheduled slots depending on availability.",
     areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "eBay Purchases"],
     faq: [
       { q: "Can you collect from a shop or seller?", a: "Yes. Our movers can collect from shops, private sellers, or auction houses. Just provide the collection address and details." },
       { q: "How much does furniture collection cost?", a: "Single-item collections typically start from £45 depending on distance and item size. Use our form for a quick quote." },
-      { q: "Will my furniture be protected?", a: "Yes. Our movers use protective blankets and straps as standard. Goods in Transit insurance is also included." }
+      { q: "Will my furniture be protected?", a: "Movers typically use protective blankets and straps as standard. We request Goods in Transit insurance details from every mover, and recommend confirming cover directly with your mover." }
     ]
   },
   "same-day-man-and-van": {
@@ -102,7 +102,7 @@ const servicePageData: Record<string, any> = {
     knowledge: "Same-day moves require flexibility and speed. Our movers keep their schedules updated so we can match you with someone who is genuinely available today. They bring the same professionalism and equipment as any pre-booked move.",
     areas: ["Emergency Moves", "Last-Minute Collections", "Urgent Deliveries", "Same-Day Furniture", "Quick Clearances", "Day-Of Requests"],
     faq: [
-      { q: "How quickly can a mover arrive?", a: "Depending on availability, a mover can sometimes arrive within 1–2 hours. Submit your request and we'll match you with the nearest available driver." },
+      { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day availability can sometimes be arranged. Submit your request and we will match you with the nearest available mover as quickly as possible." },
       { q: "Does same-day cost more?", a: "Same-day moves may carry a small premium depending on demand and distance. You'll see pricing clearly before confirming." },
       { q: "Can I book same-day for long distances?", a: "Same-day is best for local or regional moves. For long-distance same-day, mention it on the form and we'll confirm availability." }
     ]
@@ -114,7 +114,7 @@ const servicePageData: Record<string, any> = {
     description: "Long distance removals across the UK. Moving from Birmingham to London, Manchester to Bristol, or anywhere in between? Get matched with a vetted mover.",
     badge: "UK-Wide Movers",
     intro: "Moving across the country? Our long-distance removal service connects you with movers who regularly travel between cities. Whether it's a single load or a full house move, you get a dedicated driver and transparent pricing.",
-    knowledge: "Long-distance moves require careful planning. Our movers calculate routes, fuel costs, and driving time accurately. They provide clear fixed-price quotes so there are no surprises. Every long-distance move is insurance details requested.",
+    knowledge: "Long-distance moves require careful planning. Our movers calculate routes, fuel costs, and driving time accurately. They provide clear fixed-price quotes so there are no surprises. Insurance details are requested from every mover in our network.",
     areas: ["City to City", "Cross-Country", "England to Scotland", "England to Wales", "Regional Moves", "Multi-Drop"],
     faq: [
       { q: "How much does a long-distance move cost?", a: "Long-distance pricing depends on mileage, volume, and whether it's a return or one-way journey. Typical city-to-city moves start from £250." },
@@ -128,7 +128,7 @@ const servicePageData: Record<string, any> = {
     title: "Facebook Marketplace Collection & Delivery | Man and Van Club",
     description: "Collection and delivery for Facebook Marketplace purchases across England. Get matched with a local mover who can collect and deliver your purchases safely.",
     badge: "Marketplace Collection",
-    intro: "Bought something on Facebook Marketplace and need it collected? Our marketplace collection service connects you with a local mover who can pick up your purchase and deliver it to your door. Fast, affordable, and insurance details requested.",
+    intro: "Bought something on Facebook Marketplace and need it collected? Our marketplace collection service connects you with a local mover who can pick up your purchase and deliver it to your door. Fast and affordable, with insurance details requested from every mover.",
     knowledge: "Facebook Marketplace purchases often need quick collection. Our movers offer flexible slots and can often collect within 24–48 hours. They bring the right vehicle size for sofas, beds, tables, and appliances.",
     areas: ["Sofas", "Beds", "Tables", "Appliances", "Wardrobes", "Miscellaneous Items"],
     faq: [

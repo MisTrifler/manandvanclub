@@ -69,11 +69,12 @@ const BENEFIT_CARDS = [
 ];
 
 const HOW_IT_WORKS_STEPS = [
-  { t: "Submit Application", d: "Complete the online application with your business details and service areas.", icon: <ClipboardList size={24} /> },
-  { t: "Insurance Verification", d: "Provide proof of Goods in Transit and Public Liability insurance.", icon: <ShieldCheck size={24} /> },
-  { t: "Approval", d: "Our team reviews your application manually, usually within 24 hours.", icon: <BadgeCheck size={24} /> },
-  { t: "Access Enquiries", d: "Log in to view available customer enquiries in your service area.", icon: <Eye size={24} /> },
-  { t: "Contact Customers Directly", d: "Submit quotes for enquiries that suit you. Customer details are released after the customer accepts and pays the booking deposit, which is deducted from your quote.", icon: <Phone size={24} /> },
+  { t: "Apply to Join", d: "Submit your business details and insurance information for review.", icon: <ClipboardList size={24} /> },
+  { t: "View Anonymised Move Requests", d: "Approved movers can view local move requests without seeing the customer’s contact details.", icon: <Eye size={24} /> },
+  { t: "Submit Your Total Quote", d: "Enter the total price you want the customer to see. The booking deposit is deducted from your quote.", icon: <BadgeCheck size={24} /> },
+  { t: "Customer Accepts or Declines", d: "The customer receives a secure quote review link and chooses whether to proceed.", icon: <ShieldCheck size={24} /> },
+  { t: "Receive Customer Details After Deposit Payment", d: "If the customer accepts and pays the booking deposit, their details are released to you.", icon: <Phone size={24} /> },
+  { t: "Collect the Remaining Balance", d: "You collect the remaining balance directly from the customer on moving day, unless another payment method is agreed.", icon: <Wallet size={24} /> },
 ];
 
 const COVERAGE_LOCATIONS = [
@@ -262,10 +263,10 @@ export default function WhyJoinContent() {
       <section className="py-20 bg-[#F9F9F7] border-b border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works</h2>
-            <p className="text-text-secondary mt-3">From application to your first customer-confirmed opportunity.</p>
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">How It Works For Movers</h2>
+            <p className="text-text-secondary mt-3">Submit total quotes for free. Customer details are released only after a customer secures the booking with a deposit.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {HOW_IT_WORKS_STEPS.map((step, i) => (
               <motion.div
                 key={i}
@@ -285,6 +286,21 @@ export default function WhyJoinContent() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          <div className="max-w-md mx-auto mt-12 bg-white border border-border rounded-3xl p-8">
+            <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-4 text-center">Example</h3>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm"><span className="text-text-secondary">Your total quote</span><strong className="text-primary">£300</strong></div>
+              <div className="flex justify-between text-sm"><span className="text-text-secondary">Customer deposit</span><strong className="text-primary">£25</strong></div>
+              <div className="flex justify-between text-sm border-t border-dashed border-border pt-3"><span className="font-bold text-primary">Customer pays you on moving day</span><strong className="text-accent text-lg">£275</strong></div>
+            </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/apply-to-join" className="btn-orange px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-2">
+              Apply To Join <ArrowUpRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

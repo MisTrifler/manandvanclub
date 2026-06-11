@@ -32,35 +32,37 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">1. What personal information do we collect?</h2>
-            <p>When booking or registering on our site, as appropriate, you may be asked to enter your name, email address, phone number or other details to help you with your experience.</p>
+            <p>When you request a moving quote, we collect your name, email address, phone number, collection and delivery postcodes, move date and move details. When a mover applies to join our network, we collect business details, contact information and insurance information. We may also collect information you provide when contacting our support team.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">2. When do we collect information?</h2>
-            <p>We collect information from you when you register on our site, place a booking request, fill in a form or enter information on our site.</p>
+            <p>We collect information when you submit a move request, verify your email address, review or accept a mover quote, pay a booking deposit, apply to join as a mover, log in to a mover account, or contact us through the site.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">3. How do we use your information?</h2>
-            <p>We may use the information we collect from you when you register, book a van, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:</p>
+            <p>We use the information you provide to operate the Man and Van Club quote and booking service:</p>
             <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>To personalize your experience and allow us to deliver the type of content and product offerings in which you are most interested.</li>
-              <li>To improve our website in order to better serve you.</li>
-              <li>To allow us to better serve you in response to your customer service requests.</li>
-              <li>To provide to authorities when required for accounting purposes.</li>
+              <li>To share anonymised move details (without your contact information) with approved movers so they can provide a quote.</li>
+              <li>To send you service emails about your move request, your mover quote, and your booking, using our email provider.</li>
+              <li>To release your contact details to your chosen mover only after you accept their quote and pay the booking deposit.</li>
+              <li>To process booking deposit payments securely through Stripe.</li>
+              <li>To review and verify mover applications, including insurance details.</li>
+              <li>To respond to customer service requests and improve our website.</li>
+              <li>To meet legal, accounting and regulatory obligations.</li>
             </ul>
-            <p className="mt-4"><strong>Data Sharing:</strong> Customer information may be shared with a matched mover to facilitate your move request. We also share data with approved service providers such as payment processors (Stripe), hosting providers, analytics providers, and email providers. <strong>Personal data is never sold or rented for marketing purposes.</strong></p>
+            <p className="mt-4"><strong>Data Sharing:</strong> Your contact details are released only to the mover whose quote you accept, and only after the booking deposit is paid. We also share data with approved service providers, including our payment processor (Stripe), email provider, database and hosting providers. <strong>Personal data is never sold or rented for marketing purposes.</strong></p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">4. How long do we keep the data?</h2>
-            <p>Your personal data will be stored on our servers for 5 years since the moment you create a booking request, as required for business and accounting purposes.</p>
+            <p>Your personal data will be stored for up to 5 years from the date of your move request, as required for business and accounting purposes, unless you ask us to delete it sooner where we have no legal obligation to retain it.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">5. How do we protect your information?</h2>
-            <p>Our website is scanned on a regular basis for security holes and known vulnerabilities in order to make your visit to our site as safe as possible. We use regular Malware Scanning.</p>
-            <p className="mt-4">Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit information you supply is encrypted via Transport Layer Security (TLS) technology.</p>
+            <p>Your data is stored in a secure managed database with access controls, and is only accessible to a limited number of people who need it to operate the service. Customer contact details are hidden from movers until you accept a quote and pay the booking deposit. All data transmitted between your browser and our site is encrypted via Transport Layer Security (TLS).</p>
             <p className="mt-4"><strong>Payments:</strong> Payments are securely processed by Stripe or other approved payment providers. We do not store complete payment card details.</p>
           </section>
 

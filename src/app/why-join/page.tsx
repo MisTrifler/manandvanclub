@@ -2,8 +2,8 @@ import WhyJoinContent from "./WhyJoinContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Why Join Man and Van Club | Customer-Confirmed Move Requests",
-  description: "Join Man and Van Club as an approved mover. Submit quotes for anonymised customer requests and receive details after a customer-confirmed booking deposit payment, which is deducted from the mover quote.",
+  title: "How It Works For Movers | Join Man and Van Club",
+  description: "Approved movers can view anonymised local move requests, submit total quotes for free, and receive customer details after a booking deposit is paid.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk/why-join',
   },

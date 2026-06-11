@@ -315,7 +315,7 @@ export default function HomeContent() {
 
           <div className="text-center mt-8">
             <Link href="/areas-covered" className="text-accent font-black text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-              View all 93 areas <ArrowUpRight size={16} />
+              View all areas we cover <ArrowUpRight size={16} />
             </Link>
           </div>
         </div>

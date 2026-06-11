@@ -152,7 +152,7 @@ function generateLocalMovingInfo(loc: LocationData): string {
     info += `Business relocations in ${loc.businessDistricts.slice(0, 2).join(" and ")} often need evening or weekend slots to minimise disruption. `;
   }
 
-  info += `Our movers know the ${roads} corridors and understand access challenges for ${properties} properties. `;
+  info += `Our movers know the ${roads} corridors and understand the access challenges of local properties, from ${properties}. `;
 
   if (considerations.length > 0) {
     info += `Common moving considerations in ${loc.name} include ${considerations.slice(0, 3).join("; ")}. `;

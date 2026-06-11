@@ -64,7 +64,7 @@ export default function ContactContent() {
                   </div>
                   <h2 className="text-4xl font-black uppercase tracking-tight text-primary">Message Sent</h2>
                   <p className="text-text-secondary font-medium text-lg max-w-md mx-auto">
-                    Thank you for contacting us. Our team will get back to you within 2 business hours.
+                    Thank you for contacting us. Our team aims to get back to you as soon as possible, usually the same day.
                   </p>
                 </div>
               ) : (
@@ -110,7 +110,7 @@ export default function ContactContent() {
             {[
               { icon: <Phone size={24} />, title: "Call Us", value: "07943 617386", href: "tel:07943617386" },
               { icon: <Mail size={24} />, title: "Email Us", value: "support@manandvanclub.co.uk", href: "mailto:support@manandvanclub.co.uk" },
-              { icon: <Clock size={24} />, title: "Response Time", value: "Within 2 business hours" },
+              { icon: <Clock size={24} />, title: "Response Time", value: "Usually same day" },
               { icon: <MapPin size={24} />, title: "Coverage", value: "UK-Wide" },
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-3xl border border-border/50 shadow-sm">
