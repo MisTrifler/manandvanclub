@@ -550,7 +550,7 @@ export default function DriverMarketplaceClient({
                 {lead.estimated_price}
               </p>
               <p className="text-xs text-text-secondary mt-1">
-                Guide only. Final price agreed directly with the customer.
+                Guide only. Final price is set by your quote options.
               </p>
             </div>
           )}

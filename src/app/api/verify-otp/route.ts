@@ -199,7 +199,7 @@ export async function POST(req: Request) {
 
         // Build price section if estimate exists
         const priceSection = estimatedPrice
-          ? `<p style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Estimated guide price</p>
+          ? `<p style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Guide price range</p>
              <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; font-weight: 500;">${estimatedPrice}</p>
              <p style="margin: 0 0 24px 0; color: #64748B; font-size: 12px; line-height: 1.6; font-style: italic;">
                This estimate is based on the details provided and is not a confirmed quote. Your matched mover will confirm the final price before booking.

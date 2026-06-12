@@ -8,6 +8,7 @@ import { Loader2, CheckCircle2, Shield, Lock, Clock, BadgeCheck, ArrowLeft, Buil
 import Link from "next/link";
 import { detectIntent, getIntentLabel, getMoveTypeLabel, type IntentType } from "@/lib/intent-detection";
 import IntentSelector from "./IntentSelector";
+import { calculateGuidePrice } from "@/lib/guide-price";
 
 const today = new Date().toISOString().split("T")[0];
 
@@ -81,6 +82,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [otpError, setOtpError] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
+  const [guideConfidence, setGuideConfidence] = useState<"route-based" | "fallback">("fallback");
 
   // ── Route estimate (informational only — never affects pricing) ────
   const [routeEstimate, setRouteEstimate] = useState<{
@@ -192,55 +194,37 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const currentFormPairKey = `${(watchedCollectionPostcode || "").trim().toUpperCase()}|${(watchedDeliveryPostcode || "").trim().toUpperCase()}`;
   const routeEstimateIsCurrent = !!routeEstimate && routeEstimatePairKey === currentFormPairKey;
 
+  // Guide price range (display-only): uses route distance/time when
+  // available, otherwise falls back to a broad move-type guide.
+  // Server recomputes authoritatively on submit.
   const calculateEstimate = (data: FormData): { min: number; max: number } => {
-    const base: Record<IntentType, [number, number]> = {
-      office: [300, 800],
-      house: [180, 450],
-      student: [80, 200],
-      "single-item": [45, 120],
-      general: [100, 300],
-      storage: [120, 350],
-    };
-
-    // House: adjust based on bedrooms
-    if (activeIntent === "house" && data.bedrooms) {
-      const map: Record<string, [number, number]> = {
-        "Studio": [80, 130],
-        "1": [100, 180],
-        "2": [180, 280],
-        "3": [300, 450],
-        "4+": [500, 850],
-      };
-      const result = map[data.bedrooms] || base[activeIntent];
-      return { min: result[0], max: result[1] };
-    }
-
-    // Office: adjust based on office size
-    if (activeIntent === "office" && data.officeSize) {
-      const map: Record<string, [number, number]> = {
-        "Small office": [200, 450],
-        "Medium office": [400, 900],
-        "Large office": [800, 1800],
-        "Warehouse / Industrial": [600, 1500],
-      };
-      const result = map[data.officeSize] || base[activeIntent];
-      return { min: result[0], max: result[1] };
-    }
-
-    // Storage: adjust based on rough amount
-    if (activeIntent === "storage" && data.storageUnitSize) {
-      const map: Record<string, [number, number]> = {
-        "Few items": [60, 150],
-        "Half van": [120, 250],
-        "Full van": [200, 400],
-        "Unsure": [120, 350],
-      };
-      const result = map[data.storageUnitSize] || base[activeIntent];
-      return { min: result[0], max: result[1] };
-    }
-
-    const result = base[activeIntent || "general"];
-    return { min: result[0], max: result[1] };
+    const result = calculateGuidePrice({
+      intent: activeIntent,
+      moveType: data.moveType,
+      routeEstimate: routeEstimateIsCurrent && routeEstimate && routeEstimate.distanceMeters > 0 ? routeEstimate : null,
+      bedrooms: data.bedrooms,
+      propertyType: data.propertyType,
+      officeSize: data.officeSize,
+      numberOfDesks: data.numberOfDesks,
+      itemType: data.itemType,
+      numberOfItems: data.numberOfItems,
+      storageUnitSize: data.storageUnitSize,
+      storageDirection: data.storageDirection,
+      numberOfBoxes: data.numberOfBoxes,
+      suitcases: data.suitcases,
+      smallFurnitureItems: data.smallFurnitureItems,
+      loadingHelp: data.loadingHelp,
+      helperPreference: data.helperPreference,
+      accessType: data.accessType,
+      parkingAvailable: data.parkingAvailable,
+      heavyItems: data.heavyItems,
+      heavyItemsDescription: data.heavyItemsDescription,
+      dismantlingRequired: data.dismantlingRequired,
+      collectionPostcode: data.collectionPostcode,
+      deliveryPostcode: data.deliveryPostcode,
+    });
+    setGuideConfidence(result.confidence);
+    return { min: result.min, max: result.max };
   };
 
   const onNextStep = async () => {
@@ -409,7 +393,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const getStepTitle = () => {
     if (step === 1) return activeIntent ? getIntentLabel(activeIntent) + " Details" : "Move Details";
-    if (step === 2 && hasEstimate) return "Estimated Price";
+    if (step === 2 && hasEstimate) return "Guide Price Range";
     if (step === (hasEstimate ? 3 : 2)) return "Your Details";
     if (step === (hasEstimate ? 4 : 3)) return "Verify Email";
     return "";
@@ -909,16 +893,20 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           <div className="space-y-6 text-center py-2">
             <div className="bg-white p-6 rounded-[2rem] shadow-xl border-2 border-border">
               <p className="text-[10px] font-black uppercase text-primary/40 mb-2">
-                {activeIntent === "office" && "Estimated Office Move Cost"}
-                {activeIntent === "house" && "Estimated Home Move Cost"}
-                {activeIntent === "student" && "Estimated Student Move Cost"}
-                {activeIntent === "general" && "Estimated Man & Van Cost"}
-                {activeIntent === "storage" && "Estimated Storage Collection Cost"}
+                {guideConfidence === "route-based" ? "Guide price range" : "Broad guide price range"}
               </p>
-              <p className="text-5xl font-black tracking-tighter text-primary">
-                {estimate ? `£${estimate.min}–${estimate.max}` : "£—"}
+              {routeLoading && !routeEstimateIsCurrent ? (
+                <p className="text-sm text-text-secondary font-medium py-4">Calculating guide price from your route…</p>
+              ) : (
+                <p className="text-5xl font-black tracking-tighter text-primary">
+                  {estimate ? `£${estimate.min}–£${estimate.max}` : "£—"}
+                </p>
+              )}
+              <p className="text-xs text-text-secondary mt-3 font-medium">
+                {guideConfidence === "route-based"
+                  ? "Based on your route and move details. This is a guide only. Your mover will review the full job and send quote options if they can help."
+                  : "We could not estimate the route, so this is a broad guide based on your move details only. Your mover's quote options are the actual prices."}
               </p>
-              <p className="text-xs text-text-secondary mt-3 font-medium">This is an estimate based on the details you provided. A vetted mover can review your request and send a quote if they can help.</p>
             </div>
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
             <button onClick={() => setStep(1)} className="text-[10px] font-black uppercase opacity-30">Back</button>

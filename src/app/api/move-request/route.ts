@@ -5,6 +5,7 @@ import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 import { escapeHtml } from '@/lib/html';
 import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode } from '@/lib/route-estimate';
+import { calculateGuidePrice } from '@/lib/guide-price';
 
 const OTP_VALIDITY_MINUTES = 15;
 
@@ -72,6 +73,46 @@ export async function POST(req: Request) {
       }
     } catch {
       // non-blocking
+    }
+
+    // ── Guide price (display-only, server-authoritative) ─────────────
+    // Recomputed here from validated inputs + the stored route estimate.
+    // Never affects Stripe, deposits, quote options or detail release.
+    try {
+      const guide = calculateGuidePrice({
+        intent: null,
+        moveType: data.moveType,
+        routeEstimate: insertPayload.details?.routeEstimate || null,
+        bedrooms: data.details?.bedrooms,
+        propertyType: data.details?.propertyType,
+        officeSize: data.details?.officeSize,
+        numberOfDesks: data.details?.numberOfDesks,
+        itemType: data.details?.itemType,
+        numberOfItems: data.details?.numberOfItems,
+        storageUnitSize: data.details?.storageUnitSize,
+        storageDirection: data.details?.storageDirection,
+        numberOfBoxes: data.details?.numberOfBoxes,
+        suitcases: data.details?.suitcases,
+        smallFurnitureItems: data.details?.smallFurnitureItems,
+        loadingHelp: data.details?.loadingHelp,
+        helperPreference: data.details?.helperPreference,
+        accessType: data.details?.accessType,
+        parkingAvailable: data.details?.parkingAvailable,
+        heavyItems: data.details?.heavyItems,
+        heavyItemsDescription: data.details?.heavyItemsDescription,
+        dismantlingRequired: data.details?.dismantlingRequired,
+        collectionPostcode: data.collectionPostcode,
+        deliveryPostcode: data.deliveryPostcode,
+      });
+      // estimated_price stays the display string (backwards compatible);
+      // structured detail goes into details.guidePrice.
+      insertPayload.estimated_price = guide.display;
+      insertPayload.details = {
+        ...(insertPayload.details || {}),
+        guidePrice: { ...guide, calculatedAt: new Date().toISOString() },
+      };
+    } catch {
+      // non-blocking: keep client-supplied estimated_price as-is
     }
 
     let request: any;

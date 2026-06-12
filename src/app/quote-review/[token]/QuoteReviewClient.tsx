@@ -241,7 +241,7 @@ export default function QuoteReviewClient({
                     <Tag size={18} className="text-primary/60" />
                   </div>
                   <div>
-                    <p className="text-xs font-black uppercase tracking-widest text-primary/40">Estimated guide price shown earlier</p>
+                    <p className="text-xs font-black uppercase tracking-widest text-primary/40">Guide price shown earlier</p>
                     <p className="font-bold text-primary">{estimatedPrice}</p>
                   </div>
                 </div>
