@@ -4,7 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 import { escapeHtml } from '@/lib/html';
-import { computeRouteEstimate, sanitizeRouteEstimate } from '@/lib/route-estimate';
+import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode } from '@/lib/route-estimate';
 
 const OTP_VALIDITY_MINUTES = 15;
 
@@ -55,6 +55,17 @@ export async function POST(req: Request) {
           || sanitizeRouteEstimate(data.details?.routeEstimate, data.collectionPostcode, data.deliveryPostcode);
         if (finalEstimate) {
           insertPayload.details = { ...(insertPayload.details || {}), routeEstimate: finalEstimate };
+        } else if (isLikelyUKPostcode(data.collectionPostcode) && isLikelyUKPostcode(data.deliveryPostcode)) {
+          // Distance lookup unavailable: keep a safe postcode-only
+          // fallback map link so movers/customers can still view the route.
+          insertPayload.details = {
+            ...(insertPayload.details || {}),
+            routeEstimate: {
+              mapUrl: buildGoogleMapsDirectionsUrl(data.collectionPostcode, data.deliveryPostcode),
+              provider: "fallback",
+              calculatedAt: new Date().toISOString(),
+            },
+          };
         } else if (insertPayload.details?.routeEstimate) {
           delete insertPayload.details.routeEstimate; // drop unusable client value
         }

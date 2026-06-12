@@ -87,7 +87,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     distanceText: string; durationText: string; distanceMeters: number;
     durationSeconds: number; mapUrl: string; provider: string; calculatedAt: string;
   } | null>(null);
+  const [routeEstimatePairKey, setRouteEstimatePairKey] = useState("");
   const [routeLookupFailed, setRouteLookupFailed] = useState(false);
+  const [routeLoading, setRouteLoading] = useState(false);
   const [lastRoutePair, setLastRoutePair] = useState("");
 
   // Detect intent from URL on client side (for homepage / no prop)
@@ -130,14 +132,31 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   useEffect(() => {
     const from = (watchedCollectionPostcode || "").trim();
     const to = (watchedDeliveryPostcode || "").trim();
+    const currentPairKey = `${from.toUpperCase()}|${to.toUpperCase()}`;
 
-    // Only look up once both postcodes look complete; never on every keystroke.
-    if (from.length < 5 || to.length < 5) return;
+    // Either postcode incomplete: clear everything immediately — no stale estimate.
+    if (from.length < 5 || to.length < 5) {
+      if (routeEstimate || routeLookupFailed || routeLoading) {
+        setRouteEstimate(null);
+        setRouteEstimatePairKey("");
+        setRouteLookupFailed(false);
+        setRouteLoading(false);
+      }
+      return;
+    }
 
-    const pairKey = `${from.toUpperCase()}|${to.toUpperCase()}`;
-    if (pairKey === lastRoutePair) return; // same pair already looked up this session
+    if (currentPairKey === lastRoutePair) return; // same pair already looked up this session
+
+    // Pair changed: clear the old estimate IMMEDIATELY (before debounce),
+    // so an A→B result never lingers while C→D is typed/pending.
+    if (routeEstimatePairKey && routeEstimatePairKey !== currentPairKey) {
+      setRouteEstimate(null);
+      setRouteEstimatePairKey("");
+      setRouteLookupFailed(false);
+    }
 
     const timer = setTimeout(async () => {
+      setRouteLoading(true); // only after debounce begins, not per keystroke
       try {
         const res = await fetch("/api/route-estimate", {
           method: "POST",
@@ -145,23 +164,33 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           body: JSON.stringify({ collectionPostcode: from, deliveryPostcode: to }),
         });
         const data = await res.json().catch(() => ({ ok: false }));
-        setLastRoutePair(pairKey);
+        setLastRoutePair(currentPairKey);
         if (data.ok) {
           setRouteEstimate(data);
+          setRouteEstimatePairKey(currentPairKey);
           setRouteLookupFailed(false);
         } else {
-          setRouteEstimate(data.mapUrl ? { distanceText: "", durationText: "", distanceMeters: 0, durationSeconds: 0, mapUrl: data.mapUrl, provider: "fallback", calculatedAt: "" } : null);
+          // Keep the safe postcode-only fallback map link when available.
+          setRouteEstimate(data.mapUrl ? { distanceText: "", durationText: "", distanceMeters: 0, durationSeconds: 0, mapUrl: data.mapUrl, provider: "fallback", calculatedAt: new Date().toISOString() } : null);
+          setRouteEstimatePairKey(data.mapUrl ? currentPairKey : "");
           setRouteLookupFailed(true);
         }
       } catch {
-        setLastRoutePair(pairKey);
+        setLastRoutePair(currentPairKey);
         setRouteEstimate(null);
+        setRouteEstimatePairKey("");
         setRouteLookupFailed(true);
+      } finally {
+        setRouteLoading(false);
       }
     }, 800); // debounce
 
     return () => clearTimeout(timer);
-  }, [watchedCollectionPostcode, watchedDeliveryPostcode, lastRoutePair]);
+  }, [watchedCollectionPostcode, watchedDeliveryPostcode, lastRoutePair, routeEstimatePairKey, routeEstimate, routeLookupFailed, routeLoading]);
+
+  // The estimate is only valid for the postcode pair currently in the form.
+  const currentFormPairKey = `${(watchedCollectionPostcode || "").trim().toUpperCase()}|${(watchedDeliveryPostcode || "").trim().toUpperCase()}`;
+  const routeEstimateIsCurrent = !!routeEstimate && routeEstimatePairKey === currentFormPairKey;
 
   const calculateEstimate = (data: FormData): { min: number; max: number } => {
     const base: Record<IntentType, [number, number]> = {
@@ -316,9 +345,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         ? `£${estimate.min}–£${estimate.max}`
         : undefined;
 
-      // Attach route estimate (guide only — server re-validates/recalculates)
-      if (routeEstimate && routeEstimate.distanceMeters > 0) {
-        details.routeEstimate = routeEstimate;
+      // Attach route estimate (guide only — server re-validates/recalculates).
+      // Only submit if it matches the CURRENT postcode pair in the form;
+      // a stale estimate from an earlier pair is never submitted.
+      const submitPairKey = `${(data.collectionPostcode || "").trim().toUpperCase()}|${(data.deliveryPostcode || "").trim().toUpperCase()}`;
+      if (routeEstimate && routeEstimatePairKey === submitPairKey) {
+        if (routeEstimate.distanceMeters > 0) {
+          details.routeEstimate = routeEstimate;
+        } else if (routeEstimate.mapUrl) {
+          // Distance lookup failed but the safe postcode-only map link survives.
+          details.routeEstimate = { mapUrl: routeEstimate.mapUrl, provider: "fallback", calculatedAt: routeEstimate.calculatedAt };
+        }
       }
 
       const payload = {
@@ -652,12 +689,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {errors.itemType && <p className="text-red-500 text-xs font-bold mt-1">{errors.itemType.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Address / Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
                   <input {...register("collectionPostcode")} placeholder="Where is the item now?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Address / Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
                   <input {...register("deliveryPostcode")} placeholder="Where should it go?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
@@ -826,20 +863,26 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <input {...register("notes")} placeholder="Optional, e.g. stairs, parking, fragile items, narrow access" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
             </div>
 
-            {/* Route estimate panel — informational guide only */}
-            {routeEstimate && routeEstimate.distanceMeters > 0 && (
+            {/* Route estimate panel — informational guide only.
+                Renders ONLY when the estimate matches the current postcode pair. */}
+            {routeLoading && !routeEstimateIsCurrent && (
+              <p className="text-[11px] text-text-secondary/70 flex items-center gap-1.5">
+                <Loader2 size={12} className="animate-spin" /> Estimating route…
+              </p>
+            )}
+            {routeEstimateIsCurrent && routeEstimate!.distanceMeters > 0 && (
               <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-3.5">
                 <p className="text-[10px] font-black uppercase tracking-widest text-blue-700/70 mb-1">Estimated Journey</p>
                 <p className="text-sm font-bold text-primary">
                   {(watchedCollectionPostcode || "").toUpperCase()} <span className="text-primary/40">→</span> {(watchedDeliveryPostcode || "").toUpperCase()}
                 </p>
                 <p className="text-sm text-text-secondary mt-0.5">
-                  Distance: <strong className="text-primary">{routeEstimate.distanceText}</strong>
+                  Distance: <strong className="text-primary">{routeEstimate!.distanceText}</strong>
                   <span className="mx-1.5 text-primary/30">·</span>
-                  Drive time: <strong className="text-primary">{routeEstimate.durationText}</strong>
+                  Drive time: <strong className="text-primary">{routeEstimate!.durationText}</strong>
                 </p>
-                {routeEstimate.mapUrl && (
-                  <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-accent mt-1 inline-block">
+                {routeEstimate!.mapUrl && (
+                  <a href={routeEstimate!.mapUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-accent mt-1 inline-block">
                     View route on map →
                   </a>
                 )}
@@ -848,11 +891,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </p>
               </div>
             )}
-            {routeLookupFailed && !routeEstimate?.distanceMeters && (
+            {routeEstimateIsCurrent && routeLookupFailed && !routeEstimate!.distanceMeters && (
               <p className="text-[11px] text-text-secondary/70">
-                We could not estimate the route, but you can still continue.
-                {routeEstimate?.mapUrl && (
-                  <> <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-accent">View route on map</a></>
+                We could not estimate the distance, but you can still continue.
+                {routeEstimate!.mapUrl && (
+                  <> <a href={routeEstimate!.mapUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-accent">View route on map</a></>
                 )}
               </p>
             )}

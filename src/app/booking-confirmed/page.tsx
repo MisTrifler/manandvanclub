@@ -134,16 +134,20 @@ export default async function BookingConfirmedPage({
                 </div>
               )}
 
-              {routeEstimate && routeEstimate.distanceMeters > 0 && (
+              {routeEstimate && (routeEstimate.distanceMeters > 0 || routeEstimate.mapUrl) && (
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0">
                     <MapPin size={18} className="text-primary/60" />
                   </div>
                   <div>
                     <p className="text-xs font-black uppercase tracking-widest text-primary/40">Estimated route</p>
-                    <p className="font-bold text-primary">{routeEstimate.distanceText} · {routeEstimate.durationText}</p>
+                    {routeEstimate.distanceMeters > 0 && (
+                      <p className="font-bold text-primary">{routeEstimate.distanceText} · {routeEstimate.durationText}</p>
+                    )}
                     {routeEstimate.mapUrl && (
-                      <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-accent">View route on map →</a>
+                      <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-accent">
+                        {routeEstimate.distanceMeters > 0 ? "View route on map →" : "View postcode route on map →"}
+                      </a>
                     )}
                     <p className="text-[10px] text-text-secondary/60">Postcode-to-postcode guide. Final timing may vary.</p>
                   </div>

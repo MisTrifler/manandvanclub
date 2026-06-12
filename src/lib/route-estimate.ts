@@ -94,11 +94,30 @@ export function getRouteEstimateFromDetails(details: unknown): RouteEstimate | n
   const r = raw as Record<string, unknown>;
   const distanceMeters = Number(r.distanceMeters);
   const durationSeconds = Number(r.durationSeconds);
-  if (!Number.isFinite(distanceMeters) || distanceMeters <= 0) return null;
-  if (!Number.isFinite(durationSeconds) || durationSeconds <= 0) return null;
   const mapUrl = typeof r.mapUrl === "string" && r.mapUrl.startsWith("https://www.google.com/maps/dir/")
     ? r.mapUrl
     : "";
+
+  const hasDistance =
+    Number.isFinite(distanceMeters) && distanceMeters > 0 &&
+    Number.isFinite(durationSeconds) && durationSeconds > 0;
+
+  // Fallback-only estimate: distance lookup failed but a safe
+  // postcode-to-postcode map link survived. Callers should render
+  // "View postcode route on map" when distanceMeters === 0.
+  if (!hasDistance) {
+    if (!mapUrl) return null;
+    return {
+      distanceText: "",
+      durationText: "",
+      distanceMeters: 0,
+      durationSeconds: 0,
+      mapUrl,
+      provider: typeof r.provider === "string" ? r.provider : "fallback",
+      calculatedAt: typeof r.calculatedAt === "string" ? r.calculatedAt : "",
+    };
+  }
+
   return {
     distanceText: formatDistanceMiles(distanceMeters),
     durationText: formatDuration(durationSeconds),
