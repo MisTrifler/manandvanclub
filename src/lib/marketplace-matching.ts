@@ -5,8 +5,9 @@
 //
 // Business rule: a driver only sees (and can only quote) jobs that are
 // genuinely available to them: verified, unquoted, unpaid, future-dated,
-// inside their approved service area and matching their approved
-// service types. Default is restrictive: if we cannot confidently match
+// inside their approved service area. Service-type flags are retained
+// for future filtering/reporting, but are not enforced at launch.
+// Default is restrictive: if we cannot confidently match
 // the area, the job is NOT shown.
 // ─────────────────────────────────────────────────────────────────────
 

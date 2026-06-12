@@ -356,7 +356,7 @@ export async function POST(req: Request) {
                     <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 15px;">
                       <h2 style="color: #0F172A;">New Matched Move Request</h2>
                       <p>Hi ${escapeHtml(driver.contact_name || 'there')},</p>
-                      <p>A verified customer request matches your approved area and services:</p>
+                      <p>A verified customer request matches your approved service area:</p>
                       <div style="background: #F8FAFC; padding: 20px; border-radius: 10px; margin: 20px 0;">
                         <p><strong>Route:</strong> ${escapeHtml(moveRequest.collection_postcode)} → ${escapeHtml(moveRequest.delivery_postcode)}</p>
                         <p><strong>Date:</strong> ${escapeHtml(moveRequest.move_date || '—')}</p>
