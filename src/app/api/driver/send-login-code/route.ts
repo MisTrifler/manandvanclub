@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { randomInt } from "crypto";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
 import { hashLoginCode } from "@/lib/driver-auth";
@@ -94,7 +95,7 @@ export async function POST(req: Request) {
     }
 
     // 5. Generate 6-digit code and hash it
-    const code = Math.floor(100000 + Math.random() * 900000).toString();
+    const code = String(randomInt(100000, 1000000));
     const codeHash = hashLoginCode(code, email);
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString(); // 10 min
 

@@ -165,9 +165,7 @@ const SAMPLE_DATA: Company[] = [
 ];
 
 export default function RecruitmentCRM() {
-  // Admin check placeholder
-  const [isAdmin, setIsAdmin] = useState(true); // TODO: Replace with actual auth check
-
+  // Auth is enforced server-side in page.tsx via isValidAdminSession.
   const [companies, setCompanies] = useState<Company[]>([]);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<Status | "All">("All");
@@ -408,22 +406,6 @@ export default function RecruitmentCRM() {
   // Unique filter values
   const uniqueCities = useMemo(() => Array.from(new Set(companies.map((c) => c.city))).sort(), [companies]);
   const uniqueCounties = useMemo(() => Array.from(new Set(companies.map((c) => c.county))).sort(), [companies]);
-
-  // Auth placeholder
-  if (!isAdmin) {
-    return (
-      <div className="min-h-screen bg-[#F9F9F7] flex items-center justify-center">
-        <div className="bg-white p-12 rounded-[2.5rem] shadow-2xl border border-border text-center space-y-6">
-          <Lock size={48} className="text-primary mx-auto" />
-          <h2 className="text-3xl font-black text-primary uppercase tracking-tighter">Admin Only</h2>
-          <p className="text-text-secondary">You must be logged in as an administrator to access this page.</p>
-          <Link href="/login" className="btn-orange inline-block px-10 py-4 rounded-xl font-black uppercase tracking-widest text-xs">
-            Go to Login
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-[#F9F9F7]">

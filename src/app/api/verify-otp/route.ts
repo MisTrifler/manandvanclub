@@ -1,7 +1,42 @@
 import { NextResponse } from 'next/server';
+import { timingSafeEqual } from 'crypto';
 import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 
+// ── OTP hardening ─────────────────────────────────────────
+const MAX_OTP_ATTEMPTS = 5;
+
+// Simple in-memory IP rate limiter (best-effort per serverless instance;
+// the DB-backed attempt counter is the authoritative limit).
+const ipHits = new Map<string, { count: number; resetAt: number }>();
+const IP_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const IP_MAX_REQUESTS = 30;
+
+function ipRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = ipHits.get(ip);
+  if (!entry || now > entry.resetAt) {
+    ipHits.set(ip, { count: 1, resetAt: now + IP_WINDOW_MS });
+    return false;
+  }
+  entry.count += 1;
+  if (ipHits.size > 5000) ipHits.clear(); // memory guard
+  return entry.count > IP_MAX_REQUESTS;
+}
+
+function safeCodeCompare(stored: string, provided: string): boolean {
+  const a = Buffer.from(String(stored));
+  const b = Buffer.from(String(provided));
+  if (a.length !== b.length) return false;
+  try {
+    return timingSafeEqual(a, b);
+  } catch {
+    return false;
+  }
+}
+
+const GENERIC_INVALID = 'Invalid or expired verification code.';
+const GENERIC_LOCKED = 'Too many incorrect attempts. Please request a new verification code.';
 
 // ── Helpers ───────────────────────────────────────────────
 
@@ -38,41 +73,106 @@ function formatEstimate(raw: string | null | undefined): string | null {
 
 export async function POST(req: Request) {
   try {
+    // IP rate limit (generic response, no information disclosure)
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || 'unknown';
+    if (ipRateLimited(ip)) {
+      console.warn('[verify-otp] IP rate limit exceeded:', ip);
+      return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+    }
+
     const { requestId, otp } = await req.json();
 
     if (!requestId || !otp) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      return NextResponse.json({ error: GENERIC_INVALID }, { status: 400 });
     }
 
-    // 1. Check if OTP matches — select all fields needed for confirmation email
+    // 1. Fetch request — select all fields needed for confirmation email
     const { data: request, error: fetchError } = await supabase
       .from('move_requests')
-      .select('id, first_name, email, move_type, collection_postcode, delivery_postcode, move_date, estimated_price, otp_code, is_verified')
+      .select('*')
       .eq('id', requestId)
       .single();
 
     if (fetchError || !request) {
-      console.error('Verify OTP fetch error:', fetchError);
-      return NextResponse.json({ error: 'Request not found' }, { status: 404 });
+      // Generic error: do not reveal whether the requestId exists
+      return NextResponse.json({ error: GENERIC_INVALID }, { status: 400 });
     }
 
     if (request.is_verified) {
       return NextResponse.json({ message: 'Already verified' });
     }
 
-    if (request.otp_code !== otp) {
-      return NextResponse.json({ error: 'Invalid verification code' }, { status: 400 });
+    // 2. Lockout check (otp_locked_at set after MAX_OTP_ATTEMPTS failures)
+    if (request.otp_locked_at) {
+      return NextResponse.json({ error: GENERIC_LOCKED }, { status: 429 });
     }
 
-    // 2. Update status to active and is_verified to true
-    const { error: updateError } = await supabase
+    const attempts = Number(request.otp_attempts || 0);
+    if (attempts >= MAX_OTP_ATTEMPTS) {
+      await supabase
+        .from('move_requests')
+        .update({ otp_locked_at: new Date().toISOString() })
+        .eq('id', requestId);
+      return NextResponse.json({ error: GENERIC_LOCKED }, { status: 429 });
+    }
+
+    // 3. Expiry check (15 minutes from issue; column may be null on
+    //    legacy rows created before the hardening migration)
+    if (request.otp_expires_at) {
+      const expiry = new Date(request.otp_expires_at).getTime();
+      if (Number.isFinite(expiry) && expiry <= Date.now()) {
+        return NextResponse.json({ error: GENERIC_INVALID }, { status: 400 });
+      }
+    }
+
+    // 4. Timing-safe code comparison
+    if (!request.otp_code || !safeCodeCompare(request.otp_code, otp)) {
+      // Increment attempt counter; lock if this was the final allowed attempt
+      const newAttempts = attempts + 1;
+      const failUpdate: Record<string, any> = { otp_attempts: newAttempts };
+      if (newAttempts >= MAX_OTP_ATTEMPTS) {
+        failUpdate.otp_locked_at = new Date().toISOString();
+      }
+      const { error: failError } = await supabase
+        .from('move_requests')
+        .update(failUpdate)
+        .eq('id', requestId);
+      if (failError && (failError.code === '42703' || failError.code === 'PGRST204')) {
+        console.warn('[verify-otp] otp hardening columns missing — apply migration 20260612_otp_hardening.sql');
+      }
+      return NextResponse.json(
+        { error: newAttempts >= MAX_OTP_ATTEMPTS ? GENERIC_LOCKED : GENERIC_INVALID },
+        { status: newAttempts >= MAX_OTP_ATTEMPTS ? 429 : 400 }
+      );
+    }
+
+    // 5. Success: mark verified and clear the OTP so it cannot be reused
+    let { error: updateError } = await supabase
       .from('move_requests')
       .update({
         is_verified: true,
         status: 'active',
-        verified_at: new Date().toISOString()
+        verified_at: new Date().toISOString(),
+        otp_code: null,
+        otp_attempts: 0,
+        otp_locked_at: null
       })
       .eq('id', requestId);
+
+    // Fallback for environments where the otp hardening migration has not
+    // been applied yet
+    if (updateError && (updateError.code === '42703' || updateError.code === 'PGRST204')) {
+      console.warn('[verify-otp] otp hardening columns missing — apply migration 20260612_otp_hardening.sql');
+      ({ error: updateError } = await supabase
+        .from('move_requests')
+        .update({
+          is_verified: true,
+          status: 'active',
+          verified_at: new Date().toISOString(),
+          otp_code: null
+        })
+        .eq('id', requestId));
+    }
 
     if (updateError) {
       console.error('Verify OTP update error:', updateError);

@@ -77,7 +77,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [requestId, setRequestId] = useState<string | null>(null);
-  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [otpError, setOtpError] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
 
@@ -212,7 +212,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     newOtp[index] = value;
     setOtp(newOtp);
     setOtpError(null);
-    if (value && index < 3) {
+    if (value && index < 5) {
       document.getElementById(`otp-${index + 1}`)?.focus();
     }
   };
@@ -291,8 +291,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const handleVerifyOTP = async () => {
     const code = otp.join("");
-    if (code.length < 4) {
-      setOtpError("Please enter the full code");
+    if (code.length < 6) {
+      setOtpError("Please enter the full 6-digit code");
       return;
     }
     setIsSubmitting(true);
@@ -302,10 +302,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ requestId, otp: code }),
       });
-      if (!response.ok) throw new Error('Verification failed');
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        setOtpError(data.error || "Invalid or expired verification code.");
+        return;
+      }
       setStep(hasEstimate ? 5 : 4);
     } catch (error: any) {
-      setOtpError("Invalid code. Please try again.");
+      setOtpError("Invalid or expired verification code.");
     } finally {
       setIsSubmitting(false);
     }
@@ -818,8 +822,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         {(step === (hasEstimate ? 4 : 3)) && (
           <div className="space-y-6 text-center">
             <h2 className="text-2xl font-black text-primary uppercase">Verify Your Email</h2>
-            <p className="text-sm text-text-secondary">Enter the 4-digit code sent to your email</p>
-            <div className="flex justify-center gap-3">
+            <p className="text-sm text-text-secondary">Enter the 6-digit code sent to your email</p>
+            <div className="flex justify-center gap-2">
               {otp.map((digit, i) => (
                 <input
                   key={i}
@@ -830,8 +834,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   value={digit}
                   onChange={(e) => handleOtpChange(i, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(i, e)}
-                  className="w-12 h-16 bg-gray-50 border-2 rounded-xl text-center text-3xl font-black outline-none border-border focus:border-accent"
-                  aria-label={`Digit ${i + 1} of 4`}
+                  className="w-10 h-14 sm:w-12 sm:h-16 bg-gray-50 border-2 rounded-xl text-center text-2xl sm:text-3xl font-black outline-none border-border focus:border-accent"
+                  aria-label={`Digit ${i + 1} of 6`}
                 />
               ))}
             </div>

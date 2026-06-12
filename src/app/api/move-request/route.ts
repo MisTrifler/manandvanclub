@@ -1,15 +1,18 @@
 import { NextResponse } from 'next/server';
+import { randomInt } from 'crypto';
 import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 
+const OTP_VALIDITY_MINUTES = 15;
 
 export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    // 1. Generate OTP
-    const otp = Math.floor(1000 + Math.random() * 9000).toString();
+    // 1. Generate crypto-secure 6-digit OTP, valid for 15 minutes
+    const otp = String(randomInt(100000, 1000000));
+    const otpExpiresAt = new Date(Date.now() + OTP_VALIDITY_MINUTES * 60 * 1000).toISOString();
 
     // 2. Save move request to Supabase
     const quoteToken = generateCustomerQuoteToken();
@@ -27,6 +30,9 @@ export async function POST(req: Request) {
       customer_quote_token: quoteToken,
       status: 'pending',
       otp_code: otp,
+      otp_attempts: 0,
+      otp_expires_at: otpExpiresAt,
+      otp_locked_at: null,
       is_verified: false
     };
 
@@ -48,10 +54,14 @@ export async function POST(req: Request) {
     request = insertResult.data;
     error = insertResult.error;
 
-    // Retry without details if the column does not exist (PostgreSQL code 42703 = undefined_column)
-    if (error && error.code === '42703' && data.details != null) {
-      console.warn('Details column missing (code 42703), retrying insert without details');
+    // Retry without optional columns if a migration has not been applied yet
+    // (PostgreSQL code 42703 = undefined_column, PostgREST PGRST204 = missing column)
+    if (error && (error.code === '42703' || error.code === 'PGRST204')) {
+      console.warn('Optional column missing, retrying insert without details/otp-hardening columns. Apply latest migrations.');
       delete insertPayload.details;
+      delete insertPayload.otp_attempts;
+      delete insertPayload.otp_expires_at;
+      delete insertPayload.otp_locked_at;
       const retryResult = await supabase
         .from('move_requests')
         .insert([insertPayload])
