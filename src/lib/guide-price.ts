@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────
-// Guide price range — formula guide-v1.
+// Guide price range — formula guide-v1.1.
 //
 // DISPLAY-ONLY. The guide price never affects Stripe amounts, deposit
 // calculation, quote option validation, webhook checks, mover balances
@@ -41,7 +41,7 @@ export interface GuidePriceResult {
   max: number;
   display: string;
   confidence: "route-based" | "fallback";
-  formulaVersion: "guide-v1";
+  formulaVersion: "guide-v1.1";
   assumptions: string[];
   inputsUsed: {
     routeMiles: number | null;
@@ -52,7 +52,7 @@ export interface GuidePriceResult {
   };
 }
 
-const GUIDE_FORMULA_VERSION = "guide-v1" as const;
+const GUIDE_FORMULA_VERSION = "guide-v1.1" as const;
 
 // Internal hourly guide rates (never shown to customers)
 const RATE_ONE_MOVER = 40;
@@ -60,7 +60,7 @@ const RATE_TWO_MOVERS = 65;
 const RATE_LARGE_JOB = 75;
 
 const MILEAGE_FREE_MILES = 10;
-const MILEAGE_RATE_PER_MILE = 1.25;
+const MILEAGE_RATE_PER_MILE = 2.0;
 
 function num(value: unknown): number {
   const n = Number(value);
@@ -193,6 +193,23 @@ function minimumFloor(intent: string, input: GuidePriceInput): number {
   }
 }
 
+// ── C (v1.1). Route-distance minimums for van-based move types ──────
+function routeDistanceMinimum(intent: string, routeMiles: number): number {
+  const tiers: Record<string, [number, number, number, number, number]> = {
+    // [0–10mi, 11–25mi, 26–50mi, 51–100mi, 100+mi]
+    general: [90, 120, 160, 240, 350],
+    student: [75, 110, 150, 225, 325],
+    "single-item": [55, 85, 130, 200, 300],
+  };
+  const tier = tiers[intent];
+  if (!tier) return 0; // house/office/storage keep their own strong floors
+  if (routeMiles > 100) return tier[4];
+  if (routeMiles > 50) return tier[3];
+  if (routeMiles > 25) return tier[2];
+  if (routeMiles > 10) return tier[1];
+  return tier[0];
+}
+
 // ── G. Complexity uplifts ────────────────────────────────────────────
 function complexityMultiplier(input: GuidePriceInput, assumptions: string[]): { multiplier: number; level: "standard" | "raised" | "high" } {
   let pct = 0;
@@ -289,9 +306,13 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   // A. Movers
   const likelyMovers = decideLikelyMovers(intent, input, assumptions);
 
-  // B + C. Work time = loading/unloading + drive time
+  // B + C. Work time = loading/unloading + effective drive time.
+  // Route time is multiplied to partly account for travel to pickup and
+  // return/positioning after drop-off (v1.1 calibration).
+  const routeTimeMultiplier = routeMiles > 80 ? 2 : routeMiles > 40 ? 1.75 : 1.5;
+  const effectiveRouteMinutes = routeDurationMinutes * routeTimeMultiplier;
   const loadingMinutes = estimateLoadingMinutes(intent, input, assumptions);
-  const estimatedWorkMinutes = loadingMinutes + routeDurationMinutes;
+  const estimatedWorkMinutes = loadingMinutes + effectiveRouteMinutes;
 
   // D. Hourly guide rate (internal only)
   const beds = String(input.bedrooms || "");
@@ -318,20 +339,35 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   const { multiplier, level } = complexityMultiplier(input, assumptions);
   estimate *= multiplier;
 
-  // F. Minimum callout floor (2-mover jobs carry a higher callout)
+  // F. Minimum callout floor (2-mover jobs carry a higher callout),
+  //    plus route-distance minimums for van-based move types (v1.1).
   let floor = minimumFloor(intent, input);
   if (likelyMovers >= 2) {
     floor = Math.round(floor * 1.3);
   }
+  const distanceFloor = routeDistanceMinimum(intent, routeMiles);
+  if (distanceFloor > floor) floor = distanceFloor;
+
+  let flooredToMinimum = false;
   if (estimate < floor) {
     estimate = floor;
+    flooredToMinimum = true;
     assumptions.push("minimum callout applied");
   }
 
-  // H. Range buffer + rounding
-  let min = roundGuidePrice(estimate * 0.85);
-  let max = roundGuidePrice(estimate * 1.25);
-  if (min < floor) min = roundGuidePrice(floor * 0.95) || roundGuidePrice(floor);
+  // H. Range buffer + rounding. Floored estimates use the floor as the
+  // range minimum with a tighter upper buffer, so short local jobs are
+  // not over-priced while floors are respected.
+  let min: number;
+  let max: number;
+  if (flooredToMinimum) {
+    min = roundGuidePrice(floor);
+    max = roundGuidePrice(floor * 1.4);
+  } else {
+    min = roundGuidePrice(estimate * 0.85);
+    max = roundGuidePrice(estimate * 1.25);
+    if (min < roundGuidePrice(floor)) min = roundGuidePrice(floor);
+  }
   if (min < 10) min = 10;
   if (max <= min) max = min + (min < 200 ? 30 : 50);
 
