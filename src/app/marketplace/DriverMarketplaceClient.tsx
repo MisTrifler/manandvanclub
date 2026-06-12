@@ -15,6 +15,7 @@ import {
 } from "@/lib/formatting";
 import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import { noShowStatusLabel } from "@/lib/no-show";
+import { buildDriverFeedbackSummary } from "@/lib/quote-feedback";
 import {
   ShieldCheck,
   Clock,
@@ -63,6 +64,11 @@ interface Lead {
   declined_reason?: string;
   quote_expires_at?: string;
   customer_no_show_status?: string | null;
+  quote_feedback_last_outcome?: string | null;
+  quote_feedback_reason?: string | null;
+  quote_feedback_budget_min?: number | null;
+  quote_feedback_budget_max?: number | null;
+  quote_feedback_released_at?: string | null;
 }
 
 interface Props {
@@ -362,6 +368,7 @@ export default function DriverMarketplaceClient({
     const accessNote = getAccessNote(lead.details);
     const requirements = getMoveRequirements(lead.details);
     const routeEstimate = getRouteEstimateFromDetails(lead.details);
+    const feedbackSummary = buildDriverFeedbackSummary(lead);
     const hasEstimate = lead.estimated_price && lead.estimated_price.trim() !== "";
 
     const cardStatus = isMyBooked(lead)
@@ -505,6 +512,18 @@ export default function DriverMarketplaceClient({
                 )}
                 <p className="text-[10px] text-text-secondary/60">Postcode-to-postcode guide only. Final timing may vary.</p>
               </div>
+            </div>
+          )}
+
+          {/* Re-released lead: safe customer feedback summary */}
+          {feedbackSummary && cardStatus === "available" && (
+            <div className="mt-3 bg-amber-50/60 border border-amber-100 rounded-xl p-3">
+              <p className="text-[10px] font-black uppercase tracking-widest text-amber-700/70 mb-1">Customer Feedback</p>
+              <p className="text-sm text-text-secondary">{feedbackSummary.outcome}</p>
+              {feedbackSummary.reason && (
+                <p className="text-sm text-text-secondary">Customer reason: {feedbackSummary.reason}</p>
+              )}
+              <p className="text-sm font-bold text-primary">{feedbackSummary.budgetRange}</p>
             </div>
           )}
 

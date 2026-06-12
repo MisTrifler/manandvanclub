@@ -3,6 +3,8 @@ import { stripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence } from "@/lib/booking-fee";
 import { parseStoredQuoteOptions } from "@/lib/quote-options";
+import { QUOTE_CLEAR_FIELDS } from "@/lib/quote-feedback";
+import { sendQuoteFeedbackEmail } from "@/lib/quote-feedback-email";
 
 function isExpired(expiresAt?: string | null) {
   if (!expiresAt) return false;
@@ -64,12 +66,32 @@ export async function POST(req: Request) {
     }
 
     if (isExpired(lead.quote_expires_at)) {
-      await supabaseAdmin
+      // Archive as expired and hold for customer feedback — the request
+      // does NOT return to the driver pool until admin releases it.
+      const nowIso = new Date().toISOString();
+      const { error: expireError } = await supabaseAdmin
         .from("move_requests")
-        .update({ status: "expired" })
+        .update({
+          status: "quote_feedback_pending",
+          quote_feedback_requested_at: nowIso,
+          quote_feedback_last_outcome: "expired",
+          ...QUOTE_CLEAR_FIELDS,
+        })
         .eq("id", lead.id)
         .eq("status", "quoted")
         .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
+
+      // Fallback if feedback migration not applied yet
+      if (expireError && (expireError.code === "42703" || expireError.code === "PGRST204")) {
+        await supabaseAdmin
+          .from("move_requests")
+          .update({ status: "expired" })
+          .eq("id", lead.id)
+          .eq("status", "quoted")
+          .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
+      } else if (!expireError) {
+        await sendQuoteFeedbackEmail(lead);
+      }
       return NextResponse.json({ error: "This quote has expired" }, { status: 409 });
     }
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { calculateCustomerNoShowCompensation } from "@/lib/no-show";
+import { isCustomerBudgetReasonable } from "@/lib/quote-feedback";
 import {
   ArrowUpRight,
   Check,
@@ -41,6 +42,15 @@ type Lead = {
   customer_no_show_platform_retained_amount?: number;
   customer_no_show_payout_status?: string | null;
   customer_no_show_payout_reference?: string;
+  estimated_price?: string;
+  details?: any;
+  quote_feedback_last_outcome?: string | null;
+  quote_feedback_reason?: string | null;
+  quote_feedback_still_needs_help?: boolean | null;
+  quote_feedback_budget_min?: number | null;
+  quote_feedback_budget_max?: number | null;
+  quote_feedback_notes?: string | null;
+  quote_feedback_admin_decision?: string | null;
 };
 
 type Driver = {
@@ -141,6 +151,48 @@ export default function AdminPortalClient() {
       await fetchData();
     } catch {
       setError("No-show action failed.");
+    } finally {
+      setActionLoadingId(null);
+    }
+  }
+
+  // ── Quote feedback review state + actions ──────────────────────────
+  const [feedbackPanelId, setFeedbackPanelId] = useState<string | null>(null);
+  const [feedbackAdminNote, setFeedbackAdminNote] = useState("");
+
+  function budgetVerdict(lead: Lead): string {
+    const guide = lead.details?.guidePrice;
+    const prevOptions = Array.isArray(lead.details?.quoteOptionsArchive) ? lead.details.quoteOptionsArchive : [];
+    const result = isCustomerBudgetReasonable({
+      budgetMax: lead.quote_feedback_budget_max,
+      guidePriceMin: guide?.min,
+      guidePriceMax: guide?.max,
+      previousQuoteMin: prevOptions.length ? Math.min(...prevOptions.map((o: any) => Number(o.totalPrice) || Infinity)) : null,
+      previousQuoteMax: null,
+    });
+    return result.label;
+  }
+
+  async function feedbackAction(requestId: string, action: string) {
+    setActionLoadingId(requestId);
+    setError(null);
+    setSuccessMessage(null);
+    try {
+      const response = await fetch("/api/admin/quote-feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ requestId, action, adminNote: feedbackAdminNote.trim() }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.error || "Feedback action failed.");
+        return;
+      }
+      setSuccessMessage(`Feedback action '${action}' completed.`);
+      setFeedbackAdminNote("");
+      await fetchData();
+    } catch {
+      setError("Feedback action failed.");
     } finally {
       setActionLoadingId(null);
     }
@@ -363,6 +415,21 @@ export default function AdminPortalClient() {
                         </td>
                         <td className="p-8 text-xs font-bold text-primary/60 uppercase">
                           {lead.quoted_by || lead.locked_by || "—"}
+                          {["quote_feedback_pending", "quote_feedback_received", "declined", "expired"].includes(String(lead.status || "")) && (
+                            <div className="mt-2 normal-case">
+                              <span className={`px-2 py-1 rounded-full text-[9px] font-black uppercase tracking-widest ${
+                                lead.status === "quote_feedback_received" ? "bg-blue-50 text-blue-600" : "bg-amber-50 text-amber-600"
+                              }`}>
+                                Feedback: {lead.status === "quote_feedback_received" ? "received" : "awaiting customer"}
+                              </span>
+                              <button
+                                onClick={() => setFeedbackPanelId(feedbackPanelId === lead.id ? null : lead.id)}
+                                className="block mt-1.5 text-[10px] font-black uppercase tracking-widest text-accent hover:text-primary transition-colors"
+                              >
+                                {feedbackPanelId === lead.id ? "Hide feedback" : "Review feedback"}
+                              </button>
+                            </div>
+                          )}
                           {lead.customer_no_show_status && (
                             <div className="mt-2 normal-case">
                               <span className={`px-2 py-1 rounded-full text-[9px] font-black uppercase tracking-widest ${
@@ -385,8 +452,41 @@ export default function AdminPortalClient() {
                       </tr>
                     )).flatMap((row, i) => {
                       const lead = filteredLeads[i];
-                      if (!lead || noShowPanelId !== lead.id || !lead.customer_no_show_status) return [row];
-                      return [row, (
+                      if (!lead) return [row];
+                      const rows = [row];
+                      if (feedbackPanelId === lead.id && ["quote_feedback_pending", "quote_feedback_received", "declined", "expired"].includes(String(lead.status || ""))) {
+                        rows.push(
+                          <tr key={`${lead.id}-feedback`} className="bg-blue-50/30">
+                            <td colSpan={4} className="p-6">
+                              <div className="bg-white border border-border rounded-2xl p-5 space-y-4">
+                                <p className="text-xs font-black uppercase tracking-widest text-primary/60">Quote Feedback Review — {lead.collection_postcode} → {lead.delivery_postcode}</p>
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+                                  <div><span className="text-text-secondary block">Move</span><strong className="text-primary">{lead.move_type || "—"}</strong></div>
+                                  <div><span className="text-text-secondary block">Move date</span><strong className="text-primary">{lead.move_date || "—"}</strong></div>
+                                  <div><span className="text-text-secondary block">Guide price</span><strong className="text-primary">{lead.estimated_price || "—"}</strong></div>
+                                  <div><span className="text-text-secondary block">Last outcome</span><strong className="text-primary">{lead.quote_feedback_last_outcome || (lead.status === "expired" ? "expired" : lead.status === "declined" ? "declined" : "—")}</strong></div>
+                                  <div><span className="text-text-secondary block">Still needs help</span><strong className="text-primary">{lead.quote_feedback_still_needs_help === true ? "Yes" : lead.quote_feedback_still_needs_help === false ? "No" : "—"}</strong></div>
+                                  <div><span className="text-text-secondary block">Customer reason</span><strong className="text-primary">{lead.quote_feedback_reason || "—"}</strong></div>
+                                  <div><span className="text-text-secondary block">Budget range</span><strong className="text-primary">{Number(lead.quote_feedback_budget_max) > 0 ? `${Number(lead.quote_feedback_budget_min) > 0 ? `£${lead.quote_feedback_budget_min}–` : "up to "}£${lead.quote_feedback_budget_max}` : "Not provided"}</strong></div>
+                                  <div><span className="text-text-secondary block">Budget check</span><strong className="text-primary">{budgetVerdict(lead)}</strong></div>
+                                </div>
+                                {lead.quote_feedback_notes && (
+                                  <div className="bg-gray-50 rounded-xl p-3 text-xs"><span className="font-black uppercase tracking-widest text-primary/40 block mb-1">Customer notes</span><span className="text-text-secondary">{lead.quote_feedback_notes}</span></div>
+                                )}
+                                <input value={feedbackAdminNote} onChange={(e) => setFeedbackAdminNote(e.target.value)} placeholder="Admin note (optional)" className="w-full p-2.5 bg-gray-50 border border-border rounded-lg text-xs outline-none focus:border-accent" />
+                                <div className="flex flex-wrap gap-2">
+                                  <button onClick={() => feedbackAction(lead.id, "release_to_pool")} disabled={actionLoadingId === lead.id} className="px-4 py-2 bg-success text-white rounded-lg text-[10px] font-black uppercase tracking-widest disabled:opacity-50">Release back to pool</button>
+                                  <button onClick={() => feedbackAction(lead.id, "close_request")} disabled={actionLoadingId === lead.id} className="px-4 py-2 bg-red-500 text-white rounded-lg text-[10px] font-black uppercase tracking-widest disabled:opacity-50">Close request</button>
+                                  <button onClick={() => feedbackAction(lead.id, "contact_customer")} disabled={actionLoadingId === lead.id} className="px-4 py-2 bg-primary text-white rounded-lg text-[10px] font-black uppercase tracking-widest disabled:opacity-50">Contact customer</button>
+                                </div>
+                                <p className="text-[10px] text-text-secondary/60">Releasing puts the request back into the driver pool with a fresh quote required. Budget check is guidance only.</p>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      }
+                      if (noShowPanelId !== lead.id || !lead.customer_no_show_status) return rows;
+                      rows.push((
                         <tr key={`${lead.id}-noshow`} className="bg-amber-50/30">
                           <td colSpan={4} className="p-6">
                             <div className="bg-white border border-border rounded-2xl p-5 space-y-4">
@@ -432,7 +532,8 @@ export default function AdminPortalClient() {
                             </div>
                           </td>
                         </tr>
-                      )];
+                      ));
+                      return rows;
                     })
                   ) : (
                     filteredDrivers.map((driver) => (

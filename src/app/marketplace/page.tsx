@@ -109,6 +109,12 @@ export default async function MarketplacePage() {
       move_date: lead.move_date,
       move_type: lead.move_type,
       estimated_price: lead.estimated_price,
+      // Safe feedback summary for re-released leads (no mover identity, no PII)
+      quote_feedback_last_outcome: lead.quote_feedback_released_at ? lead.quote_feedback_last_outcome : undefined,
+      quote_feedback_reason: lead.quote_feedback_released_at ? lead.quote_feedback_reason : undefined,
+      quote_feedback_budget_min: lead.quote_feedback_released_at ? lead.quote_feedback_budget_min : undefined,
+      quote_feedback_budget_max: lead.quote_feedback_released_at ? lead.quote_feedback_budget_max : undefined,
+      quote_feedback_released_at: lead.quote_feedback_released_at || undefined,
       created_at: lead.created_at,
       details: lead.details,
       status: lead.status,

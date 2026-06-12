@@ -26,6 +26,23 @@ function isExpired(expiresAt?: string | null) {
   return Number.isFinite(expiry) && expiry <= Date.now();
 }
 
+function FeedbackPromptPage({ title, message, token }: { title: string; message: string; token: string }) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7] p-6">
+      <div className="max-w-md text-center space-y-6 bg-white border border-border rounded-3xl p-8 shadow-sm">
+        <h1 className="text-3xl font-black text-primary tracking-tighter">{title}</h1>
+        <p className="text-text-secondary leading-relaxed">{message}</p>
+        <a href={`/quote-feedback/${token}`} className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm">
+          Tell us what would work better
+        </a>
+        <div>
+          <a href="/" className="text-xs font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors">Return Home</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function MessagePage({ title, message }: { title: string; message: string }) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7] p-6">
@@ -63,12 +80,20 @@ export default async function QuoteReviewPage({ params }: Props) {
     return <MessagePage title="Booking Already Confirmed" message="This booking has already been confirmed. The mover will contact you directly to confirm timing, access and payment method." />;
   }
 
-  if (lead.status === "declined") {
-    return <MessagePage title="Quote Declined" message="You have declined this quote. Your details have not been released to the mover." />;
+  if (lead.status === "declined" || (lead.status === "quote_feedback_pending" && lead.quote_feedback_last_outcome === "declined")) {
+    return <FeedbackPromptPage token={token} title="Quote Declined" message="Thanks — this quote has been declined. Your details have not been released to the mover. If you still need help, tell us what would work better and we'll review whether your request should go back to approved movers." />;
   }
 
-  if (isExpired(lead.quote_expires_at)) {
-    return <MessagePage title="Quote Expired" message="This quote has expired. Please submit a new request or contact support." />;
+  if (lead.status === "quote_feedback_pending" || lead.status === "expired" || isExpired(lead.quote_expires_at)) {
+    return <FeedbackPromptPage token={token} title="Quote Expired" message="This quote has expired and can no longer be accepted. If you still need help, tell us what would work better and we'll review whether your request can go back to approved movers." />;
+  }
+
+  if (lead.status === "quote_feedback_received") {
+    return <MessagePage title="Feedback Received" message="Thanks — we've received your feedback. Our team will review it and decide whether your request should be made available to movers again." />;
+  }
+
+  if (lead.status === "closed") {
+    return <MessagePage title="Request Closed" message="This request has been closed. If you still need help with a move, you're welcome to submit a new request." />;
   }
 
   // Structured options are the primary path; legacy single quotes
