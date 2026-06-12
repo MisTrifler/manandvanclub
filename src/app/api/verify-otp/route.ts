@@ -3,7 +3,7 @@ import { timingSafeEqual } from 'crypto';
 import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { escapeHtml } from '@/lib/html';
-import { leadMatchesDriverArea, leadMatchesDriverServices } from '@/lib/marketplace-matching';
+import { leadMatchesDriverArea } from '@/lib/marketplace-matching';
 
 // ── OTP hardening ─────────────────────────────────────────
 const MAX_OTP_ATTEMPTS = 5;
@@ -315,8 +315,9 @@ export async function POST(req: Request) {
 
     // 4. Send driver notification emails after verification.
     // IMPORTANT: only notify drivers who are actually eligible for this
-    // lead — same matching rules the marketplace uses (approved +
-    // area/radius + service type). Never blast all approved drivers.
+    // lead — same matching rule the marketplace uses (approved +
+    // area/radius). Service-type flags are NOT used for notification
+    // filtering (launch decision). Never blast all approved drivers.
     try {
       if (!process.env.RESEND_API_KEY) {
         console.warn('RESEND_API_KEY missing — driver notifications not sent');
@@ -335,10 +336,7 @@ export async function POST(req: Request) {
 
           const matchingDrivers = (approvedDrivers || []).filter((driver: any) => {
             try {
-              return (
-                leadMatchesDriverArea(moveRequest, driver) &&
-                leadMatchesDriverServices(moveRequest, driver)
-              );
+              return leadMatchesDriverArea(moveRequest, driver);
             } catch {
               return false; // restrictive on any matching error
             }

@@ -163,7 +163,8 @@ export default function ApplyToJoinContent() {
                 </div>
 
                 <div className="space-y-4">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Service Types</label>
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Which Jobs Do You Usually Prefer?</label>
+                  <p className="text-[10px] text-text-secondary font-medium ml-1 mb-1">This helps us understand your business, but approved movers may see all suitable jobs in their covered area.</p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 bg-gray-50 p-5 rounded-2xl border border-transparent">
                     {[
                       { name: "serviceHouse", label: "House Removals" },

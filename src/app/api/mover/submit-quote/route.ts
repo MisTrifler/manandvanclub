@@ -5,7 +5,7 @@ import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
-import { leadIsAvailable, leadMatchesDriverArea, leadMatchesDriverServices } from "@/lib/marketplace-matching";
+import { leadIsAvailable, leadMatchesDriverArea } from "@/lib/marketplace-matching";
 import { validateQuoteOptions, STANDARD_QUOTE_ASSUMPTION, type QuoteOption } from "@/lib/quote-options";
 import { escapeHtml } from "@/lib/html";
 import {
@@ -118,10 +118,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "This request is no longer available for quoting." }, { status: 409 });
     }
 
-    // Driver must be approved for this area and service type.
-    if (!leadMatchesDriverArea(lead, driver) || !leadMatchesDriverServices(lead, driver)) {
+    // Driver must be approved for this area. Service-type flags are NOT
+    // enforced (launch decision): approved movers can quote any move
+    // type in their covered area.
+    if (!leadMatchesDriverArea(lead, driver)) {
       return NextResponse.json(
-        { error: "This enquiry is not available for your approved service area or service type." },
+        { error: "This enquiry is not available for your approved service area." },
         { status: 403 }
       );
     }
