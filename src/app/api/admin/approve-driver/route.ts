@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { resend, SENDER_ADDRESS } from "@/lib/resend";
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
 import { ADMIN_COOKIE_NAME, isValidAdminSession } from "@/lib/admin-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
@@ -91,6 +91,7 @@ export async function POST(req: Request) {
           await resend.emails.send({
             from: SENDER_ADDRESS,
             to: [driver.email],
+            replyTo: REPLY_TO_ADDRESS,
             subject: "Login to Man and Van Club",
             html: `
               <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
@@ -113,6 +114,7 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [driver.email],
+          replyTo: REPLY_TO_ADDRESS,
           subject: "Update regarding your application - Man and Van Club",
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">

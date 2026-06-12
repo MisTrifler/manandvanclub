@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
+import { escapeHtml } from '@/lib/html';
+import { leadMatchesDriverArea, leadMatchesDriverServices } from '@/lib/marketplace-matching';
 
 // ── OTP hardening ─────────────────────────────────────────
 const MAX_OTP_ATTEMPTS = 5;
@@ -205,8 +207,8 @@ export async function POST(req: Request) {
         const { data: confirmResponse, error: confirmError } = await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [request.email],
-          subject: 'Your Man and Van Club request is confirmed',
           replyTo: REPLY_TO_ADDRESS,
+          subject: 'Your Man and Van Club request is confirmed',
           html: `
             <!DOCTYPE html>
             <html>
@@ -234,15 +236,15 @@ export async function POST(req: Request) {
                       <tr>
                         <td style="padding: 0 40px 40px 40px; text-align: center;">
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 18px; line-height: 1.6; font-weight: 500;">
-                            Hi ${firstName},
+                            Hi ${escapeHtml(firstName)},
                           </p>
 
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">
-                            Your request has been received. A vetted local mover will review the details and provide a quote if they can help.
+                            Thanks — your request is confirmed. A verified local mover can now review your anonymised move details and send quote options if they can help.
                           </p>
 
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">
-                            You will receive an email when a mover sends a quote. There is no obligation to accept.
+                            Your contact details stay protected unless you accept a quote option and pay the booking deposit. You will receive an email when quote options are ready — there is no obligation to accept.
                           </p>
 
                           <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px; margin-bottom: 32px; text-align: left;">
@@ -310,7 +312,10 @@ export async function POST(req: Request) {
       console.error('Unexpected error in customer confirmation email — full object:', confirmEmailError);
     }
 
-    // 4. Send driver notification emails after verification
+    // 4. Send driver notification emails after verification.
+    // IMPORTANT: only notify drivers who are actually eligible for this
+    // lead — same matching rules the marketplace uses (approved +
+    // area/radius + service type). Never blast all approved drivers.
     try {
       if (!process.env.RESEND_API_KEY) {
         console.warn('RESEND_API_KEY missing — driver notifications not sent');
@@ -322,29 +327,43 @@ export async function POST(req: Request) {
           .single();
 
         if (moveRequest) {
-          const { data: matchingDrivers } = await supabase
+          const { data: approvedDrivers } = await supabase
             .from('driver_applications')
-            .select('email, contact_name')
+            .select('*')
             .eq('status', 'approved');
 
-          if (matchingDrivers && matchingDrivers.length > 0) {
+          const matchingDrivers = (approvedDrivers || []).filter((driver: any) => {
+            try {
+              return (
+                leadMatchesDriverArea(moveRequest, driver) &&
+                leadMatchesDriverServices(moveRequest, driver)
+              );
+            } catch {
+              return false; // restrictive on any matching error
+            }
+          });
+
+          console.log(`[verify-otp] driver notifications: ${matchingDrivers.length} matched of ${(approvedDrivers || []).length} approved`);
+
+          if (matchingDrivers.length > 0) {
             for (const driver of matchingDrivers) {
               try {
                 const { data: driverResponse, error: driverError } = await resend.emails.send({
                   from: SENDER_ADDRESS,
                   to: [driver.email],
-                  subject: `New Move Request: ${moveRequest.move_type} in ${moveRequest.collection_postcode}`,
+                  replyTo: REPLY_TO_ADDRESS,
+                  subject: `New matched move request: ${moveRequest.collection_postcode} to ${moveRequest.delivery_postcode}`,
                   html: `
                     <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 15px;">
-                      <h2 style="color: #0F172A;">NEW JOB ALERT</h2>
-                      <p>Hi ${driver.contact_name},</p>
-                      <p>A new verified move request has just been submitted in your area:</p>
+                      <h2 style="color: #0F172A;">New Matched Move Request</h2>
+                      <p>Hi ${escapeHtml(driver.contact_name || 'there')},</p>
+                      <p>A verified customer request matches your approved area and services:</p>
                       <div style="background: #F8FAFC; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <p><strong>Route:</strong> ${moveRequest.collection_postcode} → ${moveRequest.delivery_postcode}</p>
-                        <p><strong>Date:</strong> ${moveRequest.move_date}</p>
-                        <p><strong>Type:</strong> ${moveRequest.move_type}</p>
+                        <p><strong>Route:</strong> ${escapeHtml(moveRequest.collection_postcode)} → ${escapeHtml(moveRequest.delivery_postcode)}</p>
+                        <p><strong>Date:</strong> ${escapeHtml(moveRequest.move_date || '—')}</p>
+                        <p><strong>Type:</strong> ${escapeHtml(moveRequest.move_type || 'Move')}</p>
                       </div>
-                      <p>A verified mover can submit a free quote for this request. Customer details are only released after the customer accepts a quote and pays the booking deposit.</p>
+                      <p>Review the anonymised move details in your marketplace and submit structured quote options if you can help. Customer details are released only if the customer accepts an option and pays the booking deposit.</p>
                       <a href="https://www.manandvanclub.co.uk/marketplace"
                          style="display: block; background: #F97316; color: white; padding: 15px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px;">
                         View Request in Marketplace

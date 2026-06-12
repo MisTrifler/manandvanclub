@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { resend, SENDER_ADDRESS } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 
 export async function POST(req: Request) {
   try {
@@ -12,6 +12,7 @@ export async function POST(req: Request) {
     const { data, error } = await resend.emails.send({
       from: SENDER_ADDRESS,
       to: email,
+      replyTo: REPLY_TO_ADDRESS,
       subject: 'Join Man and Van Club — Exclusive Mover Enquiries',
       html: `
         <!DOCTYPE html>

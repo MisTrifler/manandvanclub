@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { getSupabaseAdmin } from '@/lib/supabase-admin';
-import { resend, SENDER_ADDRESS } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { headers } from 'next/headers';
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
 import { escapeHtml } from '@/lib/html';
@@ -206,6 +206,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
         to: [bookedRequest.quoted_by],
+        replyTo: REPLY_TO_ADDRESS,
         subject: `Customer-confirmed booking: ${colPostcode} to ${delPostcode}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
@@ -242,6 +243,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
         to: [bookedRequest.email],
+        replyTo: REPLY_TO_ADDRESS,
         subject: 'Your booking is secured',
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
@@ -323,6 +325,7 @@ async function handleLegacyDriverPayment(session: any, metadata: any) {
     await resend.emails.send({
       from: SENDER_ADDRESS,
       to: [resolvedDriverEmail],
+      replyTo: REPLY_TO_ADDRESS,
       subject: `Legacy customer details: ${escapeHtml(moveRequest.collection_postcode)} to ${escapeHtml(moveRequest.delivery_postcode)}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">

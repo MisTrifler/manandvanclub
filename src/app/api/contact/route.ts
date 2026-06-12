@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { resend, SENDER_ADDRESS } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
+import { escapeHtml } from '@/lib/html';
 
 export async function POST(req: Request) {
   try {
@@ -14,14 +15,15 @@ export async function POST(req: Request) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
         to: ['support@manandvanclub.co.uk'],
-        subject: `New Contact Form Submission: ${subject || 'General Enquiry'}`,
+        replyTo: REPLY_TO_ADDRESS,
+        subject: `New Contact Form Submission: ${(subject || 'General Enquiry').slice(0, 120)}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 15px;">
-            <h2 style="color: #0F172A;">New Message from ${name}</h2>
-            <p><strong>From:</strong> ${name} (${email})</p>
-            <p><strong>Subject:</strong> ${subject || 'General Enquiry'}</p>
+            <h2 style="color: #0F172A;">New Message from ${escapeHtml(name)}</h2>
+            <p><strong>From:</strong> ${escapeHtml(name)} (${escapeHtml(email)})</p>
+            <p><strong>Subject:</strong> ${escapeHtml(subject || 'General Enquiry')}</p>
             <hr />
-            <p style="white-space: pre-wrap;">${message}</p>
+            <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
             <hr />
             <p style="font-size: 12px; color: #94A3B8;">© 2026 Man and Van Club</p>
           </div>

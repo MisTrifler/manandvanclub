@@ -3,6 +3,7 @@ import { randomInt } from 'crypto';
 import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
+import { escapeHtml } from '@/lib/html';
 
 const OTP_VALIDITY_MINUTES = 15;
 
@@ -115,8 +116,8 @@ export async function POST(req: Request) {
                       <tr>
                         <td style="padding: 0 40px 40px 40px; text-align: center;">
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 18px; line-height: 1.6; font-weight: 500;">
-                            Hi ${data.firstName},<br>
-                            To protect your move request and ensure exclusive matching, please enter the following 6-digit code:
+                            Hi ${escapeHtml(data.firstName)},<br>
+                            Here is your 6-digit verification code. This code helps us confirm your request is genuine and expires after 15 minutes:
                           </p>
 
                           <div style="background-color: #F8FAFC; border: 2px dashed #E2E8F0; border-radius: 16px; padding: 32px; margin-bottom: 32px;">

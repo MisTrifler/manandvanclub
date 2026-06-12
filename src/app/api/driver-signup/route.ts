@@ -56,8 +56,8 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [data.email],
-          subject: 'Action Required: Verify Your Man and Van Club Application',
           replyTo: REPLY_TO_ADDRESS,
+          subject: 'Action Required: Verify Your Man and Van Club Application',
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; line-height: 1.6; color: #0F172A;">
               <p>Dear Applicant,</p>
@@ -84,6 +84,7 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: SENDER_ADDRESS,
           to: ['support@manandvanclub.co.uk'],
+          replyTo: REPLY_TO_ADDRESS,
           subject: `New Mover App: ${data.companyName}`,
           text: `New driver application from ${data.contactName} (${data.companyName}). Area: ${data.coverageArea}`
         });
