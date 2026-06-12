@@ -1,5 +1,6 @@
 import CityServiceContent from "@/components/CityServiceContent";
 import { getLocationPageData, getAllLocationPageSlugs } from "@/lib/location-content";
+import { isLocationIndexable } from "@/lib/seo-quality-guard";
 import { getEnhancedLocalBusinessSchema } from "@/lib/enhanced-schemas";
 import { type IntentType } from "@/lib/intent-detection";
 import { Metadata } from "next";
@@ -154,12 +155,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const locData = getLocationPageData(locationKey);
 
   if (locData) {
+    // Quality guard: thin/placeholder pages are noindexed and excluded
+    // from the sitemap until their local content is enriched.
+    const indexable = isLocationIndexable(locationKey);
     return {
       title: locData.title,
       description: locData.description,
       alternates: {
         canonical: `https://www.manandvanclub.co.uk/${slug}`,
       },
+      ...(indexable ? {} : { robots: { index: false, follow: true } }),
     };
   }
 

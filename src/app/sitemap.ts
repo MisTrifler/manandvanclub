@@ -1,10 +1,14 @@
 import { MetadataRoute } from 'next';
 import { LOCATIONS } from '@/constants/locations';
+import { isLocationIndexable } from '@/lib/seo-quality-guard';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.manandvanclub.co.uk';
 
-  const locationUrls = LOCATIONS.map(loc => ({
+  // Quality guard: only locations passing the thin-page checks are
+  // listed. Failing pages render with noindex and stay out of the
+  // sitemap until their data is enriched.
+  const locationUrls = LOCATIONS.filter(loc => isLocationIndexable(loc.slug)).map(loc => ({
     url: `${baseUrl}/man-and-van-${loc.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
