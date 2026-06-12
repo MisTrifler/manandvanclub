@@ -114,6 +114,7 @@ export default async function MarketplacePage() {
       booking_fee_paid: lead.booking_fee_paid,
       customer_details_released_at: detailsReleased ? lead.customer_details_released_at : undefined,
       declined_reason: isQuotedMover ? lead.declined_reason : undefined,
+      customer_no_show_status: isQuotedMover ? lead.customer_no_show_status : undefined,
     };
   });
 

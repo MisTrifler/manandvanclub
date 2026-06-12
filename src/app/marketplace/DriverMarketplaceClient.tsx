@@ -14,6 +14,7 @@ import {
   getMoveRequirements,
 } from "@/lib/formatting";
 import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
+import { noShowStatusLabel } from "@/lib/no-show";
 import {
   ShieldCheck,
   Clock,
@@ -61,6 +62,7 @@ interface Lead {
   customer_details_released_at?: string;
   declined_reason?: string;
   quote_expires_at?: string;
+  customer_no_show_status?: string | null;
 }
 
 interface Props {
@@ -118,6 +120,78 @@ export default function DriverMarketplaceClient({
   const [quotingId, setQuotingId] = useState<string | null>(null);
   const [quoteError, setQuoteError] = useState<string | null>(null);
   const [draftOptions, setDraftOptions] = useState<DraftOption[]>([DEFAULT_DRAFT_OPTION]);
+
+  // ── Customer no-show reporting (own booked jobs only) ──────────────
+  const [noShowReportingId, setNoShowReportingId] = useState<string | null>(null);
+  const [noShowError, setNoShowError] = useState<string | null>(null);
+  const [noShowForm, setNoShowForm] = useState({
+    attended: false,
+    arrivalTime: "",
+    waitMinutes: "",
+    contactAttempts: "",
+    messageSent: false,
+    notes: "",
+  });
+
+  const canReportNoShow = (lead: Lead): boolean => {
+    if (!isMyBooked(lead)) return false;
+    if (lead.customer_no_show_status && lead.customer_no_show_status !== "rejected") return false;
+    if (!lead.move_date) return false;
+    const d = new Date(lead.move_date);
+    if (Number.isNaN(d.getTime())) return false;
+    return d.toISOString().slice(0, 10) <= new Date().toISOString().slice(0, 10);
+  };
+
+  const submitNoShowReport = async (lead: Lead) => {
+    if (!noShowForm.attended) {
+      setNoShowError("Please confirm you attended the collection postcode.");
+      return;
+    }
+    const wait = parseInt(noShowForm.waitMinutes, 10);
+    if (!Number.isFinite(wait) || wait < 20) {
+      setNoShowError("You must wait at least 20 minutes before reporting a no-show.");
+      return;
+    }
+    const attempts = parseInt(noShowForm.contactAttempts, 10);
+    if (!Number.isFinite(attempts) || attempts < 2) {
+      setNoShowError("At least 2 phone call attempts are required.");
+      return;
+    }
+    if (!noShowForm.messageSent) {
+      setNoShowError("You must send at least one text or WhatsApp message first.");
+      return;
+    }
+    if (noShowForm.notes.trim().length < 20) {
+      setNoShowError("Please describe what happened (at least 20 characters).");
+      return;
+    }
+    setLoadingId(lead.id);
+    setNoShowError(null);
+    try {
+      const res = await fetch("/api/mover/report-no-show", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          requestId: lead.id,
+          waitMinutes: wait,
+          contactAttempts: attempts,
+          messageSent: true,
+          arrivalTime: noShowForm.arrivalTime.trim(),
+          notes: noShowForm.notes.trim(),
+        }),
+      });
+      const data = await res.json().catch(() => ({ error: "Unknown error" }));
+      if (!res.ok) {
+        setNoShowError(data.error || "Failed to submit report. Please try again.");
+        setLoadingId(null);
+        return;
+      }
+      window.location.reload();
+    } catch {
+      setNoShowError("Something went wrong. Please try again.");
+      setLoadingId(null);
+    }
+  };
 
   const handleLogout = async () => {
     await fetch("/api/driver/logout", { method: "POST" });
@@ -661,6 +735,77 @@ export default function DriverMarketplaceClient({
               <p className="text-xs text-text-secondary/70">
                 The booking deposit is deducted from your total quote. Collect the remaining balance from the customer on moving day.
               </p>
+
+              {/* No-show status / report (own booked jobs only) */}
+              {lead.customer_no_show_status ? (
+                <div className="bg-gray-50 border border-border rounded-xl p-3">
+                  <p className="text-xs font-bold text-primary/70">{noShowStatusLabel(lead.customer_no_show_status)}</p>
+                  {lead.customer_no_show_status === "rejected" && canReportNoShow(lead) && (
+                    <button
+                      onClick={() => setNoShowReportingId(lead.id)}
+                      className="mt-2 text-[10px] font-black uppercase tracking-widest text-primary/50 hover:text-accent transition-colors"
+                    >
+                      Submit a new report
+                    </button>
+                  )}
+                </div>
+              ) : canReportNoShow(lead) && noShowReportingId !== lead.id ? (
+                <button
+                  onClick={() => setNoShowReportingId(lead.id)}
+                  className="w-full py-2.5 rounded-xl border border-border font-black uppercase tracking-widest text-[10px] text-primary/50 hover:text-red-600 hover:border-red-200 transition-colors"
+                >
+                  Report customer no-show
+                </button>
+              ) : null}
+
+              {noShowReportingId === lead.id && (
+                <div className="bg-white border border-border rounded-xl p-4 space-y-3">
+                  <p className="text-xs font-black uppercase tracking-widest text-primary/60">Report Customer No-Show</p>
+                  <p className="text-[11px] text-text-secondary leading-relaxed">
+                    Only report a no-show if you attended the collection postcode at the agreed time, waited at least 20 minutes, called the customer at least twice, and sent a text or WhatsApp message.
+                  </p>
+                  <label className="flex items-start gap-2 text-xs text-text-secondary">
+                    <input type="checkbox" checked={noShowForm.attended} onChange={(e) => setNoShowForm({ ...noShowForm, attended: e.target.checked })} className="mt-0.5 accent-accent" />
+                    I attended the collection postcode
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 block mb-1">Arrival time</label>
+                      <input value={noShowForm.arrivalTime} onChange={(e) => setNoShowForm({ ...noShowForm, arrivalTime: e.target.value })} placeholder="e.g. 09:00" className="w-full p-2.5 bg-gray-50 border border-border rounded-lg text-sm font-bold outline-none focus:border-accent" />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 block mb-1">Minutes waited</label>
+                      <input type="number" min={20} value={noShowForm.waitMinutes} onChange={(e) => setNoShowForm({ ...noShowForm, waitMinutes: e.target.value })} placeholder="20+" className="w-full p-2.5 bg-gray-50 border border-border rounded-lg text-sm font-bold outline-none focus:border-accent" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 block mb-1">Phone call attempts</label>
+                      <input type="number" min={2} value={noShowForm.contactAttempts} onChange={(e) => setNoShowForm({ ...noShowForm, contactAttempts: e.target.value })} placeholder="2+" className="w-full p-2.5 bg-gray-50 border border-border rounded-lg text-sm font-bold outline-none focus:border-accent" />
+                    </div>
+                    <label className="flex items-end gap-2 pb-2 text-xs text-text-secondary">
+                      <input type="checkbox" checked={noShowForm.messageSent} onChange={(e) => setNoShowForm({ ...noShowForm, messageSent: e.target.checked })} className="accent-accent" />
+                      I sent a text / WhatsApp
+                    </label>
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 block mb-1">Notes / what happened</label>
+                    <textarea value={noShowForm.notes} onChange={(e) => setNoShowForm({ ...noShowForm, notes: e.target.value })} rows={3} placeholder="Describe what happened (minimum 20 characters)" className="w-full p-2.5 bg-gray-50 border border-border rounded-lg text-sm outline-none focus:border-accent resize-none" />
+                  </div>
+                  {noShowError && (
+                    <div className="rounded-lg border border-red-100 bg-red-50 p-2.5 text-red-600 text-xs font-bold">{noShowError}</div>
+                  )}
+                  <div className="flex gap-2">
+                    <button onClick={() => submitNoShowReport(lead)} disabled={loadingId === lead.id} className="flex-1 py-2.5 bg-red-600 text-white rounded-lg font-black uppercase tracking-widest text-[10px] disabled:opacity-50">
+                      {loadingId === lead.id ? "Submitting…" : "Submit no-show report"}
+                    </button>
+                    <button onClick={() => { setNoShowReportingId(null); setNoShowError(null); }} className="px-4 py-2.5 border border-border rounded-lg font-bold text-xs text-primary/60">
+                      Cancel
+                    </button>
+                  </div>
+                  <p className="text-[10px] text-text-secondary/60">Reports are reviewed by our team. The customer has 48 hours to dispute. Compensation, if approved, is handled manually.</p>
+                </div>
+              )}
             </div>
           )}
 

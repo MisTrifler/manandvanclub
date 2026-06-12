@@ -260,6 +260,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(bookedRequest.first_name || 'there')},</p>
             <p style="color: #475569; font-size: 16px;">Your booking is secured and your details have been released to the mover.</p>
             <p style="color: #475569; font-size: 16px;">The mover will contact you directly to confirm timing, access and payment method.</p>
+            <p style="color: #64748B; font-size: 14px;">Please be available at the agreed time and keep your phone nearby. If plans change, contact your mover as early as possible.</p>
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
               ${selectedOption ? `<p style="margin: 0 0 8px 0;"><strong>Selected option:</strong> ${escapeHtml(selectedOption.serviceLabel)}</p>
               <p style="margin: 0 0 8px 0;"><strong>Van:</strong> ${escapeHtml(selectedOption.vanLabel)}</p>` : ''}

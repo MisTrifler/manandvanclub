@@ -102,6 +102,9 @@ export default async function BookingConfirmedPage({
           <p className="text-text-secondary mt-2">
             The mover will contact you directly to confirm timing, access and payment method.
           </p>
+          <p className="text-sm text-text-secondary/80 mt-3">
+            Please be available at the agreed time and keep your phone nearby. If plans change, contact your mover as early as possible.
+          </p>
         </div>
 
         <div className="bg-white rounded-2xl border border-border overflow-hidden">

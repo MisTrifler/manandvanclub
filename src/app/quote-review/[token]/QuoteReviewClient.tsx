@@ -274,6 +274,9 @@ export default function QuoteReviewClient({
               <p className="text-sm text-amber-800 font-medium">
                 Pay the booking deposit on your chosen option to secure your booking and release your details to the mover. The deposit is deducted from that option&apos;s quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.
               </p>
+              <p className="text-xs text-amber-700/80 mt-2">
+                If you are unavailable when the mover attends at the agreed time and the no-show is approved after review, your deposit may be retained to cover reasonable attendance and waiting costs. You can dispute a no-show report within 48 hours.
+              </p>
             </div>
 
             <div className="bg-green-50 border border-green-100 rounded-xl p-4 mb-6">

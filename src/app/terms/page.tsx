@@ -64,13 +64,22 @@ export default function Terms() {
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">6. Limitation of Liability</h2>
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">6. Customer No-Show</h2>
+          <p>If you accept a quote and pay the deposit, the mover reserves time for your move.</p>
+          <p>If the mover attends the agreed collection postcode at the agreed time, waits at least 20 minutes, tries to contact you at least twice by phone, and sends a text or WhatsApp message, but you are unavailable or unreachable, this may be treated as a customer no-show.</p>
+          <p>Where a customer no-show is approved after review, your deposit may be retained to cover reasonable attendance, travel, waiting time, reserved slot and admin costs. Man and Van Club may pay part of the retained deposit to the mover as no-show compensation.</p>
+          <p>You will have 48 hours to dispute a no-show report if you believe it is incorrect.</p>
+          <p>If the mover is at fault, arrives at the wrong place, arrives materially late, does not attempt contact, or the move cannot go ahead because of an issue caused by the mover or the platform, the no-show report may be rejected and your deposit may be reviewed for refund.</p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">7. Limitation of Liability</h2>
           <p>Man and Van Club is not responsible for the physical moving service provided by independent movers. Customers and movers are responsible for confirming final timings, access, inventory, insurance, payment method and any other move-specific details directly with each other.</p>
           <p>Nothing in these terms limits or excludes liability where it would be unlawful to do so.</p>
         </section>
 
         <section className="mt-12 space-y-6">
-          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">7. Contact</h2>
+          <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">8. Contact</h2>
           <p>If you have questions about these terms, booking deposits, refunds or a move request, contact us at <a href="mailto:support@manandvanclub.co.uk">support@manandvanclub.co.uk</a>.</p>
         </section>
 
