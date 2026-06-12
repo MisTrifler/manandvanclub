@@ -47,6 +47,7 @@ const formSchema = z.object({
   storageDirection: z.string().min(1, "Please select a direction"),
   // Shared move requirements (all optional)
   loadingHelp: z.string().optional(),
+  helperPreference: z.string().optional(),
   accessType: z.string().optional(),
   parkingAvailable: z.string().optional(),
   heavyItems: z.string().optional(),
@@ -255,6 +256,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       }
       // Shared move requirements (all move types, optional)
       if (data.loadingHelp) details.loadingHelp = data.loadingHelp;
+      if (data.helperPreference) details.helperPreference = data.helperPreference;
       if (data.accessType) details.accessType = data.accessType;
       if (data.parkingAvailable) details.parkingAvailable = data.parkingAvailable;
       if (data.heavyItems) details.heavyItems = data.heavyItems;
@@ -718,6 +720,15 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                     <option value="Not sure">Not sure</option>
                   </select>
                 </div>
+              </div>
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">How Many Movers Do You Think You Need?</label>
+                <select {...register("helperPreference")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                  <option value="">Select (optional)</option>
+                  <option value="1 mover">1 mover</option>
+                  <option value="2 movers">2 movers</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
               </div>
               <div className="grid grid-cols-3 gap-2">
                 <div>
