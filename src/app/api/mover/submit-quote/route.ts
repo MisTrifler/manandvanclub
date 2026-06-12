@@ -210,9 +210,9 @@ export async function POST(req: Request) {
               <p style="margin:0 0 4px;color:#0F172A;font-size:15px;font-weight:900;">Option ${index + 1}: ${escapeHtml(option.serviceLabel)}</p>
               <p style="margin:0 0 10px;color:#64748B;font-size:13px;line-height:1.5;">${escapeHtml(option.serviceDescription)}</p>
               <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Van:</strong> ${escapeHtml(option.vanLabel)}</p>
-              <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Total quote:</strong> ${formatPounds(option.totalPrice)}</p>
-              <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Booking deposit:</strong> ${formatPounds(deposit)}</p>
-              <p style="margin:0;color:#475569;font-size:14px;"><strong>Pay on moving day:</strong> ${formatPounds(balance)}</p>
+              <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Deposit:</strong> ${formatPounds(deposit)}</p>
+              <p style="margin:0 0 4px;color:#475569;font-size:14px;"><strong>Pay on moving day:</strong> ${formatPounds(balance)}</p>
+              <p style="margin:0;color:#0F172A;font-size:14px;font-weight:700;"><strong>Total quote:</strong> ${formatPounds(option.totalPrice)}</p>
             </div>`;
         })
         .join("");
@@ -246,7 +246,7 @@ export async function POST(req: Request) {
                     <p style="margin:0;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveDate || "—")}</p>
                   </div>
                   <div style="background:#F0FDF4;border-left:4px solid #22C55E;padding:16px;margin-bottom:32px;text-align:left;">
-                    <p style="margin:0;color:#166534;font-size:14px;line-height:1.6;">Pay the booking deposit on the option you choose to secure your booking and release your details to the mover. The deposit is deducted from that option's quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.</p>
+                    <p style="margin:0;color:#166534;font-size:14px;line-height:1.6;">Pay the deposit on the option you choose to secure your booking and release your details to the mover. The deposit is deducted from that option's quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.</p>
                   </div>
                   <a href="${reviewUrl}" style="display:inline-block;background:#F97316;color:#fff;padding:16px 32px;text-align:center;text-decoration:none;font-weight:900;border-radius:12px;font-size:16px;">Review Your Quote Options</a>
                   <p style="margin:24px 0 0;color:#94A3B8;font-size:12px;line-height:1.6;">If you do not want to proceed, you can decline on the review page.</p>
