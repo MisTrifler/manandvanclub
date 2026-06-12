@@ -8,32 +8,42 @@ export default function HowItWorksContent() {
   const steps = [
     {
       title: "Tell Us About Your Move",
-      desc: "Enter your collection and delivery postcodes, move date and move type. It takes less than 60 seconds.",
+      desc: "Enter your collection and delivery postcodes, move date and move type. It takes less than 60 seconds and your quote request is free.",
       icon: <Search className="w-8 h-8" />,
     },
     {
-      title: "See an Estimated Price",
-      desc: "We show a guide price based on your move details. This is only an estimate, not the final mover quote.",
+      title: "Verify Your Email",
+      desc: "Confirm your email with a quick verification code so movers only see genuine requests. We also show a guide price — this is only an estimate, not the final mover quote.",
       icon: <Calculator className="w-8 h-8" />,
     },
     {
-      title: "A Vetted Mover Sends a Quote",
-      desc: "A verified local mover reviews your anonymised move details and sends a total move quote if they can help.",
+      title: "A Vetted Mover Reviews Your Request",
+      desc: "Your contact details stay protected while your request is reviewed. A verified local mover sees only anonymised move details.",
+      icon: <ShieldCheck className="w-8 h-8" />,
+    },
+    {
+      title: "Receive Clear Quote Options",
+      desc: "A vetted mover can send clear quote options based on your move details — for example transport only, 1 man and van, or 2 men and van — each with its own total price.",
       icon: <Zap className="w-8 h-8" />,
     },
     {
-      title: "Accept or Decline Securely",
-      desc: "You receive a secure quote review link. You can accept or decline the mover quote.",
+      title: "Choose the Option That Suits You",
+      desc: "You receive a secure quote review link. Compare the options and choose the one that suits your move best, or decline with no payment.",
       icon: <Lock className="w-8 h-8" />,
     },
     {
       title: "Pay Your Deposit to Secure the Booking",
-      desc: "If you accept, you pay a booking deposit. The deposit is deducted from the mover’s quote, so your total move cost stays the same.",
+      desc: "Pay a booking deposit on your chosen option. Your booking deposit is deducted from the mover’s selected quote. It is not an extra charge.",
       icon: <CreditCard className="w-8 h-8" />,
     },
     {
+      title: "Your Details Are Released to the Mover",
+      desc: "Once your deposit is paid, your contact details are released only to that mover, who contacts you directly to confirm timing and access.",
+      icon: <CheckCircle className="w-8 h-8" />,
+    },
+    {
       title: "Pay the Rest on Moving Day",
-      desc: "After your deposit is paid, your details are released to the mover. You pay the remaining balance directly to the mover on moving day.",
+      desc: "You pay the remaining balance directly to the mover on moving day. Your total move cost stays the same as the option you chose.",
       icon: <Truck className="w-8 h-8" />,
     },
   ];
@@ -57,7 +67,7 @@ export default function HowItWorksContent() {
             How Man and Van Club Works
           </h1>
           <p className="text-xl font-bold text-primary mb-4">
-            Get your free quote. Secure your booking with a deposit and pay the rest on moving day.
+            Get your quote for free. If you accept a mover option, pay a booking deposit to secure your booking and pay the rest on moving day.
           </p>
           <p className="text-lg text-text-secondary">
             One verified local mover. No spam. No endless calls. Your details stay protected until you accept a mover quote.

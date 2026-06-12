@@ -19,7 +19,7 @@ export default function Terms() {
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">1. Our Service</h2>
           <p><strong>Man and Van Club</strong> is an introduction marketplace only. We provide a platform that connects customers with independent local movers. <strong>Man and Van Club does not provide moving services directly.</strong></p>
-          <p>Customers can submit move details for free. Approved movers can review anonymised move details and submit a total mover quote. If a customer accepts a mover quote, the customer pays Man and Van Club a booking deposit and their contact details are released only to that quoted mover. The booking deposit is deducted from the mover quote.</p>
+          <p>Customers can submit a quote request for free. Approved movers can review anonymised move details and provide structured quote options based on the details supplied. If a customer accepts a quote option, the customer pays Man and Van Club a booking deposit to secure the booking, and their contact details are released only to that quoted mover. The booking deposit is deducted from the selected mover quote and is not an additional charge.</p>
           <p>Any moving contract exists solely between the customer and the mover. Man and Van Club is not a party to any agreement entered into between customers and movers.</p>
         </section>
 
@@ -32,25 +32,26 @@ export default function Terms() {
 
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">3. Booking Deposit Rules for Customers</h2>
-          <p>You only pay a booking deposit if you accept a mover quote.</p>
-          <p><strong>The booking deposit is deducted from the mover’s quote.</strong></p>
-          <p><strong>The mover’s quote is your total move cost.</strong></p>
-          <p><strong>You pay the remaining balance directly to the mover on moving day.</strong></p>
-          <p>The booking deposit confirms your accepted quote and releases your contact details only to that mover.</p>
+          <p>You only pay a booking deposit if you accept a mover quote option.</p>
+          <p><strong>The booking deposit is deducted from the selected mover quote and is not an additional charge.</strong></p>
+          <p><strong>The selected quote option is your total move cost.</strong></p>
+          <p><strong>You pay the remaining balance directly to the mover on moving day unless otherwise agreed.</strong></p>
+          <p>The booking deposit confirms your accepted quote option, and your contact details are released to the mover only after the booking deposit has been paid.</p>
+          <p>Example: selected mover quote £300, booking deposit £25, remaining balance paid to mover £275, total move cost £300.</p>
         </section>
 
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">4. Rules for Movers</h2>
-          <p>Movers must be approved before accessing the marketplace. Applications may include checks on business details, contact details, service areas and insurance documents.</p>
-          <p><strong>Movers submit quotes for free.</strong></p>
-          <p>Customer details are released only after the customer accepts a quote and pays the booking deposit.</p>
-          <p>Movers submit total quote amounts. The booking deposit is deducted from the mover’s total quote, and movers should collect the remaining balance directly from the customer on moving day. Movers are expected to honour quotes based on the details provided.</p>
+          <p>Movers must be approved before accessing the marketplace. Approved movers must provide Goods in Transit and Public Liability insurance evidence before approval, and applications may include checks on business details, contact details and service areas.</p>
+          <p><strong>Movers submit quote options for free.</strong></p>
+          <p>Customer details are released only after the customer accepts a quote option and pays the booking deposit.</p>
+          <p>Movers submit structured quote options with total prices. The booking deposit is deducted from the customer’s selected quote option, and movers should collect the remaining balance directly from the customer on moving day unless another payment method is agreed. Movers are expected to honour quotes based on the details provided.</p>
           <p>The quote may only change if the move details provided were incomplete, inaccurate or later changed.</p>
         </section>
 
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">5. Refunds and Cancellations</h2>
-          <p>The booking deposit is refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement.</p>
+          <p>The booking deposit may be refundable if the mover cannot fulfil the accepted booking and we cannot arrange a suitable replacement.</p>
           <p>The booking deposit is also refundable for duplicate payments, technical charging errors, or where customer details were not released after a successful booking deposit payment.</p>
           <p>The booking deposit is not normally refundable if you cancel after accepting the quote, provide incorrect move details, materially change the job, or book another mover elsewhere.</p>
           <p>This does not affect your statutory rights.</p>
