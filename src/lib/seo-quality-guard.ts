@@ -20,19 +20,64 @@ const FORBIDDEN_PHRASES = [
   "covered as standard",
 ];
 
+// Phrases that indicate generic filler rather than real local knowledge.
+// A page whose intro/knowledge is dominated by these (with no concrete
+// local references) is too generic to index.
+const GENERIC_FILLER_PATTERNS = [
+  /our movers know every neighbourhood/i,
+  /we cover all areas/i,
+  /no matter where you are moving/i,
+  /all types of moves at great prices/i,
+];
+
 export interface QualityResult {
   indexable: boolean;
   reasons: string[];
 }
 
+const slugSet = new Set(LOCATIONS.map((l) => l.slug));
+
+/** Internal links a page can actually render: valid nearbyLocations refs + same-region cities. */
+function countInternalLinks(loc: LocationData): number {
+  const validNearby = (loc.nearbyLocations || []).filter((s) => slugSet.has(s)).length;
+  const regionCities = LOCATIONS.filter((l) => l.region === loc.region && l.slug !== loc.slug).length;
+  return validNearby + regionCities;
+}
+
+/** Mirror of generateFAQ's guaranteed output: 7 unconditional + conditionals. */
+function countFaqs(loc: LocationData): number {
+  let count = 7;
+  if (loc.nearbyAreas.length > 0) count += 1;
+  if (loc.hasStudentAreas && loc.studentAreas && loc.studentAreas.length > 0) count += 1;
+  if (loc.businessDistricts && loc.businessDistricts.length > 0) count += 1;
+  return count;
+}
+
+/** Does intro/knowledge mention at least one concrete local feature? */
+function hasConcreteLocalContent(loc: LocationData): boolean {
+  const text = `${loc.intro} ${loc.knowledge}`;
+  const references = [
+    ...(loc.nearbyAreas || []),
+    ...(loc.majorRoads || []),
+    ...(loc.studentAreas || []),
+    ...(loc.businessDistricts || []),
+  ];
+  return references.some((ref) => ref && text.includes(ref));
+}
+
 /**
- * Quality rules (all must pass for a page to be indexable):
- * - unique local intro + knowledge paragraphs of meaningful length
- * - at least 5 nearby areas (internal-link / local-coverage signals)
- * - at least 3 moving considerations (genuine local detail)
- * - at least 3 major roads OR student areas OR business districts
- *   (extra locality signals beyond the name swap)
- * - no forbidden old-business-model or over-claim wording
+ * Tightened quality rules — ALL must pass for a page to be indexable:
+ * - intro + knowledge of meaningful length (unique local copy)
+ * - at least 5 nearby areas
+ * - at least 3 FAQs
+ * - at least 3 renderable internal nearby/city links
+ * - at least 3 local moving considerations
+ * - at least 2 locality signals (roads/student areas/districts)
+ * - unique title/meta inputs (unique name + unique intro/knowledge)
+ * - no duplicate intro OR knowledge paragraph with another location
+ * - no forbidden phrases
+ * - not too generic: must reference at least one concrete local
+ *   feature and contain no generic-filler patterns
  */
 export function assessLocationQuality(loc: LocationData): QualityResult {
   const reasons: string[] = [];
@@ -43,8 +88,14 @@ export function assessLocationQuality(loc: LocationData): QualityResult {
   if (!loc.knowledge || loc.knowledge.trim().length < 120) {
     reasons.push("knowledge paragraph too short");
   }
-  if (!loc.nearbyAreas || loc.nearbyAreas.length < 4) {
-    reasons.push("fewer than 4 nearby areas");
+  if (!loc.nearbyAreas || loc.nearbyAreas.length < 5) {
+    reasons.push("fewer than 5 nearby areas");
+  }
+  if (countFaqs(loc) < 3) {
+    reasons.push("fewer than 3 FAQs");
+  }
+  if (countInternalLinks(loc) < 3) {
+    reasons.push("fewer than 3 internal nearby/city links");
   }
   if (!loc.movingConsiderations || loc.movingConsiderations.length < 3) {
     reasons.push("fewer than 3 local moving considerations");
@@ -64,11 +115,24 @@ export function assessLocationQuality(loc: LocationData): QualityResult {
     }
   }
 
-  // Duplicate-intro detection: two locations sharing the same intro text
-  // would be doorway pages.
-  const dupe = LOCATIONS.find((l) => l.slug !== loc.slug && l.intro === loc.intro);
-  if (dupe) {
-    reasons.push(`intro duplicated with ${dupe.slug}`);
+  // Duplicate detection: intro and knowledge must both be unique
+  // (titles/meta descriptions derive from unique names + these texts).
+  const introDupe = LOCATIONS.find((l) => l.slug !== loc.slug && l.intro === loc.intro);
+  if (introDupe) reasons.push(`intro duplicated with ${introDupe.slug}`);
+  const knowledgeDupe = LOCATIONS.find((l) => l.slug !== loc.slug && l.knowledge === loc.knowledge);
+  if (knowledgeDupe) reasons.push(`knowledge duplicated with ${knowledgeDupe.slug}`);
+  const nameDupe = LOCATIONS.find((l) => l.slug !== loc.slug && l.name === loc.name);
+  if (nameDupe) reasons.push(`name (title/meta source) duplicated with ${nameDupe.slug}`);
+
+  // Generic-content check
+  if (!hasConcreteLocalContent(loc)) {
+    reasons.push("too generic: intro/knowledge reference no concrete local feature");
+  }
+  for (const pattern of GENERIC_FILLER_PATTERNS) {
+    if (pattern.test(combined)) {
+      reasons.push("too generic: contains filler phrasing");
+      break;
+    }
   }
 
   return { indexable: reasons.length === 0, reasons };
