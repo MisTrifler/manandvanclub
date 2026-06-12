@@ -19,7 +19,7 @@ export default function Terms() {
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">1. Our Service</h2>
           <p><strong>Man and Van Club</strong> is an introduction marketplace only. We provide a platform that connects customers with independent local movers. <strong>Man and Van Club does not provide moving services directly.</strong></p>
-          <p>Customers can submit a quote request for free. Approved movers can review anonymised move details and provide structured quote options based on the details supplied. If a customer accepts a quote option, the customer pays Man and Van Club a booking deposit to secure the booking, and their contact details are released only to that quoted mover. The booking deposit is deducted from the selected mover quote and is not an additional charge.</p>
+          <p>Customers can submit a quote request for free. Approved movers may provide structured quote options based on the details supplied. The customer chooses one quote option. If a customer accepts a quote option, the customer pays Man and Van Club a booking deposit to secure the booking, and their contact details are released only to that quoted mover. The booking deposit is deducted from the selected quote option and is not an additional charge.</p>
           <p>Any moving contract exists solely between the customer and the mover. Man and Van Club is not a party to any agreement entered into between customers and movers.</p>
         </section>
 
@@ -32,12 +32,18 @@ export default function Terms() {
 
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">3. Booking Deposit Rules for Customers</h2>
-          <p>You only pay a booking deposit if you accept a mover quote option.</p>
-          <p><strong>The booking deposit is deducted from the selected mover quote and is not an additional charge.</strong></p>
+          <p>You only pay a booking deposit if you accept a quote option.</p>
+          <p><strong>The booking deposit is deducted from the selected quote option and is not an additional charge.</strong></p>
           <p><strong>The selected quote option is your total move cost.</strong></p>
           <p><strong>You pay the remaining balance directly to the mover on moving day unless otherwise agreed.</strong></p>
           <p>The booking deposit confirms your accepted quote option, and your contact details are released to the mover only after the booking deposit has been paid.</p>
-          <p>Example: selected mover quote £300, booking deposit £25, remaining balance paid to mover £275, total move cost £300.</p>
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 my-4">
+            <p className="font-bold text-primary mb-2">Example</p>
+            <p>Selected mover quote: <strong>£300</strong></p>
+            <p>Booking deposit: <strong>£25</strong></p>
+            <p>Remaining balance paid to mover: <strong>£275</strong></p>
+            <p>Total move cost: <strong>£300</strong></p>
+          </div>
         </section>
 
         <section className="mt-12 space-y-6">
