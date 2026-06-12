@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { cookies } from "next/headers";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
-import { resend } from "@/lib/resend";
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
 import { leadIsAvailable, leadMatchesDriverArea, leadMatchesDriverServices } from "@/lib/marketplace-matching";
@@ -14,7 +14,6 @@ import {
   formatMoveType,
 } from "@/lib/formatting";
 
-const SENDER_ADDRESS = "Man and Van Club <support@manandvanclub.co.uk>";
 const QUOTE_EXPIRY_HOURS = 24;
 const ALLOWED_QUOTE_STATUSES = new Set(["available", "verified", "active"]);
 
@@ -222,7 +221,7 @@ export async function POST(req: Request) {
         from: SENDER_ADDRESS,
         to: [updatedLead.email],
         subject: "Your Man and Van Club quote is ready",
-        replyTo: "support@manandvanclub.co.uk",
+        replyTo: REPLY_TO_ADDRESS,
         html: `
           <!DOCTYPE html>
           <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>

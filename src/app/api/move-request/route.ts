@@ -1,9 +1,8 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { resend } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 
-const SENDER_ADDRESS = 'Man and Van Club <support@manandvanclub.co.uk>';
 
 export async function POST(req: Request) {
   try {
@@ -78,7 +77,7 @@ export async function POST(req: Request) {
           from: SENDER_ADDRESS,
           to: [data.email],
           subject: `${otp} is your Man and Van Club verification code`,
-          replyTo: 'support@manandvanclub.co.uk',
+          replyTo: REPLY_TO_ADDRESS,
           html: `
             <!DOCTYPE html>
             <html>

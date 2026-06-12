@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { resend } from "@/lib/resend";
+import { resend, SENDER_ADDRESS } from "@/lib/resend";
 import { ADMIN_COOKIE_NAME, isValidAdminSession } from "@/lib/admin-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
@@ -89,7 +89,7 @@ export async function POST(req: Request) {
 
         if (magicLink) {
           await resend.emails.send({
-            from: "Man and Van Club <support@manandvanclub.co.uk>",
+            from: SENDER_ADDRESS,
             to: [driver.email],
             subject: "Login to Man and Van Club",
             html: `
@@ -111,7 +111,7 @@ export async function POST(req: Request) {
 
       if (status === "rejected") {
         await resend.emails.send({
-          from: "Man and Van Club <support@manandvanclub.co.uk>",
+          from: SENDER_ADDRESS,
           to: [driver.email],
           subject: "Update regarding your application - Man and Van Club",
           html: `

@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { resend } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 
-const SENDER_ADDRESS = 'Man and Van Club <support@manandvanclub.co.uk>';
 
 // ── Helpers ───────────────────────────────────────────────
 
@@ -107,7 +106,7 @@ export async function POST(req: Request) {
           from: SENDER_ADDRESS,
           to: [request.email],
           subject: 'Your Man and Van Club request is confirmed',
-          replyTo: 'support@manandvanclub.co.uk',
+          replyTo: REPLY_TO_ADDRESS,
           html: `
             <!DOCTYPE html>
             <html>

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { resend } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 
 export async function POST(req: Request) {
   try {
@@ -54,10 +54,10 @@ export async function POST(req: Request) {
     if (process.env.RESEND_API_KEY) {
       try {
         await resend.emails.send({
-          from: 'Man and Van Club <support@manandvanclub.co.uk>',
+          from: SENDER_ADDRESS,
           to: [data.email],
           subject: 'Action Required: Verify Your Man and Van Club Application',
-          replyTo: 'support@manandvanclub.co.uk',
+          replyTo: REPLY_TO_ADDRESS,
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; line-height: 1.6; color: #0F172A;">
               <p>Dear Applicant,</p>
@@ -82,7 +82,7 @@ export async function POST(req: Request) {
 
         // 3. Notification to YOU (Admin)
         await resend.emails.send({
-          from: 'Man and Van Club <no-reply@manandvanclub.co.uk>',
+          from: SENDER_ADDRESS,
           to: ['support@manandvanclub.co.uk'],
           subject: `New Mover App: ${data.companyName}`,
           text: `New driver application from ${data.contactName} (${data.companyName}). Area: ${data.coverageArea}`

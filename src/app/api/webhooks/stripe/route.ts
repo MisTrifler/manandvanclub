@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { getSupabaseAdmin } from '@/lib/supabase-admin';
-import { resend } from '@/lib/resend';
+import { resend, SENDER_ADDRESS } from '@/lib/resend';
 import { headers } from 'next/headers';
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
 import { escapeHtml } from '@/lib/html';
@@ -12,7 +12,6 @@ import {
   formatMoveType,
 } from "@/lib/formatting";
 
-const SENDER_ADDRESS = 'Man and Van Club <support@manandvanclub.co.uk>';
 
 export async function POST(req: Request) {
   const body = await req.text();

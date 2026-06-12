@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
-import { resend } from "@/lib/resend";
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
 import { hashLoginCode } from "@/lib/driver-auth";
 
-const SENDER_ADDRESS = "Man and Van Club <support@manandvanclub.co.uk>";
 
 const RATE_LIMIT_EMAIL = 3; // max code requests per email per 15 min
 const RATE_LIMIT_IP = 10; // max code requests per IP per 15 min
@@ -151,7 +150,7 @@ export async function POST(req: Request) {
       from: SENDER_ADDRESS,
       to: [email],
       subject: "Your Man and Van Club login code",
-      replyTo: "support@manandvanclub.co.uk",
+      replyTo: REPLY_TO_ADDRESS,
       html: `
         <!DOCTYPE html>
         <html>

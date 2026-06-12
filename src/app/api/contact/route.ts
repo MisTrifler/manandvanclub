@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { resend } from '@/lib/resend';
+import { resend, SENDER_ADDRESS } from '@/lib/resend';
 
 export async function POST(req: Request) {
   try {
@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     if (process.env.RESEND_API_KEY) {
       await resend.emails.send({
-        from: 'Man and Van Club <support@manandvanclub.co.uk>',
+        from: SENDER_ADDRESS,
         to: ['support@manandvanclub.co.uk'],
         subject: `New Contact Form Submission: ${subject || 'General Enquiry'}`,
         html: `
