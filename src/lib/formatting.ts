@@ -89,6 +89,84 @@ export interface MoveDetails {
   packingRequired?: string;
   accessNotes?: string;
   notes?: string;
+  // Shared move requirements (anonymised, shown to drivers pre-quote)
+  loadingHelp?: string;
+  helperPreference?: string;
+  accessType?: string;
+  parkingAvailable?: string;
+  heavyItems?: string;
+  heavyItemsDescription?: string;
+  dismantlingRequired?: string;
+  customerMoveNotes?: string;
+}
+
+// ─── Contact-detail masking ─────────────────────────────────────────
+// Customer free-text may be shown to drivers before the deposit is
+// paid, so any contact details inside it must be masked.
+const CONTACT_PATTERNS: RegExp[] = [
+  /(?:\+44[\s-]?7|07)\d{2}[\s-]?\d{3}[\s-]?\d{3,4}/g,         // UK mobile numbers
+  /(?:\+44[\s-]?|0)\d{2,4}[\s-]?\d{3,4}[\s-]?\d{3,4}/g,        // UK landlines
+  /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,          // emails
+  /(?:https?:\/\/|www\.)\S+/gi,                                // URLs
+  /\b\S+\.(?:com|co\.uk|uk|net|org|io)\b/gi,                   // bare domains
+  /\bwhats\s?app\b[^.,;]*/gi,                                  // whatsapp mentions
+  /(?:@|insta(?:gram)?\s*[:\s]|facebook\s*[:\s]|fb\s*[:\s])\s*[a-zA-Z0-9._]{3,}/gi, // social handles
+];
+
+export function maskContactDetails(text?: string | null): string {
+  if (!text) return "";
+  let masked = String(text);
+  for (const pattern of CONTACT_PATTERNS) {
+    masked = masked.replace(pattern, "[hidden]");
+  }
+  return masked.trim();
+}
+
+// ─── Move Requirements (driver-facing, anonymised) ──────────────────
+export interface RequirementRow {
+  label: string;
+  value: string;
+}
+
+export function getMoveRequirements(details?: MoveDetails | null): RequirementRow[] {
+  if (!details) return [];
+  const rows: RequirementRow[] = [];
+
+  if (details.loadingHelp) rows.push({ label: "Loading help", value: details.loadingHelp });
+  if (details.helperPreference) rows.push({ label: "Customer thinks they need", value: details.helperPreference });
+  if (details.additionalHelpers) {
+    const map: Record<string, string> = { yes: "Extra helper needed", no: "Driver only", unsure: "Unsure — advise" };
+    rows.push({ label: "Extra help", value: map[details.additionalHelpers] || details.additionalHelpers });
+  }
+  if (details.accessType) rows.push({ label: "Access", value: details.accessType });
+  if (details.floorLevel && details.floorLevel !== "Ground") rows.push({ label: "Floor", value: details.floorLevel });
+  if (details.liftAccess) {
+    rows.push({
+      label: "Lift",
+      value: details.liftAccess === "yes" || details.liftAccess === "Yes — lift available" ? "Lift available"
+        : details.liftAccess === "no" || details.liftAccess === "No — stairs only" ? "Stairs only"
+        : details.liftAccess,
+    });
+  }
+  if (details.parkingAvailable) rows.push({ label: "Parking", value: details.parkingAvailable });
+  if (details.heavyItems && details.heavyItems !== "No") {
+    rows.push({
+      label: "Heavy items",
+      value: details.heavyItemsDescription
+        ? maskContactDetails(details.heavyItemsDescription)
+        : details.heavyItems,
+    });
+  }
+  if (details.dismantlingRequired && details.dismantlingRequired !== "No") {
+    rows.push({ label: "Dismantling", value: details.dismantlingRequired });
+  }
+  if (details.packingRequired === "yes") rows.push({ label: "Packing", value: "Packing help needed" });
+  if (details.packingRequired === "partial") rows.push({ label: "Packing", value: "Partial packing help" });
+  if (details.accessNotes) rows.push({ label: "Access notes", value: maskContactDetails(details.accessNotes) });
+  const customerNote = details.customerMoveNotes || details.notes;
+  if (customerNote) rows.push({ label: "Customer notes", value: maskContactDetails(customerNote) });
+
+  return rows.filter((r) => r.value && r.value !== "[hidden]");
 }
 
 export function getMoveSummary(moveType?: string, details?: MoveDetails | null): string {
@@ -144,10 +222,10 @@ export function getAccessNote(details?: MoveDetails | null): string {
     notes.push(details.packingRequired === "yes" ? "Packing required" : "");
   }
   if (details.accessNotes) {
-    notes.push(details.accessNotes);
+    notes.push(maskContactDetails(details.accessNotes));
   }
   if (details.notes) {
-    notes.push(details.notes);
+    notes.push(maskContactDetails(details.notes));
   }
 
   return notes.filter(Boolean).join(" • ");

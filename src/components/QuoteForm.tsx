@@ -45,6 +45,13 @@ const formSchema = z.object({
   storageUnitSize: z.string().min(1, "Please select a rough amount"),
   storageItems: z.string().optional(),
   storageDirection: z.string().min(1, "Please select a direction"),
+  // Shared move requirements (all optional)
+  loadingHelp: z.string().optional(),
+  accessType: z.string().optional(),
+  parkingAvailable: z.string().optional(),
+  heavyItems: z.string().optional(),
+  heavyItemsDescription: z.string().optional(),
+  dismantlingRequired: z.string().optional(),
   // Shared optional notes
   notes: z.string().optional(),
 });
@@ -246,6 +253,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         details.storageUnitSize = data.storageUnitSize;
         details.storageDirection = data.storageDirection;
       }
+      // Shared move requirements (all move types, optional)
+      if (data.loadingHelp) details.loadingHelp = data.loadingHelp;
+      if (data.accessType) details.accessType = data.accessType;
+      if (data.parkingAvailable) details.parkingAvailable = data.parkingAvailable;
+      if (data.heavyItems) details.heavyItems = data.heavyItems;
+      if (data.heavyItems === "Yes" && data.heavyItemsDescription) details.heavyItemsDescription = data.heavyItemsDescription;
+      if (data.dismantlingRequired) details.dismantlingRequired = data.dismantlingRequired;
       if (data.notes) details.notes = data.notes;
 
       const estimatePrice = estimate
@@ -675,6 +689,68 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
               </div>
             )}
+
+            {/* Shared move requirements — all move types (all optional) */}
+            <div className="border-t border-border/60 pt-3 mt-1 space-y-2">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Help the mover quote accurately (optional)</p>
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Help Loading &amp; Unloading?</label>
+                  <select {...register("loadingHelp")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select (optional)</option>
+                    <option value="No, transport only">No, transport only</option>
+                    <option value="Yes, 1 mover helping is enough">Yes, 1 mover is enough</option>
+                    <option value="Yes, 2 movers may be needed">Yes, 2 movers may be needed</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Any Stairs or Lift?</label>
+                  <select {...register("accessType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select (optional)</option>
+                    <option value="Ground floor">Ground floor</option>
+                    <option value="Stairs">Stairs</option>
+                    <option value="Lift available">Lift available</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Parking Available?</label>
+                  <select {...register("parkingAvailable")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Optional</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Heavy / Awkward Items?</label>
+                  <select {...register("heavyItems")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Optional</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Dismantling Needed?</label>
+                  <select {...register("dismantlingRequired")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Optional</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+              </div>
+              {watch("heavyItems") === "Yes" && (
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Which Heavy Items? (Optional)</label>
+                  <input {...register("heavyItemsDescription")} placeholder="e.g. sofa, wardrobe, piano, fridge freezer" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                </div>
+              )}
+            </div>
 
             {/* Shared optional notes — all move types */}
             <div>

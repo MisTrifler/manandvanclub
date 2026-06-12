@@ -11,6 +11,7 @@ import {
   getMoveSummary,
   getAccessNote,
   getItemSummary,
+  getMoveRequirements,
 } from "@/lib/formatting";
 import {
   ShieldCheck,
@@ -284,6 +285,7 @@ export default function DriverMarketplaceClient({
     const moveSummary = getMoveSummary(lead.move_type, lead.details);
     const itemSummary = getItemSummary(lead.details);
     const accessNote = getAccessNote(lead.details);
+    const requirements = getMoveRequirements(lead.details);
     const hasEstimate = lead.estimated_price && lead.estimated_price.trim() !== "";
 
     const cardStatus = isMyBooked(lead)
@@ -392,10 +394,27 @@ export default function DriverMarketplaceClient({
             </div>
           )}
 
-          {accessNote && (
+          {accessNote && requirements.length === 0 && (
             <div className="flex items-center gap-2 mb-2">
               <Home size={16} className="text-primary/40 flex-shrink-0" />
               <p className="text-sm text-text-secondary font-medium">{accessNote}</p>
+            </div>
+          )}
+
+          {/* Move Requirements — anonymised, no contact details */}
+          {requirements.length > 0 && (
+            <div className="mt-4 bg-gray-50 rounded-xl border border-border/60 p-4">
+              <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-2">
+                Move Requirements
+              </p>
+              <div className="space-y-1.5">
+                {requirements.map((row) => (
+                  <div key={row.label + row.value} className="flex items-start gap-2 text-sm">
+                    <span className="font-bold text-primary/70 flex-shrink-0">{row.label}:</span>
+                    <span className="text-text-secondary">{row.value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
@@ -443,8 +462,11 @@ export default function DriverMarketplaceClient({
             <div className="space-y-3">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 mb-1">Quote Options</p>
-                <p className="text-xs text-text-secondary/80 leading-relaxed mb-3">
+                <p className="text-xs text-text-secondary/80 leading-relaxed mb-1">
                   Offer up to 3 clear options. Do not include phone numbers, emails, company names or contact details. Customer and mover details are shared only after the customer pays the booking deposit.
+                </p>
+                <p className="text-xs font-bold text-primary/70 leading-relaxed mb-3">
+                  Review the move requirements above before choosing service levels and prices.
                 </p>
               </div>
 
