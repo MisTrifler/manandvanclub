@@ -40,9 +40,21 @@ export async function POST(req: Request) {
     const metadata = session.metadata || {};
 
     if (metadata.paymentType === 'customer_booking_deposit' || metadata.paymentType === 'customer_booking_fee') {
+      // customer_booking_fee is legacy naming for the same customer-paid
+      // deposit flow and runs through identical validation.
       await handleCustomerBookingDeposit(session, metadata);
-    } else {
+    } else if (process.env.ENABLE_LEGACY_DRIVER_PAYMENTS === 'true') {
+      // Old driver-paid/unlock model. Disabled by default; only runs if
+      // explicitly enabled via env. Never the default path.
       await handleLegacyDriverPayment(session, metadata);
+    } else {
+      // Unknown or legacy driver-paid payment type with the legacy path
+      // disabled: log safely, do NOT touch the move request, do NOT
+      // release details, do NOT email anyone. Return 200 so Stripe does
+      // not retry.
+      console.warn(
+        `[webhook] ignored non-customer-deposit payment (paymentType="${metadata.paymentType || 'none'}", session ${session.id}). Legacy driver payments are disabled.`
+      );
     }
   }
 

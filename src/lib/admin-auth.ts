@@ -4,7 +4,13 @@ export const ADMIN_COOKIE_NAME = "mv_admin_session";
 const ADMIN_SESSION_MARKER = "manandvanclub-admin";
 
 export function getAdminSecret() {
-  return process.env.ADMIN_PORTAL_SECRET || "MV2026";
+  const secret = process.env.ADMIN_PORTAL_SECRET;
+  if (!secret || secret.trim().length === 0) {
+    // No fallback: a missing secret must fail loudly rather than
+    // silently signing sessions with a guessable default.
+    throw new Error("ADMIN_PORTAL_SECRET is required");
+  }
+  return secret;
 }
 
 function signAdminValue(value: string) {

@@ -4,7 +4,13 @@ export const DRIVER_COOKIE_NAME = "mv_driver_session";
 const DRIVER_SESSION_MARKER = "manandvanclub-driver";
 
 export function getDriverSecret() {
-  return process.env.DRIVER_SESSION_SECRET || process.env.ADMIN_PORTAL_SECRET || "MV2026";
+  const secret = process.env.DRIVER_SESSION_SECRET || process.env.ADMIN_PORTAL_SECRET;
+  if (!secret || secret.trim().length === 0) {
+    // No fallback: a missing secret must fail loudly rather than
+    // silently signing driver sessions with a guessable default.
+    throw new Error("DRIVER_SESSION_SECRET is required");
+  }
+  return secret;
 }
 
 function signDriverValue(email: string) {
