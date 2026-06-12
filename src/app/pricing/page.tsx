@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   { q: "What is the booking deposit?", a: "The booking deposit secures your accepted mover quote and releases your details to the mover. It is deducted from the mover's quote, so your total move cost stays the same." },
   { q: "Do I pay the mover separately?", a: "Yes. You pay the remaining balance directly to the mover on moving day." },
   { q: "Will my total cost increase?", a: "No. The mover quote is your total move cost. The booking deposit is deducted from that quote." },
-  { q: "Example?", a: "If the mover quotes £300 and the booking deposit is £25, you pay £25 today and £275 to the mover on moving day. Your total move cost is £300." },
+  { q: "Example?", a: "If your selected quote option is £300, the booking deposit is £25. You pay £25 today and £275 directly to the mover on moving day. Your total move cost stays £300 — the deposit is not an extra charge." },
 ];
 
 export default function PricingPage() {
@@ -39,7 +39,7 @@ export default function PricingPage() {
             Booking Deposit Pricing
           </h1>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-8">
-            Customers submit requests for free. Approved movers submit total quotes for free. The booking deposit is paid only after the customer accepts a mover quote, and it is deducted from that quote.
+            Customers submit requests for free. Approved movers submit total quotes for free. The booking deposit is paid only after the customer accepts a quote option, and it is deducted from the selected quote. It is not an extra charge.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -102,7 +102,7 @@ export default function PricingPage() {
           </div>
 
           <p className="text-center text-xs text-text-secondary mt-6 font-medium">
-            Example: mover quote £300, booking deposit £25, pay mover on moving day £275. Customer total: £300.
+            Example: selected mover quote £300, booking deposit paid today £25, pay mover on moving day £275. Total move cost: £300.
           </p>
         </div>
       </section>
