@@ -3,8 +3,8 @@ import { stripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence } from "@/lib/booking-fee";
 import { parseStoredQuoteOptions } from "@/lib/quote-options";
-import { QUOTE_CLEAR_FIELDS } from "@/lib/quote-feedback";
-import { sendQuoteFeedbackEmail } from "@/lib/quote-feedback-email";
+import { archiveCurrentQuoteAttempt, releaseQuoteBackToPool } from "@/lib/quote-attempts";
+import { sendQuoteExpiredEmail } from "@/lib/quote-feedback-email";
 
 function isExpired(expiresAt?: string | null) {
   if (!expiresAt) return false;
@@ -66,31 +66,12 @@ export async function POST(req: Request) {
     }
 
     if (isExpired(lead.quote_expires_at)) {
-      // Archive as expired and hold for customer feedback — the request
-      // does NOT return to the driver pool until admin releases it.
-      const nowIso = new Date().toISOString();
-      const { error: expireError } = await supabaseAdmin
-        .from("move_requests")
-        .update({
-          status: "quote_feedback_pending",
-          quote_feedback_requested_at: nowIso,
-          quote_feedback_last_outcome: "expired",
-          ...QUOTE_CLEAR_FIELDS,
-        })
-        .eq("id", lead.id)
-        .eq("status", "quoted")
-        .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
-
-      // Fallback if feedback migration not applied yet
-      if (expireError && (expireError.code === "42703" || expireError.code === "PGRST204")) {
-        await supabaseAdmin
-          .from("move_requests")
-          .update({ status: "expired" })
-          .eq("id", lead.id)
-          .eq("status", "quoted")
-          .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
-      } else if (!expireError) {
-        await sendQuoteFeedbackEmail(lead);
+      // Simplified model: archive as expired and AUTO-release back to
+      // the available pool. The expired quote can never be paid.
+      await archiveCurrentQuoteAttempt({ request: lead, outcome: "expired" });
+      const released = await releaseQuoteBackToPool({ requestId: lead.id, outcome: "expired" });
+      if (released) {
+        await sendQuoteExpiredEmail(lead);
       }
       return NextResponse.json({ error: "This quote has expired" }, { status: 409 });
     }

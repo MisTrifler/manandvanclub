@@ -12,6 +12,8 @@ import {
 import { calculateBookingFee, normaliseQuoteAmount } from "@/lib/booking-fee";
 import { parseStoredQuoteOptions } from "@/lib/quote-options";
 import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
+import { archiveCurrentQuoteAttempt, releaseQuoteBackToPool } from "@/lib/quote-attempts";
+import { sendQuoteExpiredEmail } from "@/lib/quote-feedback-email";
 import QuoteReviewClient from "./QuoteReviewClient";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +35,7 @@ function FeedbackPromptPage({ title, message, token }: { title: string; message:
         <h1 className="text-3xl font-black text-primary tracking-tighter">{title}</h1>
         <p className="text-text-secondary leading-relaxed">{message}</p>
         <a href={`/quote-feedback/${token}`} className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm">
-          Tell us what would work better
+          Update feedback or close request
         </a>
         <div>
           <a href="/" className="text-xs font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors">Return Home</a>
@@ -80,16 +82,25 @@ export default async function QuoteReviewPage({ params }: Props) {
     return <MessagePage title="Booking Already Confirmed" message="This booking has already been confirmed. The mover will contact you directly to confirm timing, access and payment method." />;
   }
 
-  if (lead.status === "declined" || (lead.status === "quote_feedback_pending" && lead.quote_feedback_last_outcome === "declined")) {
-    return <FeedbackPromptPage token={token} title="Quote Declined" message="Thanks — this quote has been declined. Your details have not been released to the mover. If you still need help, tell us what would work better and we'll review whether your request should go back to approved movers." />;
+  if (lead.status === "declined") {
+    return <FeedbackPromptPage token={token} title="Quote Declined" message="Thanks — this quote has been declined. Your details have not been released to the mover." />;
   }
 
-  if (lead.status === "quote_feedback_pending" || lead.status === "expired" || isExpired(lead.quote_expires_at)) {
-    return <FeedbackPromptPage token={token} title="Quote Expired" message="This quote has expired and can no longer be accepted. If you still need help, tell us what would work better and we'll review whether your request can go back to approved movers." />;
+  // Render-time expiry: archive + auto-release immediately, then show
+  // the released message. The old quote can never be paid.
+  if (lead.status === "quoted" && isExpired(lead.quote_expires_at)) {
+    await archiveCurrentQuoteAttempt({ request: lead, outcome: "expired" });
+    const released = await releaseQuoteBackToPool({ requestId: lead.id, outcome: "expired" });
+    if (released) await sendQuoteExpiredEmail(lead);
+    return <FeedbackPromptPage token={token} title="Quote Expired" message="This quote has expired. We've made your request available again so another approved mover can review it." />;
   }
 
-  if (lead.status === "quote_feedback_received") {
-    return <MessagePage title="Feedback Received" message="Thanks — we've received your feedback. Our team will review it and decide whether your request should be made available to movers again." />;
+  if (lead.status === "available" && lead.quote_feedback_released_at) {
+    return <FeedbackPromptPage token={token} title="Request Available Again" message="Your request is available for approved movers to review. If your budget or move details have changed, you can update your feedback." />;
+  }
+
+  if (lead.status === "expired" || lead.status === "quote_feedback_pending" || lead.status === "quote_feedback_received") {
+    return <FeedbackPromptPage token={token} title="Quote Expired" message="This quote has expired and can no longer be accepted. You can update your feedback or close your request." />;
   }
 
   if (lead.status === "closed") {

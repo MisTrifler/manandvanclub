@@ -7,6 +7,7 @@ import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuote
 import { escapeHtml } from '@/lib/html';
 import { parseStoredQuoteOptions } from '@/lib/quote-options';
 import { getRouteEstimateFromDetails } from '@/lib/route-estimate';
+import { archiveCurrentQuoteAttempt } from '@/lib/quote-attempts';
 import {
   formatUKPostcode,
   formatDisplayDate,
@@ -275,6 +276,10 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
         `,
       });
     }
+
+    // Archive the winning quote attempt as accepted (history only —
+    // never affects booking or payment logic).
+    await archiveCurrentQuoteAttempt({ request: bookedRequest, outcome: 'accepted' });
 
     console.log('[webhook] customer_booking_deposit: processed successfully');
   } catch (err: any) {

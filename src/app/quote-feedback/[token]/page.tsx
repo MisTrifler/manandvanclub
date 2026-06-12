@@ -38,12 +38,9 @@ export default async function QuoteFeedbackPage({ params }: { params: { token: s
     return <MessagePage title="Booking Confirmed" message="This booking has already been confirmed, so feedback is not needed here. Contact support if anything has changed." />;
   }
 
-  if (lead.status === "quote_feedback_received") {
-    return <MessagePage title="Feedback Received" message="Thanks — we've received your feedback. Our team will review it and decide whether your request should be made available to movers again." />;
-  }
 
   // Also allow legacy declined/expired statuses (pre-migration leads)
-  const allowedStatuses = ["quote_feedback_pending", "declined", "expired"];
+  const allowedStatuses = ["quote_feedback_pending", "declined", "expired", "available", "closed", "quoted"];
   if (!allowedStatuses.includes(String(lead.status || ""))) {
     return <MessagePage title="Nothing To Review" message="There is no quote feedback needed for this request right now." />;
   }

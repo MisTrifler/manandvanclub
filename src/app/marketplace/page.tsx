@@ -4,6 +4,7 @@ import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { leadIsAvailableToDriver, type DriverProfile } from "@/lib/marketplace-matching";
 import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
+import { expireOldQuotes, getPreviousQuoteSummaries } from "@/lib/quote-attempts";
 import DriverMarketplaceClient from "./DriverMarketplaceClient";
 
 export const dynamic = "force-dynamic";
@@ -41,6 +42,10 @@ export default async function MarketplacePage() {
 
   const currentMoverEmail = normaliseEmail(driverEmail);
   const driverProfile: DriverProfile = driver;
+
+  // Opportunistic expiry: release stale 6-hour quote locks back to the
+  // pool before fetching available leads (cron also covers this).
+  await expireOldQuotes();
 
   // ── Server-side queries ────────────────────────────────────────────
   // 1. Candidate available leads: verified, unowned, unpaid, active
@@ -84,6 +89,9 @@ export default async function MarketplacePage() {
     (lead: any) => normaliseEmail(lead.quoted_by) === currentMoverEmail
   );
 
+  // Safe previous-quote history for available leads (no driver identity)
+  const historyMap = await getPreviousQuoteSummaries(availableForDriver.map((l: any) => l.id));
+
   const seen = new Set<string>();
   const combined = [...mine, ...availableForDriver].filter((lead: any) => {
     if (seen.has(lead.id)) return false;
@@ -115,6 +123,7 @@ export default async function MarketplacePage() {
       quote_feedback_budget_min: lead.quote_feedback_released_at ? lead.quote_feedback_budget_min : undefined,
       quote_feedback_budget_max: lead.quote_feedback_released_at ? lead.quote_feedback_budget_max : undefined,
       quote_feedback_released_at: lead.quote_feedback_released_at || undefined,
+      previous_quote_history: historyMap.get(lead.id) || undefined,
       created_at: lead.created_at,
       details: lead.details,
       status: lead.status,

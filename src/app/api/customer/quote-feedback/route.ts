@@ -50,7 +50,7 @@ export async function POST(req: Request) {
     if (lead.status === "booked" || lead.booking_fee_paid === true || lead.customer_details_released_at) {
       return NextResponse.json({ error: "This booking has already been confirmed." }, { status: 409 });
     }
-    const allowedStatuses = ["quote_feedback_pending", "declined", "expired"];
+    const allowedStatuses = ["quote_feedback_pending", "quote_feedback_received", "declined", "expired", "available", "closed"];
     if (!allowedStatuses.includes(String(lead.status || ""))) {
       return NextResponse.json({ error: "There is no quote feedback needed for this request right now." }, { status: 409 });
     }
@@ -58,8 +58,11 @@ export async function POST(req: Request) {
     const { error: updateError } = await supabaseAdmin
       .from("move_requests")
       .update({
-        status: "quote_feedback_received",
+        // Simplified model: still-needs-help keeps/returns the request to
+        // the available pool automatically; otherwise it is closed.
+        status: stillNeedsHelp ? "available" : "closed",
         quote_feedback_received_at: new Date().toISOString(),
+        quote_feedback_released_at: stillNeedsHelp ? new Date().toISOString() : null,
         quote_feedback_still_needs_help: stillNeedsHelp,
         quote_feedback_reason: reason,
         quote_feedback_budget_min: budgetMin,
@@ -78,7 +81,9 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       success: true,
-      message: "Thanks — we've received your feedback. Our team will review it and decide whether your request should be made available to movers again.",
+      message: stillNeedsHelp
+        ? "Thanks — we've received your feedback and your request is available for approved movers to review."
+        : "Thanks — we've closed your request.",
     });
   } catch (error: any) {
     console.error("[quote-feedback] error:", error?.message || "unknown");

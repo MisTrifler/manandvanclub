@@ -7,6 +7,7 @@ import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds }
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
 import { leadIsAvailable, leadMatchesDriverArea } from "@/lib/marketplace-matching";
 import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
+import { expireOldQuotes } from "@/lib/quote-attempts";
 import { validateQuoteOptions, STANDARD_QUOTE_ASSUMPTION, type QuoteOption } from "@/lib/quote-options";
 import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import { escapeHtml } from "@/lib/html";
@@ -16,7 +17,7 @@ import {
   formatMoveType,
 } from "@/lib/formatting";
 
-const QUOTE_EXPIRY_HOURS = 24;
+const QUOTE_EXPIRY_HOURS = 6;
 const ALLOWED_QUOTE_STATUSES = new Set(["available", "verified", "active"]);
 
 async function generateUniqueCustomerQuoteToken(supabaseAdmin: ReturnType<typeof getSupabaseAdmin>) {
@@ -86,6 +87,10 @@ export async function POST(req: Request) {
     if (!requestId) {
       return NextResponse.json({ error: "Missing requestId" }, { status: 400 });
     }
+
+    // Release any stale 6-hour quote locks first so freshly-expired
+    // leads are quotable immediately.
+    await expireOldQuotes();
 
     const { data: lead, error: fetchError } = await supabaseAdmin
       .from("move_requests")
@@ -196,7 +201,7 @@ export async function POST(req: Request) {
     if (updateError || !updatedLead) {
       console.error("[submit-quote] Quote update failed or request changed state.");
       return NextResponse.json(
-        { error: "Failed to submit quote. Another mover may have quoted this request first." },
+        { error: "This enquiry has just been quoted by another mover." },
         { status: 409 },
       );
     }

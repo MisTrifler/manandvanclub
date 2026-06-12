@@ -80,7 +80,7 @@ export default function QuoteFeedbackClient({
           <CheckCircle2 size={48} className="mx-auto text-green-600" />
           <h1 className="text-3xl font-black text-primary tracking-tighter">Thanks — Feedback Received</h1>
           <p className="text-text-secondary leading-relaxed">
-            Our team will review it and decide whether your request should be made available to movers again.
+            If you still need help, your request is available for approved movers to review. If you closed it, no further action is needed.
           </p>
           <a href="/" className="btn-orange inline-block px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm">Return Home</a>
         </div>

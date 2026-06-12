@@ -16,6 +16,7 @@ import {
 import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import { noShowStatusLabel } from "@/lib/no-show";
 import { buildDriverFeedbackSummary } from "@/lib/quote-feedback";
+import { getBudgetReasonablenessLabel, budgetLabelText } from "@/lib/quote-attempts-shared";
 import {
   ShieldCheck,
   Clock,
@@ -69,6 +70,12 @@ interface Lead {
   quote_feedback_budget_min?: number | null;
   quote_feedback_budget_max?: number | null;
   quote_feedback_released_at?: string | null;
+  previous_quote_history?: {
+    attemptCount: number;
+    lastOutcome: string;
+    previousOptionMin: number | null;
+    previousOptionMax: number | null;
+  } | null;
 }
 
 interface Props {
@@ -138,6 +145,20 @@ export default function DriverMarketplaceClient({
     messageSent: false,
     notes: "",
   });
+
+  // Budget-vs-guide warning for returned leads (guidance only)
+  const budgetWarning = (lead: Lead): string => {
+    const guide = (lead.details as any)?.guidePrice;
+    const label = getBudgetReasonablenessLabel({
+      budgetMax: lead.quote_feedback_budget_max,
+      guidePriceMin: guide?.min,
+      guidePriceMax: guide?.max,
+      previousQuoteMin: lead.previous_quote_history?.previousOptionMin,
+      previousQuoteMax: lead.previous_quote_history?.previousOptionMax,
+    });
+    if (label === "may_be_low" || label === "very_low") return budgetLabelText(label);
+    return "";
+  };
 
   const canReportNoShow = (lead: Lead): boolean => {
     if (!isMyBooked(lead)) return false;
@@ -515,15 +536,35 @@ export default function DriverMarketplaceClient({
             </div>
           )}
 
-          {/* Re-released lead: safe customer feedback summary */}
-          {feedbackSummary && cardStatus === "available" && (
-            <div className="mt-3 bg-amber-50/60 border border-amber-100 rounded-xl p-3">
-              <p className="text-[10px] font-black uppercase tracking-widest text-amber-700/70 mb-1">Customer Feedback</p>
-              <p className="text-sm text-text-secondary">{feedbackSummary.outcome}</p>
-              {feedbackSummary.reason && (
+          {/* Returned lead: safe previous quote history + customer feedback */}
+          {cardStatus === "available" && (feedbackSummary || lead.previous_quote_history) && (
+            <div className="mt-3 bg-amber-50/60 border border-amber-100 rounded-xl p-3 space-y-1">
+              <p className="text-[10px] font-black uppercase tracking-widest text-amber-700/70 mb-1">Previous Quote History</p>
+              {lead.previous_quote_history && lead.previous_quote_history.attemptCount > 1 && (
+                <p className="text-sm text-text-secondary">Previous quote attempts: {lead.previous_quote_history.attemptCount}</p>
+              )}
+              <p className="text-sm text-text-secondary">
+                {feedbackSummary?.outcome
+                  || (lead.previous_quote_history?.lastOutcome === "expired"
+                    ? "Last quote expired after 6 hours."
+                    : lead.previous_quote_history?.lastOutcome === "declined"
+                      ? "Last quote was declined by the customer."
+                      : "")}
+              </p>
+              {feedbackSummary?.reason && (
                 <p className="text-sm text-text-secondary">Customer reason: {feedbackSummary.reason}</p>
               )}
-              <p className="text-sm font-bold text-primary">{feedbackSummary.budgetRange}</p>
+              {lead.previous_quote_history?.previousOptionMin != null && lead.previous_quote_history?.previousOptionMax != null && (
+                <p className="text-sm text-text-secondary">
+                  Previous option range: £{Math.round(lead.previous_quote_history.previousOptionMin)}–£{Math.round(lead.previous_quote_history.previousOptionMax)}
+                </p>
+              )}
+              <p className="text-sm font-bold text-primary">
+                {feedbackSummary ? feedbackSummary.budgetRange : "No customer feedback yet."}
+              </p>
+              {budgetWarning(lead) && (
+                <p className="text-xs text-amber-700">{budgetWarning(lead)}</p>
+              )}
             </div>
           )}
 

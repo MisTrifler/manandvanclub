@@ -1,24 +1,52 @@
 import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
-import { QUOTE_CLEAR_FIELDS } from "@/lib/quote-feedback";
-import { sendQuoteFeedbackEmail } from "@/lib/quote-feedback-email";
+import { archiveCurrentQuoteAttempt, releaseQuoteBackToPool, closeRequest } from "@/lib/quote-attempts";
 
-// Customer declines a quote. The request is archived as declined and
-// held in quote_feedback_pending — it does NOT return to the driver
-// pool until admin reviews customer feedback.
+// Customer declines a quote (simplified launch model):
+// - attempt archived as declined (with optional feedback/budget)
+// - still needs help -> AUTO-released back to the available pool
+// - no longer needs help -> request closed
+// No admin review required. No money moves here.
+
+const DECLINE_REASONS = [
+  "Price was too high",
+  "I need a different service option",
+  "Date or time no longer works",
+  "I found another mover",
+  "I no longer need help",
+  "Other",
+];
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const token = typeof body.token === "string" ? body.token.trim() : "";
-    const reason = typeof body.reason === "string" ? body.reason.slice(0, 200) : null;
+    const reason = String(body.reason || "").trim().slice(0, 200);
+    const stillNeedsHelp = body.stillNeedsHelp;
+    const notes = String(body.notes || "").trim().slice(0, 1000);
+    const budgetMin = body.budgetMin === null || body.budgetMin === undefined || body.budgetMin === "" ? null : Number(body.budgetMin);
+    const budgetMax = body.budgetMax === null || body.budgetMax === undefined || body.budgetMax === "" ? null : Number(body.budgetMax);
 
     if (!token) {
       return NextResponse.json({ error: "Missing token" }, { status: 400 });
     }
+    if (!reason || !DECLINE_REASONS.includes(reason)) {
+      return NextResponse.json({ error: "Please choose a reason." }, { status: 400 });
+    }
+    if (typeof stillNeedsHelp !== "boolean") {
+      return NextResponse.json({ error: "Please tell us whether you still need help." }, { status: 400 });
+    }
+    if (budgetMin !== null && (!Number.isFinite(budgetMin) || budgetMin < 0 || budgetMin > 100000)) {
+      return NextResponse.json({ error: "Budget values must be positive numbers." }, { status: 400 });
+    }
+    if (budgetMax !== null && (!Number.isFinite(budgetMax) || budgetMax < 0 || budgetMax > 100000)) {
+      return NextResponse.json({ error: "Budget values must be positive numbers." }, { status: 400 });
+    }
+    if (budgetMin !== null && budgetMax !== null && budgetMax < budgetMin) {
+      return NextResponse.json({ error: "Maximum budget must be at least the minimum budget." }, { status: 400 });
+    }
 
     const supabaseAdmin = getSupabaseAdmin();
-
     const { data: lead } = await supabaseAdmin
       .from("move_requests")
       .select("*")
@@ -28,50 +56,53 @@ export async function POST(req: Request) {
     if (!lead) {
       return NextResponse.json({ error: "Quote not found" }, { status: 404 });
     }
-
     if (lead.booking_fee_paid === true || lead.status === "booked") {
       return NextResponse.json({ error: "This quote has already been accepted" }, { status: 409 });
     }
-
-    const now = new Date().toISOString();
-
-    // Archive attempt + hold for feedback review (quote lock cleared)
-    let { error: updateError } = await supabaseAdmin
-      .from("move_requests")
-      .update({
-        status: "quote_feedback_pending",
-        customer_declined_quote_at: now,
-        declined_reason: reason,
-        quote_feedback_requested_at: now,
-        quote_feedback_last_outcome: "declined",
-        ...QUOTE_CLEAR_FIELDS,
-      })
-      .eq("id", lead.id)
-      .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
-
-    // Fallback if feedback migration not applied yet: keep legacy behaviour
-    if (updateError && (updateError.code === "42703" || updateError.code === "PGRST204")) {
-      console.warn("[decline-quote] feedback columns missing — apply migration 20260612_quote_feedback.sql. Using legacy declined status.");
-      ({ error: updateError } = await supabaseAdmin
-        .from("move_requests")
-        .update({
-          status: "declined",
-          customer_declined_quote_at: now,
-          declined_reason: reason,
-        })
-        .eq("id", lead.id)
-        .or("booking_fee_paid.is.null,booking_fee_paid.eq.false"));
+    if (lead.status !== "quoted") {
+      return NextResponse.json({ error: "There is no active quote to decline." }, { status: 409 });
     }
 
-    if (updateError) {
-      return NextResponse.json({ error: "Could not decline the quote. Please try again." }, { status: 500 });
+    // 1. Archive attempt as declined (incl. optional feedback)
+    await archiveCurrentQuoteAttempt({
+      request: lead,
+      outcome: "declined",
+      customerDeclineReason: reason,
+      customerBudgetMin: budgetMin,
+      customerBudgetMax: budgetMax,
+      customerStillNeedsHelp: stillNeedsHelp,
+      customerFeedbackNotes: notes || null,
+    });
+
+    // 2. Auto-return or close
+    if (stillNeedsHelp) {
+      const released = await releaseQuoteBackToPool({
+        requestId: lead.id,
+        outcome: "declined",
+        customerDeclineReason: reason,
+        customerBudgetMin: budgetMin,
+        customerBudgetMax: budgetMax,
+        customerStillNeedsHelp: true,
+        customerFeedbackNotes: notes || null,
+      });
+      if (!released) {
+        return NextResponse.json({ error: "Could not process the decline. Please try again." }, { status: 500 });
+      }
+      return NextResponse.json({
+        success: true,
+        outcome: "released",
+        message: "Thanks — this quote has been declined. We've made your request available again so another approved mover can review it.",
+      });
     }
 
-    await sendQuoteFeedbackEmail(lead);
-
+    const closed = await closeRequest(lead.id, reason);
+    if (!closed) {
+      return NextResponse.json({ error: "Could not process the decline. Please try again." }, { status: 500 });
+    }
     return NextResponse.json({
       success: true,
-      message: "Thanks — this quote has been declined. If you still need help, tell us what would work better and we'll review whether your request should go back to approved movers.",
+      outcome: "closed",
+      message: "Thanks — we've closed your request.",
     });
   } catch (error: any) {
     console.error("[customer/decline-quote] Error:", error?.message || error);

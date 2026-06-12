@@ -39,10 +39,11 @@ const STANDARD_QUOTE_ASSUMPTION =
   "This quote is based on the move details provided. The price may change if the item list, access, parking, waiting time, distance, or move date changes.";
 
 const DECLINE_REASONS = [
-  "Price too high",
-  "Date no longer works",
-  "Found another mover",
-  "Details changed",
+  "Price was too high",
+  "I need a different service option",
+  "Date or time no longer works",
+  "I found another mover",
+  "I no longer need help",
   "Other",
 ];
 
@@ -61,7 +62,11 @@ export default function QuoteReviewClient({
   const [loadingOptionId, setLoadingOptionId] = useState<string | null>(null);
   const [declining, setDeclining] = useState(false);
   const [showDeclineReasons, setShowDeclineReasons] = useState(false);
-  const [declineReason, setDeclineReason] = useState("Price too high");
+  const [declineReason, setDeclineReason] = useState("Price was too high");
+  const [declineStillNeedsHelp, setDeclineStillNeedsHelp] = useState<"yes" | "no" | "">("");
+  const [declineBudgetMin, setDeclineBudgetMin] = useState("");
+  const [declineBudgetMax, setDeclineBudgetMax] = useState("");
+  const [declineNotes, setDeclineNotes] = useState("");
   const [error, setError] = useState<string | null>(null);
 
   const loading = loadingOptionId !== null;
@@ -110,13 +115,30 @@ export default function QuoteReviewClient({
   };
 
   const handleDecline = async () => {
-    setDeclining(true);
     setError(null);
+    if (declineStillNeedsHelp === "") {
+      setError("Please tell us whether you still need help with this move.");
+      return;
+    }
+    const min = declineBudgetMin ? parseFloat(declineBudgetMin) : null;
+    const max = declineBudgetMax ? parseFloat(declineBudgetMax) : null;
+    if (min !== null && max !== null && max < min) {
+      setError("Maximum budget must be at least the minimum budget.");
+      return;
+    }
+    setDeclining(true);
     try {
       const res = await fetch("/api/customer/decline-quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, reason: declineReason }),
+        body: JSON.stringify({
+          token,
+          reason: declineReason,
+          stillNeedsHelp: declineStillNeedsHelp === "yes",
+          budgetMin: min,
+          budgetMax: max,
+          notes: declineNotes.trim().slice(0, 1000),
+        }),
       });
 
       const data = await res.json().catch(() => ({ error: "Something went wrong" }));
@@ -266,7 +288,7 @@ export default function QuoteReviewClient({
 
             {expiryText && (
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
-                <p className="text-sm text-blue-800 font-bold">Quote valid until {expiryText}</p>
+                <p className="text-sm text-blue-800 font-bold">This quote is available for 6 hours — until {expiryText}.</p>
               </div>
             )}
 
@@ -310,7 +332,7 @@ export default function QuoteReviewClient({
                 </button>
               ) : (
                 <div className="space-y-3 border border-border rounded-xl p-4 bg-gray-50">
-                  <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Reason for declining</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Why did this quote not work for you?</label>
                   <select
                     value={declineReason}
                     onChange={(e) => setDeclineReason(e.target.value)}
@@ -320,6 +342,35 @@ export default function QuoteReviewClient({
                       <option key={reason}>{reason}</option>
                     ))}
                   </select>
+
+                  <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Do you still need help with this move?</label>
+                  <div className="grid grid-cols-1 gap-2">
+                    <button
+                      onClick={() => setDeclineStillNeedsHelp("yes")}
+                      className={`py-3 px-3 rounded-xl border-2 font-bold text-sm text-left transition-all ${declineStillNeedsHelp === "yes" ? "border-accent bg-accent/10 text-primary" : "border-border bg-white text-primary/60 hover:border-accent/40"}`}
+                    >
+                      Yes, make my request available again
+                    </button>
+                    <button
+                      onClick={() => setDeclineStillNeedsHelp("no")}
+                      className={`py-3 px-3 rounded-xl border-2 font-bold text-sm text-left transition-all ${declineStillNeedsHelp === "no" ? "border-accent bg-accent/10 text-primary" : "border-border bg-white text-primary/60 hover:border-accent/40"}`}
+                    >
+                      No, close my request
+                    </button>
+                  </div>
+
+                  {declineStillNeedsHelp === "yes" && (
+                    <>
+                      <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">What budget range would work for you? (Optional)</label>
+                      <div className="grid grid-cols-2 gap-2">
+                        <input type="number" min="0" value={declineBudgetMin} onChange={(e) => setDeclineBudgetMin(e.target.value)} placeholder="Minimum £" className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent" />
+                        <input type="number" min="0" value={declineBudgetMax} onChange={(e) => setDeclineBudgetMax(e.target.value)} placeholder="Maximum £" className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent" />
+                      </div>
+                      <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Anything else movers should know? (Optional)</label>
+                      <textarea value={declineNotes} onChange={(e) => setDeclineNotes(e.target.value)} rows={2} maxLength={1000} placeholder="e.g. flexible on dates, fewer items than before" className="w-full p-3 bg-white border border-border rounded-xl font-medium text-sm outline-none focus:border-accent resize-none" />
+                    </>
+                  )}
+
                   <button
                     onClick={handleDecline}
                     disabled={loading || declining}
