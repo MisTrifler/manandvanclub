@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
+import { escapeHtml } from '@/lib/html';
 
 export async function POST(req: Request) {
   try {
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
                     <!-- Body -->
                     <tr>
                       <td style="padding:40px;">
-                        <p style="color:#1B2D4F;font-size:18px;font-weight:700;margin:0 0 20px 0;">Hi ${contactName || 'there'},</p>
+                        <p style="color:#1B2D4F;font-size:18px;font-weight:700;margin:0 0 20px 0;">Hi ${escapeHtml(contactName || 'there')},</p>
                         <p style="color:#555555;font-size:15px;line-height:1.7;margin:0 0 24px 0;">
                           Thanks for your interest in joining <strong style="color:#1B2D4F;">Man and Van Club</strong>.
                           We connect verified movers with customer-confirmed move requests — no shared move requests, just direct opportunities.

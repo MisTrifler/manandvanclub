@@ -188,12 +188,13 @@ export async function POST(req: Request) {
       } else {
         console.log('Sending customer confirmation email to:', request.email);
 
-        const firstName = request.first_name || 'there';
-        const serviceName = formatServiceName(request.move_type);
-        const collection = request.collection_postcode || 'your collection address';
-        const delivery = request.delivery_postcode || 'your delivery address';
-        const moveDate = formatMoveDate(request.move_date);
-        const estimatedPrice = formatEstimate(request.estimated_price);
+        const firstName = escapeHtml(request.first_name || 'there');
+        const serviceName = escapeHtml(formatServiceName(request.move_type));
+        const collection = escapeHtml(request.collection_postcode || 'your collection address');
+        const delivery = escapeHtml(request.delivery_postcode || 'your delivery address');
+        const moveDate = escapeHtml(formatMoveDate(request.move_date));
+        const rawEstimate = formatEstimate(request.estimated_price);
+        const estimatedPrice = rawEstimate ? escapeHtml(rawEstimate) : null;
 
         // Build price section if estimate exists
         const priceSection = estimatedPrice
@@ -236,7 +237,7 @@ export async function POST(req: Request) {
                       <tr>
                         <td style="padding: 0 40px 40px 40px; text-align: center;">
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 18px; line-height: 1.6; font-weight: 500;">
-                            Hi ${escapeHtml(firstName)},
+                            Hi ${firstName},
                           </p>
 
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">

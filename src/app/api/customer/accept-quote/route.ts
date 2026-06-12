@@ -107,8 +107,6 @@ export async function POST(req: Request) {
         bookingDeposit: bookingDeposit.toString(),
         bookingFee: bookingDeposit.toString(), // legacy compatibility
         remainingMoverBalance: remainingMoverBalance.toString(),
-        quotedBy: lead.quoted_by || "",
-        customerEmail: lead.email || "",
       },
     });
 

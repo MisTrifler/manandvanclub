@@ -125,7 +125,7 @@ export async function POST(req: Request) {
                           </div>
 
                           <p style="margin: 0 0 32px 0; color: #64748B; font-size: 14px; line-height: 1.6;">
-                            This code is for your move from <strong>${data.collectionPostcode}</strong> to <strong>${data.deliveryPostcode}</strong> on ${data.moveDate}.
+                            This code is for your move from <strong>${escapeHtml(data.collectionPostcode)}</strong> to <strong>${escapeHtml(data.deliveryPostcode)}</strong> on ${escapeHtml(data.moveDate)}.
                           </p>
 
                           <div style="border-top: 1px solid #E2E8F0; padding-top: 32px;">
