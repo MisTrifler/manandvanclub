@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { leadIsAvailableToDriver, type DriverProfile } from "@/lib/marketplace-matching";
+import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
 import DriverMarketplaceClient from "./DriverMarketplaceClient";
 
 export const dynamic = "force-dynamic";
@@ -66,10 +67,17 @@ export default async function MarketplacePage() {
       .order("created_at", { ascending: false }),
   ]);
 
-  // Restrictive availability: status rules + future move date + driver
-  // approved area + driver approved service types.
+  // Restrictive availability rules always apply (verified, unquoted,
+  // unpaid, future-dated). Area scoping depends on the mode:
+  // - LAUNCH POOL (default for launch): every approved launch-region
+  //   mover sees every lead starting/ending in launch coverage.
+  //   Service flags and exact radius are NOT used to hide leads.
+  // - STRICT (LAUNCH_SHARED_LEAD_POOL=false): per-driver area matching.
+  const launchMode = isLaunchPoolEnabled();
   const availableForDriver = (candidateLeads || []).filter((lead: any) =>
-    leadIsAvailableToDriver(lead, driverProfile)
+    launchMode
+      ? leadIsVisibleInLaunchPool(lead, driver)
+      : leadIsAvailableToDriver(lead, driverProfile)
   );
 
   const mine = (ownLeads || []).filter(

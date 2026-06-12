@@ -865,7 +865,7 @@ export default function DriverMarketplaceClient({
         {/* Disclaimer */}
         <div className="bg-white rounded-2xl border border-border p-4 md:p-5 mb-6">
           <p className="text-sm text-text-secondary leading-relaxed">
-            Man &amp; Van Club provides <strong className="text-primary">verified customer enquiries in your covered area</strong>.
+            Man &amp; Van Club provides <strong className="text-primary">verified customer enquiries in your launch area</strong>.
             Review the move requirements and submit quote options for free. If the customer accepts an option, they pay a deposit to secure the booking. The deposit is deducted from your total quote, and you collect the remaining balance directly from the customer on moving day.
           </p>
         </div>

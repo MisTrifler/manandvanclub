@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { escapeHtml } from '@/lib/html';
 import { leadMatchesDriverArea } from '@/lib/marketplace-matching';
+import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from '@/lib/launch-lead-pool';
 import { getRouteEstimateFromDetails } from '@/lib/route-estimate';
 
 // ── OTP hardening ─────────────────────────────────────────
@@ -335,9 +336,12 @@ export async function POST(req: Request) {
             .select('*')
             .eq('status', 'approved');
 
+          const launchMode = isLaunchPoolEnabled();
           const matchingDrivers = (approvedDrivers || []).filter((driver: any) => {
             try {
-              return leadMatchesDriverArea(moveRequest, driver);
+              return launchMode
+                ? leadIsVisibleInLaunchPool(moveRequest, driver)
+                : leadMatchesDriverArea(moveRequest, driver);
             } catch {
               return false; // restrictive on any matching error
             }

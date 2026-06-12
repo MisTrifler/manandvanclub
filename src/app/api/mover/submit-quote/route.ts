@@ -6,6 +6,7 @@ import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
 import { leadIsAvailable, leadMatchesDriverArea } from "@/lib/marketplace-matching";
+import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
 import { validateQuoteOptions, STANDARD_QUOTE_ASSUMPTION, type QuoteOption } from "@/lib/quote-options";
 import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import { escapeHtml } from "@/lib/html";
@@ -119,10 +120,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "This request is no longer available for quoting." }, { status: 409 });
     }
 
-    // Driver must be approved for this area. Service-type flags are NOT
-    // enforced (launch decision): approved movers can quote any move
-    // type in their covered area.
-    if (!leadMatchesDriverArea(lead, driver)) {
+    // Area permission must mirror marketplace visibility exactly:
+    // - launch pool mode: any approved launch-region mover may quote
+    //   launch-pool leads (service flags never block)
+    // - strict mode: per-driver area matching
+    const areaAllowed = isLaunchPoolEnabled()
+      ? leadIsVisibleInLaunchPool(lead, driver)
+      : leadMatchesDriverArea(lead, driver);
+    if (!areaAllowed) {
       return NextResponse.json(
         { error: "This enquiry is not available for your approved service area." },
         { status: 403 }
