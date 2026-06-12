@@ -116,7 +116,7 @@ export async function POST(req: Request) {
                         <td style="padding: 0 40px 40px 40px; text-align: center;">
                           <p style="margin: 0 0 24px 0; color: #475569; font-size: 18px; line-height: 1.6; font-weight: 500;">
                             Hi ${data.firstName},<br>
-                            To protect your move request and ensure exclusive matching, please enter the following 4-digit code:
+                            To protect your move request and ensure exclusive matching, please enter the following 6-digit code:
                           </p>
 
                           <div style="background-color: #F8FAFC; border: 2px dashed #E2E8F0; border-radius: 16px; padding: 32px; margin-bottom: 32px;">
