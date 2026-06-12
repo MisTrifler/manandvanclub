@@ -8,6 +8,7 @@ import {
 } from "@/lib/formatting";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, formatPounds } from "@/lib/booking-fee";
 import { parseStoredQuoteOptions } from "@/lib/quote-options";
+import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import {
   CheckCircle2,
   MapPin,
@@ -79,6 +80,7 @@ export default async function BookingConfirmedPage({
   const colPostcode = formatUKPostcode(lead.collection_postcode);
   const delPostcode = formatUKPostcode(lead.delivery_postcode);
   const moveDate = formatDisplayDate(lead.move_date);
+  const routeEstimate = getRouteEstimateFromDetails(lead.details);
   const quoteAmount = normaliseQuoteAmount(lead.quote_amount || 0);
   const bookingDeposit = lead.booking_fee ? Number(lead.booking_fee) : calculateBookingDeposit(quoteAmount);
   const remainingMoverBalance = calculateRemainingMoverBalance(quoteAmount, bookingDeposit);
@@ -128,6 +130,22 @@ export default async function BookingConfirmedPage({
                   <div>
                     <p className="text-xs font-black uppercase tracking-widest text-primary/40">Move date</p>
                     <p className="font-bold text-primary">{moveDate}</p>
+                  </div>
+                </div>
+              )}
+
+              {routeEstimate && routeEstimate.distanceMeters > 0 && (
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0">
+                    <MapPin size={18} className="text-primary/60" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-widest text-primary/40">Estimated route</p>
+                    <p className="font-bold text-primary">{routeEstimate.distanceText} · {routeEstimate.durationText}</p>
+                    {routeEstimate.mapUrl && (
+                      <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-accent">View route on map →</a>
+                    )}
+                    <p className="text-[10px] text-text-secondary/60">Postcode-to-postcode guide. Final timing may vary.</p>
                   </div>
                 </div>
               )}

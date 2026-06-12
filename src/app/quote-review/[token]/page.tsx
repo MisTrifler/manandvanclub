@@ -11,6 +11,7 @@ import {
 } from "@/lib/formatting";
 import { calculateBookingFee, normaliseQuoteAmount } from "@/lib/booking-fee";
 import { parseStoredQuoteOptions } from "@/lib/quote-options";
+import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import QuoteReviewClient from "./QuoteReviewClient";
 
 export const dynamic = "force-dynamic";
@@ -88,6 +89,12 @@ export default async function QuoteReviewPage({ params }: Props) {
     getItemSummary(details),
     getAccessNote(details),
   ].filter(Boolean);
+
+  // Route estimate (guide only) shown near move details if available
+  const routeEstimate = getRouteEstimateFromDetails(lead.details);
+  if (routeEstimate && routeEstimate.distanceMeters > 0) {
+    detailSummary.push(`Estimated route: ${routeEstimate.distanceText} · ${routeEstimate.durationText} (postcode-to-postcode guide — final timing may vary)`);
+  }
 
   // Build the option list for the client. Legacy quotes become a single
   // option; legacy quote_message is intentionally never shown to the

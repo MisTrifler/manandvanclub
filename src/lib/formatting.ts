@@ -98,6 +98,15 @@ export interface MoveDetails {
   heavyItemsDescription?: string;
   dismantlingRequired?: string;
   customerMoveNotes?: string;
+  routeEstimate?: {
+    distanceText?: string;
+    durationText?: string;
+    distanceMeters?: number;
+    durationSeconds?: number;
+    mapUrl?: string;
+    provider?: string;
+    calculatedAt?: string;
+  };
 }
 
 // ─── Contact-detail masking ─────────────────────────────────────────

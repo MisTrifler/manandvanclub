@@ -13,6 +13,7 @@ import {
   getItemSummary,
   getMoveRequirements,
 } from "@/lib/formatting";
+import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import {
   ShieldCheck,
   Clock,
@@ -286,6 +287,7 @@ export default function DriverMarketplaceClient({
     const itemSummary = getItemSummary(lead.details);
     const accessNote = getAccessNote(lead.details);
     const requirements = getMoveRequirements(lead.details);
+    const routeEstimate = getRouteEstimateFromDetails(lead.details);
     const hasEstimate = lead.estimated_price && lead.estimated_price.trim() !== "";
 
     const cardStatus = isMyBooked(lead)
@@ -398,6 +400,29 @@ export default function DriverMarketplaceClient({
             <div className="flex items-center gap-2 mb-2">
               <Home size={16} className="text-primary/40 flex-shrink-0" />
               <p className="text-sm text-text-secondary font-medium">{accessNote}</p>
+            </div>
+          )}
+
+          {/* Route estimate — postcode-to-postcode guide only */}
+          {routeEstimate && routeEstimate.distanceMeters > 0 && (
+            <div className="flex items-start gap-2 mb-2">
+              <MapPin size={16} className="text-primary/40 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm text-text-secondary font-medium">
+                  Estimated route: <strong className="text-primary">{routeEstimate.distanceText}</strong>
+                  <span className="mx-1 text-primary/30">·</span>
+                  <strong className="text-primary">{routeEstimate.durationText}</strong>
+                  {routeEstimate.mapUrl && (
+                    <>
+                      {" "}
+                      <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="text-accent font-bold text-xs">
+                        View route on map
+                      </a>
+                    </>
+                  )}
+                </p>
+                <p className="text-[10px] text-text-secondary/60">Postcode-to-postcode guide only. Final timing may vary.</p>
+              </div>
             </div>
           )}
 

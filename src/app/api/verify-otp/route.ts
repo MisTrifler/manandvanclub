@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { escapeHtml } from '@/lib/html';
 import { leadMatchesDriverArea } from '@/lib/marketplace-matching';
+import { getRouteEstimateFromDetails } from '@/lib/route-estimate';
 
 // ── OTP hardening ─────────────────────────────────────────
 const MAX_OTP_ATTEMPTS = 5;
@@ -361,6 +362,12 @@ export async function POST(req: Request) {
                         <p><strong>Route:</strong> ${escapeHtml(moveRequest.collection_postcode)} → ${escapeHtml(moveRequest.delivery_postcode)}</p>
                         <p><strong>Date:</strong> ${escapeHtml(moveRequest.move_date || '—')}</p>
                         <p><strong>Type:</strong> ${escapeHtml(moveRequest.move_type || 'Move')}</p>
+                        ${(() => {
+                          const re = getRouteEstimateFromDetails(moveRequest.details);
+                          return re && re.distanceMeters > 0
+                            ? `<p><strong>Estimated route:</strong> ${escapeHtml(re.distanceText)} · ${escapeHtml(re.durationText)} <span style="color:#94A3B8;font-size:12px;">(guide only)</span></p>`
+                            : '';
+                        })()}
                       </div>
                       <p>Review the anonymised move details in your marketplace and submit structured quote options if you can help. Customer details are released only if the customer accepts an option and pays the booking deposit.</p>
                       <a href="https://www.manandvanclub.co.uk/marketplace"

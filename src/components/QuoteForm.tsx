@@ -82,6 +82,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [otpError, setOtpError] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
 
+  // ── Route estimate (informational only — never affects pricing) ────
+  const [routeEstimate, setRouteEstimate] = useState<{
+    distanceText: string; durationText: string; distanceMeters: number;
+    durationSeconds: number; mapUrl: string; provider: string; calculatedAt: string;
+  } | null>(null);
+  const [routeLookupFailed, setRouteLookupFailed] = useState(false);
+  const [lastRoutePair, setLastRoutePair] = useState("");
+
   // Detect intent from URL on client side (for homepage / no prop)
   useEffect(() => {
     if (!propIntent && typeof window !== "undefined") {
@@ -114,6 +122,46 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       setValue("moveType", getMoveTypeLabel(activeIntent));
     }
   }, [activeIntent, setValue]);
+
+  // ── Debounced postcode-to-postcode route lookup (guide only) ───────
+  const watchedCollectionPostcode = watch("collectionPostcode");
+  const watchedDeliveryPostcode = watch("deliveryPostcode");
+
+  useEffect(() => {
+    const from = (watchedCollectionPostcode || "").trim();
+    const to = (watchedDeliveryPostcode || "").trim();
+
+    // Only look up once both postcodes look complete; never on every keystroke.
+    if (from.length < 5 || to.length < 5) return;
+
+    const pairKey = `${from.toUpperCase()}|${to.toUpperCase()}`;
+    if (pairKey === lastRoutePair) return; // same pair already looked up this session
+
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch("/api/route-estimate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ collectionPostcode: from, deliveryPostcode: to }),
+        });
+        const data = await res.json().catch(() => ({ ok: false }));
+        setLastRoutePair(pairKey);
+        if (data.ok) {
+          setRouteEstimate(data);
+          setRouteLookupFailed(false);
+        } else {
+          setRouteEstimate(data.mapUrl ? { distanceText: "", durationText: "", distanceMeters: 0, durationSeconds: 0, mapUrl: data.mapUrl, provider: "fallback", calculatedAt: "" } : null);
+          setRouteLookupFailed(true);
+        }
+      } catch {
+        setLastRoutePair(pairKey);
+        setRouteEstimate(null);
+        setRouteLookupFailed(true);
+      }
+    }, 800); // debounce
+
+    return () => clearTimeout(timer);
+  }, [watchedCollectionPostcode, watchedDeliveryPostcode, lastRoutePair]);
 
   const calculateEstimate = (data: FormData): { min: number; max: number } => {
     const base: Record<IntentType, [number, number]> = {
@@ -267,6 +315,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       const estimatePrice = estimate
         ? `£${estimate.min}–£${estimate.max}`
         : undefined;
+
+      // Attach route estimate (guide only — server re-validates/recalculates)
+      if (routeEstimate && routeEstimate.distanceMeters > 0) {
+        details.routeEstimate = routeEstimate;
+      }
 
       const payload = {
         ...data,
@@ -772,6 +825,37 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Anything Else the Mover Should Know? (Optional)</label>
               <input {...register("notes")} placeholder="Optional, e.g. stairs, parking, fragile items, narrow access" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
             </div>
+
+            {/* Route estimate panel — informational guide only */}
+            {routeEstimate && routeEstimate.distanceMeters > 0 && (
+              <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-3.5">
+                <p className="text-[10px] font-black uppercase tracking-widest text-blue-700/70 mb-1">Estimated Journey</p>
+                <p className="text-sm font-bold text-primary">
+                  {(watchedCollectionPostcode || "").toUpperCase()} <span className="text-primary/40">→</span> {(watchedDeliveryPostcode || "").toUpperCase()}
+                </p>
+                <p className="text-sm text-text-secondary mt-0.5">
+                  Distance: <strong className="text-primary">{routeEstimate.distanceText}</strong>
+                  <span className="mx-1.5 text-primary/30">·</span>
+                  Drive time: <strong className="text-primary">{routeEstimate.durationText}</strong>
+                </p>
+                {routeEstimate.mapUrl && (
+                  <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-accent mt-1 inline-block">
+                    View route on map →
+                  </a>
+                )}
+                <p className="text-[10px] text-text-secondary/70 mt-1.5 leading-relaxed">
+                  This is a postcode-to-postcode estimate and a guide only. Your mover will quote based on the full move details.
+                </p>
+              </div>
+            )}
+            {routeLookupFailed && !routeEstimate?.distanceMeters && (
+              <p className="text-[11px] text-text-secondary/70">
+                We could not estimate the route, but you can still continue.
+                {routeEstimate?.mapUrl && (
+                  <> <a href={routeEstimate.mapUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-accent">View route on map</a></>
+                )}
+              </p>
+            )}
 
             <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
           </div>

@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 import { escapeHtml } from '@/lib/html';
+import { computeRouteEstimate, sanitizeRouteEstimate } from '@/lib/route-estimate';
 
 const OTP_VALIDITY_MINUTES = 15;
 
@@ -41,6 +42,25 @@ export async function POST(req: Request) {
     // If the column is missing, the insert will be retried without it.
     if (data.details != null) {
       insertPayload.details = data.details;
+    }
+
+    // ── Route estimate (informational only) ──────────────────────────
+    // Recalculate server-side when possible; otherwise sanitize the
+    // client value (which itself came from our /api/route-estimate).
+    // Never blocks submission; never affects pricing or deposits.
+    try {
+      if (data.collectionPostcode && data.deliveryPostcode) {
+        const serverEstimate = await computeRouteEstimate(data.collectionPostcode, data.deliveryPostcode);
+        const finalEstimate = serverEstimate
+          || sanitizeRouteEstimate(data.details?.routeEstimate, data.collectionPostcode, data.deliveryPostcode);
+        if (finalEstimate) {
+          insertPayload.details = { ...(insertPayload.details || {}), routeEstimate: finalEstimate };
+        } else if (insertPayload.details?.routeEstimate) {
+          delete insertPayload.details.routeEstimate; // drop unusable client value
+        }
+      }
+    } catch {
+      // non-blocking
     }
 
     let request: any;

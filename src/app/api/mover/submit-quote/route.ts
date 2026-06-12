@@ -7,6 +7,7 @@ import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds }
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
 import { leadIsAvailable, leadMatchesDriverArea } from "@/lib/marketplace-matching";
 import { validateQuoteOptions, STANDARD_QUOTE_ASSUMPTION, type QuoteOption } from "@/lib/quote-options";
+import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import { escapeHtml } from "@/lib/html";
 import {
   formatUKPostcode,
@@ -202,6 +203,12 @@ export async function POST(req: Request) {
       const moveDate = formatDisplayDate(updatedLead.move_date);
       const reviewUrl = `${process.env.NEXT_PUBLIC_URL || "https://www.manandvanclub.co.uk"}/quote-review/${quoteToken}`;
 
+      // Route estimate line (guide only, postcodes-derived — no PII)
+      const routeEstimate = getRouteEstimateFromDetails(updatedLead.details);
+      const routeEstimateLine = routeEstimate && routeEstimate.distanceMeters > 0
+        ? `<p style="margin:8px 0 0;color:#475569;font-size:14px;">Estimated route: ${escapeHtml(routeEstimate.distanceText)} · ${escapeHtml(routeEstimate.durationText)} <span style="color:#94A3B8;font-size:12px;">(guide only)</span></p>`
+        : "";
+
       // Platform-generated option cards. No driver-written text is included.
       const optionsHtml = quoteOptions
         .map((option: QuoteOption, index: number) => {
@@ -246,6 +253,7 @@ export async function POST(req: Request) {
                     <p style="margin:0 0 8px;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveType)}</p>
                     <p style="margin:0 0 8px;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(colPostcode || "—")} to ${escapeHtml(delPostcode || "—")}</p>
                     <p style="margin:0;color:#475569;font-size:16px;font-weight:500;">${escapeHtml(moveDate || "—")}</p>
+                    ${routeEstimateLine}
                   </div>
                   <div style="background:#F0FDF4;border-left:4px solid #22C55E;padding:16px;margin-bottom:32px;text-align:left;">
                     <p style="margin:0;color:#166534;font-size:14px;line-height:1.6;">Pay the deposit on the option you choose to secure your booking and release your details to the mover. The deposit is deducted from that option's quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.</p>

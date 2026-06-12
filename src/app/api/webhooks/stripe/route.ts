@@ -6,6 +6,7 @@ import { headers } from 'next/headers';
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
 import { escapeHtml } from '@/lib/html';
 import { parseStoredQuoteOptions } from '@/lib/quote-options';
+import { getRouteEstimateFromDetails } from '@/lib/route-estimate';
 import {
   formatUKPostcode,
   formatDisplayDate,
@@ -202,6 +203,12 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
 
     const driverName = driver?.contact_name || 'there';
 
+    // Route estimate line (guide only — derived from postcodes, no PII)
+    const bookedRouteEstimate = getRouteEstimateFromDetails(bookedRequest.details);
+    const routeEstimateLine = bookedRouteEstimate && bookedRouteEstimate.distanceMeters > 0
+      ? `<p style="margin: 0 0 20px 0;"><strong>Estimated route:</strong> ${escapeHtml(bookedRouteEstimate.distanceText)} · ${escapeHtml(bookedRouteEstimate.durationText)} <span style="color:#94A3B8;font-size:12px;">(guide only)</span></p>`
+      : '';
+
     if (bookedRequest.quoted_by) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
@@ -223,6 +230,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
               <p style="margin: 0 0 8px 0;">${escapeHtml(moveType)}</p>
               <p style="margin: 0 0 8px 0;">${escapeHtml(colPostcode)} to ${escapeHtml(delPostcode)}</p>
               <p style="margin: 0 0 20px 0;">${escapeHtml(moveDate)}</p>
+              ${routeEstimateLine}
               ${selectedOption ? `<p style="margin: 0 0 8px 0;"><strong>Selected option:</strong> ${escapeHtml(selectedOption.serviceLabel)}</p>
               <p style="margin: 0 0 8px 0;"><strong>Van:</strong> ${escapeHtml(selectedOption.vanLabel)}</p>` : ''}
               <p style="margin: 0 0 8px 0;"><strong>Your total quote:</strong> ${formatPounds(quoteAmount)}</p>
