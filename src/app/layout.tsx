@@ -71,7 +71,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <Header />
-        <main>{children}</main>
+        {/* pb on mobile reserves space for the fixed sticky CTA so it never covers final content/footer */}
+        <main className="pb-28 md:pb-0">{children}</main>
         <Footer />
         <CookieConsent />
 

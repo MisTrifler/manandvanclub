@@ -8,6 +8,26 @@ import { motion } from "framer-motion";
 import { type IntentType } from "@/lib/intent-detection";
 import { getGoogleMapsRouteUrl } from "@/lib/google-maps-routes";
 
+/**
+ * Splits long generated/custom local SEO text into short paragraphs so
+ * mobile readers never face one massive wall of text. Respects existing
+ * newlines first; otherwise groups sentences (~2 per paragraph).
+ */
+function splitIntoParagraphs(text: string): string[] {
+  if (!text) return [];
+  const byNewline = text.split(/\n+/).map((p) => p.trim()).filter(Boolean);
+  if (byNewline.length > 1) return byNewline;
+
+  const sentences = text.match(/[^.!?]+[.!?]+(\s|$)/g)?.map((s) => s.trim()).filter(Boolean) || [text];
+  if (sentences.length <= 2) return [text];
+
+  const paragraphs: string[] = [];
+  for (let i = 0; i < sentences.length; i += 2) {
+    paragraphs.push(sentences.slice(i, i + 2).join(" "));
+  }
+  return paragraphs;
+}
+
 export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: IntentType }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
   const isServicePage = data.pageType === "service";
@@ -139,7 +159,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
             <div className="lg:col-span-2 space-y-16 lg:space-y-24">
 
               {/* ── Moving in [Location] Made Simple ── */}
-              <div className="space-y-8">
+              <div className="space-y-5 lg:space-y-8">
                  <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight leading-none">
                    {isServicePage
                      ? `${data.name} Made Simple`
@@ -148,7 +168,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                        : `Moving in ${data.name} Made Simple`}
                  </h2>
                  <p className="text-lg lg:text-xl text-text-secondary font-medium leading-relaxed">{data.knowledge}</p>
-                 <div className="bg-primary/5 p-8 lg:p-12 rounded-[2.5rem] border border-border/40">
+                 <div className="bg-primary/5 p-5 lg:p-10 rounded-2xl lg:rounded-[2.5rem] border border-border/40">
                    <p className="text-lg lg:text-xl text-primary font-medium leading-relaxed italic">
                      "Whether you are moving a single item or a full house relocation, our network makes it easy to request a quote from a local professional while keeping your details protected. We handle the vetting so you can focus on your move."
                    </p>
@@ -163,7 +183,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   { t: "Insurance Required", d: "Movers must provide valid Goods in Transit and Public Liability insurance before they can be approved.", i: <CheckCircle2 size={28} /> },
                   { t: "Local Knowledge", d: "Our movers know every shortcut and parking quirk.", i: <Users size={28} /> }
                 ].map(f => (
-                  <div key={f.t} className="bg-[#F9F9F7] p-10 rounded-[2.5rem] border border-border/50 space-y-6 group hover:bg-white hover:shadow-2xl transition-all duration-500">
+                  <div key={f.t} className="bg-[#F9F9F7] p-6 lg:p-10 rounded-3xl lg:rounded-[2.5rem] border border-border/50 space-y-4 lg:space-y-6 group hover:bg-white hover:shadow-2xl transition-all duration-500">
                     <div className="text-accent group-hover:scale-110 transition-transform origin-left">{f.i}</div>
                     <div className="space-y-2">
                       <h3 className="font-black text-xl text-primary uppercase tracking-tight leading-tight">{f.t}</h3>
@@ -174,7 +194,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               </div>
 
               {/* ── CTA Card ── */}
-              <div className="bg-white p-12 rounded-[3.5rem] text-primary space-y-8 relative overflow-hidden shadow-2xl border border-border">
+              <div className="bg-white p-6 lg:p-12 rounded-3xl lg:rounded-[3.5rem] text-primary space-y-6 lg:space-y-8 relative overflow-hidden shadow-2xl border border-border">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -mr-16 -mt-16" />
                  <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-none italic">Ready to start?</h3>
                  <p className="text-text-secondary font-medium text-lg leading-relaxed">
@@ -194,7 +214,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Areas We Cover Near [Location] ── */}
               {data.areasWeCover && data.areasWeCover.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Areas We Cover Near {data.name}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Areas We Cover Near {data.name}</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {data.areasWeCover.map((area: string) => {
                       const slug = area.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
@@ -220,12 +240,33 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
 
               {/* ── Moving in [Location] ── */}
               {data.localMovingInfo && (
-                <div className="space-y-8">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Moving in {data.name}</h3>
-                  <div className="bg-[#F9F9F7] p-10 lg:p-12 rounded-[2.5rem] border border-border/50 space-y-6">
-                    <p className="text-lg text-text-secondary font-medium leading-relaxed">{data.localMovingInfo}</p>
-                    {data.popularMoves && data.popularMoves.length > 0 && (
-                      <div className="pt-4">
+                <div className="space-y-6 lg:space-y-8">
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Moving in {data.name}</h3>
+
+                  {/* Local intro split into short readable paragraphs (mobile-friendly, keeps SEO content) */}
+                  <div className="space-y-4">
+                    {splitIntoParagraphs(data.localMovingInfo).map((para: string, i: number) => (
+                      <p key={i} className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">{para}</p>
+                    ))}
+                  </div>
+
+                  {/* Compact benefit cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4">
+                    {[
+                      { t: "Local access knowledge", d: "Movers understand flats, stairs, terraces, lifts and narrow streets." },
+                      { t: "Parking-aware moves", d: "Helpful where loading space, permits or busy roads may affect the move." },
+                      { t: "Flexible move types", d: "Useful for student moves, single items, house moves, office moves and storage runs." },
+                    ].map((card) => (
+                      <div key={card.t} className="bg-[#F9F9F7] p-4 lg:p-5 rounded-2xl border border-border/50">
+                        <h4 className="text-xs font-black uppercase tracking-tight text-primary mb-1.5">{card.t}</h4>
+                        <p className="text-xs lg:text-sm text-text-secondary leading-relaxed">{card.d}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {data.popularMoves && data.popularMoves.length > 0 && (
+                  <div className="bg-[#F9F9F7] p-5 lg:p-8 rounded-2xl lg:rounded-[2.5rem] border border-border/50 space-y-6">
+                      <div>
                         <h4 className="text-sm font-black uppercase tracking-widest text-primary/40 mb-4">Popular Moving Routes From {data.name}</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {data.popularMoves.map((move: any, i: number) => {
@@ -272,16 +313,16 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                           })}
                         </div>
                       </div>
-                    )}
                   </div>
+                  )}
                 </div>
               )}
 
               {/* ── Serving [Location] & Surrounding Areas ── */}
               {data.localLandmarks && data.localLandmarks.length > 0 && (
-                <div className="space-y-8">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Serving {data.name} & Surrounding Areas</h3>
-                  <p className="text-lg text-text-secondary font-medium leading-relaxed">
+                <div className="space-y-5 lg:space-y-8">
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Serving {data.name} & Surrounding Areas</h3>
+                  <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
                     Our {data.name} movers regularly work across the area and its neighbouring districts. From {data.localLandmarks.slice(0, 3).join(", ")} to {data.region ? `the wider ${data.region} area` : "the wider local area"}, we connect you with professionals who know the local roads, parking restrictions, and the best routes for your move.
                   </p>
                   <div className="flex flex-wrap gap-3">
@@ -303,8 +344,8 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               )}
 
               {/* ── Why Customers Use Man and Van Club ── */}
-              <div className="space-y-8">
-                <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Why Customers Use Man and Van Club</h3>
+              <div className="space-y-5 lg:space-y-8">
+                <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Why Customers Use Man and Van Club</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     { icon: <ClipboardCheck size={24} />, label: "Free To Submit" },
@@ -323,9 +364,9 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
 
               {/* ── What We Check ── */}
               {data.verificationChecks && data.verificationChecks.length > 0 && (
-                <div className="space-y-8">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">What We Check</h3>
-                  <p className="text-lg text-text-secondary font-medium leading-relaxed">
+                <div className="space-y-5 lg:space-y-8">
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">What We Check</h3>
+                  <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
                     Applications are reviewed before movers receive access to customer enquiries. We verify businesses to help maintain a reliable network.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -341,9 +382,9 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
 
               {/* ── Before Your Move Checklist ── */}
               {data.movingChecklist && data.movingChecklist.length > 0 && (
-                <div className="space-y-8">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Before Your Move</h3>
-                  <div className="bg-[#F9F9F7] p-10 lg:p-12 rounded-[2.5rem] border border-border/50">
+                <div className="space-y-5 lg:space-y-8">
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Before Your Move</h3>
+                  <div className="bg-[#F9F9F7] p-5 lg:p-10 rounded-2xl lg:rounded-[2.5rem] border border-border/50">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {data.movingChecklist.map((item: string, i: number) => (
                         <div key={i} className="flex items-start gap-3">
@@ -359,7 +400,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Popular Areas ── */}
               {data.areas && data.areas.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Popular Areas</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Popular Areas</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
                     {data.areas.map((area: string) => (
                       <div key={area} className="bg-gray-50/50 p-6 rounded-2xl text-center font-black text-primary/60 border border-border/30 hover:border-accent hover:text-accent transition-all cursor-default uppercase text-[9px] tracking-widest">
@@ -373,7 +414,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Nearby Locations — Internal Linking ── */}
               {data.nearbyLocations && data.nearbyLocations.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Nearby Locations</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Nearby Locations</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {data.nearbyLocations.map((loc: { slug: string; name: string }) => (
                       <Link
@@ -392,7 +433,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Service Links — Internal Linking ── */}
               {data.serviceLinks && data.serviceLinks.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">Services Available in {data.name}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Services Available in {data.name}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {data.serviceLinks.map((service: { title: string; href: string }) => (
                       <Link
@@ -411,7 +452,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Region Cities ── */}
               {data.regionCities && data.regionCities.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary uppercase tracking-tight">{data.region ? `More Locations in ${data.region}` : "More Nearby Locations"}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{data.region ? `More Locations in ${data.region}` : "More Nearby Locations"}</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {data.regionCities.slice(0, 12).map((city: { name: string; slug: string }) => (
                       <Link
@@ -470,7 +511,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
       {/* ── Bottom CTA ── */}
       <section className="bg-[#F9F9F7] py-24 lg:py-32 border-t border-border">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <div className="space-y-8">
+          <div className="space-y-5 lg:space-y-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary uppercase tracking-tighter leading-none">
               {isServicePage
                 ? `Need ${data.name}?`
