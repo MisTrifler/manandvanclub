@@ -1,6 +1,20 @@
 // Client-safe budget label helpers (no server imports).
 // Guidance only — never affects visibility, release or payments.
 
+
+export function normaliseReason(reason: string): string {
+  return String(reason || "").trim().toLowerCase();
+}
+
+export function isClosingReason(reason: string): boolean {
+  const r = normaliseReason(reason);
+  return r.includes("found another mover") || r.includes("no longer need");
+}
+
+export function shouldShowBudgetFields(stillNeedsHelp: string, reason: string): boolean {
+  return stillNeedsHelp === "yes" && reason === "Price was too high";
+}
+
 export type BudgetLabel = "reasonable" | "may_be_low" | "very_low" | "unknown";
 
 export function getBudgetReasonablenessLabel(input: {

@@ -40,9 +40,9 @@ export default async function QuoteFeedbackPage({ params }: { params: { token: s
 
 
   // Also allow legacy declined/expired statuses (pre-migration leads)
-  const allowedStatuses = ["quote_feedback_pending", "declined", "expired", "available", "closed", "quoted"];
+  const allowedStatuses = ["quote_feedback_pending", "quote_feedback_received", "declined", "expired", "available", "closed"];
   if (!allowedStatuses.includes(String(lead.status || ""))) {
-    return <MessagePage title="Nothing To Review" message="There is no quote feedback needed for this request right now." />;
+    return <MessagePage title="Nothing To Review" message="There is no request update needed right now." />;
   }
 
   return (

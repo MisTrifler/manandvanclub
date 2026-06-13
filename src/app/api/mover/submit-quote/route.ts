@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { cookies } from "next/headers";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
-import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from "@/lib/resend";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
 import { leadIsAvailable, leadMatchesDriverArea } from "@/lib/marketplace-matching";
@@ -211,7 +211,7 @@ export async function POST(req: Request) {
       const colPostcode = formatUKPostcode(updatedLead.collection_postcode);
       const delPostcode = formatUKPostcode(updatedLead.delivery_postcode);
       const moveDate = formatDisplayDate(updatedLead.move_date);
-      const reviewUrl = `${process.env.NEXT_PUBLIC_URL || "https://www.manandvanclub.co.uk"}/quote-review/${quoteToken}`;
+      const reviewUrl = `${SITE_URL}/quote-review/${quoteToken}`;
 
       // Route estimate line (guide only, postcodes-derived — no PII)
       const routeEstimate = getRouteEstimateFromDetails(updatedLead.details);
@@ -236,11 +236,29 @@ export async function POST(req: Request) {
         })
         .join("");
 
+      const optionsText = quoteOptions
+        .map((option: QuoteOption, index: number) => {
+          const deposit = calculateBookingDeposit(option.totalPrice);
+          const balance = calculateRemainingMoverBalance(option.totalPrice, deposit);
+          return [
+            `Option ${index + 1}: ${option.serviceLabel}`,
+            option.serviceDescription,
+            `Van: ${option.vanLabel}`,
+            `Deposit: ${formatPounds(deposit)}`,
+            `Pay on moving day: ${formatPounds(balance)}`,
+            `Total quote: ${formatPounds(option.totalPrice)}`,
+          ].join("\n");
+        })
+        .join("\n\n");
+
+      const emailText = `Hi ${updatedLead.first_name || "there"},\n\nYour mover has provided quote options. Choose the one that suits your move best.\n\n${optionsText}\n\nMove details:\n${moveType}\n${colPostcode || "—"} to ${delPostcode || "—"}\n${moveDate || "—"}\n\nPay the deposit on the option you choose to secure your booking and release your details to the mover. The deposit is deducted from that option's quote, so your total move cost stays the same. You pay the remaining balance directly to the mover on moving day.\n\nReview your quote options:\n${reviewUrl}\n\nMan and Van Club\nsupport@manandvanclub.co.uk\n${SITE_URL}\nYou are receiving this email because you requested a quote through Man and Van Club.`;
+
       const { error: emailError } = await resend.emails.send({
         from: SENDER_ADDRESS,
         to: [updatedLead.email],
-        subject: "Your Man and Van Club quote is ready",
+        subject: "Your quote options are ready",
         replyTo: REPLY_TO_ADDRESS,
+        text: emailText,
         html: `
           <!DOCTYPE html>
           <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
@@ -249,7 +267,7 @@ export async function POST(req: Request) {
               <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width:600px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.05);border:1px solid #E2E8F0;">
                 <tr><td style="padding:40px 40px 20px;text-align:center;">
                   <div style="background:#0F172A;display:inline-block;padding:12px 20px;border-radius:12px;margin-bottom:24px;"><span style="color:#fff;font-weight:900;font-size:24px;letter-spacing:-1px;">M&amp;V</span></div>
-                  <h1 style="margin:0;color:#0F172A;font-size:28px;font-weight:900;letter-spacing:-0.5px;">Your Man and Van Club Quote Is Ready</h1>
+                  <h1 style="margin:0;color:#0F172A;font-size:28px;font-weight:900;letter-spacing:-0.5px;">Your quote options are ready</h1>
                 </td></tr>
                 <tr><td style="padding:0 40px 40px;text-align:center;">
                   <p style="margin:0 0 24px;color:#475569;font-size:18px;line-height:1.6;">Hi ${escapeHtml(updatedLead.first_name || "there")},</p>

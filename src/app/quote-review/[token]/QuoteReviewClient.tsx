@@ -11,6 +11,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { formatPounds } from "@/lib/booking-fee";
+import { isClosingReason, shouldShowBudgetFields } from "@/lib/quote-attempts-shared";
 
 interface DisplayOption {
   id: string;
@@ -43,7 +44,8 @@ const DECLINE_REASONS = [
   "I need a different service option",
   "Date or time no longer works",
   "I found another mover",
-  "I no longer need help",
+  "I no longer need to move",
+  "I missed the quote before it expired",
   "Other",
 ];
 
@@ -62,7 +64,7 @@ export default function QuoteReviewClient({
   const [loadingOptionId, setLoadingOptionId] = useState<string | null>(null);
   const [declining, setDeclining] = useState(false);
   const [showDeclineReasons, setShowDeclineReasons] = useState(false);
-  const [declineReason, setDeclineReason] = useState("Price was too high");
+  const [declineReason, setDeclineReason] = useState("");
   const [declineStillNeedsHelp, setDeclineStillNeedsHelp] = useState<"yes" | "no" | "">("");
   const [declineBudgetMin, setDeclineBudgetMin] = useState("");
   const [declineBudgetMax, setDeclineBudgetMax] = useState("");
@@ -114,14 +116,48 @@ export default function QuoteReviewClient({
     }
   };
 
+  const clearDeclineBudget = () => {
+    setDeclineBudgetMin("");
+    setDeclineBudgetMax("");
+  };
+
+  const handleDeclineReasonChange = (newReason: string) => {
+    setDeclineReason(newReason);
+    if (isClosingReason(newReason)) {
+      setDeclineStillNeedsHelp("no");
+      clearDeclineBudget();
+    } else if (!shouldShowBudgetFields(declineStillNeedsHelp, newReason)) {
+      clearDeclineBudget();
+    }
+  };
+
+  const handleDeclineStillNeedsHelpChange = (value: "yes" | "no") => {
+    setDeclineStillNeedsHelp(value);
+    if (value === "no" || !shouldShowBudgetFields(value, declineReason)) clearDeclineBudget();
+  };
+
   const handleDecline = async () => {
     setError(null);
     if (declineStillNeedsHelp === "") {
       setError("Please tell us whether you still need help with this move.");
       return;
     }
-    const min = declineBudgetMin ? parseFloat(declineBudgetMin) : null;
-    const max = declineBudgetMax ? parseFloat(declineBudgetMax) : null;
+    if (!declineReason) {
+      setError("Please choose the main reason.");
+      return;
+    }
+    const closeReason = isClosingReason(declineReason);
+    const showBudget = shouldShowBudgetFields(declineStillNeedsHelp, declineReason);
+    const min = showBudget && declineBudgetMin ? parseFloat(declineBudgetMin) : null;
+    const max = showBudget && declineBudgetMax ? parseFloat(declineBudgetMax) : null;
+    if (min !== null && (!Number.isFinite(min) || min < 0)) {
+      setError("Budget values must be positive numbers.");
+      return;
+    }
+    if (max !== null && (!Number.isFinite(max) || max < 0)) {
+      setError("Budget values must be positive numbers.");
+      return;
+    }
     if (min !== null && max !== null && max < min) {
       setError("Maximum budget must be at least the minimum budget.");
       return;
@@ -134,7 +170,7 @@ export default function QuoteReviewClient({
         body: JSON.stringify({
           token,
           reason: declineReason,
-          stillNeedsHelp: declineStillNeedsHelp === "yes",
+          stillNeedsHelp: closeReason ? false : declineStillNeedsHelp === "yes",
           budgetMin: min,
           budgetMax: max,
           notes: declineNotes.trim().slice(0, 1000),
@@ -335,31 +371,32 @@ export default function QuoteReviewClient({
                   <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Why did this quote not work for you?</label>
                   <select
                     value={declineReason}
-                    onChange={(e) => setDeclineReason(e.target.value)}
+                    onChange={(e) => handleDeclineReasonChange(e.target.value)}
                     className="w-full p-3 bg-white border border-border rounded-xl font-bold text-sm outline-none focus:border-accent"
                   >
+                    <option value="">Select a reason</option>
                     {DECLINE_REASONS.map((reason) => (
-                      <option key={reason}>{reason}</option>
+                      <option key={reason} value={reason}>{reason}</option>
                     ))}
                   </select>
 
                   <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Do you still need help with this move?</label>
                   <div className="grid grid-cols-1 gap-2">
                     <button
-                      onClick={() => setDeclineStillNeedsHelp("yes")}
+                      onClick={() => handleDeclineStillNeedsHelpChange("yes")}
                       className={`py-3 px-3 rounded-xl border-2 font-bold text-sm text-left transition-all ${declineStillNeedsHelp === "yes" ? "border-accent bg-accent/10 text-primary" : "border-border bg-white text-primary/60 hover:border-accent/40"}`}
                     >
                       Yes, make my request available again
                     </button>
                     <button
-                      onClick={() => setDeclineStillNeedsHelp("no")}
+                      onClick={() => handleDeclineStillNeedsHelpChange("no")}
                       className={`py-3 px-3 rounded-xl border-2 font-bold text-sm text-left transition-all ${declineStillNeedsHelp === "no" ? "border-accent bg-accent/10 text-primary" : "border-border bg-white text-primary/60 hover:border-accent/40"}`}
                     >
                       No, close my request
                     </button>
                   </div>
 
-                  {declineStillNeedsHelp === "yes" && (
+                  {shouldShowBudgetFields(declineStillNeedsHelp, declineReason) && (
                     <>
                       <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">What budget range would work for you? (Optional)</label>
                       <div className="grid grid-cols-2 gap-2">
@@ -371,12 +408,40 @@ export default function QuoteReviewClient({
                     </>
                   )}
 
+                  {declineStillNeedsHelp === "yes" && declineReason === "I need a different service option" && (
+                    <>
+                      <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">What service option would work better? (Optional)</label>
+                      <textarea value={declineNotes} onChange={(e) => setDeclineNotes(e.target.value)} rows={2} maxLength={1000} placeholder="e.g. transport only, 2 movers, Luton van, help loading and unloading" className="w-full p-3 bg-white border border-border rounded-xl font-medium text-sm outline-none focus:border-accent resize-none" />
+                    </>
+                  )}
+
+                  {declineStillNeedsHelp === "yes" && declineReason === "Date or time no longer works" && (
+                    <>
+                      <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">What date or time would work better? (Optional)</label>
+                      <textarea value={declineNotes} onChange={(e) => setDeclineNotes(e.target.value)} rows={2} maxLength={1000} placeholder="e.g. flexible this weekend, evenings only, next Friday morning" className="w-full p-3 bg-white border border-border rounded-xl font-medium text-sm outline-none focus:border-accent resize-none" />
+                    </>
+                  )}
+
+                  {declineStillNeedsHelp === "yes" && (declineReason === "I missed the quote before it expired" || declineReason === "Other") && (
+                    <>
+                      <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Anything movers should know? (Optional)</label>
+                      <textarea value={declineNotes} onChange={(e) => setDeclineNotes(e.target.value)} rows={2} maxLength={1000} placeholder="e.g. flexible on dates" className="w-full p-3 bg-white border border-border rounded-xl font-medium text-sm outline-none focus:border-accent resize-none" />
+                    </>
+                  )}
+
+                  {declineStillNeedsHelp === "no" && (
+                    <>
+                      <label className="text-xs font-black uppercase tracking-widest text-primary/50 block">Anything else you want to tell us? (Optional)</label>
+                      <textarea value={declineNotes} onChange={(e) => setDeclineNotes(e.target.value)} rows={2} maxLength={1000} placeholder="Optional note" className="w-full p-3 bg-white border border-border rounded-xl font-medium text-sm outline-none focus:border-accent resize-none" />
+                    </>
+                  )}
+
                   <button
                     onClick={handleDecline}
                     disabled={loading || declining}
                     className="w-full py-3 rounded-xl border border-red-200 bg-red-50 text-red-600 font-black uppercase tracking-widest text-sm disabled:opacity-50"
                   >
-                    {declining ? <Loader2 className="animate-spin mx-auto" size={18} /> : "Confirm decline"}
+                    {declining ? <Loader2 className="animate-spin mx-auto" size={18} /> : (declineStillNeedsHelp === "yes" && !isClosingReason(declineReason) ? "Make Request Available Again" : "Close Request")}
                   </button>
                 </div>
               )}

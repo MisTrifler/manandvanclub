@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { archiveCurrentQuoteAttempt, releaseQuoteBackToPool, closeRequest } from "@/lib/quote-attempts";
+import { isClosingReason } from "@/lib/quote-attempts-shared";
 
 // Customer declines a quote (simplified launch model):
 // - attempt archived as declined (with optional feedback/budget)
@@ -13,8 +14,11 @@ const DECLINE_REASONS = [
   "I need a different service option",
   "Date or time no longer works",
   "I found another mover",
-  "I no longer need help",
+  "I no longer need to move",
+  "I missed the quote before it expired",
   "Other",
+  // Legacy labels accepted for old links/bundles
+  "I no longer need help",
 ];
 
 export async function POST(req: Request) {
@@ -22,10 +26,13 @@ export async function POST(req: Request) {
     const body = await req.json();
     const token = typeof body.token === "string" ? body.token.trim() : "";
     const reason = String(body.reason || "").trim().slice(0, 200);
-    const stillNeedsHelp = body.stillNeedsHelp;
+    const requestedStillNeedsHelp = body.stillNeedsHelp;
+    const closingReason = isClosingReason(reason);
+    const stillNeedsHelp = closingReason ? false : requestedStillNeedsHelp;
     const notes = String(body.notes || "").trim().slice(0, 1000);
-    const budgetMin = body.budgetMin === null || body.budgetMin === undefined || body.budgetMin === "" ? null : Number(body.budgetMin);
-    const budgetMax = body.budgetMax === null || body.budgetMax === undefined || body.budgetMax === "" ? null : Number(body.budgetMax);
+    const budgetAllowed = stillNeedsHelp === true && reason === "Price was too high";
+    const budgetMin = budgetAllowed && body.budgetMin !== null && body.budgetMin !== undefined && body.budgetMin !== "" ? Number(body.budgetMin) : null;
+    const budgetMax = budgetAllowed && body.budgetMax !== null && body.budgetMax !== undefined && body.budgetMax !== "" ? Number(body.budgetMax) : null;
 
     if (!token) {
       return NextResponse.json({ error: "Missing token" }, { status: 400 });
@@ -33,7 +40,7 @@ export async function POST(req: Request) {
     if (!reason || !DECLINE_REASONS.includes(reason)) {
       return NextResponse.json({ error: "Please choose a reason." }, { status: 400 });
     }
-    if (typeof stillNeedsHelp !== "boolean") {
+    if (typeof requestedStillNeedsHelp !== "boolean") {
       return NextResponse.json({ error: "Please tell us whether you still need help." }, { status: 400 });
     }
     if (budgetMin !== null && (!Number.isFinite(budgetMin) || budgetMin < 0 || budgetMin > 100000)) {

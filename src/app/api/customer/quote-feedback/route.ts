@@ -1,19 +1,22 @@
 import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { FEEDBACK_REASONS } from "@/lib/quote-feedback";
+import { isClosingReason } from "@/lib/quote-attempts-shared";
 
 // Customer submits feedback after a declined/expired quote.
-// The request stays OUT of the driver pool until admin reviews it.
+// Simplified launch model: still-needs-help returns to available pool automatically; otherwise it closes.
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const token = typeof body.token === "string" ? body.token.trim() : "";
-    const stillNeedsHelp = body.stillNeedsHelp === true;
     const reason = String(body.reason || "").trim().slice(0, 200);
+    const closingReason = isClosingReason(reason);
+    const stillNeedsHelp = closingReason ? false : body.stillNeedsHelp === true;
     const notes = String(body.notes || "").trim().slice(0, 1000);
-    const budgetMin = body.budgetMin === null || body.budgetMin === undefined ? null : Number(body.budgetMin);
-    const budgetMax = body.budgetMax === null || body.budgetMax === undefined ? null : Number(body.budgetMax);
+    const budgetAllowed = stillNeedsHelp === true && reason === "Price was too high";
+    const budgetMin = budgetAllowed && body.budgetMin !== null && body.budgetMin !== undefined && body.budgetMin !== "" ? Number(body.budgetMin) : null;
+    const budgetMax = budgetAllowed && body.budgetMax !== null && body.budgetMax !== undefined && body.budgetMax !== "" ? Number(body.budgetMax) : null;
 
     if (!token || token.length < 16) {
       return NextResponse.json({ error: "Invalid link" }, { status: 400 });
@@ -23,9 +26,6 @@ export async function POST(req: Request) {
     }
     if (!reason || !(FEEDBACK_REASONS as readonly string[]).includes(reason)) {
       return NextResponse.json({ error: "Please choose a valid reason." }, { status: 400 });
-    }
-    if (stillNeedsHelp && (!Number.isFinite(budgetMax as number) || (budgetMax as number) <= 0)) {
-      return NextResponse.json({ error: "Please provide your maximum budget." }, { status: 400 });
     }
     if (budgetMin !== null && (!Number.isFinite(budgetMin) || budgetMin < 0 || budgetMin > 100000)) {
       return NextResponse.json({ error: "Budget values must be positive numbers." }, { status: 400 });

@@ -1,17 +1,22 @@
 // ─────────────────────────────────────────────────────────────────────
-// Quote feedback + budget review helpers.
-// Used after a quote is declined or expires: the request is held out
-// of the driver pool until admin reviews customer feedback.
+// Quote feedback helpers.
+// Simplified launch model: declined/expired requests return to the driver
+// pool automatically when the customer still needs help. Admin review is
+// not required for normal quote recycling.
 // ─────────────────────────────────────────────────────────────────────
 
 export const FEEDBACK_REASONS = [
   "Price was too high",
-  "Move date or time no longer works",
-  "I wanted a different service option",
+  "I need a different service option",
+  "Date or time no longer works",
   "I found another mover",
   "I no longer need to move",
   "I missed the quote before it expired",
   "Other",
+  // Legacy labels accepted for older links/bundles
+  "I no longer need help",
+  "Move date or time no longer works",
+  "I wanted a different service option",
 ] as const;
 
 export type AdminFeedbackDecision = "release_to_pool" | "close_request" | "contact_customer";
@@ -92,7 +97,7 @@ export function buildDriverFeedbackSummary(lead: {
   const reason = lead.quote_feedback_reason ? String(lead.quote_feedback_reason).slice(0, 120) : "";
   const min = Number(lead.quote_feedback_budget_min);
   const max = Number(lead.quote_feedback_budget_max);
-  let budgetRange = "Budget range not provided.";
+  let budgetRange = "";
   if (Number.isFinite(max) && max > 0) {
     budgetRange = Number.isFinite(min) && min > 0
       ? `Customer preferred budget range: £${Math.round(min)}–£${Math.round(max)}`

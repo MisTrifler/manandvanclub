@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { randomInt } from 'crypto';
 import { supabase } from '@/lib/supabase';
-import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 import { escapeHtml } from '@/lib/html';
 import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode } from '@/lib/route-estimate';
@@ -156,11 +156,14 @@ export async function POST(req: Request) {
       } else {
         console.log('Attempting to send OTP email to:', data.email);
 
+        const otpEmailText = `Here is your Man and Van Club verification code: ${otp}\n\nThis code helps us confirm your request is genuine and expires after 15 minutes.\n\nMan and Van Club\nsupport@manandvanclub.co.uk\n${SITE_URL}\nYou are receiving this email because you requested a quote through Man and Van Club.`;
+
         const { data: emailResponse, error: emailError } = await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [data.email],
           subject: `${otp} is your Man and Van Club verification code`,
           replyTo: REPLY_TO_ADDRESS,
+          text: otpEmailText,
           html: `
             <!DOCTYPE html>
             <html>
@@ -180,7 +183,7 @@ export async function POST(req: Request) {
                           <div style="background-color: #0F172A; display: inline-block; padding: 12px 20px; border-radius: 12px; margin-bottom: 24px;">
                             <span style="color: #ffffff; font-weight: 900; font-size: 24px; letter-spacing: -1px;">M&amp;V</span>
                           </div>
-                          <h1 style="margin: 0; color: #0F172A; font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px;">Verify Your Move</h1>
+                          <h1 style="margin: 0; color: #0F172A; font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px;">Verify your move</h1>
                         </td>
                       </tr>
 

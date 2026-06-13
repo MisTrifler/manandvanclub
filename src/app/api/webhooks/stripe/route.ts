@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { getSupabaseAdmin } from '@/lib/supabase-admin';
-import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from '@/lib/resend';
 import { headers } from 'next/headers';
 import { calculateBookingDeposit, calculateRemainingMoverBalance, normaliseQuoteAmount, toStripePence, formatPounds } from '@/lib/booking-fee';
 import { escapeHtml } from '@/lib/html';
@@ -210,16 +210,64 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
       ? `<p style="margin: 0 0 20px 0;"><strong>Estimated route:</strong> ${escapeHtml(bookedRouteEstimate.distanceText)} · ${escapeHtml(bookedRouteEstimate.durationText)} <span style="color:#94A3B8;font-size:12px;">(guide only)</span></p>`
       : '';
 
+    const driverBookingText = [
+      `Hi ${driverName},`,
+      '',
+      'The customer accepted your quote and paid the booking deposit to secure the booking.',
+      '',
+      `Customer: ${bookedRequest.first_name || '—'}`,
+      `Phone: ${bookedRequest.phone || '—'}`,
+      `Email: ${bookedRequest.email || '—'}`,
+      `Move: ${moveType}`,
+      `Route: ${colPostcode} to ${delPostcode}`,
+      `Move date: ${moveDate}`,
+      selectedOption ? `Selected option: ${selectedOption.serviceLabel}` : '',
+      selectedOption ? `Van: ${selectedOption.vanLabel}` : '',
+      `Your total quote: ${formatPounds(quoteAmount)}`,
+      `Deposit paid to secure booking: ${formatPounds(bookingDeposit)}`,
+      `Customer pays you on moving day: ${formatPounds(remainingMoverBalance)}`,
+      '',
+      'Please contact the customer as soon as possible to confirm timing, access and payment method.',
+      '',
+      'Man and Van Club',
+      'support@manandvanclub.co.uk',
+      SITE_URL,
+      'You are receiving this email because you applied as a mover with Man and Van Club.',
+    ].filter(Boolean).join('\n');
+
+    const customerBookingText = [
+      `Hi ${bookedRequest.first_name || 'there'},`,
+      '',
+      'Your Man and Van Club booking is confirmed.',
+      '',
+      'Your details have been released to the mover. The mover will contact you directly to confirm timing, access and payment method.',
+      '',
+      selectedOption ? `Selected option: ${selectedOption.serviceLabel}` : '',
+      selectedOption ? `Van: ${selectedOption.vanLabel}` : '',
+      `Mover total quote: ${formatPounds(quoteAmount)}`,
+      `Deposit paid: ${formatPounds(bookingDeposit)}`,
+      `Pay mover on moving day: ${formatPounds(remainingMoverBalance)}`,
+      `Total move cost: ${formatPounds(quoteAmount)}`,
+      '',
+      'Your booking deposit is deducted from the mover’s quote. You pay the remaining balance directly to the mover on moving day.',
+      '',
+      'Man and Van Club',
+      'support@manandvanclub.co.uk',
+      SITE_URL,
+      'You are receiving this email because you requested a quote through Man and Van Club.',
+    ].filter(Boolean).join('\n');
+
     if (bookedRequest.quoted_by) {
       await resend.emails.send({
         from: SENDER_ADDRESS,
         to: [bookedRequest.quoted_by],
         replyTo: REPLY_TO_ADDRESS,
         subject: `Customer-confirmed booking: ${colPostcode} to ${delPostcode}`,
+        text: driverBookingText,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
             <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
-            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer-Confirmed Booking</h2>
+            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer-confirmed booking</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(driverName)},</p>
             <p style="color: #475569; font-size: 16px;">The customer accepted your quote and paid the booking deposit to secure the booking.</p>
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
@@ -253,11 +301,12 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
         from: SENDER_ADDRESS,
         to: [bookedRequest.email],
         replyTo: REPLY_TO_ADDRESS,
-        subject: 'Your booking is secured',
+        subject: 'Your Man and Van Club booking is confirmed',
+        text: customerBookingText,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
             <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
-            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Booking Is Secured</h2>
+            <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Man and Van Club booking is confirmed</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(bookedRequest.first_name || 'there')},</p>
             <p style="color: #475569; font-size: 16px;">Your booking is secured and your details have been released to the mover.</p>
             <p style="color: #475569; font-size: 16px;">The mover will contact you directly to confirm timing, access and payment method.</p>

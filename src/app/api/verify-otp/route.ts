@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { supabase } from '@/lib/supabase';
-import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
+import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from '@/lib/resend';
 import { escapeHtml } from '@/lib/html';
 import { leadMatchesDriverArea } from '@/lib/marketplace-matching';
 import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from '@/lib/launch-lead-pool';
@@ -207,11 +207,32 @@ export async function POST(req: Request) {
              </p>`
           : '';
 
+        const customerConfirmationText = [
+          `Hi ${request.first_name || 'there'},`,
+          '',
+          'Your Man and Van Club request is confirmed.',
+          '',
+          'A verified local mover can now review your anonymised move details and send quote options if they can help.',
+          '',
+          `Service: ${formatServiceName(request.move_type)}`,
+          `Route: ${request.collection_postcode || '—'} to ${request.delivery_postcode || '—'}`,
+          `Move date: ${formatMoveDate(request.move_date)}`,
+          rawEstimate ? `Guide price range: ${rawEstimate}` : '',
+          '',
+          'Your contact details stay protected unless you accept a quote option and pay the booking deposit.',
+          '',
+          'Man and Van Club',
+          'support@manandvanclub.co.uk',
+          SITE_URL,
+          'You are receiving this email because you requested a quote through Man and Van Club.',
+        ].filter(Boolean).join('\n');
+
         const { data: confirmResponse, error: confirmError } = await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [request.email],
           replyTo: REPLY_TO_ADDRESS,
           subject: 'Your Man and Van Club request is confirmed',
+          text: customerConfirmationText,
           html: `
             <!DOCTYPE html>
             <html>
@@ -352,14 +373,37 @@ export async function POST(req: Request) {
           if (matchingDrivers.length > 0) {
             for (const driver of matchingDrivers) {
               try {
+                const routeEstimate = getRouteEstimateFromDetails(moveRequest.details);
+                const driverNotificationText = [
+                  `Hi ${driver.contact_name || 'there'},`,
+                  '',
+                  'A verified customer request matches your approved service area:',
+                  '',
+                  `Route: ${moveRequest.collection_postcode || '—'} to ${moveRequest.delivery_postcode || '—'}`,
+                  `Date: ${moveRequest.move_date || '—'}`,
+                  `Type: ${moveRequest.move_type || 'Move'}`,
+                  routeEstimate && routeEstimate.distanceMeters > 0 ? `Estimated route: ${routeEstimate.distanceText} · ${routeEstimate.durationText} (guide only)` : '',
+                  '',
+                  'Review the anonymised move details in your marketplace and submit structured quote options if you can help.',
+                  'Customer details are released only if the customer accepts an option and pays the booking deposit.',
+                  '',
+                  `${SITE_URL}/marketplace`,
+                  '',
+                  'Man and Van Club',
+                  'support@manandvanclub.co.uk',
+                  SITE_URL,
+                  'You are receiving this email because you applied as a mover with Man and Van Club.',
+                ].filter(Boolean).join('\n');
+
                 const { data: driverResponse, error: driverError } = await resend.emails.send({
                   from: SENDER_ADDRESS,
                   to: [driver.email],
                   replyTo: REPLY_TO_ADDRESS,
-                  subject: `New matched move request: ${moveRequest.collection_postcode} to ${moveRequest.delivery_postcode}`,
+                  subject: `New move request available`,
+                  text: driverNotificationText,
                   html: `
                     <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 15px;">
-                      <h2 style="color: #0F172A;">New Matched Move Request</h2>
+                      <h2 style="color: #0F172A;">New move request available</h2>
                       <p>Hi ${escapeHtml(driver.contact_name || 'there')},</p>
                       <p>A verified customer request matches your approved service area:</p>
                       <div style="background: #F8FAFC; padding: 20px; border-radius: 10px; margin: 20px 0;">
@@ -374,7 +418,7 @@ export async function POST(req: Request) {
                         })()}
                       </div>
                       <p>Review the anonymised move details in your marketplace and submit structured quote options if you can help. Customer details are released only if the customer accepts an option and pays the booking deposit.</p>
-                      <a href="https://www.manandvanclub.co.uk/marketplace"
+                      <a href="${SITE_URL}/marketplace"
                          style="display: block; background: #F97316; color: white; padding: 15px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px;">
                         View Request in Marketplace
                       </a>

@@ -559,9 +559,11 @@ export default function DriverMarketplaceClient({
                   Previous option range: £{Math.round(lead.previous_quote_history.previousOptionMin)}–£{Math.round(lead.previous_quote_history.previousOptionMax)}
                 </p>
               )}
-              <p className="text-sm font-bold text-primary">
-                {feedbackSummary ? feedbackSummary.budgetRange : "No customer feedback yet."}
-              </p>
+              {feedbackSummary?.budgetRange ? (
+                <p className="text-sm font-bold text-primary">{feedbackSummary.budgetRange}</p>
+              ) : (!feedbackSummary?.reason && (
+                <p className="text-sm font-bold text-primary">No customer feedback yet.</p>
+              ))}
               {budgetWarning(lead) && (
                 <p className="text-xs text-amber-700">{budgetWarning(lead)}</p>
               )}
