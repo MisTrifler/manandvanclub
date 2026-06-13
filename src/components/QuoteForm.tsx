@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Loader2, CheckCircle2, Shield, Lock, Clock, BadgeCheck, ArrowLeft, Building2, Home, GraduationCap, Sofa, Package, Boxes } from "lucide-react";
+import { Loader2, CheckCircle2, Lock, ArrowLeft, Building2, Home, GraduationCap, Sofa, Package, Boxes } from "lucide-react";
 import Link from "next/link";
 import { detectIntent, getIntentLabel, getMoveTypeLabel, type IntentType } from "@/lib/intent-detection";
 import IntentSelector from "./IntentSelector";
@@ -93,6 +93,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [routeLookupFailed, setRouteLookupFailed] = useState(false);
   const [routeLoading, setRouteLoading] = useState(false);
   const [lastRoutePair, setLastRoutePair] = useState("");
+  const shellRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
 
   // Detect intent from URL on client side (for homepage / no prop)
   useEffect(() => {
@@ -104,6 +107,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   }, [propIntent]);
 
   const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
+
+  useEffect(() => {
+    contentRef.current?.scrollTo({ top: 0, behavior: "auto" });
+    requestAnimationFrame(() => {
+      shellRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+      headingRef.current?.focus({ preventScroll: true });
+    });
+  }, [step, activeIntent]);
 
   const hasEstimate = activeIntent !== "single-item";
   const TOTAL_STEPS = hasEstimate ? 5 : 4;
@@ -393,20 +404,57 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const getStepTitle = () => {
     if (step === 1) return activeIntent ? getIntentLabel(activeIntent) + " Details" : "Move Details";
-    if (step === 2 && hasEstimate) return "Guide Price Range";
+    if (step === 2 && hasEstimate) return "Guide Price";
     if (step === (hasEstimate ? 3 : 2)) return "Your Details";
     if (step === (hasEstimate ? 4 : 3)) return "Verify Email";
     return "";
   };
 
+  const getStepHeading = () => {
+    if (step === 1) {
+      if (activeIntent === "office") return "Office move";
+      if (activeIntent === "house") return "Home move";
+      if (activeIntent === "student") return "Student move";
+      if (activeIntent === "single-item") return "Furniture delivery";
+      if (activeIntent === "storage") return "Storage collection";
+      return "Man & van";
+    }
+    if (step === 2 && hasEstimate) return "Guide price";
+    if (step === (hasEstimate ? 3 : 2)) return "Your details";
+    if (step === (hasEstimate ? 4 : 3)) return "Verify email";
+    return "";
+  };
+
+  const isOtpStep = step === (hasEstimate ? 4 : 3);
+  const isContactStep = step === (hasEstimate ? 3 : 2);
+  const showWizardFooter = !!activeIntent && step < TOTAL_STEPS;
+  const canGoBack = step > 1 && !isSubmitting;
+
+  const getPrimaryActionLabel = () => {
+    if (isOtpStep) return "Confirm code";
+    if (isContactStep) return "Send code";
+    return "Continue";
+  };
+
+  const handlePrimaryAction = () => {
+    if (isOtpStep) {
+      handleVerifyOTP();
+      return;
+    }
+    onNextStep();
+  };
+
   return (
     <div
+      ref={shellRef}
       id="quote-form"
-      className="bg-white"
+      className="bg-white flex flex-col"
       style={{
         borderRadius: '28px',
         boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
         overflow: 'hidden',
+        height: activeIntent ? 'min(760px, calc(100svh - 24px))' : undefined,
+        maxHeight: activeIntent ? 'calc(100svh - 24px)' : undefined,
       }}
     >
       {/* ──────────────────────────────────────────
@@ -423,9 +471,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               lineHeight: 1.1,
             }}
           >
-            Get Matched
+            Get your quote
           </h2>
-          <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Deposit only if quote accepted</p>
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-primary/50 mt-2">Quick details. One quote. No spam.</p>
           <div className="mt-6">
             <IntentSelector onSelect={(intent) => { setSelectedIntent(intent); setStep(1); }} />
           </div>
@@ -434,7 +482,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
       {activeIntent && (<>
       {/* Form title */}
-      <div className="px-5 pt-6 pb-2 lg:px-10 lg:pt-10">
+      <div className="flex-none px-5 pt-4 pb-2 lg:px-8 lg:pt-5">
         <h2
           className="uppercase tracking-tighter"
           style={{
@@ -444,25 +492,25 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             lineHeight: 1.1,
           }}
         >
-          Get Matched
+          Get your quote
         </h2>
-        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Deposit only if quote accepted</p>
+        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Quick details. One quote. No spam.</p>
       </div>
 
       {/* Progress bar */}
       {step < TOTAL_STEPS && (
-        <div className="bg-gray-50/50 px-5 py-3 lg:px-10 lg:py-4 border-b border-border">
-          <div className="flex items-center justify-between mb-2">
+        <div className="flex-none bg-gray-50/50 px-5 py-3 lg:px-8 border-b border-border">
+          <div className="flex items-center justify-between gap-3 mb-2">
             <div className="flex items-center gap-2">
               {INTENT_ICONS[activeIntent] && (
                 <span className="text-accent">{INTENT_ICONS[activeIntent]}</span>
               )}
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
-                Step {step} of {TOTAL_STEPS}: {getStepTitle()}
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-primary/50">
+                Step {step}/{TOTAL_STEPS}: {getStepTitle()}
               </p>
             </div>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
-              {Math.round((step / TOTAL_STEPS) * 100)}% Complete
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-primary/40 whitespace-nowrap">
+              {Math.round((step / TOTAL_STEPS) * 100)}%
             </p>
           </div>
           <div className="flex gap-1.5">
@@ -473,28 +521,15 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         </div>
       )}
 
-      <div className="px-5 pb-6 lg:px-10 lg:pb-10">
+      <div ref={contentRef} className="flex-1 overflow-y-auto overscroll-contain px-5 py-4 lg:px-8 lg:py-5">
         {/* ──────────────────── STEP 1: Service Details ──────────────────── */}
         {step === 1 && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">
-                  {activeIntent === "office" && "Your Office Move"}
-                  {activeIntent === "house" && "Your Moving Home Details"}
-                  {activeIntent === "student" && "Your Student Move"}
-                  {activeIntent === "single-item" && "Your Furniture Delivery"}
-                  {activeIntent === "general" && "Your Man & Van Service"}
-                  {activeIntent === "storage" && "Your Storage Collection"}
+                <h2 ref={headingRef} tabIndex={-1} className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter outline-none">
+                  {getStepHeading()}
                 </h2>
-                <p className="text-sm text-text-secondary mt-1 font-medium">
-                  {activeIntent === "office" && "Tell us about your office move"}
-                  {activeIntent === "house" && "Tell us about your home move"}
-                  {activeIntent === "student" && "Tell us about your student move"}
-                  {activeIntent === "single-item" && "Tell us about the furniture you need delivered"}
-                  {activeIntent === "general" && "Tell us about your move — big or small"}
-                  {activeIntent === "storage" && "Tell us about your storage collection"}
-                </p>
               </div>
               {!propIntent && (
                 <button
@@ -504,20 +539,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   <ArrowLeft size={12} /> Change
                 </button>
               )}
-            </div>
-
-            {/* Form reassurance */}
-            <div className="flex flex-wrap gap-2">
-              {[
-                { icon: <Clock size={13} />, text: "Under 60 seconds" },
-                { icon: <BadgeCheck size={13} />, text: "Free quote" },
-                { icon: <Shield size={13} />, text: "Deposit if you book" },
-                { icon: <Lock size={13} />, text: "GDPR secure" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-1.5 bg-accent/5 text-accent px-2.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider">
-                  {item.icon} {item.text}
-                </div>
-              ))}
             </div>
 
             {/* ── OFFICE FORM ── */}
@@ -771,8 +792,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             )}
 
             {/* Shared move requirements — all move types (all optional) */}
-            <div className="border-t border-border/60 pt-3 mt-1 space-y-2">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Help the mover quote accurately (optional)</p>
+            <details className="border-t border-border/60 pt-3 mt-1 space-y-2 group">
+              <summary className="cursor-pointer list-none rounded-xl bg-gray-50 px-3 py-3 text-xs font-black uppercase tracking-[0.18em] text-primary/55 flex items-center justify-between">Optional details <span className="text-accent text-sm group-open:rotate-45 transition-transform">+</span></summary>
               <div className="grid grid-cols-2 gap-2">
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Help Loading &amp; Unloading?</label>
@@ -839,7 +860,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   <input {...register("heavyItemsDescription")} placeholder="e.g. sofa, wardrobe, piano, fridge freezer" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                 </div>
               )}
-            </div>
+            </details>
 
             {/* Shared optional notes — all move types */}
             <div>
@@ -856,7 +877,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             )}
             {routeEstimateIsCurrent && routeEstimate!.distanceMeters > 0 && (
               <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-3.5">
-                <p className="text-[10px] font-black uppercase tracking-widest text-blue-700/70 mb-1">Estimated Journey</p>
+                <p className="text-[10px] font-black uppercase tracking-widest text-blue-700/70 mb-1">Route estimate</p>
                 <p className="text-sm font-bold text-primary">
                   {(watchedCollectionPostcode || "").toUpperCase()} <span className="text-primary/40">→</span> {(watchedDeliveryPostcode || "").toUpperCase()}
                 </p>
@@ -870,9 +891,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                     View route on map →
                   </a>
                 )}
-                <p className="text-[10px] text-text-secondary/70 mt-1.5 leading-relaxed">
-                  This is a postcode-to-postcode estimate and a guide only. Your mover will quote based on the full move details.
-                </p>
+
               </div>
             )}
             {routeEstimateIsCurrent && routeLookupFailed && !routeEstimate!.distanceMeters && (
@@ -883,15 +902,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 )}
               </p>
             )}
-
-            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
           </div>
         )}
 
         {/* ──────────────────── STEP 2: Estimate (skip for single-item) ──────────────────── */}
         {step === 2 && hasEstimate && (
-          <div className="space-y-6 text-center py-2">
-            <div className="bg-white p-6 rounded-[2rem] shadow-xl border-2 border-border">
+          <div className="space-y-4 text-center py-2">
+            <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-primary uppercase tracking-tighter outline-none">Guide price</h2>
+            <div className="bg-white p-5 rounded-[2rem] shadow-xl border-2 border-border">
               <p className="text-[10px] font-black uppercase text-primary/40 mb-2">
                 {guideConfidence === "route-based" ? "Guide price range" : "Broad guide price range"}
               </p>
@@ -903,30 +921,20 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </p>
               )}
               <p className="text-xs text-text-secondary mt-3 font-medium">
-                {guideConfidence === "route-based"
-                  ? "Based on your route and move details. This is a guide only. Your mover will review the full job and send quote options if they can help."
-                  : "We could not estimate the route, so this is a broad guide based on your move details only. Your mover's quote options are the actual prices."}
+                Guide only. Your mover sends the actual quote.
               </p>
             </div>
-            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
-            <button onClick={() => setStep(1)} className="text-[10px] font-black uppercase opacity-30">Back</button>
           </div>
         )}
 
         {/* ──────────────────── Step 3 (or 2 for single-item): Contact Details ──────────────────── */}
         {(step === (hasEstimate ? 3 : 2)) && (
           <div className="space-y-4">
-            <h2 className="text-2xl font-black text-primary uppercase text-center">Your Details</h2>
+            <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-primary uppercase text-center outline-none">Your details</h2>
 
-            {/* Privacy & GDPR reassurance */}
-            <div className="bg-green-50/50 border border-green-200/50 rounded-xl p-3 flex items-start gap-2">
-              <Lock size={14} className="text-green-600 mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="text-xs font-bold text-primary flex items-center gap-1.5">
-                  <span className="inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">Secure & GDPR Compliant</span>
-                </p>
-                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely. Details are released only if you accept a mover quote and pay the booking deposit. The deposit is deducted from the mover quote.</p>
-              </div>
+            <div className="bg-green-50/70 border border-green-200/60 rounded-xl p-3 flex items-center gap-2">
+              <Lock size={14} className="text-green-600 flex-shrink-0" />
+              <p className="text-xs font-bold text-primary">Details stay private until you book.</p>
             </div>
 
             <div className="space-y-2">
@@ -937,17 +945,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <input {...register("email")} placeholder="Email Address" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
               {errors.email && <p className="text-red-500 text-xs font-bold mt-1">{errors.email.message}</p>}
             </div>
-            <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest disabled:opacity-50">
-              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
-            </button>
-            <button onClick={() => setStep(step - 1)} className="text-[10px] font-black uppercase opacity-30">Back</button>
           </div>
         )}
 
         {/* ──────────────────── Step 4 (or 3 for single-item): OTP ──────────────────── */}
         {(step === (hasEstimate ? 4 : 3)) && (
           <div className="space-y-6 text-center">
-            <h2 className="text-2xl font-black text-primary uppercase">Verify Your Email</h2>
+            <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-primary uppercase outline-none">Verify email</h2>
             <p className="text-sm text-text-secondary">Enter the 6-digit code sent to your email</p>
             <div className="flex justify-center gap-2">
               {otp.map((digit, i) => (
@@ -966,9 +970,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               ))}
             </div>
             {otpError && <p className="text-red-500 text-sm">{otpError}</p>}
-            <button onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">
-              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Confirm Verification"}
-            </button>
+
           </div>
         )}
 
@@ -976,30 +978,16 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         {step === TOTAL_STEPS && (
           <div className="text-center py-4 space-y-4">
             <CheckCircle2 size={40} className="text-success mx-auto" />
-            <h2 className="text-2xl font-black text-primary uppercase">You're All Set</h2>
+            <h2 className="text-2xl font-black text-primary uppercase">Request sent</h2>
             <p className="text-text-secondary">Your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} request has been successfully submitted.</p>
-            <p className="text-text-secondary text-sm">A vetted local mover will review your details and submit a quote if they can help.</p>
-
+            <p className="text-text-secondary text-sm">Check your email for your quote options.</p>
             <div className="text-left bg-gray-50/50 rounded-2xl p-4 border border-border">
-              <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-3">What Happens Next</h3>
-              <ol className="space-y-3 text-sm text-primary/80">
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">1</span>
-                  We review your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} requirements
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">2</span>
-                  A vetted mover reviews your request and submits a quote
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">3</span>
-                  You receive the quote by email and can accept or decline
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">4</span>
-                  If you accept, you pay a booking deposit deducted from the quote and the mover contacts you directly
-                </li>
-              </ol>
+              <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-2">Next</h3>
+              <ul className="space-y-2 text-sm text-primary/80">
+                <li>1. A verified mover reviews your request.</li>
+                <li>2. You get quote options by email.</li>
+                <li>3. Pick one and pay the deposit to book.</li>
+              </ul>
             </div>
 
             <p className="text-sm font-bold text-accent tracking-tight">No spam. Just one trusted mover quote.</p>
@@ -1008,6 +996,32 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           </div>
         )}
       </div>
+
+      {showWizardFooter && (
+        <div className="flex-none border-t border-border bg-white px-5 py-3 lg:px-8" style={{ paddingBottom: 'calc(12px + env(safe-area-inset-bottom))' }}>
+          <div className="flex items-center gap-3">
+            {canGoBack ? (
+              <button
+                type="button"
+                onClick={() => setStep(step - 1)}
+                className="min-h-[52px] w-28 rounded-xl border-2 border-border font-black uppercase tracking-widest text-xs text-primary/60 hover:border-accent hover:text-accent transition-colors"
+              >
+                Back
+              </button>
+            ) : (
+              <div className="hidden sm:block w-28" />
+            )}
+            <button
+              type="button"
+              onClick={handlePrimaryAction}
+              disabled={isSubmitting}
+              className="btn-orange min-h-[52px] flex-1 rounded-xl font-black uppercase tracking-widest text-sm disabled:opacity-50 flex items-center justify-center"
+            >
+              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : getPrimaryActionLabel()}
+            </button>
+          </div>
+        </div>
+      )}
       </>)}
     </div>
   );
