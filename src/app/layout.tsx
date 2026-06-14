@@ -71,17 +71,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <Header />
-        {/* pb on mobile reserves space for the fixed sticky CTA so it never covers final content/footer */}
-        <main className="pb-28 md:pb-0">{children}</main>
+        <main>{children}</main>
         <Footer />
         <CookieConsent />
-
-        {/* Mobile Sticky CTA */}
-        <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-border z-[200]">
-          <a href="/#quote-form" className="btn-orange w-full block py-4 text-xs font-black uppercase tracking-[0.2em] rounded-xl shadow-2xl">
-            Get Matched Now
-          </a>
-        </div>
       </body>
     </html>
   );
