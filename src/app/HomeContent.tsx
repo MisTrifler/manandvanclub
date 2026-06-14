@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -15,6 +14,7 @@ import {
   Phone,
   BadgeCheck,
 } from "lucide-react";
+import QuoteForm from "@/components/QuoteForm";
 import { motion } from "framer-motion";
 import FAQ from "@/components/FAQ";
 
@@ -133,57 +133,88 @@ export default function HomeContent() {
     }),
   };
 
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash === "#quote-form") {
-      window.history.replaceState(null, "", "/get-started");
-      window.location.assign("/get-started");
-    }
-  }, []);
-
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
       {/* ──────────────────── Hero Section ──────────────────── */}
       <section
-        id="home-hero"
-        className="relative overflow-hidden bg-primary text-white"
+        id="quote-form"
+        className="relative flex items-start lg:items-center min-h-[calc(100dvh-80px)] lg:min-h-[calc(100vh-80px)] overflow-hidden scroll-mt-0"
       >
+        {/* Premium image background on desktop and mobile */}
         <div className="absolute inset-0">
           <Image
-            src="/hero-mover-bg.png"
-            alt="Movers loading a van outside a home"
+            src="/images/hero-moving.jpg"
+            alt="Professional movers loading a Luton van for a residential house move"
             fill
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-primary/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/65 to-primary/90 lg:bg-gradient-to-r lg:from-primary/85 lg:via-primary/60 lg:to-primary/10" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(15,23,42,0.86) 0%, rgba(15,23,42,0.74) 34%, rgba(15,23,42,0.58) 66%, rgba(15,23,42,0.78) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 hidden lg:block"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(15,23,42,0.78) 0%, rgba(15,23,42,0.54) 28%, rgba(15,23,42,0.22) 55%, rgba(15,23,42,0.04) 82%, rgba(15,23,42,0.00) 100%)",
+            }}
+          />
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-56px)] w-full max-w-[1800px] items-start px-4 pb-8 pt-7 sm:px-6 lg:min-h-[calc(100vh-80px)] lg:items-center lg:px-14 lg:py-16">
+        <div className="relative z-10 max-w-[1800px] mx-auto w-full flex flex-col lg:flex-row lg:items-start lg:gap-10 xl:gap-14 px-4 py-5 pb-8 sm:py-8 lg:py-12 xl:py-16 lg:px-10 xl:px-14">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="w-full max-w-3xl lg:max-w-4xl"
+            className="w-full lg:w-[50%] xl:w-[48%] text-white"
           >
-            <p className="inline-flex rounded-full bg-white/12 px-3 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-white ring-1 ring-white/15 backdrop-blur-md lg:text-xs">
+            <p className="inline-flex items-center rounded-full bg-white/12 px-3 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-white/80 ring-1 ring-white/15 backdrop-blur-sm">
               Free move request
             </p>
 
-            <h1 className="mt-4 max-w-4xl text-[42px] font-black leading-[0.95] tracking-tighter text-white sm:text-5xl lg:text-[76px]">
-              Get matched with a <span className="text-accent">verified local mover</span>
+            <h1
+              className="mt-4 font-black tracking-tighter max-w-[760px]"
+              style={{
+                fontSize: "clamp(38px, 8.8vw, 78px)",
+                fontWeight: 800,
+                lineHeight: "0.98",
+                textShadow: "0 2px 14px rgba(0,0,0,0.40)",
+              }}
+            >
+              <span className="text-white">Get matched with a</span>{" "}
+              <span className="text-accent">verified local mover</span>
             </h1>
 
-            <p className="mt-4 max-w-2xl text-base font-bold leading-relaxed text-white/92 sm:text-lg lg:text-2xl">
-              Free to submit. No spam. Your details are only shared when you accept a quote.
+            <p
+              className="mt-4 lg:mt-5 font-bold max-w-[680px]"
+              style={{
+                fontSize: "clamp(16px, 1.8vw, 25px)",
+                lineHeight: "1.45",
+                color: "rgba(255,255,255,0.95)",
+                textShadow: "0 2px 8px rgba(0,0,0,0.30)",
+              }}
+            >
+              Free to submit. No spam. Your details are only shared when you
+              accept a quote.
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mt-5 lg:mt-6">
               {TRUST_BADGES.map((badge, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 rounded-full bg-white/95 px-3 py-2 text-[11px] font-black text-primary shadow-lg shadow-black/10 lg:px-4 lg:py-2.5 lg:text-xs"
+                  className="flex items-center gap-2 rounded-full font-black transition-all duration-200 lg:hover:-translate-y-0.5 cursor-default"
+                  style={{
+                    background: "rgba(255,255,255,0.95)",
+                    borderRadius: "999px",
+                    padding: "9px 13px",
+                    boxShadow: "0 4px 14px rgba(0,0,0,0.10)",
+                    fontSize: "12px",
+                    color: "rgba(15,23,42,0.86)",
+                  }}
                 >
                   <span className="text-accent">{badge.icon}</span>
                   {badge.label}
@@ -191,44 +222,31 @@ export default function HomeContent() {
               ))}
             </div>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="/get-started"
-                className="btn-orange inline-flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-5 text-xs font-black uppercase tracking-[0.18em] shadow-2xl shadow-accent/25 transition-transform active:scale-[0.98] sm:w-auto lg:text-sm"
-              >
-                Start free move request <ArrowUpRight size={18} />
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="inline-flex w-full items-center justify-center rounded-2xl bg-white/12 px-7 py-5 text-xs font-black uppercase tracking-[0.18em] text-white ring-1 ring-white/20 backdrop-blur-md transition hover:bg-white/18 sm:w-auto lg:text-sm"
-              >
-                See how it works
-              </Link>
+            <div className="flex flex-wrap items-center gap-3 mt-5 lg:mt-6 text-xs lg:text-sm">
+              <span className="font-black text-white tracking-tighter">
+                UK-WIDE COVERAGE
+              </span>
+              <span className="text-white/40">|</span>
+              <span className="font-black text-white tracking-tighter">
+                FREE TO SUBMIT
+              </span>
+              <span className="text-white/40 hidden sm:inline">|</span>
+              <span className="hidden sm:flex items-center gap-1.5">
+                <ShieldCheck size={14} className="text-white/70" />
+                <span className="text-white/80">Verified movers</span>
+              </span>
             </div>
+          </motion.div>
 
-            <div className="mt-7 max-w-2xl rounded-[24px] bg-white/95 p-4 text-primary shadow-2xl shadow-black/15 lg:mt-9 lg:p-5">
-              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/45">
-                How it works
-              </p>
-              <div className="mt-3 grid grid-cols-3 gap-2 text-center">
-                {[
-                  "Tell us your move",
-                  "A verified mover reviews it",
-                  "Accept securely",
-                ].map((item, index) => (
-                  <div key={item} className="rounded-2xl bg-gray-50 px-2 py-3">
-                    <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center rounded-full bg-accent/10 text-xs font-black text-accent">
-                      {index + 1}
-                    </div>
-                    <p className="text-[10px] font-black leading-tight text-primary lg:text-xs">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-3 text-center text-[11px] font-semibold text-text-secondary lg:text-xs">
-                You only go through the move request form after choosing to start.
-              </p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            className="w-full lg:w-[50%] xl:w-[48%] mt-5 lg:mt-0"
+          >
+            <div className="w-full lg:max-w-[580px] lg:ml-auto">
+              <QuoteForm />
             </div>
           </motion.div>
         </div>
@@ -430,17 +448,17 @@ export default function HomeContent() {
       <section className="py-16 bg-white text-center border-b border-border">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">
-            Ready To Start Your Move Request?
+            Ready To Get Matched With A Local Mover?
           </h2>
           <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">
-            Tell us what you need moved and we will help connect you with a
-            suitable verified mover.
+            Submit your move details and we will help connect you with a
+            suitable mover.
           </p>
           <Link
-            href="/get-started"
+            href="#quote-form"
             className="btn-orange px-10 md:px-14 py-5 md:py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3"
           >
-            Start Move Request <ArrowUpRight size={20} />
+            Get Matched Now <ArrowUpRight size={20} />
           </Link>
         </div>
       </section>

@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Loader2, CheckCircle2, Lock, ArrowLeft, Building2, Home, GraduationCap, Sofa, Package, Boxes } from "lucide-react";
+import { Loader2, CheckCircle2, Shield, Lock, Clock, BadgeCheck, ArrowLeft, Building2, Home, GraduationCap, Sofa, Package, Boxes } from "lucide-react";
 import Link from "next/link";
 import { detectIntent, getIntentLabel, getMoveTypeLabel, type IntentType } from "@/lib/intent-detection";
 import IntentSelector from "./IntentSelector";
-import { calculateGuidePrice } from "@/lib/guide-price";
 
 const today = new Date().toISOString().split("T")[0];
 
@@ -24,38 +23,36 @@ const formSchema = z.object({
   firstName: z.string().min(2, "Required").optional(),
   phone: z.string().regex(/^(?:0|(?:\+44))7\d{9}$/, "Invalid UK mobile number").optional(),
   email: z.string().email("Invalid email").optional(),
-  // Office-specific (officeSize required for office intent, enforced via trigger)
-  officeSize: z.string().min(1, "Please select office size"),
+  // Office-specific
+  businessName: z.string().optional(),
+  officeSize: z.string().optional(),
   numberOfDesks: z.string().optional(),
-  // House-specific (required for house intent, enforced via trigger)
-  bedrooms: z.string().min(1, "Please select bedrooms"),
-  propertyType: z.string().min(1, "Please select property type"),
-  accessNotes: z.string().optional(),
+  itEquipment: z.string().optional(),
+  filingCabinets: z.string().optional(),
+  meetingRoomFurniture: z.string().optional(),
+  officeLiftAccess: z.string().optional(),
+  // House-specific
+  bedrooms: z.string().optional(),
+  propertyType: z.string().optional(),
+  packingRequired: z.string().optional(),
+  floorLevel: z.string().optional(),
+  houseLiftAccess: z.string().optional(),
   // Student-specific
-  accommodationArea: z.string().optional(),
+  university: z.string().optional(),
+  accommodationType: z.string().optional(),
   numberOfBoxes: z.string().optional(),
   suitcases: z.string().optional(),
   smallFurnitureItems: z.string().optional(),
-  // Single-item-specific (required for single-item intent, enforced via trigger)
-  itemType: z.string().min(1, "Please select an item"),
+  // Single-item-specific
+  itemType: z.string().optional(),
   // General
   numberOfItems: z.string().optional(),
   additionalHelpers: z.string().optional(),
-  // Storage-specific (size + direction required for storage intent, via trigger)
+  // Storage-specific
   storageFacility: z.string().optional(),
-  storageUnitSize: z.string().min(1, "Please select a rough amount"),
+  storageUnitSize: z.string().optional(),
   storageItems: z.string().optional(),
-  storageDirection: z.string().min(1, "Please select a direction"),
-  // Shared move requirements (all optional)
-  loadingHelp: z.string().optional(),
-  helperPreference: z.string().optional(),
-  accessType: z.string().optional(),
-  parkingAvailable: z.string().optional(),
-  heavyItems: z.string().optional(),
-  heavyItemsDescription: z.string().optional(),
-  dismantlingRequired: z.string().optional(),
-  // Shared optional notes
-  notes: z.string().optional(),
+  storageDirection: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -79,23 +76,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [requestId, setRequestId] = useState<string | null>(null);
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["", "", "", ""]);
   const [otpError, setOtpError] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<{ min: number; max: number } | null>(null);
-  const [guideConfidence, setGuideConfidence] = useState<"route-based" | "fallback">("fallback");
-
-  // ── Route estimate (informational only — never affects pricing) ────
-  const [routeEstimate, setRouteEstimate] = useState<{
-    distanceText: string; durationText: string; distanceMeters: number;
-    durationSeconds: number; mapUrl: string; provider: string; calculatedAt: string;
-  } | null>(null);
-  const [routeEstimatePairKey, setRouteEstimatePairKey] = useState("");
-  const [routeLookupFailed, setRouteLookupFailed] = useState(false);
-  const [routeLoading, setRouteLoading] = useState(false);
-  const [lastRoutePair, setLastRoutePair] = useState("");
-  const shellRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
 
   // Detect intent from URL on client side (for homepage / no prop)
   useEffect(() => {
@@ -108,17 +91,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
 
-  useEffect(() => {
-    contentRef.current?.scrollTo({ top: 0, behavior: "auto" });
-    requestAnimationFrame(() => {
-      shellRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
-      headingRef.current?.focus({ preventScroll: true });
-    });
-  }, [step, activeIntent]);
-
-  // Keep the customer flow short: no separate guide-price step.
-  // The server still calculates guide price after submit.
-  const hasEstimate = false;
+  const hasEstimate = activeIntent !== "single-item";
   const TOTAL_STEPS = hasEstimate ? 5 : 4;
 
   const { register, watch, trigger, setValue, formState: { errors } } = useForm<FormData>({
@@ -128,7 +101,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       moveDate: "",
       collectionPostcode: "",
       deliveryPostcode: "",
-      additionalHelpers: "",
+      packingRequired: "no",
+      houseLiftAccess: "no",
+      officeLiftAccess: "yes",
+      additionalHelpers: "no",
       storageDirection: "",
     }
   });
@@ -140,104 +116,30 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     }
   }, [activeIntent, setValue]);
 
-  // ── Debounced postcode-to-postcode route lookup (guide only) ───────
-  const watchedCollectionPostcode = watch("collectionPostcode");
-  const watchedDeliveryPostcode = watch("deliveryPostcode");
-
-  useEffect(() => {
-    const from = (watchedCollectionPostcode || "").trim();
-    const to = (watchedDeliveryPostcode || "").trim();
-    const currentPairKey = `${from.toUpperCase()}|${to.toUpperCase()}`;
-
-    // Either postcode incomplete: clear everything immediately — no stale estimate.
-    if (from.length < 5 || to.length < 5) {
-      if (routeEstimate || routeLookupFailed || routeLoading) {
-        setRouteEstimate(null);
-        setRouteEstimatePairKey("");
-        setRouteLookupFailed(false);
-        setRouteLoading(false);
-      }
-      return;
-    }
-
-    if (currentPairKey === lastRoutePair) return; // same pair already looked up this session
-
-    // Pair changed: clear the old estimate IMMEDIATELY (before debounce),
-    // so an A→B result never lingers while C→D is typed/pending.
-    if (routeEstimatePairKey && routeEstimatePairKey !== currentPairKey) {
-      setRouteEstimate(null);
-      setRouteEstimatePairKey("");
-      setRouteLookupFailed(false);
-    }
-
-    const timer = setTimeout(async () => {
-      setRouteLoading(true); // only after debounce begins, not per keystroke
-      try {
-        const res = await fetch("/api/route-estimate", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ collectionPostcode: from, deliveryPostcode: to }),
-        });
-        const data = await res.json().catch(() => ({ ok: false }));
-        setLastRoutePair(currentPairKey);
-        if (data.ok) {
-          setRouteEstimate(data);
-          setRouteEstimatePairKey(currentPairKey);
-          setRouteLookupFailed(false);
-        } else {
-          // Keep the safe postcode-only fallback map link when available.
-          setRouteEstimate(data.mapUrl ? { distanceText: "", durationText: "", distanceMeters: 0, durationSeconds: 0, mapUrl: data.mapUrl, provider: "fallback", calculatedAt: new Date().toISOString() } : null);
-          setRouteEstimatePairKey(data.mapUrl ? currentPairKey : "");
-          setRouteLookupFailed(true);
-        }
-      } catch {
-        setLastRoutePair(currentPairKey);
-        setRouteEstimate(null);
-        setRouteEstimatePairKey("");
-        setRouteLookupFailed(true);
-      } finally {
-        setRouteLoading(false);
-      }
-    }, 800); // debounce
-
-    return () => clearTimeout(timer);
-  }, [watchedCollectionPostcode, watchedDeliveryPostcode, lastRoutePair, routeEstimatePairKey, routeEstimate, routeLookupFailed, routeLoading]);
-
-  // The estimate is only valid for the postcode pair currently in the form.
-  const currentFormPairKey = `${(watchedCollectionPostcode || "").trim().toUpperCase()}|${(watchedDeliveryPostcode || "").trim().toUpperCase()}`;
-  const routeEstimateIsCurrent = !!routeEstimate && routeEstimatePairKey === currentFormPairKey;
-
-  // Guide price range (display-only): uses route distance/time when
-  // available, otherwise falls back to a broad move-type guide.
-  // Server recomputes authoritatively on submit.
   const calculateEstimate = (data: FormData): { min: number; max: number } => {
-    const result = calculateGuidePrice({
-      intent: activeIntent,
-      moveType: data.moveType,
-      routeEstimate: routeEstimateIsCurrent && routeEstimate && routeEstimate.distanceMeters > 0 ? routeEstimate : null,
-      bedrooms: data.bedrooms,
-      propertyType: data.propertyType,
-      officeSize: data.officeSize,
-      numberOfDesks: data.numberOfDesks,
-      itemType: data.itemType,
-      numberOfItems: data.numberOfItems,
-      storageUnitSize: data.storageUnitSize,
-      storageDirection: data.storageDirection,
-      numberOfBoxes: data.numberOfBoxes,
-      suitcases: data.suitcases,
-      smallFurnitureItems: data.smallFurnitureItems,
-      loadingHelp: data.loadingHelp,
-      helperPreference: data.helperPreference,
-      accessType: data.accessType,
-      parkingAvailable: data.parkingAvailable,
-      heavyItems: data.heavyItems,
-      heavyItemsDescription: data.heavyItemsDescription,
-      dismantlingRequired: data.dismantlingRequired,
-      collectionPostcode: data.collectionPostcode,
-      deliveryPostcode: data.deliveryPostcode,
-    });
-    setGuideConfidence(result.confidence);
-    return { min: result.min, max: result.max };
+    const base: Record<IntentType, [number, number]> = {
+      office: [300, 800],
+      house: [180, 450],
+      student: [80, 200],
+      "single-item": [45, 120],
+      general: [100, 300],
+      storage: [120, 350],
+    };
+
+    // House: adjust based on bedrooms
+    if (activeIntent === "house" && data.bedrooms) {
+      const map: Record<string, [number, number]> = {
+        "Studio": [80, 130],
+        "1": [100, 180],
+        "2": [180, 280],
+        "3": [300, 450],
+        "4+": [500, 850],
+      };
+      const result = map[data.bedrooms] || base[activeIntent];
+      return { min: result[0], max: result[1] };
+    }
+    const result = base[activeIntent || "general"];
+    return { min: result[0], max: result[1] };
   };
 
   const onNextStep = async () => {
@@ -248,13 +150,15 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       fields = ["collectionPostcode", "deliveryPostcode", "moveDate", "moveType"];
       // Intent-specific required fields
       if (activeIntent === "office") {
-        fields.push("officeSize");
+        fields.push("businessName", "officeSize");
       } else if (activeIntent === "house") {
-        fields.push("bedrooms");
+        fields.push("bedrooms", "propertyType");
+      } else if (activeIntent === "student") {
+        fields.push("university", "accommodationType");
       } else if (activeIntent === "single-item") {
         fields.push("itemType");
       } else if (activeIntent === "storage") {
-        fields.push("storageUnitSize", "storageDirection");
+        fields.push("storageFacility", "storageUnitSize", "storageDirection");
       }
     } else if (step === 2 && hasEstimate) {
       // Estimate step — auto-calculated, no validation needed
@@ -287,7 +191,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     newOtp[index] = value;
     setOtp(newOtp);
     setOtpError(null);
-    if (value && index < 5) {
+    if (value && index < 3) {
       document.getElementById(`otp-${index + 1}`)?.focus();
     }
   };
@@ -304,56 +208,43 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       // Capture the originating page URL for conversion attribution
       const sourcePage = typeof window !== "undefined" ? window.location.pathname : "";
 
-      // Build details object for service-specific fields (empty optionals omitted)
+      // Build details object for service-specific fields
       const details: Record<string, any> = {};
       if (activeIntent === "office") {
+        details.businessName = data.businessName;
         details.officeSize = data.officeSize;
-        if (data.numberOfDesks) details.numberOfDesks = data.numberOfDesks;
+        details.numberOfDesks = data.numberOfDesks;
+        details.itEquipment = data.itEquipment;
+        details.filingCabinets = data.filingCabinets;
+        details.meetingRoomFurniture = data.meetingRoomFurniture;
+        details.liftAccess = data.officeLiftAccess;
       } else if (activeIntent === "house") {
         details.bedrooms = data.bedrooms;
         details.propertyType = data.propertyType;
-        if (data.accessNotes) details.accessNotes = data.accessNotes;
+        details.packingRequired = data.packingRequired;
+        details.floorLevel = data.floorLevel;
+        details.liftAccess = data.houseLiftAccess;
       } else if (activeIntent === "student") {
-        if (data.accommodationArea) details.accommodationType = data.accommodationArea;
-        if (data.numberOfBoxes) details.numberOfBoxes = data.numberOfBoxes;
-        if (data.suitcases) details.suitcases = data.suitcases;
-        if (data.smallFurnitureItems) details.smallFurnitureItems = data.smallFurnitureItems;
+        details.university = data.university;
+        details.accommodationType = data.accommodationType;
+        details.numberOfBoxes = data.numberOfBoxes;
+        details.suitcases = data.suitcases;
+        details.smallFurnitureItems = data.smallFurnitureItems;
       } else if (activeIntent === "single-item") {
         details.itemType = data.itemType;
       } else if (activeIntent === "general") {
-        if (data.numberOfItems) details.numberOfItems = data.numberOfItems;
-        if (data.additionalHelpers) details.additionalHelpers = data.additionalHelpers;
+        details.numberOfItems = data.numberOfItems;
+        details.additionalHelpers = data.additionalHelpers;
       } else if (activeIntent === "storage") {
-        if (data.storageFacility) details.storageFacility = data.storageFacility;
+        details.storageFacility = data.storageFacility;
         details.storageUnitSize = data.storageUnitSize;
+        details.storageItems = data.storageItems;
         details.storageDirection = data.storageDirection;
       }
-      // Shared move requirements (all move types, optional)
-      if (data.loadingHelp) details.loadingHelp = data.loadingHelp;
-      if (data.helperPreference) details.helperPreference = data.helperPreference;
-      if (data.accessType) details.accessType = data.accessType;
-      if (data.parkingAvailable) details.parkingAvailable = data.parkingAvailable;
-      if (data.heavyItems) details.heavyItems = data.heavyItems;
-      if (data.heavyItems === "Yes" && data.heavyItemsDescription) details.heavyItemsDescription = data.heavyItemsDescription;
-      if (data.dismantlingRequired) details.dismantlingRequired = data.dismantlingRequired;
-      if (data.notes) details.notes = data.notes;
 
       const estimatePrice = estimate
         ? `£${estimate.min}–£${estimate.max}`
         : undefined;
-
-      // Attach route estimate (guide only — server re-validates/recalculates).
-      // Only submit if it matches the CURRENT postcode pair in the form;
-      // a stale estimate from an earlier pair is never submitted.
-      const submitPairKey = `${(data.collectionPostcode || "").trim().toUpperCase()}|${(data.deliveryPostcode || "").trim().toUpperCase()}`;
-      if (routeEstimate && routeEstimatePairKey === submitPairKey) {
-        if (routeEstimate.distanceMeters > 0) {
-          details.routeEstimate = routeEstimate;
-        } else if (routeEstimate.mapUrl) {
-          // Distance lookup failed but the safe postcode-only map link survives.
-          details.routeEstimate = { mapUrl: routeEstimate.mapUrl, provider: "fallback", calculatedAt: routeEstimate.calculatedAt };
-        }
-      }
 
       const payload = {
         ...data,
@@ -380,8 +271,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const handleVerifyOTP = async () => {
     const code = otp.join("");
-    if (code.length < 6) {
-      setOtpError("Please enter the full 6-digit code");
+    if (code.length < 4) {
+      setOtpError("Please enter the full code");
       return;
     }
     setIsSubmitting(true);
@@ -391,14 +282,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ requestId, otp: code }),
       });
-      if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        setOtpError(data.error || "Invalid or expired verification code.");
-        return;
-      }
+      if (!response.ok) throw new Error('Verification failed');
       setStep(hasEstimate ? 5 : 4);
     } catch (error: any) {
-      setOtpError("Invalid or expired verification code.");
+      setOtpError("Invalid code. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -406,57 +293,20 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const getStepTitle = () => {
     if (step === 1) return activeIntent ? getIntentLabel(activeIntent) + " Details" : "Move Details";
-    if (step === 2 && hasEstimate) return "Guide Price";
+    if (step === 2 && hasEstimate) return "Guide Price Range";
     if (step === (hasEstimate ? 3 : 2)) return "Your Details";
     if (step === (hasEstimate ? 4 : 3)) return "Verify Email";
     return "";
   };
 
-  const getStepHeading = () => {
-    if (step === 1) {
-      if (activeIntent === "office") return "Office move";
-      if (activeIntent === "house") return "Home move";
-      if (activeIntent === "student") return "Student move";
-      if (activeIntent === "single-item") return "Furniture delivery";
-      if (activeIntent === "storage") return "Storage collection";
-      return "Man & van";
-    }
-    if (step === 2 && hasEstimate) return "Guide price";
-    if (step === (hasEstimate ? 3 : 2)) return "Your details";
-    if (step === (hasEstimate ? 4 : 3)) return "Verify email";
-    return "";
-  };
-
-  const isOtpStep = step === (hasEstimate ? 4 : 3);
-  const isContactStep = step === (hasEstimate ? 3 : 2);
-  const showWizardFooter = !!activeIntent && step < TOTAL_STEPS;
-  const canGoBack = step > 1 && !isSubmitting;
-
-  const getPrimaryActionLabel = () => {
-    if (isOtpStep) return "Confirm code";
-    if (isContactStep) return "Send code";
-    return "Continue";
-  };
-
-  const handlePrimaryAction = () => {
-    if (isOtpStep) {
-      handleVerifyOTP();
-      return;
-    }
-    onNextStep();
-  };
-
   return (
     <div
-      ref={shellRef}
-      id="quote-form"
-      className="bg-white flex flex-col"
+      id="move-request-form"
+      className="bg-white"
       style={{
         borderRadius: '28px',
         boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
         overflow: 'hidden',
-        height: activeIntent ? 'min(760px, calc(100svh - 24px))' : undefined,
-        maxHeight: activeIntent ? 'calc(100svh - 24px)' : undefined,
       }}
     >
       {/* ──────────────────────────────────────────
@@ -473,9 +323,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               lineHeight: 1.1,
             }}
           >
-            Get your quote
+            Start Your Move Request
           </h2>
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-primary/50 mt-2">Quick details. One quote. No spam.</p>
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-primary/50 mt-2">Free to submit • No spam • Details protected</p>
           <div className="mt-6">
             <IntentSelector onSelect={(intent) => { setSelectedIntent(intent); setStep(1); }} />
           </div>
@@ -484,7 +334,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
       {activeIntent && (<>
       {/* Form title */}
-      <div className="flex-none px-5 pt-4 pb-2 lg:px-8 lg:pt-5">
+      <div className="px-5 pt-6 pb-2 lg:px-10 lg:pt-10">
         <h2
           className="uppercase tracking-tighter"
           style={{
@@ -494,25 +344,25 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             lineHeight: 1.1,
           }}
         >
-          Get your quote
+          Move Request
         </h2>
-        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Quick details. One quote. No spam.</p>
+        <p className="text-xs font-black uppercase tracking-[0.3em] text-primary/50 mt-2">Takes less than a minute • Deposit only if quote accepted</p>
       </div>
 
       {/* Progress bar */}
       {step < TOTAL_STEPS && (
-        <div className="flex-none bg-gray-50/50 px-5 py-3 lg:px-8 border-b border-border">
-          <div className="flex items-center justify-between gap-3 mb-2">
+        <div className="bg-gray-50/50 px-5 py-3 lg:px-10 lg:py-4 border-b border-border">
+          <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               {INTENT_ICONS[activeIntent] && (
                 <span className="text-accent">{INTENT_ICONS[activeIntent]}</span>
               )}
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-primary/50">
-                Step {step}/{TOTAL_STEPS}: {getStepTitle()}
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
+                Step {step} of {TOTAL_STEPS}: {getStepTitle()}
               </p>
             </div>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-primary/40 whitespace-nowrap">
-              {Math.round((step / TOTAL_STEPS) * 100)}%
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
+              {Math.round((step / TOTAL_STEPS) * 100)}% Complete
             </p>
           </div>
           <div className="flex gap-1.5">
@@ -523,15 +373,28 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         </div>
       )}
 
-      <div ref={contentRef} className="flex-1 overflow-y-auto overscroll-contain px-5 py-4 lg:px-8 lg:py-5">
+      <div className="px-5 pb-6 lg:px-10 lg:pb-10">
         {/* ──────────────────── STEP 1: Service Details ──────────────────── */}
         {step === 1 && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h2 ref={headingRef} tabIndex={-1} className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter outline-none">
-                  {getStepHeading()}
+                <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">
+                  {activeIntent === "office" && "Your Office Move"}
+                  {activeIntent === "house" && "Your Moving Home Details"}
+                  {activeIntent === "student" && "Your Student Move"}
+                  {activeIntent === "single-item" && "Your Furniture Delivery"}
+                  {activeIntent === "general" && "Your Man & Van Service"}
+                  {activeIntent === "storage" && "Your Storage Collection"}
                 </h2>
+                <p className="text-sm text-text-secondary mt-1 font-medium">
+                  {activeIntent === "office" && "Tell us about your business relocation"}
+                  {activeIntent === "house" && "Tell us about your home move"}
+                  {activeIntent === "student" && "Tell us about your university move"}
+                  {activeIntent === "single-item" && "Tell us about the furniture you need delivered"}
+                  {activeIntent === "general" && "Tell us about your move — big or small"}
+                  {activeIntent === "storage" && "Tell us about your storage collection"}
+                </p>
               </div>
               {!propIntent && (
                 <button
@@ -543,32 +406,89 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               )}
             </div>
 
+            {/* Form reassurance */}
+            <div className="flex flex-wrap gap-2">
+              {[
+                { icon: <Clock size={13} />, text: "Under 60 seconds" },
+                { icon: <BadgeCheck size={13} />, text: "Free to submit" },
+                { icon: <Shield size={13} />, text: "No obligation" },
+                { icon: <Lock size={13} />, text: "GDPR secure" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-1.5 bg-accent/5 text-accent px-2.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider">
+                  {item.icon} {item.text}
+                </div>
+              ))}
+            </div>
+
             {/* ── OFFICE FORM ── */}
             {activeIntent === "office" && (
               <div className="space-y-2">
                 <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Business Name</label>
+                  <input {...register("businessName")} placeholder="Your company name" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  {errors.businessName && <p className="text-red-500 text-xs font-bold mt-1">{errors.businessName.message}</p>}
+                </div>
+                <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Office Size</label>
                   <select {...register("officeSize")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
                     <option value="">Select office size</option>
-                    <option value="Small office">Small office</option>
-                    <option value="Medium office">Medium office</option>
-                    <option value="Large office">Large office</option>
-                    <option value="Warehouse / Industrial">Warehouse / industrial</option>
+                    <option value="Small (1–10 staff)">Small (1–10 staff)</option>
+                    <option value="Medium (11–50 staff)">Medium (11–50 staff)</option>
+                    <option value="Large (50+ staff)">Large (50+ staff)</option>
+                    <option value="Warehouse / Industrial">Warehouse / Industrial</option>
                   </select>
                   {errors.officeSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.officeSize.message}</p>}
                 </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Desks</label>
+                    <input {...register("numberOfDesks")} type="number" placeholder="Approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Filing Cabinets</label>
+                    <input {...register("filingCabinets")} type="number" placeholder="Number" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  </div>
+                </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
-                  <input {...register("collectionPostcode")} placeholder="Collection postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">IT Equipment to Move</label>
+                  <select {...register("itEquipment")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select option</option>
+                    <option value="Desktops only">Desktops only</option>
+                    <option value="Desktops + Monitors">Desktops + Monitors</option>
+                    <option value="Servers / Network equipment">Servers / Network equipment</option>
+                    <option value="Minimal IT">Minimal IT</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Meeting Room Furniture</label>
+                  <select {...register("meetingRoomFurniture")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select option</option>
+                    <option value="None">None</option>
+                    <option value="1–2 tables & chairs">1–2 tables & chairs</option>
+                    <option value="3+ tables & chairs">3+ tables & chairs</option>
+                    <option value="Full boardroom">Full boardroom</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Lift Access</label>
+                  <select {...register("officeLiftAccess")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="yes">Yes — lift available</option>
+                    <option value="no">No — stairs only</option>
+                    <option value="ground">Ground floor only</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
+                  <input {...register("collectionPostcode")} placeholder="Current office postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
-                  <input {...register("deliveryPostcode")} placeholder="Delivery postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
+                  <input {...register("deliveryPostcode")} placeholder="New office postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -578,30 +498,72 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {/* ── HOUSE FORM ── */}
             {activeIntent === "house" && (
               <div className="space-y-2">
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Bedrooms</label>
-                  <select {...register("bedrooms")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select bedrooms</option>
-                    <option value="Studio">Studio</option>
-                    <option value="1">1 Bed</option>
-                    <option value="2">2 Bed</option>
-                    <option value="3">3 Bed</option>
-                    <option value="4+">4+ Bed</option>
-                  </select>
-                  {errors.bedrooms && <p className="text-red-500 text-xs font-bold mt-1">{errors.bedrooms.message}</p>}
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Bedrooms</label>
+                    <select {...register("bedrooms")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="">Select</option>
+                      <option value="Studio">Studio</option>
+                      <option value="1">1 Bed</option>
+                      <option value="2">2 Bed</option>
+                      <option value="3">3 Bed</option>
+                      <option value="4+">4+ Bed</option>
+                    </select>
+                    {errors.bedrooms && <p className="text-red-500 text-xs font-bold mt-1">{errors.bedrooms.message}</p>}
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Property Type</label>
+                    <select {...register("propertyType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="">Select</option>
+                      <option value="House">House</option>
+                      <option value="Flat">Flat</option>
+                      <option value="Apartment">Apartment</option>
+                      <option value="Bungalow">Bungalow</option>
+                      <option value="Maisonette">Maisonette</option>
+                    </select>
+                    {errors.propertyType && <p className="text-red-500 text-xs font-bold mt-1">{errors.propertyType.message}</p>}
+                  </div>
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Packing Required?</label>
+                  <select {...register("packingRequired")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="no">No — I'll pack everything</option>
+                    <option value="yes">Yes — I need packing help</option>
+                    <option value="partial">Partial — some items only</option>
+                  </select>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Floor Level</label>
+                    <select {...register("floorLevel")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="Ground">Ground</option>
+                      <option value="1st">1st Floor</option>
+                      <option value="2nd">2nd Floor</option>
+                      <option value="3rd+">3rd+ Floor</option>
+                      <option value="Basement">Basement</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Lift Access?</label>
+                    <select {...register("houseLiftAccess")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="no">No — stairs only</option>
+                      <option value="yes">Yes — lift available</option>
+                      <option value="ground">Ground floor</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
                   <input {...register("collectionPostcode")} placeholder="Current postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
                   <input {...register("deliveryPostcode")} placeholder="New postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -612,17 +574,53 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "student" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Which University?</label>
+                  <input {...register("university")} placeholder="e.g. University of Birmingham" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  {errors.university && <p className="text-red-500 text-xs font-bold mt-1">{errors.university.message}</p>}
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Where Are You Staying?</label>
+                  <select {...register("accommodationType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select</option>
+                    <option value="University Halls">University Halls</option>
+                    <option value="Shared House">Shared House</option>
+                    <option value="Private Studio">Private Studio</option>
+                    <option value="Private Flat">Private Flat</option>
+                  </select>
+                  {errors.accommodationType && <p className="text-red-500 text-xs font-bold mt-1">{errors.accommodationType.message}</p>}
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Boxes</label>
+                    <input {...register("numberOfBoxes")} type="number" placeholder="Approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Suitcases</label>
+                    <input {...register("suitcases")} type="number" placeholder="Approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Any Small Furniture?</label>
+                  <select {...register("smallFurnitureItems")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select option</option>
+                    <option value="None">None — only boxes and bags</option>
+                    <option value="Desk + Chair">Desk + Chair</option>
+                    <option value="Desk + Chair + Bookshelf">Desk + Chair + Bookshelf</option>
+                    <option value="Other small furniture">Other small furniture</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving From (Postcode)</label>
                   <input {...register("collectionPostcode")} placeholder="Current postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving To (Postcode)</label>
                   <input {...register("deliveryPostcode")} placeholder="New postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">When Do You Need to Move?</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -633,7 +631,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "single-item" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Item</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Item Type</label>
                   <select {...register("itemType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
                     <option value="">Select item</option>
                     <option value="Sofa">Sofa</option>
@@ -641,8 +639,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                     <option value="Table">Table</option>
                     <option value="Wardrobe">Wardrobe</option>
                     <option value="Fridge">Fridge</option>
-                    <option value="Washing Machine">Washing machine</option>
-                    <option value="Dining Set">Dining set</option>
+                    <option value="Washing Machine">Washing Machine</option>
+                    <option value="Dining Set">Dining Set</option>
                     <option value="Desk">Desk</option>
                     <option value="Mattress">Mattress</option>
                     <option value="Other">Other</option>
@@ -650,17 +648,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {errors.itemType && <p className="text-red-500 text-xs font-bold mt-1">{errors.itemType.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
-                  <input {...register("collectionPostcode")} placeholder="Collection postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Address / Postcode</label>
+                  <input {...register("collectionPostcode")} placeholder="Where is the item now?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
-                  <input {...register("deliveryPostcode")} placeholder="Delivery postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Address / Postcode</label>
+                  <input {...register("deliveryPostcode")} placeholder="Where should it go?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Preferred Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -671,19 +669,31 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "general" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Pickup Postcode</label>
                   <input {...register("collectionPostcode")} placeholder="Pickup postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Drop-off Postcode</label>
                   <input {...register("deliveryPostcode")} placeholder="Drop-off postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Number of Items (approximate)</label>
+                  <input {...register("numberOfItems")} type="number" placeholder="e.g. 5" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Preferred Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Additional Helpers Required?</label>
+                  <select {...register("additionalHelpers")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="no">No — driver only</option>
+                    <option value="yes">Yes — need extra helper</option>
+                    <option value="unsure">Unsure — advise me</option>
+                  </select>
                 </div>
               </div>
             )}
@@ -691,216 +701,93 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {/* ── STORAGE FORM ── */}
             {activeIntent === "storage" && (
               <div className="space-y-2">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Direction</label>
-                    <select {...register("storageDirection")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="">Select</option>
-                      <option value="To storage">To storage</option>
-                      <option value="From storage">From storage</option>
-                      <option value="Between units">Between units</option>
-                    </select>
-                    {errors.storageDirection && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageDirection.message}</p>}
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Amount</label>
-                    <select {...register("storageUnitSize")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="">Select</option>
-                      <option value="Few items">Few items</option>
-                      <option value="Half van">Half van</option>
-                      <option value="Full van">Full van</option>
-                      <option value="Unsure">Unsure</option>
-                    </select>
-                    {errors.storageUnitSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageUnitSize.message}</p>}
-                  </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Direction</label>
+                  <select {...register("storageDirection")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select direction</option>
+                    <option value="To storage">To storage — moving items into a unit</option>
+                    <option value="From storage">From storage — collecting items out</option>
+                    <option value="Between units">Between units — moving from one storage unit to another</option>
+                  </select>
+                  {errors.storageDirection && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageDirection.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
-                  <input {...register("collectionPostcode")} placeholder="Collection postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Facility Name</label>
+                  <input {...register("storageFacility")} placeholder="e.g. Big Yellow Storage" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  {errors.storageFacility && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageFacility.message}</p>}
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Unit Size</label>
+                  <select {...register("storageUnitSize")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select unit size</option>
+                    <option value="Small (locker to 25 sq ft)">Small (locker to 25 sq ft)</option>
+                    <option value="Medium (50–100 sq ft)">Medium (50–100 sq ft)</option>
+                    <option value="Large (150+ sq ft)">Large (150+ sq ft)</option>
+                    <option value="Unsure">Unsure — need help estimating</option>
+                  </select>
+                  {errors.storageUnitSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageUnitSize.message}</p>}
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Items to Collect</label>
+                  <textarea {...register("storageItems")} placeholder="Brief description of items in storage (e.g. furniture, boxes, appliances)" rows={3} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none resize-none" />
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
+                  <input {...register("collectionPostcode")} placeholder="Storage facility postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
-                  <input {...register("deliveryPostcode")} placeholder="Delivery postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
+                  <input {...register("deliveryPostcode")} placeholder="Where items are going" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
               </div>
             )}
 
-            {/* Extra information is hidden by default so customers can click through quickly. */}
-            <details className="border-t border-border/60 pt-3 mt-1 space-y-2 group">
-              <summary className="cursor-pointer list-none rounded-xl bg-gray-50 px-3 py-3 text-xs font-black uppercase tracking-[0.18em] text-primary/55 flex items-center justify-between">
-                Add optional details <span className="text-accent text-sm group-open:rotate-45 transition-transform">+</span>
-              </summary>
-
-              <div className="space-y-2 pt-2">
-                {activeIntent === "house" && (
-                  <div className="grid grid-cols-2 gap-2">
-                    <div>
-                      <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Property Type</label>
-                      <select {...register("propertyType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                        <option value="">Optional</option>
-                        <option value="House">House</option>
-                        <option value="Flat">Flat</option>
-                        <option value="Apartment">Apartment</option>
-                        <option value="Bungalow">Bungalow</option>
-                        <option value="Maisonette">Maisonette</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Access</label>
-                      <input {...register("accessNotes")} placeholder="Stairs, lift, parking" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                    </div>
-                  </div>
-                )}
-
-                {activeIntent === "office" && (
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Desks / Items</label>
-                    <input {...register("numberOfDesks")} type="number" placeholder="Optional approximate number" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  </div>
-                )}
-
-                {activeIntent === "student" && (
-                  <div className="grid grid-cols-2 gap-2">
-                    <input {...register("accommodationArea")} placeholder="Halls / area (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                    <input {...register("numberOfBoxes")} type="number" placeholder="Boxes (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                    <input {...register("suitcases")} type="number" placeholder="Suitcases (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                    <select {...register("smallFurnitureItems")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="">Small furniture?</option>
-                      <option value="None">None</option>
-                      <option value="Desk + Chair">Desk + Chair</option>
-                      <option value="Desk + Chair + Bookshelf">Desk + Chair + Bookshelf</option>
-                      <option value="Other small furniture">Other</option>
-                    </select>
-                  </div>
-                )}
-
-                {activeIntent === "general" && (
-                  <div className="grid grid-cols-2 gap-2">
-                    <input {...register("numberOfItems")} type="number" placeholder="Items (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                    <select {...register("additionalHelpers")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="">Extra help?</option>
-                      <option value="no">No</option>
-                      <option value="yes">Yes</option>
-                      <option value="unsure">Unsure</option>
-                    </select>
-                  </div>
-                )}
-
-                {activeIntent === "storage" && (
-                  <div>
-                    <input {...register("storageFacility")} placeholder="Storage facility / notes (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  </div>
-                )}
-
-                <div className="grid grid-cols-2 gap-2">
-                  <select {...register("loadingHelp")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Loading help?</option>
-                    <option value="No, transport only">Transport only</option>
-                    <option value="Yes, 1 mover helping is enough">1 mover helping</option>
-                    <option value="Yes, 2 movers may be needed">2 movers may be needed</option>
-                    <option value="Not sure">Not sure</option>
-                  </select>
-                  <select {...register("accessType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Stairs/lift?</option>
-                    <option value="Ground floor">Ground floor</option>
-                    <option value="Stairs">Stairs</option>
-                    <option value="Lift available">Lift available</option>
-                    <option value="Not sure">Not sure</option>
-                  </select>
-                  <select {...register("parkingAvailable")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Parking?</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                    <option value="Not sure">Not sure</option>
-                  </select>
-                  <select {...register("heavyItems")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Heavy items?</option>
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
-                    <option value="Not sure">Not sure</option>
-                  </select>
-                </div>
-                {watch("heavyItems") === "Yes" && (
-                  <input {...register("heavyItemsDescription")} placeholder="Which heavy items?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                )}
-                <input {...register("notes")} placeholder="Anything else? (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-              </div>
-            </details>
-
-            {/* Route estimate panel — informational guide only.
-                Renders ONLY when the estimate matches the current postcode pair. */}
-            {routeLoading && !routeEstimateIsCurrent && (
-              <p className="text-[11px] text-text-secondary/70 flex items-center gap-1.5">
-                <Loader2 size={12} className="animate-spin" /> Estimating route…
-              </p>
-            )}
-            {routeEstimateIsCurrent && routeEstimate!.distanceMeters > 0 && (
-              <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-3.5">
-                <p className="text-[10px] font-black uppercase tracking-widest text-blue-700/70 mb-1">Route estimate</p>
-                <p className="text-sm font-bold text-primary">
-                  {(watchedCollectionPostcode || "").toUpperCase()} <span className="text-primary/40">→</span> {(watchedDeliveryPostcode || "").toUpperCase()}
-                </p>
-                <p className="text-sm text-text-secondary mt-0.5">
-                  Distance: <strong className="text-primary">{routeEstimate!.distanceText}</strong>
-                  <span className="mx-1.5 text-primary/30">·</span>
-                  Drive time: <strong className="text-primary">{routeEstimate!.durationText}</strong>
-                </p>
-                {routeEstimate!.mapUrl && (
-                  <a href={routeEstimate!.mapUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-accent mt-1 inline-block">
-                    View route on map →
-                  </a>
-                )}
-
-              </div>
-            )}
-            {routeEstimateIsCurrent && routeLookupFailed && !routeEstimate!.distanceMeters && (
-              <p className="text-[11px] text-text-secondary/70">
-                We could not estimate the distance, but you can still continue.
-                {routeEstimate!.mapUrl && (
-                  <> <a href={routeEstimate!.mapUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-accent">View route on map</a></>
-                )}
-              </p>
-            )}
+            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
           </div>
         )}
 
         {/* ──────────────────── STEP 2: Estimate (skip for single-item) ──────────────────── */}
         {step === 2 && hasEstimate && (
-          <div className="space-y-4 text-center py-2">
-            <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-primary uppercase tracking-tighter outline-none">Guide price</h2>
-            <div className="bg-white p-5 rounded-[2rem] shadow-xl border-2 border-border">
+          <div className="space-y-6 text-center py-2">
+            <div className="bg-white p-6 rounded-[2rem] shadow-xl border-2 border-border">
               <p className="text-[10px] font-black uppercase text-primary/40 mb-2">
-                {guideConfidence === "route-based" ? "Guide price range" : "Broad guide price range"}
+                {activeIntent === "office" && "Guide Price Range"}
+                {activeIntent === "house" && "Guide Price Range"}
+                {activeIntent === "student" && "Guide Price Range"}
+                {activeIntent === "general" && "Guide Price Range"}
+                {activeIntent === "storage" && "Guide Price Range"}
               </p>
-              {routeLoading && !routeEstimateIsCurrent ? (
-                <p className="text-sm text-text-secondary font-medium py-4">Calculating guide price from your route…</p>
-              ) : (
-                <p className="text-5xl font-black tracking-tighter text-primary">
-                  {estimate ? `£${estimate.min}–£${estimate.max}` : "£—"}
-                </p>
-              )}
-              <p className="text-xs text-text-secondary mt-3 font-medium">
-                Guide only. Your mover sends the actual quote.
+              <p className="text-5xl font-black tracking-tighter text-primary">
+                {estimate ? `£${estimate.min}–${estimate.max}` : "£—"}
               </p>
+              <p className="text-xs text-text-secondary mt-3 font-medium">This is a guide price range based on the details you provided. A vetted mover can review your request and send a quote if they can help.</p>
             </div>
+            <button onClick={onNextStep} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">Continue</button>
+            <button onClick={() => setStep(1)} className="text-[10px] font-black uppercase opacity-30">Back</button>
           </div>
         )}
 
         {/* ──────────────────── Step 3 (or 2 for single-item): Contact Details ──────────────────── */}
         {(step === (hasEstimate ? 3 : 2)) && (
           <div className="space-y-4">
-            <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-primary uppercase text-center outline-none">Your details</h2>
+            <h2 className="text-2xl font-black text-primary uppercase text-center">Your Details</h2>
 
-            <div className="bg-green-50/70 border border-green-200/60 rounded-xl p-3 flex items-center gap-2">
-              <Lock size={14} className="text-green-600 flex-shrink-0" />
-              <p className="text-xs font-bold text-primary">Details stay private until you book.</p>
+            {/* Privacy & GDPR reassurance */}
+            <div className="bg-green-50/50 border border-green-200/50 rounded-xl p-3 flex items-start gap-2">
+              <Lock size={14} className="text-green-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs font-bold text-primary flex items-center gap-1.5">
+                  <span className="inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">Secure & GDPR Compliant</span>
+                </p>
+                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely. Details are released only if you accept a mover quote and pay the booking deposit. The deposit is deducted from the mover quote.</p>
+              </div>
             </div>
 
             <div className="space-y-2">
@@ -911,15 +798,19 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <input {...register("email")} placeholder="Email Address" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
               {errors.email && <p className="text-red-500 text-xs font-bold mt-1">{errors.email.message}</p>}
             </div>
+            <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest disabled:opacity-50">
+              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
+            </button>
+            <button onClick={() => setStep(step - 1)} className="text-[10px] font-black uppercase opacity-30">Back</button>
           </div>
         )}
 
         {/* ──────────────────── Step 4 (or 3 for single-item): OTP ──────────────────── */}
         {(step === (hasEstimate ? 4 : 3)) && (
           <div className="space-y-6 text-center">
-            <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-primary uppercase outline-none">Verify email</h2>
-            <p className="text-sm text-text-secondary">Enter the 6-digit code sent to your email</p>
-            <div className="flex justify-center gap-2">
+            <h2 className="text-2xl font-black text-primary uppercase">Verify Your Email</h2>
+            <p className="text-sm text-text-secondary">Enter the 4-digit code sent to your email</p>
+            <div className="flex justify-center gap-3">
               {otp.map((digit, i) => (
                 <input
                   key={i}
@@ -930,13 +821,15 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   value={digit}
                   onChange={(e) => handleOtpChange(i, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(i, e)}
-                  className="w-10 h-14 sm:w-12 sm:h-16 bg-gray-50 border-2 rounded-xl text-center text-2xl sm:text-3xl font-black outline-none border-border focus:border-accent"
-                  aria-label={`Digit ${i + 1} of 6`}
+                  className="w-12 h-16 bg-gray-50 border-2 rounded-xl text-center text-3xl font-black outline-none border-border focus:border-accent"
+                  aria-label={`Digit ${i + 1} of 4`}
                 />
               ))}
             </div>
             {otpError && <p className="text-red-500 text-sm">{otpError}</p>}
-
+            <button onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full py-5 rounded-xl font-black uppercase tracking-widest">
+              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Confirm Verification"}
+            </button>
           </div>
         )}
 
@@ -944,16 +837,30 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         {step === TOTAL_STEPS && (
           <div className="text-center py-4 space-y-4">
             <CheckCircle2 size={40} className="text-success mx-auto" />
-            <h2 className="text-2xl font-black text-primary uppercase">Request sent</h2>
+            <h2 className="text-2xl font-black text-primary uppercase">You're All Set</h2>
             <p className="text-text-secondary">Your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} request has been successfully submitted.</p>
-            <p className="text-text-secondary text-sm">Check your email for your quote options.</p>
+            <p className="text-text-secondary text-sm">A vetted local mover will review your details and submit a quote if they can help.</p>
+
             <div className="text-left bg-gray-50/50 rounded-2xl p-4 border border-border">
-              <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-2">Next</h3>
-              <ul className="space-y-2 text-sm text-primary/80">
-                <li>1. A verified mover reviews your request.</li>
-                <li>2. You get quote options by email.</li>
-                <li>3. Pick one and pay the deposit to book.</li>
-              </ul>
+              <h3 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-3">What Happens Next</h3>
+              <ol className="space-y-3 text-sm text-primary/80">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">1</span>
+                  We review your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} requirements
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">2</span>
+                  A vetted mover reviews your request and submits a quote
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">3</span>
+                  You receive the quote by email and can accept or decline
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center text-xs font-black text-accent">4</span>
+                  If you accept, you pay a booking deposit deducted from the quote and the mover contacts you directly
+                </li>
+              </ol>
             </div>
 
             <p className="text-sm font-bold text-accent tracking-tight">No spam. Just one trusted mover quote.</p>
@@ -962,32 +869,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           </div>
         )}
       </div>
-
-      {showWizardFooter && (
-        <div className="flex-none border-t border-border bg-white px-5 py-3 lg:px-8" style={{ paddingBottom: 'calc(12px + env(safe-area-inset-bottom))' }}>
-          <div className="flex items-center gap-3">
-            {canGoBack ? (
-              <button
-                type="button"
-                onClick={() => setStep(step - 1)}
-                className="min-h-[52px] w-28 rounded-xl border-2 border-border font-black uppercase tracking-widest text-xs text-primary/60 hover:border-accent hover:text-accent transition-colors"
-              >
-                Back
-              </button>
-            ) : (
-              <div className="hidden sm:block w-28" />
-            )}
-            <button
-              type="button"
-              onClick={handlePrimaryAction}
-              disabled={isSubmitting}
-              className="btn-orange min-h-[52px] flex-1 rounded-xl font-black uppercase tracking-widest text-sm disabled:opacity-50 flex items-center justify-center"
-            >
-              {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : getPrimaryActionLabel()}
-            </button>
-          </div>
-        </div>
-      )}
       </>)}
     </div>
   );

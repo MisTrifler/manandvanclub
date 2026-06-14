@@ -12,7 +12,7 @@ export default function HowItWorksContent() {
       icon: <Search className="w-8 h-8" />,
     },
     {
-      title: "See an Estimated Price",
+      title: "See a Guide Price Range",
       desc: "We show a guide price range based on the move details provided. This is not the final mover quote.",
       icon: <Calculator className="w-8 h-8" />,
     },
@@ -116,7 +116,7 @@ export default function HowItWorksContent() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-black text-primary uppercase tracking-tighter mb-4">Ready to Get Started?</h2>
           <p className="text-xl text-text-secondary mb-8 max-w-md mx-auto">It takes less than 60 seconds to request a quote from a vetted local mover.</p>
-          <Link href="/get-started" className="btn-orange px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
+          <Link href="/#quote-form" className="btn-orange px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
             Start Your Move <ArrowUpRight size={20} />
           </Link>
         </div>

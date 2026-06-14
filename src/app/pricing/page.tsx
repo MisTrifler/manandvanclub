@@ -57,7 +57,7 @@ export default function PricingPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/get-started" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2">
+            <Link href="/#quote-form" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2">
               Get Matched <ArrowUpRight size={16} />
             </Link>
             <Link href="/apply-to-join" className="bg-white border border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-gray-50 inline-flex items-center justify-center gap-2">
