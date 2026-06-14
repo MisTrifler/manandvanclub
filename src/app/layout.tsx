@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 export const metadata: Metadata = {
   title: "Find Trusted Local Movers Across the UK | Man and Van Club",
@@ -74,6 +75,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <CookieConsent />
+
+        <MobileStickyCTA />
       </body>
     </html>
   );

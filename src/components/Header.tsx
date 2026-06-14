@@ -208,8 +208,8 @@ export default function Header() {
                 Driver Login
               </Link>
             )}
-            <Link href="/#quote-form" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95" aria-label="Get matched with a local mover">
-              Get Matched
+            <Link href="/get-started" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95" aria-label="Get matched with a local mover">
+              Start Request
             </Link>
           </div>
 
@@ -265,7 +265,7 @@ export default function Header() {
             ) : (
               <Link href="/login" className="bg-gray-50 text-primary py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Driver Login</Link>
             )}
-            <Link href="/#quote-form" className="btn-orange py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Get Matched</Link>
+            <Link href="/get-started" className="btn-orange py-4 rounded-xl font-black uppercase tracking-widest text-xs text-center" onClick={() => setIsOpen(false)}>Start Request</Link>
           </div>
         </div>
       )}

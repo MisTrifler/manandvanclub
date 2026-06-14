@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   { q: "What is the booking deposit?", a: "The booking deposit secures your accepted mover quote and releases your details to the mover. It is deducted from the mover's quote, so your total move cost stays the same." },
   { q: "Do I pay the mover separately?", a: "Yes. You pay the remaining balance directly to the mover on moving day." },
   { q: "Will my total cost increase?", a: "No. The mover quote is your total move cost. The booking deposit is deducted from that quote." },
-  { q: "Example?", a: "If your selected quote option is £300, the booking deposit is £25. You pay £25 today and £275 directly to the mover on moving day. Your total move cost stays £300 — the deposit is not an extra charge." },
+  { q: "Example?", a: "If the mover quotes £300 and the booking deposit is £25, you pay £25 today and £275 to the mover on moving day. Your total move cost is £300." },
 ];
 
 export default function PricingPage() {
@@ -36,10 +36,10 @@ export default function PricingPage() {
             <CreditCard size={14} /> Booking deposit pricing
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-primary uppercase tracking-tighter leading-none mb-6">
-            Booking Deposit Pricing
+            Simple Booking Deposit Pricing
           </h1>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-8">
-            Customers submit requests for free. Approved movers submit total quotes for free. The booking deposit is paid only after the customer accepts a quote option, and it is deducted from the selected quote. It is not an extra charge.
+            Customers submit requests for free. Approved movers submit total quotes for free. The booking deposit is paid only after the customer accepts a mover quote, and it is deducted from that quote.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -47,7 +47,7 @@ export default function PricingPage() {
               "Movers submit total quotes for free",
               "Customers only pay after seeing a quote",
               "Deposit deducted from mover quote",
-              "No spam or endless calls",
+              "No spam or multiple sales calls",
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 bg-white border border-border px-4 py-2 rounded-full text-sm font-bold text-primary/80">
                 <CheckCircle2 size={14} className="text-accent" />
@@ -57,7 +57,7 @@ export default function PricingPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#quote-form" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2">
+            <Link href="/get-started" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2">
               Get Matched <ArrowUpRight size={16} />
             </Link>
             <Link href="/apply-to-join" className="bg-white border border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-gray-50 inline-flex items-center justify-center gap-2">
@@ -102,7 +102,7 @@ export default function PricingPage() {
           </div>
 
           <p className="text-center text-xs text-text-secondary mt-6 font-medium">
-            Example: selected mover quote £300, booking deposit paid today £25, pay mover on moving day £275. Total move cost: £300.
+            Example: mover quote £300, booking deposit £25, pay mover on moving day £275. Customer total: £300.
           </p>
         </div>
       </section>
@@ -117,7 +117,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { t: "Protected Details", d: "Customer contact details are hidden until a quote is accepted and the booking deposit is paid.", icon: <Lock size={24} /> },
-              { t: "Movers Quote For Free", d: "Movers submit quotes without paying for enquiries that customers may not accept.", icon: <Users size={24} /> },
+              { t: "No Weak Paid Leads", d: "Movers submit quotes without paying for enquiries that customers may not accept.", icon: <Users size={24} /> },
               { t: "Customer-Confirmed", d: "The mover receives details only after the customer has shown real intent.", icon: <ShieldCheck size={24} /> },
               { t: "Balance Paid Directly", d: "The remaining balance is paid directly to the mover on moving day.", icon: <Banknote size={24} /> },
             ].map((item) => (

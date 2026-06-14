@@ -31,8 +31,8 @@ export default function IntentSelector({
       key={option.id}
       type="button"
       onClick={() => onSelect(option.id)}
-      className="flex min-h-[76px] flex-col items-center justify-center rounded-2xl border border-primary/10 bg-white p-2.5 text-center shadow-sm transition duration-200 active:scale-[0.98] sm:min-h-[92px] sm:p-4 lg:min-h-[116px] lg:p-5 lg:hover:-translate-y-0.5 lg:hover:border-accent/30 lg:hover:shadow-lg"
-      aria-label={`Continue to free quote for ${option.label}`}
+      className="flex min-h-[74px] flex-col items-center justify-center rounded-2xl border border-primary/10 bg-white p-2.5 text-center shadow-sm transition duration-200 active:scale-[0.98] sm:min-h-[92px] sm:p-4 lg:min-h-[116px] lg:p-5 lg:hover:-translate-y-0.5 lg:hover:border-accent/30 lg:hover:shadow-lg"
+      aria-label={`Start move request for ${option.label}`}
     >
       <span className="mb-1 text-2xl sm:text-3xl" aria-hidden="true">
         {option.emoji}
@@ -50,7 +50,7 @@ export default function IntentSelector({
           What do you need help moving?
         </p>
         <p className="mt-1 text-xs font-medium text-text-secondary">
-          Choose a service to continue to your free quote request.
+          Choose the closest option. You can add the details next.
         </p>
       </div>
 

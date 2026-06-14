@@ -1,24 +1,14 @@
-Mobile homepage fix v2
+Mobile homepage + quote page fix v3
 
-Changed files:
-- src/app/HomeContent.tsx
-- src/components/IntentSelector.tsx
+What this changes:
+- Removes the quote form from the homepage hero so the homepage no longer auto-scrolls into the form.
+- Restores the mobile background image using /hero-mover-bg.png.
+- Adds a dedicated /get-started page for the full move request form.
+- Updates homepage/header/sticky CTA links to /get-started instead of /#quote-form.
+- Adds a mobile sticky CTA component that hides on /get-started so it does not overlay the form.
+- Keeps move type selection compact and less "get your quote" focused.
+- Clarifies that a guide price may be shown where enough information is available, but the real mover quote comes later.
 
 Important:
-- This version deliberately does NOT include src/components/QuoteForm.tsx.
-- Do not replace QuoteForm.tsx with the earlier mobile homepage zip version, because that file can overwrite newer quote/OTP/payment work.
-- This patch only changes the mobile homepage opening and move-type selector.
-
-What changed:
-- Mobile homepage now uses a dedicated compact mobile hero instead of stacking the full desktop image hero.
-- Mobile headline/trust copy appears in a short navy card.
-- Quote form is pulled closer to the top of the first screen.
-- The first mobile view is less crowded and easier to read.
-- Move-type buttons use fixed comfortable mobile heights and no touch hover scripts.
-- Office / Storage / Student remain behind More move types on mobile.
-- Desktop/tablet image hero remains available from lg and up.
-
-After applying:
-- Run npm run build.
-- Test at 390px, 430px, and 768px widths.
-- Confirm all six move types still select correctly.
+- Backend, Stripe, driver matching, OTP, route estimate, guide price, quote expiry, no-show and payment logic are not intentionally changed.
+- Apply this over your current repo, then run npm run build.

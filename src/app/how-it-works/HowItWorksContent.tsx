@@ -1,59 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { Search, Calculator, CheckCircle, Zap, Truck, ArrowUpRight, ShieldCheck, CreditCard, Banknote, Lock } from "lucide-react";
+import { Search, Calculator, CheckCircle, Zap, Truck, ArrowUpRight, ShieldCheck, CreditCard } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HowItWorksContent() {
   const steps = [
     {
       title: "Tell Us About Your Move",
-      desc: "Enter your collection and delivery postcodes, move date and move type. It takes less than 60 seconds and your quote request is free.",
+      desc: "Enter your collection and delivery postcodes, move date, and move type. It takes less than 60 seconds.",
       icon: <Search className="w-8 h-8" />,
     },
     {
-      title: "Verify Your Email",
-      desc: "Confirm your email with a quick verification code so movers only see genuine requests. We also show a guide price — this is only an estimate, not the final mover quote.",
+      title: "See an Estimated Price",
+      desc: "We show a guide price range based on the move details provided. This is not the final mover quote.",
       icon: <Calculator className="w-8 h-8" />,
     },
     {
-      title: "A Vetted Mover Reviews Your Request",
-      desc: "Your contact details stay protected while your request is reviewed. A verified local mover sees only anonymised move details.",
-      icon: <ShieldCheck className="w-8 h-8" />,
-    },
-    {
-      title: "Receive Clear Quote Options",
-      desc: "A vetted mover can send clear quote options based on your move details — for example transport only, 1 man and van, or 2 men and van — each with its own total price.",
+      title: "A Vetted Mover Sends a Quote",
+      desc: "Approved local movers can review anonymised move details and submit a mover quote if they can help.",
       icon: <Zap className="w-8 h-8" />,
     },
     {
-      title: "Choose the Option That Suits You",
-      desc: "You receive a secure quote review link. Compare the options and choose the one that suits your move best, or decline with no payment.",
-      icon: <Lock className="w-8 h-8" />,
-    },
-    {
-      title: "Pay Your Deposit to Secure the Booking",
-      desc: "Pay a booking deposit on your chosen option. Your booking deposit is deducted from the mover’s selected quote. It is not an extra charge.",
+      title: "Accept or Decline Securely",
+      desc: "You receive a secure quote review link. Your contact details are not released unless you accept the quote and pay the booking deposit. The deposit is deducted from the mover quote.",
       icon: <CreditCard className="w-8 h-8" />,
     },
     {
-      title: "Your Details Are Released to the Mover",
-      desc: "Once your deposit is paid, your contact details are released only to that mover, who contacts you directly to confirm timing and access.",
-      icon: <CheckCircle className="w-8 h-8" />,
-    },
-    {
-      title: "Pay the Rest on Moving Day",
-      desc: "You pay the remaining balance directly to the mover on moving day. Your total move cost stays the same as the option you chose.",
+      title: "Mover Contacts You Directly",
+      desc: "After the booking deposit is paid, your details are released only to that mover. You pay the remaining balance directly to the mover on moving day.",
       icon: <Truck className="w-8 h-8" />,
     },
-  ];
-
-  const trustBadges = [
-    { icon: <ShieldCheck size={18} />, label: "One Verified Mover" },
-    { icon: <CheckCircle size={18} />, label: "No Spam" },
-    { icon: <Lock size={18} />, label: "Secure Quote Review" },
-    { icon: <CreditCard size={18} />, label: "Deposit Deducted From Quote" },
-    { icon: <Banknote size={18} />, label: "Pay the Rest on Moving Day" },
   ];
 
   return (
@@ -64,13 +41,10 @@ export default function HowItWorksContent() {
             Simple Customer-Confirmed Process
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-primary uppercase tracking-tighter mb-6">
-            How Man and Van Club Works
+            How It Works
           </h1>
-          <p className="text-xl font-bold text-primary mb-4">
-            Get your quote for free. If you accept a mover option, pay a booking deposit to secure your booking and pay the rest on moving day.
-          </p>
-          <p className="text-lg text-text-secondary">
-            One verified local mover. No spam. No endless calls. Your details stay protected until you accept a mover quote.
+          <p className="text-xl text-text-secondary">
+            One vetted local mover. No spam. No multiple sales calls. Your details stay protected until you accept a mover quote.
           </p>
         </div>
       </section>
@@ -105,14 +79,35 @@ export default function HowItWorksContent() {
         </div>
       </section>
 
-      <section className="bg-[#F9F9F7] py-12 text-primary border-y border-border">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm font-black uppercase tracking-widest">
-            {trustBadges.map((badge) => (
-              <div key={badge.label} className="flex items-center gap-2">
-                <span className="text-accent">{badge.icon}</span> {badge.label}
+      <section className="py-20 bg-[#F9F9F7] border-y border-border">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-primary uppercase tracking-tighter mb-3">For Approved Movers</h2>
+            <p className="text-text-secondary">Movers submit quotes for free and receive customer details only after a customer-confirmed booking.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            {[
+              "See anonymised local requests",
+              "Submit a mover quote for free",
+              "Customer accepts or declines",
+              "Details released after deposit is paid",
+              "Customer pays you the remaining balance",
+            ].map((item, index) => (
+              <div key={item} className="bg-white border border-border rounded-2xl p-5 text-center">
+                <div className="w-8 h-8 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-3 text-xs font-black">{index + 1}</div>
+                <p className="text-sm font-bold text-primary leading-snug">{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 text-primary">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-black uppercase tracking-widest">
+            <div className="flex items-center gap-2"><ShieldCheck size={18} className="text-accent" /> Vetted Movers</div>
+            <div className="flex items-center gap-2"><Zap size={18} className="text-accent" /> Customer-Confirmed Bookings</div>
+            <div className="flex items-center gap-2"><CheckCircle size={18} className="text-accent" /> No Multiple Sales Calls</div>
           </div>
         </div>
       </section>
@@ -120,9 +115,9 @@ export default function HowItWorksContent() {
       <section className="py-20 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-black text-primary uppercase tracking-tighter mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-text-secondary mb-8 max-w-md mx-auto">It takes less than 60 seconds to request a quote from a verified local mover.</p>
-          <Link href="/#quote-form" className="btn-orange px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
-            Get Your Free Quote <ArrowUpRight size={20} />
+          <p className="text-xl text-text-secondary mb-8 max-w-md mx-auto">It takes less than 60 seconds to request a quote from a vetted local mover.</p>
+          <Link href="/get-started" className="btn-orange px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
+            Start Your Move <ArrowUpRight size={20} />
           </Link>
         </div>
       </section>
