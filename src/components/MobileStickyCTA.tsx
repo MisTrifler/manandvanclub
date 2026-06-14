@@ -1,31 +1,11 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const HIDDEN_PREFIXES = [
-  "/quote-review",
-  "/marketplace",
-  "/login",
-  "/control-center-mv",
-  "/admin",
-];
-
+/**
+ * MobileStickyCTA was intentionally disabled.
+ *
+ * The sticky bottom "Start Move Request" button could jump customers back to
+ * the top of the form and reset their progress after they had already started
+ * filling it in. Keep this component as a harmless no-op so any older imports
+ * fail safely instead of reintroducing the sticky CTA.
+ */
 export default function MobileStickyCTA() {
-  const pathname = usePathname() || "/";
-
-  if (HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix))) {
-    return null;
-  }
-
-  return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-border z-[200]">
-      <Link
-        href="/#quote-form"
-        className="btn-orange w-full block py-4 text-center text-xs font-black uppercase tracking-[0.2em] rounded-xl shadow-2xl"
-      >
-        Start Move Request
-      </Link>
-    </div>
-  );
+  return null;
 }
