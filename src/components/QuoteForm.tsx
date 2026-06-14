@@ -116,7 +116,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     });
   }, [step, activeIntent]);
 
-  const hasEstimate = activeIntent !== "single-item";
+  // Keep the customer flow short: no separate guide-price step.
+  // The server still calculates guide price after submit.
+  const hasEstimate = false;
   const TOTAL_STEPS = hasEstimate ? 5 : 4;
 
   const { register, watch, trigger, setValue, formState: { errors } } = useForm<FormData>({
@@ -248,7 +250,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       if (activeIntent === "office") {
         fields.push("officeSize");
       } else if (activeIntent === "house") {
-        fields.push("bedrooms", "propertyType");
+        fields.push("bedrooms");
       } else if (activeIntent === "single-item") {
         fields.push("itemType");
       } else if (activeIntent === "storage") {
@@ -556,21 +558,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {errors.officeSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.officeSize.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Approx Desks / Items (Optional)</label>
-                  <input {...register("numberOfDesks")} type="number" placeholder="Optional, approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Current office postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
+                  <input {...register("collectionPostcode")} placeholder="Collection postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="New office postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
+                  <input {...register("deliveryPostcode")} placeholder="Delivery postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -580,48 +578,30 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {/* ── HOUSE FORM ── */}
             {activeIntent === "house" && (
               <div className="space-y-2">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Bedrooms</label>
-                    <select {...register("bedrooms")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="">Select</option>
-                      <option value="Studio">Studio</option>
-                      <option value="1">1 Bed</option>
-                      <option value="2">2 Bed</option>
-                      <option value="3">3 Bed</option>
-                      <option value="4+">4+ Bed</option>
-                    </select>
-                    {errors.bedrooms && <p className="text-red-500 text-xs font-bold mt-1">{errors.bedrooms.message}</p>}
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Property Type</label>
-                    <select {...register("propertyType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                      <option value="">Select</option>
-                      <option value="House">House</option>
-                      <option value="Flat">Flat</option>
-                      <option value="Apartment">Apartment</option>
-                      <option value="Bungalow">Bungalow</option>
-                      <option value="Maisonette">Maisonette</option>
-                    </select>
-                    {errors.propertyType && <p className="text-red-500 text-xs font-bold mt-1">{errors.propertyType.message}</p>}
-                  </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Bedrooms</label>
+                  <select {...register("bedrooms")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                    <option value="">Select bedrooms</option>
+                    <option value="Studio">Studio</option>
+                    <option value="1">1 Bed</option>
+                    <option value="2">2 Bed</option>
+                    <option value="3">3 Bed</option>
+                    <option value="4+">4+ Bed</option>
+                  </select>
+                  {errors.bedrooms && <p className="text-red-500 text-xs font-bold mt-1">{errors.bedrooms.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Access Notes (Optional)</label>
-                  <input {...register("accessNotes")} placeholder="Optional, e.g. stairs, lift, parking, narrow entrance" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
                   <input {...register("collectionPostcode")} placeholder="Current postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
                   <input {...register("deliveryPostcode")} placeholder="New postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -632,41 +612,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "student" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Student Accommodation or Area (Optional)</label>
-                  <input {...register("accommodationArea")} placeholder="Optional, e.g. halls, shared house, Selly Oak" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Boxes</label>
-                    <input {...register("numberOfBoxes")} type="number" placeholder="Approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Suitcases</label>
-                    <input {...register("suitcases")} type="number" placeholder="Approximate" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Any Small Furniture?</label>
-                  <select {...register("smallFurnitureItems")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select option</option>
-                    <option value="None">None — only boxes and bags</option>
-                    <option value="Desk + Chair">Desk + Chair</option>
-                    <option value="Desk + Chair + Bookshelf">Desk + Chair + Bookshelf</option>
-                    <option value="Other small furniture">Other small furniture</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving From (Postcode)</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
                   <input {...register("collectionPostcode")} placeholder="Current postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving To (Postcode)</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
                   <input {...register("deliveryPostcode")} placeholder="New postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">When Do You Need to Move?</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -677,7 +633,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "single-item" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Item Type</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Item</label>
                   <select {...register("itemType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
                     <option value="">Select item</option>
                     <option value="Sofa">Sofa</option>
@@ -685,8 +641,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                     <option value="Table">Table</option>
                     <option value="Wardrobe">Wardrobe</option>
                     <option value="Fridge">Fridge</option>
-                    <option value="Washing Machine">Washing Machine</option>
-                    <option value="Dining Set">Dining Set</option>
+                    <option value="Washing Machine">Washing machine</option>
+                    <option value="Dining Set">Dining set</option>
                     <option value="Desk">Desk</option>
                     <option value="Mattress">Mattress</option>
                     <option value="Other">Other</option>
@@ -694,17 +650,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {errors.itemType && <p className="text-red-500 text-xs font-bold mt-1">{errors.itemType.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Where is the item now?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
+                  <input {...register("collectionPostcode")} placeholder="Collection postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="Where should it go?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
+                  <input {...register("deliveryPostcode")} placeholder="Delivery postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Preferred Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
@@ -715,32 +671,19 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "general" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Pickup Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
                   <input {...register("collectionPostcode")} placeholder="Pickup postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Drop-off Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
                   <input {...register("deliveryPostcode")} placeholder="Drop-off postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Number of Items (approximate)</label>
-                  <input {...register("numberOfItems")} type="number" placeholder="e.g. 5" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Preferred Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Extra Help Needed? (Optional)</label>
-                  <select {...register("additionalHelpers")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Optional — the mover can advise</option>
-                    <option value="no">No — driver only</option>
-                    <option value="yes">Yes — need extra helper</option>
-                    <option value="unsure">Unsure — advise me</option>
-                  </select>
                 </div>
               </div>
             )}
@@ -748,125 +691,148 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {/* ── STORAGE FORM ── */}
             {activeIntent === "storage" && (
               <div className="space-y-2">
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Direction</label>
-                  <select {...register("storageDirection")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select direction</option>
-                    <option value="To storage">To storage — moving items into a unit</option>
-                    <option value="From storage">From storage — collecting items out</option>
-                    <option value="Between units">Between units — moving from one storage unit to another</option>
-                  </select>
-                  {errors.storageDirection && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageDirection.message}</p>}
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Direction</label>
+                    <select {...register("storageDirection")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="">Select</option>
+                      <option value="To storage">To storage</option>
+                      <option value="From storage">From storage</option>
+                      <option value="Between units">Between units</option>
+                    </select>
+                    {errors.storageDirection && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageDirection.message}</p>}
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Amount</label>
+                    <select {...register("storageUnitSize")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="">Select</option>
+                      <option value="Few items">Few items</option>
+                      <option value="Half van">Half van</option>
+                      <option value="Full van">Full van</option>
+                      <option value="Unsure">Unsure</option>
+                    </select>
+                    {errors.storageUnitSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageUnitSize.message}</p>}
+                  </div>
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Rough Amount</label>
-                  <select {...register("storageUnitSize")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select rough amount</option>
-                    <option value="Few items">Few items</option>
-                    <option value="Half van">Half van</option>
-                    <option value="Full van">Full van</option>
-                    <option value="Unsure">Unsure</option>
-                  </select>
-                  {errors.storageUnitSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageUnitSize.message}</p>}
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Facility / Notes (Optional)</label>
-                  <input {...register("storageFacility")} placeholder="Optional, e.g. Big Yellow Storage" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Storage facility postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">From</label>
+                  <input {...register("collectionPostcode")} placeholder="Collection postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="Where items are going" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">To</label>
+                  <input {...register("deliveryPostcode")} placeholder="Delivery postcode" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
                 </div>
               </div>
             )}
 
-            {/* Shared move requirements — all move types (all optional) */}
+            {/* Extra information is hidden by default so customers can click through quickly. */}
             <details className="border-t border-border/60 pt-3 mt-1 space-y-2 group">
-              <summary className="cursor-pointer list-none rounded-xl bg-gray-50 px-3 py-3 text-xs font-black uppercase tracking-[0.18em] text-primary/55 flex items-center justify-between">Optional details <span className="text-accent text-sm group-open:rotate-45 transition-transform">+</span></summary>
-              <div className="grid grid-cols-2 gap-2">
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Help Loading &amp; Unloading?</label>
+              <summary className="cursor-pointer list-none rounded-xl bg-gray-50 px-3 py-3 text-xs font-black uppercase tracking-[0.18em] text-primary/55 flex items-center justify-between">
+                Add optional details <span className="text-accent text-sm group-open:rotate-45 transition-transform">+</span>
+              </summary>
+
+              <div className="space-y-2 pt-2">
+                {activeIntent === "house" && (
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Property Type</label>
+                      <select {...register("propertyType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                        <option value="">Optional</option>
+                        <option value="House">House</option>
+                        <option value="Flat">Flat</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Bungalow">Bungalow</option>
+                        <option value="Maisonette">Maisonette</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Access</label>
+                      <input {...register("accessNotes")} placeholder="Stairs, lift, parking" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                    </div>
+                  </div>
+                )}
+
+                {activeIntent === "office" && (
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Desks / Items</label>
+                    <input {...register("numberOfDesks")} type="number" placeholder="Optional approximate number" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  </div>
+                )}
+
+                {activeIntent === "student" && (
+                  <div className="grid grid-cols-2 gap-2">
+                    <input {...register("accommodationArea")} placeholder="Halls / area (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                    <input {...register("numberOfBoxes")} type="number" placeholder="Boxes (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                    <input {...register("suitcases")} type="number" placeholder="Suitcases (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                    <select {...register("smallFurnitureItems")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="">Small furniture?</option>
+                      <option value="None">None</option>
+                      <option value="Desk + Chair">Desk + Chair</option>
+                      <option value="Desk + Chair + Bookshelf">Desk + Chair + Bookshelf</option>
+                      <option value="Other small furniture">Other</option>
+                    </select>
+                  </div>
+                )}
+
+                {activeIntent === "general" && (
+                  <div className="grid grid-cols-2 gap-2">
+                    <input {...register("numberOfItems")} type="number" placeholder="Items (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                    <select {...register("additionalHelpers")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
+                      <option value="">Extra help?</option>
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                      <option value="unsure">Unsure</option>
+                    </select>
+                  </div>
+                )}
+
+                {activeIntent === "storage" && (
+                  <div>
+                    <input {...register("storageFacility")} placeholder="Storage facility / notes (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                  </div>
+                )}
+
+                <div className="grid grid-cols-2 gap-2">
                   <select {...register("loadingHelp")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select (optional)</option>
-                    <option value="No, transport only">No, transport only</option>
-                    <option value="Yes, 1 mover helping is enough">Yes, 1 mover is enough</option>
-                    <option value="Yes, 2 movers may be needed">Yes, 2 movers may be needed</option>
+                    <option value="">Loading help?</option>
+                    <option value="No, transport only">Transport only</option>
+                    <option value="Yes, 1 mover helping is enough">1 mover helping</option>
+                    <option value="Yes, 2 movers may be needed">2 movers may be needed</option>
                     <option value="Not sure">Not sure</option>
                   </select>
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Any Stairs or Lift?</label>
                   <select {...register("accessType")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Select (optional)</option>
+                    <option value="">Stairs/lift?</option>
                     <option value="Ground floor">Ground floor</option>
                     <option value="Stairs">Stairs</option>
                     <option value="Lift available">Lift available</option>
                     <option value="Not sure">Not sure</option>
                   </select>
-                </div>
-              </div>
-              <div>
-                <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">How Many Movers Do You Think You Need?</label>
-                <select {...register("helperPreference")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                  <option value="">Select (optional)</option>
-                  <option value="1 mover">1 mover</option>
-                  <option value="2 movers">2 movers</option>
-                  <option value="Not sure">Not sure</option>
-                </select>
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Parking Available?</label>
                   <select {...register("parkingAvailable")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Optional</option>
+                    <option value="">Parking?</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                     <option value="Not sure">Not sure</option>
                   </select>
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Heavy / Awkward Items?</label>
                   <select {...register("heavyItems")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Optional</option>
+                    <option value="">Heavy items?</option>
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
                     <option value="Not sure">Not sure</option>
                   </select>
                 </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Dismantling Needed?</label>
-                  <select {...register("dismantlingRequired")} className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none appearance-none">
-                    <option value="">Optional</option>
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
-                    <option value="Not sure">Not sure</option>
-                  </select>
-                </div>
+                {watch("heavyItems") === "Yes" && (
+                  <input {...register("heavyItemsDescription")} placeholder="Which heavy items?" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
+                )}
+                <input {...register("notes")} placeholder="Anything else? (optional)" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
               </div>
-              {watch("heavyItems") === "Yes" && (
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Which Heavy Items? (Optional)</label>
-                  <input {...register("heavyItemsDescription")} placeholder="e.g. sofa, wardrobe, piano, fridge freezer" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-                </div>
-              )}
             </details>
-
-            {/* Shared optional notes — all move types */}
-            <div>
-              <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Anything Else the Mover Should Know? (Optional)</label>
-              <input {...register("notes")} placeholder="Optional, e.g. stairs, parking, fragile items, narrow access" className="w-full p-3 bg-gray-50 border-2 border-transparent focus:border-accent rounded-xl font-bold text-sm outline-none" />
-            </div>
 
             {/* Route estimate panel — informational guide only.
                 Renders ONLY when the estimate matches the current postcode pair. */}
