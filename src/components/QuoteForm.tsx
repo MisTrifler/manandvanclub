@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -82,6 +82,62 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [guidePrice, setGuidePrice] = useState<GuidePriceResult | null>(null);
   const [routeEstimate, setRouteEstimate] = useState<any | null>(null);
   const [isCalculatingGuide, setIsCalculatingGuide] = useState(false);
+  const formShellRef = useRef<HTMLDivElement | null>(null);
+  const activeStepRef = useRef<HTMLDivElement | null>(null);
+  const hasMountedRef = useRef(false);
+
+  const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
+
+  const canShowGuidePrice = Boolean(activeIntent);
+  const TOTAL_STEPS = 4;
+  const CONTACT_STEP = 2;
+  const VERIFY_STEP = 3;
+  const SUCCESS_STEP = 4;
+
+  const scrollToActiveStep = (behavior: ScrollBehavior = "smooth") => {
+    if (typeof window === "undefined") return;
+
+    window.requestAnimationFrame(() => {
+      const target = activeStepRef.current || formShellRef.current;
+      if (!target) return;
+
+      const stickyHeaderOffset = window.matchMedia("(min-width: 1024px)").matches ? 132 : 84;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset;
+
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior,
+      });
+    });
+  };
+
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    scrollToActiveStep(step === SUCCESS_STEP ? "auto" : "smooth");
+  }, [step]);
+
+  const scrollToStepAfterRender = () => {
+    if (typeof window === "undefined") return;
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => scrollToActiveStep("smooth"));
+    });
+  };
+
+  const handleIntentSelect = (intent: IntentType) => {
+    setSelectedIntent(intent);
+    setStep(1);
+    scrollToStepAfterRender();
+  };
+
+  const handleChangeIntent = () => {
+    setSelectedIntent(null);
+    setStep(1);
+    scrollToStepAfterRender();
+  };
 
   // Detect intent from URL on client side (for homepage / no prop)
   useEffect(() => {
@@ -91,14 +147,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       setDetectedIntent(intent);
     }
   }, [propIntent]);
-
-  const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
-
-  const canShowGuidePrice = Boolean(activeIntent);
-  const TOTAL_STEPS = 4;
-  const CONTACT_STEP = 2;
-  const VERIFY_STEP = 3;
-  const SUCCESS_STEP = 4;
 
   const { register, watch, trigger, setValue, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -342,6 +390,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   return (
     <div
+      ref={formShellRef}
       id="move-request-form"
       className="overflow-hidden rounded-[1.75rem] border border-white/25 bg-white shadow-[0_24px_80px_rgba(2,6,23,0.20)] ring-1 ring-black/5"
     >
@@ -349,7 +398,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           Fallback: no intent detected → show selector
           ────────────────────────────────────────── */}
       {!activeIntent && (
-        <div className="px-5 pt-5 pb-5 lg:px-8 lg:pt-8 lg:pb-8">
+        <div ref={activeStepRef} className="px-5 pt-5 pb-5 lg:px-8 lg:pt-8 lg:pb-8">
           <h2
             className="uppercase tracking-tighter"
             style={{
@@ -363,7 +412,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           </h2>
           <p className="text-xs font-black uppercase tracking-[0.22em] text-primary/50 mt-2">Free to submit • No spam • Details protected</p>
           <div className="mt-6">
-            <IntentSelector onSelect={(intent) => { setSelectedIntent(intent); setStep(1); }} />
+            <IntentSelector onSelect={handleIntentSelect} />
           </div>
         </div>
       )}
@@ -412,7 +461,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       <div className="px-5 pb-5 lg:px-8 lg:pb-8">
         {/* ──────────────────── STEP 1: Service Details ──────────────────── */}
         {step === 1 && (
-          <div className="space-y-4">
+          <div ref={activeStepRef} className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter">
@@ -434,7 +483,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </div>
               {!propIntent && (
                 <button
-                  onClick={() => { setSelectedIntent(null); setStep(1); }}
+                  onClick={handleChangeIntent}
                   className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors flex items-center gap-1"
                 >
                   <ArrowLeft size={12} /> Change
@@ -791,7 +840,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
         {/* ──────────────────── STEP 2: Contact Details + Guide Range ──────────────────── */}
         {(step === CONTACT_STEP) && (
-          <div className="space-y-4">
+          <div ref={activeStepRef} className="space-y-4">
             <h2 className="text-2xl font-black text-primary uppercase text-center">Your Details</h2>
 
             {/* Privacy & GDPR reassurance */}
@@ -842,7 +891,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
         {/* ──────────────────── STEP 3: OTP Verification ──────────────────── */}
         {(step === VERIFY_STEP) && (
-          <div className="space-y-6 text-center">
+          <div ref={activeStepRef} className="space-y-6 text-center">
             <h2 className="text-2xl font-black text-primary uppercase">Verify Your Email</h2>
             <p className="text-sm text-text-secondary">Enter the 6-digit code sent to your email</p>
             <div className="flex justify-center gap-3">
@@ -870,7 +919,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
         {/* ──────────────────── STEP 4: Success ──────────────────── */}
         {step === SUCCESS_STEP && (
-          <div className="text-center py-4 space-y-4">
+          <div ref={activeStepRef} className="text-center py-4 space-y-4">
             <CheckCircle2 size={40} className="text-success mx-auto" />
             <h2 className="text-2xl font-black text-primary uppercase">You're All Set</h2>
             <p className="text-text-secondary">Your {activeIntent === "office" ? "office move" : activeIntent === "single-item" ? "furniture delivery" : activeIntent === "storage" ? "storage collection" : activeIntent === "student" ? "student move" : activeIntent === "house" ? "home move" : "man & van service"} request has been successfully submitted.</p>
