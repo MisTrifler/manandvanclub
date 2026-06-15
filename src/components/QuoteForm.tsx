@@ -820,7 +820,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   </p>
                 )}
                 <p className="mt-2 text-xs font-medium leading-relaxed text-text-secondary">
-                  This is an early guide only. A verified mover will review your details and send a proper quote before you decide.
+                  This is only a guide price. A verified mover will review your move details and send an accurate quote before you decide whether to book.
                 </p>
               </div>
             )}
