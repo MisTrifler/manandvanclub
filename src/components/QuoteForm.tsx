@@ -97,18 +97,28 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const scrollToActiveStep = (behavior: ScrollBehavior = "smooth") => {
     if (typeof window === "undefined") return;
 
+    // Wait for React to mount the new step and for the browser to settle layout.
+    // Without the second frame, the viewport can keep the old taller-step scroll
+    // position and appear to drop into the homepage content below the form.
     window.requestAnimationFrame(() => {
-      const target = activeStepRef.current || formShellRef.current;
-      if (!target) return;
+      window.requestAnimationFrame(() => {
+        const target = activeStepRef.current || formShellRef.current;
+        if (!target) return;
 
-      const stickyHeaderOffset = window.matchMedia("(min-width: 1024px)").matches ? 132 : 84;
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset;
+        const stickyHeaderOffset = window.matchMedia("(min-width: 1024px)").matches ? 132 : 84;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset;
 
-      window.scrollTo({
-        top: Math.max(0, targetTop),
-        behavior,
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior,
+        });
       });
     });
+  };
+
+  const goToStep = (nextStep: number, behavior: ScrollBehavior = "smooth") => {
+    setStep(Math.min(Math.max(nextStep, 1), TOTAL_STEPS));
+    scrollToActiveStep(behavior);
   };
 
   useEffect(() => {
@@ -121,22 +131,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   }, [step]);
 
   const scrollToStepAfterRender = () => {
-    if (typeof window === "undefined") return;
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => scrollToActiveStep("smooth"));
-    });
+    scrollToActiveStep("smooth");
   };
 
   const handleIntentSelect = (intent: IntentType) => {
     setSelectedIntent(intent);
-    setStep(1);
-    scrollToStepAfterRender();
+    goToStep(1);
   };
 
   const handleChangeIntent = () => {
     setSelectedIntent(null);
-    setStep(1);
-    scrollToStepAfterRender();
+    goToStep(1);
   };
 
   // Detect intent from URL on client side (for homepage / no prop)
@@ -293,12 +298,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     if (isValid) {
       if (step === 1) {
         const currentData = watch();
-        setStep(CONTACT_STEP);
+        goToStep(CONTACT_STEP);
         void refreshGuidePreview(currentData);
       } else if (step === CONTACT_STEP) {
         handleFinalSubmit(watch());
       } else {
-        setStep(step + 1);
+        goToStep(step + 1);
       }
     }
   };
@@ -350,7 +355,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       const result = await response.json();
       if (!response.ok) throw new Error(result.details || 'Failed');
       setRequestId(result.id);
-      setStep(VERIFY_STEP);
+      goToStep(VERIFY_STEP);
     } catch (error: any) {
       alert(`Error: ${error.message}`);
     } finally {
@@ -372,7 +377,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         body: JSON.stringify({ requestId, otp: code }),
       });
       if (!response.ok) throw new Error('Verification failed');
-      setStep(SUCCESS_STEP);
+      goToStep(SUCCESS_STEP, "auto");
     } catch (error: any) {
       setOtpError("Invalid code. Please try again.");
     } finally {
@@ -483,6 +488,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </div>
               {!propIntent && (
                 <button
+                  type="button"
                   onClick={handleChangeIntent}
                   className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors flex items-center gap-1"
                 >
@@ -834,7 +840,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </div>
             )}
 
-            <button onClick={onNextStep} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">Continue</button>
+            <button type="button" onClick={onNextStep} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">Continue</button>
           </div>
         )}
 
@@ -882,10 +888,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <input {...register("email")} type="email" inputMode="email" autoComplete="email" placeholder="Email Address" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
               {errors.email && <p className="text-red-500 text-xs font-bold mt-1">{errors.email.message}</p>}
             </div>
-            <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:opacity-50">
+            <button type="button" onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:opacity-50">
               {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
             </button>
-            <button onClick={() => setStep(step - 1)} className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-primary">Back</button>
+            <button type="button" onClick={() => goToStep(step - 1)} className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-primary">Back</button>
           </div>
         )}
 
@@ -911,7 +917,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               ))}
             </div>
             {otpError && <p className="text-red-500 text-sm">{otpError}</p>}
-            <button onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">
+            <button type="button" onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">
               {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Confirm Verification"}
             </button>
           </div>
