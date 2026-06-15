@@ -6,9 +6,10 @@ import {
   computeRouteEstimate,
 } from "@/lib/route-estimate";
 
-// Informational route estimate only. Never affects pricing, deposits,
-// Stripe amounts or detail release. GOOGLE_MAPS_API_KEY is used
-// strictly server-side inside computeRouteEstimate.
+// Informational route estimate only. It may feed the display-only guide
+// price, but never affects mover quote prices, booking deposits, Stripe
+// amounts or detail release. Free Postcodes.io lookup is used server-side
+// first; Google Routes is optional and disabled unless explicitly enabled.
 
 // ── Basic in-memory IP rate limiting (best-effort per instance) ─────
 const ipHits = new Map<string, { count: number; resetAt: number }>();

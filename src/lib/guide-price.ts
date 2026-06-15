@@ -300,10 +300,10 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   let distanceMeters = num(usableRouteEstimate?.distanceMeters);
   let durationSeconds = num(usableRouteEstimate?.durationSeconds);
 
-  // If Google/route data was not supplied, still try a UK-wide postcode
+  // If precise route data was not supplied, still try a UK-wide postcode
   // distance fallback before falling back to broad move-type bands. This is
-  // what keeps WS8→B44 different from WS8→LE4, and London→Nottingham
-  // different from a local London move, even if Google Routes is unavailable.
+  // what keeps local routes different from long-distance routes, even if
+  // the external postcode lookup is unavailable.
   if ((distanceMeters <= 0 || durationSeconds <= 0) && input.collectionPostcode && input.deliveryPostcode) {
     usableRouteEstimate = estimateRouteByPostcodeFallback(input.collectionPostcode, input.deliveryPostcode);
     distanceMeters = num(usableRouteEstimate?.distanceMeters);

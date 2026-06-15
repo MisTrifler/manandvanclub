@@ -6,10 +6,11 @@
 // Stripe amounts or detail release. Map URLs contain postcodes only —
 // never names, phones, emails or full addresses.
 //
-// Google Routes is the primary source. When Google is unavailable, a
-// conservative postcode-area fallback is used so the guide price still
-// reacts to distance/time instead of falling back to the same broad range
-// for every route.
+// Free UK postcode lookup is the primary source. Postcodes.io converts
+// full UK postcodes into latitude/longitude, then we estimate route-like
+// mileage/time for the display-only guide price. Google Routes is optional
+// and disabled by default so the checker can run without paid maps usage.
+// A postcode-area centroid fallback remains as the last resort.
 // ─────────────────────────────────────────────────────────────────────
 
 export interface RouteEstimate {
@@ -64,6 +65,55 @@ export function formatDuration(durationSeconds: number): string {
 // common launch outcodes for better local accuracy. The result is clearly
 // marked as a fallback and only feeds the display-only guide price.
 type LatLng = { lat: number; lng: number };
+
+const POSTCODES_IO_TIMEOUT_MS = 3500;
+const POSTCODES_IO_BASE_URL = "https://api.postcodes.io/postcodes";
+const postcodeCoordinateCache = new Map<string, LatLng | null>();
+
+function postcodesIoPath(postcode: string): string {
+  // Postcodes.io accepts encoded postcodes with or without spaces.
+  return `${POSTCODES_IO_BASE_URL}/${encodeURIComponent(normalisePostcodeForRoute(postcode))}`;
+}
+
+async function fetchPostcodesIoCoordinate(postcode: string): Promise<LatLng | null> {
+  const normalised = normalisePostcodeForRoute(postcode);
+  if (!isLikelyUKPostcode(normalised)) return null;
+
+  if (postcodeCoordinateCache.has(normalised)) {
+    return postcodeCoordinateCache.get(normalised) || null;
+  }
+
+  try {
+    const response = await fetch(postcodesIoPath(normalised), {
+      method: "GET",
+      headers: { Accept: "application/json" },
+      signal: AbortSignal.timeout(POSTCODES_IO_TIMEOUT_MS),
+    });
+
+    if (!response.ok) {
+      postcodeCoordinateCache.set(normalised, null);
+      return null;
+    }
+
+    const data = await response.json().catch(() => null);
+    const latitude = Number(data?.result?.latitude);
+    const longitude = Number(data?.result?.longitude);
+
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+      postcodeCoordinateCache.set(normalised, null);
+      return null;
+    }
+
+    const coord = { lat: latitude, lng: longitude };
+    postcodeCoordinateCache.set(normalised, coord);
+    return coord;
+  } catch {
+    return null;
+  } finally {
+    // Prevent unbounded memory growth on long-lived server instances.
+    if (postcodeCoordinateCache.size > 2500) postcodeCoordinateCache.clear();
+  }
+}
 
 const POSTCODE_OUTCODE_CENTROIDS: Record<string, LatLng> = {
   // Launch/local examples and high-traffic districts
@@ -169,6 +219,74 @@ function haversineMiles(a: LatLng, b: LatLng): number {
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
+function estimateRoadMetricsFromCoordinates(
+  fromCoord: LatLng,
+  toCoord: LatLng,
+  fromPostcode: string,
+  toPostcode: string
+): { distanceMeters: number; durationSeconds: number; estimatedRoadMiles: number; durationMinutes: number } {
+  const straightMiles = haversineMiles(fromCoord, toCoord);
+
+  // Straight-line distance is not road distance. These factors are tuned to
+  // keep local urban routes realistic while still scaling national moves
+  // such as London → Nottingham, Manchester → Bristol, etc.
+  const roadFactor =
+    straightMiles < 2 ? 1.8 :
+    straightMiles < 10 ? 1.5 :
+    straightMiles < 40 ? 1.35 :
+    straightMiles < 120 ? 1.25 :
+    1.18;
+
+  const sameOutcode = getPostcodeParts(fromPostcode)?.outcode === getPostcodeParts(toPostcode)?.outcode;
+  const minimumLocalMiles = sameOutcode ? 2.5 : 4;
+  const estimatedRoadMiles = Math.max(minimumLocalMiles, straightMiles * roadFactor);
+
+  // Removal vans travel slower than a car average, especially around cities,
+  // parking/loading streets and A-road sections. This is a guide-time model,
+  // not a promise of exact journey time.
+  const averageMph =
+    estimatedRoadMiles < 8 ? 18 :
+    estimatedRoadMiles < 25 ? 26 :
+    estimatedRoadMiles < 60 ? 36 :
+    estimatedRoadMiles < 140 ? 43 :
+    48;
+
+  const durationMinutes = Math.max(12, Math.round((estimatedRoadMiles / averageMph) * 60));
+  return {
+    estimatedRoadMiles,
+    durationMinutes,
+    distanceMeters: Math.round(estimatedRoadMiles * 1609.344),
+    durationSeconds: Math.round(durationMinutes * 60),
+  };
+}
+
+async function computePostcodesIoRouteEstimate(
+  collectionPostcode: string,
+  deliveryPostcode: string
+): Promise<RouteEstimate | null> {
+  const from = normalisePostcodeForRoute(collectionPostcode);
+  const to = normalisePostcodeForRoute(deliveryPostcode);
+  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to)) return null;
+
+  const [fromCoord, toCoord] = await Promise.all([
+    fetchPostcodesIoCoordinate(from),
+    fetchPostcodesIoCoordinate(to),
+  ]);
+  if (!fromCoord || !toCoord) return null;
+
+  const { distanceMeters, durationSeconds } = estimateRoadMetricsFromCoordinates(fromCoord, toCoord, from, to);
+
+  return {
+    distanceText: formatDistanceMiles(distanceMeters),
+    durationText: formatDuration(durationSeconds),
+    distanceMeters,
+    durationSeconds,
+    mapUrl: buildGoogleMapsDirectionsUrl(from, to),
+    provider: "postcodes-io-distance",
+    calculatedAt: new Date().toISOString(),
+  };
+}
+
 export function estimateRouteByPostcodeFallback(
   collectionPostcode: string,
   deliveryPostcode: string
@@ -181,18 +299,7 @@ export function estimateRouteByPostcodeFallback(
   const toCoord = getFallbackCoordinate(to);
   if (!fromCoord || !toCoord) return null;
 
-  const straightMiles = haversineMiles(fromCoord, toCoord);
-  const roadFactor = straightMiles < 5 ? 1.45 : straightMiles < 40 ? 1.35 : 1.28;
-  const minimumLocalMiles = getPostcodeParts(from)?.outcode === getPostcodeParts(to)?.outcode ? 2.5 : 4;
-  const estimatedRoadMiles = Math.max(minimumLocalMiles, straightMiles * roadFactor);
-
-  // Removal jobs tend to travel slower on urban/local routes. Duration is
-  // deliberately conservative so the guide range reacts to both distance
-  // and time even when Google is unavailable.
-  const averageMph = estimatedRoadMiles < 12 ? 20 : estimatedRoadMiles < 50 ? 33 : 43;
-  const durationMinutes = Math.max(12, Math.round((estimatedRoadMiles / averageMph) * 60));
-  const distanceMeters = Math.round(estimatedRoadMiles * 1609.344);
-  const durationSeconds = Math.round(durationMinutes * 60);
+  const { distanceMeters, durationSeconds } = estimateRoadMetricsFromCoordinates(fromCoord, toCoord, from, to);
 
   return {
     distanceText: formatDistanceMiles(distanceMeters),
@@ -200,7 +307,7 @@ export function estimateRouteByPostcodeFallback(
     distanceMeters,
     durationSeconds,
     mapUrl: buildGoogleMapsDirectionsUrl(from, to),
-    provider: "postcode-distance-fallback",
+    provider: "postcode-area-fallback",
     calculatedAt: new Date().toISOString(),
   };
 }
@@ -285,8 +392,9 @@ async function computeGoogleRouteEstimate(
   collectionPostcode: string,
   deliveryPostcode: string
 ): Promise<RouteEstimate | null> {
+  const googleEnabled = String(process.env.USE_GOOGLE_ROUTE_ESTIMATE || "").toLowerCase() === "true";
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
-  if (!apiKey) return null;
+  if (!googleEnabled || !apiKey) return null;
 
   const from = normalisePostcodeForRoute(collectionPostcode);
   const to = normalisePostcodeForRoute(deliveryPostcode);
@@ -339,22 +447,24 @@ async function computeGoogleRouteEstimate(
 }
 
 /**
- * Server-side route computation. Google Routes is primary; postcode
- * fallback is used when Google is missing/slow/unavailable so guide
- * pricing remains distance-sensitive.
+ * Server-side route computation. The free Postcodes.io lookup is primary.
+ * Google Routes is optional and only used if USE_GOOGLE_ROUTE_ESTIMATE=true
+ * and GOOGLE_MAPS_API_KEY is set. A local postcode-area fallback remains
+ * for resilience if Postcodes.io is slow or unavailable.
  */
 export async function computeRouteEstimate(
   collectionPostcode: string,
   deliveryPostcode: string
 ): Promise<RouteEstimate | null> {
+  const postcodesIoEstimate = await computePostcodesIoRouteEstimate(collectionPostcode, deliveryPostcode);
+  if (postcodesIoEstimate) return postcodesIoEstimate;
+
   const googleEstimate = await computeGoogleRouteEstimate(collectionPostcode, deliveryPostcode);
   if (googleEstimate) return googleEstimate;
 
   const fallbackEstimate = estimateRouteByPostcodeFallback(collectionPostcode, deliveryPostcode);
   if (fallbackEstimate) return fallbackEstimate;
 
-  if (!process.env.GOOGLE_MAPS_API_KEY) {
-    console.warn("[route-estimate] GOOGLE_MAPS_API_KEY not set and postcode fallback unavailable");
-  }
+  console.warn("[route-estimate] postcode route estimate unavailable");
   return null;
 }
