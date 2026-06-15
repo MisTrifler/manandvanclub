@@ -266,7 +266,7 @@ export async function POST(req: Request) {
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background:#F9F9F7;padding:40px 20px;"><tr><td align="center">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width:600px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.05);border:1px solid #E2E8F0;">
                 <tr><td style="padding:40px 40px 20px;text-align:center;">
-                  <div style="background:#0F172A;display:inline-block;padding:12px 20px;border-radius:12px;margin-bottom:24px;"><span style="color:#fff;font-weight:900;font-size:24px;letter-spacing:-1px;">M&amp;V</span></div>
+                  <div style="background:#0F172A;display:inline-block;padding:12px 20px;border-radius:12px;margin-bottom:24px;"><span style="color:#fff;font-weight:900;font-size:24px;letter-spacing:-1px;">M<span style="color:#F5781E;">&amp;</span>V</span></div>
                   <h1 style="margin:0;color:#0F172A;font-size:28px;font-weight:900;letter-spacing:-0.5px;">Your quote options are ready</h1>
                 </td></tr>
                 <tr><td style="padding:0 40px 40px;text-align:center;">

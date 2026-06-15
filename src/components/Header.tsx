@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowUpRight, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { BrandIcon, BrandWordmark } from "./BrandLogo";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -105,16 +106,9 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-14 lg:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-primary p-2 rounded-xl group-hover:bg-accent transition-all duration-500 shadow-lg group-hover:scale-105">
-              <span className="text-white font-black text-xl leading-none tracking-tighter">M&V</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-black text-primary tracking-tighter leading-none uppercase">
-                Man<span className="text-accent">&</span>Van
-              </span>
-              <span className="text-[8px] font-black text-accent tracking-[0.4em] uppercase mt-0.5 leading-none">Club</span>
-            </div>
+          <Link href="/" className="flex items-center gap-2 group" aria-label="Man and Van Club home">
+            <BrandIcon />
+            <BrandWordmark />
           </Link>
 
           {/* Desktop Nav */}

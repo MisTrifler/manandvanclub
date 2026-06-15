@@ -70,7 +70,7 @@ export async function POST(req: Request) {
           subject: "Customer no-show reported for your booking",
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-              <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
+              <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M<span style="color:#F5781E;">&amp;</span>V</span></div>
               <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer No-Show Reported</h2>
               <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(lead.first_name || "there")},</p>
               <p style="color: #475569; font-size: 16px;">Your mover has reported that they attended the agreed collection postcode for your booking but could not reach you or complete the move.</p>
@@ -137,7 +137,7 @@ export async function POST(req: Request) {
           subject: "Customer no-show approved",
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-              <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
+              <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M<span style="color:#F5781E;">&amp;</span>V</span></div>
               <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer No-Show Approved</h2>
               <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(driver?.contact_name || "there")},</p>
               <p style="color: #475569; font-size: 16px;">Your customer no-show report has been approved.</p>
@@ -182,7 +182,7 @@ export async function POST(req: Request) {
           subject: "Customer no-show report reviewed",
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-              <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
+              <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M<span style="color:#F5781E;">&amp;</span>V</span></div>
               <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">No-Show Report Reviewed</h2>
               <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(driver?.contact_name || "there")},</p>
               <p style="color: #475569; font-size: 16px;">We have reviewed your customer no-show report. Based on the information available, it has not been approved.</p>

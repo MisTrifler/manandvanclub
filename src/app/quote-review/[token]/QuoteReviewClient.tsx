@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { formatPounds } from "@/lib/booking-fee";
 import { isClosingReason, shouldShowBudgetFields } from "@/lib/quote-attempts-shared";
+import { BrandIcon } from "@/components/BrandLogo";
 
 interface DisplayOption {
   id: string;
@@ -196,9 +197,7 @@ export default function QuoteReviewClient({
     <div className="min-h-screen bg-[#F9F9F7] p-4 md:p-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
-          <div className="bg-primary px-3 py-2 rounded-xl inline-block mb-4">
-            <span className="text-white font-black text-xl leading-none">M&amp;V</span>
-          </div>
+          <BrandIcon className="mb-4" />
           <h1 className="text-4xl md:text-5xl font-black text-primary tracking-tighter uppercase">
             {options.length > 1 ? "Your mover quote options are ready" : "Your mover quote is ready"}
           </h1>

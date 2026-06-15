@@ -2,6 +2,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { Mail, Loader2, ArrowRight, ShieldCheck, ArrowLeft } from "lucide-react";
+import { BrandIcon, BrandWordmark } from "@/components/BrandLogo";
 
 export default function LoginPage() {
   const [screen, setScreen] = useState<"email" | "code" | "unverified">("email");
@@ -140,11 +141,9 @@ export default function LoginPage() {
       <div className="max-w-md w-full">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <div className="bg-primary px-3 py-2 rounded-xl">
-              <span className="text-white font-black text-xl leading-none">M&V</span>
-            </div>
-            <span className="text-2xl font-black text-primary tracking-tighter uppercase">Man and Van Club</span>
+          <Link href="/" className="inline-flex items-center gap-3 group" aria-label="Man and Van Club home">
+            <BrandIcon />
+            <BrandWordmark variant="inline" size="lg" />
           </Link>
         </div>
 

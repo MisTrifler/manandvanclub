@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Loader2, ShieldAlert, CheckCircle2 } from "lucide-react";
+import { BrandIcon } from "@/components/BrandLogo";
 
 interface Props {
   token: string;
@@ -73,9 +74,7 @@ export default function NoShowDisputeClient({
     <div className="min-h-screen bg-[#F9F9F7] p-4 md:p-8">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <div className="bg-primary px-3 py-2 rounded-xl inline-block mb-4">
-            <span className="text-white font-black text-xl leading-none">M&amp;V</span>
-          </div>
+          <BrandIcon className="mb-4" />
           <h1 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase">Dispute No-Show Report</h1>
           <p className="text-text-secondary mt-3">
             Hi {firstName || "there"}, tell us what happened and our team will review it fairly.

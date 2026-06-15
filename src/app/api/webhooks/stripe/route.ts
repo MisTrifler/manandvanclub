@@ -266,7 +266,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
         text: driverBookingText,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-            <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
+            <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M<span style="color:#F5781E;">&amp;</span>V</span></div>
             <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer-confirmed booking</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(driverName)},</p>
             <p style="color: #475569; font-size: 16px;">The customer accepted your quote and paid the booking deposit to secure the booking.</p>
@@ -305,7 +305,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
         text: customerBookingText,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #E2E8F0; padding: 30px; border-radius: 16px; background: #fff;">
-            <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M&amp;V</span></div>
+            <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M<span style="color:#F5781E;">&amp;</span>V</span></div>
             <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Your Man and Van Club booking is confirmed</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(bookedRequest.first_name || 'there')},</p>
             <p style="color: #475569; font-size: 16px;">Your booking is secured and your details have been released to the mover.</p>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { isClosingReason, shouldShowBudgetFields } from "@/lib/quote-attempts-shared";
+import { BrandIcon } from "@/components/BrandLogo";
 
 const REASONS = [
   "Price was too high",
@@ -124,9 +125,7 @@ export default function QuoteFeedbackClient({
     <div className="min-h-screen bg-[#F9F9F7] p-4 md:p-8">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <div className="bg-primary px-3 py-2 rounded-xl inline-block mb-4">
-            <span className="text-white font-black text-xl leading-none">M&amp;V</span>
-          </div>
+          <BrandIcon className="mb-4" />
           <h1 className="text-3xl md:text-4xl font-black text-primary tracking-tighter uppercase">Update or close your move request</h1>
           <p className="text-text-secondary mt-3 max-w-lg mx-auto">
             Hi {firstName || "there"} — {lastOutcome === "expired"

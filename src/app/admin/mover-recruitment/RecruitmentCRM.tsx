@@ -12,6 +12,7 @@ import {
   Bell, BarChart3
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BrandIcon, BrandWordmark } from "@/components/BrandLogo";
 
 type Status =
   | "Not Contacted"
@@ -414,13 +415,9 @@ export default function RecruitmentCRM() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Link href="/" className="flex items-center gap-2">
-                <div className="bg-primary p-1.5 rounded">
-                  <span className="text-white font-black text-sm leading-none">M&V</span>
-                </div>
-                <span className="text-lg font-black text-primary tracking-tighter uppercase">
-                  MAN<span className="text-accent">&</span>VAN
-                </span>
+              <Link href="/" className="flex items-center gap-2 group" aria-label="Man and Van Club home">
+                <BrandIcon size="sm" className="shadow-none" />
+                <BrandWordmark variant="inline" size="sm" />
               </Link>
               <div className="hidden md:block w-px h-6 bg-border" />
               <div className="hidden md:flex items-center gap-2 text-primary/60">

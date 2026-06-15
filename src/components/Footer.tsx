@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, ShieldCheck, CheckCircle2, Mail, Phone, MapPin, Lock } from "lucide-react";
+import { BrandIcon, BrandWordmark } from "./BrandLogo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,13 +11,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="bg-primary p-1.5 rounded group-hover:bg-accent transition-colors">
-                <span className="text-white font-black text-sm leading-none">M&V</span>
-              </div>
-              <span className="text-xl font-bold text-primary tracking-tighter uppercase">
-                Man<span className="text-accent">&</span>Van <span className="opacity-40">Club</span>
-              </span>
+            <Link href="/" className="flex items-center gap-2 mb-6 group" aria-label="Man and Van Club home">
+              <BrandIcon size="sm" className="shadow-none" />
+              <BrandWordmark variant="inline" />
             </Link>
             <p className="text-text-secondary mb-6 leading-relaxed">
               A marketplace connecting customers with independent local movers across the UK. We match you with one suitable mover directly.

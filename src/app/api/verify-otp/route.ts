@@ -250,7 +250,7 @@ export async function POST(req: Request) {
                       <tr>
                         <td style="padding: 40px 40px 20px 40px; text-align: center;">
                           <div style="background-color: #0F172A; display: inline-block; padding: 12px 20px; border-radius: 12px; margin-bottom: 24px;">
-                            <span style="color: #ffffff; font-weight: 900; font-size: 24px; letter-spacing: -1px;">M&amp;V</span>
+                            <span style="color: #ffffff; font-weight: 900; font-size: 24px; letter-spacing: -1px;">M<span style="color:#F5781E;">&amp;</span>V</span>
                           </div>
                           <h1 style="margin: 0; color: #0F172A; font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px;">Request Confirmed</h1>
                         </td>
