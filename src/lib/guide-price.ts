@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────
-// Guide price range — formula guide-v1.1.
+// Guide price range — formula guide-v1.2.
 //
 // DISPLAY-ONLY. The guide price never affects Stripe amounts, deposit
 // calculation, quote option validation, webhook checks, mover balances
@@ -9,6 +9,8 @@
 // Structure: minimum callout floor + (work time × hourly guide rate)
 // + mileage factor + complexity uplifts, returned as a buffered range.
 // ─────────────────────────────────────────────────────────────────────
+
+import { estimateRouteByPostcodeFallback } from "@/lib/route-estimate";
 
 export interface GuidePriceInput {
   intent?: string | null;            // office | house | student | single-item | general | storage
@@ -41,7 +43,7 @@ export interface GuidePriceResult {
   max: number;
   display: string;
   confidence: "route-based" | "fallback";
-  formulaVersion: "guide-v1.1";
+  formulaVersion: "guide-v1.2";
   assumptions: string[];
   inputsUsed: {
     routeMiles: number | null;
@@ -52,15 +54,20 @@ export interface GuidePriceResult {
   };
 }
 
-const GUIDE_FORMULA_VERSION = "guide-v1.1" as const;
+const GUIDE_FORMULA_VERSION = "guide-v1.2" as const;
 
-// Internal hourly guide rates (never shown to customers)
+// Internal guide rates (never shown to customers). These are intentionally
+// simple and transparent: the customer sees a guide range only, while the
+// mover still sends the accurate quote before booking.
 const RATE_ONE_MOVER = 40;
 const RATE_TWO_MOVERS = 65;
 const RATE_LARGE_JOB = 75;
 
 const MILEAGE_FREE_MILES = 10;
-const MILEAGE_RATE_PER_MILE = 2.0;
+const MILEAGE_RATE_PER_MILE = 2.25;
+const LONG_DISTANCE_POSITIONING_UPLIFT_50 = 1.12;
+const LONG_DISTANCE_POSITIONING_UPLIFT_100 = 1.25;
+const COMPETITIVE_DISPLAY_ADJUSTMENT = 5;
 
 function num(value: unknown): number {
   const n = Number(value);
@@ -99,8 +106,8 @@ function decideLikelyMovers(intent: string, input: GuidePriceInput, assumptions:
     assumptions.push("2 movers (loading help requested)");
     return 2;
   }
-  if (input.heavyItems === "Yes" && intent !== "single-item") {
-    assumptions.push("2 movers (heavy items)");
+  if (input.heavyItems === "Yes") {
+    assumptions.push("2 movers (heavy or awkward item)");
     return 2;
   }
   const beds = String(input.bedrooms || "");
@@ -289,10 +296,21 @@ export function getFallbackGuidePrice(input: GuidePriceInput): GuidePriceResult 
 }
 
 export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
-  const distanceMeters = num(input.routeEstimate?.distanceMeters);
-  const durationSeconds = num(input.routeEstimate?.durationSeconds);
+  let usableRouteEstimate = input.routeEstimate || null;
+  let distanceMeters = num(usableRouteEstimate?.distanceMeters);
+  let durationSeconds = num(usableRouteEstimate?.durationSeconds);
 
-  // No usable route data → broad fallback guide
+  // If Google/route data was not supplied, still try a UK-wide postcode
+  // distance fallback before falling back to broad move-type bands. This is
+  // what keeps WS8→B44 different from WS8→LE4, and London→Nottingham
+  // different from a local London move, even if Google Routes is unavailable.
+  if ((distanceMeters <= 0 || durationSeconds <= 0) && input.collectionPostcode && input.deliveryPostcode) {
+    usableRouteEstimate = estimateRouteByPostcodeFallback(input.collectionPostcode, input.deliveryPostcode);
+    distanceMeters = num(usableRouteEstimate?.distanceMeters);
+    durationSeconds = num(usableRouteEstimate?.durationSeconds);
+  }
+
+  // No usable postcode/route data → broad fallback guide
   if (distanceMeters <= 0 || durationSeconds <= 0) {
     return getFallbackGuidePrice(input);
   }
@@ -309,7 +327,7 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   // B + C. Work time = loading/unloading + effective drive time.
   // Route time is multiplied to partly account for travel to pickup and
   // return/positioning after drop-off (v1.1 calibration).
-  const routeTimeMultiplier = routeMiles > 80 ? 2 : routeMiles > 40 ? 1.75 : 1.5;
+  const routeTimeMultiplier = routeMiles > 120 ? 2.15 : routeMiles > 80 ? 2 : routeMiles > 40 ? 1.75 : 1.5;
   const effectiveRouteMinutes = routeDurationMinutes * routeTimeMultiplier;
   const loadingMinutes = estimateLoadingMinutes(intent, input, assumptions);
   const estimatedWorkMinutes = loadingMinutes + effectiveRouteMinutes;
@@ -328,10 +346,10 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
     estimate += (routeMiles - MILEAGE_FREE_MILES) * MILEAGE_RATE_PER_MILE;
   }
   if (routeMiles > 100) {
-    estimate *= 1.2;
+    estimate *= LONG_DISTANCE_POSITIONING_UPLIFT_100;
     assumptions.push("long-distance uplift (100+ miles)");
   } else if (routeMiles > 50) {
-    estimate *= 1.1;
+    estimate *= LONG_DISTANCE_POSITIONING_UPLIFT_50;
     assumptions.push("long-distance uplift (50+ miles)");
   }
 
@@ -368,6 +386,10 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
     max = roundGuidePrice(estimate * 1.25);
     if (min < roundGuidePrice(floor)) min = roundGuidePrice(floor);
   }
+  // Keep the guide commercially competitive without claiming to be a live
+  // competitor quote. We do not copy or scrape third-party prices.
+  min = Math.max(10, roundGuidePrice(min - COMPETITIVE_DISPLAY_ADJUSTMENT));
+  max = Math.max(min + (min < 200 ? 30 : 50), roundGuidePrice(max - COMPETITIVE_DISPLAY_ADJUSTMENT));
   if (min < 10) min = 10;
   if (max <= min) max = min + (min < 200 ? 30 : 50);
 
