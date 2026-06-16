@@ -198,8 +198,7 @@ export default function HomeContent() {
                 textShadow: "0 2px 8px rgba(0,0,0,0.30)",
               }}
             >
-              Free to submit. No spam. Your details are only shared when you
-              accept a quote.
+              Free to submit. No spam. Your details stay private until you book.
             </p>
 
             <div className="flex flex-wrap gap-2 mt-5 lg:mt-6">
@@ -222,20 +221,6 @@ export default function HomeContent() {
               ))}
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 mt-5 lg:mt-6 text-xs lg:text-sm">
-              <span className="font-black text-white tracking-tighter">
-                UK-WIDE COVERAGE
-              </span>
-              <span className="text-white/40">|</span>
-              <span className="font-black text-white tracking-tighter">
-                FREE TO SUBMIT
-              </span>
-              <span className="text-white/40 hidden sm:inline">|</span>
-              <span className="hidden sm:flex items-center gap-1.5">
-                <ShieldCheck size={14} className="text-white/70" />
-                <span className="text-white/80">Verified movers</span>
-              </span>
-            </div>
           </motion.div>
 
           <motion.div

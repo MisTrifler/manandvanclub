@@ -12,7 +12,7 @@ import IntentSelector from "./IntentSelector";
 
 const today = new Date().toISOString().split("T")[0];
 
-const UK_POSTCODE_EXAMPLE = "WS8 6FG";
+const UK_POSTCODE_EXAMPLE = "SW1A 1AA";
 const UK_POSTCODE_REGEX = /^(?:GIR\s*0AA|[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})$/i;
 const POSTCODE_ERROR_MESSAGE = `Enter a full UK postcode, e.g. ${UK_POSTCODE_EXAMPLE}`;
 
@@ -1026,7 +1026,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <p className="text-xs font-bold text-primary flex items-center gap-1.5">
                   <span className="inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">Secure & GDPR Compliant</span>
                 </p>
-                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your enquiry is handled securely. Details are released only if you accept a mover quote and pay the booking deposit. The deposit is deducted from the mover quote.</p>
+                <p className="text-[10px] text-text-secondary mt-1 leading-relaxed">Your details stay private until you accept a quote and pay the booking deposit. The deposit is deducted from the mover’s quote.</p>
               </div>
             </div>
 
@@ -1045,7 +1045,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   </p>
                 )}
                 <p className="mt-2 text-xs font-medium leading-relaxed text-text-secondary">
-                  This is only a guide price. A verified mover will review your move details and send an accurate quote before you decide whether to book.
+                  This is only a guide price. A verified mover will review your details and send an accurate quote before you book.
                 </p>
               </div>
             )}
