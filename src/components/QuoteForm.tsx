@@ -113,8 +113,17 @@ const formSchema = z.object({
   storageFacility: z.string().optional(),
   storageUnitSize: z.string().optional(),
   storageItems: z.string().optional(),
-  storageDirection: z.string().optional(),
 }).superRefine((data, ctx) => {
+  const isStorageRequest = String(data.moveType || "").toLowerCase().includes("storage");
+
+  if (isStorageRequest && !String(data.storageItems || "").trim()) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["storageItems"],
+      message: "Tell us what needs moving",
+    });
+  }
+
   const collectionPostcode = normalisePostcodeInput(data.collectionPostcode);
   const deliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
 
@@ -362,7 +371,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       houseLiftAccess: "no",
       officeLiftAccess: "yes",
       additionalHelpers: "no",
-      storageDirection: "",
+      storageUnitSize: "Not sure",
     }
   });
 
@@ -440,7 +449,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       details.storageFacility = data.storageFacility;
       details.storageUnitSize = data.storageUnitSize;
       details.storageItems = data.storageItems;
-      details.storageDirection = data.storageDirection;
     }
     return details;
   };
@@ -458,7 +466,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       itemType: details.itemType,
       numberOfItems: details.numberOfItems,
       storageUnitSize: details.storageUnitSize,
-      storageDirection: details.storageDirection,
       numberOfBoxes: details.numberOfBoxes,
       suitcases: details.suitcases,
       smallFurnitureItems: details.smallFurnitureItems,
@@ -554,7 +561,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       } else if (activeIntent === "general") {
         fields.push("numberOfItems");
       } else if (activeIntent === "storage") {
-        fields.push("storageFacility", "storageUnitSize", "storageDirection");
+        fields.push("storageItems");
       }
     } else if (step === CONTACT_STEP) {
       // Contact details step
@@ -759,7 +766,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {activeIntent === "student" && "Tell us about your university move"}
                   {activeIntent === "single-item" && "Tell us about the furniture you need delivered"}
                   {activeIntent === "general" && "Tell us about your move — big or small"}
-                  {activeIntent === "storage" && "Tell us about your storage collection"}
+                  {activeIntent === "storage" && "Tell us what needs collecting from storage"}
                 </p>
               </div>
               {!propIntent && (
@@ -1069,49 +1076,39 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             {activeIntent === "storage" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Direction</label>
-                  <select {...register("storageDirection")} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 appearance-none">
-                    <option value="">Select direction</option>
-                    <option value="To storage">To storage — moving items into a unit</option>
-                    <option value="From storage">From storage — collecting items out</option>
-                    <option value="Between units">Between units — moving from one storage unit to another</option>
-                  </select>
-                  {errors.storageDirection && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageDirection.message}</p>}
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Facility Name</label>
-                  <input {...register("storageFacility")} placeholder="e.g. Big Yellow Storage" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.storageFacility && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageFacility.message}</p>}
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Unit Size</label>
-                  <select {...register("storageUnitSize")} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 appearance-none">
-                    <option value="">Select unit size</option>
-                    <option value="Small (locker to 25 sq ft)">Small (locker to 25 sq ft)</option>
-                    <option value="Medium (50–100 sq ft)">Medium (50–100 sq ft)</option>
-                    <option value="Large (150+ sq ft)">Large (150+ sq ft)</option>
-                    <option value="Unsure">Unsure — need help estimating</option>
-                  </select>
-                  {errors.storageUnitSize && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageUnitSize.message}</p>}
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Items to Collect</label>
-                  <textarea {...register("storageItems")} placeholder="Brief description of items in storage (e.g. furniture, boxes, appliances)" rows={3} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 resize-none" />
-                </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...registerPostcode("collectionPostcode")} placeholder="Storage facility postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Postcode</label>
+                  <input {...registerPostcode("collectionPostcode")} placeholder={`Full UK postcode, e.g. ${UK_POSTCODE_EXAMPLE}`} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...registerPostcode("deliveryPostcode")} placeholder="Where items are going" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder={`Full UK postcode, e.g. ${UK_POSTCODE_EXAMPLE}`} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
                   <input type="date" {...register("moveDate")} min={today} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.moveDate && <p className="text-red-500 text-xs font-bold mt-1">{errors.moveDate.message}</p>}
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">What Needs Moving?</label>
+                  <textarea {...register("storageItems")} placeholder="e.g. boxes, sofa, bed, appliances, furniture" rows={3} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 resize-none" />
+                  {errors.storageItems && <p className="text-red-500 text-xs font-bold mt-1">{errors.storageItems.message}</p>}
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Unit Size</label>
+                  <select {...register("storageUnitSize")} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 appearance-none">
+                    <option value="Not sure">Not sure</option>
+                    <option value="Small locker">Small locker</option>
+                    <option value="25 sq ft">25 sq ft</option>
+                    <option value="50 sq ft">50 sq ft</option>
+                    <option value="75 sq ft">75 sq ft</option>
+                    <option value="100 sq ft+">100 sq ft+</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Storage Facility Name <span className="tracking-normal text-primary/30">(optional)</span></label>
+                  <input {...register("storageFacility")} placeholder="e.g. Big Yellow, Shurgard, Access Self Storage" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                 </div>
               </div>
             )}
