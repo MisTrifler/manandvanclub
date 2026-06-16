@@ -110,7 +110,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
             >
               <div className="inline-flex items-center gap-2 lg:gap-3 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-accent/20">
                 <MapPin size={12} />
-                {data.badge ? data.badge : `Local Experts in ${data.name}`}
+                {isLocationPage ? `Verified movers in ${data.name}` : (data.badge ? data.badge : `Verified movers for ${data.name}`)}
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">
@@ -127,9 +127,9 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4">
                 {[
-                  { v: "Verified", l: "Network" },
-                  { v: "£50+", l: "From Local" },
-                  { v: "Checked", l: "Movers" }
+                  { v: "Free", l: "To Submit" },
+                  { v: "Verified", l: "Movers" },
+                  { v: "Details", l: "Protected" }
                 ].map((item, i) => (
                   <div key={i} className="space-y-1">
                     <span className="text-accent font-black text-3xl lg:text-4xl tracking-tighter leading-none">{item.v}</span>
@@ -170,7 +170,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                  <p className="text-lg lg:text-xl text-text-secondary font-medium leading-relaxed">{data.knowledge}</p>
                  <div className="bg-primary/5 p-5 lg:p-10 rounded-2xl lg:rounded-[2.5rem] border border-border/40">
                    <p className="text-lg lg:text-xl text-primary font-medium leading-relaxed italic">
-                     "Whether you are moving a single item or a full house relocation, our network makes it easy to request a quote from a local professional while keeping your details protected. We handle the vetting so you can focus on your move."
+                     "Whether you are moving a single item or a full house relocation, Man and Van Club makes it easy to submit a free request. A verified mover can review your details and send quote options before you decide whether to book."
                    </p>
                  </div>
               </div>
@@ -178,10 +178,10 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Feature Cards ── */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 {[
-                  { t: "Fixed & Hourly", d: "Choose the pricing model that works best for your budget.", i: <Clock size={28} /> },
-                  { t: "Fully Vetted", d: "Every driver is reviewed and verified by our team.", i: <ShieldCheck size={28} /> },
-                  { t: "Insurance Required", d: "Movers must provide valid Goods in Transit and Public Liability insurance before they can be approved.", i: <CheckCircle2 size={28} /> },
-                  { t: "Local Knowledge", d: "Our movers know every shortcut and parking quirk.", i: <Users size={28} /> }
+                  { t: "Quote Options", d: "A verified mover reviews your request and sends quote options before you decide whether to book.", i: <Clock size={28} /> },
+                  { t: "Checked Applications", d: "Mover applications are reviewed before they can access customer enquiries.", i: <ShieldCheck size={28} /> },
+                  { t: "Insurance Checked", d: "Movers must provide Goods in Transit and Public Liability insurance before approval. Cover details can vary by mover.", i: <CheckCircle2 size={28} /> },
+                  { t: "Local Access Notes", d: "Your postcode, parking, stairs, lifts and access details help the mover quote accurately.", i: <Users size={28} /> }
                 ].map(f => (
                   <div key={f.t} className="bg-[#F9F9F7] p-6 lg:p-10 rounded-3xl lg:rounded-[2.5rem] border border-border/50 space-y-4 lg:space-y-6 group hover:bg-white hover:shadow-2xl transition-all duration-500">
                     <div className="text-accent group-hover:scale-110 transition-transform origin-left">{f.i}</div>
@@ -199,15 +199,15 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                  <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-none italic">Ready to start?</h3>
                  <p className="text-text-secondary font-medium text-lg leading-relaxed">
                    {isServicePage
-                     ? `It takes less than 60 seconds to get matched with a vetted mover for ${data.name.toLowerCase()}.`
-                     : `It takes less than 60 seconds to request a quote from a vetted local mover in ${data.name}.`}
+                     ? `It takes less than 60 seconds to submit a free request for ${data.name.toLowerCase()}.`
+                     : `It takes less than 60 seconds to submit a free move request in ${data.name}.`}
                  </p>
                  <Link href="#quote-form" className="btn-orange w-full py-6 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 shadow-2xl shadow-accent/20 hover:scale-105 transition-all">
-                    Get Matched Now <ArrowUpRight size={22} />
+                    Start Your Move Request <ArrowUpRight size={22} />
                  </Link>
                  <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
-                   <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Insurance Required</span>
-                   <span className="flex items-center gap-1.5"><Zap size={14} className="text-accent"/> 1-to-1 Match</span>
+                   <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-accent"/> Details Protected</span>
+                   <span className="flex items-center gap-1.5"><Zap size={14} className="text-accent"/> Booking Deposit Only If Accepted</span>
                  </div>
                </div>
 
@@ -323,7 +323,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 <div className="space-y-5 lg:space-y-8">
                   <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Serving {data.name} & Surrounding Areas</h3>
                   <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
-                    Our {data.name} movers regularly work across the area and its neighbouring districts. From {data.localLandmarks.slice(0, 3).join(", ")} to {data.region ? `the wider ${data.region} area` : "the wider local area"}, we connect you with professionals who know the local roads, parking restrictions, and the best routes for your move.
+                    Requests in {data.name} can include moves around {data.localLandmarks.slice(0, 3).join(", ")} and {data.region ? `the wider ${data.region} area` : "the wider local area"}. Your move details help a verified mover account for local access, parking restrictions and route planning before they quote.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     {data.localLandmarks.map((landmark: string, i: number) => {
@@ -475,9 +475,9 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                <div className="bg-[#F9F9F7] p-10 rounded-[2.5rem] border border-border/50 space-y-6">
                   <ShieldCheck size={28} className="text-accent" />
                   <p className="text-primary font-black uppercase tracking-tighter leading-tight text-sm">
-                    Verified Move Platform
+                    Verified Mover Marketplace
                   </p>
-                  <p className="text-xs text-text-secondary font-medium leading-relaxed">We manually check move requests to ensure a high quality marketplace for both customers and movers.</p>
+                  <p className="text-xs text-text-secondary font-medium leading-relaxed">Mover applications are checked before they can access customer enquiries. Customer details stay private until a quote is accepted and booked.</p>
                </div>
 
                <div className="bg-white p-10 rounded-[2.5rem] border border-border/50 space-y-6">
@@ -487,8 +487,8 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   </p>
                   <p className="text-xs text-text-secondary font-medium leading-relaxed">
                     {isServicePage
-                      ? `We provide ${data.name.toLowerCase()} across the UK through a network of vetted local movers.`
-                      : `We cover ${data.name} and surrounding areas with a network of vetted local movers ready to help.`}
+                      ? `We help customers submit free ${data.name.toLowerCase()} requests across the UK.`
+                      : `Customers can submit free move requests in ${data.name} and nearby areas for verified movers to review.`}
                   </p>
                </div>
             </aside>
@@ -519,11 +519,11 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
             </h2>
             <p className="text-xl text-text-secondary font-medium leading-relaxed">
               {isServicePage
-                ? `Tell us what you need and we will connect you with a suitable vetted mover for ${data.name.toLowerCase()}. No spam, just one customer-confirmed process.`
-                : "Tell us about your move and we'll help connect you with a suitable local mover. No spam, just one customer-confirmed process."}
+                ? `Tell us what you need. A verified mover can review your request and send quote options before you decide whether to book.`
+                : "Tell us about your move. A verified mover can review your request and send quote options before you decide whether to book."}
             </p>
             <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3 text-lg">
-              Get Matched <ArrowRight size={24} />
+              Start Your Move Request <ArrowRight size={24} />
             </Link>
           </div>
         </div>

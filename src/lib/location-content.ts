@@ -67,6 +67,18 @@ const MOVING_CHECKLIST = [
   "Update your address",
 ];
 
+function generateBusinessModelIntro(loc: LocationData): string {
+  const areas = loc.nearbyAreas.slice(0, 3).join(", ");
+  return `${loc.name} moves can vary by postcode, property type, parking and access. Whether your move is around ${areas || loc.name} or elsewhere nearby, Man and Van Club lets you submit a free request for a verified mover to review before sending quote options.`;
+}
+
+function generateBusinessModelKnowledge(loc: LocationData): string {
+  const roads = loc.majorRoads.slice(0, 3).join(", ");
+  const properties = loc.propertyTypes.slice(0, 3).join(", ");
+  const considerations = loc.movingConsiderations.slice(0, 3).join("; ");
+  return `A good ${loc.name} quote depends on more than mileage. Postcodes, item list, parking, stairs, lifts, access and timing can all affect the work involved. Your request gives a verified mover the details they need to account for ${roads ? `${roads} routes, ` : ""}${properties || "local property types"}${considerations ? ` and local issues such as ${considerations}` : ""} before you decide whether to book.`;
+}
+
 // Popular move destinations by region (for generic generation)
 function getPopularMovesForRegion(loc: LocationData): { from: string; to: string; slug?: string; routeInfo: RouteInfo }[] {
   const majorCities: Record<string, { to: string; slug: string }[]> = {
@@ -142,7 +154,7 @@ function generateLocalMovingInfo(loc: LocationData): string {
   const roads = loc.majorRoads.slice(0, 3).join(", ");
   const properties = loc.propertyTypes.slice(0, 3).join(", ");
 
-  let info = `Moving in ${loc.name} requires local knowledge. `;
+  let info = `Moving in ${loc.name} can involve different parking, access and route considerations depending on the postcode and property type. `;
 
   if (loc.hasStudentAreas && loc.studentAreas) {
     info += `With student areas like ${loc.studentAreas.slice(0, 2).join(" and ")}, peak moving periods align with academic term dates. `;
@@ -152,13 +164,13 @@ function generateLocalMovingInfo(loc: LocationData): string {
     info += `Business relocations in ${loc.businessDistricts.slice(0, 2).join(" and ")} often need evening or weekend slots to minimise disruption. `;
   }
 
-  info += `Our movers know the ${roads} corridors and understand the access challenges of local properties, from ${properties}. `;
+  info += `A verified mover can review details such as the ${roads} corridors and local property types, from ${properties}. `;
 
   if (considerations.length > 0) {
     info += `Common moving considerations in ${loc.name} include ${considerations.slice(0, 3).join("; ")}. `;
   }
 
-  info += `Whether you are moving within ${loc.name} or relocating to a neighbouring town, our network connects you with movers who understand the local landscape.`;
+  info += `Whether you are moving within ${loc.name} or relocating to a neighbouring town, your request stays protected while a mover reviews the details and prepares quote options.`;
 
   return info;
 }
@@ -169,10 +181,7 @@ function generateLocalLandmarks(loc: LocationData): string[] {
 }
 
 function generateCostAnswer(loc: LocationData): string {
-  const base = loc.region === "Greater London" ? 60 : loc.region === "South West" ? 55 : 50;
-  const rangeLow = loc.region === "Greater London" ? 350 : loc.region === "South West" ? 300 : 280;
-  const rangeHigh = loc.region === "Greater London" ? 750 : loc.region === "South West" ? 650 : 600;
-  return `${loc.name} prices start from around £${base} for smaller moves. A typical 2–3 bedroom house move usually falls between £${rangeLow}–£${rangeHigh} depending on the locations, volume, and access. Submit your details for a more accurate estimate.`;
+  return `The guide price depends on the collection and delivery postcodes, distance, route time, item list, helpers required, stairs, parking and access. Submit your details for a guide price range first, then a verified mover can review the move and send an accurate quote before you decide whether to book.`;
 }
 
 function generateFAQ(loc: LocationData): { q: string; a: string }[] {
@@ -180,7 +189,7 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
 
   faq.push({
     q: `Do you cover all areas of ${loc.name}?`,
-    a: `Yes. Our ${loc.name} network covers ${loc.areas.slice(0, 5).join(", ")} and surrounding areas. Whether you are in the town centre or the outskirts, we can match you with a suitable local mover.`,
+    a: `Yes. You can submit a move request for ${loc.areas.slice(0, 5).join(", ")} and surrounding areas. A verified mover can review the details and send quote options if they can help.`,
   });
 
   faq.push({
@@ -190,7 +199,7 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
 
   faq.push({
     q: `Can I find a mover for a same-day move in ${loc.name}?`,
-    a: `Same-day moves are often possible in ${loc.name} depending on availability. Submit your request and we will match you with the nearest available mover.`,
+    a: `Same-day moves may be possible in ${loc.name} depending on mover availability. Submit your request and a verified mover can review the details if they have space to help.`,
   });
 
   faq.push({
@@ -205,34 +214,34 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
 
   faq.push({
     q: `How quickly will I be contacted?`,
-    a: `We aim to have your mover contact you as promptly as possible. In most cases, you can expect to hear back within 24 hours, often sooner. The mover will contact you directly by phone or email to discuss your requirements.`,
+    a: `After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit.`,
   });
 
   if (loc.nearbyAreas.length > 0) {
     const nearby = loc.nearbyAreas.slice(0, 3).join(", ");
     faq.push({
       q: `Do you cover ${nearby}?`,
-      a: `Yes. Our ${loc.name} network covers ${loc.nearbyAreas.slice(0, 5).join(", ")} and most of the surrounding areas.`,
+      a: `Yes. You can submit requests for ${loc.nearbyAreas.slice(0, 5).join(", ")} and nearby areas. Availability depends on verified movers reviewing the move details.`,
     });
   }
 
   if (loc.hasStudentAreas && loc.studentAreas && loc.studentAreas.length > 0) {
     faq.push({
       q: `Can you help with student moves in ${loc.name}?`,
-      a: `Absolutely. We regularly help students moving in and out of properties near ${loc.studentAreas.join(" and ")}.`,
+      a: `Yes. Student moves can be submitted for areas near ${loc.studentAreas.join(" and ")}. A verified mover can review the item list, access and date before quoting.`,
     });
   }
 
   if (loc.businessDistricts && loc.businessDistricts.length > 0) {
     faq.push({
       q: `Do you handle office relocations in ${loc.name}?`,
-      a: `Yes. Our movers regularly handle office relocations in ${loc.businessDistricts.join(" and ")}, including evening and weekend moves to minimise disruption.`,
+      a: `Yes. Office relocation requests can be submitted for ${loc.businessDistricts.join(" and ")}. Include access, parking, equipment and timing details so a verified mover can quote accurately.`,
     });
   }
 
   faq.push({
     q: `Are your ${loc.name} movers insured?`,
-    a: `Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. We recommend confirming the details of cover with your mover before moving day.`,
+    a: `Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so we recommend checking the quote details before booking.`,
   });
 
   return faq;
@@ -294,11 +303,15 @@ export function getLocationPageData(slug: string): LocationPageData | null {
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: `Man and Van Club - ${loc.name}`,
+    "@type": "Service",
+    name: `Man and Van ${loc.name} quote request`,
     url,
-    telephone: "07943617386",
-    email: "support@manandvanclub.co.uk",
+    provider: {
+      "@type": "Organization",
+      name: "Man and Van Club",
+      email: "support@manandvanclub.co.uk",
+      telephone: "07943617386",
+    },
     areaServed: {
       "@type": "Place",
       name: loc.name,
@@ -307,19 +320,17 @@ export function getLocationPageData(slug: string): LocationPageData | null {
         name: loc.region,
       },
     },
-    description: `Professional man and van services in ${loc.name}. Local movers who understand ${loc.nearbyAreas.slice(0, 3).join(", ")} and surrounding areas.`,
-    priceRange: "££",
-    openingHours: "Mo-Su 08:00-22:00",
-    serviceType: "Moving Services",
+    description: `Free man and van move request service in ${loc.name}. A verified mover can review anonymised move details and send quote options before the customer decides whether to book.`,
+    serviceType: "Man and van quote request",
   };
 
   const baseData = {
     name: loc.name,
-    title: `Man and Van ${loc.name} | Local Movers Who Know the Area | Man and Van Club`,
-    description: `Professional man and van services in ${loc.name}. Local movers who understand ${loc.nearbyAreas.slice(0, 3).join(", ")} and surrounding areas. Get matched with a vetted professional today.`,
-    badge: loc.badge,
-    intro: loc.intro,
-    knowledge: loc.knowledge,
+    title: `Man and Van ${loc.name} | Verified Local Movers | Man and Van Club`,
+    description: `Free man and van request in ${loc.name}. Get a guide price, submit your details securely, and let a verified mover send quote options before you decide whether to book.`,
+    badge: `Verified movers in ${loc.name}`,
+    intro: generateBusinessModelIntro(loc),
+    knowledge: generateBusinessModelKnowledge(loc),
     areas: loc.areas,
     slug: pageSlug,
     faq,

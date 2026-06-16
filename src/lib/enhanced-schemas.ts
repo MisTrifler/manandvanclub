@@ -1,6 +1,5 @@
-// Enhanced LocalBusiness schemas for priority city pages
-// These schemas include expanded neighbourhood lists, provider Organization references,
-// and richer areaServed markup for improved local SEO and rich snippet eligibility.
+// Enhanced Service schemas for priority city pages
+// These schemas describe Man and Van Club as a quote-request marketplace, not a local moving operator.
 
 const provider = {
   "@type": "Organization",
@@ -13,10 +12,9 @@ const provider = {
 
 const baseSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Service",
   "provider": provider,
-  "priceRange": "££",
-  "openingHours": "Mo-Su 08:00-22:00",
+  "serviceType": "Man and van quote request",
   "telephone": "+44-7943-617-386",
   "email": "support@manandvanclub.co.uk"
 };
@@ -26,7 +24,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Birmingham",
     description:
-      "Professional man and van services in Birmingham. Verified local movers covering Jewellery Quarter, Edgbaston, Moseley, Harborne, Digbeth, Sutton Coldfield and surrounding areas. Exclusive matching, no multiple quotes.",
+      "Free man and van request service in Birmingham. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-birmingham",
     areaServed: {
       "@type": "City",
@@ -52,7 +50,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — London",
     description:
-      "Professional man and van services in London. Verified local movers covering Shoreditch, Clapham, Islington, Camden, Hackney, Brixton, Greenwich, Kensington and all Greater London boroughs. Exclusive matching.",
+      "Free man and van request service in London. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-london",
     areaServed: {
       "@type": "City",
@@ -82,7 +80,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Manchester",
     description:
-      "Professional man and van services in Manchester. Verified local movers covering Northern Quarter, Didsbury, Chorlton, Deansgate, Ancoats, Salford and surrounding areas. Exclusive matching with vetted professionals.",
+      "Free man and van request service in Manchester. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-manchester",
     areaServed: {
       "@type": "City",
@@ -108,7 +106,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Leeds",
     description:
-      "Professional man and van services in Leeds. Verified local movers covering Headingley, Roundhay, Chapel Allerton, Horsforth, Hyde Park, Kirkstall and surrounding areas. Student moves, house removals, and flat moves matched exclusively.",
+      "Free man and van request service in Leeds. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-leeds",
     areaServed: {
       "@type": "City",
@@ -134,7 +132,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Liverpool",
     description:
-      "Professional man and van services in Liverpool. Verified local movers covering Aigburth, Allerton, Woolton, Walton, Toxteth, Anfield and surrounding areas. Exclusive matching with vetted movers for home and student moves.",
+      "Free man and van request service in Liverpool. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-liverpool",
     areaServed: {
       "@type": "City",
@@ -160,7 +158,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Bristol",
     description:
-      "Professional man and van services in Bristol. Verified local movers covering Clifton, Bedminster, Redland, Southville, Stokes Croft, Fishponds and surrounding areas. Narrow streets and parking restrictions handled by experienced local movers.",
+      "Free man and van request service in Bristol. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-bristol",
     areaServed: {
       "@type": "City",
@@ -186,7 +184,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Wolverhampton",
     description:
-      "Professional man and van services in Wolverhampton. Verified local movers covering Tettenhall, Penn, Bilston, Wednesfield, Heath Town, Fallings Park and surrounding areas. Exclusive matching with vetted local professionals.",
+      "Free man and van request service in Wolverhampton. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-wolverhampton",
     areaServed: {
       "@type": "City",
@@ -212,7 +210,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Nottingham",
     description:
-      "Professional man and van services in Nottingham. Verified local movers covering West Bridgford, Beeston, Arnold, Carlton, Lenton, Hucknall and surrounding areas. Exclusive matching with vetted professionals.",
+      "Free man and van request service in Nottingham. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-nottingham",
     areaServed: {
       "@type": "City",
@@ -238,7 +236,7 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
     ...baseSchema,
     name: "Man and Van Club — Walsall",
     description:
-      "Professional man and van services in Walsall. Verified local movers covering Pelsall, Bloxwich, Aldridge, Brownhills, Darlaston, Willenhall and surrounding areas. House removals, flat moves, and furniture delivery matched exclusively.",
+      "Free man and van request service in Walsall. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
     url: "https://www.manandvanclub.co.uk/man-and-van-walsall",
     areaServed: {
       "@type": "City",
