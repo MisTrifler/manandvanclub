@@ -20,7 +20,17 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           error: 'Invalid postcode',
-          details: 'Enter full UK postcodes for collection and delivery, e.g. WS8 6FG.',
+          details: 'Enter full UK postcodes for collection and delivery, e.g. SW1A 1AA.',
+        },
+        { status: 400 }
+      );
+    }
+
+    if (collectionPostcode === deliveryPostcode) {
+      return NextResponse.json(
+        {
+          error: 'Invalid route',
+          details: 'Collection and delivery postcodes must be different.',
         },
         { status: 400 }
       );
@@ -28,6 +38,18 @@ export async function POST(req: Request) {
 
     data.collectionPostcode = collectionPostcode;
     data.deliveryPostcode = deliveryPostcode;
+
+    const moveType = String(data.moveType || '');
+    const numberOfItems = Number(data.details?.numberOfItems ?? data.numberOfItems);
+    if (/man\s*&?\s*van|general|same day|long distance/i.test(moveType) && (!Number.isFinite(numberOfItems) || numberOfItems < 1)) {
+      return NextResponse.json(
+        {
+          error: 'Invalid move details',
+          details: 'Enter at least 1 item for a man and van request.',
+        },
+        { status: 400 }
+      );
+    }
 
     // 1. Generate crypto-secure 6-digit OTP, valid for 15 minutes
     const otp = String(randomInt(100000, 1000000));
