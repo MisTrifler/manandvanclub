@@ -598,8 +598,8 @@ export default function DriverMarketplaceClient({
               ) : (
                 <div className="flex justify-between text-xs"><span className="text-text-secondary">Mover total quote</span><strong>{formatPounds(leadQuoteValue(lead))}</strong></div>
               )}
-              <div className="flex justify-between text-xs"><span className="text-text-secondary">Booking deposit</span><strong>{formatPounds(lead.booking_fee != null && Number(lead.booking_fee) > 0 ? Number(lead.booking_fee) : calculateBookingDeposit(leadQuoteValue(lead)))}</strong></div>
-              <div className="flex justify-between text-xs"><span className="text-text-secondary">{cardStatus === "declined" ? "Value not earned" : "Customer pays you"}</span><strong>{formatPounds(moverBalance(lead))}</strong></div>
+              <div className="flex justify-between text-xs"><span className="text-text-secondary">Man &amp; Van Club booking deposit</span><strong>{formatPounds(lead.booking_fee != null && Number(lead.booking_fee) > 0 ? Number(lead.booking_fee) : calculateBookingDeposit(leadQuoteValue(lead)))}</strong></div>
+              <div className="flex justify-between text-xs"><span className="text-text-secondary">{cardStatus === "declined" ? "Value not earned" : "You collect on moving day"}</span><strong>{formatPounds(moverBalance(lead))}</strong></div>
             </div>
           )}
 
@@ -632,7 +632,7 @@ export default function DriverMarketplaceClient({
               <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 ml-1 mb-1">Quote Options</p>
                 <p className="text-xs text-text-secondary/80 leading-relaxed mb-1">
-                  Offer up to 3 clear options. Do not include phone numbers, emails, company names or contact details. Customer and mover details are shared only after the customer pays the booking deposit.
+                  Offer up to 3 clear options. Do not include phone numbers, emails, company names or contact details. Customer and mover details are shared only after the customer books.
                 </p>
                 <p className="text-xs font-bold text-primary/70 leading-relaxed mb-3">
                   Review the move requirements above before choosing service levels and prices.
@@ -700,9 +700,12 @@ export default function DriverMarketplaceClient({
                     </div>
                     {validAmount && (
                       <div className="bg-primary/5 rounded-xl border border-border/60 p-3 space-y-1">
-                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Total quote</span><strong>{formatPounds(amount)}</strong></div>
-                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Booking deposit</span><strong>{formatPounds(deposit)}</strong></div>
-                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Customer pays you on moving day</span><strong>{formatPounds(balance)}</strong></div>
+                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Customer total quote</span><strong>{formatPounds(amount)}</strong></div>
+                        <div className="flex justify-between text-xs"><span className="text-text-secondary">Man &amp; Van Club booking deposit</span><strong>{formatPounds(deposit)}</strong></div>
+                        <div className="flex justify-between text-xs"><span className="text-text-secondary">You collect on moving day</span><strong>{formatPounds(balance)}</strong></div>
+                        <p className="pt-1 text-[11px] leading-relaxed text-text-secondary/70">
+                          The booking deposit is paid to Man &amp; Van Club and deducted from your total quote. You collect the remaining balance from the customer on moving day.
+                        </p>
                       </div>
                     )}
                   </div>
@@ -757,7 +760,7 @@ export default function DriverMarketplaceClient({
               <div className="flex items-center gap-2">
                 <Banknote size={16} className="text-primary/40" />
                 <p className="text-xs text-text-secondary/70 font-medium">
-                  Submit your total quote. The customer pays a booking deposit to secure the booking, and pays you the remaining balance on moving day.
+                  Submit your total quote. If the customer books, their booking deposit is paid to Man &amp; Van Club and deducted from your quote. You collect the remaining balance on moving day.
                 </p>
               </div>
               <button
@@ -774,7 +777,7 @@ export default function DriverMarketplaceClient({
             <div className="flex items-center gap-2">
               <FileText size={16} className="text-amber-500" />
               <p className="text-sm font-bold text-amber-700">
-                Quote sent — waiting for customer. Customer details will only be released if they accept and pay the booking deposit.
+                Quote sent — waiting for customer. Customer details will only be released if they accept and pay the Man & Van Club booking deposit.
               </p>
             </div>
           )}
@@ -784,7 +787,7 @@ export default function DriverMarketplaceClient({
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-green-500" />
                 <p className="text-sm font-bold text-green-700">
-                  The customer accepted your quote and paid the booking deposit. Their contact details are now available.
+                  The customer accepted your quote and paid the Man & Van Club booking deposit. Their contact details are now available.
                 </p>
               </div>
               <a
@@ -795,7 +798,7 @@ export default function DriverMarketplaceClient({
                 View Customer Details
               </a>
               <p className="text-xs text-text-secondary/70">
-                The booking deposit is deducted from your total quote. Collect the remaining balance from the customer on moving day.
+                The Man & Van Club booking deposit is deducted from your total quote. Collect the remaining balance from the customer on moving day.
               </p>
 
               {/* No-show status / report (own booked jobs only) */}

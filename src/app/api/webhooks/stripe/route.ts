@@ -213,7 +213,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
     const driverBookingText = [
       `Hi ${driverName},`,
       '',
-      'The customer accepted your quote and paid the booking deposit to secure the booking.',
+      'The customer accepted your quote and paid the Man and Van Club booking deposit to secure the booking.',
       '',
       `Customer: ${bookedRequest.first_name || '—'}`,
       `Phone: ${bookedRequest.phone || '—'}`,
@@ -224,7 +224,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
       selectedOption ? `Selected option: ${selectedOption.serviceLabel}` : '',
       selectedOption ? `Van: ${selectedOption.vanLabel}` : '',
       `Your total quote: ${formatPounds(quoteAmount)}`,
-      `Deposit paid to secure booking: ${formatPounds(bookingDeposit)}`,
+      `Man and Van Club booking deposit paid: ${formatPounds(bookingDeposit)}`,
       `Customer pays you on moving day: ${formatPounds(remainingMoverBalance)}`,
       '',
       'Please contact the customer as soon as possible to confirm timing, access and payment method.',
@@ -269,7 +269,7 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
             <div style="text-align: center; margin-bottom: 30px;"><span style="background: #0F172A; color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 900; font-size: 20px;">M<span style="color:#F5781E;">&amp;</span>V</span></div>
             <h2 style="color: #0F172A; font-size: 24px; margin: 0 0 20px 0;">Customer-confirmed booking</h2>
             <p style="color: #475569; font-size: 16px;">Hi ${escapeHtml(driverName)},</p>
-            <p style="color: #475569; font-size: 16px;">The customer accepted your quote and paid the booking deposit to secure the booking.</p>
+            <p style="color: #475569; font-size: 16px;">The customer accepted your quote and paid the Man and Van Club booking deposit to secure the booking.</p>
             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0;">
               <p style="margin: 0 0 8px 0;"><strong>Customer details:</strong></p>
               <p style="margin: 0 0 8px 0;"><strong>Name:</strong> ${escapeHtml(bookedRequest.first_name || '—')}</p>
@@ -283,13 +283,13 @@ async function handleCustomerBookingDeposit(session: any, metadata: any) {
               ${selectedOption ? `<p style="margin: 0 0 8px 0;"><strong>Selected option:</strong> ${escapeHtml(selectedOption.serviceLabel)}</p>
               <p style="margin: 0 0 8px 0;"><strong>Van:</strong> ${escapeHtml(selectedOption.vanLabel)}</p>` : ''}
               <p style="margin: 0 0 8px 0;"><strong>Your total quote:</strong> ${formatPounds(quoteAmount)}</p>
-              <p style="margin: 0 0 8px 0;"><strong>Deposit paid to secure booking:</strong> ${formatPounds(bookingDeposit)}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Man and Van Club booking deposit paid:</strong> ${formatPounds(bookingDeposit)}</p>
               <p style="margin: 0;"><strong>Customer pays you on moving day:</strong> ${formatPounds(remainingMoverBalance)}</p>
             </div>
             <div style="background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 16px; margin: 24px 0;">
               <strong style="color: #92400E;">Next step:</strong><span style="color: #92400E;"> Please contact the customer as soon as possible to confirm timing, access and payment method.</span>
             </div>
-            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The customer has paid the booking deposit to secure your quote. This deposit is deducted from your total quote. You should collect the remaining balance directly from the customer on moving day, unless you agree another payment method with them.</p>
+            <p style="color: #64748B; font-size: 14px; margin-top: 30px;">The customer has paid the Man and Van Club booking deposit to secure your quote. This deposit is deducted from your total quote. You should collect the remaining balance directly from the customer on moving day, unless you agree another payment method with them.</p>
             <p style="color: #64748B; font-size: 14px; margin-top: 10px;">Man and Van Club<br />support@manandvanclub.co.uk</p>
           </div>
         `,
