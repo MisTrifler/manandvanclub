@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -12,11 +12,54 @@ import IntentSelector from "./IntentSelector";
 
 const today = new Date().toISOString().split("T")[0];
 
+const UK_POSTCODE_EXAMPLE = "WS8 6FG";
+const UK_POSTCODE_REGEX = /^(?:GIR\s*0AA|[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})$/i;
+const POSTCODE_ERROR_MESSAGE = `Enter a full UK postcode, e.g. ${UK_POSTCODE_EXAMPLE}`;
+
+function normalisePostcodeInput(value: unknown): string {
+  const compact = String(value || "")
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, "")
+    .slice(0, 7);
+
+  if (compact.length <= 3) return compact;
+  return `${compact.slice(0, -3)} ${compact.slice(-3)}`.trim();
+}
+
+function sanitisePostcodeTyping(value: unknown): string {
+  let compact = String(value || "")
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, "")
+    .slice(0, 7);
+
+  // UK postcodes start with one or two letters, followed by a number.
+  // This prevents city names like BIRMINGHAM, BOURNEMOUTH or EDINBURGH
+  // being typed into postcode fields as fake route queries.
+  if (/^GIR0?A?A?$/.test(compact)) {
+    return compact.length > 3 ? normalisePostcodeInput(compact) : compact;
+  }
+
+  if (/^[A-Z]{3,}/.test(compact)) {
+    compact = compact.slice(0, 2);
+  }
+
+  if (compact.length <= 4) return compact;
+  return `${compact.slice(0, -3)} ${compact.slice(-3)}`.trim();
+}
+
+function isValidUKPostcodeInput(value: unknown): boolean {
+  return UK_POSTCODE_REGEX.test(normalisePostcodeInput(value));
+}
+
+const postcodeFieldSchema = z.string().min(1, "Required").refine(isValidUKPostcodeInput, {
+  message: POSTCODE_ERROR_MESSAGE,
+});
+
 // All possible form fields — intent-specific required fields are enforced via trigger()
 const formSchema = z.object({
   // Core fields (all intents)
-  collectionPostcode: z.string().min(5, "Invalid postcode"),
-  deliveryPostcode: z.string().min(5, "Invalid postcode"),
+  collectionPostcode: postcodeFieldSchema,
+  deliveryPostcode: postcodeFieldSchema,
   moveDate: z.string().min(1, "Required").refine((date) => date >= today, {
     message: "Date cannot be in the past",
   }),
@@ -85,8 +128,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const formShellRef = useRef<HTMLDivElement | null>(null);
   const activeStepRef = useRef<HTMLDivElement | null>(null);
   const hasMountedRef = useRef(false);
-  const isRestoringBrowserStepRef = useRef(false);
-  const pendingScrollBehaviorRef = useRef<ScrollBehavior>("smooth");
+  const historyReadyRef = useRef(false);
+  const isHandlingPopStateRef = useRef(false);
+  const activeStepNumberRef = useRef(1);
+  const previousScrollRestorationRef = useRef<ScrollRestoration | null>(null);
 
   const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
 
@@ -95,81 +140,114 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const CONTACT_STEP = 2;
   const VERIFY_STEP = 3;
   const SUCCESS_STEP = 4;
-  const QUOTE_FORM_HISTORY_KEY = "__mavQuoteForm";
 
-  const clampStep = (nextStep: number) => Math.min(Math.max(nextStep, 1), TOTAL_STEPS);
-
-  const buildQuoteFormHistoryState = (nextStep: number) => ({
-    ...(typeof window !== "undefined" && window.history.state ? window.history.state : {}),
-    [QUOTE_FORM_HISTORY_KEY]: {
-      step: clampStep(nextStep),
-    },
-  });
-
-  const scrollToActiveStep = (behavior: ScrollBehavior = "smooth") => {
+  const scrollToActiveStep = useCallback((behavior: ScrollBehavior = "smooth") => {
     if (typeof window === "undefined") return;
 
-    // Wait for React to mount the new step and for the browser to settle layout.
-    // Without the second frame, the viewport can keep the old taller-step scroll
-    // position and appear to drop into the homepage content below the form.
     window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        const target = activeStepRef.current || formShellRef.current;
-        if (!target) return;
+      const target = activeStepRef.current || formShellRef.current;
+      if (!target) return;
 
-        const stickyHeaderOffset = window.matchMedia("(min-width: 1024px)").matches ? 132 : 84;
-        const targetTop = target.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset;
+      const stickyHeaderOffset = window.matchMedia("(min-width: 1024px)").matches ? 132 : 84;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset;
 
-        window.scrollTo({
-          top: Math.max(0, targetTop),
-          behavior,
-        });
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior,
       });
     });
-  };
+  }, []);
 
-  const goToStep = (nextStep: number, behavior: ScrollBehavior = "smooth") => {
-    const safeStep = clampStep(nextStep);
-    pendingScrollBehaviorRef.current = behavior;
+  const scrollToStepAfterRender = useCallback((behavior: ScrollBehavior = "smooth") => {
+    if (typeof window === "undefined") return;
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => scrollToActiveStep(behavior));
+    });
+  }, [scrollToActiveStep]);
 
-    if (typeof window !== "undefined" && !isRestoringBrowserStepRef.current && safeStep !== step) {
-      window.history.pushState(buildQuoteFormHistoryState(safeStep), "", window.location.href);
+  const pushQuoteFormHistoryState = useCallback((nextStep: number) => {
+    if (typeof window === "undefined" || !historyReadyRef.current || isHandlingPopStateRef.current) return;
+    if (activeStepNumberRef.current === nextStep) return;
+
+    const existingState = window.history.state && typeof window.history.state === "object"
+      ? window.history.state
+      : {};
+
+    window.history.pushState(
+      { ...existingState, manAndVanQuoteForm: true, quoteFormStep: nextStep },
+      "",
+      window.location.href
+    );
+    activeStepNumberRef.current = nextStep;
+  }, []);
+
+  const goToStep = useCallback((nextStep: number, options: { history?: "push" | "replace" | "none"; scroll?: ScrollBehavior } = {}) => {
+    const safeStep = Math.min(TOTAL_STEPS, Math.max(1, nextStep));
+
+    if (typeof window !== "undefined") {
+      if (options.history === "replace") {
+        const existingState = window.history.state && typeof window.history.state === "object"
+          ? window.history.state
+          : {};
+        window.history.replaceState(
+          { ...existingState, manAndVanQuoteForm: true, quoteFormStep: safeStep },
+          "",
+          window.location.href
+        );
+        activeStepNumberRef.current = safeStep;
+      } else if (options.history !== "none") {
+        pushQuoteFormHistoryState(safeStep);
+      } else {
+        activeStepNumberRef.current = safeStep;
+      }
     }
 
     setStep(safeStep);
-  };
+    scrollToStepAfterRender(options.scroll || (safeStep === SUCCESS_STEP ? "auto" : "smooth"));
+  }, [SUCCESS_STEP, TOTAL_STEPS, pushQuoteFormHistoryState, scrollToStepAfterRender]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const originalScrollRestoration = window.history.scrollRestoration;
+    previousScrollRestorationRef.current = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
 
-    window.history.replaceState(buildQuoteFormHistoryState(step), "", window.location.href);
-
+    const existingState = window.history.state && typeof window.history.state === "object"
+      ? window.history.state
+      : {};
+    window.history.replaceState(
+      { ...existingState, manAndVanQuoteForm: true, quoteFormStep: activeStepNumberRef.current },
+      "",
+      window.location.href
+    );
+    historyReadyRef.current = true;
     const handlePopState = (event: PopStateEvent) => {
-      const browserStep = event.state?.[QUOTE_FORM_HISTORY_KEY]?.step;
+      const state = event.state as { manAndVanQuoteForm?: boolean; quoteFormStep?: number } | null;
 
-      if (typeof browserStep !== "number") return;
+      if (!state?.manAndVanQuoteForm || typeof state.quoteFormStep !== "number") {
+        return;
+      }
 
-      isRestoringBrowserStepRef.current = true;
-      pendingScrollBehaviorRef.current = "auto";
-      setStep(clampStep(browserStep));
-
-      window.requestAnimationFrame(() => {
-        isRestoringBrowserStepRef.current = false;
-      });
+      event.preventDefault?.();
+      const nextStep = Math.min(TOTAL_STEPS, Math.max(1, state.quoteFormStep));
+      isHandlingPopStateRef.current = true;
+      activeStepNumberRef.current = nextStep;
+      setStep(nextStep);
+      scrollToStepAfterRender("auto");
+      window.setTimeout(() => {
+        isHandlingPopStateRef.current = false;
+      }, 0);
     };
 
     window.addEventListener("popstate", handlePopState);
-
     return () => {
       window.removeEventListener("popstate", handlePopState);
-      window.history.scrollRestoration = originalScrollRestoration;
+      historyReadyRef.current = false;
+      if (previousScrollRestorationRef.current) {
+        window.history.scrollRestoration = previousScrollRestorationRef.current;
+      }
     };
-    // This should only initialise once for the quote form instance.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [TOTAL_STEPS, scrollToStepAfterRender]);
 
   useEffect(() => {
     if (!hasMountedRef.current) {
@@ -177,19 +255,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       return;
     }
 
-    const behavior = step === SUCCESS_STEP ? "auto" : pendingScrollBehaviorRef.current;
-    scrollToActiveStep(behavior);
-    pendingScrollBehaviorRef.current = "smooth";
-  }, [step]);
+    scrollToActiveStep(step === SUCCESS_STEP ? "auto" : "smooth");
+  }, [SUCCESS_STEP, scrollToActiveStep, step]);
 
   const handleIntentSelect = (intent: IntentType) => {
     setSelectedIntent(intent);
-    goToStep(1);
+    goToStep(1, { history: "replace", scroll: "smooth" });
   };
 
   const handleChangeIntent = () => {
     setSelectedIntent(null);
-    goToStep(1);
+    goToStep(1, { history: "replace", scroll: "smooth" });
   };
 
   // Detect intent from URL on client side (for homepage / no prop)
@@ -215,6 +291,29 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       storageDirection: "",
     }
   });
+
+  const registerPostcode = (field: "collectionPostcode" | "deliveryPostcode") => {
+    const registration = register(field);
+    return {
+      ...registration,
+      inputMode: "text" as const,
+      autoCapitalize: "characters",
+      autoComplete: "postal-code",
+      autoCorrect: "off",
+      spellCheck: false,
+      maxLength: 10,
+      onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+        event.target.value = sanitisePostcodeTyping(event.target.value);
+        registration.onChange(event);
+      },
+      onBlur: (event: React.FocusEvent<HTMLInputElement>) => {
+        const normalised = normalisePostcodeInput(event.target.value);
+        setValue(field, normalised, { shouldDirty: true, shouldValidate: true });
+        event.target.value = normalised;
+        registration.onBlur(event);
+      },
+    };
+  };
 
   // Set moveType when intent is determined
   useEffect(() => {
@@ -287,14 +386,24 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     setGuidePrice(null);
     setRouteEstimate(null);
 
+    const collectionPostcode = normalisePostcodeInput(data.collectionPostcode);
+    const deliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
+
+    if (!isValidUKPostcodeInput(collectionPostcode) || !isValidUKPostcodeInput(deliveryPostcode)) {
+      setGuidePrice(null);
+      setRouteEstimate(null);
+      setIsCalculatingGuide(false);
+      return;
+    }
+
     let route: any | null = null;
     try {
       const response = await fetch("/api/route-estimate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          collectionPostcode: data.collectionPostcode,
-          deliveryPostcode: data.deliveryPostcode,
+          collectionPostcode,
+          deliveryPostcode,
         }),
       });
       const result = await response.json().catch(() => ({}));
@@ -323,6 +432,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     let fields: (keyof FormData)[] = [];
 
     if (step === 1) {
+      const collectionPostcode = normalisePostcodeInput(watch("collectionPostcode"));
+      const deliveryPostcode = normalisePostcodeInput(watch("deliveryPostcode"));
+      setValue("collectionPostcode", collectionPostcode, { shouldDirty: true, shouldValidate: true });
+      setValue("deliveryPostcode", deliveryPostcode, { shouldDirty: true, shouldValidate: true });
+
       // Core fields required for all intents
       fields = ["collectionPostcode", "deliveryPostcode", "moveDate", "moveType"];
       // Intent-specific required fields
@@ -345,7 +459,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     const isValid = await trigger(fields);
     if (isValid) {
       if (step === 1) {
-        const currentData = watch();
+        const currentData = {
+          ...watch(),
+          collectionPostcode: normalisePostcodeInput(watch("collectionPostcode")),
+          deliveryPostcode: normalisePostcodeInput(watch("deliveryPostcode")),
+        };
         goToStep(CONTACT_STEP);
         void refreshGuidePreview(currentData);
       } else if (step === CONTACT_STEP) {
@@ -388,8 +506,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
       const estimatePrice = guidePrice?.display;
 
+      const normalisedCollectionPostcode = normalisePostcodeInput(data.collectionPostcode);
+      const normalisedDeliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
+
       const payload = {
         ...data,
+        collectionPostcode: normalisedCollectionPostcode,
+        deliveryPostcode: normalisedDeliveryPostcode,
         sourcePage,
         estimatedPrice: estimatePrice,
         details: Object.keys(details).length > 0 ? details : undefined,
@@ -425,7 +548,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         body: JSON.stringify({ requestId, otp: code }),
       });
       if (!response.ok) throw new Error('Verification failed');
-      goToStep(SUCCESS_STEP, "auto");
+      goToStep(SUCCESS_STEP);
     } catch (error: any) {
       setOtpError("Invalid code. Please try again.");
     } finally {
@@ -536,7 +659,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </div>
               {!propIntent && (
                 <button
-                  type="button"
                   onClick={handleChangeIntent}
                   className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors flex items-center gap-1"
                 >
@@ -618,12 +740,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Current office postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("collectionPostcode")} placeholder="Current office postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="New office postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder="New office postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
@@ -693,12 +815,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Current postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("collectionPostcode")} placeholder="Current postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="New postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder="New postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
@@ -750,12 +872,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving From (Postcode)</label>
-                  <input {...register("collectionPostcode")} placeholder="Current postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("collectionPostcode")} placeholder="Current postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving To (Postcode)</label>
-                  <input {...register("deliveryPostcode")} placeholder="New postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder="New postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
@@ -788,12 +910,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Address / Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Where is the item now?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("collectionPostcode")} placeholder="Where is the item now?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Address / Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="Where should it go?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder="Where should it go?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
@@ -809,12 +931,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <div className="space-y-2">
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Pickup Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Pickup postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("collectionPostcode")} placeholder="Pickup postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Drop-off Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="Drop-off postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder="Drop-off postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
@@ -872,12 +994,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...register("collectionPostcode")} placeholder="Storage facility postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("collectionPostcode")} placeholder="Storage facility postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...register("deliveryPostcode")} placeholder="Where items are going" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder="Where items are going" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
                 </div>
                 <div>
@@ -888,7 +1010,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </div>
             )}
 
-            <button type="button" onClick={onNextStep} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">Continue</button>
+            <button onClick={onNextStep} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">Continue</button>
           </div>
         )}
 
@@ -936,7 +1058,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               <input {...register("email")} type="email" inputMode="email" autoComplete="email" placeholder="Email Address" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
               {errors.email && <p className="text-red-500 text-xs font-bold mt-1">{errors.email.message}</p>}
             </div>
-            <button type="button" onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:opacity-50">
+            <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:opacity-50">
               {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
             </button>
           </div>
@@ -964,7 +1086,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               ))}
             </div>
             {otpError && <p className="text-red-500 text-sm">{otpError}</p>}
-            <button type="button" onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">
+            <button onClick={handleVerifyOTP} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">
               {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Confirm Verification"}
             </button>
           </div>

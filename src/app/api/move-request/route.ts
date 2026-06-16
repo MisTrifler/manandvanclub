@@ -4,7 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 import { escapeHtml } from '@/lib/html';
-import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode } from '@/lib/route-estimate';
+import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode, normalisePostcodeForRoute } from '@/lib/route-estimate';
 import { calculateGuidePrice } from '@/lib/guide-price';
 
 const OTP_VALIDITY_MINUTES = 15;
@@ -12,6 +12,22 @@ const OTP_VALIDITY_MINUTES = 15;
 export async function POST(req: Request) {
   try {
     const data = await req.json();
+
+    const collectionPostcode = normalisePostcodeForRoute(data.collectionPostcode);
+    const deliveryPostcode = normalisePostcodeForRoute(data.deliveryPostcode);
+
+    if (!isLikelyUKPostcode(collectionPostcode) || !isLikelyUKPostcode(deliveryPostcode)) {
+      return NextResponse.json(
+        {
+          error: 'Invalid postcode',
+          details: 'Enter full UK postcodes for collection and delivery, e.g. WS8 6FG.',
+        },
+        { status: 400 }
+      );
+    }
+
+    data.collectionPostcode = collectionPostcode;
+    data.deliveryPostcode = deliveryPostcode;
 
     // 1. Generate crypto-secure 6-digit OTP, valid for 15 minutes
     const otp = String(randomInt(100000, 1000000));
