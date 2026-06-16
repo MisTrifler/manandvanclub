@@ -302,8 +302,8 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── We Verify Businesses ──────────────────── */}
-      <section className="py-16 bg-white border-b border-border">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-14 lg:py-16 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">
               We Verify Businesses Before They Join
@@ -314,11 +314,11 @@ export default function HomeContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             {VERIFICATION_CHECKS.map((check, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl border border-border p-6 flex items-center gap-3"
+                className="bg-white rounded-2xl border border-border p-5 min-h-[104px] flex items-center justify-start gap-3 shadow-sm"
               >
                 <div className="w-8 h-8 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0">
                   <CheckCircle2 size={16} className="text-success" />
@@ -331,8 +331,8 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Popular Moving Services ──────────────────── */}
-      <section className="py-16 bg-[#F9F9F7]">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-14 lg:py-16 bg-[#F9F9F7]">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">
               Popular Moving Services
@@ -342,7 +342,7 @@ export default function HomeContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 items-stretch">
             {[
               { label: "House Removals", href: "/house-removals" },
               { label: "Flat Moves", href: "/flat-removals" },
@@ -355,7 +355,7 @@ export default function HomeContent() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="text-center bg-white rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+                className="text-center bg-white rounded-2xl border border-border p-5 min-h-[112px] flex items-center justify-center hover:border-accent hover:shadow-md transition-all"
               >
                 <span className="text-sm font-black text-primary uppercase tracking-tight">
                   {service.label}
@@ -367,8 +367,8 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Popular Areas We Cover ──────────────────── */}
-      <section className="py-16 bg-white border-b border-border">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-14 lg:py-16 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">
               Popular Areas We Cover
@@ -394,7 +394,7 @@ export default function HomeContent() {
               <Link
                 key={loc.slug}
                 href={`/${loc.slug}`}
-                className="text-center bg-[#F9F9F7] rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all"
+                className="text-center bg-[#F9F9F7] rounded-2xl border border-border p-5 min-h-[88px] flex items-center justify-center hover:border-accent hover:shadow-md transition-all"
               >
                 <span className="text-sm font-black text-primary uppercase tracking-tight">
                   {loc.name}
