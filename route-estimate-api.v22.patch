@@ -1,0 +1,18 @@
+diff --git a/mnt/data/orig_v22/work_area_v19/src/app/api/route-estimate/route.ts b/mnt/data/work_v22/work_area_v19/src/app/api/route-estimate/route.ts
+index bed72e7..243c8df 100644
+--- a/mnt/data/orig_v22/work_area_v19/src/app/api/route-estimate/route.ts
++++ b/mnt/data/work_v22/work_area_v19/src/app/api/route-estimate/route.ts
+@@ -50,6 +50,13 @@ export async function POST(req: Request) {
+       return NextResponse.json({ ok: false, error: "Invalid postcode" }, { status: 400 });
+     }
+ 
++    if (from === to) {
++      return NextResponse.json(
++        { ok: false, error: "Collection and delivery postcodes must be different" },
++        { status: 400 }
++      );
++    }
++
+     // Fallback map URL is always available (postcodes only, no PII)
+     const mapUrl = buildGoogleMapsDirectionsUrl(from, to);
+ 
