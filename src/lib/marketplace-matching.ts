@@ -300,10 +300,8 @@ function hasAnyServiceData(driver: DriverProfile): boolean {
  * Returns true when the lead's move type matches one of the driver's
  * approved service types.
  *
- * NOTE (launch decision): this function is currently NOT used for
- * marketplace visibility, quote permission, or notification emails —
- * launch visibility is area-based only. Retained for future
- * filtering/reporting use.
+ * Used by strict marketplace mode. Launch-pool mode deliberately keeps
+ * service flags broad for launch liquidity; strict mode applies them.
  */
 export function leadMatchesDriverServices(
   lead: { move_type?: string | null; collection_postcode?: string | null; delivery_postcode?: string | null },
@@ -381,12 +379,8 @@ export function leadIsAvailable(lead: {
 }
 
 /**
- * Full availability for a specific driver: status + area.
- *
- * NOTE (launch decision): service-type flags are retained for future
- * filtering/reporting, but launch visibility is area-based — approved
- * movers can see and quote ANY move type in their covered area.
- * leadMatchesDriverServices is intentionally NOT applied here.
+ * Full availability for a specific driver in strict mode:
+ * status + approved area + approved service type.
  */
 export function leadIsAvailableToDriver(
   lead: Parameters<typeof leadIsAvailable>[0] & {
@@ -396,5 +390,9 @@ export function leadIsAvailableToDriver(
   },
   driver: DriverProfile
 ): boolean {
-  return leadIsAvailable(lead) && leadMatchesDriverArea(lead, driver);
+  return (
+    leadIsAvailable(lead) &&
+    leadMatchesDriverArea(lead, driver) &&
+    leadMatchesDriverServices(lead, driver)
+  );
 }

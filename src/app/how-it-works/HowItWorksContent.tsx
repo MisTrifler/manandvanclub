@@ -17,7 +17,7 @@ export default function HowItWorksContent() {
       icon: <Calculator className="w-8 h-8" />,
     },
     {
-      title: "A Vetted Mover Sends a Quote",
+      title: "A Verified Mover Sends a Quote",
       desc: "Approved local movers can review anonymised move details and submit a mover quote if they can help.",
       icon: <Zap className="w-8 h-8" />,
     },
@@ -44,7 +44,7 @@ export default function HowItWorksContent() {
             How It Works
           </h1>
           <p className="text-xl text-text-secondary">
-            One vetted local mover. No spam. No multiple sales calls. Your details stay protected until you accept a mover quote.
+            One verified mover. No spam. No multiple sales calls. Your details stay protected until you accept a mover quote.
           </p>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function HowItWorksContent() {
       <section className="bg-white py-12 text-primary">
         <div className="container mx-auto px-4 text-center">
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-black uppercase tracking-widest">
-            <div className="flex items-center gap-2"><ShieldCheck size={18} className="text-accent" /> Vetted Movers</div>
+            <div className="flex items-center gap-2"><ShieldCheck size={18} className="text-accent" /> Verified Movers</div>
             <div className="flex items-center gap-2"><Zap size={18} className="text-accent" /> Customer-Confirmed Bookings</div>
             <div className="flex items-center gap-2"><CheckCircle size={18} className="text-accent" /> No Multiple Sales Calls</div>
           </div>
@@ -115,7 +115,7 @@ export default function HowItWorksContent() {
       <section className="py-20 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-black text-primary uppercase tracking-tighter mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-text-secondary mb-8 max-w-md mx-auto">It takes less than 60 seconds to request a quote from a vetted local mover.</p>
+          <p className="text-xl text-text-secondary mb-8 max-w-md mx-auto">It takes less than 60 seconds to request a quote from a verified mover.</p>
           <Link href="/#quote-form" className="btn-orange px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
             Start Your Move <ArrowUpRight size={20} />
           </Link>

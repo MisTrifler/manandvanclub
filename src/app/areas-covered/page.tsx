@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Areas Covered | UK-Wide Man and Van Services | Man and Van Club",
   description:
-    "Man and Van Club covers towns and cities across England, Scotland and Wales. Find your area and get matched with a vetted local mover. UK-wide coverage.",
+    "Man and Van Club covers towns and cities across England, Scotland and Wales. Find your area and get matched with a verified mover. UK-wide coverage.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk/areas-covered',
   },
@@ -42,7 +42,7 @@ export default function AreasCoveredPage() {
       name: "United Kingdom",
     },
     description:
-      "UK-wide man and van marketplace connecting customers with vetted local movers via exclusive one-to-one introductions.",
+      "UK-wide man and van marketplace connecting customers with verified movers via exclusive one-to-one introductions.",
     priceRange: "££",
     openingHours: "Mo-Su 08:00-22:00",
   };

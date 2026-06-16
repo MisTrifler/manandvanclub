@@ -8,14 +8,19 @@ import { Loader2, CheckCircle2, Shield, Lock, Clock, BadgeCheck, ArrowLeft, Buil
 import Link from "next/link";
 import { detectIntent, getIntentLabel, getMoveTypeLabel, type IntentType } from "@/lib/intent-detection";
 import { calculateGuidePrice, type GuidePriceResult } from "@/lib/guide-price";
+import {
+  POSTCODE_ERROR_MESSAGE,
+  UK_POSTCODE_EXAMPLE,
+  SAME_POSTCODE_ERROR_MESSAGE,
+  isSameUKPostcode,
+  isValidUKPostcode,
+  normalisePostcodeForDisplay,
+  parseUKPostcode,
+  sanitizePostcodeTyping,
+} from "@/lib/postcode";
 import IntentSelector from "./IntentSelector";
 
 const today = new Date().toISOString().split("T")[0];
-
-const UK_POSTCODE_EXAMPLE = "SW1A 1AA";
-const UK_POSTCODE_REGEX = /^(?:GIR\s*0AA|[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})$/i;
-const POSTCODE_ERROR_MESSAGE = `Enter a full UK postcode, e.g. ${UK_POSTCODE_EXAMPLE}`;
-const SAME_POSTCODE_ERROR_MESSAGE = "Collection and delivery postcodes must be different.";
 
 const positiveIntegerString = (message: string) =>
   z.string().optional().refine((value) => {
@@ -25,38 +30,14 @@ const positiveIntegerString = (message: string) =>
   }, { message });
 
 function normalisePostcodeInput(value: unknown): string {
-  const compact = String(value || "")
-    .toUpperCase()
-    .replace(/[^A-Z0-9]/g, "")
-    .slice(0, 7);
-
-  if (compact.length <= 3) return compact;
-  return `${compact.slice(0, -3)} ${compact.slice(-3)}`.trim();
+  return normalisePostcodeForDisplay(value);
 }
 
-function sanitisePostcodeTyping(value: unknown): string {
-  let compact = String(value || "")
-    .toUpperCase()
-    .replace(/[^A-Z0-9]/g, "")
-    .slice(0, 7);
-
-  // UK postcodes start with one or two letters, followed by a number.
-  // This prevents city names like BIRMINGHAM, BOURNEMOUTH or EDINBURGH
-  // being typed into postcode fields as fake route queries.
-  if (/^GIR0?A?A?$/.test(compact)) {
-    return compact.length > 3 ? normalisePostcodeInput(compact) : compact;
-  }
-
-  if (/^[A-Z]{3,}/.test(compact)) {
-    compact = compact.slice(0, 2);
-  }
-
-  if (compact.length <= 4) return compact;
-  return `${compact.slice(0, -3)} ${compact.slice(-3)}`.trim();
-}
-
-function isValidUKPostcodeInput(value: unknown): boolean {
-  return UK_POSTCODE_REGEX.test(normalisePostcodeInput(value));
+function routePairKey(collectionPostcode: unknown, deliveryPostcode: unknown): string {
+  const collection = parseUKPostcode(collectionPostcode);
+  const delivery = parseUKPostcode(deliveryPostcode);
+  if (!collection || !delivery || collection.compact === delivery.compact) return "";
+  return `${collection.compact}|${delivery.compact}`;
 }
 
 function formatRouteGuideForCustomer(routeEstimate: any | null): string {
@@ -68,7 +49,7 @@ function formatRouteGuideForCustomer(routeEstimate: any | null): string {
   return `${routeEstimate.distanceText} · ${routeEstimate.durationText}`;
 }
 
-const postcodeFieldSchema = z.string().min(1, "Required").refine(isValidUKPostcodeInput, {
+const postcodeFieldSchema = z.string().min(1, "Required").refine(isValidUKPostcode, {
   message: POSTCODE_ERROR_MESSAGE,
 });
 
@@ -128,9 +109,9 @@ const formSchema = z.object({
   const deliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
 
   if (
-    isValidUKPostcodeInput(collectionPostcode) &&
-    isValidUKPostcodeInput(deliveryPostcode) &&
-    collectionPostcode === deliveryPostcode
+    isValidUKPostcode(collectionPostcode) &&
+    isValidUKPostcode(deliveryPostcode) &&
+    isSameUKPostcode(collectionPostcode, deliveryPostcode)
   ) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
@@ -164,7 +145,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [otpError, setOtpError] = useState<string | null>(null);
   const [guidePrice, setGuidePrice] = useState<GuidePriceResult | null>(null);
+  const [guidePricePairKey, setGuidePricePairKey] = useState<string | null>(null);
   const [routeEstimate, setRouteEstimate] = useState<any | null>(null);
+  const [routeEstimatePairKey, setRouteEstimatePairKey] = useState<string | null>(null);
   const [isCalculatingGuide, setIsCalculatingGuide] = useState(false);
   const formShellRef = useRef<HTMLDivElement | null>(null);
   const activeStepRef = useRef<HTMLDivElement | null>(null);
@@ -379,14 +362,45 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const watchedDeliveryPostcode = watch("deliveryPostcode");
   const liveCollectionPostcode = normalisePostcodeInput(watchedCollectionPostcode);
   const liveDeliveryPostcode = normalisePostcodeInput(watchedDeliveryPostcode);
+  const currentRoutePairKey = routePairKey(liveCollectionPostcode, liveDeliveryPostcode);
   const hasLiveSamePostcodeError =
-    isValidUKPostcodeInput(liveCollectionPostcode) &&
-    isValidUKPostcodeInput(liveDeliveryPostcode) &&
-    liveCollectionPostcode === liveDeliveryPostcode;
+    isValidUKPostcode(liveCollectionPostcode) &&
+    isValidUKPostcode(liveDeliveryPostcode) &&
+    isSameUKPostcode(liveCollectionPostcode, liveDeliveryPostcode);
+  const routeEstimateIsCurrent = Boolean(
+    routeEstimate && currentRoutePairKey && routeEstimatePairKey === currentRoutePairKey
+  );
+  const currentRouteEstimate = routeEstimateIsCurrent ? routeEstimate : null;
+  const guidePriceIsCurrent = Boolean(
+    guidePrice && currentRoutePairKey && guidePricePairKey === currentRoutePairKey
+  );
+  const currentGuidePrice = guidePriceIsCurrent ? guidePrice : null;
 
   const deliveryPostcodeErrorMessage = hasLiveSamePostcodeError
     ? SAME_POSTCODE_ERROR_MESSAGE
     : errors.deliveryPostcode?.message;
+
+  useEffect(() => {
+    if (!currentRoutePairKey) {
+      if (routeEstimate || guidePrice) {
+        setRouteEstimate(null);
+        setRouteEstimatePairKey(null);
+        setGuidePrice(null);
+        setGuidePricePairKey(null);
+      }
+      return;
+    }
+
+    if (routeEstimatePairKey && routeEstimatePairKey !== currentRoutePairKey) {
+      setRouteEstimate(null);
+      setRouteEstimatePairKey(null);
+    }
+
+    if (guidePricePairKey && guidePricePairKey !== currentRoutePairKey) {
+      setGuidePrice(null);
+      setGuidePricePairKey(null);
+    }
+  }, [currentRoutePairKey, guidePrice, guidePricePairKey, routeEstimate, routeEstimatePairKey]);
 
   const registerPostcode = (field: "collectionPostcode" | "deliveryPostcode") => {
     const registration = register(field);
@@ -399,7 +413,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       spellCheck: false,
       maxLength: 10,
       onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
-        event.target.value = sanitisePostcodeTyping(event.target.value);
+        event.target.value = sanitizePostcodeTyping(event.target.value);
         registration.onChange(event);
       },
       onBlur: (event: React.FocusEvent<HTMLInputElement>) => {
@@ -476,20 +490,17 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const refreshGuidePreview = async (data: FormData) => {
     if (!activeIntent) return;
-    setIsCalculatingGuide(true);
-    setGuidePrice(null);
-    setRouteEstimate(null);
-
     const collectionPostcode = normalisePostcodeInput(data.collectionPostcode);
     const deliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
+    const pairKey = routePairKey(collectionPostcode, deliveryPostcode);
 
-    if (
-      !isValidUKPostcodeInput(collectionPostcode) ||
-      !isValidUKPostcodeInput(deliveryPostcode) ||
-      collectionPostcode === deliveryPostcode
-    ) {
-      setGuidePrice(null);
-      setRouteEstimate(null);
+    setIsCalculatingGuide(true);
+    setGuidePrice(null);
+    setGuidePricePairKey(null);
+    setRouteEstimate(null);
+    setRouteEstimatePairKey(null);
+
+    if (!pairKey || !isValidUKPostcode(collectionPostcode) || !isValidUKPostcode(deliveryPostcode)) {
       setIsCalculatingGuide(false);
       return;
     }
@@ -521,8 +532,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     }
 
     const guide = calculateGuidePrice(buildGuideInput(data, route));
-    setRouteEstimate(route);
-    setGuidePrice(guide);
+    const latestPairKey = routePairKey(watch("collectionPostcode"), watch("deliveryPostcode"));
+    if (latestPairKey === pairKey) {
+      setRouteEstimate(route);
+      setRouteEstimatePairKey(pairKey);
+      setGuidePrice(guide);
+      setGuidePricePairKey(pairKey);
+    }
     setIsCalculatingGuide(false);
   };
 
@@ -536,9 +552,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       setValue("deliveryPostcode", deliveryPostcode, { shouldDirty: true, shouldValidate: true });
 
       if (
-        isValidUKPostcodeInput(collectionPostcode) &&
-        isValidUKPostcodeInput(deliveryPostcode) &&
-        collectionPostcode === deliveryPostcode
+        isValidUKPostcode(collectionPostcode) &&
+        isValidUKPostcode(deliveryPostcode) &&
+        isSameUKPostcode(collectionPostcode, deliveryPostcode)
       ) {
         setError("deliveryPostcode", { type: "manual", message: SAME_POSTCODE_ERROR_MESSAGE });
         scrollToStepAfterRender("smooth");
@@ -610,16 +626,21 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       // Capture the originating page URL for conversion attribution
       const sourcePage = typeof window !== "undefined" ? window.location.pathname : "";
 
+      const normalisedCollectionPostcode = normalisePostcodeInput(data.collectionPostcode);
+      const normalisedDeliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
+      const submitPairKey = routePairKey(normalisedCollectionPostcode, normalisedDeliveryPostcode);
+
       // Build details object for service-specific fields. Route and guide
       // preview values are informational only; the server recalculates them.
       const details: Record<string, any> = buildDetails(data);
-      if (routeEstimate) details.routeEstimate = routeEstimate;
-      if (guidePrice) details.guidePrice = { ...guidePrice, calculatedAt: new Date().toISOString() };
+      const routeEstimateForSubmit =
+        submitPairKey && routeEstimatePairKey === submitPairKey ? routeEstimate : null;
+      const guidePriceForSubmit =
+        submitPairKey && guidePricePairKey === submitPairKey ? guidePrice : null;
+      if (routeEstimateForSubmit) details.routeEstimate = routeEstimateForSubmit;
+      if (guidePriceForSubmit) details.guidePrice = { ...guidePriceForSubmit, calculatedAt: new Date().toISOString() };
 
-      const estimatePrice = guidePrice?.display;
-
-      const normalisedCollectionPostcode = normalisePostcodeInput(data.collectionPostcode);
-      const normalisedDeliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
+      const estimatePrice = guidePriceForSubmit?.display;
 
       const payload = {
         ...data,
@@ -1021,12 +1042,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   {errors.itemType && <p className="text-red-500 text-xs font-bold mt-1">{errors.itemType.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Address / Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
                   <input {...registerPostcode("collectionPostcode")} placeholder="Where is the item now?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Address / Postcode</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
                   <input {...registerPostcode("deliveryPostcode")} placeholder="Where should it go?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
@@ -1145,14 +1166,24 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-primary/45">Guide price range</p>
                 <div className="mt-1 flex items-end justify-between gap-3">
                   <p className="text-3xl font-black tracking-tighter text-primary">
-                    {isCalculatingGuide ? "Checking…" : guidePrice?.display || "Guide pending"}
+                    {isCalculatingGuide ? "Checking…" : currentGuidePrice?.display || "Guide pending"}
                   </p>
                   <span className="rounded-full bg-white px-3 py-1 text-[10px] font-black uppercase tracking-wider text-accent shadow-sm">No obligation</span>
                 </div>
-                {routeEstimate && Number(routeEstimate.distanceMeters) > 0 && (
+                {currentRouteEstimate && Number(currentRouteEstimate.distanceMeters) > 0 && (
                   <p className="mt-1 text-[11px] font-bold text-primary/65">
-                    Route guide: {formatRouteGuideForCustomer(routeEstimate)}
+                    Route guide: {formatRouteGuideForCustomer(currentRouteEstimate)}
                   </p>
+                )}
+                {currentRouteEstimate?.mapUrl && Number(currentRouteEstimate.distanceMeters) <= 0 && (
+                  <Link
+                    href={currentRouteEstimate.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-flex text-[11px] font-black uppercase tracking-wider text-accent underline-offset-4 hover:underline"
+                  >
+                    View postcode route on map
+                  </Link>
                 )}
                 <p className="mt-2 text-xs font-medium leading-relaxed text-text-secondary">
                   This is only a guide price. A verified mover will review your details and send an accurate quote before you book.

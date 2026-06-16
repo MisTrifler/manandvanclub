@@ -30,7 +30,7 @@ const STEPS = [
     icon: <Search size={24} />,
   },
   {
-    t: "A Vetted Mover Sends a Quote",
+    t: "A Verified Mover Sends a Quote",
     d: "Approved local movers can review anonymised move details and submit a quote if they can help.",
     icon: <UserCheck size={24} />,
   },
@@ -56,15 +56,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "How quickly will I receive a quote?",
-    a: "A vetted mover can review your request and send a quote if they can help. Once you accept and pay the booking deposit, the mover receives your details and contacts you directly. You pay the remaining balance on moving day.",
+    a: "A verified mover can review your request and send a quote if they can help. Once you accept and pay the booking deposit, the mover receives your details and contacts you directly. You pay the remaining balance on moving day.",
   },
   {
-    q: "Are movers vetted?",
+    q: "Are movers verified?",
     a: "We help connect customers with movers who have completed our application and verification process. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote.",
   },
   {
     q: "What happens after I submit my request?",
-    a: "After submitting your request, your contact details remain protected. A vetted local mover can review anonymised details and send a quote. You choose whether to accept or decline.",
+    a: "After submitting your request, your contact details remain protected. A verified independent mover can review anonymised details and send a quote. You choose whether to accept or decline.",
   },
   {
     q: "Do I need to pay to submit a move request?",

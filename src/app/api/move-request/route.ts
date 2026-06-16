@@ -4,7 +4,8 @@ import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from '@/lib/resend';
 import { generateCustomerQuoteToken } from '@/lib/customer-token';
 import { escapeHtml } from '@/lib/html';
-import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode, normalisePostcodeForRoute } from '@/lib/route-estimate';
+import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode } from '@/lib/route-estimate';
+import { isSameUKPostcode, parseUKPostcode } from '@/lib/postcode';
 import { calculateGuidePrice } from '@/lib/guide-price';
 
 const OTP_VALIDITY_MINUTES = 15;
@@ -13,10 +14,10 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    const collectionPostcode = normalisePostcodeForRoute(data.collectionPostcode);
-    const deliveryPostcode = normalisePostcodeForRoute(data.deliveryPostcode);
+    const collectionPostcode = parseUKPostcode(data.collectionPostcode);
+    const deliveryPostcode = parseUKPostcode(data.deliveryPostcode);
 
-    if (!isLikelyUKPostcode(collectionPostcode) || !isLikelyUKPostcode(deliveryPostcode)) {
+    if (!collectionPostcode || !deliveryPostcode) {
       return NextResponse.json(
         {
           error: 'Invalid postcode',
@@ -26,7 +27,7 @@ export async function POST(req: Request) {
       );
     }
 
-    if (collectionPostcode === deliveryPostcode) {
+    if (isSameUKPostcode(collectionPostcode.display, deliveryPostcode.display)) {
       return NextResponse.json(
         {
           error: 'Invalid route',
@@ -36,8 +37,8 @@ export async function POST(req: Request) {
       );
     }
 
-    data.collectionPostcode = collectionPostcode;
-    data.deliveryPostcode = deliveryPostcode;
+    data.collectionPostcode = collectionPostcode.display;
+    data.deliveryPostcode = deliveryPostcode.display;
 
     const moveType = String(data.moveType || '');
     const numberOfItems = Number(data.details?.numberOfItems ?? data.numberOfItems);

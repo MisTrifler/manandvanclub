@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import {
-  normalisePostcodeForRoute,
-  isLikelyUKPostcode,
   buildGoogleMapsDirectionsUrl,
   computeRouteEstimate,
 } from "@/lib/route-estimate";
+import { isSameUKPostcode, parseUKPostcode } from "@/lib/postcode";
 
 // Informational route estimate only. It may feed the display-only guide
 // price, but never affects mover quote prices, booking deposits, Stripe
@@ -43,12 +42,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "Invalid postcode" }, { status: 400 });
     }
 
-    const from = normalisePostcodeForRoute(rawFrom);
-    const to = normalisePostcodeForRoute(rawTo);
+    const fromPostcode = parseUKPostcode(rawFrom);
+    const toPostcode = parseUKPostcode(rawTo);
 
-    if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to)) {
+    if (!fromPostcode || !toPostcode) {
       return NextResponse.json({ ok: false, error: "Invalid postcode" }, { status: 400 });
     }
+
+    if (isSameUKPostcode(fromPostcode.display, toPostcode.display)) {
+      return NextResponse.json({ ok: false, error: "Collection and delivery postcodes must be different." }, { status: 400 });
+    }
+
+    const from = fromPostcode.display;
+    const to = toPostcode.display;
 
     // Fallback map URL is always available (postcodes only, no PII)
     const mapUrl = buildGoogleMapsDirectionsUrl(from, to);

@@ -13,6 +13,12 @@
 // A postcode-area centroid fallback remains as the last resort.
 // ─────────────────────────────────────────────────────────────────────
 
+import {
+  isSameUKPostcode,
+  isValidUKPostcode,
+  parseUKPostcode,
+} from "@/lib/postcode";
+
 export interface RouteEstimate {
   distanceText: string;
   durationText: string;
@@ -23,29 +29,24 @@ export interface RouteEstimate {
   calculatedAt: string;
 }
 
-const UK_POSTCODE_REGEX = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
-const MAX_POSTCODE_LENGTH = 10;
-
 export function normalisePostcodeForRoute(value: unknown): string {
-  return String(value || "").trim().toUpperCase().replace(/\s+/g, " ").slice(0, MAX_POSTCODE_LENGTH);
+  return parseUKPostcode(value)?.display || String(value || "").trim().toUpperCase().replace(/\s+/g, " ");
 }
 
 export function isLikelyUKPostcode(value: unknown): boolean {
-  const pc = normalisePostcodeForRoute(value);
-  if (!pc || pc.length < 5 || pc.length > MAX_POSTCODE_LENGTH) return false;
-  return UK_POSTCODE_REGEX.test(pc.replace(/\s+/g, " "));
+  return isValidUKPostcode(value);
 }
 
 export function isSameNormalisedPostcode(a: unknown, b: unknown): boolean {
-  const from = normalisePostcodeForRoute(a);
-  const to = normalisePostcodeForRoute(b);
-  return Boolean(from && to && from === to);
+  return isSameUKPostcode(a, b);
 }
 
 /** Postcode-to-postcode Google Maps directions URL. Postcodes only — no PII. */
 export function buildGoogleMapsDirectionsUrl(collectionPostcode: string, deliveryPostcode: string): string {
-  const from = encodeURIComponent(`${normalisePostcodeForRoute(collectionPostcode)}, UK`);
-  const to = encodeURIComponent(`${normalisePostcodeForRoute(deliveryPostcode)}, UK`);
+  const fromPostcode = parseUKPostcode(collectionPostcode)?.display || normalisePostcodeForRoute(collectionPostcode);
+  const toPostcode = parseUKPostcode(deliveryPostcode)?.display || normalisePostcodeForRoute(deliveryPostcode);
+  const from = encodeURIComponent(`${fromPostcode}, UK`);
+  const to = encodeURIComponent(`${toPostcode}, UK`);
   return `https://www.google.com/maps/dir/${from}/${to}`;
 }
 
@@ -299,7 +300,7 @@ async function computePostcodesIoRouteEstimate(
 ): Promise<RouteEstimate | null> {
   const from = normalisePostcodeForRoute(collectionPostcode);
   const to = normalisePostcodeForRoute(deliveryPostcode);
-  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || from === to) return null;
+  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || isSameNormalisedPostcode(from, to)) return null;
 
   const [fromCoord, toCoord] = await Promise.all([
     fetchPostcodesIoCoordinate(from),
@@ -326,7 +327,7 @@ export function estimateRouteByPostcodeFallback(
 ): RouteEstimate | null {
   const from = normalisePostcodeForRoute(collectionPostcode);
   const to = normalisePostcodeForRoute(deliveryPostcode);
-  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || from === to) return null;
+  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || isSameNormalisedPostcode(from, to)) return null;
 
   const fromCoord = getFallbackCoordinate(from);
   const toCoord = getFallbackCoordinate(to);
@@ -432,7 +433,7 @@ async function computeGoogleRouteEstimate(
 
   const from = normalisePostcodeForRoute(collectionPostcode);
   const to = normalisePostcodeForRoute(deliveryPostcode);
-  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || from === to) return null;
+  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || isSameNormalisedPostcode(from, to)) return null;
 
   try {
     const response = await fetch("https://routes.googleapis.com/directions/v2:computeRoutes", {

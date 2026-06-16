@@ -5,7 +5,7 @@ import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from "@/lib/resend";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
-import { leadIsAvailable, leadMatchesDriverArea } from "@/lib/marketplace-matching";
+import { leadIsAvailable, leadMatchesDriverArea, leadMatchesDriverServices } from "@/lib/marketplace-matching";
 import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
 import { expireOldQuotes } from "@/lib/quote-attempts";
 import { validateQuoteOptions, STANDARD_QUOTE_ASSUMPTION, type QuoteOption } from "@/lib/quote-options";
@@ -125,16 +125,24 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "This request is no longer available for quoting." }, { status: 409 });
     }
 
-    // Area permission must mirror marketplace visibility exactly:
+    // Permission must mirror marketplace visibility exactly:
     // - launch pool mode: any approved launch-region mover may quote
     //   launch-pool leads (service flags never block)
-    // - strict mode: per-driver area matching
-    const areaAllowed = isLaunchPoolEnabled()
+    // - strict mode: per-driver area and service-type matching
+    const launchMode = isLaunchPoolEnabled();
+    const areaAllowed = launchMode
       ? leadIsVisibleInLaunchPool(lead, driver)
       : leadMatchesDriverArea(lead, driver);
     if (!areaAllowed) {
       return NextResponse.json(
         { error: "This enquiry is not available for your approved service area." },
+        { status: 403 }
+      );
+    }
+
+    if (!launchMode && !leadMatchesDriverServices(lead, driver)) {
+      return NextResponse.json(
+        { error: "This enquiry is not available for your approved service type." },
         { status: 403 }
       );
     }
