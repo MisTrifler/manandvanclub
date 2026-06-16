@@ -15,6 +15,14 @@ const today = new Date().toISOString().split("T")[0];
 const UK_POSTCODE_EXAMPLE = "SW1A 1AA";
 const UK_POSTCODE_REGEX = /^(?:GIR\s*0AA|[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})$/i;
 const POSTCODE_ERROR_MESSAGE = `Enter a full UK postcode, e.g. ${UK_POSTCODE_EXAMPLE}`;
+const SAME_POSTCODE_ERROR_MESSAGE = "Collection and delivery postcodes must be different.";
+
+const positiveIntegerString = (message: string) =>
+  z.string().optional().refine((value) => {
+    if (value == null || value === "") return true;
+    const n = Number(value);
+    return Number.isInteger(n) && n >= 1;
+  }, { message });
 
 function normalisePostcodeInput(value: unknown): string {
   const compact = String(value || "")
@@ -70,7 +78,7 @@ const formSchema = z.object({
   // Office-specific
   businessName: z.string().optional(),
   officeSize: z.string().optional(),
-  numberOfDesks: z.string().optional(),
+  numberOfDesks: positiveIntegerString("Enter at least 1 desk"),
   itEquipment: z.string().optional(),
   filingCabinets: z.string().optional(),
   meetingRoomFurniture: z.string().optional(),
@@ -84,19 +92,34 @@ const formSchema = z.object({
   // Student-specific
   university: z.string().optional(),
   accommodationType: z.string().optional(),
-  numberOfBoxes: z.string().optional(),
-  suitcases: z.string().optional(),
+  numberOfBoxes: positiveIntegerString("Enter at least 1 box"),
+  suitcases: positiveIntegerString("Enter at least 1 suitcase"),
   smallFurnitureItems: z.string().optional(),
   // Single-item-specific
   itemType: z.string().optional(),
   // General
-  numberOfItems: z.string().optional(),
+  numberOfItems: positiveIntegerString("Enter at least 1 item"),
   additionalHelpers: z.string().optional(),
   // Storage-specific
   storageFacility: z.string().optional(),
   storageUnitSize: z.string().optional(),
   storageItems: z.string().optional(),
   storageDirection: z.string().optional(),
+}).superRefine((data, ctx) => {
+  const collectionPostcode = normalisePostcodeInput(data.collectionPostcode);
+  const deliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
+
+  if (
+    isValidUKPostcodeInput(collectionPostcode) &&
+    isValidUKPostcodeInput(deliveryPostcode) &&
+    collectionPostcode === deliveryPostcode
+  ) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["deliveryPostcode"],
+      message: SAME_POSTCODE_ERROR_MESSAGE,
+    });
+  }
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -319,7 +342,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     }
   }, [propIntent]);
 
-  const { register, watch, trigger, setValue, formState: { errors } } = useForm<FormData>({
+  const { register, watch, trigger, setValue, setError, clearErrors, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       moveType: activeIntent ? getMoveTypeLabel(activeIntent) : "",
@@ -333,6 +356,19 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       storageDirection: "",
     }
   });
+
+  const watchedCollectionPostcode = watch("collectionPostcode");
+  const watchedDeliveryPostcode = watch("deliveryPostcode");
+  const liveCollectionPostcode = normalisePostcodeInput(watchedCollectionPostcode);
+  const liveDeliveryPostcode = normalisePostcodeInput(watchedDeliveryPostcode);
+  const hasLiveSamePostcodeError =
+    isValidUKPostcodeInput(liveCollectionPostcode) &&
+    isValidUKPostcodeInput(liveDeliveryPostcode) &&
+    liveCollectionPostcode === liveDeliveryPostcode;
+
+  const deliveryPostcodeErrorMessage = hasLiveSamePostcodeError
+    ? SAME_POSTCODE_ERROR_MESSAGE
+    : errors.deliveryPostcode?.message;
 
   const registerPostcode = (field: "collectionPostcode" | "deliveryPostcode") => {
     const registration = register(field);
@@ -431,7 +467,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     const collectionPostcode = normalisePostcodeInput(data.collectionPostcode);
     const deliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
 
-    if (!isValidUKPostcodeInput(collectionPostcode) || !isValidUKPostcodeInput(deliveryPostcode)) {
+    if (
+      !isValidUKPostcodeInput(collectionPostcode) ||
+      !isValidUKPostcodeInput(deliveryPostcode) ||
+      collectionPostcode === deliveryPostcode
+    ) {
       setGuidePrice(null);
       setRouteEstimate(null);
       setIsCalculatingGuide(false);
@@ -479,6 +519,18 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       setValue("collectionPostcode", collectionPostcode, { shouldDirty: true, shouldValidate: true });
       setValue("deliveryPostcode", deliveryPostcode, { shouldDirty: true, shouldValidate: true });
 
+      if (
+        isValidUKPostcodeInput(collectionPostcode) &&
+        isValidUKPostcodeInput(deliveryPostcode) &&
+        collectionPostcode === deliveryPostcode
+      ) {
+        setError("deliveryPostcode", { type: "manual", message: SAME_POSTCODE_ERROR_MESSAGE });
+        scrollToStepAfterRender("smooth");
+        return;
+      } else {
+        clearErrors("deliveryPostcode");
+      }
+
       // Core fields required for all intents
       fields = ["collectionPostcode", "deliveryPostcode", "moveDate", "moveType"];
       // Intent-specific required fields
@@ -490,6 +542,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         fields.push("university", "accommodationType");
       } else if (activeIntent === "single-item") {
         fields.push("itemType");
+      } else if (activeIntent === "general") {
+        fields.push("numberOfItems");
       } else if (activeIntent === "storage") {
         fields.push("storageFacility", "storageUnitSize", "storageDirection");
       }
@@ -788,7 +842,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
                   <input {...registerPostcode("deliveryPostcode")} placeholder="New office postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
+                  {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
@@ -863,7 +917,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
                   <input {...registerPostcode("deliveryPostcode")} placeholder="New postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
+                  {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
@@ -920,7 +974,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving To (Postcode)</label>
                   <input {...registerPostcode("deliveryPostcode")} placeholder="New postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
+                  {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">When Do You Need to Move?</label>
@@ -958,7 +1012,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Address / Postcode</label>
                   <input {...registerPostcode("deliveryPostcode")} placeholder="Where should it go?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
+                  {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Preferred Date</label>
@@ -979,11 +1033,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Drop-off Postcode</label>
                   <input {...registerPostcode("deliveryPostcode")} placeholder="Drop-off postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
+                  {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Number of Items (approximate)</label>
-                  <input {...register("numberOfItems")} type="number" placeholder="e.g. 5" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...register("numberOfItems")} type="number" min={1} inputMode="numeric" placeholder="e.g. 5" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  {errors.numberOfItems && <p className="text-red-500 text-xs font-bold mt-1">{errors.numberOfItems.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Preferred Date</label>
@@ -1042,7 +1097,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
                   <input {...registerPostcode("deliveryPostcode")} placeholder="Where items are going" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.deliveryPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.deliveryPostcode.message}</p>}
+                  {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Move Date</label>
@@ -1052,7 +1107,14 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </div>
             )}
 
-            <button onClick={onNextStep} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest">Continue</button>
+            <button
+              type="button"
+              onClick={onNextStep}
+              disabled={hasLiveSamePostcodeError}
+              className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Continue
+            </button>
           </div>
         )}
 
