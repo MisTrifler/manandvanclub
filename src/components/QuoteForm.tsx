@@ -85,6 +85,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const formShellRef = useRef<HTMLDivElement | null>(null);
   const activeStepRef = useRef<HTMLDivElement | null>(null);
   const hasMountedRef = useRef(false);
+  const isRestoringBrowserStepRef = useRef(false);
+  const pendingScrollBehaviorRef = useRef<ScrollBehavior>("smooth");
 
   const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
 
@@ -93,6 +95,16 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const CONTACT_STEP = 2;
   const VERIFY_STEP = 3;
   const SUCCESS_STEP = 4;
+  const QUOTE_FORM_HISTORY_KEY = "__mavQuoteForm";
+
+  const clampStep = (nextStep: number) => Math.min(Math.max(nextStep, 1), TOTAL_STEPS);
+
+  const buildQuoteFormHistoryState = (nextStep: number) => ({
+    ...(typeof window !== "undefined" && window.history.state ? window.history.state : {}),
+    [QUOTE_FORM_HISTORY_KEY]: {
+      step: clampStep(nextStep),
+    },
+  });
 
   const scrollToActiveStep = (behavior: ScrollBehavior = "smooth") => {
     if (typeof window === "undefined") return;
@@ -117,9 +129,47 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   };
 
   const goToStep = (nextStep: number, behavior: ScrollBehavior = "smooth") => {
-    setStep(Math.min(Math.max(nextStep, 1), TOTAL_STEPS));
-    scrollToActiveStep(behavior);
+    const safeStep = clampStep(nextStep);
+    pendingScrollBehaviorRef.current = behavior;
+
+    if (typeof window !== "undefined" && !isRestoringBrowserStepRef.current && safeStep !== step) {
+      window.history.pushState(buildQuoteFormHistoryState(safeStep), "", window.location.href);
+    }
+
+    setStep(safeStep);
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const originalScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    window.history.replaceState(buildQuoteFormHistoryState(step), "", window.location.href);
+
+    const handlePopState = (event: PopStateEvent) => {
+      const browserStep = event.state?.[QUOTE_FORM_HISTORY_KEY]?.step;
+
+      if (typeof browserStep !== "number") return;
+
+      isRestoringBrowserStepRef.current = true;
+      pendingScrollBehaviorRef.current = "auto";
+      setStep(clampStep(browserStep));
+
+      window.requestAnimationFrame(() => {
+        isRestoringBrowserStepRef.current = false;
+      });
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      window.history.scrollRestoration = originalScrollRestoration;
+    };
+    // This should only initialise once for the quote form instance.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (!hasMountedRef.current) {
@@ -127,12 +177,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       return;
     }
 
-    scrollToActiveStep(step === SUCCESS_STEP ? "auto" : "smooth");
+    const behavior = step === SUCCESS_STEP ? "auto" : pendingScrollBehaviorRef.current;
+    scrollToActiveStep(behavior);
+    pendingScrollBehaviorRef.current = "smooth";
   }, [step]);
-
-  const scrollToStepAfterRender = () => {
-    scrollToActiveStep("smooth");
-  };
 
   const handleIntentSelect = (intent: IntentType) => {
     setSelectedIntent(intent);
@@ -891,7 +939,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             <button type="button" onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:opacity-50">
               {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
             </button>
-            <button type="button" onClick={() => goToStep(step - 1)} className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-primary">Back</button>
           </div>
         )}
 
