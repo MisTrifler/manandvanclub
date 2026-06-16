@@ -19,7 +19,7 @@ const baseSchema = {
   "email": "support@manandvanclub.co.uk"
 };
 
-export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> = {
+export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
   birmingham: {
     ...baseSchema,
     name: "Man and Van Club — Birmingham",
@@ -40,7 +40,6 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
         { "@type": "Neighborhood", name: "Harborne" },
         { "@type": "Neighborhood", name: "Selly Oak" },
         { "@type": "Neighborhood", name: "Bournville" },
-        { "@type": "Neighborhood", name: "Solihull" },
         { "@type": "Neighborhood", name: "Sutton Coldfield" }
       ]
     },
@@ -260,6 +259,6 @@ export const enhancedLocalBusinessSchemas: Record<string, Record<string, any>> =
   }
 };
 
-export function getEnhancedLocalBusinessSchema(locationKey: string): Record<string, any> | null {
-  return enhancedLocalBusinessSchemas[locationKey] || null;
+export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {
+  return enhancedServiceSchemas[locationKey] || null;
 }

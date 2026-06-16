@@ -60,8 +60,8 @@ export default function AreasCoveredContent() {
               Areas <span className="text-accent italic">We Cover</span>
             </h1>
             <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto font-medium leading-relaxed">
-              Man and Van Club matches customers with vetted local movers across{" "}
-              {totalLocations} towns and cities in England, Scotland and Wales.
+              Man and Van Club helps customers submit free move requests across{" "}
+              {totalLocations} towns and cities, with West Midlands coverage as a priority.
             </p>
 
             {/* Search */}
@@ -80,6 +80,32 @@ export default function AreasCoveredContent() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* West Midlands SEO Hub */}
+      <section className="py-16 border-b border-border bg-white">
+        <div className="container mx-auto px-4">
+          <div className="bg-[#F9F9F7] rounded-[2rem] border border-border p-8 lg:p-10 flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
+            <div className="space-y-3 max-w-2xl">
+              <span className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.28em] border border-accent/20">
+                <MapPin size={12} /> Priority Region
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight">
+                Man and Van West Midlands
+              </h2>
+              <p className="text-text-secondary font-medium leading-relaxed">
+                Our West Midlands hub links Birmingham, Walsall, Wolverhampton, Dudley, Solihull, Coventry and nearby Black Country towns into one regional guide.
+              </p>
+            </div>
+            <Link
+              href="/man-and-van-west-midlands"
+              className="btn-orange px-8 py-5 rounded-2xl font-black uppercase tracking-widest text-xs inline-flex items-center justify-center gap-3 shrink-0"
+            >
+              View West Midlands Hub <ArrowUpRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
@@ -182,13 +208,13 @@ export default function AreasCoveredContent() {
           </h2>
           <p className="text-xl text-text-secondary font-medium max-w-xl mx-auto leading-relaxed">
             We are expanding across the UK. Submit your move details and
-            we&apos;ll match you with the nearest available mover in our network.
+            we&apos;ll help one verified mover review your request where coverage is available.
           </p>
           <Link
             href="/#quote-form"
             className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3"
           >
-            Get Matched Now <ArrowUpRight size={24} />
+            Start Your Move Request <ArrowUpRight size={24} />
           </Link>
         </div>
       </section>

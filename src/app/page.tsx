@@ -2,9 +2,9 @@ import HomeContent from "./HomeContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | Get Matched With Verified Local Movers",
+  title: "Man and Van Club | Verified Man and Van Quotes",
   description:
-    "Man and Van Club connects customers with verified local movers across the UK. Request quotes for house removals, flat moves, office relocations, student moves, furniture delivery and same-day man and van services.",
+    "Submit a free man and van request, see a guide price and receive a quote from one verified mover before you book. West Midlands and UK-wide coverage.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',
   },
@@ -63,7 +63,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Are movers vetted?",
+      "name": "Are movers verified?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "We help connect customers with movers who have completed our application and verification process. Customers should still confirm insurance cover and final details directly with their mover before booking."
@@ -75,15 +75,30 @@ const faqSchema = {
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Man and Van Club",
+    "@type": "Service",
+    "name": "Man and Van Club quote request service",
     "url": "https://www.manandvanclub.co.uk",
-    "telephone": "07943617386",
-    "email": "support@manandvanclub.co.uk",
-    "areaServed": "GB",
-    "description": "Marketplace connecting customers with verified local movers across the UK through a secure customer-confirmed booking process. Free to submit, with a booking deposit only if a mover quote is accepted. The deposit is deducted from the mover quote.",
-    "priceRange": "££",
-    "openingHours": "Mo-Su 08:00-22:00"
+    "provider": {
+      "@type": "Organization",
+      "name": "Man and Van Club",
+      "url": "https://www.manandvanclub.co.uk",
+      "telephone": "+44-7943-617-386",
+      "email": "support@manandvanclub.co.uk",
+      "logo": "https://www.manandvanclub.co.uk/icon.png"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "West Midlands" },
+      { "@type": "Country", "name": "United Kingdom" }
+    ],
+    "serviceType": [
+      "Man and van quote request",
+      "House removals",
+      "Flat moves",
+      "Student moves",
+      "Furniture delivery",
+      "Office moves"
+    ],
+    "description": "Marketplace helping customers submit free man and van move requests. A verified mover reviews the details and sends a quote before the customer decides whether to book."
   };
 
   return (

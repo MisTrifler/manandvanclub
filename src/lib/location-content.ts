@@ -240,7 +240,7 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
   }
 
   faq.push({
-    q: `Are your ${loc.name} movers insured?`,
+    q: `Are approved ${loc.name} movers insured?`,
     a: `Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so we recommend checking the quote details before booking.`,
   });
 

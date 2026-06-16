@@ -85,7 +85,7 @@ export default function ForBusinessesContent() {
                 </Link>
                 <div className="flex items-center justify-center gap-6">
                   <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary/40 italic">
-                    <ShieldCheck size={14} /> Vetted Network
+                    <ShieldCheck size={14} /> Verified Network
                   </div>
                   <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary/40 italic">
                     <Zap size={14} /> Fast Approval

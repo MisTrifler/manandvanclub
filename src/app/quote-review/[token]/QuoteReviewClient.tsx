@@ -202,7 +202,7 @@ export default function QuoteReviewClient({
             {options.length > 1 ? "Your mover quote options are ready" : "Your mover quote is ready"}
           </h1>
           <p className="text-text-secondary mt-3 max-w-xl mx-auto">
-            Hi {firstName || "there"}, a vetted local mover has reviewed your request. No spam, no endless calls.
+            Hi {firstName || "there"}, a verified mover has reviewed your request. No spam, no endless calls.
           </p>
         </div>
 

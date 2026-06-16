@@ -1,10 +1,10 @@
 import CityServiceContent from "@/components/CityServiceContent";
 import { getLocationPageData, getAllLocationPageSlugs } from "@/lib/location-content";
 import { isLocationIndexable } from "@/lib/seo-quality-guard";
-import { getEnhancedLocalBusinessSchema } from "@/lib/enhanced-schemas";
+import { getEnhancedServiceSchema } from "@/lib/enhanced-schemas";
 import { type IntentType } from "@/lib/intent-detection";
 import { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 const serviceSlugs = [
   "house-removals",
@@ -22,59 +22,59 @@ const servicePageData: Record<string, any> = {
     name: "House Removals",
     formIntent: "house",
     title: "House Removals | Professional Home Moving Services | Man and Van Club",
-    description: "Professional house removals across England. Get matched with a vetted local mover for your full home move. Fixed or hourly pricing. Every approved mover must provide Goods in Transit and Public Liability insurance before joining our network.",
-    badge: "Home Moving Experts",
-    intro: "Moving your entire home? Our network of vetted local movers specialises in house removals of every size. From one-bedroom flats to large family homes, we match you with a professional who has the right vehicle and experience.",
-    knowledge: "Every house removal is different. Our movers know how to handle tight staircases, large furniture, and fragile items. They bring protective blankets, straps, and trolleys as standard. You get a single point of contact from start to finish — no call centres, no confusion.",
+    description: "House removal quote requests across England. Submit your move details securely so an approved mover can review your full home move before sending quote options.",
+    badge: "Home Move Requests",
+    intro: "Moving your entire home? Submit one secure request with the key details, from bedrooms and items to stairs, parking and access, so an approved mover can review the move properly before quoting.",
+    knowledge: "Every house removal is different. Your request helps the mover account for tight staircases, large furniture, fragile items, parking, loading access and timing before you decide whether to book.",
     areas: ["Small Homes", "Family Homes", "Large Properties", "Apartments", "Cottages", "Terraced Houses"],
     faq: [
-      { q: "How much does a house removal cost?", a: "Prices vary based on volume and distance. A typical 2-bedroom house move starts around £300. Use our form for an accurate estimate." },
-      { q: "Do movers dismantle and reassemble furniture?", a: "Most movers offer this service. Mention it when you fill out the form so we can match you with a mover who provides dismantling." },
+      { q: "How much does a house removal cost?", a: "Prices vary based on volume, distance, access, helpers, stairs and date. Use the form to see a guide price first, then an approved mover can review the details before quoting." },
+      { q: "Do movers dismantle and reassemble furniture?", a: "Some movers offer this service. Add dismantling and reassembly notes to the form so an approved mover can review whether they can include it in the quote." },
       { q: "Are my belongings insured during the move?", a: "Movers must provide Goods in Transit and Public Liability insurance before they are approved. We still recommend confirming cover details directly with your mover before moving day." }
     ]
   },
   "flat-removals": {
     name: "Flat Removals",
     formIntent: "house",
-    title: "Flat Removals | Apartment & Flat Moving Specialists | Man and Van Club",
-    description: "Expert flat and apartment removals across England. Our vetted movers understand lift access, parking restrictions, and tight staircases.",
-    badge: "Flat Moving Specialists",
-    intro: "Moving from a flat or apartment comes with unique challenges — lifts, staircases, parking permits, and tight corners. Our flat removal specialists know how to handle these constraints efficiently and safely.",
-    knowledge: "Our movers are experienced with flat removals in city centres and residential blocks. They understand how to navigate narrow hallways, protect lifts and communal areas, and manage parking for loading bays. Whether it's a studio or a penthouse, they bring the right equipment.",
+    title: "Flat Removals | Apartment & Flat Move Requests | Man and Van Club",
+    description: "Flat and apartment move requests across England. Add lift access, parking restrictions and staircase details so an approved mover can quote accurately.",
+    badge: "Flat Move Requests",
+    intro: "Moving from a flat or apartment comes with unique challenges — lifts, staircases, parking permits, tight corners and shared entrances. Add those details so the mover can review the job before quoting.",
+    knowledge: "Flat moves can involve narrow hallways, lift rules, communal areas and loading-bay restrictions. Your request gives the mover enough information to account for those details before you book.",
     areas: ["Studio Flats", "1-Bed Apartments", "2-Bed Flats", "City Centre", "Penthouses", "Ground Floor"],
     faq: [
-      { q: "Do I need to book the lift for my flat removal?", a: "It's recommended to book the lift with your building management in advance. Our movers will coordinate with you on timings." },
-      { q: "Can movers handle tight staircases?", a: "Yes. Our movers regularly handle flats with no lift access and are skilled at manoeuvring furniture on tight staircases." },
-      { q: "How much does a flat removal cost?", a: "A typical 1-bed flat move starts around £200. Prices depend on volume, distance, and access. Use our form for a tailored estimate." }
+      { q: "Do I need to book the lift for my flat removal?", a: "It is recommended to book the lift with your building management in advance. Add any lift or building access rules to your request so the mover can quote with the right timing." },
+      { q: "Can movers handle tight staircases?", a: "Yes. Add no-lift access and staircase details to your request so the mover can account for the extra time and handling before quoting." },
+      { q: "How much does a flat removal cost?", a: "Flat move prices depend on volume, distance, stairs, lift access, parking and timing. Use the form to see a guide price before an approved mover reviews the details." }
     ]
   },
   "student-removals": {
     name: "Student Removals",
     formIntent: "student",
     title: "Student Removals | Affordable University Moves | Man and Van Club",
-    description: "Affordable student removals across England. Moving to or from university halls or shared houses? Get matched with a vetted local mover.",
-    badge: "Student Moving Specialists",
-    intro: "Moving to or from university? We help students with affordable, reliable removals every term. Our movers understand the tight deadlines of term dates and the budget constraints of student life.",
-    knowledge: "Our student removal service is designed around the academic calendar. Whether you're moving into halls, a shared house, or back home for the summer, our movers offer flexible pricing and smaller vehicle options to keep costs down.",
+    description: "Student move quote requests across England. Moving to or from university halls or a shared house? Submit your details so an approved mover can review the job before quoting.",
+    badge: "Student Move Requests",
+    intro: "Moving to or from university? Student moves often involve fixed term dates, shared houses, halls, small loads and budget limits. Submit the details so a mover can review them before quoting.",
+    knowledge: "Student move requests can cover halls, shared houses, studios or moves back home for summer. The quote depends on the item list, route, helpers, access and timing.",
     areas: ["University Halls", "Shared Houses", "Studio Flats", "Home to Uni", "End of Term", "Start of Term"],
     faq: [
-      { q: "Do you offer student discounts?", a: "Our movers offer competitive rates for student moves. Smaller loads and flexible timing help keep costs low." },
-      { q: "Can I share a move with housemates?", a: "Yes. Many students combine moves to the same area to split costs. Mention it on the form and we'll match you accordingly." },
-      { q: "How much does a student move cost?", a: "Student moves typically start from £80 depending on distance and volume. Use our form for a quick estimate." }
+      { q: "Do you offer student discounts?", a: "Student move costs depend on load size, route, helpers and timing. Smaller loads and flexible dates can help keep the guide price lower." },
+      { q: "Can I share a move with housemates?", a: "Combined student moves can sometimes reduce the guide price when housemates are moving on the same route. Add the details to the form so a mover can review the request properly." },
+      { q: "How much does a student move cost?", a: "Student move prices depend on the route, item list, helpers, access and term-time demand. Smaller loads and flexible dates can help keep the guide price lower." }
     ]
   },
   "office-removals": {
     name: "Office Removals",
     formIntent: "office",
     title: "Office Removals | Business Relocation Services | Man and Van Club",
-    description: "Professional office removals and business relocations across England. Minimise downtime with vetted local movers who understand commercial moves.",
-    badge: "Business Relocation Experts",
-    intro: "Relocating your office or business? Our commercial movers understand the need to minimise downtime and protect equipment. We match you with professionals who have experience with office furniture, IT equipment, and sensitive documents.",
-    knowledge: "Office removals require careful planning. Our movers offer evening and weekend slots to reduce business disruption. They bring the right equipment for desks, filing cabinets, and fragile electronics. Every move is planned around your schedule.",
+    description: "Office removal and business relocation quote requests across England. Add access, timing and equipment details so an approved mover can review the job before quoting.",
+    badge: "Business Move Requests",
+    intro: "Relocating your office or business? Add the key details such as desks, equipment, access, loading times and preferred moving window so a mover can quote with less disruption.",
+    knowledge: "Office removals require careful planning. Your request can include evening or weekend preferences, IT equipment, filing cabinets, access restrictions and timing so the mover can review the work involved.",
     areas: ["Small Offices", "Large Offices", "Co-Working Spaces", "Retail", "Warehouses", "Home Offices"],
     faq: [
-      { q: "Can you move outside business hours?", a: "Yes. Many of our movers offer evening and weekend office relocations to minimise disruption to your business." },
-      { q: "Do you handle IT equipment?", a: "Yes. Our movers are experienced with IT equipment, monitors, and servers. They use appropriate packing and transport methods." },
+      { q: "Can you move outside business hours?", a: "Evening and weekend office relocations may be available depending on mover availability. Add your preferred timing when submitting the request." },
+      { q: "Do you handle IT equipment?", a: "Add IT equipment, monitors, servers or fragile electronics to your request so the mover can confirm what they can handle before quoting." },
       { q: "How much notice do you need for an office move?", a: "We recommend at least 1–2 weeks' notice for office moves to ensure proper planning and availability." }
     ]
   },
@@ -82,14 +82,14 @@ const servicePageData: Record<string, any> = {
     name: "Furniture Collection",
     formIntent: "single-item",
     title: "Furniture Collection & Delivery | Single Item Movers | Man and Van Club",
-    description: "Single-item furniture collection and delivery across England. From eBay purchases to shop collections, get matched with a reliable local mover.",
+    description: "Single-item furniture collection and delivery quote requests across England. From eBay purchases to shop collections, submit the details so an approved mover can review the job before quoting.",
     badge: "Furniture Delivery Experts",
-    intro: "Need a single item collected and delivered? Whether it's a sofa from a shop, a dining table from an eBay seller, or a wardrobe from a friend, our furniture collection service is fast and affordable. Every approved mover must provide Goods in Transit and Public Liability insurance before joining our network.",
-    knowledge: "Our furniture collection specialists handle everything from small parcels to large wardrobes. They bring blankets, straps, and trolleys to protect your items. You can book same-day or scheduled slots depending on availability.",
+    intro: "Need a single item collected and delivered? Whether it's a sofa from a shop, a dining table from an eBay seller, or a wardrobe from a friend, our furniture collection service is fast and affordable. Approved movers must provide Goods in Transit and Public Liability insurance before joining the platform.",
+    knowledge: "Furniture collection requests can cover small items, wardrobes, sofas and appliances. Add item size, access and timing so a mover can review the job properly before quoting.",
     areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "eBay Purchases"],
     faq: [
-      { q: "Can you collect from a shop or seller?", a: "Yes. Our movers can collect from shops, private sellers, or auction houses. Just provide the collection address and details." },
-      { q: "How much does furniture collection cost?", a: "Single-item collections typically start from £45 depending on distance and item size. Use our form for a quick quote." },
+      { q: "Can you collect from a shop or seller?", a: "Yes. Collections from shops, private sellers or auction houses can be submitted. Provide the collection postcode and item details so the mover can quote accurately." },
+      { q: "How much does furniture collection cost?", a: "Single-item collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
       { q: "Will my furniture be protected?", a: "Movers typically use protective blankets and straps as standard. Movers must provide Goods in Transit and Public Liability insurance before they are approved, and we recommend confirming cover details directly with your mover." }
     ]
   },
@@ -97,13 +97,13 @@ const servicePageData: Record<string, any> = {
     name: "Same Day Man & Van",
     formIntent: "general",
     title: "Same Day Man & Van | Emergency Moves | Man and Van Club",
-    description: "Need a mover today? Same-day man and van services across England. Get matched with an available local mover for urgent moves.",
+    description: "Need a mover today? Same-day man and van quote requests across England. Submit the details so an available approved mover can review the urgent move.",
     badge: "Same-Day Specialists",
-    intro: "Last-minute move? Urgent delivery? Our same-day man and van service connects you with available local movers who can respond quickly. No waiting days for a quote — just fast, reliable service when you need it most.",
-    knowledge: "Same-day moves require flexibility and speed. Our movers keep their schedules updated so we can match you with someone who is genuinely available today. They bring the same professionalism and equipment as any pre-booked move.",
+    intro: "Last-minute move or urgent delivery? Submit your details and an available verified mover can review the request if they have space to help that day.",
+    knowledge: "Same-day moves require accurate details. Postcodes, item list, helpers, stairs, parking and access help a mover decide quickly whether they can help and what to quote.",
     areas: ["Emergency Moves", "Last-Minute Collections", "Urgent Deliveries", "Same-Day Furniture", "Quick Clearances", "Day-Of Requests"],
     faq: [
-      { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day availability can sometimes be arranged. Submit your request and we will match you with the nearest available mover as quickly as possible." },
+      { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
       { q: "Does same-day cost more?", a: "Same-day moves may carry a small premium depending on demand and distance. You'll see pricing clearly before confirming." },
       { q: "Can I book same-day for long distances?", a: "Same-day is best for local or regional moves. For long-distance same-day, mention it on the form and we'll confirm availability." }
     ]
@@ -112,13 +112,13 @@ const servicePageData: Record<string, any> = {
     name: "Long Distance Moves",
     formIntent: "general",
     title: "Long Distance Removals | UK-Wide Moving Services | Man and Van Club",
-    description: "Long distance removals across the UK. Moving from Birmingham to London, Manchester to Bristol, or anywhere in between? Get matched with a vetted mover.",
+    description: "Long-distance move quote requests across the UK. Moving from Birmingham to London, Manchester to Bristol or anywhere in between? Submit your details so an approved mover can review the route before quoting.",
     badge: "UK-Wide Movers",
-    intro: "Moving across the country? Our long-distance removal service connects you with movers who regularly travel between cities. Whether it's a single load or a full house move, you get a dedicated driver and transparent pricing.",
-    knowledge: "Long-distance moves require careful planning. Our movers calculate routes, fuel costs, and driving time accurately. They provide clear fixed-price quotes so there are no surprises. Every mover in our network must provide Goods in Transit and Public Liability insurance before approval.",
+    intro: "Moving across the country? Long-distance quotes depend on route time, mileage, load size, access and timing. Submit the details so a mover can review the job before you book.",
+    knowledge: "Long-distance moves require careful planning. Your postcodes, date, access notes and item list help the mover account for route time, mileage, fuel, loading and unloading before sending quote options.",
     areas: ["City to City", "Cross-Country", "England to Scotland", "England to Wales", "Regional Moves", "Multi-Drop"],
     faq: [
-      { q: "How much does a long-distance move cost?", a: "Long-distance pricing depends on mileage, volume, and whether it's a return or one-way journey. Typical city-to-city moves start from £250." },
+      { q: "How much does a long-distance move cost?", a: "Long-distance pricing depends on mileage, route time, volume, access and whether the move is one-way or part of a return route. Use the form to get a guide price first." },
       { q: "Can the mover stay overnight for very long distances?", a: "For moves over 4–5 hours, some movers may require overnight accommodation. This is agreed upfront and included in the quote." },
       { q: "Is my load the only one on the van?", a: "Yes, for most long-distance bookings you get a dedicated vehicle. Mention if you need exclusive use when filling out the form." }
     ]
@@ -127,14 +127,14 @@ const servicePageData: Record<string, any> = {
     name: "Facebook Marketplace Collection",
     formIntent: "single-item",
     title: "Facebook Marketplace Collection & Delivery | Man and Van Club",
-    description: "Collection and delivery for Facebook Marketplace purchases across England. Get matched with a local mover who can collect and deliver your purchases safely.",
+    description: "Collection and delivery quote requests for Facebook Marketplace purchases across England. Submit item and postcode details so an approved mover can review the job before quoting.",
     badge: "Marketplace Collection",
-    intro: "Bought something on Facebook Marketplace and need it collected? Our marketplace collection service connects you with a local mover who can pick up your purchase and deliver it to your door. Fast and affordable. Every approved mover must provide Goods in Transit and Public Liability insurance before joining our network.",
-    knowledge: "Facebook Marketplace purchases often need quick collection. Our movers offer flexible slots and can often collect within 24–48 hours. They bring the right vehicle size for sofas, beds, tables, and appliances.",
+    intro: "Bought something on Facebook Marketplace and need it collected? Submit the seller, collection and delivery details so an approved mover can review whether they can collect and deliver the item. Approved movers must provide Goods in Transit and Public Liability insurance before joining the platform.",
+    knowledge: "Facebook Marketplace purchases often need quick collection. Add seller access, item size, collection window and delivery postcode so the mover can review whether the job is possible before quoting.",
     areas: ["Sofas", "Beds", "Tables", "Appliances", "Wardrobes", "Miscellaneous Items"],
     faq: [
       { q: "Can the mover collect on my behalf if I can't be there?", a: "Yes, with clear arrangements. Provide the seller's contact details and any collection instructions. Payment must be settled with the seller beforehand." },
-      { q: "How much does a marketplace collection cost?", a: "Marketplace collections typically start from £45 depending on distance and item size. Use our form for a quick quote." },
+      { q: "How much does a marketplace collection cost?", a: "Marketplace collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
       { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form and we'll arrange a route that works." }
     ]
   }
@@ -202,8 +202,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   const locData = getLocationPageData(locationKey);
 
   if (locData) {
-    // Override with enhanced LocalBusiness schema for approved priority cities
-    const enhancedSchema = getEnhancedLocalBusinessSchema(locationKey);
+    // Override with enhanced Service schema for approved priority cities
+    const enhancedSchema = getEnhancedServiceSchema(locationKey);
     const enhancedData = enhancedSchema
       ? { ...locData, localBusinessSchema: enhancedSchema }
       : locData;
@@ -220,8 +220,8 @@ export default function Page({ params }: { params: { slug: string } }) {
     return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} formIntent={serviceData.formIntent as IntentType} />;
   }
 
-  // Fallback for unknown slugs — redirect home
-  redirect("/");
+  // Unknown slugs should return a real 404 instead of redirecting home.
+  notFound();
 }
 
 export async function generateStaticParams() {

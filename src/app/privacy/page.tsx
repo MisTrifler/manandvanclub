@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 mt-4 space-y-2">
               <li>To share anonymised move details (without your contact information) with approved movers so they can provide a quote.</li>
               <li>To send you service emails about your move request, your mover quote, and your booking, using our email provider.</li>
-              <li>To release your contact details to your chosen mover only after you accept their quote and pay the booking deposit.</li>
+              <li>To release your contact details only to the verified mover handling your booking after you accept their quote and pay the booking deposit.</li>
               <li>To process booking deposit payments securely through Stripe.</li>
               <li>To review and verify mover applications, including insurance details.</li>
               <li>To respond to customer service requests and improve our website.</li>

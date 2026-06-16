@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
-  title: "Find Trusted Local Movers Across the UK | Man and Van Club",
-  description: "Get matched with a suitable local mover across the UK. No spam, just one direct introduction.",
+  title: "Man and Van Club | Verified Man and Van Quotes",
+  description: "Submit a free man and van request, see a guide price and receive a quote from one verified mover before you book. West Midlands and UK-wide coverage.",
   metadataBase: new URL('https://www.manandvanclub.co.uk'),
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',

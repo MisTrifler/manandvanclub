@@ -8,11 +8,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Quality guard: only locations passing the thin-page checks are
   // listed. Failing pages render with noindex and stay out of the
   // sitemap until their data is enriched.
+  const priorityWestMidlandsSlugs = new Set([
+    'birmingham',
+    'walsall',
+    'wolverhampton',
+    'dudley',
+    'west-bromwich',
+    'solihull',
+    'coventry',
+    'stourbridge',
+    'halesowen',
+    'wednesbury',
+    'bloxwich',
+    'brownhills',
+  ]);
+
   const locationUrls = LOCATIONS.filter(loc => isLocationIndexable(loc.slug)).map(loc => ({
     url: `${baseUrl}/man-and-van-${loc.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: priorityWestMidlandsSlugs.has(loc.slug) ? 0.85 : 0.75,
   }));
 
   const services = [
@@ -29,14 +44,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const staticUrls = [
-    '', '/how-it-works', '/for-businesses', '/about',
+    '', '/man-and-van-west-midlands', '/how-it-works', '/for-businesses', '/about',
     '/areas-covered', '/pricing', '/contact', '/apply-to-join',
     '/why-join', '/for-movers', '/terms', '/privacy', '/cookies'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1.0 : 0.6,
+    changeFrequency: route === '/man-and-van-west-midlands' ? 'weekly' as const : 'monthly' as const,
+    priority: route === '' ? 1.0 : route === '/man-and-van-west-midlands' ? 0.95 : route === '/areas-covered' ? 0.7 : 0.6,
   }));
 
   return [...staticUrls, ...locationUrls, ...serviceUrls];

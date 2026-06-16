@@ -16,7 +16,7 @@ export default function Footer() {
               <BrandWordmark variant="inline" />
             </Link>
             <p className="text-text-secondary mb-6 leading-relaxed">
-              A marketplace connecting customers with independent local movers across the UK. We match you with one suitable mover directly.
+              A marketplace connecting customers with independent local movers across the UK. One suitable mover reviews your request before you decide whether to book.
             </p>
             <div className="space-y-3 text-sm text-text-secondary">
               <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
@@ -43,6 +43,7 @@ export default function Footer() {
             <ul className="space-y-4 text-text-secondary">
               <li><Link href="/#quote-form" className="hover:text-accent transition-colors">Get Started</Link></li>
               <li><Link href="/how-it-works" className="hover:text-accent transition-colors">How It Works</Link></li>
+              <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands</Link></li>
               <li><Link href="/areas-covered" className="hover:text-accent transition-colors">Areas We Cover</Link></li>
               <li><Link href="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
             </ul>
@@ -64,7 +65,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">For Movers</h4>
             <ul className="space-y-4 text-text-secondary">
-              <li><Link href="/why-join" className="hover:text-accent transition-colors">Why Join</Link></li>
+              <li><Link href="/why-join" className="hover:text-accent transition-colors">Become a Mover</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
               <li><Link href="/apply-to-join" className="hover:text-accent transition-colors">Apply to Join</Link></li>
               <li><Link href="/login" className="hover:text-accent transition-colors">Driver Login</Link></li>

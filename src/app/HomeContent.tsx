@@ -100,7 +100,7 @@ const WHY_CHOOSE = [
   },
   {
     t: "Transparent Process",
-    d: "We clearly explain how we match you with a mover and what happens to your details.",
+    d: "We clearly explain how your request is reviewed and when your details are released.",
     icon: <Search size={24} />,
   },
 ];
@@ -185,7 +185,7 @@ export default function HomeContent() {
                 textShadow: "0 2px 14px rgba(0,0,0,0.40)",
               }}
             >
-              <span className="text-white">Get matched with a</span>{" "}
+              <span className="text-white">Get a quote from a</span>{" "}
               <span className="text-accent">verified local mover</span>
             </h1>
 
@@ -366,30 +366,30 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* ──────────────────── Popular Areas We Cover ──────────────────── */}
+      {/* ──────────────────── Popular in the West Midlands ──────────────────── */}
       <section className="py-14 lg:py-16 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">
-              Popular Areas We Cover
+              Popular in the West Midlands
             </h2>
             <p className="text-text-secondary mt-3 text-sm">
-              Local man and van services across the UK.
+              Start with our West Midlands hub, then choose your town or city page.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
+              { name: "West Midlands", slug: "man-and-van-west-midlands" },
               { name: "Birmingham", slug: "man-and-van-birmingham" },
-              { name: "London", slug: "man-and-van-london" },
-              { name: "Manchester", slug: "man-and-van-manchester" },
-              { name: "Leeds", slug: "man-and-van-leeds" },
-              { name: "Liverpool", slug: "man-and-van-liverpool" },
-              { name: "Bristol", slug: "man-and-van-bristol" },
-              { name: "Wolverhampton", slug: "man-and-van-wolverhampton" },
               { name: "Walsall", slug: "man-and-van-walsall" },
-              { name: "Coventry", slug: "man-and-van-coventry" },
+              { name: "Wolverhampton", slug: "man-and-van-wolverhampton" },
               { name: "Dudley", slug: "man-and-van-dudley" },
+              { name: "West Bromwich", slug: "man-and-van-west-bromwich" },
+              { name: "Solihull", slug: "man-and-van-solihull" },
+              { name: "Coventry", slug: "man-and-van-coventry" },
+              { name: "Stourbridge", slug: "man-and-van-stourbridge" },
+              { name: "Halesowen", slug: "man-and-van-halesowen" },
             ].map((loc) => (
               <Link
                 key={loc.slug}
@@ -408,7 +408,7 @@ export default function HomeContent() {
               href="/areas-covered"
               className="text-accent font-black text-sm inline-flex items-center gap-1 hover:gap-2 transition-all"
             >
-              View all 93 areas <ArrowUpRight size={16} />
+              View all areas <ArrowUpRight size={16} />
             </Link>
           </div>
         </div>
@@ -433,17 +433,16 @@ export default function HomeContent() {
       <section className="py-16 bg-white text-center border-b border-border">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 max-w-3xl mx-auto text-primary">
-            Ready To Get Matched With A Local Mover?
+            Ready To Start Your Move Request?
           </h2>
           <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">
-            Submit your move details and we will help connect you with a
-            suitable mover.
+            Submit your move details for free. Your contact details stay private until you accept a verified mover quote and book.
           </p>
           <Link
             href="#quote-form"
             className="btn-orange px-10 md:px-14 py-5 md:py-6 rounded-2xl font-black text-sm uppercase tracking-widest inline-flex items-center gap-3"
           >
-            Get Matched Now <ArrowUpRight size={20} />
+            Start Your Move Request <ArrowUpRight size={20} />
           </Link>
         </div>
       </section>
@@ -452,12 +451,10 @@ export default function HomeContent() {
       <section className="py-16 bg-[#F9F9F7] border-b border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-2xl font-black text-primary uppercase tracking-tighter mb-4">
-            Man and Van Services Across the UK
+            Man and Van Services Across the West Midlands and UK
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed">
-            Man and Van Club helps connect customers with suitable movers for
-            house removals, flat moves, office relocations, furniture
-            collections, student moves and long-distance removals across the UK.
+            Man and Van Club helps customers submit free move requests for house removals, flat moves, office relocations, furniture collections, student moves and long-distance removals. We are focusing first on strong West Midlands coverage while continuing to support UK-wide enquiries.
           </p>
         </div>
       </section>

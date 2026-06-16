@@ -72,11 +72,12 @@ export default function Header() {
   ];
 
   const cities = [
-    { name: "London", href: "/man-and-van-london" },
+    { name: "West Midlands", href: "/man-and-van-west-midlands" },
     { name: "Birmingham", href: "/man-and-van-birmingham" },
-    { name: "Manchester", href: "/man-and-van-manchester" },
-    { name: "Leeds", href: "/man-and-van-leeds" },
-    { name: "Bristol", href: "/man-and-van-bristol" },
+    { name: "Walsall", href: "/man-and-van-walsall" },
+    { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
+    { name: "Dudley", href: "/man-and-van-dudley" },
+    { name: "Coventry", href: "/man-and-van-coventry" },
   ];
 
   return (
@@ -174,7 +175,7 @@ export default function Header() {
             </div>
 
             <Link href="/why-join" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
-              Join Us
+              Become a Mover
             </Link>
             <Link href="/about" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
               About
@@ -202,7 +203,7 @@ export default function Header() {
                 Driver Login
               </Link>
             )}
-            <Link href="/#quote-form" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95" aria-label="Get matched with a local mover">
+            <Link href="/#quote-form" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95" aria-label="Start a free move request">
               Start Request
             </Link>
           </div>
@@ -247,7 +248,7 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/why-join" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>Join Us</Link>
+          <Link href="/why-join" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>Become a Mover</Link>
           <Link href="/about" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>About Us</Link>
           
           <div className="flex flex-col gap-3 pt-4 border-t border-border">
