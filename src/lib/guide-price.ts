@@ -69,6 +69,20 @@ const LONG_DISTANCE_POSITIONING_UPLIFT_50 = 1.12;
 const LONG_DISTANCE_POSITIONING_UPLIFT_100 = 1.25;
 const COMPETITIVE_DISPLAY_ADJUSTMENT = 5;
 
+function getItemCount(input: GuidePriceInput): number {
+  return num(input.numberOfItems);
+}
+
+function isSmallGeneralLocalMove(intent: string, input: GuidePriceInput, routeMiles: number): boolean {
+  if (intent !== "general") return false;
+  if (!Number.isFinite(routeMiles) || routeMiles > 5) return false;
+  const items = getItemCount(input);
+  if (items <= 0 || items > 3) return false;
+  if (input.loadingHelp === "Yes, 2 movers may be needed" || input.helperPreference === "2 movers") return false;
+  if (input.heavyItems === "Yes") return false;
+  return true;
+}
+
 function num(value: unknown): number {
   const n = Number(value);
   return Number.isFinite(n) && n > 0 ? n : 0;
@@ -201,7 +215,14 @@ function minimumFloor(intent: string, input: GuidePriceInput): number {
 }
 
 // ── C (v1.1). Route-distance minimums for van-based move types ──────
-function routeDistanceMinimum(intent: string, routeMiles: number): number {
+function routeDistanceMinimum(intent: string, routeMiles: number, input?: GuidePriceInput): number {
+  if (input && isSmallGeneralLocalMove(intent, input, routeMiles)) {
+    const items = getItemCount(input);
+    if (items <= 1) return 50;
+    if (items === 2) return 60;
+    return 70;
+  }
+
   const tiers: Record<string, [number, number, number, number, number]> = {
     // [0–10mi, 11–25mi, 26–50mi, 51–100mi, 100+mi]
     general: [90, 120, 160, 240, 350],
@@ -363,8 +384,13 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   if (likelyMovers >= 2) {
     floor = Math.round(floor * 1.3);
   }
-  const distanceFloor = routeDistanceMinimum(intent, routeMiles);
+  const distanceFloor = routeDistanceMinimum(intent, routeMiles, input);
   if (distanceFloor > floor) floor = distanceFloor;
+  if (isSmallGeneralLocalMove(intent, input, routeMiles)) {
+    const items = getItemCount(input);
+    floor = Math.min(floor, items <= 1 ? 50 : items === 2 ? 60 : 70);
+    assumptions.push("small local item move");
+  }
 
   let flooredToMinimum = false;
   if (estimate < floor) {
