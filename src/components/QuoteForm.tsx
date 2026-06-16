@@ -130,13 +130,19 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const hasMountedRef = useRef(false);
   const historyReadyRef = useRef(false);
   const isHandlingPopStateRef = useRef(false);
-  const activeStepNumberRef = useRef(1);
+  const activeStepNumberRef = useRef(0);
+  const currentIntentRef = useRef<IntentType | null>(null);
   const previousScrollRestorationRef = useRef<ScrollRestoration | null>(null);
 
   const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
 
+  useEffect(() => {
+    currentIntentRef.current = activeIntent;
+  }, [activeIntent]);
+
   const canShowGuidePrice = Boolean(activeIntent);
   const TOTAL_STEPS = 4;
+  const SELECT_INTENT_STEP = 0;
   const CONTACT_STEP = 2;
   const VERIFY_STEP = 3;
   const SUCCESS_STEP = 4;
@@ -165,38 +171,44 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     });
   }, [scrollToActiveStep]);
 
-  const pushQuoteFormHistoryState = useCallback((nextStep: number) => {
-    if (typeof window === "undefined" || !historyReadyRef.current || isHandlingPopStateRef.current) return;
-    if (activeStepNumberRef.current === nextStep) return;
-
+  const getQuoteFormHistoryState = useCallback((nextStep: number, intentOverride?: IntentType | null) => {
     const existingState = window.history.state && typeof window.history.state === "object"
       ? window.history.state
       : {};
 
+    return {
+      ...existingState,
+      manAndVanQuoteForm: true,
+      quoteFormStep: nextStep,
+      quoteFormIntent: intentOverride ?? currentIntentRef.current ?? null,
+    };
+  }, []);
+
+  const pushQuoteFormHistoryState = useCallback((nextStep: number, intentOverride?: IntentType | null) => {
+    if (typeof window === "undefined" || !historyReadyRef.current || isHandlingPopStateRef.current) return;
+    if (activeStepNumberRef.current === nextStep) return;
+
     window.history.pushState(
-      { ...existingState, manAndVanQuoteForm: true, quoteFormStep: nextStep },
+      getQuoteFormHistoryState(nextStep, intentOverride),
       "",
       window.location.href
     );
     activeStepNumberRef.current = nextStep;
-  }, []);
+  }, [getQuoteFormHistoryState]);
 
-  const goToStep = useCallback((nextStep: number, options: { history?: "push" | "replace" | "none"; scroll?: ScrollBehavior } = {}) => {
+  const goToStep = useCallback((nextStep: number, options: { history?: "push" | "replace" | "none"; scroll?: ScrollBehavior; intent?: IntentType | null } = {}) => {
     const safeStep = Math.min(TOTAL_STEPS, Math.max(1, nextStep));
 
     if (typeof window !== "undefined") {
       if (options.history === "replace") {
-        const existingState = window.history.state && typeof window.history.state === "object"
-          ? window.history.state
-          : {};
         window.history.replaceState(
-          { ...existingState, manAndVanQuoteForm: true, quoteFormStep: safeStep },
+          getQuoteFormHistoryState(safeStep, options.intent),
           "",
           window.location.href
         );
         activeStepNumberRef.current = safeStep;
       } else if (options.history !== "none") {
-        pushQuoteFormHistoryState(safeStep);
+        pushQuoteFormHistoryState(safeStep, options.intent);
       } else {
         activeStepNumberRef.current = safeStep;
       }
@@ -204,7 +216,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
     setStep(safeStep);
     scrollToStepAfterRender(options.scroll || (safeStep === SUCCESS_STEP ? "auto" : "smooth"));
-  }, [SUCCESS_STEP, TOTAL_STEPS, pushQuoteFormHistoryState, scrollToStepAfterRender]);
+  }, [SUCCESS_STEP, TOTAL_STEPS, getQuoteFormHistoryState, pushQuoteFormHistoryState, scrollToStepAfterRender]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -212,27 +224,31 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     previousScrollRestorationRef.current = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
 
-    const existingState = window.history.state && typeof window.history.state === "object"
-      ? window.history.state
-      : {};
+    const initialHistoryStep = propIntent ? 1 : SELECT_INTENT_STEP;
     window.history.replaceState(
-      { ...existingState, manAndVanQuoteForm: true, quoteFormStep: activeStepNumberRef.current },
+      getQuoteFormHistoryState(initialHistoryStep, propIntent || null),
       "",
       window.location.href
     );
+    activeStepNumberRef.current = initialHistoryStep;
     historyReadyRef.current = true;
     const handlePopState = (event: PopStateEvent) => {
-      const state = event.state as { manAndVanQuoteForm?: boolean; quoteFormStep?: number } | null;
+      const state = event.state as { manAndVanQuoteForm?: boolean; quoteFormStep?: number; quoteFormIntent?: IntentType | null } | null;
 
       if (!state?.manAndVanQuoteForm || typeof state.quoteFormStep !== "number") {
         return;
       }
 
       event.preventDefault?.();
-      const nextStep = Math.min(TOTAL_STEPS, Math.max(1, state.quoteFormStep));
+      const nextStep = Math.min(TOTAL_STEPS, Math.max(SELECT_INTENT_STEP, state.quoteFormStep));
       isHandlingPopStateRef.current = true;
       activeStepNumberRef.current = nextStep;
-      setStep(nextStep);
+
+      if (!propIntent) {
+        setSelectedIntent(nextStep === SELECT_INTENT_STEP ? null : state.quoteFormIntent || currentIntentRef.current);
+      }
+
+      setStep(nextStep <= SELECT_INTENT_STEP ? 1 : nextStep);
       scrollToStepAfterRender("auto");
       window.setTimeout(() => {
         isHandlingPopStateRef.current = false;
@@ -247,7 +263,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         window.history.scrollRestoration = previousScrollRestorationRef.current;
       }
     };
-  }, [TOTAL_STEPS, scrollToStepAfterRender]);
+  }, [SELECT_INTENT_STEP, TOTAL_STEPS, getQuoteFormHistoryState, propIntent, scrollToStepAfterRender]);
 
   useEffect(() => {
     if (!hasMountedRef.current) {
@@ -260,12 +276,38 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const handleIntentSelect = (intent: IntentType) => {
     setSelectedIntent(intent);
-    goToStep(1, { history: "replace", scroll: "smooth" });
+    currentIntentRef.current = intent;
+
+    if (typeof window !== "undefined" && historyReadyRef.current && activeStepNumberRef.current === SELECT_INTENT_STEP) {
+      window.history.pushState(
+        getQuoteFormHistoryState(1, intent),
+        "",
+        window.location.href
+      );
+      activeStepNumberRef.current = 1;
+      setStep(1);
+      scrollToStepAfterRender("smooth");
+      return;
+    }
+
+    goToStep(1, { history: "replace", scroll: "smooth", intent });
   };
 
   const handleChangeIntent = () => {
     setSelectedIntent(null);
-    goToStep(1, { history: "replace", scroll: "smooth" });
+    currentIntentRef.current = null;
+
+    if (typeof window !== "undefined" && historyReadyRef.current) {
+      window.history.replaceState(
+        getQuoteFormHistoryState(SELECT_INTENT_STEP, null),
+        "",
+        window.location.href
+      );
+      activeStepNumberRef.current = SELECT_INTENT_STEP;
+    }
+
+    setStep(1);
+    scrollToStepAfterRender("smooth");
   };
 
   // Detect intent from URL on client side (for homepage / no prop)
