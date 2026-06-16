@@ -59,6 +59,15 @@ function isValidUKPostcodeInput(value: unknown): boolean {
   return UK_POSTCODE_REGEX.test(normalisePostcodeInput(value));
 }
 
+function formatRouteGuideForCustomer(routeEstimate: any | null): string {
+  if (!routeEstimate || Number(routeEstimate.distanceMeters) <= 0) return "";
+  const provider = String(routeEstimate.provider || "");
+  if (provider.includes("local-sector")) {
+    return "Local postcode area · short local route";
+  }
+  return `${routeEstimate.distanceText} · ${routeEstimate.durationText}`;
+}
+
 const postcodeFieldSchema = z.string().min(1, "Required").refine(isValidUKPostcodeInput, {
   message: POSTCODE_ERROR_MESSAGE,
 });
@@ -1145,7 +1154,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
                 {routeEstimate && Number(routeEstimate.distanceMeters) > 0 && (
                   <p className="mt-1 text-[11px] font-bold text-primary/65">
-                    Route guide: {routeEstimate.distanceText} · {routeEstimate.durationText}
+                    Route guide: {formatRouteGuideForCustomer(routeEstimate)}
                   </p>
                 )}
                 <p className="mt-2 text-xs font-medium leading-relaxed text-text-secondary">

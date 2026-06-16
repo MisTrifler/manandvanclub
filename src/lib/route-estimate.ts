@@ -36,6 +36,12 @@ export function isLikelyUKPostcode(value: unknown): boolean {
   return UK_POSTCODE_REGEX.test(pc.replace(/\s+/g, " "));
 }
 
+export function isSameNormalisedPostcode(a: unknown, b: unknown): boolean {
+  const from = normalisePostcodeForRoute(a);
+  const to = normalisePostcodeForRoute(b);
+  return Boolean(from && to && from === to);
+}
+
 /** Postcode-to-postcode Google Maps directions URL. Postcodes only — no PII. */
 export function buildGoogleMapsDirectionsUrl(collectionPostcode: string, deliveryPostcode: string): string {
   const from = encodeURIComponent(`${normalisePostcodeForRoute(collectionPostcode)}, UK`);
@@ -193,13 +199,22 @@ const POSTCODE_AREA_CENTROIDS: Record<string, LatLng> = {
   AB: { lat: 57.1497, lng: -2.0943 }, AL: { lat: 51.7527, lng: -0.3394 }, B: { lat: 52.4862, lng: -1.8904 }, BA: { lat: 51.3811, lng: -2.3590 }, BB: { lat: 53.7486, lng: -2.4875 }, BD: { lat: 53.7950, lng: -1.7594 }, BH: { lat: 50.7192, lng: -1.8808 }, BL: { lat: 53.5769, lng: -2.4282 }, BN: { lat: 50.8225, lng: -0.1372 }, BR: { lat: 51.4060, lng: 0.0132 }, BS: { lat: 51.4545, lng: -2.5879 }, BT: { lat: 54.5973, lng: -5.9301 }, CA: { lat: 54.8925, lng: -2.9329 }, CB: { lat: 52.2053, lng: 0.1218 }, CF: { lat: 51.4816, lng: -3.1791 }, CH: { lat: 53.1934, lng: -2.8931 }, CM: { lat: 51.7356, lng: 0.4696 }, CO: { lat: 51.8959, lng: 0.8919 }, CR: { lat: 51.3762, lng: -0.0982 }, CT: { lat: 51.2798, lng: 1.0800 }, CV: { lat: 52.4068, lng: -1.5197 }, CW: { lat: 53.0979, lng: -2.4416 }, DA: { lat: 51.4462, lng: 0.2169 }, DD: { lat: 56.4620, lng: -2.9707 }, DE: { lat: 52.9225, lng: -1.4746 }, DG: { lat: 55.0709, lng: -3.6051 }, DH: { lat: 54.7753, lng: -1.5849 }, DL: { lat: 54.5243, lng: -1.5504 }, DN: { lat: 53.5228, lng: -1.1285 }, DT: { lat: 50.7151, lng: -2.4376 }, DY: { lat: 52.5123, lng: -2.0811 }, E: { lat: 51.5422, lng: -0.0022 }, EC: { lat: 51.5200, lng: -0.0970 }, EH: { lat: 55.9533, lng: -3.1883 }, EN: { lat: 51.6523, lng: -0.0807 }, EX: { lat: 50.7184, lng: -3.5339 }, FK: { lat: 56.0019, lng: -3.7839 }, FY: { lat: 53.8175, lng: -3.0357 }, G: { lat: 55.8642, lng: -4.2518 }, GL: { lat: 51.8642, lng: -2.2382 }, GU: { lat: 51.2362, lng: -0.5704 }, GY: { lat: 49.4542, lng: -2.5812 }, HA: { lat: 51.5790, lng: -0.3370 }, HD: { lat: 53.6458, lng: -1.7850 }, HG: { lat: 53.9921, lng: -1.5418 }, HP: { lat: 51.6287, lng: -0.7482 }, HR: { lat: 52.0578, lng: -2.7150 }, HS: { lat: 58.2094, lng: -6.3865 }, HU: { lat: 53.7457, lng: -0.3367 }, HX: { lat: 53.7270, lng: -1.8575 }, IG: { lat: 51.5590, lng: 0.0741 }, IM: { lat: 54.2361, lng: -4.5481 }, IP: { lat: 52.0567, lng: 1.1482 }, IV: { lat: 57.4778, lng: -4.2247 }, JE: { lat: 49.2144, lng: -2.1313 }, KA: { lat: 55.6116, lng: -4.4957 }, KT: { lat: 51.4123, lng: -0.3007 }, KW: { lat: 58.4391, lng: -3.0930 }, KY: { lat: 56.1165, lng: -3.1599 }, L: { lat: 53.4084, lng: -2.9916 }, LA: { lat: 54.0466, lng: -2.8007 }, LD: { lat: 52.2416, lng: -3.3787 }, LE: { lat: 52.6369, lng: -1.1398 }, LL: { lat: 53.1408, lng: -3.7837 }, LN: { lat: 53.2307, lng: -0.5406 }, LS: { lat: 53.8008, lng: -1.5491 }, LU: { lat: 51.8787, lng: -0.4200 }, M: { lat: 53.4808, lng: -2.2426 }, ME: { lat: 51.3896, lng: 0.5036 }, MK: { lat: 52.0406, lng: -0.7594 }, ML: { lat: 55.7776, lng: -3.9946 }, N: { lat: 51.5615, lng: -0.1083 }, NE: { lat: 54.9783, lng: -1.6178 }, NG: { lat: 52.9548, lng: -1.1581 }, NN: { lat: 52.2405, lng: -0.9027 }, NP: { lat: 51.5842, lng: -2.9977 }, NR: { lat: 52.6309, lng: 1.2974 }, NW: { lat: 51.5430, lng: -0.1931 }, OL: { lat: 53.5409, lng: -2.1114 }, OX: { lat: 51.7520, lng: -1.2577 }, PA: { lat: 55.8473, lng: -4.4400 }, PE: { lat: 52.5695, lng: -0.2405 }, PH: { lat: 56.3950, lng: -3.4308 }, PL: { lat: 50.3755, lng: -4.1427 }, PO: { lat: 50.8198, lng: -1.0880 }, PR: { lat: 53.7632, lng: -2.7031 }, RG: { lat: 51.4543, lng: -0.9781 }, RH: { lat: 51.1465, lng: -0.2084 }, RM: { lat: 51.5761, lng: 0.1807 }, S: { lat: 53.3811, lng: -1.4701 }, SA: { lat: 51.6214, lng: -3.9436 }, SE: { lat: 51.4826, lng: -0.0607 }, SG: { lat: 51.9038, lng: -0.1966 }, SK: { lat: 53.4106, lng: -2.1575 }, SL: { lat: 51.5105, lng: -0.5950 }, SM: { lat: 51.3618, lng: -0.1945 }, SN: { lat: 51.5581, lng: -1.7812 }, SO: { lat: 50.9097, lng: -1.4044 }, SP: { lat: 51.0690, lng: -1.7957 }, SR: { lat: 54.9069, lng: -1.3838 }, SS: { lat: 51.5459, lng: 0.7077 }, ST: { lat: 53.0027, lng: -2.1794 }, SW: { lat: 51.4590, lng: -0.1770 }, SY: { lat: 52.7101, lng: -2.7521 }, TA: { lat: 51.0153, lng: -3.1024 }, TD: { lat: 55.6043, lng: -2.7596 }, TF: { lat: 52.6784, lng: -2.4453 }, TN: { lat: 51.1324, lng: 0.2637 }, TQ: { lat: 50.4619, lng: -3.5253 }, TR: { lat: 50.2632, lng: -5.0510 }, TS: { lat: 54.5762, lng: -1.2348 }, TW: { lat: 51.4490, lng: -0.3904 }, UB: { lat: 51.5113, lng: -0.3754 }, W: { lat: 51.5074, lng: -0.2057 }, WA: { lat: 53.3900, lng: -2.5969 }, WC: { lat: 51.5186, lng: -0.1239 }, WD: { lat: 51.6565, lng: -0.3974 }, WF: { lat: 53.6833, lng: -1.5060 }, WN: { lat: 53.5451, lng: -2.6325 }, WR: { lat: 52.1936, lng: -2.2216 }, WS: { lat: 52.5862, lng: -1.9829 }, WV: { lat: 52.5862, lng: -2.1287 }, YO: { lat: 53.9590, lng: -1.0815 }, ZE: { lat: 60.1550, lng: -1.1450 },
 };
 
-function getPostcodeParts(postcode: string): { outcode: string; area: string } | null {
-  const pc = normalisePostcodeForRoute(postcode).replace(/\s+/g, "");
-  const match = pc.match(/^([A-Z]{1,2}\d[A-Z\d]?)(\d[A-Z]{2})$/i);
+function getPostcodeParts(postcode: string): { outcode: string; sector: string; area: string; unit: string } | null {
+  const normalised = normalisePostcodeForRoute(postcode);
+  const pc = normalised.replace(/\s+/g, "");
+  const match = pc.match(/^([A-Z]{1,2}\d[A-Z\d]?)(\d)([A-Z]{2})$/i);
   if (!match) return null;
   const outcode = match[1].toUpperCase();
+  const sector = `${outcode} ${match[2]}`.toUpperCase();
+  const unit = `${outcode} ${match[2]}${match[3]}`.toUpperCase();
   const area = (outcode.match(/^[A-Z]{1,2}/)?.[0] || "").toUpperCase();
-  return { outcode, area };
+  return { outcode, sector, area, unit };
+}
+
+function isSamePostcodeSector(a: string, b: string): boolean {
+  const fromParts = getPostcodeParts(a);
+  const toParts = getPostcodeParts(b);
+  return Boolean(fromParts?.sector && toParts?.sector && fromParts.sector === toParts.sector);
 }
 
 function getFallbackCoordinate(postcode: string): LatLng | null {
@@ -226,32 +241,50 @@ function estimateRoadMetricsFromCoordinates(
   toPostcode: string
 ): { distanceMeters: number; durationSeconds: number; estimatedRoadMiles: number; durationMinutes: number } {
   const straightMiles = haversineMiles(fromCoord, toCoord);
+  const fromParts = getPostcodeParts(fromPostcode);
+  const toParts = getPostcodeParts(toPostcode);
+  const sameSector = Boolean(fromParts?.sector && toParts?.sector && fromParts.sector === toParts.sector);
+  const sameOutcode = Boolean(fromParts?.outcode && toParts?.outcode && fromParts.outcode === toParts.outcode);
 
-  // Straight-line distance is not road distance. These factors are tuned to
-  // keep local urban routes realistic while still scaling national moves
-  // such as London → Nottingham, Manchester → Bristol, etc.
+  // Straight-line distance is not road distance. For very local moves, do not
+  // inflate the customer-facing route guide with a large artificial floor.
+  // Pricing still has its own minimum callout floor in guide-price.ts, but the
+  // displayed route should not say "2.5 miles" when both postcodes are in the
+  // same small postcode sector.
+  if (sameSector) {
+    const localRoadMiles = Math.max(0.2, Math.min(1.2, straightMiles * 1.2));
+    const localMinutes = Math.max(3, Math.min(8, Math.round((localRoadMiles / 14) * 60)));
+    return {
+      estimatedRoadMiles: localRoadMiles,
+      durationMinutes: localMinutes,
+      distanceMeters: Math.round(localRoadMiles * 1609.344),
+      durationSeconds: Math.round(localMinutes * 60),
+    };
+  }
+
   const roadFactor =
-    straightMiles < 2 ? 1.8 :
-    straightMiles < 10 ? 1.5 :
-    straightMiles < 40 ? 1.35 :
-    straightMiles < 120 ? 1.25 :
+    straightMiles < 2 ? 1.45 :
+    straightMiles < 10 ? 1.35 :
+    straightMiles < 40 ? 1.3 :
+    straightMiles < 120 ? 1.24 :
     1.18;
 
-  const sameOutcode = getPostcodeParts(fromPostcode)?.outcode === getPostcodeParts(toPostcode)?.outcode;
-  const minimumLocalMiles = sameOutcode ? 2.5 : 4;
+  const minimumLocalMiles = sameOutcode ? 0.5 : straightMiles < 2 ? 0.8 : 1.5;
   const estimatedRoadMiles = Math.max(minimumLocalMiles, straightMiles * roadFactor);
 
   // Removal vans travel slower than a car average, especially around cities,
   // parking/loading streets and A-road sections. This is a guide-time model,
   // not a promise of exact journey time.
   const averageMph =
+    estimatedRoadMiles < 3 ? 14 :
     estimatedRoadMiles < 8 ? 18 :
     estimatedRoadMiles < 25 ? 26 :
     estimatedRoadMiles < 60 ? 36 :
     estimatedRoadMiles < 140 ? 43 :
     48;
 
-  const durationMinutes = Math.max(12, Math.round((estimatedRoadMiles / averageMph) * 60));
+  const minimumMinutes = sameOutcode ? 4 : estimatedRoadMiles < 3 ? 5 : 8;
+  const durationMinutes = Math.max(minimumMinutes, Math.round((estimatedRoadMiles / averageMph) * 60));
   return {
     estimatedRoadMiles,
     durationMinutes,
@@ -266,7 +299,7 @@ async function computePostcodesIoRouteEstimate(
 ): Promise<RouteEstimate | null> {
   const from = normalisePostcodeForRoute(collectionPostcode);
   const to = normalisePostcodeForRoute(deliveryPostcode);
-  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to)) return null;
+  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || from === to) return null;
 
   const [fromCoord, toCoord] = await Promise.all([
     fetchPostcodesIoCoordinate(from),
@@ -282,7 +315,7 @@ async function computePostcodesIoRouteEstimate(
     distanceMeters,
     durationSeconds,
     mapUrl: buildGoogleMapsDirectionsUrl(from, to),
-    provider: "postcodes-io-distance",
+    provider: isSamePostcodeSector(from, to) ? "postcodes-io-local-sector" : "postcodes-io-distance",
     calculatedAt: new Date().toISOString(),
   };
 }
@@ -293,7 +326,7 @@ export function estimateRouteByPostcodeFallback(
 ): RouteEstimate | null {
   const from = normalisePostcodeForRoute(collectionPostcode);
   const to = normalisePostcodeForRoute(deliveryPostcode);
-  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to)) return null;
+  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || from === to) return null;
 
   const fromCoord = getFallbackCoordinate(from);
   const toCoord = getFallbackCoordinate(to);
@@ -307,7 +340,7 @@ export function estimateRouteByPostcodeFallback(
     distanceMeters,
     durationSeconds,
     mapUrl: buildGoogleMapsDirectionsUrl(from, to),
-    provider: "postcode-area-fallback",
+    provider: isSamePostcodeSector(from, to) ? "postcode-local-sector-fallback" : "postcode-area-fallback",
     calculatedAt: new Date().toISOString(),
   };
 }
@@ -324,6 +357,7 @@ export function sanitizeRouteEstimate(
   collectionPostcode: string,
   deliveryPostcode: string
 ): RouteEstimate | null {
+  if (isSameNormalisedPostcode(collectionPostcode, deliveryPostcode)) return null;
   if (!raw || typeof raw !== "object") return null;
   const r = raw as Record<string, unknown>;
 
@@ -398,7 +432,7 @@ async function computeGoogleRouteEstimate(
 
   const from = normalisePostcodeForRoute(collectionPostcode);
   const to = normalisePostcodeForRoute(deliveryPostcode);
-  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to)) return null;
+  if (!isLikelyUKPostcode(from) || !isLikelyUKPostcode(to) || from === to) return null;
 
   try {
     const response = await fetch("https://routes.googleapis.com/directions/v2:computeRoutes", {
