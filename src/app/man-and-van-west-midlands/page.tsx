@@ -258,16 +258,17 @@ export default function WestMidlandsPage() {
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">West Midlands services</h2>
-              <p className="text-text-secondary font-medium">One request can cover small deliveries, student moves, flat moves, house removals, office moves and same-day local moves.</p>
+              <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.35em]">Services</span>
+              <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">Popular West Midlands man and van services</h2>
+              <p className="text-text-secondary font-medium leading-relaxed">From single-item collections to student moves and house removals, submit your request free and receive a quote from one verified mover before booking.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {services.map((service) => {
                 const Icon = service.icon;
                 return (
-                  <Link key={service.href} href={service.href} className="bg-white rounded-2xl border border-border p-6 text-center hover:border-accent hover:shadow-lg transition-all group">
+                  <Link key={service.href} href={service.href} className="bg-white rounded-2xl border border-border p-6 min-h-[140px] flex flex-col items-center justify-center text-center hover:border-accent hover:shadow-lg transition-all group">
                     <Icon size={26} className="text-accent mx-auto mb-4" />
                     <span className="text-xs font-black uppercase tracking-widest text-primary group-hover:text-accent transition-colors">{service.title}</span>
                   </Link>
@@ -276,22 +277,24 @@ export default function WestMidlandsPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-primary text-white rounded-[2rem] p-8 lg:p-10 space-y-5">
-              <h2 className="text-3xl font-black uppercase tracking-tight">Local routes and access matter</h2>
-              <p className="text-white/75 font-medium leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <div className="bg-primary rounded-[2rem] p-8 lg:p-10 min-h-[260px] flex flex-col justify-center space-y-5 shadow-sm">
+              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                Local routes and <span className="text-accent">access</span> matter
+              </h2>
+              <p className="text-white/85 font-medium leading-relaxed text-base lg:text-lg">
                 A move from a Birmingham apartment block is different to a Walsall terrace, a Solihull driveway or a Wolverhampton student house. The form asks for the details a mover needs: postcodes, items, helpers, stairs, lifts, access and date.
               </p>
             </div>
-            <div className="bg-accent text-white rounded-[2rem] p-8 lg:p-10 space-y-5">
-              <h2 className="text-3xl font-black uppercase tracking-tight">One verified mover, not a lead blast</h2>
-              <p className="text-white/85 font-medium leading-relaxed">
+            <div className="bg-accent rounded-[2rem] p-8 lg:p-10 min-h-[260px] flex flex-col justify-center space-y-5 shadow-sm">
+              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-primary leading-tight">One verified mover, not a lead blast</h2>
+              <p className="text-white font-medium leading-relaxed text-base lg:text-lg">
                 Your enquiry is not sold to lots of companies. A verified mover reviews your anonymised request, then your contact details are only released if you accept the quote and pay the booking deposit.
               </p>
             </div>
           </div>
 
-          <div className="pt-10 border-t border-border">
+          <div className="pt-6 lg:pt-8 border-t border-border">
             <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
               <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.35em]">FAQ</span>
               <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">West Midlands man and van questions</h2>
