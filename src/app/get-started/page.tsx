@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.manandvanclub.co.uk/get-started",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function GetStartedPage() {

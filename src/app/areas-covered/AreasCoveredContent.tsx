@@ -211,7 +211,7 @@ export default function AreasCoveredContent() {
             we&apos;ll help one verified mover review your request where coverage is available.
           </p>
           <Link
-            href="/#quote-form"
+            href="/get-started"
             className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3"
           >
             Start Your Move Request <ArrowUpRight size={24} />

@@ -1,14 +1,16 @@
 // ─────────────────────────────────────────────────────────────────────
 // LAUNCH SHARED LEAD POOL (temporary, flag-controlled).
 //
-// For launch there are not enough movers to filter tightly by exact
-// driver area/radius/service type. While LAUNCH_SHARED_LEAD_POOL is
-// enabled, every approved launch-region mover sees every verified,
-// unquoted, unpaid lead that starts OR ends in the launch coverage
-// area. Service flags are preferences only and never hide leads.
+// For launch there may not be enough complete mover profile data to
+// filter tightly by exact driver area/radius/service type. While
+// LAUNCH_SHARED_LEAD_POOL is enabled, approved launch-region movers see
+// verified, unquoted, unpaid leads that start OR end in the core West
+// Midlands launch coverage. Service flags are preferences only and never
+// hide leads in launch mode.
 //
-// When mover density grows, set LAUNCH_SHARED_LEAD_POOL=false to
-// return to strict per-driver matching (marketplace-matching.ts).
+// Keep LAUNCH_SHARED_LEAD_POOL=true while early driver data is incomplete.
+// When mover density/profile data improves, set it to false to return to
+// strict per-driver matching (marketplace-matching.ts).
 // ─────────────────────────────────────────────────────────────────────
 
 import { leadIsAvailable, leadMatchesDriverArea, type DriverProfile } from "@/lib/marketplace-matching";
@@ -20,10 +22,22 @@ export function isLaunchPoolEnabled(): boolean {
   return flag === "true";
 }
 
-// Primary West Midlands launch prefixes + nearby practical coverage.
+/**
+ * Early launch safety valve. Defaults ON so approved movers with incomplete
+ * coverage profile data are not accidentally hidden from the launch pool.
+ * Set LAUNCH_SHARED_LEAD_POOL_ALLOW_UNKNOWN_DRIVERS=false once driver
+ * postcode/coverage fields are complete enough for stricter launch scoping.
+ */
+function allowUnknownLaunchDrivers(): boolean {
+  const flag = process.env.LAUNCH_SHARED_LEAD_POOL_ALLOW_UNKNOWN_DRIVERS;
+  if (flag === undefined || flag === "") return true;
+  return flag === "true";
+}
+
+// Core West Midlands launch prefixes only. Keep the shared pool focused
+// so early movers do not see broad non-launch-region leads. Expand this
+// list deliberately when onboarding coverage beyond the West Midlands.
 const WEST_MIDLANDS_CORE = ["B", "CV", "DY", "WS", "WV", "ST", "TF", "WR"];
-const LAUNCH_EXTENDED = ["LE", "DE", "NG", "NN", "OX", "GL", "HR", "SY"];
-const LAUNCH_PREFIXES = [...WEST_MIDLANDS_CORE, ...LAUNCH_EXTENDED];
 
 function postcodeArea(postcode?: string | null): string | null {
   const cleaned = String(postcode || "").trim().toUpperCase().replace(/\s+/g, "");
@@ -40,7 +54,7 @@ export function isWestMidlandsPostcode(postcode?: string | null): boolean {
 function isLaunchPoolPostcode(postcode?: string | null): boolean {
   const area = postcodeArea(postcode);
   if (!area) return false;
-  return LAUNCH_PREFIXES.includes(area);
+  return WEST_MIDLANDS_CORE.includes(area);
 }
 
 /** A lead belongs to the launch pool if its route starts OR ends in coverage. */
@@ -79,9 +93,9 @@ export function driverIsInLaunchPool(driver: {
   if (wmSignals.some((s) => cov.includes(s))) return true;
   if (isLaunchPoolPostcode(driver.postcode)) return true;
 
-  // Launch fallback: approved driver with no clear region data still
-  // sees the shared pool.
-  return true;
+  // Launch fallback: approved driver with no clear region data can still
+  // see the shared pool while early profile data is incomplete.
+  return allowUnknownLaunchDrivers();
 }
 
 /** Launch-mode visibility: availability rules + launch pool membership. */
