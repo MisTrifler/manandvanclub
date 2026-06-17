@@ -17,6 +17,16 @@ const serviceSlugs = [
   "facebook-marketplace-collection",
 ];
 
+const baseServiceLinks = [
+      { title: "House Removals", href: "/house-removals" },
+      { title: "Flat Moves", href: "/flat-removals" },
+      { title: "Office Relocations", href: "/office-removals" },
+      { title: "Student Moves", href: "/student-removals" },
+      { title: "Furniture Delivery", href: "/furniture-delivery" },
+      { title: "Long Distance Moves", href: "/long-distance-removals" },
+      { title: "Same Day Moves", href: "/same-day-man-and-van" }
+    ];
+
 const servicePageData: Record<string, any> = {
   "house-removals": {
     name: "House Removals",
@@ -24,9 +34,19 @@ const servicePageData: Record<string, any> = {
     title: "House Removals | Professional Home Moving Services | Man and Van Club",
     description: "House removal quote requests across England. Submit your move details securely so an approved mover can review your full home move before sending quote options.",
     badge: "Home Move Requests",
-    intro: "Moving your entire home? Submit one secure request with the key details, from bedrooms and items to stairs, parking and access, so an approved mover can review the move properly before quoting.",
-    knowledge: "Every house removal is different. Your request helps the mover account for tight staircases, large furniture, fragile items, parking, loading access and timing before you decide whether to book.",
-    areas: ["Small Homes", "Family Homes", "Large Properties", "Apartments", "Cottages", "Terraced Houses"],
+    h1: "House Removals Made Easier",
+    intro: "Moving your whole home? Add bedrooms, property type, packing, stairs, lift access and postcodes so an approved mover can review the move properly before quoting.",
+    knowledge: "A house removal needs more detail than a small collection. Your request helps the mover account for furniture volume, fragile items, parking, stairs, loading access and the timing needed on moving day.",
+    proofQuote: "Best for full home moves where the mover needs enough detail to price the job properly before you decide whether to book.",
+    requestTypesHeading: "Common House Move Requests",
+    areas: ["Full Home Moves", "Family Homes", "Terraced Houses", "Apartments", "Cottages", "Large Properties"],
+    featureCards: [
+      { t: "Full Move Details", d: "Bedrooms, property type, packing and access notes help the mover judge the size of the job.", icon: "home" },
+      { t: "Furniture Planning", d: "Large items, fragile items and dismantling notes can be added before the mover quotes.", icon: "package" },
+      { t: "Access Checked", d: "Stairs, lift access, parking and loading restrictions help avoid surprises on moving day.", icon: "access" },
+      { t: "Customer-Controlled", d: "You see the guide price first, then decide whether to accept a mover quote.", icon: "check" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/house-removals"),
     faq: [
       { q: "How much does a house removal cost?", a: "Prices vary based on volume, distance, access, helpers, stairs and date. Use the form to see a guide price first, then an approved mover can review the details before quoting." },
       { q: "Do movers dismantle and reassemble furniture?", a: "Some movers offer this service. Add dismantling and reassembly notes to the form so an approved mover can review whether they can include it in the quote." },
@@ -39,9 +59,19 @@ const servicePageData: Record<string, any> = {
     title: "Flat Removals | Apartment & Flat Move Requests | Man and Van Club",
     description: "Flat and apartment move requests across England. Add lift access, parking restrictions and staircase details so an approved mover can quote accurately.",
     badge: "Flat Move Requests",
-    intro: "Moving from a flat or apartment comes with unique challenges — lifts, staircases, parking permits, tight corners and shared entrances. Add those details so the mover can review the job before quoting.",
-    knowledge: "Flat moves can involve narrow hallways, lift rules, communal areas and loading-bay restrictions. Your request gives the mover enough information to account for those details before you book.",
-    areas: ["Studio Flats", "1-Bed Apartments", "2-Bed Flats", "City Centre", "Penthouses", "Ground Floor"],
+    h1: "Flat Removals Without The Guesswork",
+    intro: "Moving from a flat or apartment? Add lift access, floor level, parking, shared entrances and postcodes so the mover can quote around the real access conditions.",
+    knowledge: "Flat moves often depend on access. Lifts, staircases, building rules, loading bays, parking permits and narrow hallways can change the time and handling needed.",
+    proofQuote: "Best for apartments, studios and flats where access details matter as much as the item list.",
+    requestTypesHeading: "Common Flat Move Requests",
+    areas: ["Studio Flats", "1-Bed Apartments", "2-Bed Flats", "Upper Floors", "Ground Floor", "City Centre Flats"],
+    featureCards: [
+      { t: "Lift & Stair Notes", d: "Floor level and lift access help the mover understand how long loading may take.", icon: "building" },
+      { t: "Parking Details", d: "Permit zones, loading bays and restricted streets can be included in the request.", icon: "access" },
+      { t: "Smaller Loads", d: "Studios, one-bed flats and part-flat moves can be described without overbooking a full removal team.", icon: "package" },
+      { t: "Clear Quote Review", d: "An approved mover reviews the access and move details before sending quote options.", icon: "check" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/flat-removals"),
     faq: [
       { q: "Do I need to book the lift for my flat removal?", a: "It is recommended to book the lift with your building management in advance. Add any lift or building access rules to your request so the mover can quote with the right timing." },
       { q: "Can movers handle tight staircases?", a: "Yes. Add no-lift access and staircase details to your request so the mover can account for the extra time and handling before quoting." },
@@ -54,9 +84,19 @@ const servicePageData: Record<string, any> = {
     title: "Student Removals | Affordable University Moves | Man and Van Club",
     description: "Student move quote requests across England. Moving to or from university halls or a shared house? Submit your details so an approved mover can review the job before quoting.",
     badge: "Student Move Requests",
-    intro: "Moving to or from university? Student moves often involve fixed term dates, shared houses, halls, small loads and budget limits. Submit the details so a mover can review them before quoting.",
-    knowledge: "Student move requests can cover halls, shared houses, studios or moves back home for summer. The quote depends on the item list, route, helpers, access and timing.",
-    areas: ["University Halls", "Shared Houses", "Studio Flats", "Home to Uni", "End of Term", "Start of Term"],
+    h1: "Student Removals For Uni Moves",
+    intro: "Moving to halls, a shared house or back home for summer? Add your university, boxes, bags, small furniture and postcodes so a mover can review the student move quickly.",
+    knowledge: "Student moves are usually smaller but time-sensitive. Term dates, halls access, shared-house parking and budget limits can all affect the quote.",
+    proofQuote: "Best for halls, shared houses, studios and smaller student loads where speed and clear item details matter.",
+    requestTypesHeading: "Common Student Move Requests",
+    areas: ["University Halls", "Shared Houses", "Studio Flats", "Home To Uni", "End Of Term", "Start Of Term"],
+    featureCards: [
+      { t: "Student Load Details", d: "Boxes, suitcases and small furniture can be listed without filling a full house-removal form.", icon: "student" },
+      { t: "Term-Time Timing", d: "Add preferred dates and deadlines around halls move-in or end-of-term collections.", icon: "clock" },
+      { t: "Shared House Access", d: "Parking, stairs and room access details help the mover quote accurately.", icon: "building" },
+      { t: "Budget-Aware", d: "Smaller loads and flexible dates can help keep the guide price lower.", icon: "check" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/student-removals"),
     faq: [
       { q: "Do you offer student discounts?", a: "Student move costs depend on load size, route, helpers and timing. Smaller loads and flexible dates can help keep the guide price lower." },
       { q: "Can I share a move with housemates?", a: "Combined student moves can sometimes reduce the guide price when housemates are moving on the same route. Add the details to the form so a mover can review the request properly." },
@@ -69,9 +109,19 @@ const servicePageData: Record<string, any> = {
     title: "Office Removals | Business Relocation Services | Man and Van Club",
     description: "Office removal and business relocation quote requests across England. Add access, timing and equipment details so an approved mover can review the job before quoting.",
     badge: "Business Move Requests",
-    intro: "Relocating your office or business? Add the key details such as desks, equipment, access, loading times and preferred moving window so a mover can quote with less disruption.",
-    knowledge: "Office removals require careful planning. Your request can include evening or weekend preferences, IT equipment, filing cabinets, access restrictions and timing so the mover can review the work involved.",
-    areas: ["Small Offices", "Large Offices", "Co-Working Spaces", "Retail", "Warehouses", "Home Offices"],
+    h1: "Office Removals With Less Disruption",
+    intro: "Relocating your office or business? Add desks, filing cabinets, IT equipment, access, loading times and preferred moving window so a mover can quote around your work schedule.",
+    knowledge: "Office removals need careful planning. Evening or weekend preferences, IT equipment, filing cabinets, loading bays and building rules all help the mover understand the job before quoting.",
+    proofQuote: "Best for business moves where timing, equipment and disruption control are more important than a basic van booking.",
+    requestTypesHeading: "Common Office Move Requests",
+    areas: ["Small Offices", "Large Offices", "Co-Working Spaces", "Retail Units", "Warehouses", "Home Offices"],
+    featureCards: [
+      { t: "Business Timing", d: "Add evening, weekend or preferred moving windows to reduce disruption.", icon: "clock" },
+      { t: "Equipment Notes", d: "Desks, filing cabinets, IT equipment and meeting-room furniture can be listed upfront.", icon: "office" },
+      { t: "Loading Access", d: "Lift access, loading bays and building restrictions help the mover plan properly.", icon: "access" },
+      { t: "Reviewed Before Quote", d: "An approved mover checks the business-move details before sending quote options.", icon: "check" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/office-removals"),
     faq: [
       { q: "Can you move outside business hours?", a: "Evening and weekend office relocations may be available depending on mover availability. Add your preferred timing when submitting the request." },
       { q: "Do you handle IT equipment?", a: "Add IT equipment, monitors, servers or fragile electronics to your request so the mover can confirm what they can handle before quoting." },
@@ -79,15 +129,24 @@ const servicePageData: Record<string, any> = {
     ]
   },
   "furniture-delivery": {
-    name: "Furniture Collection",
+    name: "Furniture Delivery",
     formIntent: "single-item",
     title: "Furniture Collection & Delivery | Single Item Movers | Man and Van Club",
     description: "Single-item furniture collection and delivery quote requests across England. From eBay purchases to shop collections, submit the details so an approved mover can review the job before quoting.",
-    badge: "Furniture Collection Requests",
+    badge: "Furniture Delivery Requests",
     h1: "Furniture Collection & Delivery",
-    intro: "Need a single item collected and delivered? Whether it is a sofa from a shop, a dining table from an online seller or a wardrobe from a friend, submit the details so an approved mover can review the route, access and item size before quoting.",
-    knowledge: "Furniture collection requests can cover small items, wardrobes, sofas and appliances. Add item size, access and timing so a mover can review the job properly before quoting.",
-    areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "eBay Purchases"],
+    intro: "Need a sofa, bed, wardrobe, appliance or online purchase collected? Add item size, pickup and delivery postcodes, stairs and helpers so a mover can quote accurately.",
+    knowledge: "Furniture jobs depend on item size, access and handling. A wardrobe up two flights of stairs is different from a boxed item collected from a shop, so the request form asks for the details that matter.",
+    proofQuote: "Best for single items, Facebook Marketplace buys, shop collections and bulky furniture that needs the right van and handling.",
+    requestTypesHeading: "Common Furniture Delivery Requests",
+    areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "Online Purchases"],
+    featureCards: [
+      { t: "Item Size Matters", d: "Add dimensions, weight and photos if needed so the mover can judge the handling.", icon: "furniture" },
+      { t: "Pickup & Drop-Off", d: "Collection and delivery postcodes help calculate the route and guide price.", icon: "route" },
+      { t: "Access Notes", d: "Stairs, lifts, tight turns and parking details help avoid failed collections.", icon: "access" },
+      { t: "Single-Item Friendly", d: "Useful for one-off items without needing a full removal booking.", icon: "package" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/furniture-delivery"),
     faq: [
       { q: "Can you collect from a shop or seller?", a: "Yes. Collections from shops, private sellers or auction houses can be submitted. Provide the collection postcode and item details so the mover can quote accurately." },
       { q: "How much does furniture collection cost?", a: "Single-item collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
@@ -100,10 +159,19 @@ const servicePageData: Record<string, any> = {
     title: "Same Day Man and Van | Fast Local Move Quotes | Man and Van Club",
     description: "Need a same-day man and van? Submit your move details for free, see a guide price and receive a quote from one verified mover before booking.",
     badge: "Same-Day Move Requests",
-    h1: "Same Day Man and Van",
-    intro: "Need a same-day man and van for an urgent local move, furniture collection or last-minute delivery? Submit accurate postcodes, item details and access notes so an available verified mover can review the request quickly before quoting.",
-    knowledge: "Same-day moves require accurate details. Postcodes, item list, helpers, stairs, parking and access help a mover decide quickly whether they can help and what to quote.",
+    h1: "Same Day Man And Van",
+    intro: "Need urgent help today? Submit accurate postcodes, item details, timing and access notes so an available approved mover can review the request quickly before quoting.",
+    knowledge: "Same-day requests need clear details. Postcodes, item list, helpers, stairs, parking and time window help a mover decide quickly whether they can help and what to quote.",
+    proofQuote: "Best for urgent local moves, short-notice furniture collections and time-sensitive deliveries.",
+    requestTypesHeading: "Common Same-Day Requests",
     areas: ["Emergency Moves", "Last-Minute Collections", "Urgent Deliveries", "Same-Day Furniture", "Quick Clearances", "Day-Of Requests"],
+    featureCards: [
+      { t: "Fast Detail Review", d: "The clearer your item and access notes, the faster an available mover can assess the job.", icon: "clock" },
+      { t: "Urgent Local Jobs", d: "Best suited to local and regional requests where availability can be checked quickly.", icon: "route" },
+      { t: "No Endless Calls", d: "Submit one request and one suitable mover can review it before quoting.", icon: "check" },
+      { t: "Clear Timing", d: "Add your preferred time window so the mover can confirm whether same-day help is realistic.", icon: "access" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/same-day-man-and-van"),
     faq: [
       { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
       { q: "Does same-day cost more?", a: "Same-day moves can cost more when availability is limited or the route is longer. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
@@ -115,14 +183,24 @@ const servicePageData: Record<string, any> = {
     formIntent: "general",
     title: "Long Distance Removals | UK-Wide Moving Services | Man and Van Club",
     description: "Long-distance move quote requests across the UK. Moving from Birmingham to London, Manchester to Bristol or anywhere in between? Submit your details so an approved mover can review the route before quoting.",
-    badge: "UK-Wide Movers",
-    intro: "Moving across the country? Long-distance quotes depend on route time, mileage, load size, access and timing. Submit the details so a mover can review the job before you book.",
-    knowledge: "Long-distance moves require careful planning. Your postcodes, date, access notes and item list help the mover account for route time, mileage, fuel, loading and unloading before sending quote options.",
-    areas: ["City to City", "Cross-Country", "England to Scotland", "England to Wales", "Regional Moves", "Multi-Drop"],
+    badge: "UK-Wide Move Requests",
+    h1: "Long Distance Moves Planned Properly",
+    intro: "Moving city to city or across the country? Add postcodes, date, access notes and item list so a mover can review mileage, route time and loading before quoting.",
+    knowledge: "Long-distance moves need route planning. Mileage, fuel, loading time, unloading time, access and whether the van returns empty can all affect the quote.",
+    proofQuote: "Best for UK-wide moves where mileage, route time and access details need checking before booking.",
+    requestTypesHeading: "Common Long-Distance Requests",
+    areas: ["City To City", "Cross-Country", "England To Scotland", "England To Wales", "Regional Moves", "Multi-Drop"],
+    featureCards: [
+      { t: "Route Reviewed", d: "Collection and delivery postcodes help the mover review mileage and timing.", icon: "route" },
+      { t: "Dedicated Details", d: "Add load size and access notes so the quote reflects the real job.", icon: "package" },
+      { t: "Timing Planned", d: "Longer routes may need careful pickup and delivery windows.", icon: "clock" },
+      { t: "Quote Before Booking", d: "You can review quote options before deciding whether to proceed.", icon: "check" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/long-distance-removals"),
     faq: [
       { q: "How much does a long-distance move cost?", a: "Long-distance pricing depends on mileage, route time, volume, access and whether the move is one-way or part of a return route. Use the form to get a guide price first." },
       { q: "Can the mover stay overnight for very long distances?", a: "For moves over 4–5 hours, some movers may require overnight accommodation. This is agreed upfront and included in the quote." },
-      { q: "Is my load the only one on the van?", a: "Yes, for most long-distance bookings you get a dedicated vehicle. Mention if you need exclusive use when filling out the form." }
+      { q: "Is my load the only one on the van?", a: "For most long-distance bookings you can describe whether you need a dedicated vehicle or can be flexible. Add this to your request so the mover can quote correctly." }
     ]
   },
   "facebook-marketplace-collection": {
@@ -130,19 +208,27 @@ const servicePageData: Record<string, any> = {
     formIntent: "single-item",
     title: "Facebook Marketplace Collection & Delivery | Man and Van Club",
     description: "Collection and delivery quote requests for Facebook Marketplace purchases across England. Submit item and postcode details so an approved mover can review the job before quoting.",
-    badge: "Marketplace Collection",
+    badge: "Marketplace Collection Requests",
     h1: "Facebook Marketplace Collection",
-    intro: "Bought something on Facebook Marketplace and need it collected? Submit the seller, collection and delivery details so an approved mover can review whether they can collect and deliver the item before quoting.",
-    knowledge: "Facebook Marketplace purchases often need quick collection. Add seller access, item size, collection window and delivery postcode so the mover can review whether the job is possible before quoting.",
-    areas: ["Sofas", "Beds", "Tables", "Appliances", "Wardrobes", "Miscellaneous Items"],
+    intro: "Bought something on Facebook Marketplace and need it collected? Add seller access, collection and delivery postcodes, item size and timing so a mover can review the request before quoting.",
+    knowledge: "Marketplace collections often need quick, practical planning. Item size, seller access, collection window and parking details help avoid wasted journeys.",
+    proofQuote: "Best for marketplace purchases where collection timing, seller access and item size need to be clear before booking.",
+    requestTypesHeading: "Common Marketplace Collections",
+    areas: ["Sofas", "Beds", "Tables", "Appliances", "Wardrobes", "Mixed Items"],
+    featureCards: [
+      { t: "Seller Details", d: "Add collection instructions and timing so the mover can plan the pickup.", icon: "check" },
+      { t: "Item Handling", d: "Describe item size, stairs and access to reduce collection problems.", icon: "package" },
+      { t: "Route Clarity", d: "Pickup and delivery postcodes help calculate route and guide price.", icon: "route" },
+      { t: "Useful For One-Off Buys", d: "A simple way to request help without booking a full house move.", icon: "furniture" }
+    ],
+    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/facebook-marketplace-collection"),
     faq: [
-      { q: "Can the mover collect on my behalf if I can't be there?", a: "Yes, with clear arrangements. Provide the seller's contact details and any collection instructions. Payment must be settled with the seller beforehand." },
+      { q: "Can the mover collect on my behalf if I cannot be there?", a: "Yes, with clear arrangements. Provide the seller's contact details and any collection instructions. Payment must be settled with the seller beforehand." },
       { q: "How much does a marketplace collection cost?", a: "Marketplace collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
-      { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form and we'll arrange a route that works." }
+      { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form so the mover can review the route and quote correctly." }
     ]
   }
 };
-
 function buildServiceSchema(serviceData: any, slug: string) {
   return {
     "@context": "https://schema.org",

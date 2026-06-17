@@ -342,23 +342,26 @@ export default function HomeContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-stretch">
             {[
-              { label: "House Removals", href: "/house-removals" },
-              { label: "Flat Moves", href: "/flat-removals" },
-              { label: "Office Relocations", href: "/office-removals" },
-              { label: "Student Moves", href: "/student-removals" },
-              { label: "Furniture Collection", href: "/furniture-delivery" },
-              { label: "Long Distance Moves", href: "/long-distance-removals" },
-              { label: "Same Day Moves", href: "/same-day-man-and-van" },
+              { label: "House Removals", href: "/house-removals", desc: "Full home moves, bedrooms, access and packing notes." },
+              { label: "Flat Moves", href: "/flat-removals", desc: "Apartments, stairs, lifts, parking and loading access." },
+              { label: "Office Relocations", href: "/office-removals", desc: "Desks, IT equipment, timing and business access details." },
+              { label: "Student Moves", href: "/student-removals", desc: "Halls, shared houses, boxes, bags and term-time moves." },
+              { label: "Furniture Delivery", href: "/furniture-delivery", desc: "Sofas, beds, wardrobes, appliances and online purchases." },
+              { label: "Long Distance Moves", href: "/long-distance-removals", desc: "City-to-city and UK-wide route-based move requests." },
+              { label: "Same Day Moves", href: "/same-day-man-and-van", desc: "Urgent local moves and last-minute collections." },
             ].map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="text-center bg-white rounded-2xl border border-border p-5 min-h-[112px] flex items-center justify-center hover:border-accent hover:shadow-md transition-all"
+                className="group bg-white rounded-2xl border border-border p-5 min-h-[132px] flex flex-col justify-between hover:border-accent hover:shadow-md transition-all"
               >
-                <span className="text-sm font-black text-primary uppercase tracking-tight">
+                <span className="text-sm font-black text-primary uppercase tracking-tight group-hover:text-accent transition-colors">
                   {service.label}
+                </span>
+                <span className="mt-4 text-xs font-medium leading-relaxed text-text-secondary">
+                  {service.desc}
                 </span>
               </Link>
             ))}

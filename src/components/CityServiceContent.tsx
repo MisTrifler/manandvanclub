@@ -33,6 +33,33 @@ function buildRouteAnchorText(move: { from: string; to: string; slug?: string })
   return `${move.from} to ${move.to} moving route`;
 }
 
+function getServiceFeatureIcon(icon?: string) {
+  switch (icon) {
+    case "home":
+      return <Truck size={28} />;
+    case "building":
+      return <Building size={28} />;
+    case "student":
+      return <GraduationCap size={28} />;
+    case "office":
+      return <ListChecks size={28} />;
+    case "furniture":
+      return <Sofa size={28} />;
+    case "package":
+      return <Package size={28} />;
+    case "route":
+      return <Route size={28} />;
+    case "clock":
+      return <Clock size={28} />;
+    case "access":
+      return <Users size={28} />;
+    case "check":
+      return <CheckCircle2 size={28} />;
+    default:
+      return <ShieldCheck size={28} />;
+  }
+}
+
 export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: IntentType }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
   const isServicePage = data.pageType === "service";
@@ -45,6 +72,13 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
 
   const safeFaqItems = Array.isArray(faqItems) ? faqItems : [];
   const hasValidFaq = safeFaqItems.length > 0;
+  const defaultFeatureCards = [
+    { t: "Quote Options", d: "A verified mover reviews your request and sends quote options before you decide whether to book.", icon: "clock" },
+    { t: "Checked Applications", d: "Mover applications are reviewed before they can access customer enquiries.", icon: "check" },
+    { t: "Insurance Checked", d: "Movers must provide Goods in Transit and Public Liability insurance before approval. Cover details can vary by mover.", icon: "check" },
+    { t: "Local Access Notes", d: "Your postcode, parking, stairs, lifts and access details help the mover quote accurately.", icon: "access" },
+  ];
+  const featureCards = Array.isArray(data.featureCards) && data.featureCards.length > 0 ? data.featureCards : defaultFeatureCards;
 
   const faqSchema = data.faqSchema || (hasValidFaq ? {
     "@context": "https://schema.org",
@@ -185,21 +219,16 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                  <p className="text-lg lg:text-xl text-text-secondary font-medium leading-relaxed">{data.knowledge}</p>
                  <div className="bg-primary/5 p-5 lg:p-10 rounded-2xl lg:rounded-[2.5rem] border border-border/40">
                    <p className="text-lg lg:text-xl text-primary font-medium leading-relaxed italic">
-                     "Whether you are moving a single item or a full house relocation, Man and Van Club makes it easy to submit a free request. A verified mover can review your details and send quote options before you decide whether to book."
+                     “{data.proofQuote || "Submit one clear request. An approved mover can review the details and send quote options before you decide whether to book."}”
                    </p>
                  </div>
               </div>
 
               {/* ── Feature Cards ── */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                {[
-                  { t: "Quote Options", d: "A verified mover reviews your request and sends quote options before you decide whether to book.", i: <Clock size={28} /> },
-                  { t: "Checked Applications", d: "Mover applications are reviewed before they can access customer enquiries.", i: <ShieldCheck size={28} /> },
-                  { t: "Insurance Checked", d: "Movers must provide Goods in Transit and Public Liability insurance before approval. Cover details can vary by mover.", i: <CheckCircle2 size={28} /> },
-                  { t: "Local Access Notes", d: "Your postcode, parking, stairs, lifts and access details help the mover quote accurately.", i: <Users size={28} /> }
-                ].map(f => (
+                {featureCards.map((f: { t: string; d: string; icon?: string }) => (
                   <div key={f.t} className="bg-[#F9F9F7] p-6 lg:p-10 rounded-3xl lg:rounded-[2.5rem] border border-border/50 space-y-4 lg:space-y-6 group hover:bg-white hover:shadow-2xl transition-all duration-500">
-                    <div className="text-accent group-hover:scale-110 transition-transform origin-left">{f.i}</div>
+                    <div className="text-accent group-hover:scale-110 transition-transform origin-left">{getServiceFeatureIcon(f.icon)}</div>
                     <div className="space-y-2">
                       <h3 className="font-black text-xl text-primary uppercase tracking-tight leading-tight">{f.t}</h3>
                       <p className="text-text-secondary font-medium text-sm leading-relaxed">{f.d}</p>
@@ -503,7 +532,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Popular Areas ── */}
               {data.areas && data.areas.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{isServicePage ? "Popular Request Types" : "Popular Areas"}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{isServicePage ? (data.requestTypesHeading || "Popular Request Types") : "Popular Areas"}</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
                     {data.areas.map((area: string) => (
                       <div key={area} className="bg-gray-50/50 p-6 rounded-2xl text-center font-black text-primary/60 border border-border/30 hover:border-accent hover:text-accent transition-all cursor-default uppercase text-[9px] tracking-widest">
@@ -536,7 +565,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Service Links — Internal Linking ── */}
               {data.serviceLinks && data.serviceLinks.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Services Available in {data.name}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{isServicePage ? "Compare Other Moving Services" : `Services Available in ${data.name}`}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {data.serviceLinks.map((service: { title: string; href: string }) => (
                       <Link
@@ -622,7 +651,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
             </h2>
             <p className="text-xl text-text-secondary font-medium leading-relaxed">
               {isServicePage
-                ? `Tell us what you need. A verified mover can review your request and send quote options before you decide whether to book.`
+                ? (data.bottomCtaText || `Tell us what you need. A verified mover can review your request and send quote options before you decide whether to book.`)
                 : "Tell us about your move. A verified mover can review your request and send quote options before you decide whether to book."}
             </p>
             <Link href="#quote-form" className="btn-orange px-14 py-6 rounded-[2rem] font-black uppercase tracking-[0.3em] shadow-2xl shadow-accent/20 transition-all hover:scale-105 inline-flex items-center gap-3 text-lg">
