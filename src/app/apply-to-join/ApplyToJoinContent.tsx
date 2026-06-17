@@ -125,8 +125,8 @@ export default function ApplyToJoinContent() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Company Name</label>
-                  <input name="companyName" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all shadow-inner" placeholder="e.g. Swift Moves Ltd" required />
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Business / Trading Name</label>
+                  <input name="companyName" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all shadow-inner" placeholder="Your business or trading name" required />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -142,7 +142,7 @@ export default function ApplyToJoinContent() {
 
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Email Address</label>
-                  <input name="email" type="email" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all" placeholder="driver@company.co.uk" required />
+                  <input name="email" type="email" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all" placeholder="you@example.com" required />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

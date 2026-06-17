@@ -169,7 +169,7 @@ export default function LoginPage() {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="driver@company.co.uk"
+                      placeholder="you@example.com"
                       className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-border rounded-xl focus:border-accent outline-none transition-all"
                     />
                   </div>

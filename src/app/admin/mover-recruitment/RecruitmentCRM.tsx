@@ -103,7 +103,7 @@ function isToday(dateStr: string) {
 const SAMPLE_DATA: Company[] = [
   {
     id: generateId(),
-    businessName: "Swift Moves Birmingham",
+    businessName: "Sample Moving Business",
     contactName: "James Wilson",
     phone: "07912 345678",
     email: "james@swiftmoves.co.uk",
