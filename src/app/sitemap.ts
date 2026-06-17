@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticUrls = [
     '', '/man-and-van-west-midlands', '/how-it-works', '/for-businesses', '/about',
     '/areas-covered', '/pricing', '/contact', '/apply-to-join',
-    '/why-join', '/for-movers', '/terms', '/privacy', '/cookies'
+    '/why-join', '/terms', '/privacy', '/cookies'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

@@ -48,7 +48,7 @@ const FAQ_ITEMS = [
   { q: "Are enquiries shared with multiple movers?", a: "No. The platform is designed around one customer-confirmed quote at a time, so customers are not spammed by multiple companies." },
   { q: "How do I get approved?", a: "Applications are reviewed manually. You must email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk before your application can be approved. Verification usually takes less than 24 hours once your documents are received." },
   { q: "Can I choose my coverage area?", a: "Yes. You can set your preferred service area within your account. You will only see enquiries that match your location and job type preferences." },
-  { q: "How quickly are applications reviewed?", a: "Most applications are reviewed within 24 hours. Once approved, you can immediately start viewing available enquiries in your service area." },
+  { q: "How quickly are applications reviewed?", a: "Applications are reviewed once the required business and insurance details are received. Once approved, you can access customer enquiries as they become available in your approved service area." },
 ];
 
 const COMPARISON_ROWS = [

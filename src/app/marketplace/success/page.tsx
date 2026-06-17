@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
@@ -24,6 +25,14 @@ import {
   ClipboardList,
   Banknote,
 } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const dynamic = "force-dynamic";
 

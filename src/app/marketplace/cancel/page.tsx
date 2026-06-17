@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function PaymentCancel() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7] p-6">

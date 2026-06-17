@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { formatUKPostcode, formatDisplayDate, formatMoveType } from "@/lib/formatting";
 import NoShowDisputeClient from "./NoShowDisputeClient";
+
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const dynamic = "force-dynamic";
 

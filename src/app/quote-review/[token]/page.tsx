@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import {
@@ -15,6 +16,14 @@ import { getRouteEstimateFromDetails } from "@/lib/route-estimate";
 import { archiveCurrentQuoteAttempt, releaseQuoteBackToPool } from "@/lib/quote-attempts";
 import { sendQuoteExpiredEmail } from "@/lib/quote-feedback-email";
 import QuoteReviewClient from "./QuoteReviewClient";
+
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const dynamic = "force-dynamic";
 

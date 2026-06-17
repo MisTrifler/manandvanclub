@@ -10,6 +10,47 @@ import { calculateGuidePrice } from '@/lib/guide-price';
 
 const OTP_VALIDITY_MINUTES = 15;
 
+const OPTIONAL_ATTRIBUTION_COLUMNS = [
+  "landing_page",
+  "referrer",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "gclid",
+  "gbraid",
+  "wbraid",
+  "first_touch_at",
+  "device_type",
+  "service_intent",
+  "collection_outward_postcode",
+  "delivery_outward_postcode",
+  "guide_price_displayed",
+] as const;
+
+function optionalColumnMissing(error: any): boolean {
+  return Boolean(error && (error.code === "42703" || error.code === "PGRST204"));
+}
+
+function cleanOptionalText(value: unknown): string | null {
+  const text = String(value || "").trim();
+  return text.length > 0 ? text.slice(0, 500) : null;
+}
+
+function cleanOptionalUrlPath(value: unknown): string | null {
+  const text = String(value || "").trim();
+  if (!text) return null;
+  return text.slice(0, 1000);
+}
+
+function safeIsoTimestamp(value: unknown): string | null {
+  const text = String(value || "").trim();
+  if (!text) return null;
+  const time = Date.parse(text);
+  return Number.isFinite(time) ? new Date(time).toISOString() : null;
+}
+
 export async function POST(req: Request) {
   try {
     const data = await req.json();
@@ -68,6 +109,22 @@ export async function POST(req: Request) {
       move_date: data.moveDate,
       move_type: data.moveType,
       source_page: data.sourcePage || '',
+      landing_page: cleanOptionalUrlPath(data.landingPage),
+      referrer: cleanOptionalUrlPath(data.referrer),
+      utm_source: cleanOptionalText(data.utmSource),
+      utm_medium: cleanOptionalText(data.utmMedium),
+      utm_campaign: cleanOptionalText(data.utmCampaign),
+      utm_term: cleanOptionalText(data.utmTerm),
+      utm_content: cleanOptionalText(data.utmContent),
+      gclid: cleanOptionalText(data.gclid),
+      gbraid: cleanOptionalText(data.gbraid),
+      wbraid: cleanOptionalText(data.wbraid),
+      first_touch_at: safeIsoTimestamp(data.firstTouchAt),
+      device_type: cleanOptionalText(data.deviceType),
+      service_intent: cleanOptionalText(data.serviceIntent),
+      collection_outward_postcode: collectionPostcode.display.split(' ')[0],
+      delivery_outward_postcode: deliveryPostcode.display.split(' ')[0],
+      guide_price_displayed: cleanOptionalText(data.guidePriceDisplayed || data.estimatedPrice),
       estimated_price: data.estimatedPrice || null,
       customer_quote_token: quoteToken,
       status: 'pending',
@@ -146,6 +203,7 @@ export async function POST(req: Request) {
       // estimated_price stays the display string (backwards compatible);
       // structured detail goes into details.guidePrice.
       insertPayload.estimated_price = guide.display;
+      insertPayload.guide_price_displayed = guide.display;
       insertPayload.details = {
         ...(insertPayload.details || {}),
         guidePrice: { ...guide, calculatedAt: new Date().toISOString() },
@@ -157,28 +215,38 @@ export async function POST(req: Request) {
     let request: any;
     let error: any;
 
-    const insertResult = await supabase
+    const performInsert = async () => supabase
       .from('move_requests')
       .insert([insertPayload])
       .select()
       .single();
 
+    let insertResult = await performInsert();
     request = insertResult.data;
     error = insertResult.error;
 
-    // Retry without optional columns if a migration has not been applied yet
+    // Retry without attribution columns if the analytics migration has not
+    // been applied yet. Attribution is also stored inside details.attribution
+    // when the details JSONB column exists, so we preserve that first.
+    if (optionalColumnMissing(error)) {
+      console.warn('Optional attribution column missing, retrying insert without attribution columns. Apply latest attribution migration.');
+      for (const column of OPTIONAL_ATTRIBUTION_COLUMNS) {
+        delete insertPayload[column];
+      }
+      insertResult = await performInsert();
+      request = insertResult.data;
+      error = insertResult.error;
+    }
+
+    // Retry without optional columns if older migrations have not been applied.
     // (PostgreSQL code 42703 = undefined_column, PostgREST PGRST204 = missing column)
-    if (error && (error.code === '42703' || error.code === 'PGRST204')) {
+    if (optionalColumnMissing(error)) {
       console.warn('Optional column missing, retrying insert without details/otp-hardening columns. Apply latest migrations.');
       delete insertPayload.details;
       delete insertPayload.otp_attempts;
       delete insertPayload.otp_expires_at;
       delete insertPayload.otp_locked_at;
-      const retryResult = await supabase
-        .from('move_requests')
-        .insert([insertPayload])
-        .select()
-        .single();
+      const retryResult = await performInsert();
       request = retryResult.data;
       error = retryResult.error;
     }

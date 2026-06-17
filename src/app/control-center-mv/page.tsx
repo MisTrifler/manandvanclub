@@ -1,9 +1,19 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { LockKeyhole, ShieldCheck } from "lucide-react";
 import { ADMIN_COOKIE_NAME, isValidAdminSession } from "@/lib/admin-auth";
 import AdminPortalClient from "./AdminPortalClient";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Control Center | Man and Van Club",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 
 export default function ControlCenterPage({
   searchParams,

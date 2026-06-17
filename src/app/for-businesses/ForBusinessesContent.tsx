@@ -36,11 +36,11 @@ export default function ForBusinessesContent() {
                 <span> Customer Enquiries</span>
               </h1>
               <p className="text-xl text-text-secondary mb-10 max-w-xl font-medium leading-relaxed">
-                Receive customer enquiries without competing against multiple movers. No monthly contracts, just quality job enquiries across England, starting in Birmingham.
+                Access customer enquiries as they become available without competing against multiple movers. No monthly contracts — Man and Van Club is launching with a West Midlands-first focus.
               </p>
                 <div className="space-y-4">
                 {[
-                  "New customer enquiries daily",
+                  "Access enquiries as they become available",
                   "Submit quotes for verified move requests",
                   "No monthly contracts — ever",
                   "Control your service area and job types",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { stripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
@@ -15,6 +16,14 @@ import {
   CalendarDays,
   ArrowRight,
 } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const dynamic = "force-dynamic";
 

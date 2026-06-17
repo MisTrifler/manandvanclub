@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Lock,
   MapPin,
+  Package,
   Route,
   ShieldCheck,
   Sofa,
@@ -56,6 +57,30 @@ const services = [
   { title: "Student moves", href: "/student-removals", icon: GraduationCap },
   { title: "Furniture collection", href: "/furniture-delivery", icon: Sofa },
   { title: "Same-day man and van", href: "/same-day-man-and-van", icon: Route },
+];
+
+const exampleMoveRequests = [
+  {
+    area: "Birmingham B29 to Selly Oak",
+    type: "Student move",
+    detail: "Boxes, suitcases and small furniture from shared accommodation with stairs and parking notes included.",
+  },
+  {
+    area: "Walsall WS1 to Wolverhampton WV1",
+    type: "Flat move",
+    detail: "One-bedroom flat move with lift access, weekend timing and loading restrictions described upfront.",
+  },
+  {
+    area: "Dudley DY1 to West Bromwich B70",
+    type: "Furniture collection",
+    detail: "Sofa or bulky-item collection where the customer can add item size, helpers required and access details.",
+  },
+];
+
+const postcodeCoverage = [
+  { area: "Birmingham", postcodes: ["B1", "B2", "B13", "B17", "B29"] },
+  { area: "Black Country", postcodes: ["WV1", "WS1", "DY1", "B70"] },
+  { area: "Coventry and Solihull", postcodes: ["CV1", "CV4", "B90", "B91"] },
 ];
 
 const faqItems = [
@@ -231,6 +256,51 @@ export default function WestMidlandsPage() {
                 <li>3. One verified mover reviews the request.</li>
                 <li>4. Your details are released only after you accept and book.</li>
               </ul>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.35em]">Local proof</span>
+              <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">West Midlands move examples and postcode coverage</h2>
+              <p className="text-text-secondary font-medium leading-relaxed">
+                These are honest example move requests customers can submit, not fake completed bookings. Real anonymised job examples and reviews can replace this section once live requests come through.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {exampleMoveRequests.map((request) => (
+                <article key={`${request.area}-${request.type}`} className="bg-[#F9F9F7] rounded-2xl border border-border p-6 space-y-3">
+                  <span className="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-accent">
+                    <Package size={13} /> Example request
+                  </span>
+                  <h3 className="text-lg font-black uppercase tracking-tight text-primary">{request.type}</h3>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/50">{request.area}</p>
+                  <p className="text-sm text-text-secondary font-medium leading-relaxed">{request.detail}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="bg-white rounded-[2rem] border border-border p-6 lg:p-8 space-y-5 shadow-sm">
+              <div className="flex items-start gap-3">
+                <MapPin size={22} className="text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-black uppercase tracking-tight text-primary">West Midlands outward postcode examples</h3>
+                  <p className="text-sm text-text-secondary font-medium leading-relaxed">Customers enter full postcodes on the form; these outward-code examples add local relevance across the launch area.</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {postcodeCoverage.map((coverage) => (
+                  <div key={coverage.area} className="rounded-2xl bg-[#F9F9F7] border border-border/50 p-4">
+                    <p className="text-xs font-black uppercase tracking-tight text-primary mb-2">{coverage.area}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {coverage.postcodes.map((postcode) => (
+                        <span key={postcode} className="rounded-full bg-white px-3 py-1 text-[10px] font-black uppercase tracking-widest text-primary/60 border border-border/50">{postcode}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
@@ -8,6 +9,15 @@ import { expireOldQuotes, getPreviousQuoteSummaries } from "@/lib/quote-attempts
 import DriverMarketplaceClient from "./DriverMarketplaceClient";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Driver Marketplace | Man and Van Club",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 
 function normaliseEmail(value?: string | null) {
   return String(value || "").toLowerCase().trim();

@@ -1,6 +1,6 @@
 import CityServiceContent from "@/components/CityServiceContent";
 import { getLocationPageData, getAllLocationPageSlugs } from "@/lib/location-content";
-import { isLocationIndexable } from "@/lib/seo-quality-guard";
+import { getIndexableLocationSlugs, isLocationIndexable } from "@/lib/seo-quality-guard";
 import { getEnhancedServiceSchema } from "@/lib/enhanced-schemas";
 import { type IntentType } from "@/lib/intent-detection";
 import { Metadata } from "next";
@@ -252,7 +252,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  const locationParams = getAllLocationPageSlugs().map((slug) => ({ slug }));
+  // Prebuild only the location pages currently allowed into the sitemap.
+  // Non-priority pages still resolve on demand and render with noindex,
+  // keeping broad coverage available without making launch builds heavy.
+  const locationParams = getIndexableLocationSlugs().map((slug) => ({ slug: `man-and-van-${slug}` }));
   const serviceParams = serviceSlugs.map((slug) => ({ slug }));
   return [...locationParams, ...serviceParams];
 }
