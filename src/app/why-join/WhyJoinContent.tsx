@@ -15,7 +15,6 @@ import {
   Lock,
   MapPin,
   Phone,
-  QrCode,
   ShieldCheck,
   Smartphone,
   Wallet,
@@ -122,17 +121,17 @@ export default function WhyJoinContent() {
 
       <section className="relative overflow-hidden bg-[#F9F9F7] border-b border-border">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(255,122,24,0.12),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(17,38,74,0.08),transparent_30%)]" />
-        <div className="container mx-auto px-4 py-8 md:py-10 lg:py-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_390px] gap-8 lg:gap-10 items-center">
-            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="space-y-5 lg:space-y-6">
+        <div className="container mx-auto px-4 py-6 md:py-8 lg:py-10 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-6 lg:gap-8 items-center">
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="space-y-4 lg:space-y-5">
               <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.28em]">
                 <CheckCircle2 size={14} /> West Midlands founding mover network
               </div>
               <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-primary max-w-5xl">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-tighter leading-[0.92] text-primary max-w-4xl">
                   Easy mover sign-up. Quote jobs you actually want.
                 </h1>
-                <p className="text-base md:text-lg text-text-secondary max-w-2xl leading-relaxed font-medium">
+                <p className="text-sm md:text-base lg:text-lg text-text-secondary max-w-2xl leading-relaxed font-medium">
                   Apply in a few minutes, send your insurance documents, then access suitable customer enquiries as they become available in your approved service area.
                 </p>
               </div>
@@ -168,27 +167,32 @@ export default function WhyJoinContent() {
               initial="hidden"
               animate="visible"
               custom={2}
-              className="bg-white rounded-[2rem] border border-border shadow-xl p-5 md:p-6 lg:p-7 space-y-5"
+              className="bg-white rounded-[1.75rem] border border-border shadow-lg p-5 md:p-6 space-y-5"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-[9px] font-black uppercase tracking-[0.25em] text-accent mb-2">Mobile friendly</p>
-                  <h2 className="text-2xl lg:text-3xl font-black uppercase tracking-tighter text-primary leading-none">Scan or tap to apply</h2>
-                  <p className="text-sm text-text-secondary font-medium mt-3 leading-relaxed">
-                    Perfect for movers on the road. Open the application on your phone and complete the first step quickly.
-                  </p>
-                </div>
-                <QrCode size={28} className="text-accent flex-shrink-0" />
+              <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                <ClipboardCheck size={24} />
               </div>
-              <div className="bg-[#F9F9F7] rounded-[1.5rem] p-4 border border-border text-center space-y-3">
-                <img
-                  src="/apply-to-join-qr.svg"
-                  alt="QR code linking to the Man and Van Club mover application page"
-                  className="w-36 h-36 md:w-40 md:h-40 mx-auto bg-white rounded-2xl p-2 border border-border"
-                />
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/50">
-                  On mobile, tap the button below instead
+              <div>
+                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-accent mb-2">Apply in minutes</p>
+                <h2 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-primary leading-tight">
+                  Simple mover application
+                </h2>
+                <p className="text-sm text-text-secondary font-medium mt-3 leading-relaxed">
+                  Complete the short online form first. Insurance documents can be emailed afterwards when you are ready.
                 </p>
+              </div>
+              <div className="space-y-3">
+                {[
+                  "Business and contact details",
+                  "Service area and work radius",
+                  "Usual job types and capacity",
+                  "Insurance documents after applying",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm font-bold text-primary/80">
+                    <CheckCircle2 size={17} className="text-accent flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
               <Link
                 href="/apply-to-join"
@@ -296,19 +300,19 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-      <section className="scroll-mt-32 py-10 lg:py-12 bg-[#F9F9F7] border-t border-border">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-primary text-white rounded-[2rem] px-6 py-8 md:px-10 lg:px-12 lg:py-10 text-center shadow-xl">
+      <section className="scroll-mt-32 py-8 lg:py-10 bg-[#F9F9F7] border-t border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="bg-primary text-white rounded-[1.5rem] px-5 py-7 md:px-8 lg:px-10 lg:py-8 text-center shadow-lg">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-4">Mover applications</p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight mb-4">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-tight leading-tight mb-3">
               Ready to join the mover network?
             </h2>
-            <p className="text-white/75 text-base font-medium leading-relaxed mb-6 max-w-2xl mx-auto">
+            <p className="text-white/75 text-sm md:text-base font-medium leading-relaxed mb-5 max-w-2xl mx-auto">
               Apply online, then email your insurance documents when ready. Applications are reviewed manually before access is granted.
             </p>
             <Link
               href="/apply-to-join"
-              className="bg-accent text-white inline-flex items-center justify-center gap-3 px-7 md:px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-black/20 hover:scale-105 active:scale-95 transition-all"
+              className="bg-accent text-white inline-flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl shadow-black/20 hover:scale-105 active:scale-95 transition-all"
             >
               Start mover application <ArrowRight size={20} />
             </Link>
