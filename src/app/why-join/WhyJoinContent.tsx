@@ -234,28 +234,28 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#F9F9F7]">
+      <section className="scroll-mt-32 py-14 lg:py-20 bg-[#F9F9F7] border-y border-border/60">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-12 items-start">
-            <div className="bg-primary text-white rounded-[2.5rem] p-8 lg:p-10 space-y-6">
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-accent">
-                <ClipboardCheck size={28} />
+          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-12 items-center">
+            <div className="bg-white border border-border rounded-[2rem] p-7 lg:p-9 shadow-sm space-y-5">
+              <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                <ClipboardCheck size={24} />
               </div>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-4">What you need</p>
-                <h2 className="text-4xl font-black uppercase tracking-tighter leading-none">Keep it ready before you apply</h2>
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-3">Before you apply</p>
+                <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-primary">Have the basics ready</h2>
               </div>
-              <p className="text-white/70 font-medium leading-relaxed">
-                The form is easier when you have these details to hand. Insurance documents can be emailed after submitting the application.
+              <p className="text-text-secondary font-medium leading-relaxed">
+                The application is quicker when these details are to hand. Insurance documents can be emailed after you submit the form.
               </p>
-              <Link href="/apply-to-join" className="inline-flex items-center gap-3 bg-accent text-white px-7 py-4 rounded-2xl font-black uppercase tracking-widest text-xs">
+              <Link href="/apply-to-join" className="inline-flex items-center gap-3 bg-accent text-white px-7 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:shadow-lg transition-all">
                 Apply now <ArrowRight size={16} />
               </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {WHAT_YOU_NEED.map((item) => (
-                <div key={item} className="bg-white border border-border rounded-2xl p-5 flex items-center gap-3">
+                <div key={item} className="bg-white border border-border rounded-2xl p-5 flex items-center gap-3 shadow-sm">
                   <CheckCircle2 size={18} className="text-accent flex-shrink-0" />
                   <span className="text-sm font-black uppercase tracking-wider text-primary/80">{item}</span>
                 </div>
@@ -296,20 +296,23 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
-            Ready to make joining simple?
-          </h2>
-          <p className="text-white/70 text-lg font-medium leading-relaxed mb-8">
-            Apply online, then email your insurance documents when ready. We review applications manually before granting access to customer enquiries.
-          </p>
-          <Link
-            href="/apply-to-join"
-            className="bg-accent text-white inline-flex items-center justify-center gap-3 px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl shadow-black/20 hover:scale-105 active:scale-95 transition-all"
-          >
-            Start mover application <ArrowRight size={20} />
-          </Link>
+      <section className="scroll-mt-32 py-14 lg:py-20 bg-[#F9F9F7] border-t border-border">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="bg-primary text-white rounded-[2rem] lg:rounded-[2.5rem] px-6 py-10 md:px-10 lg:px-14 lg:py-12 text-center shadow-xl">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-4">Mover applications</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight mb-5">
+              Ready to join the mover network?
+            </h2>
+            <p className="text-white/75 text-base md:text-lg font-medium leading-relaxed mb-8 max-w-2xl mx-auto">
+              Apply online, then email your insurance documents when ready. Applications are reviewed manually before access is granted.
+            </p>
+            <Link
+              href="/apply-to-join"
+              className="bg-accent text-white inline-flex items-center justify-center gap-3 px-8 md:px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl shadow-black/20 hover:scale-105 active:scale-95 transition-all"
+            >
+              Start mover application <ArrowRight size={20} />
+            </Link>
+          </div>
         </div>
       </section>
     </div>
