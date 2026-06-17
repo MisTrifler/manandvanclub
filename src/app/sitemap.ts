@@ -36,11 +36,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "long-distance-removals", "facebook-marketplace-collection"
   ];
 
+  const highIntentServiceSlugs = new Set([
+    'same-day-man-and-van',
+    'furniture-delivery',
+    'student-removals',
+  ]);
+
   const serviceUrls = services.map(service => ({
     url: `${baseUrl}/${service}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    changeFrequency: highIntentServiceSlugs.has(service) ? 'weekly' as const : 'monthly' as const,
+    priority: highIntentServiceSlugs.has(service) ? 0.8 : 0.7,
   }));
 
   const staticUrls = [

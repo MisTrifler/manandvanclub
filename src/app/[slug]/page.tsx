@@ -83,8 +83,9 @@ const servicePageData: Record<string, any> = {
     formIntent: "single-item",
     title: "Furniture Collection & Delivery | Single Item Movers | Man and Van Club",
     description: "Single-item furniture collection and delivery quote requests across England. From eBay purchases to shop collections, submit the details so an approved mover can review the job before quoting.",
-    badge: "Furniture Delivery Experts",
-    intro: "Need a single item collected and delivered? Whether it's a sofa from a shop, a dining table from an eBay seller, or a wardrobe from a friend, our furniture collection service is fast and affordable. Approved movers must provide Goods in Transit and Public Liability insurance before joining the platform.",
+    badge: "Furniture Collection Requests",
+    h1: "Furniture Collection & Delivery",
+    intro: "Need a single item collected and delivered? Whether it is a sofa from a shop, a dining table from an online seller or a wardrobe from a friend, submit the details so an approved mover can review the route, access and item size before quoting.",
     knowledge: "Furniture collection requests can cover small items, wardrobes, sofas and appliances. Add item size, access and timing so a mover can review the job properly before quoting.",
     areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "eBay Purchases"],
     faq: [
@@ -94,18 +95,19 @@ const servicePageData: Record<string, any> = {
     ]
   },
   "same-day-man-and-van": {
-    name: "Same Day Man & Van",
+    name: "Same Day Man and Van",
     formIntent: "general",
-    title: "Same Day Man & Van | Emergency Moves | Man and Van Club",
-    description: "Need a mover today? Same-day man and van quote requests across England. Submit the details so an available approved mover can review the urgent move.",
-    badge: "Same-Day Specialists",
-    intro: "Last-minute move or urgent delivery? Submit your details and an available verified mover can review the request if they have space to help that day.",
+    title: "Same Day Man and Van | Fast Local Move Quotes | Man and Van Club",
+    description: "Need a same-day man and van? Submit your move details for free, see a guide price and receive a quote from one verified mover before booking.",
+    badge: "Same-Day Move Requests",
+    h1: "Same Day Man and Van",
+    intro: "Need a same-day man and van for an urgent local move, furniture collection or last-minute delivery? Submit accurate postcodes, item details and access notes so an available verified mover can review the request quickly before quoting.",
     knowledge: "Same-day moves require accurate details. Postcodes, item list, helpers, stairs, parking and access help a mover decide quickly whether they can help and what to quote.",
     areas: ["Emergency Moves", "Last-Minute Collections", "Urgent Deliveries", "Same-Day Furniture", "Quick Clearances", "Day-Of Requests"],
     faq: [
       { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
-      { q: "Does same-day cost more?", a: "Same-day moves may carry a small premium depending on demand and distance. You'll see pricing clearly before confirming." },
-      { q: "Can I book same-day for long distances?", a: "Same-day is best for local or regional moves. For long-distance same-day, mention it on the form and we'll confirm availability." }
+      { q: "Does same-day cost more?", a: "Same-day moves can cost more when availability is limited or the route is longer. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
+      { q: "Can I book same-day for long distances?", a: "Same-day is usually best for local or regional moves. For long-distance same-day requests, include accurate postcodes, timing and access notes so a mover can decide whether they can help." }
     ]
   },
   "long-distance-removals": {
@@ -129,7 +131,8 @@ const servicePageData: Record<string, any> = {
     title: "Facebook Marketplace Collection & Delivery | Man and Van Club",
     description: "Collection and delivery quote requests for Facebook Marketplace purchases across England. Submit item and postcode details so an approved mover can review the job before quoting.",
     badge: "Marketplace Collection",
-    intro: "Bought something on Facebook Marketplace and need it collected? Submit the seller, collection and delivery details so an approved mover can review whether they can collect and deliver the item. Approved movers must provide Goods in Transit and Public Liability insurance before joining the platform.",
+    h1: "Facebook Marketplace Collection",
+    intro: "Bought something on Facebook Marketplace and need it collected? Submit the seller, collection and delivery details so an approved mover can review whether they can collect and deliver the item before quoting.",
     knowledge: "Facebook Marketplace purchases often need quick collection. Add seller access, item size, collection window and delivery postcode so the mover can review whether the job is possible before quoting.",
     areas: ["Sofas", "Beds", "Tables", "Appliances", "Wardrobes", "Miscellaneous Items"],
     faq: [
@@ -139,6 +142,29 @@ const servicePageData: Record<string, any> = {
     ]
   }
 };
+
+function buildServiceSchema(serviceData: any, slug: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${serviceData.name} quote request`,
+    url: `https://www.manandvanclub.co.uk/${slug}`,
+    provider: {
+      "@type": "Organization",
+      name: "Man and Van Club",
+      url: "https://www.manandvanclub.co.uk",
+      logo: "https://www.manandvanclub.co.uk/icon.png",
+      telephone: "+44-7943-617-386",
+      email: "support@manandvanclub.co.uk",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    serviceType: serviceData.name,
+    description: serviceData.description,
+  };
+}
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params;
@@ -216,6 +242,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       ...serviceData,
       slug,
       pageType: "service" as const,
+      localBusinessSchema: buildServiceSchema(serviceData, slug),
     };
     return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} formIntent={serviceData.formIntent as IntentType} />;
   }

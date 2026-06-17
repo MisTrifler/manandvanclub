@@ -3,19 +3,56 @@
 // designed to prevent doorway-page penalties and improve local SEO relevance.
 
 export const customLocationContentOverrides: Record<string, Partial<{
-  localMovingInfo: string;
+  title: string;
+  description: string;
+  h1: string;
   intro: string;
   knowledge: string;
+  localMovingInfo: string;
+  localAreaGuides: { title: string; body: string; links?: { label: string; href: string }[] }[];
 }>> = {
   // ──────────────────────────────────────────
   // BIRMINGHAM
   // ──────────────────────────────────────────
   birmingham: {
-    localMovingInfo: `Birmingham is the UK's second-largest city and a major hub for house moves, student relocations, and business transfers. From the Georgian terraces of Edgbaston to the modern apartments of the Jewellery Quarter and the suburban semis of Sutton Coldfield, Birmingham properties vary widely — and so do the moving challenges.
+    title: "Man and Van Birmingham | Verified Birmingham Mover Quotes | Man and Van Club",
+    description: "Free man and van request in Birmingham. Get a guide price for Birmingham city centre, Jewellery Quarter, Edgbaston, Selly Oak and nearby areas before one verified mover quotes.",
+    h1: "Man and Van Birmingham",
+    intro: "Need a man and van in Birmingham? Submit your postcodes, move date, item list and access notes for free. You can see a guide price first, then one verified mover reviews your Birmingham move before you decide whether to book.",
+    knowledge: "Birmingham moving costs can change quickly by postcode. A Jewellery Quarter apartment, an Edgbaston house, a Selly Oak student move and a Sutton Coldfield family relocation can all need different planning for parking, lifts, stairs, the Clean Air Zone and route timing. Your request gives the mover those details before they quote.",
+    localMovingInfo: `Birmingham is the UK's second-largest city and one of the most competitive man and van markets in the West Midlands. Local search demand is strongest around city-centre flats, student moves, furniture collections and short-notice house moves. From the Georgian terraces of Edgbaston to the modern apartments of the Jewellery Quarter and the suburban homes of Sutton Coldfield, Birmingham properties vary widely — and so do access, parking and loading requirements.
 
-The city centre operates under a Clean Air Zone that affects postcodes B1 through B5. If your move involves the city centre, route planning around compliant vehicle access is essential. Many terraced streets in areas like Sparkbrook, Handsworth, and Small Heath have limited parking and narrow access, so advance loading bay arrangements and timing are critical. Student moves are concentrated in Selly Oak and Harborne around the University of Birmingham, where peak periods in June and September create significant demand. The M6, M5, and A38 corridors are among the busiest in the region, particularly during weekday rush hours.
+The city centre operates under a Clean Air Zone that affects central routes and can influence how a mover plans a van route. Moves in B1, B2, B3, B4 and B5 often need more attention to loading bays, apartment lifts and timed access than a simple suburban route. Many terraced streets in Sparkbrook, Handsworth and Small Heath have limited parking and narrow access, while family moves around Moseley, Harborne and Sutton Coldfield may involve larger loads, driveways, fragile furniture and school-run timing.
 
-Your Birmingham request can include property type, access, parking, stairs, lifts and route details so a verified mover can account for the difference between a Jewellery Quarter apartment, a Moseley terrace and a Sutton Coldfield family home before sending quote options. Whether you are moving within the city or relocating from Birmingham to London, Manchester or Bristol, the customer details stay protected until you accept a quote and book.`,
+Student demand is strongest around Selly Oak, Edgbaston and Harborne because of the University of Birmingham and nearby shared houses. June, July and September can be busier, so accurate item lists and flexible access notes help movers decide whether they can help. The M6, M5, A38 and A45 corridors are also important for moves heading towards Walsall, Solihull, Coventry, Wolverhampton and the wider West Midlands.
+
+Your Birmingham request can include property type, access, parking, stairs, lifts and route details so a verified mover can account for the difference between a Jewellery Quarter apartment, a Moseley terrace and a Sutton Coldfield family home before sending quote options. Customer details stay protected until you accept a quote and book.`,
+    localAreaGuides: [
+      {
+        title: "Man and van Birmingham city centre",
+        body: "City-centre moves often involve apartments, lift bookings, loading bays, one-way streets and Clean Air Zone planning. Add building access, floor level and parking notes so a mover can price the job properly before you book.",
+      },
+      {
+        title: "Man and van Jewellery Quarter",
+        body: "Jewellery Quarter moves are commonly apartment-based, with controlled access, narrow streets and limited loading space near converted buildings. Include lift and concierge details so the mover can judge time on site.",
+      },
+      {
+        title: "Man and van Edgbaston",
+        body: "Edgbaston moves can range from student rooms and flats to larger family homes. Access can vary between main-road apartments, leafy residential streets and properties close to the university and hospital areas.",
+      },
+      {
+        title: "Student moves in Selly Oak and Harborne",
+        body: "Selly Oak and Harborne are key student-move areas. Smaller loads, shared houses, term dates and narrow residential streets can all affect availability and quote accuracy.",
+      },
+      {
+        title: "Furniture collection in Birmingham",
+        body: "Single-item collections around Birmingham are often sofas, wardrobes, beds, appliances or marketplace purchases. A clear item list, collection postcode and access notes help avoid underquoting.",
+        links: [
+          { label: "Furniture collection service", href: "/furniture-delivery" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" }
+        ],
+      },
+    ],
   },
 
   // ──────────────────────────────────────────

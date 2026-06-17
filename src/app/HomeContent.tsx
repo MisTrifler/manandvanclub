@@ -454,7 +454,7 @@ export default function HomeContent() {
             Man and Van Services Across the West Midlands and UK
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed">
-            Man and Van Club helps customers submit free move requests for house removals, flat moves, office relocations, furniture collections, student moves and long-distance removals. We are focusing first on strong West Midlands coverage while continuing to support UK-wide enquiries.
+            Man and Van Club helps customers submit free move requests for house removals, flat moves, office relocations, furniture collections, student moves and long-distance removals. We are focusing first on strong West Midlands coverage, especially <a href="/man-and-van-birmingham" className="font-black text-accent hover:underline">man and van Birmingham</a>, <a href="/man-and-van-walsall" className="font-black text-accent hover:underline">man and van Walsall</a>, <a href="/man-and-van-wolverhampton" className="font-black text-accent hover:underline">man and van Wolverhampton</a> and <a href="/same-day-man-and-van" className="font-black text-accent hover:underline">same-day man and van</a> requests.
           </p>
         </div>
       </section>

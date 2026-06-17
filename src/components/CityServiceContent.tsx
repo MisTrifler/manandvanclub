@@ -125,6 +125,15 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 {data.intro}
               </p>
 
+              {isLocationPage && data.region === "West Midlands" && data.slug !== "man-and-van-west-midlands" && (
+                <Link
+                  href="/man-and-van-west-midlands"
+                  className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.24em] text-primary/60 hover:text-accent transition-colors"
+                >
+                  View the West Midlands man and van hub <ArrowUpRight size={14} />
+                </Link>
+              )}
+
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4">
                 {[
                   { v: "Free", l: "To Submit" },
@@ -315,6 +324,39 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                       </div>
                   </div>
                   )}
+                </div>
+              )}
+
+              {/* ── Local search guides / neighbourhood relevance ── */}
+              {data.localAreaGuides && data.localAreaGuides.length > 0 && (
+                <div className="space-y-6 lg:space-y-8">
+                  <div className="space-y-3">
+                    <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Popular {data.name} Move Searches</h3>
+                    <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
+                      These local notes help customers describe the move accurately and help movers account for access, timing and route details before quoting.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {data.localAreaGuides.map((guide: { title: string; body: string; links?: { label: string; href: string }[] }) => (
+                      <article key={guide.title} className="bg-white p-5 lg:p-6 rounded-2xl border border-border/50 shadow-sm space-y-3">
+                        <h4 className="text-lg font-black text-primary uppercase tracking-tight leading-tight">{guide.title}</h4>
+                        <p className="text-sm lg:text-base text-text-secondary font-medium leading-relaxed">{guide.body}</p>
+                        {guide.links && guide.links.length > 0 && (
+                          <div className="flex flex-wrap gap-2 pt-1">
+                            {guide.links.map((link) => (
+                              <Link
+                                key={link.href}
+                                href={link.href}
+                                className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-2 text-[10px] font-black uppercase tracking-widest text-primary/60 hover:border-accent hover:text-accent transition-colors"
+                              >
+                                {link.label} <ArrowUpRight size={12} />
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </article>
+                    ))}
+                  </div>
                 </div>
               )}
 

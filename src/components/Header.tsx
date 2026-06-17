@@ -21,6 +21,15 @@ export default function Header() {
 
   useEffect(() => {
     let cancelled = false;
+    const shouldCheckDriverSession =
+      pathname?.startsWith("/marketplace") || pathname === "/login";
+
+    if (!shouldCheckDriverSession) {
+      setDriverLoggedIn(false);
+      return () => {
+        cancelled = true;
+      };
+    }
 
     async function checkDriverSession() {
       try {

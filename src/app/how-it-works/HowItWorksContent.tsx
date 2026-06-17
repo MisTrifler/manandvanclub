@@ -44,7 +44,7 @@ export default function HowItWorksContent() {
             How It Works
           </h1>
           <p className="text-xl text-text-secondary">
-            One verified mover. No spam. No multiple sales calls. Your details stay protected until you accept a mover quote.
+            One verified mover reviews your request. No spam. No multiple sales calls. Your details stay protected until you accept a mover quote.
           </p>
         </div>
       </section>

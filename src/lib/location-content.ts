@@ -29,6 +29,7 @@ export interface LocationPageData {
   verificationChecks: string[];
   movingChecklist: string[];
   regionCities: { name: string; slug: string }[];
+  localAreaGuides?: { title: string; body: string; links?: { label: string; href: string }[] }[];
 }
 
 const SERVICE_LINKS = [
@@ -248,10 +249,25 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
 }
 
 function getRegionCities(loc: LocationData): { name: string; slug: string }[] {
-  return LOCATIONS.filter((l) => l.region === loc.region && l.slug !== loc.slug).map((l) => ({
-    name: l.name,
-    slug: l.slug,
-  }));
+  // Only link to nearby region pages that pass the quality guard. This keeps
+  // internal equity focused on pages Google is allowed to index. Importing the
+  // guard here would create a circular dependency, so mirror its essential
+  // threshold with data already available on LocationData.
+  return LOCATIONS
+    .filter((l) => l.region === loc.region && l.slug !== loc.slug)
+    .filter((l) =>
+      Boolean(
+        l.intro?.trim().length >= 120 &&
+        l.knowledge?.trim().length >= 120 &&
+        l.nearbyAreas?.length >= 5 &&
+        l.movingConsiderations?.length >= 3 &&
+        ((l.majorRoads?.length || 0) + (l.studentAreas?.length || 0) + (l.businessDistricts?.length || 0)) >= 2
+      )
+    )
+    .map((l) => ({
+      name: l.name,
+      slug: l.slug,
+    }));
 }
 
 export function getLocationPageData(slug: string): LocationPageData | null {
