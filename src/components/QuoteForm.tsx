@@ -40,6 +40,78 @@ function routePairKey(collectionPostcode: unknown, deliveryPostcode: unknown): s
   return `${collection.compact}|${delivery.compact}`;
 }
 
+function outwardPostcode(value: unknown): string {
+  return parseUKPostcode(value)?.display.split(" ")[0] || "";
+}
+
+function getDeviceType(): "mobile" | "tablet" | "desktop" | "unknown" {
+  if (typeof window === "undefined") return "unknown";
+  const ua = navigator.userAgent || "";
+  if (/ipad|tablet/i.test(ua)) return "tablet";
+  if (/mobile|iphone|ipod|android/i.test(ua)) return "mobile";
+  if (window.matchMedia?.("(pointer: coarse) and (max-width: 1024px)").matches) return "tablet";
+  return "desktop";
+}
+
+function getAttributionData(collectionPostcode: string, deliveryPostcode: string) {
+  if (typeof window === "undefined") {
+    return {
+      sourcePage: "",
+      landingPage: "",
+      referrer: "",
+      deviceType: "unknown",
+      collectionOutwardPostcode: outwardPostcode(collectionPostcode),
+      deliveryOutwardPostcode: outwardPostcode(deliveryPostcode),
+    };
+  }
+
+  const url = new URL(window.location.href);
+  const params = url.searchParams;
+  const campaignKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid"];
+  const currentTouch: Record<string, string> = {
+    landingPage: `${url.pathname}${url.search}`,
+    referrer: document.referrer || "",
+    firstTouchAt: new Date().toISOString(),
+  };
+
+  for (const key of campaignKeys) {
+    const value = params.get(key);
+    if (value) currentTouch[key] = value;
+  }
+
+  let firstTouch = currentTouch;
+  try {
+    const stored = window.sessionStorage.getItem("mvc_first_touch");
+    if (stored) {
+      firstTouch = { ...currentTouch, ...JSON.parse(stored) };
+    } else {
+      window.sessionStorage.setItem("mvc_first_touch", JSON.stringify(currentTouch));
+    }
+  } catch {
+    firstTouch = currentTouch;
+  }
+
+  const readCampaign = (key: string) => params.get(key) || firstTouch[key] || "";
+
+  return {
+    sourcePage: window.location.pathname,
+    landingPage: firstTouch.landingPage || `${url.pathname}${url.search}`,
+    referrer: firstTouch.referrer || document.referrer || "",
+    utmSource: readCampaign("utm_source"),
+    utmMedium: readCampaign("utm_medium"),
+    utmCampaign: readCampaign("utm_campaign"),
+    utmTerm: readCampaign("utm_term"),
+    utmContent: readCampaign("utm_content"),
+    gclid: readCampaign("gclid"),
+    gbraid: readCampaign("gbraid"),
+    wbraid: readCampaign("wbraid"),
+    firstTouchAt: firstTouch.firstTouchAt || "",
+    deviceType: getDeviceType(),
+    collectionOutwardPostcode: outwardPostcode(collectionPostcode),
+    deliveryOutwardPostcode: outwardPostcode(deliveryPostcode),
+  };
+}
+
 function formatRouteGuideForCustomer(routeEstimate: any | null): string {
   if (!routeEstimate || Number(routeEstimate.distanceMeters) <= 0) return "";
   const provider = String(routeEstimate.provider || "");
@@ -623,11 +695,9 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const handleFinalSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      // Capture the originating page URL for conversion attribution
-      const sourcePage = typeof window !== "undefined" ? window.location.pathname : "";
-
       const normalisedCollectionPostcode = normalisePostcodeInput(data.collectionPostcode);
       const normalisedDeliveryPostcode = normalisePostcodeInput(data.deliveryPostcode);
+      const attribution = getAttributionData(normalisedCollectionPostcode, normalisedDeliveryPostcode);
       const submitPairKey = routePairKey(normalisedCollectionPostcode, normalisedDeliveryPostcode);
 
       // Build details object for service-specific fields. Route and guide
@@ -641,12 +711,20 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       if (guidePriceForSubmit) details.guidePrice = { ...guidePriceForSubmit, calculatedAt: new Date().toISOString() };
 
       const estimatePrice = guidePriceForSubmit?.display;
+      details.attribution = {
+        ...attribution,
+        serviceIntent: activeIntent || "unknown",
+        guidePriceDisplayed: estimatePrice || "",
+        submittedAtClient: new Date().toISOString(),
+      };
 
       const payload = {
         ...data,
         collectionPostcode: normalisedCollectionPostcode,
         deliveryPostcode: normalisedDeliveryPostcode,
-        sourcePage,
+        ...attribution,
+        serviceIntent: activeIntent || "unknown",
+        guidePriceDisplayed: estimatePrice || "",
         estimatedPrice: estimatePrice,
         details: Object.keys(details).length > 0 ? details : undefined,
       };

@@ -28,6 +28,11 @@ function splitIntoParagraphs(text: string): string[] {
   return paragraphs;
 }
 
+function buildRouteAnchorText(move: { from: string; to: string; slug?: string }): string {
+  if (move.slug) return `Man and van ${move.to}`;
+  return `${move.from} to ${move.to} moving route`;
+}
+
 export default function CityServiceContent({ data, faqItems, formIntent }: { data: any, faqItems: any[], formIntent?: IntentType }) {
   const currentUrl = `https://www.manandvanclub.co.uk/${data.slug || ''}`;
   const isServicePage = data.pageType === "service";
@@ -302,7 +307,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                                       href={`/man-and-van-${move.slug}`}
                                       className="text-[10px] font-black uppercase tracking-widest text-accent hover:text-primary transition-colors flex-shrink-0"
                                     >
-                                      View Page
+                                      {buildRouteAnchorText(move)}
                                     </Link>
                                   )}
                                 </div>
@@ -323,6 +328,61 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                         </div>
                       </div>
                   </div>
+                  )}
+                </div>
+              )}
+
+              {/* ── Honest local proof for West Midlands launch pages ── */}
+              {isLocationPage && data.region === "West Midlands" && (
+                <div className="space-y-6 lg:space-y-8">
+                  <div className="space-y-3">
+                    <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{data.name} local move signals</h3>
+                    <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
+                      These examples are not fake completed jobs. They show the type of move details customers can submit so a verified mover can review route, access, timing and item information before quoting.
+                    </p>
+                  </div>
+
+                  {data.exampleMoveRequests && data.exampleMoveRequests.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {data.exampleMoveRequests.map((request: { area: string; type: string; detail: string }) => (
+                        <article key={`${request.area}-${request.type}`} className="bg-[#F9F9F7] p-5 lg:p-6 rounded-2xl border border-border/50 space-y-3">
+                          <span className="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-accent">
+                            <Package size={13} /> Example request
+                          </span>
+                          <h4 className="font-black text-primary uppercase tracking-tight leading-tight">{request.type}</h4>
+                          <p className="text-xs font-black uppercase tracking-widest text-primary/50">{request.area}</p>
+                          <p className="text-sm text-text-secondary font-medium leading-relaxed">{request.detail}</p>
+                        </article>
+                      ))}
+                    </div>
+                  )}
+
+                  {data.postcodeCoverage && data.postcodeCoverage.length > 0 && (
+                    <div className="bg-white p-5 lg:p-8 rounded-2xl lg:rounded-[2.5rem] border border-border/50 space-y-5">
+                      <div className="flex items-start gap-3">
+                        <MapPin size={22} className="text-accent flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="text-lg font-black text-primary uppercase tracking-tight">Postcode coverage examples</h4>
+                          <p className="text-sm text-text-secondary font-medium leading-relaxed">
+                            Customers can submit full postcodes at both ends of the route. These outward-code examples help show local relevance across {data.name}.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        {data.postcodeCoverage.map((coverage: { area: string; postcodes: string[] }) => (
+                          <div key={coverage.area} className="rounded-2xl bg-[#F9F9F7] border border-border/50 p-4">
+                            <p className="text-xs font-black uppercase tracking-tight text-primary mb-2">{coverage.area}</p>
+                            <div className="flex flex-wrap gap-2">
+                              {coverage.postcodes.map((postcode) => (
+                                <span key={postcode} className="rounded-full bg-white px-3 py-1 text-[10px] font-black uppercase tracking-widest text-primary/60 border border-border/50">
+                                  {postcode}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </div>
               )}
