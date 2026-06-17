@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Loader2, ArrowLeft, ShieldCheck, Zap } from "lucide-react";
 import { motion } from "framer-motion";
@@ -9,6 +9,18 @@ export default function ApplyToJoinContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const successPanelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!submitted) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      successPanelRef.current?.focus({ preventScroll: true });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [submitted]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,9 +68,11 @@ export default function ApplyToJoinContent() {
     return (
       <div className="min-h-screen bg-[#F9F9F7] flex items-center justify-center p-4">
         <motion.div
+          ref={successPanelRef}
+          tabIndex={-1}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-md w-full bg-white p-12 rounded-[3rem] shadow-2xl text-center space-y-8 border border-border"
+          className="max-w-md w-full bg-white p-12 rounded-[3rem] shadow-2xl text-center space-y-8 border border-border outline-none"
         >
           <div className="bg-success/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto text-success">
             <CheckCircle2 size={48} />
