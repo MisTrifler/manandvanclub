@@ -132,7 +132,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
       />
 
       {/* ── Hero Section (Optimized) ── */}
-      <section className="bg-[#F9F9F7] py-16 lg:py-12 lg:min-h-[calc(100vh-100px)] flex items-center border-b border-border overflow-hidden relative">
+      <section className="bg-[#F9F9F7] py-10 lg:py-12 lg:min-h-[calc(100vh-100px)] border-b border-border overflow-hidden relative">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
            <div className="absolute inset-0 grid grid-cols-6 gap-4">
               {[...Array(24)].map((_, i) => <div key={i} className="border border-primary/20 h-32 w-full" />)}
@@ -140,19 +140,19 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
+          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-20 xl:gap-24">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="lg:w-1/2 space-y-6 lg:space-y-8"
+              className="lg:w-1/2 space-y-5 lg:space-y-6"
             >
               <div className="inline-flex items-center gap-2 lg:gap-3 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-accent/20">
                 <MapPin size={12} />
                 {isLocationPage ? `Verified movers in ${data.name}` : (data.badge ? data.badge : `Verified movers for ${data.name}`)}
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">
+              <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">
                 {data.h1 ? data.h1 : (
                   <>
                     Man and Van <span className="text-accent italic">{data.name}</span>
@@ -160,7 +160,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 )}
               </h1>
 
-              <p className="text-base lg:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
+              <p className="text-base lg:text-lg xl:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
                 {data.intro}
               </p>
 
@@ -173,14 +173,14 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 </Link>
               )}
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 pt-2 lg:pt-3">
                 {[
                   { v: "Free", l: "To Submit" },
                   { v: "Verified", l: "Movers" },
                   { v: "Details", l: "Protected" }
                 ].map((item, i) => (
                   <div key={i} className="space-y-1">
-                    <span className="text-accent font-black text-3xl lg:text-4xl tracking-tighter leading-none">{item.v}</span>
+                    <span className="text-accent font-black text-3xl lg:text-3xl xl:text-4xl tracking-tighter leading-none">{item.v}</span>
                     <p className="text-[8px] font-black uppercase tracking-widest text-primary/30">{item.l}</p>
                   </div>
                 ))}
