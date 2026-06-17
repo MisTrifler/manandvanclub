@@ -1,6 +1,7 @@
 import { LocationData, getLocationBySlug, LOCATIONS } from "@/constants/locations";
 import { customLocationContentOverrides } from "./custom-location-content";
 import { getRouteInfo, type RouteInfo } from "./google-maps-routes";
+import { isLaunchIndexableLocation, isSeoLaunchMode } from "./seo-quality-guard";
 
 export interface LocationPageData {
   name: string;
@@ -30,7 +31,10 @@ export interface LocationPageData {
   movingChecklist: string[];
   regionCities: { name: string; slug: string }[];
   localAreaGuides?: { title: string; body: string; links?: { label: string; href: string }[] }[];
+  exampleMoveRequests?: { area: string; type: string; detail: string }[];
+  postcodeCoverage?: { area: string; postcodes: string[] }[];
 }
+
 
 const SERVICE_LINKS = [
   { title: "House Removals", href: "/house-removals" },
@@ -181,6 +185,100 @@ function generateLocalLandmarks(loc: LocationData): string[] {
   return loc.nearbyAreas.slice(0, 6);
 }
 
+
+const WEST_MIDLANDS_POSTCODE_COVERAGE: Record<string, { area: string; postcodes: string[] }[]> = {
+  birmingham: [
+    { area: "City centre and Jewellery Quarter", postcodes: ["B1", "B2", "B3"] },
+    { area: "South Birmingham", postcodes: ["B13", "B14", "B29"] },
+    { area: "Edgbaston, Harborne and west Birmingham", postcodes: ["B15", "B16", "B17"] },
+  ],
+  walsall: [
+    { area: "Central Walsall", postcodes: ["WS1", "WS2"] },
+    { area: "Bloxwich and north Walsall", postcodes: ["WS3"] },
+    { area: "Aldridge, Pelsall and nearby", postcodes: ["WS4", "WS9"] },
+  ],
+  wolverhampton: [
+    { area: "Central Wolverhampton", postcodes: ["WV1", "WV2"] },
+    { area: "Tettenhall and west Wolverhampton", postcodes: ["WV6"] },
+    { area: "Bushbury and north Wolverhampton", postcodes: ["WV10", "WV11"] },
+  ],
+  dudley: [
+    { area: "Central Dudley", postcodes: ["DY1", "DY2"] },
+    { area: "Brierley Hill and Pensnett", postcodes: ["DY5"] },
+    { area: "Kingswinford and Sedgley", postcodes: ["DY3", "DY6"] },
+  ],
+  "west-bromwich": [
+    { area: "West Bromwich and Sandwell", postcodes: ["B70", "B71"] },
+    { area: "Smethwick and nearby", postcodes: ["B66", "B67"] },
+    { area: "Oldbury and Rowley Regis", postcodes: ["B68", "B69"] },
+  ],
+  solihull: [
+    { area: "Central Solihull", postcodes: ["B91", "B92"] },
+    { area: "Shirley and Monkspath", postcodes: ["B90"] },
+    { area: "Knowle and Dorridge", postcodes: ["B93"] },
+  ],
+  coventry: [
+    { area: "Central Coventry", postcodes: ["CV1", "CV2"] },
+    { area: "Earlsdon and Canley", postcodes: ["CV4", "CV5"] },
+    { area: "Foleshill and north Coventry", postcodes: ["CV6"] },
+  ],
+};
+
+function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes: string[] }[] {
+  const explicit = WEST_MIDLANDS_POSTCODE_COVERAGE[loc.slug];
+  if (explicit) return explicit;
+
+  if (loc.region !== "West Midlands") return [];
+
+  const outwardBySlug: Record<string, string[]> = {
+    stourbridge: ["DY8", "DY9"],
+    halesowen: ["B62", "B63"],
+    wednesbury: ["WS10", "DY4"],
+    bloxwich: ["WS3"],
+    brownhills: ["WS8"],
+    aldridge: ["WS9"],
+    oldbury: ["B68", "B69"],
+    tipton: ["DY4"],
+    willenhall: ["WV12", "WV13"],
+    darlaston: ["WS10"],
+    smethwick: ["B66", "B67"],
+  };
+
+  const postcodes = outwardBySlug[loc.slug] || [];
+  return postcodes.length > 0
+    ? [{ area: `${loc.name} and nearby`, postcodes }]
+    : [];
+}
+
+function generateExampleMoveRequests(loc: LocationData): { area: string; type: string; detail: string }[] {
+  const nearby = loc.nearbyAreas.length > 0 ? loc.nearbyAreas : loc.areas;
+  const first = nearby[0] || loc.name;
+  const second = nearby[1] || loc.name;
+  const third = nearby[2] || loc.name;
+
+  return [
+    {
+      area: `${loc.name} to ${first}`,
+      type: loc.hasStudentAreas ? "Student move" : "Small home move",
+      detail: loc.hasStudentAreas
+        ? "Boxes, suitcases and small furniture with date and access notes included."
+        : "Boxes, small furniture and access details for a local mover to review.",
+    },
+    {
+      area: `${second} to ${loc.name}`,
+      type: "Furniture collection",
+      detail: "Single-item or multi-item collection with postcode, stairs and parking details supplied.",
+    },
+    {
+      area: `${loc.name} to ${third}`,
+      type: loc.businessDistricts?.length ? "Office or storage run" : "Flat move",
+      detail: loc.businessDistricts?.length
+        ? "Desk, chair, equipment or storage items with timing requirements described upfront."
+        : "Flat or apartment move where lifts, floors and loading access matter before quoting.",
+    },
+  ];
+}
+
 function generateCostAnswer(loc: LocationData): string {
   return `The guide price depends on the collection and delivery postcodes, distance, route time, item list, helpers required, stairs, parking and access. Submit your details for a guide price range first, then a verified mover can review the move and send an accurate quote before you decide whether to book.`;
 }
@@ -255,6 +353,7 @@ function getRegionCities(loc: LocationData): { name: string; slug: string }[] {
   // threshold with data already available on LocationData.
   return LOCATIONS
     .filter((l) => l.region === loc.region && l.slug !== loc.slug)
+    .filter((l) => !isSeoLaunchMode() || isLaunchIndexableLocation(l.slug))
     .filter((l) =>
       Boolean(
         l.intro?.trim().length >= 120 &&
@@ -364,6 +463,8 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     verificationChecks: VERIFICATION_CHECKS,
     movingChecklist: MOVING_CHECKLIST,
     regionCities: getRegionCities(loc),
+    exampleMoveRequests: generateExampleMoveRequests(loc),
+    postcodeCoverage: generatePostcodeCoverage(loc),
     region: loc.region,
     pageType: "location" as const,
   };

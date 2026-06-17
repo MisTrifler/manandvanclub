@@ -30,6 +30,35 @@ const GENERIC_FILLER_PATTERNS = [
   /all types of moves at great prices/i,
 ];
 
+// Launch mode keeps the national page set built but prevents weaker
+// non-priority pages being indexed too early. Default is ON for a new
+// site. Set SEO_LAUNCH_MODE=false when the site has enough real local
+// proof, mover coverage and Search Console demand to expand nationally.
+const SEO_LAUNCH_MODE = process.env.SEO_LAUNCH_MODE !== "false";
+
+const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
+  "birmingham",
+  "walsall",
+  "wolverhampton",
+  "dudley",
+  "west-bromwich",
+  "solihull",
+  "coventry",
+  "stourbridge",
+  "halesowen",
+  "wednesbury",
+  "bloxwich",
+  "brownhills",
+]);
+
+export function isSeoLaunchMode(): boolean {
+  return SEO_LAUNCH_MODE;
+}
+
+export function isLaunchIndexableLocation(slug: string): boolean {
+  return LAUNCH_INDEXABLE_LOCATION_SLUGS.has(slug);
+}
+
 export interface QualityResult {
   indexable: boolean;
   reasons: string[];
@@ -66,7 +95,11 @@ function hasConcreteLocalContent(loc: LocationData): boolean {
 }
 
 /**
- * Tightened quality rules — ALL must pass for a page to be indexable:
+ * Tightened quality rules — ALL must pass for a page to be indexable.
+ * In SEO launch mode, the page must also be in the priority West
+ * Midlands launch set, so broad national pages can exist without being
+ * indexed before they have proof/coverage.
+ *
  * - intro + knowledge of meaningful length (unique local copy)
  * - at least 5 nearby areas
  * - at least 3 FAQs
@@ -81,6 +114,10 @@ function hasConcreteLocalContent(loc: LocationData): boolean {
  */
 export function assessLocationQuality(loc: LocationData): QualityResult {
   const reasons: string[] = [];
+
+  if (SEO_LAUNCH_MODE && !LAUNCH_INDEXABLE_LOCATION_SLUGS.has(loc.slug)) {
+    reasons.push("launch mode: outside priority West Midlands index set");
+  }
 
   if (!loc.intro || loc.intro.trim().length < 120) {
     reasons.push("intro too short");
