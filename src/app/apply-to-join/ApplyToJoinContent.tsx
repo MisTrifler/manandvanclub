@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { CheckCircle2, Loader2, ArrowLeft, ShieldCheck, Zap } from "lucide-react";
+import { CheckCircle2, Loader2, ArrowLeft, ShieldCheck, Zap, ClipboardCheck, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ApplyToJoinContent() {
@@ -98,31 +98,43 @@ export default function ApplyToJoinContent() {
   return (
     <div className="min-h-screen bg-[#F9F9F7] py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <Link href="/for-businesses" className="inline-flex items-center gap-2 text-primary/40 font-black uppercase tracking-widest text-[10px] hover:text-accent transition-colors mb-12">
-          <ArrowLeft size={14} /> Back to Information
+        <Link href="/why-join" className="inline-flex items-center gap-2 text-primary/40 font-black uppercase tracking-widest text-[10px] hover:text-accent transition-colors mb-12">
+          <ArrowLeft size={14} /> Back to Mover Overview
         </Link>
 
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/3 space-y-8">
+            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em]">
+              <Smartphone size={14} /> Easy sign-up
+            </div>
             <h1 className="text-5xl font-black text-primary uppercase tracking-tighter leading-none">
-              Why Join <span className="text-accent italic">Man and Van Club?</span>
+              Apply in minutes. <span className="text-accent italic">Documents can follow.</span>
             </h1>
             <p className="text-text-secondary font-medium leading-relaxed">
-              Join a network built around customer-confirmed move requests. What's in it for you?
+              Complete the first step with your business details, main service area and preferred job types. We only approve movers after insurance documents are checked.
             </p>
 
             <div className="space-y-4">
               {[
-                { icon: <Zap size={16} className="text-accent" />, text: "Customer-confirmed booking opportunities" },
-                { icon: <ShieldCheck size={16} className="text-accent" />, text: "No competing against multiple movers" },
-                { icon: <Zap size={16} className="text-accent" />, text: "Direct customer contact" },
-                { icon: <ShieldCheck size={16} className="text-accent" />, text: "Choose your own service area" },
-                { icon: <Zap size={16} className="text-accent" />, text: "Grow your business on your terms" },
+                { icon: <Zap size={16} className="text-accent" />, text: "Short online form" },
+                { icon: <ShieldCheck size={16} className="text-accent" />, text: "Manual approval" },
+                { icon: <ClipboardCheck size={16} className="text-accent" />, text: "Email insurance after applying" },
+                { icon: <Zap size={16} className="text-accent" />, text: "No monthly subscription" },
+                { icon: <ShieldCheck size={16} className="text-accent" />, text: "Quote suitable enquiries" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-primary/60 font-black uppercase tracking-widest text-[10px]">
                   {item.icon} {item.text}
                 </div>
               ))}
+            </div>
+
+            <div className="bg-white border border-border rounded-3xl p-6 space-y-4 shadow-sm">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/40">Before you start</p>
+              <ul className="space-y-3 text-sm text-text-secondary font-bold">
+                <li className="flex gap-3"><CheckCircle2 size={16} className="text-accent flex-shrink-0 mt-0.5" /> Business or trading name</li>
+                <li className="flex gap-3"><CheckCircle2 size={16} className="text-accent flex-shrink-0 mt-0.5" /> Phone, email and main service area</li>
+                <li className="flex gap-3"><CheckCircle2 size={16} className="text-accent flex-shrink-0 mt-0.5" /> Goods in Transit and Public Liability documents can be emailed after</li>
+              </ul>
             </div>
           </div>
 
@@ -134,7 +146,7 @@ export default function ApplyToJoinContent() {
                 <div className="space-y-2 pb-2 border-b border-border">
                   <h2 className="text-3xl font-black uppercase tracking-tight text-primary leading-none">Apply to Join</h2>
                   <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">
-                    Takes under 60 seconds to complete
+                    First step takes a few minutes
                   </p>
                 </div>
 
@@ -177,7 +189,7 @@ export default function ApplyToJoinContent() {
                 </div>
 
                 <div className="space-y-4">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Which Jobs Do You Usually Prefer?</label>
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Preferred Job Types</label>
                   <p className="text-[10px] text-text-secondary font-medium ml-1 mb-1">This helps us understand your business, but approved movers may see all suitable jobs in their covered area.</p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 bg-gray-50 p-5 rounded-2xl border border-transparent">
                     {[
@@ -198,7 +210,7 @@ export default function ApplyToJoinContent() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">How many jobs can you typically handle per week?</label>
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Typical weekly capacity</label>
                   <select name="capacity" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all cursor-pointer" required>
                     <option value="">Select capacity</option>
                     <option>1–5</option>
@@ -240,7 +252,7 @@ export default function ApplyToJoinContent() {
                   disabled={isSubmitting}
                   className="btn-orange w-full py-7 rounded-[2rem] font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 text-lg shadow-2xl shadow-accent/20 transition-all hover:scale-[1.02] active:scale-95 disabled:opacity-50"
                 >
-                  {isSubmitting ? <Loader2 className="animate-spin" size={24} /> : "Submit Application →"}
+                  {isSubmitting ? <Loader2 className="animate-spin" size={24} /> : "Send application →"}
                 </button>
               </form>
             </div>
@@ -250,9 +262,9 @@ export default function ApplyToJoinContent() {
               <h3 className="text-2xl font-black text-primary uppercase tracking-tight text-center">What Happens Next</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", title: "We review your application", desc: "Our team checks your details within 24 hours." },
-                  { step: "02", title: "Email your insurance documents", desc: "Email your Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk. We check them manually." },
-                  { step: "03", title: "Receive Approval & Platform Access", desc: "Once your insurance is verified, approved movers receive login details and access to available customer enquiries." },
+                  { step: "01", title: "Submit the short form", desc: "Send your basic business, contact and service-area details." },
+                  { step: "02", title: "Email your insurance", desc: "Send Goods in Transit and Public Liability documents to support@manandvanclub.co.uk." },
+                  { step: "03", title: "Get approved access", desc: "Once checked, approved movers can access suitable customer enquiries as they become available." },
                 ].map((item, i) => (
                   <div key={i} className="bg-white p-8 rounded-3xl border border-border/50 space-y-4 shadow-sm">
                     <div className="text-accent font-black text-xl italic tracking-tighter">Step {item.step}</div>
