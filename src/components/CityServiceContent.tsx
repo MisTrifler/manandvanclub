@@ -98,7 +98,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
       />
 
       {/* ── Hero Section (Optimized) ── */}
-      <section className="bg-[#F9F9F7] py-16 lg:py-0 lg:h-[calc(100vh-100px)] flex items-center border-b border-border overflow-hidden relative">
+      <section className="bg-[#F9F9F7] py-16 lg:py-12 lg:min-h-[calc(100vh-100px)] flex items-center border-b border-border overflow-hidden relative">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
            <div className="absolute inset-0 grid grid-cols-6 gap-4">
               {[...Array(24)].map((_, i) => <div key={i} className="border border-primary/20 h-32 w-full" />)}
@@ -157,7 +157,8 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:w-1/2 w-full max-w-lg relative z-20"
+              id="quote-form"
+              className="lg:w-1/2 w-full max-w-lg relative z-20 scroll-mt-28 lg:scroll-mt-36"
             >
               <QuoteForm intent={formIntent} />
             </motion.div>
@@ -502,7 +503,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Popular Areas ── */}
               {data.areas && data.areas.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Popular Areas</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{isServicePage ? "Popular Request Types" : "Popular Areas"}</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
                     {data.areas.map((area: string) => (
                       <div key={area} className="bg-gray-50/50 p-6 rounded-2xl text-center font-black text-primary/60 border border-border/30 hover:border-accent hover:text-accent transition-all cursor-default uppercase text-[9px] tracking-widest">
