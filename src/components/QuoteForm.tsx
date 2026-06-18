@@ -121,6 +121,43 @@ function formatRouteGuideForCustomer(routeEstimate: any | null): string {
   return `${routeEstimate.distanceText} · ${routeEstimate.durationText}`;
 }
 
+const MULTI_VALUE_SEPARATOR = ", ";
+
+const FURNITURE_ITEM_OPTIONS = [
+  "Sofa",
+  "Bed",
+  "Table",
+  "Wardrobe",
+  "Fridge",
+  "Washing Machine",
+  "Dining Set",
+  "Desk",
+  "Mattress",
+  "Boxes",
+  "Other",
+];
+
+const STUDENT_FURNITURE_OPTIONS = [
+  "None — only boxes and bags",
+  "Desk",
+  "Chair",
+  "Bookshelf",
+  "Small drawers",
+  "Clothes rail",
+  "Other small furniture",
+];
+
+function splitMultiValue(value: unknown): string[] {
+  return String(value || "")
+    .split(MULTI_VALUE_SEPARATOR)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function joinMultiValues(values: string[]): string {
+  return values.filter(Boolean).join(MULTI_VALUE_SEPARATOR);
+}
+
 const postcodeFieldSchema = z.string().min(1, "Required").refine(isValidUKPostcode, {
   message: POSTCODE_ERROR_MESSAGE,
 });
@@ -157,8 +194,9 @@ const formSchema = z.object({
   numberOfBoxes: positiveIntegerString("Enter at least 1 box"),
   suitcases: positiveIntegerString("Enter at least 1 suitcase"),
   smallFurnitureItems: z.string().optional(),
-  // Single-item-specific
+  // Single-item / item-list details
   itemType: z.string().optional(),
+  itemDescription: z.string().optional(),
   // General
   numberOfItems: positiveIntegerString("Enter at least 1 item"),
   additionalHelpers: z.string().optional(),
@@ -447,6 +485,34 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     guidePrice && currentRoutePairKey && guidePricePairKey === currentRoutePairKey
   );
   const currentGuidePrice = guidePriceIsCurrent ? guidePrice : null;
+  const selectedItemTypes = splitMultiValue(watch("itemType"));
+  const selectedStudentFurnitureItems = splitMultiValue(watch("smallFurnitureItems"));
+
+  const toggleMultiValue = (field: "itemType" | "smallFurnitureItems", option: string) => {
+    const currentValues = splitMultiValue(watch(field));
+    const isNoneOption = /^none/i.test(option);
+
+    let nextValues: string[];
+    if (field === "smallFurnitureItems" && isNoneOption) {
+      nextValues = currentValues.includes(option) ? [] : [option];
+    } else {
+      const valuesWithoutNone = field === "smallFurnitureItems"
+        ? currentValues.filter((value) => !/^none/i.test(value))
+        : currentValues;
+      nextValues = valuesWithoutNone.includes(option)
+        ? valuesWithoutNone.filter((value) => value !== option)
+        : [...valuesWithoutNone, option];
+    }
+
+    setValue(field, joinMultiValues(nextValues), { shouldDirty: true, shouldValidate: true });
+  };
+
+  const multiOptionClass = (isSelected: boolean) =>
+    `rounded-2xl border px-3 py-2 text-left text-[12px] font-black uppercase tracking-[0.12em] transition ${
+      isSelected
+        ? "border-accent bg-accent text-white shadow-sm"
+        : "border-primary/10 bg-slate-50 text-primary hover:border-accent/50 hover:bg-white"
+    }`;
 
   const deliveryPostcodeErrorMessage = hasLiveSamePostcodeError
     ? SAME_POSTCODE_ERROR_MESSAGE
@@ -514,23 +580,30 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       details.filingCabinets = data.filingCabinets;
       details.meetingRoomFurniture = data.meetingRoomFurniture;
       details.liftAccess = data.officeLiftAccess;
+      if (data.itemDescription) details.itemDescription = data.itemDescription;
     } else if (activeIntent === "house") {
       details.bedrooms = data.bedrooms;
       details.propertyType = data.propertyType;
       details.packingRequired = data.packingRequired;
       details.floorLevel = data.floorLevel;
       details.liftAccess = data.houseLiftAccess;
+      if (data.itemDescription) details.itemDescription = data.itemDescription;
     } else if (activeIntent === "student") {
       details.university = data.university;
       details.accommodationType = data.accommodationType;
       details.numberOfBoxes = data.numberOfBoxes;
       details.suitcases = data.suitcases;
       details.smallFurnitureItems = data.smallFurnitureItems;
+      if (data.itemDescription) details.itemDescription = data.itemDescription;
     } else if (activeIntent === "single-item") {
       details.itemType = data.itemType;
+      details.itemTypes = splitMultiValue(data.itemType);
+      details.numberOfItems = data.numberOfItems;
+      if (data.itemDescription) details.itemDescription = data.itemDescription;
     } else if (activeIntent === "general") {
       details.numberOfItems = data.numberOfItems;
       details.additionalHelpers = data.additionalHelpers;
+      if (data.itemDescription) details.itemDescription = data.itemDescription;
     } else if (activeIntent === "storage") {
       details.storageFacility = data.storageFacility;
       details.storageUnitSize = data.storageUnitSize;
@@ -645,7 +718,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       } else if (activeIntent === "student") {
         fields.push("university", "accommodationType");
       } else if (activeIntent === "single-item") {
-        fields.push("itemType");
+        fields.push("itemType", "numberOfItems");
       } else if (activeIntent === "general") {
         fields.push("numberOfItems");
       } else if (activeIntent === "storage") {
@@ -1073,13 +1146,27 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Any Small Furniture?</label>
-                  <select {...register("smallFurnitureItems")} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 appearance-none">
-                    <option value="">Select option</option>
-                    <option value="None">None — only boxes and bags</option>
-                    <option value="Desk + Chair">Desk + Chair</option>
-                    <option value="Desk + Chair + Bookshelf">Desk + Chair + Bookshelf</option>
-                    <option value="Other small furniture">Other small furniture</option>
-                  </select>
+                  <input type="hidden" {...register("smallFurnitureItems")} />
+                  <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                    {STUDENT_FURNITURE_OPTIONS.map((option) => {
+                      const isSelected = selectedStudentFurnitureItems.includes(option);
+                      return (
+                        <button
+                          key={option}
+                          type="button"
+                          aria-pressed={isSelected}
+                          onClick={() => toggleMultiValue("smallFurnitureItems", option)}
+                          className={multiOptionClass(isSelected)}
+                        >
+                          {option}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Other Items or Notes <span className="tracking-normal text-primary/30">(optional)</span></label>
+                  <textarea {...register("itemDescription")} rows={2} placeholder="e.g. mini fridge, clothes rail, extra bags" className="w-full resize-none rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3 text-[15px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving From (Postcode)</label>
@@ -1099,34 +1186,50 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               </div>
             )}
 
-            {/* ── SINGLE ITEM FORM ── */}
+            {/* ── FURNITURE / MULTI-ITEM FORM ── */}
             {activeIntent === "single-item" && (
               <div className="space-y-2">
                 <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Item Type</label>
-                  <select {...register("itemType")} className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 appearance-none">
-                    <option value="">Select item</option>
-                    <option value="Sofa">Sofa</option>
-                    <option value="Bed">Bed</option>
-                    <option value="Table">Table</option>
-                    <option value="Wardrobe">Wardrobe</option>
-                    <option value="Fridge">Fridge</option>
-                    <option value="Washing Machine">Washing Machine</option>
-                    <option value="Dining Set">Dining Set</option>
-                    <option value="Desk">Desk</option>
-                    <option value="Mattress">Mattress</option>
-                    <option value="Other">Other</option>
-                  </select>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Items to Move</label>
+                  <input type="hidden" {...register("itemType")} />
+                  <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                    {FURNITURE_ITEM_OPTIONS.map((option) => {
+                      const isSelected = selectedItemTypes.includes(option);
+                      return (
+                        <button
+                          key={option}
+                          type="button"
+                          aria-pressed={isSelected}
+                          onClick={() => toggleMultiValue("itemType", option)}
+                          className={multiOptionClass(isSelected)}
+                        >
+                          {option}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <p className="mt-2 text-[11px] font-semibold text-primary/45">Choose all that apply. Add quantities or extra details below.</p>
                   {errors.itemType && <p className="text-red-500 text-xs font-bold mt-1">{errors.itemType.message}</p>}
+                </div>
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-[0.8fr_1.2fr]">
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Approx. Number of Items</label>
+                    <input {...register("numberOfItems")} type="number" min={1} inputMode="numeric" placeholder="e.g. 3" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                    {errors.numberOfItems && <p className="text-red-500 text-xs font-bold mt-1">{errors.numberOfItems.message}</p>}
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Item Details <span className="tracking-normal text-primary/30">(optional)</span></label>
+                    <textarea {...register("itemDescription")} rows={2} placeholder="e.g. 1 sofa, 2 wardrobes, 6 boxes" className="w-full resize-none rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3 text-[15px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  </div>
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Collection Postcode</label>
-                  <input {...registerPostcode("collectionPostcode")} placeholder="Where is the item now?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("collectionPostcode")} placeholder="Where are the items now?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {errors.collectionPostcode && <p className="text-red-500 text-xs font-bold mt-1">{errors.collectionPostcode.message}</p>}
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Delivery Postcode</label>
-                  <input {...registerPostcode("deliveryPostcode")} placeholder="Where should it go?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <input {...registerPostcode("deliveryPostcode")} placeholder="Where should they go?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
                 <div>
@@ -1150,10 +1253,16 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                   <input {...registerPostcode("deliveryPostcode")} placeholder="Drop-off postcode" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
                   {deliveryPostcodeErrorMessage && <p className="text-red-500 text-xs font-bold mt-1">{deliveryPostcodeErrorMessage}</p>}
                 </div>
-                <div>
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Number of Items (approximate)</label>
-                  <input {...register("numberOfItems")} type="number" min={1} inputMode="numeric" placeholder="e.g. 5" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  {errors.numberOfItems && <p className="text-red-500 text-xs font-bold mt-1">{errors.numberOfItems.message}</p>}
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-[0.8fr_1.2fr]">
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Number of Items (approximate)</label>
+                    <input {...register("numberOfItems")} type="number" min={1} inputMode="numeric" placeholder="e.g. 5" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                    {errors.numberOfItems && <p className="text-red-500 text-xs font-bold mt-1">{errors.numberOfItems.message}</p>}
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">What Are You Moving? <span className="tracking-normal text-primary/30">(optional)</span></label>
+                    <textarea {...register("itemDescription")} rows={2} placeholder="e.g. sofa, boxes, wardrobe, appliances" className="w-full resize-none rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3 text-[15px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  </div>
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Preferred Date</label>
