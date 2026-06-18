@@ -132,7 +132,7 @@ export default function WhyJoinContent() {
                   Easy mover sign-up. Quote jobs you actually want.
                 </h1>
                 <p className="text-sm md:text-base lg:text-lg text-text-secondary max-w-2xl leading-relaxed font-medium">
-                  Apply in a few minutes, send your insurance documents, then access suitable customer enquiries as they become available in your approved service area.
+                  Apply in a few minutes, send your insurance documents, then access suitable enquiries for furniture collections, flat moves, house removals, office moves and same-day jobs as they become available in your approved service area.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">

@@ -31,12 +31,12 @@ const servicePageData: Record<string, any> = {
   "house-removals": {
     name: "House Removals",
     formIntent: "house",
-    title: "House Removals | Professional Home Moving Services | Man and Van Club",
-    description: "House removal quote requests across England. Submit your move details securely so an approved mover can review your full home move before sending quote options.",
+    title: "House Removals | Full Home Move Requests | Man and Van Club",
+    description: "Full house removal quote requests across England. Submit bedrooms, access, packing and postcodes so an approved mover can review your home move before quoting.",
     badge: "Home Move Requests",
-    h1: "House Removals Made Easier",
-    intro: "Moving your whole home? Add bedrooms, property type, packing, stairs, lift access and postcodes so an approved mover can review the move properly before quoting.",
-    knowledge: "A house removal needs more detail than a small collection. Your request helps the mover account for furniture volume, fragile items, parking, stairs, loading access and the timing needed on moving day.",
+    h1: "Full Home Moves Made Easier",
+    intro: "Moving your whole home? Man and Van Club can handle more than collections. Add bedrooms, property type, packing, stairs, lift access and postcodes so an approved mover can review the job properly before quoting.",
+    knowledge: "A house removal needs more detail than a quick collection. Your request helps the mover account for furniture volume, fragile items, parking, stairs, loading access and the timing needed on moving day.",
     proofQuote: "Best for full home moves where the mover needs enough detail to price the job properly before you decide whether to book.",
     requestTypesHeading: "Common House Move Requests",
     areas: ["Full Home Moves", "Family Homes", "Terraced Houses", "Apartments", "Cottages", "Large Properties"],
@@ -68,7 +68,7 @@ const servicePageData: Record<string, any> = {
     featureCards: [
       { t: "Lift & Stair Notes", d: "Floor level and lift access help the mover understand how long loading may take.", icon: "building" },
       { t: "Parking Details", d: "Permit zones, loading bays and restricted streets can be included in the request.", icon: "access" },
-      { t: "Smaller Loads", d: "Studios, one-bed flats and part-flat moves can be described without overbooking a full removal team.", icon: "package" },
+      { t: "Right-Sized Moves", d: "Studios, one-bed flats and larger apartment moves can be described clearly without a generic quote form.", icon: "package" },
       { t: "Clear Quote Review", d: "An approved mover reviews the access and move details before sending quote options.", icon: "check" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/flat-removals"),
@@ -132,19 +132,19 @@ const servicePageData: Record<string, any> = {
     name: "Furniture Delivery",
     formIntent: "single-item",
     title: "Furniture Collection & Delivery | Single Item Movers | Man and Van Club",
-    description: "Single-item furniture collection and delivery quote requests across England. From eBay purchases to shop collections, submit the details so an approved mover can review the job before quoting.",
+    description: "Furniture collection and delivery quote requests across England. From one bulky item to multiple furniture pieces, submit details so an approved mover can review before quoting.",
     badge: "Furniture Delivery Requests",
     h1: "Furniture Collection & Delivery",
     intro: "Need a sofa, bed, wardrobe, appliance or online purchase collected? Add item size, pickup and delivery postcodes, stairs and helpers so a mover can quote accurately.",
     knowledge: "Furniture jobs depend on item size, access and handling. A wardrobe up two flights of stairs is different from a boxed item collected from a shop, so the request form asks for the details that matter.",
-    proofQuote: "Best for single items, Facebook Marketplace buys, shop collections and bulky furniture that needs the right van and handling.",
+    proofQuote: "Best for single items, Facebook Marketplace buys, shop collections and bulky furniture loads that need the right van and handling.",
     requestTypesHeading: "Common Furniture Delivery Requests",
     areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "Online Purchases"],
     featureCards: [
       { t: "Item Size Matters", d: "Add dimensions, weight and photos if needed so the mover can judge the handling.", icon: "furniture" },
       { t: "Pickup & Drop-Off", d: "Collection and delivery postcodes help calculate the route and guide price.", icon: "route" },
       { t: "Access Notes", d: "Stairs, lifts, tight turns and parking details help avoid failed collections.", icon: "access" },
-      { t: "Single-Item Friendly", d: "Useful for one-off items without needing a full removal booking.", icon: "package" }
+      { t: "Item Or Load Friendly", d: "Useful for one-off items or several bulky pieces without filling in a full house-removal request.", icon: "package" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/furniture-delivery"),
     faq: [
@@ -162,9 +162,9 @@ const servicePageData: Record<string, any> = {
     h1: "Same Day Man And Van",
     intro: "Need urgent help today? Submit accurate postcodes, item details, timing and access notes so an available approved mover can review the request quickly before quoting.",
     knowledge: "Same-day requests need clear details. Postcodes, item list, helpers, stairs, parking and time window help a mover decide quickly whether they can help and what to quote.",
-    proofQuote: "Best for urgent local moves, short-notice furniture collections and time-sensitive deliveries.",
+    proofQuote: "Best for urgent local moves, short-notice furniture collections, flat moves and time-sensitive deliveries.",
     requestTypesHeading: "Common Same-Day Requests",
-    areas: ["Emergency Moves", "Last-Minute Collections", "Urgent Deliveries", "Same-Day Furniture", "Quick Clearances", "Day-Of Requests"],
+    areas: ["Emergency Moves", "Last-Minute Collections", "Urgent Deliveries", "Same-Day Furniture", "Flat Moves", "Day-Of Requests"],
     featureCards: [
       { t: "Fast Detail Review", d: "The clearer your item and access notes, the faster an available mover can assess the job.", icon: "clock" },
       { t: "Urgent Local Jobs", d: "Best suited to local and regional requests where availability can be checked quickly.", icon: "route" },

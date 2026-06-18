@@ -21,7 +21,7 @@ import FAQ from "@/components/FAQ";
 const STEPS = [
   {
     t: "Submit Your Move Details",
-    d: "Tell us where you are moving from and to, your preferred date, and a few details about your move.",
+    d: "Tell us what you need moved — from one item to a full home move — plus your postcodes, date and access notes.",
     icon: <ClipboardList size={24} />,
   },
   {
@@ -30,8 +30,8 @@ const STEPS = [
     icon: <Search size={24} />,
   },
   {
-    t: "A Verified Mover Sends a Quote",
-    d: "Approved local movers can review anonymised move details and submit a quote if they can help.",
+    t: "An Approved Mover Sends a Quote",
+    d: "A suitable approved mover can review the job size, route and access details before sending a quote.",
     icon: <UserCheck size={24} />,
   },
   {
@@ -42,6 +42,10 @@ const STEPS = [
 ];
 
 const FAQ_ITEMS = [
+  {
+    q: "What types of moves can I request?",
+    a: "You can request help with single-item collections, furniture delivery, student moves, flat removals, house removals, office moves, same-day jobs and long-distance moves. The form adapts to the type of move you choose.",
+  },
   {
     q: "How does matching work?",
     a: "Submit your move details for free. Approved movers see anonymised details and may submit a total quote. You receive one quote review link, pay a booking deposit only if you accept, and that deposit is deducted from the mover quote.",
@@ -74,8 +78,8 @@ const FAQ_ITEMS = [
 
 const WHY_CHOOSE = [
   {
-    t: "Verified Businesses",
-    d: "We help connect customers with movers who have completed our application and verification process.",
+    t: "Flexible Move Types",
+    d: "Use the same simple request flow for furniture collections, flat moves, house removals, office moves and long-distance jobs.",
     icon: <ShieldCheck size={24} />,
   },
   {
@@ -114,9 +118,9 @@ const VERIFICATION_CHECKS = [
 ];
 
 const TRUST_BADGES = [
-  { icon: <BadgeCheck size={20} />, label: "Verified movers" },
-  { icon: <Lock size={20} />, label: "Secure enquiry" },
-  { icon: <CheckCircle2 size={20} />, label: "Pay balance on moving day" },
+  { icon: <BadgeCheck size={20} />, label: "Approved movers" },
+  { icon: <Lock size={20} />, label: "Details protected" },
+  { icon: <CheckCircle2 size={20} />, label: "One item to full home moves" },
 ];
 
 export default function HomeContent() {
@@ -185,8 +189,8 @@ export default function HomeContent() {
                 textShadow: "0 2px 14px rgba(0,0,0,0.40)",
               }}
             >
-              <span className="text-white">Get a quote from a</span>{" "}
-              <span className="text-accent">verified local mover</span>
+              <span className="text-white">From one item to a</span>{" "}
+              <span className="text-accent">full home move</span>
             </h1>
 
             <p
@@ -198,7 +202,7 @@ export default function HomeContent() {
                 textShadow: "0 2px 8px rgba(0,0,0,0.30)",
               }}
             >
-              Free to submit. No spam. Your details stay private until you book.
+              Submit your move once. Furniture collections, flat moves, house removals and office moves can all be reviewed by an approved mover before you decide whether to book.
             </p>
 
             <div className="flex flex-wrap gap-2 mt-5 lg:mt-6">
@@ -276,7 +280,7 @@ export default function HomeContent() {
               Why Customers Choose Man and Van Club
             </h2>
             <p className="text-text-secondary mt-3">
-              A simpler, more trustworthy way to find a mover.
+              From single-item collections to full home moves, without your details being passed around to lots of companies.
             </p>
           </div>
 
@@ -338,7 +342,7 @@ export default function HomeContent() {
               Popular Moving Services
             </h2>
             <p className="text-text-secondary mt-3 text-sm">
-              Find the right service for your move.
+              Choose the right route for your job — from one bulky item to a full home or office move.
             </p>
           </div>
 
@@ -348,7 +352,7 @@ export default function HomeContent() {
               { label: "Flat Moves", href: "/flat-removals", desc: "Apartments, stairs, lifts, parking and loading access." },
               { label: "Office Relocations", href: "/office-removals", desc: "Desks, IT equipment, timing and business access details." },
               { label: "Student Moves", href: "/student-removals", desc: "Halls, shared houses, boxes, bags and term-time moves." },
-              { label: "Furniture Delivery", href: "/furniture-delivery", desc: "Sofas, beds, wardrobes, appliances and online purchases." },
+              { label: "Furniture Delivery", href: "/furniture-delivery", desc: "Sofas, beds, wardrobes, appliances, marketplace buys and store collections." },
               { label: "Long Distance Moves", href: "/long-distance-removals", desc: "City-to-city and UK-wide route-based move requests." },
               { label: "Same Day Moves", href: "/same-day-man-and-van", desc: "Urgent local moves and last-minute collections." },
             ].map((service) => (
@@ -439,7 +443,7 @@ export default function HomeContent() {
             Ready To Start Your Move Request?
           </h2>
           <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg mx-auto leading-relaxed">
-            Submit your move details for free. Your contact details stay private until you accept a verified mover quote and book.
+            Submit one clear request for anything from a single item to a full home move. Your contact details stay private until you accept an approved mover quote and book.
           </p>
           <Link
             href="#quote-form"
@@ -457,7 +461,7 @@ export default function HomeContent() {
             Man and Van Services Across the West Midlands and UK
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed">
-            Man and Van Club helps customers submit free move requests for house removals, flat moves, office relocations, furniture collections, student moves and long-distance removals. We are focusing first on strong West Midlands coverage, especially <a href="/man-and-van-birmingham" className="font-black text-accent hover:underline">man and van Birmingham</a>, <a href="/man-and-van-walsall" className="font-black text-accent hover:underline">man and van Walsall</a>, <a href="/man-and-van-wolverhampton" className="font-black text-accent hover:underline">man and van Wolverhampton</a> and <a href="/same-day-man-and-van" className="font-black text-accent hover:underline">same-day man and van</a> requests.
+            Man and Van Club helps customers submit free move requests for everything from single-item furniture collections to full house removals, flat moves, office relocations, student moves and long-distance removals. We are focusing first on strong West Midlands coverage, especially <a href="/man-and-van-birmingham" className="font-black text-accent hover:underline">man and van Birmingham</a>, <a href="/man-and-van-walsall" className="font-black text-accent hover:underline">man and van Walsall</a>, <a href="/man-and-van-wolverhampton" className="font-black text-accent hover:underline">man and van Wolverhampton</a> and <a href="/same-day-man-and-van" className="font-black text-accent hover:underline">same-day man and van</a> requests.
           </p>
         </div>
       </section>

@@ -2,9 +2,9 @@ import HomeContent from "./HomeContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | Verified Man and Van Quotes",
+  title: "Man and Van Club | From One Item to Full Home Moves",
   description:
-    "Submit a free man and van request, see a guide price and receive a quote from one verified mover before you book. West Midlands and UK-wide coverage.",
+    "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover can review before you book.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',
   },
@@ -92,13 +92,14 @@ export default function Home() {
     ],
     "serviceType": [
       "Man and van quote request",
+      "Single item collections",
       "House removals",
       "Flat moves",
       "Student moves",
       "Furniture delivery",
       "Office moves"
     ],
-    "description": "Marketplace helping customers submit free man and van move requests. A verified mover reviews the details and sends a quote before the customer decides whether to book."
+    "description": "Marketplace helping customers submit free move requests for anything from single-item collections to full home moves. An approved mover reviews the details and sends a quote before the customer decides whether to book."
   };
 
   return (

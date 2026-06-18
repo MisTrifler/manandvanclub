@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | Verified Man and Van Quotes",
-  description: "Submit a free man and van request, see a guide price and receive a quote from one verified mover before you book. West Midlands and UK-wide coverage.",
+  title: "Man and Van Club | From One Item to Full Home Moves",
+  description: "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover can review before you book.",
   metadataBase: new URL('https://www.manandvanclub.co.uk'),
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',
@@ -28,7 +28,7 @@ const organizationSchema = {
   "name": "Man and Van Club",
   "url": "https://www.manandvanclub.co.uk",
   "logo": "https://www.manandvanclub.co.uk/icon.png",
-  "description": "A marketplace connecting customers with verified independent local movers across the UK through a customer-confirmed booking deposit process.",
+  "description": "A marketplace helping customers arrange flexible moves, from single-item collections to full home moves, through an approved mover quote and customer-confirmed booking deposit process.",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+44-7943-617-386",
@@ -47,6 +47,8 @@ const organizationSchema = {
   },
   "knowsAbout": [
     "Man and van services",
+    "Single item collections",
+    "Home moves",
     "House removals",
     "Flat removals",
     "Student removals",
