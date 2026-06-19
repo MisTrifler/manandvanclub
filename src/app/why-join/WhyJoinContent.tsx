@@ -194,12 +194,6 @@ export default function WhyJoinContent() {
                   </div>
                 ))}
               </div>
-              <Link
-                href="/apply-to-join"
-                className="btn-orange w-full py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center justify-center gap-3"
-              >
-                Start application <ArrowRight size={18} />
-              </Link>
             </motion.div>
           </div>
         </div>
