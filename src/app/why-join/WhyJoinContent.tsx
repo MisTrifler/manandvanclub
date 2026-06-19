@@ -65,8 +65,8 @@ const SIMPLE_STEPS = [
     icon: <BadgeCheck size={24} />,
   },
   {
-    title: "Quote jobs you want",
-    text: "Review move details, submit a total quote, then receive customer details after acceptance.",
+    title: "Fill quiet slots",
+    text: "Review suitable enquiries, quote the jobs that fit your diary, then receive customer details after acceptance.",
     icon: <Phone size={24} />,
   },
 ];
@@ -77,7 +77,7 @@ const QUICK_BENEFITS = [
   { title: "Protected customer details", icon: <Lock size={20} /> },
   { title: "Approved service areas", icon: <MapPin size={20} /> },
   { title: "One-mover quote process", icon: <ShieldCheck size={20} /> },
-  { title: "Choose enquiries to quote", icon: <Eye size={20} /> },
+  { title: "Fit jobs around your diary", icon: <Eye size={20} /> },
 ];
 
 const WHAT_YOU_NEED = [
@@ -129,10 +129,10 @@ export default function WhyJoinContent() {
               </div>
               <div className="space-y-4">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-tighter leading-[0.92] text-primary max-w-4xl">
-                  Easy mover sign-up. Quote jobs you actually want.
+                  Easy mover sign-up. Fill quiet days with suitable moving jobs.
                 </h1>
                 <p className="text-sm md:text-base lg:text-lg text-text-secondary max-w-2xl leading-relaxed font-medium">
-                  Apply in a few minutes, send your insurance documents, then access suitable enquiries for furniture collections, flat moves, house removals, office moves and same-day jobs as they become available in your approved service area.
+                  Apply in a few minutes, send your insurance documents, then access suitable enquiries for furniture collections, flat moves, house removals, office moves and same-day jobs that fit your diary and service area.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -267,7 +267,7 @@ export default function WhyJoinContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-4">Why it feels easier</p>
-            <h2 className="text-4xl lg:text-5xl font-black text-primary uppercase tracking-tighter">Built around mover control</h2>
+            <h2 className="text-4xl lg:text-5xl font-black text-primary uppercase tracking-tighter">Built around your working day</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {QUICK_BENEFITS.map((benefit) => (
