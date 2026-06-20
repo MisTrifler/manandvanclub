@@ -6,6 +6,7 @@ import { isCustomerBudgetReasonable } from "@/lib/quote-feedback";
 import {
   ArrowUpRight,
   Check,
+  Clock,
   Loader2,
   Search,
   Shield,
@@ -53,6 +54,27 @@ type Lead = {
   quote_feedback_admin_decision?: string | null;
 };
 
+type AbandonedQuote = {
+  id: string;
+  status?: string;
+  first_name?: string;
+  email?: string;
+  phone?: string;
+  collection_postcode?: string;
+  delivery_postcode?: string;
+  move_type?: string;
+  move_date?: string;
+  service_intent?: string;
+  guide_price_displayed?: string;
+  source_page?: string;
+  landing_page?: string;
+  last_activity_at?: string;
+  contacted_at?: string;
+  created_at?: string;
+  details?: any;
+  admin_notes?: string | null;
+};
+
 type Driver = {
   id: string;
   company_name?: string;
@@ -71,11 +93,13 @@ type Driver = {
 type DashboardResponse = {
   leads: Lead[];
   drivers: Driver[];
+  abandonedLeads?: AbandonedQuote[];
 };
 
 export default function AdminPortalClient() {
-  const [activeTab, setActiveTab] = useState<"leads" | "drivers">("leads");
+  const [activeTab, setActiveTab] = useState<"leads" | "abandoned" | "drivers">("leads");
   const [leads, setLeads] = useState<Lead[]>([]);
+  const [abandonedLeads, setAbandonedLeads] = useState<AbandonedQuote[]>([]);
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -106,6 +130,7 @@ export default function AdminPortalClient() {
 
       const data = result as DashboardResponse;
       setLeads(data.leads || []);
+      setAbandonedLeads(data.abandonedLeads || []);
       setDrivers(data.drivers || []);
     } catch (err: any) {
       setError(err.message || "Failed to load admin data.");
@@ -198,6 +223,31 @@ export default function AdminPortalClient() {
     }
   }
 
+  async function updateAbandonedQuoteStatus(id: string, action: "contacted" | "archive" | "reopen") {
+    setActionLoadingId(id);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const response = await fetch("/api/admin/abandoned-quotes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, action }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.error || "Failed to update abandoned quote.");
+        return;
+      }
+      setSuccessMessage("Abandoned quote updated.");
+      await fetchData();
+    } catch {
+      setError("Failed to update abandoned quote.");
+    } finally {
+      setActionLoadingId(null);
+    }
+  }
+
   async function markInsuranceVerified(driverId: string) {
     setActionLoadingId(driverId);
     setError(null);
@@ -281,6 +331,17 @@ export default function AdminPortalClient() {
     );
   }, [leads, search]);
 
+  const filteredAbandonedLeads = useMemo(() => {
+    const term = search.toLowerCase().trim();
+    const visible = abandonedLeads.filter((lead) => lead.status !== "converted");
+    if (!term) return visible;
+    return visible.filter((lead) =>
+      [lead.first_name, lead.email, lead.phone, lead.collection_postcode, lead.delivery_postcode, lead.move_type, lead.service_intent]
+        .filter(Boolean)
+        .some((value) => value!.toLowerCase().includes(term)),
+    );
+  }, [abandonedLeads, search]);
+
   const filteredDrivers = useMemo(() => {
     const term = search.toLowerCase().trim();
     if (!term) return drivers;
@@ -313,6 +374,14 @@ export default function AdminPortalClient() {
                 Move Leads
               </button>
               <button
+                onClick={() => setActiveTab("abandoned")}
+                className={`px-5 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all ${
+                  activeTab === "abandoned" ? "bg-primary text-white shadow-lg" : "text-primary/40 hover:bg-gray-50"
+                }`}
+              >
+                Abandoned
+              </button>
+              <button
                 onClick={() => setActiveTab("drivers")}
                 className={`px-5 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all ${
                   activeTab === "drivers" ? "bg-primary text-white shadow-lg" : "text-primary/40 hover:bg-gray-50"
@@ -331,8 +400,9 @@ export default function AdminPortalClient() {
           </div>
         </header>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
           <StatCard label="Total Leads" value={leads.length} icon={<Zap size={20} />} />
+          <StatCard label="Abandoned" value={abandonedLeads.filter((l) => ["abandoned", "contacted"].includes(String(l.status || ""))).length} icon={<Clock size={20} />} />
           <StatCard label="Pending Apps" value={drivers.filter((d) => d.status === "pending").length} icon={<Shield size={20} />} />
           <StatCard label="Verified Leads" value={leads.filter((l) => l.is_verified).length} icon={<Check size={20} />} />
           <StatCard label="Active Movers" value={drivers.filter((d) => d.status === "approved").length} icon={<User size={20} />} />
@@ -367,6 +437,12 @@ export default function AdminPortalClient() {
               <Loader2 className="animate-spin text-accent" size={48} />
               <p className="font-black text-primary/20 uppercase tracking-[0.3em] text-xs">Loading Admin Data...</p>
             </div>
+          ) : activeTab === "abandoned" ? (
+            <AbandonedQuotesPanel
+              quotes={filteredAbandonedLeads}
+              actionLoadingId={actionLoadingId}
+              onAction={updateAbandonedQuoteStatus}
+            />
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
@@ -615,6 +691,124 @@ export default function AdminPortalClient() {
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function formatAbandonedDate(value?: string) {
+  if (!value) return "—";
+  return new Date(value).toLocaleString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
+function normaliseUkMobileForWhatsApp(phone?: string) {
+  const digits = String(phone || "").replace(/\D/g, "");
+  if (!digits) return "";
+  if (digits.startsWith("44")) return digits;
+  if (digits.startsWith("0")) return `44${digits.slice(1)}`;
+  return digits;
+}
+
+function AbandonedQuotesPanel({
+  quotes,
+  actionLoadingId,
+  onAction,
+}: {
+  quotes: AbandonedQuote[];
+  actionLoadingId: string | null;
+  onAction: (id: string, action: "contacted" | "archive" | "reopen") => void;
+}) {
+  if (!quotes.length) {
+    return (
+      <div className="p-12 text-center">
+        <p className="text-2xl font-black uppercase tracking-tight text-primary">No abandoned quotes yet</p>
+        <p className="mt-2 text-sm font-medium text-text-secondary">When a customer enters contact details but leaves before finishing, they will appear here.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="divide-y divide-border/60">
+      {quotes.map((quote) => {
+        const whatsappNumber = normaliseUkMobileForWhatsApp(quote.phone);
+        const message = encodeURIComponent(
+          `Hi ${quote.first_name || "there"}, you started a Man and Van Club quote for ${quote.collection_postcode || "your collection"} to ${quote.delivery_postcode || "your delivery"}. Do you still need help completing it?`,
+        );
+
+        return (
+          <div key={quote.id} className="grid gap-6 p-6 lg:grid-cols-[1.3fr_1fr_1fr_auto] lg:items-center lg:p-8 hover:bg-gray-50/60 transition-colors">
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="font-black text-primary uppercase tracking-tight">{quote.first_name || "Unnamed customer"}</p>
+                <span className={`rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-widest ${quote.status === "contacted" ? "bg-blue-50 text-blue-600" : quote.status === "archived" ? "bg-gray-100 text-gray-500" : "bg-amber-50 text-amber-600"}`}>
+                  {quote.status || "abandoned"}
+                </span>
+              </div>
+              <p className="mt-1 text-xs font-medium text-text-secondary break-all">{quote.email || "No email"}</p>
+              <p className="text-xs font-medium text-text-secondary">{quote.phone || "No phone"}</p>
+              <p className="mt-2 text-[10px] font-black uppercase tracking-widest text-primary/35">Last activity: {formatAbandonedDate(quote.last_activity_at || quote.created_at)}</p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold text-primary italic">
+                {quote.collection_postcode || "—"} <ArrowUpRight size={12} /> {quote.delivery_postcode || "—"}
+              </div>
+              <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-text-secondary">{quote.move_type || quote.service_intent || "Move request"}</p>
+              {quote.move_date && <p className="mt-1 text-xs font-bold text-primary/60">Move date: {quote.move_date}</p>}
+              {quote.guide_price_displayed && <p className="mt-1 text-xs font-bold text-accent">Guide: {quote.guide_price_displayed}</p>}
+            </div>
+
+            <div className="space-y-2 text-xs">
+              {quote.email && (
+                <a href={`mailto:${quote.email}?subject=${encodeURIComponent("Complete your Man and Van Club quote")}`} className="block rounded-xl border border-border bg-white px-4 py-2 font-black uppercase tracking-widest text-primary hover:border-accent">
+                  Email customer
+                </a>
+              )}
+              {quote.phone && (
+                <a href={`tel:${quote.phone}`} className="block rounded-xl border border-border bg-white px-4 py-2 font-black uppercase tracking-widest text-primary hover:border-accent">
+                  Call customer
+                </a>
+              )}
+              {whatsappNumber && (
+                <a href={`https://wa.me/${whatsappNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border bg-white px-4 py-2 font-black uppercase tracking-widest text-primary hover:border-accent">
+                  WhatsApp
+                </a>
+              )}
+            </div>
+
+            <div className="flex flex-wrap gap-2 lg:justify-end">
+              <button
+                onClick={() => onAction(quote.id, "contacted")}
+                disabled={actionLoadingId === quote.id}
+                className="rounded-xl bg-primary px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white disabled:opacity-50"
+              >
+                Contacted
+              </button>
+              {quote.status === "archived" ? (
+                <button
+                  onClick={() => onAction(quote.id, "reopen")}
+                  disabled={actionLoadingId === quote.id}
+                  className="rounded-xl bg-amber-500 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white disabled:opacity-50"
+                >
+                  Reopen
+                </button>
+              ) : (
+                <button
+                  onClick={() => onAction(quote.id, "archive")}
+                  disabled={actionLoadingId === quote.id}
+                  className="rounded-xl bg-gray-100 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-primary/60 disabled:opacity-50"
+                >
+                  Archive
+                </button>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

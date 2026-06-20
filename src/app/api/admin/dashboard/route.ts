@@ -5,10 +5,10 @@ import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
 export const dynamic = "force-dynamic";
 
-function sortByNewest<T extends { created_at?: string; applied_at?: string; id?: string | number }>(rows: T[]) {
+function sortByNewest<T extends { created_at?: string; applied_at?: string; last_activity_at?: string; id?: string | number }>(rows: T[]) {
   return [...rows].sort((a, b) => {
-    const aDate = a.created_at || a.applied_at || "";
-    const bDate = b.created_at || b.applied_at || "";
+    const aDate = a.last_activity_at || a.created_at || a.applied_at || "";
+    const bDate = b.last_activity_at || b.created_at || b.applied_at || "";
 
     if (aDate && bDate) {
       return new Date(bDate).getTime() - new Date(aDate).getTime();
@@ -28,9 +28,10 @@ export async function GET() {
   try {
     const supabaseAdmin = getSupabaseAdmin();
 
-    const [leadsResult, driversResult] = await Promise.all([
+    const [leadsResult, driversResult, abandonedQuotesResult] = await Promise.all([
       supabaseAdmin.from("move_requests").select("*"),
       supabaseAdmin.from("driver_applications").select("*"),
+      supabaseAdmin.from("abandoned_quote_requests").select("*").order("last_activity_at", { ascending: false }),
     ]);
 
     if (leadsResult.error || driversResult.error) {
@@ -49,6 +50,8 @@ export async function GET() {
     return NextResponse.json({
       leads: sortByNewest(leadsResult.data || []),
       drivers: sortByNewest(driversResult.data || []),
+      abandonedLeads: abandonedQuotesResult.error ? [] : sortByNewest(abandonedQuotesResult.data || []),
+      abandonedLeadsWarning: abandonedQuotesResult.error?.message || null,
     });
   } catch (error: any) {
     return NextResponse.json(

@@ -112,6 +112,49 @@ function getAttributionData(collectionPostcode: string, deliveryPostcode: string
   };
 }
 
+
+function generateFallbackUuid(): string {
+  return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (char) => {
+    const value = Number(char) ^ (Math.random() * 16 >> (Number(char) / 4));
+    return value.toString(16);
+  });
+}
+
+function getOrCreateAbandonedQuoteId(): string {
+  if (typeof window === "undefined") return "";
+
+  try {
+    const existing = window.localStorage.getItem("mvc_abandoned_quote_id");
+    if (existing) return existing;
+
+    const nextId = typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : generateFallbackUuid();
+
+    window.localStorage.setItem("mvc_abandoned_quote_id", nextId);
+    return nextId;
+  } catch {
+    return typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : generateFallbackUuid();
+  }
+}
+
+function clearAbandonedQuoteId() {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem("mvc_abandoned_quote_id");
+  } catch {
+    // ignore storage errors
+  }
+}
+
+function hasRecoverableContact(email: unknown, phone: unknown): boolean {
+  const cleanEmail = String(email || "").trim();
+  const cleanPhone = String(phone || "").replace(/\D/g, "");
+  return cleanEmail.includes("@") || cleanPhone.length >= 10;
+}
+
 function formatRouteGuideForCustomer(routeEstimate: any | null): string {
   if (!routeEstimate || Number(routeEstimate.distanceMeters) <= 0) return "";
   const provider = String(routeEstimate.provider || "");
@@ -259,7 +302,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [routeEstimate, setRouteEstimate] = useState<any | null>(null);
   const [routeEstimatePairKey, setRouteEstimatePairKey] = useState<string | null>(null);
   const [isCalculatingGuide, setIsCalculatingGuide] = useState(false);
+  const [abandonedQuoteStatus, setAbandonedQuoteStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const formShellRef = useRef<HTMLDivElement | null>(null);
+  const abandonedQuoteTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const abandonedQuoteConvertedRef = useRef(false);
   const activeStepRef = useRef<HTMLDivElement | null>(null);
   const hasMountedRef = useRef(false);
   const historyReadyRef = useRef(false);
@@ -470,6 +516,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   const watchedCollectionPostcode = watch("collectionPostcode");
   const watchedDeliveryPostcode = watch("deliveryPostcode");
+  const watchedMoveDate = watch("moveDate");
+  const watchedMoveType = watch("moveType");
+  const watchedFirstName = watch("firstName");
+  const watchedPhone = watch("phone");
+  const watchedEmail = watch("email");
   const liveCollectionPostcode = normalisePostcodeInput(watchedCollectionPostcode);
   const liveDeliveryPostcode = normalisePostcodeInput(watchedDeliveryPostcode);
   const currentRoutePairKey = routePairKey(liveCollectionPostcode, liveDeliveryPostcode);
@@ -747,6 +798,102 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     }
   };
 
+  useEffect(() => {
+    if (step !== CONTACT_STEP || !activeIntent || abandonedQuoteConvertedRef.current) return;
+
+    const formData = watch();
+    const normalisedCollectionPostcode = normalisePostcodeInput(formData.collectionPostcode);
+    const normalisedDeliveryPostcode = normalisePostcodeInput(formData.deliveryPostcode);
+
+    if (
+      !hasRecoverableContact(formData.email, formData.phone) ||
+      !isValidUKPostcode(normalisedCollectionPostcode) ||
+      !isValidUKPostcode(normalisedDeliveryPostcode) ||
+      isSameUKPostcode(normalisedCollectionPostcode, normalisedDeliveryPostcode) ||
+      !String(formData.moveDate || "").trim() ||
+      !String(formData.moveType || "").trim()
+    ) {
+      return;
+    }
+
+    if (abandonedQuoteTimerRef.current) {
+      clearTimeout(abandonedQuoteTimerRef.current);
+    }
+
+    setAbandonedQuoteStatus("saving");
+
+    abandonedQuoteTimerRef.current = setTimeout(async () => {
+      try {
+        const quoteId = getOrCreateAbandonedQuoteId();
+        const attribution = getAttributionData(normalisedCollectionPostcode, normalisedDeliveryPostcode);
+        const submitPairKey = routePairKey(normalisedCollectionPostcode, normalisedDeliveryPostcode);
+        const guidePriceForSnapshot =
+          submitPairKey && guidePricePairKey === submitPairKey ? guidePrice : null;
+        const details = buildDetails(formData);
+
+        if (guidePriceForSnapshot) {
+          details.guidePrice = {
+            ...guidePriceForSnapshot,
+            calculatedAt: new Date().toISOString(),
+          };
+        }
+
+        details.attribution = {
+          ...attribution,
+          serviceIntent: activeIntent || "unknown",
+          guidePriceDisplayed: guidePriceForSnapshot?.display || "",
+          savedAtClient: new Date().toISOString(),
+        };
+
+        const response = await fetch("/api/abandoned-quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: quoteId,
+            status: "abandoned",
+            firstName: formData.firstName,
+            email: formData.email,
+            phone: formData.phone,
+            collectionPostcode: normalisedCollectionPostcode,
+            deliveryPostcode: normalisedDeliveryPostcode,
+            moveType: formData.moveType,
+            moveDate: formData.moveDate,
+            serviceIntent: activeIntent || "unknown",
+            currentStep: CONTACT_STEP,
+            ...attribution,
+            guidePriceDisplayed: guidePriceForSnapshot?.display || "",
+            details,
+          }),
+        });
+
+        if (!response.ok) throw new Error("Failed to save quote reminder");
+        setAbandonedQuoteStatus("saved");
+      } catch {
+        setAbandonedQuoteStatus("error");
+      }
+    }, 900);
+
+    return () => {
+      if (abandonedQuoteTimerRef.current) {
+        clearTimeout(abandonedQuoteTimerRef.current);
+      }
+    };
+  }, [
+    CONTACT_STEP,
+    activeIntent,
+    guidePrice,
+    guidePricePairKey,
+    step,
+    watchedCollectionPostcode,
+    watchedDeliveryPostcode,
+    watchedEmail,
+    watchedFirstName,
+    watchedMoveDate,
+    watchedMoveType,
+    watchedPhone,
+    watch,
+  ]);
+
   const handleOtpChange = (index: number, value: string) => {
     if (value.length > 1) value = value.slice(-1);
     if (!/^\d*$/.test(value)) return;
@@ -810,6 +957,32 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       const result = await response.json();
       if (!response.ok) throw new Error(result.details || 'Failed');
       setRequestId(result.id);
+
+      const abandonedQuoteId = typeof window !== "undefined"
+        ? window.localStorage.getItem("mvc_abandoned_quote_id")
+        : null;
+      if (abandonedQuoteId) {
+        abandonedQuoteConvertedRef.current = true;
+        void fetch("/api/abandoned-quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: abandonedQuoteId,
+            status: "converted",
+            convertedToRequestId: result.id,
+            email: data.email,
+            phone: data.phone,
+            firstName: data.firstName,
+            collectionPostcode: normalisedCollectionPostcode,
+            deliveryPostcode: normalisedDeliveryPostcode,
+            moveType: data.moveType,
+            moveDate: data.moveDate,
+            serviceIntent: activeIntent || "unknown",
+            details: { convertedAtClient: new Date().toISOString() },
+          }),
+        }).finally(() => clearAbandonedQuoteId());
+      }
+
       goToStep(VERIFY_STEP);
     } catch (error: any) {
       alert(`Error: ${error.message}`);
@@ -1385,6 +1558,12 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
               {errors.phone && <p className="text-red-500 text-xs font-bold mt-1">{errors.phone.message}</p>}
               <input {...register("email")} type="email" inputMode="email" autoComplete="email" placeholder="Email Address" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
               {errors.email && <p className="text-red-500 text-xs font-bold mt-1">{errors.email.message}</p>}
+            </div>
+            <div className="rounded-2xl border border-primary/10 bg-slate-50/80 p-3 text-[10px] font-semibold leading-relaxed text-text-secondary">
+              We use these details for this quote request and to send a reminder if you leave before finishing. No marketing spam.
+              {abandonedQuoteStatus === "saving" && <span className="ml-1 font-black text-primary">Saving quote link…</span>}
+              {abandonedQuoteStatus === "saved" && <span className="ml-1 font-black text-success">Quote reminder saved.</span>}
+              {abandonedQuoteStatus === "error" && <span className="ml-1 font-black text-amber-600">Reminder could not be saved.</span>}
             </div>
             <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:opacity-50">
               {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
