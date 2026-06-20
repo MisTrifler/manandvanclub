@@ -120,33 +120,10 @@ function generateFallbackUuid(): string {
   });
 }
 
-function getOrCreateAbandonedQuoteId(): string {
-  if (typeof window === "undefined") return "";
-
-  try {
-    const existing = window.localStorage.getItem("mvc_abandoned_quote_id");
-    if (existing) return existing;
-
-    const nextId = typeof crypto !== "undefined" && "randomUUID" in crypto
-      ? crypto.randomUUID()
-      : generateFallbackUuid();
-
-    window.localStorage.setItem("mvc_abandoned_quote_id", nextId);
-    return nextId;
-  } catch {
-    return typeof crypto !== "undefined" && "randomUUID" in crypto
-      ? crypto.randomUUID()
-      : generateFallbackUuid();
-  }
-}
-
-function clearAbandonedQuoteId() {
-  if (typeof window === "undefined") return;
-  try {
-    window.localStorage.removeItem("mvc_abandoned_quote_id");
-  } catch {
-    // ignore storage errors
-  }
+function createAbandonedQuoteId(): string {
+  return typeof crypto !== "undefined" && "randomUUID" in crypto
+    ? crypto.randomUUID()
+    : generateFallbackUuid();
 }
 
 function hasRecoverableContact(email: unknown, phone: unknown): boolean {
@@ -304,6 +281,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [isCalculatingGuide, setIsCalculatingGuide] = useState(false);
   const formShellRef = useRef<HTMLDivElement | null>(null);
   const abandonedQuoteTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const abandonedQuoteIdRef = useRef<string>(createAbandonedQuoteId());
   const abandonedQuoteConvertedRef = useRef(false);
   const savedAbandonedQuotePayloadRef = useRef<string | null>(null);
   const activeStepRef = useRef<HTMLDivElement | null>(null);
@@ -315,6 +293,19 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const previousScrollRestorationRef = useRef<ScrollRestoration | null>(null);
 
   const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
+
+  const getCurrentAbandonedQuoteId = useCallback(() => {
+    if (!abandonedQuoteIdRef.current) {
+      abandonedQuoteIdRef.current = createAbandonedQuoteId();
+    }
+    return abandonedQuoteIdRef.current;
+  }, []);
+
+  const startFreshAbandonedQuoteAttempt = useCallback(() => {
+    abandonedQuoteIdRef.current = createAbandonedQuoteId();
+    savedAbandonedQuotePayloadRef.current = null;
+    abandonedQuoteConvertedRef.current = false;
+  }, []);
 
   useEffect(() => {
     currentIntentRef.current = activeIntent;
@@ -753,7 +744,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       return null;
     }
 
-    const quoteId = getOrCreateAbandonedQuoteId();
+    const quoteId = getCurrentAbandonedQuoteId();
     const attribution = getAttributionData(normalisedCollectionPostcode, normalisedDeliveryPostcode);
     const submitPairKey = routePairKey(normalisedCollectionPostcode, normalisedDeliveryPostcode);
     const guidePriceForSnapshot =
@@ -821,7 +812,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     if (!response.ok) throw new Error("Failed to save quote reminder");
     savedAbandonedQuotePayloadRef.current = payloadFingerprint;
     return quoteId;
-  }, [CONTACT_STEP, activeIntent, guidePrice, guidePricePairKey]);
+  }, [CONTACT_STEP, activeIntent, getCurrentAbandonedQuoteId, guidePrice, guidePricePairKey]);
 
   const onNextStep = async () => {
     let fields: (keyof FormData)[] = [];
@@ -974,9 +965,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         submittedAtClient: new Date().toISOString(),
       };
 
-      const abandonedQuoteId = typeof window !== "undefined"
-        ? window.localStorage.getItem("mvc_abandoned_quote_id")
-        : null;
+      const abandonedQuoteId = abandonedQuoteIdRef.current;
 
       const payload = {
         ...data,
@@ -1018,7 +1007,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             serviceIntent: activeIntent || "unknown",
             details: { convertedAtClient: new Date().toISOString() },
           }),
-        }).finally(() => clearAbandonedQuoteId());
+        }).finally(() => startFreshAbandonedQuoteAttempt());
       }
 
       goToStep(VERIFY_STEP);
