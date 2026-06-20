@@ -974,6 +974,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         submittedAtClient: new Date().toISOString(),
       };
 
+      const abandonedQuoteId = typeof window !== "undefined"
+        ? window.localStorage.getItem("mvc_abandoned_quote_id")
+        : null;
+
       const payload = {
         ...data,
         collectionPostcode: normalisedCollectionPostcode,
@@ -982,6 +986,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         serviceIntent: activeIntent || "unknown",
         guidePriceDisplayed: estimatePrice || "",
         estimatedPrice: estimatePrice,
+        abandonedQuoteId: abandonedQuoteId || undefined,
         details: Object.keys(details).length > 0 ? details : undefined,
       };
 
@@ -994,9 +999,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       if (!response.ok) throw new Error(result.details || 'Failed');
       setRequestId(result.id);
 
-      const abandonedQuoteId = typeof window !== "undefined"
-        ? window.localStorage.getItem("mvc_abandoned_quote_id")
-        : null;
       if (abandonedQuoteId) {
         abandonedQuoteConvertedRef.current = true;
         void fetch("/api/abandoned-quote", {

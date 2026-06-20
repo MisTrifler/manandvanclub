@@ -70,6 +70,9 @@ type AbandonedQuote = {
   landing_page?: string;
   last_activity_at?: string;
   contacted_at?: string;
+  converted_at?: string;
+  converted_request_id?: string;
+  archived_at?: string;
   created_at?: string;
   details?: any;
   admin_notes?: string | null;
@@ -106,6 +109,7 @@ export default function AdminPortalClient() {
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [actionLoadingId, setActionLoadingId] = useState<string | null>(null);
+  const [abandonedStatusFilter, setAbandonedStatusFilter] = useState<"active" | "all" | "abandoned" | "contacted" | "converted" | "archived">("active");
 
   async function fetchData() {
     setLoading(true);
@@ -331,16 +335,35 @@ export default function AdminPortalClient() {
     );
   }, [leads, search]);
 
+  const abandonedStatusCounts = useMemo(() => {
+    return abandonedLeads.reduce(
+      (acc, lead) => {
+        const status = String(lead.status || "abandoned");
+        acc.all += 1;
+        if (["abandoned", "contacted"].includes(status)) acc.active += 1;
+        if (status in acc) acc[status as keyof typeof acc] += 1;
+        return acc;
+      },
+      { all: 0, active: 0, abandoned: 0, contacted: 0, converted: 0, archived: 0 },
+    );
+  }, [abandonedLeads]);
+
   const filteredAbandonedLeads = useMemo(() => {
     const term = search.toLowerCase().trim();
-    const visible = abandonedLeads.filter((lead) => lead.status !== "converted");
+    const visible = abandonedLeads.filter((lead) => {
+      const status = String(lead.status || "abandoned");
+      if (abandonedStatusFilter === "all") return true;
+      if (abandonedStatusFilter === "active") return ["abandoned", "contacted"].includes(status);
+      return status === abandonedStatusFilter;
+    });
+
     if (!term) return visible;
     return visible.filter((lead) =>
       [lead.first_name, lead.email, lead.phone, lead.collection_postcode, lead.delivery_postcode, lead.move_type, lead.service_intent]
         .filter(Boolean)
         .some((value) => value!.toLowerCase().includes(term)),
     );
-  }, [abandonedLeads, search]);
+  }, [abandonedLeads, abandonedStatusFilter, search]);
 
   const filteredDrivers = useMemo(() => {
     const term = search.toLowerCase().trim();
@@ -402,7 +425,7 @@ export default function AdminPortalClient() {
 
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
           <StatCard label="Total Leads" value={leads.length} icon={<Zap size={20} />} />
-          <StatCard label="Abandoned" value={abandonedLeads.filter((l) => ["abandoned", "contacted"].includes(String(l.status || ""))).length} icon={<Clock size={20} />} />
+          <StatCard label="Active Abandoned" value={abandonedStatusCounts.active} icon={<Clock size={20} />} />
           <StatCard label="Pending Apps" value={drivers.filter((d) => d.status === "pending").length} icon={<Shield size={20} />} />
           <StatCard label="Verified Leads" value={leads.filter((l) => l.is_verified).length} icon={<Check size={20} />} />
           <StatCard label="Active Movers" value={drivers.filter((d) => d.status === "approved").length} icon={<User size={20} />} />
@@ -438,11 +461,35 @@ export default function AdminPortalClient() {
               <p className="font-black text-primary/20 uppercase tracking-[0.3em] text-xs">Loading Admin Data...</p>
             </div>
           ) : activeTab === "abandoned" ? (
-            <AbandonedQuotesPanel
-              quotes={filteredAbandonedLeads}
-              actionLoadingId={actionLoadingId}
-              onAction={updateAbandonedQuoteStatus}
-            />
+            <div>
+              <div className="flex flex-wrap gap-2 border-b border-border/60 bg-gray-50/60 p-5">
+                {([
+                  ["active", "Active", abandonedStatusCounts.active],
+                  ["abandoned", "Abandoned", abandonedStatusCounts.abandoned],
+                  ["contacted", "Contacted", abandonedStatusCounts.contacted],
+                  ["converted", "Converted", abandonedStatusCounts.converted],
+                  ["archived", "Archived", abandonedStatusCounts.archived],
+                  ["all", "All", abandonedStatusCounts.all],
+                ] as const).map(([key, label, count]) => (
+                  <button
+                    key={key}
+                    onClick={() => setAbandonedStatusFilter(key)}
+                    className={`rounded-xl px-4 py-2 text-[10px] font-black uppercase tracking-widest transition-all ${
+                      abandonedStatusFilter === key
+                        ? "bg-primary text-white shadow-lg"
+                        : "bg-white text-primary/50 hover:text-primary border border-border"
+                    }`}
+                  >
+                    {label} <span className="ml-1 opacity-70">{count}</span>
+                  </button>
+                ))}
+              </div>
+              <AbandonedQuotesPanel
+                quotes={filteredAbandonedLeads}
+                actionLoadingId={actionLoadingId}
+                onAction={updateAbandonedQuoteStatus}
+              />
+            </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
@@ -725,8 +772,8 @@ function AbandonedQuotesPanel({
   if (!quotes.length) {
     return (
       <div className="p-12 text-center">
-        <p className="text-2xl font-black uppercase tracking-tight text-primary">No abandoned quotes yet</p>
-        <p className="mt-2 text-sm font-medium text-text-secondary">When a customer enters contact details but leaves before finishing, they will appear here.</p>
+        <p className="text-2xl font-black uppercase tracking-tight text-primary">No records in this view</p>
+        <p className="mt-2 text-sm font-medium text-text-secondary">Abandoned, contacted, converted and archived quote recovery records stay here for tracking.</p>
       </div>
     );
   }
@@ -744,13 +791,26 @@ function AbandonedQuotesPanel({
             <div>
               <div className="flex flex-wrap items-center gap-2">
                 <p className="font-black text-primary uppercase tracking-tight">{quote.first_name || "Unnamed customer"}</p>
-                <span className={`rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-widest ${quote.status === "contacted" ? "bg-blue-50 text-blue-600" : quote.status === "archived" ? "bg-gray-100 text-gray-500" : "bg-amber-50 text-amber-600"}`}>
+                <span className={`rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-widest ${
+                  quote.status === "contacted"
+                    ? "bg-blue-50 text-blue-600"
+                    : quote.status === "converted"
+                      ? "bg-success/10 text-success"
+                      : quote.status === "archived"
+                        ? "bg-gray-100 text-gray-500"
+                        : "bg-amber-50 text-amber-600"
+                }`}>
                   {quote.status || "abandoned"}
                 </span>
               </div>
               <p className="mt-1 text-xs font-medium text-text-secondary break-all">{quote.email || "No email"}</p>
               <p className="text-xs font-medium text-text-secondary">{quote.phone || "No phone"}</p>
               <p className="mt-2 text-[10px] font-black uppercase tracking-widest text-primary/35">Last activity: {formatAbandonedDate(quote.last_activity_at || quote.created_at)}</p>
+              {quote.status === "converted" && (
+                <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-success">
+                  Converted: {formatAbandonedDate(quote.converted_at)}
+                </p>
+              )}
             </div>
 
             <div>
@@ -781,29 +841,37 @@ function AbandonedQuotesPanel({
             </div>
 
             <div className="flex flex-wrap gap-2 lg:justify-end">
-              <button
-                onClick={() => onAction(quote.id, "contacted")}
-                disabled={actionLoadingId === quote.id}
-                className="rounded-xl bg-primary px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white disabled:opacity-50"
-              >
-                Contacted
-              </button>
-              {quote.status === "archived" ? (
-                <button
-                  onClick={() => onAction(quote.id, "reopen")}
-                  disabled={actionLoadingId === quote.id}
-                  className="rounded-xl bg-amber-500 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white disabled:opacity-50"
-                >
-                  Reopen
-                </button>
+              {quote.status === "converted" ? (
+                <span className="rounded-xl bg-success/10 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-success">
+                  Converted
+                </span>
               ) : (
-                <button
-                  onClick={() => onAction(quote.id, "archive")}
-                  disabled={actionLoadingId === quote.id}
-                  className="rounded-xl bg-gray-100 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-primary/60 disabled:opacity-50"
-                >
-                  Archive
-                </button>
+                <>
+                  <button
+                    onClick={() => onAction(quote.id, "contacted")}
+                    disabled={actionLoadingId === quote.id}
+                    className="rounded-xl bg-primary px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white disabled:opacity-50"
+                  >
+                    Contacted
+                  </button>
+                  {quote.status === "archived" ? (
+                    <button
+                      onClick={() => onAction(quote.id, "reopen")}
+                      disabled={actionLoadingId === quote.id}
+                      className="rounded-xl bg-amber-500 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white disabled:opacity-50"
+                    >
+                      Reopen
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => onAction(quote.id, "archive")}
+                      disabled={actionLoadingId === quote.id}
+                      className="rounded-xl bg-gray-100 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-primary/60 disabled:opacity-50"
+                    >
+                      Archive
+                    </button>
+                  )}
+                </>
               )}
             </div>
           </div>

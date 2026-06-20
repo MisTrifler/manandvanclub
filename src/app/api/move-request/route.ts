@@ -7,6 +7,7 @@ import { escapeHtml } from '@/lib/html';
 import { computeRouteEstimate, sanitizeRouteEstimate, buildGoogleMapsDirectionsUrl, isLikelyUKPostcode } from '@/lib/route-estimate';
 import { isSameUKPostcode, parseUKPostcode } from '@/lib/postcode';
 import { calculateGuidePrice } from '@/lib/guide-price';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 const OTP_VALIDITY_MINUTES = 15;
 
@@ -49,6 +50,37 @@ function safeIsoTimestamp(value: unknown): string | null {
   if (!text) return null;
   const time = Date.parse(text);
   return Number.isFinite(time) ? new Date(time).toISOString() : null;
+}
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+async function markAbandonedQuoteConverted(params: { abandonedQuoteId?: unknown; requestId?: string }) {
+  const abandonedQuoteId = String(params.abandonedQuoteId || "").trim();
+
+  if (!abandonedQuoteId || !UUID_RE.test(abandonedQuoteId) || !params.requestId) {
+    return;
+  }
+
+  try {
+    const now = new Date().toISOString();
+    const supabaseAdmin = getSupabaseAdmin();
+    const { error } = await supabaseAdmin
+      .from("abandoned_quote_requests")
+      .update({
+        status: "converted",
+        converted_request_id: params.requestId,
+        converted_at: now,
+        last_activity_at: now,
+        updated_at: now,
+      })
+      .eq("id", abandonedQuoteId);
+
+    if (error) {
+      console.warn("Could not mark abandoned quote as converted:", error.message);
+    }
+  } catch (error: any) {
+    console.warn("Could not mark abandoned quote as converted:", error?.message || error);
+  }
 }
 
 export async function POST(req: Request) {
@@ -255,6 +287,14 @@ export async function POST(req: Request) {
       console.error('Supabase Error:', error);
       return NextResponse.json({ error: 'Database Error', details: error.message }, { status: 500 });
     }
+
+    // Keep abandoned quote recovery rows for reporting. When a customer
+    // completes the quote request, mark the recovery row as converted instead
+    // of deleting it so the admin dashboard keeps a full recovery trail.
+    await markAbandonedQuoteConverted({
+      abandonedQuoteId: data.abandonedQuoteId,
+      requestId: request.id,
+    });
 
     // 3. Send Email with OTP
     try {
