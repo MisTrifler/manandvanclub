@@ -302,7 +302,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const [routeEstimate, setRouteEstimate] = useState<any | null>(null);
   const [routeEstimatePairKey, setRouteEstimatePairKey] = useState<string | null>(null);
   const [isCalculatingGuide, setIsCalculatingGuide] = useState(false);
-  const [abandonedQuoteStatus, setAbandonedQuoteStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const formShellRef = useRef<HTMLDivElement | null>(null);
   const abandonedQuoteTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const abandonedQuoteConvertedRef = useRef(false);
@@ -820,8 +819,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       clearTimeout(abandonedQuoteTimerRef.current);
     }
 
-    setAbandonedQuoteStatus("saving");
-
     abandonedQuoteTimerRef.current = setTimeout(async () => {
       try {
         const quoteId = getOrCreateAbandonedQuoteId();
@@ -867,9 +864,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         });
 
         if (!response.ok) throw new Error("Failed to save quote reminder");
-        setAbandonedQuoteStatus("saved");
-      } catch {
-        setAbandonedQuoteStatus("error");
+      } catch (error) {
+        // Do not show abandoned-quote recovery failures to customers.
+        // The main quote submission flow must continue even if recovery saving fails.
+        console.warn("Abandoned quote reminder could not be saved", error);
       }
     }, 900);
 
@@ -1561,9 +1559,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
             </div>
             <div className="rounded-2xl border border-primary/10 bg-slate-50/80 p-3 text-[10px] font-semibold leading-relaxed text-text-secondary">
               We use these details for this quote request and to send a reminder if you leave before finishing. No marketing spam.
-              {abandonedQuoteStatus === "saving" && <span className="ml-1 font-black text-primary">Saving quote link…</span>}
-              {abandonedQuoteStatus === "saved" && <span className="ml-1 font-black text-success">Quote reminder saved.</span>}
-              {abandonedQuoteStatus === "error" && <span className="ml-1 font-black text-amber-600">Reminder could not be saved.</span>}
             </div>
             <button onClick={onNextStep} disabled={isSubmitting} className="btn-orange w-full rounded-2xl py-4 font-black uppercase tracking-widest disabled:opacity-50">
               {isSubmitting ? <Loader2 className="animate-spin mx-auto" /> : "Verify Email"}
