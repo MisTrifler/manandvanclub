@@ -305,6 +305,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const formShellRef = useRef<HTMLDivElement | null>(null);
   const abandonedQuoteTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const abandonedQuoteConvertedRef = useRef(false);
+  const savedAbandonedQuotePayloadRef = useRef<string | null>(null);
   const activeStepRef = useRef<HTMLDivElement | null>(null);
   const hasMountedRef = useRef(false);
   const historyReadyRef = useRef(false);
@@ -737,6 +738,91 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     setIsCalculatingGuide(false);
   };
 
+  const saveAbandonedQuoteSnapshot = useCallback(async (formData: FormData) => {
+    if (!activeIntent || abandonedQuoteConvertedRef.current) return null;
+
+    const normalisedCollectionPostcode = normalisePostcodeInput(formData.collectionPostcode);
+    const normalisedDeliveryPostcode = normalisePostcodeInput(formData.deliveryPostcode);
+
+    if (
+      !hasRecoverableContact(formData.email, formData.phone) ||
+      !isValidUKPostcode(normalisedCollectionPostcode) ||
+      !isValidUKPostcode(normalisedDeliveryPostcode) ||
+      isSameUKPostcode(normalisedCollectionPostcode, normalisedDeliveryPostcode)
+    ) {
+      return null;
+    }
+
+    const quoteId = getOrCreateAbandonedQuoteId();
+    const attribution = getAttributionData(normalisedCollectionPostcode, normalisedDeliveryPostcode);
+    const submitPairKey = routePairKey(normalisedCollectionPostcode, normalisedDeliveryPostcode);
+    const guidePriceForSnapshot =
+      submitPairKey && guidePricePairKey === submitPairKey ? guidePrice : null;
+    const details = buildDetails(formData);
+    const moveTypeForSnapshot =
+      String(formData.moveType || "").trim() ||
+      getMoveTypeLabel(activeIntent) ||
+      activeIntent ||
+      "Move request";
+
+    if (guidePriceForSnapshot) {
+      details.guidePrice = {
+        ...guidePriceForSnapshot,
+        calculatedAt: new Date().toISOString(),
+      };
+    }
+
+    details.attribution = {
+      ...attribution,
+      serviceIntent: activeIntent || "unknown",
+      guidePriceDisplayed: guidePriceForSnapshot?.display || "",
+      savedAtClient: new Date().toISOString(),
+    };
+
+    const payload = {
+      id: quoteId,
+      status: "abandoned",
+      firstName: formData.firstName,
+      email: formData.email,
+      phone: formData.phone,
+      collectionPostcode: normalisedCollectionPostcode,
+      deliveryPostcode: normalisedDeliveryPostcode,
+      moveType: moveTypeForSnapshot,
+      moveDate: String(formData.moveDate || "").trim(),
+      serviceIntent: activeIntent || "unknown",
+      currentStep: CONTACT_STEP,
+      ...attribution,
+      guidePriceDisplayed: guidePriceForSnapshot?.display || "",
+      details,
+    };
+
+    const payloadFingerprint = JSON.stringify({
+      firstName: payload.firstName || "",
+      email: payload.email || "",
+      phone: payload.phone || "",
+      collectionPostcode: payload.collectionPostcode || "",
+      deliveryPostcode: payload.deliveryPostcode || "",
+      moveType: payload.moveType || "",
+      moveDate: payload.moveDate || "",
+      serviceIntent: payload.serviceIntent || "",
+      guidePriceDisplayed: payload.guidePriceDisplayed || "",
+    });
+
+    if (savedAbandonedQuotePayloadRef.current === payloadFingerprint) {
+      return quoteId;
+    }
+
+    const response = await fetch("/api/abandoned-quote", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) throw new Error("Failed to save quote reminder");
+    savedAbandonedQuotePayloadRef.current = payloadFingerprint;
+    return quoteId;
+  }, [CONTACT_STEP, activeIntent, guidePrice, guidePricePairKey]);
+
   const onNextStep = async () => {
     let fields: (keyof FormData)[] = [];
 
@@ -790,7 +876,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         goToStep(CONTACT_STEP);
         void refreshGuidePreview(currentData);
       } else if (step === CONTACT_STEP) {
-        handleFinalSubmit(watch());
+        const currentData = watch();
+        try {
+          await saveAbandonedQuoteSnapshot(currentData);
+        } catch (error) {
+          console.warn("Abandoned quote reminder could not be saved before submit", error);
+        }
+        handleFinalSubmit(currentData);
       } else {
         goToStep(step + 1);
       }
@@ -801,17 +893,8 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     if (step !== CONTACT_STEP || !activeIntent || abandonedQuoteConvertedRef.current) return;
 
     const formData = watch();
-    const normalisedCollectionPostcode = normalisePostcodeInput(formData.collectionPostcode);
-    const normalisedDeliveryPostcode = normalisePostcodeInput(formData.deliveryPostcode);
 
-    if (
-      !hasRecoverableContact(formData.email, formData.phone) ||
-      !isValidUKPostcode(normalisedCollectionPostcode) ||
-      !isValidUKPostcode(normalisedDeliveryPostcode) ||
-      isSameUKPostcode(normalisedCollectionPostcode, normalisedDeliveryPostcode) ||
-      !String(formData.moveDate || "").trim() ||
-      !String(formData.moveType || "").trim()
-    ) {
+    if (!hasRecoverableContact(formData.email, formData.phone)) {
       return;
     }
 
@@ -819,57 +902,13 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       clearTimeout(abandonedQuoteTimerRef.current);
     }
 
-    abandonedQuoteTimerRef.current = setTimeout(async () => {
-      try {
-        const quoteId = getOrCreateAbandonedQuoteId();
-        const attribution = getAttributionData(normalisedCollectionPostcode, normalisedDeliveryPostcode);
-        const submitPairKey = routePairKey(normalisedCollectionPostcode, normalisedDeliveryPostcode);
-        const guidePriceForSnapshot =
-          submitPairKey && guidePricePairKey === submitPairKey ? guidePrice : null;
-        const details = buildDetails(formData);
-
-        if (guidePriceForSnapshot) {
-          details.guidePrice = {
-            ...guidePriceForSnapshot,
-            calculatedAt: new Date().toISOString(),
-          };
-        }
-
-        details.attribution = {
-          ...attribution,
-          serviceIntent: activeIntent || "unknown",
-          guidePriceDisplayed: guidePriceForSnapshot?.display || "",
-          savedAtClient: new Date().toISOString(),
-        };
-
-        const response = await fetch("/api/abandoned-quote", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            id: quoteId,
-            status: "abandoned",
-            firstName: formData.firstName,
-            email: formData.email,
-            phone: formData.phone,
-            collectionPostcode: normalisedCollectionPostcode,
-            deliveryPostcode: normalisedDeliveryPostcode,
-            moveType: formData.moveType,
-            moveDate: formData.moveDate,
-            serviceIntent: activeIntent || "unknown",
-            currentStep: CONTACT_STEP,
-            ...attribution,
-            guidePriceDisplayed: guidePriceForSnapshot?.display || "",
-            details,
-          }),
-        });
-
-        if (!response.ok) throw new Error("Failed to save quote reminder");
-      } catch (error) {
+    abandonedQuoteTimerRef.current = setTimeout(() => {
+      void saveAbandonedQuoteSnapshot(formData).catch((error) => {
         // Do not show abandoned-quote recovery failures to customers.
         // The main quote submission flow must continue even if recovery saving fails.
         console.warn("Abandoned quote reminder could not be saved", error);
-      }
-    }, 900);
+      });
+    }, 450);
 
     return () => {
       if (abandonedQuoteTimerRef.current) {
@@ -879,8 +918,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   }, [
     CONTACT_STEP,
     activeIntent,
-    guidePrice,
-    guidePricePairKey,
     step,
     watchedCollectionPostcode,
     watchedDeliveryPostcode,
@@ -890,6 +927,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
     watchedMoveType,
     watchedPhone,
     watch,
+    saveAbandonedQuoteSnapshot,
   ]);
 
   const handleOtpChange = (index: number, value: string) => {
