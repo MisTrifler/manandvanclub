@@ -183,7 +183,7 @@ export default function ApplyToJoinContent() {
                       <option>25 miles</option>
                       <option>50 miles</option>
                       <option>100 miles</option>
-                      <option>England-wide</option>
+                      <option>Nationwide</option>
                     </select>
                   </div>
                 </div>
