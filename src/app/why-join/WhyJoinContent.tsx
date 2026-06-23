@@ -379,22 +379,20 @@ export default function WhyJoinContent() {
       </section>
 
       <section className="scroll-mt-32 py-8 lg:py-10 bg-white border-t border-border/70">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="relative overflow-hidden bg-primary text-white rounded-[1.75rem] px-6 py-7 md:px-9 md:py-8 shadow-lg shadow-primary/10 border border-white/10">
-            <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-accent/15 blur-2xl" />
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center text-center md:text-left">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-3">Mover applications</p>
-                <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight mb-3">
-                  Ready to join the mover network?
-                </h2>
-                <p className="text-white/75 text-sm md:text-base font-medium leading-relaxed max-w-2xl">
-                  Apply online, then email your insurance documents to <span className="font-bold text-white">partners@manandvanclub.co.uk</span> when ready. Applications are reviewed manually before access is granted.
-                </p>
-              </div>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="relative overflow-hidden bg-primary text-white rounded-[1.75rem] px-5 py-7 sm:px-8 md:px-10 md:py-9 shadow-lg shadow-primary/10 border border-white/10 text-center">
+            <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-accent/15 blur-2xl" />
+            <div className="relative z-10 mx-auto max-w-2xl">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-3">Mover applications</p>
+              <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight mb-3">
+                Ready to join the mover network?
+              </h2>
+              <p className="text-white/75 text-sm md:text-base font-medium leading-relaxed mx-auto max-w-xl">
+                Apply online, then email your insurance documents to <span className="font-bold text-white">partners@manandvanclub.co.uk</span> when ready. Applications are reviewed manually before access is granted.
+              </p>
               <Link
                 href="/apply-to-join"
-                className="bg-accent text-white inline-flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl shadow-black/20 hover:translate-y-[-1px] active:translate-y-0 transition-all whitespace-nowrap"
+                className="mt-5 bg-accent text-white inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 md:px-8 py-3.5 rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl shadow-black/20 hover:translate-y-[-1px] active:translate-y-0 transition-all"
               >
                 Start mover application <ArrowRight size={20} />
               </Link>
