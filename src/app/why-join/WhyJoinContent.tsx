@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do I need to pay to join?",
-    a: "There is no monthly subscription and no fee to submit quotes. When a customer accepts your quote, they pay a Booking Deposit through Man and Van Club. The Booking Deposit is retained by Man and Van Club as the platform booking/introduction fee and is deducted from your total quote. For example, if your quote is £300 and the customer pays a £25 Booking Deposit, the customer pays you £275 on moving day.",
+    a: "There is no monthly subscription and no fee to submit quotes. A platform fee only applies when a customer accepts your quote. The customer pays a Booking Deposit through Man and Van Club, which is retained by Man and Van Club as the platform booking/introduction fee and deducted from your total quote. The current maximum platform fee deducted from an accepted quote is £50.",
   },
   {
     q: "What documents do I need?",
@@ -73,10 +73,10 @@ const SIMPLE_STEPS = [
 
 const QUICK_BENEFITS = [
   { title: "No monthly subscription", icon: <Wallet size={20} /> },
-  { title: "Simple online application", icon: <Smartphone size={20} /> },
+  { title: "No fee to submit quotes", icon: <CheckCircle2 size={20} /> },
+  { title: "Max £50 platform fee", icon: <BadgeCheck size={20} /> },
   { title: "Protected customer details", icon: <Lock size={20} /> },
   { title: "Approved service areas", icon: <MapPin size={20} /> },
-  { title: "One-mover quote process", icon: <ShieldCheck size={20} /> },
   { title: "Fit jobs around your diary", icon: <Eye size={20} /> },
 ];
 
@@ -158,11 +158,12 @@ export default function WhyJoinContent() {
                   Send Insurance <ArrowUpRight size={20} />
                 </a>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 max-w-3xl">
                 {[
                   "No monthly subscription",
-                  "No mass lead sharing",
-                  "Customer accepts before details release",
+                  "No fee to quote",
+                  "Max £50 platform fee",
+                  "Details released after acceptance",
                 ].map((item) => (
                   <div key={item} className="bg-white border border-border rounded-xl px-3 py-2 text-[9px] font-black uppercase tracking-wider text-primary/70 flex items-center gap-2">
                     <CheckCircle2 size={15} className="text-accent flex-shrink-0" /> {item}
@@ -291,7 +292,7 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 bg-[#F9F9F7] border-y border-border/60">
+      <section className="py-14 lg:py-20 bg-[#F9F9F7] border-y border-border/60">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-start">
             <div className="space-y-5">
@@ -300,21 +301,32 @@ export default function WhyJoinContent() {
                 Clear charges before you quote
               </h2>
               <p className="text-text-secondary font-medium leading-relaxed">
-                There is no monthly subscription and no fee to submit quotes. Man and Van Club only keeps the customer Booking Deposit when the customer accepts your quote. The Booking Deposit is deducted from your total quote, so the customer pays you the remaining balance on moving day.
+                There is no monthly subscription and no fee to submit quotes. A platform fee only applies when a customer accepts your quote. The customer pays a Booking Deposit through Man and Van Club, Man and Van Club keeps that Booking Deposit as the platform booking/introduction fee, and you collect the remaining balance from the customer.
               </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  "No subscription",
+                  "No fee to quote",
+                  "£50 current maximum",
+                ].map((item) => (
+                  <div key={item} className="bg-white border border-border rounded-2xl px-4 py-3 text-xs font-black uppercase tracking-wider text-primary flex items-center gap-2 shadow-sm">
+                    <CheckCircle2 size={16} className="text-accent flex-shrink-0" /> {item}
+                  </div>
+                ))}
+              </div>
               <div className="bg-white border border-border rounded-2xl p-5 shadow-sm space-y-3">
                 <h3 className="text-sm font-black uppercase tracking-widest text-primary">Simple example</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
                   <div className="rounded-xl bg-[#F9F9F7] border border-border p-4">
-                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Your quote</p>
+                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Accepted quote</p>
                     <p className="text-2xl font-black text-primary mt-1">£300</p>
                   </div>
                   <div className="rounded-xl bg-[#F9F9F7] border border-border p-4">
-                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Booking Deposit</p>
+                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Platform fee</p>
                     <p className="text-2xl font-black text-accent mt-1">£25</p>
                   </div>
                   <div className="rounded-xl bg-[#F9F9F7] border border-border p-4">
-                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Paid to you</p>
+                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Customer pays you</p>
                     <p className="text-2xl font-black text-primary mt-1">£275</p>
                   </div>
                 </div>
@@ -326,8 +338,8 @@ export default function WhyJoinContent() {
 
             <div className="bg-white border border-border rounded-[2rem] shadow-sm overflow-hidden">
               <div className="px-5 py-4 bg-primary text-white">
-                <h3 className="text-base font-black uppercase tracking-widest">Booking Deposit table</h3>
-                <p className="text-xs text-white/70 font-medium mt-1">Current maximum Booking Deposit is £50.</p>
+                <h3 className="text-base font-black uppercase tracking-widest">Booking Deposit / platform fee table</h3>
+                <p className="text-xs text-white/70 font-medium mt-1">Current maximum platform fee deducted from an accepted quote is £50.</p>
               </div>
               <div className="divide-y divide-border">
                 {BOOKING_DEPOSIT_TIERS.map((tier) => (
@@ -337,7 +349,7 @@ export default function WhyJoinContent() {
                       <p className="text-base font-black text-primary mt-1">{tier.quote}</p>
                     </div>
                     <div>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary">Deposit kept</p>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary">Platform fee kept</p>
                       <p className="text-base font-black text-accent mt-1">{tier.deposit}</p>
                     </div>
                     <div className="text-sm font-bold text-primary/75 leading-relaxed">{tier.example}</div>
@@ -346,7 +358,7 @@ export default function WhyJoinContent() {
               </div>
               <div className="px-5 py-4 bg-[#F9F9F7] border-t border-border">
                 <p className="text-xs text-text-secondary font-medium leading-relaxed">
-                  The Booking Deposit is the platform booking/introduction fee retained by Man and Van Club. It is deducted from the mover's total quote, not added on top of the customer's move cost.
+                  The Booking Deposit is deducted from the mover&apos;s total quote, not added on top of the customer&apos;s move cost. The mover does not pay anything upfront to join or to submit quotes.
                 </p>
               </div>
             </div>
@@ -354,7 +366,7 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#F9F9F7]">
+      <section className="pt-14 pb-8 bg-[#F9F9F7]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em] mb-5">
@@ -366,22 +378,27 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-      <section className="scroll-mt-32 py-8 lg:py-10 bg-[#F9F9F7] border-t border-border">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="bg-primary text-white rounded-[1.5rem] px-5 py-7 md:px-8 lg:px-10 lg:py-8 text-center shadow-lg">
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-4">Mover applications</p>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-tight leading-tight mb-3">
-              Ready to join the mover network?
-            </h2>
-            <p className="text-white/75 text-sm md:text-base font-medium leading-relaxed mb-5 max-w-2xl mx-auto">
-              Apply online, then email your insurance documents to partners@manandvanclub.co.uk when ready. Applications are reviewed manually before access is granted.
-            </p>
-            <Link
-              href="/apply-to-join"
-              className="bg-accent text-white inline-flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl shadow-black/20 hover:scale-105 active:scale-95 transition-all"
-            >
-              Start mover application <ArrowRight size={20} />
-            </Link>
+      <section className="scroll-mt-32 py-8 lg:py-10 bg-white border-t border-border/70">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="relative overflow-hidden bg-primary text-white rounded-[1.75rem] px-6 py-7 md:px-9 md:py-8 shadow-lg shadow-primary/10 border border-white/10">
+            <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-accent/15 blur-2xl" />
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center text-center md:text-left">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-3">Mover applications</p>
+                <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight mb-3">
+                  Ready to join the mover network?
+                </h2>
+                <p className="text-white/75 text-sm md:text-base font-medium leading-relaxed max-w-2xl">
+                  Apply online, then email your insurance documents to <span className="font-bold text-white">partners@manandvanclub.co.uk</span> when ready. Applications are reviewed manually before access is granted.
+                </p>
+              </div>
+              <Link
+                href="/apply-to-join"
+                className="bg-accent text-white inline-flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl shadow-black/20 hover:translate-y-[-1px] active:translate-y-0 transition-all whitespace-nowrap"
+              >
+                Start mover application <ArrowRight size={20} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
