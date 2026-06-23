@@ -28,11 +28,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do I need to pay to join?",
-    a: "There is no monthly subscription and no fee to submit quotes. When a customer accepts your quote, they pay a Booking Deposit through Man and Van Club. Man and Van Club keeps the Booking Deposit as the platform booking/introduction fee, and the customer pays you the remaining balance. Example: if your quote is £300 and the customer pays a £25 Booking Deposit, the customer pays you £275 on moving day.",
+    a: "There is no monthly subscription and no fee to submit quotes. When a customer accepts your quote, they pay a Booking Deposit through Man and Van Club. The Booking Deposit is retained by Man and Van Club as the platform booking/introduction fee and is deducted from your total quote. For example, if your quote is £300 and the customer pays a £25 Booking Deposit, the customer pays you £275 on moving day.",
   },
   {
     q: "What documents do I need?",
-    a: "Before approval, email your Goods in Transit, Public Liability and suitable vehicle insurance documents to partners@manandvanclub.co.uk. We review these before granting access to customer enquiries.",
+    a: "Before approval, you must email valid Goods in Transit, Public Liability and suitable vehicle insurance documents to partners@manandvanclub.co.uk. We review these before granting access to customer enquiries.",
   },
   {
     q: "Will I be competing with lots of other movers?",
@@ -56,7 +56,7 @@ const SIMPLE_STEPS = [
   },
   {
     title: "Send insurance",
-    text: "Email Goods in Transit, Public Liability and suitable vehicle insurance documents to partners@manandvanclub.co.uk.",
+    text: "After applying, email Goods in Transit, Public Liability and suitable vehicle insurance documents to partners@manandvanclub.co.uk so we can review your application.",
     icon: <FileCheck size={24} />,
   },
   {
@@ -88,6 +88,14 @@ const WHAT_YOU_NEED = [
   "Goods in Transit insurance",
   "Public Liability insurance",
   "Suitable vehicle insurance",
+];
+
+const BOOKING_DEPOSIT_TIERS = [
+  { quote: "£50–£100", deposit: "£10", example: "£90 quote → customer pays you £80" },
+  { quote: "£101–£250", deposit: "£15", example: "£200 quote → customer pays you £185" },
+  { quote: "£251–£500", deposit: "£25", example: "£300 quote → customer pays you £275" },
+  { quote: "£501–£1,000", deposit: "£35", example: "£800 quote → customer pays you £765" },
+  { quote: "Over £1,000", deposit: "£50 maximum", example: "£1,200 quote → customer pays you £1,150" },
 ];
 
 export default function WhyJoinContent() {
@@ -133,7 +141,7 @@ export default function WhyJoinContent() {
                   Easy mover sign-up. Fill quiet days with suitable moving jobs.
                 </h1>
                 <p className="text-sm md:text-base lg:text-lg text-text-secondary max-w-2xl leading-relaxed font-medium">
-                  Apply in a few minutes, send your insurance documents to partners@manandvanclub.co.uk, then access suitable enquiries for furniture collections, flat moves, house removals, office moves and same-day jobs that fit your diary and service area.
+                  Apply in a few minutes, send your insurance documents, then access suitable enquiries for furniture collections, flat moves, house removals, office moves and same-day jobs that fit your diary and service area.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -179,7 +187,7 @@ export default function WhyJoinContent() {
                   Simple mover application
                 </h2>
                 <p className="text-sm text-text-secondary font-medium mt-3 leading-relaxed">
-                  Complete the short online form first. Insurance documents can be emailed to partners@manandvanclub.co.uk afterwards when you are ready.
+                  Complete the short online form first. Insurance documents can be emailed afterwards when you are ready.
                 </p>
               </div>
               <div className="space-y-3">
@@ -245,7 +253,7 @@ export default function WhyJoinContent() {
                 <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-primary">Have the basics ready</h2>
               </div>
               <p className="text-text-secondary font-medium leading-relaxed">
-                The application is quicker when these details are to hand. Insurance documents can be emailed to partners@manandvanclub.co.uk after you submit the form.
+                The application is quicker when these details are to hand. Insurance documents can be emailed after you submit the form.
               </p>
               <Link href="/apply-to-join" className="inline-flex items-center gap-3 bg-accent text-white px-7 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:shadow-lg transition-all">
                 Apply now <ArrowRight size={16} />
@@ -283,63 +291,64 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
-
-
       <section className="py-16 lg:py-20 bg-[#F9F9F7] border-y border-border/60">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-start">
             <div className="space-y-5">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">How our fee works</p>
-              <h2 className="text-4xl lg:text-5xl font-black text-primary uppercase tracking-tighter leading-tight">
-                No subscription. No fee to quote.
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">Platform fee</p>
+              <h2 className="text-3xl lg:text-5xl font-black text-primary uppercase tracking-tighter leading-tight">
+                Clear charges before you quote
               </h2>
               <p className="text-text-secondary font-medium leading-relaxed">
-                Movers do not pay a monthly subscription and there is no charge to submit quotes for suitable enquiries.
-                Man and Van Club only keeps the customer Booking Deposit when the customer accepts your quote.
+                There is no monthly subscription and no fee to submit quotes. Man and Van Club only keeps the customer Booking Deposit when the customer accepts your quote. The Booking Deposit is deducted from your total quote, so the customer pays you the remaining balance on moving day.
               </p>
+              <div className="bg-white border border-border rounded-2xl p-5 shadow-sm space-y-3">
+                <h3 className="text-sm font-black uppercase tracking-widest text-primary">Simple example</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                  <div className="rounded-xl bg-[#F9F9F7] border border-border p-4">
+                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Your quote</p>
+                    <p className="text-2xl font-black text-primary mt-1">£300</p>
+                  </div>
+                  <div className="rounded-xl bg-[#F9F9F7] border border-border p-4">
+                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Booking Deposit</p>
+                    <p className="text-2xl font-black text-accent mt-1">£25</p>
+                  </div>
+                  <div className="rounded-xl bg-[#F9F9F7] border border-border p-4">
+                    <p className="text-[10px] uppercase tracking-widest font-black text-text-secondary">Paid to you</p>
+                    <p className="text-2xl font-black text-primary mt-1">£275</p>
+                  </div>
+                </div>
+                <p className="text-xs text-text-secondary font-medium leading-relaxed">
+                  The customer should not be charged the Booking Deposit again unless the job changes or extra work is agreed.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white border border-border rounded-[2rem] p-6 lg:p-8 shadow-sm space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {[
-                  "No subscription",
-                  "No fee to quote",
-                  "Booking Deposit is the platform fee",
-                ].map((item) => (
-                  <div key={item} className="bg-[#F9F9F7] border border-border rounded-2xl p-4 flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-accent flex-shrink-0 mt-0.5" />
-                    <span className="text-xs font-black uppercase tracking-wider text-primary/80 leading-snug">{item}</span>
+            <div className="bg-white border border-border rounded-[2rem] shadow-sm overflow-hidden">
+              <div className="px-5 py-4 bg-primary text-white">
+                <h3 className="text-base font-black uppercase tracking-widest">Booking Deposit table</h3>
+                <p className="text-xs text-white/70 font-medium mt-1">Current maximum Booking Deposit is £50.</p>
+              </div>
+              <div className="divide-y divide-border">
+                {BOOKING_DEPOSIT_TIERS.map((tier) => (
+                  <div key={tier.quote} className="grid grid-cols-1 sm:grid-cols-[1fr_150px_1.2fr] gap-3 px-5 py-4 items-center">
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary">Customer accepted quote</p>
+                      <p className="text-base font-black text-primary mt-1">{tier.quote}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary">Deposit kept</p>
+                      <p className="text-base font-black text-accent mt-1">{tier.deposit}</p>
+                    </div>
+                    <div className="text-sm font-bold text-primary/75 leading-relaxed">{tier.example}</div>
                   </div>
                 ))}
               </div>
-
-              <div className="rounded-[1.5rem] border border-primary/10 bg-primary/[0.03] p-5 space-y-4">
-                <div>
-                  <h3 className="text-xl font-black uppercase tracking-tight text-primary">Example</h3>
-                  <p className="text-sm text-text-secondary font-medium mt-2 leading-relaxed">
-                    If your total quote is £300 and the customer pays a £25 Booking Deposit through Man and Van Club,
-                    the customer pays you the remaining £275 on moving day.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
-                  <div className="bg-white border border-border rounded-2xl p-4">
-                    <p className="text-[9px] font-black uppercase tracking-[0.22em] text-primary/50 mb-2">Your quote</p>
-                    <p className="text-2xl font-black text-primary">£300</p>
-                  </div>
-                  <div className="bg-white border border-border rounded-2xl p-4">
-                    <p className="text-[9px] font-black uppercase tracking-[0.22em] text-primary/50 mb-2">Booking Deposit</p>
-                    <p className="text-2xl font-black text-accent">£25</p>
-                  </div>
-                  <div className="bg-white border border-border rounded-2xl p-4">
-                    <p className="text-[9px] font-black uppercase tracking-[0.22em] text-primary/50 mb-2">Paid to you</p>
-                    <p className="text-2xl font-black text-primary">£275</p>
-                  </div>
-                </div>
+              <div className="px-5 py-4 bg-[#F9F9F7] border-t border-border">
+                <p className="text-xs text-text-secondary font-medium leading-relaxed">
+                  The Booking Deposit is the platform booking/introduction fee retained by Man and Van Club. It is deducted from the mover's total quote, not added on top of the customer's move cost.
+                </p>
               </div>
-
-              <p className="text-xs text-text-secondary font-semibold leading-relaxed">
-                The customer should not be charged the Booking Deposit again unless the job changes or extra work is agreed.
-              </p>
             </div>
           </div>
         </div>
