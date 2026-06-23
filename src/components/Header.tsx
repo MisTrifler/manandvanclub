@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, ArrowUpRight, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { BrandIcon, BrandWordmark } from "./BrandLogo";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -104,10 +104,6 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <MapPin size={10} className="text-accent" />
               <span>UK-Wide Coverage</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock size={10} className="text-accent" />
-              <span>Mon–Sun: 8 AM – 10 PM</span>
             </div>
           </div>
         </div>
