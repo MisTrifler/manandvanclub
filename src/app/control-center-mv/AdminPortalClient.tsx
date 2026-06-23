@@ -82,6 +82,7 @@ type Driver = {
   id: string;
   company_name?: string;
   contact_name?: string;
+  position_authority?: string;
   phone?: string;
   email?: string;
   coverage_area?: string;
@@ -681,6 +682,7 @@ export default function AdminPortalClient() {
                         </td>
                         <td className="p-8 text-xs">
                           <p className="font-bold text-primary">{driver.contact_name || "—"}</p>
+                          <p className="text-[10px] text-text-secondary font-bold uppercase tracking-widest">{driver.position_authority || "Position not provided"}</p>
                           <p className="text-text-secondary font-medium">{driver.phone || "—"}</p>
                           <p className="text-text-secondary font-medium break-all">{driver.email || "—"}</p>
                           <p className={`text-[9px] font-black uppercase tracking-widest mt-1 ${driver.insurance_verified ? "text-success" : "text-amber-600"}`}>
@@ -689,7 +691,7 @@ export default function AdminPortalClient() {
                           {!driver.insurance_verified && (
                             <>
                               <p className="text-[9px] text-text-secondary font-medium mt-1 normal-case tracking-normal">
-                                Mover must email Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk.
+                                Mover must email Goods in Transit and Public Liability insurance documents to partners@manandvanclub.co.uk.
                               </p>
                               <button
                                 onClick={() => markInsuranceVerified(driver.id)}

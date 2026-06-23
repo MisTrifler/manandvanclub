@@ -36,6 +36,7 @@ export async function POST(req: Request) {
     const extendedFields = {
       business_type: data.businessType,
       company_number: data.companyNumber,
+      position_authority: data.position,
       towns_covered: data.townsCovered,
       capacity: data.capacity,
     };

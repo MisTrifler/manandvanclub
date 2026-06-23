@@ -92,6 +92,7 @@ export async function POST(req: Request) {
           company_name: driver.company_name,
           business_type: driver.business_type,
           company_number: driver.company_number,
+          position_authority: driver.position_authority,
           contact_name: driver.contact_name,
           phone: driver.phone,
           email: driver.email,

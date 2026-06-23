@@ -12,6 +12,9 @@ export type MoverApplicationLike = {
   company_number?: unknown;
   contactName?: unknown;
   contact_name?: unknown;
+  position?: unknown;
+  positionAuthority?: unknown;
+  position_authority?: unknown;
   phone?: unknown;
   email?: unknown;
   coverageArea?: unknown;
@@ -74,6 +77,7 @@ export function normaliseMoverApplication(input: MoverApplicationLike) {
     businessType: asText(input.businessType ?? input.business_type, "[Limited company / Sole trader / Partnership / Other]"),
     companyNumber: asText(input.companyNumber ?? input.company_number, "Not applicable"),
     contactName: asText(input.contactName ?? input.contact_name, "[Full Name]"),
+    position: asText(input.position ?? input.positionAuthority ?? input.position_authority, "[Position]"),
     phone: asText(input.phone, "[Mover Phone]"),
     email: asText(input.email, "[Mover Email]"),
     coverageArea: asText(input.coverageArea ?? input.coverage_area, "[Main Service Area]"),
@@ -193,8 +197,8 @@ export function buildMoverAgreementHtml(input: MoverApplicationLike, agreementDa
       ${formRow("Mover business / trading name", data.companyName)}
       ${formRow("Business type", data.businessType)}
       ${formRow("Company number, if applicable", data.companyNumber)}
-      ${formRow("Authorised contact name", data.contactName)}
-      ${formRow("Position / authority", "Owner / Director / Authorised Person")}
+      ${formRow("Name of authorised person", data.contactName)}
+      ${formRow("Position", data.position)}
       ${formRow("Contact email", data.email)}
       ${formRow("Contact phone", data.phone)}
       ${formRow("Main service area", data.coverageArea)}
@@ -481,7 +485,7 @@ export function buildMoverAgreementHtml(input: MoverApplicationLike, agreementDa
       <table>
         ${formRow("Mover business / trading name", data.companyName)}
         ${formRow("Name of authorised person", data.contactName)}
-        ${formRow("Position / authority", "Owner / Director / Authorised Person")}
+        ${formRow("Position", data.position)}
         ${formRow("Email", data.email)}
         ${formRow("Date", "")}
         ${formRow("Signature or email acceptance", "")}
@@ -521,7 +525,8 @@ export function buildMoverApplicationSummaryHtml(input: MoverApplicationLike, ag
     ${row("Business / trading name", data.companyName)}
     ${row("Business type", data.businessType)}
     ${row("Company number", data.companyNumber)}
-    ${row("Contact name", data.contactName)}
+    ${row("Name of authorised person", data.contactName)}
+    ${row("Position", data.position)}
     ${row("Email", data.email)}
     ${row("Phone", data.phone)}
     ${row("Main service area", data.coverageArea)}
@@ -546,7 +551,7 @@ export function buildAdminMoverApplicationEmailHtml(input: MoverApplicationLike,
       <h2 style="color:#1B2D4F;margin-bottom:8px;">New mover application received</h2>
       <p><strong>${escapeHtml(data.companyName)}</strong> has applied to join Man and Van Club.</p>
       <table style="border-collapse:collapse;width:100%;margin:18px 0;">
-        ${row("Contact", `${data.contactName} | ${data.email} | ${data.phone}`)}
+        ${row("Contact", `${data.contactName} | ${data.position} | ${data.email} | ${data.phone}`)}
         ${row("Business type", data.businessType)}
         ${row("Company number", data.companyNumber)}
         ${row("Main service area", data.coverageArea)}
