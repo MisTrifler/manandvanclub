@@ -244,16 +244,49 @@ export function getItemSummary(details?: MoveDetails | null): string {
   if (!details) return "";
   const items: string[] = [];
 
-  if (details.numberOfBoxes) items.push(`${details.numberOfBoxes} boxes`);
-  if (details.suitcases) items.push(`${details.suitcases} suitcases`);
-  if (details.smallFurnitureItems) items.push(details.smallFurnitureItems);
-  if (details.numberOfItems) items.push(`${details.numberOfItems} items`);
-  if (details.numberOfDesks) items.push(`${details.numberOfDesks} desks`);
-  if (details.itEquipment) items.push(details.itEquipment);
-  if (details.filingCabinets) items.push(`${details.filingCabinets} filing cabinets`);
-  if (details.meetingRoomFurniture) items.push(details.meetingRoomFurniture);
-  if (details.storageItems) items.push(details.storageItems);
-  if (details.itemType) items.push(details.itemType);
+  const clean = (value?: string | null): string => {
+    const text = String(value || "").trim();
+    if (!text) return "";
+    if (/^(0|none|no|n\/a|na|not applicable)$/i.test(text)) return "";
+    return maskContactDetails(text);
+  };
 
-  return items.filter(Boolean).join(" • ");
+  const cleanNumber = (value?: string | null): number | null => {
+    const text = clean(value);
+    if (!text) return null;
+    const number = parseInt(text, 10);
+    return Number.isFinite(number) && number > 0 ? number : null;
+  };
+
+  const boxes = cleanNumber(details.numberOfBoxes);
+  if (boxes) items.push(`${boxes} box${boxes === 1 ? "" : "es"}`);
+
+  const suitcases = cleanNumber(details.suitcases);
+  if (suitcases) items.push(`${suitcases} suitcase${suitcases === 1 ? "" : "s"}`);
+
+  const smallFurnitureItems = clean(details.smallFurnitureItems);
+  if (smallFurnitureItems) items.push(smallFurnitureItems);
+
+  const numberOfItems = cleanNumber(details.numberOfItems);
+  if (numberOfItems) items.push(`${numberOfItems} item${numberOfItems === 1 ? "" : "s"}`);
+
+  const numberOfDesks = cleanNumber(details.numberOfDesks);
+  if (numberOfDesks) items.push(`${numberOfDesks} desk${numberOfDesks === 1 ? "" : "s"}`);
+
+  const itEquipment = clean(details.itEquipment);
+  if (itEquipment) items.push(itEquipment);
+
+  const filingCabinets = cleanNumber(details.filingCabinets);
+  if (filingCabinets) items.push(`${filingCabinets} filing cabinet${filingCabinets === 1 ? "" : "s"}`);
+
+  const meetingRoomFurniture = clean(details.meetingRoomFurniture);
+  if (meetingRoomFurniture) items.push(meetingRoomFurniture);
+
+  const storageItems = clean(details.storageItems);
+  if (storageItems) items.push(storageItems);
+
+  const itemType = clean(details.itemType);
+  if (itemType) items.push(itemType);
+
+  return Array.from(new Set(items)).join(" • ");
 }

@@ -5,7 +5,7 @@ import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from "@/lib/resend";
 import { calculateBookingDeposit, calculateRemainingMoverBalance, formatPounds } from "@/lib/booking-fee";
 import { generateCustomerQuoteToken } from "@/lib/customer-token";
-import { leadIsAvailable, leadMatchesDriverArea, leadMatchesDriverServices } from "@/lib/marketplace-matching";
+import { leadIsAvailable, leadMatchesDriverArea, leadMatchesDriverServices, todayDateString } from "@/lib/marketplace-matching";
 import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
 import { expireOldQuotes } from "@/lib/quote-attempts";
 import { validateQuoteOptions, STANDARD_QUOTE_ASSUMPTION, type QuoteOption } from "@/lib/quote-options";
@@ -164,6 +164,8 @@ export async function POST(req: Request) {
       status: "quoted",
     };
 
+    const today = todayDateString();
+
     let { data: updatedLead, error: updateError } = await supabaseAdmin
       .from("move_requests")
       .update(updatePayload)
@@ -173,6 +175,7 @@ export async function POST(req: Request) {
       .is("quoted_by", null)
       .is("quote_amount", null)
       .or("booking_fee_paid.is.null,booking_fee_paid.eq.false")
+      .or(`move_date.is.null,move_date.gte.${today}`)
       .select("*")
       .single();
 
@@ -202,6 +205,7 @@ export async function POST(req: Request) {
         .is("quoted_by", null)
         .is("quote_amount", null)
         .or("booking_fee_paid.is.null,booking_fee_paid.eq.false")
+        .or(`move_date.is.null,move_date.gte.${today}`)
         .select("*")
         .single());
     }

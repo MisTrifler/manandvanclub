@@ -331,6 +331,9 @@ export default function DriverMarketplaceClient({
 
   const isAvailable = (lead: Lead) =>
     !lead.quoted_by &&
+    !lead.booking_fee_paid &&
+    !lead.customer_details_released_at &&
+    !isPastDate(lead) &&
     (lead.status === "available" || lead.status === "active" || lead.status === "verified" || lead.status === null || lead.status === "");
 
   const availableLeads = leads.filter((l) => isAvailable(l));
@@ -385,7 +388,8 @@ export default function DriverMarketplaceClient({
     const submitted = relativeTime(lead.created_at);
     const urgent = isUrgent(lead.move_date);
     const moveSummary = getMoveSummary(lead.move_type, lead.details);
-    const itemSummary = getItemSummary(lead.details);
+    const rawItemSummary = getItemSummary(lead.details);
+    const itemSummary = rawItemSummary && rawItemSummary !== moveSummary ? rawItemSummary : "";
     const accessNote = getAccessNote(lead.details);
     const requirements = getMoveRequirements(lead.details);
     const routeEstimate = getRouteEstimateFromDetails(lead.details);
@@ -931,7 +935,7 @@ export default function DriverMarketplaceClient({
         <div className="bg-white rounded-2xl border border-border p-4 md:p-5 mb-6">
           <p className="text-sm text-text-secondary leading-relaxed">
             Man &amp; Van Club provides <strong className="text-primary">verified customer enquiries in your launch area</strong>.
-            Review the move requirements and submit quote options for free. If the customer accepts an option, they pay a deposit to secure the booking. The deposit is deducted from your total quote, and you collect the remaining balance directly from the customer on moving day.
+            Review the move requirements and submit quote options for free. If the customer accepts an option, they pay a deposit to secure the booking. The deposit is deducted from your total quote, and you collect the remaining balance directly from the customer on moving day. Booked, completed, cancelled and past-date enquiries are hidden from the available list automatically.
           </p>
         </div>
 
@@ -993,7 +997,7 @@ export default function DriverMarketplaceClient({
             <h2 className="text-sm font-black uppercase tracking-widest text-primary/60 mb-1">
               Available Enquiries
             </h2>
-            <p className="text-xs text-text-secondary mb-3">Jobs you can quote for, matched to your approved service area and service types.</p>
+            <p className="text-xs text-text-secondary mb-3">Jobs you can quote for, matched to your approved service area and service types. Completed, booked, cancelled and past-date jobs are not shown here.</p>
             <div className="grid grid-cols-1 gap-5">
               {availableLeads.map((lead) =>
                 renderLeadCard(lead, quotingId === lead.id)

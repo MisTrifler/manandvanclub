@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { DRIVER_COOKIE_NAME, isValidDriverSession } from "@/lib/driver-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
-import { leadIsAvailableToDriver, type DriverProfile } from "@/lib/marketplace-matching";
+import { leadIsAvailableToDriver, todayDateString, type DriverProfile } from "@/lib/marketplace-matching";
 import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
 import { expireOldQuotes, getPreviousQuoteSummaries } from "@/lib/quote-attempts";
 import DriverMarketplaceClient from "./DriverMarketplaceClient";
@@ -57,6 +57,8 @@ export default async function MarketplacePage() {
   // pool before fetching available leads (cron also covers this).
   await expireOldQuotes();
 
+  const today = todayDateString();
+
   // ── Server-side queries ────────────────────────────────────────────
   // 1. Candidate available leads: verified, unowned, unpaid, active
   //    statuses only. Area/service/date filtering applied below before
@@ -73,6 +75,7 @@ export default async function MarketplacePage() {
       .is("quote_amount", null)
       .or("booking_fee_paid.is.null,booking_fee_paid.eq.false")
       .is("customer_details_released_at", null)
+      .or(`move_date.is.null,move_date.gte.${today}`)
       .order("created_at", { ascending: false }),
     supabaseAdmin
       .from("move_requests")
