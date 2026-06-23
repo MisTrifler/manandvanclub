@@ -380,15 +380,15 @@ export default function WhyJoinContent() {
 
       <section className="scroll-mt-32 py-8 lg:py-10 bg-white border-t border-border/70">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="relative overflow-hidden bg-primary text-white rounded-[1.75rem] px-5 py-7 sm:px-8 md:px-10 md:py-9 shadow-lg shadow-primary/10 border border-white/10 text-center">
+          <div className="relative overflow-hidden bg-[#142f63] text-white rounded-[1.75rem] px-5 py-7 sm:px-8 md:px-10 md:py-9 shadow-lg shadow-primary/10 border border-white/10 text-center">
             <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-accent/15 blur-2xl" />
             <div className="relative z-10 mx-auto max-w-2xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-3">Mover applications</p>
-              <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight mb-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#ff8a2a] mb-3">Mover applications</p>
+              <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight mb-3 text-white">
                 Ready to join the mover network?
               </h2>
-              <p className="text-white/75 text-sm md:text-base font-medium leading-relaxed mx-auto max-w-xl">
-                Apply online, then email your insurance documents to <span className="font-bold text-white">partners@manandvanclub.co.uk</span> when ready. Applications are reviewed manually before access is granted.
+              <p className="text-white text-sm md:text-base font-semibold leading-relaxed mx-auto max-w-xl">
+                Apply online, then email your insurance documents to <span className="font-black text-white underline decoration-white/50 underline-offset-4">partners@manandvanclub.co.uk</span> when ready. Applications are reviewed manually before access is granted.
               </p>
               <Link
                 href="/apply-to-join"
