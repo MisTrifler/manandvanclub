@@ -28,11 +28,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do I need to pay to join?",
-    a: "There is no monthly subscription for the main marketplace flow. Approved movers can submit quotes for suitable enquiries. Customer details are released only when the customer accepts a quote and pays the booking deposit, which is deducted from the mover's quote.",
+    a: "There is no monthly subscription and no fee to submit quotes. When a customer accepts your quote, they pay a Booking Deposit through Man and Van Club. Man and Van Club keeps the Booking Deposit as the platform booking/introduction fee, and the customer pays you the remaining balance. Example: if your quote is £300 and the customer pays a £25 Booking Deposit, the customer pays you £275 on moving day.",
   },
   {
     q: "What documents do I need?",
-    a: "Before approval, you must email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk. We review these before granting access to customer enquiries.",
+    a: "Before approval, email your Goods in Transit, Public Liability and suitable vehicle insurance documents to partners@manandvanclub.co.uk. We review these before granting access to customer enquiries.",
   },
   {
     q: "Will I be competing with lots of other movers?",
@@ -56,7 +56,7 @@ const SIMPLE_STEPS = [
   },
   {
     title: "Send insurance",
-    text: "Email Goods in Transit and Public Liability documents so we can review your application.",
+    text: "Email Goods in Transit, Public Liability and suitable vehicle insurance documents to partners@manandvanclub.co.uk.",
     icon: <FileCheck size={24} />,
   },
   {
@@ -87,6 +87,7 @@ const WHAT_YOU_NEED = [
   "Usual job types and weekly capacity",
   "Goods in Transit insurance",
   "Public Liability insurance",
+  "Suitable vehicle insurance",
 ];
 
 export default function WhyJoinContent() {
@@ -132,7 +133,7 @@ export default function WhyJoinContent() {
                   Easy mover sign-up. Fill quiet days with suitable moving jobs.
                 </h1>
                 <p className="text-sm md:text-base lg:text-lg text-text-secondary max-w-2xl leading-relaxed font-medium">
-                  Apply in a few minutes, send your insurance documents, then access suitable enquiries for furniture collections, flat moves, house removals, office moves and same-day jobs that fit your diary and service area.
+                  Apply in a few minutes, send your insurance documents to partners@manandvanclub.co.uk, then access suitable enquiries for furniture collections, flat moves, house removals, office moves and same-day jobs that fit your diary and service area.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -143,7 +144,7 @@ export default function WhyJoinContent() {
                   Apply to Join <ArrowRight size={20} />
                 </Link>
                 <a
-                  href="mailto:support@manandvanclub.co.uk?subject=Mover%20insurance%20documents"
+                  href="mailto:partners@manandvanclub.co.uk?subject=Mover%20insurance%20documents"
                   className="bg-white border-2 border-primary text-primary px-7 md:px-8 py-4 rounded-2xl font-black text-xs md:text-sm uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition-all"
                 >
                   Send Insurance <ArrowUpRight size={20} />
@@ -178,7 +179,7 @@ export default function WhyJoinContent() {
                   Simple mover application
                 </h2>
                 <p className="text-sm text-text-secondary font-medium mt-3 leading-relaxed">
-                  Complete the short online form first. Insurance documents can be emailed afterwards when you are ready.
+                  Complete the short online form first. Insurance documents can be emailed to partners@manandvanclub.co.uk afterwards when you are ready.
                 </p>
               </div>
               <div className="space-y-3">
@@ -244,7 +245,7 @@ export default function WhyJoinContent() {
                 <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-primary">Have the basics ready</h2>
               </div>
               <p className="text-text-secondary font-medium leading-relaxed">
-                The application is quicker when these details are to hand. Insurance documents can be emailed after you submit the form.
+                The application is quicker when these details are to hand. Insurance documents can be emailed to partners@manandvanclub.co.uk after you submit the form.
               </p>
               <Link href="/apply-to-join" className="inline-flex items-center gap-3 bg-accent text-white px-7 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:shadow-lg transition-all">
                 Apply now <ArrowRight size={16} />
@@ -282,6 +283,68 @@ export default function WhyJoinContent() {
         </div>
       </section>
 
+
+
+      <section className="py-16 lg:py-20 bg-[#F9F9F7] border-y border-border/60">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-start">
+            <div className="space-y-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">How our fee works</p>
+              <h2 className="text-4xl lg:text-5xl font-black text-primary uppercase tracking-tighter leading-tight">
+                No subscription. No fee to quote.
+              </h2>
+              <p className="text-text-secondary font-medium leading-relaxed">
+                Movers do not pay a monthly subscription and there is no charge to submit quotes for suitable enquiries.
+                Man and Van Club only keeps the customer Booking Deposit when the customer accepts your quote.
+              </p>
+            </div>
+
+            <div className="bg-white border border-border rounded-[2rem] p-6 lg:p-8 shadow-sm space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  "No subscription",
+                  "No fee to quote",
+                  "Booking Deposit is the platform fee",
+                ].map((item) => (
+                  <div key={item} className="bg-[#F9F9F7] border border-border rounded-2xl p-4 flex items-start gap-3">
+                    <CheckCircle2 size={18} className="text-accent flex-shrink-0 mt-0.5" />
+                    <span className="text-xs font-black uppercase tracking-wider text-primary/80 leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-[1.5rem] border border-primary/10 bg-primary/[0.03] p-5 space-y-4">
+                <div>
+                  <h3 className="text-xl font-black uppercase tracking-tight text-primary">Example</h3>
+                  <p className="text-sm text-text-secondary font-medium mt-2 leading-relaxed">
+                    If your total quote is £300 and the customer pays a £25 Booking Deposit through Man and Van Club,
+                    the customer pays you the remaining £275 on moving day.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+                  <div className="bg-white border border-border rounded-2xl p-4">
+                    <p className="text-[9px] font-black uppercase tracking-[0.22em] text-primary/50 mb-2">Your quote</p>
+                    <p className="text-2xl font-black text-primary">£300</p>
+                  </div>
+                  <div className="bg-white border border-border rounded-2xl p-4">
+                    <p className="text-[9px] font-black uppercase tracking-[0.22em] text-primary/50 mb-2">Booking Deposit</p>
+                    <p className="text-2xl font-black text-accent">£25</p>
+                  </div>
+                  <div className="bg-white border border-border rounded-2xl p-4">
+                    <p className="text-[9px] font-black uppercase tracking-[0.22em] text-primary/50 mb-2">Paid to you</p>
+                    <p className="text-2xl font-black text-primary">£275</p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xs text-text-secondary font-semibold leading-relaxed">
+                The customer should not be charged the Booking Deposit again unless the job changes or extra work is agreed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-[#F9F9F7]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
@@ -302,7 +365,7 @@ export default function WhyJoinContent() {
               Ready to join the mover network?
             </h2>
             <p className="text-white/75 text-sm md:text-base font-medium leading-relaxed mb-5 max-w-2xl mx-auto">
-              Apply online, then email your insurance documents when ready. Applications are reviewed manually before access is granted.
+              Apply online, then email your insurance documents to partners@manandvanclub.co.uk when ready. Applications are reviewed manually before access is granted.
             </p>
             <Link
               href="/apply-to-join"
