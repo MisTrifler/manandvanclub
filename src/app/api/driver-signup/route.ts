@@ -1,12 +1,27 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from '@/lib/resend';
+import { resend, SENDER_ADDRESS } from '@/lib/resend';
+import {
+  PARTNERS_EMAIL,
+  PARTNERS_REPLY_TO,
+  buildAdminMoverApplicationEmailHtml,
+  buildMoverAgreementHtml,
+  buildMoverApplicationReceivedEmailHtml,
+  buildMoverApplicationSummaryHtml,
+  getAgreementDate,
+  makeMoverAttachmentFilenames,
+  normaliseMoverApplication,
+} from '@/lib/mover-onboarding';
+
+function isMissingColumnError(error: any) {
+  return error?.code === '42703' || error?.code === 'PGRST204' || /column .* does not exist|schema cache/i.test(error?.message || '');
+}
 
 export async function POST(req: Request) {
   try {
     const data = await req.json();
+    const normalised = normaliseMoverApplication(data);
 
-    // 1. Insert into driver_applications
     const baseRecord = {
       company_name: data.companyName,
       contact_name: data.contactName,
@@ -15,7 +30,14 @@ export async function POST(req: Request) {
       coverage_area: data.coverageArea,
       radius: data.radius,
       has_insurance: data.hasInsurance,
-      status: 'pending'
+      status: 'pending',
+    };
+
+    const extendedFields = {
+      business_type: data.businessType,
+      company_number: data.companyNumber,
+      towns_covered: data.townsCovered,
+      capacity: data.capacity,
     };
 
     const serviceFields = {
@@ -28,69 +50,70 @@ export async function POST(req: Request) {
       service_long_distance: data.serviceLongDistance === true,
     };
 
-    let { error } = await supabase
-      .from('driver_applications')
-      .insert([{ ...baseRecord, ...serviceFields }]);
+    const insertAttempts = [
+      { ...baseRecord, ...extendedFields, ...serviceFields },
+      { ...baseRecord, ...serviceFields },
+      baseRecord,
+    ];
 
-    // Fallback for environments where the service-type migration has not
-    // been applied yet: retry without the service columns.
-    if (error && (error.code === '42703' || error.code === 'PGRST204')) {
-      console.warn('Driver signup: service columns missing, inserting without them. Apply migration 20260612_driver_service_types.sql.');
-      ({ error } = await supabase
-        .from('driver_applications')
-        .insert([baseRecord]));
-    }
+    let insertError: any = null;
+    for (const record of insertAttempts) {
+      const { error } = await supabase.from('driver_applications').insert([record]);
+      insertError = error;
 
-    if (error) {
-      console.error('Supabase Driver Signup Error:', error);
+      if (!error) {
+        insertError = null;
+        break;
+      }
+
       if (error.code === '23505') {
         return NextResponse.json({ error: 'This email has already applied.' }, { status: 400 });
       }
-      // Return specific error details to help debug
-      return NextResponse.json({ error: 'Database error', details: error.message, code: error.code }, { status: 500 });
+
+      if (!isMissingColumnError(error)) break;
     }
 
-    // 2. Send Confirmation Email to Driver
+    if (insertError) {
+      console.error('Supabase Driver Signup Error:', insertError);
+      return NextResponse.json({ error: 'Database error', details: insertError.message, code: insertError.code }, { status: 500 });
+    }
+
     if (process.env.RESEND_API_KEY) {
       try {
+        const agreementDate = getAgreementDate();
+        const filenames = makeMoverAttachmentFilenames(data);
+        const agreementHtml = buildMoverAgreementHtml(data, agreementDate);
+        const summaryHtml = buildMoverApplicationSummaryHtml(data, agreementDate);
+
         await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [data.email],
-          replyTo: REPLY_TO_ADDRESS,
-          subject: 'Action Required: Verify Your Man and Van Club Application',
-          html: `
-            <div style="font-family: sans-serif; max-width: 600px; margin: auto; line-height: 1.6; color: #0F172A;">
-              <p>Dear Applicant,</p>
-              <p>Thank you for applying to join <strong>Man and Van Club</strong>.</p>
-              <p>We have successfully received your application and it is currently under review by our team.</p>
-              <p>To complete your application, please email your Goods in Transit and Public Liability insurance documents to <a href="mailto:support@manandvanclub.co.uk">support@manandvanclub.co.uk</a>. <strong>You can simply reply to this email with copies of the following documents:</strong></p>
-              <ul style="list-style-type: disc; padding-left: 20px;">
-                <li>Public Liability Insurance Certificate (minimum £1 million cover recommended)</li>
-                <li>Goods in Transit Insurance Certificate (where applicable)</li>
-              </ul>
-              <p>Please ensure that all insurance documents are valid, current, and issued in the same company or trading name used on your application. We are unable to approve applications where the insurance details do not match the business information provided.</p>
-              <p>Your application cannot be approved until these documents have been received and checked.</p>
-              <p>Once verification is complete, we will notify you of the outcome and provide access to your driver account if approved.</p>
-              <p>If you have any questions, please reply to this email and a member of our team will be happy to assist.</p>
-              <p>Kind regards,</p>
-              <p><strong>Man and Van Club</strong><br />Driver Approval Team</p>
-              <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
-              <p style="font-size: 11px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
-            </div>
-          `
+          replyTo: PARTNERS_REPLY_TO,
+          subject: 'Application received - Man and Van Club',
+          html: buildMoverApplicationReceivedEmailHtml(),
         });
 
-        // 3. Notification to YOU (Admin)
         await resend.emails.send({
           from: SENDER_ADDRESS,
-          to: ['support@manandvanclub.co.uk'],
-          replyTo: REPLY_TO_ADDRESS,
-          subject: `New Mover App: ${data.companyName}`,
-          text: `New driver application from ${data.contactName} (${data.companyName}). Area: ${data.coverageArea}`
+          to: [PARTNERS_EMAIL],
+          replyTo: normalised.email || PARTNERS_REPLY_TO,
+          subject: `New mover application - ${normalised.companyName} - ${normalised.coverageArea}`,
+          html: buildAdminMoverApplicationEmailHtml(data, agreementDate),
+          attachments: [
+            {
+              filename: filenames.summary,
+              content: Buffer.from(summaryHtml, 'utf8'),
+              contentType: 'text/html',
+            },
+            {
+              filename: filenames.agreement,
+              content: Buffer.from(agreementHtml, 'utf8'),
+              contentType: 'text/html',
+            },
+          ] as any,
         });
       } catch (emailErr) {
-        console.error('Non-blocking Email Error:', emailErr);
-        // We don't return error here because the DB insert was successful
+        console.error('Non-blocking Driver Signup Email Error:', emailErr);
       }
     }
 

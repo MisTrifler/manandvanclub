@@ -30,10 +30,13 @@ export default function ApplyToJoinContent() {
     const formData = new FormData(e.currentTarget);
     const data = {
       companyName: formData.get("companyName"),
+      businessType: formData.get("businessType"),
+      companyNumber: formData.get("companyNumber"),
       contactName: formData.get("contactName"),
       phone: formData.get("phone"),
       email: formData.get("email"),
       coverageArea: formData.get("coverageArea"),
+      townsCovered: formData.get("townsCovered"),
       radius: formData.get("radius"),
       capacity: formData.get("capacity"),
       serviceHouse: formData.get("serviceHouse") === "on",
@@ -80,11 +83,11 @@ export default function ApplyToJoinContent() {
           <div className="space-y-4">
             <h2 className="text-4xl font-black uppercase tracking-tight text-primary">Application Sent</h2>
             <p className="text-text-secondary font-medium leading-relaxed">
-              Thank you for applying to Man and Van Club. To complete your application, please email your Goods in Transit and Public Liability insurance documents to{" "}
-              <a href="mailto:support@manandvanclub.co.uk" className="text-accent font-bold">support@manandvanclub.co.uk</a>.
+              Thank you for applying to Man and Van Club. To complete your application, please email your insurance documents to{" "}
+              <a href="mailto:partners@manandvanclub.co.uk" className="text-accent font-bold">partners@manandvanclub.co.uk</a>.
             </p>
             <p className="text-text-secondary font-medium leading-relaxed">
-              We will review your application once your insurance documents have been received.
+              We will review your application once your insurance documents have been received. If approved, we will send your pre-filled agreement for signature or email acceptance.
             </p>
           </div>
           <Link href="/" className="btn-orange w-full block py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-accent/20">
@@ -157,6 +160,23 @@ export default function ApplyToJoinContent() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Business Type</label>
+                    <select name="businessType" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all cursor-pointer" required>
+                      <option value="">Select business type</option>
+                      <option>Limited company</option>
+                      <option>Sole trader</option>
+                      <option>Partnership</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Company Number <span className="normal-case tracking-normal font-bold text-primary/30">(if limited)</span></label>
+                    <input name="companyNumber" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all" placeholder="e.g. 12345678 or N/A" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Contact Name</label>
                     <input name="contactName" className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all" placeholder="Your Name" required />
                   </div>
@@ -186,6 +206,11 @@ export default function ApplyToJoinContent() {
                       <option>Nationwide</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-1">Towns / Postcodes Covered</label>
+                  <textarea name="townsCovered" rows={3} className="w-full p-5 bg-gray-50 border-2 border-transparent focus:border-accent focus:bg-white rounded-2xl outline-none font-bold transition-all resize-none" placeholder="e.g. Walsall, Brownhills, Birmingham, WS and B postcodes" required />
                 </div>
 
                 <div className="space-y-4">
@@ -226,7 +251,7 @@ export default function ApplyToJoinContent() {
                     <div className="space-y-1">
                       <p className="text-xs font-black uppercase tracking-tight text-primary">Insurance Confirmation</p>
                       <p className="text-[10px] text-text-secondary font-medium leading-relaxed uppercase tracking-wider">
-                        I understand that my application cannot be approved until I email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk.
+                        I understand that my application cannot be approved until I email valid insurance documents to partners@manandvanclub.co.uk, including hire-or-reward/commercial vehicle cover where applicable.
                       </p>
                     </div>
                   </div>
@@ -234,7 +259,7 @@ export default function ApplyToJoinContent() {
 
                 <div className="space-y-2">
                   <p className="text-[10px] font-black uppercase tracking-widest text-primary/30 text-center">
-                    Insurance is required before approval. You must email valid Goods in Transit and Public Liability insurance documents to support@manandvanclub.co.uk before your application can be approved.
+                    Insurance is required before approval. You must email valid insurance documents to partners@manandvanclub.co.uk before your application can be approved.
                   </p>
                   <p className="text-[10px] font-black uppercase tracking-widest text-accent/70 text-center">
                     We carefully review every application before granting access to customer enquiries.
@@ -263,7 +288,7 @@ export default function ApplyToJoinContent() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   { step: "01", title: "Submit the short form", desc: "Send your basic business, contact and service-area details." },
-                  { step: "02", title: "Email your insurance", desc: "Send Goods in Transit and Public Liability documents to support@manandvanclub.co.uk." },
+                  { step: "02", title: "Email your insurance", desc: "Send insurance documents to partners@manandvanclub.co.uk. We check them before approval." },
                   { step: "03", title: "Get approved access", desc: "Once checked, approved movers can access suitable customer enquiries as they become available." },
                 ].map((item, i) => (
                   <div key={i} className="bg-white p-8 rounded-3xl border border-border/50 space-y-4 shadow-sm">

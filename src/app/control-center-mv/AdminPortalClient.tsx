@@ -304,7 +304,7 @@ export default function AdminPortalClient() {
       // Show success message
       const driver = drivers.find(d => d.id === driverId);
       if (status === "approved" && driver?.email) {
-        setSuccessMessage(`Driver approved. Magic link sent to ${driver.email}`);
+        setSuccessMessage(`Driver approved. Agreement sent to ${driver.email}`);
       } else if (status === "rejected") {
         setSuccessMessage("Driver application rejected.");
       }

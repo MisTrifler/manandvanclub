@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
+import { resend, SENDER_ADDRESS } from "@/lib/resend";
+import {
+  PARTNERS_REPLY_TO,
+  buildApprovedMoverEmailHtml,
+  buildMoverAgreementHtml,
+  getAgreementDate,
+  makeMoverAttachmentFilenames,
+} from "@/lib/mover-onboarding";
 import { ADMIN_COOKIE_NAME, isValidAdminSession } from "@/lib/admin-auth";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
@@ -19,7 +26,7 @@ export async function POST(req: Request) {
     const supabaseAdmin = getSupabaseAdmin();
 
     // Admin marks insurance as verified after documents were emailed to
-    // support@manandvanclub.co.uk and manually checked.
+    // partners@manandvanclub.co.uk and manually checked.
     if (action === "verify_insurance") {
       if (!driverId) {
         return NextResponse.json({ error: "Invalid data" }, { status: 400 });
@@ -68,9 +75,10 @@ export async function POST(req: Request) {
 
     if (process.env.RESEND_API_KEY) {
       if (status === "approved") {
-        // Check if user already exists
+        // Create/confirm the auth user, but do not send login access in this email.
+        // The approved mover agreement must be accepted first.
         const { data: { users } } = await supabaseAdmin.auth.admin.listUsers();
-        const existingUser = users.find(u => u.email === driver.email);
+        const existingUser = users.find((u) => u.email === driver.email);
 
         if (!existingUser) {
           await supabaseAdmin.auth.admin.createUser({
@@ -79,42 +87,51 @@ export async function POST(req: Request) {
           });
         }
 
-        // Generate magic link
-        const { data: linkData } = await supabaseAdmin.auth.admin.generateLink({
-          type: "magiclink",
+        const agreementDate = getAgreementDate();
+        const moverData = {
+          company_name: driver.company_name,
+          business_type: driver.business_type,
+          company_number: driver.company_number,
+          contact_name: driver.contact_name,
+          phone: driver.phone,
           email: driver.email,
+          coverage_area: driver.coverage_area,
+          towns_covered: driver.towns_covered,
+          radius: driver.radius,
+          capacity: driver.capacity,
+          service_house: driver.service_house,
+          service_flat: driver.service_flat,
+          service_student: driver.service_student,
+          service_furniture: driver.service_furniture,
+          service_office: driver.service_office,
+          service_single: driver.service_single,
+          service_long_distance: driver.service_long_distance,
+          has_insurance: driver.has_insurance,
+        };
+        const filenames = makeMoverAttachmentFilenames(moverData);
+        const agreementHtml = buildMoverAgreementHtml(moverData, agreementDate);
+
+        await resend.emails.send({
+          from: SENDER_ADDRESS,
+          to: [driver.email],
+          replyTo: PARTNERS_REPLY_TO,
+          subject: "Man and Van Club - approved mover onboarding",
+          html: buildApprovedMoverEmailHtml(moverData, agreementDate),
+          attachments: [
+            {
+              filename: filenames.agreement,
+              content: Buffer.from(agreementHtml, "utf8"),
+              contentType: "text/html",
+            },
+          ] as any,
         });
-
-        const magicLink = linkData?.properties?.action_link;
-
-        if (magicLink) {
-          await resend.emails.send({
-            from: SENDER_ADDRESS,
-            to: [driver.email],
-            replyTo: REPLY_TO_ADDRESS,
-            subject: "Login to Man and Van Club",
-            html: `
-              <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
-                <h2 style="color: #0F172A;">Welcome to Man and Van Club</h2>
-                <p>Hi ${driver.contact_name},</p>
-                <p>Your account has been approved. Click below to log in:</p>
-                <a href="${magicLink}" style="display:inline-block; background:#F97316; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; margin:20px 0;">
-                  Log in with Magic Link
-                </a>
-                <p style="color:#64748B; font-size:13px;">This link expires in 24 hours.</p>
-                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
-                <p style="font-size: 12px; color: #94A3B8; text-align: center;">© 2026 Man and Van Club</p>
-              </div>
-            `,
-          });
-        }
       }
 
       if (status === "rejected") {
         await resend.emails.send({
           from: SENDER_ADDRESS,
           to: [driver.email],
-          replyTo: REPLY_TO_ADDRESS,
+          replyTo: PARTNERS_REPLY_TO,
           subject: "Update regarding your application - Man and Van Club",
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
