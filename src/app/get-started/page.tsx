@@ -12,24 +12,24 @@ export const metadata: Metadata = {
 
 export default function GetStartedPage() {
   return (
-    <div className="bg-[#F9F9F7] py-10 lg:py-16">
+    <div className="bg-[#F9F9F7] py-8 lg:py-14">
       <div className="container mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <section className="rounded-[2rem] bg-primary p-6 text-white shadow-xl lg:p-9">
-          <p className="inline-flex rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.22em] text-white/75 ring-1 ring-white/15">
+        <section className="rounded-[2rem] bg-primary p-6 text-white shadow-xl lg:p-8">
+          <p className="inline-flex rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.22em] text-white/85 ring-1 ring-white/15">
             Free move request
           </p>
-          <h1 className="mt-5 text-4xl font-black uppercase tracking-tighter lg:text-6xl">
-            Start your move request
+          <h1 className="mt-5 max-w-md text-4xl font-black leading-tight tracking-tight text-white lg:text-5xl">
+            Move quotes without the spam
           </h1>
-          <p className="mt-4 text-base font-bold leading-relaxed text-white/82 lg:text-lg">
+          <p className="mt-4 max-w-md text-base font-bold leading-relaxed text-white/90 lg:text-lg">
             Tell us the postcodes, move date and basic move details. A verified mover can review your anonymised request and send a quote before you decide whether to book.
           </p>
-          <div className="mt-6 grid gap-3 text-sm font-bold text-white/82">
+          <div className="mt-6 grid gap-3 text-sm font-bold text-white/90">
             <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
               Free to submit. No obligation until you accept a mover quote.
             </div>
             <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              Your contact details stay private until booking deposit is paid.
+              Your contact details stay private until the booking deposit is paid.
             </div>
             <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
               The booking deposit is deducted from the mover’s total quote.
