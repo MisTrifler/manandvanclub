@@ -57,7 +57,9 @@ const organizationSchema = {
     "Same-day man and van services",
     "Long distance removals"
   ],
-  "sameAs": []
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61590898873944"
+  ]
 };
 
 export default function RootLayout({

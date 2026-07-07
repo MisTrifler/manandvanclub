@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Clock, MapPin, ArrowUpRight, Phone, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Clock, MapPin, ArrowUpRight, Phone, Loader2, CheckCircle2, Facebook } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
+const facebookUrl = "https://www.facebook.com/profile.php?id=61590898873944";
 
 export default function ContactContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -110,6 +112,7 @@ export default function ContactContent() {
             {[
               { icon: <Phone size={24} />, title: "Call Us", value: "07943 617386", href: "tel:07943617386" },
               { icon: <Mail size={24} />, title: "Email Us", value: "support@manandvanclub.co.uk", href: "mailto:support@manandvanclub.co.uk" },
+              { icon: <Facebook size={24} />, title: "Facebook", value: "Man and Van Club", href: facebookUrl },
               { icon: <Clock size={24} />, title: "Response Time", value: "Usually same day" },
               { icon: <MapPin size={24} />, title: "Coverage", value: "UK-Wide" },
             ].map((item, i) => (

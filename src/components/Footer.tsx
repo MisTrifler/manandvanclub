@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, ShieldCheck, CheckCircle2, Mail, Phone, MapPin, Lock } from "lucide-react";
+import { Facebook, ShieldCheck, CheckCircle2, Mail, Phone, MapPin, Lock, ExternalLink } from "lucide-react";
 import { BrandIcon, BrandWordmark } from "./BrandLogo";
+
+const facebookUrl = "https://www.facebook.com/profile.php?id=61590898873944";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -34,6 +36,21 @@ export default function Footer() {
                 <Lock size={14} className="text-green-600" /> GDPR Compliant
               </div>
               <p>Your data is handled securely and only released to the mover handling your booking after you accept a quote.</p>
+            </div>
+
+            <div className="mt-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/40 mb-3">Find us online</p>
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-bold text-primary shadow-sm transition-colors hover:border-accent hover:text-accent"
+                aria-label="Visit Man and Van Club on Facebook"
+              >
+                <Facebook size={16} />
+                Facebook
+                <ExternalLink size={13} />
+              </a>
             </div>
           </div>
 
