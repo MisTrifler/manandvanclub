@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ShieldCheck, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { updateCookieConsent } from "@/lib/analytics";
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
@@ -16,11 +17,13 @@ export default function CookieConsent() {
 
   const handleAccept = () => {
     localStorage.setItem("cookie-consent", "accepted");
+    updateCookieConsent("accepted");
     setShowBanner(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem("cookie-consent", "declined");
+    updateCookieConsent("declined");
     setShowBanner(false);
   };
 

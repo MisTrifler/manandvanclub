@@ -19,6 +19,7 @@ import {
   sanitizePostcodeTyping,
 } from "@/lib/postcode";
 import IntentSelector from "./IntentSelector";
+import { trackEvent } from "@/lib/analytics";
 
 const today = new Date().toISOString().split("T")[0];
 
@@ -291,6 +292,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
   const activeStepNumberRef = useRef(0);
   const currentIntentRef = useRef<IntentType | null>(null);
   const previousScrollRestorationRef = useRef<ScrollRestoration | null>(null);
+  const quoteStartTrackedRef = useRef(false);
 
   const activeIntent: IntentType | null = propIntent || selectedIntent || detectedIntent;
 
@@ -309,7 +311,15 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
 
   useEffect(() => {
     currentIntentRef.current = activeIntent;
-  }, [activeIntent]);
+
+    if (activeIntent && !quoteStartTrackedRef.current) {
+      quoteStartTrackedRef.current = true;
+      trackEvent("quote_start", {
+        service_intent: activeIntent,
+        source: propIntent ? "preselected_intent" : "selected_or_detected_intent",
+      });
+    }
+  }, [activeIntent, propIntent]);
 
   const canShowGuidePrice = Boolean(activeIntent);
   const TOTAL_STEPS = 4;
@@ -864,6 +874,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
           collectionPostcode: normalisePostcodeInput(watch("collectionPostcode")),
           deliveryPostcode: normalisePostcodeInput(watch("deliveryPostcode")),
         };
+        trackEvent("quote_step_completed", { step_number: 1, service_intent: activeIntent || "unknown" });
         goToStep(CONTACT_STEP);
         void refreshGuidePreview(currentData);
       } else if (step === CONTACT_STEP) {
@@ -873,6 +884,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         } catch (error) {
           console.warn("Abandoned quote reminder could not be saved before submit", error);
         }
+        trackEvent("quote_step_completed", { step_number: CONTACT_STEP, service_intent: activeIntent || "unknown" });
         handleFinalSubmit(currentData);
       } else {
         goToStep(step + 1);
@@ -987,6 +999,10 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       const result = await response.json();
       if (!response.ok) throw new Error(result.details || 'Failed');
       setRequestId(result.id);
+      trackEvent("quote_submitted", {
+        service_intent: activeIntent || "unknown",
+        has_guide_price: Boolean(estimatePrice),
+      });
 
       if (abandonedQuoteId) {
         abandonedQuoteConvertedRef.current = true;
@@ -1032,6 +1048,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
         body: JSON.stringify({ requestId, otp: code }),
       });
       if (!response.ok) throw new Error('Verification failed');
+      trackEvent("quote_verified", { service_intent: activeIntent || "unknown" });
       goToStep(SUCCESS_STEP);
     } catch (error: any) {
       setOtpError("Invalid code. Please try again.");

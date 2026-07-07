@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Loader2, ArrowLeft, ShieldCheck, Zap, ClipboardCheck, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ApplyToJoinContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,6 +27,8 @@ export default function ApplyToJoinContent() {
     e.preventDefault();
     setIsSubmitting(true);
     setError("");
+
+    trackEvent("mover_apply_start");
 
     const formData = new FormData(e.currentTarget);
     const data = {
@@ -61,6 +64,10 @@ export default function ApplyToJoinContent() {
       if (!res.ok) throw new Error(result.error || "Submission failed");
 
       setSubmitted(true);
+      trackEvent("mover_apply_submit", {
+        business_type: String(data.businessType || ""),
+        radius: String(data.radius || ""),
+      });
     } catch (err: any) {
       setError(err.message);
     } finally {

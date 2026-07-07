@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Mail, Clock, MapPin, ArrowUpRight, Phone, Loader2, CheckCircle2, Facebook } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { trackEvent } from "@/lib/analytics";
 
 const facebookUrl = "https://www.facebook.com/profile.php?id=61590898873944";
 
@@ -35,6 +36,7 @@ export default function ContactContent() {
       if (!res.ok) throw new Error("Failed to send message. Please try again.");
 
       setSubmitted(true);
+      trackEvent("contact_form_submitted", { subject: String(data.subject || "") });
     } catch (err: any) {
       setError(err.message);
     } finally {

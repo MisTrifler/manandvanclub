@@ -3,6 +3,8 @@ import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
+import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 
 export const metadata: Metadata = {
   title: "Man and Van Club | From One Item to Full Home Moves",
@@ -70,6 +72,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <GoogleTagManagerNoScript />
+        <GoogleTagManager />
+        <AnalyticsEvents />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
