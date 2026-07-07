@@ -197,6 +197,11 @@ const WEST_MIDLANDS_POSTCODE_COVERAGE: Record<string, { area: string; postcodes:
     { area: "Bloxwich and north Walsall", postcodes: ["WS3"] },
     { area: "Aldridge, Pelsall and nearby", postcodes: ["WS4", "WS9"] },
   ],
+  brownhills: [
+    { area: "Brownhills and WS8", postcodes: ["WS8"] },
+    { area: "North Walsall and Pelsall", postcodes: ["WS3", "WS4"] },
+    { area: "Aldridge and Walsall Wood", postcodes: ["WS9"] },
+  ],
   wolverhampton: [
     { area: "Central Wolverhampton", postcodes: ["WV1", "WV2"] },
     { area: "Tettenhall and west Wolverhampton", postcodes: ["WV6"] },

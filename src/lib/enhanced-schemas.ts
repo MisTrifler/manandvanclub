@@ -256,6 +256,33 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
       ]
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  brownhills: {
+    ...baseSchema,
+    name: "Man and Van Club — Brownhills",
+    description:
+      "Free man and van request service in Brownhills, WS8 and Walsall. Submit your move details securely so an approved mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-brownhills",
+    areaServed: {
+      "@type": "Place",
+      name: "Brownhills",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "WS8" },
+        { "@type": "Neighborhood", name: "Walsall Wood" },
+        { "@type": "Neighborhood", name: "Clayhanger" },
+        { "@type": "Neighborhood", name: "Pelsall" },
+        { "@type": "Neighborhood", name: "Aldridge" },
+        { "@type": "Neighborhood", name: "Burntwood" },
+        { "@type": "Neighborhood", name: "Cannock" },
+        { "@type": "Neighborhood", name: "Lichfield" },
+        { "@type": "Neighborhood", name: "Sutton Coldfield" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "Furniture Delivery", "House Removals", "Flat Removals", "Same Day Moves"]
   }
 };
 

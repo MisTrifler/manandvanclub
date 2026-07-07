@@ -12,6 +12,59 @@ export const customLocationContentOverrides: Record<string, Partial<{
   localAreaGuides: { title: string; body: string; links?: { label: string; href: string }[] }[];
 }>> = {
   // ──────────────────────────────────────────
+  // BROWNHILLS
+  // ──────────────────────────────────────────
+  brownhills: {
+    title: "Man and Van Brownhills | Local Moving Quotes in Walsall",
+    description: "Request man and van quotes in Brownhills, WS8 and Walsall. Furniture delivery, house, flat and same-day moves from approved independent movers.",
+    h1: "Man and Van Brownhills",
+    intro: "Need a man and van in Brownhills? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Brownhills move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Brownhills moves often depend on local access as much as distance. A sofa collection from Walsall Wood, a flat move near Clayhanger, a home move towards Pelsall or a route out to Cannock, Lichfield, Sutton Coldfield, Walsall or Birmingham can all need different timing around the A5, A452, A461 and M6 Toll.",
+    localMovingInfo: `Brownhills sits on the north-east side of Walsall, with regular local movement between WS8, Walsall Wood, Clayhanger, Pelsall, Aldridge, Burntwood and Cannock. It is a useful local search area because customers often need smaller man and van jobs, furniture collections, flat moves and short-notice help without ringing multiple removal companies.
+
+The A5 and A452 are the main route considerations. A short move within Brownhills can still take longer if loading access is tight, if the van needs to stop near a busy road, or if the move is planned around school-run traffic. Routes towards Walsall, Birmingham, Lichfield, Cannock and Sutton Coldfield can also change the final quote depending on time of day and parking at both addresses.
+
+Brownhills properties can vary from post-war semis and bungalows to terraced homes and newer estates. Add floor level, stairs, driveway access, parking notes, dismantling needs and bulky furniture details so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    localAreaGuides: [
+      {
+        title: "Man and van Brownhills WS8",
+        body: "For WS8 moves, include both full postcodes, the item list and any parking or access notes. This helps a mover judge whether the job is a quick local run or needs more time for loading and unloading.",
+      },
+      {
+        title: "Furniture collection in Brownhills",
+        body: "Sofas, beds, wardrobes, appliances and marketplace purchases often need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" }
+        ],
+      },
+      {
+        title: "House and flat moves around Walsall Wood and Clayhanger",
+        body: "Moves around Walsall Wood, Clayhanger and Pelsall can involve cul-de-sacs, estate roads, parking limits and stairs. The more detail you add, the easier it is for a mover to price the job without surprises.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+          { label: "Flat removals", href: "/flat-removals" }
+        ],
+      },
+      {
+        title: "Brownhills to Walsall, Birmingham or Cannock",
+        body: "Longer local routes from Brownhills often depend on the A5, A452, A461 and M6 Toll. Add preferred times and any access restrictions so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Walsall", href: "/man-and-van-walsall" },
+          { label: "Man and van Birmingham", href: "/man-and-van-birmingham" }
+        ],
+      },
+      {
+        title: "Same-day man and van Brownhills",
+        body: "Same-day help may be possible depending on mover availability. Include photos or clear item descriptions where possible, plus collection time, delivery time and whether anyone can help load.",
+        links: [
+          { label: "Start a request", href: "/get-started" }
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
   // BIRMINGHAM
   // ──────────────────────────────────────────
   birmingham: {
