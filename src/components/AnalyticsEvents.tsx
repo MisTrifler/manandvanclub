@@ -48,7 +48,6 @@ export default function AnalyticsEvents() {
       if (rawHref.startsWith("mailto:")) {
         trackEvent("email_click", {
           link_text: linkText,
-          email_address: rawHref.replace("mailto:", "").split("?")[0],
         });
         return;
       }
@@ -56,7 +55,6 @@ export default function AnalyticsEvents() {
       if (rawHref.startsWith("tel:")) {
         trackEvent("phone_click", {
           link_text: linkText,
-          phone_number: rawHref.replace("tel:", ""),
         });
         return;
       }

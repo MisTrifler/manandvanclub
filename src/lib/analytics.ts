@@ -14,21 +14,38 @@ export type AnalyticsEventName =
   | "cookie_consent_update";
 
 type AnalyticsParams = Record<string, string | number | boolean | null | undefined>;
+type CookieConsentChoice = "accepted" | "declined";
 
 declare global {
   interface Window {
-    dataLayer?: Array<Record<string, unknown>>;
+    dataLayer?: Array<Record<string, unknown> | unknown[]>;
     gtag?: (...args: unknown[]) => void;
   }
 }
 
-function pageContext() {
+function safePageLocation() {
+  if (typeof window === "undefined") return undefined;
+
+  // Keep analytics useful without sending query strings such as Stripe session IDs,
+  // login tokens, customer references, or other personal/payment-related data.
+  return `${window.location.origin}${window.location.pathname}`;
+}
+
+function pageContext(event?: AnalyticsEventName) {
   if (typeof window === "undefined") return {};
 
-  return {
+  const baseContext = {
     page_path: window.location.pathname,
-    page_location: window.location.href,
     page_title: document.title,
+  };
+
+  if (event === "phone_click" || event === "email_click") {
+    return baseContext;
+  }
+
+  return {
+    ...baseContext,
+    page_location: safePageLocation(),
   };
 }
 
@@ -38,12 +55,12 @@ export function trackEvent(event: AnalyticsEventName, params: AnalyticsParams = 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event,
-    ...pageContext(),
+    ...pageContext(event),
     ...params,
   });
 }
 
-export function updateCookieConsent(consent: "accepted" | "declined") {
+function setGoogleConsent(consent: CookieConsentChoice) {
   if (typeof window === "undefined") return;
 
   window.dataLayer = window.dataLayer || [];
@@ -66,8 +83,15 @@ export function updateCookieConsent(consent: "accepted" | "declined") {
   if (typeof window.gtag === "function") {
     window.gtag("consent", "update", consentUpdate);
   } else {
-    window.dataLayer.push(["consent", "update", consentUpdate] as unknown as Record<string, unknown>);
+    window.dataLayer.push(["consent", "update", consentUpdate]);
   }
+}
 
+export function applyCookieConsent(consent: CookieConsentChoice) {
+  setGoogleConsent(consent);
+}
+
+export function updateCookieConsent(consent: CookieConsentChoice) {
+  setGoogleConsent(consent);
   trackEvent("cookie_consent_update", { consent });
 }

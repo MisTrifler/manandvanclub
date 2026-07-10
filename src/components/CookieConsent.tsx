@@ -1,18 +1,22 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ShieldCheck, X } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { updateCookieConsent } from "@/lib/analytics";
+import { applyCookieConsent, updateCookieConsent } from "@/lib/analytics";
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
-    if (!consent) {
-      setShowBanner(true);
+
+    if (consent === "accepted" || consent === "declined") {
+      applyCookieConsent(consent);
+      return;
     }
+
+    setShowBanner(true);
   }, []);
 
   const handleAccept = () => {
@@ -42,7 +46,7 @@ export default function CookieConsent() {
                <span className="font-black uppercase tracking-widest text-xs">Privacy & Cookies</span>
             </div>
             <p className="text-sm text-text-secondary font-medium leading-relaxed">
-              We use cookies to enhance your experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our <Link href="/cookies" className="text-primary font-bold hover:underline">Cookie Policy</Link>.
+              We use cookies to enhance your experience and analyse our traffic. By clicking "Accept All", you consent to our use of cookies. Read our <Link href="/cookies" className="text-primary font-bold hover:underline">Cookie Policy</Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <button 
@@ -55,7 +59,7 @@ export default function CookieConsent() {
                 onClick={handleDecline}
                 className="bg-gray-100 text-primary flex-1 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-gray-200 transition-colors"
               >
-                Manage Preferences
+                Decline
               </button>
             </div>
           </div>
