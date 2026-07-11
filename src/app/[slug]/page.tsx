@@ -240,7 +240,7 @@ function buildServiceSchema(serviceData: any, slug: string) {
       name: "Man and Van Club",
       url: "https://www.manandvanclub.co.uk",
       logo: "https://www.manandvanclub.co.uk/icon.png",
-      telephone: "+44-7943-617-386",
+      telephone: "+44-121-751-1269",
       email: "support@manandvanclub.co.uk",
     },
     areaServed: {

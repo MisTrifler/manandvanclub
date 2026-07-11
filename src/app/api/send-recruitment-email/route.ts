@@ -76,7 +76,7 @@ export async function POST(req: Request) {
                         </table>
 
                         <p style="color:#555555;font-size:14px;line-height:1.7;margin:32px 0 0 0;">
-                          If you have any questions, reply to this email or call us on <strong style="color:#1B2D4F;">07943 617 386</strong>.
+                          If you have any questions, reply to this email or call us on <strong style="color:#1B2D4F;">0121 751 1269</strong>.
                         </p>
                       </td>
                     </tr>

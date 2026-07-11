@@ -72,7 +72,7 @@ export default function AboutContent() {
                   <Phone className="text-accent" size={20} />
                   <span className="font-black text-sm uppercase tracking-widest text-primary/40">Call Us</span>
                 </div>
-                <a href="tel:07943617386" className="text-2xl font-black text-primary hover:text-accent">07943 617386</a>
+                <a href="tel:01217511269" className="text-2xl font-black text-primary hover:text-accent">0121 751 1269</a>
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-2">

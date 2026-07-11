@@ -112,7 +112,7 @@ export default function ContactContent() {
           {/* Contact Info */}
           <div className="lg:w-1/3 space-y-6">
             {[
-              { icon: <Phone size={24} />, title: "Call Us", value: "07943 617386", href: "tel:07943617386" },
+              { icon: <Phone size={24} />, title: "Call Us", value: "0121 751 1269", href: "tel:01217511269" },
               { icon: <Mail size={24} />, title: "Email Us", value: "support@manandvanclub.co.uk", href: "mailto:support@manandvanclub.co.uk" },
               { icon: <Facebook size={24} />, title: "Facebook", value: "Man and Van Club", href: facebookUrl },
               { icon: <Clock size={24} />, title: "Response Time", value: "Usually same day" },

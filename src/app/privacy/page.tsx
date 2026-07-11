@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
             <ul className="list-none pl-0 mt-4">
               <li><strong>Website:</strong> www.manandvanclub.co.uk</li>
               <li><strong>Email:</strong> support@manandvanclub.co.uk</li>
-              <li><strong>Phone:</strong> 07943 617386</li>
+              <li><strong>Phone:</strong> 0121 751 1269</li>
             </ul>
           </section>
 

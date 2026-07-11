@@ -174,7 +174,7 @@ export function buildMoverAgreementHtml(input: MoverApplicationLike, agreementDa
       <div class="contact">
         www.manandvanclub.co.uk<br />
         partners@manandvanclub.co.uk<br />
-        07943 617386
+        0121 751 1269
       </div>
     </div>
 
@@ -193,7 +193,7 @@ export function buildMoverAgreementHtml(input: MoverApplicationLike, agreementDa
       ${row("Platform", "Man and Van Club")}
       ${row("Website", "www.manandvanclub.co.uk")}
       ${row("Email", "partners@manandvanclub.co.uk")}
-      ${row("Phone", "07943 617386")}
+      ${row("Phone", "0121 751 1269")}
       ${formRow("Mover business / trading name", data.companyName)}
       ${formRow("Business type", data.businessType)}
       ${formRow("Company number, if applicable", data.companyNumber)}
@@ -614,7 +614,7 @@ export function buildApprovedMoverEmailHtml(input: MoverApplicationLike, agreeme
       <p>If you are happy to proceed, please reply to this email with the following wording:</p>
       <p style="background:#f8fafc;border:1px solid #cbd5e1;padding:12px;"><strong>“I agree to the Man and Van Club Independent Approved Mover Agreement dated ${escapeHtml(agreementDate)} on behalf of ${escapeHtml(data.companyName)}.”</strong></p>
       <p>Please also send any outstanding insurance documents if we have not already received them.</p>
-      <p>Kind regards,<br /><strong>V</strong><br />Man and Van Club<br />${PARTNERS_EMAIL}<br />07943 617386<br />www.manandvanclub.co.uk</p>
+      <p>Kind regards,<br /><strong>V</strong><br />Man and Van Club<br />${PARTNERS_EMAIL}<br />0121 751 1269<br />www.manandvanclub.co.uk</p>
     </div>
   `;
 }

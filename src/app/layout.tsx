@@ -33,7 +33,7 @@ const organizationSchema = {
   "description": "A marketplace helping customers arrange flexible moves, from single-item collections to full home moves, through an approved mover quote and customer-confirmed booking deposit process.",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+44-7943-617-386",
+    "telephone": "+44-121-751-1269",
     "contactType": "customer support",
     "availableLanguage": "English",
     "areaServed": "GB"

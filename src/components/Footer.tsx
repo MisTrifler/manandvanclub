@@ -25,7 +25,7 @@ export default function Footer() {
                 <Mail size={14} className="text-accent" /> support@manandvanclub.co.uk
               </a>
               <div className="flex items-center gap-2">
-                <Phone size={14} className="text-accent" /> 07943 617 386
+                <Phone size={14} className="text-accent" /> 0121 751 1269
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={14} className="text-accent" /> UK-Wide Coverage

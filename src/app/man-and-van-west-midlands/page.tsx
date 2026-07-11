@@ -120,7 +120,7 @@ const serviceSchema = {
     name: "Man and Van Club",
     url: baseUrl,
     email: "support@manandvanclub.co.uk",
-    telephone: "+44-7943-617-386",
+    telephone: "+44-121-751-1269",
     logo: `${baseUrl}/icon.png`,
   },
   areaServed: {

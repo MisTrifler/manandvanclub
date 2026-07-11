@@ -430,7 +430,7 @@ export function getLocationPageData(slug: string): LocationPageData | null {
       "@type": "Organization",
       name: "Man and Van Club",
       email: "support@manandvanclub.co.uk",
-      telephone: "07943617386",
+      telephone: "01217511269",
     },
     areaServed: {
       "@type": "Place",
