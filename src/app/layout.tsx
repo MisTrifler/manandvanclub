@@ -7,11 +7,33 @@ import AnalyticsEvents from "@/components/AnalyticsEvents";
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | From One Item to Full Home Moves",
-  description: "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover can review before you book.",
+  title: "Man and Van Club | Verified Man and Van Quotes — House Removals & Furniture Delivery",
+  description: "Submit one free move request for house removals, flat moves, furniture delivery, office relocations and student moves across the UK. Verified movers, protected details, no spam.",
   metadataBase: new URL('https://www.manandvanclub.co.uk'),
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',
+  },
+  openGraph: {
+    title: "Man and Van Club | Verified Man and Van Quotes",
+    description: "Submit one free move request for house removals, flat moves, furniture delivery, office relocations and student moves across the UK. Verified movers, protected details, no spam.",
+    url: 'https://www.manandvanclub.co.uk',
+    siteName: "Man and Van Club",
+    images: [
+      {
+        url: 'https://www.manandvanclub.co.uk/images/hero-moving.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Man and Van Club — Professional movers loading a Luton van',
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Man and Van Club | Verified Man and Van Quotes",
+    description: "Submit one free move request for house removals, flat moves, furniture delivery and more. Verified movers, no spam.",
+    images: ['https://www.manandvanclub.co.uk/images/hero-moving.jpg'],
   },
   icons: {
     icon: [
@@ -26,11 +48,21 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness"],
   "name": "Man and Van Club",
   "url": "https://www.manandvanclub.co.uk",
   "logo": "https://www.manandvanclub.co.uk/icon.png",
-  "description": "A marketplace helping customers arrange flexible moves, from single-item collections to full home moves, through an approved mover quote and customer-confirmed booking deposit process.",
+  "description": "A UK-wide marketplace helping customers submit free move requests for anything from single-item collections to full home moves. Verified movers, protected details, no spam.",
+  "telephone": "+44-7943-617-386",
+  "email": "support@manandvanclub.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Towpath Drive, Brownhills",
+    "addressLocality": "Walsall",
+    "addressRegion": "West Midlands",
+    "postalCode": "WS8 6FG",
+    "addressCountry": "GB"
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+44-7943-617-386",
@@ -38,7 +70,6 @@ const organizationSchema = {
     "availableLanguage": "English",
     "areaServed": "GB"
   },
-  "email": "support@manandvanclub.co.uk",
   "areaServed": {
     "@type": "Country",
     "name": "United Kingdom"
@@ -47,7 +78,7 @@ const organizationSchema = {
     "@type": "Country",
     "name": "United Kingdom"
   },
-  "knowsAbout": [
+  "serviceType": [
     "Man and van services",
     "Single item collections",
     "Home moves",
@@ -59,6 +90,7 @@ const organizationSchema = {
     "Same-day man and van services",
     "Long distance removals"
   ],
+  "priceRange": "Free quote",
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61590898873944"
   ]

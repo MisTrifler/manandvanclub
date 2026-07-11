@@ -2,9 +2,9 @@ import HomeContent from "./HomeContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | From One Item to Full Home Moves",
+  title: "Man and Van Club | Verified Man and Van Quotes — House Removals & Furniture Delivery",
   description:
-    "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover can review before you book.",
+    "Submit one free move request for house removals, flat moves, furniture delivery, office relocations and student moves across the UK. Verified movers, protected details, no spam.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk',
   },

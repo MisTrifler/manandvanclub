@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
-  title: "Booking Deposit Pricing | Man and Van Club",
-  description: "Simple booking deposit pricing. The deposit is deducted from the mover's quote, so the customer's total move cost stays the same.",
+  title: "Pricing | Free Move Requests & Booking Deposits | Man and Van Club",
+  description: "Free move requests. The booking deposit is deducted from the mover quote, so your total move cost stays the same. Pay the remaining balance on moving day.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk/pricing',
   },

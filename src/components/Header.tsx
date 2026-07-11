@@ -101,6 +101,10 @@ export default function Header() {
             </a>
           </div>
           <div className="flex gap-6">
+            <a href="tel:07943617386" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Phone size={10} className="text-accent" />
+              <span>07943 617 386</span>
+            </a>
             <div className="flex items-center gap-2">
               <MapPin size={10} className="text-accent" />
               <span>UK-Wide Coverage</span>
