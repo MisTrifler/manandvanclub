@@ -189,8 +189,8 @@ export default function HomeContent() {
                 textShadow: "0 2px 14px rgba(0,0,0,0.40)",
               }}
             >
-              <span className="text-white">Man and Van —</span>{" "}
-              <span className="text-accent">From one item to a full home move</span>
+              <span className="text-white">From one item to a</span>{" "}
+              <span className="text-accent">full home move</span>
             </h1>
 
             <p
