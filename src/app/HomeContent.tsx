@@ -223,22 +223,25 @@ export default function HomeContent() {
                   {badge.label}
                 </div>
               ))}
-              <a
-                href="tel:01217511269"
-                className="flex items-center gap-2 rounded-full font-black transition-all duration-200 hover:-translate-y-0.5"
-                style={{
-                  background: "rgba(255,255,255,0.95)",
-                  borderRadius: "999px",
-                  padding: "9px 13px",
-                  boxShadow: "0 4px 14px rgba(0,0,0,0.10)",
-                  fontSize: "12px",
-                  color: "rgba(15,23,42,0.86)",
-                }}
-              >
-                <Phone size={14} className="text-accent" />
-                <span>Call us: 0121 751 1269</span>
-              </a>
             </div>
+
+            <a
+              href="tel:01217511269"
+              className="inline-flex items-center gap-3 rounded-full font-black transition-all duration-200 hover:scale-105 active:scale-95 mt-5"
+              style={{
+                background: "#F97316",
+                borderRadius: "999px",
+                padding: "14px 22px",
+                boxShadow: "0 6px 24px rgba(249,115,22,0.45)",
+                fontSize: "16px",
+                color: "#ffffff",
+                fontWeight: 900,
+                letterSpacing: "0.02em",
+              }}
+            >
+              <Phone size={22} className="text-green-500" />
+              <span>Call Now: 0121 751 1269</span>
+            </a>
 
           </motion.div>
 
