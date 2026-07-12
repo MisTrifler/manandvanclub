@@ -10,8 +10,8 @@ const siteUrl = "https://www.manandvanclub.co.uk";
 
 // Popular West Midlands locations to link from service pages
 const popularLocations = [
-  { name: "Birmingham", href: "/man-and-van-birmingham" },
-  { name: "Walsall", href: "/man-and-van-walsall" },
+  { name: "Man and Van Birmingham", href: "/man-and-van-birmingham" },
+  { name: "Man and Van Walsall", href: "/man-and-van-walsall" },
   { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
   { name: "Dudley", href: "/man-and-van-dudley" },
   { name: "West Bromwich", href: "/man-and-van-west-bromwich" },

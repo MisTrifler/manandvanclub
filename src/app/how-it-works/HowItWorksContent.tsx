@@ -119,6 +119,18 @@ export default function HowItWorksContent() {
           <Link href="/get-started" className="btn-orange px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
             Start Your Move <ArrowUpRight size={20} />
           </Link>
+
+          {/* Popular Areas — Internal Linking */}
+          <div className="mt-12 pt-8 border-t border-border max-w-xl mx-auto">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/40 mb-4">Popular areas</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/man-and-van-birmingham" className="text-xs font-black uppercase tracking-widest text-primary/50 hover:text-accent transition-colors">Man and Van Birmingham</Link>
+              <span className="text-primary/20">·</span>
+              <Link href="/man-and-van-walsall" className="text-xs font-black uppercase tracking-widest text-primary/50 hover:text-accent transition-colors">Man and Van Walsall</Link>
+              <span className="text-primary/20">·</span>
+              <Link href="/man-and-van-west-midlands" className="text-xs font-black uppercase tracking-widest text-primary/50 hover:text-accent transition-colors">West Midlands Hub</Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

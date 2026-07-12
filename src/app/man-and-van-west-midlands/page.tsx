@@ -317,13 +317,50 @@ export default function WestMidlandsPage() {
             </div>
           </div>
 
+          {/* Featured Locations — Birmingham & Walsall get prominence */}
+          <div className="space-y-8">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.35em]">Featured areas</span>
+              <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">Man and Van Birmingham &amp; Walsall</h2>
+              <p className="text-text-secondary font-medium">Our two most popular West Midlands areas. Submit a free move request for verified local mover quotes.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link
+                href="/man-and-van-birmingham"
+                className="group bg-white rounded-2xl border border-border p-8 hover:border-accent hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="space-y-3">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-[9px] font-black uppercase tracking-widest text-accent">Most popular</span>
+                    <h3 className="text-xl font-black uppercase tracking-tight text-primary group-hover:text-accent transition-colors">Man and Van Birmingham</h3>
+                    <p className="text-sm text-text-secondary font-medium leading-relaxed">City-centre flats, student moves in Selly Oak, Edgbaston family homes and Jewellery Quarter apartments. Clean Air Zone routes, lift access and parking notes included.</p>
+                  </div>
+                  <ArrowUpRight size={20} className="text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" />
+                </div>
+              </Link>
+              <Link
+                href="/man-and-van-walsall"
+                className="group bg-white rounded-2xl border border-border p-8 hover:border-accent hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="space-y-3">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-[9px] font-black uppercase tracking-widest text-accent">Most popular</span>
+                    <h3 className="text-xl font-black uppercase tracking-tight text-primary group-hover:text-accent transition-colors">Man and Van Walsall</h3>
+                    <p className="text-sm text-text-secondary font-medium leading-relaxed">Black Country moves from Bloxwich semis to Aldridge estates. A34 and A454 route timing, town-centre terraces and furniture collections across WS postcodes.</p>
+                  </div>
+                  <ArrowUpRight size={20} className="text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" />
+                </div>
+              </Link>
+            </div>
+          </div>
+
           <div className="space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">Popular West Midlands areas</h2>
-              <p className="text-text-secondary font-medium">Use these pages for local route, access and area information across Birmingham, the Black Country and nearby towns.</p>
+              <p className="text-text-secondary font-medium">Use these pages for local route, access and area information across the Black Country and nearby towns.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {westMidlandsAreas.map((area) => (
+              {westMidlandsAreas.filter(a => a.slug !== "birmingham" && a.slug !== "walsall").map((area) => (
                 <Link
                   key={area.href}
                   href={area.href}

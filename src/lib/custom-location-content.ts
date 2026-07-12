@@ -128,6 +128,13 @@ Your Birmingham request can include property type, access, parking, stairs, lift
         title: "Man and van vs removal company in Birmingham",
         body: "A man and van is typically more affordable and flexible than a full removals company, especially for flats, student moves, single items and same-day jobs. Man and Van Club is a marketplace — you submit one request and one verified mover quotes, rather than your details going to lots of companies. For larger 4+ bedroom house moves with packing services, a removal company may be more suitable.",
       },
+      {
+        title: "Man and van Walsall — moves between Birmingham and Walsall",
+        body: "The A34 corridor connects Birmingham and Walsall directly, making moves between the two areas common. Whether you are moving from a Birmingham flat to a Walsall house or need a furniture collection that crosses the city boundary, include both postcodes and access notes so a mover can review the route timing before quoting.",
+        links: [
+          { label: "Man and van Walsall", href: "/man-and-van-walsall" },
+        ],
+      },
     ],
   },
   // ──────────────────────────────────────────

@@ -61,6 +61,32 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* Popular Areas — Internal Linking */}
+      <section className="py-16 bg-white border-y border-border">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-4">Where We Operate</h2>
+          <p className="text-text-secondary mb-8 max-w-xl mx-auto">We are building coverage across the West Midlands first. Submit a free move request for any of these areas.</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { name: "Man and Van Birmingham", href: "/man-and-van-birmingham" },
+              { name: "Man and Van Walsall", href: "/man-and-van-walsall" },
+              { name: "Man and Van Wolverhampton", href: "/man-and-van-wolverhampton" },
+              { name: "Man and Van Dudley", href: "/man-and-van-dudley" },
+              { name: "West Midlands Hub", href: "/man-and-van-west-midlands" },
+              { name: "All Areas Covered", href: "/areas-covered" },
+            ].map((loc) => (
+              <Link
+                key={loc.href}
+                href={loc.href}
+                className="bg-[#F9F9F7] rounded-full border border-border px-5 py-3 text-xs font-black uppercase tracking-widest text-primary hover:border-accent hover:text-accent transition-all"
+              >
+                {loc.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-4xl">

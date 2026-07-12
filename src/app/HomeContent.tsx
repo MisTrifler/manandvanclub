@@ -372,8 +372,8 @@ export default function HomeContent() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
               { name: "West Midlands", slug: "man-and-van-west-midlands" },
-              { name: "Birmingham", slug: "man-and-van-birmingham" },
-              { name: "Walsall", slug: "man-and-van-walsall" },
+              { name: "Man and Van Birmingham", slug: "man-and-van-birmingham" },
+              { name: "Man and Van Walsall", slug: "man-and-van-walsall" },
               { name: "Wolverhampton", slug: "man-and-van-wolverhampton" },
               { name: "Dudley", slug: "man-and-van-dudley" },
               { name: "West Bromwich", slug: "man-and-van-west-bromwich" },

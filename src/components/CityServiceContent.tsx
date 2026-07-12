@@ -584,16 +584,22 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 <div className="space-y-10">
                   <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Nearby Locations</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {data.nearbyLocations.map((loc: { slug: string; name: string }) => (
-                      <Link
-                        key={loc.slug}
-                        href={`/man-and-van-${loc.slug}`}
-                        className="group flex items-center justify-between bg-[#F9F9F7] p-6 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
-                      >
-                        <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{loc.name}</span>
-                        <ArrowUpRight size={16} className="text-primary/30 group-hover:text-accent transition-colors" />
-                      </Link>
-                    ))}
+                    {data.nearbyLocations.map((loc: { slug: string; name: string }) => {
+                      // Use keyword-rich anchor for priority cities
+                      const label = (loc.slug === "birmingham" || loc.slug === "walsall")
+                        ? `Man and Van ${loc.name}`
+                        : loc.name;
+                      return (
+                        <Link
+                          key={loc.slug}
+                          href={`/man-and-van-${loc.slug}`}
+                          className="group flex items-center justify-between bg-[#F9F9F7] p-6 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                        >
+                          <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{label}</span>
+                          <ArrowUpRight size={16} className="text-primary/30 group-hover:text-accent transition-colors" />
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -623,16 +629,22 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Popular West Midlands Locations</h3>
                   <p className="text-text-secondary font-medium leading-relaxed">We are focusing first on strong West Midlands coverage. Submit a free move request for any of these areas.</p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {data.popularLocations.map((loc: { name: string; href: string }) => (
-                      <Link
-                        key={loc.href}
-                        href={loc.href}
-                        className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
-                      >
-                        <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{loc.name}</span>
-                        <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
-                      </Link>
-                    ))}
+                    {data.popularLocations.map((loc: { name: string; href: string }) => {
+                      // Use keyword-rich anchor for priority cities
+                      const label = (loc.href === "/man-and-van-birmingham" || loc.href === "/man-and-van-walsall")
+                        ? `Man and Van ${loc.name}`
+                        : loc.name;
+                      return (
+                        <Link
+                          key={loc.href}
+                          href={loc.href}
+                          className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                        >
+                          <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{label}</span>
+                          <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -642,16 +654,22 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 <div className="space-y-10">
                   <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{data.region ? `More Locations in ${data.region}` : "More Nearby Locations"}</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {data.regionCities.slice(0, 12).map((city: { name: string; slug: string }) => (
-                      <Link
-                        key={city.slug}
-                        href={`/man-and-van-${city.slug}`}
-                        className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
-                      >
-                        <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{city.name}</span>
-                        <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
-                      </Link>
-                    ))}
+                    {data.regionCities.slice(0, 12).map((city: { name: string; slug: string }) => {
+                      // Use keyword-rich anchor for priority cities
+                      const label = (city.slug === "birmingham" || city.slug === "walsall")
+                        ? `Man and Van ${city.name}`
+                        : city.name;
+                      return (
+                        <Link
+                          key={city.slug}
+                          href={`/man-and-van-${city.slug}`}
+                          className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                        >
+                          <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{label}</span>
+                          <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
