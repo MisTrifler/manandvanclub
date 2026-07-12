@@ -2,7 +2,7 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap, CheckCircle, Lock, PhoneOff, UserCheck, ClipboardCheck, Truck, Package, Route, Building, GraduationCap, Sofa, ArrowRight, ListChecks, ExternalLink } from "lucide-react";
+import { MapPin, Star, CheckCircle2, ShieldCheck, Clock, Users, ArrowUpRight, ChevronRight, Zap, CheckCircle, Lock, PhoneOff, UserCheck, ClipboardCheck, Truck, Package, Route, Building, GraduationCap, Sofa, ArrowRight, ListChecks, ExternalLink, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { type IntentType } from "@/lib/intent-detection";
@@ -703,6 +703,20 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                       : `Customers can submit free move requests in ${data.name} and nearby areas for verified movers to review.`}
                   </p>
                </div>
+
+               {/* Phone CTA */}
+               <a
+                  href="tel:01217511269"
+                  className="flex items-center gap-4 bg-primary text-white p-8 rounded-[2rem] hover:bg-primary/90 transition-colors group"
+               >
+                  <div className="bg-accent rounded-full p-3 group-hover:scale-110 transition-transform">
+                     <Phone size={22} className="text-white" />
+                  </div>
+                  <div>
+                     <p className="text-xs font-bold uppercase tracking-widest text-white/70">Prefer to talk?</p>
+                     <p className="text-lg font-black tracking-tight">0121 751 1269</p>
+                  </div>
+               </a>
             </aside>
 
           </div>
@@ -740,6 +754,16 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
           </div>
         </div>
       </section>
+
+      {/* ── Mobile Floating Call Button ── */}
+      <a
+        href="tel:01217511269"
+        className="fixed bottom-6 right-6 z-[200] lg:hidden flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:bg-primary/90 transition-all"
+        aria-label="Call Man and Van Club"
+      >
+        <Phone size={22} className="text-white" />
+        <span className="font-black tracking-tight text-sm">Call Now</span>
+      </a>
     </div>
   );
 }
