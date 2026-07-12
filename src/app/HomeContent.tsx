@@ -257,6 +257,50 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* ──────────────────── The Man and Van Club Difference ──────────────────── */}
+      <section className="py-14 bg-primary text-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-2">The Man and Van Club Difference</p>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white">
+              Why Customers Choose Human-Reviewed Quotes Over Algorithmic Platforms
+            </h2>
+            <p className="mt-3 text-white/70 text-sm leading-relaxed">
+              Instant automated calculators often lead to surprise fees on moving day if you misestimate your inventory. We do things differently.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white/10 p-6 rounded-2xl border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <ShieldCheck size={20} className="text-accent" />
+              </div>
+              <h3 className="text-lg font-black text-white mb-2">Human-Reviewed Accuracy</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                An approved independent mover reviews your postcodes, stair access, parking notes, and items <strong className="text-white">before</strong> sending a quote. This ensures realistic pricing with zero surprise upcharges on the day.
+              </p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-2xl border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <CheckCircle2 size={20} className="text-accent" />
+              </div>
+              <h3 className="text-lg font-black text-white mb-2">Dedicated Vetted Movers</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                Your belongings are not handed off to random multi-drop couriers. We verify Goods in Transit insurance, Public Liability, and business credentials before any mover joins our network.
+              </p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-2xl border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <Lock size={20} className="text-accent" />
+              </div>
+              <h3 className="text-lg font-black text-white mb-2">100% Protected Details</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                Unlike quote comparison brokers that sell your phone number to multiple competing companies, your details stay strictly private until you accept a quote and pay your booking deposit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ──────────────────── Why Customers Choose ──────────────────── */}
       <section className="py-16 bg-[#F9F9F7]">
         <div className="container mx-auto px-4">
