@@ -86,7 +86,6 @@ const VERIFICATION_CHECKS = [
 const TRUST_BADGES = [
   { icon: <BadgeCheck size={20} />, label: "Approved movers" },
   { icon: <Lock size={20} />, label: "Details protected" },
-  { icon: <CheckCircle2 size={20} />, label: "One item to full home moves" },
 ];
 
 export default function HomeContent() {
