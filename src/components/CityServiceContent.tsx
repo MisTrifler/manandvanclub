@@ -93,23 +93,38 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
     }))
   } : null);
 
+  // Build BreadcrumbList matching the visible breadcrumb trail.
+  // West Midlands location pages get 3 levels: Home → West Midlands → City
+  // Service pages and other regions get 2 levels: Home → Page Name
+  const fallbackBreadcrumbItems: Record<string, any>[] = [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.manandvanclub.co.uk"
+    },
+  ];
+
+  if (isLocationPage && data.region === "West Midlands" && data.slug !== "man-and-van-west-midlands") {
+    fallbackBreadcrumbItems.push({
+      "@type": "ListItem",
+      "position": 2,
+      "name": "West Midlands",
+      "item": "https://www.manandvanclub.co.uk/man-and-van-west-midlands"
+    });
+  }
+
+  fallbackBreadcrumbItems.push({
+    "@type": "ListItem",
+    "position": fallbackBreadcrumbItems.length + 1,
+    "name": data.name,
+    "item": currentUrl
+  });
+
   const breadcrumbSchema = data.breadcrumbSchema || {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.manandvanclub.co.uk"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": data.name,
-        "item": currentUrl
-      }
-    ]
+    "itemListElement": fallbackBreadcrumbItems,
   };
 
   return (

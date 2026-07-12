@@ -389,23 +389,37 @@ export function getLocationPageData(slug: string): LocationPageData | null {
 
   const faq = generateFAQ(loc);
 
+  // Build 3-level breadcrumb for West Midlands: Home → West Midlands → City
+  // Other regions use 2-level: Home → City (no regional hub page exists yet)
+  const breadcrumbItems: Record<string, any>[] = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.manandvanclub.co.uk",
+    },
+  ];
+
+  if (loc.region === "West Midlands") {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 2,
+      name: "West Midlands",
+      item: "https://www.manandvanclub.co.uk/man-and-van-west-midlands",
+    });
+  }
+
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    position: breadcrumbItems.length + 1,
+    name: loc.name,
+    item: url,
+  });
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.manandvanclub.co.uk",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: loc.name,
-        item: url,
-      },
-    ],
+    itemListElement: breadcrumbItems,
   };
 
   const faqSchema = {
