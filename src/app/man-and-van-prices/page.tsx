@@ -28,15 +28,15 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much does a man and van cost per hour in the UK?",
-    a: "In 2026, UK man and van hourly rates typically range from £30 to £55 per hour. West Midlands rates average £30–£50/hr, London rates average £45–£70/hr, and other regions fall between £30–£50/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
+    a: "In 2026, UK man and van hourly rates typically range from £50 to £70 per hour. West Midlands rates average £50–£70/hr, London rates average £55–£80/hr, and other regions fall between £50–£70/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
   },
   {
     q: "How much does a man and van cost for a full day?",
-    a: "A full-day man and van booking in 2026 typically costs £240–£400 in the West Midlands, £350–£550 in London, and £220–£380 in other UK regions. Full-day rates usually cover 8–10 hours and are better value than hourly rates for larger moves.",
+    a: "A full-day man and van booking in 2026 typically costs £350–£500 in the West Midlands, £400–£600 in London, and £350–£500 in other UK regions. Full-day rates usually cover 8–10 hours and are better value than hourly rates for larger moves.",
   },
   {
     q: "How much does a single-item furniture collection cost?",
-    a: "A single-item man and van collection in 2026 typically costs £35–£70 locally, or £50–£100+ for longer distances. Sofas, beds and wardrobes are at the higher end due to size and handling. Add item dimensions and access details for an accurate quote.",
+    a: "A single-item man and van collection in 2026 typically starts from £50 locally, or £60–£100+ for longer distances. Sofas, beds and wardrobes are at the higher end due to size and handling. Add item dimensions and access details for an accurate quote.",
   },
   {
     q: "Why do man and van prices vary so much?",
@@ -48,7 +48,7 @@ const faqItems = [
   },
   {
     q: "How much does a same-day man and van cost?",
-    a: "Same-day man and van rates in 2026 are typically 15–30% higher than standard bookings, ranging from £40–£60 per hour. A local same-day furniture collection might cost £80–£150, while a same-day flat move could be £200–£400. Availability is more limited, especially on weekends and during peak moving periods.",
+    a: "Same-day man and van rates in 2026 are typically 15–30% higher than standard bookings, starting from £55 per hour. A local same-day furniture collection might cost £80–£150, while a same-day flat move could be £200–£400. Availability is more limited, especially on weekends and during peak moving periods.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function ManAndVanPricesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single-item furniture collection", price: "£35–£70", factors: "Item size, distance, stairs, parking" },
+                  { type: "Single-item furniture collection", price: "From £50", factors: "Item size, distance, stairs, parking" },
                   { type: "Studio / 1-bed flat move", price: "£150–£350", factors: "Floor level, lift access, parking, distance" },
                   { type: "2-bed flat move", price: "£250–£500", factors: "Volume, stairs, helpers, parking permits" },
                   { type: "1–2 bed house move", price: "£200–£400", factors: "Volume, distance, driveway access, packing" },
@@ -143,7 +143,7 @@ export default function ManAndVanPricesPage() {
                   { type: "4+ bed house move", price: "£500–£1,000+", factors: "Large volume, multiple helpers, packing, distance" },
                   { type: "Student move (halls/shared house)", price: "£80–£350", factors: "Load size, term-time demand, access" },
                   { type: "Small office relocation", price: "£300–£600", factors: "IT equipment, timing, loading bay, after-hours" },
-                  { type: "Same-day man and van", price: "£40–£60/hr", factors: "Availability, urgency, distance, access" },
+                  { type: "Same-day man and van", price: "From £55/hr", factors: "Availability, urgency, distance, access" },
                   { type: "Long-distance move (100+ miles)", price: "£1.00–£2.00/mile", factors: "Mileage, route time, volume, one-way vs return" },
                 ].map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#F9F9F7]"}>
@@ -164,9 +164,9 @@ export default function ManAndVanPricesPage() {
           <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-8 text-center">Man and Van Hourly Rates by Region</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { region: "West Midlands", rate: "£30–£50/hr", fullDay: "£240–£400", cities: ["Birmingham", "Walsall", "Wolverhampton", "Coventry"] },
-              { region: "Greater London", rate: "£45–£70/hr", fullDay: "£350–£550", cities: ["London", "Croydon", "Stratford", "Richmond"] },
-              { region: "Other UK Regions", rate: "£30–£50/hr", fullDay: "£220–£380", cities: ["Manchester", "Leeds", "Bristol", "Liverpool"] },
+              { region: "West Midlands", rate: "£50–£70/hr", fullDay: "£350–£500", cities: ["Birmingham", "Walsall", "Wolverhampton", "Coventry"] },
+              { region: "Greater London", rate: "£55–£80/hr", fullDay: "£400–£600", cities: ["London", "Croydon", "Stratford", "Richmond"] },
+              { region: "Other UK Regions", rate: "£50–£70/hr", fullDay: "£350–£500", cities: ["Manchester", "Leeds", "Bristol", "Liverpool"] },
             ].map((region) => (
               <div key={region.region} className="bg-white rounded-2xl border border-border p-8 space-y-4">
                 <h3 className="text-xl font-black text-primary uppercase tracking-tight">{region.region}</h3>

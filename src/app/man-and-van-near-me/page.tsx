@@ -42,7 +42,7 @@ const faqItems = [
   },
   {
     q: "How much does a man and van near me cost?",
-    a: "UK man and van rates in 2026 typically range from £30–£55 per hour. West Midlands rates average £30–£50/hr, London rates average £45–£70/hr. A single-item collection might start from £35–£70, while a full house move could cost £300–£600+. Submit your details for a free guide price first.",
+    a: "UK man and van rates in 2026 start from £50 per hour. West Midlands rates average £50–£70/hr, London rates average £55–£80/hr. A single-item collection starts from £50, while a full house move could cost £300–£600+. Submit your details for a free guide price first.",
   },
   {
     q: "Are the movers near me verified?",
@@ -219,9 +219,9 @@ export default function ManAndVanNearMePage() {
           <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-8 text-center">Man and Van Prices Near Me (2026)</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { region: "West Midlands", rate: "£30–£50/hr", example: "Birmingham, Walsall, Wolverhampton, Coventry" },
-              { region: "Greater London", rate: "£45–£70/hr", example: "London, Croydon, Stratford, Richmond" },
-              { region: "Other UK", rate: "£30–£50/hr", example: "Manchester, Leeds, Bristol, Liverpool" },
+              { region: "West Midlands", rate: "From £50/hr", example: "Birmingham, Walsall, Wolverhampton, Coventry" },
+              { region: "Greater London", rate: "From £55/hr", example: "London, Croydon, Stratford, Richmond" },
+              { region: "Other UK", rate: "From £50/hr", example: "Manchester, Leeds, Bristol, Liverpool" },
             ].map((region) => (
               <div key={region.region} className="bg-[#F9F9F7] rounded-2xl border border-border p-6 space-y-3 text-center">
                 <h3 className="font-black text-primary uppercase tracking-tight">{region.region}</h3>

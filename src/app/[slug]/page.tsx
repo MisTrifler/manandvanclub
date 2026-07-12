@@ -176,9 +176,9 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "Can you collect from a shop or seller?", a: "Yes. Collections from shops, private sellers or auction houses can be submitted. Provide the collection postcode and item details so the mover can quote accurately." },
-      { q: "How much does furniture collection cost?", a: "In 2026, UK single-item furniture collection prices typically range from £35–£70 for a local collection (sofa, bed, wardrobe or appliance). Multi-item collections or longer distances cost more. Prices depend on distance, item size, access, stairs and whether extra help is needed. Use the form to see a guide price first." },
+      { q: "How much does furniture collection cost?", a: "In 2026, UK single-item furniture collection prices start from £50 for a local collection (sofa, bed, wardrobe or appliance). Multi-item collections or longer distances cost more. Prices depend on distance, item size, access, stairs and whether extra help is needed. Use the form to see a guide price first." },
       { q: "Will my furniture be protected?", a: "Movers typically use protective blankets and straps as standard. Movers must provide Goods in Transit and Public Liability insurance before they are approved, and we recommend confirming cover details directly with your mover." },
-      { q: "How much does a Facebook Marketplace collection cost?", a: "Marketplace collections in 2026 typically cost £35–£70 for a single local item. Sofa and bed collections are at the higher end due to size and handling. Add item dimensions and access details for an accurate guide price." }
+      { q: "How much does a Facebook Marketplace collection cost?", a: "Marketplace collections in 2026 start from £50 for a single local item. Sofa and bed collections are at the higher end due to size and handling. Add item dimensions and access details for an accurate guide price." }
     ]
   },
   "same-day-man-and-van": {
@@ -203,7 +203,7 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
-      { q: "Does same-day cost more?", a: "Same-day moves in 2026 can cost 15–30% more than booked-ahead moves when availability is limited or the route is longer. UK same-day man and van rates typically range from £40–£60 per hour, compared to £30–£50 for standard bookings. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
+      { q: "Does same-day cost more?", a: "Same-day moves in 2026 can cost 15–30% more than booked-ahead moves when availability is limited or the route is longer. UK same-day man and van rates start from £55 per hour, compared to £50 for standard bookings. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
       { q: "Can I book same-day for long distances?", a: "Same-day is usually best for local or regional moves. For long-distance same-day requests, include accurate postcodes, timing and access notes so a mover can decide whether they can help." },
       { q: "How much does a same-day man and van cost?", a: "In 2026, UK same-day man and van prices typically range from £40–£60 per hour, with a minimum charge usually equivalent to 2 hours. A local same-day furniture collection might cost £80–£150, while a same-day flat move could be £200–£400 depending on access and timing. Submit your details for a guide price first." }
     ]
@@ -257,9 +257,9 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "Can the mover collect on my behalf if I cannot be there?", a: "Yes, with clear arrangements. Provide the seller's contact details and any collection instructions. Payment must be settled with the seller beforehand." },
-      { q: "How much does a marketplace collection cost?", a: "In 2026, Facebook Marketplace collections in the UK typically cost £35–£70 for a single local item (sofa, bed, wardrobe or appliance). Longer-distance collections or multi-item pickups cost more. Add item dimensions and access details for an accurate guide price." },
+      { q: "How much does a marketplace collection cost?", a: "In 2026, Facebook Marketplace collections in the UK start from £50 for a single local item (sofa, bed, wardrobe or appliance). Longer-distance collections or multi-item pickups cost more. Add item dimensions and access details for an accurate guide price." },
       { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form so the mover can review the route and quote correctly." },
-      { q: "How much does a sofa collection from Facebook Marketplace cost?", a: "A local sofa collection in 2026 typically costs £40–£70, depending on sofa size, whether it needs dismantling, stairs at either address and parking access. Corner sofas and recliners cost more due to handling. Submit your postcodes and sofa details for a guide price." }
+      { q: "How much does a sofa collection from Facebook Marketplace cost?", a: "A local sofa collection in 2026 starts from £50, depending on sofa size, whether it needs dismantling, stairs at either address and parking access. Corner sofas and recliners cost more due to handling. Submit your postcodes and sofa details for a guide price." }
     ]
   }
 };
