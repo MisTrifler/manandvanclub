@@ -380,6 +380,18 @@ export default function WhyJoinContent() {
 
       <section className="scroll-mt-32 py-8 lg:py-10 bg-white border-t border-border/70">
         <div className="container mx-auto px-4 max-w-3xl">
+          {/* Popular areas — Internal Linking */}
+          <div className="text-center mb-8">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/40 mb-3">Popular areas</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/man-and-van-birmingham" className="text-xs font-black uppercase tracking-widest text-primary/50 hover:text-accent transition-colors">Man and Van Birmingham</Link>
+              <span className="text-primary/20">·</span>
+              <Link href="/man-and-van-walsall" className="text-xs font-black uppercase tracking-widest text-primary/50 hover:text-accent transition-colors">Man and Van Walsall</Link>
+              <span className="text-primary/20">·</span>
+              <Link href="/man-and-van-west-midlands" className="text-xs font-black uppercase tracking-widest text-primary/50 hover:text-accent transition-colors">West Midlands Hub</Link>
+            </div>
+          </div>
+
           <div className="relative overflow-hidden bg-[#142f63] text-white rounded-[1.75rem] px-5 py-7 sm:px-8 md:px-10 md:py-9 shadow-lg shadow-primary/10 border border-white/10 text-center">
             <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-accent/15 blur-2xl" />
             <div className="relative z-10 mx-auto max-w-2xl">

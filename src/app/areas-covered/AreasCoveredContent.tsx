@@ -170,27 +170,33 @@ export default function AreasCoveredContent() {
                       </span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                      {regionLocs.map((loc) => (
-                        <Link
-                          key={loc.slug}
-                          href={`/man-and-van-${loc.slug}`}
-                          className="group flex items-center justify-between bg-[#F9F9F7] p-6 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
-                        >
-                          <div className="flex items-center gap-3">
-                            <MapPin
-                              size={14}
+                      {regionLocs.map((loc) => {
+                        // Use keyword-rich anchor for priority cities
+                        const label = (loc.slug === "birmingham" || loc.slug === "walsall")
+                          ? `Man and Van ${loc.name}`
+                          : loc.name;
+                        return (
+                          <Link
+                            key={loc.slug}
+                            href={`/man-and-van-${loc.slug}`}
+                            className="group flex items-center justify-between bg-[#F9F9F7] p-6 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                          >
+                            <div className="flex items-center gap-3">
+                              <MapPin
+                                size={14}
+                                className="text-primary/30 group-hover:text-accent transition-colors"
+                              />
+                              <span className="font-black text-primary text-sm uppercase tracking-tight group-hover:text-accent transition-colors">
+                                {label}
+                              </span>
+                            </div>
+                            <ArrowUpRight
+                              size={16}
                               className="text-primary/30 group-hover:text-accent transition-colors"
                             />
-                            <span className="font-black text-primary text-sm uppercase tracking-tight group-hover:text-accent transition-colors">
-                              {loc.name}
-                            </span>
-                          </div>
-                          <ArrowUpRight
-                            size={16}
-                            className="text-primary/30 group-hover:text-accent transition-colors"
-                          />
-                        </Link>
-                      ))}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 );
