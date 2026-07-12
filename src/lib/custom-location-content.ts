@@ -120,6 +120,14 @@ Your Birmingham request can include property type, access, parking, stairs, lift
         title: "Man and van Sparkbrook, Handsworth and Small Heath",
         body: "These areas have dense Victorian terraces with on-street parking, narrow access and high foot traffic. Loading notes, parking restrictions and property access details help a mover quote accurately.",
       },
+      {
+        title: "How much does a man and van cost in Birmingham?",
+        body: "Across the UK in 2026, Birmingham man and van hourly rates typically range from £35 to £50 per hour, with full-day costs around £280–£400 depending on van size, crew, stairs, parking and access. A single-item furniture collection might start from £40–£70, while a full house move from a 3-bed property could range from £300–£600. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.",
+      },
+      {
+        title: "Man and van vs removal company in Birmingham",
+        body: "A man and van is typically more affordable and flexible than a full removals company, especially for flats, student moves, single items and same-day jobs. Man and Van Club is a marketplace — you submit one request and one verified mover quotes, rather than your details going to lots of companies. For larger 4+ bedroom house moves with packing services, a removal company may be more suitable.",
+      },
     ],
   },
   // ──────────────────────────────────────────
@@ -234,6 +242,18 @@ Walsall moves can differ by postcode, from town centre terraces to Bloxwich semi
       {
         title: "Man and van Darlaston and Willenhall",
         body: "Darlaston and Willenhall sit between Walsall and Wolverhampton. Terraced streets, estate roads and route timing around the M6 and A463 can all affect the move. Add both postcodes and access details.",
+      },
+      {
+        title: "How much does a man and van cost in Walsall?",
+        body: "Walsall man and van rates typically range from £30 to £50 per hour, with full-day costs around £240–£400 depending on van size, crew, stairs, parking and access. A single-item collection (sofa, bed, appliance) might start from £35–£65, while a full house move from a 3-bed Walsall property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.",
+      },
+      {
+        title: "Man and van Walsall to Birmingham, Wolverhampton or Coventry",
+        body: "Routes between Walsall and nearby cities depend on the A34, A454 and M6 corridors. Rush-hour timing and parking at both addresses can affect the quote. Add preferred times and access details so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Birmingham", href: "/man-and-van-birmingham" },
+          { label: "Man and van Wolverhampton", href: "/man-and-van-wolverhampton" },
+        ],
       },
     ],
   },

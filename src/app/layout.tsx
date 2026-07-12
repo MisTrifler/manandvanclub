@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: siteUrl,
+    languages: {
+      'en-GB': siteUrl,
+    },
+  },
+  other: {
+    'geo.region': 'GB',
+    'geo.placename': 'West Midlands',
+    'geo.country': 'GB',
   },
   openGraph: {
     type: "website",

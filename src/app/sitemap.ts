@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationUrls = LOCATIONS.filter(loc => isLocationIndexable(loc.slug)).map(loc => ({
     url: `${baseUrl}/man-and-van-${loc.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date('2026-07-12'),
     changeFrequency: 'weekly' as const,
     priority: priorityWestMidlandsSlugs.has(loc.slug) ? 0.85 : 0.75,
   }));
@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const serviceUrls = services.map(service => ({
     url: `${baseUrl}/${service}`,
-    lastModified: new Date(),
+    lastModified: new Date('2026-07-12'),
     changeFrequency: highIntentServiceSlugs.has(service) ? 'weekly' as const : 'monthly' as const,
     priority: highIntentServiceSlugs.has(service) ? 0.8 : 0.7,
   }));
@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/why-join', '/terms', '/privacy', '/cookies'
   ].map(route => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date('2026-07-12'),
     changeFrequency: route === '/man-and-van-west-midlands' ? 'weekly' as const : 'monthly' as const,
     priority: route === '' ? 1.0 : route === '/man-and-van-west-midlands' ? 0.95 : route === '/areas-covered' ? 0.7 : 0.6,
   }));
