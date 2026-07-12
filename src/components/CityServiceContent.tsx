@@ -135,6 +135,12 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
           dangerouslySetInnerHTML={{ __html: JSON.stringify(data.localBusinessSchema) }}
         />
       )}
+      {data.localBusinessExtra && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data.localBusinessExtra) }}
+        />
+      )}
       {faqSchema && (
         <script
           type="application/ld+json"

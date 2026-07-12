@@ -80,7 +80,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '': '2026-07-12',
     '/man-and-van-west-midlands': '2026-07-12',
     '/man-and-van-prices': '2026-07-12',
-    '/how-it-works': '2026-07-08',
+    '/man-and-van-near-me': '2026-07-12',
+    '/man-and-van-vs-removal-company': '2026-07-12',
+    '/how-it-works': '2026-07-12',
     '/for-businesses': '2026-07-08',
     '/about': '2026-07-10',
     '/areas-covered': '2026-07-11',
@@ -94,14 +96,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   };
 
   const staticUrls = [
-    '', '/man-and-van-west-midlands', '/man-and-van-prices', '/how-it-works', '/for-businesses', '/about',
+    '', '/man-and-van-west-midlands', '/man-and-van-prices', '/man-and-van-near-me',
+    '/man-and-van-vs-removal-company', '/how-it-works', '/for-businesses', '/about',
     '/areas-covered', '/pricing', '/contact', '/apply-to-join',
     '/why-join', '/terms', '/privacy', '/cookies'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(staticLastModified[route] || '2026-07-01'),
-    changeFrequency: route === '/man-and-van-west-midlands' || route === '/man-and-van-prices' ? 'weekly' as const : 'monthly' as const,
-    priority: route === '' ? 1.0 : route === '/man-and-van-west-midlands' ? 0.95 : route === '/man-and-van-prices' ? 0.85 : route === '/areas-covered' ? 0.7 : 0.6,
+    changeFrequency: route === '/man-and-van-west-midlands' || route === '/man-and-van-prices' || route === '/man-and-van-near-me' || route === '/man-and-van-vs-removal-company' ? 'weekly' as const : 'monthly' as const,
+    priority: route === '' ? 1.0 : route === '/man-and-van-west-midlands' ? 0.95 : route === '/man-and-van-prices' || route === '/man-and-van-near-me' || route === '/man-and-van-vs-removal-company' ? 0.85 : route === '/areas-covered' ? 0.7 : 0.6,
   }));
 
   return [...staticUrls, ...locationUrls, ...serviceUrls];

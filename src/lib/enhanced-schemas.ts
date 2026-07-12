@@ -1,6 +1,8 @@
 // Enhanced Service schemas for priority city pages
 // These schemas describe Man and Van Club as a quote-request marketplace, not a local moving operator.
 
+const siteUrl = "https://www.manandvanclub.co.uk";
+
 const provider = {
   "@type": "Organization",
   "name": "Man and Van Club",
@@ -288,4 +290,85 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {
   return enhancedServiceSchemas[locationKey] || null;
+}
+
+// LocalBusiness schema for the two priority target cities.
+// These run alongside the Service schema on those pages and give Google
+// a strong local entity signal for the local pack and map results.
+export function getLocalBusinessSchema(locationKey: string): Record<string, any> | null {
+  const base = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Man and Van Club",
+    "alternateName": ["Man & Van Club", "Man and Van Club UK"],
+    "url": siteUrl,
+    "logo": `${siteUrl}/icon.png`,
+    "telephone": "+44-121-751-1269",
+    "email": "support@manandvanclub.co.uk",
+    "image": `${siteUrl}/images/og-homepage.jpg`,
+    "priceRange": "£30–£50/hr",
+    "currenciesAccepted": "GBP",
+    "paymentAccepted": "Card, Bank Transfer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Walsall",
+      "addressRegion": "West Midlands",
+      "addressCountry": "GB"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Man and Van Club",
+      "url": siteUrl
+    }
+  };
+
+  if (locationKey === "birmingham") {
+    return {
+      ...base,
+      "name": "Man and Van Club — Birmingham",
+      "description": "Free man and van quote request service in Birmingham, West Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Jewellery Quarter, Edgbaston, Moseley, Harborne, Selly Oak, Bournville and Sutton Coldfield.",
+      "url": `${siteUrl}/man-and-van-birmingham`,
+      "areaServed": {
+        "@type": "City",
+        "name": "Birmingham",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "West Midlands"
+        }
+      },
+      "hasMap": "https://maps.google.com/?q=Birmingham+West+Midlands+UK",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "20:00"
+      }
+    };
+  }
+
+  if (locationKey === "walsall") {
+    return {
+      ...base,
+      "name": "Man and Van Club — Walsall",
+      "description": "Free man and van quote request service in Walsall, West Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Bloxwich, Aldridge, Brownhills, Darlaston, Willenhall, Pelsall and Rushall.",
+      "url": `${siteUrl}/man-and-van-walsall`,
+      "areaServed": {
+        "@type": "City",
+        "name": "Walsall",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "West Midlands"
+        }
+      },
+      "hasMap": "https://maps.google.com/?q=Walsall+West+Midlands+UK",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "20:00"
+      }
+    };
+  }
+
+  return null;
 }

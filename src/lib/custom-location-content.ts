@@ -70,7 +70,7 @@ Brownhills properties can vary from post-war semis and bungalows to terraced hom
   // ──────────────────────────────────────────
   birmingham: {
     title: "Man and Van Birmingham | Verified Birmingham Mover Quotes | Man and Van Club",
-    description: "Free man and van request in Birmingham, West Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you.",
+    description: "Free man and van request in Birmingham, West Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you. Covers Jewellery Quarter, Edgbaston, Selly Oak, Moseley, Harborne and Sutton Coldfield.",
     h1: "Man and Van Birmingham",
     intro: "Need a man and van in Birmingham? Submit your postcodes, move date, item list and access notes for free. You can see a guide price first, then one verified mover reviews your Birmingham move before you decide whether to book.",
     knowledge: "Birmingham moving costs can change quickly by postcode. A Jewellery Quarter apartment, an Edgbaston house, a Selly Oak student move and a Sutton Coldfield family relocation can all need different planning for parking, lifts, stairs, the Clean Air Zone and route timing. Your request gives the mover those details before they quote.",

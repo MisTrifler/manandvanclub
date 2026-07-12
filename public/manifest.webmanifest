@@ -1,0 +1,32 @@
+{
+  "name": "Man and Van Club",
+  "short_name": "Man&Van Club",
+  "description": "Submit a free move request for furniture collections, flat moves, house removals and office moves. One verified mover reviews before you book.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F97316",
+  "orientation": "portrait-primary",
+  "lang": "en-GB",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "lifestyle"],
+  "prefer_related_applications": false
+}

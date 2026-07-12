@@ -39,6 +39,24 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "Man and Van Club",
   "url": siteUrl,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/get-started?search={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    "[data-speakable='hero-heading']",
+    "[data-speakable='hero-description']",
+    "[data-speakable='seo-content']"
+  ]
 };
 
 const faqSchema = {
@@ -89,6 +107,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
       <script
         type="application/ld+json"

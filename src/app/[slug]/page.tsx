@@ -1,7 +1,7 @@
 import CityServiceContent from "@/components/CityServiceContent";
 import { getLocationPageData, getAllLocationPageSlugs } from "@/lib/location-content";
 import { getIndexableLocationSlugs, isLocationIndexable } from "@/lib/seo-quality-guard";
-import { getEnhancedServiceSchema } from "@/lib/enhanced-schemas";
+import { getEnhancedServiceSchema, getLocalBusinessSchema } from "@/lib/enhanced-schemas";
 import { type IntentType } from "@/lib/intent-detection";
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
@@ -304,6 +304,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     // Quality guard: thin/placeholder pages are noindexed and excluded
     // from the sitemap until their local content is enriched.
     const indexable = isLocationIndexable(locationKey);
+    const ogTitle = locData.title.replace(/ \| Man and Van Club$/, '');
+    const ogSubtitle = `Free move requests in ${locData.name}, ${locData.region}`;
+    const dynamicOgImage = `${siteUrl}/api/og?title=${encodeURIComponent(ogTitle)}&subtitle=${encodeURIComponent(ogSubtitle)}&location=${encodeURIComponent(locData.name + ', ' + locData.region)}`;
     return {
       title: locData.title,
       description: locData.description,
@@ -314,13 +317,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         title: locData.title,
         description: locData.description,
         url: `${siteUrl}/${slug}`,
-        images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: `Man and Van ${locData.name} | Man and Van Club` }],
+        images: [{ url: dynamicOgImage, width: 1200, height: 630, alt: `Man and Van ${locData.name} | Man and Van Club` }],
       },
       twitter: {
         card: "summary_large_image",
         title: locData.title,
         description: locData.description,
-        images: ["/images/og-homepage.jpg"],
+        images: [dynamicOgImage],
       },
       ...(indexable ? {} : { robots: { index: false, follow: true } }),
     };
@@ -328,6 +331,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const serviceData = servicePageData[slug];
   if (serviceData) {
+    const ogTitle = serviceData.title.replace(/ \| Man and Van Club$/, '');
+    const dynamicOgImage = `${siteUrl}/api/og?title=${encodeURIComponent(ogTitle)}&subtitle=${encodeURIComponent(serviceData.badge || serviceData.name)}`;
     return {
       title: serviceData.title,
       description: serviceData.description,
@@ -338,13 +343,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         title: serviceData.title,
         description: serviceData.description,
         url: `${siteUrl}/${slug}`,
-        images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: `${serviceData.name} | Man and Van Club` }],
+        images: [{ url: dynamicOgImage, width: 1200, height: 630, alt: `${serviceData.name} | Man and Van Club` }],
       },
       twitter: {
         card: "summary_large_image",
         title: serviceData.title,
         description: serviceData.description,
-        images: ["/images/og-homepage.jpg"],
+        images: [dynamicOgImage],
       },
     };
   }
@@ -374,9 +379,10 @@ export default function Page({ params }: { params: { slug: string } }) {
   if (locData) {
     // Override with enhanced Service schema for approved priority cities
     const enhancedSchema = getEnhancedServiceSchema(locationKey);
+    const localBusinessSchema = getLocalBusinessSchema(locationKey);
     const enhancedData = enhancedSchema
-      ? { ...locData, localBusinessSchema: enhancedSchema }
-      : locData;
+      ? { ...locData, localBusinessSchema: enhancedSchema, localBusinessExtra: localBusinessSchema }
+      : { ...locData, localBusinessExtra: localBusinessSchema };
     return <CityServiceContent data={enhancedData} faqItems={locData.faq} />;
   }
 
