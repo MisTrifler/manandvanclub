@@ -131,6 +131,27 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
+      {/* ── Visible Breadcrumb ── */}
+      <nav aria-label="Breadcrumb" className="bg-[#F9F9F7] border-b border-border/50">
+        <div className="container mx-auto px-4 py-3">
+          <ol className="flex items-center gap-2 text-xs font-medium text-primary/50">
+            <li>
+              <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+            </li>
+            {isLocationPage && data.region === "West Midlands" && data.slug !== "man-and-van-west-midlands" && (
+              <li className="flex items-center gap-2">
+                <ChevronRight size={12} className="text-primary/30" />
+                <Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands</Link>
+              </li>
+            )}
+            <li className="flex items-center gap-2" aria-current="page">
+              <ChevronRight size={12} className="text-primary/30" />
+              <span className="text-primary font-bold truncate">{data.name}</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       {/* ── Hero Section (Optimized) ── */}
       <section className="bg-[#F9F9F7] py-10 lg:py-12 lg:min-h-[calc(100vh-100px)] border-b border-border overflow-hidden relative">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
@@ -575,6 +596,26 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                       >
                         <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{service.title}</span>
                         <ArrowUpRight size={16} className="text-primary/30 group-hover:text-accent transition-colors" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* ── Popular Locations (Service Pages) ── */}
+              {isServicePage && data.popularLocations && data.popularLocations.length > 0 && (
+                <div className="space-y-10">
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Popular West Midlands Locations</h3>
+                  <p className="text-text-secondary font-medium leading-relaxed">We are focusing first on strong West Midlands coverage. Submit a free move request for any of these areas.</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {data.popularLocations.map((loc: { name: string; href: string }) => (
+                      <Link
+                        key={loc.href}
+                        href={loc.href}
+                        className="group flex items-center justify-between bg-[#F9F9F7] p-5 rounded-2xl border border-border/50 hover:border-accent hover:shadow-lg transition-all duration-300"
+                      >
+                        <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{loc.name}</span>
+                        <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
                       </Link>
                     ))}
                   </div>

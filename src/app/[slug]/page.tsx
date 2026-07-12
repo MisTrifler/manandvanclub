@@ -6,6 +6,24 @@ import { type IntentType } from "@/lib/intent-detection";
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 
+const siteUrl = "https://www.manandvanclub.co.uk";
+
+// Popular West Midlands locations to link from service pages
+const popularLocations = [
+  { name: "Birmingham", href: "/man-and-van-birmingham" },
+  { name: "Walsall", href: "/man-and-van-walsall" },
+  { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
+  { name: "Dudley", href: "/man-and-van-dudley" },
+  { name: "West Bromwich", href: "/man-and-van-west-bromwich" },
+  { name: "Solihull", href: "/man-and-van-solihull" },
+  { name: "Coventry", href: "/man-and-van-coventry" },
+  { name: "Stourbridge", href: "/man-and-van-stourbridge" },
+  { name: "Halesowen", href: "/man-and-van-halesowen" },
+  { name: "Wednesbury", href: "/man-and-van-wednesbury" },
+  { name: "Bloxwich", href: "/man-and-van-bloxwich" },
+  { name: "Brownhills", href: "/man-and-van-brownhills" },
+];
+
 const serviceSlugs = [
   "house-removals",
   "flat-removals",
@@ -47,6 +65,7 @@ const servicePageData: Record<string, any> = {
       { t: "Customer-Controlled", d: "You see the guide price first, then decide whether to accept a mover quote.", icon: "check" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/house-removals"),
+    popularLocations,
     faq: [
       { q: "How much does a house removal cost?", a: "Prices vary based on volume, distance, access, helpers, stairs and date. Use the form to see a guide price first, then an approved mover can review the details before quoting." },
       { q: "Do movers dismantle and reassemble furniture?", a: "Some movers offer this service. Add dismantling and reassembly notes to the form so an approved mover can review whether they can include it in the quote." },
@@ -72,6 +91,7 @@ const servicePageData: Record<string, any> = {
       { t: "Clear Quote Review", d: "An approved mover reviews the access and move details before sending quote options.", icon: "check" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/flat-removals"),
+    popularLocations,
     faq: [
       { q: "Do I need to book the lift for my flat removal?", a: "It is recommended to book the lift with your building management in advance. Add any lift or building access rules to your request so the mover can quote with the right timing." },
       { q: "Can movers handle tight staircases?", a: "Yes. Add no-lift access and staircase details to your request so the mover can account for the extra time and handling before quoting." },
@@ -97,6 +117,7 @@ const servicePageData: Record<string, any> = {
       { t: "Budget-Aware", d: "Smaller loads and flexible dates can help keep the guide price lower.", icon: "check" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/student-removals"),
+    popularLocations,
     faq: [
       { q: "Do you offer student discounts?", a: "Student move costs depend on load size, route, helpers and timing. Smaller loads and flexible dates can help keep the guide price lower." },
       { q: "Can I share a move with housemates?", a: "Combined student moves can sometimes reduce the guide price when housemates are moving on the same route. Add the details to the form so a mover can review the request properly." },
@@ -106,7 +127,7 @@ const servicePageData: Record<string, any> = {
   "office-removals": {
     name: "Office Removals",
     formIntent: "office",
-    title: "Office Removals | Business Relocation Services | Man and Van Club",
+    title: "Office Removals | Verified Business Mover Quotes | Man and Van Club",
     description: "Office removal and business relocation quote requests across England. Add access, timing and equipment details so an approved mover can review the job before quoting.",
     badge: "Business Move Requests",
     h1: "Office Removals With Less Disruption",
@@ -122,6 +143,7 @@ const servicePageData: Record<string, any> = {
       { t: "Reviewed Before Quote", d: "An approved mover checks the business-move details before sending quote options.", icon: "check" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/office-removals"),
+    popularLocations,
     faq: [
       { q: "Can you move outside business hours?", a: "Evening and weekend office relocations may be available depending on mover availability. Add your preferred timing when submitting the request." },
       { q: "Do you handle IT equipment?", a: "Add IT equipment, monitors, servers or fragile electronics to your request so the mover can confirm what they can handle before quoting." },
@@ -147,6 +169,7 @@ const servicePageData: Record<string, any> = {
       { t: "Item Or Load Friendly", d: "Useful for one-off items or several bulky pieces without filling in a full house-removal request.", icon: "package" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/furniture-delivery"),
+    popularLocations,
     faq: [
       { q: "Can you collect from a shop or seller?", a: "Yes. Collections from shops, private sellers or auction houses can be submitted. Provide the collection postcode and item details so the mover can quote accurately." },
       { q: "How much does furniture collection cost?", a: "Single-item collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
@@ -172,6 +195,7 @@ const servicePageData: Record<string, any> = {
       { t: "Clear Timing", d: "Add your preferred time window so the mover can confirm whether same-day help is realistic.", icon: "access" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/same-day-man-and-van"),
+    popularLocations,
     faq: [
       { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
       { q: "Does same-day cost more?", a: "Same-day moves can cost more when availability is limited or the route is longer. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
@@ -197,6 +221,7 @@ const servicePageData: Record<string, any> = {
       { t: "Quote Before Booking", d: "You can review quote options before deciding whether to proceed.", icon: "check" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/long-distance-removals"),
+    popularLocations,
     faq: [
       { q: "How much does a long-distance move cost?", a: "Long-distance pricing depends on mileage, route time, volume, access and whether the move is one-way or part of a return route. Use the form to get a guide price first." },
       { q: "Can the mover stay overnight for very long distances?", a: "For moves over 4–5 hours, some movers may require overnight accommodation. This is agreed upfront and included in the quote." },
@@ -222,6 +247,7 @@ const servicePageData: Record<string, any> = {
       { t: "Useful For One-Off Buys", d: "A simple way to request help without booking a full house move.", icon: "furniture" }
     ],
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/facebook-marketplace-collection"),
+    popularLocations,
     faq: [
       { q: "Can the mover collect on my behalf if I cannot be there?", a: "Yes, with clear arrangements. Provide the seller's contact details and any collection instructions. Payment must be settled with the seller beforehand." },
       { q: "How much does a marketplace collection cost?", a: "Marketplace collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
@@ -274,7 +300,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: locData.title,
       description: locData.description,
       alternates: {
-        canonical: `https://www.manandvanclub.co.uk/${slug}`,
+        canonical: `${siteUrl}/${slug}`,
+      },
+      openGraph: {
+        title: locData.title,
+        description: locData.description,
+        url: `${siteUrl}/${slug}`,
+        images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: `Man and Van ${locData.name} | Man and Van Club` }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: locData.title,
+        description: locData.description,
+        images: ["/images/og-homepage.jpg"],
       },
       ...(indexable ? {} : { robots: { index: false, follow: true } }),
     };
@@ -286,7 +324,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: serviceData.title,
       description: serviceData.description,
       alternates: {
-        canonical: `https://www.manandvanclub.co.uk/${slug}`,
+        canonical: `${siteUrl}/${slug}`,
+      },
+      openGraph: {
+        title: serviceData.title,
+        description: serviceData.description,
+        url: `${siteUrl}/${slug}`,
+        images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: `${serviceData.name} | Man and Van Club` }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: serviceData.title,
+        description: serviceData.description,
+        images: ["/images/og-homepage.jpg"],
       },
     };
   }

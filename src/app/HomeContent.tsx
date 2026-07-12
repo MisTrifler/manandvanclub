@@ -17,6 +17,7 @@ import {
 import QuoteForm from "@/components/QuoteForm";
 import { motion } from "framer-motion";
 import FAQ from "@/components/FAQ";
+import { HOME_FAQ_ITEMS } from "@/constants/home-faq";
 
 const STEPS = [
   {
@@ -38,41 +39,6 @@ const STEPS = [
     t: "Accept or Decline Securely",
     d: "You receive a secure quote review link. Your details are released only if you accept the quote and pay the booking deposit, which is deducted from the mover quote.",
     icon: <Phone size={24} />,
-  },
-];
-
-const FAQ_ITEMS = [
-  {
-    q: "What types of moves can I request?",
-    a: "You can request help with single-item collections, furniture delivery, student moves, flat removals, house removals, office moves, same-day jobs and long-distance moves. The form adapts to the type of move you choose.",
-  },
-  {
-    q: "How does matching work?",
-    a: "Submit your move details for free. Approved movers see anonymised details and may submit a total quote. You receive one quote review link, pay a booking deposit only if you accept, and that deposit is deducted from the mover quote.",
-  },
-  {
-    q: "Will multiple movers contact me?",
-    a: "No. Your details are not shared with multiple companies. They are only released to the mover whose quote you accept.",
-  },
-  {
-    q: "Is there any obligation?",
-    a: "No. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote, and that deposit is deducted from the total quote.",
-  },
-  {
-    q: "How quickly will I receive a quote?",
-    a: "A verified mover can review your request and send a quote if they can help. Once you accept and pay the booking deposit, the mover receives your details and contacts you directly. You pay the remaining balance on moving day.",
-  },
-  {
-    q: "Are movers verified?",
-    a: "We help connect customers with movers who have completed our application and verification process. While we take steps to assess movers in our network, we always recommend that customers conduct their own due diligence before booking, including confirming insurance coverage and obtaining a written quote.",
-  },
-  {
-    q: "What happens after I submit my request?",
-    a: "After submitting your request, your contact details remain protected. A verified independent mover can review anonymised details and send a quote. You choose whether to accept or decline.",
-  },
-  {
-    q: "Do I need to pay to submit a move request?",
-    a: "No. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote, and that deposit is deducted from the total quote. The remaining balance is paid directly to the mover on moving day.",
   },
 ];
 
@@ -189,8 +155,8 @@ export default function HomeContent() {
                 textShadow: "0 2px 14px rgba(0,0,0,0.40)",
               }}
             >
-              <span className="text-white">From one item to a</span>{" "}
-              <span className="text-accent">full home move</span>
+              <span className="text-white">Man and Van</span>{" "}
+              <span className="text-accent">— From One Item to a Full Home Move</span>
             </h1>
 
             <p
@@ -450,7 +416,7 @@ export default function HomeContent() {
               Everything you need to know about our matching service.
             </p>
           </div>
-          <FAQ items={FAQ_ITEMS} />
+          <FAQ items={HOME_FAQ_ITEMS} />
         </div>
       </section>
 
@@ -475,12 +441,20 @@ export default function HomeContent() {
       {/* ──────────────────── SEO Content Block ──────────────────── */}
       <section className="py-16 bg-[#F9F9F7] border-b border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter mb-4">
+          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter mb-6">
             Man and Van Services Across the West Midlands and UK
           </h2>
-          <p className="text-sm text-text-secondary leading-relaxed">
-            Man and Van Club helps customers submit free move requests for everything from single-item furniture collections to full house removals, flat moves, office relocations, student moves and long-distance removals. We are focusing first on strong West Midlands coverage, especially <a href="/man-and-van-birmingham" className="font-black text-accent hover:underline">man and van Birmingham</a>, <a href="/man-and-van-walsall" className="font-black text-accent hover:underline">man and van Walsall</a>, <a href="/man-and-van-wolverhampton" className="font-black text-accent hover:underline">man and van Wolverhampton</a> and <a href="/same-day-man-and-van" className="font-black text-accent hover:underline">same-day man and van</a> requests.
-          </p>
+          <div className="space-y-4 text-sm text-text-secondary leading-relaxed">
+            <p>
+              Man and Van Club is a UK marketplace that helps customers submit free move requests for everything from single-item furniture collections to full house removals, flat moves, office relocations, student moves and long-distance removals. Instead of your details being sent to lots of companies, one verified independent mover reviews your anonymised request and sends a quote before you decide whether to book. If you accept, you pay a booking deposit that is deducted from the mover&apos;s quote, and the remaining balance is paid directly to the mover on moving day.
+            </p>
+            <p>
+              We are focusing first on strong West Midlands coverage, especially <Link href="/man-and-van-birmingham" className="font-black text-accent hover:underline">man and van Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-black text-accent hover:underline">man and van Walsall</Link>, <Link href="/man-and-van-wolverhampton" className="font-black text-accent hover:underline">man and van Wolverhampton</Link> and <Link href="/same-day-man-and-van" className="font-black text-accent hover:underline">same-day man and van</Link> requests. Birmingham moves can vary widely — from Jewellery Quarter apartments with lift access and Clean Air Zone planning, to Selly Oak student moves, Edgbaston family homes and Sutton Coldfield suburban relocations. Walsall moves range from town-centre terraces to Bloxwich semis and Aldridge estates, with route timing often depending on the A34 and A454 corridors.
+            </p>
+            <p>
+              Whether you need <Link href="/furniture-delivery" className="font-black text-accent hover:underline">furniture delivery</Link>, a <Link href="/flat-removals" className="font-black text-accent hover:underline">flat move</Link>, <Link href="/house-removals" className="font-black text-accent hover:underline">house removals</Link>, <Link href="/office-removals" className="font-black text-accent hover:underline">office relocation</Link> or <Link href="/long-distance-removals" className="font-black text-accent hover:underline">long-distance removals</Link>, the process is the same: submit your postcodes, move date, item list and access notes for free, see a guide price, then let one approved mover review the details before quoting. Your details stay protected until you accept. See our <Link href="/man-and-van-west-midlands" className="font-black text-accent hover:underline">West Midlands man and van hub</Link> for area-specific route information, postcode coverage and local move examples.
+            </p>
+          </div>
         </div>
       </section>
     </div>

@@ -69,7 +69,7 @@ Brownhills properties can vary from post-war semis and bungalows to terraced hom
   // ──────────────────────────────────────────
   birmingham: {
     title: "Man and Van Birmingham | Verified Birmingham Mover Quotes | Man and Van Club",
-    description: "Free man and van request in Birmingham. Get a guide price for Birmingham city centre, Jewellery Quarter, Edgbaston, Selly Oak and nearby areas before one verified mover quotes.",
+    description: "Free man and van request in Birmingham, West Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you.",
     h1: "Man and Van Birmingham",
     intro: "Need a man and van in Birmingham? Submit your postcodes, move date, item list and access notes for free. You can see a guide price first, then one verified mover reviews your Birmingham move before you decide whether to book.",
     knowledge: "Birmingham moving costs can change quickly by postcode. A Jewellery Quarter apartment, an Edgbaston house, a Selly Oak student move and a Sutton Coldfield family relocation can all need different planning for parking, lifts, stairs, the Clean Air Zone and route timing. Your request gives the mover those details before they quote.",
@@ -105,11 +105,23 @@ Your Birmingham request can include property type, access, parking, stairs, lift
           { label: "Same-day man and van", href: "/same-day-man-and-van" }
         ],
       },
+      {
+        title: "Man and van Sutton Coldfield",
+        body: "Sutton Coldfield moves are typically larger family homes with driveways, gardens and suburban roads. Add furniture volume, packing notes and driveway access so the mover can judge the full job before quoting.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+        ],
+      },
+      {
+        title: "Man and van Moseley and Kings Heath",
+        body: "Moseley and Kings Heath have a mix of Victorian terraces and converted flats. Parking can be limited on terraced streets, especially near the high streets. Add parking restrictions and access details to your request.",
+      },
+      {
+        title: "Man and van Sparkbrook, Handsworth and Small Heath",
+        body: "These areas have dense Victorian terraces with on-street parking, narrow access and high foot traffic. Loading notes, parking restrictions and property access details help a mover quote accurately.",
+      },
     ],
   },
-
-  // ──────────────────────────────────────────
-  // LONDON
   // ──────────────────────────────────────────
   london: {
     localMovingInfo: `London is one of the busiest moving markets in the UK, with unique challenges that local movers often need to account for. From narrow Victorian streets in Kensington and Islington to congestion zone restrictions and ULEZ charges, a London move requires careful planning and local knowledge.
@@ -178,11 +190,52 @@ Wolverhampton moves can involve tight terraced streets, wider suburban roads or 
   // WALSALL
   // ──────────────────────────────────────────
   walsall: {
+    title: "Man and Van Walsall | Verified Local Mover Quotes | Man and Van Club",
+    description: "Free man and van request in Walsall, West Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you.",
     localMovingInfo: `Walsall is a Black Country town with a strong industrial heritage and a mix of housing types, from post-war semis to newer estates. From Bloxwich to Aldridge, Brownhills to Pelsall, Walsall moves require a mover who understands the local road network, estate layouts, and the town centre's one-way system. The A34 and A454 create heavy traffic during rush hours, and the town centre has controlled parking zones that complicate loading.
 
 Residential estates in Brownhills and Pelsall often have narrow cul-de-sacs and limited turning space for larger vans. The Victorian terraces in the town centre and the older streets around the Arboretum have tight access and on-street parking restrictions. The newer estates in Aldridge and Rushall have wider roads but still require knowledge of the local school-run traffic and rush-hour bottlenecks. Moves between Walsall and surrounding Black Country towns often depend on route timing around the A34 and A454 corridors, so these details are useful for the mover to review before quoting.
 
 Walsall moves can differ by postcode, from town centre terraces to Bloxwich semis and Aldridge estates. Your request helps a verified mover review route, parking, access and item details before sending quote options.`,
+    localAreaGuides: [
+      {
+        title: "Man and van Walsall town centre",
+        body: "Town-centre moves in WS1 and WS2 often involve terraces with on-street parking, controlled parking zones and narrow access. Add parking notes, floor level and loading details so a mover can quote accurately.",
+      },
+      {
+        title: "Man and van Bloxwich and Leamore",
+        body: "Bloxwich has a mix of post-war semis and newer estates along the A34 corridor. Cul-de-sac access, driveway availability and school-run timing can all affect the move. Include these details in your request.",
+        links: [
+          { label: "Man and van Bloxwich", href: "/man-and-van-bloxwich" },
+        ],
+      },
+      {
+        title: "Man and van Aldridge and Rushall",
+        body: "Aldridge and Rushall are suburban areas with wider roads, driveways and larger family homes. Add furniture volume, packing notes and any garden access so the mover can judge the full scope before quoting.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+        ],
+      },
+      {
+        title: "Man and van Brownhills and Pelsall",
+        body: "Brownhills and Pelsall are on the north-east side of Walsall near the A5 and A452. Estate roads, cul-de-sacs and local route timing around the M6 Toll are key details to include.",
+        links: [
+          { label: "Man and van Brownhills", href: "/man-and-van-brownhills" },
+        ],
+      },
+      {
+        title: "Furniture collection in Walsall",
+        body: "Single-item collections around Walsall are often sofas, beds, wardrobes, appliances and Facebook Marketplace purchases. Add item size, collection postcode and access notes for an accurate quote.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" },
+        ],
+      },
+      {
+        title: "Man and van Darlaston and Willenhall",
+        body: "Darlaston and Willenhall sit between Walsall and Wolverhampton. Terraced streets, estate roads and route timing around the M6 and A463 can all affect the move. Add both postcodes and access details.",
+      },
+    ],
   },
 
   // ──────────────────────────────────────────

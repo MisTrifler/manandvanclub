@@ -184,6 +184,19 @@ export default function WestMidlandsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
+      {/* Visible Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="bg-[#F9F9F7] border-b border-border/50">
+        <div className="container mx-auto px-4 py-3">
+          <ol className="flex items-center gap-2 text-xs font-medium text-primary/50">
+            <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
+            <li className="flex items-center gap-2" aria-current="page">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary/30"><path d="m9 18 6-6-6-6"/></svg>
+              <span className="text-primary font-bold">Man and Van West Midlands</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       <section className="bg-[#F9F9F7] border-b border-border py-16 lg:py-24 overflow-hidden relative">
         <div className="absolute inset-0 opacity-5 pointer-events-none grid grid-cols-6 gap-4">
           {[...Array(30)].map((_, i) => (

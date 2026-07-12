@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Facebook, ShieldCheck, CheckCircle2, Mail, Phone, MapPin, Lock, ExternalLink } from "lucide-react";
 import { BrandIcon, BrandWordmark } from "./BrandLogo";
 
 const facebookUrl = "https://www.facebook.com/profile.php?id=61590898873944";
+const yellUrl = "https://www.yell.com/biz/man-and-van-club-walsall-11043227/";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +13,9 @@ export default function Footer() {
   return (
     <footer className="bg-white text-primary pt-16 pb-12 border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
-          <div>
+          <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6 group" aria-label="Man and Van Club home">
               <BrandIcon size="sm" className="shadow-none" />
               <BrandWordmark variant="inline" />
@@ -24,11 +27,11 @@ export default function Footer() {
               <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Mail size={14} className="text-accent" /> support@manandvanclub.co.uk
               </a>
-              <div className="flex items-center gap-2">
+              <a href="tel:01217511269" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={14} className="text-accent" /> 0121 751 1269
-              </div>
+              </a>
               <div className="flex items-center gap-2">
-                <MapPin size={14} className="text-accent" /> UK-Wide Coverage
+                <MapPin size={14} className="text-accent" /> Walsall, West Midlands
               </div>
             </div>
             <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-border text-xs text-text-secondary">
@@ -38,49 +41,81 @@ export default function Footer() {
               <p>Your data is handled securely and only released to the mover handling your booking after you accept a quote.</p>
             </div>
 
+            {/* Business Details — Sole Trader */}
+            <div className="mt-4 text-xs text-text-secondary leading-relaxed">
+              <p className="font-bold text-primary mb-1">Man and Van Club</p>
+              <p>Trading as Man and Van Club</p>
+              <p>Walsall, West Midlands, England</p>
+            </div>
+
+            {/* Social Links */}
             <div className="mt-5">
               <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/40 mb-3">Find us online</p>
-              <a
-                href={facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-bold text-primary shadow-sm transition-colors hover:border-accent hover:text-accent"
-                aria-label="Visit Man and Van Club on Facebook"
-              >
-                <Facebook size={16} />
-                Facebook
-                <ExternalLink size={13} />
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-bold text-primary shadow-sm transition-colors hover:border-accent hover:text-accent"
+                  aria-label="Visit Man and Van Club on Facebook"
+                >
+                  <Facebook size={16} />
+                  Facebook
+                  <ExternalLink size={13} />
+                </a>
+                <a
+                  href={yellUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-bold text-primary shadow-sm transition-colors hover:border-accent hover:text-accent"
+                  aria-label="Visit Man and Van Club on Yell"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/></svg>
+                  Yell
+                  <ExternalLink size={13} />
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Links 1 */}
+          {/* Popular Areas — NEW column with Birmingham & Walsall prominently */}
           <div>
-            <h4 className="font-bold text-lg mb-6">For Customers</h4>
+            <h4 className="font-bold text-lg mb-6">Popular Areas</h4>
             <ul className="space-y-4 text-text-secondary">
-              <li><Link href="/get-started" className="hover:text-accent transition-colors">Get Started</Link></li>
-              <li><Link href="/how-it-works" className="hover:text-accent transition-colors">How It Works</Link></li>
-              <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands</Link></li>
-              <li><Link href="/areas-covered" className="hover:text-accent transition-colors">Areas We Cover</Link></li>
-              <li><Link href="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
+              <li><Link href="/man-and-van-birmingham" className="hover:text-accent transition-colors">Man and Van Birmingham</Link></li>
+              <li><Link href="/man-and-van-walsall" className="hover:text-accent transition-colors">Man and Van Walsall</Link></li>
+              <li><Link href="/man-and-van-wolverhampton" className="hover:text-accent transition-colors">Man and Van Wolverhampton</Link></li>
+              <li><Link href="/man-and-van-dudley" className="hover:text-accent transition-colors">Man and Van Dudley</Link></li>
+              <li><Link href="/man-and-van-coventry" className="hover:text-accent transition-colors">Man and Van Coventry</Link></li>
+              <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands Hub</Link></li>
+              <li><Link href="/areas-covered" className="hover:text-accent transition-colors">All Areas Covered</Link></li>
             </ul>
           </div>
 
-          {/* Links 2 */}
+          {/* Services */}
           <div>
             <h4 className="font-bold text-lg mb-6">Services</h4>
             <ul className="space-y-4 text-text-secondary">
               <li><Link href="/house-removals" className="hover:text-accent transition-colors">House Removals</Link></li>
               <li><Link href="/flat-removals" className="hover:text-accent transition-colors">Flat Moves</Link></li>
+              <li><Link href="/student-removals" className="hover:text-accent transition-colors">Student Moves</Link></li>
               <li><Link href="/office-removals" className="hover:text-accent transition-colors">Office Relocations</Link></li>
-              <li><Link href="/long-distance-removals" className="hover:text-accent transition-colors">Long Distance</Link></li>
+              <li><Link href="/furniture-delivery" className="hover:text-accent transition-colors">Furniture Delivery</Link></li>
               <li><Link href="/same-day-man-and-van" className="hover:text-accent transition-colors">Same Day</Link></li>
+              <li><Link href="/long-distance-removals" className="hover:text-accent transition-colors">Long Distance</Link></li>
             </ul>
           </div>
 
-          {/* Links 3 */}
+          {/* For Customers & Movers combined */}
           <div>
-            <h4 className="font-bold text-lg mb-6">For Movers</h4>
+            <h4 className="font-bold text-lg mb-6">For Customers</h4>
+            <ul className="space-y-4 text-text-secondary">
+              <li><Link href="/get-started" className="hover:text-accent transition-colors">Get Started</Link></li>
+              <li><Link href="/how-it-works" className="hover:text-accent transition-colors">How It Works</Link></li>
+              <li><Link href="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
+            </ul>
+
+            <h4 className="font-bold text-lg mb-6 mt-8">For Movers</h4>
             <ul className="space-y-4 text-text-secondary">
               <li><Link href="/why-join" className="hover:text-accent transition-colors">Become a Mover</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
@@ -93,11 +128,21 @@ export default function Footer() {
         {/* Legal & Badges */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col gap-2 text-sm text-text-secondary">
-            <span>© {currentYear} Man and Van Club</span>
+            <span>© 2024–{currentYear} Man and Van Club</span>
             <div className="flex flex-wrap gap-6 mt-2">
               <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-primary">Terms & Conditions</Link>
               <Link href="/cookies" className="hover:text-primary">Cookie Policy</Link>
+              <button
+                type="button"
+                className="hover:text-primary text-left"
+                onClick={() => {
+                  localStorage.removeItem("cookie-consent");
+                  window.location.reload();
+                }}
+              >
+                Cookie Preferences
+              </button>
             </div>
           </div>
 

@@ -1,12 +1,36 @@
 import HomeContent from "./HomeContent";
 import { Metadata } from "next";
+import { HOME_FAQ_ITEMS } from "@/constants/home-faq";
+
+const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
   title: "Man and Van Club | From One Item to Full Home Moves",
   description:
     "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover can review before you book.",
   alternates: {
-    canonical: 'https://www.manandvanclub.co.uk',
+    canonical: siteUrl,
+  },
+  openGraph: {
+    title: "Man and Van Club | Free Move Requests | UK-Wide Verified Movers",
+    description:
+      "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover reviews your details before you decide whether to book.",
+    url: siteUrl,
+    images: [
+      {
+        url: "/images/og-homepage.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Man and Van Club — Free Move Requests Across the UK",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Man and Van Club | Free Move Requests | UK-Wide Verified Movers",
+    description:
+      "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs.",
+    images: ["/images/og-homepage.jpg"],
   },
 };
 
@@ -14,62 +38,20 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Man and Van Club",
-  "url": "https://www.manandvanclub.co.uk",
+  "url": siteUrl,
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is it free to submit a move request?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote."
-      }
+  "mainEntity": HOME_FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a,
     },
-    {
-      "@type": "Question",
-      "name": "What is the booking deposit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The booking deposit secures your accepted mover quote and releases your details to the mover. It is deducted from the mover’s quote, so your total move cost stays the same."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I pay the mover separately?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You pay the remaining balance directly to the mover on moving day."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will lots of companies contact me?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Your details are not shared with multiple companies. They are only released to the mover whose quote you accept."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the mover quote fixed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The quote is based on the details you provide. It may only change if your move details were incomplete, inaccurate or later changed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are movers verified?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We help connect customers with movers who have completed our application and verification process. Customers should still confirm insurance cover and final details directly with their mover before booking."
-      }
-    }
-  ]
+  })),
 };
 
 export default function Home() {
@@ -77,18 +59,18 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Man and Van Club quote request service",
-    "url": "https://www.manandvanclub.co.uk",
+    "url": siteUrl,
     "provider": {
       "@type": "Organization",
       "name": "Man and Van Club",
-      "url": "https://www.manandvanclub.co.uk",
+      "url": siteUrl,
       "telephone": "+44-121-751-1269",
       "email": "support@manandvanclub.co.uk",
-      "logo": "https://www.manandvanclub.co.uk/icon.png"
+      "logo": `${siteUrl}/icon.png`,
     },
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "West Midlands" },
-      { "@type": "Country", "name": "United Kingdom" }
+      { "@type": "Country", "name": "United Kingdom" },
     ],
     "serviceType": [
       "Man and van quote request",
@@ -97,9 +79,9 @@ export default function Home() {
       "Flat moves",
       "Student moves",
       "Furniture delivery",
-      "Office moves"
+      "Office moves",
     ],
-    "description": "Marketplace helping customers submit free move requests for anything from single-item collections to full home moves. An approved mover reviews the details and sends a quote before the customer decides whether to book."
+    "description": "Marketplace helping customers submit free move requests for anything from single-item collections to full home moves. An approved mover reviews the details and sends a quote before the customer decides whether to book.",
   };
 
   return (

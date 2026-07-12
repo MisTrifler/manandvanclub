@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { BrandIcon, BrandWordmark } from "./BrandLogo";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -99,6 +99,10 @@ export default function Header() {
               <Mail size={10} className="text-accent" />
               <span>support@manandvanclub.co.uk</span>
             </a>
+            <a href="tel:01217511269" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Phone size={10} className="text-accent" />
+              <span>0121 751 1269</span>
+            </a>
           </div>
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
@@ -175,6 +179,10 @@ export default function Header() {
                       <ArrowUpRight size={14} className="opacity-0 group-hover/item:opacity-100" />
                     </Link>
                   ))}
+                  <Link href="/areas-covered" className="flex items-center justify-between px-5 py-4 hover:bg-accent/5 rounded-xl text-[10px] font-black uppercase tracking-widest text-accent hover:text-primary transition-all">
+                    View All Areas
+                    <ArrowUpRight size={14} />
+                  </Link>
                 </div>
               </div>
             </div>
