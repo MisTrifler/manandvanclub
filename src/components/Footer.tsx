@@ -83,11 +83,11 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">Popular Areas</h4>
             <ul className="space-y-4 text-text-secondary">
-              <li><Link href="/man-and-van-birmingham" className="hover:text-accent transition-colors">Man and Van Birmingham</Link></li>
-              <li><Link href="/man-and-van-walsall" className="hover:text-accent transition-colors">Man and Van Walsall</Link></li>
-              <li><Link href="/man-and-van-wolverhampton" className="hover:text-accent transition-colors">Man and Van Wolverhampton</Link></li>
-              <li><Link href="/man-and-van-dudley" className="hover:text-accent transition-colors">Man and Van Dudley</Link></li>
-              <li><Link href="/man-and-van-coventry" className="hover:text-accent transition-colors">Man and Van Coventry</Link></li>
+              <li><Link href="/man-and-van-birmingham" className="hover:text-accent transition-colors">Birmingham</Link></li>
+              <li><Link href="/man-and-van-walsall" className="hover:text-accent transition-colors">Walsall</Link></li>
+              <li><Link href="/man-and-van-wolverhampton" className="hover:text-accent transition-colors">Wolverhampton</Link></li>
+              <li><Link href="/man-and-van-dudley" className="hover:text-accent transition-colors">Dudley</Link></li>
+              <li><Link href="/man-and-van-coventry" className="hover:text-accent transition-colors">Coventry</Link></li>
               <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands Hub</Link></li>
               <li><Link href="/areas-covered" className="hover:text-accent transition-colors">All Areas Covered</Link></li>
             </ul>
