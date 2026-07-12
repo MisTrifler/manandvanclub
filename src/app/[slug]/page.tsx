@@ -67,9 +67,10 @@ const servicePageData: Record<string, any> = {
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/house-removals"),
     popularLocations,
     faq: [
-      { q: "How much does a house removal cost?", a: "Prices vary based on volume, distance, access, helpers, stairs and date. Use the form to see a guide price first, then an approved mover can review the details before quoting." },
+      { q: "How much does a house removal cost?", a: "In 2026, UK house removal prices typically range from £300–£600 for a 3-bedroom home and £500–£1,000+ for a 4+ bedroom property. Smaller 1–2 bed house moves can cost £200–£400. Prices depend on volume, distance, access, helpers, stairs, parking and date. Use the form to see a guide price first, then an approved mover can review the details before quoting." },
       { q: "Do movers dismantle and reassemble furniture?", a: "Some movers offer this service. Add dismantling and reassembly notes to the form so an approved mover can review whether they can include it in the quote." },
-      { q: "Are my belongings insured during the move?", a: "Movers must provide Goods in Transit and Public Liability insurance before they are approved. We still recommend confirming cover details directly with your mover before moving day." }
+      { q: "Are my belongings insured during the move?", a: "Movers must provide Goods in Transit and Public Liability insurance before they are approved. We still recommend confirming cover details directly with your mover before moving day." },
+      { q: "How much does a house removal cost in the West Midlands?", a: "West Midlands house removal prices in 2026 typically range from £250–£500 for a 3-bed home, with Birmingham and Solihull often at the higher end due to Clean Air Zone and parking considerations. Walsall, Wolverhampton and Black Country moves may cost less. Submit your postcodes and property details for a guide price first." }
     ]
   },
   "flat-removals": {
@@ -95,7 +96,8 @@ const servicePageData: Record<string, any> = {
     faq: [
       { q: "Do I need to book the lift for my flat removal?", a: "It is recommended to book the lift with your building management in advance. Add any lift or building access rules to your request so the mover can quote with the right timing." },
       { q: "Can movers handle tight staircases?", a: "Yes. Add no-lift access and staircase details to your request so the mover can account for the extra time and handling before quoting." },
-      { q: "How much does a flat removal cost?", a: "Flat move prices depend on volume, distance, stairs, lift access, parking and timing. Use the form to see a guide price before an approved mover reviews the details." }
+      { q: "How much does a flat removal cost?", a: "In 2026, UK flat removal prices typically range from £150–£350 for a 1-bed flat and £250–£500 for a 2-bed flat. Upper-floor flats without lift access cost more due to the extra time needed. City-centre flats with loading restrictions can also affect the price. Use the form to see a guide price before an approved mover reviews the details." },
+      { q: "Does a flat move cost less than a house move?", a: "Generally yes — flat moves involve fewer items and smaller loads than full house removals. A studio or 1-bed flat move in 2026 might cost £150–£300, compared to £300–£600 for a 3-bed house. However, factors like lift access, stairs, parking restrictions and loading bays can bring the flat price closer to a house move." }
     ]
   },
   "student-removals": {
@@ -121,7 +123,8 @@ const servicePageData: Record<string, any> = {
     faq: [
       { q: "Do you offer student discounts?", a: "Student move costs depend on load size, route, helpers and timing. Smaller loads and flexible dates can help keep the guide price lower." },
       { q: "Can I share a move with housemates?", a: "Combined student moves can sometimes reduce the guide price when housemates are moving on the same route. Add the details to the form so a mover can review the request properly." },
-      { q: "How much does a student move cost?", a: "Student move prices depend on the route, item list, helpers, access and term-time demand. Smaller loads and flexible dates can help keep the guide price lower." }
+      { q: "How much does a student move cost?", a: "In 2026, UK student moves typically cost £80–£200 for a halls room or studio, and £150–£350 for a shared house. Prices depend on the route, item list, helpers, access and whether it falls during the busy June–September period. Flexible dates and smaller loads help keep the guide price lower." },
+      { q: "When is the cheapest time for a student move?", a: "Avoiding the last week of June and first two weeks of September can reduce the price, as these are the busiest student move periods. Mid-week moves are often cheaper than weekends, and booking a few days ahead gives movers more flexibility to fit your job in." }
     ]
   },
   "office-removals": {
@@ -147,7 +150,8 @@ const servicePageData: Record<string, any> = {
     faq: [
       { q: "Can you move outside business hours?", a: "Evening and weekend office relocations may be available depending on mover availability. Add your preferred timing when submitting the request." },
       { q: "Do you handle IT equipment?", a: "Add IT equipment, monitors, servers or fragile electronics to your request so the mover can confirm what they can handle before quoting." },
-      { q: "How much notice do you need for an office move?", a: "We recommend at least 1–2 weeks' notice for office moves to ensure proper planning and availability." }
+      { q: "How much notice do you need for an office move?", a: "We recommend at least 1–2 weeks' notice for office moves to ensure proper planning and availability." },
+      { q: "How much does an office removal cost?", a: "In 2026, UK office removal costs typically range from £300–£600 for a small office (1–5 desks), £600–£1,500 for a medium office (5–20 desks), and £1,500+ for larger offices. Prices depend on the amount of equipment, IT infrastructure, access, loading bay availability and whether the move happens outside business hours. Submit your details for a guide price first." }
     ]
   },
   "furniture-delivery": {
@@ -172,8 +176,9 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "Can you collect from a shop or seller?", a: "Yes. Collections from shops, private sellers or auction houses can be submitted. Provide the collection postcode and item details so the mover can quote accurately." },
-      { q: "How much does furniture collection cost?", a: "Single-item collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
-      { q: "Will my furniture be protected?", a: "Movers typically use protective blankets and straps as standard. Movers must provide Goods in Transit and Public Liability insurance before they are approved, and we recommend confirming cover details directly with your mover." }
+      { q: "How much does furniture collection cost?", a: "In 2026, UK single-item furniture collection prices typically range from £35–£70 for a local collection (sofa, bed, wardrobe or appliance). Multi-item collections or longer distances cost more. Prices depend on distance, item size, access, stairs and whether extra help is needed. Use the form to see a guide price first." },
+      { q: "Will my furniture be protected?", a: "Movers typically use protective blankets and straps as standard. Movers must provide Goods in Transit and Public Liability insurance before they are approved, and we recommend confirming cover details directly with your mover." },
+      { q: "How much does a Facebook Marketplace collection cost?", a: "Marketplace collections in 2026 typically cost £35–£70 for a single local item. Sofa and bed collections are at the higher end due to size and handling. Add item dimensions and access details for an accurate guide price." }
     ]
   },
   "same-day-man-and-van": {
@@ -198,8 +203,9 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
-      { q: "Does same-day cost more?", a: "Same-day moves can cost more when availability is limited or the route is longer. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
-      { q: "Can I book same-day for long distances?", a: "Same-day is usually best for local or regional moves. For long-distance same-day requests, include accurate postcodes, timing and access notes so a mover can decide whether they can help." }
+      { q: "Does same-day cost more?", a: "Same-day moves in 2026 can cost 15–30% more than booked-ahead moves when availability is limited or the route is longer. UK same-day man and van rates typically range from £40–£60 per hour, compared to £30–£50 for standard bookings. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
+      { q: "Can I book same-day for long distances?", a: "Same-day is usually best for local or regional moves. For long-distance same-day requests, include accurate postcodes, timing and access notes so a mover can decide whether they can help." },
+      { q: "How much does a same-day man and van cost?", a: "In 2026, UK same-day man and van prices typically range from £40–£60 per hour, with a minimum charge usually equivalent to 2 hours. A local same-day furniture collection might cost £80–£150, while a same-day flat move could be £200–£400 depending on access and timing. Submit your details for a guide price first." }
     ]
   },
   "long-distance-removals": {
@@ -223,9 +229,10 @@ const servicePageData: Record<string, any> = {
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/long-distance-removals"),
     popularLocations,
     faq: [
-      { q: "How much does a long-distance move cost?", a: "Long-distance pricing depends on mileage, route time, volume, access and whether the move is one-way or part of a return route. Use the form to get a guide price first." },
+      { q: "How much does a long-distance move cost?", a: "In 2026, UK long-distance man and van prices typically range from £1.00–£2.00 per mile, or £300–£600 for a Birmingham to London move, £350–£650 for Birmingham to Manchester, and £400–£750 for Birmingham to Glasgow. Pricing depends on mileage, route time, volume, access and whether the move is one-way or part of a return route. Use the form to get a guide price first." },
       { q: "Can the mover stay overnight for very long distances?", a: "For moves over 4–5 hours, some movers may require overnight accommodation. This is agreed upfront and included in the quote." },
-      { q: "Is my load the only one on the van?", a: "For most long-distance bookings you can describe whether you need a dedicated vehicle or can be flexible. Add this to your request so the mover can quote correctly." }
+      { q: "Is my load the only one on the van?", a: "For most long-distance bookings you can describe whether you need a dedicated vehicle or can be flexible. Add this to your request so the mover can quote correctly." },
+      { q: "How much does Birmingham to London cost with a man and van?", a: "A Birmingham to London man and van move in 2026 typically costs £300–£600 depending on load size, access at both addresses and whether the trip is one-way. A single-item collection from London to Birmingham might start from £150–£250. Submit your postcodes and item list for a guide price." }
     ]
   },
   "facebook-marketplace-collection": {
@@ -250,8 +257,9 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "Can the mover collect on my behalf if I cannot be there?", a: "Yes, with clear arrangements. Provide the seller's contact details and any collection instructions. Payment must be settled with the seller beforehand." },
-      { q: "How much does a marketplace collection cost?", a: "Marketplace collection prices depend on distance, item size, access, timing and whether extra help is needed. Use the form to see a guide price first." },
-      { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form so the mover can review the route and quote correctly." }
+      { q: "How much does a marketplace collection cost?", a: "In 2026, Facebook Marketplace collections in the UK typically cost £35–£70 for a single local item (sofa, bed, wardrobe or appliance). Longer-distance collections or multi-item pickups cost more. Add item dimensions and access details for an accurate guide price." },
+      { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form so the mover can review the route and quote correctly." },
+      { q: "How much does a sofa collection from Facebook Marketplace cost?", a: "A local sofa collection in 2026 typically costs £40–£70, depending on sofa size, whether it needs dismantling, stairs at either address and parking access. Corner sofas and recliners cost more due to handling. Submit your postcodes and sofa details for a guide price." }
     ]
   }
 };

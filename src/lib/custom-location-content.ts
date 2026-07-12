@@ -9,6 +9,7 @@ export const customLocationContentOverrides: Record<string, Partial<{
   intro: string;
   knowledge: string;
   localMovingInfo: string;
+  faq: { q: string; a: string }[];
   localAreaGuides: { title: string; body: string; links?: { label: string; href: string }[] }[];
 }>> = {
   // ──────────────────────────────────────────
@@ -80,6 +81,20 @@ The city centre operates under a Clean Air Zone that affects central routes and 
 Student demand is strongest around Selly Oak, Edgbaston and Harborne because of the University of Birmingham and nearby shared houses. June, July and September can be busier, so accurate item lists and flexible access notes help movers decide whether they can help. The M6, M5, A38 and A45 corridors are also important for moves heading towards Walsall, Solihull, Coventry, Wolverhampton and the wider West Midlands.
 
 Your Birmingham request can include property type, access, parking, stairs, lifts and route details so a verified mover can account for the difference between a Jewellery Quarter apartment, a Moseley terrace and a Sutton Coldfield family home before sending quote options. Customer details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "Do you cover all areas of Birmingham?", a: "Yes. You can submit a move request for Jewellery Quarter, Edgbaston, Moseley, Harborne, Selly Oak, Sutton Coldfield and surrounding areas. A verified mover can review the details and send quote options if they can help." },
+      { q: "How much does a man and van cost in Birmingham?", a: "Birmingham man and van hourly rates in 2026 typically range from £35 to £50 per hour, with full-day costs around £280–£400 depending on van size, crew, stairs, parking and access. A single-item furniture collection might start from £40–£70, while a full house move from a 3-bed property could range from £300–£600. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "Can I find a mover for a same-day move in Birmingham?", a: "Same-day moves may be possible in Birmingham depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
+      { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
+      { q: "How quickly will I be contacted?", a: "After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit." },
+      { q: "Do you cover Jewellery Quarter, Edgbaston, Moseley?", a: "Yes. You can submit requests for Jewellery Quarter, Edgbaston, Moseley, Harborne, Selly Oak and nearby areas. Availability depends on verified movers reviewing the move details." },
+      { q: "Can you help with student moves in Birmingham?", a: "Yes. Student moves can be submitted for areas near Selly Oak and Harborne. A verified mover can review the item list, access and date before quoting." },
+      { q: "Do you handle office relocations in Birmingham?", a: "Yes. Office relocation requests can be submitted for City Centre and Digbeth and Jewellery Quarter. Include access, parking, equipment and timing details so a verified mover can quote accurately." },
+      { q: "Are approved Birmingham movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so we recommend checking the quote details before booking." },
+      { q: "Does Birmingham's Clean Air Zone affect my move?", a: "Yes. Birmingham city centre has a Clean Air Zone (CAZ) that charges non-compliant vehicles £8 per day. Most modern vans used by approved movers are CAZ-compliant, but it is worth confirming this when you receive your quote. Moves in B1–B5 postcodes are most likely to be affected. Suburban moves in Sutton Coldfield, Moseley, Harborne and Edgbaston fall outside the zone." },
+      { q: "How much does a man and van cost from Birmingham to Walsall?", a: "A Birmingham to Walsall man and van move in 2026 typically costs £80–£180 depending on load size, access at both addresses and time of day. The A34 corridor connects the two directly, making it a common route. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price." },
+    ],
     localAreaGuides: [
       {
         title: "Man and van Birmingham city centre",
@@ -207,6 +222,18 @@ Wolverhampton moves can involve tight terraced streets, wider suburban roads or 
   walsall: {
     title: "Man and Van Walsall | Verified Local Mover Quotes | Man and Van Club",
     description: "Free man and van request in Walsall, West Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you.",
+    faq: [
+      { q: "Do you cover all areas of Walsall?", a: "Yes. You can submit a move request for Town Centre, Aldridge, Bloxwich, Willenhall, Darlaston, Pelsall, Rushall and surrounding areas. A verified mover can review the details and send quote options if they can help." },
+      { q: "How much does a man and van cost in Walsall?", a: "Walsall man and van rates in 2026 typically range from £30 to £50 per hour, with full-day costs around £240–£400 depending on van size, crew, stairs, parking and access. A single-item collection (sofa, bed, appliance) might start from £35–£65, while a full house move from a 3-bed Walsall property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "Can I find a mover for a same-day move in Walsall?", a: "Same-day moves may be possible in Walsall depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
+      { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
+      { q: "How quickly will I be contacted?", a: "After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit." },
+      { q: "Do you cover Aldridge, Bloxwich, Willenhall?", a: "Yes. You can submit requests for Aldridge, Bloxwich, Willenhall, Darlaston, Wednesbury, Pelsall and nearby areas. Availability depends on verified movers reviewing the move details." },
+      { q: "Are approved Walsall movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so we recommend checking the quote details before booking." },
+      { q: "How much does a man and van cost from Walsall to Birmingham?", a: "A Walsall to Birmingham man and van move in 2026 typically costs £80–£180 depending on load size, access at both addresses and time of day. The A34 corridor connects Walsall and Birmingham directly, making it a common route. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price." },
+      { q: "How much does a man and van cost from Walsall to Wolverhampton?", a: "A Walsall to Wolverhampton move in 2026 typically costs £70–£150 depending on load size and access. The two towns are close, so route time is usually short. Submit your postcodes for a guide price." },
+    ],
     localMovingInfo: `Walsall is a Black Country town with a strong industrial heritage and a mix of housing types, from post-war semis to newer estates. From Bloxwich to Aldridge, Brownhills to Pelsall, Walsall moves require a mover who understands the local road network, estate layouts, and the town centre's one-way system. The A34 and A454 create heavy traffic during rush hours, and the town centre has controlled parking zones that complicate loading.
 
 Residential estates in Brownhills and Pelsall often have narrow cul-de-sacs and limited turning space for larger vans. The Victorian terraces in the town centre and the older streets around the Arboretum have tight access and on-street parking restrictions. The newer estates in Aldridge and Rushall have wider roads but still require knowledge of the local school-run traffic and rush-hour bottlenecks. Moves between Walsall and surrounding Black Country towns often depend on route timing around the A34 and A454 corridors, so these details are useful for the mover to review before quoting.

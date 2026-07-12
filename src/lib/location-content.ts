@@ -285,7 +285,14 @@ function generateExampleMoveRequests(loc: LocationData): { area: string; type: s
 }
 
 function generateCostAnswer(loc: LocationData): string {
-  return `The guide price depends on the collection and delivery postcodes, distance, route time, item list, helpers required, stairs, parking and access. Submit your details for a guide price range first, then a verified mover can review the move and send an accurate quote before you decide whether to book.`;
+  // Provide region-specific pricing context where possible
+  if (loc.region === "West Midlands") {
+    return `Man and van rates in the West Midlands in 2026 typically range from £30 to £50 per hour, with full-day costs around £240–£400 depending on van size, crew, stairs, parking and access. A single-item furniture collection might start from £35–£65, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
+  }
+  if (loc.region === "Greater London") {
+    return `Man and van rates in London in 2026 typically range from £45 to £70 per hour, with full-day costs around £350–£550. Congestion Charge and ULEZ may apply to central London moves. A single-item collection might start from £50–£80. Submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
+  }
+  return `Man and van rates in the UK in 2026 typically range from £30 to £55 per hour, with full-day costs around £250–£450 depending on van size, crew, stairs, parking and access. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
 }
 
 function generateFAQ(loc: LocationData): { q: string; a: string }[] {
