@@ -306,7 +306,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">
-              Why Customers Choose Man and Van Club
+              What Our Customers Value
             </h2>
             <p className="text-text-secondary mt-3">
               From single-item collections to full home moves, without your details being passed around to lots of companies.
