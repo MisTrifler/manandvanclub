@@ -94,9 +94,17 @@ export default function Footer() {
               <li><Link href="/man-and-van-edinburgh" className="hover:text-accent transition-colors">Edinburgh</Link></li>
               <li><Link href="/man-and-van-glasgow" className="hover:text-accent transition-colors">Glasgow</Link></li>
               <li><Link href="/man-and-van-cardiff" className="hover:text-accent transition-colors">Cardiff</Link></li>
-              <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands Hub</Link></li>
-              <li><Link href="/man-and-van-east-midlands" className="hover:text-accent transition-colors">East Midlands Hub</Link></li>
-              <li><Link href="/areas-covered" className="hover:text-accent transition-colors">All Areas Covered</Link></li>
+            </ul>
+            <h4 className="font-bold text-lg mb-4 mt-6">Regional Hubs</h4>
+            <ul className="space-y-4 text-text-secondary">
+              <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands</Link></li>
+              <li><Link href="/man-and-van-east-midlands" className="hover:text-accent transition-colors">East Midlands</Link></li>
+              <li><Link href="/man-and-van-london" className="hover:text-accent transition-colors">London</Link></li>
+              <li><Link href="/man-and-van-manchester" className="hover:text-accent transition-colors">Greater Manchester</Link></li>
+              <li><Link href="/man-and-van-leeds" className="hover:text-accent transition-colors">West Yorkshire</Link></li>
+              <li><Link href="/man-and-van-liverpool" className="hover:text-accent transition-colors">Merseyside</Link></li>
+              <li><Link href="/man-and-van-bristol" className="hover:text-accent transition-colors">South West</Link></li>
+              <li><Link href="/areas-covered" className="hover:text-accent transition-colors font-bold">All Areas Covered</Link></li>
             </ul>
           </div>
 

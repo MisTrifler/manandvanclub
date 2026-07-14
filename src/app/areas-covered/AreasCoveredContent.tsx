@@ -85,7 +85,49 @@ export default function AreasCoveredContent() {
       </section>
 
 
-      {/* West Midlands SEO Hub */}
+      {/* Regional Hub Pages */}
+      <section className="py-16 border-b border-border bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+            <span className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.28em] border border-accent/20">
+              <MapPin size={12} /> Regional Hubs
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight">
+              Browse by Region
+            </h2>
+            <p className="text-text-secondary font-medium leading-relaxed">
+              Each hub page covers the local routes, postcodes, access challenges and nearby areas for its region.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {[
+              { name: "West Midlands", href: "/man-and-van-west-midlands", desc: "Birmingham, Walsall, Wolverhampton, Dudley, Coventry and Black Country towns" },
+              { name: "East Midlands", href: "/man-and-van-east-midlands", desc: "Nottingham, Leicester, Derby, Northampton, Lincoln and nearby areas" },
+              { name: "London", href: "/man-and-van-london", desc: "Croydon, Bromley, Romford, Wembley, Ealing, Stratford and 20+ boroughs" },
+              { name: "Greater Manchester", href: "/man-and-van-manchester", desc: "Salford, Bolton, Bury, Rochdale, Stockport, Wigan and nearby towns" },
+              { name: "West Yorkshire", href: "/man-and-van-leeds", desc: "Bradford, Wakefield, Huddersfield, Halifax, Dewsbury and nearby towns" },
+              { name: "Merseyside", href: "/man-and-van-liverpool", desc: "Bootle, Birkenhead, Wallasey, Southport, St Helens and Wirral" },
+              { name: "South West", href: "/man-and-van-bristol", desc: "Bath, Weston-super-Mare, Taunton, Swindon, Cheltenham, Gloucester" },
+            ].map((hub) => (
+              <Link
+                key={hub.href}
+                href={hub.href}
+                className="group bg-[#F9F9F7] rounded-2xl border border-border p-6 hover:border-accent hover:bg-white hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-black uppercase tracking-tight text-primary group-hover:text-accent transition-colors">{hub.name}</h3>
+                    <p className="text-sm text-text-secondary font-medium leading-relaxed">{hub.desc}</p>
+                  </div>
+                  <ArrowUpRight size={18} className="text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* West Midlands Priority Hub */}
       <section className="py-16 border-b border-border bg-white">
         <div className="container mx-auto px-4">
           <div className="bg-[#F9F9F7] rounded-[2rem] border border-border p-8 lg:p-10 flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">

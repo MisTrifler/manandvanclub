@@ -80,13 +80,57 @@ export default function Header() {
     { name: "Same Day", href: "/same-day-man-and-van" },
   ];
 
-  const cities = [
-    { name: "West Midlands", href: "/man-and-van-west-midlands" },
-    { name: "Birmingham", href: "/man-and-van-birmingham" },
-    { name: "Walsall", href: "/man-and-van-walsall" },
-    { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
-    { name: "Dudley", href: "/man-and-van-dudley" },
-    { name: "Coventry", href: "/man-and-van-coventry" },
+  const areaSections = [
+    {
+      heading: "Midlands",
+      links: [
+        { name: "West Midlands Hub", href: "/man-and-van-west-midlands" },
+        { name: "Birmingham", href: "/man-and-van-birmingham" },
+        { name: "Walsall", href: "/man-and-van-walsall" },
+        { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
+        { name: "Coventry", href: "/man-and-van-coventry" },
+        { name: "Nottingham", href: "/man-and-van-nottingham" },
+        { name: "Leicester", href: "/man-and-van-leicester" },
+        { name: "Derby", href: "/man-and-van-derby" },
+        { name: "East Midlands Hub", href: "/man-and-van-east-midlands" },
+      ],
+    },
+    {
+      heading: "London",
+      links: [
+        { name: "London", href: "/man-and-van-london" },
+        { name: "Croydon", href: "/man-and-van-croydon" },
+        { name: "Bromley", href: "/man-and-van-bromley" },
+        { name: "Romford", href: "/man-and-van-romford" },
+        { name: "Wembley", href: "/man-and-van-wembley" },
+        { name: "Ealing", href: "/man-and-van-ealing" },
+        { name: "Stratford", href: "/man-and-van-stratford" },
+      ],
+    },
+    {
+      heading: "North",
+      links: [
+        { name: "Manchester", href: "/man-and-van-manchester" },
+        { name: "Leeds", href: "/man-and-van-leeds" },
+        { name: "Liverpool", href: "/man-and-van-liverpool" },
+        { name: "Sheffield", href: "/man-and-van-sheffield" },
+        { name: "Newcastle", href: "/man-and-van-newcastle-upon-tyne" },
+        { name: "Hull", href: "/man-and-van-hull" },
+        { name: "Bradford", href: "/man-and-van-bradford" },
+      ],
+    },
+    {
+      heading: "South & Scotland",
+      links: [
+        { name: "Bristol", href: "/man-and-van-bristol" },
+        { name: "Southampton", href: "/man-and-van-southampton" },
+        { name: "Oxford", href: "/man-and-van-oxford" },
+        { name: "Cambridge", href: "/man-and-van-cambridge" },
+        { name: "Edinburgh", href: "/man-and-van-edinburgh" },
+        { name: "Glasgow", href: "/man-and-van-glasgow" },
+        { name: "Cardiff", href: "/man-and-van-cardiff" },
+      ],
+    },
   ];
 
   return (
@@ -168,18 +212,24 @@ export default function Header() {
               <div 
                 id="areas-menu"
                 className={cn(
-                  "absolute top-full -left-4 w-56 bg-white border border-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl transition-all p-3 z-50 mt-4",
+                  "absolute top-full -left-4 w-80 bg-white border border-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl transition-all p-3 z-50 mt-4",
                   areasOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
               >
-                 <div className="grid grid-cols-1 gap-1">
-                  {cities.map((c) => (
-                    <Link key={c.href} href={c.href} className="flex items-center justify-between px-5 py-4 hover:bg-accent/5 rounded-xl text-[10px] font-black uppercase tracking-widest text-primary/60 hover:text-accent group/item transition-all">
-                      {c.name}
-                      <ArrowUpRight size={14} className="opacity-0 group-hover/item:opacity-100" />
-                    </Link>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                  {areaSections.map((section) => (
+                    <div key={section.heading}>
+                      <p className="text-[8px] font-black uppercase tracking-[0.25em] text-primary/30 px-5 pt-3 pb-1">{section.heading}</p>
+                      {section.links.map((c) => (
+                        <Link key={c.href} href={c.href} className="flex items-center justify-between px-3 py-2 hover:bg-accent/5 rounded-lg text-[9px] font-black uppercase tracking-widest text-primary/60 hover:text-accent group/item transition-all" onClick={() => setAreasOpen(false)}>
+                          {c.name}
+                        </Link>
+                      ))}
+                    </div>
                   ))}
-                  <Link href="/areas-covered" className="flex items-center justify-between px-5 py-4 hover:bg-accent/5 rounded-xl text-[10px] font-black uppercase tracking-widest text-accent hover:text-primary transition-all">
+                </div>
+                <div className="mt-2 pt-2 border-t border-border">
+                  <Link href="/areas-covered" className="flex items-center justify-between px-5 py-3 hover:bg-accent/5 rounded-xl text-[10px] font-black uppercase tracking-widest text-accent hover:text-primary transition-all" onClick={() => setAreasOpen(false)}>
                     View All Areas
                     <ArrowUpRight size={14} />
                   </Link>
@@ -251,14 +301,19 @@ export default function Header() {
 
           <div className="p-2 space-y-4">
             <span className="font-black uppercase tracking-widest text-[10px] text-primary/40 block">Areas</span>
-            <div className="grid grid-cols-2 gap-4 pl-2">
-              {cities.map(c => (
-                <Link key={c.href} href={c.href} className="text-sm font-bold text-primary" onClick={() => setIsOpen(false)}>
-                  {c.name}
-                </Link>
-              ))}
-              <Link href="/areas-covered" className="text-sm font-black text-accent col-span-2 mt-2" onClick={() => setIsOpen(false)}>View All Areas →</Link>
-            </div>
+            {areaSections.map((section) => (
+              <div key={section.heading} className="pl-2">
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-primary/30 block mb-2">{section.heading}</span>
+                <div className="grid grid-cols-2 gap-3">
+                  {section.links.map(c => (
+                    <Link key={c.href} href={c.href} className="text-sm font-bold text-primary" onClick={() => setIsOpen(false)}>
+                      {c.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <Link href="/areas-covered" className="text-sm font-black text-accent block mt-2" onClick={() => setIsOpen(false)}>View All Areas →</Link>
           </div>
 
           <Link href="/why-join" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>Become a Mover</Link>
