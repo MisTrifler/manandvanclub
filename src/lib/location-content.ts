@@ -599,7 +599,25 @@ export function getLocationPageData(slug: string): LocationPageData | null {
   // Merge custom content overrides for priority cities (prevents doorway-page penalties)
   const customOverride = customLocationContentOverrides[loc.slug];
   if (customOverride) {
-    return { ...baseData, ...customOverride };
+    const merged = { ...baseData, ...customOverride };
+
+    // If FAQ was overridden, rebuild FAQ schema to match the new FAQ items
+    if (customOverride.faq) {
+      merged.faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: merged.faq.map((item: { q: string; a: string }) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a,
+          },
+        })),
+      };
+    }
+
+    return merged;
   }
 
   return baseData;
