@@ -312,5 +312,250 @@ Coventry moves can involve ring-road access, post-war estates, Victorian terrace
 The city centre has narrow streets in the Lace Market and Hockley areas, with loading restrictions and tram line crossings that require careful planning and timing. The Park Estate is one of the most desirable residential areas in the city but has steep, narrow roads that challenge even experienced movers. Student moves are concentrated in Lenton, Dunkirk, and Beeston around the University of Nottingham and Nottingham Trent University campuses, while family relocations frequently move to West Bridgford, Arnold, and Carlton. The M1 and A52 create significant traffic during rush hours, and the A60 corridor through the city is frequently congested.
 
 The Meadows and St Ann's areas have dense Victorian terraces with narrow street access, while newer developments around the canal and Trent Bridge can involve different loading arrangements. Your request lets a verified mover review access, tram-line considerations, route timing and item details before sending quote options.`,
+    faq: [
+      { q: "Do you cover all areas of Nottingham?", a: "Yes. You can submit a move request for West Bridgford, Beeston, Arnold, Carlton, Hucknall, Lenton, Clifton and surrounding areas. A verified mover can review the details and send quote options if they can help." },
+      { q: "How much does a man and van cost in Nottingham?", a: "Nottingham man and van hourly rates in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "Can I find a mover for a same-day move in Nottingham?", a: "Same-day moves may be possible in Nottingham depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
+      { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
+      { q: "How quickly will I be contacted?", a: "After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit." },
+      { q: "Do you cover West Bridgford, Beeston, Arnold and Hucknall?", a: "Yes. You can submit requests for West Bridgford, Beeston, Arnold, Carlton, Hucknall, Lenton, Clifton and nearby areas. Availability depends on verified movers reviewing the move details." },
+      { q: "Can you help with student moves in Nottingham?", a: "Yes. Student moves can be submitted for areas near Lenton, Dunkirk and Beeston around the University of Nottingham and Nottingham Trent University. A verified mover can review the item list, access and date before quoting." },
+      { q: "Are the Lace Market and Hockley hard to access with a van?", a: "The Lace Market and Hockley have narrow streets, loading restrictions and tram line crossings. Adding your access notes, floor level and any parking restrictions helps a mover plan the route before quoting." },
+      { q: "How much does a man and van cost from Nottingham to Leicester?", a: "A Nottingham to Leicester man and van move in 2026 typically costs £80–£160 depending on load size, access at both addresses and time of day. The M1 connects the two cities directly. A single-item collection might start from £60–£90. Submit your postcodes and item list for a guide price." },
+      { q: "How much does a man and van cost from Nottingham to Derby?", a: "A Nottingham to Derby move in 2026 typically costs £70–£140 depending on load size and access. The A52 connects the two cities in around 30 minutes. Submit your postcodes for a guide price." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van West Bridgford and Lady Bay",
+        body: "West Bridgford has tree-lined streets, Victorian villas and modern developments around Gamston and Edwalton. Moves here often need careful planning around Central Avenue parking, Lady Bay conservation area access and Trent Bridge match-day road closures.",
+        links: [
+          { label: "Man and van West Bridgford", href: "/man-and-van-west-bridgford" },
+        ],
+      },
+      {
+        title: "Man and van Beeston and the University area",
+        body: "Beeston sits between Nottingham and the M1 with a mix of Victorian terraces, student housing and newer developments. The tram line crossing on Station Road and university-area parking patterns are key details to include in your request.",
+        links: [
+          { label: "Man and van Beeston", href: "/man-and-van-beeston" },
+        ],
+      },
+      {
+        title: "Man and van Arnold and Sherwood",
+        body: "Arnold is one of Nottingham's most popular northern suburbs. The A60 Mansfield Road creates rush-hour congestion, and residential crescents near the town centre can have tight turning circles for larger vans.",
+        links: [
+          { label: "Man and van Arnold", href: "/man-and-van-arnold" },
+        ],
+      },
+      {
+        title: "Man and van Carlton and Gedling",
+        body: "Carlton sits east of the city centre with a mix of Victorian terraces and post-war semis. On-street parking near Carlton Road and tight access on older streets are common considerations.",
+        links: [
+          { label: "Man and van Carlton", href: "/man-and-van-carlton" },
+        ],
+      },
+      {
+        title: "Student moves in Lenton and Dunkirk",
+        body: "Student moves around the University of Nottingham campus cluster in Lenton, Dunkirk and Beeston. Peak demand falls in June, July and September. Add your full item list, access notes and preferred dates for a verified mover to review.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // LEICESTER
+  // ──────────────────────────────────────────
+  leicester: {
+    localMovingInfo: `Leicester is one of the East Midlands' busiest moving markets, home to two universities, a dense city centre around Highcross, and popular family suburbs like Oadby and Wigston. From LE1 apartments to the terraces off Narborough Road, every Leicester move has its own access quirks.
+
+The city centre has a one-way loop around Highcross and the Clock Tower that can complicate van access, especially for the apartment developments around the cultural quarter. Narborough Road's Victorian terraces have narrow access and limited on-street parking, while the student areas around Clarendon Park and Evington follow the DMU and University of Leicester academic calendars. The M1 at junction 21 and the M69 create regular rush-hour congestion on the city's southern approaches.
+
+Family moves tend to head for Oadby, Wigston, Glenfield and Birstall — suburban areas with larger properties and driveway access but school-run traffic on the main routes. Fosse Park and Meridian Business Park generate office and commercial moves. The A6 and A46 corridors are key for moves heading towards Loughborough, Market Harborough and the wider county.
+
+Leicester moves can differ greatly by postcode, from Highcross apartments to Oadby family homes and Evington terraces. Your request helps a verified mover review route, parking, access and item details before sending quote options.`,
+    faq: [
+      { q: "Do you cover all areas of Leicester?", a: "Yes. You can submit a move request for Oadby, Wigston, Braunstone, Evington, Glenfield, Clarendon Park, Birstall and surrounding areas. A verified mover can review the details and send quote options if they can help." },
+      { q: "How much does a man and van cost in Leicester?", a: "Leicester man and van hourly rates in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "Can I find a mover for a same-day move in Leicester?", a: "Same-day moves may be possible in Leicester depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
+      { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
+      { q: "How quickly will I be contacted?", a: "After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit." },
+      { q: "Do you cover Oadby, Wigston and Clarendon Park?", a: "Yes. You can submit requests for Oadby, Wigston, Braunstone, Evington, Clarendon Park, Glenfield and nearby areas. Availability depends on verified movers reviewing the move details." },
+      { q: "Can you help with student moves in Leicester?", a: "Yes. Student moves can be submitted for areas near Clarendon Park and Evington around DMU and the University of Leicester. A verified mover can review the item list, access and date before quoting." },
+      { q: "How much does a man and van cost from Leicester to Nottingham?", a: "A Leicester to Nottingham man and van move in 2026 typically costs £80–£160 depending on load size, access at both addresses and time of day. The M1 connects the two cities directly. A single-item collection might start from £60–£90. Submit your postcodes and item list for a guide price." },
+      { q: "How much does a man and van cost from Leicester to Birmingham?", a: "A Leicester to Birmingham man and van move in 2026 typically costs £100–£200 depending on load size, access and time of day. The M6 and M69 provide the main route. Submit your postcodes for a guide price." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Oadby and Stoneygate",
+        body: "Oadby is one of Leicester's most popular family suburbs with tree-lined streets and University of Leicester halls. The A6 London Road creates commuter congestion, and university-area parking can be restricted during term time.",
+        links: [
+          { label: "Man and van Oadby", href: "/man-and-van-oadby" },
+        ],
+      },
+      {
+        title: "Man and van Wigston and South Wigston",
+        body: "Wigston sits south of Leicester with a mix of Victorian terraces and post-war semis. The A5199 Welford Road and B582 corridors create regular rush-hour traffic that affects move timing.",
+        links: [
+          { label: "Man and van Wigston", href: "/man-and-van-wigston" },
+        ],
+      },
+      {
+        title: "Student moves in Clarendon Park and Evington",
+        body: "Student areas around DMU and the University of Leicester cluster in Clarendon Park and Evington. Peak demand is June, July and September. Add your full item list and access notes for a verified mover to review.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // DERBY
+  // ──────────────────────────────────────────
+  derby: {
+    localMovingInfo: `Derby sits at the crossroads of the A38, A52 and A50, making it a natural base for moves across the East Midlands. From Victorian terraces off Normanton Road to family homes in Mickleover and Allestree, access varies widely across the city.
+
+The A38 and A52 junction creates one of the city's biggest pinch points, especially during rush hour when traffic backs up between Derby and Nottingham. Pride Park and the football stadium generate match-day traffic that can block key routes, particularly the A52 and A6 approaches. The Victorian terraces around Normanton Road have narrow access and on-street parking, while the suburban streets of Mickleover, Littleover and Allestree offer better access but involve larger loads from bigger family homes.
+
+Student demand is smaller than Nottingham or Leicester but concentrated around the Kedleston Road university area. Commercial moves around Pride Park, Infinity Park and the city centre office buildings tend to need evening or weekend slots. The A50 connects Derby to Stoke-on-Trent and the M1, while the A6 runs north towards Matlock and Buxton — both routes that generate regular longer-distance move requests.
+
+Derby moves can differ greatly by postcode, from Normanton Road terraces to Allestree family homes and Chaddesden estates. Your request helps a verified mover review route, parking, access and item details before sending quote options.`,
+    faq: [
+      { q: "Do you cover all areas of Derby?", a: "Yes. You can submit a move request for Mickleover, Littleover, Chaddesden, Allestree, Spondon, Alvaston and surrounding areas. A verified mover can review the details and send quote options if they can help." },
+      { q: "How much does a man and van cost in Derby?", a: "Derby man and van hourly rates in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "Can I find a mover for a same-day move in Derby?", a: "Same-day moves may be possible in Derby depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
+      { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
+      { q: "How quickly will I be contacted?", a: "After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit." },
+      { q: "Do you cover Mickleover, Chaddesden and Allestree?", a: "Yes. You can submit requests for Mickleover, Littleover, Chaddesden, Allestree, Spondon, Alvaston and nearby areas. Availability depends on verified movers reviewing the move details." },
+      { q: "How much does a man and van cost from Derby to Nottingham?", a: "A Derby to Nottingham man and van move in 2026 typically costs £70–£140 depending on load size, access at both addresses and time of day. The A52 connects the two cities in around 30 minutes. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Mickleover and Littleover",
+        body: "Mickleover and Littleover are popular western suburbs with larger family homes and driveway access. The A38 junction timing and school-run traffic on residential roads are key considerations for movers.",
+        links: [
+          { label: "Man and van Mickleover", href: "/man-and-van-mickleover" },
+          { label: "Man and van Littleover", href: "/man-and-van-littleover" },
+        ],
+      },
+      {
+        title: "Man and van Chaddesden and Oakwood",
+        body: "Chaddesden has a mix of post-war estates and newer Oakwood developments. The A52 Nottingham Road corridor creates regular rush-hour congestion, and older estate roads can have tighter access.",
+        links: [
+          { label: "Man and van Chaddesden", href: "/man-and-van-chaddesden" },
+        ],
+      },
+      {
+        title: "Furniture collection in Derby",
+        body: "Single-item collections around Derby are often sofas, beds, wardrobes and Marketplace purchases. Add item size, collection postcode and access notes for an accurate quote.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // NORTHAMPTON
+  // ──────────────────────────────────────────
+  northampton: {
+    title: "Man and Van Northampton | Verified Local Mover Quotes | Man and Van Club",
+    description: "Free man and van request in Northampton, East Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you. Covers Kingsthorpe, Duston, Abington and surrounding areas.",
+    h1: "Man and Van Northampton",
+    intro: "Need a man and van in Northampton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A verified mover can review your Northampton move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Northampton moves depend on which side of the M1 you are moving from, the one-way system around the town centre, and whether the property is a Victorian terrace near Abington or a newer build in Hunsbury. The M1 at junctions 15 and 15A creates regular congestion, and the A45 corridor towards Wellingborough and the Brackmills area gets busy during rush hour.",
+    localMovingInfo: `Northampton sits at the crossroads of the M1, A45 and A43, making it a key moving hub in the East Midlands. From Victorian terraces near the town centre to the expanding estates of Hunsbury and Wootton, Northampton moves need local knowledge of the one-way system, the M1 junction approach roads and the distinct access patterns of each neighbourhood.
+
+The town centre has a one-way system that can complicate van access, particularly around the Drapery and Gold Street areas. Abington and Kingsthorpe have Victorian and Edwardian terraces with on-street parking and narrow doorways, while the newer estates in Hunsbury, Wootton and Upton have driveway access but can involve larger furniture volumes. The M1 at junctions 15 and 15A is a key route consideration for any move heading north towards Leicester or south towards Milton Keynes and London.
+
+Student moves around the University of Northampton and family relocations to the suburban estates both keep movers busy year-round. Commercial moves from the Brackmills industrial area and Moulton Park business district tend to need evening or weekend timing.
+
+Northampton moves can differ by postcode, from Abington terraces to Hunsbury estates. Your request helps a verified mover review route, parking, access and item details before sending quote options.`,
+    faq: [
+      { q: "Do you cover all areas of Northampton?", a: "Yes. You can submit a move request for Kingsthorpe, Duston, Abington, Wootton, Hunsbury, Delapre and surrounding areas. A verified mover can review the details and send quote options if they can help." },
+      { q: "How much does a man and van cost in Northampton?", a: "Northampton man and van hourly rates in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "Can I find a mover for a same-day move in Northampton?", a: "Same-day moves may be possible in Northampton depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
+      { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
+      { q: "How quickly will I be contacted?", a: "After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit." },
+      { q: "Do you cover Kingsthorpe, Duston and Abington?", a: "Yes. You can submit requests for Kingsthorpe, Duston, Abington, Wootton, Hunsbury and nearby areas. Availability depends on verified movers reviewing the move details." },
+      { q: "How much does a man and van cost from Northampton to Leicester?", a: "A Northampton to Leicester man and van move in 2026 typically costs £90–£170 depending on load size, access at both addresses and time of day. The M1 and A14 provide the main route. Submit your postcodes and item list for a guide price." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Kingsthorpe",
+        body: "Kingsthorpe has a village character with Victorian terraces near the old high street and newer estates towards Moulton. The A508 Welford Road creates rush-hour congestion, and the older village streets have limited van access.",
+        links: [
+          { label: "Man and van Kingsthorpe", href: "/man-and-van-kingsthorpe" },
+        ],
+      },
+      {
+        title: "Man and van Duston",
+        body: "Duston blends an older village core of stone cottages with extensive new-build estates. The A45 approaching the M1 at junction 15A gets heavily congested, so route timing matters.",
+        links: [
+          { label: "Man and van Duston", href: "/man-and-van-duston" },
+        ],
+      },
+      {
+        title: "Man and van Abington",
+        body: "Abington has Victorian and Edwardian terraces near the park and town centre. On-street parking, narrow doorways and stairs in older properties are the main considerations for movers.",
+        links: [
+          { label: "Man and van Abington", href: "/man-and-van-abington" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // LINCOLN
+  // ──────────────────────────────────────────
+  lincoln: {
+    title: "Man and Van Lincoln | Verified Local Mover Quotes | Man and Van Club",
+    description: "Free man and van request in Lincoln, East Midlands. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you. Covers Cathedral Quarter, Brayford, North Hykeham and surrounding areas.",
+    h1: "Man and Van Lincoln",
+    intro: "Need a man and van in Lincoln? Submit your collection and delivery postcodes, move date, item list and access notes for free. A verified mover can review your Lincoln move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Lincoln's dual personality — the medieval Cathedral Quarter above the city and the modern Brayford Waterfront below — means moves vary dramatically by area. Steep Hill and the cobbled streets around the cathedral have van access restrictions, while the newer estates in North Hykeham and Bracebridge Heath offer more straightforward loading. The A46 bypass and A15 connect Lincoln to the wider county.",
+    localMovingInfo: `Lincoln's Cathedral Quarter and the famous Steep Hill create some of the most challenging moving conditions in the East Midlands. Above the cathedral, cobbled streets and restricted access make van loading difficult; below, the Brayford Waterfront and newer estates offer more straightforward moves. Lincoln's dual personality — historic hillside and modern riverside — means every move needs area-specific planning.
+
+The Cathedral Quarter and Bailgate area have some of the narrowest streets in any English city, with pedestrian zones and loading time restrictions that require careful scheduling. Steep Hill, as the name suggests, is one of the steepest streets in England and presents unique challenges for loaded vans. The area below — around the Brayford Pool and the University of Lincoln — has modern apartment blocks with better access, though parking can still be limited during term time.
+
+Student moves cluster around the University of Lincoln campus at Brayford, with peak demand in June, July and September. Family moves tend to head for North Hykeham, Bracebridge Heath and Waddington — growing areas south of the city with newer housing and driveway access. The A46 bypass connects Lincoln to Newark and Nottingham, while the A15 runs south towards Sleaford and north towards Scunthorpe.
+
+Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to North Hykeham estates. Your request helps a verified mover review route, parking, access and item details before sending quote options.`,
+    faq: [
+      { q: "Do you cover all areas of Lincoln?", a: "Yes. You can submit a move request for the Cathedral Quarter, Brayford, North Hykeham, Bracebridge Heath, Boultham, Waddington and surrounding areas. A verified mover can review the details and send quote options if they can help." },
+      { q: "How much does a man and van cost in Lincoln?", a: "Lincoln man and van hourly rates in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "Can I find a mover for a same-day move in Lincoln?", a: "Same-day moves may be possible in Lincoln depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
+      { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
+      { q: "How quickly will I be contacted?", a: "After you submit your request, a verified mover can review your anonymised move details and send quote options if they can help. Your contact details are only released after you accept a quote and pay the booking deposit." },
+      { q: "Can a van access Steep Hill and the Cathedral Quarter?", a: "Steep Hill and the Cathedral Quarter have restricted access, narrow streets and loading time limits. Adding your exact address, floor level and any access restrictions helps a mover plan the best approach before quoting." },
+      { q: "Do you cover North Hykeham and Bracebridge Heath?", a: "Yes. You can submit requests for North Hykeham, Bracebridge Heath, Waddington, Boultham, Skellingthorpe and nearby areas. Availability depends on verified movers reviewing the move details." },
+      { q: "How much does a man and van cost from Lincoln to Nottingham?", a: "A Lincoln to Nottingham man and van move in 2026 typically costs £100–£200 depending on load size, access at both addresses and time of day. The A46 provides the main route between the two cities. Submit your postcodes and item list for a guide price." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van North Hykeham",
+        body: "North Hykeham is a growing area south of Lincoln with a mix of post-war homes and newer estates. The A46 bypass and Newark Road connect it to Lincoln, but both routes create rush-hour congestion.",
+        links: [
+          { label: "Man and van North Hykeham", href: "/man-and-van-north-hykeham" },
+        ],
+      },
+      {
+        title: "Student moves at the University of Lincoln",
+        body: "Student moves cluster around the Brayford campus. Peak demand is June, July and September. Add your full item list, halls or house address and preferred dates for a verified mover to review.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+      {
+        title: "Cathedral Quarter and Steep Hill moves",
+        body: "The Cathedral Quarter has some of the narrowest streets in any English city. Add exact address, loading restrictions, floor level and whether items need carrying up Steep Hill so the mover can quote properly.",
+      },
+    ],
   },
 };

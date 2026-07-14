@@ -22,6 +22,11 @@ const popularLocations = [
   { name: "Wednesbury", href: "/man-and-van-wednesbury" },
   { name: "Bloxwich", href: "/man-and-van-bloxwich" },
   { name: "Brownhills", href: "/man-and-van-brownhills" },
+  { name: "Nottingham", href: "/man-and-van-nottingham" },
+  { name: "Leicester", href: "/man-and-van-leicester" },
+  { name: "Derby", href: "/man-and-van-derby" },
+  { name: "Northampton", href: "/man-and-van-northampton" },
+  { name: "Lincoln", href: "/man-and-van-lincoln" },
 ];
 
 const serviceSlugs = [

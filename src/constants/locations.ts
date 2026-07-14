@@ -1511,7 +1511,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Nottingham regularly move families between the city centre, West Bridgford, and Beeston. They can account for the narrow streets of the Lace Market, the tram line restrictions, the steep roads around the Park Estate, and the best routes along the A52 and M1.",
     badge: "Verified Movers in Nottingham",
     areas: ["City Centre", "West Bridgford", "Beeston", "Arnold", "Carlton", "Hucknall", "Clifton", "Lenton"],
-    nearbyLocations: ["leicester", "derby", "sheffield"]
+    nearbyLocations: ["leicester", "derby", "arnold", "beeston", "carlton", "west-bridgford", "hucknall"]
   },
 
   // ──────────────────────────────────────────
@@ -1533,7 +1533,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Leicester movers regularly handle student moves around DMU and the University of Leicester, family moves out to Glenfield and Birstall, and office relocations near Meridian Business Park. They can take account of the A6 and A46 corridors, Fosse Park traffic, and the one-way loops around the city centre.",
     badge: "Verified Movers in Leicester",
     areas: ["City Centre", "Oadby", "Wigston", "Braunstone", "Glenfield", "Birstall", "Clarendon Park", "Evington"],
-    nearbyLocations: ["nottingham", "coventry", "birmingham"]
+    nearbyLocations: ["nottingham", "coventry", "birmingham", "oadby", "wigston", "braunstone", "evington"]
   },
   {
     slug: "sheffield",
@@ -1731,7 +1731,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Derby movers can take account of the city's junction pinch points, match-day traffic around Pride Park, and the quickest routes to Nottingham along the A52. Moves up to Belper and across to Long Eaton are everyday runs.",
     badge: "Verified Movers in Derby",
     areas: ["Allestree", "Mickleover", "Littleover", "Chaddesden", "Spondon", "City Centre", "Belper", "Long Eaton"],
-    nearbyLocations: ["nottingham", "leicester", "sheffield"]
+    nearbyLocations: ["nottingham", "leicester", "chaddesden", "mickleover", "alvaston", "littleover"]
   },
   {
     slug: "stoke-on-trent",
@@ -1858,6 +1858,327 @@ export const LOCATIONS: LocationData[] = [
     badge: "Verified Movers in York",
     areas: ["Heworth", "Acomb", "Fulford", "Clifton", "Bishopthorpe", "Haxby", "City Centre", "Heslington"],
     nearbyLocations: ["leeds", "hull", "newcastle-upon-tyne"]
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — AREA PAGES (Nottingham)
+  // ──────────────────────────────────────────
+  {
+    slug: "arnold",
+    name: "Arnold",
+    region: "East Midlands",
+    county: "Nottinghamshire",
+    nearbyAreas: ["Nottingham City Centre", "Sherwood", "Daybrook", "Redhill", "Bestwood", "Calverton", "Woodthorpe", "Killisick"],
+    majorRoads: ["A60", "A614"],
+    propertyTypes: ["1930s semis", "post-war terraces", "new-build estates"],
+    movingConsiderations: ["A60 commuter traffic through Arnold town centre", "narrow streets around Arnold market area", "parking restrictions near schools on Mansfield Road", "residential crescent turning space"],
+    intro: "Arnold is one of Nottingham's most popular northern suburbs, with a busy town centre along Mansfield Road and a mix of 1930s semis, newer estates and retirement bungalows. Moves in Arnold often depend on A60 traffic timing and whether the property has driveway access or relies on on-street parking.",
+    knowledge: "Approved movers serving Arnold regularly handle moves between the older streets near Daybrook and the newer estates towards Calverton and Bestwood. The A60 corridor creates rush-hour congestion, so movers plan around peak times. Residential crescents off Mansfield Road can have tight turning circles for larger vans.",
+    badge: "Verified Movers in Arnold",
+    areas: ["Town Centre", "Daybrook", "Sherwood", "Redhill", "Bestwood", "Calverton", "Woodthorpe", "Killisick"],
+    nearbyLocations: ["nottingham", "hucknall", "carlton"]
+  },
+  {
+    slug: "beeston",
+    name: "Beeston",
+    region: "East Midlands",
+    county: "Nottinghamshire",
+    nearbyAreas: ["Chilwell", "Toton", "Bramcote", "Wollaton", "Dunkirk", "Lenton", "Long Eaton", "Stapleford"],
+    majorRoads: ["A6005", "A52", "M1"],
+    propertyTypes: ["Victorian terraces", "1930s semis", "modern apartments"],
+    hasStudentAreas: true,
+    studentAreas: ["Beeston Rylands", "near University of Nottingham"],
+    businessDistricts: ["Beeston Business Park", "University Park"],
+    movingConsiderations: ["tram line crossing on Station Road", "M1 junction 25 congestion", "student area parking restrictions", "narrow terraced streets near the High Road"],
+    intro: "Beeston sits between Nottingham and the M1, with a blend of Victorian terraces, university-facing streets and newer developments around the tram interchange. Student moves near the University of Nottingham, family homes towards Chilwell and Bramcote, and flat moves around the town centre each need different access planning.",
+    knowledge: "Approved movers serving Beeston can account for the tram line crossing on Station Road, the parking patterns around the university campus, and the quickest routes to the A52 and M1. Student moves in Beeston Rylands and Dunkirk follow the academic calendar, while family moves tend to focus on Chilwell, Bramcote and Toton.",
+    badge: "Verified Movers in Beeston",
+    areas: ["Town Centre", "Chilwell", "Toton", "Bramcote", "Beeston Rylands", "Dunkirk", "Stapleford", "Wollaton"],
+    nearbyLocations: ["nottingham", "derby", "carlton"]
+  },
+  {
+    slug: "carlton",
+    name: "Carlton",
+    region: "East Midlands",
+    county: "Nottinghamshire",
+    nearbyAreas: ["Gedling", "Netherfield", "Colwick", "Sneinton", "Bakersfield", "Mapperley", "St Anns", "Burton Joyce"],
+    majorRoads: ["A612", "B683"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
+    movingConsiderations: ["narrow terraced streets off Carlton Road", "on-street parking near Carlton Hill shops", "A612 rush-hour traffic towards Netherfield", "residential estate cul-de-sacs"],
+    intro: "Carlton is an established residential area east of Nottingham city centre, with Victorian terraces near Carlton Road giving way to post-war semis and newer estates further out. Moves in Carlton often involve tight on-street parking near the older terraces and driveway access on the newer estates.",
+    knowledge: "Approved movers serving Carlton regularly handle moves between the terraced streets near Carlton Hill and the suburban estates towards Gedling and Burton Joyce. The A612 and B683 connect Carlton to the city centre and Netherfield, and movers plan around the busiest commuter times.",
+    badge: "Verified Movers in Carlton",
+    areas: ["Town Centre", "Gedling", "Netherfield", "Colwick", "Sneinton", "Mapperley", "Bakersfield", "Burton Joyce"],
+    nearbyLocations: ["nottingham", "arnold", "hucknall"]
+  },
+  {
+    slug: "west-bridgford",
+    name: "West Bridgford",
+    region: "East Midlands",
+    county: "Nottinghamshire",
+    nearbyAreas: ["Edwalton", "Gamston", "Ruddington", "Trent Bridge", "The Park", "Lady Bay", "Wilford", "Clifton"],
+    majorRoads: ["A60", "A52", "A6006"],
+    propertyTypes: ["Victorian villas", "1930s semis", "modern executive homes"],
+    businessDistricts: ["Central Avenue", "Trent Bridge"],
+    movingConsiderations: ["Central Avenue parking restrictions", "Trent Bridge match-day road closures", "narrow streets in Lady Bay conservation area", "A52 Clifton Bridge congestion"],
+    intro: "West Bridgford is one of Nottingham's most sought-after suburbs, with tree-lined streets, Victorian villas and modern developments around Gamston and Edwalton. Moves in West Bridgford often need careful planning around Central Avenue parking, Lady Bay's conservation area streets and Trent Bridge match-day road closures.",
+    knowledge: "Approved movers serving West Bridgford know the parking patterns around Central Avenue, the access limitations in Lady Bay, and how Trent Bridge cricket and football events can close key routes. Family moves to Edwalton and Gamston typically involve larger loads and driveway access, while Lady Bay moves need on-street parking awareness.",
+    badge: "Verified Movers in West Bridgford",
+    areas: ["Central Avenue", "Lady Bay", "Edwalton", "Gamston", "Ruddington", "Trent Bridge", "Wilford", "The Park"],
+    nearbyLocations: ["nottingham", "beeston", "arnold"]
+  },
+  {
+    slug: "hucknall",
+    name: "Hucknall",
+    region: "East Midlands",
+    county: "Nottinghamshire",
+    nearbyAreas: ["Bulwell", "Bestwood", "Annesley", "Kirkby-in-Ashfield", "Sutton-in-Ashfield", "Linby", "Papplewick", "Calverton"],
+    majorRoads: ["A611", "A60", "M1"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "new-build estates"],
+    movingConsiderations: ["A611 congestion through Hucknall town centre", "tram terminus parking restrictions", "narrow streets near the market area", "M1 junction 27 access"],
+    intro: "Hucknall sits north of Nottingham on the tram line, with a mix of Victorian terraces near the town centre, post-war semis and growing new-build estates. The A611 and tram terminus create regular congestion, making route timing an important factor for local moves.",
+    knowledge: "Approved movers serving Hucknall can take account of the A611 corridor congestion, the tram terminus area parking rules, and the best routes towards the M1 at junction 27. Moves towards Kirkby-in-Ashfield, Sutton-in-Ashfield and the wider Ashfield district are common runs from Hucknall.",
+    badge: "Verified Movers in Hucknall",
+    areas: ["Town Centre", "Bulwell", "Bestwood", "Annesley", "Linby", "Papplewick", "Calverton", "Kirkby-in-Ashfield"],
+    nearbyLocations: ["nottingham", "arnold", "derby"]
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — AREA PAGES (Leicester)
+  // ──────────────────────────────────────────
+  {
+    slug: "oadby",
+    name: "Oadby",
+    region: "East Midlands",
+    county: "Leicestershire",
+    nearbyAreas: ["Stoneygate", "Evington", "Wigston", "Knighton", "Blaby", "Great Glen", "Scraptoft", "Thurnby"],
+    majorRoads: ["A6", "A563"],
+    propertyTypes: ["1930s semis", "Victorian villas", "modern family homes"],
+    movingConsiderations: ["A6 London Road commuter traffic", "residential parking near the University of Leicester halls", "tree-lined streets with narrow van access", "school-run traffic around local roads"],
+    intro: "Oadby is one of Leicester's most popular family suburbs, known for its tree-lined streets, University of Leicester halls and a mix of Victorian villas and newer homes. Moves in Oadby often involve driveway access on larger properties but can be complicated by the A6 commuter corridor and university-area parking.",
+    knowledge: "Approved movers serving Oadby regularly handle student moves near the university halls and family moves along the leafy streets towards Stoneygate and Knighton. The A6 and A563 ring road create rush-hour congestion, so movers plan around peak times when moving to or from Oadby.",
+    badge: "Verified Movers in Oadby",
+    areas: ["Town Centre", "Stoneygate", "Knighton", "Great Glen", "Scraptoft", "Thurnby", "University Area", "Evington"],
+    nearbyLocations: ["leicester", "wigston", "evington"]
+  },
+  {
+    slug: "wigston",
+    name: "Wigston",
+    region: "East Midlands",
+    county: "Leicestershire",
+    nearbyAreas: ["South Wigston", "Oadby", "Blaby", "Glen Parva", "Countesthorpe", "Whetstone", "Enderby", "Kibworth"],
+    majorRoads: ["A5199", "A563", "B582"],
+    propertyTypes: ["Victorian terraces", "1930s semis", "post-war estates"],
+    movingConsiderations: ["A5199 Welford Road congestion", "narrow streets in South Wigston", "residential parking near Wigston town centre", "school-run traffic on B582"],
+    intro: "Wigston and South Wigston form a well-established residential area south of Leicester, with a mix of Victorian terraces near the older town centre and post-war semis on the surrounding estates. Moves in Wigston depend on route timing along the A5199 and B582 corridors.",
+    knowledge: "Approved movers serving Wigston can account for the A5199 Welford Road commuter traffic, the narrower streets in South Wigston, and the residential estates towards Glen Parva and Countesthorpe. Moves between Wigston and Oadby are common, as are longer runs towards Blaby and the M1.",
+    badge: "Verified Movers in Wigston",
+    areas: ["Wigston Town Centre", "South Wigston", "Glen Parva", "Blaby", "Countesthorpe", "Whetstone", "Kibworth", "Enderby"],
+    nearbyLocations: ["leicester", "oadby", "braunstone"]
+  },
+  {
+    slug: "braunstone",
+    name: "Braunstone",
+    region: "East Midlands",
+    county: "Leicestershire",
+    nearbyAreas: ["Braunstone Town", "New Parks", "Glenfield", "Aylestone", "Westcotes", "Dane Hills", "Kirkby Mallory", "Thorpe Astley"],
+    majorRoads: ["A47", "A563", "M1"],
+    propertyTypes: ["post-war semis", "council estates", "newer housing developments"],
+    movingConsiderations: ["A47 Narborough Road congestion", "M1 junction 21 access", "older estate road layouts with tight turns", "residential parking on post-war estates"],
+    intro: "Braunstone sits west of Leicester city centre, with a mix of post-war housing estates and newer developments. The area borders Narborough Road and the M1 corridor, making route timing and access planning important for local moves, especially during rush-hour periods.",
+    knowledge: "Approved movers serving Braunstone can take account of the A47 Narborough Road traffic, the estate road layouts in New Parks and Braunstone Town, and the best routes towards the M1 at junction 21. Moves to Glenfield and the western suburbs are regular runs from Braunstone.",
+    badge: "Verified Movers in Braunstone",
+    areas: ["Braunstone Town", "New Parks", "Thorpe Astley", "Glenfield", "Aylestone", "Dane Hills", "Westcotes", "Kirkby Mallory"],
+    nearbyLocations: ["leicester", "wigston", "glenfield"]
+  },
+  {
+    slug: "evington",
+    name: "Evington",
+    region: "East Midlands",
+    county: "Leicestershire",
+    nearbyAreas: ["Oadby", "Clarendon Park", "Stoneygate", "Thurnby", "Humberstone", "Knighton", "Scraptoft", "Hamilton"],
+    majorRoads: ["A47", "A563"],
+    propertyTypes: ["Victorian terraces", "1930s semis", "modern developments"],
+    hasStudentAreas: true,
+    studentAreas: ["Clarendon Park"],
+    movingConsiderations: ["A47 Uppingham Road commuter traffic", "student area parking around Clarendon Park", "narrow Victorian streets near the city boundary", "mixed residential and commercial access"],
+    intro: "Evington sits on Leicester's eastern side, blending Victorian terraces, student areas around Clarendon Park and newer developments towards Hamilton. Moves in Evington depend on whether the property is on a quieter residential street or near the busier A47 corridor.",
+    knowledge: "Approved movers serving Evington regularly handle student moves in Clarendon Park, family relocations towards Oadby and Stoneygate, and moves along the A47 Uppingham Road corridor. The mix of student housing and family homes means access and parking vary widely by street.",
+    badge: "Verified Movers in Evington",
+    areas: ["Evington Village", "Clarendon Park", "Thurnby", "Humberstone", "Hamilton", "Knighton", "Scraptoft", "Stoneygate"],
+    nearbyLocations: ["leicester", "oadby", "wigston"]
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — AREA PAGES (Derby)
+  // ──────────────────────────────────────────
+  {
+    slug: "chaddesden",
+    name: "Chaddesden",
+    region: "East Midlands",
+    county: "Derbyshire",
+    nearbyAreas: ["Spondon", "Alvaston", "Oakwood", "Nottingham Road area", "Derby City Centre", "Borrowash", "Draycott", "Ockbrook"],
+    majorRoads: ["A52", "A6005", "A6"],
+    propertyTypes: ["post-war semis", "council estates", "newer estates"],
+    movingConsiderations: ["A52 Nottingham Road congestion", "narrow residential streets in older Chaddesden", "school-run traffic near Chaddesden Lane", "limited parking on older estate roads"],
+    intro: "Chaddesden is a large residential area on Derby's eastern side, with a mix of post-war estates and newer developments near Oakwood. The A52 connects Chaddesden to Nottingham and creates regular rush-hour congestion, making route timing important for local moves.",
+    knowledge: "Approved movers serving Chaddesden can account for the A52 corridor congestion, the older estate road layouts with tighter access, and the newer Oakwood developments with wider roads and driveway access. Moves towards Spondon, Borrowash and along the A6 are common runs.",
+    badge: "Verified Movers in Chaddesden",
+    areas: ["Chaddesden Village", "Spondon", "Oakwood", "Alvaston", "Borrowwash", "Draycott", "Ockbrook", "Nottingham Road"],
+    nearbyLocations: ["derby", "alvaston", "nottingham"]
+  },
+  {
+    slug: "mickleover",
+    name: "Mickleover",
+    region: "East Midlands",
+    county: "Derbyshire",
+    nearbyAreas: ["Littleover", "Kingway", "Findern", "Etwall", "Repton", "Willington", "Harton", "Derby City Centre"],
+    majorRoads: ["A38", "A516", "A5111"],
+    propertyTypes: ["1930s semis", "detached family homes", "new-build estates"],
+    movingConsiderations: ["A38 junction access and congestion", "school-run traffic around Mickleover Court Road area", "larger family homes with more furniture volume", "newer estate access near Kingway"],
+    intro: "Mickleover is one of Derby's most popular western suburbs, known for its family homes, good schools and quieter residential streets. Moves in Mickleover tend to involve larger loads due to the property types, but access is generally good with driveway parking on most streets.",
+    knowledge: "Approved movers serving Mickleover regularly handle larger family home moves, account for the A38 junction timing when heading towards Birmingham or the south, and plan around school-run traffic on the main residential roads. Moves to nearby Littleover and Kingway are everyday runs.",
+    badge: "Verified Movers in Mickleover",
+    areas: ["Mickleover Village", "Kingway", "Littleover", "Findern", "Etwall", "Repton", "Harton", "Willington"],
+    nearbyLocations: ["derby", "littleover", "nottingham"]
+  },
+  {
+    slug: "alvaston",
+    name: "Alvaston",
+    region: "East Midlands",
+    county: "Derbyshire",
+    nearbyAreas: ["Chaddesden", "Boulton", "Allenton", "Shelton Lock", "Spondon", "Derby City Centre", "Elvaston", "Draycott"],
+    majorRoads: ["A6", "A5111", "A52"],
+    propertyTypes: ["post-war semis", "terraced housing", "newer developments"],
+    movingConsiderations: ["A6 London Road congestion", "older estate road layouts near Alvaston Park", "school-run traffic around Boulton Lane", "A52 junction access"],
+    intro: "Alvaston sits on Derby's south-eastern side, with post-war housing estates and newer developments around Shelton Lock. The A6 London Road corridor creates regular congestion, and older estate roads near Alvaston Park can have tighter access for larger vans.",
+    knowledge: "Approved movers serving Alvaston can account for the A6 London Road rush-hour traffic, the older estate road layouts, and the best routes towards the A52 and M1. Moves between Alvaston and Chaddesden, or runs to Nottingham along the A52, are standard work.",
+    badge: "Verified Movers in Alvaston",
+    areas: ["Alvaston Park", "Boulton", "Allenton", "Shelton Lock", "Elvaston", "Draycott", "Spondon", "Chaddesden"],
+    nearbyLocations: ["derby", "chaddesden", "nottingham"]
+  },
+  {
+    slug: "littleover",
+    name: "Littleover",
+    region: "East Midlands",
+    county: "Derbyshire",
+    nearbyAreas: ["Mickleover", "Heatherton Village", "Sunnyhill", "Derby City Centre", "Findern", "Etwall", "Stenson Fields", "Blagreaves"],
+    majorRoads: ["A38", "A5111", "A516"],
+    propertyTypes: ["1930s semis", "detached homes", "executive developments"],
+    movingConsiderations: ["A38 junction access near Littleover roundabout", "hilly streets off Blagreaves Lane", "larger properties with more furniture volume", "school-run traffic around St Peter's area"],
+    intro: "Littleover is a popular western suburb of Derby with a village feel, good schools and a range of property types from 1930s semis to executive homes. Moves in Littleover typically involve larger loads and driveway access, though some older streets have tighter turning circles.",
+    knowledge: "Approved movers serving Littleover can account for the A38 roundabout access, the hillier streets off Blagreaves Lane, and the furniture volume that comes with larger family homes. Moves to and from Mickleover and Heatherton Village are common, as are longer runs to the A50 and M1.",
+    badge: "Verified Movers in Littleover",
+    areas: ["Littleover Village", "Heatherton Village", "Sunnyhill", "Blagreaves", "Stenson Fields", "Findern", "Mickleover", "Etwall"],
+    nearbyLocations: ["derby", "mickleover", "nottingham"]
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — AREA PAGES (Northampton)
+  // ──────────────────────────────────────────
+  {
+    slug: "kingsthorpe",
+    name: "Kingsthorpe",
+    region: "East Midlands",
+    county: "Northamptonshire",
+    nearbyAreas: ["Kingsthorpe Village", "Kingsthorpe Hollow", "Dallington", "Obelisk", "Northampton Town Centre", "Boothville", "Sywell", "Moulton"],
+    majorRoads: ["A508", "A43", "A45"],
+    propertyTypes: ["Victorian terraces", "1930s semis", "modern estates"],
+    movingConsiderations: ["A508 Welford Road commuter traffic", "narrow streets in Kingsthorpe Village", "on-street parking near Kingsthorpe shops", "A45 access towards M1"],
+    intro: "Kingsthorpe sits north of Northampton town centre with a distinct village character, a mix of Victorian terraces near the old high street and newer estates towards Moulton. Moves in Kingsthorpe often depend on A508 traffic timing and whether the property has driveway access.",
+    knowledge: "Approved movers serving Kingsthorpe regularly handle moves between the village's older terraces and the newer estates towards Moulton and Boothville. The A508 Welford Road and A43 create rush-hour congestion, and the older village streets have limited van access and on-street parking.",
+    badge: "Verified Movers in Kingsthorpe",
+    areas: ["Kingsthorpe Village", "Kingsthorpe Hollow", "Dallington", "Obelisk", "Boothville", "Moulton", "Sywell", "Northampton Centre"],
+    nearbyLocations: ["northampton", "duston", "abington"]
+  },
+  {
+    slug: "duston",
+    name: "Duston",
+    region: "East Midlands",
+    county: "Northamptonshire",
+    nearbyAreas: ["Old Duston", "New Duston", "Upton", "Dallington", "Harlestone", "Briar Hill", "Weedon Bec", "Doddingtree"],
+    majorRoads: ["A45", "A428", "M1"],
+    propertyTypes: ["Victorian stone cottages", "1930s semis", "new-build estates"],
+    movingConsiderations: ["A45 approaching M1 junction 15A congestion", "older village street access in Old Duston", "newer estate layouts with cul-de-sacs", "school-run traffic around Duston school roads"],
+    intro: "Duston sits west of Northampton, blending an older village core of stone cottages with extensive new-build estates. The A45 connects Duston to the M1 at junction 15A, but this route gets heavily congested. Moves in Duston depend on whether the property is in the old village or the newer developments.",
+    knowledge: "Approved movers serving Duston can account for the A45 congestion near the M1, the narrower access in Old Duston, and the cul-de-sac layouts in the newer estates. Moves between Duston and Northampton town centre, or longer runs towards the M1 corridor, are regular work.",
+    badge: "Verified Movers in Duston",
+    areas: ["Old Duston", "New Duston", "Upton", "Dallington", "Harlestone", "Briar Hill", "Weedon Bec", "Doddingtree"],
+    nearbyLocations: ["northampton", "kingsthorpe", "abington"]
+  },
+  {
+    slug: "abington",
+    name: "Abington",
+    region: "East Midlands",
+    county: "Northamptonshire",
+    nearbyAreas: ["Abington Park", "Abington Vale", "Wellingborough Road area", "Semilong", "Northampton Town Centre", "Kingsthorpe", "Weston Favell", "Boothville"],
+    majorRoads: ["A508", "A428", "A45"],
+    propertyTypes: ["Victorian terraces", "Edwardian villas", "1930s semis"],
+    movingConsiderations: ["on-street parking in Victorian terrace areas", "Wellingborough Road traffic", "narrow streets near Abington Park", "mixed residential and commercial access"],
+    intro: "Abington is a popular residential area near Northampton town centre, known for its Victorian and Edwardian architecture and the green space of Abington Park. Moves in Abington typically involve on-street parking, narrow terrace access and furniture that needs careful handling in older properties.",
+    knowledge: "Approved movers serving Abington can account for the on-street parking patterns, the narrow doorways and staircases common in Victorian terraces, and the Wellingborough Road traffic. Moves between Abington and the town centre are short but often need careful access planning.",
+    badge: "Verified Movers in Abington",
+    areas: ["Abington Park", "Abington Vale", "Semilong", "Wellingborough Road", "Weston Favell", "Kingsthorpe", "Boothville", "Town Centre"],
+    nearbyLocations: ["northampton", "kingsthorpe", "duston"]
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — AREA PAGES (Lincoln)
+  // ──────────────────────────────────────────
+  {
+    slug: "north-hykeham",
+    name: "North Hykeham",
+    region: "East Midlands",
+    county: "Lincolnshire",
+    nearbyAreas: ["South Hykeham", "Waddington", "Bracebridge Heath", "Lincoln City Centre", "Newark Road area", "Witham St Hughs", "Skellingthorpe", "Boultham"],
+    majorRoads: ["A46", "A1434", "A15"],
+    propertyTypes: ["post-war semis", "modern estates", "new-build developments"],
+    movingConsiderations: ["A46 Lincoln bypass congestion", "newer estate layouts with varying access", "commuter traffic on Newark Road", "school-run timing around Hykeham schools"],
+    intro: "North Hykeham sits south of Lincoln with a growing mix of post-war homes and newer housing estates. The A46 bypass and Newark Road connect the area to Lincoln and the wider county, but both routes create regular rush-hour congestion that can affect move timing.",
+    knowledge: "Approved movers serving North Hykeham can account for the A46 bypass timing, the access differences between older post-war streets and newer estate roads, and the commuter traffic on Newark Road. Moves into Lincoln city centre, or south towards Waddington and the A15, are standard runs.",
+    badge: "Verified Movers in North Hykeham",
+    areas: ["North Hykeham Town Centre", "South Hykeham", "Waddington", "Bracebridge Heath", "Witham St Hughs", "Skellingthorpe", "Boultham", "Newark Road"],
+    nearbyLocations: ["lincoln", "nottingham", "derby"]
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — NEW CITY PAGES
+  // ──────────────────────────────────────────
+  {
+    slug: "northampton",
+    name: "Northampton",
+    region: "East Midlands",
+    county: "Northamptonshire",
+    nearbyAreas: ["Kingsthorpe", "Duston", "Abington", "Wootton", "East Hunsbury", "West Hunsbury", "Delapre", "Upton"],
+    majorRoads: ["M1", "A45", "A43", "A508"],
+    propertyTypes: ["Victorian terraces", "1930s semis", "new-build estates"],
+    hasStudentAreas: true,
+    studentAreas: ["Abington", "Kingsthorpe"],
+    businessDistricts: ["Town Centre", "Moulton Park", "Brackmills"],
+    movingConsiderations: ["M1 junction 15 and 15A congestion", "town centre one-way system", "Wellingborough Road traffic", "new-build estate access varies by development"],
+    intro: "Northampton sits at the crossroads of the M1, A45 and A43, making it a key moving hub in the East Midlands. From Victorian terraces near the town centre to the expanding estates of Hunsbury and Wootton, Northampton moves need local knowledge of the one-way system, the M1 junction approach roads and the distinct access patterns of each neighbourhood.",
+    knowledge: "Approved movers serving Northampton can account for the M1 junction 15 and 15A congestion, the town centre one-way system, and the A45 corridor towards the Brackmills industrial area. Family moves to Kingsthorpe, Duston and Hunsbury are common, as are furniture collections from the retail parks along the A45.",
+    badge: "Verified Movers in Northampton",
+    areas: ["Town Centre", "Kingsthorpe", "Duston", "Abington", "Wootton", "East Hunsbury", "West Hunsbury", "Delapre"],
+    nearbyLocations: ["leicester", "nottingham", "milton-keynes"]
+  },
+  {
+    slug: "lincoln",
+    name: "Lincoln",
+    region: "East Midlands",
+    county: "Lincolnshire",
+    nearbyAreas: ["North Hykeham", "Bracebridge Heath", "Waddington", "Boultham", "Skellingthorpe", "Saxilby", "Washingborough", "Heighington"],
+    majorRoads: ["A46", "A15", "A57", "A158"],
+    propertyTypes: ["historic stone terraces", "post-war semis", "new-build estates"],
+    hasStudentAreas: true,
+    studentAreas: ["Brayford", "Riseholme"],
+    businessDistricts: ["City Centre", "Brayford Waterfront", "Lincoln Science and Innovation Park"],
+    movingConsiderations: ["Steep Hill — one of the steepest streets in England", "medieval city centre access restrictions", "A46 bypass congestion", "narrow streets in the Cathedral Quarter"],
+    intro: "Lincoln's Cathedral Quarter and the famous Steep Hill create some of the most challenging moving conditions in the East Midlands. Above the cathedral, cobbled streets and restricted access make van loading difficult; below, the Brayford Waterfront and newer estates offer more straightforward moves. Lincoln's dual personality — historic hillside and modern riverside — means every move needs area-specific planning.",
+    knowledge: "Approved movers serving Lincoln can account for the Steep Hill and Cathedral Quarter access restrictions, the A46 bypass timing, and the best loading spots near the medieval streets. Student moves around the University of Lincoln at Brayford, family moves to North Hykeham and Bracebridge Heath, and rural runs towards Gainsborough and Sleaford are all standard work.",
+    badge: "Verified Movers in Lincoln",
+    areas: ["Cathedral Quarter", "Steep Hill", "Brayford", "Boultham", "North Hykeham", "Bracebridge Heath", "Waddington", "Skellingthorpe"],
+    nearbyLocations: ["nottingham", "derby", "grimsby"]
   },
 ];
 

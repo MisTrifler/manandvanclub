@@ -89,6 +89,9 @@ export default function Footer() {
               <li><Link href="/man-and-van-dudley" className="hover:text-accent transition-colors">Dudley</Link></li>
               <li><Link href="/man-and-van-coventry" className="hover:text-accent transition-colors">Coventry</Link></li>
               <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands Hub</Link></li>
+              <li><Link href="/man-and-van-nottingham" className="hover:text-accent transition-colors">Nottingham</Link></li>
+              <li><Link href="/man-and-van-leicester" className="hover:text-accent transition-colors">Leicester</Link></li>
+              <li><Link href="/man-and-van-east-midlands" className="hover:text-accent transition-colors">East Midlands Hub</Link></li>
               <li><Link href="/areas-covered" className="hover:text-accent transition-colors">All Areas Covered</Link></li>
             </ul>
           </div>

@@ -285,6 +285,110 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
       ]
     },
     serviceType: ["Man and Van Services", "Furniture Delivery", "House Removals", "Flat Removals", "Same Day Moves"]
+  },
+  leicester: {
+    ...baseSchema,
+    name: "Man and Van Club — Leicester",
+    description:
+      "Free man and van request service in Leicester. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-leicester",
+    areaServed: {
+      "@type": "City",
+      name: "Leicester",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Midlands"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Oadby" },
+        { "@type": "Neighborhood", name: "Wigston" },
+        { "@type": "Neighborhood", name: "Braunstone" },
+        { "@type": "Neighborhood", name: "Evington" },
+        { "@type": "Neighborhood", name: "Clarendon Park" },
+        { "@type": "Neighborhood", name: "Glenfield" },
+        { "@type": "Neighborhood", name: "Birstall" },
+        { "@type": "Neighborhood", name: "Fosse Park" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery", "Office Relocations"]
+  },
+  derby: {
+    ...baseSchema,
+    name: "Man and Van Club — Derby",
+    description:
+      "Free man and van request service in Derby. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-derby",
+    areaServed: {
+      "@type": "City",
+      name: "Derby",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Midlands"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Mickleover" },
+        { "@type": "Neighborhood", name: "Littleover" },
+        { "@type": "Neighborhood", name: "Chaddesden" },
+        { "@type": "Neighborhood", name: "Allestree" },
+        { "@type": "Neighborhood", name: "Spondon" },
+        { "@type": "Neighborhood", name: "Alvaston" },
+        { "@type": "Neighborhood", name: "Pride Park" },
+        { "@type": "Neighborhood", name: "Belper" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery", "Office Relocations"]
+  },
+  northampton: {
+    ...baseSchema,
+    name: "Man and Van Club — Northampton",
+    description:
+      "Free man and van request service in Northampton. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-northampton",
+    areaServed: {
+      "@type": "City",
+      name: "Northampton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Midlands"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Kingsthorpe" },
+        { "@type": "Neighborhood", name: "Duston" },
+        { "@type": "Neighborhood", name: "Abington" },
+        { "@type": "Neighborhood", name: "Wootton" },
+        { "@type": "Neighborhood", name: "East Hunsbury" },
+        { "@type": "Neighborhood", name: "West Hunsbury" },
+        { "@type": "Neighborhood", name: "Moulton Park" },
+        { "@type": "Neighborhood", name: "Brackmills" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery", "Office Relocations"]
+  },
+  lincoln: {
+    ...baseSchema,
+    name: "Man and Van Club — Lincoln",
+    description:
+      "Free man and van request service in Lincoln. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-lincoln",
+    areaServed: {
+      "@type": "City",
+      name: "Lincoln",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Midlands"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Cathedral Quarter" },
+        { "@type": "Neighborhood", name: "Brayford" },
+        { "@type": "Neighborhood", name: "North Hykeham" },
+        { "@type": "Neighborhood", name: "Bracebridge Heath" },
+        { "@type": "Neighborhood", name: "Boultham" },
+        { "@type": "Neighborhood", name: "Waddington" },
+        { "@type": "Neighborhood", name: "Skellingthorpe" },
+        { "@type": "Neighborhood", name: "Steep Hill" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery", "Office Relocations"]
   }
 };
 

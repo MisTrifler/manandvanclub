@@ -134,7 +134,7 @@ function getPopularMovesForRegion(loc: LocationData): { from: string; to: string
       { to: "London", slug: "london" },
       { to: "Manchester", slug: "manchester" },
       { to: "Leeds", slug: "leeds" },
-      { to: "Leicester", slug: "" },
+      { to: "Leicester", slug: "leicester" },
     ],
   };
 
@@ -227,13 +227,102 @@ const WEST_MIDLANDS_POSTCODE_COVERAGE: Record<string, { area: string; postcodes:
     { area: "Earlsdon and Canley", postcodes: ["CV4", "CV5"] },
     { area: "Foleshill and north Coventry", postcodes: ["CV6"] },
   ],
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS POSTCODE COVERAGE
+  // ──────────────────────────────────────────
+  nottingham: [
+    { area: "City centre and Lace Market", postcodes: ["NG1", "NG2"] },
+    { area: "West Bridgford and Lady Bay", postcodes: ["NG2"] },
+    { area: "Beeston and University area", postcodes: ["NG9"] },
+    { area: "Arnold and Sherwood", postcodes: ["NG5"] },
+    { area: "Carlton and Gedling", postcodes: ["NG4"] },
+    { area: "Hucknall and north Nottingham", postcodes: ["NG15"] },
+  ],
+  leicester: [
+    { area: "City centre and Highcross", postcodes: ["LE1", "LE2"] },
+    { area: "Oadby and Stoneygate", postcodes: ["LE2"] },
+    { area: "Wigston and South Leicester", postcodes: ["LE18"] },
+    { area: "Braunstone and west Leicester", postcodes: ["LE3"] },
+    { area: "Evington and Clarendon Park", postcodes: ["LE5"] },
+  ],
+  derby: [
+    { area: "City centre and Pride Park", postcodes: ["DE1", "DE24"] },
+    { area: "Mickleover and Littleover", postcodes: ["DE3"] },
+    { area: "Chaddesden and Spondon", postcodes: ["DE21"] },
+    { area: "Alvaston and Allenton", postcodes: ["DE24"] },
+    { area: "Allestree and north Derby", postcodes: ["DE22"] },
+  ],
+  northampton: [
+    { area: "Town centre and Abington", postcodes: ["NN1"] },
+    { area: "Kingsthorpe and north Northampton", postcodes: ["NN2"] },
+    { area: "Duston and west Northampton", postcodes: ["NN5"] },
+    { area: "Wootton and East Hunsbury", postcodes: ["NN4"] },
+  ],
+  lincoln: [
+    { area: "City centre and Cathedral Quarter", postcodes: ["LN1", "LN2"] },
+    { area: "Brayford and University area", postcodes: ["LN6"] },
+    { area: "North Hykeham and south Lincoln", postcodes: ["LN6"] },
+    { area: "Boultham and west Lincoln", postcodes: ["LN6"] },
+  ],
+  // East Midlands area pages
+  arnold: [
+    { area: "Arnold and Daybrook", postcodes: ["NG5"] },
+  ],
+  beeston: [
+    { area: "Beeston and Chilwell", postcodes: ["NG9"] },
+  ],
+  carlton: [
+    { area: "Carlton and Gedling", postcodes: ["NG4"] },
+  ],
+  "west-bridgford": [
+    { area: "West Bridgford and Lady Bay", postcodes: ["NG2"] },
+  ],
+  hucknall: [
+    { area: "Hucknall", postcodes: ["NG15"] },
+  ],
+  oadby: [
+    { area: "Oadby and Stoneygate", postcodes: ["LE2"] },
+  ],
+  wigston: [
+    { area: "Wigston and South Wigston", postcodes: ["LE18"] },
+  ],
+  braunstone: [
+    { area: "Braunstone and New Parks", postcodes: ["LE3"] },
+  ],
+  evington: [
+    { area: "Evington and Clarendon Park", postcodes: ["LE5"] },
+  ],
+  chaddesden: [
+    { area: "Chaddesden and Oakwood", postcodes: ["DE21"] },
+  ],
+  mickleover: [
+    { area: "Mickleover and Kingway", postcodes: ["DE3"] },
+  ],
+  alvaston: [
+    { area: "Alvaston and Boulton", postcodes: ["DE24"] },
+  ],
+  littleover: [
+    { area: "Littleover and Heatherton", postcodes: ["DE3"] },
+  ],
+  kingsthorpe: [
+    { area: "Kingsthorpe", postcodes: ["NN2"] },
+  ],
+  duston: [
+    { area: "Duston and Upton", postcodes: ["NN5"] },
+  ],
+  abington: [
+    { area: "Abington and Semilong", postcodes: ["NN1"] },
+  ],
+  "north-hykeham": [
+    { area: "North Hykeham", postcodes: ["LN6"] },
+  ],
 };
 
 function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes: string[] }[] {
   const explicit = WEST_MIDLANDS_POSTCODE_COVERAGE[loc.slug];
   if (explicit) return explicit;
 
-  if (loc.region !== "West Midlands") return [];
+  if (loc.region !== "West Midlands" && loc.region !== "East Midlands") return [];
 
   const outwardBySlug: Record<string, string[]> = {
     stourbridge: ["DY8", "DY9"],
@@ -291,6 +380,9 @@ function generateCostAnswer(loc: LocationData): string {
   }
   if (loc.region === "Greater London") {
     return `Man and van rates in London in 2026 start from £55 per hour, with full-day costs around £400–£600. Congestion Charge and ULEZ may apply to central London moves. A single-item collection starts from £55. Submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
+  }
+  if (loc.region === "East Midlands") {
+    return `Man and van rates in the East Midlands in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
   }
   return `Man and van rates in the UK in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
 }
@@ -413,6 +505,15 @@ export function getLocationPageData(slug: string): LocationPageData | null {
       position: 2,
       name: "West Midlands",
       item: "https://www.manandvanclub.co.uk/man-and-van-west-midlands",
+    });
+  }
+
+  if (loc.region === "East Midlands") {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 2,
+      name: "East Midlands",
+      item: "https://www.manandvanclub.co.uk/man-and-van-east-midlands",
     });
   }
 

@@ -49,6 +49,34 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "wednesbury",
   "bloxwich",
   "brownhills",
+  // East Midlands expansion
+  "nottingham",
+  "leicester",
+  "derby",
+  "northampton",
+  "lincoln",
+  // East Midlands area pages — Nottingham
+  "arnold",
+  "beeston",
+  "carlton",
+  "west-bridgford",
+  "hucknall",
+  // East Midlands area pages — Leicester
+  "oadby",
+  "wigston",
+  "braunstone",
+  "evington",
+  // East Midlands area pages — Derby
+  "chaddesden",
+  "mickleover",
+  "alvaston",
+  "littleover",
+  // East Midlands area pages — Northampton
+  "kingsthorpe",
+  "duston",
+  "abington",
+  // East Midlands area pages — Lincoln
+  "north-hykeham",
 ]);
 
 export function isSeoLaunchMode(): boolean {
