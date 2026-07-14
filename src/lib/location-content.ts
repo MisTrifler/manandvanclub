@@ -568,8 +568,8 @@ export function getLocationPageData(slug: string): LocationPageData | null {
 
   const baseData = {
     name: loc.name,
-    title: `Man and Van ${loc.name} | Verified Local Movers | Man and Van Club`,
-    description: `Free man and van request in ${loc.name}, ${loc.region}. A verified mover reviews your postcodes, item list, access and route details before sending quote options. No multiple companies contacting you.`,
+    title: `Man and Van ${loc.name} | Verified Local Movers`,
+    description: `Man and van ${loc.name} from £50/hr. One verified mover quotes. Free to submit, no multiple companies.`,
     badge: `Verified movers in ${loc.name}`,
     intro: generateBusinessModelIntro(loc),
     knowledge: generateBusinessModelKnowledge(loc),
