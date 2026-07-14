@@ -108,6 +108,10 @@ export default function AreasCoveredContent() {
               { name: "West Yorkshire", href: "/man-and-van-leeds", desc: "Bradford, Wakefield, Huddersfield, Halifax, Dewsbury and nearby towns" },
               { name: "Merseyside", href: "/man-and-van-liverpool", desc: "Bootle, Birkenhead, Wallasey, Southport, St Helens and Wirral" },
               { name: "South West", href: "/man-and-van-bristol", desc: "Bath, Weston-super-Mare, Taunton, Swindon, Cheltenham, Gloucester" },
+              { name: "South Yorkshire", href: "/man-and-van-sheffield", desc: "Sheffield city centre, Hillsborough, Broomhill, Dore and surrounding areas" },
+              { name: "Scotland", href: "/man-and-van-edinburgh", desc: "Edinburgh, Glasgow, Aberdeen and Dundee" },
+              { name: "Wales", href: "/man-and-van-cardiff", desc: "Cardiff, Swansea and surrounding areas" },
+              { name: "North East", href: "/man-and-van-newcastle-upon-tyne", desc: "Newcastle upon Tyne, Jesmond, Gosforth and surrounding areas" },
             ].map((hub) => (
               <Link
                 key={hub.href}

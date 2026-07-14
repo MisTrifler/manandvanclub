@@ -170,6 +170,10 @@ export default function Header() {
             <Link href="/how-it-works" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
               How It Works
             </Link>
+
+            <Link href="/blog" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
+              Moving Tips
+            </Link>
             
             <div className="relative group">
               <button 
@@ -287,6 +291,7 @@ export default function Header() {
       {isOpen && (
         <div className="lg:hidden absolute top-14 left-0 w-full bg-white border-b border-border shadow-xl p-6 flex flex-col gap-6 max-h-[80vh] overflow-y-auto">
           <Link href="/how-it-works" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>How It Works</Link>
+          <Link href="/blog" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>Moving Tips</Link>
           
           <div className="p-2 space-y-4">
             <span className="font-black uppercase tracking-widest text-[10px] text-primary/40 block">Services</span>
