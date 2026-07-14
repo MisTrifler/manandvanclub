@@ -322,9 +322,9 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
   const explicit = WEST_MIDLANDS_POSTCODE_COVERAGE[loc.slug];
   if (explicit) return explicit;
 
-  if (loc.region !== "West Midlands" && loc.region !== "East Midlands") return [];
-
+  // Postcode coverage for all major UK cities
   const outwardBySlug: Record<string, string[]> = {
+    // West Midlands
     stourbridge: ["DY8", "DY9"],
     halesowen: ["B62", "B63"],
     wednesbury: ["WS10", "DY4"],
@@ -336,6 +336,105 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     willenhall: ["WV12", "WV13"],
     darlaston: ["WS10"],
     smethwick: ["B66", "B67"],
+    bilston: ["WV14"],
+    rugby: ["CV21", "CV22", "CV23"],
+    nuneaton: ["CV10", "CV11", "CV12"],
+    tamworth: ["B77", "B78", "B79"],
+    cannock: ["WS11", "WS12"],
+    lichfield: ["WS13", "WS14"],
+    // Greater London
+    croydon: ["CR0", "CR2", "CR7", "CR9"],
+    bromley: ["BR1", "BR2", "BR3"],
+    romford: ["RM1", "RM2", "RM3", "RM5"],
+    ilford: ["IG1", "IG2", "IG3"],
+    wembley: ["HA0", "HA9"],
+    ealing: ["W5", "W7", "W13"],
+    harrow: ["HA1", "HA2", "HA3"],
+    hounslow: ["TW3", "TW4", "TW5"],
+    kingston: ["KT1", "KT2"],
+    twickenham: ["TW1", "TW2"],
+    enfield: ["EN1", "EN2", "EN3"],
+    barnet: ["EN4", "EN5"],
+    finchley: ["N3", "N12"],
+    edgware: ["HA8"],
+    stratford: ["E15", "E20"],
+    lewisham: ["SE13", "SE14", "SE6"],
+    greenwich: ["SE10", "SE7", "SE18"],
+    bexley: ["DA5", "DA6", "DA7"],
+    sutton: ["SM1", "SM2", "SM3"],
+    mitcham: ["CR4"],
+    walthamstow: ["E17"],
+    "wood-green": ["N22", "N8"],
+    tottenham: ["N15", "N17"],
+    acton: ["W3", "W12"],
+    chiswick: ["W4"],
+    richmond: ["TW9", "TW10"],
+    // Greater Manchester
+    salford: ["M5", "M6", "M7"],
+    bolton: ["BL1", "BL2", "BL3"],
+    bury: ["BL8", "BL9"],
+    rochdale: ["OL11", "OL12", "OL16"],
+    oldham: ["OL1", "OL2", "OL3"],
+    stockport: ["SK1", "SK2", "SK3"],
+    altrincham: ["WA14", "WA15"],
+    trafford: ["M32", "M33"],
+    wigan: ["WN1", "WN2", "WN3"],
+    leigh: ["WN7"],
+    "ashton-under-lyne": ["OL6", "OL7"],
+    hyde: ["SK14"],
+    stalybridge: ["SK15"],
+    // West Yorkshire
+    bradford: ["BD1", "BD2", "BD3", "BD4"],
+    wakefield: ["WF1", "WF2", "WF3"],
+    huddersfield: ["HD1", "HD2", "HD3"],
+    halifax: ["HX1", "HX2", "HX3"],
+    dewsbury: ["WF12", "WF13"],
+    batley: ["WF17"],
+    keighley: ["BD20", "BD21"],
+    pudsey: ["LS28"],
+    morley: ["LS27"],
+    // Merseyside
+    bootle: ["L20", "L30"],
+    birkenhead: ["CH41", "CH42"],
+    wallasey: ["CH44", "CH45"],
+    southport: ["PR8", "PR9"],
+    "st-helens": ["WA10", "WA11"],
+    widnes: ["WA8"],
+    prescot: ["L34", "L35"],
+    huyton: ["L36", "L14"],
+    // South West
+    bath: ["BA1", "BA2"],
+    "weston-super-mare": ["BS22", "BS23", "BS24"],
+    bridgwater: ["TA6", "TA7"],
+    taunton: ["TA1", "TA2"],
+    yeovil: ["BA20", "BA21"],
+    frome: ["BA11"],
+    trowbridge: ["BA14"],
+    swindon: ["SN1", "SN2", "SN3", "SN25"],
+    cheltenham: ["GL50", "GL51", "GL52"],
+    gloucester: ["GL1", "GL2", "GL3", "GL4"],
+    // Scotland
+    edinburgh: ["EH1", "EH2", "EH3", "EH4", "EH5", "EH6"],
+    glasgow: ["G1", "G2", "G3", "G4", "G5", "G11"],
+    aberdeen: ["AB10", "AB11", "AB12", "AB15"],
+    dundee: ["DD1", "DD2", "DD3", "DD4"],
+    // Wales
+    cardiff: ["CF10", "CF11", "CF14", "CF15", "CF23", "CF24"],
+    swansea: ["SA1", "SA2", "SA3", "SA5"],
+    // North East
+    "newcastle-upon-tyne": ["NE1", "NE2", "NE3", "NE4", "NE5"],
+    // South East
+    southampton: ["SO14", "SO15", "SO16", "SO17"],
+    portsmouth: ["PO1", "PO2", "PO3", "PO4", "PO5"],
+    oxford: ["OX1", "OX2", "OX3", "OX4"],
+    cambridge: ["CB1", "CB2", "CB3", "CB4"],
+    reading: ["RG1", "RG2", "RG4", "RG5", "RG6"],
+    // Other
+    sheffield: ["S1", "S2", "S3", "S6", "S7", "S8", "S10"],
+    "stoke-on-trent": ["ST1", "ST2", "ST3", "ST4", "ST5", "ST6"],
+    hull: ["HU1", "HU2", "HU3", "HU5", "HU6"],
+    plymouth: ["PL1", "PL2", "PL3", "PL4"],
+    york: ["YO1", "YO10", "YO23", "YO24", "YO30", "YO31"],
   };
 
   const postcodes = outwardBySlug[loc.slug] || [];
@@ -488,8 +587,8 @@ export function getLocationPageData(slug: string): LocationPageData | null {
 
   const faq = generateFAQ(loc);
 
-  // Build 3-level breadcrumb for West Midlands: Home → West Midlands → City
-  // Other regions use 2-level: Home → City (no regional hub page exists yet)
+  // Build 3-level breadcrumb for regions with hub pages: Home → Region → City
+  // Other regions use 2-level: Home → City
   const breadcrumbItems: Record<string, any>[] = [
     {
       "@type": "ListItem",
@@ -499,21 +598,34 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     },
   ];
 
-  if (loc.region === "West Midlands") {
-    breadcrumbItems.push({
-      "@type": "ListItem",
-      position: 2,
-      name: "West Midlands",
-      item: "https://www.manandvanclub.co.uk/man-and-van-west-midlands",
-    });
-  }
+  const regionBreadcrumbs: Record<string, { name: string; slug: string }> = {
+    "West Midlands": { name: "West Midlands", slug: "man-and-van-west-midlands" },
+    "East Midlands": { name: "East Midlands", slug: "man-and-van-east-midlands" },
+    "Greater London": { name: "London", slug: "man-and-van-london" },
+    "Greater Manchester": { name: "Manchester", slug: "man-and-van-manchester" },
+    "West Yorkshire": { name: "West Yorkshire", slug: "man-and-van-leeds" },
+    "Merseyside": { name: "Merseyside", slug: "man-and-van-liverpool" },
+    "South West": { name: "South West", slug: "man-and-van-bristol" },
+    "Scotland": { name: "Scotland", slug: "man-and-van-edinburgh" },
+    "Wales": { name: "Wales", slug: "man-and-van-cardiff" },
+    "South East": { name: "South East", slug: "man-and-van-oxford" },
+    "South Yorkshire": { name: "South Yorkshire", slug: "man-and-van-sheffield" },
+    "North East": { name: "North East", slug: "man-and-van-newcastle-upon-tyne" },
+    "East of England": { name: "East of England", slug: "man-and-van-cambridge" },
+    "East Yorkshire": { name: "East Yorkshire", slug: "man-and-van-hull" },
+    "North Yorkshire": { name: "North Yorkshire", slug: "man-and-van-york" },
+    "West England": { name: "West England", slug: "man-and-van-stoke-on-trent" },
+    "South": { name: "South", slug: "man-and-van-reading" },
+    "South West coast": { name: "South West", slug: "man-and-van-plymouth" },
+  };
 
-  if (loc.region === "East Midlands") {
+  const regionCrumb = regionBreadcrumbs[loc.region];
+  if (regionCrumb) {
     breadcrumbItems.push({
       "@type": "ListItem",
       position: 2,
-      name: "East Midlands",
-      item: "https://www.manandvanclub.co.uk/man-and-van-east-midlands",
+      name: regionCrumb.name,
+      item: `https://www.manandvanclub.co.uk/${regionCrumb.slug}`,
     });
   }
 

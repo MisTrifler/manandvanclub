@@ -37,6 +37,7 @@ const GENERIC_FILLER_PATTERNS = [
 const SEO_LAUNCH_MODE = process.env.SEO_LAUNCH_MODE !== "false";
 
 const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
+  // ─── West Midlands (12) ───
   "birmingham",
   "walsall",
   "wolverhampton",
@@ -49,34 +50,150 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "wednesbury",
   "bloxwich",
   "brownhills",
-  // East Midlands expansion
+  // ─── West Midlands area pages (10) ───
+  "aldridge",
+  "willenhall",
+  "darlaston",
+  "oldbury",
+  "tipton",
+  "bilston",
+  // ─── East Midlands (5) ───
   "nottingham",
   "leicester",
   "derby",
   "northampton",
   "lincoln",
-  // East Midlands area pages — Nottingham
+  // ─── East Midlands area pages — Nottingham (5) ───
   "arnold",
   "beeston",
   "carlton",
   "west-bridgford",
   "hucknall",
-  // East Midlands area pages — Leicester
+  // ─── East Midlands area pages — Leicester (4) ───
   "oadby",
   "wigston",
   "braunstone",
   "evington",
-  // East Midlands area pages — Derby
+  // ─── East Midlands area pages — Derby (4) ───
   "chaddesden",
   "mickleover",
   "alvaston",
   "littleover",
-  // East Midlands area pages — Northampton
+  // ─── East Midlands area pages — Northampton (3) ───
   "kingsthorpe",
   "duston",
   "abington",
-  // East Midlands area pages — Lincoln
+  // ─── East Midlands area pages — Lincoln (1) ───
   "north-hykeham",
+  // ─── East Midlands expansion (5) ───
+  "rugby",
+  "nuneaton",
+  "tamworth",
+  "cannock",
+  "lichfield",
+  // ─── Greater London (27) ───
+  "london",
+  "croydon",
+  "bromley",
+  "romford",
+  "ilford",
+  "wembley",
+  "ealing",
+  "harrow",
+  "hounslow",
+  "kingston",
+  "twickenham",
+  "enfield",
+  "barnet",
+  "finchley",
+  "edgware",
+  "stratford",
+  "lewisham",
+  "greenwich",
+  "bexley",
+  "sutton",
+  "mitcham",
+  "walthamstow",
+  "wood-green",
+  "tottenham",
+  "acton",
+  "chiswick",
+  "richmond",
+  // ─── Greater Manchester (14) ───
+  "manchester",
+  "salford",
+  "bolton",
+  "bury",
+  "rochdale",
+  "oldham",
+  "stockport",
+  "altrincham",
+  "trafford",
+  "wigan",
+  "leigh",
+  "ashton-under-lyne",
+  "hyde",
+  "stalybridge",
+  // ─── West Yorkshire (10) ───
+  "leeds",
+  "bradford",
+  "wakefield",
+  "huddersfield",
+  "halifax",
+  "dewsbury",
+  "batley",
+  "keighley",
+  "pudsey",
+  "morley",
+  // ─── Merseyside (9) ───
+  "liverpool",
+  "bootle",
+  "birkenhead",
+  "wallasey",
+  "southport",
+  "st-helens",
+  "widnes",
+  "prescot",
+  "huyton",
+  // ─── South West (12) ───
+  "bristol",
+  "bath",
+  "weston-super-mare",
+  "bridgwater",
+  "taunton",
+  "yeovil",
+  "frome",
+  "trowbridge",
+  "swindon",
+  "cheltenham",
+  "gloucester",
+  // ─── South Yorkshire (1) ───
+  "sheffield",
+  // ─── Scotland (4) ───
+  "edinburgh",
+  "glasgow",
+  "aberdeen",
+  "dundee",
+  // ─── Wales (2) ───
+  "cardiff",
+  "swansea",
+  // ─── North East (1) ───
+  "newcastle-upon-tyne",
+  // ─── South East (4) ───
+  "southampton",
+  "portsmouth",
+  "oxford",
+  "cambridge",
+  // ─── South (1) ───
+  "reading",
+  // ─── West England (1) ───
+  "stoke-on-trent",
+  // ─── East Yorkshire (1) ───
+  "hull",
+  // ─── South West coast (1) ───
+  "plymouth",
+  // ─── North Yorkshire (1) ───
+  "york",
 ]);
 
 export function isSeoLaunchMode(): boolean {
