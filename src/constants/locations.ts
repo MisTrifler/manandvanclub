@@ -2160,7 +2160,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Northampton can account for the M1 junction 15 and 15A congestion, the town centre one-way system, and the A45 corridor towards the Brackmills industrial area. Family moves to Kingsthorpe, Duston and Hunsbury are common, as are furniture collections from the retail parks along the A45.",
     badge: "Verified Movers in Northampton",
     areas: ["Town Centre", "Kingsthorpe", "Duston", "Abington", "Wootton", "East Hunsbury", "West Hunsbury", "Delapre"],
-    nearbyLocations: ["leicester", "nottingham", "milton-keynes"]
+    nearbyLocations: ["leicester", "nottingham", "derby"]
   },
   {
     slug: "lincoln",
@@ -2178,7 +2178,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Lincoln can account for the Steep Hill and Cathedral Quarter access restrictions, the A46 bypass timing, and the best loading spots near the medieval streets. Student moves around the University of Lincoln at Brayford, family moves to North Hykeham and Bracebridge Heath, and rural runs towards Gainsborough and Sleaford are all standard work.",
     badge: "Verified Movers in Lincoln",
     areas: ["Cathedral Quarter", "Steep Hill", "Brayford", "Boultham", "North Hykeham", "Bracebridge Heath", "Waddington", "Skellingthorpe"],
-    nearbyLocations: ["nottingham", "derby", "grimsby"]
+    nearbyLocations: ["nottingham", "derby", "leicester"]
   },
 ];
 
