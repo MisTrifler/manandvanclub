@@ -64,6 +64,22 @@ function groupRoutes(): RouteGroup[] {
       groupLabel = "Scotland";
     } else if (regionPair.includes("West Midlands") && regionPair.includes("West Yorkshire")) {
       groupLabel = "Midlands ↔ Yorkshire";
+    } else if (regionPair.includes("West Midlands") && regionPair.includes("East Midlands")) {
+      groupLabel = "Midlands";
+    } else if (regionPair.includes("West Midlands") && regionPair.includes("Wales")) {
+      groupLabel = "Midlands ↔ Wales";
+    } else if (regionPair.includes("Greater Manchester") && regionPair.includes("Scotland")) {
+      groupLabel = "North West ↔ Scotland";
+    } else if (regionPair.includes("Greater Manchester") && regionPair.includes("South Yorkshire")) {
+      groupLabel = "North West ↔ Yorkshire";
+    } else if (regionPair.includes("South West") && regionPair.includes("Wales")) {
+      groupLabel = "South West ↔ Wales";
+    } else if (regionPair.includes("South East") && regionPair.includes("South West")) {
+      groupLabel = "South ↔ South West";
+    } else if (regionPair.includes("East Midlands")) {
+      groupLabel = "East Midlands";
+    } else if (regionPair.includes("South Yorkshire") && regionPair.includes("West Midlands")) {
+      groupLabel = "Midlands ↔ Yorkshire";
     } else {
       groupLabel = "Other Routes";
     }

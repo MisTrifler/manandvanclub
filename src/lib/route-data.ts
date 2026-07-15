@@ -908,6 +908,1037 @@ export const ROUTES: RouteData[] = [
     ],
     cityALink: "/man-and-van-london",
     cityBLink: "/man-and-van-sheffield"
+  },
+  {
+    slug: "birmingham-to-coventry",
+    cityA: "Birmingham",
+    cityB: "Coventry",
+    regionA: "West Midlands",
+    regionB: "West Midlands",
+    distance: "20 miles",
+    driveTime: "40 minutes",
+    motorway: "M6 / A45",
+    estimatedFrom: "£80",
+    estimatedTo: "£280",
+    title: "Man and Van Birmingham to Coventry | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Birmingham to Coventry moves. 20 miles via M6 / A45. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Birmingham to Coventry",
+    intro: "Moving from Birmingham to Coventry? The 20-mile journey via the M6 and A45 takes roughly 40 minutes in clear traffic. It's a common local route — close enough that some movers treat it as a half-day job. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M6 between junctions 4 and 5 gets congested during rush hours — allow an extra 20 minutes",
+      "The A45 Coventry Road is an alternative if the M6 is backed up, but it has average speed cameras through Sheldon and Meriden",
+      "Coventry's ring road is one-way and can be confusing — the junctions are numbered 1 to 12",
+      "Birmingham Clean Air Zone applies at the collection end if you're in the city centre"
+    ],
+    parkingNotes: [
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway. Suburban areas like Acocks Green, Yardley and Sheldon have free on-street parking." },
+      { city: "Coventry", notes: "Coventry has a Clean Air Zone covering the city centre and ring road area. Earlsdon, Cheylesmore and Binley generally have easier parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Birmingham to Coventry cost?", a: "In 2026, a Birmingham to Coventry man and van move typically costs £80–£280 depending on load size and access. A single-item collection starts from around £50." },
+      { q: "How long does a Birmingham to Coventry move take?", a: "The drive is about 20 miles and takes 35–45 minutes. Loading and unloading add 1–3 hours depending on property size. Most moves are completed in half a day." },
+      { q: "Is there a Clean Air Zone in Coventry?", a: "Yes. Coventry's Clean Air Zone covers the city centre and inner ring road. Most modern Euro 6 diesel vans and all petrol vans are exempt." }
+    ],
+    relatedRoutes: [
+      { label: "Coventry to Birmingham", href: "/routes/coventry-to-birmingham" },
+      { label: "Birmingham to Leicester", href: "/routes/birmingham-to-leicester" }
+    ],
+    cityALink: "/man-and-van-birmingham",
+    cityBLink: "/man-and-van-coventry"
+  },
+  {
+    slug: "coventry-to-birmingham",
+    cityA: "Coventry",
+    cityB: "Birmingham",
+    regionA: "West Midlands",
+    regionB: "West Midlands",
+    distance: "20 miles",
+    driveTime: "40 minutes",
+    motorway: "M6 / A45",
+    estimatedFrom: "£80",
+    estimatedTo: "£280",
+    title: "Man and Van Coventry to Birmingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Coventry to Birmingham moves. 20 miles via M6 / A45. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Coventry to Birmingham",
+    intro: "Moving from Coventry to Birmingham? The 20-mile journey via the M6 and A45 takes roughly 40 minutes in clear traffic. It's a straightforward local move for most man and van services. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M6 northbound between junctions 2 and 4 slows during the morning rush — leave before 7:30am for a smoother run",
+      "The A45 is the main alternative through Meriden and Sheldon if the M6 is congested",
+      "If your Birmingham delivery address is in the city centre, use the A4540 Middleway rather than the inner ring",
+      "Coventry's ring road is one-way — plan your exit carefully"
+    ],
+    parkingNotes: [
+      { city: "Coventry", notes: "Coventry has a Clean Air Zone covering the city centre. Suburban areas like Earlsdon, Styvechale and Wyken have free on-street parking." },
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway ring road. Areas like Moseley, Kings Heath and Harborne have on-street parking with some time limits." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Coventry to Birmingham cost?", a: "In 2026, a Coventry to Birmingham man and van move typically costs £80–£280 depending on load size and access. A single-item collection starts from around £50." },
+      { q: "Can I do a Coventry to Birmingham move and be done by lunch?", a: "Yes, for a studio or 1-bed flat move with good access at both ends, a morning start usually finishes by early afternoon. Larger moves take a full day." }
+    ],
+    relatedRoutes: [
+      { label: "Birmingham to Coventry", href: "/routes/birmingham-to-coventry" },
+      { label: "London to Coventry", href: "/routes/london-to-coventry" }
+    ],
+    cityALink: "/man-and-van-coventry",
+    cityBLink: "/man-and-van-birmingham"
+  },
+  {
+    slug: "birmingham-to-leicester",
+    cityA: "Birmingham",
+    cityB: "Leicester",
+    regionA: "West Midlands",
+    regionB: "East Midlands",
+    distance: "45 miles",
+    driveTime: "1 hour",
+    motorway: "M6 / M69",
+    estimatedFrom: "£120",
+    estimatedTo: "£400",
+    title: "Man and Van Birmingham to Leicester | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Birmingham to Leicester moves. 45 miles via M6 / M69. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Birmingham to Leicester",
+    intro: "Moving from Birmingham to Leicester? The 45-mile journey via the M6 and M69 takes roughly 1 hour in clear traffic. It's a popular cross-Midlands route for house moves and student moves. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M69 is a quieter motorway but can slow near Leicester where it meets the M1 at junction 21",
+      "If the M6 is congested around Coventry, the A47 through Nuneaton is a reasonable alternative",
+      "Leicester's inner ring road has average speed cameras and one-way sections — a sat-nav helps",
+      "Student moves between Birmingham and Leicester peak in June/July and September"
+    ],
+    parkingNotes: [
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540. Suburban areas like Acocks Green and Yardley have unrestricted parking." },
+      { city: "Leicester", notes: "Leicester city centre has a Clean Air Zone. Areas like Oadby, Evington and Wigston have on-street parking with fewer restrictions. Clarendon Park and Highfields have permit-only zones." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Birmingham to Leicester cost?", a: "In 2026, a Birmingham to Leicester man and van move typically costs £120–£400 depending on load size, access and timing. A single-item delivery starts from around £70." },
+      { q: "Is this a common route for student moves?", a: "Yes. Both cities have large student populations. Book early for June/July and September if you're moving student accommodation." }
+    ],
+    relatedRoutes: [
+      { label: "Leicester to Birmingham", href: "/routes/leicester-to-birmingham" },
+      { label: "Birmingham to Coventry", href: "/routes/birmingham-to-coventry" },
+      { label: "Birmingham to Nottingham", href: "/routes/birmingham-to-nottingham" }
+    ],
+    cityALink: "/man-and-van-birmingham",
+    cityBLink: "/man-and-van-leicester"
+  },
+  {
+    slug: "leicester-to-birmingham",
+    cityA: "Leicester",
+    cityB: "Birmingham",
+    regionA: "East Midlands",
+    regionB: "West Midlands",
+    distance: "45 miles",
+    driveTime: "1 hour",
+    motorway: "M69 / M6",
+    estimatedFrom: "£120",
+    estimatedTo: "£400",
+    title: "Man and Van Leicester to Birmingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Leicester to Birmingham moves. 45 miles via M69 / M6. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Leicester to Birmingham",
+    intro: "Moving from Leicester to Birmingham? The 45-mile journey via the M69 and M6 takes roughly 1 hour in clear traffic. A cross-Midlands move that's common for both house moves and student moves. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M69 joins the M6 at junction 2 — the M6 northbound towards Birmingham can be slow from junctions 2 to 5 during the evening rush",
+      "If heading to south Birmingham (Solihull, Shirley), the A47 and A45 through Nuneaton can be faster",
+      "Leicester's Welford Road and London Road are busy routes out — plan your departure around morning traffic",
+      "The M6 toll provides a faster alternative if the M6 is congested"
+    ],
+    parkingNotes: [
+      { city: "Leicester", notes: "Leicester city centre has a Clean Air Zone. Clarendon Park and Highfields have permit-only parking. Oadby and Wigston have fewer restrictions." },
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway. Suburban areas like Moseley, Kings Heath and Harborne have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Leicester to Birmingham cost?", a: "In 2026, a Leicester to Birmingham man and van move typically costs £120–£400. A single-item delivery starts from around £70." },
+      { q: "Can I move from Leicester to Birmingham in half a day?", a: "For a studio or 1-bed flat with good access, yes — the drive is about an hour. Larger moves need a full day." }
+    ],
+    relatedRoutes: [
+      { label: "Birmingham to Leicester", href: "/routes/birmingham-to-leicester" },
+      { label: "Leicester to Nottingham", href: "/routes/leicester-to-nottingham" },
+      { label: "London to Leicester", href: "/routes/london-to-leicester" }
+    ],
+    cityALink: "/man-and-van-leicester",
+    cityBLink: "/man-and-van-birmingham"
+  },
+  {
+    slug: "birmingham-to-nottingham",
+    cityA: "Birmingham",
+    cityB: "Nottingham",
+    regionA: "West Midlands",
+    regionB: "East Midlands",
+    distance: "55 miles",
+    driveTime: "1 hour 15 minutes",
+    motorway: "M42 / M1",
+    estimatedFrom: "£140",
+    estimatedTo: "£450",
+    title: "Man and Van Birmingham to Nottingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Birmingham to Nottingham moves. 55 miles via M42 / M1. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Birmingham to Nottingham",
+    intro: "Moving from Birmingham to Nottingham? The 55-mile journey via the M42 and M1 takes roughly 1 hour 15 minutes in clear traffic. A straightforward cross-Midlands move. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M42 near the M40 junction (3a) can be congested during rush hour",
+      "Leave the M1 at junction 25 for Nottingham south (West Bridgford, Gamston) or junction 26 for the north",
+      "Nottingham's tram network runs through several main roads — check for tram-only sections near your address",
+      "The A453 between the M1 and Nottingham was upgraded to dual carriageway and is now faster"
+    ],
+    parkingNotes: [
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway. Solihull, Shirley and Hall Green have unrestricted on-street parking." },
+      { city: "Nottingham", notes: "Nottingham has no Clean Air Zone but does have a workplace parking levy. West Bridgford, Beeston and Arnold have on-street parking with fewer restrictions. The city centre has Controlled Parking Zones." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Birmingham to Nottingham cost?", a: "In 2026, a Birmingham to Nottingham man and van move typically costs £140–£450 depending on load size, access and timing. A single-item delivery starts from around £80." },
+      { q: "Does Nottingham have a Clean Air Zone?", a: "No. Nottingham does not currently have a Clean Air Zone. However, the city centre has controlled parking zones." }
+    ],
+    relatedRoutes: [
+      { label: "Nottingham to Birmingham", href: "/routes/nottingham-to-birmingham" },
+      { label: "Birmingham to Leicester", href: "/routes/birmingham-to-leicester" },
+      { label: "London to Nottingham", href: "/routes/london-to-nottingham" }
+    ],
+    cityALink: "/man-and-van-birmingham",
+    cityBLink: "/man-and-van-nottingham"
+  },
+  {
+    slug: "nottingham-to-birmingham",
+    cityA: "Nottingham",
+    cityB: "Birmingham",
+    regionA: "East Midlands",
+    regionB: "West Midlands",
+    distance: "55 miles",
+    driveTime: "1 hour 15 minutes",
+    motorway: "M1 / M42",
+    estimatedFrom: "£140",
+    estimatedTo: "£450",
+    title: "Man and Van Nottingham to Birmingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Nottingham to Birmingham moves. 55 miles via M1 / M42. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Nottingham to Birmingham",
+    intro: "Moving from Nottingham to Birmingham? The 55-mile journey via the M1 and M42 takes roughly 1 hour 15 minutes. A common cross-Midlands route for house moves and work relocations. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "Join the M1 southbound at junction 25 or 26 and take the M42 west at junction 23a",
+      "The M1 between Nottingham and Leicester (junctions 21–25) can be slow during weekday rush hours",
+      "If heading to south Birmingham, the A46 to the A45 through Coventry can be an alternative",
+      "Avoid the M42 around Birmingham airport during the afternoon peak"
+    ],
+    parkingNotes: [
+      { city: "Nottingham", notes: "No Clean Air Zone in Nottingham. The city centre has Controlled Parking Zones. West Bridgford, Beeston and Arnold have fewer restrictions." },
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway. Suburban areas like Moseley, Kings Heath and Harborne have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Nottingham to Birmingham cost?", a: "In 2026, a Nottingham to Birmingham man and van move typically costs £140–£450. A single-item delivery starts from around £80." },
+      { q: "Can I move from Nottingham to Birmingham in a morning?", a: "For a 1-bed flat with good access, yes — the drive is about 1 hour 15 minutes. Larger moves need a full day." }
+    ],
+    relatedRoutes: [
+      { label: "Birmingham to Nottingham", href: "/routes/birmingham-to-nottingham" },
+      { label: "Nottingham to Leicester", href: "/routes/nottingham-to-leicester" },
+      { label: "London to Birmingham", href: "/routes/london-to-birmingham" }
+    ],
+    cityALink: "/man-and-van-nottingham",
+    cityBLink: "/man-and-van-birmingham"
+  },
+  {
+    slug: "birmingham-to-walsall",
+    cityA: "Birmingham",
+    cityB: "Walsall",
+    regionA: "West Midlands",
+    regionB: "West Midlands",
+    distance: "10 miles",
+    driveTime: "25 minutes",
+    motorway: "A34 / M6",
+    estimatedFrom: "£60",
+    estimatedTo: "£250",
+    title: "Man and Van Birmingham to Walsall | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Birmingham to Walsall moves. 10 miles via A34 / M6. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Birmingham to Walsall",
+    intro: "Moving from Birmingham to Walsall? The 10-mile journey via the A34 or M6 takes roughly 25 minutes in clear traffic. It's a short local move — close enough that most movers treat it as a standard local job. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A34 Walsall Road is the most direct route — but it has average speed cameras through Perry Barr",
+      "The M6 between junctions 6 and 7 gets congested during rush hour — the A34 is often faster",
+      "Walsall town centre has one-way streets near the Saddlers Centre — use a sat-nav for the last mile",
+      "Birmingham Clean Air Zone applies if you're collecting from the city centre"
+    ],
+    parkingNotes: [
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway. Areas like Perry Barr, Handsworth and Great Barr have free on-street parking." },
+      { city: "Walsall", notes: "Walsall does not have a Clean Air Zone. Aldridge, Bloxwich and Pelsall have easier parking with fewer restrictions." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Birmingham to Walsall cost?", a: "In 2026, a Birmingham to Walsall man and van move typically costs £60–£250 depending on load size and access. A single-item delivery starts from around £50." },
+      { q: "Can I do a Birmingham to Walsall move in a few hours?", a: "Yes. The drive is only 10–15 minutes. A studio or 1-bed flat move with good access can be done in 2–3 hours." }
+    ],
+    relatedRoutes: [
+      { label: "Walsall to Birmingham", href: "/routes/walsall-to-birmingham" },
+      { label: "Birmingham to Coventry", href: "/routes/birmingham-to-coventry" }
+    ],
+    cityALink: "/man-and-van-birmingham",
+    cityBLink: "/man-and-van-walsall"
+  },
+  {
+    slug: "walsall-to-birmingham",
+    cityA: "Walsall",
+    cityB: "Birmingham",
+    regionA: "West Midlands",
+    regionB: "West Midlands",
+    distance: "10 miles",
+    driveTime: "25 minutes",
+    motorway: "A34 / M6",
+    estimatedFrom: "£60",
+    estimatedTo: "£250",
+    title: "Man and Van Walsall to Birmingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Walsall to Birmingham moves. 10 miles via A34 / M6. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Walsall to Birmingham",
+    intro: "Moving from Walsall to Birmingham? The 10-mile journey via the A34 or M6 takes roughly 25 minutes. A short local move within the West Midlands conurbation. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A34 southbound towards Birmingham is busy during morning rush — allow an extra 15 minutes",
+      "If heading to Birmingham city centre, the M6 junction 6 (A38M) is the fastest entry point",
+      "For south Birmingham (Moseley, Kings Heath, Solihull), use the A4540 Middleway",
+      "Birmingham's Clean Air Zone applies if the delivery address is in the city centre"
+    ],
+    parkingNotes: [
+      { city: "Walsall", notes: "No Clean Air Zone in Walsall. Aldridge, Brownhills and Pelsall have easy parking. The town centre near the market has time-limited bays." },
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway. Edgbaston, Moseley and Harborne have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Walsall to Birmingham cost?", a: "In 2026, a Walsall to Birmingham man and van move typically costs £60–£250. A single-item delivery starts from around £50." }
+    ],
+    relatedRoutes: [
+      { label: "Birmingham to Walsall", href: "/routes/birmingham-to-walsall" },
+      { label: "London to Birmingham", href: "/routes/london-to-birmingham" }
+    ],
+    cityALink: "/man-and-van-walsall",
+    cityBLink: "/man-and-van-birmingham"
+  },
+  {
+    slug: "birmingham-to-wolverhampton",
+    cityA: "Birmingham",
+    cityB: "Wolverhampton",
+    regionA: "West Midlands",
+    regionB: "West Midlands",
+    distance: "15 miles",
+    driveTime: "30 minutes",
+    motorway: "M6 / A41",
+    estimatedFrom: "£60",
+    estimatedTo: "£260",
+    title: "Man and Van Birmingham to Wolverhampton | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Birmingham to Wolverhampton moves. 15 miles via M6 / A41. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Birmingham to Wolverhampton",
+    intro: "Moving from Birmingham to Wolverhampton? The 15-mile journey via the M6 or A41 takes roughly 30 minutes. It's a short local move within the Black Country. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A41 Birmingham New Road is the most direct route",
+      "The M6 between junctions 8 and 10 is an alternative but often congested during rush hour",
+      "Wolverhampton city centre has a one-way system around the ring road — plan your approach",
+      "Birmingham's Clean Air Zone applies if your collection address is in the city centre"
+    ],
+    parkingNotes: [
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540. Smethwick, Oldbury and West Bromwich have unrestricted parking." },
+      { city: "Wolverhampton", notes: "No Clean Air Zone in Wolverhampton. Tettenhall, Compton and Penn have easy on-street parking. The city centre has time-limited bays near the train station." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Birmingham to Wolverhampton cost?", a: "In 2026, a Birmingham to Wolverhampton man and van move typically costs £60–£260. A single-item delivery starts from around £50." },
+      { q: "Does Wolverhampton have a Clean Air Zone?", a: "No. Wolverhampton does not have a Clean Air Zone. Birmingham's zone applies if the collection address is inside the A4540 Middleway." }
+    ],
+    relatedRoutes: [
+      { label: "Wolverhampton to Birmingham", href: "/routes/wolverhampton-to-birmingham" },
+      { label: "Birmingham to Walsall", href: "/routes/birmingham-to-walsall" }
+    ],
+    cityALink: "/man-and-van-birmingham",
+    cityBLink: "/man-and-van-wolverhampton"
+  },
+  {
+    slug: "wolverhampton-to-birmingham",
+    cityA: "Wolverhampton",
+    cityB: "Birmingham",
+    regionA: "West Midlands",
+    regionB: "West Midlands",
+    distance: "15 miles",
+    driveTime: "30 minutes",
+    motorway: "A41 / M6",
+    estimatedFrom: "£60",
+    estimatedTo: "£260",
+    title: "Man and Van Wolverhampton to Birmingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Wolverhampton to Birmingham moves. 15 miles via A41 / M6. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Wolverhampton to Birmingham",
+    intro: "Moving from Wolverhampton to Birmingham? The 15-mile journey via the A41 or M6 takes roughly 30 minutes. A short Black Country to Birmingham move that's straightforward for local movers. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A41 eastbound towards Birmingham is the most direct route",
+      "The M6 southbound from junction 10 to 6 can be congested during the morning commute",
+      "If heading to central Birmingham, use the A4540 Middleway rather than the inner city",
+      "Birmingham's Clean Air Zone applies if the delivery address is inside the A4540 ring road"
+    ],
+    parkingNotes: [
+      { city: "Wolverhampton", notes: "No Clean Air Zone. Penn, Tettenhall and Compton have easy parking. The city centre has time-limited bays." },
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540. Edgbaston, Harborne and Moseley have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Wolverhampton to Birmingham cost?", a: "In 2026, a Wolverhampton to Birmingham man and van move typically costs £60–£260. A single-item delivery starts from around £50." }
+    ],
+    relatedRoutes: [
+      { label: "Birmingham to Wolverhampton", href: "/routes/birmingham-to-wolverhampton" },
+      { label: "Walsall to Birmingham", href: "/routes/walsall-to-birmingham" },
+      { label: "London to Birmingham", href: "/routes/london-to-birmingham" }
+    ],
+    cityALink: "/man-and-van-wolverhampton",
+    cityBLink: "/man-and-van-birmingham"
+  },
+  {
+    slug: "manchester-to-edinburgh",
+    cityA: "Manchester",
+    cityB: "Edinburgh",
+    regionA: "Greater Manchester",
+    regionB: "Scotland",
+    distance: "220 miles",
+    driveTime: "4 hours",
+    motorway: "M6 / A74(M) / M8",
+    estimatedFrom: "£400",
+    estimatedTo: "£800",
+    title: "Man and Van Manchester to Edinburgh | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Manchester to Edinburgh moves. 220 miles via M6 / A74(M) / M8. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Manchester to Edinburgh",
+    intro: "Moving from Manchester to Edinburgh? The 220-mile journey via the M6, A74(M) and M8 takes roughly 4 hours in clear traffic. It's a long-distance move that crosses the England-Scotland border. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M6 north of Carlisle becomes the A74(M) at the Scottish border — no tolls, but the road narrows in places",
+      "Shap Fell on the M6 (junctions 38–39) can be dangerous in winter weather — check conditions before setting off",
+      "Edinburgh has a Low Emission Zone covering the city centre — most modern vans are exempt",
+      "The M8 through Glasgow and into Edinburgh gets busy during rush hours",
+      "Fuel stops on the A74(M) are more spread out than on the M6 — fill up at Tebay if needed"
+    ],
+    parkingNotes: [
+      { city: "Manchester", notes: "Manchester has a Clean Air Zone covering the city centre. Most suburban areas have on-street parking. Salford Quays and the Northern Quarter have restricted parking." },
+      { city: "Edinburgh", notes: "Edinburgh has a Low Emission Zone covering the city centre. Leith, Portobello and Corstorphine have on-street parking with some restrictions. The Old Town and New Town have controlled parking zones." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Manchester to Edinburgh cost?", a: "In 2026, a Manchester to Edinburgh man and van move typically costs £400–£800. A single-item delivery starts from around £200." },
+      { q: "Does Edinburgh have an emission zone?", a: "Yes. Edinburgh has a Low Emission Zone covering the city centre. Most Euro 6 diesel vans and all petrol vans are exempt." },
+      { q: "Is there anything to watch on the M6 between Manchester and Scotland?", a: "Shap Fell (junctions 38–39) can be affected by strong winds and poor visibility, especially in winter. The A74(M) has fewer services than the M6." }
+    ],
+    relatedRoutes: [
+      { label: "Edinburgh to Manchester", href: "/routes/edinburgh-to-manchester" },
+      { label: "Edinburgh to Glasgow", href: "/routes/edinburgh-to-glasgow" },
+      { label: "London to Edinburgh", href: "/routes/london-to-edinburgh" }
+    ],
+    cityALink: "/man-and-van-manchester",
+    cityBLink: "/man-and-van-edinburgh"
+  },
+  {
+    slug: "edinburgh-to-manchester",
+    cityA: "Edinburgh",
+    cityB: "Manchester",
+    regionA: "Scotland",
+    regionB: "Greater Manchester",
+    distance: "220 miles",
+    driveTime: "4 hours",
+    motorway: "M8 / A74(M) / M6",
+    estimatedFrom: "£400",
+    estimatedTo: "£800",
+    title: "Man and Van Edinburgh to Manchester | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Edinburgh to Manchester moves. 220 miles via M8 / A74(M) / M6. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Edinburgh to Manchester",
+    intro: "Moving from Edinburgh to Manchester? The 220-mile journey via the M8, A74(M) and M6 takes roughly 4 hours in clear traffic. A cross-border move common for work relocations. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "Leave Edinburgh early to avoid the M8 Glasgow rush hour — junctions 8 to 13 slow considerably between 7:30 and 9am",
+      "The A74(M) through the Scottish borders is generally clear but has limited service areas",
+      "Shap Fell on the M6 (junctions 38–39) can have poor visibility in bad weather",
+      "Manchester's Clean Air Zone covers the city centre — check your delivery postcode"
+    ],
+    parkingNotes: [
+      { city: "Edinburgh", notes: "Edinburgh has a Low Emission Zone covering the city centre. Leith, Morningsade and Portobello have a mix of free and restricted parking." },
+      { city: "Manchester", notes: "Manchester has a Clean Air Zone covering the city centre. Didsbury, Chorlton and Sale have on-street parking with fewer restrictions." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Edinburgh to Manchester cost?", a: "In 2026, an Edinburgh to Manchester man and van move typically costs £400–£800. A single-item delivery starts from around £200." },
+      { q: "Are there any border crossings or tolls?", a: "No tolls or border checks between Scotland and England. The road changes from A74(M) to M6 at the border but it's continuous motorway standard." }
+    ],
+    relatedRoutes: [
+      { label: "Manchester to Edinburgh", href: "/routes/manchester-to-edinburgh" },
+      { label: "Edinburgh to Glasgow", href: "/routes/edinburgh-to-glasgow" },
+      { label: "London to Manchester", href: "/routes/london-to-manchester" }
+    ],
+    cityALink: "/man-and-van-edinburgh",
+    cityBLink: "/man-and-van-manchester"
+  },
+  {
+    slug: "manchester-to-sheffield",
+    cityA: "Manchester",
+    cityB: "Sheffield",
+    regionA: "Greater Manchester",
+    regionB: "South Yorkshire",
+    distance: "40 miles",
+    driveTime: "1 hour",
+    motorway: "A57 / M67",
+    estimatedFrom: "£120",
+    estimatedTo: "£400",
+    title: "Man and Van Manchester to Sheffield | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Manchester to Sheffield moves. 40 miles via A57 / M67. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Manchester to Sheffield",
+    intro: "Moving from Manchester to Sheffield? The 40-mile Pennine crossing takes roughly 1 hour via the A57 or M67. It's shorter than you'd think, but the Pennine crossing needs planning in bad weather. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The Snake Pass (A57) is scenic but closes in winter snow — check the status before relying on it",
+      "The Woodhead Pass (A628) is an alternative but also affected by high-altitude weather",
+      "The M67 from Manchester to Glossop is the most reliable motorway option, then A57 to Sheffield",
+      "Sheffield's city centre has a Clean Air Zone — check if your delivery address is within it"
+    ],
+    parkingNotes: [
+      { city: "Manchester", notes: "Manchester has a Clean Air Zone covering the city centre. Didsbury, Stockport and Altrincham have easier parking." },
+      { city: "Sheffield", notes: "Sheffield has a Clean Air Zone covering the city centre. Ecclesall, Nether Edge and Broomhill have on-street parking with fewer restrictions." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Manchester to Sheffield cost?", a: "In 2026, a Manchester to Sheffield man and van move typically costs £120–£400. A single-item delivery starts from around £70." },
+      { q: "What's the best route from Manchester to Sheffield?", a: "The M67 to Glossop then A57 (Snake Pass) is the most common. In winter, the M1 via Leeds is longer but more reliable." },
+      { q: "Does the Snake Pass close in winter?", a: "Yes. It regularly closes during snow and ice, typically between November and March. Check Derbyshire County Council's website." }
+    ],
+    relatedRoutes: [
+      { label: "Sheffield to Manchester", href: "/routes/sheffield-to-manchester" },
+      { label: "Leeds to Manchester", href: "/routes/leeds-to-manchester" },
+      { label: "Manchester to Liverpool", href: "/routes/manchester-to-liverpool" }
+    ],
+    cityALink: "/man-and-van-manchester",
+    cityBLink: "/man-and-van-sheffield"
+  },
+  {
+    slug: "sheffield-to-manchester",
+    cityA: "Sheffield",
+    cityB: "Manchester",
+    regionA: "South Yorkshire",
+    regionB: "Greater Manchester",
+    distance: "40 miles",
+    driveTime: "1 hour",
+    motorway: "A57 / M67",
+    estimatedFrom: "£120",
+    estimatedTo: "£400",
+    title: "Man and Van Sheffield to Manchester | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Sheffield to Manchester moves. 40 miles via A57 / M67. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Sheffield to Manchester",
+    intro: "Moving from Sheffield to Manchester? The 40-mile Pennine crossing takes roughly 1 hour via the A57 and M67. A popular route for people relocating between South Yorkshire and Greater Manchester. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "Take the A57 (Snake Pass) west from Sheffield — it's the most direct route in good weather",
+      "In winter, the M1 north to the M62 west is a safer (but 30-minute longer) alternative",
+      "The M67 eastbound from the A57 has frequent speed cameras",
+      "Manchester's Clean Air Zone applies to the city centre"
+    ],
+    parkingNotes: [
+      { city: "Sheffield", notes: "Sheffield has a Clean Air Zone covering the city centre. Ecclesall, Broomhill and Nether Edge have easier parking." },
+      { city: "Manchester", notes: "Manchester has a Clean Air Zone covering the city centre. Salford, Didsbury and Stockport have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Sheffield to Manchester cost?", a: "In 2026, a Sheffield to Manchester man and van move typically costs £120–£400. A single-item delivery starts from around £70." },
+      { q: "How long does the drive take in winter?", a: "If the Snake Pass is open, add 15–20 minutes for cautious driving. If it's closed, the M1/M62 route takes about 1 hour 30 minutes." }
+    ],
+    relatedRoutes: [
+      { label: "Manchester to Sheffield", href: "/routes/manchester-to-sheffield" },
+      { label: "London to Sheffield", href: "/routes/london-to-sheffield" }
+    ],
+    cityALink: "/man-and-van-sheffield",
+    cityBLink: "/man-and-van-manchester"
+  },
+  {
+    slug: "sheffield-to-birmingham",
+    cityA: "Sheffield",
+    cityB: "Birmingham",
+    regionA: "South Yorkshire",
+    regionB: "West Midlands",
+    distance: "75 miles",
+    driveTime: "1 hour 30 minutes",
+    motorway: "M1 / M42",
+    estimatedFrom: "£180",
+    estimatedTo: "£500",
+    title: "Man and Van Sheffield to Birmingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Sheffield to Birmingham moves. 75 miles via M1 / M42. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Sheffield to Birmingham",
+    intro: "Moving from Sheffield to Birmingham? The 75-mile journey via the M1 and M42 takes roughly 1 hour 30 minutes in clear traffic. A cross-Midlands route that's straightforward on a good day. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M1 south from Sheffield (junctions 30–34) can be congested during the morning rush",
+      "Join the M42 west at junction 23a — it's generally quieter than the M6 through Birmingham",
+      "Birmingham's Clean Air Zone applies if your delivery address is inside the A4540 Middleway",
+      "The A38 from the M1 to M42 via Derby is an alternative if the M1 is congested around Nottingham"
+    ],
+    parkingNotes: [
+      { city: "Sheffield", notes: "Sheffield has a Clean Air Zone covering the city centre. Ecclesall, Broomhill and Nether Edge have easier parking." },
+      { city: "Birmingham", notes: "The Clean Air Zone covers the city centre inside the A4540 Middleway. Solihull, Hall Green and Moseley have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Sheffield to Birmingham cost?", a: "In 2026, a Sheffield to Birmingham man and van move typically costs £180–£500. A single-item delivery starts from around £100." },
+      { q: "Is the M1 or A38 a better route?", a: "The M1/M42 is the standard route and usually fastest. The A38 via Derby and Burton-on-Trent is an alternative if the M1 has major delays." }
+    ],
+    relatedRoutes: [
+      { label: "Birmingham to Leeds", href: "/routes/birmingham-to-leeds" },
+      { label: "London to Sheffield", href: "/routes/london-to-sheffield" },
+      { label: "Sheffield to Manchester", href: "/routes/sheffield-to-manchester" }
+    ],
+    cityALink: "/man-and-van-sheffield",
+    cityBLink: "/man-and-van-birmingham"
+  },
+  {
+    slug: "bristol-to-cardiff",
+    cityA: "Bristol",
+    cityB: "Cardiff",
+    regionA: "South West",
+    regionB: "Wales",
+    distance: "45 miles",
+    driveTime: "1 hour",
+    motorway: "M4",
+    estimatedFrom: "£130",
+    estimatedTo: "£420",
+    title: "Man and Van Bristol to Cardiff | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Bristol to Cardiff moves. 45 miles via M4. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Bristol to Cardiff",
+    intro: "Moving from Bristol to Cardiff? The 45-mile journey via the M4 takes roughly 1 hour in clear traffic. It's a cross-border move from England to Wales, but there are no border checks or tolls. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "Severn Bridge tolls were abolished in 2018 — both M4 and M48 crossings are free",
+      "Cardiff city centre can be congested around M4 junctions 29–32 during rush hour",
+      "The A48 through Chepstow is a scenic alternative but adds 15–20 minutes",
+      "Both Bristol and Cardiff have Clean Air Zones covering their city centres"
+    ],
+    parkingNotes: [
+      { city: "Bristol", notes: "Bristol has a Clean Air Zone covering the city centre. Clifton, Redland and Cotham have permit parking areas. Bedminster and Southville have fewer restrictions." },
+      { city: "Cardiff", notes: "Cardiff has a Clean Air Zone covering the city centre. Canton, Roath and Cathays have on-street parking. Pontcanna and Llandaff have easier parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Bristol to Cardiff cost?", a: "In 2026, a Bristol to Cardiff man and van move typically costs £130–£420. A single-item delivery starts from around £80." },
+      { q: "Do you need to pay to cross the Severn Bridge?", a: "No. Severn Bridge tolls were removed in December 2018. Both crossings are free." },
+      { q: "Are there any restrictions moving from England to Wales?", a: "No border checks, no customs, no paperwork. The only practical difference is that some councils in Wales have different parking rules." }
+    ],
+    relatedRoutes: [
+      { label: "Cardiff to Bristol", href: "/routes/cardiff-to-bristol" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
+      { label: "London to Cardiff", href: "/routes/london-to-cardiff" }
+    ],
+    cityALink: "/man-and-van-bristol",
+    cityBLink: "/man-and-van-cardiff"
+  },
+  {
+    slug: "cardiff-to-bristol",
+    cityA: "Cardiff",
+    cityB: "Bristol",
+    regionA: "Wales",
+    regionB: "South West",
+    distance: "45 miles",
+    driveTime: "1 hour",
+    motorway: "M4",
+    estimatedFrom: "£130",
+    estimatedTo: "£420",
+    title: "Man and Van Cardiff to Bristol | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Cardiff to Bristol moves. 45 miles via M4. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Cardiff to Bristol",
+    intro: "Moving from Cardiff to Bristol? The 45-mile journey via the M4 takes roughly 1 hour in clear traffic. A common cross-border move for work and lifestyle relocations. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "Leave Cardiff early to avoid the M4 junction 32 congestion during morning rush hour",
+      "The M4 Second Severn Crossing is the standard route — no tolls since 2018",
+      "Bristol's Clean Air Zone covers the city centre — check if your delivery address is inside it",
+      "If heading to north Bristol (Clifton, Redland), use the M5 junction 18 rather than the M4 junction 19"
+    ],
+    parkingNotes: [
+      { city: "Cardiff", notes: "Cardiff has a Clean Air Zone covering the city centre. Roath, Cathays and Canton have on-street parking. Pontcanna and Llandaff have fewer restrictions." },
+      { city: "Bristol", notes: "Bristol has a Clean Air Zone covering the city centre. Bedminster, Southville and Knowle have easier parking. Clifton and Redland have permit-only zones." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Cardiff to Bristol cost?", a: "In 2026, a Cardiff to Bristol man and van move typically costs £130–£420. A single-item delivery starts from around £80." },
+      { q: "Can I move from Cardiff to Bristol in half a day?", a: "Yes, for a flat or small house move with good access. The drive is about an hour, so a morning start can finish by early afternoon." }
+    ],
+    relatedRoutes: [
+      { label: "Bristol to Cardiff", href: "/routes/bristol-to-cardiff" },
+      { label: "London to Cardiff", href: "/routes/london-to-cardiff" }
+    ],
+    cityALink: "/man-and-van-cardiff",
+    cityBLink: "/man-and-van-bristol"
+  },
+  {
+    slug: "london-to-brighton",
+    cityA: "London",
+    cityB: "Brighton",
+    regionA: "Greater London",
+    regionB: "South East",
+    distance: "55 miles",
+    driveTime: "1 hour 30 minutes",
+    motorway: "M23 / A23",
+    estimatedFrom: "£160",
+    estimatedTo: "£500",
+    title: "Man and Van London to Brighton | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for London to Brighton moves. 55 miles via M23 / A23. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "London to Brighton",
+    intro: "Moving from London to Brighton? The 55-mile journey via the M23 and A23 takes roughly 1 hour 30 minutes in clear traffic. One of the most popular London exit routes — especially for people moving to the coast. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M23/A23 can be very busy on Friday evenings and Sunday afternoons — peak coast-bound traffic",
+      "Brighton has a Low Traffic Neighbourhood scheme in several areas — check for restrictions near your delivery address",
+      "London ULEZ and Congestion Charge may apply at the collection end",
+      "Brighton's one-way system around the Old Steine can be confusing — plan your approach"
+    ],
+    parkingNotes: [
+      { city: "London", notes: "Most boroughs have CPZs. Apply for a parking suspension at least 5 working days before the move. Loading bays allow 20–40 minutes." },
+      { city: "Brighton", notes: "Brighton has Controlled Parking Zones covering most of the city. Hove, Preston Park and areas north of the A27 have easier parking. Seafront properties often have residents' permit zones." }
+    ],
+    faq: [
+      { q: "How much does a man and van from London to Brighton cost?", a: "In 2026, a London to Brighton man and van move typically costs £160–£500. A single-item delivery starts from around £90." },
+      { q: "How long does the drive take?", a: "About 1 hour 30 minutes via the M23 and A23 in clear traffic. Weekend and summer traffic can add 30–60 minutes." },
+      { q: "Is Brighton a popular destination for London movers?", a: "Very. Brighton is one of the top destinations for people leaving London. Movers on this route are experienced and availability is generally good." }
+    ],
+    relatedRoutes: [
+      { label: "Brighton to London", href: "/routes/brighton-to-london" },
+      { label: "London to Bristol", href: "/routes/bristol-to-london" },
+      { label: "London to Southampton", href: "/routes/london-to-southampton" }
+    ],
+    cityALink: "/man-and-van-london",
+    cityBLink: "/man-and-van-brighton"
+  },
+  {
+    slug: "brighton-to-london",
+    cityA: "Brighton",
+    cityB: "London",
+    regionA: "South East",
+    regionB: "Greater London",
+    distance: "55 miles",
+    driveTime: "1 hour 30 minutes",
+    motorway: "A23 / M23",
+    estimatedFrom: "£160",
+    estimatedTo: "£500",
+    title: "Man and Van Brighton to London | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Brighton to London moves. 55 miles via A23 / M23. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Brighton to London",
+    intro: "Moving from Brighton to London? The 55-mile journey via the A23 and M23 takes roughly 1 hour 30 minutes. Whether you're moving for work, family or a change of scene, a verified man and van can handle the full move. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A23 northbound through Crawley and the M23 approach to the M25 are busiest on weekday mornings",
+      "Avoid the M25 clockwise between junctions 7 and 10 during the afternoon rush",
+      "London ULEZ applies to most of Greater London — check the zone boundary",
+      "If heading to south London (Croydon, Bromley), the A23 through Purley is more direct than the M25"
+    ],
+    parkingNotes: [
+      { city: "Brighton", notes: "Brighton has Controlled Parking Zones across most of the city. Fiveways, Hollingdean and Patcham have fewer restrictions than the city centre." },
+      { city: "London", notes: "CPZs cover most boroughs. Apply for a parking suspension at least 5 working days before. Inner London boroughs have the strictest rules." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Brighton to London cost?", a: "In 2026, a Brighton to London man and van move typically costs £160–£500. A single-item delivery starts from around £90." },
+      { q: "What's the best time to drive?", a: "Tuesday to Thursday mornings before 7:30am give the clearest run. Avoid Sunday evenings when coast-to-city traffic peaks." }
+    ],
+    relatedRoutes: [
+      { label: "London to Brighton", href: "/routes/london-to-brighton" },
+      { label: "London to Birmingham", href: "/routes/london-to-birmingham" },
+      { label: "London to Manchester", href: "/routes/london-to-manchester" }
+    ],
+    cityALink: "/man-and-van-brighton",
+    cityBLink: "/man-and-van-london"
+  },
+  {
+    slug: "london-to-leicester",
+    cityA: "London",
+    cityB: "Leicester",
+    regionA: "Greater London",
+    regionB: "East Midlands",
+    distance: "100 miles",
+    driveTime: "2 hours",
+    motorway: "M1",
+    estimatedFrom: "£220",
+    estimatedTo: "£550",
+    title: "Man and Van London to Leicester | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for London to Leicester moves. 100 miles via M1. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "London to Leicester",
+    intro: "Moving from London to Leicester? The 100-mile journey via the M1 takes roughly 2 hours in clear traffic. A popular route for people relocating to a more affordable city with good transport links. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M1 northbound is busy from junctions 1 to 6a during the morning rush",
+      "M1 roadworks between junctions 13 and 16 (Milton Keynes to Northampton) may cause delays",
+      "Leave the M1 at junction 21 for Leicester city centre and south Leicester",
+      "London ULEZ and Congestion Charge may apply at the collection end"
+    ],
+    parkingNotes: [
+      { city: "London", notes: "Most boroughs have CPZs. Apply for a parking suspension at least 5 working days before." },
+      { city: "Leicester", notes: "Leicester has a Clean Air Zone covering the city centre. Oadby, Wigston and Evington have on-street parking. Clarendon Park has permit-only zones." }
+    ],
+    faq: [
+      { q: "How much does a man and van from London to Leicester cost?", a: "In 2026, a London to Leicester man and van move typically costs £220–£550. A single-item delivery starts from around £130." },
+      { q: "Does Leicester have a Clean Air Zone?", a: "Yes. Leicester has a Clean Air Zone covering the city centre. Most modern vans (Euro 6 diesel and Euro 4+ petrol) are exempt." }
+    ],
+    relatedRoutes: [
+      { label: "Leicester to London", href: "/routes/leicester-to-london" },
+      { label: "Birmingham to Leicester", href: "/routes/birmingham-to-leicester" },
+      { label: "London to Nottingham", href: "/routes/london-to-nottingham" }
+    ],
+    cityALink: "/man-and-van-london",
+    cityBLink: "/man-and-van-leicester"
+  },
+  {
+    slug: "leicester-to-london",
+    cityA: "Leicester",
+    cityB: "London",
+    regionA: "East Midlands",
+    regionB: "Greater London",
+    distance: "100 miles",
+    driveTime: "2 hours",
+    motorway: "M1",
+    estimatedFrom: "£220",
+    estimatedTo: "£550",
+    title: "Man and Van Leicester to London | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Leicester to London moves. 100 miles via M1. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Leicester to London",
+    intro: "Moving from Leicester to London? The 100-mile journey via the M1 takes roughly 2 hours in clear traffic. Whether it's a work relocation or moving closer to family, a verified mover can handle the full journey. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M1 southbound is busiest between 7am and 9:30am on weekdays — Northamptonshire is a regular bottleneck",
+      "London ULEZ covers most of Greater London within the North and South Circular Roads",
+      "The M1 junction 6a to M25 interchange is frequently congested — allow extra time",
+      "If heading to east London, the A14 then A1(M) via Peterborough can be an alternative"
+    ],
+    parkingNotes: [
+      { city: "Leicester", notes: "Leicester has a Clean Air Zone covering the city centre. Evington, Oadby and Braunstone have on-street parking with fewer restrictions." },
+      { city: "London", notes: "CPZs cover most boroughs. Inner London parking is the most restricted. Apply for a parking suspension well in advance." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Leicester to London cost?", a: "In 2026, a Leicester to London man and van move typically costs £220–£550. A single-item delivery starts from around £130." },
+      { q: "What's the best time to drive from Leicester to London?", a: "Tuesday to Thursday mornings before 7:30am give the clearest M1 run. Friday afternoons and Sunday evenings are the worst times." }
+    ],
+    relatedRoutes: [
+      { label: "London to Leicester", href: "/routes/london-to-leicester" },
+      { label: "Birmingham to Leicester", href: "/routes/birmingham-to-leicester" },
+      { label: "London to Birmingham", href: "/routes/london-to-birmingham" }
+    ],
+    cityALink: "/man-and-van-leicester",
+    cityBLink: "/man-and-van-london"
+  },
+  {
+    slug: "leicester-to-nottingham",
+    cityA: "Leicester",
+    cityB: "Nottingham",
+    regionA: "East Midlands",
+    regionB: "East Midlands",
+    distance: "25 miles",
+    driveTime: "40 minutes",
+    motorway: "M1 / A46",
+    estimatedFrom: "£80",
+    estimatedTo: "£300",
+    title: "Man and Van Leicester to Nottingham | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Leicester to Nottingham moves. 25 miles via M1 / A46. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Leicester to Nottingham",
+    intro: "Moving from Leicester to Nottingham? The 25-mile journey via the M1 or A46 takes roughly 40 minutes. A short East Midlands move — close enough for a half-day job for most properties. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A46 between Leicester and Nottingham is often faster than the M1 — dual carriageway with fewer junctions",
+      "Nottingham's tram network operates in the city centre — check for tram-only sections near your delivery address",
+      "Student moves between the two cities peak in June/July and September"
+    ],
+    parkingNotes: [
+      { city: "Leicester", notes: "Leicester has a Clean Air Zone covering the city centre. Oadby, Wigston and Evington have easier parking." },
+      { city: "Nottingham", notes: "No Clean Air Zone. City centre has Controlled Parking Zones. West Bridgford, Beeston and Arnold have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Leicester to Nottingham cost?", a: "In 2026, a Leicester to Nottingham man and van move typically costs £80–£300. A single-item delivery starts from around £50." },
+      { q: "Can I move from Leicester to Nottingham in a morning?", a: "Yes. The drive is only 25 miles and takes about 40 minutes. A flat move can be done in 2–3 hours." }
+    ],
+    relatedRoutes: [
+      { label: "Nottingham to Leicester", href: "/routes/nottingham-to-leicester" },
+      { label: "Birmingham to Leicester", href: "/routes/birmingham-to-leicester" },
+      { label: "Birmingham to Nottingham", href: "/routes/birmingham-to-nottingham" }
+    ],
+    cityALink: "/man-and-van-leicester",
+    cityBLink: "/man-and-van-nottingham"
+  },
+  {
+    slug: "nottingham-to-leicester",
+    cityA: "Nottingham",
+    cityB: "Leicester",
+    regionA: "East Midlands",
+    regionB: "East Midlands",
+    distance: "25 miles",
+    driveTime: "40 minutes",
+    motorway: "A46 / M1",
+    estimatedFrom: "£80",
+    estimatedTo: "£300",
+    title: "Man and Van Nottingham to Leicester | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Nottingham to Leicester moves. 25 miles via A46 / M1. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Nottingham to Leicester",
+    intro: "Moving from Nottingham to Leicester? The 25-mile journey via the A46 or M1 takes roughly 40 minutes. A short East Midlands move between two well-connected cities. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A46 south from Nottingham is the most direct route — dual carriageway most of the way",
+      "If the A46 is congested, the M1 south from junction 26 to junction 21 is an alternative",
+      "Leicester's inner ring road has average speed cameras",
+      "Both universities have peak moving periods in June/July and September — book early"
+    ],
+    parkingNotes: [
+      { city: "Nottingham", notes: "No Clean Air Zone. City centre has Controlled Parking Zones. Beeston, West Bridgford and Arnold have easier parking." },
+      { city: "Leicester", notes: "Leicester has a Clean Air Zone covering the city centre. Oadby, Evington and Braunstone have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Nottingham to Leicester cost?", a: "In 2026, a Nottingham to Leicester man and van move typically costs £80–£300. A single-item delivery starts from around £50." },
+      { q: "Is the A46 or M1 better?", a: "The A46 is usually faster — more direct with fewer junctions. The M1 is only better if the A46 has roadworks." }
+    ],
+    relatedRoutes: [
+      { label: "Leicester to Nottingham", href: "/routes/leicester-to-nottingham" },
+      { label: "Nottingham to Birmingham", href: "/routes/nottingham-to-birmingham" },
+      { label: "London to Nottingham", href: "/routes/london-to-nottingham" }
+    ],
+    cityALink: "/man-and-van-nottingham",
+    cityBLink: "/man-and-van-leicester"
+  },
+  {
+    slug: "london-to-southampton",
+    cityA: "London",
+    cityB: "Southampton",
+    regionA: "Greater London",
+    regionB: "South East",
+    distance: "80 miles",
+    driveTime: "1 hour 45 minutes",
+    motorway: "M3",
+    estimatedFrom: "£200",
+    estimatedTo: "£520",
+    title: "Man and Van London to Southampton | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for London to Southampton moves. 80 miles via M3. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "London to Southampton",
+    intro: "Moving from London to Southampton? The 80-mile journey via the M3 takes roughly 1 hour 45 minutes in clear traffic. A popular route for people relocating to the south coast. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M3 between junctions 2 and 4a gets congested on weekday mornings",
+      "Southampton's Itchen Bridge has a toll for vehicles over 3 tonnes — most Luton vans are under this limit",
+      "The M27 connects to Portsmouth — useful if your delivery address is in the eastern suburbs",
+      "London ULEZ applies at the collection end for most central addresses"
+    ],
+    parkingNotes: [
+      { city: "London", notes: "CPZs cover most boroughs. Apply for a parking suspension at least 5 working days before the move." },
+      { city: "Southampton", notes: "Southampton city centre has Controlled Parking Zones. Portswood, Bitterne and Shirley have on-street parking with fewer restrictions. The university area has permit-only zones." }
+    ],
+    faq: [
+      { q: "How much does a man and van from London to Southampton cost?", a: "In 2026, a London to Southampton man and van move typically costs £200–£520. A single-item delivery starts from around £110." },
+      { q: "Does Southampton have a Clean Air Zone?", a: "No. Southampton currently does not have a Clean Air Zone, though the city centre has Controlled Parking Zones." }
+    ],
+    relatedRoutes: [
+      { label: "Southampton to London", href: "/routes/southampton-to-london" },
+      { label: "London to Brighton", href: "/routes/london-to-brighton" },
+      { label: "London to Bristol", href: "/routes/bristol-to-london" }
+    ],
+    cityALink: "/man-and-van-london",
+    cityBLink: "/man-and-van-southampton"
+  },
+  {
+    slug: "southampton-to-london",
+    cityA: "Southampton",
+    cityB: "London",
+    regionA: "South East",
+    regionB: "Greater London",
+    distance: "80 miles",
+    driveTime: "1 hour 45 minutes",
+    motorway: "M3",
+    estimatedFrom: "£200",
+    estimatedTo: "£520",
+    title: "Man and Van Southampton to London | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Southampton to London moves. 80 miles via M3. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Southampton to London",
+    intro: "Moving from Southampton to London? The 80-mile journey via the M3 takes roughly 1 hour 45 minutes. Whether it's for work, study or a return to the capital, a verified mover can handle the full journey. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M3 northbound is busiest on weekday mornings — the M25 junction can add 20 minutes",
+      "London ULEZ covers most of Greater London within the North and South Circular Roads",
+      "If heading to west London, the M3 to M25 (clockwise) to M4 is a common route",
+      "Avoid the M25 between junctions 9 and 13 during afternoon rush hour"
+    ],
+    parkingNotes: [
+      { city: "Southampton", notes: "No Clean Air Zone. City centre has Controlled Parking Zones. Bitterne, Shirley and Woolston have easier parking." },
+      { city: "London", notes: "CPZs cover most boroughs. Inner London boroughs have the strictest parking rules. Apply for a parking suspension well in advance." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Southampton to London cost?", a: "In 2026, a Southampton to London man and van move typically costs £200–£520. A single-item delivery starts from around £110." },
+      { q: "What's the best time to drive?", a: "Tuesday to Thursday mornings before 7:30am give the clearest run on the M3. Friday afternoons and Sunday evenings are the busiest." }
+    ],
+    relatedRoutes: [
+      { label: "London to Southampton", href: "/routes/london-to-southampton" },
+      { label: "London to Brighton", href: "/routes/london-to-brighton" },
+      { label: "London to Bristol", href: "/routes/bristol-to-london" }
+    ],
+    cityALink: "/man-and-van-southampton",
+    cityBLink: "/man-and-van-london"
+  },
+  {
+    slug: "london-to-plymouth",
+    cityA: "London",
+    cityB: "Plymouth",
+    regionA: "Greater London",
+    regionB: "South West",
+    distance: "215 miles",
+    driveTime: "3 hours 45 minutes",
+    motorway: "M3 / A303 / A38",
+    estimatedFrom: "£380",
+    estimatedTo: "£800",
+    title: "Man and Van London to Plymouth | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for London to Plymouth moves. 215 miles via M3 / A303 / A38. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "London to Plymouth",
+    intro: "Moving from London to Plymouth? The 215-mile journey via the M3, A303 and A38 takes roughly 3 hours 45 minutes in clear traffic. It's a long move to the far south-west that needs a full day. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A303 is the main route west — it has single-carriageway sections near Stonehenge and Ilminster that can cause delays",
+      "The A38 Devon Expressway from Exeter to Plymouth is mostly dual carriageway but can be slow in summer tourist traffic",
+      "There are limited service areas on the A303 — plan fuel stops at Fleet Services or near Yeovil",
+      "London ULEZ and Congestion Charge apply at the collection end"
+    ],
+    parkingNotes: [
+      { city: "London", notes: "CPZs cover most boroughs. Apply for a parking suspension at least 5 working days before." },
+      { city: "Plymouth", notes: "No Clean Air Zone in Plymouth. Mutley, Mannamead and Peverell have on-street parking. The Hoe and city centre have restricted parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from London to Plymouth cost?", a: "In 2026, a London to Plymouth man and van move typically costs £380–£800. A single-item delivery starts from around £200." },
+      { q: "Is the A303 or M5 a better route?", a: "The A303 is shorter and more direct. The M5 (via Bristol and Exeter) is longer but motorway standard all the way. In summer, the A303 can be slower; in winter, the M5 is more reliable." }
+    ],
+    relatedRoutes: [
+      { label: "Plymouth to London", href: "/routes/plymouth-to-london" },
+      { label: "London to Bristol", href: "/routes/bristol-to-london" },
+      { label: "London to Southampton", href: "/routes/london-to-southampton" }
+    ],
+    cityALink: "/man-and-van-london",
+    cityBLink: "/man-and-van-plymouth"
+  },
+  {
+    slug: "plymouth-to-london",
+    cityA: "Plymouth",
+    cityB: "London",
+    regionA: "South West",
+    regionB: "Greater London",
+    distance: "215 miles",
+    driveTime: "3 hours 45 minutes",
+    motorway: "A38 / A303 / M3",
+    estimatedFrom: "£380",
+    estimatedTo: "£800",
+    title: "Man and Van Plymouth to London | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Plymouth to London moves. 215 miles via A38 / A303 / M3. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Plymouth to London",
+    intro: "Moving from Plymouth to London? The 215-mile journey via the A38, A303 and M3 takes roughly 3 hours 45 minutes. A long-distance move from the far south-west that needs a full day. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "Leave early — the A38 Devon Expressway is quieter before 7am",
+      "The A303 has single-carriageway sections that slow traffic during holidays and summer weekends",
+      "The M5 to the M4 (via Bristol) is the all-motorway alternative — about 30 minutes longer but more reliable",
+      "London ULEZ covers most of Greater London within the North and South Circular Roads"
+    ],
+    parkingNotes: [
+      { city: "Plymouth", notes: "No Clean Air Zone. Mutley, Mannamead and Peverell have on-street parking. The city centre and Hoe area have restricted parking." },
+      { city: "London", notes: "CPZs cover most boroughs. Inner London has the strictest parking. Apply for a parking suspension well in advance." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Plymouth to London cost?", a: "In 2026, a Plymouth to London man and van move typically costs £380–£800. A single-item delivery starts from around £200." },
+      { q: "Can I move from Plymouth to London in one day?", a: "Yes. The drive is about 3 hours 45 minutes. A 1–2 bed flat can be done in a day with an early start. A 3-bed house may need two days." }
+    ],
+    relatedRoutes: [
+      { label: "London to Plymouth", href: "/routes/london-to-plymouth" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
+      { label: "London to Southampton", href: "/routes/london-to-southampton" }
+    ],
+    cityALink: "/man-and-van-plymouth",
+    cityBLink: "/man-and-van-london"
+  },
+  {
+    slug: "coventry-to-leicester",
+    cityA: "Coventry",
+    cityB: "Leicester",
+    regionA: "West Midlands",
+    regionB: "East Midlands",
+    distance: "25 miles",
+    driveTime: "40 minutes",
+    motorway: "M69",
+    estimatedFrom: "£80",
+    estimatedTo: "£300",
+    title: "Man and Van Coventry to Leicester | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Coventry to Leicester moves. 25 miles via M69. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Coventry to Leicester",
+    intro: "Moving from Coventry to Leicester? The 25-mile journey via the M69 takes roughly 40 minutes. A short cross-Midlands move that's straightforward for most man and van services. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The M69 is a quiet motorway and rarely congested — one of the easiest cross-city routes in the Midlands",
+      "Leave the M69 at the A47 for Hinckley and south Leicester, or continue to M1 junction 21 for the city centre",
+      "Both Coventry and Leicester have Clean Air Zones covering their city centres",
+      "The A47 through Nuneaton is the main alternative if the M69 has an incident"
+    ],
+    parkingNotes: [
+      { city: "Coventry", notes: "Coventry has a Clean Air Zone covering the city centre. Earlsdon, Cheylesmore and Binley have easier parking." },
+      { city: "Leicester", notes: "Leicester has a Clean Air Zone covering the city centre. Oadby, Wigston and Evington have on-street parking." }
+    ],
+    faq: [
+      { q: "How much does a man and van from Coventry to Leicester cost?", a: "In 2026, a Coventry to Leicester man and van move typically costs £80–£300. A single-item delivery starts from around £50." },
+      { q: "Is the M69 a busy motorway?", a: "No. The M69 is one of the quieter motorways in England and is rarely congested. It's a straightforward 25-mile drive." }
+    ],
+    relatedRoutes: [
+      { label: "Birmingham to Coventry", href: "/routes/birmingham-to-coventry" },
+      { label: "Birmingham to Leicester", href: "/routes/birmingham-to-leicester" }
+    ],
+    cityALink: "/man-and-van-coventry",
+    cityBLink: "/man-and-van-leicester"
   }
 ];
 

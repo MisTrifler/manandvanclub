@@ -95,6 +95,34 @@
 - https://www.manandvanclub.co.uk/routes/london-to-coventry — London to Coventry: 95mi via M1, from £200
 - https://www.manandvanclub.co.uk/routes/london-to-nottingham — London to Nottingham: 130mi via M1, from £250
 - https://www.manandvanclub.co.uk/routes/london-to-sheffield — London to Sheffield: 165mi via M1, from £300
+- https://www.manandvanclub.co.uk/routes/birmingham-to-coventry — Birmingham to Coventry: 20mi via M6/A45, from £80
+- https://www.manandvanclub.co.uk/routes/coventry-to-birmingham — Coventry to Birmingham: 20mi via M6/A45, from £80
+- https://www.manandvanclub.co.uk/routes/birmingham-to-leicester — Birmingham to Leicester: 45mi via M6/M69, from £120
+- https://www.manandvanclub.co.uk/routes/leicester-to-birmingham — Leicester to Birmingham: 45mi via M69/M6, from £120
+- https://www.manandvanclub.co.uk/routes/birmingham-to-nottingham — Birmingham to Nottingham: 55mi via M42/M1, from £140
+- https://www.manandvanclub.co.uk/routes/nottingham-to-birmingham — Nottingham to Birmingham: 55mi via M1/M42, from £140
+- https://www.manandvanclub.co.uk/routes/birmingham-to-walsall — Birmingham to Walsall: 10mi via A34/M6, from £60
+- https://www.manandvanclub.co.uk/routes/walsall-to-birmingham — Walsall to Birmingham: 10mi via A34/M6, from £60
+- https://www.manandvanclub.co.uk/routes/birmingham-to-wolverhampton — Birmingham to Wolverhampton: 15mi via M6/A41, from £60
+- https://www.manandvanclub.co.uk/routes/wolverhampton-to-birmingham — Wolverhampton to Birmingham: 15mi via A41/M6, from £60
+- https://www.manandvanclub.co.uk/routes/manchester-to-edinburgh — Manchester to Edinburgh: 220mi via M6/A74(M)/M8, from £400
+- https://www.manandvanclub.co.uk/routes/edinburgh-to-manchester — Edinburgh to Manchester: 220mi via M8/A74(M)/M6, from £400
+- https://www.manandvanclub.co.uk/routes/manchester-to-sheffield — Manchester to Sheffield: 40mi via A57/M67, from £120
+- https://www.manandvanclub.co.uk/routes/sheffield-to-manchester — Sheffield to Manchester: 40mi via A57/M67, from £120
+- https://www.manandvanclub.co.uk/routes/sheffield-to-birmingham — Sheffield to Birmingham: 75mi via M1/M42, from £180
+- https://www.manandvanclub.co.uk/routes/bristol-to-cardiff — Bristol to Cardiff: 45mi via M4, from £130
+- https://www.manandvanclub.co.uk/routes/cardiff-to-bristol — Cardiff to Bristol: 45mi via M4, from £130
+- https://www.manandvanclub.co.uk/routes/london-to-brighton — London to Brighton: 55mi via M23/A23, from £160
+- https://www.manandvanclub.co.uk/routes/brighton-to-london — Brighton to London: 55mi via A23/M23, from £160
+- https://www.manandvanclub.co.uk/routes/london-to-leicester — London to Leicester: 100mi via M1, from £220
+- https://www.manandvanclub.co.uk/routes/leicester-to-london — Leicester to London: 100mi via M1, from £220
+- https://www.manandvanclub.co.uk/routes/leicester-to-nottingham — Leicester to Nottingham: 25mi via M1/A46, from £80
+- https://www.manandvanclub.co.uk/routes/nottingham-to-leicester — Nottingham to Leicester: 25mi via A46/M1, from £80
+- https://www.manandvanclub.co.uk/routes/london-to-southampton — London to Southampton: 80mi via M3, from £200
+- https://www.manandvanclub.co.uk/routes/southampton-to-london — Southampton to London: 80mi via M3, from £200
+- https://www.manandvanclub.co.uk/routes/london-to-plymouth — London to Plymouth: 215mi via M3/A303/A38, from £380
+- https://www.manandvanclub.co.uk/routes/plymouth-to-london — Plymouth to London: 215mi via A38/A303/M3, from £380
+- https://www.manandvanclub.co.uk/routes/coventry-to-leicester — Coventry to Leicester: 25mi via M69, from £80
 
 ### Blog Posts
 - https://www.manandvanclub.co.uk/blog/how-much-does-man-and-van-cost — How much does a man and van cost in 2026? Full pricing breakdown by move type and region
