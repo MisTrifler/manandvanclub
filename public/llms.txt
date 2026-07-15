@@ -123,6 +123,33 @@
 - https://www.manandvanclub.co.uk/routes/london-to-plymouth — London to Plymouth: 215mi via M3/A303/A38, from £380
 - https://www.manandvanclub.co.uk/routes/plymouth-to-london — Plymouth to London: 215mi via A38/A303/M3, from £380
 - https://www.manandvanclub.co.uk/routes/coventry-to-leicester — Coventry to Leicester: 25mi via M69, from £80
+- https://www.manandvanclub.co.uk/routes/london-to-cambridge — London to Cambridge: 62mi via M11, from £140
+- https://www.manandvanclub.co.uk/routes/cambridge-to-london — Cambridge to London: 62mi via M11, from £140
+- https://www.manandvanclub.co.uk/routes/birmingham-to-stoke-on-trent — Birmingham to Stoke-on-Trent: 40mi via M6, from £90
+- https://www.manandvanclub.co.uk/routes/stoke-on-trent-to-birmingham — Stoke-on-Trent to Birmingham: 40mi via M6, from £90
+- https://www.manandvanclub.co.uk/routes/leeds-to-sheffield — Leeds to Sheffield: 34mi via M1, from £80
+- https://www.manandvanclub.co.uk/routes/sheffield-to-leeds — Sheffield to Leeds: 34mi via M1, from £80
+- https://www.manandvanclub.co.uk/routes/manchester-to-newcastle-upon-tyne — Manchester to Newcastle: 135mi via A1(M), from £270
+- https://www.manandvanclub.co.uk/routes/newcastle-upon-tyne-to-manchester — Newcastle to Manchester: 135mi via A1(M), from £270
+- https://www.manandvanclub.co.uk/routes/london-to-oxford — London to Oxford: 55mi via M40, from £130
+- https://www.manandvanclub.co.uk/routes/oxford-to-london — Oxford to London: 55mi via M40, from £130
+- https://www.manandvanclub.co.uk/routes/london-to-norwich — London to Norwich: 115mi via A11/M11, from £240
+- https://www.manandvanclub.co.uk/routes/norwich-to-london — Norwich to London: 115mi via A11/M11, from £240
+- https://www.manandvanclub.co.uk/routes/liverpool-to-manchester — Liverpool to Manchester: 34mi via M62, from £80
+- https://www.manandvanclub.co.uk/routes/nottingham-to-sheffield — Nottingham to Sheffield: 38mi via M1, from £90
+- https://www.manandvanclub.co.uk/routes/sheffield-to-nottingham — Sheffield to Nottingham: 38mi via M1, from £90
+- https://www.manandvanclub.co.uk/routes/london-to-newcastle-upon-tyne — London to Newcastle: 275mi via A1(M), from £450
+- https://www.manandvanclub.co.uk/routes/newcastle-upon-tyne-to-london — Newcastle to London: 275mi via A1(M), from £450
+- https://www.manandvanclub.co.uk/routes/birmingham-to-derby — Birmingham to Derby: 36mi via M6/A38, from £85
+- https://www.manandvanclub.co.uk/routes/derby-to-birmingham — Derby to Birmingham: 36mi via A38/M6, from £85
+- https://www.manandvanclub.co.uk/routes/london-to-luton — London to Luton: 33mi via M1, from £80
+- https://www.manandvanclub.co.uk/routes/luton-to-london — Luton to London: 33mi via M1, from £80
+- https://www.manandvanclub.co.uk/routes/london-to-exeter — London to Exeter: 175mi via M3/A303/M5, from £340
+- https://www.manandvanclub.co.uk/routes/exeter-to-london — Exeter to London: 175mi via M5/A303/M3, from £340
+- https://www.manandvanclub.co.uk/routes/birmingham-to-newcastle-upon-tyne — Birmingham to Newcastle: 200mi via M6/A1(M), from £380
+- https://www.manandvanclub.co.uk/routes/newcastle-upon-tyne-to-birmingham — Newcastle to Birmingham: 200mi via A1(M)/M6, from £380
+- https://www.manandvanclub.co.uk/routes/reading-to-london — Reading to London: 40mi via M4, from £90
+- https://www.manandvanclub.co.uk/routes/london-to-reading — London to Reading: 40mi via M4, from £90
 
 ### Blog Posts
 - https://www.manandvanclub.co.uk/blog/how-much-does-man-and-van-cost — How much does a man and van cost in 2026? Full pricing breakdown by move type and region
