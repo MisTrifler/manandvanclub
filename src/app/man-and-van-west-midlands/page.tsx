@@ -277,7 +277,7 @@ export default function WestMidlandsPage() {
               <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.35em]">Local proof</span>
               <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">West Midlands move examples and postcode coverage</h2>
               <p className="text-text-secondary font-medium leading-relaxed">
-                These are honest example move requests customers can submit, not fake completed bookings. Real anonymised job examples and reviews can replace this section once live requests come through.
+                These are example move requests showing the type of details customers submit — postcodes, item lists, access notes and preferred dates — so a verified mover can review the job before quoting.
               </p>
             </div>
 

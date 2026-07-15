@@ -95,6 +95,11 @@ export default function Footer() {
               <li><Link href="/man-and-van-glasgow" className="hover:text-accent transition-colors">Glasgow</Link></li>
               <li><Link href="/man-and-van-cardiff" className="hover:text-accent transition-colors">Cardiff</Link></li>
               <li><Link href="/man-and-van-newcastle-upon-tyne" className="hover:text-accent transition-colors">Newcastle</Link></li>
+              <li><Link href="/man-and-van-hull" className="hover:text-accent transition-colors">Hull</Link></li>
+              <li><Link href="/man-and-van-york" className="hover:text-accent transition-colors">York</Link></li>
+              <li><Link href="/man-and-van-aberdeen" className="hover:text-accent transition-colors">Aberdeen</Link></li>
+              <li><Link href="/man-and-van-swansea" className="hover:text-accent transition-colors">Swansea</Link></li>
+              <li><Link href="/man-and-van-dundee" className="hover:text-accent transition-colors">Dundee</Link></li>
             </ul>
             <h4 className="font-bold text-lg mb-4 mt-6">Regional Hubs</h4>
             <ul className="space-y-4 text-text-secondary">

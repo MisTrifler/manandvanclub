@@ -410,7 +410,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   <div className="space-y-3">
                     <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">{data.name} local move signals</h3>
                     <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
-                      These examples are not fake completed jobs. They show the type of move details customers can submit so a verified mover can review route, access, timing and item information before quoting.
+                      These are example move requests showing the type of details customers submit — postcodes, item lists, access notes and preferred dates — so a verified mover can review the job before quoting.
                     </p>
                   </div>
 
@@ -632,8 +632,8 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               {/* ── Popular Locations (Service Pages) ── */}
               {isServicePage && data.popularLocations && data.popularLocations.length > 0 && (
                 <div className="space-y-10">
-                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Popular West Midlands Locations</h3>
-                  <p className="text-text-secondary font-medium leading-relaxed">We are focusing first on strong West Midlands coverage. Submit a free move request for any of these areas.</p>
+                  <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Popular Locations</h3>
+                  <p className="text-text-secondary font-medium leading-relaxed">Submit a free move request for any of these areas. One verified mover reviews your details before quoting.</p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     {data.popularLocations.map((loc: { name: string; href: string }) => {
                       // Use keyword-rich anchor for priority cities
