@@ -242,6 +242,18 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
         </div>
       </section>
 
+      {/* ── Coverage Signal (Step 2: top 20 locations only) ── */}
+      {isLocationPage && data.coverageSignal && (
+        <div className="bg-green-50 border-b border-green-100">
+          <div className="container mx-auto px-4 py-3 flex items-center gap-3">
+            <CheckCircle2 size={18} className="text-green-600 flex-shrink-0" />
+            <p className="text-sm text-green-800 font-medium">
+              Verified movers covering <strong>{data.name}</strong> and surrounding areas. Submit your move details for free — a mover reviews your request before quoting.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* ── Content Section ── */}
       <section className="py-24 lg:py-32">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -456,6 +468,36 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                       </div>
                     </div>
                   )}
+                </div>
+              )}
+
+              {/* ── Cross-Region Nearby Areas (Step 3: stronger internal linking) ── */}
+              {isLocationPage && data.crossRegionLinks && data.crossRegionLinks.length > 0 && (
+                <div className="space-y-6 lg:space-y-8">
+                  <div className="space-y-3">
+                    <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Also Covered Near {data.name}</h3>
+                    <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
+                      Verified movers on the platform may also cover moves between {data.name} and these nearby areas. Submit your collection and delivery postcodes for a quote.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
+                    {data.crossRegionLinks.map((loc: { slug: string; name: string }) => {
+                      // Use keyword-rich anchor for priority cities
+                      const label = (loc.slug === "birmingham" || loc.slug === "walsall")
+                        ? `Man and Van ${loc.name}`
+                        : loc.name;
+                      return (
+                        <Link
+                          key={loc.slug}
+                          href={`/man-and-van-${loc.slug}`}
+                          className="group flex items-center justify-between bg-white p-4 lg:p-5 rounded-xl border border-border/50 hover:border-accent hover:shadow-md transition-all duration-300"
+                        >
+                          <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors">{label}</span>
+                          <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors" />
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
 

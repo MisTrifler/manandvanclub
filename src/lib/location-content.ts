@@ -33,6 +33,10 @@ export interface LocationPageData {
   localAreaGuides?: { title: string; body: string; links?: { label: string; href: string }[] }[];
   exampleMoveRequests?: { area: string; type: string; detail: string }[];
   postcodeCoverage?: { area: string; postcodes: string[] }[];
+  // Step 2: Honest coverage signal for top locations
+  coverageSignal?: boolean;
+  // Step 3: Cross-region nearby areas for stronger internal linking
+  crossRegionLinks?: { slug: string; name: string }[];
 }
 
 
@@ -572,6 +576,50 @@ function getRegionCities(loc: LocationData): { name: string; slug: string }[] {
     }));
 }
 
+// Top 20 priority locations for coverage signal (Step 2)
+const COVERAGE_SIGNAL_SLUGS = new Set([
+  'birmingham', 'walsall', 'wolverhampton', 'coventry', 'dudley',
+  'solihull', 'west-bromwich', 'nottingham', 'leicester', 'manchester',
+  'liverpool', 'leeds', 'bristol', 'sheffield', 'derby',
+  'edinburgh', 'glasgow', 'cardiff', 'newcastle-upon-tyne', 'stoke-on-trent',
+]);
+
+// Cross-region nearby links for stronger internal linking (Step 3)
+// Key cities link to important cities in other regions, not just same-region
+const CROSS_REGION_MAP: Record<string, string[]> = {
+  'birmingham': ['walsall', 'wolverhampton', 'coventry', 'dudley', 'solihull', 'west-bromwich', 'nottingham', 'leicester', 'stoke-on-trent'],
+  'walsall': ['birmingham', 'wolverhampton', 'dudley', 'west-bromwich', 'coventry', 'stoke-on-trent'],
+  'wolverhampton': ['birmingham', 'walsall', 'dudley', 'stoke-on-trent', 'coventry'],
+  'coventry': ['birmingham', 'solihull', 'leicester', 'nottingham', 'derby', 'northampton'],
+  'dudley': ['birmingham', 'walsall', 'wolverhampton', 'west-bromwich', 'stourbridge'],
+  'solihull': ['birmingham', 'coventry', 'leicester', 'stratford', 'redditch'],
+  'west-bromwich': ['birmingham', 'walsall', 'wolverhampton', 'dudley', 'wednesbury'],
+  'nottingham': ['derby', 'leicester', 'sheffield', 'coventry', 'lincoln'],
+  'leicester': ['nottingham', 'coventry', 'birmingham', 'derby', 'northampton'],
+  'manchester': ['liverpool', 'leeds', 'sheffield', 'bolton', 'stockport', 'stoke-on-trent'],
+  'liverpool': ['manchester', 'chester', 'preston', 'wigan', 'warrington'],
+  'leeds': ['manchester', 'sheffield', 'bradford', 'york', 'huddersfield'],
+  'bristol': ['bath', 'cardiff', 'gloucester', 'swindon', 'exeter'],
+  'sheffield': ['leeds', 'nottingham', 'manchester', 'doncaster', 'rotherham'],
+  'derby': ['nottingham', 'leicester', 'sheffield', 'birmingham', 'stoke-on-trent'],
+  'edinburgh': ['glasgow', 'dundee', 'aberdeen', 'stirling'],
+  'glasgow': ['edinburgh', 'stirling', 'paisley', 'dundee'],
+  'cardiff': ['bristol', 'swansea', 'newport', 'hereford'],
+  'newcastle-upon-tyne': ['sunderland', 'durham', 'middlesbrough', 'leeds'],
+  'stoke-on-trent': ['manchester', 'wolverhampton', 'derby', 'birmingham', 'crewe'],
+};
+
+function getCrossRegionLinks(loc: LocationData): { slug: string; name: string }[] {
+  const slugs = CROSS_REGION_MAP[loc.slug];
+  if (!slugs) return [];
+  return slugs
+    .map((s) => {
+      const l = getLocationBySlug(s);
+      return l ? { slug: s, name: l.name } : null;
+    })
+    .filter((x): x is { slug: string; name: string } => x !== null);
+}
+
 export function getLocationPageData(slug: string): LocationPageData | null {
   const loc = getLocationBySlug(slug);
   if (!loc) return null;
@@ -708,6 +756,8 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     postcodeCoverage: generatePostcodeCoverage(loc),
     region: loc.region,
     pageType: "location" as const,
+    coverageSignal: COVERAGE_SIGNAL_SLUGS.has(loc.slug),
+    crossRegionLinks: getCrossRegionLinks(loc),
   };
 
   // Merge custom content overrides for priority cities (prevents doorway-page penalties)

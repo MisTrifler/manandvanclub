@@ -124,6 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/man-and-van-aberdeen', priority: 0.95, freq: 'weekly' as const },
     { route: '/man-and-van-swansea', priority: 0.95, freq: 'weekly' as const },
     { route: '/man-and-van-dundee', priority: 0.95, freq: 'weekly' as const },
+    { route: '/man-and-van-stoke-on-trent', priority: 0.95, freq: 'weekly' as const },
     { route: '/blog', priority: 0.8, freq: 'weekly' as const },
     { route: '/blog/how-much-does-man-and-van-cost', priority: 0.85, freq: 'monthly' as const },
     { route: '/blog/how-to-prepare-for-moving-day', priority: 0.85, freq: 'monthly' as const },
