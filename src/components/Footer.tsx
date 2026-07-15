@@ -101,6 +101,8 @@ export default function Footer() {
               <li><Link href="/man-and-van-swansea" className="hover:text-accent transition-colors">Swansea</Link></li>
               <li><Link href="/man-and-van-dundee" className="hover:text-accent transition-colors">Dundee</Link></li>
               <li><Link href="/man-and-van-stoke-on-trent" className="hover:text-accent transition-colors">Stoke-on-Trent</Link></li>
+              <li><Link href="/man-and-van-belfast" className="hover:text-accent transition-colors">Belfast</Link></li>
+              <li><Link href="/man-and-van-brighton" className="hover:text-accent transition-colors">Brighton</Link></li>
             </ul>
             <h4 className="font-bold text-sm mb-3 mt-6">Regional Hubs</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-text-secondary text-sm">
@@ -115,6 +117,8 @@ export default function Footer() {
               <li><Link href="/man-and-van-glasgow" className="hover:text-accent transition-colors">Scotland</Link></li>
               <li><Link href="/man-and-van-cardiff" className="hover:text-accent transition-colors">Wales</Link></li>
               <li><Link href="/man-and-van-newcastle-upon-tyne" className="hover:text-accent transition-colors">North East</Link></li>
+              <li><Link href="/man-and-van-belfast" className="hover:text-accent transition-colors">Northern Ireland</Link></li>
+              <li><Link href="/man-and-van-brighton" className="hover:text-accent transition-colors">South East</Link></li>
               <li><Link href="/areas-covered" className="hover:text-accent transition-colors font-semibold">All Areas →</Link></li>
             </ul>
           </div>

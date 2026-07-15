@@ -1,0 +1,28 @@
+import { Metadata } from "next";
+import { HUB_PAGES } from "@/lib/hub-page-data";
+import HubPageContent from "@/components/HubPageContent";
+
+const hub = HUB_PAGES["bournemouth"]!;
+const baseUrl = "https://www.manandvanclub.co.uk";
+
+export const metadata: Metadata = {
+  title: hub.title,
+  description: hub.description,
+  alternates: { canonical: `${baseUrl}/man-and-van-${hub.slug}` },
+  openGraph: {
+    title: hub.title,
+    description: hub.description,
+    url: `${baseUrl}/man-and-van-${hub.slug}`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: `Man and Van ${hub.name} | Man and Van Club` }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: hub.title,
+    description: hub.description,
+    images: ["/images/og-homepage.jpg"],
+  },
+};
+
+export default function BournemouthPage() {
+  return <HubPageContent hub={hub} />;
+}
