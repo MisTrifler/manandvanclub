@@ -135,6 +135,7 @@ export default function Footer() {
               <li><Link href="/man-and-van-near-me" className="hover:text-accent transition-colors">Man and Van Near Me</Link></li>
               <li><Link href="/man-and-van-vs-removal-company" className="hover:text-accent transition-colors">Man and Van vs Removals</Link></li>
               <li><Link href="/routes" className="hover:text-accent transition-colors">Popular Routes</Link></li>
+              <li><Link href="/vs-anyvan" className="hover:text-accent transition-colors">Vs AnyVan</Link></li>
             </ul>
           </div>
 

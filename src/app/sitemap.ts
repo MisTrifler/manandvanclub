@@ -181,6 +181,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/man-and-van-prices', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-near-me', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-vs-removal-company', priority: 0.85, freq: 'weekly' as const },
+    { route: '/vs-anyvan', priority: 0.85, freq: 'weekly' as const },
     { route: '/house-removals', priority: 0.8, freq: 'monthly' as const },
     { route: '/flat-removals', priority: 0.8, freq: 'monthly' as const },
     { route: '/student-removals', priority: 0.8, freq: 'monthly' as const },
