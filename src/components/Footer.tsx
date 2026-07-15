@@ -128,6 +128,8 @@ export default function Footer() {
               <li><Link href="/student-removals" className="hover:text-accent transition-colors">Student Moves</Link></li>
               <li><Link href="/office-removals" className="hover:text-accent transition-colors">Office Relocations</Link></li>
               <li><Link href="/furniture-delivery" className="hover:text-accent transition-colors">Furniture Delivery</Link></li>
+              <li><Link href="/piano-removals" className="hover:text-accent transition-colors">Piano Removals</Link></li>
+              <li><Link href="/single-item-delivery" className="hover:text-accent transition-colors">Single Item Delivery</Link></li>
               <li><Link href="/same-day-man-and-van" className="hover:text-accent transition-colors">Same Day</Link></li>
               <li><Link href="/long-distance-removals" className="hover:text-accent transition-colors">Long Distance</Link></li>
               <li><Link href="/man-and-van-prices" className="hover:text-accent transition-colors">Man and Van Prices</Link></li>

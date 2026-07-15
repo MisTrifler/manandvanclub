@@ -274,6 +274,8 @@ export default function ManAndVanNearMePage() {
               { label: "Student Moves", href: "/student-removals" },
               { label: "Office Moves", href: "/office-removals" },
               { label: "Furniture Delivery", href: "/furniture-delivery" },
+              { label: "Piano Removals", href: "/piano-removals" },
+              { label: "Single Item", href: "/single-item-delivery" },
               { label: "Same Day", href: "/same-day-man-and-van" },
               { label: "Long Distance", href: "/long-distance-removals" },
               { label: "Marketplace Collection", href: "/facebook-marketplace-collection" },

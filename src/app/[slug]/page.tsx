@@ -41,6 +41,8 @@ const serviceSlugs = [
   "same-day-man-and-van",
   "long-distance-removals",
   "facebook-marketplace-collection",
+  "piano-removals",
+  "single-item-delivery",
 ];
 
 const baseServiceLinks = [
@@ -268,6 +270,62 @@ const servicePageData: Record<string, any> = {
       { q: "How much does a marketplace collection cost?", a: "In 2026, Facebook Marketplace collections in the UK start from £50 for a single local item (sofa, bed, wardrobe or appliance). Longer-distance collections or multi-item pickups cost more. Add item dimensions and access details for an accurate guide price." },
       { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form so the mover can review the route and quote correctly." },
       { q: "How much does a sofa collection from Facebook Marketplace cost?", a: "A local sofa collection in 2026 starts from £50, depending on sofa size, whether it needs dismantling, stairs at either address and parking access. Corner sofas and recliners cost more due to handling. Submit your postcodes and sofa details for a guide price." }
+    ]
+  },
+  "piano-removals": {
+    name: "Piano Removals",
+    formIntent: "single-item",
+    title: "Piano Removals | Piano Move Quote Requests | Man and Van Club",
+    description: "Piano removal quote requests across the UK. Upright, digital, baby grand and grand pianos — submit details so a mover with the right experience and equipment can review before quoting.",
+    badge: "Piano Move Requests",
+    h1: "Piano Removals With The Right Handling",
+    intro: "Need a piano moved? Upright, digital, baby grand or grand — pianos need specialist handling, equipment and experience. Add piano type, size, access, stairs and postcodes so a mover can review the job properly before quoting.",
+    knowledge: "Piano moves are not standard furniture jobs. Weight distribution, key protection, leg removal, trolley access, staircase width and floor protection all matter. A mover who understands pianos can account for these before quoting, rather than discovering problems on the day.",
+    proofQuote: "Best for piano moves where the mover needs to understand the instrument, access conditions and handling requirements before committing.",
+    requestTypesHeading: "Common Piano Move Requests",
+    areas: ["Upright Pianos", "Digital Pianos", "Baby Grands", "Grand Pianos", "Organ Moves", "Piano + Furniture"],
+    featureCards: [
+      { t: "Piano Type & Size", d: "Upright, digital, baby grand or grand — each has different weight, dimensions and handling needs.", icon: "package" },
+      { t: "Access Details", d: "Staircase width, turns, landings, lifts and door frames all affect whether a piano can be moved safely.", icon: "access" },
+      { t: "Floor Protection", d: "Hard floors, carpet and thresholds need consideration for both the piano and the property.", icon: "home" },
+      { t: "Reviewed By Mover", d: "A mover reviews the piano details and access conditions before quoting, not after arrival.", icon: "check" }
+    ],
+    serviceLinks: [...baseServiceLinks, { title: "Single Item Delivery", href: "/single-item-delivery" }].filter((item) => item.href !== "/piano-removals"),
+    popularLocations,
+    faq: [
+      { q: "How much does a piano removal cost?", a: "In 2026, UK piano removal costs typically range from £150–£350 for a local upright piano move, £250–£500 for a baby grand, and £400–£800+ for a grand piano. Prices depend on piano type, weight, distance, stairs, access and whether the piano legs need removing. Submit your piano details for a guide price first." },
+      { q: "Can any man and van move a piano?", a: "Not all movers are equipped for piano moves. When you submit a piano request on Man and Van Club, a mover who can handle the job reviews the details before quoting. If no suitable mover is available, you will not receive a quote — which is better than a mover arriving unprepared." },
+      { q: "Do piano legs need to be removed for a move?", a: "Grand and baby grand pianos usually need their legs removed for transport. Upright pianos are typically moved intact. Add piano type and access details so the mover can plan the correct approach before quoting." },
+      { q: "Is my piano insured during the move?", a: "Movers must provide Goods in Transit and Public Liability insurance. For high-value pianos, we recommend confirming the coverage amount with the mover directly before the move and checking whether your home insurance covers transit." },
+      { q: "Can a piano be moved up or down stairs?", a: "Yes, but it depends on the staircase width, turns and landing size. Add staircase details (width, number of turns, narrowest point) to your request so the mover can assess whether specialist equipment is needed before quoting." }
+    ]
+  },
+  "single-item-delivery": {
+    name: "Single Item Delivery",
+    formIntent: "single-item",
+    title: "Single Item Delivery | One-Item Collection & Delivery | Man and Van Club",
+    description: "Single item delivery quote requests across the UK. Sofa, bed, TV, appliance or any single bulky item — submit details so a mover can review before quoting.",
+    badge: "Single Item Requests",
+    h1: "Single Item Delivery Made Simple",
+    intro: "Only need one item moved? A sofa, bed, appliance, TV or piece of furniture — submit the item details, collection and delivery postcodes, and access notes so a mover can quote accurately for a single-item job.",
+    knowledge: "Single-item deliveries are the most common man and van request. They need less time than a full house move but the details still matter — item size, weight, stairs, parking and timing all affect the quote.",
+    proofQuote: "Best for one-off items where you need a quick, accurate quote without filling in a full house-removal form.",
+    requestTypesHeading: "Common Single Item Requests",
+    areas: ["Sofas", "Beds & Mattresses", "TVs & Monitors", "Washing Machines", "Fridges", "Tables & Desks"],
+    featureCards: [
+      { t: "Item Details", d: "Type, approximate size, weight and any special handling notes help the mover quote accurately.", icon: "package" },
+      { t: "Collection & Delivery", d: "Both postcodes help calculate the route, distance and guide price.", icon: "route" },
+      { t: "Access At Both Ends", d: "Stairs, lifts, narrow doorways and parking details help avoid problems on the day.", icon: "access" },
+      { t: "Quick Turnaround", d: "Single items can often be collected and delivered faster than full moves.", icon: "clock" }
+    ],
+    serviceLinks: [...baseServiceLinks, { title: "Piano Removals", href: "/piano-removals" }].filter((item) => item.href !== "/single-item-delivery"),
+    popularLocations,
+    faq: [
+      { q: "How much does single item delivery cost?", a: "In 2026, UK single item delivery prices start from £50 for a local collection within the same town or city. Longer distances, heavy items, stairs and awkward access increase the price. A sofa delivered across London might cost £70–£120, while a washing machine delivered within Birmingham might cost £50–£80. Submit your item details for a guide price." },
+      { q: "What items can be delivered?", a: "Any single item that fits in a van: sofas, beds, mattresses, TVs, washing machines, fridges, tables, desks, wardrobes, exercise equipment and more. Add the item type and approximate size so the mover can judge the handling." },
+      { q: "Can the mover carry the item up stairs?", a: "Yes, but add staircase details to your request so the mover can account for the extra time and handling. Very heavy items on upper floors without lift access may need two people." },
+      { q: "Is single item delivery cheaper than a full move?", a: "Yes. A single item delivery is typically the most affordable man and van service, starting from £50 for a local job. Full house moves start from £300+ because of the time and volume involved." },
+      { q: "Can I get same-day single item delivery?", a: "Same-day single item delivery is sometimes possible depending on mover availability and your location. Add your preferred timing to the request. Expect a 15–30% premium for same-day service." }
     ]
   }
 };

@@ -190,6 +190,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/same-day-man-and-van', priority: 0.8, freq: 'weekly' as const },
     { route: '/long-distance-removals', priority: 0.8, freq: 'monthly' as const },
     { route: '/facebook-marketplace-collection', priority: 0.75, freq: 'monthly' as const },
+    { route: '/piano-removals', priority: 0.8, freq: 'monthly' as const },
+    { route: '/single-item-delivery', priority: 0.8, freq: 'monthly' as const },
     { route: '/moving-cost-calculator', priority: 0.9, freq: 'weekly' as const },
     { route: '/how-it-works', priority: 0.7, freq: 'monthly' as const },
     { route: '/get-started', priority: 0.8, freq: 'monthly' as const },
