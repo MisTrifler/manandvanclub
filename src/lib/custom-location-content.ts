@@ -1845,4 +1845,603 @@ A verified mover reviewing a Weston request will check whether the property is a
     faq: [{"q":"Do you cover all areas of York?","a":"Yes. You can submit a move request for Heworth, Acomb, Fulford, Clifton, Bishopthorpe and surrounding areas. Whether a mover is available for these areas depends on their current schedule — they review requests before quoting."},{"q":"How much does a man and van cost in York?","a":"York man and van rates in 2026 start from £50 per hour. For a local move, expect to pay £60–£130 depending on how much furniture you have, whether there are stairs or lifts, and parking at both addresses. A full house move from a 3-bed York property is typically in the £250–£500 range. Submit your postcodes and item list for a guide price first."},{"q":"Can I find a mover for a same-day move in York?","a":"Same-day moves around York and Heworth, Acomb may be available. Submit both postcodes and your preferred time window — a verified mover covering the A64 route can review the request if they have space."},{"q":"Will multiple movers contact me?","a":"No. Unlike lead-selling websites that share your enquiry with dozens of companies, Man and Van Club sends your York request to one verified mover only. Your phone number and email are never broadcast — they stay private until you choose to accept a quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, the submission process is free with no obligation. The only cost is a booking deposit if you accept a mover quote — this is taken off the total, and the mover is paid the balance on moving day. Before any payment, a verified mover reviews your York move details including postcodes, items and access."},{"q":"How quickly will I be contacted?","a":"Once submitted, a verified mover assesses your York move details — postcodes, furniture list, access and preferred date — and sends a quote if they can help. No personal details are shared until you accept a quote and pay the deposit. Movers working around Heworth, Acomb, Fulford and the A64 typically review requests within their working day."},{"q":"Do you cover Heworth, Acomb, Fulford?","a":"Yes. You can submit requests for Heworth, Acomb, Fulford, Clifton, Bishopthorpe and nearby areas. Availability depends on verified movers reviewing the move details."},{"q":"Are approved York movers insured?","a":"Movers must provide valid Goods in Transit and Public Liability insurance before they are approved to use the platform. When you get a quote for your York move, we recommend confirming the mover's insurance details with them directly before you accept."},{"q":"Can you help with student moves in York?","a":"Yes. Student moves can be submitted for areas near Heslington and Fulford. Peak demand is June, July and September. Add your item list, access notes and preferred dates for a verified mover to review."},{"q":"What should I know about moving in York?","a":"Be aware of walled-city access restrictions and narrow snickelways and bar gates. Add your property access notes, parking details and any stairs so the mover can quote accurately for your York move."},{"q":"How much does a man and van cost from York to Leeds?","a":"A York to Leeds move in 2026 typically costs £80–£180 depending on load, access and timing. York and Leeds are connected by the A64 and A1(M), roughly 30–40 minutes apart in North and West Yorkshire. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price."}],
   },
 
+  // ──────────────────────────────────────────
+  // BELFAST — Northern Ireland's capital
+  // ──────────────────────────────────────────
+  belfast: {
+    title: "Man and Van Belfast | Verified Mover Quotes from £50",
+    description: "Man and van Belfast from £50/hr. One verified mover quotes — no lead blasting. City centre, Titanic Quarter, South Belfast, Queen's University, Holyland, Stranmillis.",
+    h1: "Man and Van Belfast",
+    intro: "Need a man and van in Belfast? Submit your postcodes, item list and access notes for free. One verified mover reviews your Belfast move before you decide whether to book. No flood of calls from competing companies — just one careful quote.",
+    knowledge: "Belfast moves depend heavily on which side of the river you are on and whether you are in a city-centre apartment, a South Belfast terrace or a suburban estate. The Holyland and Stranmillis student areas have tight parking and narrow Victorian streets. Titanic Quarter apartments often have loading bay rules. The M1, M2 and A2 keep cross-city routes moving, but the Ormeau and Lisburn Roads can slow down during rush hour.",
+    localMovingInfo: `Belfast is Northern Ireland's only major city, and man and van demand comes from a mix of students, young professionals and families. The city has changed fast — the Titanic Quarter, Cathedral Quarter and Sailtown areas have hundreds of new apartments with controlled parking, concierge access and lift bookings. South Belfast is different: Victorian and Edwardian terraces around the Ormeau Road, Lisburn Road and University area have on-street permit parking and narrow entries that make furniture handling slower.
+
+Queen's University and Ulster University create big student move demand in June, July and September. The Holyland area is notoriously tight for van access — one-way streets, residents-only parking and narrow Victorian staircases. Students moving from shared houses here usually have smaller loads (boxes, bags, a few small furniture items) but the access can still slow things down.
+
+Cross-city moves along the M1 (west towards Lisburn) or M2 (north towards Newtownabbey) are generally straightforward. Moves to or from Dublin need a mover who can operate across the border — mention this on the form so the mover can confirm before quoting. Belfast does not have a Clean Air Zone, so there is no extra charge to factor in for city-centre deliveries.
+
+Property types vary a lot. A Castle Court apartment, a Falls Road terrace, a Holywood family home and a Newtownabbey estate house all need different timing, parking arrangements and handling. Add your access details, stairs, lift bookings and parking notes so the mover can price the actual job, not a guess.`,
+    faq: [
+      {"q":"How much does a man and van cost in Belfast?","a":"Belfast man and van rates in 2026 start from £50 per hour. A local move within Belfast usually costs £60–£130 depending on furniture volume, stairs, parking and route. A 3-bed house move could be £300–£550. Moves to Dublin cost more because of the distance and cross-border logistics. Submit your postcodes and item list for a guide price first."},
+      {"q":"Do you cover the Holyland and Stranmillis student areas?","a":"Yes. Student moves from the Holyland, Stranmillis, University Street and the Lisburn Road area can all be submitted. Peak demand is June, July and September. Parking in the Holyland is tight and mostly permit-only, so add your parking notes and access details to help the mover plan."},
+      {"q":"Can you help with a Belfast to Dublin move?","a":"Cross-border moves to Dublin can be submitted. The mover would need to operate in both Northern Ireland and the Republic. Add both postcodes and mention it is a cross-border move so the mover can confirm they can handle it before quoting."},
+      {"q":"Is parking difficult in Belfast for removals?","a":"The city centre and South Belfast have permit-only parking zones. The Cathedral Quarter and Titanic Quarter apartments often have loading bay rules and time limits. Further out — Andersonstown, Newtownabbey, Castlereagh — on-street parking is usually easier. If you need a parking suspension, contact Belfast City Council at least 5 working days before your move."},
+      {"q":"Does Belfast have a Clean Air Zone?","a":"No. Belfast does not have a Clean Air Zone or congestion charge. There are no extra vehicle fees to worry about for city-centre moves."},
+      {"q":"Will multiple movers contact me?","a":"No. Your request goes to one verified mover. Your phone number and email are not shared with multiple companies. Your contact details only get released if you accept a quote and pay the booking deposit."},
+    ],
+    localAreaGuides: [
+      {title: "Belfast city centre and Titanic Quarter", body: "City-centre moves usually involve apartments with lifts, loading bays and controlled access. Add your floor level, lift booking details and parking arrangements so the mover can judge time on site accurately."},
+      {title: "South Belfast and the Lisburn Road", body: "The Lisburn Road, Ormeau Road and University area have Victorian terraces with narrow entries, on-street permit parking and tight staircases. Add parking and access notes so the mover can plan properly."},
+      {title: "Student moves in the Holyland", body: "Holyland student moves are usually smaller loads but access is notoriously tight. One-way streets, residents-only parking and narrow staircases mean clear details on the form help the mover quote accurately.", links: [{label: "Student removals", href: "/student-removals"}]},
+      {title: "Furniture collection in Belfast", body: "Sofas, beds and marketplace purchases from Belfast sellers need clear item size, floor level and parking details. A sofa from a Lisburn Road flat needs different planning than one from a Newtownabbey driveway.", links: [{label: "Furniture delivery", href: "/furniture-delivery"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // BRIGHTON — South Coast
+  // ──────────────────────────────────────────
+  brighton: {
+    title: "Man and Van Brighton | Verified Mover Quotes from £55",
+    description: "Man and van Brighton from £55/hr. One verified mover quotes. Kemptown, Hove, Seven Dials, Preston Park, Hanover, Lewes Road. No lead blasting.",
+    h1: "Man and Van Brighton",
+    intro: "Need a man and van in Brighton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Brighton move before you decide whether to book.",
+    knowledge: "Brighton is a moving challenge wrapped in Regency architecture. Basement flats in Brunswick and Hove Square mean steep steps down to street level. Hanover and Kemptown have narrow Victorian staircases and mostly permit-only parking. Hove is easier — wider roads, more driveways, fewer CPZs. The A23/M23 runs north to London and the M25.",
+    localMovingInfo: `Brighton's housing stock is dominated by Victorian and Regency conversions — large houses split into flats, each with its own access quirks. A basement flat on the seafront means steep stone steps, no lift and probably a CPZ outside. A Hanover terrace means a narrow staircase, no garden access and parking that requires a visitor permit. A Preston Park semi is more straightforward but still needs clear access notes.
+
+The city has two universities (Sussex and Brighton), creating strong student move demand in Falmer, Lewes Road, Moulsecoomb and the Hanover area. Students typically have smaller loads but the tight access makes each job slower than expected. June and September are the busiest months.
+
+Parking is the single biggest issue for Brighton moves. The city has extensive Controlled Parking Zones covering most of the city centre, Kemptown, Hanover and parts of Preston Park. Hove west of the cricket ground has some unrestricted streets. You should apply for a parking suspension from Brighton & Hove City Council at least 5 working days before your move — without it, the van may have to park streets away from the property.
+
+The London commute means many Brighton moves are actually Brighton-to-London or London-to-Brighton. The A23/M23 takes about an hour to the M25, making it one of the most common inter-city man and van routes in the South East. Brighton rates start from £55 per hour, reflecting the South East's higher costs.`,
+    faq: [
+      {"q":"How much does a man and van cost in Brighton?","a":"Brighton man and van rates in 2026 start from £55 per hour — slightly above the national average because of South East costs and parking challenges. A local move within Brighton usually costs £70–£150 depending on access, stairs and parking. A 3-bed house move could be £350–£600. Submit your postcodes for a guide price first."},
+      {"q":"Is parking difficult for removals in Brighton?","a":"Very. Most of central Brighton, Kemptown and Hanover is CPZ. You need a parking suspension from Brighton & Hove City Council — apply at least 5 working days before your move. Hove has some unrestricted areas. Always add your parking notes to the form so the mover can plan."},
+      {"q":"How much does a Brighton to London move cost?","a":"A Brighton to London move in 2026 typically costs £200–£450 depending on load, access and timing. The A23/M23 takes about 1 hour 15 minutes. A single-item delivery starts from around £120. Submit your postcodes for a guide price."},
+      {"q":"Do you cover student moves in Brighton?","a":"Yes. Student moves near Sussex University (Falmer), Brighton University (Moulsecoomb, Grand Parade) and shared houses in Hanover and Lewes Road can be submitted. Peak demand is June and September."},
+      {"q":"Does Brighton have a Clean Air Zone?","a":"No. Brighton does not have a Clean Air Zone. Some central streets have bus gates and pedestrian zones that affect van routes, but there are no vehicle emission charges."},
+      {"q":"What makes Brighton moves different?","a":"Basement flats, narrow Victorian staircases and CPZ parking. A sofa from a Brunswick Square basement needs different planning than one from a Hove driveway. Always add stairs, lift, parking and floor-level details so the mover can quote the actual job."},
+    ],
+    localAreaGuides: [
+      {title: "Brighton seafront and Kemptown", body: "Seafront flats often have basement levels, steep steps and no lift. Kemptown has narrow one-way streets and CPZ parking. Add your floor level and parking situation so the mover can plan loading time."},
+      {title: "Hanover and Lewes Road", body: "Hanover's steep hills and narrow terraces are some of the tightest access in Brighton. Student-heavy area with permit-only parking. Add staircase width and parking notes."},
+      {title: "Hove", body: "Hove generally has wider roads, more driveways and fewer parking restrictions than central Brighton. Family homes around Hove Park and West Hove are easier for van access.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Student moves in Falmer and Moulsecoomb", body: "University of Sussex (Falmer) and Brighton University (Moulsecoomb) students can submit moves for the June and September peak. Add halls or shared-house access details.", links: [{label: "Student removals", href: "/student-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // SUNDERLAND — North East
+  // ──────────────────────────────────────────
+  sunderland: {
+    title: "Man and Van Sunderland | Verified Mover Quotes from £50",
+    description: "Man and van Sunderland from £50/hr. One verified mover quotes. Roker, Seaburn, Hendon, Washington, Hylton, University area. No lead blasting.",
+    h1: "Man and Van Sunderland",
+    intro: "Need a man and van in Sunderland? Submit your postcodes, item list and access notes for free. One verified mover reviews your Sunderland move before you decide whether to book.",
+    knowledge: "Sunderland sits at the mouth of the River Wear. Roker and Seaburn seafront flats have parking restrictions. Hendon and Millfield terraces are tight for van access. Washington new town has wider roads and estates with driveways. The A19 connects Sunderland to Newcastle in about 25 minutes.",
+    localMovingInfo: `Sunderland is often overlooked in favour of Newcastle but has its own strong man and van demand. The University of Sunderland creates student move peaks in the summer, especially around the city centre and St Peter's campus. Hendon and Millfield have older terraced streets with on-street parking that can be tight for vans. Roker seafront apartments have sea views but limited loading space.
+
+Washington, technically a separate town but part of the Sunderland area, has modern estates with wider roads and driveways — generally easier for movers than the city centre. Hylton and South Hylton are more residential but still compact.
+
+The A19 is the main artery connecting Sunderland to Newcastle, Durham and Teesside. It is generally free-flowing outside rush hour, making cross-city moves relatively straightforward. Sunderland does not have a Clean Air Zone.
+
+Rates in Sunderland are in line with North East averages — starting from £50 per hour. A move from a Hendon terrace to a Washington estate is a common pattern and usually takes a morning. Seafront apartment moves in Roker need more attention to parking and lift access.`,
+    faq: [
+      {"q":"How much does a man and van cost in Sunderland?","a":"Sunderland moves typically start from £50 per hour. A local move costs £60–£130 depending on volume, access and parking. A 3-bed house move could be £300–£500. Submit your postcodes and item list for a guide price first."},
+      {"q":"How far is Sunderland from Newcastle?","a":"About 12 miles via the A19, taking roughly 25–30 minutes in clear traffic. A Sunderland to Newcastle man and van move typically costs £80–£180 depending on load and access."},
+      {"q":"Does Sunderland have a Clean Air Zone?","a":"No. There is no Clean Air Zone in Sunderland. Standard parking restrictions still apply in the city centre and seafront areas."},
+      {"q":"Can you help with student moves in Sunderland?","a":"Yes. Student moves near the University of Sunderland's city-centre and St Peter's campuses can be submitted. Peak demand is June, July and September."},
+      {"q":"Is parking difficult in Sunderland?","a":"City centre and seafront areas have restrictions and permit zones. Hendon and Millfield terraces have on-street parking that can be tight. Washington estates generally have driveways or unrestricted street parking. Add your parking notes to the form."},
+    ],
+    localAreaGuides: [
+      {title: "Sunderland city centre and St Peter's", body: "City-centre moves often involve newer apartments near the river. Add lift access, floor level and loading bay rules if applicable."},
+      {title: "Roker and Seaburn seafront", body: "Seafront flats have limited parking and can be busy in summer months. Add parking restrictions and access notes."},
+      {title: "Hendon and Millfield", body: "Older terraced streets with on-street parking. Narrow entries and staircases mean clear access details help the mover quote accurately."},
+      {title: "Washington new town", body: "Washington estates generally have wider roads and driveways, making van access easier than the city centre. Good for family house moves.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // MILTON KEYNES — South East
+  // ──────────────────────────────────────────
+  "milton-keynes": {
+    title: "Man and Van Milton Keynes | Verified Mover Quotes from £50",
+    description: "Man and van Milton Keynes from £50/hr. One verified mover quotes. City centre, Bletchley, Stony Stratford, Newport Pagnell, Wolverton. Grid roads, easy van access.",
+    h1: "Man and Van Milton Keynes",
+    intro: "Need a man and van in Milton Keynes? Submit your postcodes, item list and access notes for free. One verified mover reviews your Milton Keynes move before you decide whether to book.",
+    knowledge: "Milton Keynes was built on a grid system, which makes van access easier than almost any other UK city. But the city has older areas too — Bletchley terraces, Stony Stratford cottages and Wolverton railway houses all have different access to the modern estates. The M1 (junctions 13–15) connects to London and the North.",
+    localMovingInfo: `Milton Keynes is unusual for a UK city because it was designed for cars. The grid road system means vans can reach almost any address without navigating narrow one-way streets. Most modern estates have driveways or allocated parking. This makes MK one of the easier cities for man and van work in terms of access.
+
+But not everything is new-build. Bletchley has older terraces and semis near the railway station with on-street parking. Stony Stratford's high street has restricted parking and older cottages with narrow entries. Wolverton, the original railway town, has compact Victorian terraces. These areas need the same level of access detail as any other older UK town.
+
+The M1 runs along the eastern edge of MK, with junctions 13, 14 and 15 all serving different parts of the city. This makes London about an hour south and Birmingham about 90 minutes north. MK to London is a common man and van route.
+
+Student demand is lower than most cities of this size because the Open University is primarily distance-learning. Most moves here are family relocations, apartment moves and furniture collections. Rates start from £50 per hour — the same as the national average, despite MK's South East location.`,
+    faq: [
+      {"q":"How much does a man and van cost in Milton Keynes?","a":"Milton Keynes moves start from £50 per hour. A local move usually costs £60–£130 depending on volume and access. A 3-bed house move could be £300–£550. Submit your postcodes and item list for a guide price first."},
+      {"q":"Is parking easy in Milton Keynes?","a":"Generally yes. The grid road system and modern estates make van access easier than most UK cities. City-centre apartments and newer developments may have restricted parking or loading bay rules. Bletchley and Stony Stratford have older streets with more restrictions."},
+      {"q":"How much does Milton Keynes to London cost?","a":"An MK to London move in 2026 typically costs £200–£400 depending on load and access. The M1 connects both in about an hour. A single-item delivery starts from around £120."},
+      {"q":"Does Milton Keynes have a Clean Air Zone?","a":"No. Milton Keynes does not have a Clean Air Zone or congestion charge."},
+      {"q":"What makes Milton Keynes moves easier?","a":"The grid road system. Vans can reach most addresses without tight corners, one-way systems or narrow streets. Driveways are common. The main thing to watch is city-centre apartment buildings with controlled parking."},
+    ],
+    localAreaGuides: [
+      {title: "Milton Keynes city centre", body: "City-centre apartments often have allocated parking or loading bays. Check with building management for access rules. The theatre district and Campbell Park areas are popular."},
+      {title: "Bletchley and Fenny Stratford", body: "Older housing near the railway station. Terraces and semis with on-street parking. Add access notes for tighter streets."},
+      {title: "Stony Stratford", body: "A market town within MK with older cottages and a high street. Restricted parking near the shops. Add parking notes for older properties."},
+      {title: "Newport Pagnell and Wolverton", body: "Newport Pagnell has a mix of older and newer properties. Wolverton is a compact railway town with Victorian terraces. Both are well-connected to the grid road network."},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // BOURNEMOUTH — South Coast
+  // ──────────────────────────────────────────
+  bournemouth: {
+    title: "Man and Van Bournemouth | Verified Mover Quotes from £50",
+    description: "Man and van Bournemouth from £50/hr. One verified mover quotes. Boscombe, Westbourne, Poole, Christchurch, Charminster, Winton. No lead blasting.",
+    h1: "Man and Van Bournemouth",
+    intro: "Need a man and van in Bournemouth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Bournemouth move before you decide whether to book.",
+    knowledge: "Bournemouth is a coastal city with a split personality: seafront apartments with parking restrictions, Victorian terraces in Boscombe and Charminster, and suburban family homes in Westbourne, Poole and Christchurch. The A338 Spur Road connects to the M27 and London in about 2 hours.",
+    localMovingInfo: `Bournemouth's man and van demand comes from a mix of students, retirees downsizing, and families moving within the Dorset/Hampshire border area. The two universities (Bournemouth University and Arts University Bournemouth) create strong student move peaks around Talbot Woods, Winton and Lansdowne.
+
+The town centre and Boscombe have heavy parking restrictions — mostly CPZs and timed bays. Seafront apartments near the East Cliff and West Cliff often have underground parking with height restrictions or loading bay time limits. If you are in a block near the pier, add your parking and access details carefully.
+
+Westbourne, Poole and Broadstone are generally easier for van access — larger properties, more driveways, fewer restrictions. The Poole Harbour area has some properties with private parking but also gated access that needs arranging in advance.
+
+The A338 is the main route in and out of Bournemouth, connecting to the M27 at Ringwood. It gets congested during rush hour and summer weekends. Bournemouth to London is about 2 hours via the M3. There is no Clean Air Zone.
+
+Retiree downsizing is a notable feature of the Bournemouth market — moves from a 3-bed house in Kinson to a 1-bed flat in Westbourne are common. These need careful handling of sentimental items and furniture that may not all fit in the new place.`,
+    faq: [
+      {"q":"How much does a man and van cost in Bournemouth?","a":"Bournemouth moves start from £50 per hour. A local move usually costs £60–£130 depending on volume, access and parking. A 3-bed house move could be £300–£550. Submit your postcodes for a guide price first."},
+      {"q":"Is parking difficult in Bournemouth?","a":"The town centre and Boscombe have CPZs with timed bays. Seafront apartments often have controlled underground parking. Westbourne and Poole are generally easier. Apply for a parking suspension from BCP Council if needed."},
+      {"q":"Does Bournemouth have a Clean Air Zone?","a":"No. Bournemouth does not have a Clean Air Zone or congestion charge."},
+      {"q":"Can you help with student moves in Bournemouth?","a":"Yes. Student moves near Bournemouth University (Talbot Woods), Arts University Bournemouth and Lansdowne can be submitted. June and September are the busiest months."},
+      {"q":"How much does Bournemouth to London cost?","a":"A Bournemouth to London move in 2026 typically costs £250–£500 depending on load and access. The M3 route takes about 2 hours. A single-item delivery starts from around £150."},
+    ],
+    localAreaGuides: [
+      {title: "Bournemouth town centre and seafront", body: "East Cliff and West Cliff apartments often have underground parking with height restrictions and loading bay time limits. Add parking and lift details to the form."},
+      {title: "Boscombe and Charminster", body: "Victorian terraces with mostly permit-only street parking. Narrow staircases and shared entries. Add staircase and parking notes."},
+      {title: "Westbourne and Poole", body: "Larger properties with more driveways and fewer parking restrictions. Generally easier for van access. Poole Harbour area may have gated access."},
+      {title: "Student areas — Talbot Woods and Winton", body: "BU and AUB students can submit moves for the June and September peak. Shared houses in Winton and Charminster have on-street parking.", links: [{label: "Student removals", href: "/student-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // PETERBOROUGH — East of England
+  // ──────────────────────────────────────────
+  peterborough: {
+    title: "Man and Van Peterborough | Verified Mover Quotes from £50",
+    description: "Man and van Peterborough from £50/hr. One verified mover quotes. City centre, Orton, Werrington, Bretton, Hampton. A1/M1 corridor. No lead blasting.",
+    h1: "Man and Van Peterborough",
+    intro: "Need a man and van in Peterborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Peterborough move before you decide whether to book.",
+    knowledge: "Peterborough grew fast in the 1970s and 1980s, so much of the housing is modern estates with good road access. The older city centre and areas like Millfield and New England have tighter terraced streets. The A1(M) and A47 connect Peterborough to London, the Midlands and the East Coast.",
+    localMovingInfo: `Peterborough sits on the A1(M) corridor between London and the North, making it a common stop for long-distance man and van routes. The city itself has a mix of new-town estates (Orton, Bretton, Werrington, Hampton) with good road access and driveways, and older terraced areas near the city centre and railway station.
+
+The new-town estates are generally easy for movers — wide roads, allocated parking, driveways. Hampton, the newest development, has modern apartments and family homes with decent access. The older areas around Millfield, New England and the city centre have terraces, on-street parking and narrower entries.
+
+Peterborough's train link to London King's Cross (about 50 minutes) means it attracts London commuters. Peterborough to London moves are common, especially for families relocating from more expensive areas. The A1(M) makes the drive straightforward in about 1 hour 30 minutes.
+
+There is no Clean Air Zone. Rates start from £50 per hour. The city's rapid growth means a constant flow of people moving in and out, particularly on the newer estates.`,
+    faq: [
+      {"q":"How much does a man and van cost in Peterborough?","a":"Peterborough moves start from £50 per hour. A local move usually costs £60–£130 depending on volume and access. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"How much does Peterborough to London cost?","a":"A Peterborough to London move in 2026 typically costs £200–£400 depending on load and access. The A1(M) and M25 take about 1 hour 30 minutes. A single-item delivery starts from around £130."},
+      {"q":"Does Peterborough have a Clean Air Zone?","a":"No. Peterborough does not have a Clean Air Zone or congestion charge."},
+      {"q":"Is parking easy in Peterborough?","a":"The new-town estates (Orton, Bretton, Hampton) mostly have driveways and allocated parking. The city centre and older terraced areas have on-street restrictions. Add your parking notes to the form."},
+    ],
+    localAreaGuides: [
+      {title: "Peterborough city centre", body: "City-centre moves involve a mix of older terraces and newer apartments. Add parking and access notes for the terraced streets near the railway station."},
+      {title: "Orton, Bretton and Werrington", body: "New-town estates with wide roads, driveways and allocated parking. Generally straightforward for van access and family house moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Hampton", body: "The newest development in Peterborough. Modern apartments and family homes with decent road access. Check apartment buildings for loading bay rules."},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // NORWICH — East of England
+  // ──────────────────────────────────────────
+  norwich: {
+    title: "Man and Van Norwich | Verified Mover Quotes from £50",
+    description: "Man and van Norwich from £50/hr. One verified mover quotes. City centre, Eaton, Cringleford, Thorpe St Andrew, University of East Anglia. No lead blasting.",
+    h1: "Man and Van Norwich",
+    intro: "Need a man and van in Norwich? Submit your postcodes, item list and access notes for free. One verified mover reviews your Norwich move before you decide whether to book.",
+    knowledge: "Norwich has a medieval city centre with narrow streets, a castle mound and the cathedral close. Outside the walls, Eaton, Cringleford and Thorpe St Andrew offer easier suburban moves. UEA creates student demand near Earlham Road. The A11 and A47 connect Norwich to Cambridge and the Midlands.",
+    localMovingInfo: `Norwich is East Anglia's biggest city but feels smaller than its size because the medieval street plan keeps traffic slow in the centre. Moves within the city walls need careful planning — one-way systems, pedestrian zones, narrow lanes and limited parking. The Cathedral Quarter and Tombland area are particularly tight for van access.
+
+Outside the walls it gets easier. Eaton, Cringleford, Thorpe St Andrew, Sprowston and Hellesdon are suburban areas with a mix of 1930s semis and newer builds. Most have on-street parking rather than driveways, but the roads are wider and access is straightforward.
+
+The University of East Anglia (UEA) on Earlham Road creates student move demand, particularly in the Golden Triangle area between UEA and the city centre. Students here mostly live in shared Victorian terraces with on-street permit parking. June and September are the busiest months.
+
+Norwich is relatively isolated — the A11 to Cambridge takes about 1 hour 15 minutes, and London is about 2 hours by road. This means most man and van work is local rather than long-distance. Rates start from £50 per hour. There is no Clean Air Zone.`,
+    faq: [
+      {"q":"How much does a man and van cost in Norwich?","a":"Norwich moves start from £50 per hour. A local move usually costs £60–£130 depending on volume and access. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"Is the city centre difficult for removals?","a":"The medieval street plan means narrow lanes, one-way systems and limited parking. Moves within the city walls need careful access planning. Suburban areas like Eaton and Thorpe St Andrew are much easier."},
+      {"q":"Does Norwich have a Clean Air Zone?","a":"No. Norwich does not have a Clean Air Zone or congestion charge."},
+      {"q":"Can you help with student moves at UEA?","a":"Yes. Student moves near the University of East Anglia and the Golden Triangle area can be submitted. Peak demand is June and September."},
+    ],
+    localAreaGuides: [
+      {title: "Norwich city centre and Cathedral Quarter", body: "Medieval streets with tight van access. Add parking arrangements and any pedestrian-zone restrictions. One-way systems need careful route planning."},
+      {title: "Eaton and Cringleford", body: "South of the city centre with larger properties and easier road access. Good for family house moves."},
+      {title: "UEA and the Golden Triangle", body: "Student-heavy area with Victorian terraces and on-street permit parking. Add staircase and parking notes.", links: [{label: "Student removals", href: "/student-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // LUTON — South East
+  // ──────────────────────────────────────────
+  luton: {
+    title: "Man and Van Luton | Verified Mover Quotes from £50",
+    description: "Man and van Luton from £50/hr. One verified mover quotes. Biscot, High Town, Leagrave, Stopsley, Luton Airport area. M1 corridor. No lead blasting.",
+    h1: "Man and Van Luton",
+    intro: "Need a man and van in Luton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Luton move before you decide whether to book.",
+    knowledge: "Luton sits on the M1 about 30 miles north of London. The town has a mix of Victorian terraces near the railway station, 1930s semis in Stopsley and Leagrave, and newer builds around the airport. The M1 (junctions 10–12) connects Luton to London in about 45 minutes.",
+    localMovingInfo: `Luton's man and van market is driven by its position on the M1 corridor. Many people move between Luton and London, and the town's relatively affordable housing compared to the capital keeps demand steady. The University of Bedfordshire adds student move demand in the summer.
+
+The town centre and High Town have older terraced streets with on-street parking that can be tight. Biscot Road and the surrounding streets are typical Victorian terrace territory. Stopsley and Leagrave have more 1930s semis with drives and wider roads. The airport area (LU2) has a mix of newer developments and older housing.
+
+Luton to London is one of the most common man and van routes from this area. The M1 southbound gets congested around the M25 junction during rush hour, so timing matters for these moves. Luton does not have a Clean Air Zone.
+
+One thing movers need to know: roads near the airport can have unusual traffic patterns, especially around the shuttle bus routes. If your address is near the airport, add access notes about any parking restrictions or controlled zones.`,
+    faq: [
+      {"q":"How much does a man and van cost in Luton?","a":"Luton moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£550. Submit your postcodes for a guide price first."},
+      {"q":"How much does Luton to London cost?","a":"A Luton to London move in 2026 typically costs £150–£350 depending on load, access and where in London you are delivering. The M1 takes 45 minutes to 1 hour outside rush hour. A single-item delivery starts from around £100."},
+      {"q":"Does Luton have a Clean Air Zone?","a":"No. Luton does not have a Clean Air Zone or congestion charge."},
+      {"q":"Is parking difficult in Luton?","a":"The town centre and High Town have permit zones and timed bays. Stopsley, Leagrave and the suburbs generally have easier on-street parking. Add your parking notes to the form."},
+    ],
+    localAreaGuides: [
+      {title: "Luton town centre and High Town", body: "Victorian terraces with on-street parking. Add staircase and parking notes. Biscot Road area is typical terrace territory."},
+      {title: "Stopsley and Leagrave", body: "1930s semis with wider roads and more driveways. Easier for van access than the town centre."},
+      {title: "Airport area (LU2)", body: "Mix of newer and older housing near London Luton Airport. Watch for shuttle bus routes and controlled parking zones.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // MIDDLESBROUGH — North East
+  // ──────────────────────────────────────────
+  middlesbrough: {
+    title: "Man and Van Middlesbrough | Verified Mover Quotes from £50",
+    description: "Man and van Middlesbrough from £50/hr. One verified mover quotes. Linthorpe, Acklam, Marton, Nunthorpe, University area. A19 corridor. No lead blasting.",
+    h1: "Man and Van Middlesbrough",
+    intro: "Need a man and van in Middlesbrough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Middlesbrough move before you decide whether to book.",
+    knowledge: "Middlesbrough is a Teesside town with Victorian terraces near the centre and suburban semis in Acklam, Marton and Nunthorpe. Teesside University creates student demand. The A19 runs north to Sunderland and south to York. The A66 connects to Darlington and the A1(M).",
+    localMovingInfo: `Middlesbrough's housing is a clear split between the older inner areas and the more spacious suburbs. Near the town centre, Gresham, Linthorpe Road and the university area have Victorian terraces with tight on-street parking. These streets were built for the iron and steel workers and the access reflects that — narrow entries, small front gardens and limited parking.
+
+Move a few miles south and it changes completely. Acklam, Marton, Nunthorpe and Coulby Newham have post-war and newer estates with drives, garages and wider roads. Van access is straightforward here. These areas are where most family house moves happen.
+
+Teesside University in the centre creates student demand, especially around Southfield Road and the streets near Albert Park. Student loads are usually smaller but parking near the university can be difficult during term time.
+
+The A19 connects Middlesbrough to Sunderland (30 minutes north) and York (45 minutes south). The A66 heads west to Darlington and the A1(M). There is no Clean Air Zone. Rates start from £50 per hour.`,
+    faq: [
+      {"q":"How much does a man and van cost in Middlesbrough?","a":"Middlesbrough moves start from £50 per hour. A local move usually costs £60–£130 depending on volume and access. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"Does Middlesbrough have a Clean Air Zone?","a":"No. Middlesbrough does not have a Clean Air Zone or congestion charge."},
+      {"q":"Is parking difficult in Middlesbrough?","a":"The town centre and Gresham area have on-street restrictions. Linthorpe Road and university streets have permit zones. Acklam, Marton and Nunthorpe generally have easier parking."},
+      {"q":"Can you help with student moves in Middlesbrough?","a":"Yes. Student moves near Teesside University can be submitted. Peak demand is June and September."},
+    ],
+    localAreaGuides: [
+      {title: "Middlesbrough town centre and Gresham", body: "Victorian terraces with on-street parking. Add staircase and parking details. The university area near Albert Park has permit zones."},
+      {title: "Linthorpe and Acklam", body: "A mix of older and newer properties. Linthorpe Road has terraces and semis. Acklam has wider roads and drives. Good for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Marton and Nunthorpe", body: "Suburban areas with larger properties, drives and easier van access. Popular family areas."},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // NEWPORT — Wales
+  // ──────────────────────────────────────────
+  newport: {
+    title: "Man and Van Newport | Verified Mover Quotes from £50",
+    description: "Man and van Newport from £50/hr. One verified mover quotes. City centre, Caerleon, Maindee, Pillgwenlly, Rogerstone. M4 corridor. No lead blasting.",
+    h1: "Man and Van Newport",
+    intro: "Need a man and van in Newport? Submit your postcodes, item list and access notes for free. One verified mover reviews your Newport move before you decide whether to book.",
+    knowledge: "Newport sits on the M4 at the gateway to Wales, about 12 miles east of Cardiff. The city has Victorian terraces near the docks, suburban estates in Rogerstone and Caerleon, and newer developments around the city centre regeneration. The M4 and A449 connect Newport to Cardiff, Bristol and the Midlands.",
+    localMovingInfo: `Newport is Wales' third-largest city and sits at the M4's lowest Severn crossing point. This makes it a natural stop for moves between England and South Wales. The city itself has a mix of older dockland terraces near Pillgwenlly and Maindee, suburban semis in Rogerstone, Somerton and Gaer, and the historic area of Caerleon with its Roman heritage.
+
+The city centre has been through major regeneration — the Friars Walk area has newer apartments with controlled parking. Older streets near the railway station and docks have terraces with on-street parking that can be tight for vans. The suburbs are generally easier: drives, wider roads, fewer restrictions.
+
+Caerleon is a village within Newport known for its Roman amphitheatre and university campus. Student moves here peak in summer. The rest of Newport's man and van demand comes from families relocating within the Gwent area and people moving between Newport and Cardiff or Bristol.
+
+The M4 makes Cardiff about 20 minutes west and Bristol about 30 minutes east. The Severn Bridge crossings are toll-free. There is no Clean Air Zone in Newport.`,
+    faq: [
+      {"q":"How much does a man and van cost in Newport?","a":"Newport moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"How much does Newport to Cardiff cost?","a":"A Newport to Cardiff move in 2026 typically costs £80–£180 depending on load and access. The M4 connects both cities in about 20 minutes."},
+      {"q":"Does Newport have a Clean Air Zone?","a":"No. Newport does not have a Clean Air Zone or congestion charge."},
+      {"q":"Is the Severn Bridge still tolled?","a":"No. The Severn Bridge tolls were removed in December 2018. The M4 crossing between England and Wales is free."},
+    ],
+    localAreaGuides: [
+      {title: "Newport city centre and docks", body: "Newer apartments near Friars Walk have controlled parking. Older dockland terraces near Pillgwenlly and Maindee have on-street parking and tighter access."},
+      {title: "Caerleon", body: "Historic village with the university campus. Terraces and cottages near the High Street. Student moves peak in summer.", links: [{label: "Student removals", href: "/student-removals"}]},
+      {title: "Rogerstone and Somerton", body: "Suburban areas with drives and wider roads. Easier for family house moves.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // IPSWICH — East of England
+  // ──────────────────────────────────────────
+  ipswich: {
+    title: "Man and Van Ipswich | Verified Mover Quotes from £50",
+    description: "Man and van Ipswich from £50/hr. One verified mover quotes. Town centre, Stoke Park, Chantry, Rushmere, University of Suffolk. A12/A14 corridor. No lead blasting.",
+    h1: "Man and Van Ipswich",
+    intro: "Need a man and van in Ipswich? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ipswich move before you decide whether to book.",
+    knowledge: "Ipswich has a mix of medieval town-centre streets, Victorian terraces near the docks and suburban estates in Rushmere, Chantry and Stoke Park. The A12 and A14 connect Ipswich to London, Cambridge and Felixstowe. The University of Suffolk adds student demand.",
+    localMovingInfo: `Ipswich is Suffolk's county town and the biggest settlement between Norwich and Cambridge. The town centre has a medieval street layout that slows van access — one-way systems, narrow lanes near the waterfront and limited parking around the Cornhill area. The docks and waterfront have newer apartments with controlled parking.
+
+Further out, the picture changes. Stoke Park, Rushmere, Chantry and the Belt Road estates have 1930s and newer housing with drives and wider roads. These suburban areas are straightforward for man and van work.
+
+The University of Suffolk is based at the waterfront, creating student move demand in the summer. Student housing is mainly in the town centre and along the London Road corridor. The A12 runs south to London (about 1 hour 30 minutes) and the A14 heads west to Cambridge and the Midlands. There is no Clean Air Zone.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ipswich?","a":"Ipswich moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"Is the town centre difficult for removals?","a":"The medieval street plan means narrow lanes and limited parking near the waterfront and Cornhill. Suburban areas like Stoke Park and Rushmere are much easier for van access."},
+      {"q":"Does Ipswich have a Clean Air Zone?","a":"No. Ipswich does not have a Clean Air Zone or congestion charge."},
+    ],
+    localAreaGuides: [
+      {title: "Ipswich waterfront and town centre", body: "Newer apartments with controlled parking near the university. Older streets near the Cornhill have tighter access. Add parking and lift details."},
+      {title: "Stoke Park and Rushmere", body: "Suburban areas with 1930s semis and drives. Straightforward for family house moves.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // EXETER — South West
+  // ──────────────────────────────────────────
+  exeter: {
+    title: "Man and Van Exeter | Verified Mover Quotes from £50",
+    description: "Man and van Exeter from £50/hr. One verified mover quotes. City centre, St Thomas, Heavitree, Pinhoe, University of Exeter. A30/M5 corridor. No lead blasting.",
+    h1: "Man and Van Exeter",
+    intro: "Need a man and van in Exeter? Submit your postcodes, item list and access notes for free. One verified mover reviews your Exeter move before you decide whether to book.",
+    knowledge: "Exeter is Devon's capital, sitting where the M5 meets the A30. The city has a Roman-medieval centre with tight streets, plus leafy suburbs in St Leonard's, Pennsylvania and Heavitree. The University of Exeter creates strong student demand in summer.",
+    localMovingInfo: `Exeter is the gateway to Devon and Cornwall, and man and van demand comes from a mix of students, families and people relocating from London and the Home Counties. The M5 makes Bristol about 1 hour 15 minutes north and London about 3 hours.
+
+The city centre has the usual medieval-street challenges — narrow lanes, one-way systems and limited parking around the Cathedral Close and High Street. Moves here need careful access planning. St Thomas, across the river, has a mix of older terraces and newer builds with somewhat easier parking.
+
+The University of Exeter is one of the biggest drivers of man and van demand in the city. Student housing clusters around St Leonard's, Pennsylvania and Heavitree — mostly Victorian and Edwardian terraces with on-street permit parking. June and September are the busiest months and availability gets tight.
+
+Suburban areas like Pinhoe, Broadclyst and Alphington have modern estates with drives and easier van access. The M5/A30 interchange makes long-distance moves straightforward. There is no Clean Air Zone.`,
+    faq: [
+      {"q":"How much does a man and van cost in Exeter?","a":"Exeter moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£550. Submit your postcodes for a guide price first."},
+      {"q":"Can you help with student moves at the University of Exeter?","a":"Yes. Student moves near the Streatham and St Luke's campuses can be submitted. Peak demand is June and September. Parking near St Leonard's and Pennsylvania is mostly permit-only."},
+      {"q":"Does Exeter have a Clean Air Zone?","a":"No. Exeter does not have a Clean Air Zone or congestion charge."},
+      {"q":"How much does Exeter to London cost?","a":"An Exeter to London move in 2026 typically costs £350–£700 depending on load and access. The M5/M4 route takes about 3 hours. A single-item delivery starts from around £180."},
+    ],
+    localAreaGuides: [
+      {title: "Exeter city centre and Cathedral Close", body: "Medieval streets with tight van access. Add parking arrangements and loading notes."},
+      {title: "St Leonard's and Pennsylvania", body: "Student-heavy areas with Victorian terraces and on-street permit parking. Add staircase and parking notes.", links: [{label: "Student removals", href: "/student-removals"}]},
+      {title: "Pinhoe and Alphington", body: "Suburban estates with drives and wider roads. Easier for family house moves.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // DERRY — Northern Ireland
+  // ──────────────────────────────────────────
+  derry: {
+    title: "Man and Van Derry/Londonderry | Verified Mover Quotes from £50",
+    description: "Man and van Derry/Londonderry from £50/hr. One verified mover quotes. City centre, Waterside, Creggan, Rosemount, Strand Road. No lead blasting.",
+    h1: "Man and Van Derry/Londonderry",
+    intro: "Need a man and van in Derry? Submit your postcodes, item list and access notes for free. One verified mover reviews your Derry move before you decide whether to book.",
+    knowledge: "Derry/Londonderry is Northern Ireland's second city, sitting on the River Foyle near the Donegal border. The walled city centre has tight streets and limited parking. The Waterside, across the river, has more modern estates. The A6 connects Derry to Belfast in about 70 minutes.",
+    localMovingInfo: `Derry is the North West's main city and the only major settlement between Belfast and Donegal. The walled city centre has some of the tightest van access in Northern Ireland — the 17th-century walls, narrow streets and mostly on-street parking make moves within the city walls slow and parking-dependent.
+
+The Waterside, across the Craigavon Bridge, is more spread out with modern estates and easier road access. Creggan, Rosemount and the Shantallow area have a mix of older terraces and newer builds. The A2 runs along the river and connects the city to the airport and Limavady.
+
+Derry's position near the Donegal border means cross-border moves to the Republic are common. If your move crosses the border, mention this on the form so the mover can confirm they can handle it. The A6 to Belfast takes about 70 minutes and is the main corridor for moves between the two cities.
+
+There is no Clean Air Zone. Rates start from £50 per hour, in line with Northern Ireland averages.`,
+    faq: [
+      {"q":"How much does a man and van cost in Derry?","a":"Derry moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"How much does Derry to Belfast cost?","a":"A Derry to Belfast move in 2026 typically costs £200–£400 depending on load and access. The A6 takes about 70 minutes."},
+      {"q":"Can you help with cross-border moves to Donegal?","a":"Cross-border moves can be submitted. Add both postcodes and mention it is a cross-border move so the mover can confirm they can operate in both jurisdictions."},
+      {"q":"Does Derry have a Clean Air Zone?","a":"No. Derry does not have a Clean Air Zone or congestion charge."},
+    ],
+    localAreaGuides: [
+      {title: "Derry city centre and walled city", body: "The walled city centre has the tightest access. Narrow streets and on-street parking make moves slower. Add parking and access notes carefully."},
+      {title: "Waterside", body: "Across the Craigavon Bridge, with modern estates and wider roads. Generally easier for van access than the city side."},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // INVERNESS — Scottish Highlands
+  // ──────────────────────────────────────────
+  inverness: {
+    title: "Man and Van Inverness | Verified Mover Quotes from £50",
+    description: "Man and van Inverness from £50/hr. One verified mover quotes. City centre, Dalneigh, Culloden, Smithton, A96/A9 corridors. No lead blasting.",
+    h1: "Man and Van Inverness",
+    intro: "Need a man and van in Inverness? Submit your postcodes, item list and access notes for free. One verified mover reviews your Inverness move before you decide whether to book.",
+    knowledge: "Inverness is the Highland capital and the most northerly city in the UK. The city centre has Victorian terraces and newer developments by the river. Culloden and Smithton are suburban estates. The A9 connects south to Perth and the A96 heads east to Aberdeen — both can be slow in winter.",
+    localMovingInfo: `Inverness is the hub for the entire Scottish Highlands. Most man and van work here is local — moves within the city and surrounding villages. The city centre is compact, sitting along the River Ness, with a mix of Victorian sandstone buildings and newer riverside apartments. Parking near the High Street and along the riverfront can be restricted.
+
+Suburban areas like Culloden, Smithton, Dalneigh and Hilton have a mix of council-built and private housing with on-street parking and some drives. These areas are generally easier for van access than the city centre. Drakies and Milton of Leys are newer estates with wider roads.
+
+Long-distance moves from Inverness are notable because of the distances involved. Aberdeen is 2 hours via the A96, Glasgow and Edinburgh are about 3 hours via the A9, and the journey south can be affected by snow and high winds on the A9 in winter. Movers planning these routes need to factor in the extra time and potential weather delays.
+
+There is no Clean Air Zone. Rates start from £50 per hour. The city's small size means most local moves can be completed in half a day.`,
+    faq: [
+      {"q":"How much does a man and van cost in Inverness?","a":"Inverness moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"How long does it take to drive from Inverness to Aberdeen?","a":"About 2 hours via the A96 in clear conditions. Allow extra time in winter when the A96 can be affected by snow and ice. A mover quoting for this route will factor in the distance."},
+      {"q":"Does Inverness have a Clean Air Zone?","a":"No. Inverness does not have a Clean Air Zone or congestion charge."},
+      {"q":"Are long-distance moves from Inverness more expensive?","a":"Yes. The distance from Inverness to central Scotland (Glasgow/Edinburgh) is about 150 miles via the A9, typically 3 hours. A move this distance could cost £500–£1,000 depending on load. The A9 can be slow in winter."},
+    ],
+    localAreaGuides: [
+      {title: "Inverness city centre", body: "Compact city centre along the River Ness. Riverside apartments have controlled parking. Victorian streets near the High Street have on-street restrictions."},
+      {title: "Culloden and Smithton", body: "Eastern suburbs with a mix of housing types. Generally easier for van access than the city centre."},
+      {title: "Long-distance moves from Inverness", body: "The A9 south and A96 east are the main routes. Both can be affected by winter weather. Add timing flexibility for long-distance moves.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // COLCHESTER — East of England
+  // ──────────────────────────────────────────
+  colchester: {
+    title: "Man and Van Colchester | Verified Mover Quotes from £50",
+    description: "Man and van Colchester from £50/hr. One verified mover quotes. Town centre, Lexden, Stanway, University of Essex, Garrison area. A12 corridor. No lead blasting.",
+    h1: "Man and Van Colchester",
+    intro: "Need a man and van in Colchester? Submit your postcodes, item list and access notes for free. One verified mover reviews your Colchester move before you decide whether to book.",
+    knowledge: "Colchester is Britain's oldest recorded town, with a Roman wall and narrow town-centre streets. Lexden and Stanway have suburban housing with easier access. The University of Essex campus at Wivenhoe Park adds student demand. The A12 connects to London in about 1 hour.",
+    localMovingInfo: `Colchester's man and van demand comes from its position on the London-commuter belt (about 1 hour to Liverpool Street by train) plus the University of Essex and the town's military garrison. The A12 runs north-south through the town and connects to the M25.
+
+The town centre has Roman-wall constraints — some streets are narrow and parking near the High Street and Castle Park is restricted. Dutch Quarter has older properties with tight access. Moves within the town walls need careful parking planning.
+
+Lexden, to the west, has larger Victorian and Edwardian properties with drives. Stanway and Greenstead, to the south and east, have a mix of council-built and private housing. The University of Essex campus at Wivenhoe Park has student accommodation, and the surrounding area of Wivenhoe and Hythe has shared student houses.
+
+There is no Clean Air Zone. Rates start from £50 per hour. Colchester to London moves are common because of the commuter population.`,
+    faq: [
+      {"q":"How much does a man and van cost in Colchester?","a":"Colchester moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£550. Submit your postcodes for a guide price first."},
+      {"q":"How much does Colchester to London cost?","a":"A Colchester to London move in 2026 typically costs £180–£380 depending on load, access and where in London. The A12 takes about 1 hour 15 minutes outside rush hour."},
+      {"q":"Does Colchester have a Clean Air Zone?","a":"No. Colchester does not have a Clean Air Zone or congestion charge."},
+      {"q":"Can you help with student moves at the University of Essex?","a":"Yes. Student moves near the Wivenhoe Park campus and Wivenhoe village can be submitted. Peak demand is June and September."},
+    ],
+    localAreaGuides: [
+      {title: "Colchester town centre and Dutch Quarter", body: "Roman-wall streets with tight access. Add parking and loading notes. Some areas near the High Street have timed restrictions."},
+      {title: "Lexden and Stanway", body: "Suburban areas with larger properties and drives. Easier for family house moves.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // DONCASTER — South Yorkshire
+  // ──────────────────────────────────────────
+  doncaster: {
+    title: "Man and Van Doncaster | Verified Mover Quotes from £50",
+    description: "Man and van Doncaster from £50/hr. One verified mover quotes. Town centre, Bessacarr, Cantley, Wheatley, Edenthorpe. A1(M)/M18 corridor. No lead blasting.",
+    h1: "Man and Van Doncaster",
+    intro: "Need a man and van in Doncaster? Submit your postcodes, item list and access notes for free. One verified mover reviews your Doncaster move before you decide whether to book.",
+    knowledge: "Doncaster sits at the junction of the A1(M) and M18, making it a road-transport hub. The town centre has a mix of older terraces and newer builds. Bessacarr and Cantley have suburban semis. Doncaster's rail connections make London about 90 minutes away.",
+    localMovingInfo: `Doncaster's road connections are its defining feature for man and van work. The A1(M) runs north-south and the M18 heads east to the M180 and Humberside. This makes Doncaster a natural stop for long-distance moves between the North and South.
+
+The town centre has older terraced streets near the market and railway station with on-street parking. Wheatley and Hexthorpe have a mix of terraces and semis. Bessacarr, to the south, has larger properties with drives and is generally easier for van access. Cantley and Edenthorpe are typical suburban estates.
+
+Doncaster does not have a Clean Air Zone. Rates start from £50 per hour. The town's transport links mean it is well-connected for moves to Sheffield (25 minutes), Leeds (40 minutes) and London (about 3 hours by road).`,
+    faq: [
+      {"q":"How much does a man and van cost in Doncaster?","a":"Doncaster moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"Does Doncaster have a Clean Air Zone?","a":"No. Doncaster does not have a Clean Air Zone or congestion charge."},
+      {"q":"How far is Doncaster from Sheffield?","a":"About 20 miles via the M18 and M1, taking roughly 25 minutes in clear traffic. A Doncaster to Sheffield man and van move typically costs £80–£160."},
+    ],
+    localAreaGuides: [
+      {title: "Doncaster town centre", body: "Older terraces near the market and railway station with on-street parking. Add access notes for tighter streets."},
+      {title: "Bessacarr and Cantley", body: "Suburban areas with drives and wider roads. Good for family house moves.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // CRAWLEY — South East
+  // ──────────────────────────────────────────
+  crawley: {
+    title: "Man and Van Crawley | Verified Mover Quotes from £50",
+    description: "Man and van Crawley from £50/hr. One verified mover quotes. Town centre, Gatwick area, Ifield, Pound Hill, Three Bridges. M23 corridor. No lead blasting.",
+    h1: "Man and Van Crawley",
+    intro: "Need a man and van in Crawley? Submit your postcodes, item list and access notes for free. One verified mover reviews your Crawley move before you decide whether to book.",
+    knowledge: "Crawley is a new town built around Gatwick Airport. The town has 13 neighbourhoods with a mix of housing types. The M23 connects to the M25 in about 15 minutes, making Crawley a key commuter town. Ifield and Three Bridges have older housing; Maidenbower and Forge Wood are newer.",
+    localMovingInfo: `Crawley's man and van market is driven by its position between London and the South Coast, plus the constant turnover of people moving for work at Gatwick Airport and the surrounding business parks. The M23/M25 interchange is about 10 minutes from the town centre.
+
+As a new town, Crawley's neighbourhoods are generally well-designed for vehicle access — wide roads, allocated parking and drives are common. Ifield and Three Bridges have some older properties with tighter access, but most of the 13 neighbourhoods are post-war estates with decent road layouts.
+
+The Gatwick area brings specific challenges. Properties near the airport may have parking restrictions, and roads around the South and North Terminals can be congested. If your address is near the airport perimeter, add access notes about parking.
+
+Crawley to London is about 30 miles via the M23 and M25, taking 45 minutes to 1 hour outside rush hour. Crawley to Brighton is about 30 minutes via the A23. There is no Clean Air Zone.`,
+    faq: [
+      {"q":"How much does a man and van cost in Crawley?","a":"Crawley moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£550. Submit your postcodes for a guide price first."},
+      {"q":"How much does Crawley to London cost?","a":"A Crawley to London move in 2026 typically costs £180–£380 depending on load and where in London. The M23/M25 takes about 45 minutes to 1 hour."},
+      {"q":"Does Crawley have a Clean Air Zone?","a":"No. Crawley does not have a Clean Air Zone or congestion charge."},
+      {"q":"Is parking easy in Crawley?","a":"Generally yes. As a new town, most neighbourhoods have allocated parking and drives. The Gatwick area may have specific restrictions. Add your parking notes to the form."},
+    ],
+    localAreaGuides: [
+      {title: "Crawley town centre and County Mall", body: "Newer apartments and retail area. Controlled parking in most developments. Add loading bay rules if applicable."},
+      {title: "Ifield and Three Bridges", body: "Older neighbourhoods with a mix of housing. Some properties near Three Bridges station have restricted parking."},
+      {title: "Maidenbower and Forge Wood", body: "Newer estates with drives and allocated parking. Straightforward for van access.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // BASILDON — East of England
+  // ──────────────────────────────────────────
+  basildon: {
+    title: "Man and Van Basildon | Verified Mover Quotes from £50",
+    description: "Man and van Basildon from £50/hr. One verified mover quotes. Town centre, Pitsea, Laindon, Vange, Wickford. A127/A13 corridor. No lead blasting.",
+    h1: "Man and Van Basildon",
+    intro: "Need a man and van in Basildon? Submit your postcodes, item list and access notes for free. One verified mover reviews your Basildon move before you decide whether to book.",
+    knowledge: "Basildon is a post-war new town in south Essex, built to relocate Londoners after the Blitz. The town has modern estates with good road access, plus older villages like Laindon and Pitsea. The A127 and A13 connect to London in about 40 minutes.",
+    localMovingInfo: `Basildon is a commuter town at its core — most moves here are either local or between Basildon and London. The A127 and A13 are the main routes into east London, taking about 40 minutes outside rush hour.
+
+As a new town, Basildon's road layout is generally good for vans. Wide estates, allocated parking and drives are common. Pitsea, Laindon and Vange have some older properties with tighter on-street parking but nothing like the Victorian terraces of inner London. Wickford, technically separate, has a small-town feel with a mix of housing.
+
+The town centre has been through regeneration — Basildon's Eastgate Centre area has newer developments. There is no Clean Air Zone. Rates start from £50 per hour.`,
+    faq: [
+      {"q":"How much does a man and van cost in Basildon?","a":"Basildon moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"How much does Basildon to London cost?","a":"A Basildon to London move in 2026 typically costs £180–£350 depending on load and where in London. The A13 takes about 40 minutes to reach east London."},
+      {"q":"Does Basildon have a Clean Air Zone?","a":"No. Basildon does not have a Clean Air Zone or congestion charge."},
+    ],
+    localAreaGuides: [
+      {title: "Basildon town centre", body: "Newer developments around the Eastgate area with controlled parking. Older estates nearby have drives and allocated parking."},
+      {title: "Pitsea, Laindon and Wickford", body: "Mixed housing with some older terraces and newer builds. Generally decent road access for vans.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // SLOUGH — South East
+  // ──────────────────────────────────────────
+  slough: {
+    title: "Man and Van Slough | Verified Mover Quotes from £50",
+    description: "Man and van Slough from £50/hr. One verified mover quotes. Town centre, Cippenham, Langley, Britwell, Upton Park. M4 corridor. No lead blasting.",
+    h1: "Man and Van Slough",
+    intro: "Need a man and van in Slough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Slough move before you decide whether to book.",
+    knowledge: "Slough sits on the M4 just west of London, making it one of the best-connected towns for man and van routes. The town has a mix of Victorian terraces, 1930s semis and modern developments. The M4 connects to central London in about 30 minutes and the M25 in 10 minutes.",
+    localMovingInfo: `Slough's position on the M4 corridor means most man and van work here is either local moves or moves between Slough and London. The M4 makes Heathrow about 15 minutes away and central London about 30 minutes. This makes Slough a common start or end point for long-distance routes.
+
+The town centre has older terraces near the High Street and railway station with on-street parking. Cippenham and Langley have 1930s and newer semis with drives. Britwell is a post-war estate with a mix of housing. Upton Park and the area near the Slough Trading Estate have varied property types.
+
+Parking in the town centre can be restricted. The railway station area has permit zones. Further out, drives and unrestricted on-street parking are more common. There is no Clean Air Zone.
+
+Slough to London moves are very common. The M4 connects directly to the A4 and central London. A single-item delivery from Slough to west London can be done in under an hour.`,
+    faq: [
+      {"q":"How much does a man and van cost in Slough?","a":"Slough moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£550. Submit your postcodes for a guide price first."},
+      {"q":"How much does Slough to London cost?","a":"A Slough to London move in 2026 typically costs £150–£300 depending on load and where in London. The M4 takes about 30 minutes to west London outside rush hour."},
+      {"q":"Does Slough have a Clean Air Zone?","a":"No. Slough does not have a Clean Air Zone. However, if your London delivery address is inside the ULEZ zone, the mover's van may need to be ULEZ-compliant."},
+    ],
+    localAreaGuides: [
+      {title: "Slough town centre", body: "Older terraces near the High Street and station with on-street permit parking. Add access notes for tighter streets."},
+      {title: "Cippenham and Langley", body: "1930s and newer semis with drives. Good for family house moves. Langley also has newer developments.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // GATESHEAD — North East
+  // ──────────────────────────────────────────
+  gateshead: {
+    title: "Man and Van Gateshead | Verified Mover Quotes from £50",
+    description: "Man and van Gateshead from £50/hr. One verified mover quotes. Town centre, Low Fell, Team Valley, Dunston, Bensham. A1 corridor. No lead blasting.",
+    h1: "Man and Van Gateshead",
+    intro: "Need a man and van in Gateshead? Submit your postcodes, item list and access notes for free. One verified mover reviews your Gateshead move before you decide whether to book.",
+    knowledge: "Gateshead sits on the south bank of the Tyne, directly opposite Newcastle. The town centre and Bensham have older terraces. Low Fell and Team Valley have suburban housing. The A1 runs through Gateshead, connecting to the A1(M) and the North.",
+    localMovingInfo: `Gateshead is often treated as part of Newcastle for man and van purposes, but it has its own character. The town centre and Bensham have rows of Victorian terraces with tight on-street parking — similar to Newcastle's older areas. The Team Valley Trading Estate is one of the biggest commercial areas in the North East.
+
+Low Fell, to the south, is a popular residential area with Victorian and Edwardian properties. It has on-street parking but the roads are wider than Bensham. Dunston, near the river, has a mix of older terraces and newer developments. Team Valley has industrial access roads and nearby housing.
+
+The A1 runs through Gateshead, making it well-connected for long-distance routes. The Tyne Bridge and Redheugh Bridge connect directly to Newcastle city centre in about 5 minutes. There is no Clean Air Zone. Rates start from £50 per hour.`,
+    faq: [
+      {"q":"How much does a man and van cost in Gateshead?","a":"Gateshead moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"How far is Gateshead from Newcastle?","a":"Directly across the River Tyne — about 5 minutes by van via the Tyne Bridge. A Gateshead to Newcastle move typically costs £60–£120 depending on load and access."},
+      {"q":"Does Gateshead have a Clean Air Zone?","a":"No. Gateshead does not have a Clean Air Zone or congestion charge."},
+    ],
+    localAreaGuides: [
+      {title: "Gateshead town centre and Bensham", body: "Victorian terraces with on-street parking. Add staircase and parking notes for tighter streets."},
+      {title: "Low Fell and Team Valley", body: "Popular residential area with wider roads. Team Valley has commercial and industrial properties alongside housing.", links: [{label: "Office removals", href: "/office-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // BARNsLEY — South Yorkshire
+  // ──────────────────────────────────────────
+  barnsley: {
+    title: "Man and Van Barnsley | Verified Mover Quotes from £50",
+    description: "Man and van Barnsley from £50/hr. One verified mover quotes. Town centre, Dodworth, Penistone, Royston, Monk Bretton. M1/A1 corridor. No lead blasting.",
+    h1: "Man and Van Barnsley",
+    intro: "Need a man and van in Barnsley? Submit your postcodes, item list and access notes for free. One verified mover reviews your Barnsley move before you decide whether to book.",
+    knowledge: "Barnsley is a South Yorkshire market town with strong road connections via the M1 and A1. The town centre has older terraces from the mining era. Dodworth and Penistone are more rural. The M1 (junction 36–38) connects Barnsley to Sheffield in about 20 minutes and Leeds in about 30 minutes.",
+    localMovingInfo: `Barnsley's man and van market is mostly local moves within the town and surrounding villages, plus regular moves between Barnsley and Sheffield, Leeds and Doncaster. The M1 makes all of these straightforward.
+
+The town centre has older terraces — mining-era housing with on-street parking and smaller rooms. These need clear access details on the form. Further out, Monk Bretton, Royston and Cudworth have a mix of terraces and semis. Dodworth and Penistone to the west are more rural with larger properties and drives.
+
+Barnsley to Sheffield is a common route (about 12 miles via the M1). Barnsley to Leeds is also straightforward (about 25 miles via the M1 and M62). There is no Clean Air Zone. Rates start from £50 per hour.`,
+    faq: [
+      {"q":"How much does a man and van cost in Barnsley?","a":"Barnsley moves start from £50 per hour. A local move usually costs £60–£130. A 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"How far is Barnsley from Sheffield?","a":"About 12 miles via the M1, taking roughly 20 minutes. A Barnsley to Sheffield man and van move typically costs £80–£160."},
+      {"q":"Does Barnsley have a Clean Air Zone?","a":"No. Barnsley does not have a Clean Air Zone or congestion charge."},
+    ],
+    localAreaGuides: [
+      {title: "Barnsley town centre", body: "Older terraces from the mining era with on-street parking. Add access notes for tighter streets near the market."},
+      {title: "Dodworth and Penistone", body: "More rural areas with larger properties and drives. Penistone is a small market town on the edge of the Peak District.", links: [{label: "House removals", href: "/house-removals"}]},
+    ],
+  },
+
 };
