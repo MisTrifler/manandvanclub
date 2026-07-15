@@ -910,6 +910,1140 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery"]
   },
+  belfast: {
+    ...baseSchema,
+    name: "Man and Van Club — Belfast",
+    description:
+      "Free man and van request service in Belfast. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-belfast",
+    areaServed: {
+      "@type": "City",
+      name: "Belfast",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Antrim"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "South Belfast" },
+        { "@type": "Neighborhood", name: "East Belfast" },
+        { "@type": "Neighborhood", name: "West Belfast" },
+        { "@type": "Neighborhood", name: "Queens Quarter" },
+        { "@type": "Neighborhood", name: "Titanic Quarter" },
+        { "@type": "Neighborhood", name: "Botanic" },
+        { "@type": "Neighborhood", name: "Ballyhackamore" },
+        { "@type": "Neighborhood", name: "Ormeau" },
+        { "@type": "Neighborhood", name: "Andersonstown" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  brighton: {
+    ...baseSchema,
+    name: "Man and Van Club — Brighton",
+    description:
+      "Free man and van request service in Brighton. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-brighton",
+    areaServed: {
+      "@type": "City",
+      name: "Brighton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Sussex"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Kemptown" },
+        { "@type": "Neighborhood", name: "Hove" },
+        { "@type": "Neighborhood", name: "Preston Park" },
+        { "@type": "Neighborhood", name: "Hanover" },
+        { "@type": "Neighborhood", name: "Seven Dials" },
+        { "@type": "Neighborhood", name: "Fiveways" },
+        { "@type": "Neighborhood", name: "Queens Park" },
+        { "@type": "Neighborhood", name: "Moulsecoomb" },
+        { "@type": "Neighborhood", name: "Portslade" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  sunderland: {
+    ...baseSchema,
+    name: "Man and Van Club — Sunderland",
+    description:
+      "Free man and van request service in Sunderland. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-sunderland",
+    areaServed: {
+      "@type": "City",
+      name: "Sunderland",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Tyne and Wear"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Roker" },
+        { "@type": "Neighborhood", name: "Seaburn" },
+        { "@type": "Neighborhood", name: "Hendon" },
+        { "@type": "Neighborhood", name: "Millfield" },
+        { "@type": "Neighborhood", name: "Ashbrooke" },
+        { "@type": "Neighborhood", name: "Fulwell" },
+        { "@type": "Neighborhood", name: "Barnes" },
+        { "@type": "Neighborhood", name: "Thornhill" },
+        { "@type": "Neighborhood", name: "Pallion" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "milton-keynes": {
+    ...baseSchema,
+    name: "Man and Van Club — Milton Keynes",
+    description:
+      "Free man and van request service in Milton Keynes. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-milton-keynes",
+    areaServed: {
+      "@type": "City",
+      name: "Milton Keynes",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Buckinghamshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Stony Stratford" },
+        { "@type": "Neighborhood", name: "Wolverton" },
+        { "@type": "Neighborhood", name: "Bletchley" },
+        { "@type": "Neighborhood", name: "Newport Pagnell" },
+        { "@type": "Neighborhood", name: "Olney" },
+        { "@type": "Neighborhood", name: "Shenley Church End" },
+        { "@type": "Neighborhood", name: "Great Linford" },
+        { "@type": "Neighborhood", name: "Campbell Park" },
+        { "@type": "Neighborhood", name: "Loughton" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  bournemouth: {
+    ...baseSchema,
+    name: "Man and Van Club — Bournemouth",
+    description:
+      "Free man and van request service in Bournemouth. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bournemouth",
+    areaServed: {
+      "@type": "City",
+      name: "Bournemouth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Dorset"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Westbourne" },
+        { "@type": "Neighborhood", name: "Boscombe" },
+        { "@type": "Neighborhood", name: "Southbourne" },
+        { "@type": "Neighborhood", name: "Winton" },
+        { "@type": "Neighborhood", name: "Charminster" },
+        { "@type": "Neighborhood", name: "Kinson" },
+        { "@type": "Neighborhood", name: "Poole" },
+        { "@type": "Neighborhood", name: "Christchurch" },
+        { "@type": "Neighborhood", name: "Talbot Woods" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  peterborough: {
+    ...baseSchema,
+    name: "Man and Van Club — Peterborough",
+    description:
+      "Free man and van request service in Peterborough. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-peterborough",
+    areaServed: {
+      "@type": "City",
+      name: "Peterborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cambridgeshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Hampton" },
+        { "@type": "Neighborhood", name: "Werrington" },
+        { "@type": "Neighborhood", name: "Fletton" },
+        { "@type": "Neighborhood", name: "Woodston" },
+        { "@type": "Neighborhood", name: "Orton" },
+        { "@type": "Neighborhood", name: "Bretton" },
+        { "@type": "Neighborhood", name: "Paston" },
+        { "@type": "Neighborhood", name: "Dogsthorpe" },
+        { "@type": "Neighborhood", name: "Newborough" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  norwich: {
+    ...baseSchema,
+    name: "Man and Van Club — Norwich",
+    description:
+      "Free man and van request service in Norwich. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-norwich",
+    areaServed: {
+      "@type": "City",
+      name: "Norwich",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Norfolk"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Eaton" },
+        { "@type": "Neighborhood", name: "Cringleford" },
+        { "@type": "Neighborhood", name: "Thorpe St Andrew" },
+        { "@type": "Neighborhood", name: "Sprowston" },
+        { "@type": "Neighborhood", name: "Hellesdon" },
+        { "@type": "Neighborhood", name: "Costessey" },
+        { "@type": "Neighborhood", name: "Taverham" },
+        { "@type": "Neighborhood", name: "Lakenham" },
+        { "@type": "Neighborhood", name: "Bowthorpe" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  luton: {
+    ...baseSchema,
+    name: "Man and Van Club — Luton",
+    description:
+      "Free man and van request service in Luton. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-luton",
+    areaServed: {
+      "@type": "City",
+      name: "Luton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Bedfordshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Biscot" },
+        { "@type": "Neighborhood", name: "High Town" },
+        { "@type": "Neighborhood", name: "Barton Hills" },
+        { "@type": "Neighborhood", name: "Leagrave" },
+        { "@type": "Neighborhood", name: "Limbury" },
+        { "@type": "Neighborhood", name: "Stockwood Park" },
+        { "@type": "Neighborhood", name: "Caddington" },
+        { "@type": "Neighborhood", name: "Bramingham" },
+        { "@type": "Neighborhood", name: "Sundon Park" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  middlesbrough: {
+    ...baseSchema,
+    name: "Man and Van Club — Middlesbrough",
+    description:
+      "Free man and van request service in Middlesbrough. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-middlesbrough",
+    areaServed: {
+      "@type": "City",
+      name: "Middlesbrough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Yorkshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Linthorpe" },
+        { "@type": "Neighborhood", name: "Acklam" },
+        { "@type": "Neighborhood", name: "Marton" },
+        { "@type": "Neighborhood", name: "Nunthorpe" },
+        { "@type": "Neighborhood", name: "Billingham" },
+        { "@type": "Neighborhood", name: "Stockton" },
+        { "@type": "Neighborhood", name: "Redcar" },
+        { "@type": "Neighborhood", name: "Guisborough" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  newport: {
+    ...baseSchema,
+    name: "Man and Van Club — Newport",
+    description:
+      "Free man and van request service in Newport. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-newport",
+    areaServed: {
+      "@type": "City",
+      name: "Newport",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Gwent"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Caerleon" },
+        { "@type": "Neighborhood", name: "Bettws" },
+        { "@type": "Neighborhood", name: "Maindee" },
+        { "@type": "Neighborhood", name: "Baneswell" },
+        { "@type": "Neighborhood", name: "Somerton" },
+        { "@type": "Neighborhood", name: "Gaer" },
+        { "@type": "Neighborhood", name: "Rogerstone" },
+        { "@type": "Neighborhood", name: "Pillgwenlly" },
+        { "@type": "Neighborhood", name: "Duffryn" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  ipswich: {
+    ...baseSchema,
+    name: "Man and Van Club — Ipswich",
+    description:
+      "Free man and van request service in Ipswich. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ipswich",
+    areaServed: {
+      "@type": "City",
+      name: "Ipswich",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Suffolk"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Felixstowe" },
+        { "@type": "Neighborhood", name: "Woodbridge" },
+        { "@type": "Neighborhood", name: "Kesgrave" },
+        { "@type": "Neighborhood", name: "Rushmere St Andrew" },
+        { "@type": "Neighborhood", name: "Claydon" },
+        { "@type": "Neighborhood", name: "Pinewood" },
+        { "@type": "Neighborhood", name: "Chantry" },
+        { "@type": "Neighborhood", name: "Bramford" },
+        { "@type": "Neighborhood", name: "Westerfield" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  exeter: {
+    ...baseSchema,
+    name: "Man and Van Club — Exeter",
+    description:
+      "Free man and van request service in Exeter. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-exeter",
+    areaServed: {
+      "@type": "City",
+      name: "Exeter",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Devon"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "St Leonards" },
+        { "@type": "Neighborhood", name: "Heavitree" },
+        { "@type": "Neighborhood", name: "Pinhoe" },
+        { "@type": "Neighborhood", name: "Alphington" },
+        { "@type": "Neighborhood", name: "Topsham" },
+        { "@type": "Neighborhood", name: "Cranbrook" },
+        { "@type": "Neighborhood", name: "Countess Wear" },
+        { "@type": "Neighborhood", name: "Whipton" },
+        { "@type": "Neighborhood", name: "St Thomas" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  derry: {
+    ...baseSchema,
+    name: "Man and Van Club — Derry",
+    description:
+      "Free man and van request service in Derry/Londonderry. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-derry",
+    areaServed: {
+      "@type": "City",
+      name: "Derry",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Londonderry"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Waterside" },
+        { "@type": "Neighborhood", name: "Creggan" },
+        { "@type": "Neighborhood", name: "Shantallow" },
+        { "@type": "Neighborhood", name: "Ballymagroarty" },
+        { "@type": "Neighborhood", name: "Foyle Bridge area" },
+        { "@type": "Neighborhood", name: "Clooney" },
+        { "@type": "Neighborhood", name: "Eglinton" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  inverness: {
+    ...baseSchema,
+    name: "Man and Van Club — Inverness",
+    description:
+      "Free man and van request service in Inverness. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-inverness",
+    areaServed: {
+      "@type": "City",
+      name: "Inverness",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Highland"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Culloden" },
+        { "@type": "Neighborhood", name: "Dingwall" },
+        { "@type": "Neighborhood", name: "Nairn" },
+        { "@type": "Neighborhood", name: "Beauly" },
+        { "@type": "Neighborhood", name: "Drumnadrochit" },
+        { "@type": "Neighborhood", name: "Fortrose" },
+        { "@type": "Neighborhood", name: "Aviemore" },
+        { "@type": "Neighborhood", name: "Munlochy" },
+        { "@type": "Neighborhood", name: "Alness" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  colchester: {
+    ...baseSchema,
+    name: "Man and Van Club — Colchester",
+    description:
+      "Free man and van request service in Colchester. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-colchester",
+    areaServed: {
+      "@type": "City",
+      name: "Colchester",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Essex"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Lexden" },
+        { "@type": "Neighborhood", name: "Prettygate" },
+        { "@type": "Neighborhood", name: "Stanway" },
+        { "@type": "Neighborhood", name: "Greenstead" },
+        { "@type": "Neighborhood", name: "Highwoods" },
+        { "@type": "Neighborhood", name: "Tiptree" },
+        { "@type": "Neighborhood", name: "Wivenhoe" },
+        { "@type": "Neighborhood", name: "Layer-de-la-Haye" },
+        { "@type": "Neighborhood", name: "Marks Tey" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  doncaster: {
+    ...baseSchema,
+    name: "Man and Van Club — Doncaster",
+    description:
+      "Free man and van request service in Doncaster. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-doncaster",
+    areaServed: {
+      "@type": "City",
+      name: "Doncaster",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "South Yorkshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Bessacarr" },
+        { "@type": "Neighborhood", name: "Wheatley" },
+        { "@type": "Neighborhood", name: "Cantley" },
+        { "@type": "Neighborhood", name: "Edenthorpe" },
+        { "@type": "Neighborhood", name: "Armthorpe" },
+        { "@type": "Neighborhood", name: "Hatfield" },
+        { "@type": "Neighborhood", name: "Rossington" },
+        { "@type": "Neighborhood", name: "Sprotbrough" },
+        { "@type": "Neighborhood", name: "Finningley" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  crawley: {
+    ...baseSchema,
+    name: "Man and Van Club — Crawley",
+    description:
+      "Free man and van request service in Crawley. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-crawley",
+    areaServed: {
+      "@type": "City",
+      name: "Crawley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Sussex"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Three Bridges" },
+        { "@type": "Neighborhood", name: "Ifield" },
+        { "@type": "Neighborhood", name: "Pound Hill" },
+        { "@type": "Neighborhood", name: "Tilgate" },
+        { "@type": "Neighborhood", name: "Broadfield" },
+        { "@type": "Neighborhood", name: "Bewbush" },
+        { "@type": "Neighborhood", name: "Gossops Green" },
+        { "@type": "Neighborhood", name: "Southgate" },
+        { "@type": "Neighborhood", name: "West Green" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  basildon: {
+    ...baseSchema,
+    name: "Man and Van Club — Basildon",
+    description:
+      "Free man and van request service in Basildon. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-basildon",
+    areaServed: {
+      "@type": "City",
+      name: "Basildon",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Essex"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Pitsea" },
+        { "@type": "Neighborhood", name: "Laindon" },
+        { "@type": "Neighborhood", name: "Wickford" },
+        { "@type": "Neighborhood", name: "Billericay" },
+        { "@type": "Neighborhood", name: "Langdon Hills" },
+        { "@type": "Neighborhood", name: "Vange" },
+        { "@type": "Neighborhood", name: "Lee Chapel" },
+        { "@type": "Neighborhood", name: "Great Burstead" },
+        { "@type": "Neighborhood", name: "Dunton" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  slough: {
+    ...baseSchema,
+    name: "Man and Van Club — Slough",
+    description:
+      "Free man and van request service in Slough. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-slough",
+    areaServed: {
+      "@type": "City",
+      name: "Slough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Berkshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Cippenham" },
+        { "@type": "Neighborhood", name: "Langley" },
+        { "@type": "Neighborhood", name: "Britwell" },
+        { "@type": "Neighborhood", name: "Wexham" },
+        { "@type": "Neighborhood", name: "Chalvey" },
+        { "@type": "Neighborhood", name: "Upton" },
+        { "@type": "Neighborhood", name: "Iver" },
+        { "@type": "Neighborhood", name: "Colnbrook" },
+        { "@type": "Neighborhood", name: "Datchet" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  gateshead: {
+    ...baseSchema,
+    name: "Man and Van Club — Gateshead",
+    description:
+      "Free man and van request service in Gateshead. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-gateshead",
+    areaServed: {
+      "@type": "City",
+      name: "Gateshead",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Tyne and Wear"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Low Fell" },
+        { "@type": "Neighborhood", name: "Gateshead Quays" },
+        { "@type": "Neighborhood", name: "Bensham" },
+        { "@type": "Neighborhood", name: "Saltwell" },
+        { "@type": "Neighborhood", name: "Deckham" },
+        { "@type": "Neighborhood", name: "Dunston" },
+        { "@type": "Neighborhood", name: "Whickham" },
+        { "@type": "Neighborhood", name: "Blaydon" },
+        { "@type": "Neighborhood", name: "Rowlands Gill" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  barnsley: {
+    ...baseSchema,
+    name: "Man and Van Club — Barnsley",
+    description:
+      "Free man and van request service in Barnsley. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-barnsley",
+    areaServed: {
+      "@type": "City",
+      name: "Barnsley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "South Yorkshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Dodworth" },
+        { "@type": "Neighborhood", name: "Penistone" },
+        { "@type": "Neighborhood", name: "Hoyland" },
+        { "@type": "Neighborhood", name: "Wombwell" },
+        { "@type": "Neighborhood", name: "Royston" },
+        { "@type": "Neighborhood", name: "Cudworth" },
+        { "@type": "Neighborhood", name: "Monk Bretton" },
+        { "@type": "Neighborhood", name: "Goldthorpe" },
+        { "@type": "Neighborhood", name: "Thurnscoe" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  aberystwyth: {
+    ...baseSchema,
+    name: "Man and Van Club — Aberystwyth",
+    description:
+      "Free man and van request service in Aberystwyth. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-aberystwyth",
+    areaServed: {
+      "@type": "City",
+      name: "Aberystwyth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Ceredigion"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Penparcau" },
+        { "@type": "Neighborhood", name: "Llanbadarn Fawr" },
+        { "@type": "Neighborhood", name: "Borth" },
+        { "@type": "Neighborhood", name: "Trefechan" },
+        { "@type": "Neighborhood", name: "Comins Coch" },
+        { "@type": "Neighborhood", name: "Capel Bangor" },
+        { "@type": "Neighborhood", name: "Bow Street" },
+        { "@type": "Neighborhood", name: "Clarach" },
+        { "@type": "Neighborhood", name: "Talybont" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery"]
+  },
+  bangor: {
+    ...baseSchema,
+    name: "Man and Van Club — Bangor",
+    description:
+      "Free man and van request service in Bangor. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bangor",
+    areaServed: {
+      "@type": "City",
+      name: "Bangor",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Gwynedd"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Hirael" },
+        { "@type": "Neighborhood", name: "Garth" },
+        { "@type": "Neighborhood", name: "Port Penrhyn" },
+        { "@type": "Neighborhood", name: "Tregarth" },
+        { "@type": "Neighborhood", name: "Bethel" },
+        { "@type": "Neighborhood", name: "Llanberis" },
+        { "@type": "Neighborhood", name: "Menai Bridge" },
+        { "@type": "Neighborhood", name: "Beaumaris" },
+        { "@type": "Neighborhood", name: "Caernarfon" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Furniture Delivery"]
+  },
+  darlington: {
+    ...baseSchema,
+    name: "Man and Van Club — Darlington",
+    description:
+      "Free man and van request service in Darlington. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-darlington",
+    areaServed: {
+      "@type": "City",
+      name: "Darlington",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Durham"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Northgate" },
+        { "@type": "Neighborhood", name: "Haughton" },
+        { "@type": "Neighborhood", name: "Faverdale" },
+        { "@type": "Neighborhood", name: "Brinkburn" },
+        { "@type": "Neighborhood", name: "Cockerton" },
+        { "@type": "Neighborhood", name: "Hurstworth" },
+        { "@type": "Neighborhood", name: "Sadberge" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  durham: {
+    ...baseSchema,
+    name: "Man and Van Club — Durham",
+    description:
+      "Free man and van request service in Durham. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-durham",
+    areaServed: {
+      "@type": "City",
+      name: "Durham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Durham"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Gilesgate" },
+        { "@type": "Neighborhood", name: "Framwellgate Moor" },
+        { "@type": "Neighborhood", name: "Nevilles Cross" },
+        { "@type": "Neighborhood", name: "Claypath" },
+        { "@type": "Neighborhood", name: "Belmont" },
+        { "@type": "Neighborhood", name: "Aykley Heads" },
+        { "@type": "Neighborhood", name: "Dragonville" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Student Moves", "Office Relocations", "Furniture Delivery"]
+  },
+  "east-kilbride": {
+    ...baseSchema,
+    name: "Man and Van Club — East Kilbride",
+    description:
+      "Free man and van request service in East Kilbride. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-east-kilbride",
+    areaServed: {
+      "@type": "City",
+      name: "East Kilbride",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "South Lanarkshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "The Village" },
+        { "@type": "Neighborhood", name: "Greenhills" },
+        { "@type": "Neighborhood", name: "Stewartfield" },
+        { "@type": "Neighborhood", name: "West Mains" },
+        { "@type": "Neighborhood", name: "Calderwood" },
+        { "@type": "Neighborhood", name: "Mossneuk" },
+        { "@type": "Neighborhood", name: "Hairmyres" },
+        { "@type": "Neighborhood", name: "Murray" },
+        { "@type": "Neighborhood", name: "Whitehills" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  falkirk: {
+    ...baseSchema,
+    name: "Man and Van Club — Falkirk",
+    description:
+      "Free man and van request service in Falkirk. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-falkirk",
+    areaServed: {
+      "@type": "City",
+      name: "Falkirk",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Falkirk"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Grangemouth" },
+        { "@type": "Neighborhood", name: "Larbert" },
+        { "@type": "Neighborhood", name: "Denny" },
+        { "@type": "Neighborhood", name: "Bonnybridge" },
+        { "@type": "Neighborhood", name: "Polmont" },
+        { "@type": "Neighborhood", name: "Camelon" },
+        { "@type": "Neighborhood", name: "Bainsford" },
+        { "@type": "Neighborhood", name: "Brightons" },
+        { "@type": "Neighborhood", name: "Reddingmuirhead" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  hartlepool: {
+    ...baseSchema,
+    name: "Man and Van Club — Hartlepool",
+    description:
+      "Free man and van request service in Hartlepool. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-hartlepool",
+    areaServed: {
+      "@type": "City",
+      name: "Hartlepool",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Durham"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Headland" },
+        { "@type": "Neighborhood", name: "Seaton Carew" },
+        { "@type": "Neighborhood", name: "West Park" },
+        { "@type": "Neighborhood", name: "Throston" },
+        { "@type": "Neighborhood", name: "Elwick" },
+        { "@type": "Neighborhood", name: "Owton" },
+        { "@type": "Neighborhood", name: "Rift House" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  horsham: {
+    ...baseSchema,
+    name: "Man and Van Club — Horsham",
+    description:
+      "Free man and van request service in Horsham. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-horsham",
+    areaServed: {
+      "@type": "City",
+      name: "Horsham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Sussex"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Broadbridge Heath" },
+        { "@type": "Neighborhood", name: "Southwater" },
+        { "@type": "Neighborhood", name: "Billingshurst" },
+        { "@type": "Neighborhood", name: "Henfield" },
+        { "@type": "Neighborhood", name: "Steyning" },
+        { "@type": "Neighborhood", name: "Pulborough" },
+        { "@type": "Neighborhood", name: "Warnham" },
+        { "@type": "Neighborhood", name: "Rusper" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  lisburn: {
+    ...baseSchema,
+    name: "Man and Van Club — Lisburn",
+    description:
+      "Free man and van request service in Lisburn. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-lisburn",
+    areaServed: {
+      "@type": "City",
+      name: "Lisburn",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Antrim"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Hillsborough" },
+        { "@type": "Neighborhood", name: "Moira" },
+        { "@type": "Neighborhood", name: "Lambeg" },
+        { "@type": "Neighborhood", name: "Knockmore" },
+        { "@type": "Neighborhood", name: "Lisnasharragh" },
+        { "@type": "Neighborhood", name: "Hilden" },
+        { "@type": "Neighborhood", name: "Maze" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  livingston: {
+    ...baseSchema,
+    name: "Man and Van Club — Livingston",
+    description:
+      "Free man and van request service in Livingston. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-livingston",
+    areaServed: {
+      "@type": "City",
+      name: "Livingston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Lothian"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Dedridge" },
+        { "@type": "Neighborhood", name: "Murieston" },
+        { "@type": "Neighborhood", name: "Adambrae" },
+        { "@type": "Neighborhood", name: "Boghall" },
+        { "@type": "Neighborhood", name: "Eliburn" },
+        { "@type": "Neighborhood", name: "Deans" },
+        { "@type": "Neighborhood", name: "Broxburn" },
+        { "@type": "Neighborhood", name: "Uphall" },
+        { "@type": "Neighborhood", name: "Winchburgh" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  maidstone: {
+    ...baseSchema,
+    name: "Man and Van Club — Maidstone",
+    description:
+      "Free man and van request service in Maidstone. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-maidstone",
+    areaServed: {
+      "@type": "City",
+      name: "Maidstone",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Kent"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Bearsted" },
+        { "@type": "Neighborhood", name: "Loose" },
+        { "@type": "Neighborhood", name: "Detling" },
+        { "@type": "Neighborhood", name: "Marden" },
+        { "@type": "Neighborhood", name: "Yalding" },
+        { "@type": "Neighborhood", name: "Headcorn" },
+        { "@type": "Neighborhood", name: "Birling" },
+        { "@type": "Neighborhood", name: "Parkwood" },
+        { "@type": "Neighborhood", name: "Shepway" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  medway: {
+    ...baseSchema,
+    name: "Man and Van Club — Medway",
+    description:
+      "Free man and van request service in Medway. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-medway",
+    areaServed: {
+      "@type": "City",
+      name: "Medway",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Kent"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Rochester" },
+        { "@type": "Neighborhood", name: "Chatham" },
+        { "@type": "Neighborhood", name: "Gillingham" },
+        { "@type": "Neighborhood", name: "Strood" },
+        { "@type": "Neighborhood", name: "Rainham" },
+        { "@type": "Neighborhood", name: "Cuxton" },
+        { "@type": "Neighborhood", name: "Halling" },
+        { "@type": "Neighborhood", name: "Hoo" },
+        { "@type": "Neighborhood", name: "Walderslade" },
+        { "@type": "Neighborhood", name: "Lordswood" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  newry: {
+    ...baseSchema,
+    name: "Man and Van Club — Newry",
+    description:
+      "Free man and van request service in Newry. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-newry",
+    areaServed: {
+      "@type": "City",
+      name: "Newry",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Down"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Warrenpoint" },
+        { "@type": "Neighborhood", name: "Crossmaglen" },
+        { "@type": "Neighborhood", name: "Kilkeel" },
+        { "@type": "Neighborhood", name: "Rostrevor" },
+        { "@type": "Neighborhood", name: "Bessbrook" },
+        { "@type": "Neighborhood", name: "Camlough" },
+        { "@type": "Neighborhood", name: "Meigh" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  paisley: {
+    ...baseSchema,
+    name: "Man and Van Club — Paisley",
+    description:
+      "Free man and van request service in Paisley. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-paisley",
+    areaServed: {
+      "@type": "City",
+      name: "Paisley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Renfrewshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Gallowhill" },
+        { "@type": "Neighborhood", name: "Foxbar" },
+        { "@type": "Neighborhood", name: "Ferguslie" },
+        { "@type": "Neighborhood", name: "Elderslie" },
+        { "@type": "Neighborhood", name: "Johnstone" },
+        { "@type": "Neighborhood", name: "Renfrew" },
+        { "@type": "Neighborhood", name: "Linwood" },
+        { "@type": "Neighborhood", name: "Shortroods" },
+        { "@type": "Neighborhood", name: "Ralston" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  perth: {
+    ...baseSchema,
+    name: "Man and Van Club — Perth",
+    description:
+      "Free man and van request service in Perth. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-perth",
+    areaServed: {
+      "@type": "City",
+      name: "Perth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Perth and Kinross"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Scone" },
+        { "@type": "Neighborhood", name: "Crieff" },
+        { "@type": "Neighborhood", name: "Auchterarder" },
+        { "@type": "Neighborhood", name: "Blairgowrie" },
+        { "@type": "Neighborhood", name: "Coupar Angus" },
+        { "@type": "Neighborhood", name: "Bridge of Earn" },
+        { "@type": "Neighborhood", name: "Stanley" },
+        { "@type": "Neighborhood", name: "Luncarty" },
+        { "@type": "Neighborhood", name: "Muirton" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  rotherham: {
+    ...baseSchema,
+    name: "Man and Van Club — Rotherham",
+    description:
+      "Free man and van request service in Rotherham. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-rotherham",
+    areaServed: {
+      "@type": "City",
+      name: "Rotherham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "South Yorkshire"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Wickersley" },
+        { "@type": "Neighborhood", name: "Bramley" },
+        { "@type": "Neighborhood", name: "Maltby" },
+        { "@type": "Neighborhood", name: "Rawmarsh" },
+        { "@type": "Neighborhood", name: "Wath-upon-Dearne" },
+        { "@type": "Neighborhood", name: "Swinton" },
+        { "@type": "Neighborhood", name: "Aston" },
+        { "@type": "Neighborhood", name: "Thurcroft" },
+        { "@type": "Neighborhood", name: "Kimberworth" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  stirling: {
+    ...baseSchema,
+    name: "Man and Van Club — Stirling",
+    description:
+      "Free man and van request service in Stirling. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-stirling",
+    areaServed: {
+      "@type": "City",
+      name: "Stirling",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Stirling"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Bridge of Allan" },
+        { "@type": "Neighborhood", name: "Dunblane" },
+        { "@type": "Neighborhood", name: "Bannockburn" },
+        { "@type": "Neighborhood", name: "Causewayhead" },
+        { "@type": "Neighborhood", name: "Raploch" },
+        { "@type": "Neighborhood", name: "St Ninians" },
+        { "@type": "Neighborhood", name: "Fallin" },
+        { "@type": "Neighborhood", name: "Cambusbarron" },
+        { "@type": "Neighborhood", name: "Throsk" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  torquay: {
+    ...baseSchema,
+    name: "Man and Van Club — Torbay",
+    description:
+      "Free man and van request service in Torquay and the Torbay area. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-torquay",
+    areaServed: {
+      "@type": "City",
+      name: "Torbay",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Devon"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Torquay" },
+        { "@type": "Neighborhood", name: "Paignton" },
+        { "@type": "Neighborhood", name: "Brixham" },
+        { "@type": "Neighborhood", name: "Chelston" },
+        { "@type": "Neighborhood", name: "Ellacombe" },
+        { "@type": "Neighborhood", name: "St Marychurch" },
+        { "@type": "Neighborhood", name: "Cockington" },
+        { "@type": "Neighborhood", name: "Galmpton" },
+        { "@type": "Neighborhood", name: "Maidenhall" },
+        { "@type": "Neighborhood", name: "Goodrington" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  truro: {
+    ...baseSchema,
+    name: "Man and Van Club — Truro",
+    description:
+      "Free man and van request service in Truro. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-truro",
+    areaServed: {
+      "@type": "City",
+      name: "Truro",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cornwall"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "City Centre" },
+        { "@type": "Neighborhood", name: "Newham" },
+        { "@type": "Neighborhood", name: "Tregolls" },
+        { "@type": "Neighborhood", name: "Highertown" },
+        { "@type": "Neighborhood", name: "Kenwyn" },
+        { "@type": "Neighborhood", name: "Malpas" },
+        { "@type": "Neighborhood", name: "Shortlandsend" },
+        { "@type": "Neighborhood", name: "Probus" },
+        { "@type": "Neighborhood", name: "St Clement" },
+        { "@type": "Neighborhood", name: "Feock" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  wrexham: {
+    ...baseSchema,
+    name: "Man and Van Club — Wrexham",
+    description:
+      "Free man and van request service in Wrexham. Submit your move details securely so a verified mover can review them and send quote options before you decide whether to book.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-wrexham",
+    areaServed: {
+      "@type": "City",
+      name: "Wrexham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Clwyd"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Town Centre" },
+        { "@type": "Neighborhood", name: "Gresford" },
+        { "@type": "Neighborhood", name: "Rhosddu" },
+        { "@type": "Neighborhood", name: "Broughton" },
+        { "@type": "Neighborhood", name: "Ruabon" },
+        { "@type": "Neighborhood", name: "Chirk" },
+        { "@type": "Neighborhood", name: "Coedpoeth" },
+        { "@type": "Neighborhood", name: "Bangor-on-Dee" },
+        { "@type": "Neighborhood", name: "Hightown" },
+        { "@type": "Neighborhood", name: "Acton" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  }
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {
