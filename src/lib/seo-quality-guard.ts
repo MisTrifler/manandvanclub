@@ -194,6 +194,63 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "plymouth",
   // ─── North Yorkshire (1) ───
   "york",
+
+  // ─── Northern Ireland (4 — NEW) ───
+  "belfast",
+  "derry",
+  "lisburn",
+  "newry",
+
+  // ─── North East expansion (6 — NEW) ───
+  "sunderland",
+  "middlesbrough",
+  "gateshead",
+  "darlington",
+  "durham",
+  "hartlepool",
+
+  // ─── South Yorkshire expansion (3 — NEW) ───
+  "doncaster",
+  "rotherham",
+  "barnsley",
+
+  // ─── South East expansion (8 — NEW) ───
+  "brighton",
+  "milton-keynes",
+  "luton",
+  "bournemouth",
+  "slough",
+  "medway",
+  "crawley",
+  "maidstone",
+  "horsham",
+
+  // ─── East of England expansion (5 — NEW) ───
+  "peterborough",
+  "norwich",
+  "ipswich",
+  "colchester",
+  "basildon",
+
+  // ─── South West expansion (3 — NEW) ───
+  "exeter",
+  "torquay",
+  "truro",
+
+  // ─── Wales expansion (4 — NEW) ───
+  "newport",
+  "wrexham",
+  "bangor",
+  "aberystwyth",
+
+  // ─── Scotland expansion (7 — NEW) ───
+  "inverness",
+  "stirling",
+  "perth",
+  "paisley",
+  "east-kilbride",
+  "livingston",
+  "falkirk",
 ]);
 
 export function isSeoLaunchMode(): boolean {
