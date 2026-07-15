@@ -132,6 +132,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/blog/what-to-tell-your-mover-before-moving-day', priority: 0.85, freq: 'monthly' as const },
     { route: '/blog/birmingham-postcode-moving-guide', priority: 0.85, freq: 'monthly' as const },
     { route: '/blog/london-borough-moving-guide', priority: 0.85, freq: 'monthly' as const },
+    { route: '/blog/what-affects-man-and-van-prices', priority: 0.85, freq: 'monthly' as const },
+    { route: '/blog/same-day-move-guide', priority: 0.85, freq: 'monthly' as const },
     { route: '/man-and-van-prices', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-near-me', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-vs-removal-company', priority: 0.85, freq: 'weekly' as const },

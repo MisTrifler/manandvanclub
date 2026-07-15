@@ -74,8 +74,16 @@ const organizationSchema = {
     "telephone": "+44-121-751-1269",
     "contactType": "customer support",
     "availableLanguage": "English",
-    "areaServed": "GB"
+    "areaServed": "GB",
+    "hoursAvailable": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "09:00", "closes": "18:00" }
+    ]
   },
+  "acceptedPaymentMethod": ["DebitCard", "CreditCard"],
+  "priceRange": "££",
+  "currenciesAccepted": "GBP",
   "email": "support@manandvanclub.co.uk",
   "address": {
     "@type": "PostalAddress",
@@ -161,6 +169,14 @@ const organizationSchema = {
           "@type": "Service",
           "name": "Long-Distance Removals",
           "url": `${siteUrl}/long-distance-removals`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Facebook Marketplace Collection",
+          "url": `${siteUrl}/facebook-marketplace-collection`
         }
       }
     ]

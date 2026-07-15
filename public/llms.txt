@@ -36,6 +36,11 @@
 - https://www.manandvanclub.co.uk/man-and-van-glasgow — Glasgow hub: West End, Shawlands, Dennistoun, Partick, Edinburgh nearby
 - https://www.manandvanclub.co.uk/man-and-van-cardiff — Cardiff hub: Swansea, Newport, Barry
 - https://www.manandvanclub.co.uk/man-and-van-newcastle-upon-tyne — Newcastle hub: Gateshead, Sunderland, Durham
+- https://www.manandvanclub.co.uk/man-and-van-hull — Hull hub: East Yorkshire, A1079 corridor, student moves, Broughty Ferry
+- https://www.manandvanclub.co.uk/man-and-van-york — York hub: North Yorkshire, A64 corridor, student moves, Fulford, Heslington
+- https://www.manandvanclub.co.uk/man-and-van-aberdeen — Aberdeen hub: North-East Scotland, A90 corridor, granite tenements, energy-sector moves
+- https://www.manandvanclub.co.uk/man-and-van-swansea — Swansea hub: South West Wales, M4 corridor, student moves, Mumbles, Uplands
+- https://www.manandvanclub.co.uk/man-and-van-dundee — Dundee hub: East Scotland, A90 corridor, student moves, Kingsway, Broughty Ferry
 
 ### Target Location Pages (West Midlands)
 - https://www.manandvanclub.co.uk/man-and-van-birmingham — Birmingham mover quotes, city-centre flats, student moves, Clean Air Zone routes, Edgbaston, Selly Oak, Jewellery Quarter
@@ -69,6 +74,8 @@
 - https://www.manandvanclub.co.uk/blog/what-to-tell-your-mover-before-moving-day — Key details to share with your mover: parking, stairs, access, item sizes
 - https://www.manandvanclub.co.uk/blog/birmingham-postcode-moving-guide — Birmingham B-postcode moving guide: access, parking and route challenges by area
 - https://www.manandvanclub.co.uk/blog/london-borough-moving-guide — London borough moving guide: parking rules, ULEZ, Congestion Charge and access by area
+- https://www.manandvanclub.co.uk/blog/what-affects-man-and-van-prices — What affects man and van prices: 9 factors that change your quote (distance, load, stairs, parking, timing, access, same-day premium, region, route)
+- https://www.manandvanclub.co.uk/blog/same-day-move-guide — Same-day man and van guide: when it is possible, what it costs, how to improve your chances
 
 ### Information
 - https://www.manandvanclub.co.uk/how-it-works — Step-by-step matching process

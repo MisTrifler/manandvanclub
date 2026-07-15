@@ -396,11 +396,22 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   const serviceData = servicePageData[slug];
   if (serviceData) {
+    // Build 3-level breadcrumb for service pages: Home → Services → Page Name
+    const serviceBreadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/man-and-van-near-me` },
+        { "@type": "ListItem", position: 3, name: serviceData.name, item: `${siteUrl}/${slug}` },
+      ],
+    };
     const serviceDataWithSlug = {
       ...serviceData,
       slug,
       pageType: "service" as const,
       localBusinessSchema: buildServiceSchema(serviceData, slug),
+      breadcrumbSchema: serviceBreadcrumbSchema,
     };
     return <CityServiceContent data={serviceDataWithSlug} faqItems={serviceData.faq} formIntent={serviceData.formIntent as IntentType} />;
   }
