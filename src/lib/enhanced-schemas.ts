@@ -2043,6 +2043,1590 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
       ]
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  abington: {
+    ...baseSchema,
+    name: "Man and Van Club — Abington",
+    description:
+      "Free man and van quote request service in Abington, Northamptonshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-abington`,
+    areaServed: {
+      "@type": "City",
+      name: "Abington",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  acton: {
+    ...baseSchema,
+    name: "Man and Van Club — Acton",
+    description:
+      "Free man and van quote request service in Acton, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-acton`,
+    areaServed: {
+      "@type": "City",
+      name: "Acton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  aldridge: {
+    ...baseSchema,
+    name: "Man and Van Club — Aldridge",
+    description:
+      "Free man and van quote request service in Aldridge, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-aldridge`,
+    areaServed: {
+      "@type": "City",
+      name: "Aldridge",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  altrincham: {
+    ...baseSchema,
+    name: "Man and Van Club — Altrincham",
+    description:
+      "Free man and van quote request service in Altrincham, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-altrincham`,
+    areaServed: {
+      "@type": "City",
+      name: "Altrincham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  alvaston: {
+    ...baseSchema,
+    name: "Man and Van Club — Alvaston",
+    description:
+      "Free man and van quote request service in Alvaston, Derbyshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-alvaston`,
+    areaServed: {
+      "@type": "City",
+      name: "Alvaston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  arnold: {
+    ...baseSchema,
+    name: "Man and Van Club — Arnold",
+    description:
+      "Free man and van quote request service in Arnold, Nottinghamshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-arnold`,
+    areaServed: {
+      "@type": "City",
+      name: "Arnold",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  "ashton-under-lyne": {
+    ...baseSchema,
+    name: "Man and Van Club — Ashton-under-Lyne",
+    description:
+      "Free man and van quote request service in Ashton-under-Lyne, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-ashton-under-lyne`,
+    areaServed: {
+      "@type": "City",
+      name: "Ashton-under-Lyne",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  barnet: {
+    ...baseSchema,
+    name: "Man and Van Club — Barnet",
+    description:
+      "Free man and van quote request service in Barnet, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-barnet`,
+    areaServed: {
+      "@type": "City",
+      name: "Barnet",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bath: {
+    ...baseSchema,
+    name: "Man and Van Club — Bath",
+    description:
+      "Free man and van quote request service in Bath, Somerset. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bath`,
+    areaServed: {
+      "@type": "City",
+      name: "Bath",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Somerset"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  batley: {
+    ...baseSchema,
+    name: "Man and Van Club — Batley",
+    description:
+      "Free man and van quote request service in Batley, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-batley`,
+    areaServed: {
+      "@type": "City",
+      name: "Batley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  beeston: {
+    ...baseSchema,
+    name: "Man and Van Club — Beeston",
+    description:
+      "Free man and van quote request service in Beeston, Nottinghamshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-beeston`,
+    areaServed: {
+      "@type": "City",
+      name: "Beeston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bexley: {
+    ...baseSchema,
+    name: "Man and Van Club — Bexley",
+    description:
+      "Free man and van quote request service in Bexley, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bexley`,
+    areaServed: {
+      "@type": "City",
+      name: "Bexley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bilston: {
+    ...baseSchema,
+    name: "Man and Van Club — Bilston",
+    description:
+      "Free man and van quote request service in Bilston, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bilston`,
+    areaServed: {
+      "@type": "City",
+      name: "Bilston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  birkenhead: {
+    ...baseSchema,
+    name: "Man and Van Club — Birkenhead",
+    description:
+      "Free man and van quote request service in Birkenhead, Merseyside. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-birkenhead`,
+    areaServed: {
+      "@type": "City",
+      name: "Birkenhead",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bloxwich: {
+    ...baseSchema,
+    name: "Man and Van Club — Bloxwich",
+    description:
+      "Free man and van quote request service in Bloxwich, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bloxwich`,
+    areaServed: {
+      "@type": "City",
+      name: "Bloxwich",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bolton: {
+    ...baseSchema,
+    name: "Man and Van Club — Bolton",
+    description:
+      "Free man and van quote request service in Bolton, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bolton`,
+    areaServed: {
+      "@type": "City",
+      name: "Bolton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bootle: {
+    ...baseSchema,
+    name: "Man and Van Club — Bootle",
+    description:
+      "Free man and van quote request service in Bootle, Merseyside. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bootle`,
+    areaServed: {
+      "@type": "City",
+      name: "Bootle",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  braunstone: {
+    ...baseSchema,
+    name: "Man and Van Club — Braunstone",
+    description:
+      "Free man and van quote request service in Braunstone, Leicestershire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-braunstone`,
+    areaServed: {
+      "@type": "City",
+      name: "Braunstone",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bridgwater: {
+    ...baseSchema,
+    name: "Man and Van Club — Bridgwater",
+    description:
+      "Free man and van quote request service in Bridgwater, Somerset. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bridgwater`,
+    areaServed: {
+      "@type": "City",
+      name: "Bridgwater",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Somerset"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bromley: {
+    ...baseSchema,
+    name: "Man and Van Club — Bromley",
+    description:
+      "Free man and van quote request service in Bromley, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bromley`,
+    areaServed: {
+      "@type": "City",
+      name: "Bromley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  bury: {
+    ...baseSchema,
+    name: "Man and Van Club — Bury",
+    description:
+      "Free man and van quote request service in Bury, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-bury`,
+    areaServed: {
+      "@type": "City",
+      name: "Bury",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  cannock: {
+    ...baseSchema,
+    name: "Man and Van Club — Cannock",
+    description:
+      "Free man and van quote request service in Cannock, Staffordshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-cannock`,
+    areaServed: {
+      "@type": "City",
+      name: "Cannock",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Staffordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  carlton: {
+    ...baseSchema,
+    name: "Man and Van Club — Carlton",
+    description:
+      "Free man and van quote request service in Carlton, Nottinghamshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-carlton`,
+    areaServed: {
+      "@type": "City",
+      name: "Carlton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  chaddesden: {
+    ...baseSchema,
+    name: "Man and Van Club — Chaddesden",
+    description:
+      "Free man and van quote request service in Chaddesden, Derbyshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-chaddesden`,
+    areaServed: {
+      "@type": "City",
+      name: "Chaddesden",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  cheltenham: {
+    ...baseSchema,
+    name: "Man and Van Club — Cheltenham",
+    description:
+      "Free man and van quote request service in Cheltenham, Gloucestershire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-cheltenham`,
+    areaServed: {
+      "@type": "City",
+      name: "Cheltenham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Gloucestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  chiswick: {
+    ...baseSchema,
+    name: "Man and Van Club — Chiswick",
+    description:
+      "Free man and van quote request service in Chiswick, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-chiswick`,
+    areaServed: {
+      "@type": "City",
+      name: "Chiswick",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  croydon: {
+    ...baseSchema,
+    name: "Man and Van Club — Croydon",
+    description:
+      "Free man and van quote request service in Croydon, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-croydon`,
+    areaServed: {
+      "@type": "City",
+      name: "Croydon",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  darlaston: {
+    ...baseSchema,
+    name: "Man and Van Club — Darlaston",
+    description:
+      "Free man and van quote request service in Darlaston, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-darlaston`,
+    areaServed: {
+      "@type": "City",
+      name: "Darlaston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  dewsbury: {
+    ...baseSchema,
+    name: "Man and Van Club — Dewsbury",
+    description:
+      "Free man and van quote request service in Dewsbury, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-dewsbury`,
+    areaServed: {
+      "@type": "City",
+      name: "Dewsbury",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  dudley: {
+    ...baseSchema,
+    name: "Man and Van Club — Dudley",
+    description:
+      "Free man and van quote request service in Dudley, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-dudley`,
+    areaServed: {
+      "@type": "City",
+      name: "Dudley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  duston: {
+    ...baseSchema,
+    name: "Man and Van Club — Duston",
+    description:
+      "Free man and van quote request service in Duston, Northamptonshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-duston`,
+    areaServed: {
+      "@type": "City",
+      name: "Duston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  ealing: {
+    ...baseSchema,
+    name: "Man and Van Club — Ealing",
+    description:
+      "Free man and van quote request service in Ealing, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-ealing`,
+    areaServed: {
+      "@type": "City",
+      name: "Ealing",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  edgware: {
+    ...baseSchema,
+    name: "Man and Van Club — Edgware",
+    description:
+      "Free man and van quote request service in Edgware, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-edgware`,
+    areaServed: {
+      "@type": "City",
+      name: "Edgware",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  enfield: {
+    ...baseSchema,
+    name: "Man and Van Club — Enfield",
+    description:
+      "Free man and van quote request service in Enfield, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-enfield`,
+    areaServed: {
+      "@type": "City",
+      name: "Enfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  evington: {
+    ...baseSchema,
+    name: "Man and Van Club — Evington",
+    description:
+      "Free man and van quote request service in Evington, Leicestershire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-evington`,
+    areaServed: {
+      "@type": "City",
+      name: "Evington",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  finchley: {
+    ...baseSchema,
+    name: "Man and Van Club — Finchley",
+    description:
+      "Free man and van quote request service in Finchley, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-finchley`,
+    areaServed: {
+      "@type": "City",
+      name: "Finchley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  frome: {
+    ...baseSchema,
+    name: "Man and Van Club — Frome",
+    description:
+      "Free man and van quote request service in Frome, Somerset. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-frome`,
+    areaServed: {
+      "@type": "City",
+      name: "Frome",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Somerset"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  gloucester: {
+    ...baseSchema,
+    name: "Man and Van Club — Gloucester",
+    description:
+      "Free man and van quote request service in Gloucester, Gloucestershire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-gloucester`,
+    areaServed: {
+      "@type": "City",
+      name: "Gloucester",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Gloucestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  greenwich: {
+    ...baseSchema,
+    name: "Man and Van Club — Greenwich",
+    description:
+      "Free man and van quote request service in Greenwich, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-greenwich`,
+    areaServed: {
+      "@type": "City",
+      name: "Greenwich",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  halesowen: {
+    ...baseSchema,
+    name: "Man and Van Club — Halesowen",
+    description:
+      "Free man and van quote request service in Halesowen, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-halesowen`,
+    areaServed: {
+      "@type": "City",
+      name: "Halesowen",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  halifax: {
+    ...baseSchema,
+    name: "Man and Van Club — Halifax",
+    description:
+      "Free man and van quote request service in Halifax, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-halifax`,
+    areaServed: {
+      "@type": "City",
+      name: "Halifax",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  harrow: {
+    ...baseSchema,
+    name: "Man and Van Club — Harrow",
+    description:
+      "Free man and van quote request service in Harrow, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-harrow`,
+    areaServed: {
+      "@type": "City",
+      name: "Harrow",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  hounslow: {
+    ...baseSchema,
+    name: "Man and Van Club — Hounslow",
+    description:
+      "Free man and van quote request service in Hounslow, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-hounslow`,
+    areaServed: {
+      "@type": "City",
+      name: "Hounslow",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  hucknall: {
+    ...baseSchema,
+    name: "Man and Van Club — Hucknall",
+    description:
+      "Free man and van quote request service in Hucknall, Nottinghamshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-hucknall`,
+    areaServed: {
+      "@type": "City",
+      name: "Hucknall",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  huddersfield: {
+    ...baseSchema,
+    name: "Man and Van Club — Huddersfield",
+    description:
+      "Free man and van quote request service in Huddersfield, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-huddersfield`,
+    areaServed: {
+      "@type": "City",
+      name: "Huddersfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  huyton: {
+    ...baseSchema,
+    name: "Man and Van Club — Huyton",
+    description:
+      "Free man and van quote request service in Huyton, Merseyside. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-huyton`,
+    areaServed: {
+      "@type": "City",
+      name: "Huyton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  hyde: {
+    ...baseSchema,
+    name: "Man and Van Club — Hyde",
+    description:
+      "Free man and van quote request service in Hyde, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-hyde`,
+    areaServed: {
+      "@type": "City",
+      name: "Hyde",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  ilford: {
+    ...baseSchema,
+    name: "Man and Van Club — Ilford",
+    description:
+      "Free man and van quote request service in Ilford, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-ilford`,
+    areaServed: {
+      "@type": "City",
+      name: "Ilford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  keighley: {
+    ...baseSchema,
+    name: "Man and Van Club — Keighley",
+    description:
+      "Free man and van quote request service in Keighley, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-keighley`,
+    areaServed: {
+      "@type": "City",
+      name: "Keighley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  kingsthorpe: {
+    ...baseSchema,
+    name: "Man and Van Club — Kingsthorpe",
+    description:
+      "Free man and van quote request service in Kingsthorpe, Northamptonshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-kingsthorpe`,
+    areaServed: {
+      "@type": "City",
+      name: "Kingsthorpe",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  kingston: {
+    ...baseSchema,
+    name: "Man and Van Club — Kingston upon Thames",
+    description:
+      "Free man and van quote request service in Kingston upon Thames, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-kingston`,
+    areaServed: {
+      "@type": "City",
+      name: "Kingston upon Thames",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  leigh: {
+    ...baseSchema,
+    name: "Man and Van Club — Leigh",
+    description:
+      "Free man and van quote request service in Leigh, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-leigh`,
+    areaServed: {
+      "@type": "City",
+      name: "Leigh",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  lewisham: {
+    ...baseSchema,
+    name: "Man and Van Club — Lewisham",
+    description:
+      "Free man and van quote request service in Lewisham, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-lewisham`,
+    areaServed: {
+      "@type": "City",
+      name: "Lewisham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  lichfield: {
+    ...baseSchema,
+    name: "Man and Van Club — Lichfield",
+    description:
+      "Free man and van quote request service in Lichfield, Staffordshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-lichfield`,
+    areaServed: {
+      "@type": "City",
+      name: "Lichfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Staffordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  littleover: {
+    ...baseSchema,
+    name: "Man and Van Club — Littleover",
+    description:
+      "Free man and van quote request service in Littleover, Derbyshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-littleover`,
+    areaServed: {
+      "@type": "City",
+      name: "Littleover",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  mickleover: {
+    ...baseSchema,
+    name: "Man and Van Club — Mickleover",
+    description:
+      "Free man and van quote request service in Mickleover, Derbyshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-mickleover`,
+    areaServed: {
+      "@type": "City",
+      name: "Mickleover",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  mitcham: {
+    ...baseSchema,
+    name: "Man and Van Club — Mitcham",
+    description:
+      "Free man and van quote request service in Mitcham, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-mitcham`,
+    areaServed: {
+      "@type": "City",
+      name: "Mitcham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  morley: {
+    ...baseSchema,
+    name: "Man and Van Club — Morley",
+    description:
+      "Free man and van quote request service in Morley, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-morley`,
+    areaServed: {
+      "@type": "City",
+      name: "Morley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  "north-hykeham": {
+    ...baseSchema,
+    name: "Man and Van Club — North Hykeham",
+    description:
+      "Free man and van quote request service in North Hykeham, Lincolnshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-north-hykeham`,
+    areaServed: {
+      "@type": "City",
+      name: "North Hykeham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  nuneaton: {
+    ...baseSchema,
+    name: "Man and Van Club — Nuneaton",
+    description:
+      "Free man and van quote request service in Nuneaton, Warwickshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-nuneaton`,
+    areaServed: {
+      "@type": "City",
+      name: "Nuneaton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Warwickshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  oadby: {
+    ...baseSchema,
+    name: "Man and Van Club — Oadby",
+    description:
+      "Free man and van quote request service in Oadby, Leicestershire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-oadby`,
+    areaServed: {
+      "@type": "City",
+      name: "Oadby",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  oldbury: {
+    ...baseSchema,
+    name: "Man and Van Club — Oldbury",
+    description:
+      "Free man and van quote request service in Oldbury, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-oldbury`,
+    areaServed: {
+      "@type": "City",
+      name: "Oldbury",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  oldham: {
+    ...baseSchema,
+    name: "Man and Van Club — Oldham",
+    description:
+      "Free man and van quote request service in Oldham, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-oldham`,
+    areaServed: {
+      "@type": "City",
+      name: "Oldham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  prescot: {
+    ...baseSchema,
+    name: "Man and Van Club — Prescot",
+    description:
+      "Free man and van quote request service in Prescot, Merseyside. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-prescot`,
+    areaServed: {
+      "@type": "City",
+      name: "Prescot",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  pudsey: {
+    ...baseSchema,
+    name: "Man and Van Club — Pudsey",
+    description:
+      "Free man and van quote request service in Pudsey, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-pudsey`,
+    areaServed: {
+      "@type": "City",
+      name: "Pudsey",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  richmond: {
+    ...baseSchema,
+    name: "Man and Van Club — Richmond",
+    description:
+      "Free man and van quote request service in Richmond, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-richmond`,
+    areaServed: {
+      "@type": "City",
+      name: "Richmond",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  rochdale: {
+    ...baseSchema,
+    name: "Man and Van Club — Rochdale",
+    description:
+      "Free man and van quote request service in Rochdale, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-rochdale`,
+    areaServed: {
+      "@type": "City",
+      name: "Rochdale",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  romford: {
+    ...baseSchema,
+    name: "Man and Van Club — Romford",
+    description:
+      "Free man and van quote request service in Romford, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-romford`,
+    areaServed: {
+      "@type": "City",
+      name: "Romford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  rugby: {
+    ...baseSchema,
+    name: "Man and Van Club — Rugby",
+    description:
+      "Free man and van quote request service in Rugby, Warwickshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-rugby`,
+    areaServed: {
+      "@type": "City",
+      name: "Rugby",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Warwickshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  salford: {
+    ...baseSchema,
+    name: "Man and Van Club — Salford",
+    description:
+      "Free man and van quote request service in Salford, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-salford`,
+    areaServed: {
+      "@type": "City",
+      name: "Salford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  solihull: {
+    ...baseSchema,
+    name: "Man and Van Club — Solihull",
+    description:
+      "Free man and van quote request service in Solihull, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-solihull`,
+    areaServed: {
+      "@type": "City",
+      name: "Solihull",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  southport: {
+    ...baseSchema,
+    name: "Man and Van Club — Southport",
+    description:
+      "Free man and van quote request service in Southport, Merseyside. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-southport`,
+    areaServed: {
+      "@type": "City",
+      name: "Southport",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  "st-helens": {
+    ...baseSchema,
+    name: "Man and Van Club — St Helens",
+    description:
+      "Free man and van quote request service in St Helens, Merseyside. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-st-helens`,
+    areaServed: {
+      "@type": "City",
+      name: "St Helens",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  stalybridge: {
+    ...baseSchema,
+    name: "Man and Van Club — Stalybridge",
+    description:
+      "Free man and van quote request service in Stalybridge, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-stalybridge`,
+    areaServed: {
+      "@type": "City",
+      name: "Stalybridge",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  stockport: {
+    ...baseSchema,
+    name: "Man and Van Club — Stockport",
+    description:
+      "Free man and van quote request service in Stockport, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-stockport`,
+    areaServed: {
+      "@type": "City",
+      name: "Stockport",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  stourbridge: {
+    ...baseSchema,
+    name: "Man and Van Club — Stourbridge",
+    description:
+      "Free man and van quote request service in Stourbridge, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-stourbridge`,
+    areaServed: {
+      "@type": "City",
+      name: "Stourbridge",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  stratford: {
+    ...baseSchema,
+    name: "Man and Van Club — Stratford",
+    description:
+      "Free man and van quote request service in Stratford, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-stratford`,
+    areaServed: {
+      "@type": "City",
+      name: "Stratford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  sutton: {
+    ...baseSchema,
+    name: "Man and Van Club — Sutton",
+    description:
+      "Free man and van quote request service in Sutton, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-sutton`,
+    areaServed: {
+      "@type": "City",
+      name: "Sutton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  tamworth: {
+    ...baseSchema,
+    name: "Man and Van Club — Tamworth",
+    description:
+      "Free man and van quote request service in Tamworth, Staffordshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-tamworth`,
+    areaServed: {
+      "@type": "City",
+      name: "Tamworth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Staffordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  taunton: {
+    ...baseSchema,
+    name: "Man and Van Club — Taunton",
+    description:
+      "Free man and van quote request service in Taunton, Somerset. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-taunton`,
+    areaServed: {
+      "@type": "City",
+      name: "Taunton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Somerset"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  tipton: {
+    ...baseSchema,
+    name: "Man and Van Club — Tipton",
+    description:
+      "Free man and van quote request service in Tipton, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-tipton`,
+    areaServed: {
+      "@type": "City",
+      name: "Tipton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  tottenham: {
+    ...baseSchema,
+    name: "Man and Van Club — Tottenham",
+    description:
+      "Free man and van quote request service in Tottenham, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-tottenham`,
+    areaServed: {
+      "@type": "City",
+      name: "Tottenham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  trafford: {
+    ...baseSchema,
+    name: "Man and Van Club — Trafford",
+    description:
+      "Free man and van quote request service in Trafford, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-trafford`,
+    areaServed: {
+      "@type": "City",
+      name: "Trafford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  trowbridge: {
+    ...baseSchema,
+    name: "Man and Van Club — Trowbridge",
+    description:
+      "Free man and van quote request service in Trowbridge, Wiltshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-trowbridge`,
+    areaServed: {
+      "@type": "City",
+      name: "Trowbridge",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Wiltshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  twickenham: {
+    ...baseSchema,
+    name: "Man and Van Club — Twickenham",
+    description:
+      "Free man and van quote request service in Twickenham, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-twickenham`,
+    areaServed: {
+      "@type": "City",
+      name: "Twickenham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  wakefield: {
+    ...baseSchema,
+    name: "Man and Van Club — Wakefield",
+    description:
+      "Free man and van quote request service in Wakefield, West Yorkshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-wakefield`,
+    areaServed: {
+      "@type": "City",
+      name: "Wakefield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  wallasey: {
+    ...baseSchema,
+    name: "Man and Van Club — Wallasey",
+    description:
+      "Free man and van quote request service in Wallasey, Merseyside. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-wallasey`,
+    areaServed: {
+      "@type": "City",
+      name: "Wallasey",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  walthamstow: {
+    ...baseSchema,
+    name: "Man and Van Club — Walthamstow",
+    description:
+      "Free man and van quote request service in Walthamstow, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-walthamstow`,
+    areaServed: {
+      "@type": "City",
+      name: "Walthamstow",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  wednesbury: {
+    ...baseSchema,
+    name: "Man and Van Club — Wednesbury",
+    description:
+      "Free man and van quote request service in Wednesbury, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-wednesbury`,
+    areaServed: {
+      "@type": "City",
+      name: "Wednesbury",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  wembley: {
+    ...baseSchema,
+    name: "Man and Van Club — Wembley",
+    description:
+      "Free man and van quote request service in Wembley, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-wembley`,
+    areaServed: {
+      "@type": "City",
+      name: "Wembley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  "west-bridgford": {
+    ...baseSchema,
+    name: "Man and Van Club — West Bridgford",
+    description:
+      "Free man and van quote request service in West Bridgford, Nottinghamshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-west-bridgford`,
+    areaServed: {
+      "@type": "City",
+      name: "West Bridgford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  "west-bromwich": {
+    ...baseSchema,
+    name: "Man and Van Club — West Bromwich",
+    description:
+      "Free man and van quote request service in West Bromwich, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-west-bromwich`,
+    areaServed: {
+      "@type": "City",
+      name: "West Bromwich",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  "weston-super-mare": {
+    ...baseSchema,
+    name: "Man and Van Club — Weston-super-Mare",
+    description:
+      "Free man and van quote request service in Weston-super-Mare, Somerset. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-weston-super-mare`,
+    areaServed: {
+      "@type": "City",
+      name: "Weston-super-Mare",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Somerset"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  widnes: {
+    ...baseSchema,
+    name: "Man and Van Club — Widnes",
+    description:
+      "Free man and van quote request service in Widnes, Cheshire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-widnes`,
+    areaServed: {
+      "@type": "City",
+      name: "Widnes",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cheshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  wigan: {
+    ...baseSchema,
+    name: "Man and Van Club — Wigan",
+    description:
+      "Free man and van quote request service in Wigan, Greater Manchester. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-wigan`,
+    areaServed: {
+      "@type": "City",
+      name: "Wigan",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  wigston: {
+    ...baseSchema,
+    name: "Man and Van Club — Wigston",
+    description:
+      "Free man and van quote request service in Wigston, Leicestershire. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-wigston`,
+    areaServed: {
+      "@type": "City",
+      name: "Wigston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  willenhall: {
+    ...baseSchema,
+    name: "Man and Van Club — Willenhall",
+    description:
+      "Free man and van quote request service in Willenhall, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-willenhall`,
+    areaServed: {
+      "@type": "City",
+      name: "Willenhall",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  "wood-green": {
+    ...baseSchema,
+    name: "Man and Van Club — Wood Green",
+    description:
+      "Free man and van quote request service in Wood Green, Greater London. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-wood-green`,
+    areaServed: {
+      "@type": "City",
+      name: "Wood Green",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater London"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
+  yeovil: {
+    ...baseSchema,
+    name: "Man and Van Club — Yeovil",
+    description:
+      "Free man and van quote request service in Yeovil, Somerset. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-yeovil`,
+    areaServed: {
+      "@type": "City",
+      name: "Yeovil",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Somerset"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
   }
 };
 
