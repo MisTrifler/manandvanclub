@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, MapPin, Phone, ShieldCheck, CheckCircle2 } from "lucide-react";
 
+const siteUrl = "https://www.manandvanclub.co.uk";
+
 export const metadata: Metadata = {
   title: "Man and Van Prices UK 2026 | Hourly Rates & Move Costs | Man and Van Club",
   description:
@@ -14,14 +16,14 @@ export const metadata: Metadata = {
     description:
       "UK man and van prices in 2026. Compare hourly rates, full-day costs and per-move pricing for house removals, flat moves, furniture delivery and same-day jobs.",
     url: "https://www.manandvanclub.co.uk/man-and-van-prices",
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Prices UK 2026 | Man and Van Club" }],
+    images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Prices UK")}&subtitle=${encodeURIComponent("2026 Transparent Pricing")}`, width: 1200, height: 630, alt: "Man and Van Prices UK 2026 | Man and Van Club" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Prices UK 2026 | Hourly Rates & Move Costs",
     description:
       "UK man and van prices in 2026. Compare hourly rates and per-move pricing across the West Midlands and UK.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Prices UK")}&subtitle=${encodeURIComponent("2026 Transparent Pricing")}`],
   },
 };
 

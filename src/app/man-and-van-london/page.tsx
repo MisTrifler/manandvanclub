@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: "Man and Van London | Verified Mover Quotes from £55",
     description: "Submit a free man and van request across London. From Croydon to Wembley, one verified mover reviews your details before you book. From £55/hr.",
     url: `${baseUrl}/man-and-van-london`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van London | Verified Mover Quotes" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: "Man and Van London | Verified Mover Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van London | Verified Mover Quotes from £55",
     description: "Submit a free man and van request across London. From Croydon to Wembley, one verified mover reviews your details before you book.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
   },
 };
 

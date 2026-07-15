@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "How to Pack for a House Move: Room-by-Room Guide",
     description: "A practical room-by-room packing guide covering kitchen, bedroom, living room, bathroom and more. What to pack first and what to leave for moving day.",
     url: `${baseUrl}/blog/how-to-pack-for-a-house-move`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "How to Pack for a House Move" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("How to Pack for a House Move")}&subtitle=${encodeURIComponent("Room-by-Room Packing Guide")}`, width: 1200, height: 630, alt: "How to Pack for a House Move" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Pack for a House Move: Room-by-Room Guide",
     description: "A practical room-by-room packing guide covering kitchen, bedroom, living room, bathroom and more.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("How to Pack for a House Move")}&subtitle=${encodeURIComponent("Room-by-Room Packing Guide")}`],
   },
 };
 

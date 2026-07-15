@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     title: "Moving Cost Calculator | Estimate Your Man and Van Price",
     description: "Estimate your man and van cost in seconds. Select move type, region and access for an instant guide price.",
     url: `${baseUrl}/moving-cost-calculator`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Moving Cost Calculator — Man and Van Club" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Moving Cost Calculator")}&subtitle=${encodeURIComponent("Estimate Your Move Cost")}`, width: 1200, height: 630, alt: "Moving Cost Calculator — Man and Van Club" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Moving Cost Calculator | Estimate Your Man and Van Price",
     description: "Estimate your man and van cost in seconds. Free guide price based on move type, region and access.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Moving Cost Calculator")}&subtitle=${encodeURIComponent("Estimate Your Move Cost")}`],
   },
 };
 

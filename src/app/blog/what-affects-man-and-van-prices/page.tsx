@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: "What Affects Man and Van Prices in 2026",
     description: "The 9 factors that change your man and van quote: distance, load size, stairs, parking, timing, access, same-day premium, region and route.",
     url: `${baseUrl}/blog/what-affects-man-and-van-prices`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "What Affects Man and Van Prices" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("What Affects Man and Van Prices")}&subtitle=${encodeURIComponent("Understanding Your Quote")}`, width: 1200, height: 630, alt: "What Affects Man and Van Prices" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "What Affects Man and Van Prices in 2026",
     description: "The 9 factors that change your man and van quote: distance, load size, stairs, parking, timing, access, same-day premium, region and route.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("What Affects Man and Van Prices")}&subtitle=${encodeURIComponent("Understanding Your Quote")}`],
   },
 };
 

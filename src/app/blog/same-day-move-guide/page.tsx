@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: "Same-Day Man and Van Guide 2026",
     description: "How to get a same-day man and van: when it is possible, what it costs, how to improve your chances.",
     url: `${baseUrl}/blog/same-day-move-guide`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Same-Day Man and Van Guide" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Same-Day Man and Van")}&subtitle=${encodeURIComponent("Emergency Move Advice")}`, width: 1200, height: 630, alt: "Same-Day Man and Van" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Same-Day Man and Van Guide 2026",
     description: "How to get a same-day man and van: when it is possible, what it costs, how to improve your chances.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Same-Day Man and Van")}&subtitle=${encodeURIComponent("Emergency Move Advice")}`],
   },
 };
 

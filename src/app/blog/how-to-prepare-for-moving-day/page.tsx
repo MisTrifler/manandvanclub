@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "How to Prepare for Moving Day: Complete Checklist",
     description: "A practical moving day checklist covering packing, access notes, parking arrangements and everything you need to do before, during and after your move.",
     url: `${baseUrl}/blog/how-to-prepare-for-moving-day`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "How to Prepare for Moving Day" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("How to Prepare for Moving Day")}&subtitle=${encodeURIComponent("Checklist & Tips")}`, width: 1200, height: 630, alt: "How to Prepare for Moving Day" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Prepare for Moving Day: Complete Checklist",
     description: "A practical moving day checklist covering packing, access notes, parking and everything you need to do before, during and after your move.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("How to Prepare for Moving Day")}&subtitle=${encodeURIComponent("Checklist & Tips")}`],
   },
 };
 

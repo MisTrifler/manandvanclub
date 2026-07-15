@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Ultimate House Moving Checklist UK 2026",
     description: "The complete UK house moving checklist — from 8 weeks before to the day you collect the keys. Every admin task covered.",
     url: `${baseUrl}/blog/house-moving-checklist-uk`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "House Moving Checklist UK" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("House Moving Checklist UK")}&subtitle=${encodeURIComponent("Complete 2026 Move Planner")}`, width: 1200, height: 630, alt: "House Moving Checklist UK" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ultimate House Moving Checklist UK 2026",
     description: "The complete UK house moving checklist — from 8 weeks before to moving day. Every admin task covered.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("House Moving Checklist UK")}&subtitle=${encodeURIComponent("Complete 2026 Move Planner")}`],
   },
 };
 

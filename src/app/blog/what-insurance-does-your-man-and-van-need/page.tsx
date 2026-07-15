@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "What Insurance Does Your Man and Van Need?",
     description: "Goods in Transit, Public Liability, employer's liability — the insurance movers need and customers should check before booking.",
     url: `${baseUrl}/blog/what-insurance-does-your-man-and-van-need`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Insurance Guide" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Insurance Guide")}&subtitle=${encodeURIComponent("What Cover You Need")}`, width: 1200, height: 630, alt: "Man and Van Insurance Guide" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "What Insurance Does Your Man and Van Need?",
     description: "The insurance movers need and customers should check before booking. No jargon.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Insurance Guide")}&subtitle=${encodeURIComponent("What Cover You Need")}`],
   },
 };
 

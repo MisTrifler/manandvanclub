@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description:
       "Submit a free move request in 5 simple steps. One verified mover reviews your anonymised details and sends a quote before you decide whether to book.",
     url: `${siteUrl}/how-it-works`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "How Man and Van Club Works" }],
+    images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("How Man and Van Club Works")}&subtitle=${encodeURIComponent("Simple 3-Step Process")}`, width: 1200, height: 630, alt: "How Man and Van Club Works" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "How It Works | Free Move Request Process | Man and Van Club",
     description:
       "Submit a free move request in 5 simple steps. One verified mover reviews your anonymised details and sends a quote before you decide whether to book.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${siteUrl}/api/og?title=${encodeURIComponent("How Man and Van Club Works")}&subtitle=${encodeURIComponent("Simple 3-Step Process")}`],
   },
 };
 

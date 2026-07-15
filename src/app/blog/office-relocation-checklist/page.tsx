@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Office Relocation Checklist: What to Plan Before Moving Day",
     description: "A practical office relocation checklist for small and medium businesses. IT, furniture, comms, staff and logistics.",
     url: `${baseUrl}/blog/office-relocation-checklist`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Office Relocation Checklist" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Office Relocation Checklist")}&subtitle=${encodeURIComponent("Step-by-Step Move Plan")}`, width: 1200, height: 630, alt: "Office Relocation Checklist" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Office Relocation Checklist: What to Plan Before Moving Day",
     description: "A practical office relocation checklist for small and medium businesses moving premises.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Office Relocation Checklist")}&subtitle=${encodeURIComponent("Step-by-Step Move Plan")}`],
   },
 };
 

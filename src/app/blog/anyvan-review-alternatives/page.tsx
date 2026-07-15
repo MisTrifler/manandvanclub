@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "AnyVan Review: Is It Worth It? Plus Cheaper Alternatives",
     description: "An honest look at how AnyVan works, what customers say, and when a marketplace model might be the better option.",
     url: `${baseUrl}/blog/anyvan-review-alternatives`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "AnyVan Review" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("AnyVan Review & Alternatives")}&subtitle=${encodeURIComponent("Compare Man and Van Services")}`, width: 1200, height: 630, alt: "AnyVan Review & Alternatives" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AnyVan Review: Is It Worth It? Plus Cheaper Alternatives",
     description: "An honest look at how AnyVan works and when a marketplace model might be better.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("AnyVan Review & Alternatives")}&subtitle=${encodeURIComponent("Compare Man and Van Services")}`],
   },
 };
 

@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Man and Van Edinburgh | Verified Mover Quotes from £50",
     description: "Submit a free man and van request in Edinburgh. One verified mover reviews your details before you book. From £50/hr.",
     url: `${baseUrl}/man-and-van-edinburgh`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Edinburgh | Verified Mover Quotes from £50" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Edinburgh")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £50")}`, width: 1200, height: 630, alt: "Man and Van Edinburgh | Verified Mover Quotes from £50" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Edinburgh | Verified Mover Quotes from £50",
     description: "Submit a free man and van request in Edinburgh. One verified mover reviews your details before you book. From £50/hr.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Edinburgh")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £50")}`],
   },
 };
 

@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Do I Need to Empty Drawers for Movers?",
     description: "Can you leave clothes in drawers when moving house? It depends on the furniture. Here's what to empty and what you can leave.",
     url: `${baseUrl}/blog/do-i-need-to-empty-drawers-for-movers`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Empty Drawers for Movers" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Empty Drawers for Movers?")}&subtitle=${encodeURIComponent("What You Need to Know")}`, width: 1200, height: 630, alt: "Empty Drawers for Movers?" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Do I Need to Empty Drawers for Movers?",
     description: "Can you leave clothes in drawers when moving? It depends on the furniture. Here's what to empty and what you can leave.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Empty Drawers for Movers?")}&subtitle=${encodeURIComponent("What You Need to Know")}`],
   },
 };
 

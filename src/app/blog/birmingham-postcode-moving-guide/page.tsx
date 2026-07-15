@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Birmingham Postcode Moving Guide | B-Postcode Areas Explained",
     description: "Moving in Birmingham? Each B postcode has different access, parking and route challenges. This guide covers B1 to B75.",
     url: `${baseUrl}/blog/birmingham-postcode-moving-guide`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Birmingham Postcode Moving Guide" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Birmingham Postcode Moving Guide")}&subtitle=${encodeURIComponent("Area-by-Area Move Advice")}`, width: 1200, height: 630, alt: "Birmingham Postcode Moving Guide" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Birmingham Postcode Moving Guide | B-Postcode Areas Explained",
     description: "Moving in Birmingham? Each B postcode has different access, parking and route challenges.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Birmingham Postcode Moving Guide")}&subtitle=${encodeURIComponent("Area-by-Area Move Advice")}`],
   },
 };
 

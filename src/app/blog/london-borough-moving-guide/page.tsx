@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "London Borough Moving Guide | What to Know Before You Move",
     description: "Moving in London? Each borough has different parking rules, congestion charges and access challenges.",
     url: `${baseUrl}/blog/london-borough-moving-guide`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "London Borough Moving Guide" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("London Borough Moving Guide")}&subtitle=${encodeURIComponent("Area-by-Area Move Advice")}`, width: 1200, height: 630, alt: "London Borough Moving Guide" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "London Borough Moving Guide | What to Know Before You Move",
     description: "Moving in London? Each borough has different parking rules, congestion charges and access challenges.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("London Borough Moving Guide")}&subtitle=${encodeURIComponent("Area-by-Area Move Advice")}`],
   },
 };
 

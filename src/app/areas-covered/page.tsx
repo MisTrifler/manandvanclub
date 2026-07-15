@@ -1,6 +1,8 @@
 import AreasCoveredContent from "./AreasCoveredContent";
 import { Metadata } from "next";
 
+const siteUrl = "https://www.manandvanclub.co.uk";
+
 export const metadata: Metadata = {
   title: "Areas Covered | UK-Wide Man and Van Services | Man and Van Club",
   description:
@@ -12,13 +14,13 @@ export const metadata: Metadata = {
     title: "Areas Covered | UK-Wide Man and Van Services",
     description: "Man and Van Club covers towns and cities across England, Scotland and Wales. Find your area and submit a free request.",
     url: 'https://www.manandvanclub.co.uk/areas-covered',
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Areas Covered — Man and Van Club" }],
+    images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("Areas Covered")}&subtitle=${encodeURIComponent("UK-Wide Mover Coverage")}`, width: 1200, height: 630, alt: "Areas Covered — Man and Van Club" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Areas Covered | UK-Wide Man and Van Services",
     description: "Man and Van Club covers towns and cities across England, Scotland and Wales.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${siteUrl}/api/og?title=${encodeURIComponent("Areas Covered")}&subtitle=${encodeURIComponent("UK-Wide Mover Coverage")}`],
   },
 };
 

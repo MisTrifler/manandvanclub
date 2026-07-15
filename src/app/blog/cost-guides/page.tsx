@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Moving Cost Guides | Man and Van Club Blog",
     description: "Real pricing data for UK moves — based on actual man and van quotes.",
     url: `${baseUrl}/blog/cost-guides`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Moving Cost Guides" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Moving Cost Guides")}&subtitle=${encodeURIComponent("UK Man and Van Pricing Advice")}`, width: 1200, height: 630, alt: "Moving Cost Guides" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Moving Cost Guides | Man and Van Club Blog",
     description: "Real pricing data for UK moves — based on actual man and van quotes.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Moving Cost Guides")}&subtitle=${encodeURIComponent("UK Man and Van Pricing Advice")}`],
   },
 };
 

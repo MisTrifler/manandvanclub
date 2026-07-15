@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Area Moving Guides | Man and Van Club Blog",
     description: "Local moving guides for UK cities — parking, access, Clean Air Zones and route tips.",
     url: `${baseUrl}/blog/area-guides`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Area Moving Guides" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Area Moving Guides")}&subtitle=${encodeURIComponent("City & Borough Move Advice")}`, width: 1200, height: 630, alt: "Area Moving Guides" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Area Moving Guides | Man and Van Club Blog",
     description: "Local moving guides for UK cities — parking, access, Clean Air Zones and route tips.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Area Moving Guides")}&subtitle=${encodeURIComponent("City & Borough Move Advice")}`],
   },
 };
 

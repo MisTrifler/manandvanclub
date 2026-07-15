@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "How to Move a Piano Without Damage",
     description: "Moving a piano is not like moving a sofa. What can go wrong, how professionals do it, and why you shouldn't attempt it alone.",
     url: `${baseUrl}/blog/how-to-move-a-piano-without-damage`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "How to Move a Piano" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("How to Move a Piano Safely")}&subtitle=${encodeURIComponent("Protection & Transport Tips")}`, width: 1200, height: 630, alt: "How to Move a Piano Safely" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Move a Piano Without Damage",
     description: "Moving a piano is not like moving a sofa. What can go wrong and how professionals do it differently.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("How to Move a Piano Safely")}&subtitle=${encodeURIComponent("Protection & Transport Tips")}`],
   },
 };
 

@@ -3,6 +3,8 @@ import { ArrowUpRight, CheckCircle2, HelpCircle, ShieldCheck, Users, CreditCard,
 import { Metadata } from "next";
 import FAQ from "@/components/FAQ";
 
+const siteUrl = "https://www.manandvanclub.co.uk";
+
 export const metadata: Metadata = {
   title: "Booking Deposit Pricing | Man and Van Club",
   description: "Simple booking deposit pricing. The deposit is deducted from the mover's quote, so the customer's total move cost stays the same.",
@@ -13,13 +15,13 @@ export const metadata: Metadata = {
     title: "Booking Deposit Pricing | Man and Van Club",
     description: "Simple booking deposit pricing. The deposit is deducted from the mover's quote, so the customer's total move cost stays the same.",
     url: 'https://www.manandvanclub.co.uk/pricing',
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Pricing — Man and Van Club" }],
+    images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("Pricing")}&subtitle=${encodeURIComponent("Man and Van Club")}`, width: 1200, height: 630, alt: "Pricing — Man and Van Club" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Booking Deposit Pricing | Man and Van Club",
     description: "Simple booking deposit pricing. The deposit is deducted from the mover's quote.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${siteUrl}/api/og?title=${encodeURIComponent("Pricing")}&subtitle=${encodeURIComponent("Man and Van Club")}`],
   },
 };
 

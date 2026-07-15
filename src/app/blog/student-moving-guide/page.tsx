@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Student Moving Guide: How to Move on a Budget",
     description: "Practical advice for university students moving between term-time accommodation, including packing tips, timing, and how to keep man and van costs down.",
     url: `${baseUrl}/blog/student-moving-guide`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Student Moving Guide" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Student Moving Guide")}&subtitle=${encodeURIComponent("Affordable Moves for Students")}`, width: 1200, height: 630, alt: "Student Moving Guide" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Student Moving Guide: How to Move on a Budget",
     description: "Practical advice for university students moving between term-time accommodation, including packing tips and how to keep costs down.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Student Moving Guide")}&subtitle=${encodeURIComponent("Affordable Moves for Students")}`],
   },
 };
 

@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "What to Tell Your Mover Before Moving Day",
     description: "The details that make the difference between a smooth move and a stressful one. Parking, access, stairs, lifts, item sizes and timing — explained clearly.",
     url: `${baseUrl}/blog/what-to-tell-your-mover-before-moving-day`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "What to Tell Your Mover Before Moving Day" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("What to Tell Your Mover")}&subtitle=${encodeURIComponent("Essential Info Before Moving Day")}`, width: 1200, height: 630, alt: "What to Tell Your Mover" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "What to Tell Your Mover Before Moving Day",
     description: "The details that make the difference between a smooth move and a stressful one. Parking, access, stairs, lifts, item sizes and timing.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("What to Tell Your Mover")}&subtitle=${encodeURIComponent("Essential Info Before Moving Day")}`],
   },
 };
 

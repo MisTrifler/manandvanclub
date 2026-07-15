@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     title: "Man and Van Club vs AnyVan — Honest Comparison",
     description: "Compare Man and Van Club with AnyVan. Marketplace models, pricing transparency, commission structure and customer control.",
     url: `${siteUrl}/vs-anyvan`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Club vs AnyVan Comparison" }],
+    images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Club vs AnyVan")}&subtitle=${encodeURIComponent("Compare Moving Services")}`, width: 1200, height: 630, alt: "Man and Van Club vs AnyVan Comparison" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Club vs AnyVan — Honest Comparison",
     description: "Compare Man and Van Club with AnyVan. Marketplace models, pricing transparency and customer control.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Club vs AnyVan")}&subtitle=${encodeURIComponent("Compare Moving Services")}`],
   },
 };
 

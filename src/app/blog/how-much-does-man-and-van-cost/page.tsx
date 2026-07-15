@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "How Much Does a Man and Van Cost in 2026?",
     description: "A breakdown of man and van pricing across the UK, from West Midlands to London. Learn what affects the cost and how to get an accurate quote for your move.",
     url: `${baseUrl}/blog/how-much-does-man-and-van-cost`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "How Much Does a Man and Van Cost in 2026?" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("How Much Does a Man and Van Cost?")}&subtitle=${encodeURIComponent("2026 UK Price Guide")}`, width: 1200, height: 630, alt: "How Much Does a Man and Van Cost?" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "How Much Does a Man and Van Cost in 2026?",
     description: "A breakdown of man and van pricing across the UK. Learn what affects the cost and how to get an accurate quote.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("How Much Does a Man and Van Cost?")}&subtitle=${encodeURIComponent("2026 UK Price Guide")}`],
   },
 };
 

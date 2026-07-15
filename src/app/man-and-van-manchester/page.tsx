@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: "Man and Van Manchester | Verified Mover Quotes from £50",
     description: "Submit a free man and van request across Greater Manchester. From the city centre to Stockport and Bolton, one verified mover reviews your details before you book.",
     url: `${baseUrl}/man-and-van-manchester`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Manchester | Verified Mover Quotes" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Manchester")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: "Man and Van Manchester | Verified Mover Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Manchester | Verified Mover Quotes from £50",
     description: "Submit a free man and van request across Greater Manchester. One verified mover reviews your details before you book.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Manchester")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
   },
 };
 

@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     description:
       "Find a man and van near you across the UK. Submit a free move request and one verified local mover reviews your details before sending a quote.",
     url: `${siteUrl}/man-and-van-near-me`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Near Me — Find Local Verified Movers" }],
+    images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Near Me")}&subtitle=${encodeURIComponent("Find Local Verified Movers")}`, width: 1200, height: 630, alt: "Man and Van Near Me — Find Local Verified Movers" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Near Me | Find Local Verified Movers",
     description:
       "Find a man and van near you across the UK. Submit a free move request and one verified local mover reviews your details before sending a quote.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Near Me")}&subtitle=${encodeURIComponent("Find Local Verified Movers")}`],
   },
 };
 

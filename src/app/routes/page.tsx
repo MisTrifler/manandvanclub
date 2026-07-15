@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Man and Van Routes — City-to-City Move Quotes",
     description: "Man and van quotes for popular UK city-to-city moves. Verified movers, transparent pricing.",
     url: `${siteUrl}/routes`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Routes — City-to-City Move Quotes" }],
+    images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Routes")}&subtitle=${encodeURIComponent("City-to-City Move Quotes")}`, width: 1200, height: 630, alt: "Man and Van Routes — City-to-City Move Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Routes — City-to-City Move Quotes",
     description: "Man and van quotes for popular UK city-to-city moves. Verified movers, transparent pricing.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${siteUrl}/api/og?title=${encodeURIComponent("Man and Van Routes")}&subtitle=${encodeURIComponent("City-to-City Move Quotes")}`],
   },
 };
 

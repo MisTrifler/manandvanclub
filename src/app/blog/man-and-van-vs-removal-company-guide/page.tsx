@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Man and Van vs Removal Company: Which Is Right for You?",
     description: "Understand when a man and van is the better choice over a full removal company, and when you might need the extra capacity, crew and packing services.",
     url: `${baseUrl}/blog/man-and-van-vs-removal-company-guide`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van vs Removal Company" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van vs Removal Company")}&subtitle=${encodeURIComponent("Which Should You Choose?")}`, width: 1200, height: 630, alt: "Man and Van vs Removal Company" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van vs Removal Company: Which Is Right for You?",
     description: "Understand when a man and van is the better choice over a full removal company.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van vs Removal Company")}&subtitle=${encodeURIComponent("Which Should You Choose?")}`],
   },
 };
 

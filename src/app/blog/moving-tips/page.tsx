@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Moving Tips & Preparation Guides | Man and Van Club Blog",
     description: "Practical moving tips, packing guides and preparation checklists for UK moves.",
     url: `${baseUrl}/blog/moving-tips`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Moving Tips" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Moving Tips")}&subtitle=${encodeURIComponent("Prepare for a Smooth Move")}`, width: 1200, height: 630, alt: "Moving Tips" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Moving Tips & Preparation Guides | Man and Van Club Blog",
     description: "Practical moving tips, packing guides and preparation checklists for UK moves.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Moving Tips")}&subtitle=${encodeURIComponent("Prepare for a Smooth Move")}`],
   },
 };
 

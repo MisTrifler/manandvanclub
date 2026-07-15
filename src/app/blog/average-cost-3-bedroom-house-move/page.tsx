@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "Average Cost of a 3-Bedroom House Move in the UK (2026)",
     description: "Real cost breakdowns for moving a 3-bed house in the UK — by distance, region and access type. Based on actual man and van quotes, not inflated estimates.",
     url: `${baseUrl}/blog/average-cost-3-bedroom-house-move`,
-    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "3-Bedroom House Move Cost UK" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("3-Bed House Move Cost UK")}&subtitle=${encodeURIComponent("2026 Price Breakdown")}`, width: 1200, height: 630, alt: "3-Bed House Move Cost UK" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Average Cost of a 3-Bedroom House Move in the UK (2026)",
     description: "Real cost breakdowns for moving a 3-bed house in the UK — by distance, region and access type.",
-    images: ["/images/og-homepage.jpg"],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("3-Bed House Move Cost UK")}&subtitle=${encodeURIComponent("2026 Price Breakdown")}`],
   },
 };
 
