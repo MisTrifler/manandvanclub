@@ -220,6 +220,9 @@ export default function ManAndVanNearMePage() {
               { name: "Man and Van Edinburgh", href: "/man-and-van-edinburgh", desc: "Leith, Morningside, Corstorphine, Old Town" },
               { name: "Man and Van Cardiff", href: "/man-and-van-cardiff", desc: "Swansea, Newport, Barry, Bridgend" },
               { name: "Man and Van Newcastle", href: "/man-and-van-newcastle-upon-tyne", desc: "Gateshead, Sunderland, Durham, Middlesbrough" },
+              { name: "Man and Van Belfast", href: "/man-and-van-belfast", desc: "Titanic Quarter, Queen's, South Belfast, Holyland" },
+              { name: "Man and Van Brighton", href: "/man-and-van-brighton", desc: "Hove, Kemptown, Preston Park, Seven Dials" },
+              { name: "Man and Van Sunderland", href: "/man-and-van-sunderland", desc: "Roker, Seaburn, Washington, Hylton" },
             ].map((area) => (
               <Link
                 key={area.href}

@@ -42,6 +42,11 @@
 - https://www.manandvanclub.co.uk/man-and-van-swansea — Swansea hub: South West Wales, M4 corridor, student moves, Mumbles, Uplands
 - https://www.manandvanclub.co.uk/man-and-van-dundee — Dundee hub: East Scotland, A90 corridor, student moves, Kingsway, Broughty Ferry
 - https://www.manandvanclub.co.uk/man-and-van-stoke-on-trent — Stoke-on-Trent hub: Staffordshire, six pottery towns, A500 D-road, A50 link road, no Clean Air Zone
+- https://www.manandvanclub.co.uk/man-and-van-belfast — Belfast hub: Northern Ireland capital, Titanic Quarter, Queen's University, M1/M2 corridors, no Clean Air Zone
+- https://www.manandvanclub.co.uk/man-and-van-brighton — Brighton hub: South East coast, Regency terraces, CPZ parking, A23/M23 to London, no Clean Air Zone
+- https://www.manandvanclub.co.uk/man-and-van-sunderland — Sunderland hub: North East, River Wear, Roker seafront, A19 to Newcastle, no Clean Air Zone
+- https://www.manandvanclub.co.uk/man-and-van-milton-keynes — Milton Keynes hub: South East, grid road system, M1 junctions 13-15, no Clean Air Zone
+- https://www.manandvanclub.co.uk/man-and-van-bournemouth — Bournemouth hub: South Coast, Victorian terraces, Poole, Christchurch, A338/M27, no Clean Air Zone
 
 ### Target Location Pages (West Midlands)
 - https://www.manandvanclub.co.uk/man-and-van-birmingham — Birmingham mover quotes, city-centre flats, student moves, Clean Air Zone routes, Edgbaston, Selly Oak, Jewellery Quarter
