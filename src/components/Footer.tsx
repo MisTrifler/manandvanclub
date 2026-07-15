@@ -81,11 +81,11 @@ export default function Footer() {
 
           {/* Popular Areas — Nationwide coverage */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Popular Areas</h4>
-            <ul className="space-y-4 text-text-secondary">
+            <h4 className="font-bold text-lg mb-4">Popular Areas</h4>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-text-secondary text-sm">
               <li><Link href="/man-and-van-birmingham" className="hover:text-accent transition-colors">Birmingham</Link></li>
-              <li><Link href="/man-and-van-walsall" className="hover:text-accent transition-colors">Walsall</Link></li>
               <li><Link href="/man-and-van-london" className="hover:text-accent transition-colors">London</Link></li>
+              <li><Link href="/man-and-van-walsall" className="hover:text-accent transition-colors">Walsall</Link></li>
               <li><Link href="/man-and-van-manchester" className="hover:text-accent transition-colors">Manchester</Link></li>
               <li><Link href="/man-and-van-leeds" className="hover:text-accent transition-colors">Leeds</Link></li>
               <li><Link href="/man-and-van-liverpool" className="hover:text-accent transition-colors">Liverpool</Link></li>
@@ -102,8 +102,8 @@ export default function Footer() {
               <li><Link href="/man-and-van-dundee" className="hover:text-accent transition-colors">Dundee</Link></li>
               <li><Link href="/man-and-van-stoke-on-trent" className="hover:text-accent transition-colors">Stoke-on-Trent</Link></li>
             </ul>
-            <h4 className="font-bold text-lg mb-4 mt-6">Regional Hubs</h4>
-            <ul className="space-y-4 text-text-secondary">
+            <h4 className="font-bold text-sm mb-3 mt-6">Regional Hubs</h4>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-text-secondary text-sm">
               <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands</Link></li>
               <li><Link href="/man-and-van-east-midlands" className="hover:text-accent transition-colors">East Midlands</Link></li>
               <li><Link href="/man-and-van-london" className="hover:text-accent transition-colors">London</Link></li>
@@ -115,14 +115,14 @@ export default function Footer() {
               <li><Link href="/man-and-van-glasgow" className="hover:text-accent transition-colors">Scotland</Link></li>
               <li><Link href="/man-and-van-cardiff" className="hover:text-accent transition-colors">Wales</Link></li>
               <li><Link href="/man-and-van-newcastle-upon-tyne" className="hover:text-accent transition-colors">North East</Link></li>
-              <li><Link href="/areas-covered" className="hover:text-accent transition-colors font-bold">All Areas Covered</Link></li>
+              <li><Link href="/areas-covered" className="hover:text-accent transition-colors font-semibold">All Areas →</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Services</h4>
-            <ul className="space-y-4 text-text-secondary">
+            <h4 className="font-bold text-lg mb-4">Services</h4>
+            <ul className="space-y-2.5 text-text-secondary text-sm">
               <li><Link href="/house-removals" className="hover:text-accent transition-colors">House Removals</Link></li>
               <li><Link href="/flat-removals" className="hover:text-accent transition-colors">Flat Moves</Link></li>
               <li><Link href="/student-removals" className="hover:text-accent transition-colors">Student Moves</Link></li>
@@ -139,16 +139,16 @@ export default function Footer() {
 
           {/* For Customers & Movers combined */}
           <div>
-            <h4 className="font-bold text-lg mb-6">For Customers</h4>
-            <ul className="space-y-4 text-text-secondary">
+            <h4 className="font-bold text-lg mb-4">For Customers</h4>
+            <ul className="space-y-2.5 text-text-secondary text-sm">
               <li><Link href="/get-started" className="hover:text-accent transition-colors">Get Started</Link></li>
               <li><Link href="/how-it-works" className="hover:text-accent transition-colors">How It Works</Link></li>
               <li><Link href="/blog" className="hover:text-accent transition-colors">Moving Tips &amp; Blog</Link></li>
               <li><Link href="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
             </ul>
 
-            <h4 className="font-bold text-lg mb-6 mt-8">For Movers</h4>
-            <ul className="space-y-4 text-text-secondary">
+            <h4 className="font-bold text-lg mb-4 mt-6">For Movers</h4>
+            <ul className="space-y-2.5 text-text-secondary text-sm">
               <li><Link href="/why-join" className="hover:text-accent transition-colors">Become a Mover</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
               <li><Link href="/apply-to-join" className="hover:text-accent transition-colors">Apply to Join</Link></li>
