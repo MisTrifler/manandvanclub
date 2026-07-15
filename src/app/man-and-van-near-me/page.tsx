@@ -223,6 +223,11 @@ export default function ManAndVanNearMePage() {
               { name: "Man and Van Belfast", href: "/man-and-van-belfast", desc: "Titanic Quarter, Queen's, South Belfast, Holyland" },
               { name: "Man and Van Brighton", href: "/man-and-van-brighton", desc: "Hove, Kemptown, Preston Park, Seven Dials" },
               { name: "Man and Van Sunderland", href: "/man-and-van-sunderland", desc: "Roker, Seaburn, Washington, Hylton" },
+              { name: "Man and Van Milton Keynes", href: "/man-and-van-milton-keynes", desc: "Bletchley, Stony Stratford, Newport Pagnell" },
+              { name: "Man and Van Bournemouth", href: "/man-and-van-bournemouth", desc: "Poole, Christchurch, Boscombe, Westbourne" },
+              { name: "Man and Van Coventry", href: "/man-and-van-coventry", desc: "Earlsdon, Cheylesmore, Binley, Tile Hill" },
+              { name: "Man and Van Nottingham", href: "/man-and-van-nottingham", desc: "West Bridgford, Beeston, Arnold, Carlton" },
+              { name: "Man and Van Leicester", href: "/man-and-van-leicester", desc: "Oadby, Wigston, Evington, Braunstone" },
             ].map((area) => (
               <Link
                 key={area.href}
