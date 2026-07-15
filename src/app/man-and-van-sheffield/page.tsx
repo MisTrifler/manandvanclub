@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   title: "Man and Van Sheffield | Verified Mover Quotes from £50",
   description: "Submit a free man and van request in Sheffield. One verified mover reviews your details before you book. From £50/hr.",
   alternates: { canonical: `${baseUrl}/man-and-van-sheffield` },
+  openGraph: {
+    title: "Man and Van Sheffield | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request in Sheffield. One verified mover reviews your details before you book. From £50/hr.",
+    url: `${baseUrl}/man-and-van-sheffield`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Sheffield | Verified Mover Quotes from £50" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Man and Van Sheffield | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request in Sheffield. One verified mover reviews your details before you book. From £50/hr.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const faqItems = [
@@ -24,7 +36,12 @@ const serviceSchema = {
   "@context": "https://schema.org", "@type": "Service",
   name: "Man and Van Sheffield quote request", url: `${baseUrl}/man-and-van-sheffield`,
   provider: { "@type": "Organization", name: "Man and Van Club", url: baseUrl, email: "support@manandvanclub.co.uk", telephone: "+44-121-751-1269", logo: `${baseUrl}/icon.png` },
-  areaServed: { "@type": "City", name: "Sheffield" },
+  areaServed: { "@type": "City", name: "Sheffield", containedInPlace: { "@type": "AdministrativeArea", name: "South Yorkshire" }, containsPlace: [
+    { "@type": "City", name: "Rotherham" },
+    { "@type": "City", name: "Barnsley" },
+    { "@type": "City", name: "Doncaster" },
+    { "@type": "City", name: "Chesterfield" },
+  ] },
   serviceType: ["Man and van quote request", "House removals", "Flat moves", "Student moves", "Furniture collection", "Office moves", "Same-day man and van"],
   description: "Free Sheffield man and van request service. Customers can see a guide price, submit details securely and receive a quote from one verified mover before booking.",
 };

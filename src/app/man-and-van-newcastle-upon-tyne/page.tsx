@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: "Man and Van Newcastle | Verified Mover Quotes from £50",
   description: "Submit a free man and van request in Newcastle upon Tyne. One verified mover reviews your details before you book. From £50/hr.",
   alternates: { canonical: `${baseUrl}/man-and-van-newcastle-upon-tyne` },
+  openGraph: {
+    title: "Man and Van Newcastle | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request in Newcastle upon Tyne. One verified mover reviews your details before you book. From £50/hr.",
+    url: `${baseUrl}/man-and-van-newcastle-upon-tyne`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Newcastle | Verified Mover Quotes from £50" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Man and Van Newcastle | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request in Newcastle upon Tyne. One verified mover reviews your details before you book. From £50/hr.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const faqItems = [
@@ -19,7 +31,7 @@ const faqItems = [
   { q: "Can I use this for single-item furniture collection in Newcastle?", a: "Yes. The Newcastle service can be used for single items, furniture collection, student moves, flat moves, house removals, office moves and local storage runs." },
 ];
 
-const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Man and Van Newcastle quote request", url: `${baseUrl}/man-and-van-newcastle-upon-tyne`, provider: { "@type": "Organization", name: "Man and Van Club", url: baseUrl, email: "support@manandvanclub.co.uk", telephone: "+44-121-751-1269", logo: `${baseUrl}/icon.png` }, areaServed: { "@type": "City", name: "Newcastle upon Tyne" }, serviceType: ["Man and van quote request", "House removals", "Flat moves", "Student moves", "Furniture collection", "Same-day man and van"], description: "Free Newcastle man and van request service. Customers can see a guide price, submit details securely and receive a quote from one verified mover before booking." };
+const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Man and Van Newcastle quote request", url: `${baseUrl}/man-and-van-newcastle-upon-tyne`, provider: { "@type": "Organization", name: "Man and Van Club", url: baseUrl, email: "support@manandvanclub.co.uk", telephone: "+44-121-751-1269", logo: `${baseUrl}/icon.png` }, areaServed: { "@type": "City", name: "Newcastle upon Tyne", containedInPlace: { "@type": "AdministrativeArea", name: "North East England" }, containsPlace: [{ "@type": "City", name: "Gateshead" }, { "@type": "City", name: "Sunderland" }, { "@type": "City", name: "Durham" }, { "@type": "City", name: "Middlesbrough" }] }, serviceType: ["Man and van quote request", "House removals", "Flat moves", "Student moves", "Furniture collection", "Same-day man and van"], description: "Free Newcastle man and van request service. Customers can see a guide price, submit details securely and receive a quote from one verified mover before booking." };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqItems.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) };
 const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: baseUrl }, { "@type": "ListItem", position: 2, name: "Man and Van Newcastle", item: `${baseUrl}/man-and-van-newcastle-upon-tyne` }] };
 

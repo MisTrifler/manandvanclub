@@ -24,6 +24,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${baseUrl}/man-and-van-liverpool`,
   },
+  openGraph: {
+    title: "Man and Van Liverpool | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request across Merseyside. From Liverpool city centre to Bootle, Birkenhead and Southport, one verified mover reviews your details before you book.",
+    url: `${baseUrl}/man-and-van-liverpool`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Liverpool | Verified Mover Quotes" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Man and Van Liverpool | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request across Merseyside. One verified mover reviews your details before you book.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const merseysideAreaCandidates = [

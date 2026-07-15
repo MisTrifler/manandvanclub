@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${baseUrl}/blog/student-moving-guide`,
   },
+  openGraph: {
+    title: "Student Moving Guide: How to Move on a Budget",
+    description: "Practical advice for university students moving between term-time accommodation, including packing tips, timing, and how to keep man and van costs down.",
+    url: `${baseUrl}/blog/student-moving-guide`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Student Moving Guide" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Student Moving Guide: How to Move on a Budget",
+    description: "Practical advice for university students moving between term-time accommodation, including packing tips and how to keep costs down.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const articleSchema = {
@@ -120,6 +132,16 @@ export default function BlogPost() {
             >
               Start Free Request
             </Link>
+            <div className="mt-6 pt-6 border-t border-border">
+              <p className="text-sm font-black text-primary uppercase tracking-widest mb-3">Related</p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/student-removals" className="text-sm text-accent font-bold hover:underline">Student Moves</Link>
+                <Link href="/man-and-van-prices" className="text-sm text-accent font-bold hover:underline">Man and Van Prices</Link>
+                <Link href="/man-and-van-birmingham" className="text-sm text-accent font-bold hover:underline">Birmingham</Link>
+                <Link href="/man-and-van-coventry" className="text-sm text-accent font-bold hover:underline">Coventry</Link>
+                <Link href="/man-and-van-nottingham" className="text-sm text-accent font-bold hover:underline">Nottingham</Link>
+              </div>
+            </div>
           </div>
         </div>
       </BlogPostLayout>

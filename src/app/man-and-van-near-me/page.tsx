@@ -7,7 +7,7 @@ const siteUrl = "https://www.manandvanclub.co.uk";
 export const metadata: Metadata = {
   title: "Man and Van Near Me | Find Local Verified Movers | Man and Van Club",
   description:
-    "Find a man and van near you across the UK. Submit a free move request and one verified local mover reviews your details before sending a quote. Birmingham, Walsall, Wolverhampton, London, Manchester and more.",
+    "Find a man and van near you across the UK. Submit a free move request and one verified local mover reviews your details before sending a quote. West Midlands, London, Manchester, Leeds and more.",
   alternates: {
     canonical: `${siteUrl}/man-and-van-near-me`,
   },
@@ -35,6 +35,10 @@ const faqItems = [
   {
     q: "Is there a man and van near me in the West Midlands?",
     a: "Yes. Man and Van Club covers Birmingham, Walsall, Wolverhampton, Dudley, West Bromwich, Solihull, Coventry, Stourbridge, Halesowen, Wednesbury, Bloxwich, Brownhills and surrounding West Midlands areas. Submit your postcodes and a local mover can review the details.",
+  },
+  {
+    q: "Is there a man and van near me outside the West Midlands?",
+    a: "Yes. Man and Van Club also covers London, Manchester, Leeds, Liverpool, Bristol, Sheffield, Edinburgh, Cardiff, Newcastle upon Tyne, Nottingham, Leicester, Derby and surrounding areas across England, Scotland and Wales. Enter your postcodes to see if a verified mover in your area can help.",
   },
   {
     q: "How quickly can a man and van near me arrive?",
@@ -177,9 +181,10 @@ export default function ManAndVanNearMePage() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-4 text-center">Man and Van Near Me — Popular Areas</h2>
           <p className="text-text-secondary text-center mb-10 max-w-2xl mx-auto">
-            We are building strong coverage across the West Midlands first. Enter your postcodes on the form to see if a verified mover near you can help.
+            We cover towns and cities across the UK. Enter your postcodes on the form to see if a verified mover near you can help.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h3 className="text-xs font-black uppercase tracking-[0.25em] text-primary/40 mb-4">West Midlands</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {[
               { name: "Man and Van Birmingham", href: "/man-and-van-birmingham", desc: "City centre, Edgbaston, Selly Oak, Jewellery Quarter, Sutton Coldfield", popular: true },
               { name: "Man and Van Walsall", href: "/man-and-van-walsall", desc: "Bloxwich, Aldridge, Brownhills, Darlaston, Willenhall", popular: true },
@@ -187,10 +192,8 @@ export default function ManAndVanNearMePage() {
               { name: "Man and Van Dudley", href: "/man-and-van-dudley", desc: "Brierley Hill, Kingswinford, Sedgley, Netherton" },
               { name: "Man and Van Coventry", href: "/man-and-van-coventry", desc: "Earlsdon, Canley, Foleshill, city centre" },
               { name: "Man and Van Solihull", href: "/man-and-van-solihull", desc: "Shirley, Knowle, Dorridge, Monkspath" },
-              { name: "Man and Van West Bromwich", href: "/man-and-van-west-bromwich", desc: "Smethwick, Oldbury, Rowley Regis" },
-              { name: "Man and Van Stourbridge", href: "/man-and-van-stourbridge", desc: "Canal-side, Lye, Amblecote, Wollaston" },
-              { name: "Man and Van Halesowen", href: "/man-and-van-halesowen", desc: "Cradley Heath, Hasbury, Quinton" },
               { name: "West Midlands Hub", href: "/man-and-van-west-midlands", desc: "All West Midlands areas, services and pricing" },
+              { name: "East Midlands Hub", href: "/man-and-van-east-midlands", desc: "Nottingham, Leicester, Derby and surrounding areas" },
             ].map((area) => (
               <Link
                 key={area.href}
@@ -200,6 +203,29 @@ export default function ManAndVanNearMePage() {
                 {area.popular && (
                   <span className="inline-block bg-accent/10 text-accent text-[8px] font-black uppercase tracking-widest px-2 py-1 rounded-full mb-2">Most popular</span>
                 )}
+                <h3 className="font-black text-primary text-sm uppercase tracking-tight group-hover:text-accent transition-colors">{area.name}</h3>
+                <p className="text-xs text-text-secondary mt-2 leading-relaxed">{area.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <h3 className="text-xs font-black uppercase tracking-[0.25em] text-primary/40 mb-4">UK-Wide</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { name: "Man and Van London", href: "/man-and-van-london", desc: "Croydon, Stratford, Richmond, Camden, Shoreditch, Clapham" },
+              { name: "Man and Van Manchester", href: "/man-and-van-manchester", desc: "Salford, Stockport, Bolton, Oldham, Altrincham" },
+              { name: "Man and Van Leeds", href: "/man-and-van-leeds", desc: "Bradford, Wakefield, Huddersfield, Halifax" },
+              { name: "Man and Van Liverpool", href: "/man-and-van-liverpool", desc: "Bootle, Birkenhead, Southport, St Helens" },
+              { name: "Man and Van Bristol", href: "/man-and-van-bristol", desc: "Bath, Weston-super-Mare, Cheltenham, Gloucester" },
+              { name: "Man and Van Sheffield", href: "/man-and-van-sheffield", desc: "Rotherham, Barnsley, Doncaster, Chesterfield" },
+              { name: "Man and Van Edinburgh", href: "/man-and-van-edinburgh", desc: "Leith, Morningside, Corstorphine, Old Town" },
+              { name: "Man and Van Cardiff", href: "/man-and-van-cardiff", desc: "Swansea, Newport, Barry, Bridgend" },
+              { name: "Man and Van Newcastle", href: "/man-and-van-newcastle-upon-tyne", desc: "Gateshead, Sunderland, Durham, Middlesbrough" },
+            ].map((area) => (
+              <Link
+                key={area.href}
+                href={area.href}
+                className="group bg-white rounded-2xl border border-border p-6 hover:border-accent hover:shadow-lg transition-all"
+              >
                 <h3 className="font-black text-primary text-sm uppercase tracking-tight group-hover:text-accent transition-colors">{area.name}</h3>
                 <p className="text-xs text-text-secondary mt-2 leading-relaxed">{area.desc}</p>
               </Link>

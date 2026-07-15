@@ -23,13 +23,26 @@
 ### Homepage
 - https://www.manandvanclub.co.uk/ — Free move request form, service overview, UK coverage
 
+### Regional Hub Pages
+- https://www.manandvanclub.co.uk/man-and-van-west-midlands — West Midlands hub: Birmingham, Walsall, Wolverhampton, Dudley, Coventry, Solihull and all WM areas
+- https://www.manandvanclub.co.uk/man-and-van-east-midlands — East Midlands hub: Nottingham, Leicester, Derby and surrounding areas
+- https://www.manandvanclub.co.uk/man-and-van-london — London hub: Croydon, Stratford, Richmond, Camden and all London boroughs
+- https://www.manandvanclub.co.uk/man-and-van-manchester — Manchester hub: Salford, Stockport, Bolton, Oldham, Altrincham
+- https://www.manandvanclub.co.uk/man-and-van-leeds — Leeds hub: Bradford, Wakefield, Huddersfield, Halifax
+- https://www.manandvanclub.co.uk/man-and-van-liverpool — Liverpool hub: Bootle, Birkenhead, Southport, St Helens
+- https://www.manandvanclub.co.uk/man-and-van-bristol — Bristol hub: Bath, Weston-super-Mare, Cheltenham, Gloucester
+- https://www.manandvanclub.co.uk/man-and-van-sheffield — Sheffield hub: Rotherham, Barnsley, Doncaster
+- https://www.manandvanclub.co.uk/man-and-van-edinburgh — Edinburgh hub: Leith, Morningside, Old Town
+- https://www.manandvanclub.co.uk/man-and-van-cardiff — Cardiff hub: Swansea, Newport, Barry
+- https://www.manandvanclub.co.uk/man-and-van-newcastle-upon-tyne — Newcastle hub: Gateshead, Sunderland, Durham
+
 ### Target Location Pages (West Midlands)
 - https://www.manandvanclub.co.uk/man-and-van-birmingham — Birmingham mover quotes, city-centre flats, student moves, Clean Air Zone routes, Edgbaston, Selly Oak, Jewellery Quarter
 - https://www.manandvanclub.co.uk/man-and-van-walsall — Walsall mover quotes, Bloxwich, Aldridge, Brownhills, A34 and A454 route timing, Black Country moves
 - https://www.manandvanclub.co.uk/man-and-van-wolverhampton — Wolverhampton mover quotes, Tettenhall, Penn, Bilston, ring road routes
 - https://www.manandvanclub.co.uk/man-and-van-dudley — Dudley mover quotes, Brierley Hill, Kingswinford, Black Country
 - https://www.manandvanclub.co.uk/man-and-van-coventry — Coventry mover quotes, ring road access, student moves, Earlsdon
-- https://www.manandvanclub.co.uk/man-and-van-west-midlands — West Midlands hub page, all WM areas and services
+- 133+ total location pages across the UK — see areas-covered page for full list
 
 ### Service Pages
 - https://www.manandvanclub.co.uk/house-removals — Full home move requests
@@ -45,6 +58,13 @@
 - https://www.manandvanclub.co.uk/man-and-van-prices — UK 2026 man and van pricing guide with hourly rates and full-day costs
 - https://www.manandvanclub.co.uk/man-and-van-near-me — Find a man and van near you, UK-wide local mover coverage
 - https://www.manandvanclub.co.uk/man-and-van-vs-removal-company — Man and van vs removal company comparison
+
+### Blog Posts
+- https://www.manandvanclub.co.uk/blog/how-much-does-man-and-van-cost — How much does a man and van cost in 2026? Full pricing breakdown by move type and region
+- https://www.manandvanclub.co.uk/blog/how-to-prepare-for-moving-day — Complete moving day checklist: packing order, access notes, what movers need
+- https://www.manandvanclub.co.uk/blog/man-and-van-vs-removal-company-guide — When to choose a man and van over a removal company
+- https://www.manandvanclub.co.uk/blog/student-moving-guide — Student moving guide: budget tips, timing, halls and shared-house moves
+- https://www.manandvanclub.co.uk/blog/what-to-tell-your-mover-before-moving-day — Key details to share with your mover: parking, stairs, access, item sizes
 
 ### Information
 - https://www.manandvanclub.co.uk/how-it-works — Step-by-step matching process

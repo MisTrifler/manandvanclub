@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${baseUrl}/blog`,
   },
+  openGraph: {
+    title: "Moving Tips & Guides | Man and Van Club Blog",
+    description: "Practical moving tips, cost guides and area information for house moves, flat moves, student moves and furniture deliveries across the UK.",
+    url: `${baseUrl}/blog`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Club Blog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Moving Tips & Guides | Man and Van Club Blog",
+    description: "Practical moving tips, cost guides and area information for your move across the UK.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const breadcrumbSchema = {

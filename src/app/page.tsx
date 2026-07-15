@@ -88,6 +88,10 @@ export default function Home() {
     },
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "West Midlands" },
+      { "@type": "AdministrativeArea", "name": "East Midlands" },
+      { "@type": "AdministrativeArea", "name": "Greater London" },
+      { "@type": "AdministrativeArea", "name": "Greater Manchester" },
+      { "@type": "AdministrativeArea", "name": "Merseyside" },
       { "@type": "Country", "name": "United Kingdom" },
     ],
     "serviceType": [

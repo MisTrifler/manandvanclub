@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${baseUrl}/blog/what-to-tell-your-mover-before-moving-day`,
   },
+  openGraph: {
+    title: "What to Tell Your Mover Before Moving Day",
+    description: "The details that make the difference between a smooth move and a stressful one. Parking, access, stairs, lifts, item sizes and timing — explained clearly.",
+    url: `${baseUrl}/blog/what-to-tell-your-mover-before-moving-day`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "What to Tell Your Mover Before Moving Day" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What to Tell Your Mover Before Moving Day",
+    description: "The details that make the difference between a smooth move and a stressful one. Parking, access, stairs, lifts, item sizes and timing.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const articleSchema = {
@@ -125,6 +137,16 @@ export default function BlogPost() {
             >
               Start Free Request
             </Link>
+            <div className="mt-6 pt-6 border-t border-border">
+              <p className="text-sm font-black text-primary uppercase tracking-widest mb-3">Related</p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/house-removals" className="text-sm text-accent font-bold hover:underline">House Removals</Link>
+                <Link href="/flat-removals" className="text-sm text-accent font-bold hover:underline">Flat Moves</Link>
+                <Link href="/furniture-delivery" className="text-sm text-accent font-bold hover:underline">Furniture Delivery</Link>
+                <Link href="/man-and-van-near-me" className="text-sm text-accent font-bold hover:underline">Find a Mover Near You</Link>
+                <Link href="/man-and-van-prices" className="text-sm text-accent font-bold hover:underline">Man and Van Prices</Link>
+              </div>
+            </div>
           </div>
         </div>
       </BlogPostLayout>

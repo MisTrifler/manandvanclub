@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${baseUrl}/blog/how-much-does-man-and-van-cost`,
   },
+  openGraph: {
+    title: "How Much Does a Man and Van Cost in 2026?",
+    description: "A breakdown of man and van pricing across the UK, from West Midlands to London. Learn what affects the cost and how to get an accurate quote for your move.",
+    url: `${baseUrl}/blog/how-much-does-man-and-van-cost`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "How Much Does a Man and Van Cost in 2026?" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How Much Does a Man and Van Cost in 2026?",
+    description: "A breakdown of man and van pricing across the UK. Learn what affects the cost and how to get an accurate quote.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const articleSchema = {
@@ -121,6 +133,16 @@ export default function BlogPost() {
             >
               Start Free Request
             </Link>
+            <div className="mt-6 pt-6 border-t border-border">
+              <p className="text-sm font-black text-primary uppercase tracking-widest mb-3">Related</p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/man-and-van-prices" className="text-sm text-accent font-bold hover:underline">Man and Van Prices</Link>
+                <Link href="/man-and-van-vs-removal-company" className="text-sm text-accent font-bold hover:underline">Man and Van vs Removals</Link>
+                <Link href="/man-and-van-west-midlands" className="text-sm text-accent font-bold hover:underline">West Midlands</Link>
+                <Link href="/man-and-van-london" className="text-sm text-accent font-bold hover:underline">London</Link>
+                <Link href="/same-day-man-and-van" className="text-sm text-accent font-bold hover:underline">Same Day Moves</Link>
+              </div>
+            </div>
           </div>
         </div>
       </BlogPostLayout>

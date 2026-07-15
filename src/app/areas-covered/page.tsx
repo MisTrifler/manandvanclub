@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk/areas-covered',
   },
+  openGraph: {
+    title: "Areas Covered | UK-Wide Man and Van Services",
+    description: "Man and Van Club covers towns and cities across England, Scotland and Wales. Find your area and submit a free request.",
+    url: 'https://www.manandvanclub.co.uk/areas-covered',
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Areas Covered — Man and Van Club" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Areas Covered | UK-Wide Man and Van Services",
+    description: "Man and Van Club covers towns and cities across England, Scotland and Wales.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 export default function AreasCoveredPage() {

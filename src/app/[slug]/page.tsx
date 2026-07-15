@@ -213,7 +213,7 @@ const servicePageData: Record<string, any> = {
       { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
       { q: "Does same-day cost more?", a: "Same-day moves in 2026 can cost 15–30% more than booked-ahead moves when availability is limited or the route is longer. UK same-day man and van rates start from £55 per hour, compared to £50 for standard bookings. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
       { q: "Can I book same-day for long distances?", a: "Same-day is usually best for local or regional moves. For long-distance same-day requests, include accurate postcodes, timing and access notes so a mover can decide whether they can help." },
-      { q: "How much does a same-day man and van cost?", a: "In 2026, UK same-day man and van prices typically range from £40–£60 per hour, with a minimum charge usually equivalent to 2 hours. A local same-day furniture collection might cost £80–£150, while a same-day flat move could be £200–£400 depending on access and timing. Submit your details for a guide price first." }
+      { q: "How much does a same-day man and van cost?", a: "In 2026, UK same-day man and van prices typically start from £55 per hour (15–30% above standard rates), with a minimum charge usually equivalent to 2 hours. A local same-day furniture collection might cost £80–£150, while a same-day flat move could be £200–£400 depending on access and timing. Submit your details for a guide price first." }
     ]
   },
   "long-distance-removals": {
@@ -413,7 +413,14 @@ export async function generateStaticParams() {
   // Prebuild only the location pages currently allowed into the sitemap.
   // Non-priority pages still resolve on demand and render with noindex,
   // keeping broad coverage available without making launch builds heavy.
-  const locationParams = getIndexableLocationSlugs().map((slug) => ({ slug: `man-and-van-${slug}` }));
+  // Exclude hub page slugs that have dedicated static route files.
+  const hubSlugs = new Set([
+    'london', 'manchester', 'leeds', 'liverpool', 'bristol',
+    'sheffield', 'edinburgh', 'cardiff', 'newcastle-upon-tyne',
+  ]);
+  const locationParams = getIndexableLocationSlugs()
+    .filter((slug) => !hubSlugs.has(slug))
+    .map((slug) => ({ slug: `man-and-van-${slug}` }));
   const serviceParams = serviceSlugs.map((slug) => ({ slug }));
   return [...locationParams, ...serviceParams];
 }

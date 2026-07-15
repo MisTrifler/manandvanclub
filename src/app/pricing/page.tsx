@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk/pricing',
   },
+  openGraph: {
+    title: "Booking Deposit Pricing | Man and Van Club",
+    description: "Simple booking deposit pricing. The deposit is deducted from the mover's quote, so the customer's total move cost stays the same.",
+    url: 'https://www.manandvanclub.co.uk/pricing',
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Pricing — Man and Van Club" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Booking Deposit Pricing | Man and Van Club",
+    description: "Simple booking deposit pricing. The deposit is deducted from the mover's quote.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const FAQ_ITEMS = [
@@ -18,6 +30,16 @@ const FAQ_ITEMS = [
   { q: "Will my total cost increase?", a: "No. The mover quote is your total move cost. The booking deposit is deducted from that quote." },
   { q: "Example?", a: "If the mover quotes £300 and the booking deposit is £25, you pay £25 today and £275 to the mover on moving day. Your total move cost is £300." },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 export default function PricingPage() {
   const bookingDepositTiers = [
@@ -30,6 +52,7 @@ export default function PricingPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="bg-[#F9F9F7] py-20 border-b border-border">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.3em] mb-6">

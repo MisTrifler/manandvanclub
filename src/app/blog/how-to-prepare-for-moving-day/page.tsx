@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${baseUrl}/blog/how-to-prepare-for-moving-day`,
   },
+  openGraph: {
+    title: "How to Prepare for Moving Day: Complete Checklist",
+    description: "A practical moving day checklist covering packing, access notes, parking arrangements and everything you need to do before, during and after your move.",
+    url: `${baseUrl}/blog/how-to-prepare-for-moving-day`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "How to Prepare for Moving Day" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Prepare for Moving Day: Complete Checklist",
+    description: "A practical moving day checklist covering packing, access notes, parking and everything you need to do before, during and after your move.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const articleSchema = {
@@ -120,6 +132,16 @@ export default function BlogPost() {
             >
               Start Free Request
             </Link>
+            <div className="mt-6 pt-6 border-t border-border">
+              <p className="text-sm font-black text-primary uppercase tracking-widest mb-3">Related</p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/man-and-van-prices" className="text-sm text-accent font-bold hover:underline">Man and Van Prices</Link>
+                <Link href="/man-and-van-near-me" className="text-sm text-accent font-bold hover:underline">Find a Mover Near You</Link>
+                <Link href="/man-and-van-west-midlands" className="text-sm text-accent font-bold hover:underline">West Midlands</Link>
+                <Link href="/man-and-van-london" className="text-sm text-accent font-bold hover:underline">London</Link>
+                <Link href="/man-and-van-manchester" className="text-sm text-accent font-bold hover:underline">Manchester</Link>
+              </div>
+            </div>
           </div>
         </div>
       </BlogPostLayout>

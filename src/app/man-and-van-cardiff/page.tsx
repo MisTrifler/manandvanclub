@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: "Man and Van Cardiff | Verified Mover Quotes from £50",
   description: "Submit a free man and van request in Cardiff. One verified mover reviews your details before you book. From £50/hr.",
   alternates: { canonical: `${baseUrl}/man-and-van-cardiff` },
+  openGraph: {
+    title: "Man and Van Cardiff | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request in Cardiff. One verified mover reviews your details before you book. From £50/hr.",
+    url: `${baseUrl}/man-and-van-cardiff`,
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Man and Van Cardiff | Verified Mover Quotes from £50" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Man and Van Cardiff | Verified Mover Quotes from £50",
+    description: "Submit a free man and van request in Cardiff. One verified mover reviews your details before you book. From £50/hr.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 const faqItems = [
@@ -19,7 +31,7 @@ const faqItems = [
   { q: "Can I use this for single-item furniture collection in Cardiff?", a: "Yes. The Cardiff service can be used for single items, furniture collection, student moves, flat moves, house removals, office moves and local storage runs." },
 ];
 
-const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Man and Van Cardiff quote request", url: `${baseUrl}/man-and-van-cardiff`, provider: { "@type": "Organization", name: "Man and Van Club", url: baseUrl, email: "support@manandvanclub.co.uk", telephone: "+44-121-751-1269", logo: `${baseUrl}/icon.png` }, areaServed: { "@type": "City", name: "Cardiff" }, serviceType: ["Man and van quote request", "House removals", "Flat moves", "Student moves", "Furniture collection", "Same-day man and van"], description: "Free Cardiff man and van request service. Customers can see a guide price, submit details securely and receive a quote from one verified mover before booking." };
+const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Man and Van Cardiff quote request", url: `${baseUrl}/man-and-van-cardiff`, provider: { "@type": "Organization", name: "Man and Van Club", url: baseUrl, email: "support@manandvanclub.co.uk", telephone: "+44-121-751-1269", logo: `${baseUrl}/icon.png` }, areaServed: { "@type": "City", name: "Cardiff", containedInPlace: { "@type": "AdministrativeArea", name: "Wales" }, containsPlace: [{ "@type": "City", name: "Swansea" }, { "@type": "City", name: "Newport" }, { "@type": "City", name: "Barry" }, { "@type": "City", name: "Bridgend" }] }, serviceType: ["Man and van quote request", "House removals", "Flat moves", "Student moves", "Furniture collection", "Same-day man and van"], description: "Free Cardiff man and van request service. Customers can see a guide price, submit details securely and receive a quote from one verified mover before booking." };
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqItems.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) };
 const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: baseUrl }, { "@type": "ListItem", position: 2, name: "Man and Van Cardiff", item: `${baseUrl}/man-and-van-cardiff` }] };
 

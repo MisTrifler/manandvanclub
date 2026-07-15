@@ -403,19 +403,20 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* ──────────────────── Popular in the West Midlands ──────────────────── */}
+      {/* ──────────────────── Popular Areas ──────────────────── */}
       <section className="py-14 lg:py-16 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-black text-primary uppercase tracking-tighter">
-              Popular in the West Midlands
+              Popular Areas
             </h2>
             <p className="text-text-secondary mt-3 text-sm">
-              Start with our West Midlands hub, then choose your town or city page.
+              West Midlands and UK-wide coverage with dedicated area pages.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <h3 className="text-xs font-black uppercase tracking-[0.25em] text-primary/40 mb-4">West Midlands</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
             {[
               { name: "West Midlands", slug: "man-and-van-west-midlands" },
               { name: "Birmingham", slug: "man-and-van-birmingham" },
@@ -427,6 +428,32 @@ export default function HomeContent() {
               { name: "Coventry", slug: "man-and-van-coventry" },
               { name: "Stourbridge", slug: "man-and-van-stourbridge" },
               { name: "Halesowen", slug: "man-and-van-halesowen" },
+            ].map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/${loc.slug}`}
+                className="text-center bg-[#F9F9F7] rounded-2xl border border-border p-5 min-h-[88px] flex items-center justify-center hover:border-accent hover:shadow-md transition-all"
+              >
+                <span className="text-sm font-black text-primary uppercase tracking-tight">
+                  {loc.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <h3 className="text-xs font-black uppercase tracking-[0.25em] text-primary/40 mb-4">UK-Wide</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { name: "London", slug: "man-and-van-london" },
+              { name: "Manchester", slug: "man-and-van-manchester" },
+              { name: "Leeds", slug: "man-and-van-leeds" },
+              { name: "Liverpool", slug: "man-and-van-liverpool" },
+              { name: "Bristol", slug: "man-and-van-bristol" },
+              { name: "Sheffield", slug: "man-and-van-sheffield" },
+              { name: "Edinburgh", slug: "man-and-van-edinburgh" },
+              { name: "Cardiff", slug: "man-and-van-cardiff" },
+              { name: "Newcastle", slug: "man-and-van-newcastle-upon-tyne" },
+              { name: "Nottingham", slug: "man-and-van-nottingham" },
             ].map((loc) => (
               <Link
                 key={loc.slug}
@@ -488,17 +515,17 @@ export default function HomeContent() {
       <section className="py-16 bg-[#F9F9F7] border-b border-border" data-speakable="seo-content">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-2xl font-black text-primary uppercase tracking-tighter mb-6">
-            Man and Van Services Across the West Midlands and UK
+            Man and Van Services Across the UK
           </h2>
           <div className="space-y-4 text-sm text-text-secondary leading-relaxed">
             <p>
               Man and Van Club is a UK marketplace that helps customers submit free move requests for everything from single-item furniture collections to full house removals, flat moves, office relocations, student moves and long-distance removals. Instead of your details being sent to lots of companies, one verified independent mover reviews your anonymised request and sends a quote before you decide whether to book. If you accept, you pay a booking deposit that is deducted from the mover&apos;s quote, and the remaining balance is paid directly to the mover on moving day.
             </p>
             <p>
-              We are focusing first on strong West Midlands coverage, especially <Link href="/man-and-van-birmingham" className="font-black text-accent hover:underline">man and van Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-black text-accent hover:underline">man and van Walsall</Link>, <Link href="/man-and-van-wolverhampton" className="font-black text-accent hover:underline">man and van Wolverhampton</Link> and <Link href="/same-day-man-and-van" className="font-black text-accent hover:underline">same-day man and van</Link> requests. Birmingham moves can vary widely — from Jewellery Quarter apartments with lift access and Clean Air Zone planning, to Selly Oak student moves, Edgbaston family homes and Sutton Coldfield suburban relocations. Walsall moves range from town-centre terraces to Bloxwich semis and Aldridge estates, with route timing often depending on the A34 and A454 corridors.
+              We cover towns and cities across England, Scotland and Wales — from <Link href="/man-and-van-birmingham" className="font-black text-accent hover:underline">man and van Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-black text-accent hover:underline">Walsall</Link> and <Link href="/man-and-van-wolverhampton" className="font-black text-accent hover:underline">Wolverhampton</Link> in the Midlands, to <Link href="/man-and-van-london" className="font-black text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-black text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-black text-accent hover:underline">Leeds</Link>, <Link href="/man-and-van-liverpool" className="font-black text-accent hover:underline">Liverpool</Link>, <Link href="/man-and-van-bristol" className="font-black text-accent hover:underline">Bristol</Link>, <Link href="/man-and-van-sheffield" className="font-black text-accent hover:underline">Sheffield</Link>, <Link href="/man-and-van-edinburgh" className="font-black text-accent hover:underline">Edinburgh</Link>, <Link href="/man-and-van-cardiff" className="font-black text-accent hover:underline">Cardiff</Link> and <Link href="/man-and-van-newcastle-upon-tyne" className="font-black text-accent hover:underline">Newcastle</Link>. Whether you need <Link href="/same-day-man-and-van" className="font-black text-accent hover:underline">same-day man and van</Link> or a planned move, one approved mover reviews your details before quoting.
             </p>
             <p>
-              Whether you need <Link href="/furniture-delivery" className="font-black text-accent hover:underline">furniture delivery</Link>, a <Link href="/flat-removals" className="font-black text-accent hover:underline">flat move</Link>, <Link href="/house-removals" className="font-black text-accent hover:underline">house removals</Link>, <Link href="/office-removals" className="font-black text-accent hover:underline">office relocation</Link> or <Link href="/long-distance-removals" className="font-black text-accent hover:underline">long-distance removals</Link>, the process is the same: submit your postcodes, move date, item list and access notes for free, see a guide price, then let one approved mover review the details before quoting. Your details stay protected until you accept. See our <Link href="/man-and-van-west-midlands" className="font-black text-accent hover:underline">West Midlands man and van hub</Link> for area-specific route information, postcode coverage and local move examples. Not sure whether you need a man and van or a removal company? See our <Link href="/man-and-van-vs-removal-company" className="font-black text-accent hover:underline">man and van vs removal company comparison</Link>.
+              Whether you need <Link href="/furniture-delivery" className="font-black text-accent hover:underline">furniture delivery</Link>, a <Link href="/flat-removals" className="font-black text-accent hover:underline">flat move</Link>, <Link href="/house-removals" className="font-black text-accent hover:underline">house removals</Link>, <Link href="/office-removals" className="font-black text-accent hover:underline">office relocation</Link> or <Link href="/long-distance-removals" className="font-black text-accent hover:underline">long-distance removals</Link>, the process is the same: submit your postcodes, move date, item list and access notes for free, see a guide price, then let one approved mover review the details before quoting. Your details stay protected until you accept. See our <Link href="/man-and-van-west-midlands" className="font-black text-accent hover:underline">West Midlands hub</Link>, <Link href="/man-and-van-east-midlands" className="font-black text-accent hover:underline">East Midlands hub</Link> or <Link href="/areas-covered" className="font-black text-accent hover:underline">full areas covered page</Link> for area-specific route information, postcode coverage and local move examples. Not sure whether you need a man and van or a removal company? See our <Link href="/man-and-van-vs-removal-company" className="font-black text-accent hover:underline">man and van vs removal company comparison</Link>.
             </p>
           </div>
         </div>

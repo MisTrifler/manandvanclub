@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   other: {
     'geo.region': 'GB',
-    'geo.placename': 'West Midlands',
+    'geo.placename': 'United Kingdom',
     'geo.country': 'GB',
     'theme-color': '#F97316',
     'apple-mobile-web-app-capable': 'yes',

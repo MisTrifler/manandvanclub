@@ -96,7 +96,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'student-removals',
   ]);
 
-  const serviceUrls = services.map(service => ({
+  // Service URLs are now in staticUrls above with proper priorities.
+  // Keep this array for reference but don't duplicate in the sitemap.
+  const _serviceUrls = services.map(service => ({
     url: `${baseUrl}/${service}`,
     lastModified: new Date('2026-07-14'),
     changeFrequency: highIntentServiceSlugs.has(service) ? 'weekly' as const : 'monthly' as const,
@@ -125,7 +127,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/man-and-van-prices', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-near-me', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-vs-removal-company', priority: 0.85, freq: 'weekly' as const },
+    { route: '/house-removals', priority: 0.8, freq: 'monthly' as const },
+    { route: '/flat-removals', priority: 0.8, freq: 'monthly' as const },
+    { route: '/student-removals', priority: 0.8, freq: 'monthly' as const },
+    { route: '/office-removals', priority: 0.8, freq: 'monthly' as const },
+    { route: '/furniture-delivery', priority: 0.8, freq: 'monthly' as const },
+    { route: '/same-day-man-and-van', priority: 0.8, freq: 'weekly' as const },
+    { route: '/long-distance-removals', priority: 0.8, freq: 'monthly' as const },
+    { route: '/facebook-marketplace-collection', priority: 0.75, freq: 'monthly' as const },
     { route: '/how-it-works', priority: 0.7, freq: 'monthly' as const },
+    { route: '/get-started', priority: 0.8, freq: 'monthly' as const },
     { route: '/for-businesses', priority: 0.6, freq: 'monthly' as const },
     { route: '/about', priority: 0.6, freq: 'monthly' as const },
     { route: '/areas-covered', priority: 0.7, freq: 'monthly' as const },
@@ -143,5 +154,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }));
 
-  return [...staticUrls, ...locationUrls, ...serviceUrls];
+  return [...staticUrls, ...locationUrls];
 }

@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.manandvanclub.co.uk/get-started",
   },
+  openGraph: {
+    title: "Start Your Move Request | Man and Van Club",
+    description: "Submit your move details for free. Your details stay private until you accept a verified mover quote.",
+    url: "https://www.manandvanclub.co.uk/get-started",
+    images: [{ url: "/images/og-homepage.jpg", width: 1200, height: 630, alt: "Start Your Move Request — Man and Van Club" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Start Your Move Request | Man and Van Club",
+    description: "Submit your move details for free. Your details stay private until you accept a verified mover quote.",
+    images: ["/images/og-homepage.jpg"],
+  },
 };
 
 export default function GetStartedPage() {
