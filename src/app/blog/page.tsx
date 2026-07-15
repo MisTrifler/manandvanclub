@@ -98,6 +98,96 @@ const blogPosts = [
     readTime: "9 min read",
     category: "Area Guides",
   },
+  {
+    slug: "same-day-move-guide",
+    title: "Same-Day Man and Van Guide",
+    description:
+      "When you need a mover today rather than next week. What same-day moves involve, how pricing works, and what to have ready before you submit a request.",
+    date: "2026-07-15",
+    readTime: "4 min read",
+    category: "Guides",
+  },
+  {
+    slug: "what-affects-man-and-van-prices",
+    title: "What Affects Man and Van Prices?",
+    description:
+      "The seven factors that determine your man and van quote — distance, volume, access, stairs, timing, location and day of the week. Understanding them helps you get a fairer price.",
+    date: "2026-07-15",
+    readTime: "5 min read",
+    category: "Cost Guides",
+  },
+  {
+    slug: "how-to-pack-for-a-house-move",
+    title: "How to Pack for a House Move: Room-by-Room Guide",
+    description:
+      "A room-by-room packing guide covering kitchen, bedroom, living room, bathroom and more. What to pack first, what to leave to the movers, and the mistakes that slow everything down.",
+    date: "2026-07-15",
+    readTime: "9 min read",
+    category: "Moving Tips",
+  },
+  {
+    slug: "average-cost-3-bedroom-house-move",
+    title: "Average Cost of a 3-Bedroom House Move in the UK (2026)",
+    description:
+      "Real cost breakdowns for moving a 3-bed house — by distance, region and access type. Based on actual man and van quotes, not inflated estimates from removal company websites.",
+    date: "2026-07-15",
+    readTime: "7 min read",
+    category: "Cost Guides",
+  },
+  {
+    slug: "do-i-need-to-empty-drawers-for-movers",
+    title: "Do I Need to Empty Drawers for Movers?",
+    description:
+      "Can you leave clothes in drawers when moving house? The honest answer depends on the furniture type. Here's what to empty, what you can leave, and why getting it wrong matters.",
+    date: "2026-07-15",
+    readTime: "5 min read",
+    category: "Moving Tips",
+  },
+  {
+    slug: "how-to-move-a-piano-without-damage",
+    title: "How to Move a Piano Without Damage",
+    description:
+      "Moving a piano is not like moving a sofa. This guide covers uprights, digital pianos and grands — what can go wrong, how professionals do it, and why this is one job you shouldn't attempt alone.",
+    date: "2026-07-15",
+    readTime: "7 min read",
+    category: "Guides",
+  },
+  {
+    slug: "office-relocation-checklist",
+    title: "Office Relocation Checklist: What to Plan Before Moving Day",
+    description:
+      "A practical office relocation checklist for small and medium businesses. IT, furniture, comms, staff logistics and the things that always get forgotten.",
+    date: "2026-07-15",
+    readTime: "8 min read",
+    category: "Guides",
+  },
+  {
+    slug: "anyvan-review-alternatives",
+    title: "AnyVan Review: Is It Worth It? Plus Cheaper Alternatives",
+    description:
+      "An honest look at how AnyVan works — the pricing model, what customers say, where it works well and where a marketplace model might be the better option.",
+    date: "2026-07-15",
+    readTime: "8 min read",
+    category: "Reviews",
+  },
+  {
+    slug: "what-insurance-does-your-man-and-van-need",
+    title: "What Insurance Does Your Man and Van Need?",
+    description:
+      "Goods in Transit, Public Liability, employer's liability — the insurance movers need and the cover customers should check before booking. No jargon.",
+    date: "2026-07-15",
+    readTime: "6 min read",
+    category: "Guides",
+  },
+  {
+    slug: "house-moving-checklist-uk",
+    title: "Ultimate House Moving Checklist UK 2026",
+    description:
+      "The complete UK house moving checklist — from 8 weeks before to the day you collect the keys. Conveyancing, packing, utilities, council tax and every admin task in between.",
+    date: "2026-07-15",
+    readTime: "10 min read",
+    category: "Moving Tips",
+  },
 ];
 
 export default function BlogPage() {
