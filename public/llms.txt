@@ -32,7 +32,8 @@
 - https://www.manandvanclub.co.uk/man-and-van-liverpool — Liverpool hub: Bootle, Birkenhead, Southport, St Helens
 - https://www.manandvanclub.co.uk/man-and-van-bristol — Bristol hub: Bath, Weston-super-Mare, Cheltenham, Gloucester
 - https://www.manandvanclub.co.uk/man-and-van-sheffield — Sheffield hub: Rotherham, Barnsley, Doncaster
-- https://www.manandvanclub.co.uk/man-and-van-edinburgh — Edinburgh hub: Leith, Morningside, Old Town
+- https://www.manandvanclub.co.uk/man-and-van-edinburgh — Edinburgh hub: Leith, Morningside, Old Town, Glasgow nearby
+- https://www.manandvanclub.co.uk/man-and-van-glasgow — Glasgow hub: West End, Shawlands, Dennistoun, Partick, Edinburgh nearby
 - https://www.manandvanclub.co.uk/man-and-van-cardiff — Cardiff hub: Swansea, Newport, Barry
 - https://www.manandvanclub.co.uk/man-and-van-newcastle-upon-tyne — Newcastle hub: Gateshead, Sunderland, Durham
 

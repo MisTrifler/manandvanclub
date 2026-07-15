@@ -106,7 +106,7 @@ export default function Footer() {
               <li><Link href="/man-and-van-liverpool" className="hover:text-accent transition-colors">Merseyside</Link></li>
               <li><Link href="/man-and-van-bristol" className="hover:text-accent transition-colors">South West</Link></li>
               <li><Link href="/man-and-van-sheffield" className="hover:text-accent transition-colors">South Yorkshire</Link></li>
-              <li><Link href="/man-and-van-edinburgh" className="hover:text-accent transition-colors">Scotland</Link></li>
+              <li><Link href="/man-and-van-glasgow" className="hover:text-accent transition-colors">Scotland</Link></li>
               <li><Link href="/man-and-van-cardiff" className="hover:text-accent transition-colors">Wales</Link></li>
               <li><Link href="/man-and-van-newcastle-upon-tyne" className="hover:text-accent transition-colors">North East</Link></li>
               <li><Link href="/areas-covered" className="hover:text-accent transition-colors font-bold">All Areas Covered</Link></li>

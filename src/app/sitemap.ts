@@ -118,6 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/man-and-van-edinburgh', priority: 0.95, freq: 'weekly' as const },
     { route: '/man-and-van-cardiff', priority: 0.95, freq: 'weekly' as const },
     { route: '/man-and-van-newcastle-upon-tyne', priority: 0.95, freq: 'weekly' as const },
+    { route: '/man-and-van-glasgow', priority: 0.95, freq: 'weekly' as const },
     { route: '/blog', priority: 0.8, freq: 'weekly' as const },
     { route: '/blog/how-much-does-man-and-van-cost', priority: 0.85, freq: 'monthly' as const },
     { route: '/blog/how-to-prepare-for-moving-day', priority: 0.85, freq: 'monthly' as const },

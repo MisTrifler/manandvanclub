@@ -416,7 +416,7 @@ export async function generateStaticParams() {
   // Exclude hub page slugs that have dedicated static route files.
   const hubSlugs = new Set([
     'london', 'manchester', 'leeds', 'liverpool', 'bristol',
-    'sheffield', 'edinburgh', 'cardiff', 'newcastle-upon-tyne',
+    'sheffield', 'edinburgh', 'cardiff', 'newcastle-upon-tyne', 'glasgow',
   ]);
   const locationParams = getIndexableLocationSlugs()
     .filter((slug) => !hubSlugs.has(slug))
