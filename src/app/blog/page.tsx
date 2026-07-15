@@ -80,6 +80,24 @@ const blogPosts = [
     readTime: "4 min read",
     category: "Moving Tips",
   },
+  {
+    slug: "birmingham-postcode-moving-guide",
+    title: "Birmingham Postcode Moving Guide",
+    description:
+      "Each Birmingham B-postcode has different access, parking and route challenges. From B1 city-centre flats to B75 Sutton Coldfield homes — what to tell your mover.",
+    date: "2026-07-15",
+    readTime: "8 min read",
+    category: "Area Guides",
+  },
+  {
+    slug: "london-borough-moving-guide",
+    title: "London Borough Moving Guide",
+    description:
+      "Each London borough has different parking rules, congestion charges and access challenges. From Camden CPZs to Croydon driveways — what to know before you move.",
+    date: "2026-07-15",
+    readTime: "9 min read",
+    category: "Area Guides",
+  },
 ];
 
 export default function BlogPage() {
