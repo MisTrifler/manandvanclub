@@ -125,6 +125,7 @@ export default function Footer() {
               <li><Link href="/same-day-man-and-van" className="hover:text-accent transition-colors">Same Day</Link></li>
               <li><Link href="/long-distance-removals" className="hover:text-accent transition-colors">Long Distance</Link></li>
               <li><Link href="/man-and-van-prices" className="hover:text-accent transition-colors">Man and Van Prices</Link></li>
+              <li><Link href="/moving-cost-calculator" className="hover:text-accent transition-colors">Cost Calculator</Link></li>
               <li><Link href="/man-and-van-near-me" className="hover:text-accent transition-colors">Man and Van Near Me</Link></li>
               <li><Link href="/man-and-van-vs-removal-company" className="hover:text-accent transition-colors">Man and Van vs Removals</Link></li>
             </ul>

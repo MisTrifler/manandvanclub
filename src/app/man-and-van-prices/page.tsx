@@ -248,9 +248,9 @@ export default function ManAndVanPricesPage() {
             <Link href="/get-started" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
               Start Your Move Request <ArrowUpRight size={20} />
             </Link>
-            <a href="tel:01217511269" className="bg-white border-2 border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 text-primary hover:border-accent hover:text-accent transition-all">
-              <Phone size={18} /> Call 0121 751 1269
-            </a>
+            <Link href="/moving-cost-calculator" className="bg-white border-2 border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 text-primary hover:border-accent hover:text-accent transition-all">
+              Try the Cost Calculator <ArrowUpRight size={16} />
+            </Link>
           </div>
           <div className="flex items-center justify-center gap-6 mt-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
             <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-green-600" /> Details Protected</span>
