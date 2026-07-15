@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { LOCATIONS } from '@/constants/locations';
 import { isLocationIndexable } from '@/lib/seo-quality-guard';
+import { getAllRouteSlugs } from '@/lib/route-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.manandvanclub.co.uk';
@@ -208,5 +209,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }));
 
-  return [...staticUrls, ...locationUrls];
+  // Route pages — city-to-city move pages
+  const routeUrls = getAllRouteSlugs().map(slug => ({
+    url: `${baseUrl}/routes/${slug}`,
+    lastModified: new Date('2026-07-15'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  const routeIndexUrl = {
+    url: `${baseUrl}/routes`,
+    lastModified: new Date('2026-07-15'),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  };
+
+  return [...staticUrls, routeIndexUrl, ...routeUrls, ...locationUrls];
 }

@@ -67,6 +67,27 @@
 - https://www.manandvanclub.co.uk/man-and-van-near-me — Find a man and van near you, UK-wide local mover coverage
 - https://www.manandvanclub.co.uk/man-and-van-vs-removal-company — Man and van vs removal company comparison
 
+### Route Pages (City-to-City Moves)
+- https://www.manandvanclub.co.uk/routes — Index of all city-to-city move routes with distance, pricing and parking guidance
+- https://www.manandvanclub.co.uk/routes/london-to-birmingham — London to Birmingham: 120mi via M1, from £250
+- https://www.manandvanclub.co.uk/routes/birmingham-to-london — Birmingham to London: 120mi via M1, from £250
+- https://www.manandvanclub.co.uk/routes/london-to-manchester — London to Manchester: 200mi via M1/M6, from £350
+- https://www.manandvanclub.co.uk/routes/manchester-to-london — Manchester to London: 200mi via M6/M1, from £350
+- https://www.manandvanclub.co.uk/routes/london-to-leeds — London to Leeds: 195mi via M1, from £350
+- https://www.manandvanclub.co.uk/routes/birmingham-to-manchester — Birmingham to Manchester: 85mi via M6, from £200
+- https://www.manandvanclub.co.uk/routes/birmingham-to-bristol — Birmingham to Bristol: 90mi via M5, from £200
+- https://www.manandvanclub.co.uk/routes/bristol-to-london — Bristol to London: 120mi via M4, from £250
+- https://www.manandvanclub.co.uk/routes/london-to-cardiff — London to Cardiff: 150mi via M4, from £300
+- https://www.manandvanclub.co.uk/routes/london-to-edinburgh — London to Edinburgh: 400mi via A1(M), from £550
+- https://www.manandvanclub.co.uk/routes/london-to-liverpool — London to Liverpool: 220mi via M1/M6, from £350
+- https://www.manandvanclub.co.uk/routes/birmingham-to-leeds — Birmingham to Leeds: 120mi via M42/M1, from £250
+- https://www.manandvanclub.co.uk/routes/leeds-to-manchester — Leeds to Manchester: 40mi via M62, from £150
+- https://www.manandvanclub.co.uk/routes/manchester-to-liverpool — Manchester to Liverpool: 35mi via M62, from £130
+- https://www.manandvanclub.co.uk/routes/edinburgh-to-glasgow — Edinburgh to Glasgow: 47mi via M8, from £150
+- https://www.manandvanclub.co.uk/routes/london-to-coventry — London to Coventry: 95mi via M1, from £200
+- https://www.manandvanclub.co.uk/routes/london-to-nottingham — London to Nottingham: 130mi via M1, from £250
+- https://www.manandvanclub.co.uk/routes/london-to-sheffield — London to Sheffield: 165mi via M1, from £300
+
 ### Blog Posts
 - https://www.manandvanclub.co.uk/blog/how-much-does-man-and-van-cost — How much does a man and van cost in 2026? Full pricing breakdown by move type and region
 - https://www.manandvanclub.co.uk/blog/how-to-prepare-for-moving-day — Complete moving day checklist: packing order, access notes, what movers need
