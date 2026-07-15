@@ -65,13 +65,23 @@ export default function AboutContent() {
       <section className="py-16 bg-white border-y border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-4">Where We Operate</h2>
-          <p className="text-text-secondary mb-8 max-w-xl mx-auto">We are building coverage across the West Midlands first. Submit a free move request for any of these areas.</p>
+          <p className="text-text-secondary mb-8 max-w-xl mx-auto">We cover locations across the UK — from Birmingham and the West Midlands to London, Manchester, Leeds, Edinburgh and beyond. Submit a free move request for any of these areas.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { name: "Man and Van Birmingham", href: "/man-and-van-birmingham" },
-              { name: "Man and Van Walsall", href: "/man-and-van-walsall" },
-              { name: "Man and Van Wolverhampton", href: "/man-and-van-wolverhampton" },
-              { name: "Man and Van Dudley", href: "/man-and-van-dudley" },
+              { name: "Birmingham", href: "/man-and-van-birmingham" },
+              { name: "Walsall", href: "/man-and-van-walsall" },
+              { name: "London", href: "/man-and-van-london" },
+              { name: "Manchester", href: "/man-and-van-manchester" },
+              { name: "Leeds", href: "/man-and-van-leeds" },
+              { name: "Liverpool", href: "/man-and-van-liverpool" },
+              { name: "Bristol", href: "/man-and-van-bristol" },
+              { name: "Sheffield", href: "/man-and-van-sheffield" },
+              { name: "Nottingham", href: "/man-and-van-nottingham" },
+              { name: "Leicester", href: "/man-and-van-leicester" },
+              { name: "Coventry", href: "/man-and-van-coventry" },
+              { name: "Edinburgh", href: "/man-and-van-edinburgh" },
+              { name: "Glasgow", href: "/man-and-van-glasgow" },
+              { name: "Cardiff", href: "/man-and-van-cardiff" },
               { name: "West Midlands Hub", href: "/man-and-van-west-midlands" },
               { name: "All Areas Covered", href: "/areas-covered" },
             ].map((loc) => (
@@ -112,6 +122,31 @@ export default function AboutContent() {
               <Link href="/contact" className="btn-orange px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
                 Send Us a Message <ArrowUpRight size={18} />
               </Link>
+            </div>
+
+            {/* Social proof — verified profiles */}
+            <div className="mt-8 pt-8 border-t border-border/50">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/40 mb-4">Find us online</p>
+              <div className="flex justify-center gap-4">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61590898873944"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#F9F9F7] rounded-full border border-border px-5 py-3 text-xs font-black uppercase tracking-widest text-primary hover:border-[#1877F2] hover:text-accent transition-all"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/></svg>
+                  Facebook
+                </a>
+                <a
+                  href="https://www.yell.com/biz/man-and-van-club-walsall-11043227/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#F9F9F7] rounded-full border border-border px-5 py-3 text-xs font-black uppercase tracking-widest text-primary hover:border-[#FED900] hover:text-accent transition-all"
+                >
+                  <svg width="30" height="12" viewBox="0 0 123.9 40"><path fill="#FED900" d="M41 36c0 2-1.6 3.6-3.6 3.6H5.3c-2 0-3.6-1.6-3.6-3.6V4C1.7 2 3.3.4 5.3.4h32.1C39.4.4 41 2 41 4v32.1-.1z"/><path d="M18 12.7c-.3 0-.4.1-.7.5C15.5 16 10.5 23.7 9.7 25c-.7 1.1-.9 1.9-.7 2.8.2.8.8 1.4 1.8 1.6.2 0 .5 0 .6-.3 1.3-1.6 8.7-11.5 10-13.3.2-.2.1-.4 0-.6-.3-.5-1.2-1.6-2-2.1-.5-.3-1-.5-1.3-.5H18" fill="#333"/></svg>
+                  Yell
+                </a>
+              </div>
             </div>
           </div>
         </div>

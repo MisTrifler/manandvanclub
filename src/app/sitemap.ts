@@ -51,13 +51,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Last modified dates
   const locationLastModified: Record<string, string> = {
-    'birmingham': '2026-07-14',
-    'walsall': '2026-07-14',
-    'wolverhampton': '2026-07-14',
-    'dudley': '2026-07-14',
-    'west-bromwich': '2026-07-14',
-    'solihull': '2026-07-14',
-    'coventry': '2026-07-14',
+    'birmingham': '2026-07-15',
+    'walsall': '2026-07-15',
+    'wolverhampton': '2026-07-15',
+    'dudley': '2026-07-15',
+    'west-bromwich': '2026-07-15',
+    'solihull': '2026-07-15',
+    'coventry': '2026-07-15',
     'stourbridge': '2026-07-14',
     'halesowen': '2026-07-14',
     'wednesbury': '2026-07-14',

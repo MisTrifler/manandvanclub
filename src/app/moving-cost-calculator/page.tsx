@@ -68,12 +68,33 @@ const howToSchema = {
   ],
 };
 
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Man and Van Club Moving Cost Calculator",
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "GBP",
+  },
+  description: "Free UK moving cost calculator. Get an instant guide price for man and van services based on move type, region and access. No sign-up required.",
+  url: `${baseUrl}/moving-cost-calculator`,
+  provider: {
+    "@type": "Organization",
+    name: "Man and Van Club",
+    url: baseUrl,
+  },
+};
+
 export default function MovingCostCalculatorPage() {
   return (
     <main className="bg-white min-h-screen selection:bg-accent selection:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
 
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="bg-[#F9F9F7] border-b border-border/50">
