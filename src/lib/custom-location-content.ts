@@ -823,6 +823,38 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
       { q: "Do Hawthorns match days affect moves in West Bromwich?", a: "Yes. West Bromwich Albion home matches at the Hawthorns create road closures, parking restrictions and heavy traffic in the surrounding streets. If your move is on a match-day Saturday, mention this so the mover can plan an alternative route or adjust timing. Properties further from the ground towards Great Barr and Oldbury are less affected." },
       { q: "How much does a man and van cost from West Bromwich to Birmingham?", a: "A West Bromwich to Birmingham move in 2026 typically costs £60–£130 depending on load size, access at both addresses and time of day. The A41 connects the two in around 15–20 minutes outside rush hour. A single-item collection might start from £50–£70. Submit your postcodes and item list for a guide price." },
     ],
+    localAreaGuides: [
+      {
+        title: "Town centre and High Street access",
+        body: "West Bromwich town centre has restricted parking around the High Street and Queen Street. If you're moving from one of the older terraces near the town centre, mention whether there's a rear entry or alley access — many of these streets were built before cars existed and the van might need to park around the corner. Loading bays near the Tesco Extra and the old Kingfisher Centre area fill up fast.",
+      },
+      {
+        title: "Great Barr and Yew Tree moves",
+        body: "Great Barr is one of the largest residential areas in West Bromwich, with a mix of interwar semis, newer estates and some larger detached homes. Most properties here have driveways, which makes loading and unloading much quicker. The A34 Walsall Road runs through Great Barr and gets busy near the Scott Arms junction — mention preferred times if your move crosses this route.",
+        links: [
+          { label: "Man and van Walsall", href: "/man-and-van-walsall" },
+        ],
+      },
+      {
+        title: "Smethwick and Oldbury border moves",
+        body: "Smethwick and Oldbury sit on the eastern side of West Bromwich and are tightly packed with Victorian and Edwardian terraces. Streets off the A457 Bearwood Road and Hollyhedge Road have limited parking and narrow entries. If your move is on the Smethwick side, note whether there's permit-only parking — it's common around the Soho area and near Lightwoods Park.",
+        links: [
+          { label: "Man and van Birmingham", href: "/man-and-van-birmingham" },
+        ],
+      },
+      {
+        title: "Greets Green and Hatton moves",
+        body: "Greets Green is a regeneration area with a mix of older terraces and newer build homes. Access has improved with the redevelopment, but some of the remaining older streets near the canal still have tight corners. Hatton is more suburban with better access. The A41 runs through both and connects to the M5 at junction 1 — useful for moves heading towards Birmingham or the Black Country.",
+      },
+      {
+        title: "Hawthorns match day and weekend moves",
+        body: "If your move is on a Saturday during football season, check whether West Bromwich Albion are playing at home. Roads around The Hawthorns stadium — Halfords Lane, Birmingham Road, the A41 — are closed or heavily congested for two hours before and after kick-off. A mover can plan an alternative route if they know in advance.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+          { label: "Start a request", href: "/get-started" },
+        ],
+      },
+    ],
   },
 
   // ──────────────────────────────────────────
@@ -973,6 +1005,35 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
       { q: "Is parking difficult in the Lady Bay conservation area?", a: "Lady Bay has restricted parking in its conservation area streets, with narrow access and limited on-street spaces. If your property is in Lady Bay, mention whether there is a driveway or whether on-street loading is possible. Properties on the wider roads towards Central Avenue and Gamston tend to have easier access." },
       { q: "How much does a man and van cost from West Bridgford to Nottingham city centre?", a: "A West Bridgford to Nottingham city centre move in 2026 typically costs £50–£100 depending on load and access. The A60 London Road connects the two in around 5–10 minutes outside rush hour. A single-item collection might start from £50. Submit both postcodes for a guide price." },
     ],
+    localAreaGuides: [
+      {
+        title: "Lady Bay and the conservation area",
+        body: "Lady Bay is one of West Bridgford's most sought-after areas, with tree-lined streets and Victorian and Edwardian houses. The conservation area status means parking restrictions are tighter than other parts of town, and some streets are too narrow for two vehicles to pass. If you're moving from Lady Bay, mention whether there's a driveway or whether the van will need to park on the street — and whether you can get a parking suspension from Rushcliffe Borough Council.",
+      },
+      {
+        title: "Edwalton and Gamston moves",
+        body: "Edwalton and Gamston are the newer, more suburban parts of West Bridgford with detached and semi-detached homes that typically have double driveways and garages. Access is straightforward — the main consideration is the A606 Melton Road, which gets busy during rush hour. Moves here tend to be quicker for loading and unloading because of the driveway access.",
+        links: [
+          { label: "Man and van Nottingham", href: "/man-and-van-nottingham" },
+        ],
+      },
+      {
+        title: "Central Avenue and the town centre",
+        body: "Central Avenue is the main shopping street in West Bridgford, with flats above shops and terraced houses on the side streets. Parking along Central Avenue itself is restricted, but the side streets — Prospect Road, Syston Street — usually have spaces available. If your flat is above a shop on Central Avenue, mention whether there's rear access through a service yard.",
+      },
+      {
+        title: "Trent Bridge match day considerations",
+        body: "When Trent Bridge is hosting cricket or the City Ground has a football match, the roads around the bridges — Trent Bridge, Lady Bay Bridge, and the A60 London Road — become gridlocked. Radcliffe Road and Bridgford Road are often closed. If your move falls on a match day, a mover can plan around it, but only if they know in advance. Add this to your access notes.",
+      },
+      {
+        title: "Ruddington and Wilford routes",
+        body: "Ruddington is a large village south of West Bridgford with a mix of older cottages near the Green and newer estates further out. Wilford sits between West Bridgford and the Clifton estate and has some tight access streets near the village. The A60 connects both to Nottingham city centre in about 10 minutes outside rush hour. For moves heading into Nottingham, include both postcodes for a more accurate quote.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+          { label: "Start a request", href: "/get-started" },
+        ],
+      },
+    ],
   },
 
   // ──────────────────────────────────────────
@@ -1059,6 +1120,35 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
       { q: "Are approved North Hykeham movers insured?", a: "Movers on the platform must hold Goods in Transit and Public Liability insurance. When you receive a quote for your North Hykeham move, confirm their cover before booking." },
       { q: "Does the A46 bypass affect move timing in North Hykeham?", a: "The A46 bypass roundabout near North Hykeham creates regular congestion during rush hour, particularly in the morning and late afternoon. If your move involves crossing the bypass, mention preferred timing so the mover can plan around peak periods. The A1434 Newark Road provides an alternative route into Lincoln." },
       { q: "How much does a man and van cost from North Hykeham to Lincoln city centre?", a: "A North Hykeham to Lincoln city centre move in 2026 typically costs £50–£90 depending on load and access. The A1434 Newark Road connects the two in around 10 minutes outside rush hour. A single-item collection might start from £50. Submit both postcodes for a guide price." },
+    ],
+    localAreaGuides: [
+      {
+        title: "North Hykeham town centre and Moor Lane",
+        body: "North Hykeham has grown rapidly and the town centre area around Moor Lane and the retail park has a mix of modern housing estates and older properties. Most newer builds have driveways, which makes loading straightforward. The retail park car parks can be handy for van parking if your street is tight — mention whether your property has a drive or is on-street only.",
+      },
+      {
+        title: "Waddington and Bracebridge Heath",
+        body: "Waddington, just south of North Hykeham, is a large village with a mix of RAF housing, older stone-built properties and modern estates. Bracebridge Heath sits between North Hykeham and Lincoln and has good access via the A15. Both areas have driveway access as standard. If you're moving from the older part of Waddington near the High Street, mention whether there are narrow lanes.",
+        links: [
+          { label: "Man and van Lincoln", href: "/man-and-van-lincoln" },
+        ],
+      },
+      {
+        title: "Witham St Hughs and new-build estates",
+        body: "Witham St Hughs is a large new development west of North Hykeham, with modern detached and semi-detached homes. Access here is usually excellent — wide roads, driveways, and no parking restrictions. The main thing to flag is whether the property is on a road that's still being finished on adjacent plots, as construction traffic can sometimes block access during the day.",
+      },
+      {
+        title: "Skellingthorpe and Boultham moves",
+        body: "Skellingthorpe is a village on the western side with older properties near the village green and newer estates on the outskirts. Boultham is closer to Lincoln and has a mix of council-built housing and newer developments. Both connect to Lincoln via the A1434 Newark Road. The Skellingthorpe roundabout on the A46 can back up during morning and evening rush hour.",
+      },
+      {
+        title: "Moves into Lincoln city centre from North Hykeham",
+        body: "The A1434 Newark Road is the main route from North Hykeham into Lincoln, taking about 10 minutes outside rush hour. But Lincoln's city centre has tight one-way streets, pedestrian zones, and very limited parking near the uphill area and the Cathedral Quarter. If your delivery address is in central Lincoln, mention whether there's a loading bay or whether the van will need to park on a side street and carry items.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+          { label: "Start a request", href: "/get-started" },
+        ],
+      },
     ],
   },
 
@@ -1338,6 +1428,38 @@ Mitcham is popular with first-time buyers moving out from Croydon and Tooting, s
     description: "Man and van Wood Green from £55/hr. One verified mover quotes. Walthamstow, Tottenham, Harringay, Bounds Green.",
     localMovingInfo: "Wood Green is a busy North London shopping and residential area with a mix of Victorian and modern housing. Approved Wood Green movers can take account of the busy A406, the shopping centre access, and the quieter streets towards Bounds Green and Harringay. Approved movers serving Wood Green regularly handle moves between the town centre, Harringay, and Bounds Green. They can account for the A406 traffic, the busy shopping area access, and the best routes for moves in this popular North London area. The A105, A109, A406 routes affect move timing, particularly during rush hour. A406 traffic. busy shopping area. A verified mover reviewing a Wood Green request will check property access, parking availability and A105 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of Wood Green?","a":"Yes. You can submit a move request for Walthamstow, Tottenham, Harringay, Bounds Green, Turnpike Lane and surrounding areas. A verified mover can check the request and send quote options if they cover that area."},{"q":"How much does a man and van cost in Wood Green?","a":"Wood Green man and van rates in 2026 start from £55 per hour. For a local move, expect to pay £60–£130 depending on how much furniture you have, whether there are stairs or lifts, and parking at both addresses. A full house move from a 3-bed Wood Green property is typically in the £300–£550 range. Submit your postcodes and item list for a guide price first."},{"q":"Can I find a mover for a same-day move in Wood Green?","a":"Same-day moves in the Wood Green area may be possible if a verified mover is available. Include both postcodes, your preferred timing and any access details, and a mover can review the request if they have capacity."},{"q":"Will multiple movers contact me?","a":"No. Your Wood Green enquiry goes to exactly one verified mover, not a panel. This is different from comparison sites that sell your details to multiple firms. Your contact information stays protected until you accept a quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, it costs nothing to submit a request. Payment only happens if you choose to accept a quote: you pay a booking deposit (which comes off the total), and the mover collects the balance on the day. A verified mover checks your Wood Green postcodes, item list and access notes before they quote."},{"q":"How quickly will I be contacted?","a":"After submission, a verified mover reviews your Wood Green request — including postcodes, items, access and timing — and can send quote options if available. Your phone number and email stay protected until you accept a quote. Movers covering Walthamstow, Tottenham, Harringay and the A105 route tend to respond during working hours."},{"q":"Do you cover Walthamstow, Tottenham, Harringay?","a":"Yes. You can submit requests for Walthamstow, Tottenham, Harringay, Bounds Green, Turnpike Lane and nearby areas. A verified mover can check the request and send quote options if they cover that area."},{"q":"Are approved Wood Green movers insured?","a":"Yes. Every mover on the platform must hold Goods in Transit and Public Liability insurance — this is a requirement, not optional. Before you book your Wood Green move, ask the quoting mover to confirm their policy details so you know exactly what is covered."},{"q":"What should I know about moving in Wood Green?","a":"Be aware of A406 traffic and busy shopping area. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Wood Green move."},{"q":"How much does a man and van cost from Wood Green to Walthamstow?","a":"A Wood Green to Walthamstow move in 2026 typically costs £80–£180 depending on load, access and timing. The A105 and A406 connect Wood Green to Haringey and the North Circular. Wood Green shopping city has loading bay restrictions. The A406 Bounds Green junction creates delays, and Turnpike Lane has bus lanes with time-restricted loading. A single-item collection might start from £55–£80. Submit your postcodes and item list for a guide price."}],
+    localAreaGuides: [
+      {
+        title: "Wood Green shopping district and High Road",
+        body: "The High Road through Wood Green is one of north London's busiest stretches, with bus lanes, loading restrictions and constant traffic. If your flat or house is near the shopping city, mention whether there's a side street or mews the van can use instead. Loading bays on the High Road are time-restricted and heavily enforced by Haringey parking enforcement.",
+      },
+      {
+        title: "Bounds Green and Bowes Park moves",
+        body: "Bounds Green, on the Enfield border, has a mix of Edwardian terraces and 1930s semis with generally better access than the heart of Wood Green. The A406 North Circular runs right past Bounds Green and creates a bottleneck at the Bounds Green junction during rush hour. Properties on the side streets off Brownlow Road and Bounds Green Road often have permit parking — include your parking situation in the request.",
+        links: [
+          { label: "Man and van Enfield", href: "/man-and-van-enfield" },
+        ],
+      },
+      {
+        title: "Harringay Ladder and Finsbury Park side",
+        body: "The Harringay Ladder — the parallel streets running between Green Lanes and Finsbury Park — is a popular area with Victorian terraces that have small front gardens and limited on-street parking. Some streets are permit-only. The Ladder streets are narrow, and two vans can't pass easily. Mention whether there are steps up to the front door — even a few steps add time on a full house move.",
+        links: [
+          { label: "Man and van London", href: "/man-and-van-london" },
+        ],
+      },
+      {
+        title: "Turnpike Lane and Ducketts Common area",
+        body: "Turnpike Lane is a major bus interchange and the surrounding streets are a mix of converted Victorian houses split into flats and newer social housing blocks. Parking is tight and often permit-restricted. Flats above shops on Turnpike Lane itself may have rear access through service yards — mention this if you have it, as it saves the mover carrying items through the shop front.",
+      },
+      {
+        title: "Furniture deliveries and single-item pickups in N22",
+        body: "N22 covers Wood Green and parts of Alexandra Palace. For furniture collections from Facebook Marketplace or eBay sellers in N22, include the full postcode, whether there are stairs or a lift, and whether the item is already dismantled. A verified mover checks these details before sending a quote — it means the price reflects the actual work rather than a guess.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Start a request", href: "/get-started" },
+        ],
+      },
+    ],
   },
   tottenham: {
     intro: `From Victorian terraces in central Tottenham to family homes near Wood Green, Walthamstow, Edmonton, every move is different. The A10 and local A10 traffic congestion can affect how long the job takes. Submit your postcodes, items and access details for a verified mover to review before quoting.`,
@@ -1459,6 +1581,38 @@ Mitcham is popular with first-time buyers moving out from Croydon and Tooting, s
     description: "Man and van Ashton-under-Lyne from £50/hr. One verified mover quotes. Oldham, Stalybridge, Dukinfield, Droylsden.",
     localMovingInfo: "Ashton-under-Lyne is a historic Lancashire town with a busy market and a mix of Victorian and modern housing. Approved Ashton movers can take account of the steep roads towards Stalybridge, the busy A635, and the best routes through this busy Greater Manchester town. Approved movers serving Ashton-under-Lyne regularly handle moves between the town centre, Dukinfield, and Droylsden. They can account for the M60 traffic, the hilly roads in some areas, and the best access routes for moves in this busy Greater Manchester town. The A635, A57, M60 routes affect move timing, particularly during rush hour. M60 traffic congestion. hilly roads towards Stalybridge. A verified mover reviewing a Ashton-under-Lyne request will check property access, parking availability and A635 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of Ashton-under-Lyne?","a":"Yes. You can submit a move request for Oldham, Stalybridge, Dukinfield, Droylsden, Mossley and surrounding areas. A verified mover can check the request and send quote options if they cover that area."},{"q":"How much does a man and van cost in Ashton-under-Lyne?","a":"Hourly rates for Ashton-under-Lyne man and van services in 2026 begin at £50. A typical local job costs £60–£130, though stairs, heavy furniture and restricted parking can push this up. A complete house move from a 3-bed Ashton-under-Lyne home generally ranges from £250–£500. Enter your details for a guide price before a verified mover quotes."},{"q":"Can I find a mover for a same-day move in Ashton-under-Lyne?","a":"Same-day moves around Ashton-under-Lyne and Oldham, Stalybridge may be available. Submit both postcodes and your preferred time window — a verified mover covering the A635 route can review the request if they have space."},{"q":"Will multiple movers contact me?","a":"No. Man and Van Club is not a lead-generation site. When you submit a Ashton-under-Lyne move request, one verified mover reviews it — not a list of competing companies. Your phone number and email stay confidential until you accept their quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, you can submit your Ashton-under-Lyne move request at no cost. If a verified mover sends a quote you want to accept, you pay a booking deposit that reduces the total. The mover collects the remaining balance directly on moving day. Your postcodes, item list and access notes are reviewed before any quote is sent."},{"q":"How quickly will I be contacted?","a":"Once submitted, a verified mover assesses your Ashton-under-Lyne move details — postcodes, furniture list, access and preferred date — and sends a quote if they can help. No personal details are shared until you accept a quote and pay the deposit. Movers working around Oldham, Stalybridge, Dukinfield and the A635 typically review requests within their working day."},{"q":"Do you cover Oldham, Stalybridge, Dukinfield?","a":"Yes. You can submit requests for Oldham, Stalybridge, Dukinfield, Droylsden, Mossley and nearby areas. Submit your request and a verified mover can respond with a quote if they cover those areas."},{"q":"Are approved Ashton-under-Lyne movers insured?","a":"Yes. Movers on the platform must carry Goods in Transit and Public Liability insurance before they can access any customer requests. When you receive a quote for your Ashton-under-Lyne move, ask the mover to confirm their specific cover details before you book."},{"q":"What should I know about moving in Ashton-under-Lyne?","a":"Be aware of M60 traffic congestion and hilly roads towards stalybridge. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Ashton-under-Lyne move."},{"q":"How much does a man and van cost from Ashton-under-Lyne to Oldham?","a":"A Ashton-under-Lyne to Oldham move in 2026 typically costs £80–£180 depending on load, access and timing. Ashton-under-Lyne and Oldham are connected by the A627 and A671, roughly 15–20 minutes apart in Greater Manchester. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price."}],
+    localAreaGuides: [
+      {
+        title: "Moves in Ashton town centre and Stamford Street",
+        body: "The town centre around Stamford Street and the market area has a concentration of Victorian terraces with narrow entries and limited on-street parking. Loading bays near the arcades fill up quickly on market days (Tuesday, Friday, Saturday). If you're moving from a terrace off Katherine Street or Oldham Road, mention whether the van can pull up outside or needs to carry items down a ginnel.",
+      },
+      {
+        title: "Cotchford Farm and Dukinfield moves",
+        body: "Dukinfield sits across the Tame from Ashton town centre and is mostly semis and newer builds with better driveway access than the terraces closer in. Moves around Dukinfield often use the A616 to cross the river, and the Astley Street bridge can bottleneck at school times. Add whether there's a driveway — it makes a real difference to loading time.",
+        links: [
+          { label: "Man and van Stalybridge", href: "/man-and-van-stalybridge" },
+        ],
+      },
+      {
+        title: "Hill-top terraces near Stalybridge and Mossley",
+        body: "The roads climbing up from Ashton towards Stalybridge and Mossley are genuinely steep in places — Ryecroft Road and Hough Hill Road being the obvious ones. If your move involves carrying furniture up or down these hills, the mover needs to know so they can allow extra time and hands. Parking on these roads is also tighter than it looks on a map.",
+        links: [
+          { label: "Man and van Oldham", href: "/man-and-van-oldham" },
+        ],
+      },
+      {
+        title: "Droylsden and the A662 corridor",
+        body: "Droylsden sits east of Ashton along the A662 and has a good mix of terraced housing near the centre and larger semis towards Fairfield. The A662 itself can slow right down near the junction with the M60 at rush hour. If you're moving from the Fairfield side, mention driveway access — many properties there have off-road parking which speeds things up.",
+      },
+      {
+        title: "Furniture deliveries along the M60 corridor",
+        body: "Ashton sits right on the M60, which is handy for larger furniture collections from retailers or marketplace pickups further afield. But the M60 between junctions 23 and 25 can crawl at peak times. Give the mover both postcodes and a time window so they can plan around the motorway rather than sitting in queuing traffic.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Start a request", href: "/get-started" },
+        ],
+      },
+    ],
   },
   hyde: {
     intro: `Moving in Hyde means planning around M67 traffic congestion, the A57 corridor and a mix of Victorian terraces. Whether your move is within Hyde or heading to Stalybridge, Dukinfield, Denton, adding accurate postcodes, access details and your item list helps a verified mover review the job and quote appropriately before you decide whether to book.`,
@@ -1596,6 +1750,36 @@ Pudsey moves are typically family-sized, with the grammar school drawing parents
     description: "Man and van St Helens from £50/hr. One verified mover quotes. Widnes, Prescot, Rainford, Haydock.",
     localMovingInfo: "St Helens is a historic Merseyside town with a strong industrial past and a mix of Victorian and modern housing. Approved St Helens movers can take account of the busy A57, the M62 junctions, and the best routes through this busy Merseyside town. Approved movers serving St Helens regularly move families between the town centre, Widnes, and Prescot. They can account for the M62 traffic, the narrow town centre access, and the best routes for moves in this busy Merseyside town. The A57, A58, M62 routes affect move timing, particularly during rush hour. M62 traffic congestion. narrow town centre streets. A verified mover reviewing a St Helens request will check property access, parking availability and A57 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of St Helens?","a":"Yes. You can submit a move request for Widnes, Prescot, Rainford, Haydock, Eccleston and surrounding areas. Whether a mover is available for these areas depends on their current schedule — they review requests before quoting."},{"q":"How much does a man and van cost in St Helens?","a":"Hourly rates for St Helens man and van services in 2026 begin at £50. A typical local job costs £60–£130, though stairs, heavy furniture and restricted parking can push this up. A complete house move from a 3-bed St Helens home generally ranges from £250–£500. Enter your details for a guide price before a verified mover quotes."},{"q":"Can I find a mover for a same-day move in St Helens?","a":"Same-day help in St Helens depends on mover availability. Submit your postcodes, item list and preferred time — a verified mover will check whether they can fit your job in and send a quote if they can."},{"q":"Will multiple movers contact me?","a":"No. Unlike sites that sell your details to several movers at once, your St Helens request is seen by only one verified mover. Your phone number and email are never shared around — they are only released after you accept a quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, submitting is completely free. If you accept a mover quote, you pay a booking deposit that counts towards the total — the mover receives the rest on moving day. Your St Helens request includes postcodes, access details and your item list, which a verified mover reviews before quoting."},{"q":"How quickly will I be contacted?","a":"Once you submit, a verified mover can review your St Helens move details — postcodes, item list, access notes and preferred date — and send quote options. Your contact details remain hidden until you accept a quote and pay the booking deposit. Movers working the A57 corridor check local requests regularly."},{"q":"Do you cover Widnes, Prescot, Rainford?","a":"Yes. You can submit requests for Widnes, Prescot, Rainford, Haydock, Eccleston and nearby areas. Submit your request and a verified mover can respond with a quote if they cover those areas."},{"q":"Are approved St Helens movers insured?","a":"Movers must provide valid Goods in Transit and Public Liability insurance before they are approved to use the platform. When you get a quote for your St Helens move, we recommend confirming the mover's insurance details with them directly before you accept."},{"q":"What should I know about moving in St Helens?","a":"Be aware of M62 traffic congestion and narrow town centre streets. Add your property access notes, parking details and any stairs so the mover can quote accurately for your St Helens move."},{"q":"How much does a man and van cost from St Helens to Liverpool?","a":"A St Helens to Liverpool move in 2026 typically costs £80–£180 depending on load, access and timing. The A570 and A58 connect St Helens to Liverpool and Wigan. St Helens town centre has restricted parking near the bus station. The M62 junction 7 at Rainhill provides fast access to Manchester and Liverpool. The A570 Sherdley Road is a busy corridor with loading restrictions. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price."}],
+    localAreaGuides: [
+      {
+        title: "Town centre moves around Church Street and Duke Street",
+        body: "St Helens town centre has a mix of above-shop flats and older terraces running off Church Street. Parking near the bus station and along Duke Street is time-limited, and loading bays fill early. If your flat is above a shop on Church Street, mention whether there's a rear entry — some have yard access through ginnels that a van can't reach.",
+      },
+      {
+        title: "Eccleston and the A570 corridor",
+        body: "Eccleston is one of the more popular residential areas in St Helens, with larger semis and detached homes that typically have driveways. The A570 Sherdley Road is the main route in but has loading restrictions during the day. Moves in Eccleston tend to be smoother for access — just make sure to mention if there are gravel drives or steps up to the front door, which slow down trolley work.",
+      },
+      {
+        title: "Haydock and Blackbrook moves",
+        body: "Haydock sits between St Helens and Wigan and is well connected via the A580 East Lancs Road. Properties around Haydock are mostly post-war semis with decent access. The main thing to flag is whether your move falls on a race day at Haydock Park — traffic on the A580 and A49 gets heavy and side roads near the course are closed.",
+      },
+      {
+        title: "Rainford and Rainhill — village moves",
+        body: "Both Rainford and Rainhill are village-style areas with wider roads and easier parking than central St Helens. Rainhill sits right by the M62 at junction 7, which is convenient for longer-distance moves but means the roundabout gets congested at rush hour. Rainford is more rural — add whether the property is on a lane too narrow for a Luton van.",
+        links: [
+          { label: "Man and van Wigan", href: "/man-and-van-wigan" },
+          { label: "Man and van Liverpool", href: "/man-and-van-liverpool" },
+        ],
+      },
+      {
+        title: "Furniture collections and deliveries in WA10 and WA11",
+        body: "For single-item pickups or deliveries in the WA10 and WA11 postcodes — whether it's a sofa from a shop on the retail park off Boundary Road or a washing machine from a seller in Thatto Heath — include the full postcode and whether the item needs carrying up stairs. A verified mover reviews these details before quoting.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Start a request", href: "/get-started" },
+        ],
+      },
+    ],
   },
   widnes: {
     intro: `From Victorian terraces in central Widnes to family homes near St Helens, Runcorn, Warrington, every move is different. The A557 and local M62 traffic congestion can affect how long the job takes. Submit your postcodes, items and access details for a verified mover to review before quoting.`,
@@ -1641,6 +1825,35 @@ The A370 is the only major road in and out of Weston, and it gets congested duri
 
 A verified mover reviewing a Weston request will check whether the property is a seafront flat (lift access, parking restrictions, tourist traffic) or a Worle estate home (wider access, driveway, longer route to the motorway). The distance to Bristol also affects the quote — a Weston-to-Bristol move is 25 minutes on a clear run but can be double during rush hour.`,
     faq: [{"q":"Do you cover all areas of Weston-super-Mare?","a":"Yes. You can submit a move request for Worle, Milton, Oldmixon, Uphill, Locking Castle and surrounding areas. Whether a mover is available for these areas depends on their current schedule — they review requests before quoting."},{"q":"How much does a man and van cost in Weston-super-Mare?","a":"In 2026, Weston-super-Mare man and van prices start at around £50 per hour. A straightforward local move usually comes in at £60–£130 — the exact cost depends on furniture volume, access (stairs, lifts, parking) and the A370 traffic at the time. A 3-bed house move in Weston-super-Mare could be £250–£500. Add your details for a guide price."},{"q":"Can I find a mover for a same-day move in Weston-super-Mare?","a":"Same-day moves around Weston-super-Mare and Worle, Milton may be available. Submit both postcodes and your preferred time window — a verified mover covering the A370 route can review the request if they have space."},{"q":"Will multiple movers contact me?","a":"No. Unlike lead-selling websites that share your enquiry with dozens of companies, Man and Van Club sends your Weston-super-Mare request to one verified mover only. Your phone number and email are never broadcast — they stay private until you choose to accept a quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, submitting is completely free. If you accept a mover quote, you pay a booking deposit that counts towards the total — the mover receives the rest on moving day. Your Weston-super-Mare request includes postcodes, access details and your item list, which a verified mover reviews before quoting."},{"q":"How quickly will I be contacted?","a":"Once you submit, a verified mover can review your Weston-super-Mare move details — postcodes, item list, access notes and preferred date — and send quote options. Your contact details remain hidden until you accept a quote and pay the booking deposit. Movers working the A370 corridor check local requests regularly."},{"q":"Do you cover Worle, Milton, Oldmixon?","a":"Yes. You can submit requests for Worle, Milton, Oldmixon, Uphill, Locking Castle and nearby areas. Availability depends on verified movers reviewing the move details."},{"q":"Are approved Weston-super-Mare movers insured?","a":"Yes. Movers on the platform must carry Goods in Transit and Public Liability insurance before they can access any customer requests. When you receive a quote for your Weston-super-Mare move, ask the mover to confirm their specific cover details before you book."},{"q":"What should I know about moving in Weston-super-Mare?","a":"Be aware of A370 coastal traffic and seafront access restrictions. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Weston-super-Mare move."},{"q":"How much does a man and van cost from Weston-super-Mare to Bristol?","a":"A Weston-super-Mare to Bristol move in 2026 typically costs £80–£180 depending on load, access and timing. Weston-super-Mare connects to Bristol via the A370 and M5, roughly 30–40 minutes depending on M5 traffic. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price."}],
+    localAreaGuides: [
+      {
+        title: "Seafront and Grand Pier area moves",
+        body: "Properties along the seafront — from Knightstone Island towards Uphill — have fantastic views but tricky access. The seafront road has loading restrictions in summer, and parking near the Grand Pier is pay-and-display only with short time limits. If you're moving from a seafront flat, mention whether there's a lift or it's stairs only — some of the older buildings have steep, narrow staircases.",
+      },
+      {
+        title: "Worle and Milton moves",
+        body: "Worle is the biggest residential area in Weston and mostly consists of post-war semis and modern estates with good driveway access. Milton, just south of the town centre, has a mix of Victorian villas and newer builds. The A371 links both to the town centre and can slow down near the Worle supermarket roundabout at peak times. Driveway access is the norm in Worle — mention if you don't have one.",
+      },
+      {
+        title: "Oldmixon and Locking Castle",
+        body: "Oldmixon is a post-war estate on the south side of Weston with mostly semis and terraces. Access is generally good with on-street parking available. Locking Castle is a newer development with modern housing and decent roads. Both areas are close to the M5 junction 21, which is handy for moves heading towards Bristol or the M4 corridor.",
+        links: [
+          { label: "Man and van Bristol", href: "/man-and-van-bristol" },
+        ],
+      },
+      {
+        title: "Uphill village and the A370 corridor",
+        body: "Uphill is the older village at the southern end of Weston, with stone-built cottages and narrow lanes that can be tight for a Luton van. The A370 runs past Uphill on its way to Bristol and gets busy with coastal traffic in summer. If your move involves Uphill Hill or the streets around the old church, note the lane width and any low walls that could block van access.",
+      },
+      {
+        title: "Marketplace pickups and furniture deliveries in BS22–BS24",
+        body: "Single-item collections and furniture deliveries in the BS22 and BS24 postcodes are common — from sellers near the Sovereign Centre to pickups from the retail parks along the A370. Give both postcodes and add whether the item needs dismantling. A verified mover checks these details before quoting so there are no surprises on the day.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Start a request", href: "/get-started" },
+        ],
+      },
+    ],
   },
   bridgwater: {
     intro: `Whether you are moving within Bridgwater or relocating to North Petherton, Cannington, Puriton, the details matter — A38 traffic congestion, Victorian terraces and the A38 can all change the scope of the job. A verified mover reviews your postcodes, item list and access notes before sending quote options.`,
