@@ -49,3 +49,17 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   @apply bg-white p-6 rounded-lg border border-[#E0E0E0] shadow-sm;
 }
+
+/* ── Floating Call Button Pulse Animation ── */
+@keyframes floating-call-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(249,115,22,0.5), 0 8px 32px rgba(249,115,22,0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(249,115,22,0), 0 8px 32px rgba(249,115,22,0.6);
+  }
+}
+
+.floating-call-btn {
+  animation: floating-call-pulse 2s ease-in-out infinite;
+}

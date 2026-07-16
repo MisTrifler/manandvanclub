@@ -135,9 +135,18 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white border-b border-border sticky top-0 z-[100] transition-all">
-      {/* Top Info Bar */}
-      <div className="hidden lg:block bg-primary text-white py-1 border-b border-white/5">
+    <>
+      {/* ── Mobile Urgent Call Bar ── */}
+      <div className="lg:hidden bg-accent text-white py-1.5 text-center sticky top-0 z-[110]">
+        <a href="tel:01217511269" className="flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-widest">
+          <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+          Open Now · Call 0121 751 1269 · From £50
+        </a>
+      </div>
+
+      <header className="bg-white border-b border-border sticky top-6 lg:top-0 z-[100] transition-all">
+        {/* Top Info Bar */}
+        <div className="hidden lg:block bg-primary text-white py-1 border-b border-white/5">
         <div className="container mx-auto px-4 flex justify-between items-center text-[9px] font-black uppercase tracking-[0.2em]">
           <div className="flex gap-6">
             <a href="mailto:support@manandvanclub.co.uk" className="flex items-center gap-2 hover:text-accent transition-colors">
@@ -349,5 +358,6 @@ export default function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }
