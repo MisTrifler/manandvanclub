@@ -30,72 +30,71 @@ export default function HomeContent() {
       {/* ──────────────────── Hero: Move Type Selector ──────────────────── */}
       <section
         id="quote-form"
-        className="relative flex items-center justify-center min-h-[calc(100dvh-56px)] lg:min-h-[calc(100vh-64px)] scroll-mt-0"
+        className="relative flex items-center justify-center min-h-[calc(100dvh-56px)] lg:min-h-[calc(100vh-64px)] scroll-mt-0 bg-[#0f172a]"
       >
-        {/* Background image */}
+        {/* Background image — very dark overlay for readability */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-moving.jpg"
-            alt="Professional movers loading a Luton van for a residential house move"
+            src="/images/hero-man-and-van.jpg"
+            alt="Man and van service — verified mover ready to help with your move"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center opacity-25"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/92 via-[#0f172a]/85 to-[#0f172a]/92" />
         </div>
 
         <div className="relative z-10 w-full max-w-lg mx-auto px-5 py-10 text-center">
 
           {/* Headline */}
           <h1
-            className="font-black tracking-tighter text-white"
-            style={{ fontSize: "clamp(32px, 7vw, 52px)", lineHeight: "0.95" }}
+            className="font-black tracking-tight text-white"
+            style={{ fontSize: "clamp(28px, 6.5vw, 44px)", lineHeight: "1.05" }}
           >
             Start Your Move Request
           </h1>
 
-          <p className="mt-3 text-sm font-bold text-white/70 tracking-wide">
+          <p className="mt-3 text-sm font-bold text-white/80 tracking-wide">
             Free to submit · No spam · Details protected
           </p>
 
           {/* Move Type Selector */}
           <div className="mt-8">
             <h2
-              className="font-black text-white tracking-tight mb-2"
-              style={{ fontSize: "clamp(20px, 3.5vw, 26px)" }}
+              className="font-black text-white tracking-tight mb-1"
+              style={{ fontSize: "clamp(18px, 3.5vw, 24px)" }}
             >
               What do you need help moving?
             </h2>
-            <p className="text-sm text-white/60 mb-5">
-              Choose the closest option. You can add the details next.
+            <p className="text-sm text-white/70 mb-6">
+              Choose the closest option. You can add details next.
             </p>
 
-            <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto">
+            <div className="grid grid-cols-3 gap-3 max-w-xs mx-auto">
               {MOVE_TYPES.map((type) => (
                 <a
                   key={type.label}
                   href={type.href}
-                  className="group flex flex-col items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 hover:bg-accent hover:border-accent transition-all duration-200 hover:scale-[1.04] active:scale-[0.97]"
+                  className="group flex flex-col items-center gap-2.5 bg-white rounded-2xl p-4 shadow-lg hover:bg-accent transition-all duration-200 hover:scale-[1.04] active:scale-[0.97]"
                 >
                   <span className="text-3xl leading-none">{type.emoji}</span>
-                  <span className="text-xs font-black text-white tracking-tight leading-tight">
+                  <span className="text-xs font-black text-primary group-hover:text-white tracking-tight leading-tight">
                     {type.label}
                   </span>
                 </a>
               ))}
             </div>
 
-            <p className="mt-4 text-xs text-white/40 font-medium">
+            <p className="mt-5 text-sm text-white/60 font-medium">
               Not sure? Choose <strong className="text-accent">Man &amp; Van</strong>.
             </p>
           </div>
 
-          {/* Call button */}
+          {/* Call option */}
           <a
             href="tel:01217511269"
-            className="inline-flex items-center gap-2 mt-6 text-xs font-black text-white/50 hover:text-accent transition-colors"
+            className="inline-flex items-center gap-2 mt-6 text-sm font-black text-white/90 hover:text-accent transition-colors"
           >
-            <Phone size={14} />
+            <Phone size={16} />
             0121 751 1269
           </a>
 
