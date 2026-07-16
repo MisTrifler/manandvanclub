@@ -8,7 +8,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
-import IntentSelector from "@/components/IntentSelector";
 import type { IntentType } from "@/lib/intent-detection";
 
 const MOVE_TYPES: { label: string; emoji: string; intent: IntentType }[] = [
@@ -25,7 +24,6 @@ export default function HomeContent() {
 
   const handleTileClick = useCallback((intent: IntentType) => {
     setSelectedIntent(intent);
-    // Small delay to let the form render with the new intent, then scroll
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const formSection = document.getElementById("quote-form");
@@ -34,10 +32,6 @@ export default function HomeContent() {
         }
       });
     });
-  }, []);
-
-  const handleIntentFromSelector = useCallback((intent: IntentType) => {
-    setSelectedIntent(intent);
   }, []);
 
   return (
@@ -64,11 +58,12 @@ export default function HomeContent() {
           <h1
             className="font-black tracking-tight text-white"
             style={{ fontSize: "clamp(28px, 6.5vw, 44px)", lineHeight: "1.05" }}
+            data-speakable="hero-heading"
           >
             Start Your Move Request
           </h1>
 
-          <p className="mt-3 text-sm font-bold text-white/80 tracking-wide">
+          <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
             Free to submit · No spam · Details protected
           </p>
 
@@ -125,20 +120,31 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-xl">
 
           {!selectedIntent ? (
-            /* ── No intent selected yet: show clean selector ── */
-            <>
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-black text-primary uppercase tracking-tight">
-                  Get your free quote
-                </h2>
-                <p className="text-sm text-text-secondary mt-1">
-                  Pick a move type and we&apos;ll match you with a verified local mover.
-                </p>
+            /* ── No intent selected yet: show compact inline selector ── */
+            <div className="text-center">
+              <h2 className="text-2xl font-black text-primary uppercase tracking-tight mb-1">
+                Get your free quote
+              </h2>
+              <p className="text-sm text-text-secondary mb-5">
+                Pick a move type and we&apos;ll match you with a verified local mover.
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {MOVE_TYPES.map((type) => (
+                  <button
+                    key={type.label}
+                    type="button"
+                    onClick={() => handleTileClick(type.intent)}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/10 bg-white px-4 py-2.5 text-xs font-black uppercase tracking-wider text-primary shadow-sm transition hover:border-accent hover:bg-accent hover:text-white active:scale-[0.97]"
+                  >
+                    <span className="text-base leading-none">{type.emoji}</span>
+                    {type.label}
+                  </button>
+                ))}
               </div>
-              <div className="overflow-hidden rounded-[1.75rem] border border-white/25 bg-white shadow-[0_24px_80px_rgba(2,6,23,0.20)] ring-1 ring-black/5 px-5 pt-5 pb-5 lg:px-8 lg:pt-8 lg:pb-8">
-                <IntentSelector onSelect={handleIntentFromSelector} />
-              </div>
-            </>
+              <p className="mt-3 text-xs text-text-secondary">
+                Not sure? Choose <button type="button" onClick={() => handleTileClick("general")} className="font-black text-accent hover:underline">Man &amp; Van</button>.
+              </p>
+            </div>
           ) : (
             /* ── Intent selected: show the form ── */
             <>
@@ -230,7 +236,7 @@ export default function HomeContent() {
               Man and Van Club is a UK marketplace connecting customers with independent, verified local movers. Submit a free move request for <Link href="/house-removals" className="font-bold text-accent hover:underline">house removals</Link>, <Link href="/flat-removals" className="font-bold text-accent hover:underline">flat moves</Link>, <Link href="/furniture-delivery" className="font-bold text-accent hover:underline">furniture delivery</Link>, <Link href="/student-removals" className="font-bold text-accent hover:underline">student moves</Link>, <Link href="/same-day-man-and-van" className="font-bold text-accent hover:underline">same-day man and van</Link> and <Link href="/long-distance-removals" className="font-bold text-accent hover:underline">long-distance removals</Link>. One verified mover reviews your details before quoting. Prices from £50/hr. Call 0121 751 1269.
             </p>
             <p>
-              We cover <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link>, <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link>, <Link href="/man-and-van-bristol" className="font-bold text-accent hover:underline">Bristol</Link>, <Link href="/man-and-van-sheffield" className="font-bold text-accent hover:underline">Sheffield</Link>, <Link href="/man-and-van-edinburgh" className="font-bold text-accent hover:underline">Edinburgh</Link>, <Link href="/man-and-van-cardiff" className="font-bold text-accent hover:underline">Cardiff</Link> and 164 more areas across <Link href="/areas-covered" className="font-bold text-accent hover:underline">England, Scotland and Wales</Link>. Compare with our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">man and van vs removal company guide</Link> or <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">vs AnyVan comparison</Link>.
+              We cover <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link> and <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link> plus 168 more areas across <Link href="/areas-covered" className="font-bold text-accent hover:underline">England, Scotland and Wales</Link>. Compare with our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">man and van vs removal company guide</Link> or <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">vs AnyVan comparison</Link>.
             </p>
           </div>
         </div>

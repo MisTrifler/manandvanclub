@@ -1,20 +1,19 @@
 import HomeContent from "./HomeContent";
 import { Metadata } from "next";
-import { HOME_FAQ_ITEMS } from "@/constants/home-faq";
 
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | From One Item to Full Home Moves",
+  title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
   description:
-    "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover can review before you book.",
+    "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Man and Van Club | Free Move Requests | UK-Wide Verified Movers",
+    title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
     description:
-      "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover reviews your details before you decide whether to book.",
+      "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book.",
     url: siteUrl,
     images: [
       {
@@ -27,26 +26,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Club | Free Move Requests | UK-Wide Verified Movers",
+    title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
     description:
-      "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs.",
+      "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
     images: ["/images/og-homepage.jpg"],
   },
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Man and Van Club",
-  "url": siteUrl,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${siteUrl}/get-started?search={search_term_string}`
-    },
-    "query-input": "required name=search_term_string"
-  }
 };
 
 const speakableSchema = {
@@ -59,21 +43,8 @@ const speakableSchema = {
   ]
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": HOME_FAQ_ITEMS.map((item) => ({
-    "@type": "Question",
-    "name": item.q,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": item.a,
-    },
-  })),
-};
-
 export default function Home() {
-  const jsonLd = {
+  const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Man and Van Club quote request service",
@@ -110,19 +81,11 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <HomeContent />
     </>
