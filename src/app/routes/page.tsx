@@ -56,6 +56,8 @@ function groupRoutes(): RouteGroup[] {
       groupLabel = "London ↔ UK Cities";
     } else if (regionPair.includes("West Midlands") && regionPair.includes("North East")) {
       groupLabel = "Midlands ↔ North East";
+    } else if (regionPair.includes("West Midlands") && regionPair.includes("North Yorkshire")) {
+      groupLabel = "Midlands ↔ Yorkshire";
     } else if (regionPair.includes("West Midlands") && regionPair.includes("Greater Manchester")) {
       groupLabel = "Midlands ↔ North West";
     } else if (regionPair.includes("West Midlands") && regionPair.includes("South West")) {
@@ -68,20 +70,34 @@ function groupRoutes(): RouteGroup[] {
       groupLabel = "Midlands ↔ Wales";
     } else if (regionPair.includes("West Yorkshire") && regionPair.includes("Greater Manchester")) {
       groupLabel = "North West ↔ Yorkshire";
+    } else if (regionPair.includes("West Yorkshire") && regionPair.includes("East Midlands")) {
+      groupLabel = "Yorkshire ↔ East Midlands";
     } else if (regionPair.includes("Greater Manchester") && regionPair.includes("North East")) {
       groupLabel = "North West ↔ North East";
     } else if (regionPair.includes("Greater Manchester") && regionPair.includes("Scotland")) {
       groupLabel = "North West ↔ Scotland";
     } else if (regionPair.includes("Greater Manchester") && regionPair.includes("South Yorkshire")) {
       groupLabel = "North West ↔ Yorkshire";
+    } else if (regionPair.includes("Greater Manchester") && regionPair.includes("Merseyside")) {
+      groupLabel = "North West";
     } else if (regionPair.includes("Merseyside") && regionPair.includes("Greater Manchester")) {
       groupLabel = "North West";
+    } else if (regionPair.includes("Merseyside") && regionPair.includes("West Yorkshire")) {
+      groupLabel = "North West ↔ Yorkshire";
     } else if (regionPair.includes("Scotland")) {
       groupLabel = "Scotland";
+    } else if (regionPair.includes("South West") && regionPair.includes("South West")) {
+      groupLabel = "South West";
     } else if (regionPair.includes("South West") && regionPair.includes("Wales")) {
       groupLabel = "South West ↔ Wales";
+    } else if (regionPair.includes("South West") && regionPair.includes("West Midlands")) {
+      groupLabel = "Midlands ↔ South West";
     } else if (regionPair.includes("East Midlands") && regionPair.includes("South Yorkshire")) {
       groupLabel = "Midlands ↔ Yorkshire";
+    } else if (regionPair.includes("East Midlands") && regionPair.includes("West Yorkshire")) {
+      groupLabel = "Midlands ↔ Yorkshire";
+    } else if (regionPair.includes("West Yorkshire") && regionPair.includes("West Yorkshire")) {
+      groupLabel = "West Yorkshire";
     } else if (regionPair.includes("East Midlands")) {
       groupLabel = "East Midlands";
     } else if (regionPair.includes("South Yorkshire") && regionPair.includes("West Midlands")) {

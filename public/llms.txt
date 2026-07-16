@@ -149,6 +149,27 @@
 - https://www.manandvanclub.co.uk/routes/birmingham-to-newcastle-upon-tyne — Birmingham to Newcastle: 200mi via M6/A1(M), from £380
 - https://www.manandvanclub.co.uk/routes/newcastle-upon-tyne-to-birmingham — Newcastle to Birmingham: 200mi via A1(M)/M6, from £380
 - https://www.manandvanclub.co.uk/routes/reading-to-london — Reading to London: 40mi via M4, from £90
+- https://www.manandvanclub.co.uk/routes/london-to-portsmouth — London to Portsmouth: 75mi via A3, from £170
+- https://www.manandvanclub.co.uk/routes/portsmouth-to-london — Portsmouth to London: 75mi via A3, from £170
+- https://www.manandvanclub.co.uk/routes/bristol-to-exeter — Bristol to Exeter: 75mi via M5, from £170
+- https://www.manandvanclub.co.uk/routes/exeter-to-bristol — Exeter to Bristol: 75mi via M5, from £170
+- https://www.manandvanclub.co.uk/routes/manchester-to-sheffield — Manchester to Sheffield: 38mi via A57/M67, from £90
+- https://www.manandvanclub.co.uk/routes/london-to-colchester — London to Colchester: 60mi via A12, from £140
+- https://www.manandvanclub.co.uk/routes/colchester-to-london — Colchester to London: 60mi via A12, from £140
+- https://www.manandvanclub.co.uk/routes/birmingham-to-york — Birmingham to York: 125mi via M42/M1, from £250
+- https://www.manandvanclub.co.uk/routes/york-to-birmingham — York to Birmingham: 125mi via M1/M42, from £250
+- https://www.manandvanclub.co.uk/routes/leeds-to-nottingham — Leeds to Nottingham: 60mi via M1, from £130
+- https://www.manandvanclub.co.uk/routes/nottingham-to-leeds — Nottingham to Leeds: 60mi via M1, from £130
+- https://www.manandvanclub.co.uk/routes/birmingham-to-cheltenham — Birmingham to Cheltenham: 50mi via M5, from £110
+- https://www.manandvanclub.co.uk/routes/london-to-peterborough — London to Peterborough: 80mi via A1(M), from £175
+- https://www.manandvanclub.co.uk/routes/peterborough-to-london — Peterborough to London: 80mi via A1(M), from £175
+- https://www.manandvanclub.co.uk/routes/leicester-to-sheffield — Leicester to Sheffield: 55mi via M1, from £120
+- https://www.manandvanclub.co.uk/routes/sheffield-to-leicester — Sheffield to Leicester: 55mi via M1, from £120
+- https://www.manandvanclub.co.uk/routes/london-to-swindon — London to Swindon: 80mi via M4, from £175
+- https://www.manandvanclub.co.uk/routes/swindon-to-london — Swindon to London: 80mi via M4, from £175
+- https://www.manandvanclub.co.uk/routes/manchester-to-liverpool — Manchester to Liverpool: 34mi via M62, from £80
+- https://www.manandvanclub.co.uk/routes/huddersfield-to-leeds — Huddersfield to Leeds: 15mi via M62, from £60
+- https://www.manandvanclub.co.uk/routes/leeds-to-huddersfield — Leeds to Huddersfield: 15mi via M62, from £60
 - https://www.manandvanclub.co.uk/routes/london-to-reading — London to Reading: 40mi via M4, from £90
 
 ### Blog Posts
