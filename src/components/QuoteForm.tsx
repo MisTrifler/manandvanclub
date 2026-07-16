@@ -221,6 +221,8 @@ const formSchema = z.object({
   // General
   numberOfItems: positiveIntegerString("Enter at least 1 item"),
   additionalHelpers: z.string().optional(),
+  // Promo code
+  promoCode: z.string().optional(),
   // Storage-specific
   storageFacility: z.string().optional(),
   storageUnitSize: z.string().optional(),
@@ -647,6 +649,7 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
       details.suitcases = data.suitcases;
       details.smallFurnitureItems = data.smallFurnitureItems;
       if (data.itemDescription) details.itemDescription = data.itemDescription;
+      if (data.promoCode) details.promoCode = data.promoCode;
     } else if (activeIntent === "single-item") {
       details.itemType = data.itemType;
       details.itemTypes = splitMultiValue(data.itemType);
@@ -1384,6 +1387,11 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Other Items or Notes <span className="tracking-normal text-primary/30">(optional)</span></label>
                   <textarea {...register("itemDescription")} rows={2} placeholder="e.g. mini fridge, clothes rail, extra bags" className="w-full resize-none rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3 text-[15px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Promo Code <span className="tracking-normal text-primary/30">(optional)</span></label>
+                  <input {...register("promoCode")} placeholder="e.g. UNIDAYS12" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
+                  <p className="text-[10px] text-accent font-bold mt-1">£12 off student moves with code UNIDAYS12</p>
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving From (Postcode)</label>

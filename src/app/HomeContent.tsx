@@ -10,13 +10,13 @@ import {
 import QuoteForm from "@/components/QuoteForm";
 import type { IntentType } from "@/lib/intent-detection";
 
-const MOVE_TYPES: { label: string; emoji: string; intent: IntentType }[] = [
+const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: string }[] = [
   { label: "Moving Home", emoji: "🏠", intent: "house" },
   { label: "Furniture", emoji: "🛋️", intent: "single-item" },
   { label: "Man & Van", emoji: "🚐", intent: "general" },
   { label: "Office", emoji: "🏢", intent: "office" },
   { label: "Storage", emoji: "📦", intent: "storage" },
-  { label: "Student", emoji: "🎓", intent: "student" },
+  { label: "Student", emoji: "🎓", intent: "student", badge: "£12 off" },
 ];
 
 export default function HomeContent() {
@@ -85,8 +85,13 @@ export default function HomeContent() {
                   key={type.label}
                   type="button"
                   onClick={() => handleTileClick(type.intent)}
-                  className="group flex flex-col items-center gap-2.5 bg-white rounded-2xl p-4 shadow-lg hover:bg-accent transition-all duration-200 hover:scale-[1.04] active:scale-[0.97] cursor-pointer"
+                  className="group relative flex flex-col items-center gap-2.5 bg-white rounded-2xl p-4 shadow-lg hover:bg-accent transition-all duration-200 hover:scale-[1.04] active:scale-[0.97] cursor-pointer"
                 >
+                  {type.badge && (
+                    <span className="absolute -top-2 -right-2 bg-accent text-white text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-full shadow-sm z-10">
+                      {type.badge}
+                    </span>
+                  )}
                   <span className="text-3xl leading-none">{type.emoji}</span>
                   <span className="text-xs font-black text-primary group-hover:text-white tracking-tight leading-tight">
                     {type.label}

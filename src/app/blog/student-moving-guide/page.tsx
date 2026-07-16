@@ -120,6 +120,13 @@ export default function BlogPost() {
           <p>
             Man and Van Club lets you submit your move details for free. A verified mover reviews your postcodes, item list and access notes, then sends a quote. Your contact details stay private until you accept the quote. This means no unwanted calls from multiple companies — just one quote from one verified mover.
           </p>
+          <div className="bg-accent/5 border border-accent/20 rounded-2xl p-4 mt-4 flex items-start gap-3">
+            <span className="text-2xl">🎓</span>
+            <div>
+              <p className="text-sm font-black text-primary">£12 off student moves</p>
+              <p className="text-xs text-text-secondary mt-0.5">Enter code <strong className="text-accent">UNIDAYS12</strong> in the promo code field when you submit your student move request. The discount comes off your total — you just pay less on moving day.</p>
+            </div>
+          </div>
 
           <div className="bg-[#F9F9F7] rounded-2xl border border-border p-8 mt-10">
             <h3 className="text-xl font-black text-primary uppercase tracking-tight mb-3">Submit your student move request</h3>

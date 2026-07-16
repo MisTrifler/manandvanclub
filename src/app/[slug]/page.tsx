@@ -113,11 +113,11 @@ const servicePageData: Record<string, any> = {
   "student-removals": {
     name: "Student Removals",
     formIntent: "student",
-    title: "Student Removals | From £50 | Affordable University Moves | Man and Van Club",
-    description: "Student move quote requests across the UK from £50. Moving to or from university halls or a shared house? Submit your details so an approved mover can review the job before quoting. Call 0121 751 1269.",
+    title: "Student Removals | £12 Off with UNIDAYS12 | From £50 | Man and Van Club",
+    description: "Student moves from £50 across the UK. £12 off with code UNIDAYS12. Moving to or from university halls or a shared house? Submit your details so an approved mover can review the job before quoting. Call 0121 751 1269.",
     badge: "Student Move Requests",
-    h1: "Student Removals For Uni Moves",
-    intro: "Moving to halls, a shared house or back home for summer? Add your university, boxes, bags, small furniture and postcodes so a mover can review the student move quickly.",
+    h1: "Student Removals — £12 Off with UNIDAYS12",
+    intro: "Moving to halls, a shared house or back home for summer? Add your university, boxes, bags, small furniture and postcodes so a mover can review the student move quickly. Enter code UNIDAYS12 for £12 off.",
     knowledge: "Student moves are usually smaller but time-sensitive. Term dates, halls access, shared-house parking and budget limits can all affect the quote.",
     proofQuote: "Best for halls, shared houses, studios and smaller student loads where speed and clear item details matter.",
     requestTypesHeading: "Common Student Move Requests",
@@ -131,9 +131,9 @@ const servicePageData: Record<string, any> = {
     serviceLinks: baseServiceLinks.filter((item) => item.href !== "/student-removals"),
     popularLocations,
     faq: [
-      { q: "Do you offer student discounts?", a: "Student move costs depend on load size, route, helpers and timing. Smaller loads and flexible dates can help keep the guide price lower." },
+      { q: "Do you offer student discounts?", a: "Yes. Students get £12 off their move with promo code UNIDAYS12. Enter it in the promo code field when you submit your student move request. The discount is deducted from your total — you just pay less on moving day." },
       { q: "Can I share a move with housemates?", a: "Combined student moves can sometimes reduce the guide price when housemates are moving on the same route. Add the details to the form so a mover can review the request properly." },
-      { q: "How much does a student move cost?", a: "In 2026, UK student moves typically cost £80–£200 for a halls room or studio, and £150–£350 for a shared house. Prices depend on the route, item list, helpers, access and whether it falls during the busy June–September period. Flexible dates and smaller loads help keep the guide price lower." },
+      { q: "How much does a student move cost?", a: "In 2026, UK student moves typically cost £80–£200 for a halls room or studio, and £150–£350 for a shared house. Use code UNIDAYS12 for £12 off. Prices depend on the route, item list, helpers, access and whether it falls during the busy June–September period. Flexible dates and smaller loads help keep the guide price lower." },
       { q: "When is the cheapest time for a student move?", a: "Avoiding the last week of June and first two weeks of September can reduce the price, as these are the busiest student move periods. Mid-week moves are often cheaper than weekends, and booking a few days ahead gives movers more flexibility to fit your job in." }
     ]
   },
