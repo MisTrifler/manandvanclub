@@ -501,6 +501,37 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 </div>
               )}
 
+              {/* ── City-to-City Route Pages (internal links to /routes/* pages) ── */}
+              {isLocationPage && data.routeLinks && data.routeLinks.length > 0 && (
+                <div className="space-y-6 lg:space-y-8">
+                  <div className="space-y-3">
+                    <h3 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-tight">Routes From {data.name}</h3>
+                    <p className="text-base lg:text-lg text-text-secondary font-medium leading-relaxed">
+                      Find detailed route information, pricing estimates and parking advice for city-to-city moves involving {data.name}.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
+                    {data.routeLinks.map((route: { slug: string; cityA: string; cityB: string; distance: string; price: string }) => (
+                      <Link
+                        key={route.slug}
+                        href={`/routes/${route.slug}`}
+                        className="group flex items-center justify-between bg-white p-4 lg:p-5 rounded-xl border border-border/50 hover:border-accent hover:shadow-md transition-all duration-300"
+                      >
+                        <div>
+                          <span className="font-black text-primary uppercase text-[10px] tracking-widest group-hover:text-accent transition-colors block">
+                            {route.cityA} → {route.cityB}
+                          </span>
+                          <span className="text-[9px] font-bold text-primary/40 block mt-0.5">
+                            {route.distance} · From {route.price}
+                          </span>
+                        </div>
+                        <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* ── Local search guides / neighbourhood relevance ── */}
               {data.localAreaGuides && data.localAreaGuides.length > 0 && (
                 <div className="space-y-6 lg:space-y-8">

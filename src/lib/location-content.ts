@@ -2,6 +2,7 @@ import { LocationData, getLocationBySlug, LOCATIONS } from "@/constants/location
 import { customLocationContentOverrides } from "./custom-location-content";
 import { getRouteInfo, type RouteInfo } from "./google-maps-routes";
 import { isLaunchIndexableLocation, isSeoLaunchMode } from "./seo-quality-guard";
+import { ROUTES } from "./route-data";
 
 export interface LocationPageData {
   name: string;
@@ -37,6 +38,8 @@ export interface LocationPageData {
   coverageSignal?: boolean;
   // Step 3: Cross-region nearby areas for stronger internal linking
   crossRegionLinks?: { slug: string; name: string }[];
+  // Step 4: City-to-city route page links for internal linking
+  routeLinks?: { slug: string; cityA: string; cityB: string; distance: string; price: string }[];
 }
 
 
@@ -647,6 +650,20 @@ function getCrossRegionLinks(loc: LocationData): { slug: string; name: string }[
     .filter((x): x is { slug: string; name: string } => x !== null);
 }
 
+// City-to-city route page links for internal linking
+// Filters the ROUTES array to find routes involving a given city
+function getRouteLinksForCity(cityName: string): { slug: string; cityA: string; cityB: string; distance: string; price: string }[] {
+  return ROUTES
+    .filter((r) => r.cityA === cityName || r.cityB === cityName)
+    .map((r) => ({
+      slug: r.slug,
+      cityA: r.cityA,
+      cityB: r.cityB,
+      distance: r.distance,
+      price: r.estimatedFrom,
+    }));
+}
+
 export function getLocationPageData(slug: string): LocationPageData | null {
   const loc = getLocationBySlug(slug);
   if (!loc) return null;
@@ -785,6 +802,7 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     pageType: "location" as const,
     coverageSignal: COVERAGE_SIGNAL_SLUGS.has(loc.slug),
     crossRegionLinks: getCrossRegionLinks(loc),
+    routeLinks: getRouteLinksForCity(loc.name),
   };
 
   // Merge custom content overrides for priority cities (prevents doorway-page penalties)
