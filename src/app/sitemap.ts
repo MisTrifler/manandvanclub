@@ -194,6 +194,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/blog/anyvan-review-alternatives', priority: 0.85, freq: 'monthly' as const },
     { route: '/blog/what-insurance-does-your-man-and-van-need', priority: 0.85, freq: 'monthly' as const },
     { route: '/blog/house-moving-checklist-uk', priority: 0.85, freq: 'monthly' as const },
+    { route: '/blog/man-and-van-birmingham-prices-how-to-book', priority: 0.9, freq: 'monthly' as const },
+    { route: '/blog/man-and-van-walsall-prices-how-to-book', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-prices', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-near-me', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-vs-removal-company', priority: 0.85, freq: 'weekly' as const },

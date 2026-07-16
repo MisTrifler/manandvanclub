@@ -188,6 +188,24 @@ const blogPosts = [
     readTime: "10 min read",
     category: "Moving Tips",
   },
+  {
+    slug: "man-and-van-birmingham-prices-how-to-book",
+    title: "Man and Van Birmingham: Prices & How to Book (2026)",
+    description:
+      "Current Birmingham man and van prices, what affects the cost, local area tips and how to book a verified mover for your next move in Birmingham.",
+    date: "2026-07-16",
+    readTime: "7 min read",
+    category: "Cost Guides",
+  },
+  {
+    slug: "man-and-van-walsall-prices-how-to-book",
+    title: "Man and Van Walsall: Prices & How to Book (2026)",
+    description:
+      "Current Walsall man and van prices, local area tips, how to book a verified mover and what to have ready before your move day in Walsall.",
+    date: "2026-07-16",
+    readTime: "6 min read",
+    category: "Cost Guides",
+  },
 ];
 
 export default function BlogPage() {

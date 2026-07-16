@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Phone, ShieldCheck, CheckCircle2, ArrowUpRight, Clock, Users, Search } from "lucide-react";
+import { MapPin, Phone, ShieldCheck, CheckCircle2, ArrowUpRight, Clock, Users, Search, MessageCircle } from "lucide-react";
+import QuoteForm from "@/components/QuoteForm";
 
 const siteUrl = "https://www.manandvanclub.co.uk";
 
@@ -132,28 +133,60 @@ export default function ManAndVanNearMePage() {
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="bg-[#F9F9F7] py-16 lg:py-24 border-b border-border">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-accent/20 mb-6">
-            <MapPin size={12} /> UK-Wide Local Coverage
-          </div>
-          <h1 className="text-5xl md:text-6xl font-black text-primary uppercase tracking-tighter mb-6">
-            Man and Van Near Me
-          </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto">
-            Find a verified man and van near you across the UK. Submit your postcodes and move details for free — one approved local mover reviews your request and sends a quote before you decide whether to book.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Link href="/get-started" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
-              Start Your Move Request <ArrowUpRight size={20} />
-            </Link>
-            <a href="tel:01217511269" className="bg-white border-2 border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 text-primary hover:border-accent hover:text-accent transition-all">
-              <Phone size={18} /> Call 0121 751 1269
-            </a>
+      {/* Hero with Quote Form */}
+      <section className="bg-[#F9F9F7] py-10 lg:py-16 border-b border-border">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
+            <div className="lg:w-1/2 space-y-5">
+              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-accent/20">
+                <MapPin size={12} /> UK-Wide Local Coverage
+              </div>
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-primary/20">
+                <span className="text-accent font-black text-sm leading-none">£</span> Prices from £50
+              </div>
+              <h1 className="text-5xl md:text-6xl font-black text-primary uppercase tracking-tighter">
+                Man and Van Near Me
+              </h1>
+              <p className="text-lg text-text-secondary leading-relaxed max-w-xl">
+                Find a verified man and van near you across the UK. Submit your postcodes and move details for free — one approved local mover reviews your request and sends a quote before you decide whether to book.
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full border border-green-100">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Open 7 days</span>
+                </div>
+                <span className="text-[10px] font-medium text-primary/50">Mon–Sun, 8am–8pm</span>
+              </div>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a href="tel:01217511269" className="bg-primary text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 hover:bg-primary/90 transition-all">
+                  <Phone size={18} /> Call 0121 751 1269
+                </a>
+                <a href="https://wa.me/441217511269?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20move" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 hover:bg-[#20bd5a] transition-all">
+                  <MessageCircle size={18} /> WhatsApp
+                </a>
+              </div>
+            </div>
+            <div className="lg:w-1/2 w-full max-w-lg">
+              <QuoteForm />
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Trust Signal Strip */}
+      <div className="bg-green-50 border-b border-green-100">
+        <div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+          <span className="flex items-center gap-2 text-sm text-green-800 font-medium">
+            <CheckCircle2 size={16} className="text-green-600 flex-shrink-0" /> Free to submit
+          </span>
+          <span className="flex items-center gap-2 text-sm text-green-800 font-medium">
+            <ShieldCheck size={16} className="text-green-600 flex-shrink-0" /> Verified movers
+          </span>
+          <span className="flex items-center gap-2 text-sm text-green-800 font-medium">
+            <CheckCircle2 size={16} className="text-green-600 flex-shrink-0" /> No hidden fees
+          </span>
+        </div>
+      </div>
 
       {/* How It Works */}
       <section className="py-16 bg-white">
@@ -336,6 +369,27 @@ export default function ManAndVanNearMePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Mobile Floating Call + WhatsApp Buttons ── */}
+      <div className="fixed bottom-6 right-6 z-[200] lg:hidden flex flex-col gap-3">
+        <a
+          href="https://wa.me/441217511269?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20move"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl shadow-[#25D366]/40 hover:bg-[#20bd5a] transition-all"
+          aria-label="WhatsApp Man and Van Club"
+        >
+          <MessageCircle size={24} className="text-white" />
+        </a>
+        <a
+          href="tel:01217511269"
+          className="flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:bg-primary/90 transition-all"
+          aria-label="Call Man and Van Club"
+        >
+          <Phone size={22} className="text-white" />
+          <span className="font-black tracking-tight text-sm">Call Now</span>
+        </a>
+      </div>
     </div>
   );
 }

@@ -44,6 +44,8 @@ const BLOG_POSTS = [
   { name: "AnyVan Review & Alternatives", href: "/blog/anyvan-review-alternatives" },
   { name: "Man and Van Insurance Guide", href: "/blog/what-insurance-does-your-man-and-van-need" },
   { name: "House Moving Checklist UK", href: "/blog/house-moving-checklist-uk" },
+  { name: "Man and Van Birmingham: Prices & How to Book", href: "/blog/man-and-van-birmingham-prices-how-to-book" },
+  { name: "Man and Van Walsall: Prices & How to Book", href: "/blog/man-and-van-walsall-prices-how-to-book" },
 ];
 
 const OTHER_PAGES = [

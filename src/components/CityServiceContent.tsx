@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 import { type IntentType } from "@/lib/intent-detection";
 import { getGoogleMapsRouteUrl } from "@/lib/google-maps-routes";
+import { MessageCircle } from "lucide-react";
 
 /**
  * Splits long generated/custom local SEO text into short paragraphs so
@@ -194,6 +195,11 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 {isLocationPage ? `Verified movers in ${data.name}` : (data.badge ? data.badge : `Verified movers for ${data.name}`)}
               </div>
 
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-primary/20">
+                <span className="text-accent font-black text-sm leading-none">£</span>
+                Prices from £50
+              </div>
+
               <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">
                 {data.h1 ? data.h1 : (
                   <>
@@ -226,6 +232,14 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                     <p className="text-[8px] font-black uppercase tracking-widest text-primary/30">{item.l}</p>
                   </div>
                 ))}
+              </div>
+
+              <div className="flex items-center gap-3 pt-2">
+                <div className="flex items-center gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full border border-green-100">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Open 7 days</span>
+                </div>
+                <span className="text-[10px] font-medium text-primary/50">Mon–Sun, 8am–8pm</span>
               </div>
             </motion.div>
 
@@ -828,15 +842,26 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
         </div>
       </section>
 
-      {/* ── Mobile Floating Call Button ── */}
-      <a
-        href="tel:01217511269"
-        className="fixed bottom-6 right-6 z-[200] lg:hidden flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:bg-primary/90 transition-all"
-        aria-label="Call Man and Van Club"
-      >
-        <Phone size={22} className="text-white" />
-        <span className="font-black tracking-tight text-sm">Call Now</span>
-      </a>
+      {/* ── Mobile Floating Call + WhatsApp Buttons ── */}
+      <div className="fixed bottom-6 right-6 z-[200] lg:hidden flex flex-col gap-3">
+        <a
+          href="https://wa.me/441217511269?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20move"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl shadow-[#25D366]/40 hover:bg-[#20bd5a] transition-all"
+          aria-label="WhatsApp Man and Van Club"
+        >
+          <MessageCircle size={24} className="text-white" />
+        </a>
+        <a
+          href="tel:01217511269"
+          className="flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:bg-primary/90 transition-all"
+          aria-label="Call Man and Van Club"
+        >
+          <Phone size={22} className="text-white" />
+          <span className="font-black tracking-tight text-sm">Call Now</span>
+        </a>
+      </div>
     </div>
   );
 }
