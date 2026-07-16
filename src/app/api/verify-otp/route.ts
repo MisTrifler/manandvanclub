@@ -3,8 +3,6 @@ import { timingSafeEqual } from 'crypto';
 import { supabase } from '@/lib/supabase';
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS, SITE_URL } from '@/lib/resend';
 import { escapeHtml } from '@/lib/html';
-import { leadMatchesDriverArea } from '@/lib/marketplace-matching';
-import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from '@/lib/launch-lead-pool';
 import { getRouteEstimateFromDetails } from '@/lib/route-estimate';
 
 // ── OTP hardening ─────────────────────────────────────────
@@ -337,10 +335,10 @@ export async function POST(req: Request) {
     }
 
     // 4. Send driver notification emails after verification.
-    // IMPORTANT: only notify drivers who are actually eligible for this
-    // lead — same matching rule the marketplace uses (approved +
-    // area/radius). Service-type flags are NOT used for notification
-    // filtering (launch decision). Never blast all approved drivers.
+    // Notify ALL approved drivers so no request is missed.
+    // Area matching is still used for marketplace visibility, but
+    // email notifications go to every approved driver to ensure
+    // nothing falls through the cracks.
     try {
       if (!process.env.RESEND_API_KEY) {
         console.warn('RESEND_API_KEY missing — driver notifications not sent');
@@ -357,27 +355,21 @@ export async function POST(req: Request) {
             .select('*')
             .eq('status', 'approved');
 
-          const launchMode = isLaunchPoolEnabled();
-          const matchingDrivers = (approvedDrivers || []).filter((driver: any) => {
-            try {
-              return launchMode
-                ? leadIsVisibleInLaunchPool(moveRequest, driver)
-                : leadMatchesDriverArea(moveRequest, driver);
-            } catch {
-              return false; // restrictive on any matching error
-            }
+          // Send to every approved driver — no area filtering on notifications
+          const notifyDrivers = (approvedDrivers || []).filter((driver: any) => {
+            return driver.email; // just need a valid email address
           });
 
-          console.log(`[verify-otp] driver notifications: ${matchingDrivers.length} matched of ${(approvedDrivers || []).length} approved`);
+          console.log(`[verify-otp] driver notifications: sending to ${notifyDrivers.length} approved drivers`);
 
-          if (matchingDrivers.length > 0) {
-            for (const driver of matchingDrivers) {
+          if (notifyDrivers.length > 0) {
+            for (const driver of notifyDrivers) {
               try {
                 const routeEstimate = getRouteEstimateFromDetails(moveRequest.details);
                 const driverNotificationText = [
                   `Hi ${driver.contact_name || 'there'},`,
                   '',
-                  'A verified customer request matches your approved service area:',
+                  'A new verified customer move request has been submitted:',
                   '',
                   `Route: ${moveRequest.collection_postcode || '—'} to ${moveRequest.delivery_postcode || '—'}`,
                   `Date: ${moveRequest.move_date || '—'}`,
@@ -405,7 +397,7 @@ export async function POST(req: Request) {
                     <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 15px;">
                       <h2 style="color: #0F172A;">New move request available</h2>
                       <p>Hi ${escapeHtml(driver.contact_name || 'there')},</p>
-                      <p>A verified customer request matches your approved service area:</p>
+                      <p>A new verified customer move request has been submitted:</p>
                       <div style="background: #F8FAFC; padding: 20px; border-radius: 10px; margin: 20px 0;">
                         <p><strong>Route:</strong> ${escapeHtml(moveRequest.collection_postcode)} → ${escapeHtml(moveRequest.delivery_postcode)}</p>
                         <p><strong>Date:</strong> ${escapeHtml(moveRequest.move_date || '—')}</p>

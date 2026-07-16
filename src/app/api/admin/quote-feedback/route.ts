@@ -5,9 +5,6 @@ import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { QUOTE_CLEAR_FIELDS } from "@/lib/quote-feedback";
 import { resend, SENDER_ADDRESS, REPLY_TO_ADDRESS } from "@/lib/resend";
 import { escapeHtml } from "@/lib/html";
-import { isLaunchPoolEnabled, leadIsVisibleInLaunchPool } from "@/lib/launch-lead-pool";
-import { leadMatchesDriverArea } from "@/lib/marketplace-matching";
-
 // Admin decision on customer quote feedback.
 // Actions: release_to_pool | close_request | contact_customer
 
@@ -62,22 +59,15 @@ export async function POST(req: Request) {
         .or("booking_fee_paid.is.null,booking_fee_paid.eq.false");
       if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-      // Optional: notify matched launch-pool drivers (once per release)
+      // Notify ALL approved drivers when a request is released back
       if (process.env.RESEND_API_KEY && lead.quote_feedback_still_needs_help !== false) {
         try {
           const { data: approvedDrivers } = await supabaseAdmin
             .from("driver_applications")
             .select("*")
             .eq("status", "approved");
-          const releasedLead = { ...lead, status: "available", quoted_by: null, quote_amount: null, booking_fee_paid: false, customer_details_released_at: null };
-          const launchMode = isLaunchPoolEnabled();
-          const matching = (approvedDrivers || []).filter((driver: any) => {
-            try {
-              return launchMode
-                ? leadIsVisibleInLaunchPool(releasedLead as any, driver)
-                : leadMatchesDriverArea(releasedLead as any, driver);
-            } catch { return false; }
-          });
+          // Send to every approved driver — no area filtering on notifications
+          const notifyDrivers = (approvedDrivers || []).filter((driver: any) => driver.email);
 
           const budgetLine = Number(lead.quote_feedback_budget_max) > 0
             ? `<p><strong>Preferred budget range:</strong> ${Number(lead.quote_feedback_budget_min) > 0 ? `£${Math.round(lead.quote_feedback_budget_min)}–` : "up to "}£${Math.round(lead.quote_feedback_budget_max)}</p>`
@@ -86,7 +76,7 @@ export async function POST(req: Request) {
             ? `<p><strong>Customer feedback:</strong> ${escapeHtml(lead.quote_feedback_reason)}</p>`
             : "";
 
-          for (const driver of matching) {
+          for (const driver of notifyDrivers) {
             try {
               await resend.emails.send({
                 from: SENDER_ADDRESS,
