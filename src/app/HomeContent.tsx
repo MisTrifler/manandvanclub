@@ -123,7 +123,7 @@ export default function HomeContent() {
             /* ── No intent selected yet: prompt to pick from hero ── */
             <div className="text-center py-6">
               <div className="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <ArrowRight size={22} className="rotate-90" />
+                <ArrowRight size={22} className="-rotate-90" />
               </div>
               <h2 className="text-xl font-black text-primary uppercase tracking-tight mb-1">
                 Choose your move type above
