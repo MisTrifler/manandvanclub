@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Phone, ShieldCheck, CheckCircle2, ArrowUpRight, Clock, Users, Search, MessageCircle } from "lucide-react";
+import { MapPin, Phone, ShieldCheck, CheckCircle2, ArrowUpRight, Clock, Users, Search } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 
 const siteUrl = "https://www.manandvanclub.co.uk";
@@ -160,9 +160,6 @@ export default function ManAndVanNearMePage() {
               <div className="flex flex-wrap gap-4 pt-2">
                 <a href="tel:01217511269" className="bg-primary text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 hover:bg-primary/90 transition-all">
                   <Phone size={18} /> Call 0121 751 1269
-                </a>
-                <a href="https://wa.me/441217511269?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20move" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 hover:bg-[#20bd5a] transition-all">
-                  <MessageCircle size={18} /> WhatsApp
                 </a>
               </div>
             </div>
@@ -370,26 +367,15 @@ export default function ManAndVanNearMePage() {
         </div>
       </section>
 
-      {/* ── Mobile Floating Call + WhatsApp Buttons ── */}
-      <div className="fixed bottom-6 right-6 z-[200] lg:hidden flex flex-col gap-3">
-        <a
-          href="https://wa.me/441217511269?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20move"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl shadow-[#25D366]/40 hover:bg-[#20bd5a] transition-all"
-          aria-label="WhatsApp Man and Van Club"
-        >
-          <MessageCircle size={24} className="text-white" />
-        </a>
-        <a
-          href="tel:01217511269"
-          className="flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:bg-primary/90 transition-all"
-          aria-label="Call Man and Van Club"
-        >
-          <Phone size={22} className="text-white" />
-          <span className="font-black tracking-tight text-sm">Call Now</span>
-        </a>
-      </div>
+      {/* ── Mobile Floating Call Button ── */}
+      <a
+        href="tel:01217511269"
+        className="fixed bottom-6 right-6 z-[200] lg:hidden flex items-center gap-3 bg-primary text-white px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:bg-primary/90 transition-all"
+        aria-label="Call Man and Van Club"
+      >
+        <Phone size={22} className="text-white" />
+        <span className="font-black tracking-tight text-sm">Call Now</span>
+      </a>
     </div>
   );
 }
