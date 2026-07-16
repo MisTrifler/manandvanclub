@@ -23,8 +23,8 @@ const poppins = Poppins({
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | From One Item to Full Home Moves",
-  description: "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover can review before you book.",
+  title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
+  description: "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: siteUrl,
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteUrl,
     siteName: "Man and Van Club",
-    title: "Man and Van Club | Free Move Requests | UK-Wide Verified Movers",
-    description: "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs. One approved mover reviews your details before you decide whether to book.",
+    title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
+    description: "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
     images: [
       {
         url: "/images/og-homepage.jpg",
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Club | Free Move Requests | UK-Wide Verified Movers",
-    description: "Submit a free move request for furniture collections, flat moves, house removals, office moves and same-day jobs.",
+    title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
+    description: "Moving home? Man and van from £50/hr. Verified UK movers for house removals, flat moves, furniture delivery and same-day jobs.",
     images: ["/images/og-homepage.jpg"],
   },
   icons: {

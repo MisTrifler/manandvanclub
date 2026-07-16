@@ -5,9 +5,9 @@ import { Phone, ShieldCheck, CheckCircle2, ArrowUpRight, Clock, MapPin } from "l
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "How Much Does a Man and Van Cost? | UK Prices 2026 | Man and Van Club",
+  title: "How Much Does a Man and Van Cost? | Cheap Moving Van Prices 2026 | Man and Van Club",
   description:
-    "How much does a man and van cost in 2026? UK hourly rates from £50, full house move prices, regional comparisons and what affects the quote. Call 0121 751 1269.",
+    "How much is a man and van in 2026? Cheap moving van prices from £50/hr. Full cost breakdown by move type, region and access. Call 0121 751 1269.",
   alternates: {
     canonical: `${siteUrl}/man-and-van-cost`,
   },
