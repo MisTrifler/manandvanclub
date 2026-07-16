@@ -3653,8 +3653,10 @@ export function getLocalBusinessSchema(locationKey: string): Record<string, any>
     "paymentAccepted": "Card, Bank Transfer",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Towpath Drive, Brownhills",
       "addressLocality": "Walsall",
       "addressRegion": "West Midlands",
+      "postalCode": "WS8 6FG",
       "addressCountry": "GB"
     },
     "parentOrganization": {

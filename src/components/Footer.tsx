@@ -44,8 +44,7 @@ export default function Footer() {
             {/* Business Details — Sole Trader */}
             <div className="mt-4 text-xs text-text-secondary leading-relaxed">
               <p className="font-bold text-primary mb-1">Man and Van Club</p>
-              <p>Trading as Man and Van Club</p>
-              <p>Walsall, West Midlands, England</p>
+              <p>Towpath Drive, Brownhills, Walsall, WS8 6FG</p>
             </div>
 
             {/* Social Links */}

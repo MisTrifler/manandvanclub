@@ -87,8 +87,10 @@ const organizationSchema = {
   "email": "support@manandvanclub.co.uk",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Towpath Drive, Brownhills",
     "addressLocality": "Walsall",
     "addressRegion": "West Midlands",
+    "postalCode": "WS8 6FG",
     "addressCountry": "GB"
   },
   "areaServed": {
