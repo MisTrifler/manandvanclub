@@ -488,6 +488,8 @@ export async function generateStaticParams() {
     'sheffield', 'edinburgh', 'cardiff', 'newcastle-upon-tyne', 'glasgow',
     'hull', 'york', 'aberdeen', 'swansea', 'dundee', 'stoke-on-trent',
     'belfast', 'brighton', 'sunderland', 'milton-keynes', 'bournemouth',
+    'kent', 'essex', 'surrey', 'hampshire', 'lancashire', 'yorkshire',
+    'devon', 'cornwall',
   ]);
   const locationParams = getIndexableLocationSlugs()
     .filter((slug) => !hubSlugs.has(slug))

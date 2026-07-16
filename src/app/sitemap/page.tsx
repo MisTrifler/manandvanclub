@@ -56,6 +56,7 @@ const OTHER_PAGES = [
   { name: "How It Works", href: "/how-it-works" },
   { name: "Get Started", href: "/get-started" },
   { name: "Man and Van Prices", href: "/man-and-van-prices" },
+  { name: "How Much Does a Man and Van Cost?", href: "/man-and-van-cost" },
   { name: "Man and Van Near Me", href: "/man-and-van-near-me" },
   { name: "Man and Van vs Removal Company", href: "/man-and-van-vs-removal-company" },
   { name: "Moving Cost Calculator", href: "/moving-cost-calculator" },
@@ -67,6 +68,43 @@ const OTHER_PAGES = [
   { name: "For Movers", href: "/for-businesses" },
   { name: "Why Join", href: "/why-join" },
   { name: "Apply to Join", href: "/apply-to-join" },
+];
+
+const HUB_PAGES = [
+  { name: "West Midlands Hub", href: "/man-and-van-west-midlands" },
+  { name: "East Midlands Hub", href: "/man-and-van-east-midlands" },
+  { name: "London", href: "/man-and-van-london" },
+  { name: "Manchester", href: "/man-and-van-manchester" },
+  { name: "Leeds", href: "/man-and-van-leeds" },
+  { name: "Liverpool", href: "/man-and-van-liverpool" },
+  { name: "Bristol", href: "/man-and-van-bristol" },
+  { name: "Sheffield", href: "/man-and-van-sheffield" },
+  { name: "Edinburgh", href: "/man-and-van-edinburgh" },
+  { name: "Cardiff", href: "/man-and-van-cardiff" },
+  { name: "Newcastle upon Tyne", href: "/man-and-van-newcastle-upon-tyne" },
+  { name: "Glasgow", href: "/man-and-van-glasgow" },
+  { name: "Hull", href: "/man-and-van-hull" },
+  { name: "York", href: "/man-and-van-york" },
+  { name: "Aberdeen", href: "/man-and-van-aberdeen" },
+  { name: "Swansea", href: "/man-and-van-swansea" },
+  { name: "Dundee", href: "/man-and-van-dundee" },
+  { name: "Stoke-on-Trent", href: "/man-and-van-stoke-on-trent" },
+  { name: "Belfast", href: "/man-and-van-belfast" },
+  { name: "Brighton", href: "/man-and-van-brighton" },
+  { name: "Sunderland", href: "/man-and-van-sunderland" },
+  { name: "Milton Keynes", href: "/man-and-van-milton-keynes" },
+  { name: "Bournemouth", href: "/man-and-van-bournemouth" },
+];
+
+const COUNTY_PAGES = [
+  { name: "Kent", href: "/man-and-van-kent" },
+  { name: "Essex", href: "/man-and-van-essex" },
+  { name: "Surrey", href: "/man-and-van-surrey" },
+  { name: "Hampshire", href: "/man-and-van-hampshire" },
+  { name: "Lancashire", href: "/man-and-van-lancashire" },
+  { name: "Yorkshire", href: "/man-and-van-yorkshire" },
+  { name: "Devon", href: "/man-and-van-devon" },
+  { name: "Cornwall", href: "/man-and-van-cornwall" },
 ];
 
 // Group locations by region
@@ -143,6 +181,33 @@ export default function SitemapPage() {
                   {page.name}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          {/* County & Region Hubs */}
+          <div>
+            <h2 className="text-xs font-black uppercase tracking-[0.25em] text-primary/40 mb-5">County & Region Hubs</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-sm font-black text-primary/60 uppercase tracking-wide mb-3">City Hubs</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
+                  {HUB_PAGES.map((page) => (
+                    <Link key={page.href} href={page.href} className="text-xs text-primary hover:text-accent transition-colors py-0.5">
+                      {page.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-black text-primary/60 uppercase tracking-wide mb-3">Counties</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
+                  {COUNTY_PAGES.map((page) => (
+                    <Link key={page.href} href={page.href} className="text-xs text-primary hover:text-accent transition-colors py-0.5">
+                      {page.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
