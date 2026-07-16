@@ -1,213 +1,166 @@
 # Man and Van Club
 
-> Man and Van Club is a UK marketplace connecting customers with independent, verified local movers. Customers submit free move requests; one approved mover reviews the anonymised details and sends a quote before the customer decides whether to book. The service covers single-item furniture collections, flat moves, house removals, office relocations, student moves, same-day jobs and long-distance removals across England, Scotland and Wales.
+> Man and Van Club is a UK marketplace connecting customers with independent, verified local movers. Customers submit free move requests; one approved mover reviews the anonymised details and sends a quote before the customer decides whether to book. Prices start from £50/hr. Open 7 days, 8am–8pm. Phone: 0121 751 1269. Trading as a sole trader from Walsall, West Midlands.
 
 ## Disambiguation
 
 - Man and Van Club is a marketplace platform, NOT a traditional removal company with its own fleet of vans
 - Man and Van Club is NOT "Man With a Van" or "AnyVan" or "Compare the Man and Van" — it is a separate brand
 - Trading name: Man and Van Club | Registered as: sole trader in Walsall, West Midlands, England
-- Primary phone: 0121 751 1269 | Email: support@manandvanclub.co.uk
+- Primary phone: 0121 751 1269 (landline, no WhatsApp) | Email: support@manandvanclub.co.uk
+- Prices start from £50 | Verified movers only | Free to submit a move request
 
 ## How It Works
 
 1. Customer submits a free move request with postcodes, move date, item list and access notes
-2. Man and Van Club reviews the request
-3. One verified, approved independent mover reviews the anonymised details and sends a quote
-4. Customer receives a secure quote review link — accepts or declines
-5. If accepted, customer pays a booking deposit (deducted from the mover's quote)
-6. Mover contacts customer directly; remaining balance paid to mover on moving day
+2. One verified, approved independent mover reviews the anonymised details and sends a quote
+3. Customer receives a secure quote review link — accepts or declines
+4. If accepted, customer pays a booking deposit (deducted from the mover's quote)
+5. Mover contacts customer directly; remaining balance paid to mover on moving day
 
 ## Key Pages
 
 ### Homepage
 - https://www.manandvanclub.co.uk/ — Free move request form, service overview, UK coverage
 
-### Regional Hub Pages
-- https://www.manandvanclub.co.uk/man-and-van-west-midlands — West Midlands hub: Birmingham, Walsall, Wolverhampton, Dudley, Coventry, Solihull and all WM areas
-- https://www.manandvanclub.co.uk/man-and-van-east-midlands — East Midlands hub: Nottingham, Leicester, Derby and surrounding areas
-- https://www.manandvanclub.co.uk/man-and-van-london — London hub: Croydon, Stratford, Richmond, Camden and all London boroughs
-- https://www.manandvanclub.co.uk/man-and-van-manchester — Manchester hub: Salford, Stockport, Bolton, Oldham, Altrincham
-- https://www.manandvanclub.co.uk/man-and-van-leeds — Leeds hub: Bradford, Wakefield, Huddersfield, Halifax
-- https://www.manandvanclub.co.uk/man-and-van-liverpool — Liverpool hub: Bootle, Birkenhead, Southport, St Helens
-- https://www.manandvanclub.co.uk/man-and-van-bristol — Bristol hub: Bath, Weston-super-Mare, Cheltenham, Gloucester
-- https://www.manandvanclub.co.uk/man-and-van-sheffield — Sheffield hub: Rotherham, Barnsley, Doncaster
-- https://www.manandvanclub.co.uk/man-and-van-edinburgh — Edinburgh hub: Leith, Morningside, Old Town, Glasgow nearby
-- https://www.manandvanclub.co.uk/man-and-van-glasgow — Glasgow hub: West End, Shawlands, Dennistoun, Partick, Edinburgh nearby
-- https://www.manandvanclub.co.uk/man-and-van-cardiff — Cardiff hub: Swansea, Newport, Barry
-- https://www.manandvanclub.co.uk/man-and-van-newcastle-upon-tyne — Newcastle hub: Gateshead, Sunderland, Durham
-- https://www.manandvanclub.co.uk/man-and-van-hull — Hull hub: East Yorkshire, A1079 corridor, student moves, Broughty Ferry
-- https://www.manandvanclub.co.uk/man-and-van-york — York hub: North Yorkshire, A64 corridor, student moves, Fulford, Heslington
-- https://www.manandvanclub.co.uk/man-and-van-aberdeen — Aberdeen hub: North-East Scotland, A90 corridor, granite tenements, energy-sector moves
-- https://www.manandvanclub.co.uk/man-and-van-swansea — Swansea hub: South West Wales, M4 corridor, student moves, Mumbles, Uplands
-- https://www.manandvanclub.co.uk/man-and-van-dundee — Dundee hub: East Scotland, A90 corridor, student moves, Kingsway, Broughty Ferry
-- https://www.manandvanclub.co.uk/man-and-van-stoke-on-trent — Stoke-on-Trent hub: Staffordshire, six pottery towns, A500 D-road, A50 link road, no Clean Air Zone
-- https://www.manandvanclub.co.uk/man-and-van-belfast — Belfast hub: Northern Ireland capital, Titanic Quarter, Queen's University, M1/M2 corridors, no Clean Air Zone
-- https://www.manandvanclub.co.uk/man-and-van-brighton — Brighton hub: South East coast, Regency terraces, CPZ parking, A23/M23 to London, no Clean Air Zone
-- https://www.manandvanclub.co.uk/man-and-van-sunderland — Sunderland hub: North East, River Wear, Roker seafront, A19 to Newcastle, no Clean Air Zone
-- https://www.manandvanclub.co.uk/man-and-van-milton-keynes — Milton Keynes hub: South East, grid road system, M1 junctions 13-15, no Clean Air Zone
-- https://www.manandvanclub.co.uk/man-and-van-bournemouth — Bournemouth hub: South Coast, Victorian terraces, Poole, Christchurch, A338/M27, no Clean Air Zone
+### City Hub Pages (23 major cities)
+- https://www.manandvanclub.co.uk/man-and-van-west-midlands — West Midlands hub
+- https://www.manandvanclub.co.uk/man-and-van-east-midlands — East Midlands hub
+- https://www.manandvanclub.co.uk/man-and-van-london — London hub
+- https://www.manandvanclub.co.uk/man-and-van-manchester — Manchester hub
+- https://www.manandvanclub.co.uk/man-and-van-leeds — Leeds hub
+- https://www.manandvanclub.co.uk/man-and-van-liverpool — Liverpool hub
+- https://www.manandvanclub.co.uk/man-and-van-bristol — Bristol hub
+- https://www.manandvanclub.co.uk/man-and-van-sheffield — Sheffield hub
+- https://www.manandvanclub.co.uk/man-and-van-edinburgh — Edinburgh hub
+- https://www.manandvanclub.co.uk/man-and-van-glasgow — Glasgow hub
+- https://www.manandvanclub.co.uk/man-and-van-cardiff — Cardiff hub
+- https://www.manandvanclub.co.uk/man-and-van-newcastle-upon-tyne — Newcastle hub
+- https://www.manandvanclub.co.uk/man-and-van-hull — Hull hub
+- https://www.manandvanclub.co.uk/man-and-van-york — York hub
+- https://www.manandvanclub.co.uk/man-and-van-aberdeen — Aberdeen hub
+- https://www.manandvanclub.co.uk/man-and-van-swansea — Swansea hub
+- https://www.manandvanclub.co.uk/man-and-van-dundee — Dundee hub
+- https://www.manandvanclub.co.uk/man-and-van-stoke-on-trent — Stoke-on-Trent hub
+- https://www.manandvanclub.co.uk/man-and-van-belfast — Belfast hub
+- https://www.manandvanclub.co.uk/man-and-van-brighton — Brighton hub
+- https://www.manandvanclub.co.uk/man-and-van-sunderland — Sunderland hub
+- https://www.manandvanclub.co.uk/man-and-van-milton-keynes — Milton Keynes hub
+- https://www.manandvanclub.co.uk/man-and-van-bournemouth — Bournemouth hub
 
-### Target Location Pages (West Midlands)
-- https://www.manandvanclub.co.uk/man-and-van-birmingham — Birmingham mover quotes, city-centre flats, student moves, Clean Air Zone routes, Edgbaston, Selly Oak, Jewellery Quarter
-- https://www.manandvanclub.co.uk/man-and-van-walsall — Walsall mover quotes, Bloxwich, Aldridge, Brownhills, A34 and A454 route timing, Black Country moves
-- https://www.manandvanclub.co.uk/man-and-van-wolverhampton — Wolverhampton mover quotes, Tettenhall, Penn, Bilston, ring road routes
-- https://www.manandvanclub.co.uk/man-and-van-dudley — Dudley mover quotes, Brierley Hill, Kingswinford, Black Country
-- https://www.manandvanclub.co.uk/man-and-van-coventry — Coventry mover quotes, ring road access, student moves, Earlsdon
-- 133+ total location pages across the UK — see areas-covered page for full list
+### County Hub Pages (29 counties)
+- https://www.manandvanclub.co.uk/man-and-van-kent — Kent: Maidstone, Canterbury, Tunbridge Wells, Dartford
+- https://www.manandvanclub.co.uk/man-and-van-essex — Essex: Chelmsford, Colchester, Basildon, Southend
+- https://www.manandvanclub.co.uk/man-and-van-surrey — Surrey: Guildford, Woking, Epsom, Kingston
+- https://www.manandvanclub.co.uk/man-and-van-hampshire — Hampshire: Southampton, Portsmouth, Basingstoke, Winchester
+- https://www.manandvanclub.co.uk/man-and-van-lancashire — Lancashire: Preston, Blackburn, Burnley, Lancaster
+- https://www.manandvanclub.co.uk/man-and-van-yorkshire — Yorkshire: Leeds, Sheffield, Bradford, Hull
+- https://www.manandvanclub.co.uk/man-and-van-devon — Devon: Exeter, Plymouth, Torquay, Barnstaple
+- https://www.manandvanclub.co.uk/man-and-van-cornwall — Cornwall: Truro, Falmouth, Newquay, St Ives
+- https://www.manandvanclub.co.uk/man-and-van-staffordshire — Staffordshire: Stoke-on-Trent, Stafford, Lichfield, Cannock
+- https://www.manandvanclub.co.uk/man-and-van-warwickshire — Warwickshire: Leamington Spa, Warwick, Stratford-upon-Avon, Rugby
+- https://www.manandvanclub.co.uk/man-and-van-worcestershire — Worcestershire: Worcester, Kidderminster, Bromsgrove, Malvern
+- https://www.manandvanclub.co.uk/man-and-van-shropshire — Shropshire: Shrewsbury, Telford, Ludlow, Oswestry
+- https://www.manandvanclub.co.uk/man-and-van-herefordshire — Herefordshire: Hereford, Leominster, Ross-on-Wye, Ledbury
+- https://www.manandvanclub.co.uk/man-and-van-nottinghamshire — Nottinghamshire: Nottingham, Mansfield, Newark, Worksop
+- https://www.manandvanclub.co.uk/man-and-van-leicestershire — Leicestershire: Leicester, Loughborough, Hinckley, Market Harborough
+- https://www.manandvanclub.co.uk/man-and-van-derbyshire — Derbyshire: Derby, Chesterfield, Matlock, Buxton
+- https://www.manandvanclub.co.uk/man-and-van-northamptonshire — Northamptonshire: Northampton, Corby, Kettering, Wellingborough
+- https://www.manandvanclub.co.uk/man-and-van-berkshire — Berkshire: Reading, Slough, Windsor, Maidenhead
+- https://www.manandvanclub.co.uk/man-and-van-oxfordshire — Oxfordshire: Oxford, Banbury, Bicester, Abingdon
+- https://www.manandvanclub.co.uk/man-and-van-buckinghamshire — Buckinghamshire: Milton Keynes, Aylesbury, High Wycombe, Marlow
+- https://www.manandvanclub.co.uk/man-and-van-hertfordshire — Hertfordshire: Watford, St Albans, Stevenage, Hemel Hempstead
+- https://www.manandvanclub.co.uk/man-and-van-cheshire — Cheshire: Chester, Warrington, Crewe, Wilmslow
+- https://www.manandvanclub.co.uk/man-and-van-somerset — Somerset: Bath, Taunton, Yeovil, Frome (Bath has Clean Air Zone)
+- https://www.manandvanclub.co.uk/man-and-van-dorset — Dorset: Bournemouth, Poole, Dorchester, Weymouth
+- https://www.manandvanclub.co.uk/man-and-van-wiltshire — Wiltshire: Swindon, Salisbury, Chippenham, Trowbridge
+- https://www.manandvanclub.co.uk/man-and-van-gloucestershire — Gloucestershire: Gloucester, Cheltenham, Stroud, Cirencester
+- https://www.manandvanclub.co.uk/man-and-van-norfolk — Norfolk: Norwich, Great Yarmouth, King's Lynn, Cromer
+- https://www.manandvanclub.co.uk/man-and-van-suffolk — Suffolk: Ipswich, Bury St Edmunds, Lowestoft, Felixstowe
+- https://www.manandvanclub.co.uk/man-and-van-cambridgeshire — Cambridgeshire: Cambridge, Peterborough, Huntingdon, Ely
 
-### Service Pages
-- https://www.manandvanclub.co.uk/house-removals — Full home move requests
-- https://www.manandvanclub.co.uk/flat-removals — Apartment and flat move requests
-- https://www.manandvanclub.co.uk/student-removals — University and halls move requests
-- https://www.manandvanclub.co.uk/office-removals — Office relocation requests
-- https://www.manandvanclub.co.uk/furniture-delivery — Single-item and furniture collection requests
-- https://www.manandvanclub.co.uk/same-day-man-and-van — Urgent and last-minute move requests
-- https://www.manandvanclub.co.uk/long-distance-removals — City-to-city and UK-wide move requests
-- https://www.manandvanclub.co.uk/facebook-marketplace-collection — Marketplace purchase collection and delivery
-- https://www.manandvanclub.co.uk/piano-removals — Piano move quote requests: upright, digital, baby grand and grand pianos
-- https://www.manandvanclub.co.uk/single-item-delivery — Single item collection and delivery: sofas, beds, appliances, TVs
+### Location Pages (174 areas)
+- https://www.manandvanclub.co.uk/man-and-van-birmingham — Birmingham: Edgbaston, Selly Oak, Jewellery Quarter, Moseley
+- https://www.manandvanclub.co.uk/man-and-van-walsall — Walsall: Bloxwich, Aldridge, Brownhills
+- 174 total location pages across all UK regions — see https://www.manandvanclub.co.uk/areas-covered
 
-### Pricing & Comparison
-- https://www.manandvanclub.co.uk/moving-cost-calculator — Free moving cost calculator: estimate your man and van price by move type, region and access level
-- https://www.manandvanclub.co.uk/man-and-van-prices — UK 2026 man and van pricing guide with hourly rates and full-day costs
-- https://www.manandvanclub.co.uk/man-and-van-near-me — Find a man and van near you, UK-wide local mover coverage
-- https://www.manandvanclub.co.uk/man-and-van-vs-removal-company — Man and van vs removal company comparison
-- https://www.manandvanclub.co.uk/vs-anyvan — Man and Van Club vs AnyVan honest comparison: marketplace models, pricing transparency, commission structure, privacy
+### Service Pages (10)
+- https://www.manandvanclub.co.uk/house-removals
+- https://www.manandvanclub.co.uk/flat-removals
+- https://www.manandvanclub.co.uk/student-removals
+- https://www.manandvanclub.co.uk/office-removals
+- https://www.manandvanclub.co.uk/furniture-delivery
+- https://www.manandvanclub.co.uk/same-day-man-and-van
+- https://www.manandvanclub.co.uk/long-distance-removals
+- https://www.manandvanclub.co.uk/facebook-marketplace-collection
+- https://www.manandvanclub.co.uk/piano-removals
+- https://www.manandvanclub.co.uk/single-item-delivery
 
-### Route Pages (City-to-City Moves)
-- https://www.manandvanclub.co.uk/routes — Index of all city-to-city move routes with distance, pricing and parking guidance
-- https://www.manandvanclub.co.uk/routes/london-to-birmingham — London to Birmingham: 120mi via M1, from £250
-- https://www.manandvanclub.co.uk/routes/birmingham-to-london — Birmingham to London: 120mi via M1, from £250
-- https://www.manandvanclub.co.uk/routes/london-to-manchester — London to Manchester: 200mi via M1/M6, from £350
-- https://www.manandvanclub.co.uk/routes/manchester-to-london — Manchester to London: 200mi via M6/M1, from £350
-- https://www.manandvanclub.co.uk/routes/london-to-leeds — London to Leeds: 195mi via M1, from £350
-- https://www.manandvanclub.co.uk/routes/birmingham-to-manchester — Birmingham to Manchester: 85mi via M6, from £200
-- https://www.manandvanclub.co.uk/routes/birmingham-to-bristol — Birmingham to Bristol: 90mi via M5, from £200
-- https://www.manandvanclub.co.uk/routes/bristol-to-london — Bristol to London: 120mi via M4, from £250
-- https://www.manandvanclub.co.uk/routes/london-to-cardiff — London to Cardiff: 150mi via M4, from £300
-- https://www.manandvanclub.co.uk/routes/london-to-edinburgh — London to Edinburgh: 400mi via A1(M), from £550
-- https://www.manandvanclub.co.uk/routes/london-to-liverpool — London to Liverpool: 220mi via M1/M6, from £350
-- https://www.manandvanclub.co.uk/routes/birmingham-to-leeds — Birmingham to Leeds: 120mi via M42/M1, from £250
-- https://www.manandvanclub.co.uk/routes/leeds-to-manchester — Leeds to Manchester: 40mi via M62, from £150
-- https://www.manandvanclub.co.uk/routes/manchester-to-liverpool — Manchester to Liverpool: 35mi via M62, from £130
-- https://www.manandvanclub.co.uk/routes/edinburgh-to-glasgow — Edinburgh to Glasgow: 47mi via M8, from £150
-- https://www.manandvanclub.co.uk/routes/london-to-coventry — London to Coventry: 95mi via M1, from £200
-- https://www.manandvanclub.co.uk/routes/london-to-nottingham — London to Nottingham: 130mi via M1, from £250
-- https://www.manandvanclub.co.uk/routes/london-to-sheffield — London to Sheffield: 165mi via M1, from £300
-- https://www.manandvanclub.co.uk/routes/birmingham-to-coventry — Birmingham to Coventry: 20mi via M6/A45, from £80
-- https://www.manandvanclub.co.uk/routes/coventry-to-birmingham — Coventry to Birmingham: 20mi via M6/A45, from £80
-- https://www.manandvanclub.co.uk/routes/birmingham-to-leicester — Birmingham to Leicester: 45mi via M6/M69, from £120
-- https://www.manandvanclub.co.uk/routes/leicester-to-birmingham — Leicester to Birmingham: 45mi via M69/M6, from £120
-- https://www.manandvanclub.co.uk/routes/birmingham-to-nottingham — Birmingham to Nottingham: 55mi via M42/M1, from £140
-- https://www.manandvanclub.co.uk/routes/nottingham-to-birmingham — Nottingham to Birmingham: 55mi via M1/M42, from £140
-- https://www.manandvanclub.co.uk/routes/birmingham-to-walsall — Birmingham to Walsall: 10mi via A34/M6, from £60
-- https://www.manandvanclub.co.uk/routes/walsall-to-birmingham — Walsall to Birmingham: 10mi via A34/M6, from £60
-- https://www.manandvanclub.co.uk/routes/birmingham-to-wolverhampton — Birmingham to Wolverhampton: 15mi via M6/A41, from £60
-- https://www.manandvanclub.co.uk/routes/wolverhampton-to-birmingham — Wolverhampton to Birmingham: 15mi via A41/M6, from £60
-- https://www.manandvanclub.co.uk/routes/manchester-to-edinburgh — Manchester to Edinburgh: 220mi via M6/A74(M)/M8, from £400
-- https://www.manandvanclub.co.uk/routes/edinburgh-to-manchester — Edinburgh to Manchester: 220mi via M8/A74(M)/M6, from £400
-- https://www.manandvanclub.co.uk/routes/manchester-to-sheffield — Manchester to Sheffield: 40mi via A57/M67, from £120
-- https://www.manandvanclub.co.uk/routes/sheffield-to-manchester — Sheffield to Manchester: 40mi via A57/M67, from £120
-- https://www.manandvanclub.co.uk/routes/sheffield-to-birmingham — Sheffield to Birmingham: 75mi via M1/M42, from £180
-- https://www.manandvanclub.co.uk/routes/bristol-to-cardiff — Bristol to Cardiff: 45mi via M4, from £130
-- https://www.manandvanclub.co.uk/routes/cardiff-to-bristol — Cardiff to Bristol: 45mi via M4, from £130
-- https://www.manandvanclub.co.uk/routes/london-to-brighton — London to Brighton: 55mi via M23/A23, from £160
-- https://www.manandvanclub.co.uk/routes/brighton-to-london — Brighton to London: 55mi via A23/M23, from £160
-- https://www.manandvanclub.co.uk/routes/london-to-leicester — London to Leicester: 100mi via M1, from £220
-- https://www.manandvanclub.co.uk/routes/leicester-to-london — Leicester to London: 100mi via M1, from £220
-- https://www.manandvanclub.co.uk/routes/leicester-to-nottingham — Leicester to Nottingham: 25mi via M1/A46, from £80
-- https://www.manandvanclub.co.uk/routes/nottingham-to-leicester — Nottingham to Leicester: 25mi via A46/M1, from £80
-- https://www.manandvanclub.co.uk/routes/london-to-southampton — London to Southampton: 80mi via M3, from £200
-- https://www.manandvanclub.co.uk/routes/southampton-to-london — Southampton to London: 80mi via M3, from £200
-- https://www.manandvanclub.co.uk/routes/london-to-plymouth — London to Plymouth: 215mi via M3/A303/A38, from £380
-- https://www.manandvanclub.co.uk/routes/plymouth-to-london — Plymouth to London: 215mi via A38/A303/M3, from £380
-- https://www.manandvanclub.co.uk/routes/coventry-to-leicester — Coventry to Leicester: 25mi via M69, from £80
-- https://www.manandvanclub.co.uk/routes/london-to-cambridge — London to Cambridge: 62mi via M11, from £140
-- https://www.manandvanclub.co.uk/routes/cambridge-to-london — Cambridge to London: 62mi via M11, from £140
-- https://www.manandvanclub.co.uk/routes/birmingham-to-stoke-on-trent — Birmingham to Stoke-on-Trent: 40mi via M6, from £90
-- https://www.manandvanclub.co.uk/routes/stoke-on-trent-to-birmingham — Stoke-on-Trent to Birmingham: 40mi via M6, from £90
-- https://www.manandvanclub.co.uk/routes/leeds-to-sheffield — Leeds to Sheffield: 34mi via M1, from £80
-- https://www.manandvanclub.co.uk/routes/sheffield-to-leeds — Sheffield to Leeds: 34mi via M1, from £80
-- https://www.manandvanclub.co.uk/routes/manchester-to-newcastle-upon-tyne — Manchester to Newcastle: 135mi via A1(M), from £270
-- https://www.manandvanclub.co.uk/routes/newcastle-upon-tyne-to-manchester — Newcastle to Manchester: 135mi via A1(M), from £270
-- https://www.manandvanclub.co.uk/routes/london-to-oxford — London to Oxford: 55mi via M40, from £130
-- https://www.manandvanclub.co.uk/routes/oxford-to-london — Oxford to London: 55mi via M40, from £130
-- https://www.manandvanclub.co.uk/routes/london-to-norwich — London to Norwich: 115mi via A11/M11, from £240
-- https://www.manandvanclub.co.uk/routes/norwich-to-london — Norwich to London: 115mi via A11/M11, from £240
-- https://www.manandvanclub.co.uk/routes/liverpool-to-manchester — Liverpool to Manchester: 34mi via M62, from £80
-- https://www.manandvanclub.co.uk/routes/nottingham-to-sheffield — Nottingham to Sheffield: 38mi via M1, from £90
-- https://www.manandvanclub.co.uk/routes/sheffield-to-nottingham — Sheffield to Nottingham: 38mi via M1, from £90
-- https://www.manandvanclub.co.uk/routes/london-to-newcastle-upon-tyne — London to Newcastle: 275mi via A1(M), from £450
-- https://www.manandvanclub.co.uk/routes/newcastle-upon-tyne-to-london — Newcastle to London: 275mi via A1(M), from £450
-- https://www.manandvanclub.co.uk/routes/birmingham-to-derby — Birmingham to Derby: 36mi via M6/A38, from £85
-- https://www.manandvanclub.co.uk/routes/derby-to-birmingham — Derby to Birmingham: 36mi via A38/M6, from £85
-- https://www.manandvanclub.co.uk/routes/london-to-luton — London to Luton: 33mi via M1, from £80
-- https://www.manandvanclub.co.uk/routes/luton-to-london — Luton to London: 33mi via M1, from £80
-- https://www.manandvanclub.co.uk/routes/london-to-exeter — London to Exeter: 175mi via M3/A303/M5, from £340
-- https://www.manandvanclub.co.uk/routes/exeter-to-london — Exeter to London: 175mi via M5/A303/M3, from £340
-- https://www.manandvanclub.co.uk/routes/birmingham-to-newcastle-upon-tyne — Birmingham to Newcastle: 200mi via M6/A1(M), from £380
-- https://www.manandvanclub.co.uk/routes/newcastle-upon-tyne-to-birmingham — Newcastle to Birmingham: 200mi via A1(M)/M6, from £380
-- https://www.manandvanclub.co.uk/routes/reading-to-london — Reading to London: 40mi via M4, from £90
-- https://www.manandvanclub.co.uk/routes/london-to-portsmouth — London to Portsmouth: 75mi via A3, from £170
-- https://www.manandvanclub.co.uk/routes/portsmouth-to-london — Portsmouth to London: 75mi via A3, from £170
-- https://www.manandvanclub.co.uk/routes/bristol-to-exeter — Bristol to Exeter: 75mi via M5, from £170
-- https://www.manandvanclub.co.uk/routes/exeter-to-bristol — Exeter to Bristol: 75mi via M5, from £170
-- https://www.manandvanclub.co.uk/routes/manchester-to-sheffield — Manchester to Sheffield: 38mi via A57/M67, from £90
-- https://www.manandvanclub.co.uk/routes/london-to-colchester — London to Colchester: 60mi via A12, from £140
-- https://www.manandvanclub.co.uk/routes/colchester-to-london — Colchester to London: 60mi via A12, from £140
-- https://www.manandvanclub.co.uk/routes/birmingham-to-york — Birmingham to York: 125mi via M42/M1, from £250
-- https://www.manandvanclub.co.uk/routes/york-to-birmingham — York to Birmingham: 125mi via M1/M42, from £250
-- https://www.manandvanclub.co.uk/routes/leeds-to-nottingham — Leeds to Nottingham: 60mi via M1, from £130
-- https://www.manandvanclub.co.uk/routes/nottingham-to-leeds — Nottingham to Leeds: 60mi via M1, from £130
-- https://www.manandvanclub.co.uk/routes/birmingham-to-cheltenham — Birmingham to Cheltenham: 50mi via M5, from £110
-- https://www.manandvanclub.co.uk/routes/london-to-peterborough — London to Peterborough: 80mi via A1(M), from £175
-- https://www.manandvanclub.co.uk/routes/peterborough-to-london — Peterborough to London: 80mi via A1(M), from £175
-- https://www.manandvanclub.co.uk/routes/leicester-to-sheffield — Leicester to Sheffield: 55mi via M1, from £120
-- https://www.manandvanclub.co.uk/routes/sheffield-to-leicester — Sheffield to Leicester: 55mi via M1, from £120
-- https://www.manandvanclub.co.uk/routes/london-to-swindon — London to Swindon: 80mi via M4, from £175
-- https://www.manandvanclub.co.uk/routes/swindon-to-london — Swindon to London: 80mi via M4, from £175
-- https://www.manandvanclub.co.uk/routes/manchester-to-liverpool — Manchester to Liverpool: 34mi via M62, from £80
-- https://www.manandvanclub.co.uk/routes/huddersfield-to-leeds — Huddersfield to Leeds: 15mi via M62, from £60
-- https://www.manandvanclub.co.uk/routes/leeds-to-huddersfield — Leeds to Huddersfield: 15mi via M62, from £60
-- https://www.manandvanclub.co.uk/routes/london-to-reading — London to Reading: 40mi via M4, from £90
+### Route Pages (100 city-to-city moves)
+- https://www.manandvanclub.co.uk/routes — Full index of all 100 routes with pricing
+- Key routes include: London-Birmingham, London-Manchester, London-Leeds, London-Edinburgh, Birmingham-Bristol, Manchester-Liverpool, Edinburgh-Glasgow, and 93 more
 
-### Blog Posts
-- https://www.manandvanclub.co.uk/blog/how-much-does-man-and-van-cost — How much does a man and van cost in 2026? Full pricing breakdown by move type and region
-- https://www.manandvanclub.co.uk/blog/how-to-prepare-for-moving-day — Complete moving day checklist: packing order, access notes, what movers need
-- https://www.manandvanclub.co.uk/blog/man-and-van-vs-removal-company-guide — When to choose a man and van over a removal company
-- https://www.manandvanclub.co.uk/blog/student-moving-guide — Student moving guide: budget tips, timing, halls and shared-house moves
-- https://www.manandvanclub.co.uk/blog/what-to-tell-your-mover-before-moving-day — Key details to share with your mover: parking, stairs, access, item sizes
-- https://www.manandvanclub.co.uk/blog/birmingham-postcode-moving-guide — Birmingham B-postcode moving guide: access, parking and route challenges by area
-- https://www.manandvanclub.co.uk/blog/london-borough-moving-guide — London borough moving guide: parking rules, ULEZ, Congestion Charge and access by area
-- https://www.manandvanclub.co.uk/blog/what-affects-man-and-van-prices — What affects man and van prices: 9 factors that change your quote (distance, load, stairs, parking, timing, access, same-day premium, region, route)
-- https://www.manandvanclub.co.uk/blog/same-day-move-guide — Same-day man and van guide: when it is possible, what it costs, how to improve your chances
-- https://www.manandvanclub.co.uk/blog/how-to-pack-for-a-house-move — Room-by-room packing guide: kitchen, bedroom, living room, bathroom, what not to pack
-- https://www.manandvanclub.co.uk/blog/average-cost-3-bedroom-house-move — Real cost breakdowns for 3-bed house moves by distance, region and access type
-- https://www.manandvanclub.co.uk/blog/do-i-need-to-empty-drawers-for-movers — Whether to empty drawers by furniture type: what you can leave and what you must pack
-- https://www.manandvanclub.co.uk/blog/how-to-move-a-piano-without-damage — Piano moving guide: uprights, digitals, baby grands and grands — what can go wrong
-- https://www.manandvanclub.co.uk/blog/office-relocation-checklist — Office relocation checklist for SMEs: IT, furniture, comms, staff logistics
-- https://www.manandvanclub.co.uk/blog/anyvan-review-alternatives — Honest AnyVan review plus comparison with marketplace model
-- https://www.manandvanclub.co.uk/blog/what-insurance-does-your-man-and-van-need — Insurance guide: Goods in Transit, Public Liability, what to check before booking
-- https://www.manandvanclub.co.uk/blog/house-moving-checklist-uk — Complete UK house moving checklist from 8 weeks before to moving day
+### Blog Posts (28)
+#### Cost Guides
+- https://www.manandvanclub.co.uk/blog/how-much-does-man-and-van-cost — UK man and van pricing breakdown
+- https://www.manandvanclub.co.uk/blog/what-affects-man-and-van-prices — 9 factors that change your quote
+- https://www.manandvanclub.co.uk/blog/average-cost-3-bedroom-house-move — 3-bed house move costs by region
+- https://www.manandvanclub.co.uk/blog/man-and-van-birmingham-prices-how-to-book — Birmingham prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-walsall-prices-how-to-book — Walsall prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-london-prices-how-to-book — London prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-manchester-prices-how-to-book — Manchester prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-leeds-prices-how-to-book — Leeds prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-sheffield-prices-how-to-book — Sheffield prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-bristol-prices-how-to-book — Bristol prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-liverpool-prices-how-to-book — Liverpool prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-edinburgh-prices-how-to-book — Edinburgh prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-cardiff-prices-how-to-book — Cardiff prices & booking
+- https://www.manandvanclub.co.uk/blog/man-and-van-newcastle-prices-how-to-book — Newcastle prices & booking
 
-### Information
-- https://www.manandvanclub.co.uk/how-it-works — Step-by-step matching process
-- https://www.manandvanclub.co.uk/about — About Man and Van Club, marketplace model
-- https://www.manandvanclub.co.uk/areas-covered — All areas covered across the UK
-- https://www.manandvanclub.co.uk/why-join — Become an approved mover
-- https://www.manandvanclub.co.uk/contact — Contact Man and Van Club
+#### Area Guides
+- https://www.manandvanclub.co.uk/blog/birmingham-postcode-moving-guide — Birmingham B-postcode access guide
+- https://www.manandvanclub.co.uk/blog/london-borough-moving-guide — London borough parking & ULEZ guide
+
+#### Moving Tips
+- https://www.manandvanclub.co.uk/blog/how-to-prepare-for-moving-day — Moving day checklist
+- https://www.manandvanclub.co.uk/blog/student-moving-guide — Student moving guide
+- https://www.manandvanclub.co.uk/blog/what-to-tell-your-mover-before-moving-day — What movers need to know
+- https://www.manandvanclub.co.uk/blog/same-day-move-guide — Same-day move guide
+- https://www.manandvanclub.co.uk/blog/how-to-pack-for-a-house-move — Room-by-room packing guide
+- https://www.manandvanclub.co.uk/blog/do-i-need-to-empty-drawers-for-movers — Empty drawers guide
+- https://www.manandvanclub.co.uk/blog/how-to-move-a-piano-without-damage — Piano moving guide
+- https://www.manandvanclub.co.uk/blog/office-relocation-checklist — Office relocation checklist
+- https://www.manandvanclub.co.uk/blog/what-insurance-does-your-man-and-van-need — Insurance guide
+- https://www.manandvanclub.co.uk/blog/house-moving-checklist-uk — UK house moving checklist
+- https://www.manandvanclub.co.uk/blog/man-and-van-vs-removal-company-guide — Man and van vs removal company
+- https://www.manandvanclub.co.uk/blog/anyvan-review-alternatives — AnyVan review & alternatives
+
+### Pricing & Tools
+- https://www.manandvanclub.co.uk/moving-cost-calculator — Free moving cost calculator
+- https://www.manandvanclub.co.uk/man-and-van-prices — UK 2026 pricing guide
+- https://www.manandvanclub.co.uk/man-and-van-cost — How much does a man and van cost
+- https://www.manandvanclub.co.uk/man-and-van-near-me — Find a man and van near you
+- https://www.manandvanclub.co.uk/man-and-van-vs-removal-company — Man and van vs removal company
+- https://www.manandvanclub.co.uk/vs-anyvan — Man and Van Club vs AnyVan comparison
 
 ## Pricing (2026 UK)
 
-- West Midlands hourly rate: From £50/hr
-- London hourly rate: From £55/hr
-- UK average hourly rate: From £50/hr
+- Hourly rate: From £50/hr
 - Single-item furniture collection: From £50
-- 1-bed flat move: £150–£350
-- 3-bed house move: £300–£600
-- Full day West Midlands: £350–£500
+- 1-bed flat move: £130–£350
+- 3-bed house move: £280–£600
+- Full day: £350–£500
 - Same-day premium: 15–30% above standard rates
+
+## Clean Air Zones
+
+- Birmingham: Yes (Class D city centre)
+- Bath: Yes (Class C — older vans may be charged)
+- Bristol: Yes (Class D city centre)
+- Edinburgh: Low Emission Zone (city centre, 24/7)
+- Newcastle: Clean Air Zone (city centre + bridges)
+- London: ULEZ (all boroughs) + Congestion Charge (central)
+- All other areas: No CAZ/LEZ
 
 ## Verified Mover Checks
 
@@ -222,5 +175,4 @@ All approved movers must complete:
 
 - Facebook: https://www.facebook.com/profile.php?id=61590898873944
 - Yell: https://www.yell.com/biz/man-and-van-club-walsall-11043227/
-- https://www.manandvanclub.co.uk/routes/london-to-ipswich — London to Ipswich: 70mi via A12/A14, from £160
-- https://www.manandvanclub.co.uk/routes/ipswich-to-london — Ipswich to London: 70mi via A12, from £160
+- Google Business Profile: Man and Van Club, Walsall
