@@ -11,7 +11,10 @@ const nextConfig = {
         hostname: 'i.pravatar.cc',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
   },
+  compress: true,
+  poweredByHeader: false,
   async redirects() {
     return [
       {
