@@ -168,36 +168,48 @@ export default function Footer() {
         </div>
 
         {/* Legal & Badges */}
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col gap-2 text-sm text-text-secondary">
-            <span>© 2024–{currentYear} Man and Van Club</span>
-            <div className="flex flex-wrap gap-6 mt-2">
-              <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-primary">Terms & Conditions</Link>
-              <Link href="/cookies" className="hover:text-primary">Cookie Policy</Link>
-              <button
-                type="button"
-                className="hover:text-primary text-left"
-                onClick={() => {
-                  localStorage.removeItem("cookie-consent");
-                  window.location.reload();
-                }}
-              >
-                Cookie Preferences
-              </button>
+        <div className="border-t border-border pt-8 flex flex-col gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex flex-col gap-2 text-sm text-text-secondary">
+              <span>© 2024–{currentYear} Man and Van Club</span>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs">
+                <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
+                <span className="text-border">|</span>
+                <Link href="/terms" className="hover:text-primary">Terms & Conditions</Link>
+                <span className="text-border">|</span>
+                <Link href="/cookies" className="hover:text-primary">Cookie Policy</Link>
+                <span className="text-border">|</span>
+                <Link href="/sitemap" className="hover:text-primary">Sitemap</Link>
+                <span className="text-border">|</span>
+                <button
+                  type="button"
+                  className="hover:text-primary text-left"
+                  onClick={() => {
+                    localStorage.removeItem("cookie-consent");
+                    window.location.reload();
+                  }}
+                >
+                  Cookie Preferences
+                </button>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1 text-xs text-text-secondary">
+                <ShieldCheck size={16} className="text-green-600" />
+                <span>Secure Encrypted Connection</span>
+              </div>
+              <div className="flex items-center gap-1 text-xs text-text-secondary">
+                <CheckCircle2 size={16} className="text-green-600" />
+                <span>GDPR Compliant</span>
+              </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1 text-xs text-text-secondary">
-              <ShieldCheck size={16} className="text-green-600" />
-              <span>Secure Encrypted Connection</span>
-            </div>
-            <div className="flex items-center gap-1 text-xs text-text-secondary">
-              <CheckCircle2 size={16} className="text-green-600" />
-              <span>GDPR Compliant</span>
-            </div>
-          </div>
+          {/* Business details — legally required for UK sole traders */}
+          <p className="text-[11px] text-text-secondary/70 leading-relaxed text-center md:text-left">
+            Man and Van Club is a sole trader business registered in England. Trading address: Towpath Drive, Brownhills, Walsall, WS8 6FG
+          </p>
         </div>
       </div>
     </footer>
