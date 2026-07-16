@@ -3704,6 +3704,79 @@ export const ROUTES: RouteData[] = [
     ],
     cityALink: "/man-and-van-leeds",
     cityBLink: "/man-and-van-huddersfield"
+  },
+  {
+    slug: "london-to-ipswich",
+    cityA: "London",
+    cityB: "Ipswich",
+    regionA: "Greater London",
+    regionB: "East of England",
+    distance: "70 miles",
+    driveTime: "1 hour 30 minutes",
+    motorway: "A12/A14",
+    estimatedFrom: "£160",
+    estimatedTo: "£420",
+    title: "Man and Van London to Ipswich | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for London to Ipswich moves. 70 miles via A12. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "London to Ipswich",
+    intro: "Moving from London to Ipswich? The 70-mile journey along the A12 and A14 takes about 1 hour 30 minutes in clear traffic. Whether you are relocating to Suffolk for a quieter pace of life or moving closer to Felixstowe port, a verified man and van can handle the whole move. Submit your postcodes and item list for a free guide price.",
+    routeTips: [
+      "The A12 through Essex can be slow around Chelmsford and Colchester — allow extra time at peak hours",
+      "Ipswich town centre has restricted parking — areas like Kesgrave, Rushmere and Martlesham Heath are easier for van access",
+      "The A14 connects Ipswich to the Midlands and is useful if you need onward transport",
+      "London ULEZ and Congestion Charge may apply at the collection end",
+    ],
+    parkingNotes: [
+      { city: "London", notes: "Controlled Parking Zones cover most boroughs. Loading bays allow 20–40 minutes. Check your borough's rules." },
+      { city: "Ipswich", notes: "Ipswich town centre has time-limited parking. Kesgrave, Rushmere and Martlesham Heath have easier on-street parking for vans." },
+    ],
+    faq: [
+      { q: "How much does a man and van from London to Ipswich cost?", a: "In 2026, a London to Ipswich man and van move typically costs £160–£420. A single-item delivery starts from around £90." },
+      { q: "Can I move from London to Ipswich in half a day?", a: "Yes for a 1-bed flat or smaller. The drive is 1 hour 30 minutes, so with loading and unloading, the whole job takes about 4–5 hours." },
+    ],
+    relatedRoutes: [
+      { label: "London to Colchester", href: "/routes/london-to-colchester" },
+      { label: "London to Norwich", href: "/routes/london-to-norwich" },
+      { label: "London to Cambridge", href: "/routes/london-to-cambridge" },
+    ],
+    cityALink: "/man-and-van-london",
+    cityBLink: "/man-and-van-ipswich"
+  },
+  {
+    slug: "ipswich-to-london",
+    cityA: "Ipswich",
+    cityB: "London",
+    regionA: "East of England",
+    regionB: "Greater London",
+    distance: "70 miles",
+    driveTime: "1 hour 30 minutes",
+    motorway: "A12/A14",
+    estimatedFrom: "£160",
+    estimatedTo: "£420",
+    title: "Man and Van Ipswich to London | Move Quotes | Man and Van Club",
+    description: "Man and van quotes for Ipswich to London moves. 70 miles via A12. Verified movers, transparent pricing. Submit your move details for free.",
+    h1: "Ipswich to London",
+    intro: "Moving from Ipswich to London? The 70-mile journey south-west via the A12 takes about 1 hour 30 minutes in clear conditions. Whether you are heading to the capital for work or family, a verified man and van can manage the whole process. Submit your details for a free guide price.",
+    routeTips: [
+      "Leave Ipswich before 7:30am for the clearest A12",
+      "The A12 approaching the M25 can be slow during weekday mornings",
+      "London ULEZ and Congestion Charge may apply at the delivery end",
+    ],
+    parkingNotes: [
+      { city: "Ipswich", notes: "Ipswich town centre has time-limited parking. Kesgrave, Rushmere and Martlesham Heath have easier parking for vans." },
+      { city: "London", notes: "Most London boroughs have Controlled Parking Zones. Check your destination for loading bay and permit rules." },
+    ],
+    faq: [
+      { q: "How much does a man and van from Ipswich to London cost?", a: "In 2026, an Ipswich to London man and van move typically costs £160–£420. A single-item delivery starts from around £90." },
+      { q: "What is the best time to drive from Ipswich to London?", a: "Tuesday to Thursday before 8am gives the clearest A12. Avoid Friday afternoons." },
+    ],
+    relatedRoutes: [
+      { label: "London to Ipswich", href: "/routes/london-to-ipswich" },
+      { label: "Colchester to London", href: "/routes/colchester-to-london" },
+      { label: "London to Norwich", href: "/routes/london-to-norwich" },
+    ],
+    cityALink: "/man-and-van-ipswich",
+    cityBLink: "/man-and-van-london"
   }
 ];
 
