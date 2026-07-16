@@ -49,6 +49,12 @@ const BLOG_POSTS = [
   { name: "Man and Van London: Prices & How to Book", href: "/blog/man-and-van-london-prices-how-to-book" },
   { name: "Man and Van Manchester: Prices & How to Book", href: "/blog/man-and-van-manchester-prices-how-to-book" },
   { name: "Man and Van Leeds: Prices & How to Book", href: "/blog/man-and-van-leeds-prices-how-to-book" },
+  { name: "Man and Van Sheffield: Prices & How to Book", href: "/blog/man-and-van-sheffield-prices-how-to-book" },
+  { name: "Man and Van Bristol: Prices & How to Book", href: "/blog/man-and-van-bristol-prices-how-to-book" },
+  { name: "Man and Van Liverpool: Prices & How to Book", href: "/blog/man-and-van-liverpool-prices-how-to-book" },
+  { name: "Man and Van Edinburgh: Prices & How to Book", href: "/blog/man-and-van-edinburgh-prices-how-to-book" },
+  { name: "Man and Van Cardiff: Prices & How to Book", href: "/blog/man-and-van-cardiff-prices-how-to-book" },
+  { name: "Man and Van Newcastle upon Tyne: Prices & How to Book", href: "/blog/man-and-van-newcastle-prices-how-to-book" },
 ];
 
 const OTHER_PAGES = [

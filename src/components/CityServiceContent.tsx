@@ -553,6 +553,12 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   "london": { title: "Man and Van London: Prices & How to Book (2026)", href: "/blog/man-and-van-london-prices-how-to-book" },
                   "manchester": { title: "Man and Van Manchester: Prices & How to Book (2026)", href: "/blog/man-and-van-manchester-prices-how-to-book" },
                   "leeds": { title: "Man and Van Leeds: Prices & How to Book (2026)", href: "/blog/man-and-van-leeds-prices-how-to-book" },
+                  "sheffield": { title: "Man and Van Sheffield: Prices & How to Book (2026)", href: "/blog/man-and-van-sheffield-prices-how-to-book" },
+                  "bristol": { title: "Man and Van Bristol: Prices & How to Book (2026)", href: "/blog/man-and-van-bristol-prices-how-to-book" },
+                  "liverpool": { title: "Man and Van Liverpool: Prices & How to Book (2026)", href: "/blog/man-and-van-liverpool-prices-how-to-book" },
+                  "edinburgh": { title: "Man and Van Edinburgh: Prices & How to Book (2026)", href: "/blog/man-and-van-edinburgh-prices-how-to-book" },
+                  "cardiff": { title: "Man and Van Cardiff: Prices & How to Book (2026)", href: "/blog/man-and-van-cardiff-prices-how-to-book" },
+                  "newcastle-upon-tyne": { title: "Man and Van Newcastle upon Tyne: Prices & How to Book (2026)", href: "/blog/man-and-van-newcastle-prices-how-to-book" },
                 };
                 const blogLink = blogLinks[data.slug?.replace("man-and-van-", "") || ""];
                 return blogLink ? (
