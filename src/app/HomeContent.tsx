@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -13,24 +14,39 @@ import {
   ArrowRight,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import type { IntentType } from "@/lib/intent-detection";
 
-const MOVE_TYPES = [
-  { label: "Moving Home", emoji: "🏠", icon: <Home size={28} />, href: "#quote-form" },
-  { label: "Furniture", emoji: "🛋️", icon: <Sofa size={28} />, href: "#quote-form" },
-  { label: "Man & Van", emoji: "🚐", icon: <Truck size={28} />, href: "#quote-form" },
-  { label: "Office", emoji: "🏢", icon: <Building2 size={28} />, href: "#quote-form" },
-  { label: "Storage", emoji: "📦", icon: <Package size={28} />, href: "#quote-form" },
-  { label: "Student", emoji: "🎓", icon: <GraduationCap size={28} />, href: "#quote-form" },
+const MOVE_TYPES: { label: string; emoji: string; intent: IntentType }[] = [
+  { label: "Moving Home", emoji: "🏠", intent: "house" },
+  { label: "Furniture", emoji: "🛋️", intent: "single-item" },
+  { label: "Man & Van", emoji: "🚐", intent: "general" },
+  { label: "Office", emoji: "🏢", intent: "office" },
+  { label: "Storage", emoji: "📦", intent: "storage" },
+  { label: "Student", emoji: "🎓", intent: "student" },
 ];
 
 export default function HomeContent() {
+  const [selectedIntent, setSelectedIntent] = useState<IntentType | null>(null);
+
+  const handleTileClick = useCallback((intent: IntentType) => {
+    setSelectedIntent(intent);
+    // Small delay to let the form render with the new intent, then scroll
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const formSection = document.getElementById("quote-form");
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+  }, []);
+
   return (
     <div className="flex flex-col w-full selection:bg-accent selection:text-white">
 
       {/* ──────────────────── Hero: Move Type Selector ──────────────────── */}
       <section
-        id="quote-form"
-        className="relative flex items-center justify-center min-h-[calc(100dvh-56px)] lg:min-h-[calc(100vh-64px)] scroll-mt-0 bg-[#0f172a]"
+        className="relative flex items-center justify-center min-h-[calc(100dvh-56px)] lg:min-h-[calc(100vh-64px)] bg-[#0f172a]"
       >
         {/* Background image — very dark overlay for readability */}
         <div className="absolute inset-0">
@@ -71,16 +87,17 @@ export default function HomeContent() {
 
             <div className="grid grid-cols-3 gap-3 max-w-xs mx-auto">
               {MOVE_TYPES.map((type) => (
-                <a
+                <button
                   key={type.label}
-                  href={type.href}
-                  className="group flex flex-col items-center gap-2.5 bg-white rounded-2xl p-4 shadow-lg hover:bg-accent transition-all duration-200 hover:scale-[1.04] active:scale-[0.97]"
+                  type="button"
+                  onClick={() => handleTileClick(type.intent)}
+                  className="group flex flex-col items-center gap-2.5 bg-white rounded-2xl p-4 shadow-lg hover:bg-accent transition-all duration-200 hover:scale-[1.04] active:scale-[0.97] cursor-pointer"
                 >
                   <span className="text-3xl leading-none">{type.emoji}</span>
                   <span className="text-xs font-black text-primary group-hover:text-white tracking-tight leading-tight">
                     {type.label}
                   </span>
-                </a>
+                </button>
               ))}
             </div>
 
@@ -102,7 +119,10 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Quote Form Section ──────────────────── */}
-      <section className="py-10 lg:py-14 bg-white border-b border-border">
+      <section
+        id="quote-form"
+        className="py-10 lg:py-14 bg-white border-b border-border scroll-mt-16 lg:scroll-mt-20"
+      >
         <div className="container mx-auto px-4 max-w-xl">
           <div className="text-center mb-6">
             <p className="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1">Step 1 done</p>
@@ -113,7 +133,7 @@ export default function HomeContent() {
               Postcodes, items, date and access — takes under a minute.
             </p>
           </div>
-          <QuoteForm />
+          <QuoteForm intent={selectedIntent ?? undefined} />
         </div>
       </section>
 
