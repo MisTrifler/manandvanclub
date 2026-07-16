@@ -46,6 +46,9 @@ const BLOG_POSTS = [
   { name: "House Moving Checklist UK", href: "/blog/house-moving-checklist-uk" },
   { name: "Man and Van Birmingham: Prices & How to Book", href: "/blog/man-and-van-birmingham-prices-how-to-book" },
   { name: "Man and Van Walsall: Prices & How to Book", href: "/blog/man-and-van-walsall-prices-how-to-book" },
+  { name: "Man and Van London: Prices & How to Book", href: "/blog/man-and-van-london-prices-how-to-book" },
+  { name: "Man and Van Manchester: Prices & How to Book", href: "/blog/man-and-van-manchester-prices-how-to-book" },
+  { name: "Man and Van Leeds: Prices & How to Book", href: "/blog/man-and-van-leeds-prices-how-to-book" },
 ];
 
 const OTHER_PAGES = [

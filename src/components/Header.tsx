@@ -277,14 +277,24 @@ export default function Header() {
           </div>
 
           {/* Mobile Toggle */}
-          <button 
-            className="lg:hidden p-2 text-primary" 
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <a
+              href="tel:01217511269"
+              className="flex items-center gap-2 bg-accent/10 text-accent px-3 py-2 rounded-xl text-xs font-black"
+              aria-label="Call Man and Van Club"
+            >
+              <Phone size={16} />
+              <span className="hidden sm:inline">Call</span>
+            </a>
+            <button 
+              className="p-2 text-primary" 
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </div>
 

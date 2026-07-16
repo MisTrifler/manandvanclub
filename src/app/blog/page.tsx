@@ -206,6 +206,33 @@ const blogPosts = [
     readTime: "6 min read",
     category: "Cost Guides",
   },
+  {
+    slug: "man-and-van-london-prices-how-to-book",
+    title: "Man and Van London: Prices & How to Book (2026)",
+    description:
+      "Current London man and van prices by borough, what affects the cost, how to book a verified mover and what to know before moving in London.",
+    date: "2026-07-16",
+    readTime: "8 min read",
+    category: "Cost Guides",
+  },
+  {
+    slug: "man-and-van-manchester-prices-how-to-book",
+    title: "Man and Van Manchester: Prices & How to Book (2026)",
+    description:
+      "Current Manchester man and van prices, what affects the cost, how to book a verified mover and what to have ready before your move in Manchester.",
+    date: "2026-07-16",
+    readTime: "7 min read",
+    category: "Cost Guides",
+  },
+  {
+    slug: "man-and-van-leeds-prices-how-to-book",
+    title: "Man and Van Leeds: Prices & How to Book (2026)",
+    description:
+      "Current Leeds man and van prices, what affects the cost, how to book a verified mover and what to have ready before your move in Leeds.",
+    date: "2026-07-16",
+    readTime: "6 min read",
+    category: "Cost Guides",
+  },
 ];
 
 export default function BlogPage() {

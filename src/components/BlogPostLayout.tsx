@@ -85,7 +85,7 @@ export default function BlogPostLayout({
 
       {/* CTA */}
       <section className="py-16 bg-[#F9F9F7] border-t border-border">
-        <div className="container mx-auto px-4 text-center space-y-8">
+        <div className="container mx-auto px-4 text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tighter">
             Need a man and van?
           </h2>
@@ -101,10 +101,18 @@ export default function BlogPostLayout({
             </Link>
             <a
               href="tel:01217511269"
-              className="bg-white border border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs inline-flex items-center gap-3 text-primary hover:border-accent hover:text-accent transition-all"
+              className="bg-primary text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs inline-flex items-center gap-3 hover:bg-primary/90 transition-all"
             >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               Call 0121 751 1269
             </a>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-primary/40">
+            <span>Prices from £50</span>
+            <span>·</span>
+            <span>Open 7 days</span>
+            <span>·</span>
+            <span>Free to submit</span>
           </div>
         </div>
       </section>

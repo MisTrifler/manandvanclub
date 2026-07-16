@@ -772,10 +772,10 @@ export function getLocationPageData(slug: string): LocationPageData | null {
 
   const baseData = {
     name: loc.name,
-    title: `Man and Van ${loc.name} | Verified Local Movers`,
+    title: `Man and Van ${loc.name} | From £50 | Verified Local Movers`,
     description: loc.region === 'Greater London'
-      ? `Man and van ${loc.name} from £55/hr. One verified mover quotes. Free to submit, no multiple companies.`
-      : `Man and van ${loc.name} from £50/hr. One verified mover quotes. Free to submit, no multiple companies.`,
+      ? `Man and van ${loc.name} from £55/hr. One verified mover quotes. Free to submit, no multiple companies. Call 0121 751 1269.`
+      : `Man and van ${loc.name} from £50/hr. One verified mover quotes. Free to submit, no multiple companies. Call 0121 751 1269.`,
     badge: `Verified movers in ${loc.name}`,
     intro: generateBusinessModelIntro(loc),
     knowledge: generateBusinessModelKnowledge(loc),

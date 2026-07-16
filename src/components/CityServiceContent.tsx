@@ -545,6 +545,35 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 </div>
               )}
 
+              {/* ── Blog Cross-Link — Pricing Guide ── */}
+              {isLocationPage && (() => {
+                const blogLinks: Record<string, { title: string; href: string }> = {
+                  "birmingham": { title: "Man and Van Birmingham: Prices & How to Book (2026)", href: "/blog/man-and-van-birmingham-prices-how-to-book" },
+                  "walsall": { title: "Man and Van Walsall: Prices & How to Book (2026)", href: "/blog/man-and-van-walsall-prices-how-to-book" },
+                  "london": { title: "Man and Van London: Prices & How to Book (2026)", href: "/blog/man-and-van-london-prices-how-to-book" },
+                  "manchester": { title: "Man and Van Manchester: Prices & How to Book (2026)", href: "/blog/man-and-van-manchester-prices-how-to-book" },
+                  "leeds": { title: "Man and Van Leeds: Prices & How to Book (2026)", href: "/blog/man-and-van-leeds-prices-how-to-book" },
+                };
+                const blogLink = blogLinks[data.slug?.replace("man-and-van-", "") || ""];
+                return blogLink ? (
+                  <div className="bg-accent/5 p-6 lg:p-8 rounded-2xl border border-accent/20 space-y-3">
+                    <p className="text-[9px] font-black uppercase tracking-widest text-accent">Pricing Guide</p>
+                    <h3 className="font-black text-primary text-lg uppercase tracking-tight leading-tight">
+                      {blogLink.title}
+                    </h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      Detailed prices, local area tips and step-by-step booking advice for your move in {data.name}.
+                    </p>
+                    <Link
+                      href={blogLink.href}
+                      className="inline-flex items-center gap-2 text-accent font-black text-xs uppercase tracking-widest hover:gap-3 transition-all"
+                    >
+                      Read the guide <ArrowUpRight size={14} />
+                    </Link>
+                  </div>
+                ) : null;
+              })()}
+
               {/* ── Local search guides / neighbourhood relevance ── */}
               {data.localAreaGuides && data.localAreaGuides.length > 0 && (
                 <div className="space-y-6 lg:space-y-8">
@@ -802,6 +831,23 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                      <p className="text-xs font-bold uppercase tracking-widest text-white/70">Prefer to talk?</p>
                      <p className="text-lg font-black tracking-tight">0121 751 1269</p>
                   </div>
+               </a>
+
+               {/* Yell Profile Link */}
+               <a
+                  href="https://www.yell.com/biz/man-and-van-club-walsall-11043227/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-[#F9F9F7] p-8 rounded-[2rem] border border-border/50 hover:border-accent hover:shadow-md transition-all group"
+               >
+                  <div className="bg-accent/10 rounded-full p-3 group-hover:scale-110 transition-transform">
+                     <Star size={22} className="text-accent" />
+                  </div>
+                  <div>
+                     <p className="text-xs font-bold uppercase tracking-widest text-primary/50">See us on</p>
+                     <p className="text-lg font-black tracking-tight text-primary">Yell.com</p>
+                  </div>
+                  <ArrowUpRight size={16} className="text-primary/30 ml-auto group-hover:text-accent transition-colors" />
                </a>
             </aside>
 
