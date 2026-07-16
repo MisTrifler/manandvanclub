@@ -120,29 +120,22 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-xl">
 
           {!selectedIntent ? (
-            /* ── No intent selected yet: show compact inline selector ── */
-            <div className="text-center">
-              <h2 className="text-2xl font-black text-primary uppercase tracking-tight mb-1">
-                Get your free quote
-              </h2>
-              <p className="text-sm text-text-secondary mb-5">
-                Pick a move type and we&apos;ll match you with a verified local mover.
-              </p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {MOVE_TYPES.map((type) => (
-                  <button
-                    key={type.label}
-                    type="button"
-                    onClick={() => handleTileClick(type.intent)}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/10 bg-white px-4 py-2.5 text-xs font-black uppercase tracking-wider text-primary shadow-sm transition hover:border-accent hover:bg-accent hover:text-white active:scale-[0.97]"
-                  >
-                    <span className="text-base leading-none">{type.emoji}</span>
-                    {type.label}
-                  </button>
-                ))}
+            /* ── No intent selected yet: prompt to pick from hero ── */
+            <div className="text-center py-6">
+              <div className="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <ArrowRight size={22} className="rotate-90" />
               </div>
-              <p className="mt-3 text-xs text-text-secondary">
-                Not sure? Choose <button type="button" onClick={() => handleTileClick("general")} className="font-black text-accent hover:underline">Man &amp; Van</button>.
+              <h2 className="text-xl font-black text-primary uppercase tracking-tight mb-1">
+                Choose your move type above
+              </h2>
+              <p className="text-sm text-text-secondary">
+                Pick a category to get started — it&apos;s free and takes under a minute.
+              </p>
+              <p className="mt-4 text-xs text-text-secondary/60">
+                Or call us directly:{" "}
+                <a href="tel:01217511269" className="font-black text-accent hover:underline">
+                  0121 751 1269
+                </a>
               </p>
             </div>
           ) : (
