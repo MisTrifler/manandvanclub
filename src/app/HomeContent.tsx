@@ -4,16 +4,11 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Home,
-  Sofa,
-  Truck,
-  Building2,
-  Package,
-  GraduationCap,
   Phone,
   ArrowRight,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import IntentSelector from "@/components/IntentSelector";
 import type { IntentType } from "@/lib/intent-detection";
 
 const MOVE_TYPES: { label: string; emoji: string; intent: IntentType }[] = [
@@ -39,6 +34,10 @@ export default function HomeContent() {
         }
       });
     });
+  }, []);
+
+  const handleIntentFromSelector = useCallback((intent: IntentType) => {
+    setSelectedIntent(intent);
   }, []);
 
   return (
@@ -124,16 +123,38 @@ export default function HomeContent() {
         className="py-10 lg:py-14 bg-white border-b border-border scroll-mt-16 lg:scroll-mt-20"
       >
         <div className="container mx-auto px-4 max-w-xl">
-          <div className="text-center mb-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1">Step 1 done</p>
-            <h2 className="text-2xl font-black text-primary uppercase tracking-tight">
-              Tell us about your move
-            </h2>
-            <p className="text-sm text-text-secondary mt-1">
-              Postcodes, items, date and access — takes under a minute.
-            </p>
-          </div>
-          <QuoteForm intent={selectedIntent ?? undefined} />
+
+          {!selectedIntent ? (
+            /* ── No intent selected yet: show clean selector ── */
+            <>
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-black text-primary uppercase tracking-tight">
+                  Get your free quote
+                </h2>
+                <p className="text-sm text-text-secondary mt-1">
+                  Pick a move type and we&apos;ll match you with a verified local mover.
+                </p>
+              </div>
+              <div className="overflow-hidden rounded-[1.75rem] border border-white/25 bg-white shadow-[0_24px_80px_rgba(2,6,23,0.20)] ring-1 ring-black/5 px-5 pt-5 pb-5 lg:px-8 lg:pt-8 lg:pb-8">
+                <IntentSelector onSelect={handleIntentFromSelector} />
+              </div>
+            </>
+          ) : (
+            /* ── Intent selected: show the form ── */
+            <>
+              <div className="text-center mb-6">
+                <p className="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1">Step 1 done</p>
+                <h2 className="text-2xl font-black text-primary uppercase tracking-tight">
+                  Tell us about your move
+                </h2>
+                <p className="text-sm text-text-secondary mt-1">
+                  Postcodes, items, date and access — takes under a minute.
+                </p>
+              </div>
+              <QuoteForm intent={selectedIntent} />
+            </>
+          )}
+
         </div>
       </section>
 
