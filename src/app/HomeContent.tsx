@@ -125,18 +125,27 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-xl">
 
           {!selectedIntent ? (
-            /* ── No intent selected yet: prompt to pick from hero ── */
-            <div className="text-center py-6">
-              <div className="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <ArrowRight size={22} className="-rotate-90" />
-              </div>
-              <h2 className="text-xl font-black text-primary uppercase tracking-tight mb-1">
-                Choose your move type above
+            /* ── No intent selected yet: show quick-select tiles ── */ 
+            <div className="text-center py-4">
+              <h2 className="text-xl font-black text-primary uppercase tracking-tight mb-4">
+                What do you need help moving?
               </h2>
-              <p className="text-sm text-text-secondary">
-                Pick a category to get started — it&apos;s free and takes under a minute.
-              </p>
-              <p className="mt-4 text-xs text-text-secondary/60">
+              <div className="grid grid-cols-3 gap-2 max-w-xs mx-auto mb-4">
+                {MOVE_TYPES.map((type) => (
+                  <button
+                    key={type.label}
+                    type="button"
+                    onClick={() => handleTileClick(type.intent)}
+                    className="group flex flex-col items-center gap-1.5 bg-[#F9F9F7] rounded-xl p-3 border border-border hover:bg-accent hover:border-accent transition-all duration-200 cursor-pointer"
+                  >
+                    <span className="text-2xl leading-none">{type.emoji}</span>
+                    <span className="text-[10px] font-black text-primary group-hover:text-white tracking-tight leading-tight">
+                      {type.label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <p className="text-xs text-text-secondary/60">
                 Or call us directly:{" "}
                 <a href="tel:01217511269" className="font-black text-accent hover:underline">
                   0121 751 1269
@@ -199,8 +208,14 @@ export default function HomeContent() {
               Man and Van Club is a UK marketplace that connects you with independent, verified local movers. Whether you&apos;re moving a single sofa across town or an entire flat to another city, you submit one free request and a checked-and-approved mover reviews your details before quoting. No comparison tables, no five companies ringing you — just one quote from one verified mover.
             </p>
             <p>
-              Prices start from £45/hr, which undercuts the typical £50/hr you&apos;ll see on larger platforms. Every mover on the platform holds Goods in Transit and Public Liability insurance, and their business details are verified before they can access any move requests. You stay in control: review the quote, accept or walk away, no obligation.
+              Prices start from £45/hr. Every mover on the platform holds Goods in Transit and Public Liability insurance, and their business details are verified before they can access any move requests. You stay in control: review the quote, accept or walk away, no obligation.
             </p>
+          </div>
+          <div className="text-center mt-6">
+            <a href="#quote-form" className="btn-orange px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs inline-flex items-center gap-2 shadow-xl shadow-accent/20 hover:scale-105 active:scale-95 transition-all">
+              Start Your Move Request <ArrowRight size={16} />
+            </a>
+            <p className="mt-2 text-xs text-text-secondary/60">Free to submit · Takes under a minute</p>
           </div>
         </div>
       </section>
