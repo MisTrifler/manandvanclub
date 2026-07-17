@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   description: "Moving home? Man and van from £45/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: siteUrl,
     languages: {
       'en-GB': siteUrl,
     },

@@ -60,11 +60,11 @@ export default function HomeContent() {
             style={{ fontSize: "clamp(28px, 6.5vw, 44px)", lineHeight: "1.05" }}
             data-speakable="hero-heading"
           >
-            Start Your Move Request
+            Moving Home? Man and Van From £45
           </h1>
 
           <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
-            Free to submit · No spam · Details protected
+            Free to submit · Verified movers · No spam · Details protected
           </p>
 
           {/* Move Type Selector */}
@@ -184,6 +184,23 @@ export default function HomeContent() {
               <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-1">Accept or walk away</h3>
               <p className="text-text-secondary text-xs leading-relaxed">If the quote works, book it. If not, no obligation. Your details stay private.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────── About the Service ──────────────────── */}
+      <section className="py-12 lg:py-14 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter text-center mb-6">
+            How Man and Van Club works
+          </h2>
+          <div className="space-y-4 text-sm text-text-secondary leading-relaxed max-w-2xl mx-auto">
+            <p>
+              Man and Van Club is a UK marketplace that connects you with independent, verified local movers. Whether you&apos;re moving a single sofa across town or an entire flat to another city, you submit one free request and a checked-and-approved mover reviews your details before quoting. No comparison tables, no five companies ringing you — just one quote from one verified mover.
+            </p>
+            <p>
+              Prices start from £45/hr, which undercuts the typical £50/hr you&apos;ll see on larger platforms. Every mover on the platform holds Goods in Transit and Public Liability insurance, and their business details are verified before they can access any move requests. You stay in control: review the quote, accept or walk away, no obligation.
+            </p>
           </div>
         </div>
       </section>

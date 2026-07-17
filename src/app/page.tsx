@@ -63,6 +63,15 @@ export default function Home() {
       { "@type": "AdministrativeArea", "name": "Greater London" },
       { "@type": "AdministrativeArea", "name": "Greater Manchester" },
       { "@type": "AdministrativeArea", "name": "Merseyside" },
+      { "@type": "AdministrativeArea", "name": "South East England" },
+      { "@type": "AdministrativeArea", "name": "South West England" },
+      { "@type": "AdministrativeArea", "name": "North East England" },
+      { "@type": "AdministrativeArea", "name": "North West England" },
+      { "@type": "AdministrativeArea", "name": "Yorkshire and the Humber" },
+      { "@type": "AdministrativeArea", "name": "East of England" },
+      { "@type": "Country", "name": "Scotland" },
+      { "@type": "Country", "name": "Wales" },
+      { "@type": "Country", "name": "Northern Ireland" },
       { "@type": "Country", "name": "United Kingdom" },
     ],
     "serviceType": [
@@ -73,8 +82,38 @@ export default function Home() {
       "Student moves",
       "Furniture delivery",
       "Office moves",
+      "Piano removals",
+      "Single item delivery",
     ],
     "description": "Marketplace helping customers submit free move requests for anything from single-item collections to full home moves. An approved mover reviews the details and sends a quote before the customer decides whether to book.",
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to get a man and van quote on Man and Van Club",
+    "description": "Submit a free move request, receive a quote from a verified mover, and decide whether to book — no obligation.",
+    "totalTime": "PT2M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Submit your details",
+        "text": "Enter your postcodes, items, move date and access notes. Free and takes under a minute.",
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "A verified mover reviews it",
+        "text": "One approved mover — not five companies — reviews your anonymised details and sends a quote.",
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Accept or walk away",
+        "text": "If the quote works, book it. If not, no obligation. Your details stay private.",
+      },
+    ],
   };
 
   return (
@@ -86,6 +125,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <HomeContent />
     </>

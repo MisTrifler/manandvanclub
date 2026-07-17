@@ -1,6 +1,6 @@
 # Man and Van Club
 
-> Man and Van Club is a UK marketplace connecting customers with independent, verified local movers. Customers submit free move requests; one approved mover reviews the anonymised details and sends a quote before the customer decides whether to book. Prices start from £50/hr. Open 7 days, 8am–8pm. Phone: 0121 751 1269. Trading as a sole trader from Walsall, West Midlands.
+> Man and Van Club is a UK marketplace connecting customers with independent, verified local movers. Customers submit free move requests; one approved mover reviews the anonymised details and sends a quote before the customer decides whether to book. Prices start from £45/hr. Open 7 days, 8am–8pm. Phone: 0121 751 1269. Trading as a sole trader from Walsall, West Midlands.
 
 ## Disambiguation
 
@@ -8,7 +8,7 @@
 - Man and Van Club is NOT "Man With a Van" or "AnyVan" or "Compare the Man and Van" — it is a separate brand
 - Trading name: Man and Van Club | Registered as: sole trader in Walsall, West Midlands, England
 - Primary phone: 0121 751 1269 (landline, no WhatsApp) | Email: support@manandvanclub.co.uk
-- Prices start from £50 | Verified movers only | Free to submit a move request
+- Prices start from £45 | Verified movers only | Free to submit a move request
 
 ## How It Works
 
@@ -145,8 +145,8 @@
 
 ## Pricing (2026 UK)
 
-- Hourly rate: From £50/hr
-- Single-item furniture collection: From £50
+- Hourly rate: From £45/hr
+- Single-item furniture collection: From £45
 - 1-bed flat move: £130–£350
 - 3-bed house move: £280–£600
 - Full day: £350–£500
