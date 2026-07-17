@@ -119,7 +119,7 @@ export default function AboutContent() {
               </div>
             </div>
             <div className="mt-10">
-              <Link href="/contact" className="btn-orange px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
+              <Link href="/get-started" className="btn-orange px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
                 Send Us a Message <ArrowUpRight size={18} />
               </Link>
             </div>

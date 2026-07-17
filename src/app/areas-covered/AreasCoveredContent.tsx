@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useMemo } from "react";
+import { Phone } from "lucide-react";
 import { LOCATIONS, LOCATION_REGIONS } from "@/constants/locations";
 import { MapPin, ArrowUpRight, Search } from "lucide-react";
 
@@ -268,8 +269,21 @@ export default function AreasCoveredContent() {
           >
             Start Your Move Request <ArrowUpRight size={24} />
           </Link>
+          <p className="text-sm text-text-secondary">
+            Or call us: <a href="tel:01217511269" className="font-black text-accent hover:underline">0121 751 1269</a> · Open 7 days · From £45/hr
+          </p>
         </div>
       </section>
+
+      {/* ── Mobile Floating Call Button ── */}
+      <a
+        href="tel:01217511269"
+        className="floating-call-btn fixed bottom-6 right-6 z-[200] lg:hidden flex items-center gap-3 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent/90 transition-all"
+        aria-label="Call Man and Van Club"
+      >
+        <Phone size={22} className="text-white" />
+        <span className="font-black tracking-tight text-sm">Call Now</span>
+      </a>
     </div>
   );
 }

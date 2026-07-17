@@ -250,6 +250,9 @@ export default function ManAndVanPricesPage() {
             <Link href="/get-started" className="btn-orange px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
               Start Your Move Request <ArrowUpRight size={20} />
             </Link>
+            <a href="tel:01217511269" className="bg-white border-2 border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 text-primary hover:border-accent hover:text-accent transition-all">
+              <Phone size={18} /> Call 0121 751 1269
+            </a>
             <Link href="/moving-cost-calculator" className="bg-white border-2 border-border px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 text-primary hover:border-accent hover:text-accent transition-all">
               Try the Cost Calculator <ArrowUpRight size={16} />
             </Link>
@@ -257,9 +260,20 @@ export default function ManAndVanPricesPage() {
           <div className="flex items-center justify-center gap-6 mt-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
             <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-green-600" /> Details Protected</span>
             <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-green-600" /> Free To Submit</span>
+            <span className="flex items-center gap-1.5"><Phone size={14} className="text-accent" /> From £45/hr</span>
           </div>
         </div>
       </section>
+
+      {/* ── Mobile Floating Call Button ── */}
+      <a
+        href="tel:01217511269"
+        className="floating-call-btn fixed bottom-6 right-6 z-[200] lg:hidden flex items-center gap-3 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent/90 transition-all"
+        aria-label="Call Man and Van Club"
+      >
+        <Phone size={22} className="text-white" />
+        <span className="font-black tracking-tight text-sm">Call Now</span>
+      </a>
     </div>
   );
 }

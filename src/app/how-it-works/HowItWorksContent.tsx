@@ -119,6 +119,9 @@ export default function HowItWorksContent() {
           <Link href="/get-started" className="btn-orange px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3">
             Start Your Move <ArrowUpRight size={20} />
           </Link>
+          <p className="mt-4 text-sm text-text-secondary">
+            Or call: <a href="tel:01217511269" className="font-black text-accent hover:underline">0121 751 1269</a> · Open 7 days · From £45/hr
+          </p>
 
           {/* Popular Areas — Internal Linking */}
           <div className="mt-12 pt-8 border-t border-border max-w-xl mx-auto">
