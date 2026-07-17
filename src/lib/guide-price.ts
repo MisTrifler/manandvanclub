@@ -59,9 +59,9 @@ const GUIDE_FORMULA_VERSION = "guide-v1.2" as const;
 // Internal guide rates (never shown to customers). These are intentionally
 // simple and transparent: the customer sees a guide range only, while the
 // mover still sends the accurate quote before booking.
-const RATE_ONE_MOVER = 40;
-const RATE_TWO_MOVERS = 65;
-const RATE_LARGE_JOB = 75;
+const RATE_ONE_MOVER = 35;
+const RATE_TWO_MOVERS = 60;
+const RATE_LARGE_JOB = 70;
 
 const MILEAGE_FREE_MILES = 10;
 const MILEAGE_RATE_PER_MILE = 2.25;
@@ -195,22 +195,22 @@ function estimateLoadingMinutes(intent: string, input: GuidePriceInput, assumpti
 // ── F. Minimum callout floors ────────────────────────────────────────
 function minimumFloor(intent: string, input: GuidePriceInput): number {
   switch (intent) {
-    case "single-item": return 55;
-    case "student": return 75;
-    case "general": return 90;
-    case "storage": return 95;
+    case "single-item": return 45;
+    case "student": return 70;
+    case "general": return 85;
+    case "storage": return 90;
     case "house": {
-      const map: Record<string, number> = { "Studio": 90, "1": 120, "2": 180, "3": 280, "4+": 420 };
-      return map[String(input.bedrooms || "")] ?? 120;
+      const map: Record<string, number> = { "Studio": 85, "1": 115, "2": 175, "3": 275, "4+": 415 };
+      return map[String(input.bedrooms || "")] ?? 115;
     }
     case "office": {
       const size = String(input.officeSize || "");
-      if (/small/i.test(size)) return 180;
-      if (/medium/i.test(size)) return 350;
-      if (/large|warehouse/i.test(size)) return 650;
-      return 180;
+      if (/small/i.test(size)) return 175;
+      if (/medium/i.test(size)) return 345;
+      if (/large|warehouse/i.test(size)) return 645;
+      return 175;
     }
-    default: return 90;
+    default: return 85;
   }
 }
 
@@ -218,16 +218,16 @@ function minimumFloor(intent: string, input: GuidePriceInput): number {
 function routeDistanceMinimum(intent: string, routeMiles: number, input?: GuidePriceInput): number {
   if (input && isSmallGeneralLocalMove(intent, input, routeMiles)) {
     const items = getItemCount(input);
-    if (items <= 1) return 50;
-    if (items === 2) return 60;
-    return 70;
+    if (items <= 1) return 45;
+    if (items === 2) return 55;
+    return 65;
   }
 
   const tiers: Record<string, [number, number, number, number, number]> = {
     // [0–10mi, 11–25mi, 26–50mi, 51–100mi, 100+mi]
-    general: [90, 120, 160, 240, 350],
-    student: [75, 110, 150, 225, 325],
-    "single-item": [55, 85, 130, 200, 300],
+    general: [85, 115, 155, 235, 345],
+    student: [70, 105, 145, 220, 320],
+    "single-item": [45, 80, 125, 195, 295],
   };
   const tier = tiers[intent];
   if (!tier) return 0; // house/office/storage keep their own strong floors
@@ -388,7 +388,7 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   if (distanceFloor > floor) floor = distanceFloor;
   if (isSmallGeneralLocalMove(intent, input, routeMiles)) {
     const items = getItemCount(input);
-    floor = Math.min(floor, items <= 1 ? 50 : items === 2 ? 60 : 70);
+    floor = Math.min(floor, items <= 1 ? 45 : items === 2 ? 55 : 65);
     assumptions.push("small local item move");
   }
 

@@ -163,7 +163,7 @@ export default function BlogPost() {
           <ul className="list-disc pl-6 space-y-2">
             <li><strong className="text-primary">Parking suspensions</strong> — £30–£80 per day depending on the council.</li>
             <li><strong className="text-primary">Packing service</strong> — if the mover packs for you, add £200–£400 for a 3-bed house.</li>
-            <li><strong className="text-primary">Dismantling and reassembly</strong> — some movers include this, others charge extra (£50–£150).</li>
+            <li><strong className="text-primary">Dismantling and reassembly</strong> — some movers include this, others charge extra (£45–£150).</li>
             <li><strong className="text-primary">Storage</strong> — if there's a gap between moving out and moving in, storage costs around £20–£40 per week for a 3-bed house worth of items.</li>
             <li><strong className="text-primary">Congestion charge or ULEZ</strong> — if either property is in a charged zone, factor in the fee.</li>
           </ul>

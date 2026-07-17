@@ -4,16 +4,16 @@ import { Metadata } from "next";
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
+  title: "Man and Van Club | Moving Home From £45 | Verified UK Movers",
   description:
-    "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
+    "Moving home? Man and van from £45/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
+    title: "Man and Van Club | Moving Home From £45 | Verified UK Movers",
     description:
-      "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book.",
+      "Moving home? Man and van from £45/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book.",
     url: siteUrl,
     images: [
       {
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Club | Moving Home From £50 | Verified UK Movers",
+    title: "Man and Van Club | Moving Home From £45 | Verified UK Movers",
     description:
-      "Moving home? Man and van from £50/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
+      "Moving home? Man and van from £45/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
     images: ["/images/og-homepage.jpg"],
   },
 };

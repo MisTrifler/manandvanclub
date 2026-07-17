@@ -482,15 +482,15 @@ function generateExampleMoveRequests(loc: LocationData): { area: string; type: s
 function generateCostAnswer(loc: LocationData): string {
   // Provide region-specific pricing context where possible
   if (loc.region === "West Midlands") {
-    return `Man and van rates in the West Midlands in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
+    return `Man and van rates in the West Midlands in 2026 start from £45 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £45, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
   }
   if (loc.region === "Greater London") {
     return `Man and van rates in London in 2026 start from £55 per hour, with full-day costs around £400–£600. Congestion Charge and ULEZ may apply to central London moves. A single-item collection starts from £55. Submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
   }
   if (loc.region === "East Midlands") {
-    return `Man and van rates in the East Midlands in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £50, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
+    return `Man and van rates in the East Midlands in 2026 start from £45 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £45, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
   }
-  return `Man and van rates in the UK in 2026 start from £50 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
+  return `Man and van rates in the UK in 2026 start from £45 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
 }
 
 function generateFAQ(loc: LocationData): { q: string; a: string }[] {
@@ -772,10 +772,10 @@ export function getLocationPageData(slug: string): LocationPageData | null {
 
   const baseData = {
     name: loc.name,
-    title: `Man and Van ${loc.name} | From £50 | Verified Local Movers`,
+    title: `Man and Van ${loc.name} | From £45 | Verified Local Movers`,
     description: loc.region === 'Greater London'
       ? `Man and van ${loc.name} from £55/hr. One verified mover quotes. Free to submit, no multiple companies. Call 0121 751 1269.`
-      : `Man and van ${loc.name} from £50/hr. One verified mover quotes. Free to submit, no multiple companies. Call 0121 751 1269.`,
+      : `Man and van ${loc.name} from £45/hr. One verified mover quotes. Free to submit, no multiple companies. Call 0121 751 1269.`,
     badge: `Verified movers in ${loc.name}`,
     intro: generateBusinessModelIntro(loc),
     knowledge: generateBusinessModelKnowledge(loc),

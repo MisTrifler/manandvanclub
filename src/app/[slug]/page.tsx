@@ -59,8 +59,8 @@ const servicePageData: Record<string, any> = {
   "house-removals": {
     name: "House Removals",
     formIntent: "house",
-    title: "House Removals & Moving Home | From £50 | Man and Van Club",
-    description: "Moving home? House removals from £50 across the UK. Submit bedrooms, access, packing and postcodes so an approved mover can review your home move before quoting. Call 0121 751 1269.",
+    title: "House Removals & Moving Home | From £45 | Man and Van Club",
+    description: "Moving home? House removals from £45 across the UK. Submit bedrooms, access, packing and postcodes so an approved mover can review your home move before quoting. Call 0121 751 1269.",
     badge: "Home Move Requests",
     h1: "Moving Home? Get a Verified Mover Quote",
     intro: "Moving your whole home? Man and Van Club can handle more than collections. Add bedrooms, property type, packing, stairs, lift access and postcodes so an approved mover can review the job properly before quoting.",
@@ -86,8 +86,8 @@ const servicePageData: Record<string, any> = {
   "flat-removals": {
     name: "Flat Removals",
     formIntent: "house",
-    title: "Flat Removals & Moving House | From £50 | Man and Van Club",
-    description: "Moving house or flat? Removals from £50 across the UK. Add lift access, parking restrictions and staircase details so an approved mover can quote accurately. Call 0121 751 1269.",
+    title: "Flat Removals & Moving House | From £45 | Man and Van Club",
+    description: "Moving house or flat? Removals from £45 across the UK. Add lift access, parking restrictions and staircase details so an approved mover can quote accurately. Call 0121 751 1269.",
     badge: "Flat Move Requests",
     h1: "Moving House or Flat? Get a Verified Mover Quote",
     intro: "Moving from a flat or apartment? Add lift access, floor level, parking, shared entrances and postcodes so the mover can quote around the real access conditions.",
@@ -113,8 +113,8 @@ const servicePageData: Record<string, any> = {
   "student-removals": {
     name: "Student Removals",
     formIntent: "student",
-    title: "Student Removals | £12 Off via UNiDAYS | From £50 | Man and Van Club",
-    description: "Student moves from £50 across the UK. £12 off for UNiDAYS-verified students. Moving to or from university halls or a shared house? Submit your details so an approved mover can review the job before quoting. Call 0121 751 1269.",
+    title: "Student Removals | £12 Off via UNiDAYS | From £45 | Man and Van Club",
+    description: "Student moves from £45 across the UK. £12 off for UNiDAYS-verified students. Moving to or from university halls or a shared house? Submit your details so an approved mover can review the job before quoting. Call 0121 751 1269.",
     badge: "Student Move Requests",
     h1: "Student Removals — £12 Off via UNiDAYS",
     intro: "Moving to halls, a shared house or back home for summer? Add your university, boxes, bags, small furniture and postcodes so a mover can review the student move quickly. UNiDAYS-verified students get £12 off — find your code on the UNiDAYS app.",
@@ -140,8 +140,8 @@ const servicePageData: Record<string, any> = {
   "office-removals": {
     name: "Office Removals",
     formIntent: "office",
-    title: "Office Removals | From £50 | Verified Business Mover Quotes | Man and Van Club",
-    description: "Office removal and business relocation quote requests across the UK from £50. Add access, timing and equipment details so an approved mover can review the job before quoting. Call 0121 751 1269.",
+    title: "Office Removals | From £45 | Verified Business Mover Quotes | Man and Van Club",
+    description: "Office removal and business relocation quote requests across the UK from £45. Add access, timing and equipment details so an approved mover can review the job before quoting. Call 0121 751 1269.",
     badge: "Business Move Requests",
     h1: "Office Removals With Less Disruption",
     intro: "Relocating your office or business? Add desks, filing cabinets, IT equipment, access, loading times and preferred moving window so a mover can quote around your work schedule.",
@@ -167,8 +167,8 @@ const servicePageData: Record<string, any> = {
   "furniture-delivery": {
     name: "Furniture Delivery",
     formIntent: "single-item",
-    title: "Furniture Collection & Delivery | From £50 | Moving Van Service | Man and Van Club",
-    description: "Furniture collection and delivery quote requests across the UK from £50. From one bulky item to multiple furniture pieces, submit details so an approved mover can review before quoting. Call 0121 751 1269.",
+    title: "Furniture Collection & Delivery | From £45 | Moving Van Service | Man and Van Club",
+    description: "Furniture collection and delivery quote requests across the UK from £45. From one bulky item to multiple furniture pieces, submit details so an approved mover can review before quoting. Call 0121 751 1269.",
     badge: "Furniture Delivery Requests",
     h1: "Furniture Collection & Delivery",
     intro: "Need a sofa, bed, wardrobe, appliance or online purchase collected? Add item size, pickup and delivery postcodes, stairs and helpers so a mover can quote accurately.",
@@ -186,16 +186,16 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "Can you collect from a shop or seller?", a: "Yes. Collections from shops, private sellers or auction houses can be submitted. Provide the collection postcode and item details so the mover can quote accurately." },
-      { q: "How much does furniture collection cost?", a: "In 2026, UK single-item furniture collection prices start from £50 for a local collection (sofa, bed, wardrobe or appliance). Multi-item collections or longer distances cost more. Prices depend on distance, item size, access, stairs and whether extra help is needed. Use the form to see a guide price first." },
+      { q: "How much does furniture collection cost?", a: "In 2026, UK single-item furniture collection prices start from £45 for a local collection (sofa, bed, wardrobe or appliance). Multi-item collections or longer distances cost more. Prices depend on distance, item size, access, stairs and whether extra help is needed. Use the form to see a guide price first." },
       { q: "Will my furniture be protected?", a: "Movers typically use protective blankets and straps as standard. Movers must provide Goods in Transit and Public Liability insurance before they are approved, and we recommend confirming cover details directly with your mover." },
-      { q: "How much does a Facebook Marketplace collection cost?", a: "Marketplace collections in 2026 start from £50 for a single local item. Sofa and bed collections are at the higher end due to size and handling. Add item dimensions and access details for an accurate guide price." }
+      { q: "How much does a Facebook Marketplace collection cost?", a: "Marketplace collections in 2026 start from £45 for a single local item. Sofa and bed collections are at the higher end due to size and handling. Add item dimensions and access details for an accurate guide price." }
     ]
   },
   "same-day-man-and-van": {
     name: "Same Day Man and Van",
     formIntent: "general",
-    title: "Same Day Man and Van | From £50 | Cheap Urgent Moving Van | Man and Van Club",
-    description: "Need a same-day man and van from £50? Submit your move details for free, see a guide price and receive a quote from one verified mover before booking. Call 0121 751 1269.",
+    title: "Same Day Man and Van | From £45 | Cheap Urgent Moving Van | Man and Van Club",
+    description: "Need a same-day man and van from £45? Submit your move details for free, see a guide price and receive a quote from one verified mover before booking. Call 0121 751 1269.",
     badge: "Same-Day Move Requests",
     h1: "Same Day Man And Van",
     intro: "Need urgent help today? Submit accurate postcodes, item details, timing and access notes so an available approved mover can review the request quickly before quoting.",
@@ -213,7 +213,7 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "How quickly can a mover arrive?", a: "Depending on availability, same-day help can sometimes be arranged. Submit accurate postcodes, items and access notes so an available approved mover can review the request quickly." },
-      { q: "Does same-day cost more?", a: "Same-day moves in 2026 can cost 15–30% more than booked-ahead moves when availability is limited or the route is longer. UK same-day man and van rates start from £55 per hour, compared to £50 for standard bookings. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
+      { q: "Does same-day cost more?", a: "Same-day moves in 2026 can cost 15–30% more than booked-ahead moves when availability is limited or the route is longer. UK same-day man and van rates start from £55 per hour, compared to £45 for standard bookings. You can see a guide price first, then the mover quote is shown before you decide whether to book." },
       { q: "Can I book same-day for long distances?", a: "Same-day is usually best for local or regional moves. For long-distance same-day requests, include accurate postcodes, timing and access notes so a mover can decide whether they can help." },
       { q: "How much does a same-day man and van cost?", a: "In 2026, UK same-day man and van prices typically start from £55 per hour (15–30% above standard rates), with a minimum charge usually equivalent to 2 hours. A local same-day furniture collection might cost £80–£150, while a same-day flat move could be £200–£400 depending on access and timing. Submit your details for a guide price first." }
     ]
@@ -221,8 +221,8 @@ const servicePageData: Record<string, any> = {
   "long-distance-removals": {
     name: "Long Distance Moves",
     formIntent: "general",
-    title: "Long Distance Removals | From £50 | UK-Wide Moving Services | Man and Van Club",
-    description: "Long-distance move quote requests across the UK from £50. Moving from Birmingham to London, Manchester to Bristol or anywhere in between? Submit your details so an approved mover can review the route before quoting. Call 0121 751 1269.",
+    title: "Long Distance Removals | From £45 | UK-Wide Moving Services | Man and Van Club",
+    description: "Long-distance move quote requests across the UK from £45. Moving from Birmingham to London, Manchester to Bristol or anywhere in between? Submit your details so an approved mover can review the route before quoting. Call 0121 751 1269.",
     badge: "UK-Wide Move Requests",
     h1: "Long Distance Moves Planned Properly",
     intro: "Moving city to city or across the country? Add postcodes, date, access notes and item list so a mover can review mileage, route time and loading before quoting.",
@@ -248,8 +248,8 @@ const servicePageData: Record<string, any> = {
   "facebook-marketplace-collection": {
     name: "Facebook Marketplace Collection",
     formIntent: "single-item",
-    title: "Facebook Marketplace Collection & Delivery | From £50 | Man and Van Club",
-    description: "Collection and delivery quote requests for Facebook Marketplace purchases across the UK from £50. Submit item and postcode details so an approved mover can review the job before quoting. Call 0121 751 1269.",
+    title: "Facebook Marketplace Collection & Delivery | From £45 | Man and Van Club",
+    description: "Collection and delivery quote requests for Facebook Marketplace purchases across the UK from £45. Submit item and postcode details so an approved mover can review the job before quoting. Call 0121 751 1269.",
     badge: "Marketplace Collection Requests",
     h1: "Facebook Marketplace Collection",
     intro: "Bought something on Facebook Marketplace and need it collected? Add seller access, collection and delivery postcodes, item size and timing so a mover can review the request before quoting.",
@@ -267,9 +267,9 @@ const servicePageData: Record<string, any> = {
     popularLocations,
     faq: [
       { q: "Can the mover collect on my behalf if I cannot be there?", a: "Yes, with clear arrangements. Provide the seller's contact details and any collection instructions. Payment must be settled with the seller beforehand." },
-      { q: "How much does a marketplace collection cost?", a: "In 2026, Facebook Marketplace collections in the UK start from £50 for a single local item (sofa, bed, wardrobe or appliance). Longer-distance collections or multi-item pickups cost more. Add item dimensions and access details for an accurate guide price." },
+      { q: "How much does a marketplace collection cost?", a: "In 2026, Facebook Marketplace collections in the UK start from £45 for a single local item (sofa, bed, wardrobe or appliance). Longer-distance collections or multi-item pickups cost more. Add item dimensions and access details for an accurate guide price." },
       { q: "Can you collect multiple items from different sellers?", a: "Yes. Multi-drop collections are possible. Mention it on the form so the mover can review the route and quote correctly." },
-      { q: "How much does a sofa collection from Facebook Marketplace cost?", a: "A local sofa collection in 2026 starts from £50, depending on sofa size, whether it needs dismantling, stairs at either address and parking access. Corner sofas and recliners cost more due to handling. Submit your postcodes and sofa details for a guide price." }
+      { q: "How much does a sofa collection from Facebook Marketplace cost?", a: "A local sofa collection in 2026 starts from £45, depending on sofa size, whether it needs dismantling, stairs at either address and parking access. Corner sofas and recliners cost more due to handling. Submit your postcodes and sofa details for a guide price." }
     ]
   },
   "piano-removals": {
@@ -303,8 +303,8 @@ const servicePageData: Record<string, any> = {
   "single-item-delivery": {
     name: "Single Item Delivery",
     formIntent: "single-item",
-    title: "Single Item Delivery | From £50 | One-Item Collection & Delivery | Man and Van Club",
-    description: "Single item delivery quote requests across the UK from £50. Sofa, bed, TV, appliance or any single bulky item — submit details so a mover can review before quoting. Call 0121 751 1269.",
+    title: "Single Item Delivery | From £45 | One-Item Collection & Delivery | Man and Van Club",
+    description: "Single item delivery quote requests across the UK from £45. Sofa, bed, TV, appliance or any single bulky item — submit details so a mover can review before quoting. Call 0121 751 1269.",
     badge: "Single Item Requests",
     h1: "Single Item Delivery Made Simple",
     intro: "Only need one item moved? A sofa, bed, appliance, TV or piece of furniture — submit the item details, collection and delivery postcodes, and access notes so a mover can quote accurately for a single-item job.",
@@ -321,10 +321,10 @@ const servicePageData: Record<string, any> = {
     serviceLinks: [...baseServiceLinks, { title: "Piano Removals", href: "/piano-removals" }].filter((item) => item.href !== "/single-item-delivery"),
     popularLocations,
     faq: [
-      { q: "How much does single item delivery cost?", a: "In 2026, UK single item delivery prices start from £50 for a local collection within the same town or city. Longer distances, heavy items, stairs and awkward access increase the price. A sofa delivered across London might cost £70–£120, while a washing machine delivered within Birmingham might cost £50–£80. Submit your item details for a guide price." },
+      { q: "How much does single item delivery cost?", a: "In 2026, UK single item delivery prices start from £45 for a local collection within the same town or city. Longer distances, heavy items, stairs and awkward access increase the price. A sofa delivered across London might cost £70–£120, while a washing machine delivered within Birmingham might cost £45–£80. Submit your item details for a guide price." },
       { q: "What items can be delivered?", a: "Any single item that fits in a van: sofas, beds, mattresses, TVs, washing machines, fridges, tables, desks, wardrobes, exercise equipment and more. Add the item type and approximate size so the mover can judge the handling." },
       { q: "Can the mover carry the item up stairs?", a: "Yes, but add staircase details to your request so the mover can account for the extra time and handling. Very heavy items on upper floors without lift access may need two people." },
-      { q: "Is single item delivery cheaper than a full move?", a: "Yes. A single item delivery is typically the most affordable man and van service, starting from £50 for a local job. Full house moves start from £300+ because of the time and volume involved." },
+      { q: "Is single item delivery cheaper than a full move?", a: "Yes. A single item delivery is typically the most affordable man and van service, starting from £45 for a local job. Full house moves start from £300+ because of the time and volume involved." },
       { q: "Can I get same-day single item delivery?", a: "Same-day single item delivery is sometimes possible depending on mover availability and your location. Add your preferred timing to the request. Expect a 15–30% premium for same-day service." }
     ]
   }

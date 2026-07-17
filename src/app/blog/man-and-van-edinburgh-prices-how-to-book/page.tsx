@@ -69,10 +69,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Edinburgh prices in 2026</h2>
           <p>
-            Edinburgh man and van rates start from <strong className="text-primary">£50 per hour</strong>. Typical ranges:
+            Edinburgh man and van rates start from <strong className="text-primary">£45 per hour</strong>. Typical ranges:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £50. A sofa from Leith to Morningside, for example.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £45. A sofa from Leith to Morningside, for example.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £150–£280. A New Town basement with no parking is at the higher end; a ground-floor flat in Currie is lower.</li>
             <li><strong className="text-primary">2–3 bedroom house move</strong> — from £280–£550. Tenement flats in Marchmont and Bruntsfield often have three or four flights of stairs and no lift.</li>
             <li><strong className="text-primary">Edinburgh to Glasgow</strong> — from £180–£300. About 50 minutes via the M8. A common route.</li>

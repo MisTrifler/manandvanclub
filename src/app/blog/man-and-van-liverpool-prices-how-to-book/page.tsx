@@ -69,10 +69,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Liverpool prices in 2026</h2>
           <p>
-            Liverpool man and van rates start from <strong className="text-primary">£50 per hour</strong>. Typical price ranges:
+            Liverpool man and van rates start from <strong className="text-primary">£45 per hour</strong>. Typical price ranges:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £50. A desk from Aigburth to Childwall, for example.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £45. A desk from Aigburth to Childwall, for example.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £130–£250. A city-centre apartment near the Albert Dock is different to a flat in Old Swan with its own driveway.</li>
             <li><strong className="text-primary">2–3 bedroom house move</strong> — from £250–£480. Liverpool's Victorian terraces in areas like Wavertree and Toxteth are often bigger inside than they look.</li>
             <li><strong className="text-primary">Liverpool to London</strong> — from £350–£550. The M6 and M1 route takes about 3.5 hours. A long day but doable in one go.</li>

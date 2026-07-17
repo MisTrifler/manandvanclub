@@ -35,7 +35,7 @@ const faqItems = [
   },
   {
     q: "Does Man and Van Club have a minimum fee?",
-    a: "No. Man and Van Club does not set a minimum fee. The mover's quote is based on your actual move details — postcodes, items, access, stairs and timing. UK man and van rates in 2026 start from £50 per hour for local jobs."
+    a: "No. Man and Van Club does not set a minimum fee. The mover's quote is based on your actual move details — postcodes, items, access, stairs and timing. UK man and van rates in 2026 start from £45 per hour for local jobs."
   },
   {
     q: "Can I cancel a booking on Man and Van Club?",

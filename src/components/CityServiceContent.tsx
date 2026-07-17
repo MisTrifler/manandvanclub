@@ -196,7 +196,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
 
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-primary/20">
                 <span className="text-accent font-black text-sm leading-none">£</span>
-                Prices from £50
+                Prices from £45
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">

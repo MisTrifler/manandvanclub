@@ -5,7 +5,7 @@ import { ArrowUpRight, MapPin, Phone, ShieldCheck, CheckCircle2 } from "lucide-r
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Prices UK 2026 | Cheap Moving Van Rates From £50 | Man and Van Club",
+  title: "Man and Van Prices UK 2026 | Cheap Moving Van Rates From £45 | Man and Van Club",
   description:
     "UK man and van prices in 2026. Compare hourly rates, full-day costs and per-move pricing for house removals, flat moves, furniture delivery, student moves and same-day jobs across the West Midlands and UK.",
   alternates: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much does a man and van cost per hour in the UK?",
-    a: "In 2026, UK man and van hourly rates typically range from £50 to £70 per hour. West Midlands rates average £50–£70/hr, London rates average £55–£80/hr, and other regions fall between £50–£70/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
+    a: "In 2026, UK man and van hourly rates typically range from £45 to £70 per hour. West Midlands rates average £45–£70/hr, London rates average £55–£80/hr, and other regions fall between £45–£70/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
   },
   {
     q: "How much does a man and van cost for a full day?",
@@ -38,7 +38,7 @@ const faqItems = [
   },
   {
     q: "How much does a single-item furniture collection cost?",
-    a: "A single-item man and van collection in 2026 typically starts from £50 locally, or £60–£100+ for longer distances. Sofas, beds and wardrobes are at the higher end due to size and handling. Add item dimensions and access details for an accurate quote.",
+    a: "A single-item man and van collection in 2026 typically starts from £45 locally, or £60–£100+ for longer distances. Sofas, beds and wardrobes are at the higher end due to size and handling. Add item dimensions and access details for an accurate quote.",
   },
   {
     q: "Why do man and van prices vary so much?",
@@ -137,7 +137,7 @@ export default function ManAndVanPricesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single-item furniture collection", price: "From £50", factors: "Item size, distance, stairs, parking" },
+                  { type: "Single-item furniture collection", price: "From £45", factors: "Item size, distance, stairs, parking" },
                   { type: "Studio / 1-bed flat move", price: "£150–£350", factors: "Floor level, lift access, parking, distance" },
                   { type: "2-bed flat move", price: "£250–£500", factors: "Volume, stairs, helpers, parking permits" },
                   { type: "1–2 bed house move", price: "£200–£400", factors: "Volume, distance, driveway access, packing" },
@@ -166,9 +166,9 @@ export default function ManAndVanPricesPage() {
           <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-8 text-center">Man and Van Hourly Rates by Region</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { region: "West Midlands", rate: "£50–£70/hr", fullDay: "£350–£500", cities: ["Birmingham", "Walsall", "Wolverhampton", "Coventry"] },
+              { region: "West Midlands", rate: "£45–£70/hr", fullDay: "£350–£500", cities: ["Birmingham", "Walsall", "Wolverhampton", "Coventry"] },
               { region: "Greater London", rate: "£55–£80/hr", fullDay: "£400–£600", cities: ["London", "Croydon", "Stratford", "Richmond"] },
-              { region: "Other UK Regions", rate: "£50–£70/hr", fullDay: "£350–£500", cities: ["Manchester", "Leeds", "Bristol", "Liverpool"] },
+              { region: "Other UK Regions", rate: "£45–£70/hr", fullDay: "£350–£500", cities: ["Manchester", "Leeds", "Bristol", "Liverpool"] },
             ].map((region) => (
               <div key={region.region} className="bg-white rounded-2xl border border-border p-8 space-y-4">
                 <h3 className="text-xl font-black text-primary uppercase tracking-tight">{region.region}</h3>

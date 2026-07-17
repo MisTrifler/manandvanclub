@@ -7,20 +7,20 @@ import { ArrowUpRight, CheckCircle2, MapPin, Package, Route, ShieldCheck, Truck,
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Glasgow | Verified Mover Quotes from £50",
-  description: "Submit a free man and van request in Glasgow. One verified mover reviews your details before you book. From £50/hr. West End, Shawlands, Dennistoun, Partick.",
+  title: "Man and Van Glasgow | Verified Mover Quotes from £45",
+  description: "Submit a free man and van request in Glasgow. One verified mover reviews your details before you book. From £45/hr. West End, Shawlands, Dennistoun, Partick.",
   alternates: { canonical: `${baseUrl}/man-and-van-glasgow` },
   openGraph: {
-    title: "Man and Van Glasgow | Verified Mover Quotes from £50",
-    description: "Submit a free man and van request in Glasgow. One verified mover reviews your details before you book. From £50/hr.",
+    title: "Man and Van Glasgow | Verified Mover Quotes from £45",
+    description: "Submit a free man and van request in Glasgow. One verified mover reviews your details before you book. From £45/hr.",
     url: `${baseUrl}/man-and-van-glasgow`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Glasgow")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £50")}`, width: 1200, height: 630, alt: "Man and Van Glasgow | Verified Mover Quotes from £50" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Glasgow")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £45")}`, width: 1200, height: 630, alt: "Man and Van Glasgow | Verified Mover Quotes from £45" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Glasgow | Verified Mover Quotes from £50",
-    description: "Submit a free man and van request in Glasgow. One verified mover reviews your details before you book. From £50/hr.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Glasgow")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £50")}`],
+    title: "Man and Van Glasgow | Verified Mover Quotes from £45",
+    description: "Submit a free man and van request in Glasgow. One verified mover reviews your details before you book. From £45/hr.",
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Glasgow")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £45")}`],
   },
 };
 
@@ -39,14 +39,14 @@ const glasgowAreas = glasgowAreaCandidates
   }));
 
 const faqItems = [
-  { q: "How much does a man and van cost in Glasgow?", a: "Glasgow moves typically start from £50 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and M8 traffic. A full 3-bed house move in Glasgow could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
+  { q: "How much does a man and van cost in Glasgow?", a: "Glasgow moves typically start from £45 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and M8 traffic. A full 3-bed house move in Glasgow could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
   { q: "Will multiple movers contact me?", a: "No. Your details are not sent to lots of companies. One verified mover reviews your anonymised request, and your contact details are only released after you accept a quote and pay the booking deposit." },
   { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover\u2019s quote, and the remaining balance is paid directly to the mover on moving day." },
   { q: "Can I book a same-day man and van in Glasgow?", a: "Same-day moves may be possible depending on mover availability, route and access. Glasgow\u2019s M8 corridor, the Clydeside Expressway and the A77 are factored into route planning. Submit the request with the correct postcodes and move details so a verified mover can review it quickly." },
   { q: "Can I use this for single-item furniture collection?", a: "Yes. The Glasgow service can be used for single items, furniture collection, student moves, flat moves, house removals, office moves and local storage runs." },
   { q: "Do you cover West End, Shawlands and Dennistoun?", a: "Yes. You can submit move requests for West End, Shawlands, Dennistoun, Partick, Hyndland, Pollokshields, Finnieston and surrounding areas. A verified mover will review your request and can quote if they work in those areas." },
   { q: "Can you help with student moves in Glasgow?", a: "Yes. Student moves can be submitted for areas near the West End, Partick and Dennistoun, close to Glasgow University and Strathclyde. Peak demand is June, July and September. Add your item list, access notes and preferred dates for a verified mover to review." },
-  { q: "How much does a man and van cost from Glasgow to Edinburgh?", a: "A Glasgow to Edinburgh move in 2026 typically costs £80–£180 depending on load, access and timing. The M8 connects both cities in around 50 minutes. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price." },
+  { q: "How much does a man and van cost from Glasgow to Edinburgh?", a: "A Glasgow to Edinburgh move in 2026 typically costs £80–£180 depending on load, access and timing. The M8 connects both cities in around 50 minutes. A single-item collection might start from £45–£80. Submit your postcodes and item list for a guide price." },
 ];
 
 const serviceSchema = {
@@ -158,10 +158,10 @@ export default function GlasgowPage() {
               </div>
               <div className="space-y-5">
                 <h1 className="text-5xl md:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.9]">Man and Van <span className="text-accent italic">Glasgow</span></h1>
-                <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">Submit a free Glasgow move request, see a guide price and let one verified mover review your details before you decide whether to book. From £50/hr.</p>
+                <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">Submit a free Glasgow move request, see a guide price and let one verified mover review your details before you decide whether to book. From £45/hr.</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="bg-white rounded-2xl border border-border p-5 text-center"><Package size={22} className="text-accent mx-auto mb-2" /><span className="text-[9px] font-black uppercase tracking-widest text-primary/50 block">From</span><span className="text-2xl font-black text-primary">£50<span className="text-sm font-bold text-text-secondary">/hr</span></span></div>
+                <div className="bg-white rounded-2xl border border-border p-5 text-center"><Package size={22} className="text-accent mx-auto mb-2" /><span className="text-[9px] font-black uppercase tracking-widest text-primary/50 block">From</span><span className="text-2xl font-black text-primary">£45<span className="text-sm font-bold text-text-secondary">/hr</span></span></div>
                 <div className="bg-white rounded-2xl border border-border p-5 text-center"><CheckCircle2 size={22} className="text-accent mx-auto mb-2" /><span className="text-[9px] font-black uppercase tracking-widest text-primary/50 block">Verified</span><span className="text-sm font-black text-primary">One mover, not a lead blast</span></div>
                 <div className="bg-white rounded-2xl border border-border p-5 text-center"><ShieldCheck size={22} className="text-accent mx-auto mb-2" /><span className="text-[9px] font-black uppercase tracking-widest text-primary/50 block">Private</span><span className="text-sm font-black text-primary">Details stay anonymous</span></div>
               </div>
@@ -258,7 +258,7 @@ export default function GlasgowPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single-item furniture collection", price: "From £50" },
+                  { type: "Single-item furniture collection", price: "From £45" },
                   { type: "Studio / 1-bed flat move", price: "£150–£300" },
                   { type: "2-bed flat or tenement move", price: "£200–£400" },
                   { type: "1–2 bed house move", price: "£200–£400" },

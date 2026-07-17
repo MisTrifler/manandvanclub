@@ -109,7 +109,7 @@ export default function BlogPost() {
             As a rough guide:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Man and van</strong> — from £50/hr (or from £55/hr in London). A typical one-bedroom flat move costs around £100–£165.</li>
+            <li><strong className="text-primary">Man and van</strong> — from £45/hr (or from £55/hr in London). A typical one-bedroom flat move costs around £100–£165.</li>
             <li><strong className="text-primary">Removal company</strong> — typically £300–£800+ for a one to two-bedroom move, depending on distance and services included.</li>
           </ul>
           <p>

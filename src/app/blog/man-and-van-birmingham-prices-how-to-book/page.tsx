@@ -72,10 +72,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Birmingham prices in 2026</h2>
           <p>
-            Birmingham man and van rates typically start from <strong className="text-primary">£50 per hour</strong>. That's the baseline for a standard van with one mover doing local work within the city. Most Birmingham moves fall into these ranges:
+            Birmingham man and van rates typically start from <strong className="text-primary">£45 per hour</strong>. That's the baseline for a standard van with one mover doing local work within the city. Most Birmingham moves fall into these ranges:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £50. A sofa from the Bull Ring area to a flat in Selly Oak, for example.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £45. A sofa from the Bull Ring area to a flat in Selly Oak, for example.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £150–£250. Depends on which floor, whether there's a lift, and how close the van can park.</li>
             <li><strong className="text-primary">2–3 bedroom house move</strong> — from £300–£550. More items, more time, potentially a Luton van rather than a standard transit.</li>
             <li><strong className="text-primary">Birmingham to London</strong> — from £350–£500 for a full van load. Long-distance quotes factor in fuel, return travel time and any Congestion Charge if the delivery is inside the zone.</li>

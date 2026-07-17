@@ -72,10 +72,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Walsall prices in 2026</h2>
           <p>
-            Walsall rates start from <strong className="text-primary">£50 per hour</strong>, which is in line with the wider West Midlands average. Being slightly outside Birmingham means parking tends to be easier and travel times shorter, which can help keep costs down compared to city-centre moves. Here's what typical Walsall moves cost:
+            Walsall rates start from <strong className="text-primary">£45 per hour</strong>, which is in line with the wider West Midlands average. Being slightly outside Birmingham means parking tends to be easier and travel times shorter, which can help keep costs down compared to city-centre moves. Here's what typical Walsall moves cost:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection or delivery</strong> — from £50. Picking up a sofa from a shop on High Street, or moving a washing machine between WS postcodes.</li>
+            <li><strong className="text-primary">Single item collection or delivery</strong> — from £45. Picking up a sofa from a shop on High Street, or moving a washing machine between WS postcodes.</li>
             <li><strong className="text-primary">1-bed flat or studio</strong> — from £130–£220. Depends on whether there's a lift and how close the van can get to the entrance.</li>
             <li><strong className="text-primary">2–3 bedroom house</strong> — from £280–£500. Walsall has plenty of 1930s semis with good driveway access, which keeps loading time down.</li>
             <li><strong className="text-primary">Walsall to Birmingham</strong> — from £120–£200. It's only 8–10 miles depending on the postcodes, but access at both ends makes a big difference to the total.</li>

@@ -72,10 +72,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Leeds prices in 2026</h2>
           <p>
-            Leeds rates start from <strong className="text-primary">£50 per hour</strong>, consistent with the wider Yorkshire and North West market. The city is slightly cheaper than Manchester for most moves, and significantly cheaper than London. Typical costs:
+            Leeds rates start from <strong className="text-primary">£45 per hour</strong>, consistent with the wider Yorkshire and North West market. The city is slightly cheaper than Manchester for most moves, and significantly cheaper than London. Typical costs:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection or delivery</strong> — from £50. A washing machine from Leeds city centre to Headingley, or a sofa from a shop in Crown Point.</li>
+            <li><strong className="text-primary">Single item collection or delivery</strong> — from £45. A washing machine from Leeds city centre to Headingley, or a sofa from a shop in Crown Point.</li>
             <li><strong className="text-primary">1-bed flat or studio</strong> — from £130–£220. Depends on floor and parking access.</li>
             <li><strong className="text-primary">2–3 bedroom house</strong> — from £270–£480. Leeds has lots of back-to-back terraces in areas like Burley and Harehills, which can slow loading down.</li>
             <li><strong className="text-primary">Leeds to London</strong> — from £350–£550. See <Link href="/routes/leeds-to-london" className="text-accent font-bold hover:underline">Leeds to London route</Link>.</li>

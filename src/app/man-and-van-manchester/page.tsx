@@ -18,21 +18,21 @@ import {
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Manchester | Verified Mover Quotes from £50",
+  title: "Man and Van Manchester | Verified Mover Quotes from £45",
   description:
     "Submit a free man and van request across Greater Manchester. From the city centre to Stockport and Bolton, one verified mover reviews your details before you book.",
   alternates: {
     canonical: `${baseUrl}/man-and-van-manchester`,
   },
   openGraph: {
-    title: "Man and Van Manchester | Verified Mover Quotes from £50",
+    title: "Man and Van Manchester | Verified Mover Quotes from £45",
     description: "Submit a free man and van request across Greater Manchester. From the city centre to Stockport and Bolton, one verified mover reviews your details before you book.",
     url: `${baseUrl}/man-and-van-manchester`,
     images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Manchester")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: "Man and Van Manchester | Verified Mover Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Manchester | Verified Mover Quotes from £50",
+    title: "Man and Van Manchester | Verified Mover Quotes from £45",
     description: "Submit a free man and van request across Greater Manchester. One verified mover reviews your details before you book.",
     images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Manchester")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
   },
@@ -97,7 +97,7 @@ const postcodeCoverage = [
 const faqItems = [
   {
     q: "How much does a man and van cost in Manchester?",
-    a: "Manchester moves typically start from £50 per hour. The final quote depends on the postcodes, distance, item list, helpers required, stairs, parking and access. You can see a guide price first, then a verified mover reviews the details and sends a quote before you decide whether to book.",
+    a: "Manchester moves typically start from £45 per hour. The final quote depends on the postcodes, distance, item list, helpers required, stairs, parking and access. You can see a guide price first, then a verified mover reviews the details and sends a quote before you decide whether to book.",
   },
   {
     q: "Do you cover all Greater Manchester boroughs?",
@@ -230,14 +230,14 @@ export default function ManchesterPage() {
                   Man and Van <span className="text-accent italic">Manchester</span>
                 </h1>
                 <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
-                  Submit a free Greater Manchester move request, see a guide price and let one verified mover review your details before you decide whether to book. From £50/hr.
+                  Submit a free Greater Manchester move request, see a guide price and let one verified mover review your details before you decide whether to book. From £45/hr.
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-white rounded-2xl border border-border p-5 text-center">
                   <Package size={22} className="text-accent mx-auto mb-2" />
                   <span className="text-[9px] font-black uppercase tracking-widest text-primary/50 block">From</span>
-                  <span className="text-2xl font-black text-primary">£50<span className="text-sm font-bold text-text-secondary">/hr</span></span>
+                  <span className="text-2xl font-black text-primary">£45<span className="text-sm font-bold text-text-secondary">/hr</span></span>
                 </div>
                 <div className="bg-white rounded-2xl border border-border p-5 text-center">
                   <CheckCircle2 size={22} className="text-accent mx-auto mb-2" />

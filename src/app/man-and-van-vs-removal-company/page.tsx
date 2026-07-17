@@ -142,7 +142,7 @@ export default function ManAndVanVsRemovalCompanyPage() {
                 {[
                   { factor: "Typical cost (3-bed house)", manAndVan: "£300–£600", removal: "£600–£1,200" },
                   { factor: "Typical cost (1-bed flat)", manAndVan: "£150–£350", removal: "£400–£700" },
-                  { factor: "Typical cost (single item)", manAndVan: "From £50", removal: "£150–£300 (minimum charge)" },
+                  { factor: "Typical cost (single item)", manAndVan: "From £45", removal: "£150–£300 (minimum charge)" },
                   { factor: "Crew size", manAndVan: "1–2 people", removal: "2–6+ people" },
                   { factor: "Van size", manAndVan: "Transit or Luton van", removal: "Large Luton or articulated lorry" },
                   { factor: "Packing service", manAndVan: "Usually not included", removal: "Often included or available" },
@@ -246,7 +246,7 @@ export default function ManAndVanVsRemovalCompanyPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single item (local)", mv: "From £50", rc: "£150–£300", saving: "50–75%" },
+                  { type: "Single item (local)", mv: "From £45", rc: "£150–£300", saving: "50–75%" },
                   { type: "Studio / 1-bed flat", mv: "£150–£350", rc: "£400–£700", saving: "50–60%" },
                   { type: "2-bed flat", mv: "£250–£500", rc: "£500–£900", saving: "40–50%" },
                   { type: "1–2 bed house", mv: "£200–£400", rc: "£500–£900", saving: "40–55%" },

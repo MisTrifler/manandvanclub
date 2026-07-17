@@ -69,10 +69,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Bristol prices in 2026</h2>
           <p>
-            Bristol man and van rates start from <strong className="text-primary">£50 per hour</strong> for local work with a standard van and one mover. Typical price ranges:
+            Bristol man and van rates start from <strong className="text-primary">£45 per hour</strong> for local work with a standard van and one mover. Typical price ranges:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £50. A wardrobe collected from Horfield and delivered to Knowle.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £45. A wardrobe collected from Horfield and delivered to Knowle.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £150–£280. A Clifton basement flat with no parking is at the higher end; a ground-floor Stoke Bishop flat is at the lower.</li>
             <li><strong className="text-primary">2–3 bedroom house move</strong> — from £280–£550. Bristol's Victorian terraces can be deceptively large inside. More boxes than you think.</li>
             <li><strong className="text-primary">Bristol to London</strong> — from £300–£500. The M4 is the direct route — about 1 hour 45 minutes to West London.</li>

@@ -7,20 +7,20 @@ import { ArrowUpRight, CheckCircle2, MapPin, Package, Route, ShieldCheck, Truck,
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van York | Verified Mover Quotes from £50",
-  description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £50/hr. City centre, Acomb, Haxby, Fulford.",
+  title: "Man and Van York | Verified Mover Quotes from £45",
+  description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £45/hr. City centre, Acomb, Haxby, Fulford.",
   alternates: { canonical: `${baseUrl}/man-and-van-york` },
   openGraph: {
-    title: "Man and Van York | Verified Mover Quotes from £50",
-    description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £50/hr.",
+    title: "Man and Van York | Verified Mover Quotes from £45",
+    description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £45/hr.",
     url: `${baseUrl}/man-and-van-york`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £50")}`, width: 1200, height: 630, alt: "Man and Van York | Verified Mover Quotes from £50" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £45")}`, width: 1200, height: 630, alt: "Man and Van York | Verified Mover Quotes from £45" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van York | Verified Mover Quotes from £50",
-    description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £50/hr.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £50")}`],
+    title: "Man and Van York | Verified Mover Quotes from £45",
+    description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £45/hr.",
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £45")}`],
   },
 };
 
@@ -39,14 +39,14 @@ const yorkAreas = yorkAreaCandidates
   }));
 
 const faqItems = [
-  { q: "How much does a man and van cost in York?", a: "York moves typically start from £50 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and A64 traffic. A full 3-bed house move in York could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
+  { q: "How much does a man and van cost in York?", a: "York moves typically start from £45 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and A64 traffic. A full 3-bed house move in York could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
   { q: "Will multiple movers contact me?", a: "No. Your details are not sent to lots of companies. One verified mover reviews your anonymised request, and your contact details are only released after you accept a quote and pay the booking deposit." },
   { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover\u2019s quote, and the remaining balance is paid directly to the mover on moving day." },
   { q: "Can I book a same-day man and van in York?", a: "Same-day moves may be possible depending on mover availability, route and access. York\u2019s inner ring road, A64 and A19 approaches are factored into route planning. Submit the request with the correct postcodes and move details so a verified mover can review it quickly." },
   { q: "Can I use this for single-item furniture collection?", a: "Yes. The York service can be used for single items, furniture collection, student moves, flat moves, house removals, office moves and local storage runs." },
   { q: "Do you cover Acomb, Haxby and Fulford?", a: "Yes. You can submit move requests for Acomb, Haxby, Fulford, Osbaldwick, Clifton, Bishopthorpe and surrounding areas. A verified mover will review your request and can quote if they work in those areas." },
   { q: "Can you help with student moves in York?", a: "Yes. Student moves can be submitted for areas near the University of York campus, Heslington and Fulford. Peak demand is June, July and September. Add your item list, access notes and preferred dates for a verified mover to review." },
-  { q: "How much does a man and van cost from York to Leeds?", a: "A York to Leeds move in 2026 typically costs £80–£180 depending on load, access and timing. The A64 and A1(M) connect both cities in around 30–40 minutes. A single-item collection might start from £50–£80. Submit your postcodes and item list for a guide price." },
+  { q: "How much does a man and van cost from York to Leeds?", a: "A York to Leeds move in 2026 typically costs £80–£180 depending on load, access and timing. The A64 and A1(M) connect both cities in around 30–40 minutes. A single-item collection might start from £45–£80. Submit your postcodes and item list for a guide price." },
 ];
 
 const serviceSchema = {
@@ -259,7 +259,7 @@ export default function YorkPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single-item furniture collection", price: "From £50" },
+                  { type: "Single-item furniture collection", price: "From £45" },
                   { type: "Studio / 1-bed flat move", price: "£150–£300" },
                   { type: "2-bed flat or terraced house move", price: "£200–£400" },
                   { type: "1–2 bed house move", price: "£200–£400" },
