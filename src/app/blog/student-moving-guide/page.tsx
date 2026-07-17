@@ -124,7 +124,7 @@ export default function BlogPost() {
             <span className="text-2xl">🎓</span>
             <div>
               <p className="text-sm font-black text-primary">£12 off student moves</p>
-              <p className="text-xs text-text-secondary mt-0.5">Enter code <strong className="text-accent">UNIDAYS12</strong> in the promo code field when you submit your student move request. The discount comes off your total — you just pay less on moving day.</p>
+              <p className="text-xs text-text-secondary mt-0.5">UNiDAYS-verified students get £12 off. Open the <strong className="text-accent">UNiDAYS app</strong>, find Man and Van Club, and copy the promo code into the discount field when you submit your student move request.</p>
             </div>
           </div>
 
