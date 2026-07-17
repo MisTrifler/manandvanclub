@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────
-// Guide price range — formula guide-v1.2.
+// Guide price range — formula guide-v1.3.
 //
 // DISPLAY-ONLY. The guide price never affects Stripe amounts, deposit
 // calculation, quote option validation, webhook checks, mover balances
@@ -43,7 +43,7 @@ export interface GuidePriceResult {
   max: number;
   display: string;
   confidence: "route-based" | "fallback";
-  formulaVersion: "guide-v1.2";
+  formulaVersion: "guide-v1.3";
   assumptions: string[];
   inputsUsed: {
     routeMiles: number | null;
@@ -54,20 +54,27 @@ export interface GuidePriceResult {
   };
 }
 
-const GUIDE_FORMULA_VERSION = "guide-v1.2" as const;
+const GUIDE_FORMULA_VERSION = "guide-v1.3" as const;
 
 // Internal guide rates (never shown to customers). These are intentionally
 // simple and transparent: the customer sees a guide range only, while the
 // mover still sends the accurate quote before booking.
-const RATE_ONE_MOVER = 35;
-const RATE_TWO_MOVERS = 60;
-const RATE_LARGE_JOB = 70;
+//
+// Pricing philosophy: rates are set to undercut the UK market leader's
+// typical hourly equivalents by approximately £5 across the board. This
+// is an internal positioning strategy — rate names and competitor
+// references are never displayed to customers.
+const RATE_ONE_MOVER = 35;   // Market avg ~£40/hr (1-person) → we price £5 below
+const RATE_TWO_MOVERS = 46;  // Market avg ~£51/hr (2-person) → we price £5 below
+const RATE_LARGE_JOB = 55;   // Market avg ~£60/hr (large/3+ mover) → we price £5 below
 
 const MILEAGE_FREE_MILES = 10;
 const MILEAGE_RATE_PER_MILE = 2.25;
 const LONG_DISTANCE_POSITIONING_UPLIFT_50 = 1.12;
 const LONG_DISTANCE_POSITIONING_UPLIFT_100 = 1.25;
-const COMPETITIVE_DISPLAY_ADJUSTMENT = 5;
+// Small display buffer to keep guide ranges sharp. The main £5 undercut
+// is embedded in the hourly rates above — this just smooths rounding.
+const COMPETITIVE_DISPLAY_ADJUSTMENT = 3;
 
 function getItemCount(input: GuidePriceInput): number {
   return num(input.numberOfItems);
@@ -382,7 +389,7 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   //    plus route-distance minimums for van-based move types (v1.1).
   let floor = minimumFloor(intent, input);
   if (likelyMovers >= 2) {
-    floor = Math.round(floor * 1.3);
+    floor = Math.round(floor * 1.2);
   }
   const distanceFloor = routeDistanceMinimum(intent, routeMiles, input);
   if (distanceFloor > floor) floor = distanceFloor;
