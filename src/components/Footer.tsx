@@ -171,7 +171,7 @@ export default function Footer() {
         <div className="border-t border-border pt-8 flex flex-col gap-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col gap-2 text-sm text-text-secondary">
-              <span>© 2024–{currentYear} Man and Van Club</span>
+              <span>© 2026 Man and Van Club</span>
               <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs">
                 <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
                 <span className="text-border">|</span>
