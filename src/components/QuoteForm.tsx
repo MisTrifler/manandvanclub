@@ -1391,7 +1391,6 @@ export default function QuoteForm({ intent: propIntent }: QuoteFormProps) {
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Promo Code <span className="tracking-normal text-primary/30">(optional)</span></label>
                   <input {...register("promoCode")} placeholder="Got a discount code?" className="w-full rounded-2xl border border-primary/10 bg-slate-50/80 px-4 py-3.5 text-[16px] font-bold text-primary outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10" />
-                  <p className="text-[10px] text-text-secondary/60 font-bold mt-1">UNiDAYS students: enter the code shown on your UNiDAYS app</p>
                 </div>
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Moving From (Postcode)</label>
