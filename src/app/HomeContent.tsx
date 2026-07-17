@@ -16,7 +16,7 @@ const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: st
   { label: "Man & Van", emoji: "🚐", intent: "general" },
   { label: "Office", emoji: "🏢", intent: "office" },
   { label: "Storage", emoji: "📦", intent: "storage" },
-  { label: "Student", emoji: "🎓", intent: "student", badge: "UNiDAYS" },
+  { label: "Student", emoji: "🎓", intent: "student", badge: "Discount" },
 ];
 
 export default function HomeContent() {
