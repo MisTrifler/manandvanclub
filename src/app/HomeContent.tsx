@@ -125,27 +125,22 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-xl">
 
           {!selectedIntent ? (
-            /* ── No intent selected yet: show quick-select tiles ── */ 
-            <div className="text-center py-4">
-              <h2 className="text-xl font-black text-primary uppercase tracking-tight mb-4">
-                What do you need help moving?
-              </h2>
-              <div className="grid grid-cols-3 gap-2 max-w-xs mx-auto mb-4">
-                {MOVE_TYPES.map((type) => (
-                  <button
-                    key={type.label}
-                    type="button"
-                    onClick={() => handleTileClick(type.intent)}
-                    className="group flex flex-col items-center gap-1.5 bg-[#F9F9F7] rounded-xl p-3 border border-border hover:bg-accent hover:border-accent transition-all duration-200 cursor-pointer"
-                  >
-                    <span className="text-2xl leading-none">{type.emoji}</span>
-                    <span className="text-[10px] font-black text-primary group-hover:text-white tracking-tight leading-tight">
-                      {type.label}
-                    </span>
-                  </button>
-                ))}
-              </div>
-              <p className="text-xs text-text-secondary/60">
+            /* ── No intent selected yet: prompt to choose above ── */ 
+            <div className="text-center py-8">
+              <p className="text-sm text-text-secondary mb-3">
+                Choose your move type above to get started
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  const hero = document.querySelector('[data-speakable="hero-heading"]');
+                  if (hero) hero.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="btn-orange px-8 py-3 rounded-2xl font-black uppercase tracking-widest text-xs inline-flex items-center gap-2 shadow-xl shadow-accent/20 hover:scale-105 active:scale-95 transition-all"
+              >
+                ↑ Pick Your Move Type
+              </button>
+              <p className="mt-3 text-xs text-text-secondary/60">
                 Or call us directly:{" "}
                 <a href="tel:01217511269" className="font-black text-accent hover:underline">
                   0121 751 1269
@@ -263,10 +258,10 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <div className="space-y-2 text-[11px] text-text-secondary/70 leading-relaxed">
             <p>
-              Man and Van Club is a UK marketplace connecting customers with independent, verified local movers. Submit a free move request for <Link href="/house-removals" className="font-bold text-accent hover:underline">house removals</Link>, <Link href="/flat-removals" className="font-bold text-accent hover:underline">flat moves</Link>, <Link href="/furniture-delivery" className="font-bold text-accent hover:underline">furniture delivery</Link>, <Link href="/student-removals" className="font-bold text-accent hover:underline">student moves</Link>, <Link href="/same-day-man-and-van" className="font-bold text-accent hover:underline">same-day man and van</Link> and <Link href="/long-distance-removals" className="font-bold text-accent hover:underline">long-distance removals</Link>. One verified mover reviews your details before quoting. Prices from £45/hr. Call 0121 751 1269.
+              Looking for a <Link href="/house-removals" className="font-bold text-accent hover:underline">house removal</Link>, <Link href="/flat-removals" className="font-bold text-accent hover:underline">flat move</Link>, <Link href="/furniture-delivery" className="font-bold text-accent hover:underline">furniture delivery</Link>, <Link href="/student-removals" className="font-bold text-accent hover:underline">student move</Link>, <Link href="/same-day-man-and-van" className="font-bold text-accent hover:underline">same-day pickup</Link> or <Link href="/long-distance-removals" className="font-bold text-accent hover:underline">long-distance relocation</Link>? Submit one free request and a verified mover quotes you — no spam, no obligation. Prices from £45/hr. Call 0121 751 1269 any day of the week.
             </p>
             <p>
-              We cover <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link> and <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link> plus 168 more areas across <Link href="/areas-covered" className="font-bold text-accent hover:underline">England, Scotland and Wales</Link>. Compare with our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">man and van vs removal company guide</Link> or <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">vs AnyVan comparison</Link>.
+              Areas covered: <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link>, <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link> and <Link href="/areas-covered" className="font-bold text-accent hover:underline">168 more UK towns and cities</Link>. Not sure if you need a man and van or a full removal firm? Read our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">comparison guide</Link> or check our <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">how we compare page</Link>.
             </p>
           </div>
         </div>
