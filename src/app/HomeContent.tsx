@@ -60,7 +60,7 @@ export default function HomeContent() {
             style={{ fontSize: "clamp(28px, 6.5vw, 44px)", lineHeight: "1.05" }}
             data-speakable="hero-heading"
           >
-            Man and Van From £45/hr — Verified Movers Across the UK
+            Man and Van From £45/hr<br />Verified Movers Across the UK
           </h1>
 
           <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
