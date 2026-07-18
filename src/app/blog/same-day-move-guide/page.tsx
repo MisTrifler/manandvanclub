@@ -69,7 +69,7 @@ export default function SameDayMoveGuidePost() {
           <p>Availability tends to be higher on weekdays than weekends, and higher outside of peak periods (end of month, student move weeks in June and September).</p>
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">How much does a same-day man and van cost?</h2>
-          <p>Same-day moves typically carry a small premium because the mover may need to reroute their day. In 2026, expect to pay from £55/hr for a same-day job, compared to from £45/hr for a planned move.</p>
+          <p>Same-day moves typically carry a small premium because the mover may need to reroute their day. In 2026, expect to pay from £55/hr for a same-day job, compared to from £34/hr for a planned move.</p>
           <p>Typical same-day price ranges:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong className="text-primary">Single-item collection:</strong> From £55</li>

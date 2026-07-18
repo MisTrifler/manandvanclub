@@ -64,7 +64,7 @@ const GUIDE_FORMULA_VERSION = "guide-v1.3" as const;
 // typical hourly equivalents by approximately £5 across the board. This
 // is an internal positioning strategy — rate names and competitor
 // references are never displayed to customers.
-const RATE_ONE_MOVER = 35;   // Market avg ~£40/hr (1-person) → we price £5 below
+const RATE_ONE_MOVER = 34;   // Market avg ~£40/hr (1-person) → we price £6 below
 const RATE_TWO_MOVERS = 46;  // Market avg ~£51/hr (2-person) → we price £5 below
 const RATE_LARGE_JOB = 55;   // Market avg ~£60/hr (large/3+ mover) → we price £5 below
 
@@ -202,7 +202,7 @@ function estimateLoadingMinutes(intent: string, input: GuidePriceInput, assumpti
 // ── F. Minimum callout floors ────────────────────────────────────────
 function minimumFloor(intent: string, input: GuidePriceInput): number {
   switch (intent) {
-    case "single-item": return 45;
+    case "single-item": return 34;
     case "student": return 70;
     case "general": return 85;
     case "storage": return 90;
@@ -225,7 +225,7 @@ function minimumFloor(intent: string, input: GuidePriceInput): number {
 function routeDistanceMinimum(intent: string, routeMiles: number, input?: GuidePriceInput): number {
   if (input && isSmallGeneralLocalMove(intent, input, routeMiles)) {
     const items = getItemCount(input);
-    if (items <= 1) return 45;
+    if (items <= 1) return 34;
     if (items === 2) return 55;
     return 65;
   }
@@ -234,7 +234,7 @@ function routeDistanceMinimum(intent: string, routeMiles: number, input?: GuideP
     // [0–10mi, 11–25mi, 26–50mi, 51–100mi, 100+mi]
     general: [85, 115, 155, 235, 345],
     student: [70, 105, 145, 220, 320],
-    "single-item": [45, 80, 125, 195, 295],
+    "single-item": [34, 80, 125, 195, 295],
   };
   const tier = tiers[intent];
   if (!tier) return 0; // house/office/storage keep their own strong floors
@@ -276,7 +276,7 @@ export function getFallbackGuidePrice(input: GuidePriceInput): GuidePriceResult 
     office: [300, 800],
     house: [180, 450],
     student: [80, 200],
-    "single-item": [45, 120],
+    "single-item": [34, 110],
     general: [100, 300],
     storage: [120, 350],
   };
@@ -395,7 +395,7 @@ export function calculateGuidePrice(input: GuidePriceInput): GuidePriceResult {
   if (distanceFloor > floor) floor = distanceFloor;
   if (isSmallGeneralLocalMove(intent, input, routeMiles)) {
     const items = getItemCount(input);
-    floor = Math.min(floor, items <= 1 ? 45 : items === 2 ? 55 : 65);
+    floor = Math.min(floor, items <= 1 ? 34 : items === 2 ? 55 : 65);
     assumptions.push("small local item move");
   }
 

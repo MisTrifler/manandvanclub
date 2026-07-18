@@ -140,7 +140,7 @@ export default function Header() {
       <div className="lg:hidden bg-accent text-white py-1.5 text-center sticky top-0 z-[110]">
         <a href="tel:01217511269" className="flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-widest">
           <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-          Open Now · Call 0121 751 1269 · From £45
+          Open Now · Call 0121 751 1269 · From £34
         </a>
       </div>
 

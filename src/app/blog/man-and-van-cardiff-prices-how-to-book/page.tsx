@@ -69,10 +69,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Cardiff prices in 2026</h2>
           <p>
-            Cardiff man and van rates start from <strong className="text-primary">£45 per hour</strong>. Typical ranges:
+            Cardiff man and van rates start from <strong className="text-primary">£34 per hour</strong>. Typical ranges:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £45. A bed frame from Llandaff to Whitchurch, for example.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £34. A bed frame from Llandaff to Whitchurch, for example.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £130–£250. A Cardiff Bay apartment is different to a ground-floor flat in Rumney.</li>
             <li><strong className="text-primary">2–3 bedroom house move</strong> — from £250–£480. Cardiff's Victorian terraces in Pontcanna and Splott can be surprisingly spacious.</li>
             <li><strong className="text-primary">Cardiff to London</strong> — from £350–£550. About 2.5 hours via the M4. A common long-distance route.</li>

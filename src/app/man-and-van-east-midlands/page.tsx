@@ -103,7 +103,7 @@ const postcodeCoverage = [
 const faqItems = [
   {
     q: "How much does a man and van cost in the East Midlands?",
-    a: "The guide price depends on the collection and delivery postcodes, distance, item list, helpers required, stairs, parking and access. East Midlands rates in 2026 start from £45 per hour, with full-day costs around £350–£500. You can see a guide price first, then a verified mover reviews the details and sends a quote before you decide whether to book.",
+    a: "The guide price depends on the collection and delivery postcodes, distance, item list, helpers required, stairs, parking and access. East Midlands rates in 2026 start from £34 per hour, with full-day costs around £350–£500. You can see a guide price first, then a verified mover reviews the details and sends a quote before you decide whether to book.",
   },
   {
     q: "Do you cover Nottingham, Leicester, Derby, Northampton and Lincoln?",
@@ -259,7 +259,7 @@ export default function EastMidlandsPage() {
                 </div>
                 <div className="flex items-center gap-3 bg-white rounded-xl border border-border px-4 py-3">
                   <CheckCircle2 size={18} className="text-accent" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary">From £45/hr</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">From £34/hr</span>
                 </div>
               </div>
             </div>

@@ -7,20 +7,20 @@ const siteUrl = "https://www.manandvanclub.co.uk";
 export const metadata: Metadata = {
   title: "How Much Does a Man and Van Cost? | Cheap Moving Van Prices 2026 | Man and Van Club",
   description:
-    "How much is a man and van in 2026? Cheap moving van prices from £45/hr. Full cost breakdown by move type, region and access. Call 0121 751 1269.",
+    "How much is a man and van in 2026? Cheap moving van prices from £34/hr. Full cost breakdown by move type, region and access. Call 0121 751 1269.",
   alternates: {
     canonical: `${siteUrl}/man-and-van-cost`,
   },
   openGraph: {
     title: "How Much Does a Man and Van Cost? | UK Prices 2026",
-    description: "UK man and van costs broken down by move type, region and access. From £45/hr. Get a free guide price before you book.",
+    description: "UK man and van costs broken down by move type, region and access. From £34/hr. Get a free guide price before you book.",
     url: `${siteUrl}/man-and-van-cost`,
     images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("How Much Does a Man and Van Cost?")}&subtitle=${encodeURIComponent("UK Prices 2026")}`, width: 1200, height: 630, alt: "How Much Does a Man and Van Cost? UK 2026" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "How Much Does a Man and Van Cost? | UK Prices 2026",
-    description: "UK man and van costs broken down by move type, region and access. From £45/hr.",
+    description: "UK man and van costs broken down by move type, region and access. From £34/hr.",
     images: [`${siteUrl}/api/og?title=${encodeURIComponent("How Much Does a Man and Van Cost?")}&subtitle=${encodeURIComponent("UK Prices 2026")}`],
   },
 };
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much does a man and van cost per hour in the UK?",
-    a: "In 2026, UK man and van rates start from £45 per hour outside London. London rates start from £55 per hour due to Congestion Charge, ULEZ and higher parking costs. Most local moves take 2–4 hours, so you're typically looking at £100–£280 for a straightforward job.",
+    a: "In 2026, UK man and van rates start from £34 per hour outside London. London rates start from £55 per hour due to Congestion Charge, ULEZ and higher parking costs. Most local moves take 2–4 hours, so you're typically looking at £100–£280 for a straightforward job.",
   },
   {
     q: "How much does a full house move cost with a man and van?",
@@ -52,7 +52,7 @@ const faqItems = [
   },
   {
     q: "How much does a man and van cost for a single item?",
-    a: "A single-item collection or delivery starts from £45 in most UK areas. This covers a sofa, bed frame, washing machine or similar. The price may increase if the item is very heavy (piano), needs two people, or is being moved a long distance between postcodes.",
+    a: "A single-item collection or delivery starts from £34 in most UK areas. This covers a sofa, bed frame, washing machine or similar. The price may increase if the item is very heavy (piano), needs two people, or is being moved a long distance between postcodes.",
   },
   {
     q: "Do man and van prices include insurance?",
@@ -129,7 +129,7 @@ export default function ManAndVanCostPage() {
       <section className="bg-[#F9F9F7] py-16 lg:py-24 border-b border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-accent/20 mb-6">
-            <span className="text-accent font-black text-sm leading-none">£</span> Prices from £45
+            <span className="text-accent font-black text-sm leading-none">£</span> Prices from £34
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-primary uppercase tracking-tighter mb-6">
             How Much Does a Man and Van Cost?
@@ -164,9 +164,9 @@ export default function ManAndVanCostPage() {
               </thead>
               <tbody className="divide-y divide-border/50">
                 {[
-                  { type: "Hourly rate (outside London)", price: "From £45/hr" },
+                  { type: "Hourly rate (outside London)", price: "From £34/hr" },
                   { type: "Hourly rate (London)", price: "From £55/hr" },
-                  { type: "Single item collection/delivery", price: "From £45" },
+                  { type: "Single item collection/delivery", price: "From £34" },
                   { type: "Studio or 1-bed flat move", price: "£150–£320" },
                   { type: "2-bed flat or small house move", price: "£220–£450" },
                   { type: "3-bed house move", price: "£300–£600" },
@@ -197,14 +197,14 @@ export default function ManAndVanCostPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { region: "West Midlands", rate: "From £45/hr", cities: "Birmingham, Walsall, Wolverhampton, Coventry, Dudley", note: "Generally the most affordable area in the UK for man and van hire. Good road access via M6/M5/A38." },
-              { region: "East Midlands", rate: "From £45/hr", cities: "Nottingham, Leicester, Derby, Northampton", note: "Comparable to West Midlands. Student areas (Nottingham, Leicester) see peak demand June–September." },
+              { region: "West Midlands", rate: "From £34/hr", cities: "Birmingham, Walsall, Wolverhampton, Coventry, Dudley", note: "Generally the most affordable area in the UK for man and van hire. Good road access via M6/M5/A38." },
+              { region: "East Midlands", rate: "From £34/hr", cities: "Nottingham, Leicester, Derby, Northampton", note: "Comparable to West Midlands. Student areas (Nottingham, Leicester) see peak demand June–September." },
               { region: "Greater London", rate: "From £55/hr", cities: "London, Croydon, Bromley, Stratford, Ealing", note: "Higher rates due to Congestion Charge (£15/day), ULEZ (£12.50/day for non-compliant vehicles) and Controlled Parking Zones." },
-              { region: "Greater Manchester", rate: "From £45/hr", cities: "Manchester, Salford, Bolton, Stockport, Oldham", note: "City centre parking and M60 congestion can add time. Suburban areas like Altrincham and Stockport are usually cheaper." },
-              { region: "Yorkshire", rate: "From £45/hr", cities: "Leeds, Sheffield, Bradford, Hull, Huddersfield", note: "Competitive pricing across Yorkshire. Back-to-back terraces in Leeds and Bradford slow loading down." },
-              { region: "Scotland", rate: "From £45/hr", cities: "Edinburgh, Glasgow, Aberdeen, Dundee", note: "Edinburgh Old Town and Glasgow West End have narrow streets and permit zones. Aberdeen and Dundee are typically cheaper." },
-              { region: "South West", rate: "From £45/hr", cities: "Bristol, Exeter, Plymouth, Bournemouth", note: "Bristol is the priciest in the region. Rural Devon and Cornwall moves may carry a minimum charge due to distance." },
-              { region: "North East", rate: "From £45/hr", cities: "Newcastle, Sunderland, Durham, Middlesbrough", note: "Affordable rates. Newcastle city centre has some parking restrictions but overall lower than the South." },
+              { region: "Greater Manchester", rate: "From £34/hr", cities: "Manchester, Salford, Bolton, Stockport, Oldham", note: "City centre parking and M60 congestion can add time. Suburban areas like Altrincham and Stockport are usually cheaper." },
+              { region: "Yorkshire", rate: "From £34/hr", cities: "Leeds, Sheffield, Bradford, Hull, Huddersfield", note: "Competitive pricing across Yorkshire. Back-to-back terraces in Leeds and Bradford slow loading down." },
+              { region: "Scotland", rate: "From £34/hr", cities: "Edinburgh, Glasgow, Aberdeen, Dundee", note: "Edinburgh Old Town and Glasgow West End have narrow streets and permit zones. Aberdeen and Dundee are typically cheaper." },
+              { region: "South West", rate: "From £34/hr", cities: "Bristol, Exeter, Plymouth, Bournemouth", note: "Bristol is the priciest in the region. Rural Devon and Cornwall moves may carry a minimum charge due to distance." },
+              { region: "North East", rate: "From £34/hr", cities: "Newcastle, Sunderland, Durham, Middlesbrough", note: "Affordable rates. Newcastle city centre has some parking restrictions but overall lower than the South." },
             ].map((item) => (
               <div key={item.region} className="bg-white rounded-2xl border border-border p-6 space-y-3">
                 <h3 className="font-black text-primary text-lg uppercase tracking-tight">{item.region}</h3>
@@ -282,7 +282,7 @@ export default function ManAndVanCostPage() {
           <div className="flex items-center justify-center gap-6 mt-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
             <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-green-600" /> Verified Movers</span>
             <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-green-600" /> Free To Submit</span>
-            <span>Prices from £45</span>
+            <span>Prices from £34</span>
             <span>Open 7 days</span>
           </div>
         </div>

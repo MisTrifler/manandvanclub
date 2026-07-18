@@ -69,10 +69,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Sheffield prices in 2026</h2>
           <p>
-            Sheffield man and van rates typically start from <strong className="text-primary">£45 per hour</strong>. That's the going rate for a standard van with one mover doing local work within the city. Most Sheffield moves fall into these ranges:
+            Sheffield man and van rates typically start from <strong className="text-primary">£34 per hour</strong>. That's the going rate for a standard van with one mover doing local work within the city. Most Sheffield moves fall into these ranges:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £45. A sofa picked up from Meadowhall and delivered to Heeley, for example.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £34. A sofa picked up from Meadowhall and delivered to Heeley, for example.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £140–£260. Depends heavily on which floor and whether there's a lift. City-centre apartments near the Moor are different to a ground-floor flat in Crookes.</li>
             <li><strong className="text-primary">2–3 bedroom house move</strong> — from £250–£500. Sheffield's terraces in areas like Walkley and Nether Edge can be deceptively full, and the narrow staircases slow things down.</li>
             <li><strong className="text-primary">Sheffield to London</strong> — from £350–£550 for a full van load. The M1 is the direct route — about 2 hours 45 minutes if the traffic behaves.</li>

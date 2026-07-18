@@ -69,10 +69,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Newcastle prices in 2026</h2>
           <p>
-            Newcastle man and van rates start from <strong className="text-primary">£45 per hour</strong>. Typical ranges:
+            Newcastle man and van rates start from <strong className="text-primary">£34 per hour</strong>. Typical ranges:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £45. A fridge from Gosforth to Fenham, for example.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £34. A fridge from Gosforth to Fenham, for example.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £130–£250. A Quayside apartment with underground parking is different to a top-floor flat in Byker.</li>
             <li><strong className="text-primary">2–3 bedroom house move</strong> — from £250–£480. Gosforth and Jesmond family homes tend to be larger with more furniture.</li>
             <li><strong className="text-primary">Newcastle to Edinburgh</strong> — from £250–£400. About 1.5 hours via the A1. A common cross-border route.</li>

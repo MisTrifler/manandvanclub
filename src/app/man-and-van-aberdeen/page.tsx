@@ -7,20 +7,20 @@ import { ArrowUpRight, CheckCircle2, MapPin, Package, Route, ShieldCheck, Truck,
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Aberdeen | Verified Mover Quotes from £45",
-  description: "Submit a free man and van request in Aberdeen. One verified mover reviews your details before you book. From £45/hr. City centre, West End, Bridge of Don, Cults.",
+  title: "Man and Van Aberdeen | Verified Mover Quotes from £34",
+  description: "Submit a free man and van request in Aberdeen. One verified mover reviews your details before you book. From £34/hr. City centre, West End, Bridge of Don, Cults.",
   alternates: { canonical: `${baseUrl}/man-and-van-aberdeen` },
   openGraph: {
-    title: "Man and Van Aberdeen | Verified Mover Quotes from £45",
-    description: "Submit a free man and van request in Aberdeen. One verified mover reviews your details before you book. From £45/hr.",
+    title: "Man and Van Aberdeen | Verified Mover Quotes from £34",
+    description: "Submit a free man and van request in Aberdeen. One verified mover reviews your details before you book. From £34/hr.",
     url: `${baseUrl}/man-and-van-aberdeen`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Aberdeen")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £45")}`, width: 1200, height: 630, alt: "Man and Van Aberdeen | Verified Mover Quotes from £45" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Aberdeen")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £34")}`, width: 1200, height: 630, alt: "Man and Van Aberdeen | Verified Mover Quotes from £34" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Aberdeen | Verified Mover Quotes from £45",
-    description: "Submit a free man and van request in Aberdeen. One verified mover reviews your details before you book. From £45/hr.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Aberdeen")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £45")}`],
+    title: "Man and Van Aberdeen | Verified Mover Quotes from £34",
+    description: "Submit a free man and van request in Aberdeen. One verified mover reviews your details before you book. From £34/hr.",
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Aberdeen")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £34")}`],
   },
 };
 
@@ -39,14 +39,14 @@ const aberdeenAreas = aberdeenAreaCandidates
   }));
 
 const faqItems = [
-  { q: "How much does a man and van cost in Aberdeen?", a: "Aberdeen moves typically start from £45 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and A90 traffic. A full 3-bed house move in Aberdeen could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
+  { q: "How much does a man and van cost in Aberdeen?", a: "Aberdeen moves typically start from £34 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and A90 traffic. A full 3-bed house move in Aberdeen could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
   { q: "Will multiple movers contact me?", a: "No. Your details are not sent to lots of companies. One verified mover reviews your anonymised request, and your contact details are only released after you accept a quote and pay the booking deposit." },
   { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover\u2019s quote, and the remaining balance is paid directly to the mover on moving day." },
   { q: "Can I book a same-day man and van in Aberdeen?", a: "Same-day moves may be possible depending on mover availability, route and access. Aberdeen\u2019s Anderson Drive, the A90 and the Parkway are factored into route planning. Submit the request with the correct postcodes and move details so a verified mover can review it quickly." },
   { q: "Can I use this for single-item furniture collection?", a: "Yes. The Aberdeen service can be used for single items, furniture collection, student moves, flat moves, house removals, office moves and local storage runs." },
   { q: "Do you cover West End, Bridge of Don and Cults?", a: "Yes. You can submit move requests for West End, Bridge of Don, Cults, Bieldside, Kingswells, Dyce and surrounding areas. A verified mover will review your request and can quote if they work in those areas." },
   { q: "Can you help with oil-industry relocations in Aberdeen?", a: "Yes. Aberdeen has a high turnover of moves related to the energy sector. Whether you are moving to a rental in the West End, a family home in Cults or temporary accommodation near the airport, submit your postcodes and item list and a verified mover can review the job." },
-  { q: "How much does a man and van cost from Aberdeen to Dundee?", a: "An Aberdeen to Dundee move in 2026 typically costs £80–£180 depending on load, access and timing. The A90 connects both cities in around 60–70 minutes. A single-item collection might start from £45–£80. Submit your postcodes and item list for a guide price." },
+  { q: "How much does a man and van cost from Aberdeen to Dundee?", a: "An Aberdeen to Dundee move in 2026 typically costs £80–£180 depending on load, access and timing. The A90 connects both cities in around 60–70 minutes. A single-item collection might start from £34–£80. Submit your postcodes and item list for a guide price." },
 ];
 
 const serviceSchema = {
@@ -259,7 +259,7 @@ export default function AberdeenPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single-item furniture collection", price: "From £45" },
+                  { type: "Single-item furniture collection", price: "From £34" },
                   { type: "Studio / 1-bed flat move", price: "£150–£300" },
                   { type: "2-bed flat or tenement move", price: "£200–£400" },
                   { type: "1–2 bed house move", price: "£200–£400" },

@@ -72,7 +72,7 @@ export default function WhatAffectsPricesPost() {
           <p>A single sofa collection from a ground-floor garage costs significantly less than moving the contents of a 3-bed house. The mover needs to judge van size, loading time and whether a second trip is likely. Being specific about items — including dimensions for oversized furniture — helps the mover quote accurately without padding for uncertainty.</p>
           <p>Common load categories:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item:</strong> Sofa, bed, appliance — from £45</li>
+            <li><strong className="text-primary">Single item:</strong> Sofa, bed, appliance — from £34</li>
             <li><strong className="text-primary">Part load:</strong> A few items from one room — £80–£150</li>
             <li><strong className="text-primary">Flat move:</strong> Studio or 1–2 bed — £150–£400</li>
             <li><strong className="text-primary">House move:</strong> 3+ bed property — £250–£600+</li>
@@ -91,16 +91,16 @@ export default function WhatAffectsPricesPost() {
           <p>Student move periods (June–July and September) drive up prices in university cities like <Link href="/man-and-van-leeds" className="text-accent hover:underline">Leeds</Link>, Manchester, <Link href="/man-and-van-sheffield" className="text-accent hover:underline">Sheffield</Link> and Nottingham.</p>
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">6. Same-day and short-notice premium</h2>
-          <p>Need a mover today? Same-day availability depends on whether a verified mover has a gap in their schedule. Because the mover may need to reroute or adjust their day, same-day jobs typically carry a premium — expect to pay from £55/hr rather than the standard £45/hr. <Link href="/same-day-man-and-van" className="text-accent hover:underline">Same-day man and van</Link> requests submitted early in the day have a better chance of being picked up.</p>
+          <p>Need a mover today? Same-day availability depends on whether a verified mover has a gap in their schedule. Because the mover may need to reroute or adjust their day, same-day jobs typically carry a premium — expect to pay from £55/hr rather than the standard £34/hr. <Link href="/same-day-man-and-van" className="text-accent hover:underline">Same-day man and van</Link> requests submitted early in the day have a better chance of being picked up.</p>
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">7. Regional price differences</h2>
           <p>Man and van rates vary by region across the UK:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">West Midlands:</strong> From £45/hr — competitive rates due to high mover availability</li>
+            <li><strong className="text-primary">West Midlands:</strong> From £34/hr — competitive rates due to high mover availability</li>
             <li><strong className="text-primary">London:</strong> From £55/hr — ULEZ, Congestion Charge and higher operating costs</li>
-            <li><strong className="text-primary">North West (Manchester, Liverpool):</strong> From £45/hr</li>
-            <li><strong className="text-primary">Scotland (Edinburgh, Glasgow):</strong> From £45/hr</li>
-            <li><strong className="text-primary">South West (Bristol, Bath):</strong> From £45/hr</li>
+            <li><strong className="text-primary">North West (Manchester, Liverpool):</strong> From £34/hr</li>
+            <li><strong className="text-primary">Scotland (Edinburgh, Glasgow):</strong> From £34/hr</li>
+            <li><strong className="text-primary">South West (Bristol, Bath):</strong> From £34/hr</li>
             <li><strong className="text-primary">Remote/rural areas:</strong> Higher rates due to fewer available movers and longer travel distances</li>
           </ul>
           <p>Use the <Link href="/moving-cost-calculator" className="text-accent hover:underline">moving cost calculator</Link> to get an estimate for your specific region and move type.</p>

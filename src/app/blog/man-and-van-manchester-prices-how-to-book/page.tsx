@@ -72,10 +72,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van Manchester prices in 2026</h2>
           <p>
-            Manchester rates start from <strong className="text-primary">£45 per hour</strong>, in line with the wider North West average. The city centre commands slightly more than suburban areas, but overall Manchester is cheaper than London and comparable to Birmingham. Typical moves cost:
+            Manchester rates start from <strong className="text-primary">£34 per hour</strong>, in line with the wider North West average. The city centre commands slightly more than suburban areas, but overall Manchester is cheaper than London and comparable to Birmingham. Typical moves cost:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection or delivery</strong> — from £45. Picking up a wardrobe from a shop in the Arndale or delivering a sofa to Sale.</li>
+            <li><strong className="text-primary">Single item collection or delivery</strong> — from £34. Picking up a wardrobe from a shop in the Arndale or delivering a sofa to Sale.</li>
             <li><strong className="text-primary">1-bed flat or studio</strong> — from £140–£250. City-centre apartments with underground car parks are easier for loading than terraced houses in Levenshulme.</li>
             <li><strong className="text-primary">2–3 bedroom house</strong> — from £280–£520. Suburban moves in Altrincham, Stockport and Prestwich tend to be straightforward with driveway access.</li>
             <li><strong className="text-primary">Manchester to Birmingham</strong> — from £300–£450. See <Link href="/routes/manchester-to-birmingham" className="text-accent font-bold hover:underline">Manchester to Birmingham route</Link>.</li>

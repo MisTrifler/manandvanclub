@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: hub.title,
     description: hub.description,
     url: `${baseUrl}/man-and-van-${hub.slug}`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Oxfordshire")}&subtitle=${encodeURIComponent("From £45 · Verified Movers")}`, width: 1200, height: 630, alt: `Man and Van ${hub.name} | Man and Van Club` }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Oxfordshire")}&subtitle=${encodeURIComponent("From £34 · Verified Movers")}`, width: 1200, height: 630, alt: `Man and Van ${hub.name} | Man and Van Club` }],
   },
   twitter: {
     card: "summary_large_image",
     title: hub.title,
     description: hub.description,
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Oxfordshire")}&subtitle=${encodeURIComponent("From £45 · Verified Movers")}`],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Oxfordshire")}&subtitle=${encodeURIComponent("From £34 · Verified Movers")}`],
   },
 };
 
