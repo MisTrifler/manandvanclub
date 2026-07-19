@@ -69,8 +69,8 @@ Brownhills properties can vary from post-war semis and bungalows to terraced hom
   // BIRMINGHAM
   // ──────────────────────────────────────────
   birmingham: {
-    title: "Man and Van Birmingham | Verified Mover Quotes",
-    description: "Man and van Birmingham from £34/hr. One verified mover quotes — no multiple companies. Edgbaston, Selly Oak, Moseley, Harborne, Sutton Coldfield.",
+    title: "Cheapest Man and Van Birmingham | From £34/hr | Verified Local Movers",
+    description: "Cheapest man and van Birmingham from £34/hr. One verified mover quotes — no multiple companies. Edgbaston, Selly Oak, Moseley, Harborne, Sutton Coldfield. Call 0121 751 1269.",
     h1: "Man and Van Birmingham",
     intro: "Need a man and van in Birmingham? Submit your postcodes, move date, item list and access notes for free. You can see a guide price first, then one verified mover reviews your Birmingham move before you decide whether to book.",
     knowledge: "Birmingham moving costs can change quickly by postcode. A Jewellery Quarter apartment, an Edgbaston house, a Selly Oak student move and a Sutton Coldfield family relocation can all need different planning for parking, lifts, stairs, the Clean Air Zone and route timing. Your request gives the mover those details before they quote.",
@@ -84,6 +84,7 @@ Your Birmingham request can include property type, access, parking, stairs, lift
     faq: [
       { q: "Do you cover all areas of Birmingham?", a: "Yes. You can submit a move request for Jewellery Quarter, Edgbaston, Moseley, Harborne, Selly Oak, Sutton Coldfield and surrounding areas. Whether a mover is available for these areas depends on their current schedule — they review requests before quoting." },
       { q: "How much does a man and van cost in Birmingham?", a: "Birmingham man and van hourly rates in 2026 start from £34 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £34, while a full house move from a 3-bed property could range from £300–£600. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "What is the cheapest man and van in Birmingham?", a: "The cheapest man and van option in Birmingham is a self-loading service where you carry items to and from the van yourself, starting from around £20–£35 per hour with a small transit van. If you need the driver to help with loading, rates start from £34 per hour on Man and Van Club. Moves outside the Clean Air Zone in suburban areas like Sutton Coldfield, Moseley and Harborne are typically cheaper than city-centre moves. Book a Tuesday or Wednesday for the lowest rates." },
       { q: "Can I find a mover for a same-day move in Birmingham?", a: "Same-day moves may be possible in Birmingham depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
       { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
       { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
@@ -220,11 +221,12 @@ Wolverhampton moves can involve tight terraced streets, wider suburban roads or 
   // WALSALL
   // ──────────────────────────────────────────
   walsall: {
-    title: "Man and Van Walsall | Verified Mover Quotes",
-    description: "Man and van Walsall from £34/hr. One verified mover quotes — no multiple companies. Aldridge, Bloxwich, Willenhall, Darlaston, Pelsall.",
+    title: "Cheapest Man and Van Walsall | From £34/hr | Verified Local Movers",
+    description: "Cheapest man and van Walsall from £34/hr. One verified mover quotes — no multiple companies. Aldridge, Bloxwich, Willenhall, Darlaston, Pelsall. Call 0121 751 1269.",
     faq: [
       { q: "Do you cover all areas of Walsall?", a: "Yes. You can submit a move request for Town Centre, Aldridge, Bloxwich, Willenhall, Darlaston, Pelsall, Rushall and surrounding areas. A verified mover will see your request and can quote if they work in those areas." },
       { q: "How much does a man and van cost in Walsall?", a: "Walsall man and van rates in 2026 start from £34 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item collection (sofa, bed, appliance) starts from £34, while a full house move from a 3-bed Walsall property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },
+      { q: "What is the cheapest man and van in Walsall?", a: "The cheapest man and van option in Walsall is a self-loading service where you carry items to and from the van yourself, starting from around £20–£35 per hour with a small transit van. If you need the driver to help load and carry, rates start from £34 per hour on Man and Van Club. Walsall is one of the most affordable areas in the UK for man and van hire — rates here are lower than Birmingham city centre and significantly lower than London. Book a Tuesday or Wednesday for the best rate." },
       { q: "Can I find a mover for a same-day move in Walsall?", a: "Same-day moves may be possible in Walsall depending on mover availability. Submit your request and a verified mover can review the details if they have space to help." },
       { q: "Will multiple movers contact me?", a: "No. That is exactly what makes us different. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
       { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover's quote, and you pay the remaining balance directly to the mover on moving day." },
