@@ -15,6 +15,24 @@ const SUGGESTIONS = [
   "How does it work?",
 ];
 
+/** Strip markdown formatting that Gemini sometimes produces despite instructions */
+function stripMarkdown(text: string): string {
+  return text
+    // Remove bold markers **text** or __text__
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/__(.+?)__/g, "$1")
+    // Remove italic markers *text* or _text_ (but not within words)
+    .replace(/(?<!\w)\*(.+?)\*(?!\w)/g, "$1")
+    .replace(/(?<!\w)_(.+?)_(?!\w)/g, "$1")
+    // Remove markdown links [text](url) → text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    // Remove headers # ## ###
+    .replace(/^#{1,6}\s+/gm, "")
+    // Clean up multiple spaces
+    .replace(/  +/g, " ")
+    .trim();
+}
+
 export default function AIChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -75,12 +93,12 @@ export default function AIChatWidget() {
         });
 
         const data = await response.json();
-        const replyText = data.reply || data.error;
+        const rawReply = data.reply || data.error;
 
-        if (replyText) {
+        if (rawReply) {
           setMessages((prev) => [
             ...prev,
-            { role: "assistant", content: replyText },
+            { role: "assistant", content: stripMarkdown(rawReply) },
           ]);
         } else {
           setMessages((prev) => [
