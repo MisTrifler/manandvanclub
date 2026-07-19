@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import AIChatWidget from "@/components/AIChatWidget";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 
@@ -241,6 +242,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <CookieConsent />
+        <AIChatWidget />
 
       </body>
     </html>
