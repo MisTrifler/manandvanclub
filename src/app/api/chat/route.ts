@@ -112,7 +112,11 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      return NextResponse.json({ error: "Chat unavailable" }, { status: 503 });
+      console.error("GEMINI_API_KEY is not set in environment variables");
+      return NextResponse.json(
+        { error: "Chat is being set up. Please call 0121 751 1269 for help — open 7 days." },
+        { status: 503 }
+      );
     }
 
     // Build conversation history for context
@@ -162,11 +166,14 @@ export async function POST(req: NextRequest) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Gemini API error:", response.status, errorText);
-      return NextResponse.json(
-        { error: "Something went wrong. Please try again or call 0121 751 1269." },
-        { status: 500 }
-      );
+      console.error("Gemini API error:", response.status, errorText.substring(0, 500));
+      
+      // Provide user-friendly fallback
+      const fallbackReplies: Record<string, string> = {
+        default: "I'm having trouble connecting right now. Please call 0121 751 1269 — we're open 7 days and can help straight away.",
+      };
+      
+      return NextResponse.json({ reply: fallbackReplies.default });
     }
 
     const data = await response.json();
@@ -177,9 +184,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ reply });
   } catch (error) {
     console.error("Chat API error:", error);
-    return NextResponse.json(
-      { error: "Something went wrong. Please try again or call 0121 751 1269." },
-      { status: 500 }
-    );
+    return NextResponse.json({
+      reply: "I'm having trouble right now. Please call 0121 751 1269 — we're open 7 days and can help straight away.",
+    });
   }
 }

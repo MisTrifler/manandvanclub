@@ -75,11 +75,12 @@ export default function AIChatWidget() {
         });
 
         const data = await response.json();
+        const replyText = data.reply || data.error;
 
-        if (data.reply) {
+        if (replyText) {
           setMessages((prev) => [
             ...prev,
-            { role: "assistant", content: data.reply },
+            { role: "assistant", content: replyText },
           ]);
         } else {
           setMessages((prev) => [
@@ -87,7 +88,7 @@ export default function AIChatWidget() {
             {
               role: "assistant",
               content:
-                "Sorry, I had trouble with that. Try again or call us on 0121 751 1269 — we're open 7 days.",
+                "Sorry, I had trouble with that. Call us on 0121 751 1269 — we're open 7 days.",
             },
           ]);
         }
