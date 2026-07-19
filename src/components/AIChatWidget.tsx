@@ -10,7 +10,7 @@ interface Message {
 
 const SUGGESTIONS = [
   "How much does a man and van cost?",
-  "Do you cover Birmingham?",
+  "What areas do you cover?",
   "What's the cheapest option?",
   "How does it work?",
 ];
