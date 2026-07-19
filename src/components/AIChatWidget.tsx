@@ -53,7 +53,7 @@ export default function AIChatWidget() {
   const [callbackSent, setCallbackSent] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const chatWindowRef = useRef<HTMLDivElement>(null);
+  const callbackPhoneRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -63,38 +63,12 @@ export default function AIChatWidget() {
     scrollToBottom();
   }, [messages, isLoading, scrollToBottom]);
 
+  // Focus input only when user explicitly interacts (not on open — avoids keyboard popup)
   useEffect(() => {
-    if (isOpen && inputRef.current && !showCallbackForm) {
-      inputRef.current.focus();
+    if (isOpen && showCallbackForm && callbackPhoneRef.current) {
+      callbackPhoneRef.current.focus();
     }
   }, [isOpen, showCallbackForm]);
-
-  // Mobile keyboard fix
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleResize = () => {
-      if (chatWindowRef.current && window.visualViewport) {
-        const vv = window.visualViewport;
-        const offsetTop = vv.offsetTop || 0;
-        chatWindowRef.current.style.maxHeight = `${vv.height - 24}px`;
-        chatWindowRef.current.style.bottom = `${offsetTop + 12}px`;
-      }
-    };
-
-    const vv = window.visualViewport;
-    if (vv) {
-      vv.addEventListener("resize", handleResize);
-      vv.addEventListener("scroll", handleResize);
-    }
-
-    return () => {
-      if (vv) {
-        vv.removeEventListener("resize", handleResize);
-        vv.removeEventListener("scroll", handleResize);
-      }
-    };
-  }, [isOpen]);
 
   const openChat = useCallback(() => {
     setIsOpen(true);
@@ -138,7 +112,6 @@ export default function AIChatWidget() {
         if (rawReply) {
           const cleaned = stripMarkdown(rawReply);
 
-          // Check if this response should trigger callback form
           if (shouldShowCallback(cleaned)) {
             const displayText = cleanCallbackTag(cleaned);
             setMessages((prev) => [
@@ -206,7 +179,6 @@ export default function AIChatWidget() {
                 "Got it! We've got your number and will call you back as soon as we can. We're open 7 days, 8am–8pm. Thanks!",
             },
           ]);
-          // Reset form after delay
           setTimeout(() => {
             setShowCallbackForm(false);
             setCallbackPhone("");
@@ -257,11 +229,18 @@ export default function AIChatWidget() {
 
   return (
     <>
-      {/* Chat Window */}
+      {/* Chat Window — full screen on mobile, floating card on desktop */}
       {isOpen && (
-        <div ref={chatWindowRef} className="fixed bottom-6 right-4 sm:right-6 z-[300] w-[calc(100vw-2rem)] sm:w-[380px] max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-border overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-200">
+        <div
+          className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 z-[300] flex flex-col bg-white sm:rounded-2xl sm:shadow-2xl sm:border sm:border-border sm:max-h-[70dvh] sm:w-[380px] sm:max-w-[calc(100vw-2rem)]"
+          style={{
+            height: "100dvh",
+            paddingBottom: "env(safe-area-inset-bottom, 0px)",
+            touchAction: "manipulation",
+          }}
+        >
           {/* Header */}
-          <div className="bg-primary text-white px-4 py-3 flex items-center justify-between flex-shrink-0">
+          <div className="bg-primary text-white px-4 py-3 flex items-center justify-between flex-shrink-0 rounded-t-2xl">
             <div className="flex items-center gap-2">
               <MessageCircle size={18} />
               <div>
@@ -271,15 +250,15 @@ export default function AIChatWidget() {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="w-7 h-7 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
+              className="w-9 h-9 rounded-full hover:bg-white/10 active:bg-white/20 flex items-center justify-center transition-colors"
               aria-label="Close chat"
             >
-              <X size={16} />
+              <X size={18} />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0" style={{ maxHeight: "calc(60vh - 130px)" }}>
+          <div className="flex-1 overflow-y-auto overscroll-contain p-4 space-y-3 min-h-0">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -314,16 +293,17 @@ export default function AIChatWidget() {
 
           {/* Callback Form (replaces input area when shown) */}
           {showCallbackForm && !callbackSent ? (
-            <div className="border-t border-border p-4 flex flex-col gap-3 flex-shrink-0 bg-white">
+            <div className="border-t border-border p-3 sm:p-4 flex flex-col gap-2 flex-shrink-0 bg-white">
               <button
                 onClick={() => setShowCallbackForm(false)}
-                className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700 transition-colors self-start"
+                className="flex items-center gap-1 text-xs text-gray-500 active:text-gray-700 self-start py-1"
               >
                 <ArrowLeft size={12} /> Back to chat
               </button>
               <p className="text-xs font-bold text-primary">Request a callback</p>
               <form onSubmit={handleSubmitCallback} className="flex flex-col gap-2">
                 <input
+                  ref={callbackPhoneRef}
                   type="tel"
                   value={callbackPhone}
                   onChange={(e) => setCallbackPhone(e.target.value)}
@@ -332,27 +312,32 @@ export default function AIChatWidget() {
                   required
                   minLength={7}
                   disabled={callbackSubmitting}
+                  autoComplete="tel"
                 />
-                <input
-                  type="text"
-                  value={callbackName}
-                  onChange={(e) => setCallbackName(e.target.value)}
-                  placeholder="Name (optional)"
-                  className="w-full text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg"
-                  disabled={callbackSubmitting}
-                />
-                <input
-                  type="email"
-                  value={callbackEmail}
-                  onChange={(e) => setCallbackEmail(e.target.value)}
-                  placeholder="Email (optional)"
-                  className="w-full text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg"
-                  disabled={callbackSubmitting}
-                />
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={callbackName}
+                    onChange={(e) => setCallbackName(e.target.value)}
+                    placeholder="Name (optional)"
+                    className="flex-1 text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg min-w-0"
+                    disabled={callbackSubmitting}
+                    autoComplete="name"
+                  />
+                  <input
+                    type="email"
+                    value={callbackEmail}
+                    onChange={(e) => setCallbackEmail(e.target.value)}
+                    placeholder="Email (optional)"
+                    className="flex-1 text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg min-w-0"
+                    disabled={callbackSubmitting}
+                    autoComplete="email"
+                  />
+                </div>
                 <button
                   type="submit"
                   disabled={callbackPhone.trim().length < 7 || callbackSubmitting}
-                  className="w-full bg-accent text-white text-sm font-bold py-2.5 rounded-lg hover:bg-accent/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-accent text-white text-sm font-bold py-2.5 rounded-lg active:bg-accent/80 transition-colors disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <Phone size={14} />
                   {callbackSubmitting ? "Sending..." : "Request callback"}
@@ -363,12 +348,12 @@ export default function AIChatWidget() {
             <>
               {/* Suggestions (show only at start) */}
               {messages.length <= 1 && (
-                <div className="px-4 pb-2 flex flex-wrap gap-1.5">
+                <div className="px-4 pb-2 flex flex-wrap gap-1.5 flex-shrink-0">
                   {SUGGESTIONS.map((s) => (
                     <button
                       key={s}
                       onClick={() => handleSuggestion(s)}
-                      className="text-[10px] font-bold text-accent bg-accent/5 border border-accent/20 rounded-full px-3 py-1.5 hover:bg-accent/10 transition-colors"
+                      className="text-[10px] font-bold text-accent bg-accent/5 border border-accent/20 rounded-full px-3 py-1.5 active:bg-accent/15 transition-colors"
                     >
                       {s}
                     </button>
@@ -377,16 +362,16 @@ export default function AIChatWidget() {
               )}
 
               {/* Quick actions */}
-              <div className="px-4 pb-2 flex gap-2">
+              <div className="px-3 sm:px-4 pb-2 flex gap-2 flex-shrink-0">
                 <a
                   href="tel:01217511269"
-                  className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-primary bg-[#F9F9F7] rounded-lg py-2 hover:bg-accent/5 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-primary bg-[#F9F9F7] rounded-lg py-2 active:bg-gray-200"
                 >
                   <Phone size={12} /> Call 0121 751 1269
                 </a>
                 <a
                   href="/get-started"
-                  className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-white bg-accent rounded-lg py-2 hover:bg-accent/90 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-white bg-accent rounded-lg py-2 active:bg-accent/80"
                 >
                   Get a Quote <ArrowRight size={10} />
                 </a>
@@ -403,14 +388,16 @@ export default function AIChatWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about your move..."
-                  className="flex-1 text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2 rounded-lg min-w-0"
+                  enterKeyHint="send"
+                  className="flex-1 text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg min-w-0"
                   disabled={isLoading}
                   maxLength={500}
+                  autoComplete="off"
                 />
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading}
-                  className="w-8 h-8 bg-accent text-white rounded-lg flex items-center justify-center hover:bg-accent/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
+                  className="w-9 h-9 bg-accent text-white rounded-lg flex items-center justify-center active:bg-accent/80 transition-colors disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
                   aria-label="Send message"
                 >
                   <Send size={14} />
@@ -425,10 +412,14 @@ export default function AIChatWidget() {
       {!isOpen && (
         <button
           onClick={openChat}
-          className="fixed bottom-6 right-4 sm:right-6 z-[300] flex items-center gap-3 bg-primary text-white pl-5 pr-6 py-4 rounded-full shadow-2xl hover:bg-primary/90 transition-all group cursor-pointer"
+          className="fixed bottom-6 right-4 sm:right-6 z-[300] flex items-center gap-3 bg-primary text-white pl-5 pr-6 py-4 rounded-full shadow-2xl active:bg-primary/80 transition-all group cursor-pointer"
+          style={{
+            bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))",
+            touchAction: "manipulation",
+          }}
           aria-label="Open AI chat"
         >
-          <MessageCircle size={22} className="text-accent group-hover:scale-110 transition-transform" />
+          <MessageCircle size={22} className="text-accent group-hover:scale-110 group-active:scale-95 transition-transform" />
           <span className="font-black tracking-tight text-sm">Ask AI</span>
         </button>
       )}
