@@ -158,18 +158,19 @@ export async function POST(req: NextRequest) {
       parts: [{ text: message }],
     });
 
-    // Model fallback chain: try 2.0-flash first (fast, cheap, no thinking overhead)
-    // then fall back to 3.5-flash if 2.0-flash is unavailable/rate-limited
-    const MODELS = ["gemini-2.0-flash", "gemini-3.5-flash"] as const;
+    // Model fallback chain — each model has its own free tier daily quota.
+    // If one is rate-limited (429), we try the next.
+    // gemini-3.1-flash-lite is preferred: no thinking tokens = fast + cheap
+    const MODELS = ["gemini-3.1-flash-lite", "gemini-2.0-flash", "gemini-3-flash-preview"] as const;
 
     let lastError = "";
     let reply = "";
 
     for (const model of MODELS) {
       try {
-        // Thinking models (3.x) need high maxOutputTokens because the limit covers
-        // BOTH thinking tokens AND visible response tokens. 2.0-flash doesn't think.
-        const isThinkingModel = model.startsWith("gemini-3");
+        // Some models use "thinking" tokens that count against maxOutputTokens.
+        // Use higher limit for those to avoid truncated responses.
+        const isThinkingModel = model.includes("3-flash-preview") || model.includes("3.5-flash");
         const maxTokens = isThinkingModel ? 8192 : 1024;
 
         const response = await fetch(
