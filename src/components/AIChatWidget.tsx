@@ -127,7 +127,7 @@ export default function AIChatWidget() {
     <>
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 left-6 sm:left-auto sm:right-6 z-[300] w-[calc(100vw-3rem)] sm:w-[380px] max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-border overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-200">
+        <div className="fixed bottom-6 right-4 sm:right-6 z-[300] w-[calc(100vw-2rem)] sm:w-[380px] max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-border overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-200">
           {/* Header */}
           <div className="bg-primary text-white px-4 py-3 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-2">
@@ -242,7 +242,7 @@ export default function AIChatWidget() {
       {!isOpen && (
         <button
           onClick={openChat}
-          className="fixed bottom-6 left-6 z-[300] flex items-center gap-3 bg-primary text-white pl-5 pr-6 py-4 rounded-full shadow-2xl hover:bg-primary/90 transition-all group cursor-pointer"
+          className="fixed bottom-6 right-4 sm:right-6 z-[300] flex items-center gap-3 bg-primary text-white pl-5 pr-6 py-4 rounded-full shadow-2xl hover:bg-primary/90 transition-all group cursor-pointer"
           aria-label="Open AI chat"
         >
           <MessageCircle size={22} className="text-accent group-hover:scale-110 transition-transform" />

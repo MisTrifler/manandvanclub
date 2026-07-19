@@ -370,7 +370,7 @@ export default function ManAndVanNearMePage() {
       {/* ── Mobile Floating Call Button ── */}
       <a
         href="tel:01217511269"
-        className="floating-call-btn fixed bottom-6 right-6 z-[200] lg:hidden flex items-center gap-3 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent/90 transition-all"
+        className="floating-call-btn fixed bottom-20 right-6 z-[200] lg:hidden flex items-center gap-3 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent/90 transition-all"
         aria-label="Call Man and Van Club"
       >
         <Phone size={22} className="text-white" />
