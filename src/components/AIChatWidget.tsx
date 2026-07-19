@@ -232,7 +232,7 @@ export default function AIChatWidget() {
       {/* Chat Window — full screen on mobile, floating card on desktop */}
       {isOpen && (
         <div
-          className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 z-[300] flex flex-col bg-white sm:rounded-2xl sm:shadow-2xl sm:border sm:border-border sm:max-h-[70dvh] sm:w-[380px] sm:max-w-[calc(100vw-2rem)]"
+          className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 z-[300] flex flex-col bg-white sm:rounded-2xl sm:shadow-2xl sm:border sm:border-border sm:max-h-[70dvh] sm:w-[380px] sm:max-w-[calc(100vw-2rem)] overflow-hidden"
           style={{
             height: "100dvh",
             paddingBottom: "env(safe-area-inset-bottom, 0px)",
@@ -258,18 +258,19 @@ export default function AIChatWidget() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto overscroll-contain p-4 space-y-3 min-h-0">
+          <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain p-4 space-y-3 min-h-0">
             {messages.map((msg, i) => (
               <div
                 key={i}
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                  className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed break-words ${
                     msg.role === "user"
                       ? "bg-accent text-white rounded-br-md"
                       : "bg-[#F9F9F7] text-primary rounded-bl-md"
                   }`}
+                  style={{ overflowWrap: "anywhere" }}
                 >
                   {msg.content}
                 </div>
