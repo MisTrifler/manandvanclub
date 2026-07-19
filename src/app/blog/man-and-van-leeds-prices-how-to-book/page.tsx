@@ -113,7 +113,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Ready to book your Leeds move?</h2>
           <p>
-            Go to <Link href="/man-and-van-leeds" className="text-accent font-bold hover:underline">manandvanclub.co.uk/leeds</Link>, enter your details and a verified mover reviews your request before quoting. Free to submit, no obligation. Or call <a href="tel:01217511269" className="text-accent font-bold hover:underline">0121 751 1269</a> — open 7 days, 8am to 8pm.
+            Go to <Link href="/man-and-van-leeds" className="text-accent font-bold hover:underline">manandvanclub.co.uk/leeds</Link>, enter your details and a verified mover reviews your request before quoting. Free to submit, no obligation. Or call <a href="tel:01217511269" className="text-accent font-bold hover:underline">0121 751 1269</a> — open 24/7.
           </p>
           <p>
             Moving from Leeds to another city? See our <Link href="/routes" className="text-accent font-bold hover:underline">route pages</Link> for <Link href="/routes/leeds-to-london" className="text-accent font-bold hover:underline">Leeds to London</Link>, <Link href="/routes/manchester-to-leeds" className="text-accent font-bold hover:underline">Leeds to Manchester</Link> and <Link href="/routes/leeds-to-sheffield" className="text-accent font-bold hover:underline">Leeds to Sheffield</Link>.

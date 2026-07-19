@@ -354,7 +354,7 @@ export default function ManAndVanCostPage() {
             <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-green-600" /> Verified Movers</span>
             <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-green-600" /> Free To Submit</span>
             <span>Prices from £19</span>
-            <span>Open 7 days</span>
+            <span>Open 24/7</span>
           </div>
         </div>
       </section>

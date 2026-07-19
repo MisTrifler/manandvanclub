@@ -73,7 +73,7 @@ export default function GetStartedPage() {
             Prefer to talk?{" "}
             <a href="tel:01217511269" className="font-black text-accent hover:underline">Call 0121 751 1269</a>
           </p>
-          <p className="text-xs text-text-secondary/60 mt-1">Open 7 days · From £19/hr</p>
+          <p className="text-xs text-text-secondary/60 mt-1">Open 24/7 · From £19/hr</p>
         </section>
       </div>
 

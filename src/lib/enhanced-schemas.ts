@@ -3683,9 +3683,9 @@ export function getLocalBusinessSchema(locationKey: string): Record<string, any>
       "hasMap": "https://maps.google.com/?q=Birmingham+West+Midlands+UK",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "07:00",
-        "closes": "20:00"
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
       }
     };
   }
@@ -3707,9 +3707,9 @@ export function getLocalBusinessSchema(locationKey: string): Record<string, any>
       "hasMap": "https://maps.google.com/?q=Walsall+West+Midlands+UK",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "07:00",
-        "closes": "20:00"
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
       }
     };
   }

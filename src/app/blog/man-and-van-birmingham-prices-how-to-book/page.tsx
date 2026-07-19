@@ -137,7 +137,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Ready to book your Birmingham move?</h2>
           <p>
-            Submit your move details on the <Link href="/man-and-van-birmingham" className="text-accent font-bold hover:underline">Birmingham page</Link>. It takes under a minute, it's free, and a verified mover reviews your exact requirements before sending a quote. If you'd rather talk it through, call <a href="tel:01217511269" className="text-accent font-bold hover:underline">0121 751 1269</a> — we're open 7 days a week.
+            Submit your move details on the <Link href="/man-and-van-birmingham" className="text-accent font-bold hover:underline">Birmingham page</Link>. It takes under a minute, it's free, and a verified mover reviews your exact requirements before sending a quote. If you'd rather talk it through, call <a href="tel:01217511269" className="text-accent font-bold hover:underline">0121 751 1269</a> — we're open 24/7.
           </p>
           <p>
             Moving from Birmingham to another city? Check our <Link href="/routes" className="text-accent font-bold hover:underline">route pages</Link> for pricing estimates and access information for city-to-city moves including <Link href="/routes/birmingham-to-london" className="text-accent font-bold hover:underline">Birmingham to London</Link>, <Link href="/routes/birmingham-to-manchester" className="text-accent font-bold hover:underline">Birmingham to Manchester</Link> and <Link href="/routes/birmingham-to-bristol" className="text-accent font-bold hover:underline">Birmingham to Bristol</Link>.

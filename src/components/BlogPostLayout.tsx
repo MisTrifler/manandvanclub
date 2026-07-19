@@ -110,7 +110,7 @@ export default function BlogPostLayout({
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-primary/40">
             <span>Prices from £19</span>
             <span>·</span>
-            <span>Open 7 days</span>
+            <span>Open 24/7</span>
             <span>·</span>
             <span>Free to submit</span>
           </div>

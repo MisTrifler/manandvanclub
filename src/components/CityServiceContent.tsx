@@ -236,9 +236,9 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
               <div className="flex items-center gap-3 pt-2">
                 <div className="flex items-center gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full border border-green-100">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  <span className="text-[10px] font-black uppercase tracking-widest">Open 7 days</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Open 24/7</span>
                 </div>
-                <span className="text-[10px] font-medium text-primary/50">Mon–Sun, 8am–8pm</span>
+                <span className="text-[10px] font-medium text-primary/50">24/7</span>
               </div>
             </motion.div>
 

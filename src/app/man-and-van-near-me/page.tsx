@@ -153,9 +153,9 @@ export default function ManAndVanNearMePage() {
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full border border-green-100">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  <span className="text-[10px] font-black uppercase tracking-widest">Open 7 days</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Open 24/7</span>
                 </div>
-                <span className="text-[10px] font-medium text-primary/50">Mon–Sun, 8am–8pm</span>
+                <span className="text-[10px] font-medium text-primary/50">24/7</span>
               </div>
               <div className="flex flex-wrap gap-4 pt-2">
                 <a href="tel:01217511269" className="bg-primary text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm inline-flex items-center gap-3 hover:bg-primary/90 transition-all">

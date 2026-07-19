@@ -270,7 +270,7 @@ export default function AreasCoveredContent() {
             Start Your Move Request <ArrowUpRight size={24} />
           </Link>
           <p className="text-sm text-text-secondary">
-            Or call us: <a href="tel:01217511269" className="font-black text-accent hover:underline">0121 751 1269</a> · Open 7 days · From £19/hr
+            Or call us: <a href="tel:01217511269" className="font-black text-accent hover:underline">0121 751 1269</a> · Open 24/7 · From £19/hr
           </p>
         </div>
       </section>

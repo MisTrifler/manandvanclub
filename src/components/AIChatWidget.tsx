@@ -131,7 +131,7 @@ export default function AIChatWidget() {
             {
               role: "assistant",
               content:
-                "Sorry, I had trouble with that. Call us on 0121 751 1269 — we're open 7 days.",
+                "Sorry, I had trouble with that. Call us on 0121 751 1269 — we're open 24/7.",
             },
           ]);
         }
@@ -141,7 +141,7 @@ export default function AIChatWidget() {
           {
             role: "assistant",
             content:
-              "Something went wrong. Please try again or call 0121 751 1269 — we're open 7 days.",
+              "Something went wrong. Please try again or call 0121 751 1269 — we're open 24/7.",
           },
         ]);
       } finally {
@@ -176,7 +176,7 @@ export default function AIChatWidget() {
             {
               role: "assistant",
               content:
-                "Got it! We've got your number and will call you back as soon as we can. We're open 7 days, 8am–8pm. Thanks!",
+                "Got it! We've got your number and will call you back as soon as we can. We're open 24/7. Thanks!",
             },
           ]);
           setTimeout(() => {
@@ -192,7 +192,7 @@ export default function AIChatWidget() {
             {
               role: "assistant",
               content:
-                "Something went wrong submitting your request. Please call us directly on 0121 751 1269 — we're open 7 days.",
+                "Something went wrong submitting your request. Please call us directly on 0121 751 1269 — we're open 24/7.",
             },
           ]);
         }
@@ -202,7 +202,7 @@ export default function AIChatWidget() {
           {
             role: "assistant",
             content:
-              "Couldn't submit your request. Please call us on 0121 751 1269 — we're open 7 days.",
+              "Couldn't submit your request. Please call us on 0121 751 1269 — we're open 24/7.",
           },
         ]);
       } finally {

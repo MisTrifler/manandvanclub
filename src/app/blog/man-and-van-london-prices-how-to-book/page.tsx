@@ -126,7 +126,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Ready to book your London move?</h2>
           <p>
-            Submit your move details on the <Link href="/man-and-van-london" className="text-accent font-bold hover:underline">London page</Link>. It's free, takes under a minute, and a verified mover reviews your exact requirements before sending a quote. If you'd rather talk it through, call <a href="tel:01217511269" className="text-accent font-bold hover:underline">0121 751 1269</a> — open 7 days, 8am to 8pm.
+            Submit your move details on the <Link href="/man-and-van-london" className="text-accent font-bold hover:underline">London page</Link>. It's free, takes under a minute, and a verified mover reviews your exact requirements before sending a quote. If you'd rather talk it through, call <a href="tel:01217511269" className="text-accent font-bold hover:underline">0121 751 1269</a> — open 24/7.
           </p>
           <p>
             Moving from London to another city? See our <Link href="/routes" className="text-accent font-bold hover:underline">route pages</Link> including <Link href="/routes/london-to-birmingham" className="text-accent font-bold hover:underline">London to Birmingham</Link>, <Link href="/routes/london-to-manchester" className="text-accent font-bold hover:underline">London to Manchester</Link>, <Link href="/routes/london-to-leeds" className="text-accent font-bold hover:underline">London to Leeds</Link> and <Link href="/routes/london-to-bristol" className="text-accent font-bold hover:underline">London to Bristol</Link>.

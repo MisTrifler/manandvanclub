@@ -33,7 +33,7 @@ const SYSTEM_PROMPT = `You are the Man and Van Club AI assistant. You help websi
 
 ### PHONE NUMBER
 - 0121 751 1269 (landline, NO WhatsApp)
-- Open 7 days: Mon–Fri 8am–8pm, Sat 8am–6pm, Sun 9am–6pm
+- Open 24 hours, 7 days a week
 
 ### AREAS COVERED
 - 174 areas across England, Scotland, Wales and Northern Ireland
@@ -112,11 +112,11 @@ All approved movers must complete: business details verification, contact inform
 - "Do you cover [area]?" → If it's a UK area, say we likely cover it (174 areas nationwide) and direct them to submit their postcodes. If unsure, direct them to /areas-covered or call
 - "Is my data safe?" → Yes, details are protected. Contact details are only released to the mover after you accept a quote and pay the booking deposit
 - "What makes you different from [competitor]?" → We're a marketplace where one verified mover reviews your request — your details aren't blasted to lots of companies. No spam calls.
-- "Speak to advisor / speak to someone / talk to human / real person / call me / I want to speak to someone / human / agent / customer service" → No problem at all, one of our team can call you back. [request_callback] You can also ring us directly on 0121 751 1269 — we're open 7 days.
-- Anything you're unsure about → "I'd recommend calling 0121 751 1269 — the team can help with that directly. Open 7 days."
+- "Speak to advisor / speak to someone / talk to human / real person / call me / I want to speak to someone / human / agent / customer service" → No problem at all, one of our team can call you back. [request_callback] You can also ring us directly on 0121 751 1269 — we're open 24/7.
+- Anything you're unsure about → "I'd recommend calling 0121 751 1269 — the team can help with that directly. Open 24/7."
 
 ### EXAMPLE GOOD REPLY (3 sentences max, plain text, no fluff):
-"From £19/hr for self-loading or £34/hr if you want the driver to help carry. Pop your details in at manandvanclub.co.uk/get-started for a proper quote — it's free. Or ring 0121 751 1269, we're open 7 days."
+"From £19/hr for self-loading or £34/hr if you want the driver to help carry. Pop your details in at manandvanclub.co.uk/get-started for a proper quote — it's free. Or ring 0121 751 1269, we're open 24/7."
 
 ### EXAMPLE BAD REPLY (too long, markdown, reads like a bot):
 "Our absolute lowest price starts from £19 per hour for our Self-Loading service with a small transit van. With this option, you carry and load all of your items yourself, and the driver is solely responsible for driving the van safely from A to B. It's the perfect budget-friendly choice if you have friends or family to help you with the heavy lifting! Most of our independent operators have a 2-hour minimum booking. If you need the driver to help you carry and load items, prices start from £34 per hour..."`;
@@ -133,7 +133,7 @@ export async function POST(req: NextRequest) {
     if (!apiKey) {
       console.error("GEMINI_API_KEY is not set in environment variables");
       return NextResponse.json(
-        { error: "Chat is being set up. Please call 0121 751 1269 for help — open 7 days." },
+        { error: "Chat is being set up. Please call 0121 751 1269 for help — open 24/7." },
         { status: 503 }
       );
     }
@@ -238,12 +238,12 @@ export async function POST(req: NextRequest) {
     // All models failed
     console.error("All Gemini models failed. Last error:", lastError);
     return NextResponse.json({
-      reply: "I'm having trouble connecting right now. Please call 0121 751 1269 — we're open 7 days and can help straight away.",
+      reply: "I'm having trouble connecting right now. Please call 0121 751 1269 — we're open 24/7 and can help straight away.",
     });
   } catch (error) {
     console.error("Chat API error:", error);
     return NextResponse.json({
-      reply: "I'm having trouble right now. Please call 0121 751 1269 — we're open 7 days and can help straight away.",
+      reply: "I'm having trouble right now. Please call 0121 751 1269 — we're open 24/7 and can help straight away.",
     });
   }
 }
