@@ -139,49 +139,87 @@ export async function POST(req: NextRequest) {
       parts: [{ text: message }],
     });
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          system_instruction: {
-            parts: [{ text: SYSTEM_PROMPT }],
-          },
-          contents,
-          generationConfig: {
-            temperature: 0.7,
-            topP: 0.9,
-            maxOutputTokens: 500,
-          },
-          safetySettings: [
-            { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-            { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-            { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-            { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-          ],
-        }),
-      }
-    );
+    // Model fallback chain: try 2.0-flash first (fast, cheap, no thinking overhead)
+    // then fall back to 3.5-flash if 2.0-flash is unavailable/rate-limited
+    const MODELS = ["gemini-2.0-flash", "gemini-3.5-flash"] as const;
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Gemini API error:", response.status, errorText.substring(0, 500));
-      
-      // Provide user-friendly fallback
-      const fallbackReplies: Record<string, string> = {
-        default: "I'm having trouble connecting right now. Please call 0121 751 1269 — we're open 7 days and can help straight away.",
-      };
-      
-      return NextResponse.json({ reply: fallbackReplies.default });
+    let lastError = "";
+    let reply = "";
+
+    for (const model of MODELS) {
+      try {
+        // Thinking models (3.x) need high maxOutputTokens because the limit covers
+        // BOTH thinking tokens AND visible response tokens. 2.0-flash doesn't think.
+        const isThinkingModel = model.startsWith("gemini-3");
+        const maxTokens = isThinkingModel ? 8192 : 1024;
+
+        const response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              system_instruction: {
+                parts: [{ text: SYSTEM_PROMPT }],
+              },
+              contents,
+              generationConfig: {
+                temperature: 0.7,
+                topP: 0.9,
+                maxOutputTokens: maxTokens,
+              },
+              safetySettings: [
+                { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+              ],
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error(`Gemini API error (${model}):`, response.status, errorText.substring(0, 500));
+          lastError = errorText.substring(0, 200);
+          // If rate limited or model unavailable, try next model
+          if (response.status === 429 || response.status === 404 || response.status === 503) {
+            continue;
+          }
+          // For other errors, also try next model
+          continue;
+        }
+
+        const data = await response.json();
+
+        // Extract text from parts, skipping thought-only parts
+        const parts = data?.candidates?.[0]?.content?.parts || [];
+        for (const part of parts) {
+          if (part.text && part.text.trim()) {
+            reply = part.text.trim();
+            break;
+          }
+        }
+
+        if (reply) {
+          return NextResponse.json({ reply });
+        }
+
+        // If no text extracted, try next model
+        lastError = "No text in response";
+        continue;
+      } catch (fetchError) {
+        console.error(`Gemini fetch error (${model}):`, fetchError);
+        lastError = String(fetchError);
+        continue;
+      }
     }
 
-    const data = await response.json();
-    const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Sorry, I couldn't generate a response. Please call 0121 751 1269 for help.";
-
-    return NextResponse.json({ reply });
+    // All models failed
+    console.error("All Gemini models failed. Last error:", lastError);
+    return NextResponse.json({
+      reply: "I'm having trouble connecting right now. Please call 0121 751 1269 — we're open 7 days and can help straight away.",
+    });
   } catch (error) {
     console.error("Chat API error:", error);
     return NextResponse.json({
