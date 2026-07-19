@@ -3648,7 +3648,7 @@ export function getLocalBusinessSchema(locationKey: string): Record<string, any>
     "telephone": "+44-121-751-1269",
     "email": "support@manandvanclub.co.uk",
     "image": `${siteUrl}/images/og-homepage.jpg`,
-    "priceRange": "From £34/hr",
+    "priceRange": "From £19/hr",
     "currenciesAccepted": "GBP",
     "paymentAccepted": "Card, Bank Transfer",
     "address": {

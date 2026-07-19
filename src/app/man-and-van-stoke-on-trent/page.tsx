@@ -7,20 +7,20 @@ import { ArrowUpRight, CheckCircle2, MapPin, Package, Route, ShieldCheck, Truck,
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £34",
-  description: "Submit a free man and van request in Stoke-on-Trent. One verified mover reviews your details before you book. From £34/hr. Hanley, Burslem, Tunstall, Longton, Fenton.",
+  title: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £19",
+  description: "Submit a free man and van request in Stoke-on-Trent. One verified mover reviews your details before you book. From £19/hr. Hanley, Burslem, Tunstall, Longton, Fenton.",
   alternates: { canonical: `${baseUrl}/man-and-van-stoke-on-trent` },
   openGraph: {
-    title: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £34",
-    description: "Submit a free man and van request in Stoke-on-Trent. One verified mover reviews your details before you book. From £34/hr.",
+    title: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £19",
+    description: "Submit a free man and van request in Stoke-on-Trent. One verified mover reviews your details before you book. From £19/hr.",
     url: `${baseUrl}/man-and-van-stoke-on-trent`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Stoke-on-Trent")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £34")}`, width: 1200, height: 630, alt: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £34" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Stoke-on-Trent")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £19")}`, width: 1200, height: 630, alt: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £19" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £34",
-    description: "Submit a free man and van request in Stoke-on-Trent. One verified mover reviews your details before you book. From £34/hr.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Stoke-on-Trent")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £34")}`],
+    title: "Man and Van Stoke-on-Trent | Verified Mover Quotes from £19",
+    description: "Submit a free man and van request in Stoke-on-Trent. One verified mover reviews your details before you book. From £19/hr.",
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Stoke-on-Trent")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £19")}`],
   },
 };
 
@@ -39,7 +39,7 @@ const stokeAreas = stokeAreaCandidates
   }));
 
 const faqItems = [
-  { q: "How much does a man and van cost in Stoke-on-Trent?", a: "Stoke-on-Trent moves typically start from £34 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and A500 traffic. A full 3-bed house move in Stoke could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
+  { q: "How much does a man and van cost in Stoke-on-Trent?", a: "Stoke-on-Trent moves typically start from £19 per hour. A straightforward local move usually costs £60–£130 depending on furniture volume, access (stairs, lifts, parking) and A500 traffic. A full 3-bed house move in Stoke could be £250–£500. Submit your postcodes and item list for a guide price first, then a verified mover reviews the details and sends a quote." },
   { q: "Will multiple movers contact me?", a: "No. Your details are not sent to lots of companies. One verified mover reviews your anonymised request, and your contact details are only released after you accept a quote and pay the booking deposit." },
   { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your request. You only pay a booking deposit if you accept a mover quote. The booking deposit is deducted from the mover\u2019s quote, and the remaining balance is paid directly to the mover on moving day." },
   { q: "Can I book a same-day man and van in Stoke-on-Trent?", a: "Same-day moves may be possible depending on mover availability, route and access. Stoke-on-Trent\u2019s A500 D-road and A50 link road connect the six towns quickly, but terraced streets in Burslem and Longton can slow loading. Submit the request with the correct postcodes and move details so a verified mover can review it quickly." },
@@ -273,7 +273,7 @@ export default function StokeOnTrentPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single-item furniture collection", price: "From £34" },
+                  { type: "Single-item furniture collection", price: "From £19" },
                   { type: "Studio / 1-bed flat move", price: "£150–£300" },
                   { type: "2-bed flat or terraced house move", price: "£200–£400" },
                   { type: "1–2 bed house move", price: "£200–£400" },

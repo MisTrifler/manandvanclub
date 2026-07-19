@@ -5,7 +5,7 @@ import { ArrowUpRight, MapPin, Phone, ShieldCheck, CheckCircle2 } from "lucide-r
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Prices UK 2026 | Cheapest Moving Van Rates From £34 | Man and Van Club",
+  title: "Man and Van Prices UK 2026 | Cheapest Moving Van Rates From £19 | Man and Van Club",
   description:
     "UK man and van prices in 2026. Compare hourly rates, full-day costs and per-move pricing for house removals, flat moves, furniture delivery, student moves and same-day jobs across the West Midlands and UK.",
   alternates: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much does a man and van cost per hour in the UK?",
-    a: "In 2026, UK man and van hourly rates typically range from £34 to £70 per hour. West Midlands rates average £34–£70/hr, London rates average £55–£80/hr, and other regions fall between £34–£70/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
+    a: "In 2026, UK man and van hourly rates typically range from £19 to £70 per hour. West Midlands rates average £19–£70/hr, London rates average £55–£80/hr, and other regions fall between £19–£70/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
   },
   {
     q: "How much does a man and van cost for a full day?",
@@ -38,7 +38,7 @@ const faqItems = [
   },
   {
     q: "How much does a single-item furniture collection cost?",
-    a: "A single-item man and van collection in 2026 typically starts from £34 locally, or £60–£100+ for longer distances. Sofas, beds and wardrobes are at the higher end due to size and handling. Add item dimensions and access details for an accurate quote.",
+    a: "A single-item man and van collection in 2026 typically starts from £19 locally, or £60–£100+ for longer distances. Sofas, beds and wardrobes are at the higher end due to size and handling. Add item dimensions and access details for an accurate quote.",
   },
   {
     q: "Why do man and van prices vary so much?",
@@ -137,7 +137,7 @@ export default function ManAndVanPricesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  { type: "Single-item furniture collection", price: "From £34", factors: "Item size, distance, stairs, parking" },
+                  { type: "Single-item furniture collection", price: "From £19", factors: "Item size, distance, stairs, parking" },
                   { type: "Studio / 1-bed flat move", price: "£150–£350", factors: "Floor level, lift access, parking, distance" },
                   { type: "2-bed flat move", price: "£250–£500", factors: "Volume, stairs, helpers, parking permits" },
                   { type: "1–2 bed house move", price: "£200–£400", factors: "Volume, distance, driveway access, packing" },
@@ -166,9 +166,9 @@ export default function ManAndVanPricesPage() {
           <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-8 text-center">Man and Van Hourly Rates by Region</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { region: "West Midlands", rate: "£34–£70/hr", fullDay: "£350–£500", cities: ["Birmingham", "Walsall", "Wolverhampton", "Coventry"] },
+              { region: "West Midlands", rate: "£19–£70/hr", fullDay: "£350–£500", cities: ["Birmingham", "Walsall", "Wolverhampton", "Coventry"] },
               { region: "Greater London", rate: "£55–£80/hr", fullDay: "£400–£600", cities: ["London", "Croydon", "Stratford", "Richmond"] },
-              { region: "Other UK Regions", rate: "£34–£70/hr", fullDay: "£350–£500", cities: ["Manchester", "Leeds", "Bristol", "Liverpool"] },
+              { region: "Other UK Regions", rate: "£19–£70/hr", fullDay: "£350–£500", cities: ["Manchester", "Leeds", "Bristol", "Liverpool"] },
             ].map((region) => (
               <div key={region.region} className="bg-white rounded-2xl border border-border p-8 space-y-4">
                 <h3 className="text-xl font-black text-primary uppercase tracking-tight">{region.region}</h3>
@@ -260,7 +260,7 @@ export default function ManAndVanPricesPage() {
           <div className="flex items-center justify-center gap-6 mt-6 text-[9px] font-black uppercase tracking-widest text-primary/40">
             <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-green-600" /> Details Protected</span>
             <span className="flex items-center gap-1.5"><CheckCircle2 size={14} className="text-green-600" /> Free To Submit</span>
-            <span className="flex items-center gap-1.5"><Phone size={14} className="text-accent" /> From £34/hr</span>
+            <span className="flex items-center gap-1.5"><Phone size={14} className="text-accent" /> From £19/hr</span>
           </div>
         </div>
       </section>

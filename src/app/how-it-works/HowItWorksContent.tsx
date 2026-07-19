@@ -120,7 +120,7 @@ export default function HowItWorksContent() {
             Start Your Move <ArrowUpRight size={20} />
           </Link>
           <p className="mt-4 text-sm text-text-secondary">
-            Or call: <a href="tel:01217511269" className="font-black text-accent hover:underline">0121 751 1269</a> · Open 7 days · From £34/hr
+            Or call: <a href="tel:01217511269" className="font-black text-accent hover:underline">0121 751 1269</a> · Open 7 days · From £19/hr
           </p>
 
           {/* Popular Areas — Internal Linking */}

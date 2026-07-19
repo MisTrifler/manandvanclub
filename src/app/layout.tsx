@@ -23,8 +23,8 @@ const poppins = Poppins({
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | Moving Home From £34 | Verified UK Movers",
-  description: "Moving home? Man and van from £34/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
+  title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
+  description: "Moving home? Man and van from £19/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
   metadataBase: new URL(siteUrl),
   alternates: {
     languages: {
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteUrl,
     siteName: "Man and Van Club",
-    title: "Man and Van Club | Moving Home From £34 | Verified UK Movers",
-    description: "Moving home? Man and van from £34/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
+    title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
+    description: "Moving home? Man and van from £19/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
     images: [
       {
         url: "/images/og-homepage.jpg",
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Club | Moving Home From £34 | Verified UK Movers",
-    description: "Moving home? Man and van from £34/hr. Verified UK movers for house removals, flat moves, furniture delivery and same-day jobs.",
+    title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
+    description: "Moving home? Man and van from £19/hr. Verified UK movers for house removals, flat moves, furniture delivery and same-day jobs.",
     images: ["/images/og-homepage.jpg"],
   },
   icons: {

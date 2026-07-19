@@ -71,7 +71,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Typical student move costs</h2>
           <p>
-            A student move — typically boxes, suitcases and small furniture from a shared house or halls — usually takes 1–2 hours with a man and van. At £34 per hour (or £55 in London), that means a total cost of roughly £34–£110 (or £55–£120 in London).
+            A student move — typically boxes, suitcases and small furniture from a shared house or halls — usually takes 1–2 hours with a man and van. At £19 per hour (or £55 in London), that means a total cost of roughly £19–£110 (or £55–£120 in London).
           </p>
           <p>
             Split between housemates, this can be very affordable. If three of you are moving from the same house on the same day, you could share the van and split the cost three ways.

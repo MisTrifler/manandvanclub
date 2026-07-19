@@ -102,7 +102,7 @@ export default function RoutePageContent({ route }: { route: RouteData }) {
             <CheckCircle2 size={16} className="text-green-600 flex-shrink-0" /> No hidden fees
           </span>
           <span className="flex items-center gap-2 text-sm text-green-800 font-medium">
-            <span className="text-accent font-black text-lg leading-none">£</span> Prices from £34
+            <span className="text-accent font-black text-lg leading-none">£</span> Prices from £19
           </span>
         </div>
       </div>

@@ -91,7 +91,7 @@ const WHAT_YOU_NEED = [
 ];
 
 const BOOKING_DEPOSIT_TIERS = [
-  { quote: "£34–£100", deposit: "£10", example: "£90 quote → customer pays you £80" },
+  { quote: "£19–£100", deposit: "£10", example: "£90 quote → customer pays you £80" },
   { quote: "£101–£250", deposit: "£15", example: "£200 quote → customer pays you £185" },
   { quote: "£251–£500", deposit: "£25", example: "£300 quote → customer pays you £275" },
   { quote: "£501–£1,000", deposit: "£35", example: "£800 quote → customer pays you £765" },
