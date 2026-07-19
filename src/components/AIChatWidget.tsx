@@ -41,6 +41,7 @@ export default function AIChatWidget() {
   const [hasGreeted, setHasGreeted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const chatWindowRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -54,6 +55,35 @@ export default function AIChatWidget() {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
+  }, [isOpen]);
+
+  // Mobile keyboard fix: keep chat window visible when virtual keyboard opens
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleResize = () => {
+      if (chatWindowRef.current && window.visualViewport) {
+        const vv = window.visualViewport;
+        // When keyboard is open, visual viewport shrinks
+        const offsetTop = vv.offsetTop || 0;
+        chatWindowRef.current.style.maxHeight = `${vv.height - 24}px`;
+        chatWindowRef.current.style.bottom = `${offsetTop + 12}px`;
+      }
+    };
+
+    // Listen to visual viewport changes (keyboard open/close on mobile)
+    const vv = window.visualViewport;
+    if (vv) {
+      vv.addEventListener("resize", handleResize);
+      vv.addEventListener("scroll", handleResize);
+    }
+
+    return () => {
+      if (vv) {
+        vv.removeEventListener("resize", handleResize);
+        vv.removeEventListener("scroll", handleResize);
+      }
+    };
   }, [isOpen]);
 
   const openChat = useCallback(() => {
@@ -145,7 +175,7 @@ export default function AIChatWidget() {
     <>
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-4 sm:right-6 z-[300] w-[calc(100vw-2rem)] sm:w-[380px] max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-border overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-200">
+        <div ref={chatWindowRef} className="fixed bottom-6 right-4 sm:right-6 z-[300] w-[calc(100vw-2rem)] sm:w-[380px] max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-border overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-200">
           {/* Header */}
           <div className="bg-primary text-white px-4 py-3 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-2">
@@ -165,7 +195,7 @@ export default function AIChatWidget() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0" style={{ maxHeight: "calc(70vh - 120px)" }}>
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0" style={{ maxHeight: "calc(60vh - 130px)" }}>
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -239,8 +269,8 @@ export default function AIChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask me anything about your move..."
-              className="flex-1 text-sm bg-transparent outline-none placeholder:text-primary/30 text-primary"
+              placeholder="Ask about your move..."
+              className="flex-1 text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2 rounded-lg min-w-0"
               disabled={isLoading}
               maxLength={500}
             />
