@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { MessageCircle, X, Phone, Send, ArrowRight } from "lucide-react";
+import { MessageCircle, X, Phone, Send, ArrowRight, ArrowLeft } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -18,19 +18,25 @@ const SUGGESTIONS = [
 /** Strip markdown formatting that Gemini sometimes produces despite instructions */
 function stripMarkdown(text: string): string {
   return text
-    // Remove bold markers **text** or __text__
     .replace(/\*\*(.+?)\*\*/g, "$1")
     .replace(/__(.+?)__/g, "$1")
-    // Remove italic markers *text* or _text_ (but not within words)
     .replace(/(?<!\w)\*(.+?)\*(?!\w)/g, "$1")
     .replace(/(?<!\w)_(.+?)_(?!\w)/g, "$1")
-    // Remove markdown links [text](url) → text
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    // Remove headers # ## ###
     .replace(/^#{1,6}\s+/gm, "")
-    // Clean up multiple spaces
     .replace(/  +/g, " ")
     .trim();
+}
+
+/** Check if the AI response should trigger the callback form */
+function shouldShowCallback(text: string): boolean {
+  const lower = text.toLowerCase();
+  return lower.includes("[request_callback]") || lower.includes("request_callback");
+}
+
+/** Remove the callback trigger tag from display text */
+function cleanCallbackTag(text: string): string {
+  return text.replace(/\[?request_callback\]?/gi, "").replace(/  +/g, " ").trim();
 }
 
 export default function AIChatWidget() {
@@ -39,6 +45,12 @@ export default function AIChatWidget() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [hasGreeted, setHasGreeted] = useState(false);
+  const [showCallbackForm, setShowCallbackForm] = useState(false);
+  const [callbackPhone, setCallbackPhone] = useState("");
+  const [callbackName, setCallbackName] = useState("");
+  const [callbackEmail, setCallbackEmail] = useState("");
+  const [callbackSubmitting, setCallbackSubmitting] = useState(false);
+  const [callbackSent, setCallbackSent] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const chatWindowRef = useRef<HTMLDivElement>(null);
@@ -52,26 +64,24 @@ export default function AIChatWidget() {
   }, [messages, isLoading, scrollToBottom]);
 
   useEffect(() => {
-    if (isOpen && inputRef.current) {
+    if (isOpen && inputRef.current && !showCallbackForm) {
       inputRef.current.focus();
     }
-  }, [isOpen]);
+  }, [isOpen, showCallbackForm]);
 
-  // Mobile keyboard fix: keep chat window visible when virtual keyboard opens
+  // Mobile keyboard fix
   useEffect(() => {
     if (!isOpen) return;
 
     const handleResize = () => {
       if (chatWindowRef.current && window.visualViewport) {
         const vv = window.visualViewport;
-        // When keyboard is open, visual viewport shrinks
         const offsetTop = vv.offsetTop || 0;
         chatWindowRef.current.style.maxHeight = `${vv.height - 24}px`;
         chatWindowRef.current.style.bottom = `${offsetTop + 12}px`;
       }
     };
 
-    // Listen to visual viewport changes (keyboard open/close on mobile)
     const vv = window.visualViewport;
     if (vv) {
       vv.addEventListener("resize", handleResize);
@@ -126,10 +136,22 @@ export default function AIChatWidget() {
         const rawReply = data.reply || data.error;
 
         if (rawReply) {
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: stripMarkdown(rawReply) },
-          ]);
+          const cleaned = stripMarkdown(rawReply);
+
+          // Check if this response should trigger callback form
+          if (shouldShowCallback(cleaned)) {
+            const displayText = cleanCallbackTag(cleaned);
+            setMessages((prev) => [
+              ...prev,
+              { role: "assistant", content: displayText },
+            ]);
+            setShowCallbackForm(true);
+          } else {
+            setMessages((prev) => [
+              ...prev,
+              { role: "assistant", content: cleaned },
+            ]);
+          }
         } else {
           setMessages((prev) => [
             ...prev,
@@ -154,6 +176,68 @@ export default function AIChatWidget() {
       }
     },
     [isLoading, messages]
+  );
+
+  const handleSubmitCallback = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      const phone = callbackPhone.trim();
+      if (phone.length < 7) return;
+
+      setCallbackSubmitting(true);
+      try {
+        const res = await fetch("/api/callback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            phone,
+            name: callbackName.trim() || undefined,
+            email: callbackEmail.trim() || undefined,
+          }),
+        });
+
+        if (res.ok) {
+          setCallbackSent(true);
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content:
+                "Got it! We've got your number and will call you back as soon as we can. We're open 7 days, 8am–8pm. Thanks!",
+            },
+          ]);
+          // Reset form after delay
+          setTimeout(() => {
+            setShowCallbackForm(false);
+            setCallbackPhone("");
+            setCallbackName("");
+            setCallbackEmail("");
+            setCallbackSent(false);
+          }, 2000);
+        } else {
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content:
+                "Something went wrong submitting your request. Please call us directly on 0121 751 1269 — we're open 7 days.",
+            },
+          ]);
+        }
+      } catch {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content:
+              "Couldn't submit your request. Please call us on 0121 751 1269 — we're open 7 days.",
+          },
+        ]);
+      } finally {
+        setCallbackSubmitting(false);
+      }
+    },
+    [callbackPhone, callbackName, callbackEmail]
   );
 
   const handleSubmit = useCallback(
@@ -228,61 +312,112 @@ export default function AIChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Suggestions (show only at start) */}
-          {messages.length <= 1 && (
-            <div className="px-4 pb-2 flex flex-wrap gap-1.5">
-              {SUGGESTIONS.map((s) => (
+          {/* Callback Form (replaces input area when shown) */}
+          {showCallbackForm && !callbackSent ? (
+            <div className="border-t border-border p-4 flex flex-col gap-3 flex-shrink-0 bg-white">
+              <button
+                onClick={() => setShowCallbackForm(false)}
+                className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700 transition-colors self-start"
+              >
+                <ArrowLeft size={12} /> Back to chat
+              </button>
+              <p className="text-xs font-bold text-primary">Request a callback</p>
+              <form onSubmit={handleSubmitCallback} className="flex flex-col gap-2">
+                <input
+                  type="tel"
+                  value={callbackPhone}
+                  onChange={(e) => setCallbackPhone(e.target.value)}
+                  placeholder="Your phone number *"
+                  className="w-full text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg"
+                  required
+                  minLength={7}
+                  disabled={callbackSubmitting}
+                />
+                <input
+                  type="text"
+                  value={callbackName}
+                  onChange={(e) => setCallbackName(e.target.value)}
+                  placeholder="Name (optional)"
+                  className="w-full text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg"
+                  disabled={callbackSubmitting}
+                />
+                <input
+                  type="email"
+                  value={callbackEmail}
+                  onChange={(e) => setCallbackEmail(e.target.value)}
+                  placeholder="Email (optional)"
+                  className="w-full text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2.5 rounded-lg"
+                  disabled={callbackSubmitting}
+                />
                 <button
-                  key={s}
-                  onClick={() => handleSuggestion(s)}
-                  className="text-[10px] font-bold text-accent bg-accent/5 border border-accent/20 rounded-full px-3 py-1.5 hover:bg-accent/10 transition-colors"
+                  type="submit"
+                  disabled={callbackPhone.trim().length < 7 || callbackSubmitting}
+                  className="w-full bg-accent text-white text-sm font-bold py-2.5 rounded-lg hover:bg-accent/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  {s}
+                  <Phone size={14} />
+                  {callbackSubmitting ? "Sending..." : "Request callback"}
                 </button>
-              ))}
+              </form>
             </div>
+          ) : (
+            <>
+              {/* Suggestions (show only at start) */}
+              {messages.length <= 1 && (
+                <div className="px-4 pb-2 flex flex-wrap gap-1.5">
+                  {SUGGESTIONS.map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => handleSuggestion(s)}
+                      className="text-[10px] font-bold text-accent bg-accent/5 border border-accent/20 rounded-full px-3 py-1.5 hover:bg-accent/10 transition-colors"
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Quick actions */}
+              <div className="px-4 pb-2 flex gap-2">
+                <a
+                  href="tel:01217511269"
+                  className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-primary bg-[#F9F9F7] rounded-lg py-2 hover:bg-accent/5 transition-colors"
+                >
+                  <Phone size={12} /> Call 0121 751 1269
+                </a>
+                <a
+                  href="/get-started"
+                  className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-white bg-accent rounded-lg py-2 hover:bg-accent/90 transition-colors"
+                >
+                  Get a Quote <ArrowRight size={10} />
+                </a>
+              </div>
+
+              {/* Input */}
+              <form
+                onSubmit={handleSubmit}
+                className="border-t border-border px-3 py-2 flex items-center gap-2 flex-shrink-0"
+              >
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Ask about your move..."
+                  className="flex-1 text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2 rounded-lg min-w-0"
+                  disabled={isLoading}
+                  maxLength={500}
+                />
+                <button
+                  type="submit"
+                  disabled={!input.trim() || isLoading}
+                  className="w-8 h-8 bg-accent text-white rounded-lg flex items-center justify-center hover:bg-accent/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
+                  aria-label="Send message"
+                >
+                  <Send size={14} />
+                </button>
+              </form>
+            </>
           )}
-
-          {/* Quick actions */}
-          <div className="px-4 pb-2 flex gap-2">
-            <a
-              href="tel:01217511269"
-              className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-primary bg-[#F9F9F7] rounded-lg py-2 hover:bg-accent/5 transition-colors"
-            >
-              <Phone size={12} /> Call 0121 751 1269
-            </a>
-            <a
-              href="/get-started"
-              className="flex-1 flex items-center justify-center gap-1.5 text-[10px] font-black text-white bg-accent rounded-lg py-2 hover:bg-accent/90 transition-colors"
-            >
-              Get a Quote <ArrowRight size={10} />
-            </a>
-          </div>
-
-          {/* Input */}
-          <form
-            onSubmit={handleSubmit}
-            className="border-t border-border px-3 py-2 flex items-center gap-2 flex-shrink-0"
-          >
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about your move..."
-              className="flex-1 text-sm bg-gray-100 outline-none placeholder:text-gray-400 text-gray-900 px-3 py-2 rounded-lg min-w-0"
-              disabled={isLoading}
-              maxLength={500}
-            />
-            <button
-              type="submit"
-              disabled={!input.trim() || isLoading}
-              className="w-8 h-8 bg-accent text-white rounded-lg flex items-center justify-center hover:bg-accent/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
-              aria-label="Send message"
-            >
-              <Send size={14} />
-            </button>
-          </form>
         </div>
       )}
 
