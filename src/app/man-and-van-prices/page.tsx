@@ -5,7 +5,7 @@ import { ArrowUpRight, MapPin, Phone, ShieldCheck, CheckCircle2 } from "lucide-r
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Prices UK 2026 | Cheap Moving Van Rates From £34 | Man and Van Club",
+  title: "Man and Van Prices UK 2026 | Cheapest Moving Van Rates From £34 | Man and Van Club",
   description:
     "UK man and van prices in 2026. Compare hourly rates, full-day costs and per-move pricing for house removals, flat moves, furniture delivery, student moves and same-day jobs across the West Midlands and UK.",
   alternates: {

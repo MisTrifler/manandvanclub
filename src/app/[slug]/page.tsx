@@ -194,7 +194,7 @@ const servicePageData: Record<string, any> = {
   "same-day-man-and-van": {
     name: "Same Day Man and Van",
     formIntent: "general",
-    title: "Same Day Man and Van | From £34 | Cheap Urgent Moving Van | Man and Van Club",
+    title: "Same Day Man and Van | From £34 | Cheapest Urgent Moving Van | Man and Van Club",
     description: "Need a same-day man and van from £34? Submit your move details for free, see a guide price and receive a quote from one verified mover before booking. Call 0121 751 1269.",
     badge: "Same-Day Move Requests",
     h1: "Same Day Man And Van",

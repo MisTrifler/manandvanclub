@@ -6,7 +6,7 @@ import QuoteForm from "@/components/QuoteForm";
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Near Me | Cheap Moving Van From £34 | Man and Van Club",
+  title: "Man and Van Near Me | Cheapest Moving Van From £34 | Man and Van Club",
   description:
     "Find a man and van near you across the UK. Submit a free move request and one verified local mover reviews your details before sending a quote. West Midlands, London, Manchester, Leeds and more.",
   alternates: {

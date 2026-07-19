@@ -5,27 +5,31 @@ import { Phone, ShieldCheck, CheckCircle2, ArrowUpRight, Clock, MapPin } from "l
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "How Much Does a Man and Van Cost? | Cheap Moving Van Prices 2026 | Man and Van Club",
+  title: "How Much Does a Man and Van Cost? | Cheapest Moving Van Prices 2026 | Man and Van Club",
   description:
-    "How much is a man and van in 2026? Cheap moving van prices from £34/hr. Full cost breakdown by move type, region and access. Call 0121 751 1269.",
+    "How much is a man and van in 2026? Cheapest moving van prices from £34/hr. Full cost breakdown by setup, move type, region and access. Call 0121 751 1269.",
   alternates: {
     canonical: `${siteUrl}/man-and-van-cost`,
   },
   openGraph: {
-    title: "How Much Does a Man and Van Cost? | UK Prices 2026",
-    description: "UK man and van costs broken down by move type, region and access. From £34/hr. Get a free guide price before you book.",
+    title: "How Much Does a Man and Van Cost? | Cheapest UK Prices 2026",
+    description: "UK man and van costs broken down by setup, move type, region and access. From £34/hr. Get a free guide price before you book.",
     url: `${siteUrl}/man-and-van-cost`,
     images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("How Much Does a Man and Van Cost?")}&subtitle=${encodeURIComponent("UK Prices 2026")}`, width: 1200, height: 630, alt: "How Much Does a Man and Van Cost? UK 2026" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Much Does a Man and Van Cost? | UK Prices 2026",
+    title: "How Much Does a Man and Van Cost? | Cheapest UK Prices 2026",
     description: "UK man and van costs broken down by move type, region and access. From £34/hr.",
     images: [`${siteUrl}/api/og?title=${encodeURIComponent("How Much Does a Man and Van Cost?")}&subtitle=${encodeURIComponent("UK Prices 2026")}`],
   },
 };
 
 const faqItems = [
+  {
+    q: "What is the cheapest man and van service?",
+    a: "The cheapest man and van option is a self-loading service with one driver and a small transit van, where you carry all items to and from the van yourself. Rates start from £20–£35 per hour. If you need the driver to help with loading and carrying, expect £34–£55 per hour. On Man and Van Club, quotes start from £34/hr for a driver-helps service across most of the UK.",
+  },
   {
     q: "How much does a man and van cost per hour in the UK?",
     a: "In 2026, UK man and van rates start from £34 per hour outside London. London rates start from £55 per hour due to Congestion Charge, ULEZ and higher parking costs. Most local moves take 2–4 hours, so you're typically looking at £100–£280 for a straightforward job.",
@@ -100,7 +104,7 @@ const serviceSchema = {
     priceSpecification: {
       "@type": "PriceSpecification",
       priceCurrency: "GBP",
-      minPrice: "50",
+      minPrice: "34",
     },
   },
 };
@@ -186,6 +190,73 @@ export default function ManAndVanCostPage() {
           <p className="text-sm text-text-secondary text-center mt-6">
             These are guide prices for 2026. Your final quote depends on postcodes, item list, access, stairs, parking and timing. <Link href="/get-started" className="text-accent font-bold hover:underline">Submit your details for a free guide price →</Link>
           </p>
+        </div>
+      </section>
+
+      {/* Rate by Setup — the table AI overviews love to cite */}
+      <section className="py-16 bg-[#F9F9F7] border-y border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-4 text-center">
+            Man and Van Rates by Setup (2026)
+          </h2>
+          <p className="text-text-secondary text-center mb-10 max-w-2xl mx-auto">The hourly rate you pay depends on the van size, how many helpers you need and whether you are loading yourself. Here are the current UK market ranges.</p>
+          <div className="bg-white rounded-2xl border border-border overflow-hidden">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-border bg-primary text-white">
+                  <th className="px-6 py-4 text-[10px] font-black uppercase tracking-widest">Setup</th>
+                  <th className="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-right">Hourly Rate</th>
+                  <th className="px-6 py-4 text-[10px] font-black uppercase tracking-widest">Best For</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border/50">
+                {[
+                  { setup: "1 man + small van (you load)", rate: "£20 – £35/hr", best: "Single items, Facebook Marketplace collections, student moves" },
+                  { setup: "1 man + medium van (driver helps)", rate: "£34 – £55/hr", best: "Small flat moves, partial room relocations, local deliveries" },
+                  { setup: "2 men + medium/large van", rate: "£50 – £75/hr", best: "Heavy furniture, appliances, stairs, 2–3 bed house moves" },
+                ].map((row) => (
+                  <tr key={row.setup} className="hover:bg-[#F9F9F7] transition-colors">
+                    <td className="px-6 py-4 text-sm font-bold text-primary">{row.setup}</td>
+                    <td className="px-6 py-4 text-sm font-black text-accent text-right">{row.rate}</td>
+                    <td className="px-6 py-4 text-sm text-text-secondary">{row.best}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-text-secondary text-center mt-4">
+            Man and Van Club quotes start from £34/hr for a driver-helps service. Most budget operators require a 2-hour minimum booking.
+          </p>
+        </div>
+      </section>
+
+      {/* How to Get the Cheapest Man and Van */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-black text-primary uppercase tracking-tight mb-4 text-center">
+            How to Get the Cheapest Man and Van
+          </h2>
+          <p className="text-text-secondary text-center mb-10 max-w-2xl mx-auto">The price you pay depends on how much lifting you do, when you move and how well you prepare. Here is how to keep costs down.</p>
+          <div className="space-y-4">
+            {[
+              { title: "Help with the loading", desc: "If you carry your own boxes and furniture to the van and back, most drivers will charge their lowest rate. Self-loading is the single biggest way to cut your man and van cost." },
+              { title: "Book midweek and mid-month", desc: "Fridays and Saturdays are the most expensive days — everyone wants to move on the weekend. Tuesdays and Wednesdays are usually the cheapest. End-of-month dates carry a premium because of tenancy changeovers." },
+              { title: "Disassemble furniture in advance", desc: "Take bed frames, wardrobes and tables apart before the mover arrives. It saves 30–60 minutes of billable time. Put screws and bolts in a labelled sandwich bag taped to the item." },
+              { title: "Box everything and move it to the ground floor", desc: "If everything is packed, sealed and waiting at the front door or on the pavement, the mover can load in half the time. Every trip upstairs is billable time." },
+              { title: "Be specific with your item list", desc: "Vague descriptions like \"2-bed flat worth\" get padded quotes because movers plan for the worst case. List every large item — \"1 double bed, 1 wardrobe, 1 sofa, 6 boxes, 1 TV\" — and your quote will be tighter and often lower." },
+              { title: "Book in advance, not same-day", desc: "Same-day moves typically cost 15–30% more because the driver may need to cancel or rearrange another job. Book 3–7 days ahead for the best rate." },
+            ].map((item, i) => (
+              <div key={item.title} className="flex items-start gap-4 bg-[#F9F9F7] p-5 rounded-2xl border border-border/50">
+                <div className="w-8 h-8 bg-accent/10 text-accent rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black">
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 className="font-black text-primary text-sm uppercase tracking-tight mb-1">{item.title}</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
