@@ -145,7 +145,7 @@ export default function Header() {
       </div>
 
       <header className="bg-white border-b border-border sticky top-6 lg:top-0 z-[100] transition-all">
-        {/* Top Info Bar */}
+        {/* Top Info Bar — desktop only */}
         <div className="hidden lg:block bg-primary text-white py-1 border-b border-white/5">
         <div className="container mx-auto px-4 flex justify-between items-center text-[9px] font-black uppercase tracking-[0.2em]">
           <div className="flex gap-6">
@@ -153,16 +153,21 @@ export default function Header() {
               <Mail size={10} className="text-accent" />
               <span>support@manandvanclub.co.uk</span>
             </a>
-            <a href="tel:01217511269" className="flex items-center gap-2 hover:text-accent transition-colors">
-              <Phone size={10} className="text-accent" />
-              <span>0121 751 1269</span>
-            </a>
-          </div>
-          <div className="flex gap-6">
             <div className="flex items-center gap-2">
               <MapPin size={10} className="text-accent" />
               <span>UK-Wide Coverage</span>
             </div>
+          </div>
+          <div className="flex gap-6">
+            <a href="/why-join" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <span>Become a Mover</span>
+            </a>
+            <span className="text-white/30">|</span>
+            {driverLoggedIn ? (
+              <button onClick={handleDriverLogout} className="hover:text-accent transition-colors">Logout</button>
+            ) : (
+              <a href="/login" className="hover:text-accent transition-colors">Driver Login</a>
+            )}
           </div>
         </div>
       </div>
@@ -251,49 +256,38 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/why-join" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
-              Become a Mover
-            </Link>
             <Link href="/about" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors">
               About
             </Link>
           </nav>
 
-          {/* CTAs */}
-          <div className="hidden lg:flex items-center gap-4">
-            {driverLoggedIn ? (
-              <>
-                <Link href="/marketplace" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors px-4" aria-label="Driver marketplace">
-                  Marketplace
-                </Link>
-                <button
-                  type="button"
-                  onClick={handleDriverLogout}
-                  className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 hover:text-accent transition-colors px-2"
-                  aria-label="Log out of driver account"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <Link href="/login" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/60 hover:text-accent transition-colors px-4" aria-label="Driver login portal">
-                Driver Login
-              </Link>
-            )}
+          {/* CTAs — Phone number PRIMARY + Start Request */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:01217511269"
+              className="flex items-center gap-2.5 bg-accent/10 hover:bg-accent/15 text-accent px-5 py-2.5 rounded-xl transition-colors group"
+              aria-label="Call Man and Van Club"
+            >
+              <Phone size={18} className="group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col leading-none">
+                <span className="text-sm font-black tracking-wide">0121 751 1269</span>
+                <span className="text-[9px] font-bold text-accent/60 uppercase tracking-widest">Open 24/7</span>
+              </div>
+            </a>
             <Link href="/get-started" className="btn-orange text-[10px] py-4 px-8 rounded-xl uppercase tracking-[0.2em] font-black shadow-xl shadow-accent/20 hover:scale-105 active:scale-95" aria-label="Start a free move request">
               Start Request
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile — Phone CTA + hamburger */}
           <div className="lg:hidden flex items-center gap-2">
             <a
               href="tel:01217511269"
-              className="flex items-center gap-2 bg-accent/10 text-accent px-3 py-2 rounded-xl text-xs font-black"
+              className="flex items-center gap-2 bg-accent text-white px-4 py-2.5 rounded-xl font-black text-sm shadow-lg shadow-accent/20 active:scale-95 transition-transform"
               aria-label="Call Man and Van Club"
             >
               <Phone size={16} />
-              <span className="hidden sm:inline">Call</span>
+              <span>Call Now</span>
             </a>
             <button 
               className="p-2 text-primary" 
@@ -344,6 +338,12 @@ export default function Header() {
           <Link href="/why-join" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>Become a Mover</Link>
           <Link href="/about" className="font-black uppercase tracking-widest text-xs p-2" onClick={() => setIsOpen(false)}>About Us</Link>
           
+          {/* Mobile menu — big phone CTA */}
+          <a href="tel:01217511269" className="flex items-center justify-center gap-3 bg-accent text-white py-4 rounded-xl font-black uppercase tracking-widest text-sm shadow-lg active:scale-95 transition-transform">
+            <Phone size={20} />
+            0121 751 1269
+          </a>
+
           <div className="flex flex-col gap-3 pt-4 border-t border-border">
             {driverLoggedIn ? (
               <>
