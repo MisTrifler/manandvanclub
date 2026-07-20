@@ -38,6 +38,11 @@ const REVIEW_CARDS = [
     text: "Good price and customer service! Very pleased.",
   },
   {
+    name: "Harman S.",
+    platform: "Google",
+    text: "Amazing! Thank you for the help.",
+  },
+  {
     name: "VC-17",
     platform: "Yell",
     text: "Great experience with Man and Van Club. Simple easy booking by calling, got matched with a surprisingly low fee compared to other services. Definitely will use again!",
@@ -361,7 +366,7 @@ export default function HomeContent() {
             What our customers say
           </h2>
           <p className="text-sm text-white/60 mt-1">
-            5.0 / 5.0 across 9 verified reviews on Google, Trustpilot & Yell
+            5.0 / 5.0 across 10 verified reviews on Google, Trustpilot & Yell
           </p>
         </div>
 
