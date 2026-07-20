@@ -215,6 +215,115 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* ──────────────────── Customer Reviews ──────────────────── */}
+      <section className="py-12 lg:py-14 bg-[#0f172a] overflow-hidden">
+        <div className="container mx-auto px-4 text-center mb-8">
+          <div className="flex justify-center gap-1 mb-2">
+            {[1,2,3,4,5].map((s) => (
+              <span key={s} className="text-accent text-xl">★</span>
+            ))}
+          </div>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tighter">
+            What our customers say
+          </h2>
+          <p className="text-sm text-white/60 mt-1">
+            5.0 / 5.0 across 6 verified reviews on Google, Trustpilot & Yell
+          </p>
+        </div>
+
+        {/* Scrolling review cards — slow scroll, pauses on hover */}
+        <div className="relative">
+          {/* Fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0f172a] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0f172a] to-transparent z-10 pointer-events-none" />
+
+          <div className="flex gap-6 animate-scroll-reviews hover:[animation-play-state:paused]">
+            {/* Duplicate the cards for seamless loop */}
+            {[1, 2].map((set) => (
+              <div key={set} className="flex gap-6 shrink-0">
+                {[
+                  {
+                    name: "Customer Name",
+                    platform: "Google",
+                    text: "Your Google review text will go here. Paste your real reviews and this placeholder will be replaced.",
+                    stars: 5,
+                  },
+                  {
+                    name: "Customer Name",
+                    platform: "Trustpilot",
+                    text: "Your Trustpilot review text will go here. Paste your real reviews and this placeholder will be replaced.",
+                    stars: 5,
+                  },
+                  {
+                    name: "Customer Name",
+                    platform: "Yell",
+                    text: "Your Yell review text will go here. Paste your real reviews and this placeholder will be replaced.",
+                    stars: 5,
+                  },
+                  {
+                    name: "Customer Name",
+                    platform: "Google",
+                    text: "Another Google review will go here. Paste all your reviews and I'll format them perfectly.",
+                    stars: 5,
+                  },
+                ].map((review, i) => (
+                  <div
+                    key={`${set}-${i}`}
+                    className="w-[300px] shrink-0 bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col"
+                  >
+                    <div className="flex items-center gap-1 mb-3">
+                      {[1,2,3,4,5].map((s) => (
+                        <span key={s} className="text-accent text-sm">★</span>
+                      ))}
+                    </div>
+                    <p className="text-sm text-white/90 leading-relaxed flex-1">
+                      &ldquo;{review.text}&rdquo;
+                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <span className="text-xs font-black text-white/70">{review.name}</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-accent/70 bg-accent/10 px-2 py-0.5 rounded-full">
+                        {review.platform}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 text-center mt-8">
+          <div className="flex justify-center gap-4 flex-wrap">
+            <a
+              href="https://uk.trustpilot.com/review/manandvanclub.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-accent transition-colors"
+            >
+              Trustpilot →
+            </a>
+            <span className="text-white/20">·</span>
+            <a
+              href="https://www.yell.com/biz/man-and-van-club-walsall-11043227/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-accent transition-colors"
+            >
+              Yell →
+            </a>
+            <span className="text-white/20">·</span>
+            <a
+              href="https://share.google/xemGXWRByHBK5PSbN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-accent transition-colors"
+            >
+              Google →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ──────────────────── Popular Areas ──────────────────── */}
       <section className="py-12 lg:py-14 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-4xl">
