@@ -855,6 +855,34 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   </div>
                   <ArrowUpRight size={16} className="text-primary/30 ml-auto group-hover:text-accent transition-colors" />
                </a>
+
+               {/* Trustpilot Profile Link */}
+               <a
+                  href="https://uk.trustpilot.com/review/manandvanclub.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-[#F9F9F7] p-8 rounded-[2rem] border border-border/50 hover:border-accent hover:shadow-md transition-all group"
+               >
+                  <div className="bg-green-500/10 rounded-full p-3 group-hover:scale-110 transition-transform">
+                     <Star size={22} className="text-green-500" />
+                  </div>
+                  <div>
+                     <p className="text-xs font-bold uppercase tracking-widest text-primary/50">See us on</p>
+                     <p className="text-lg font-black tracking-tight text-primary">Trustpilot</p>
+                  </div>
+                  <ArrowUpRight size={16} className="text-primary/30 ml-auto group-hover:text-accent transition-colors" />
+               </a>
+
+               {/* Reviews Summary */}
+               <div className="bg-[#F9F9F7] p-8 rounded-[2rem] border border-border/50 text-center">
+                  <div className="flex justify-center gap-1 mb-2">
+                     {[1,2,3,4,5].map((s) => (
+                        <Star key={s} size={20} className="text-accent fill-accent" />
+                     ))}
+                  </div>
+                  <p className="text-2xl font-black text-primary">5.0 / 5.0</p>
+                  <p className="text-xs font-bold text-primary/50 uppercase tracking-widest mt-1">6 verified reviews</p>
+               </div>
             </aside>
 
           </div>

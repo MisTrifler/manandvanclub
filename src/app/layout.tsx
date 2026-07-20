@@ -197,8 +197,16 @@ const organizationSchema = {
   },
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61590898873944",
-    "https://www.yell.com/biz/man-and-van-club-walsall-11043227/"
-  ]
+    "https://www.yell.com/biz/man-and-van-club-walsall-11043227/",
+    "https://uk.trustpilot.com/review/manandvanclub.co.uk",
+    "https://share.google/xemGXWRByHBK5PSbN"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "6",
+    "bestRating": "5"
+  }
 };
 
 // WebSite schema with SearchAction — signals to Google that this is a real, searchable website

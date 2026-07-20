@@ -57,6 +57,7 @@ All approved movers must complete: business details verification, contact inform
 ### EXTERNAL PROFILES
 - Facebook: https://www.facebook.com/profile.php?id=61590898873944
 - Yell: https://www.yell.com/biz/man-and-van-club-walsall-11043227/
+- Trustpilot: https://uk.trustpilot.com/review/manandvanclub.co.uk
 - Google Business Profile: Man and Van Club, Walsall
 
 ### BUSINESS DETAILS
