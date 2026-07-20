@@ -355,17 +355,17 @@ export default function HomeContent() {
       </section>
 
       {/* ──────────────────── Customer Reviews ──────────────────── */}
-      <section className="py-12 lg:py-14 bg-[#0f172a] overflow-hidden">
+      <section className="py-12 lg:py-14 bg-white overflow-hidden">
         <div className="container mx-auto px-4 text-center mb-8">
           <div className="flex justify-center gap-1 mb-2">
             {[1,2,3,4,5].map((s) => (
               <span key={s} className="text-accent text-xl">★</span>
             ))}
           </div>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tighter">
+          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter">
             What our customers say
           </h2>
-          <p className="text-sm text-white/60 mt-1">
+          <p className="text-sm text-text-secondary mt-1">
             5.0 / 5.0 across 10 verified reviews on Google, Trustpilot & Yell
           </p>
         </div>
@@ -373,14 +373,14 @@ export default function HomeContent() {
         {/* Scrollable review cards — auto-scrolls, drag/swipe, arrow buttons */}
         <div className="relative group/scroll">
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0f172a] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0f172a] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           {/* Left arrow */}
           <button
             type="button"
             onClick={() => scrollByCard("left")}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-primary/5 border border-border text-primary/60 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
             aria-label="Scroll reviews left"
           >
             <ChevronLeft size={20} />
@@ -389,7 +389,7 @@ export default function HomeContent() {
           <button
             type="button"
             onClick={() => scrollByCard("right")}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-primary/5 border border-border text-primary/60 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
             aria-label="Scroll reviews right"
           >
             <ChevronRight size={20} />
@@ -413,19 +413,19 @@ export default function HomeContent() {
                 {REVIEW_CARDS.map((review, i) => (
                   <div
                     key={`${set}-${i}`}
-                    className="w-[300px] shrink-0 bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col"
+                    className="w-[300px] shrink-0 bg-[#F9F9F7] border border-border/50 rounded-2xl p-6 flex flex-col"
                   >
                     <div className="flex items-center gap-1 mb-3">
                       {[1,2,3,4,5].map((s) => (
                         <span key={s} className="text-accent text-sm">★</span>
                       ))}
                     </div>
-                    <p className="text-sm text-white/90 leading-relaxed flex-1">
+                    <p className="text-sm text-text-secondary leading-relaxed flex-1">
                       &ldquo;{review.text}&rdquo;
                     </p>
                     <div className="mt-4 flex items-center justify-between">
-                      <span className="text-xs font-black text-white/70">{review.name}</span>
-                      <span className="text-[9px] font-black uppercase tracking-widest text-accent/70 bg-accent/10 px-2 py-0.5 rounded-full">
+                      <span className="text-xs font-black text-primary/70">{review.name}</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-accent bg-accent/10 px-2 py-0.5 rounded-full">
                         {review.platform}
                       </span>
                     </div>
@@ -442,25 +442,25 @@ export default function HomeContent() {
               href="https://uk.trustpilot.com/review/manandvanclub.co.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-accent transition-colors"
+              className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors"
             >
               Trustpilot →
             </a>
-            <span className="text-white/20">·</span>
+            <span className="text-primary/20">·</span>
             <a
               href="https://www.yell.com/biz/man-and-van-club-walsall-11043227/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-accent transition-colors"
+              className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors"
             >
               Yell →
             </a>
-            <span className="text-white/20">·</span>
+            <span className="text-primary/20">·</span>
             <a
               href="https://share.google/xemGXWRByHBK5PSbN"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-accent transition-colors"
+              className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors"
             >
               Google →
             </a>
