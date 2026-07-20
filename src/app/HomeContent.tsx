@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   Phone,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import type { IntentType } from "@/lib/intent-detection";
@@ -19,8 +21,38 @@ const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: st
   { label: "Student", emoji: "🎓", intent: "student" },
 ];
 
+const REVIEW_CARDS = [
+  {
+    name: "Mansi B.",
+    platform: "Google",
+    text: "Amazing service, easy and seamless. Adrian was punctual and got the job done fast. Definitely would use again!",
+  },
+  {
+    name: "Umar M.",
+    platform: "Google",
+    text: "Very pleased with the service. The booking process was straightforward and communication was clear throughout.",
+  },
+  {
+    name: "Parmod C.",
+    platform: "Google",
+    text: "Good price and customer service! Very pleased.",
+  },
+  {
+    name: "VC-17",
+    platform: "Yell",
+    text: "Great experience with Man and Van Club. Simple easy booking by calling, got matched with a surprisingly low fee compared to other services. Definitely will use again!",
+  },
+];
+
 export default function HomeContent() {
   const [selectedIntent, setSelectedIntent] = useState<IntentType | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
+  const autoScrollId = useRef<ReturnType<typeof requestAnimationFrame> | null>(null);
+  const userPaused = useRef(false);
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleTileClick = useCallback((intent: IntentType) => {
     setSelectedIntent(intent);
@@ -32,6 +64,108 @@ export default function HomeContent() {
         }
       });
     });
+  }, []);
+
+  // ── Auto-scroll reviews ──
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    // Set initial scroll to 1/3 so we have room to scroll both directions
+    const oneThird = el.scrollWidth / 3;
+    el.scrollLeft = oneThird;
+
+    const speed = 0.6; // px per frame — gentle, readable
+
+    function step() {
+      if (!el) return;
+      if (!userPaused.current) {
+        el.scrollLeft += speed;
+        // Seamless loop: if we've scrolled past the first third (into the second copy),
+        // reset back by one-third width to stay in the middle copy
+        const oneThird = el.scrollWidth / 3;
+        if (el.scrollLeft >= oneThird * 2) {
+          el.scrollLeft -= oneThird;
+        }
+        if (el.scrollLeft <= 0) {
+          el.scrollLeft += oneThird;
+        }
+      }
+      autoScrollId.current = requestAnimationFrame(step);
+    }
+
+    autoScrollId.current = requestAnimationFrame(step);
+    return () => {
+      if (autoScrollId.current) cancelAnimationFrame(autoScrollId.current);
+    };
+  }, []);
+
+  // ── Mouse drag-to-scroll ──
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    isDragging.current = true;
+    startX.current = e.pageX;
+    scrollStart.current = el.scrollLeft;
+    userPaused.current = true;
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    el.style.cursor = "grabbing";
+    e.preventDefault();
+  }, []);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    const dx = e.pageX - startX.current;
+    el.scrollLeft = scrollStart.current - dx;
+  }, []);
+
+  const onMouseUp = useCallback(() => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    const el = scrollRef.current;
+    if (el) el.style.cursor = "grab";
+    // Resume auto-scroll after 2s of no interaction
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => { userPaused.current = false; }, 2000);
+  }, []);
+
+  // ── Touch drag-to-scroll ──
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    isDragging.current = true;
+    startX.current = e.touches[0].pageX;
+    scrollStart.current = el.scrollLeft;
+    userPaused.current = true;
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+  }, []);
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!isDragging.current) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    const dx = e.touches[0].pageX - startX.current;
+    el.scrollLeft = scrollStart.current - dx;
+  }, []);
+
+  const onTouchEnd = useCallback(() => {
+    isDragging.current = false;
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => { userPaused.current = false; }, 2000);
+  }, []);
+
+  // ── Arrow button navigation ──
+  const scrollByCard = useCallback((direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = 324; // 300px card + 24px gap
+    el.scrollBy({ left: direction === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
+    // Pause briefly then resume
+    userPaused.current = true;
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => { userPaused.current = false; }, 3000);
   }, []);
 
   return (
@@ -231,42 +365,47 @@ export default function HomeContent() {
           </p>
         </div>
 
-        {/* Scrolling review cards — slow scroll, pauses on hover */}
-        <div className="relative">
+        {/* Scrollable review cards — auto-scrolls, drag/swipe, arrow buttons */}
+        <div className="relative group/scroll">
           {/* Fade edges */}
           <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0f172a] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0f172a] to-transparent z-10 pointer-events-none" />
 
-          <div className="flex gap-6 animate-scroll-reviews hover:[animation-play-state:paused]">
-            {/* Duplicate the cards for seamless loop */}
-            {[1, 2].map((set) => (
+          {/* Left arrow */}
+          <button
+            type="button"
+            onClick={() => scrollByCard("left")}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
+            aria-label="Scroll reviews left"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          {/* Right arrow */}
+          <button
+            type="button"
+            onClick={() => scrollByCard("right")}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
+            aria-label="Scroll reviews right"
+          >
+            <ChevronRight size={20} />
+          </button>
+
+          {/* Scroll container — triplicate for seamless infinite loop */}
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scrollbar-none cursor-grab select-none"
+            style={{ WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp}
+            onMouseLeave={onMouseUp}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            {[1, 2, 3].map((set) => (
               <div key={set} className="flex gap-6 shrink-0">
-                {[
-                  {
-                    name: "Mansi B.",
-                    platform: "Google",
-                    text: "Amazing service, easy and seamless. Adrian was punctual and got the job done fast. Definitely would use again!",
-                    stars: 5,
-                  },
-                  {
-                    name: "Umar M.",
-                    platform: "Google",
-                    text: "Very pleased with the service. The booking process was straightforward and communication was clear throughout.",
-                    stars: 5,
-                  },
-                  {
-                    name: "Parmod C.",
-                    platform: "Google",
-                    text: "Good price and customer service! Very pleased.",
-                    stars: 5,
-                  },
-                  {
-                    name: "VC-17",
-                    platform: "Yell",
-                    text: "Great experience with Man and Van Club. Simple easy booking by calling, got matched with a surprisingly low fee compared to other services. Definitely will use again!",
-                    stars: 5,
-                  },
-                ].map((review, i) => (
+                {REVIEW_CARDS.map((review, i) => (
                   <div
                     key={`${set}-${i}`}
                     className="w-[300px] shrink-0 bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col"

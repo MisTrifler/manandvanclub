@@ -64,20 +64,11 @@ h1, h2, h3, h4, h5, h6 {
   animation: floating-call-pulse 2s ease-in-out infinite;
 }
 
-/* ── Review Marquee Scroll ── */
-@keyframes scroll-reviews {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* ── Review Carousel — scrollbar hidden ── */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
-
-.animate-scroll-reviews {
-  animation: scroll-reviews 40s linear infinite;
-}
-
-.animate-scroll-reviews:hover {
-  animation-play-state: paused;
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
