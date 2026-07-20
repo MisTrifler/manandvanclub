@@ -204,7 +204,7 @@ const organizationSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
-    "reviewCount": "6",
+    "reviewCount": "9",
     "bestRating": "5"
   }
 };

@@ -227,7 +227,7 @@ export default function HomeContent() {
             What our customers say
           </h2>
           <p className="text-sm text-white/60 mt-1">
-            5.0 / 5.0 across 6 verified reviews on Google, Trustpilot & Yell
+            5.0 / 5.0 across 9 verified reviews on Google, Trustpilot & Yell
           </p>
         </div>
 
@@ -243,27 +243,27 @@ export default function HomeContent() {
               <div key={set} className="flex gap-6 shrink-0">
                 {[
                   {
-                    name: "Customer Name",
+                    name: "Mansi B.",
                     platform: "Google",
-                    text: "Your Google review text will go here. Paste your real reviews and this placeholder will be replaced.",
+                    text: "Amazing service, easy and seamless. Adrian was punctual and got the job done fast. Definitely would use again!",
                     stars: 5,
                   },
                   {
-                    name: "Customer Name",
-                    platform: "Trustpilot",
-                    text: "Your Trustpilot review text will go here. Paste your real reviews and this placeholder will be replaced.",
+                    name: "Umar M.",
+                    platform: "Google",
+                    text: "Very pleased with the service. The booking process was straightforward and communication was clear throughout.",
                     stars: 5,
                   },
                   {
-                    name: "Customer Name",
+                    name: "Parmod C.",
+                    platform: "Google",
+                    text: "Good price and customer service! Very pleased.",
+                    stars: 5,
+                  },
+                  {
+                    name: "VC-17",
                     platform: "Yell",
-                    text: "Your Yell review text will go here. Paste your real reviews and this placeholder will be replaced.",
-                    stars: 5,
-                  },
-                  {
-                    name: "Customer Name",
-                    platform: "Google",
-                    text: "Another Google review will go here. Paste all your reviews and I'll format them perfectly.",
+                    text: "Great experience with Man and Van Club. Simple easy booking by calling, got matched with a surprisingly low fee compared to other services. Definitely will use again!",
                     stars: 5,
                   },
                 ].map((review, i) => (
