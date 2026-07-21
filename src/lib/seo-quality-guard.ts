@@ -252,6 +252,56 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "east-kilbride",
   "livingston",
   "falkirk",
+
+  // ─── East Midlands — Derbyshire towns (11 NEW) ───
+  "chesterfield",
+  "glossop",
+  "ilkeston",
+  "long-eaton",
+  "belper",
+  "swadlincote",
+  "buxton",
+  "ripley",
+  "heanor",
+  "alfreton",
+  "matlock",
+
+  // ─── East Midlands — Leicestershire towns (7 NEW) ───
+  "loughborough",
+  "coalville",
+  "hinckley",
+  "melton-mowbray",
+  "market-harborough",
+  "ashby-de-la-zouch",
+  "lutterworth",
+
+  // ─── East Midlands — Lincolnshire towns (8 NEW) ───
+  "grantham",
+  "boston",
+  "spalding",
+  "stamford",
+  "gainsborough",
+  "sleaford",
+  "skegness",
+  "louth",
+
+  // ─── East Midlands — Northamptonshire towns (5 NEW) ───
+  "kettering",
+  "corby",
+  "wellingborough",
+  "rushden",
+  "daventry",
+
+  // ─── East Midlands — Nottinghamshire towns (6 NEW) ───
+  "mansfield",
+  "newark-on-trent",
+  "worksop",
+  "sutton-in-ashfield",
+  "retford",
+  "kirkby-in-ashfield",
+
+  // ─── East Midlands — Rutland (1 NEW) ───
+  "oakham",
 ]);
 
 export function isSeoLaunchMode(): boolean {

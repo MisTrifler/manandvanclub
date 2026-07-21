@@ -90,10 +90,12 @@ export default function Header() {
         { name: "Walsall", href: "/man-and-van-walsall" },
         { name: "Wolverhampton", href: "/man-and-van-wolverhampton" },
         { name: "Coventry", href: "/man-and-van-coventry" },
+        { name: "East Midlands Hub", href: "/man-and-van-east-midlands" },
         { name: "Nottingham", href: "/man-and-van-nottingham" },
         { name: "Leicester", href: "/man-and-van-leicester" },
         { name: "Derby", href: "/man-and-van-derby" },
-        { name: "East Midlands Hub", href: "/man-and-van-east-midlands" },
+        { name: "Chesterfield", href: "/man-and-van-chesterfield" },
+        { name: "Mansfield", href: "/man-and-van-mansfield" },
       ],
     },
     {
@@ -130,6 +132,7 @@ export default function Header() {
         { name: "Edinburgh", href: "/man-and-van-edinburgh" },
         { name: "Glasgow", href: "/man-and-van-glasgow" },
         { name: "Cardiff", href: "/man-and-van-cardiff" },
+        { name: "Belfast", href: "/man-and-van-belfast" },
       ],
     },
   ];

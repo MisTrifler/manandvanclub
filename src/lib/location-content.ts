@@ -436,6 +436,50 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     oxford: ["OX1", "OX2", "OX3", "OX4"],
     cambridge: ["CB1", "CB2", "CB3", "CB4"],
     reading: ["RG1", "RG2", "RG4", "RG5", "RG6"],
+    // East Midlands — Derbyshire
+    chesterfield: ["S40", "S41", "S42", "S43", "S44"],
+    glossop: ["SK13"],
+    ilkeston: ["DE7"],
+    "long-eaton": ["NG10"],
+    belper: ["DE56"],
+    swadlincote: ["DE11", "DE12"],
+    buxton: ["SK17"],
+    ripley: ["DE5"],
+    heanor: ["DE75"],
+    alfreton: ["DE55"],
+    matlock: ["DE4"],
+    // East Midlands — Leicestershire
+    loughborough: ["LE11", "LE12"],
+    coalville: ["LE67"],
+    hinckley: ["LE10"],
+    "melton-mowbray": ["LE13", "LE14"],
+    "market-harborough": ["LE16"],
+    "ashby-de-la-zouch": ["LE65"],
+    lutterworth: ["LE17"],
+    // East Midlands — Lincolnshire
+    grantham: ["NG31", "NG32", "NG33"],
+    boston: ["PE20", "PE21", "PE22"],
+    spalding: ["PE11", "PE12"],
+    stamford: ["PE9"],
+    gainsborough: ["DN21"],
+    sleaford: ["NG34"],
+    skegness: ["PE24", "PE25"],
+    louth: ["LN11"],
+    // East Midlands — Northamptonshire
+    kettering: ["NN14", "NN15", "NN16"],
+    corby: ["NN17", "NN18"],
+    wellingborough: ["NN8", "NN9"],
+    rushden: ["NN10"],
+    daventry: ["NN11"],
+    // East Midlands — Nottinghamshire
+    mansfield: ["NG18", "NG19", "NG20"],
+    "newark-on-trent": ["NG22", "NG23", "NG24"],
+    worksop: ["S80", "S81"],
+    "sutton-in-ashfield": ["NG17"],
+    retford: ["DN22"],
+    "kirkby-in-ashfield": ["NG17"],
+    // East Midlands — Rutland
+    oakham: ["LE15"],
     // Other
     sheffield: ["S1", "S2", "S3", "S6", "S7", "S8", "S10"],
     "stoke-on-trent": ["ST1", "ST2", "ST3", "ST4", "ST5", "ST6"],
@@ -590,6 +634,15 @@ const COVERAGE_SIGNAL_SLUGS = new Set([
   'luton', 'bournemouth', 'slough', 'norwich', 'ipswich',
   'peterborough', 'exeter', 'newport', 'inverness', 'stirling',
   'perth', 'paisley', 'doncaster', 'rotherham', 'medway',
+  // East Midlands — expanded coverage
+  'chesterfield', 'loughborough', 'mansfield', 'grantham', 'boston',
+  'kettering', 'corby', 'gainsborough', 'oakham', 'sleaford',
+  'spalding', 'stamford', 'skegness', 'worksop', 'newark-on-trent',
+  'wellingborough', 'rushden', 'daventry', 'hinckley', 'melton-mowbray',
+  'market-harborough', 'coalville', 'ashby-de-la-zouch', 'ilkeston',
+  'belper', 'ripley', 'matlock', 'swadlincote', 'buxton',
+  'heanor', 'alfreton', 'long-eaton', 'glossop', 'louth',
+  'lutterworth', 'sutton-in-ashfield', 'retford', 'kirkby-in-ashfield',
 ]);
 
 // Cross-region nearby links for stronger internal linking (Step 3)
@@ -639,6 +692,15 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   'doncaster': ['sheffield', 'rotherham', 'barnsley', 'leeds'],
   'rotherham': ['sheffield', 'doncaster', 'barnsley', 'leeds'],
   'barnsley': ['sheffield', 'rotherham', 'doncaster', 'wakefield'],
+  "chesterfield": ["sheffield", "derby", "nottingham", "mansfield"],
+  "loughborough": ["nottingham", "leicester", "derby"],
+  "mansfield": ["nottingham", "chesterfield", "derby"],
+  "grantham": ["nottingham", "lincoln", "leicester"],
+  "boston": ["lincoln", "spalding", "sleaford"],
+  "kettering": ["northampton", "corby", "wellingborough"],
+  "corby": ["northampton", "kettering", "peterborough"],
+  "gainsborough": ["lincoln", "doncaster"],
+  "oakham": ["stamford", "corby", "nottingham"],
 };
 
 function getCrossRegionLinks(loc: LocationData): { slug: string; name: string }[] {

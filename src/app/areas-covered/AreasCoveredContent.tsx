@@ -1,14 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Phone } from "lucide-react";
 import { LOCATIONS, LOCATION_REGIONS } from "@/constants/locations";
-import { MapPin, ArrowUpRight, Search } from "lucide-react";
+import { MapPin, ArrowUpRight, Search, X } from "lucide-react";
 
 export default function AreasCoveredContent() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const filteredLocations = useMemo(() => {
     let filtered = LOCATIONS;
@@ -30,6 +32,27 @@ export default function AreasCoveredContent() {
 
     return filtered;
   }, [searchQuery, activeRegion]);
+
+  // Live search suggestions — shown as dropdown below search bar
+  const searchSuggestions = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase();
+    return LOCATIONS.filter(
+      (l) =>
+        l.name.toLowerCase().includes(q) ||
+        l.county.toLowerCase().includes(q) ||
+        l.nearbyAreas.some((a) => a.toLowerCase().includes(q))
+    ).slice(0, 12);
+  }, [searchQuery]);
+
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  // Auto-scroll to results when search changes
+  useEffect(() => {
+    if (searchQuery.trim() && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [searchQuery]);
 
   const locationsByRegion = useMemo(() => {
     const grouped: Record<string, typeof LOCATIONS> = {};
@@ -65,7 +88,7 @@ export default function AreasCoveredContent() {
               {totalLocations} towns and cities, with West Midlands coverage as a priority.
             </p>
 
-            {/* Search */}
+            {/* Search with live dropdown */}
             <div className="max-w-xl mx-auto relative pt-4">
               <div className="relative">
                 <Search
@@ -73,14 +96,92 @@ export default function AreasCoveredContent() {
                   className="absolute left-5 top-1/2 -translate-y-1/2 text-primary/30"
                 />
                 <input
+                  ref={searchInputRef}
                   type="text"
                   placeholder="Search for your town or city..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-14 pr-6 py-5 rounded-[2rem] bg-white border border-border text-primary font-black uppercase text-[10px] tracking-widest placeholder:text-primary/30 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowSuggestions(true);
+                  }}
+                  onFocus={() => setShowSuggestions(true)}
+                  className="w-full pl-14 pr-12 py-5 rounded-[2rem] bg-white border border-border text-primary font-black uppercase text-sm tracking-widest placeholder:text-primary/30 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
                 />
+                {searchQuery && (
+                  <button
+                    onClick={() => {
+                      setSearchQuery("");
+                      searchInputRef.current?.focus();
+                    }}
+                    className="absolute right-5 top-1/2 -translate-y-1/2 text-primary/30 hover:text-primary transition-colors"
+                    aria-label="Clear search"
+                  >
+                    <X size={18} />
+                  </button>
+                )}
               </div>
+
+              {/* Live search dropdown */}
+              {showSuggestions && searchQuery.trim() && searchSuggestions.length > 0 && (
+                <div className="absolute z-50 w-full mt-2 bg-white border border-border rounded-2xl shadow-2xl overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border bg-[#F9F9F7]">
+                    <p className="text-[9px] font-black uppercase tracking-widest text-primary/40">
+                      {filteredLocations.length} location{filteredLocations.length !== 1 ? "s" : ""} found
+                    </p>
+                  </div>
+                  <div className="max-h-[400px] overflow-y-auto">
+                    {searchSuggestions.map((loc) => (
+                      <Link
+                        key={loc.slug}
+                        href={`/man-and-van-${loc.slug}`}
+                        className="flex items-center justify-between px-5 py-4 hover:bg-accent/5 transition-colors border-b border-border/50 last:border-0"
+                        onClick={() => setShowSuggestions(false)}
+                      >
+                        <div className="flex items-center gap-3">
+                          <MapPin size={14} className="text-accent flex-shrink-0" />
+                          <div>
+                            <span className="font-black text-primary text-sm uppercase tracking-tight">{loc.name}</span>
+                            <span className="text-[10px] text-primary/40 font-bold uppercase tracking-widest ml-2">{loc.county}</span>
+                          </div>
+                        </div>
+                        <span className="text-[9px] font-black uppercase tracking-widest text-primary/30 bg-[#F9F9F7] px-2 py-1 rounded-full">{loc.region}</span>
+                      </Link>
+                    ))}
+                  </div>
+                  {filteredLocations.length > 12 && (
+                    <div className="px-5 py-3 border-t border-border bg-[#F9F9F7]">
+                      <button
+                        onClick={() => {
+                          setShowSuggestions(false);
+                          resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }}
+                        className="text-[10px] font-black uppercase tracking-widest text-accent hover:text-primary transition-colors"
+                      >
+                        View all {filteredLocations.length} results below ↓
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* No results in dropdown */}
+              {showSuggestions && searchQuery.trim() && searchSuggestions.length === 0 && (
+                <div className="absolute z-50 w-full mt-2 bg-white border border-border rounded-2xl shadow-2xl overflow-hidden">
+                  <div className="px-5 py-6 text-center">
+                    <p className="font-black text-primary text-sm uppercase tracking-tight">No locations found</p>
+                    <p className="text-text-secondary text-sm mt-1">Try a different search term or browse by region below.</p>
+                  </div>
+                </div>
+              )}
             </div>
+
+            {/* Click outside to close suggestions */}
+            {showSuggestions && searchQuery.trim() && (
+              <div
+                className="fixed inset-0 z-40"
+                onClick={() => setShowSuggestions(false)}
+              />
+            )}
           </div>
         </div>
       </section>
@@ -103,16 +204,16 @@ export default function AreasCoveredContent() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[
               { name: "West Midlands", href: "/man-and-van-west-midlands", desc: "Birmingham, Walsall, Wolverhampton, Dudley, Coventry and Black Country towns" },
-              { name: "East Midlands", href: "/man-and-van-east-midlands", desc: "Nottingham, Leicester, Derby, Northampton, Lincoln and nearby areas" },
+              { name: "East Midlands", href: "/man-and-van-east-midlands", desc: "Nottingham, Leicester, Derby, Northampton, Lincoln, Chesterfield, Mansfield and more" },
               { name: "London", href: "/man-and-van-london", desc: "Croydon, Bromley, Romford, Wembley, Ealing, Stratford and 20+ boroughs" },
               { name: "Greater Manchester", href: "/man-and-van-manchester", desc: "Salford, Bolton, Bury, Rochdale, Stockport, Wigan and nearby towns" },
               { name: "West Yorkshire", href: "/man-and-van-leeds", desc: "Bradford, Wakefield, Huddersfield, Halifax, Dewsbury and nearby towns" },
               { name: "Merseyside", href: "/man-and-van-liverpool", desc: "Bootle, Birkenhead, Wallasey, Southport, St Helens and Wirral" },
               { name: "South West", href: "/man-and-van-bristol", desc: "Bath, Weston-super-Mare, Taunton, Swindon, Cheltenham, Gloucester" },
-              { name: "South Yorkshire", href: "/man-and-van-sheffield", desc: "Sheffield city centre, Hillsborough, Broomhill, Dore and surrounding areas" },
-              { name: "Scotland", href: "/man-and-van-glasgow", desc: "Glasgow, Edinburgh, Aberdeen and Dundee" },
-              { name: "Wales", href: "/man-and-van-cardiff", desc: "Cardiff, Swansea and surrounding areas" },
-              { name: "North East", href: "/man-and-van-newcastle-upon-tyne", desc: "Newcastle upon Tyne, Jesmond, Gosforth and surrounding areas" },
+              { name: "South Yorkshire", href: "/man-and-van-sheffield", desc: "Sheffield, Doncaster, Rotherham, Barnsley" },
+              { name: "Scotland", href: "/man-and-van-glasgow", desc: "Glasgow, Edinburgh, Aberdeen, Dundee, Stirling, Inverness and more" },
+              { name: "Wales", href: "/man-and-van-cardiff", desc: "Cardiff, Swansea, Newport, Wrexham and more" },
+              { name: "North East", href: "/man-and-van-newcastle-upon-tyne", desc: "Newcastle, Sunderland, Middlesbrough, Durham and more" },
             ].map((hub) => (
               <Link
                 key={hub.href}
@@ -189,8 +290,27 @@ export default function AreasCoveredContent() {
       </section>
 
       {/* Locations Grid */}
-      <section className="py-24 lg:py-32">
+      <section className="py-24 lg:py-32" ref={resultsRef}>
         <div className="container mx-auto px-4">
+          {/* Active search indicator */}
+          {searchQuery.trim() && (
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-3 bg-accent/10 text-accent px-6 py-3 rounded-full border border-accent/20">
+                <Search size={14} />
+                <span className="font-black uppercase tracking-widest text-[10px]">
+                  {filteredLocations.length} result{filteredLocations.length !== 1 ? "s" : ""} for &ldquo;{searchQuery}&rdquo;
+                </span>
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="hover:text-primary transition-colors"
+                  aria-label="Clear search"
+                >
+                  <X size={14} />
+                </button>
+              </div>
+            </div>
+          )}
+
           {filteredLocations.length === 0 ? (
             <div className="text-center py-24">
               <p className="text-2xl font-black text-primary uppercase tracking-tight">
@@ -199,6 +319,15 @@ export default function AreasCoveredContent() {
               <p className="text-text-secondary mt-4 font-medium">
                 Try a different search term or clear the filters.
               </p>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setActiveRegion(null);
+                }}
+                className="btn-orange px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs mt-8"
+              >
+                Clear All Filters
+              </button>
             </div>
           ) : (
             <div className="space-y-24">
