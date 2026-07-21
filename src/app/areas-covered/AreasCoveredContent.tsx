@@ -11,6 +11,7 @@ export default function AreasCoveredContent() {
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const filteredLocations = useMemo(() => {
     let filtered = LOCATIONS;
@@ -45,8 +46,6 @@ export default function AreasCoveredContent() {
     ).slice(0, 12);
   }, [searchQuery]);
 
-  const [showSuggestions, setShowSuggestions] = useState(false);
-
   // Auto-scroll to results when search changes
   useEffect(() => {
     if (searchQuery.trim() && resultsRef.current) {
@@ -66,9 +65,9 @@ export default function AreasCoveredContent() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Hero */}
-      <section className="bg-[#F9F9F7] py-24 lg:py-32 border-b border-border overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+      {/* Hero — NO overflow-hidden so dropdown can render */}
+      <section className="bg-[#F9F9F7] py-24 lg:py-32 border-b border-border relative">
+        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none overflow-hidden">
           <div className="absolute inset-0 grid grid-cols-6 gap-4">
             {[...Array(24)].map((_, i) => (
               <div key={i} className="border border-primary/20 h-32 w-full" />
@@ -121,9 +120,9 @@ export default function AreasCoveredContent() {
                 )}
               </div>
 
-              {/* Live search dropdown */}
+              {/* Live search dropdown — rendered outside overflow context */}
               {showSuggestions && searchQuery.trim() && searchSuggestions.length > 0 && (
-                <div className="absolute z-50 w-full mt-2 bg-white border border-border rounded-2xl shadow-2xl overflow-hidden">
+                <div className="absolute z-[150] w-full mt-2 bg-white border border-border rounded-2xl shadow-2xl overflow-hidden">
                   <div className="px-5 py-3 border-b border-border bg-[#F9F9F7]">
                     <p className="text-[9px] font-black uppercase tracking-widest text-primary/40">
                       {filteredLocations.length} location{filteredLocations.length !== 1 ? "s" : ""} found
@@ -166,7 +165,7 @@ export default function AreasCoveredContent() {
 
               {/* No results in dropdown */}
               {showSuggestions && searchQuery.trim() && searchSuggestions.length === 0 && (
-                <div className="absolute z-50 w-full mt-2 bg-white border border-border rounded-2xl shadow-2xl overflow-hidden">
+                <div className="absolute z-[150] w-full mt-2 bg-white border border-border rounded-2xl shadow-2xl overflow-hidden">
                   <div className="px-5 py-6 text-center">
                     <p className="font-black text-primary text-sm uppercase tracking-tight">No locations found</p>
                     <p className="text-text-secondary text-sm mt-1">Try a different search term or browse by region below.</p>
@@ -178,7 +177,7 @@ export default function AreasCoveredContent() {
             {/* Click outside to close suggestions */}
             {showSuggestions && searchQuery.trim() && (
               <div
-                className="fixed inset-0 z-40"
+                className="fixed inset-0 z-[140]"
                 onClick={() => setShowSuggestions(false)}
               />
             )}
@@ -347,7 +346,6 @@ export default function AreasCoveredContent() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                       {regionLocs.map((loc) => {
-                        // Use keyword-rich anchor for priority cities
                         const label = (loc.slug === "birmingham" || loc.slug === "walsall")
                           ? `Man and Van ${loc.name}`
                           : loc.name;
@@ -403,16 +401,6 @@ export default function AreasCoveredContent() {
           </p>
         </div>
       </section>
-
-      {/* ── Mobile Floating Call Button ── */}
-      <a
-        href="tel:01217511269"
-        className="floating-call-btn fixed bottom-20 right-6 z-[200] lg:hidden flex items-center gap-3 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent/90 transition-all"
-        aria-label="Call Man and Van Club"
-      >
-        <Phone size={22} className="text-white" />
-        <span className="font-black tracking-tight text-sm">Call Now</span>
-      </a>
     </div>
   );
 }
