@@ -524,6 +524,13 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     "cleckheaton": ['BD19'],
     "ossett": ['WF5'],
     "ilkley": ['LS29'],
+    // South Yorkshire + North East
+    "mexborough": ['S64'],
+    "washington": ['NE37', 'NE38'],
+    "south-shields": ['NE33', 'NE34'],
+    "north-shields": ['NE29', 'NE30'],
+    "jarrow": ['NE32'],
+    "gosforth": ['NE3'],
 
   };
 
@@ -786,6 +793,13 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   "cleckheaton": ["batley", "dewsbury", "bradford", "huddersfield"],
   "ossett": ["wakefield", "dewsbury", "batley", "huddersfield"],
   "ilkley": ["bradford", "bingley", "keighley", "harrogate"],
+  // South Yorkshire + North East
+  "mexborough": ["doncaster", "rotherham", "barnsley", "sheffield"],
+  "washington": ["sunderland", "newcastle-upon-tyne", "gateshead", "durham"],
+  "south-shields": ["newcastle-upon-tyne", "sunderland", "jarrow"],
+  "north-shields": ["newcastle-upon-tyne", "south-shields", "whitley-bay"],
+  "jarrow": ["south-shields", "newcastle-upon-tyne", "sunderland"],
+  "gosforth": ["newcastle-upon-tyne", "sunderland", "gateshead"],
 
 };
 

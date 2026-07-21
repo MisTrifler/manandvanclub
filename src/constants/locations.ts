@@ -3438,7 +3438,7 @@ export const LOCATIONS: LocationData[] = [
     nearbyLocations: ["belfast", "lisburn"]
   },
 
-  // ─── NORTH EAST (6 cities — NEW) ───
+  // ─── NORTH EAST (11 cities — NEW) ───
   {
     slug: "sunderland",
     name: "Sunderland",
@@ -3538,8 +3538,83 @@ export const LOCATIONS: LocationData[] = [
     areas: ["Town Centre", "Headland", "Seaton Carew", "West Park", "Throston", "Elwick", "Owton", "Rift House"],
     nearbyLocations: ["middlesbrough", "sunderland", "darlington"]
   },
+  {
+    slug: "washington",
+    name: "Washington",
+    region: "North East",
+    county: "Tyne and Wear",
+    nearbyAreas: ["Concord", "Centenary", "Oxclose", "Ayton", "Barmston", "Glebe", "Rickleton"],
+    majorRoads: ["A1(M)", "A1231", "A195"],
+    propertyTypes: ["post-war estates", "new-build developments", "terraced housing", "semis"],
+    movingConsiderations: ["A1(M) junction 64 congestion", "new-town road layout", "residential estate parking restrictions"],
+    intro: "Washington is a New Town between Sunderland and Gateshead, built around a series of villages and connected by the A1231 and A1(M). Approved movers serving Washington know the new-town road layout, the residential estates, and the quick links to Sunderland, Newcastle and Durham.",
+    knowledge: "Approved movers covering Washington are used to the town's village-based layout where distinct areas like Concord, Oxclose and Glebe each have their own centres. They understand the A1(M) junction 64 access, the A1231 Sunderland link, and the fastest routes to Newcastle city centre. Washington's post-war estates generally have decent van access.",
+    badge: "Washington Movers",
+    areas: ["Concord", "Centenary", "Oxclose", "Ayton", "Barmston", "Glebe", "Rickleton"],
+    nearbyLocations: ["sunderland", "newcastle-upon-tyne", "gateshead", "durham"]
+  },
+  {
+    slug: "south-shields",
+    name: "South Shields",
+    region: "North East",
+    county: "Tyne and Wear",
+    nearbyAreas: ["Town Centre", "Marsden", "Whitburn", "Cleadon", "Hebburn", "Jarrow"],
+    majorRoads: ["A183", "A19", "A1018"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "seafront apartments"],
+    movingConsiderations: ["narrow terraced streets near town centre", "A19 Tyne Tunnel traffic", "seafront parking restrictions"],
+    intro: "South Shields sits at the mouth of the Tyne with a famous seafront, a bustling town centre, and narrow Victorian terraces. Approved movers serving South Shields know the tight streets near the market, the A19 approaches, and the routes out to Cleadon and Whitburn.",
+    knowledge: "Approved movers covering South Shields handle moves in the Victorian terraces around the town centre and market area, where streets are narrow and parking is limited. They understand the A19 Tyne Tunnel queues, the seafront traffic in summer, and the suburban areas of Cleadon and Whitburn with better access.",
+    badge: "South Shields Movers",
+    areas: ["Town Centre", "Marsden", "Whitburn", "Cleadon", "Hebburn", "Jarrow"],
+    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "jarrow", "gateshead"]
+  },
+  {
+    slug: "north-shields",
+    name: "North Shields",
+    region: "North East",
+    county: "Tyne and Wear",
+    nearbyAreas: ["Tynemouth", "Whitley Bay", "Wallsend", "Percy Main", "Chirton", "Fish Quay"],
+    majorRoads: ["A193", "A1058", "A19"],
+    propertyTypes: ["Victorian terraces", "fishermen's cottages", "post-war semis", "seafront apartments"],
+    movingConsiderations: ["narrow streets around Fish Quay", "A19 Tyne Tunnel access", "conservation area in Tynemouth", "coastal parking restrictions"],
+    intro: "North Shields is a historic fishing port next to Tynemouth, with narrow streets around the Fish Quay and smarter properties along the coast. Approved movers serving North Shields know the Fish Quay conservation area, the Tynemouth parking rules, and the routes inland to Wallsend and beyond.",
+    knowledge: "Approved movers covering North Shields handle moves in the narrow streets around the Fish Quay, the period properties in Tynemouth conservation area, and the suburban housing towards Whitley Bay. They understand the A193 access, the A1058 coastal road, and the Tyne Tunnel approach. Tynemouth Front Street has parking restrictions on market days.",
+    badge: "North Shields Movers",
+    areas: ["Tynemouth", "Whitley Bay", "Wallsend", "Percy Main", "Fish Quay", "Chirton"],
+    nearbyLocations: ["newcastle-upon-tyne", "south-shields", "whitley-bay", "wallsend"]
+  },
+  {
+    slug: "jarrow",
+    name: "Jarrow",
+    region: "North East",
+    county: "Tyne and Wear",
+    nearbyAreas: ["Hebburn", "South Shields", "Boldon", "Fellgate", "Harton"],
+    majorRoads: ["A19", "A185", "A1018"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
+    movingConsiderations: ["A19 Tyne Tunnel traffic", "narrow terraced streets near town centre", "industrial estate access"],
+    intro: "Jarrow sits on the south bank of the Tyne between South Shields and Gateshead, famous for its history and close to the Tyne Tunnel. Approved movers serving Jarrow know the terraced streets near the town centre, the A19 access, and the links to Hebburn and Boldon.",
+    knowledge: "Approved movers covering Jarrow handle moves in the older terraces near the town centre and the post-war estates spreading south. They understand the A19 Tyne Tunnel timing, the Metro links to Newcastle and Sunderland, and the best routes through to Hebburn and Boldon. The town is compact which keeps most moves short-distance.",
+    badge: "Jarrow Movers",
+    areas: ["Town Centre", "Hebburn", "Boldon", "Fellgate", "Harton"],
+    nearbyLocations: ["south-shields", "newcastle-upon-tyne", "sunderland", "gateshead"]
+  },
+  {
+    slug: "gosforth",
+    name: "Gosforth",
+    region: "North East",
+    county: "Tyne and Wear",
+    nearbyAreas: ["High Gosforth", "Gosforth Park", "Kenton", "Fawdon", "Kingston Park", "South Gosforth"],
+    majorRoads: ["A1", "A1058", "B1318"],
+    propertyTypes: ["Edwardian villas", "interwar semis", "modern apartments", "new-build estates"],
+    movingConsiderations: ["parking restrictions near the High Street", "A1 congestion at peak times", "conservation area rules in parts of High Gosforth"],
+    intro: "Gosforth is Newcastle's most desirable suburb, with Edwardian villas along the High Street, excellent restaurants, and some of the city's priciest postcodes. Approved movers serving Gosforth know the parking restrictions on the High Street, the conservation area rules, and the suburban estates spreading north.",
+    knowledge: "Approved movers covering Gosforth handle moves in Edwardian and Victorian properties with period features that need careful handling. They understand the High Street parking restrictions, the Metro links to the city centre, and the suburban areas like Kingston Park and Gosforth Park. Properties here tend to be larger and more valuable than the Newcastle average.",
+    badge: "Gosforth Movers",
+    areas: ["High Gosforth", "Gosforth Park", "Kenton", "Fawdon", "Kingston Park"],
+    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "gateshead", "north-shields"]
+  },
 
-  // ─── SOUTH YORKSHIRE (3 cities — NEW) ───
+  // ─── SOUTH YORKSHIRE (4 cities — NEW) ───
   {
     slug: "doncaster",
     name: "Doncaster",
@@ -3585,6 +3660,21 @@ export const LOCATIONS: LocationData[] = [
     badge: "Verified Movers in Barnsley",
     areas: ["Town Centre", "Dodworth", "Penistone", "Hoyland", "Wombwell", "Royston", "Cudworth", "Monk Bretton", "Goldthorpe", "Thurnscoe"],
     nearbyLocations: ["sheffield", "rotherham", "doncaster", "wakefield"]
+  },
+  {
+    slug: "mexborough",
+    name: "Mexborough",
+    region: "South Yorkshire",
+    county: "South Yorkshire",
+    nearbyAreas: ["Denaby Main", "Conisbrough", "Swinton", "Wath-upon-Dearne", "Brampton", "Adwick-le-Street"],
+    majorRoads: ["A6022", "A630", "M18"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "stone-built cottages"],
+    movingConsiderations: ["M18 junction 36 access", "narrow terraced streets near town centre", "railway bridge height restrictions"],
+    intro: "Mexborough sits between Rotherham and Doncaster on the Dearne Valley corridor, with the M18 running alongside. Approved movers serving Mexborough know the tight terraced streets near the town centre, the railway bridge restrictions, and the links to Conisbrough and Swinton.",
+    knowledge: "Approved movers covering Mexborough handle moves in the Victorian terraces near the town centre and the newer estates around Adwick-le-Street. They understand the M18 junction 36 access, the A6022 through-town traffic, and the best routes to Doncaster and Rotherham. Mexborough's position on the Dearne Valley railway line makes it well-connected.",
+    badge: "Mexborough Movers",
+    areas: ["Town Centre", "Denaby Main", "Conisbrough", "Swinton", "Wath-upon-Dearne", "Brampton"],
+    nearbyLocations: ["doncaster", "rotherham", "barnsley", "sheffield"]
   },
 
   // ─── SOUTH EAST (9 cities — NEW) ───

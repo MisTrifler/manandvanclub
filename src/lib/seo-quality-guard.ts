@@ -342,6 +342,13 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "cleckheaton",
   "ossett",
   "ilkley",
+  // ─── Phase 5+6: South Yorkshire + North East (6) ───
+  "mexborough",
+  "washington",
+  "south-shields",
+  "north-shields",
+  "jarrow",
+  "gosforth",
 ]);
 
 export function isSeoLaunchMode(): boolean {

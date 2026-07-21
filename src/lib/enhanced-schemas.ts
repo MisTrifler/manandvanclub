@@ -4748,6 +4748,98 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+
+  // ─── Phase 5+6: South Yorkshire + North East (6 NEW) ───
+  "mexborough": {
+    ...baseSchema,
+    name: "Man and Van Club — Mexborough",
+    description: "Free man and van quote request service in Mexborough, South Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Denaby Main, Conisbrough, Swinton, Wath-upon-Dearne.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-mexborough",
+    areaServed: {
+      "@type": "City",
+      name: "Mexborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "South Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "washington": {
+    ...baseSchema,
+    name: "Man and Van Club — Washington",
+    description: "Free man and van quote request service in Washington, Tyne and Wear. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Concord, Oxclose, Glebe, Rickleton, Barmston.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-washington",
+    areaServed: {
+      "@type": "City",
+      name: "Washington",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Tyne and Wear"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "south-shields": {
+    ...baseSchema,
+    name: "Man and Van Club — South Shields",
+    description: "Free man and van quote request service in South Shields, Tyne and Wear. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Marsden, Cleadon, Hebburn, Whitburn, Jarrow.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-south-shields",
+    areaServed: {
+      "@type": "City",
+      name: "South Shields",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Tyne and Wear"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "north-shields": {
+    ...baseSchema,
+    name: "Man and Van Club — North Shields",
+    description: "Free man and van quote request service in North Shields, Tyne and Wear. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Tynemouth, Whitley Bay, Wallsend, Fish Quay.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-north-shields",
+    areaServed: {
+      "@type": "City",
+      name: "North Shields",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Tyne and Wear"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "jarrow": {
+    ...baseSchema,
+    name: "Man and Van Club — Jarrow",
+    description: "Free man and van quote request service in Jarrow, Tyne and Wear. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Hebburn, Boldon, South Shields, Harton.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-jarrow",
+    areaServed: {
+      "@type": "City",
+      name: "Jarrow",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Tyne and Wear"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "gosforth": {
+    ...baseSchema,
+    name: "Man and Van Club — Gosforth",
+    description: "Free man and van quote request service in Gosforth, Tyne and Wear. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers High Gosforth, Gosforth Park, Kingston Park, Kenton.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-gosforth",
+    areaServed: {
+      "@type": "City",
+      name: "Gosforth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Tyne and Wear"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {

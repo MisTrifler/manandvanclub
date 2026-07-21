@@ -5198,4 +5198,116 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
       {title: "Wharfedale villages", body: "Addingham, Burley-in-Wharfedale and Menston are charming villages along the valley. Some properties are reached by narrow lanes. Worth mentioning access details in your quote.", links: [{label: "Furniture delivery", href: "/furniture-delivery"}]},
     ],
   },
+
+  // ─── Phase 5: South Yorkshire expansion ───
+  "mexborough": {
+    title: "Man and Van Mexborough | From £19",
+    description: "Man and van Mexborough from £19/hr. S64. Denaby Main, Conisbrough, Swinton, Wath-upon-Dearne. Call 0121 751 1269.",
+    h1: "Man and Van Mexborough",
+    intro: "Need a man and van in Mexborough? Tell us your postcodes, what you're moving, and any access details. One verified mover reviews your Mexborough move before quoting.",
+    knowledge: "Mexborough sits in the Dearne Valley between Doncaster and Rotherham, with the M18 running right past. It's a compact town with tight Victorian terraces near the centre and more spacious housing towards Swinton and Wath. Conisbrough next door has the famous castle and similar terraced streets. The M18 junction 36 gives quick access to the M1 and A1(M).",
+    localMovingInfo: `Mexborough is about 7 miles north-west of Doncaster on the A6022. The M18 junction 36 is close by, linking to the M1 (north to Leeds, south to Sheffield) and the A1(M). The town centre has Victorian terraces with narrow streets and some on-street parking limitations. Denaby Main to the east is similar. Swinton and Wath-upon-Dearne to the west are more suburban with better access. Conisbrough has the castle and older terraces. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Mexborough?","a":"Mexborough moves start from £19 per hour. A local move typically costs £60–£110. A move to Doncaster or Rotherham is usually £70–£130."},
+      {"q":"How far is Mexborough from Doncaster?","a":"About 7 miles south via the A6022 — roughly 15 minutes. The M18 gives a faster route for longer-distance moves."},
+      {"q":"Are the terraced streets difficult for moves?","a":"The older terraces near the town centre have narrow entries and limited parking. Swinton and Wath have better access. Mention any parking issues in your quote."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre and Denaby Main", body: "Victorian terraces with narrow streets and on-street parking. Best moved early morning. The A6022 carries through-traffic."},
+      {title: "Conisbrough", body: "Famous for its castle but the housing is similar Victorian terraces. Narrow streets near the centre, better access on the outskirts.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Swinton and Wath-upon-Dearne", body: "More suburban areas west of Mexborough with a mix of semis and newer housing. Better van access and parking. Close to M18 junction 35."},
+    ],
+  },
+
+  // ─── Phase 6: North East expansion ───
+  "washington": {
+    title: "Man and Van Washington | From £19",
+    description: "Man and van Washington from £19/hr. NE37, NE38. Concord, Oxclose, Glebe, Rickleton, Barmston. Call 0121 751 1269.",
+    h1: "Man and Van Washington",
+    intro: "Need a man and van in Washington? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Washington move before quoting.",
+    knowledge: "Washington is a New Town between Sunderland and Gateshead — built around a series of distinct villages rather than a traditional town centre. Each area (Concord, Oxclose, Glebe, Rickleton etc) has its own centre and housing. The A1(M) runs right past and the A1231 connects to Sunderland. It's generally easy for moving — the roads are wide, the estates are modern, and parking is decent compared to older North East towns.",
+    localMovingInfo: `Washington sits between Sunderland (5 miles east) and Gateshead (6 miles west), connected by the A1231 and A1(M). The town is built around distinct village areas — Concord, Centenary, Oxclose, Ayton, Barmston, Glebe, Rickleton — each with their own housing and shops. The A1(M) junction 64 gives fast access to Newcastle (about 15 minutes) and Durham (about 15 minutes). The post-war and newer estates generally have wide roads and decent parking. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Washington?","a":"Washington moves start from £19 per hour. A local move typically costs £60–£110. A move to Newcastle or Sunderland is usually £70–£140."},
+      {"q":"Is Washington easy to access for removals?","a":"Yes — the New Town layout means wide roads, decent parking, and modern estates. It's much easier for moves than the older terraced areas of Newcastle or Sunderland."},
+      {"q":"How far is Washington from Newcastle?","a":"About 8 miles via the A1(M) — roughly 15–20 minutes. Washington to Newcastle is a straightforward run."},
+    ],
+    localAreaGuides: [
+      {title: "Concord and Centenary", body: "Central Washington areas with a mix of housing types and the town's main shopping centre. Good road access and generally easy for moves."},
+      {title: "Oxclose and Glebe", body: "Residential areas with post-war and modern housing. Wide roads, decent parking. Close to the A1231 link to Sunderland.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Rickleton and Barmston", body: "Southern Washington with more modern developments. Good A1(M) access at junction 64. Generally straightforward for moves."},
+    ],
+  },
+  "south-shields": {
+    title: "Man and Van South Shields | From £19",
+    description: "Man and van South Shields from £19/hr. NE33, NE34. Marsden, Cleadon, Hebburn, Whitburn, Jarrow. Call 0121 751 1269.",
+    h1: "Man and Van South Shields",
+    intro: "Need a man and van in South Shields? Tell us your postcodes, what you're moving, and any access details. One verified mover checks your South Shields move before quoting.",
+    knowledge: "South Shields sits at the mouth of the Tyne with one of the North East's best seafronts, a bustling town centre market, and narrow Victorian terraces behind the main streets. The seafront is popular with visitors in summer which can affect parking. The town centre streets around Fowler Street and the market area are tight for vans. Head towards Cleadon and Whitburn for bigger properties with better access.",
+    localMovingInfo: `South Shields is at the south side of the Tyne mouth, about 10 miles east of Newcastle. The A183 coast road and A19 provide the main access. The town centre has Victorian terraces with narrow streets and limited parking, especially near the market. The seafront has some apartment blocks. Cleadon to the south is an affluent village with larger properties. Whitburn is a coastal village. Hebburn and Jarrow are the neighbouring towns to the west. The Tyne Pedestrian and Vehicle Tunnels link to North Shields. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in South Shields?","a":"South Shields moves start from £19 per hour. A local move typically costs £60–£120. A move to Newcastle or Sunderland is usually £80–£150."},
+      {"q":"Is parking difficult in South Shields?","a":"The town centre and seafront have parking restrictions, especially in summer. Cleadon and the residential areas have better on-street parking. Mention parking in your access notes."},
+      {"q":"How far is South Shields from Newcastle?","a":"About 10 miles via the A19 and A1018 — roughly 20–25 minutes. The Tyne Tunnel provides a direct route."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre and market", body: "Victorian terraces around the market area with narrow streets and limited parking. The market operates Monday to Saturday. Best to move early morning or on quieter streets.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Seafront and Marsden", body: "Seafront properties and the Marsden area with cliff-top housing. Popular with visitors in summer which can affect parking. Some seafront apartments with lift access."},
+      {title: "Cleadon and Whitburn", body: "Affluent villages south of South Shields with larger properties and better access. Cleadon has a village green. Whitburn has a coastal nature reserve. Both are easier for moves than the town centre."},
+    ],
+  },
+  "north-shields": {
+    title: "Man and Van North Shields | From £19",
+    description: "Man and van North Shields from £19/hr. NE29, NE30. Tynemouth, Whitley Bay, Wallsend, Fish Quay. Call 0121 751 1269.",
+    h1: "Man and Van North Shields",
+    intro: "Need a man and van in North Shields? Share your postcodes, what needs moving, and any access details. One verified mover reviews your North Shields move before quoting.",
+    knowledge: "North Shields is a fishing town at the north side of the Tyne mouth, right next to the smarter Tynemouth. The Fish Quay area has narrow streets and conservation restrictions — it's being regenerated but the old street pattern remains. Tynemouth is more upmarket with period properties and a popular Front Street that has parking restrictions on market days. The A193 and A1058 give good road access.",
+    localMovingInfo: `North Shields sits at the north side of the Tyne mouth, about 8 miles east of Newcastle. The Fish Quay area has narrow streets in a conservation zone with limited parking. Tynemouth to the east has period properties around Front Street, which hosts a popular market on weekends with parking restrictions. Whitley Bay is further along the coast. Wallsend is inland to the west. The A193 and A1058 provide road access. The Tyne Pedestrian and Vehicle Tunnels link to South Shields. The Metro connects to Newcastle city centre. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in North Shields?","a":"North Shields moves start from £19 per hour. A local move typically costs £60–£120. A move to Newcastle is usually £80–£150."},
+      {"q":"Is Tynemouth hard for moves?","a":"Tynemouth Front Street has parking restrictions, especially on market days (weekends). The conservation area has rules about external changes. Most residential streets are fine for van access."},
+      {"q":"How far is North Shields from Newcastle?","a":"About 8 miles via the A1058 — roughly 15–20 minutes. The Metro also connects to Newcastle city centre in about 25 minutes."},
+    ],
+    localAreaGuides: [
+      {title: "Fish Quay area", body: "Historic conservation zone with narrow streets and limited parking. Being regenerated with new apartments alongside the old fish merchants. Note any access restrictions in your quote.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Tynemouth", body: "Upmarket area with period properties, Front Street shops and a popular weekend market. Parking is restricted on market days. The Priory is a landmark. Properties tend to be well-maintained period homes.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Whitley Bay", body: "A seaside town further along the coast with a mix of housing and a seafront. The Spanish City area has been regenerated. Generally easier for van access than North Shields centre."},
+    ],
+  },
+  "jarrow": {
+    title: "Man and Van Jarrow | From £19",
+    description: "Man and van Jarrow from £19/hr. NE32. Hebburn, South Shields, Boldon, Harton. Call 0121 751 1269.",
+    h1: "Man and Van Jarrow",
+    intro: "Need a man and van in Jarrow? Tell us your postcodes, what you need moving, and any access notes. One verified mover reviews your Jarrow move before quoting.",
+    knowledge: "Jarrow sits on the south bank of the Tyne between South Shields and Gateshead. It's famous for the Jarrow Crusade but these days it's a compact residential town with good transport links. The older terraces near the town centre have the usual tight access, while the estates to the south are more spacious. The Metro and A19 give quick links to Newcastle, Sunderland and beyond.",
+    localMovingInfo: `Jarrow is about 7 miles east of Newcastle on the south bank of the Tyne. The A19 provides main road access, with the Tyne Tunnel connecting to the north bank. The town centre has older terraces with some narrow streets. The post-war estates to the south have better parking and access. Hebburn is the neighbouring town to the west, Boldon is to the south-east. The Metro connects Jarrow to Newcastle in about 20 minutes and to Sunderland in about 25 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Jarrow?","a":"Jarrow moves start from £19 per hour. A local move typically costs £60–£110. A move to Newcastle is usually £80–£140."},
+      {"q":"How far is Jarrow from Newcastle?","a":"About 7 miles via the A19 — roughly 15–20 minutes. The Metro also connects directly."},
+      {"q":"Is Jarrow well-connected?","a":"Yes — the Metro connects to Newcastle and Sunderland. The A19 and Tyne Tunnel give road access to the whole region. It's a compact town so local moves are usually quick."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "Older terraces with some narrow streets and on-street parking. The Viking Centre is the main shopping area. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Residential estates", body: "Post-war and newer estates to the south with better parking and wider roads. Generally straightforward for moves."},
+      {title: "Hebburn and Boldon", body: "Neighbouring areas — Hebburn to the west with similar housing, Boldon to the south-east with more suburban and village-style housing. Both have good road links."},
+    ],
+  },
+  "gosforth": {
+    title: "Man and Van Gosforth | From £19",
+    description: "Man and van Gosforth from £19/hr. NE3. High Gosforth, Gosforth Park, Kingston Park, Kenton, Fawdon. Call 0121 751 1269.",
+    h1: "Man and Van Gosforth",
+    intro: "Need a man and van in Gosforth? Share your postcodes, what you're moving, and any access details. One verified mover reviews your Gosforth move before quoting.",
+    knowledge: "Gosforth is Newcastle's smartest suburb — the High Street is packed with restaurants, cafes and independent shops, and the housing stock includes some of the city's most expensive properties. The Edwardian villas along the High Street and in High Gosforth have period features that need careful handling. Parking on the High Street is restricted. Further out towards Kingston Park and Fawdon it's more standard suburban housing with better access.",
+    localMovingInfo: `Gosforth is about 3 miles north of Newcastle city centre, connected by the A1, A1058 and Metro. The High Street (Great North Road) is the main shopping and dining area with parking restrictions. High Gosforth has Edwardian and Victorian villas with period features. Gosforth Park has the racecourse and larger properties. Kingston Park to the north-west has modern housing. Kenton and Fawdon are more suburban with a mix of housing and better parking. The Metro connects to the city centre in about 10 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Gosforth?","a":"Gosforth moves start from £19 per hour. A local move typically costs £60–£130. A move to Newcastle city centre is usually £60–£100 — it's very close."},
+      {"q":"Is parking difficult on Gosforth High Street?","a":"Yes — the High Street has parking restrictions and it's busy with shoppers and diners. Most residential streets off the High Street have on-street parking available. Mention access details in your quote."},
+      {"q":"How far is Gosforth from Newcastle city centre?","a":"About 3 miles — roughly 10 minutes by car or Metro. Very close, which keeps move costs down."},
+    ],
+    localAreaGuides: [
+      {title: "High Street and High Gosforth", body: "The smartest part of Gosforth with Edwardian villas, independent shops and restaurants. Parking is restricted on the High Street. Properties have period features that need careful handling.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Gosforth Park", body: "Home to the racecourse and larger properties. Good road access. Race days bring extra traffic — avoid moving when meetings are on."},
+      {title: "Kingston Park and Fawdon", body: "More suburban areas with modern housing and better parking. Kingston Park has a retail centre and Metro station. Fawdon is more residential. Both are easier for moves than the High Street area."},
+    ],
+  },
 };
