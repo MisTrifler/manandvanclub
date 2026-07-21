@@ -1031,7 +1031,7 @@ export const LOCATIONS: LocationData[] = [
     nearbyLocations: ["ashton-under-lyne", "hyde", "mossley", "manchester", "glossop"]
   },
   // ──────────────────────────────────────────
-  // WEST YORKSHIRE (11 locations)
+  // WEST YORKSHIRE (17 locations)
   // ──────────────────────────────────────────
   {
     slug: "leeds",
@@ -1189,6 +1189,96 @@ export const LOCATIONS: LocationData[] = [
     badge: "Verified Movers in Morley",
     areas: ["Town Centre", "Leeds", "Dewsbury", "Batley", "Gildersome", "Churwell", "Tingley"],
     nearbyLocations: ["leeds", "dewsbury", "batley", "wakefield", "pudsey"]
+  },
+  {
+    slug: "brighouse",
+    name: "Brighouse",
+    region: "West Yorkshire",
+    county: "West Yorkshire",
+    nearbyAreas: ["Rastrick", "Hipperholme", "Lightcliffe", "Clifton", "Bradford", "Halifax"],
+    majorRoads: ["M62", "A641", "A644"],
+    propertyTypes: ["Victorian terraces", "stone-built cottages", "post-war semis"],
+    movingConsiderations: ["M62 junction 25 congestion", "A641 Bradford Road traffic", "narrow streets near town centre"],
+    intro: "Brighouse sits between Halifax and Huddersfield on the A641 corridor, with the M62 running right past it. Approved movers serving Brighouse know the Bradford Road traffic, the terraced streets around the town centre, and the quickest routes to Rastrick and Hipperholme.",
+    knowledge: "Approved movers covering Brighouse regularly handle moves between the town centre, Rastrick, and the villages of Hipperholme and Lightcliffe. They understand the M62 junction 25 morning queue, the A641 rush-hour pattern, and the narrow entries in the older terraces near the canal basin.",
+    badge: "Brighouse Movers",
+    areas: ["Town Centre", "Rastrick", "Hipperholme", "Lightcliffe", "Clifton", "Bradford", "Halifax"],
+    nearbyLocations: ["halifax", "huddersfield", "bradford", "wakefield", "dewsbury"]
+  },
+  {
+    slug: "shipley",
+    name: "Shipley",
+    region: "West Yorkshire",
+    county: "West Yorkshire",
+    nearbyAreas: ["Saltaire", "Baildon", "Windhill", "Cottingley", "Heaton", "Bradford"],
+    majorRoads: ["A650", "A6038", "M606"],
+    propertyTypes: ["Victorian terraces", "stone-built cottages", "post-war semis"],
+    movingConsiderations: ["A650 traffic through town", "narrow streets in Saltaire conservation area", "M606 junction access"],
+    intro: "Shipley sits at the edge of Bradford, next to the UNESCO World Heritage village of Saltaire. Approved movers serving Shipley know the conservation area parking rules in Saltaire, the A650 through-traffic, and the residential areas up towards Baildon.",
+    knowledge: "Approved movers covering Shipley handle moves in Saltaire where the Victorian mill workers' houses have parking restrictions, as well as standard moves in Baildon and the Windhill area. They understand the A650 congestion heading into Bradford, the M606 link road, and the best routes to Keighley and Bingley.",
+    badge: "Shipley Movers",
+    areas: ["Town Centre", "Saltaire", "Baildon", "Windhill", "Cottingley", "Heaton"],
+    nearbyLocations: ["bradford", "bingley", "keighley", "leeds", "halifax"]
+  },
+  {
+    slug: "bingley",
+    name: "Bingley",
+    region: "West Yorkshire",
+    county: "West Yorkshire",
+    nearbyAreas: ["Eldwick", "Micklethwaite", "Crossflatts", "Cottingley", "Shipley", "Keighley"],
+    majorRoads: ["A650", "A629", "B6265"],
+    propertyTypes: ["Victorian terraces", "stone-built cottages", "post-war semis", "new-build estates"],
+    movingConsiderations: ["A650 Bradford to Keighley traffic", "narrow canal-side streets", "hill roads to Eldwick"],
+    intro: "Bingley is a market town in the Aire Valley between Shipley and Keighley, famous for the Five Rise Locks on the Leeds-Liverpool Canal. Approved movers serving Bingley know the A650 corridor traffic, the canal-side access, and the hill roads up to Eldwick.",
+    knowledge: "Approved movers covering Bingley handle moves in the town centre terraces near the canal and the larger properties up in Eldwick. They understand the A650 rush-hour pattern between Bradford and Keighley, the narrow streets near the Five Rise Locks, and the best routes to Crossflatts and Cottingley.",
+    badge: "Bingley Movers",
+    areas: ["Town Centre", "Eldwick", "Micklethwaite", "Crossflatts", "Cottingley"],
+    nearbyLocations: ["shipley", "keighley", "bradford", "halifax", "ilkley"]
+  },
+  {
+    slug: "cleckheaton",
+    name: "Cleckheaton",
+    region: "West Yorkshire",
+    county: "West Yorkshire",
+    nearbyAreas: ["Birkenshaw", "Gomersal", "Scholes", "Hunsworth", "Mirfield", "Batley"],
+    majorRoads: ["M62", "A638", "A643", "B6132"],
+    propertyTypes: ["Victorian terraces", "stone-built cottages", "post-war semis"],
+    movingConsiderations: ["M62 junction 26 queues", "A638 through-town traffic", "narrow streets in Spen Valley"],
+    intro: "Cleckheaton is the main town in the Spen Valley, sitting between Bradford, Huddersfield and Dewsbury. Approved movers serving Cleckheaton know the Spen Valley roads, the M62 access at junction 26, and the tight streets around the market town centre.",
+    knowledge: "Approved movers covering Cleckheaton handle moves in the town centre terraces and the surrounding villages of Gomersal, Birkenshaw and Scholes. They understand the M62 junction 26 congestion, the A638 through-traffic, and the best routes to Mirfield and Batley. The Spen Valley is compact so moves are usually short distances.",
+    badge: "Cleckheaton Movers",
+    areas: ["Town Centre", "Birkenshaw", "Gomersal", "Scholes", "Hunsworth", "Mirfield"],
+    nearbyLocations: ["batley", "dewsbury", "bradford", "huddersfield", "morley"]
+  },
+  {
+    slug: "ossett",
+    name: "Ossett",
+    region: "West Yorkshire",
+    county: "West Yorkshire",
+    nearbyAreas: ["Horbury", "Gawthorpe", "South Ossett", "Alverthorpe", "Wakefield", "Dewsbury"],
+    majorRoads: ["M1", "A638", "A636"],
+    propertyTypes: ["Victorian terraces", "stone-built cottages", "post-war semis", "modern estates"],
+    movingConsiderations: ["M1 junction 40 congestion", "A638 traffic", "narrow terraced streets near town centre"],
+    intro: "Ossett sits between Wakefield and Dewsbury on the A638, with the M1 running alongside. Approved movers serving Ossett know the M1 junction 40 queues, the terraced streets around the town centre, and the links to Horbury and Wakefield.",
+    knowledge: "Approved movers covering Ossett handle moves in the town centre terraces and the newer estates around South Ossett. They understand the M1 junction 40 morning queue, the A638 corridor traffic, and the best routes to Horbury, Wakefield and Dewsbury. Ossett's compact size means most moves are straightforward once you're off the main roads.",
+    badge: "Ossett Movers",
+    areas: ["Town Centre", "Horbury", "Gawthorpe", "South Ossett", "Alverthorpe"],
+    nearbyLocations: ["wakefield", "dewsbury", "batley", "huddersfield", "morley"]
+  },
+  {
+    slug: "ilkley",
+    name: "Ilkley",
+    region: "West Yorkshire",
+    county: "West Yorkshire",
+    nearbyAreas: ["Ben Rhydding", "Addingham", "Burley-in-Wharfedale", "Menston", "Otley"],
+    majorRoads: ["A65", "A660", "B6381"],
+    propertyTypes: ["Victorian villas", "stone-built cottages", "modern apartments", "country houses"],
+    movingConsiderations: ["narrow lanes in Wharfedale", "limited parking near the Grove", "rural property access", "A65 traffic"],
+    intro: "Ilkley is a genteel spa town on the edge of the moors, known for its Victorian architecture and the famous Cow and Calf rocks. Approved movers serving Ilkley know the narrow Wharfedale lanes, the limited parking around the Grove, and the best routes to Addingham and Burley-in-Wharfedale.",
+    knowledge: "Approved movers covering Ilkley handle moves in Victorian villas near the Grove and stone cottages up towards the moor. They understand the A65 traffic, the narrow lanes heading into Wharfedale villages, and the access challenges of rural properties around Addingham and Menston. Ilkley's properties tend to be larger so moves often need careful planning.",
+    badge: "Ilkley Movers",
+    areas: ["Town Centre", "Ben Rhydding", "Addingham", "Burley-in-Wharfedale", "Menston"],
+    nearbyLocations: ["bradford", "bingley", "keighley", "otley", "shipley"]
   },
   // ──────────────────────────────────────────
   // MERSEYSIDE (11 locations)

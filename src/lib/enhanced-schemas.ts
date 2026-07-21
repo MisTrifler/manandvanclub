@@ -4656,6 +4656,98 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+
+  // ─── Phase 4: West Yorkshire expansion (6 NEW) ───
+  "brighouse": {
+    ...baseSchema,
+    name: "Man and Van Club — Brighouse",
+    description: "Free man and van quote request service in Brighouse, West Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Rastrick, Hipperholme, Lightcliffe.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-brighouse",
+    areaServed: {
+      "@type": "City",
+      name: "Brighouse",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "shipley": {
+    ...baseSchema,
+    name: "Man and Van Club — Shipley",
+    description: "Free man and van quote request service in Shipley, West Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Saltaire, Baildon, Windhill, Cottingley.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-shipley",
+    areaServed: {
+      "@type": "City",
+      name: "Shipley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "bingley": {
+    ...baseSchema,
+    name: "Man and Van Club — Bingley",
+    description: "Free man and van quote request service in Bingley, West Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Eldwick, Crossflatts, Cottingley, Micklethwaite.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bingley",
+    areaServed: {
+      "@type": "City",
+      name: "Bingley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "cleckheaton": {
+    ...baseSchema,
+    name: "Man and Van Club — Cleckheaton",
+    description: "Free man and van quote request service in Cleckheaton, West Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Birkenshaw, Gomersal, Scholes, Hunsworth.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-cleckheaton",
+    areaServed: {
+      "@type": "City",
+      name: "Cleckheaton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ossett": {
+    ...baseSchema,
+    name: "Man and Van Club — Ossett",
+    description: "Free man and van quote request service in Ossett, West Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Horbury, Gawthorpe, South Ossett.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ossett",
+    areaServed: {
+      "@type": "City",
+      name: "Ossett",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ilkley": {
+    ...baseSchema,
+    name: "Man and Van Club — Ilkley",
+    description: "Free man and van quote request service in Ilkley, West Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Ben Rhydding, Addingham, Burley-in-Wharfedale, Menston.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ilkley",
+    areaServed: {
+      "@type": "City",
+      name: "Ilkley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {

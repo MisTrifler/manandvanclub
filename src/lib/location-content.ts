@@ -517,6 +517,13 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     "chorley": ['PR6', 'PR7'],
     "skelmersdale": ['WN8'],
     "ormskirk": ['L39', 'L40'],
+    // West Yorkshire expansion
+    "brighouse": ['HD6', 'HD2'],
+    "shipley": ['BD17', 'BD18'],
+    "bingley": ['BD16'],
+    "cleckheaton": ['BD19'],
+    "ossett": ['WF5'],
+    "ilkley": ['LS29'],
 
   };
 
@@ -772,6 +779,13 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   "ormskirk": ["liverpool", "preston", "southport"],
   "ellesmere-port": ["liverpool", "chester", "birkenhead"],
   "bebington": ["liverpool", "birkenhead", "chester"],
+  // West Yorkshire expansion
+  "brighouse": ["halifax", "huddersfield", "bradford", "wakefield"],
+  "shipley": ["bradford", "bingley", "keighley", "leeds"],
+  "bingley": ["shipley", "keighley", "bradford", "ilkley"],
+  "cleckheaton": ["batley", "dewsbury", "bradford", "huddersfield"],
+  "ossett": ["wakefield", "dewsbury", "batley", "huddersfield"],
+  "ilkley": ["bradford", "bingley", "keighley", "harrogate"],
 
 };
 

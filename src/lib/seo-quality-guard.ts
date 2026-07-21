@@ -335,6 +335,13 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "chorley",
   "skelmersdale",
   "ormskirk",
+  // ─── Phase 4: West Yorkshire (6) ───
+  "brighouse",
+  "shipley",
+  "bingley",
+  "cleckheaton",
+  "ossett",
+  "ilkley",
 ]);
 
 export function isSeoLaunchMode(): boolean {
