@@ -3406,4 +3406,1137 @@ There is no Clean Air Zone. Rates start from £19 per hour. Moves between Wrexha
     ],
   },
 
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — DERBYSHIRE TOWNS
+  // ──────────────────────────────────────────
+
+  chesterfield: {
+    title: "Man and Van Chesterfield | From £19",
+    description: "Man and van Chesterfield from £19/hr. S40/S41. Brimington, Hasland, Staveley, Clay Cross. Call 0121 751 1269.",
+    h1: "Man and Van Chesterfield",
+    intro: "Need a man and van in Chesterfield? Submit your postcodes, move date, item list and access notes for free. One verified mover reviews your Chesterfield move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Chesterfield moves depend on local access as much as distance. The Crooked Spire area and market square have narrow streets that restrict van access, while the M1 junction 29 and 30 approaches can slow routes at rush hour. A sofa collection from Brimington, a flat move in Hasland, or a full house move towards Staveley or Clay Cross all need different timing around the A61, A617 and M1 corridor.",
+    localMovingInfo: `Chesterfield sits on the M1 corridor in north Derbyshire, with the A61 running through the town centre and the A617 connecting to the M1 at junction 29. The town grew around the market and coal mining, so the street layout varies from the wide roads near the retail parks to the tight streets around the Crooked Spire and market square.
+
+Brimington and Hasland are popular residential areas with a mix of terraces and semis. Staveley and Clay Cross to the east are former mining communities with narrower streets and different access patterns. The M1 gives good connections south to Derby and Nottingham, and north to Sheffield.
+
+Rates start from £19 per hour. Add full postcodes, floor level, stairs, driveway access and parking notes so a mover can quote accurately. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      {"q":"How much does a man and van cost in Chesterfield?","a":"Chesterfield moves start from £19 per hour. A local move typically costs £60–£130. A full 3-bed house move could be £300–£500. Submit your postcodes for a guide price first."},
+      {"q":"Can a van get near the Crooked Spire and market square?","a":"Some streets around the market are narrow with parking restrictions. Add your exact postcode and any access notes so the mover can plan the best loading spot."},
+      {"q":"How far is Chesterfield from the M1?","a":"Junction 29 is about 3 miles east of the town centre via the A617. Junction 30 is north via the A619. Both can be congested at rush hour."},
+      {"q":"Do you cover Staveley and Clay Cross?","a":"Yes. Staveley and Clay Cross are covered as part of the Chesterfield area. The A619 and A61 connect them to the town centre."},
+    ],
+    localAreaGuides: [
+      {title: "Chesterfield town centre and Crooked Spire", body: "Narrow streets near the market square with restricted van access. The Crooked Spire area is best approached from Knifesmithgate or the A61 for loading. Parking can be limited on market days (Thursday, Friday, Saturday)."},
+      {title: "Brimington and Hasland moves", body: "Residential areas with a mix of terraces, semis and newer estates. Better road access than the town centre. Brimington Common has wider roads and driveways."},
+      {title: "Staveley and Clay Cross", body: "Former mining communities with narrower streets and on-street parking. Add access details and whether items need carrying a distance from the van.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Chesterfield to Sheffield moves", body: "About 12 miles north via the A61 or M1. A common route taking 25–40 minutes depending on traffic. Sheffield moves often involve hilly streets and parking restrictions.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  glossop: {
+    title: "Man and Van Glossop | From £19",
+    description: "Man and van Glossop from £19/hr. SK13. Hadfield, Padfield, Simmondley, Whitfield. Peak District edge. Call 0121 751 1269.",
+    h1: "Man and Van Glossop",
+    intro: "Need a man and van in Glossop? Submit your collection and delivery postcodes, move date, item list and access notes for free. One verified mover reviews your Glossop move before sending a quote — you only book if you're happy with the details.",
+    knowledge: "Glossop sits at the edge of the Peak District where Derbyshire meets Greater Manchester. The town's stone-built terraces and Victorian villas sit on steep hillsides with narrow streets that need careful van navigation. The A57 Snake Pass can close in winter, and the Woodhead Pass (A628) is an alternative route when open. Moves between Glossop and Manchester are common.",
+    localMovingInfo: `Glossop is a mill town at the western edge of the Peak District National Park, about 15 miles east of Manchester. The A57 connects to Manchester via the Snake Pass (which closes in snow), while the A624 and A626 serve the local area.
+
+The town is built on a hillside, with older stone terraces on steep streets near the town centre and Victorian villas in the higher areas like Whitfield and Simmondley. These hillside streets can be narrow and tight for vans, especially where cars are parked on both sides.
+
+Hadfield and Padfield to the north-east are flatter but still have narrow mill-town streets. The Glossop Brook runs through the centre, and some roads cross it on tight bridges that need careful approach angles.
+
+Winter weather can be a real factor — the Snake Pass closes several times a year due to snow, and even the lower roads can be icy on frosty mornings. A mover who knows the area will plan accordingly.`,
+    faq: [
+      {"q":"How much does a man and van cost in Glossop?","a":"Glossop moves start from £19 per hour. A local move typically costs £70–£140. A full house move could be £300–£550. The hilly terrain and narrow streets can add time."},
+      {"q":"Can a van get to all areas of Glossop?","a":"Most areas are accessible, but some of the steeper hillside streets in Whitfield and Simmondley are narrow with limited turning space. Add your exact postcode and access notes."},
+      {"q":"Does the Snake Pass close in winter?","a":"Yes. The A57 Snake Pass closes several times a year due to snow and ice, typically from November to March. The M67 and A628 Woodhead Pass are alternatives but can also be affected."},
+      {"q":"How far is Glossop from Manchester?","a":"About 15 miles via the A57, taking roughly 30–40 minutes depending on traffic and Snake Pass conditions. A Glossop to Manchester move typically costs £90–£180."},
+    ],
+    localAreaGuides: [
+      {title: "Glossop town centre", body: "Stone-built terraces on sloping streets near the market. Parking is limited on market days (Thursday and Saturday). Some streets are one-way."},
+      {title: "Whitfield and Simmondley", body: "Victorian villas on steep hillside roads. Narrow streets with cars parked on both sides. Best for smaller vans or careful approach.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Hadfield and Padfield", body: "Flatter mill-town streets to the north-east. Generally easier van access than the hillside areas. Good connections to the A57."},
+      {title: "Glossop to Manchester moves", body: "A common route via the A57 Snake Pass or M67/A57. About 30–40 minutes. Check Snake Pass conditions in winter.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  ilkeston: {
+    title: "Man and Van Ilkeston | From £19",
+    description: "Man and van Ilkeston from £19/hr. DE7. Cotmanhay, Kirk Hallam, Little Hallam, Stanley. Call 0121 751 1269.",
+    h1: "Man and Van Ilkeston",
+    intro: "Need a man and van in Ilkeston? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ilkeston move before quoting — no spam, no obligation, no ten companies calling at once.",
+    knowledge: "Ilkeston sits between Derby and Nottingham with the M1 at junction 25 giving fast access to both cities. The town's mining heritage means the older areas around Cotmanhay have narrow terraced streets, while the newer estates in Kirk Hallam offer wider roads and better van access. Bath Street is the main route through town and can be busy at rush hour.",
+    localMovingInfo: `Ilkeston is a market town in the Erewash valley, sitting on the Derbyshire-Nottinghamshire border. The M1 at junction 25 is just a few minutes away, making both Derby and Nottingham easily accessible.
+
+The older areas around Cotmanhay have the red-brick terraces built for the mining community — these streets are narrow with on-street parking and can be tight for larger vans. Kirk Hallam and Little Hallam have post-war and newer estates with wider roads, driveways and better access.
+
+Bath Street runs through the centre and connects to the A609, which heads east towards the M1. The A6007 heads north towards Eastwood and the A610. Friday and Saturday are market days which can add traffic to the town centre.
+
+Rates start from £19 per hour. Include full postcodes, floor level, stairs, driveway access and parking notes.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ilkeston?","a":"Ilkeston moves start from £19 per hour. A local move usually costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Is Ilkeston close to Derby and Nottingham?","a":"Very close. Derby is about 8 miles west via the A609, and Nottingham is about 8 miles east via the A6009. Both take 15–20 minutes by van."},
+      {"q":"Can a van get down Cotmanhay streets?","a":"Some of the older terraced streets in Cotmanhay are narrow with parked cars. Add your exact postcode and any access notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Ilkeston town centre and Bath Street", body: "The main shopping area with older terraces nearby. Market days on Friday and Saturday bring extra traffic and parking can be tight."},
+      {title: "Cotmanhay", body: "Older mining-heritage terraces with narrow streets and on-street parking. Best to include detailed access notes and whether items need carrying from a distance.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Kirk Hallam and Little Hallam", body: "Post-war and newer estates with wider roads, driveways and better van access. Popular areas for family moves."},
+      {title: "Ilkeston to Derby or Nottingham", body: "Both cities are about 8 miles away. The M1 junction 25 gives fast access. Common cross-city moves costing £80–£160 depending on load.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  "long-eaton": {
+    title: "Man and Van Long Eaton | From £19",
+    description: "Man and van Long Eaton from £19/hr. NG10. Sawley, Borrowash, Breaston, Sandiacre. Call 0121 751 1269.",
+    h1: "Man and Van Long Eaton",
+    intro: "Need a man and van in Long Eaton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Long Eaton move before quoting — no spam, no obligation.",
+    knowledge: "Long Eaton sits on the Derby-Nottingham border where the M1 meets the A52, giving it excellent road connections but regular rush-hour congestion at junction 25. The station level crossing on the Midland Main Line can add unexpected delays, and the A52 Trent Bridge brings steady through-traffic. Breaston and Sawley to the south have easier access with wider estate roads.",
+    localMovingInfo: `Long Eaton is a town on the River Erewash at the Derby-Nottingham border. The M1 junction 25 and the A52 give fast access to both cities, but both routes can be congested at rush hour. The A52 Trent Bridge is a particular bottleneck.
+
+The town centre has Victorian terraces near the railway station, with a level crossing on the Midland Main Line that closes regularly for trains — this can delay moves if your route crosses it. The station area also has narrow streets with on-street parking.
+
+Breaston and Sawley to the south are popular residential areas with interwar semis and newer estates. They have better road access and more driveways than the town centre. Borrowwash to the north-east is a village with similar housing.
+
+Trent Lock at the southern tip where the River Trent, River Erewash and Cranfleet Cut meet is a distinctive area with riverside apartments and cottages — some of these have limited road access.
+
+Rates start from £19 per hour. Include full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Long Eaton?","a":"Long Eaton moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Does the station level crossing cause delays?","a":"Yes. The Midland Main Line crosses the A6005 near the station, and the barriers come down regularly for trains. If your route crosses the railway, allow extra time or plan an alternative approach."},
+      {"q":"Is Long Eaton close to Derby and Nottingham?","a":"Very close. Derby is about 7 miles west and Nottingham about 8 miles east. Both are 15–20 minutes by van, longer at rush hour."},
+    ],
+    localAreaGuides: [
+      {title: "Long Eaton town centre", body: "Victorian terraces near the station with on-street parking. The level crossing can delay moves. Market days on Thursday, Friday and Saturday bring extra traffic."},
+      {title: "Breaston and Sawley", body: "Popular residential areas south of the town centre with semis and newer estates. Better access with more driveways. Sawley Marina has some riverside properties.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Borrowash", body: "Village to the north-east with interwar semis and good road access. A common destination for family moves."},
+      {title: "Long Eaton to Derby or Nottingham", body: "Both cities are 7–8 miles away via the A52 or M1. Rush-hour congestion at junction 25 and the A52 Trent Bridge can add 15–20 minutes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  belper: {
+    title: "Man and Van Belper | From £19",
+    description: "Man and van Belper from £19/hr. DE56. Milford, Heage, Ripley, Swanwick. Derwent Valley. Call 0121 751 1269.",
+    h1: "Man and Van Belper",
+    intro: "Need a man and van in Belper? Submit your postcodes, item list and access notes for free. One verified mover reviews your Belper move before quoting — you only book if you're happy with the price and details.",
+    knowledge: "Belper sits in the Derwent Valley Mills World Heritage Site, where Georgian millworkers' cottages climb the steep hillsides above the River Derwent. The steep streets running off King Street create challenging van access in some areas, especially near the River Gardens conservation area. The A6 carries through-traffic through the town, and moves up to Ripley or down to Derby are common runs.",
+    localMovingInfo: `Belper is a market town in the Amber Valley, about 8 miles north of Derby on the A6. The town is famous for the Strutt family's cotton mills, and the Georgian and Victorian millworkers' housing gives Belper its character — but also its moving challenges.
+
+The town centre sits in the Derwent valley, with streets climbing steeply on both sides. King Street is the main drag with the market, and the roads running off it up the hillside can be narrow and steep. The conservation area near the River Gardens has particularly tight access.
+
+Milford to the south is a smaller mill village with similar character. Heage to the east has a mix of older and newer housing. Ripley is about 5 miles north on the A6, and Swanwick is just east of Ripley.
+
+The A6 connects Belper directly to Derby (about 15 minutes south) and Matlock (about 20 minutes north). The A38 bypass is accessible from the A6 at Little Eaton for longer routes.
+
+Rates start from £19 per hour. Add full postcodes and any notes about steep access or tight streets.`,
+    faq: [
+      {"q":"How much does a man and van cost in Belper?","a":"Belper moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £300–£500."},
+      {"q":"Are Belper's hillside streets difficult for vans?","a":"Some are. The streets running up from King Street towards the Deer Park area are steep and narrow. Add your exact postcode and access notes so the mover can plan the right approach."},
+      {"q":"How far is Belper from Derby?","a":"About 8 miles south on the A6, taking roughly 15–20 minutes. A Belper to Derby move typically costs £80–£160 depending on load and access."},
+    ],
+    localAreaGuides: [
+      {title: "Belper town centre and River Gardens", body: "Georgian millworkers' cottages on steep, narrow streets. The conservation area near the River Gardens has tight access. Best approached from Bridge Foot for loading."},
+      {title: "Milford and Heage", body: "Milford is a smaller mill village south of Belper with similar character. Heage to the east has a mix of housing types with better road access.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Belper to Derby moves", body: "About 8 miles south on the A6. A common route taking 15–20 minutes. The A6 can be slow at rush hour near Allestree and Duffield."},
+      {title: "Belper to Ripley and Alfreton", body: "About 5 miles north on the A6 to Ripley, then another 3 miles to Alfreton. Straightforward A-road runs.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  swadlincote: {
+    title: "Man and Van Swadlincote | From £19",
+    description: "Man and van Swadlincote from £19/hr. DE11/DE12. Church Gresley, Newhall, Woodville, Midway. Call 0121 751 1269.",
+    h1: "Man and Van Swadlincote",
+    intro: "Need a man and van in Swadlincote? Submit your postcodes, item list and access notes for free. One verified mover reviews your move before quoting — no spam, no obligation.",
+    knowledge: "Swadlincote sits on the Derbyshire-Leicestershire border where the former clay pits and collieries have been redeveloped into new housing. The older mining communities of Church Gresley, Newhall and Midway each have their own street patterns, while the newer estates around the town centre have wider roads. The A511 connects Swadlincote to both Burton upon Trent and Leicester.",
+    localMovingInfo: `Swadlincote is a town in South Derbyshire built on clay and coal. The former pipeworks and colliery sites have been redeveloped, creating a mix of older terraces and new-build estates that each present different moving challenges.
+
+Church Gresley and Newhall to the east are the oldest areas, with red-brick terraces on narrow streets built for the mining and pottery communities. Parking is on-street and the roads can be tight for larger vans. Midway is similar in character.
+
+The town centre and the newer estates to the south and west — built on the former clay pits — have wider roads, more driveways and better van access. These areas are popular for family moves.
+
+Woodville to the south connects to the A511 towards Ashby de la Zouch and the A444 towards Burton. The A511 is the main route north to Derby and south to Ashby.
+
+Rates start from £19 per hour. Add full postcodes and access details so the mover can judge whether the job needs a smaller van for tight access.`,
+    faq: [
+      {"q":"How much does a man and van cost in Swadlincote?","a":"Swadlincote moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Can a van access the older terraced streets?","a":"Church Gresley and Newhall have some narrow streets with on-street parking. Add your exact postcode and access notes — a smaller van may be needed for some areas."},
+      {"q":"How far is Swadlincote from Burton and Derby?","a":"Burton upon Trent is about 6 miles east via the A511 and A444, taking 15 minutes. Derby is about 12 miles north via the A511, taking 25–30 minutes."},
+    ],
+    localAreaGuides: [
+      {title: "Swadlincote town centre", body: "A mix of older and newer buildings with the High Street and The Pipeworks retail area. Better road access than the older mining villages."},
+      {title: "Church Gresley and Newhall", body: "Former mining and pottery areas with narrow terraced streets and on-street parking. Add detailed access notes and whether items need carrying from a distance.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Woodville and Moira", body: "Woodville connects to the A511 and A444. Moira has the National Forest and Conkers visitor centre nearby. Good road access for moves to Ashby and Burton."},
+      {title: "Swadlincote to Burton upon Trent", body: "About 6 miles east via the A511 and A444. A common route taking 15 minutes. Burton has a mix of Victorian terraces and newer estates.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  buxton: {
+    title: "Man and Van Buxton | From £19",
+    description: "Man and van Buxton from £19/hr. SK17. Fairfield, Lightwood, Harpur Hill. Peak District spa town. Call 0121 751 1269.",
+    h1: "Man and Van Buxton",
+    intro: "Need a man and van in Buxton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Buxton move before quoting — you decide whether to book after seeing the details.",
+    knowledge: "Buxton sits at over 300 metres above sea level in the heart of the Peak District, making it one of the highest towns in England. The steep gradients throughout the town and the winter weather on the A53 and A6 create challenging moving conditions. The Georgian streets around The Crescent and Opera House have limited parking and narrow access, while the higher areas like Fairfield and Harpur Hill have steep approach roads.",
+    localMovingInfo: `Buxton is a spa town in the High Peak district of Derbyshire, famous for its thermal springs, Georgian architecture and the annual Buxton Festival. Sitting in a natural bowl at over 300 metres, the town has significant gradients throughout.
+
+The town centre has Georgian and Victorian stone buildings around The Crescent, Opera House and Spring Gardens. These streets are narrow with limited parking, and the conservation area restricts some access. Approaching from the A6 gives the easiest route to the centre.
+
+Fairfield and Lightwood are residential areas on the hillside above the town centre. The roads here can be steep, and in winter the gradients become tricky with ice and snow. Harpur Hill to the south has similar challenges.
+
+The A6 runs north-south through Buxton, connecting to Stockport and Manchester to the north-west and Matlock and Derby to the south. The A53 heads west towards Leek and Stoke-on-Trent. Both the A6 and A53 can be affected by snow and ice in winter — the Cat and Fiddle road (A537) out of Buxton is one of the most dangerous roads in Britain in winter conditions.
+
+Rates start from £19 per hour. Add full postcodes, access notes and whether there are steep gradients or steps involved.`,
+    faq: [
+      {"q":"How much does a man and van cost in Buxton?","a":"Buxton moves start from £19 per hour. A local move typically costs £70–£140 due to the gradients and access challenges. A full house move could be £300–£550."},
+      {"q":"Does winter weather affect moves in Buxton?","a":"Yes. Buxton's altitude means snow and ice are common from November to March. The A6 and A53 can be affected, and some hillside streets become difficult. A mover will plan around the conditions."},
+      {"q":"How far is Buxton from Manchester?","a":"About 25 miles north-west via the A6, taking roughly 45–60 minutes depending on traffic and weather. The Cat and Fiddle route is scenic but can be slow and dangerous in winter."},
+    ],
+    localAreaGuides: [
+      {title: "Buxton town centre and The Crescent", body: "Georgian and Victorian stone buildings around The Crescent, Opera House and Spring Gardens. Narrow streets with limited parking. The conservation area restricts some access. Best approached from the A6 for loading."},
+      {title: "Fairfield and Lightwood", body: "Residential areas on the hillside with steep approach roads. Gradients can be challenging for loading. Some streets have restricted parking.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Harpur Hill", body: "Southern residential area with a mix of housing types. The approach from the A53 has gradients. Good access to the A53 towards Leek and Stoke."},
+      {title: "Buxton to Manchester moves", body: "About 25 miles via the A6 or A537. The Cat and Fiddle road is the shorter but more challenging route. The A6 via Whaley Bridge is more reliable in winter. Allow 45–60 minutes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  ripley: {
+    title: "Man and Van Ripley | From £19",
+    description: "Man and van Ripley from £19/hr. DE5. Codnor, Heanor, Waingroves, Pentrich. Amber Valley. Call 0121 751 1269.",
+    h1: "Man and Van Ripley",
+    intro: "Need a man and van in Ripley? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ripley move before quoting — no spam, no obligation.",
+    knowledge: "Ripley is an Amber Valley market town with strong mining and industrial heritage, sitting between the A610 and A38 corridors. The A38 junction 28 gives fast access to Derby and the M1, while the A610 connects to Nottingham. The former mining communities around Codnor and Waingroves have narrow streets that need careful van navigation.",
+    localMovingInfo: `Ripley is a market town in the Amber Valley, about 10 miles north of Derby. The A38 runs just east of the town with junction 28 giving fast connections south to Derby and the M1, and north to the A610 towards Nottingham.
+
+The town centre has a mix of red-brick terraces and post-war housing. The market place area has some narrower streets, while the newer estates on the edges have better access. Nottingham Road is the main shopping street.
+
+Codnor, Waingroves and Butterley are former mining areas to the east and south-east. These have the typical red-brick terraces with narrow streets and on-street parking that need careful van navigation. Pentrich, famous for the 1817 workers' uprising, is a small village to the south-west.
+
+Heanor is the next town north, about 3 miles on the A608, and Belper is about 5 miles south on the A6.
+
+Rates start from £19 per hour. Add full postcodes, floor level and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ripley?","a":"Ripley moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Ripley from Derby?","a":"About 10 miles south via the A38, taking roughly 15–20 minutes. A Ripley to Derby move typically costs £80–£160 depending on load and access."},
+      {"q":"Do you cover Codnor and Waingroves?","a":"Yes. Both are part of the Ripley area. The narrow terraced streets in these areas may need a smaller van — add your access notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Ripley town centre", body: "A mix of terraces and newer buildings around the market place and Nottingham Road. The market is on Fridays and Saturdays, which can affect parking and access."},
+      {title: "Codnor and Waingroves", body: "Former mining areas with narrow terraced streets and on-street parking. Include detailed access notes and whether items need carrying from a distance.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Butterley and Pentrich", body: "Butterley has the Midland Railway Centre and former reservoir area. Pentrich is a small village to the south-west. Both have mixed housing with reasonable access."},
+      {title: "Ripley to Derby moves", body: "About 10 miles south via the A38. A fast dual carriageway route taking 15–20 minutes. Common for cross-town moves.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  heanor: {
+    title: "Man and Van Heanor | From £19",
+    description: "Man and van Heanor from £19/hr. DE75. Loscoe, Langley Mill, Marlpool, Shipley. Call 0121 751 1269.",
+    h1: "Man and Van Heanor",
+    intro: "Need a man and van in Heanor? Submit your postcodes, item list and access notes for free. One verified mover reviews your Heanor move before quoting — you decide whether to book.",
+    knowledge: "Heanor and Loscoe sit on the Derbyshire-Nottinghamshire border, with Langley Mill to the north forming a triangle of former mining communities. The A608 and A610 provide the main routes, and the M1 at junction 26 gives fast access to Nottingham. The narrow terraced streets in Langley Mill and the older areas need careful van navigation.",
+    localMovingInfo: `Heanor is a town in the Amber Valley, about 8 miles north-east of Derby. It sits alongside Loscoe to the west and Langley Mill to the north, forming a continuous built-up area with a shared mining heritage.
+
+The A608 runs through Heanor connecting to the M1 at junction 26 (about 4 miles east) and the A610 to Nottingham. Market Street is the main shopping area. The town has a mix of red-brick terraces near the centre and newer estates in Marlpool and Shipley.
+
+Langley Mill has some of the narrowest streets in the area, with older terraces built for the mining and railway communities. On-street parking is the norm here, and the streets can be tight for larger vans. Loscoe is similar but slightly more spread out.
+
+Marlpool to the south has a mix of interwar and post-war housing with better road access. Shipley and Smalley to the west are more rural with a mix of cottages and newer homes.
+
+Rates start from £19 per hour. Add full postcodes, floor level and access notes.`,
+    faq: [
+      {"q":"How much does a man and van cost in Heanor?","a":"Heanor moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Heanor from Nottingham?","a":"About 9 miles south-east via the A608 and M1 junction 26, taking roughly 20 minutes. A Heanor to Nottingham move typically costs £80–£160."},
+      {"q":"Are Langley Mill streets difficult for vans?","a":"Some of the older terraced streets in Langley Mill are narrow with on-street parking. Add your exact postcode and access notes so the mover can plan the right approach."},
+    ],
+    localAreaGuides: [
+      {title: "Heanor town centre and Market Street", body: "Red-brick terraces and local shops. The market operates on Fridays and Saturdays. Some streets near the centre are narrow with limited parking."},
+      {title: "Langley Mill and Loscoe", body: "The tightest streets in the area, built for mining and railway workers. On-street parking and narrow roads make some areas challenging for larger vans. Add detailed access notes.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Marlpool and Shipley", body: "Marlpool has interwar and newer housing with better road access. Shipley is more rural with a mix of cottages and newer homes. Easier for van access."},
+      {title: "Heanor to Nottingham and Derby", body: "Nottingham is about 9 miles via the M1, Derby about 8 miles via the A608 and A38. Both are common cross-city moves.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  alfreton: {
+    title: "Man and Van Alfreton | From £19",
+    description: "Man and van Alfreton from £19/hr. DE55. Somercotes, Riddings, Ironville, Shirland. Call 0121 751 1269.",
+    h1: "Man and Van Alfreton",
+    intro: "Need a man and van in Alfreton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Alfreton move before quoting — no spam, no obligation.",
+    knowledge: "Alfreton sits at the junction of the A38 and A61 in the Amber Valley, with the A38 giving fast dual-carriageway access to Derby and the M1. The former mining communities of Somercotes, Riddings and Ironville each have narrow street patterns, while the town centre and retail park areas have more straightforward access.",
+    localMovingInfo: `Alfreton is a market town in the Amber Valley, about 12 miles north of Derby. The A38 runs just west of the town with junction 28 giving fast access south to Derby and the M1. The A61 heads north towards Chesterfield.
+
+The town centre has a mix of older terraces and newer developments. The retail park off the A38 draws steady traffic. High Street and King Street are the main shopping areas.
+
+Somercotes to the south-east and Riddings to the south are former mining and ironworking communities with narrow terraced streets. Ironville, further east towards the Nottinghamshire border, has similar character. These areas need careful van navigation and detailed access notes.
+
+Shirland and Higham to the west are more rural with a mix of cottages and newer homes. The A615 connects to Matlock about 12 miles to the south-west.
+
+Alfreton is well-positioned for cross-area moves — the A38 goes straight to Derby, the A61 heads to Chesterfield, and the M1 is easily accessible for Nottingham and Sheffield routes.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Alfreton?","a":"Alfreton moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Alfreton from Derby?","a":"About 12 miles south via the A38, taking roughly 15–20 minutes. A fast dual carriageway route. An Alfreton to Derby move typically costs £80–£160."},
+      {"q":"Can a van get to Somercotes and Riddings?","a":"Yes, but some streets in these older mining areas are narrow with on-street parking. Add your exact postcode and access notes so the mover can plan the right vehicle size."},
+    ],
+    localAreaGuides: [
+      {title: "Alfreton town centre", body: "A mix of terraces and newer buildings around High Street and King Street. The retail park off the A38 has good loading access for furniture collections."},
+      {title: "Somercotes and Riddings", body: "Former mining and ironworking areas with narrow terraced streets and on-street parking. Add detailed access notes.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Shirland and Higham", body: "More rural areas to the west with a mix of older cottages and newer homes. Better road access and more driveways than the mining villages."},
+      {title: "Alfreton to Mansfield and Chesterfield", body: "Mansfield is about 8 miles north-east via the A38 and A617. Chesterfield is about 10 miles north via the A61. Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  matlock: {
+    title: "Man and Van Matlock | From £19",
+    description: "Man and van Matlock from £19/hr. DE4. Matlock Bath, Cromford, Darley Dale, Rowsley. Derwent Valley. Call 0121 751 1269.",
+    h1: "Man and Van Matlock",
+    intro: "Need a man and van in Matlock? Submit your postcodes, item list and access notes for free. One verified mover reviews your Matlock move before quoting — you only book if you're happy with the details.",
+    knowledge: "Matlock is the county town of Derbyshire, sitting in a steep-sided valley on the River Derwent where the A6 carries through-traffic including tourists heading for Matlock Bath and the Heights of Abraham. The town's hillside position means many streets have significant gradients, and the conservation area near Crown Square has narrow access. The A6 through Matlock Bath can be very slow in tourist season.",
+    localMovingInfo: `Matlock is the county town of Derbyshire, about 16 miles north of Derby on the A6. The town sits in the Derwent valley with steep hillsides rising on both sides, creating a distinctive landscape that affects moving conditions.
+
+The town centre is around Crown Square and Causeway Lane, with the A6 running through as the main road. The conservation area near Crown Square has narrow streets with restricted access. The A6 through Matlock is busy with local traffic and through-routes to the Peak District.
+
+Matlock Bath, just to the south, is a tourist destination with the Heights of Abraham cable car, Gulliver's Kingdom theme park and the stone-lined riverside promenade. The A6 through Matlock Bath can be extremely congested on summer weekends and bank holidays — avoid moving during peak tourist times if possible.
+
+Cromford, a mile south of Matlock Bath, is where Sir Richard Arkwright built his cotton mill in 1771 — the birthplace of the factory system. It's part of the Derwent Valley Mills World Heritage Site.
+
+Darley Dale and Rowsley to the north are more spread out with a mix of stone cottages and newer estates. The A6 continues north through these villages towards Bakewell and the Peak District.
+
+Rates start from £19 per hour. Include full postcodes and any notes about steep gradients or tight access.`,
+    faq: [
+      {"q":"How much does a man and van cost in Matlock?","a":"Matlock moves start from £19 per hour. A local move typically costs £70–£140 due to the gradients and valley access. A full house move could be £300–£520."},
+      {"q":"Is the A6 through Matlock Bath always busy?","a":"It's busiest on summer weekends and bank holidays when tourists visit the Heights of Abraham and the promenade. Weekdays and winter months are much quieter."},
+      {"q":"How far is Matlock from Derby?","a":"About 16 miles south on the A6, taking roughly 25–30 minutes. The A6 can be slow through Duffield and Belper at rush hour."},
+    ],
+    localAreaGuides: [
+      {title: "Matlock town centre", body: "Around Crown Square and Causeway Lane with steep side streets. The conservation area has narrow access. Best approached from the A6 for loading. Parking is limited near the town centre."},
+      {title: "Matlock Bath", body: "Tourist area on the A6 with narrow access near the riverside. Extremely busy on summer weekends — avoid these times for moves. The cable car station area has limited parking.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Cromford and Darley Dale", body: "Cromford is a World Heritage Site village with stone cottages. Darley Dale has a mix of housing with better road access. Rowsley sits at the junction of the A6 and A6015."},
+      {title: "Matlock to Derby moves", body: "About 16 miles south on the A6. Takes 25–30 minutes but can be longer at rush hour. A common route for cross-valley moves.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — LEICESTERSHIRE TOWNS
+  // ──────────────────────────────────────────
+
+  loughborough: {
+    title: "Man and Van Loughborough | From £19",
+    description: "Man and van Loughborough from £19/hr. LE11/LE12. Shepshed, Quorn, Mountsorrel, Nanpantan. Call 0121 751 1269.",
+    h1: "Man and Van Loughborough",
+    intro: "Need a man and van in Loughborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Loughborough move before quoting — you only book if you're happy with the details.",
+    knowledge: "Loughborough is dominated by its university, and the student letting cycle creates peak demand every July and September. Beyond the student areas, the town is a busy market centre on the M1 and A6 corridor between Leicester and Nottingham. The Golden Triangle near the campus has the highest concentration of student houses with restricted parking and tight access.",
+    localMovingInfo: `Loughborough is a market town in Leicestershire, home to Loughborough University — one of the UK's largest campus universities. The student population of over 17,000 creates two major moving peaks each year: July when students move out and September when they move in.
+
+The Golden Triangle (the area between the university, Epinal Way and Forest Road) has hundreds of student houses and HMOs. During move-in and move-out weeks, the streets are packed with vans and cars. Parking is extremely limited and access can be chaotic. Outside the peak weeks, these areas are much easier to navigate.
+
+The town centre around Market Place and the pedestrianised areas has older terraces with on-street parking. Shepshed to the west is a separate town with a mix of housing types. Quorn, Mountsorrel and Barrow upon Soar to the south are desirable villages along the A6 and the River Soar valley.
+
+The M1 junction 23 is just 3 miles west via the A512, giving fast access to Leicester, Nottingham and Derby. The A6 runs through the centre, connecting to Leicester to the south and Loughborough to the north.
+
+Rates start from £19 per hour. For student moves, book early for July and September as demand is high.`,
+    faq: [
+      {"q":"How much does a man and van cost in Loughborough?","a":"Loughborough moves start from £19 per hour. A local student move typically costs £60–£120. A full house move could be £300–£500."},
+      {"q":"When is the busiest time for student moves?","a":"July (move-out) and September (move-in) are the peak months. Book early for these periods as demand is very high, especially around the Golden Triangle near the university."},
+      {"q":"How far is Loughborough from Leicester and Nottingham?","a":"Leicester is about 11 miles south via the A6 or M1, taking 20–25 minutes. Nottingham is about 12 miles north via the M1, taking 20–25 minutes."},
+    ],
+    localAreaGuides: [
+      {title: "The Golden Triangle and student areas", body: "The area between the university, Epinal Way and Forest Road is packed with student houses. During July and September, parking is extremely limited and streets are busy with moving traffic. Plan ahead and book early.", links: [{label: "Student removals", href: "/student-removals"}]},
+      {title: "Loughborough town centre", body: "Market Place and the pedestrianised area with older terraces nearby. The market operates on Thursday and Saturday, which can affect parking and access."},
+      {title: "Shepshed, Quorn and Mountsorrel", body: "Shepshed is to the west with mixed housing. Quorn and Mountsorrel are desirable villages along the A6 to the south. All have good road access for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Loughborough to Leicester or Nottingham", body: "Both cities are about 11–12 miles away via the A6 or M1. Common cross-city moves taking 20–25 minutes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  coalville: {
+    title: "Man and Van Coalville | From £19",
+    description: "Man and van Coalville from £19/hr. LE67. Whitwick, Hugglescote, Newhall, Ravenstone. Call 0121 751 1269.",
+    h1: "Man and Van Coalville",
+    intro: "Need a man and van in Coalville? Submit your postcodes, item list and access notes for free. One verified mover reviews your Coalville move before quoting — no spam, no obligation.",
+    knowledge: "Coalville sits in north-west Leicestershire between the M1 and Charnwood Forest, built on the coalfield that gave the town its name. The former mining communities of Whitwick, Hugglescote and Ravenstone each have narrow terraced streets, while the newer estates on the town's edges have wider roads and better van access. The A511 connects Coalville to both Ashby de la Zouch and Leicester.",
+    localMovingInfo: `Coalville is a town in north-west Leicestershire, about 7 miles south of the M1 junction 22. The town grew with coal mining and has been regenerated with new housing and retail developments on former colliery sites.
+
+Whitwick to the north-east and Hugglescote to the south are the older mining areas with red-brick terraces on narrow streets. Parking is on-street and the roads can be tight for vans. Ravenstone and Ellistown have similar character.
+
+The town centre has the Belvoir Shopping Centre and newer developments. The Broom Leys and Greenhill estates to the west are more modern with wider roads and driveways.
+
+The A511 runs through Coalville, connecting to Ashby de la Zouch to the south (about 5 miles) and Leicester to the south-east (about 14 miles). The A512 heads east towards Loughborough and the M1 junction 23.
+
+Rates start from £19 per hour. Add full postcodes and access notes so the mover can plan the right vehicle size for the street layout.`,
+    faq: [
+      {"q":"How much does a man and van cost in Coalville?","a":"Coalville moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"Can a van access the older mining streets?","a":"Some streets in Whitwick and Hugglescote are narrow with on-street parking. Add your exact postcode and access notes — a smaller van may be better for some areas."},
+      {"q":"How far is Coalville from Leicester?","a":"About 14 miles south-east via the A511 and A47, taking roughly 25–30 minutes."},
+    ],
+    localAreaGuides: [
+      {title: "Coalville town centre", body: "The Belvoir Shopping Centre area with a mix of older and newer buildings. Market on Friday and Saturday. Better road access than the mining villages."},
+      {title: "Whitwick and Hugglescote", body: "Former mining areas with narrow terraced streets and on-street parking. Add detailed access notes and whether items need carrying from a distance.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Broom Leys and Greenhill estates", body: "Newer estates with wider roads, driveways and better van access. Popular areas for family moves."},
+      {title: "Coalville to Ashby and Leicester", body: "Ashby de la Zouch is about 5 miles south on the A511. Leicester is about 14 miles south-east. Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  hinckley: {
+    title: "Man and Van Hinckley | From £19",
+    description: "Man and van Hinckley from £19/hr. LE10. Barwell, Earl Shilton, Burbage, Stoke Golding. Call 0121 751 1269.",
+    h1: "Man and Van Hinckley",
+    intro: "Need a man and van in Hinckley? Submit your postcodes, item list and access notes for free. One verified mover reviews your Hinckley move before quoting — no spam, no obligation.",
+    knowledge: "Hinckley sits on the A5 Watling Street between Nuneaton and Leicester, with the M69 giving fast access to both Coventry and Leicester. The town has a hosiery heritage and a mix of Victorian terraces, interwar semis and newer estates in Burbage. The A5 carries steady through-traffic and the market square area has narrow streets.",
+    localMovingInfo: `Hinckley is a market town in south-west Leicestershire, about 12 miles south-west of Leicester and 10 miles north-east of Nuneaton. The A5 Watling Street runs through the town, and the M69 junction 2 gives fast access to Coventry and the M6.
+
+The town centre has Victorian terraces around the market square, with narrow streets that need careful van access. The hosiery industry shaped the town, and the old mill buildings have been converted into apartments and small businesses. Market days are on Mondays and Saturdays.
+
+Burbage to the south is a popular residential area with interwar semis and newer estates — better road access and more driveways. Barwell and Earl Shilton to the north are larger villages with a mix of housing types.
+
+Stoke Golding and Dadlington to the east are smaller villages near the site of the Battle of Bosworth. Sapcote and Stoney Stanton to the south are similar in character.
+
+The M69 gives fast access to Coventry (about 15 minutes) and Leicester (about 20 minutes). The A47 connects to Leicester city centre.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Hinckley?","a":"Hinckley moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Hinckley from Coventry?","a":"About 12 miles west via the M69, taking roughly 15–20 minutes. A Hinckley to Coventry move typically costs £80–£160."},
+      {"q":"Does the A5 through-traffic cause delays?","a":"The A5 Watling Street carries steady through-traffic through Hinckley. At rush hour it can slow, especially near the traffic lights at the town centre. Plan loading and routes accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Hinckley town centre and market", body: "Victorian terraces around the market square with narrow streets and limited parking. Market days on Monday and Saturday bring extra traffic. Some streets are one-way near the centre."},
+      {title: "Burbage", body: "Popular residential area south of the town with interwar semis and newer estates. Better road access and more driveways than the town centre. A common destination for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Barwell and Earl Shilton", body: "Larger villages to the north with a mix of housing. Good road connections to the A47 and M69."},
+      {title: "Hinckley to Coventry and Leicester", body: "Coventry is about 12 miles west via the M69. Leicester is about 12 miles north-east via the A47. Both are 15–20 minute runs.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  "melton-mowbray": {
+    title: "Man and Van Melton Mowbray | From £19",
+    description: "Man and van Melton Mowbray from £19/hr. LE13. Asfordby, Bottesford, Waltham on the Wolds. Call 0121 751 1269.",
+    h1: "Man and Van Melton Mowbray",
+    intro: "Need a man and van in Melton Mowbray? Submit your postcodes, item list and access notes for free. One verified mover reviews your Melton move before quoting — you decide whether to book.",
+    knowledge: "Melton Mowbray is the rural capital of Leicestershire, famous for its pork pies and Stilton cheese and home to one of the oldest cattle markets in England. Market days on Tuesdays and Saturdays bring extra traffic to already narrow town-centre streets, and the surrounding villages along the Wreake valley sit on rural roads that need local knowledge for access.",
+    localMovingInfo: `Melton Mowbray is a market town in north-east Leicestershire, about 19 miles north-east of Leicester. The town is famous for its food heritage — pork pies, Stilton cheese and the annual Melton Mowbray Food Festival — and it still has a working cattle market on Tuesdays.
+
+The town centre has a mix of Victorian terraces, Georgian buildings and newer developments around Nottingham Road and the market area. The streets near the cattle market and St Mary's Church are narrow with limited parking, especially on market days.
+
+Asfordby to the north is a large village with a mix of mining-heritage housing and newer estates. Bottesford is across the county border in Nottinghamshire with good access to the A52 and A46. Waltham on the Wolds to the south-east is a hilltop village with rural access roads.
+
+The A606 connects Melton to Oakham and Stamford to the east, and the A607 runs west to Leicester and north to Grantham. The A46 gives access to Newark and Lincoln to the north.
+
+Rates start from £19 per hour. Add full postcodes and access details, especially for rural villages with narrow lanes.`,
+    faq: [
+      {"q":"How much does a man and van cost in Melton Mowbray?","a":"Melton Mowbray moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Are market days a problem for moving?","a":"The Tuesday and Saturday markets bring extra traffic and parking pressure to the town centre. If your move involves the town centre, consider avoiding these days or planning around the market hours."},
+      {"q":"How far is Melton Mowbray from Leicester?","a":"About 19 miles south-west via the A607, taking roughly 25–30 minutes. A Melton to Leicester move typically costs £90–£170."},
+    ],
+    localAreaGuides: [
+      {title: "Melton Mowbray town centre", body: "Victorian and Georgian buildings around the market place and St Mary's Church. Narrow streets with limited parking, especially on Tuesday and Saturday market days. The cattle market area has tight access."},
+      {title: "Asfordby and Bottesford", body: "Asfordby has a mix of mining-heritage housing and newer estates with reasonable access. Bottesford is across the border in Nottinghamshire with good road connections.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Rural Wreake valley villages", body: "Villages along the Wreake valley like Kirby Bellars, Frisby on the Wreake and Hoby have narrow rural lanes. Add detailed access notes for these locations."},
+      {title: "Melton Mowbray to Grantham and Stamford", body: "Grantham is about 15 miles north on the A607. Stamford is about 22 miles east via the A606. Both are common cross-county routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  "market-harborough": {
+    title: "Man and Van Market Harborough | From £19",
+    description: "Man and van Market Harborough from £19/hr. LE16. Great Bowden, Foxton, Kibworth. Call 0121 751 1269.",
+    h1: "Man and Van Market Harborough",
+    intro: "Need a man and van in Market Harborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your move before quoting — no spam, no obligation.",
+    knowledge: "Market Harborough is an elegant market town at the southern tip of Leicestershire where the A6 crosses the Welland valley. The Old Grammar School sitting on stilts in the market square is the town's iconic image, and the surrounding Georgian townhouses sit on narrow streets that need careful van navigation, especially on market days.",
+    localMovingInfo: `Market Harborough is a market town in south Leicestershire, about 16 miles south of Leicester on the A6. The town is known for its Georgian architecture, the Old Grammar School, and its thriving market.
+
+The town centre has Georgian townhouses and Victorian terraces on narrow streets around the High Street and the market square. The Old Grammar School, built on stilts above the butter market, sits at the heart of the conservation area. Access is restricted near the square on market days (Tuesday, Friday and Saturday).
+
+Great Bowden and Little Bowden to the north and south are popular residential villages with a mix of older and newer housing. Foxton to the south is known for its famous canal locks — a staircase of ten locks on the Grand Union Canal. Kibworth to the north is a large village on the A6.
+
+The A6 connects to Leicester to the north and Bedford to the south. The A508 heads east to Northampton and the M1 junction 20 is about 8 miles west via the A4304.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Market Harborough?","a":"Market Harborough moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Market Harborough from Leicester?","a":"About 16 miles north on the A6, taking roughly 20–25 minutes. A Market Harborough to Leicester move typically costs £90–£170."},
+      {"q":"Are market days a problem for moving?","a":"Tuesday, Friday and Saturday markets can make the town centre congested with limited parking. Plan loading and routes to avoid the market square on these days."},
+    ],
+    localAreaGuides: [
+      {title: "Market Harborough town centre", body: "Georgian townhouses and the Old Grammar School in the conservation area. Narrow streets with limited parking, especially on market days (Tuesday, Friday, Saturday). The High Street has some loading bays."},
+      {title: "Great Bowden and Little Bowden", body: "Desirable residential villages with a mix of period and modern housing. Better road access than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Foxton and Kibworth", body: "Foxton is known for its canal locks. Kibworth is a large village on the A6. Both have reasonable road access with a mix of housing types."},
+      {title: "Market Harborough to Northampton and Leicester", body: "Northampton is about 18 miles south via the A508. Leicester is about 16 miles north on the A6. Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  "ashby-de-la-zouch": {
+    title: "Man and Van Ashby de la Zouch | From £19",
+    description: "Man and van Ashby de la Zouch from £19/hr. LE65. Moira, Measham, Packington. Call 0121 751 1269.",
+    h1: "Man and Van Ashby de la Zouch",
+    intro: "Need a man and van in Ashby de la Zouch? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ashby move before quoting — you only book if you're happy with the details.",
+    knowledge: "Ashby de la Zouch is a market town on the Leicestershire-Derbyshire border with a castle ruin at its heart and the A42 giving fast access to the M42 and Birmingham. Market Street mixes Georgian and Victorian buildings with narrow access, while the former mining villages of Moira and Donisthorpe have their own distinct street patterns.",
+    localMovingInfo: `Ashby de la Zouch (known locally as just 'Ashby') is a market town in north-west Leicestershire, about 15 miles north-west of Leicester and 10 miles south of Derby. The town has a Norman castle ruin, a busy Market Street and good road connections.
+
+The A42 runs just east of the town, giving fast dual-carriageway access to the M42 (for Birmingham and the West Midlands) and the A50 (for Stoke and the North West). The A511 heads west towards Swadlincote and Burton upon Trent.
+
+Market Street is the main shopping area with Georgian and Victorian buildings. Some of the streets running off it are narrow with limited parking. The Saturday market brings extra traffic to the town centre.
+
+Moira and Donisthorpe to the west are former mining villages with narrow terraced streets. Measham to the south-west is similar. These areas need careful van navigation and detailed access notes.
+
+Packington and Normanton le Heath to the east are more rural with a mix of cottages and newer homes. The Ashby Woulds area between the town and Moira has been regenerated from its mining past with the Conkers visitor centre and National Forest walks.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ashby de la Zouch?","a":"Ashby moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Ashby from Birmingham?","a":"About 28 miles west via the A42 and M42, taking roughly 35–45 minutes depending on traffic. An Ashby to Birmingham move typically costs £130–£220."},
+      {"q":"Can a van access Moira and Donisthorpe?","a":"Yes, but some streets in these former mining villages are narrow with on-street parking. Add your exact postcode and access notes."},
+    ],
+    localAreaGuides: [
+      {title: "Ashby town centre and Market Street", body: "Georgian and Victorian buildings along Market Street with some narrow side streets. The Saturday market brings extra traffic. The castle area is a conservation zone with restricted access."},
+      {title: "Moira and Donisthorpe", body: "Former mining villages to the west with narrow terraced streets and on-street parking. Add detailed access notes. The National Forest and Conkers are nearby.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Measham and Packington", body: "Measham to the south-west is a larger village with mixed housing. Packington to the east is more rural. Both have reasonable road access."},
+      {title: "Ashby to Birmingham and the West Midlands", body: "The A42 and M42 give fast access to Birmingham (about 35–45 minutes). A common route for cross-region moves. The West Midlands hub is accessible for wider coverage.", links: [{label: "Man and Van West Midlands", href: "/man-and-van-west-midlands"}]},
+    ],
+  },
+
+  lutterworth: {
+    title: "Man and Van Lutterworth | From £19",
+    description: "Man and van Lutterworth from £19/hr. LE17. Magna Park, Bitteswell, Gilmorton. Call 0121 751 1269.",
+    h1: "Man and Van Lutterworth",
+    intro: "Need a man and van in Lutterworth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Lutterworth move before quoting — no spam, no obligation.",
+    knowledge: "Lutterworth sits on the A5 Watling Street where the M1 and M6 nearly meet, making it a key logistics crossroads. Magna Park, one of Europe's largest distribution centres, sits on the doorstep and adds heavy goods traffic to the local roads. The town itself has a charming conservation area with Georgian cottages and narrow streets.",
+    localMovingInfo: `Lutterworth is a small market town in south Leicestershire, about 10 miles south of Rugby and 14 miles south-west of Leicester. The A5 Watling Street runs through the town, and the M1 junction 20 and M6 junction 1 are both within a few miles.
+
+Magna Park, one of Europe's largest logistics and distribution centres, sits just east of the town. The HGV traffic from Magna Park adds to the A5 and A4304 traffic, especially at shift-change times. This can affect move timing on the main routes.
+
+The town centre has a conservation area with Georgian cottages and narrow streets around the market place. The parish church of St Mary has a 14th-century spire and sits at the heart of the old town. Parking is limited near the centre.
+
+Bitteswell, Cotesbach and Gilmorton are nearby villages with a mix of housing types and better road access than the town centre. Shawell and Walton to the south are smaller settlements on rural roads.
+
+The A5 connects Lutterworth to Rugby to the south and Hinckley to the north. The A4304 heads east to Market Harborough. The M1 junction 20 gives fast access to Northampton and London, while the M6 heads north to Coventry and Birmingham.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Lutterworth?","a":"Lutterworth moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"Does Magna Park traffic cause delays?","a":"The HGV traffic from Magna Park can slow the A5 and A4304 at shift-change times (early morning and mid-afternoon). Plan moves outside these peak times if possible."},
+      {"q":"How far is Lutterworth from Rugby?","a":"About 10 miles south on the A5, taking roughly 15–20 minutes. A Lutterworth to Rugby move typically costs £80–£150."},
+    ],
+    localAreaGuides: [
+      {title: "Lutterworth town centre", body: "Conservation area with Georgian cottages around the market place. Narrow streets with limited parking. The A5 carries through-traffic through the town, which can be busy at rush hour."},
+      {title: "Bitteswell and Gilmorton", body: "Nearby villages with a mix of housing types. Better road access and more driveways than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Magna Park area", body: "The logistics park east of town generates significant HGV traffic. Residential developments near Magna Park have modern road layouts with good access."},
+      {title: "Lutterworth to Rugby and Northampton", body: "Rugby is about 10 miles south on the A5. Northampton is about 20 miles south via the M1. Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — LINCOLNSHIRE TOWNS
+  // ──────────────────────────────────────────
+
+  grantham: {
+    title: "Man and Van Grantham | From £19",
+    description: "Man and van Grantham from £19/hr. NG31/NG32. Barrowby, Harlaxton, Belton, Caythorpe. Call 0121 751 1269.",
+    h1: "Man and Van Grantham",
+    intro: "Need a man and van in Grantham? Submit your postcodes, item list and access notes for free. One verified mover reviews your Grantham move before quoting — you only book if you're happy with the details.",
+    knowledge: "Grantham sits on the A1 where it crosses the River Witham, a market town famous as the birthplace of Margaret Thatcher and home to the King's School that educated Isaac Newton. The A1 junction layout can delay moves at peak times, and the older streets near the Guildhall and St Wulfram's Church need careful van navigation.",
+    localMovingInfo: `Grantham is a market town in south Lincolnshire, about 24 miles south of Lincoln and 23 miles east of Nottingham. The A1 runs just east of the town, giving fast north-south access. The A52 heads west to Nottingham and the A607 runs north to Lincoln.
+
+The town centre has Georgian townhouses and Victorian terraces around the Guildhall and St Wulfram's Church. The streets near the Guildhall are narrow with limited parking. The market operates on Saturdays.
+
+Barrowby and Great Gonerby to the west are large villages with a mix of housing types and better road access than the town centre. Harlaxton to the west has the impressive Harlaxton Manor. Belton to the north-east has Belton House (National Trust).
+
+The A1 bypass junctions (north and south) give access to the dual carriageway for fast routes to Peterborough, Stamford and the north. The A52 connects to Nottingham (about 35 minutes) and the A607 to Lincoln (about 40 minutes).
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Grantham?","a":"Grantham moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Grantham from Nottingham?","a":"About 23 miles west via the A52, taking roughly 35 minutes. A Grantham to Nottingham move typically costs £90–£170."},
+      {"q":"Does the A1 cause delays for moves?","a":"The A1 junctions north and south of Grantham can be congested at rush hour. Plan routes that avoid peak times if possible."},
+    ],
+    localAreaGuides: [
+      {title: "Grantham town centre", body: "Georgian townhouses around the Guildhall and St Wulfram's Church. Narrow streets with limited parking. Saturday market brings extra traffic. The conservation area restricts some access."},
+      {title: "Barrowby and Great Gonerby", body: "Large villages to the west with a mix of housing types. Better road access and more driveways. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Harlaxton and Belton", body: "Harlaxton has the manor and village housing. Belton has Belton House and a mix of cottages and modern estates. Both have reasonable rural road access."},
+      {title: "Grantham to Nottingham and Lincoln", body: "Nottingham is about 23 miles west via the A52 (35 minutes). Lincoln is about 24 miles north via the A607 (40 minutes). Both are common cross-county routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  boston: {
+    title: "Man and Van Boston | From £19",
+    description: "Man and van Boston from £19/hr. PE20/PE21. Wyberton, Fishtoft, Freiston, Skirbeck. Call 0121 751 1269.",
+    h1: "Man and Van Boston",
+    intro: "Need a man and van in Boston? Submit your postcodes, item list and access notes for free. One verified mover reviews your Boston move before quoting — no spam, no obligation.",
+    knowledge: "Boston sits on the River Witham in the Lincolnshire Fens, dominated by the 272-foot tower of St Botolph's Church — known locally as the Stump. The flat fenland landscape brings its own challenges with winter flooding on rural roads, and the town centre's one-way system around the Stump needs careful planning.",
+    localMovingInfo: `Boston is a market town in south Lincolnshire, about 35 miles south-east of Lincoln. The town sits on the River Witham in the heart of the Fens — flat, agricultural land that was drained in the 17th century. The town's position makes it a gateway to the Lincolnshire coast.
+
+The town centre is dominated by the Stump — the tower of St Botolph's Church, one of the largest parish churches in England. The one-way system around the Stump and the market place can be confusing for drivers who don't know the area. Wednesday and Saturday are market days with extra traffic and parking pressure.
+
+Wyberton and Fishtoft to the south and east are residential areas with a mix of housing types. Skirbeck to the east is an older area with some narrow streets. Freiston and Butterwick to the east are fenland villages on rural roads.
+
+The A16 runs north-south through Boston, connecting to Lincoln (about 40 minutes north) and Spalding (about 25 minutes south). The A52 heads west to Grantham. The A17 runs east to King's Lynn.
+
+Winter flooding can affect some fenland roads, particularly the lower routes between villages. A mover who knows the area will plan around any flood warnings.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Boston?","a":"Boston moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Does winter flooding affect moves?","a":"Some fenland roads between villages can flood in winter, especially after heavy rain. Add access notes and a mover will plan the best route."},
+      {"q":"How far is Boston from Lincoln?","a":"About 35 miles north via the A16, taking roughly 40–50 minutes. A Boston to Lincoln move typically costs £100–£180."},
+    ],
+    localAreaGuides: [
+      {title: "Boston town centre and the Stump", body: "The one-way system around St Botolph's Church (the Stump) and the market place can be confusing. Market days on Wednesday and Saturday bring extra traffic. Some streets near the docks are narrow."},
+      {title: "Wyberton and Fishtoft", body: "Residential areas to the south and east with a mix of housing types. Better road access than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Fenland villages", body: "Freiston, Butterwick and other fenland villages to the east sit on flat, rural roads. These can flood in winter. Add detailed access notes for properties on fenland lanes."},
+      {title: "Boston to Lincoln and Spalding", body: "Lincoln is about 35 miles north on the A16 (40–50 minutes). Spalding is about 20 miles south on the A16 (25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  spalding: {
+    title: "Man and Van Spalding | From £19",
+    description: "Man and van Spalding from £19/hr. PE11. Pinchbeck, Cowbit, Gosberton, Donington. Call 0121 751 1269.",
+    h1: "Man and Van Spalding",
+    intro: "Need a man and van in Spalding? Submit your postcodes, item list and access notes for free. One verified mover reviews your Spalding move before quoting — no spam, no obligation.",
+    knowledge: "Spalding is the capital of the Lincolnshire bulb-growing district, famous for its flower festival and the Springfields outlet shopping centre. The flat fenland roads between the drainage channels are fast but vulnerable to winter flooding, and the A16 carries steady through-traffic through the town.",
+    localMovingInfo: `Spalding is a market town in south Lincolnshire, about 20 miles north of Peterborough and 20 miles south of Boston. The town sits in the Fens and is known for its tulip fields and the annual flower parade.
+
+The town centre has a mix of Georgian and Victorian buildings around the market place and the River Welland. The Springfields outlet and gardens complex to the south-east is a major draw for visitors. Hall Place is the main shopping area.
+
+Pinchbeck to the north and Cowbit to the east are residential villages with a mix of housing. Gosberton and Donington to the north are larger villages on the A16 corridor towards Boston.
+
+The A16 runs north-south through Spalding, connecting to Boston (about 25 minutes north) and Peterborough (about 25 minutes south). The A151 heads west to Bourne and the A1073 connects to the A47 towards Wisbech.
+
+The fenland drainage channels (known locally as dykes) cross many roads on narrow bridges that can be tight for larger vehicles. In winter, some low-lying roads can flood after heavy rain.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Spalding?","a":"Spalding moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Spalding from Peterborough?","a":"About 20 miles south via the A16, taking roughly 25–30 minutes. A Spalding to Peterborough move typically costs £80–£150."},
+      {"q":"Do the fenland drainage channels affect access?","a":"Some roads cross drainage dykes on narrow bridges that are tight for larger vans. Add access notes if your property is near a dyke crossing."},
+    ],
+    localAreaGuides: [
+      {title: "Spalding town centre", body: "Georgian and Victorian buildings around the market place and River Welland. The A16 carries through-traffic. Market on Saturday. Springfields outlet is to the south-east with good loading access."},
+      {title: "Pinchbeck and Cowbit", body: "Residential villages with a mix of housing. Better road access than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Gosberton and Donington", body: "Larger villages on the A16 corridor north towards Boston. Good road connections with a mix of housing types."},
+      {title: "Spalding to Peterborough and Boston", body: "Peterborough is about 20 miles south on the A16. Boston is about 20 miles north on the A16. Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  stamford: {
+    title: "Man and Van Stamford | From £19",
+    description: "Man and van Stamford from £19/hr. PE9. Barnack, Ketton, Easton on the Hill. Stone town. Call 0121 751 1269.",
+    h1: "Man and Van Stamford",
+    intro: "Need a man and van in Stamford? Submit your postcodes, item list and access notes for free. One verified mover reviews your Stamford move before quoting — you only book if you're happy with the details.",
+    knowledge: "Stamford is one of England's finest stone towns with over 600 listed buildings and a conservation area that was the first in England. The Georgian townhouses along the Welland valley sit on narrow medieval streets that make van access difficult, and the town's beauty brings steady tourist traffic, especially in summer.",
+    localMovingInfo: `Stamford is a market town in south Lincolnshire, about 12 miles west of Peterborough and 25 miles east of Leicester. It's one of the most attractive towns in England, built from local limestone with over 600 listed buildings. It was the first conservation area in England, designated in 1967.
+
+The town centre has narrow medieval streets lined with Georgian townhouses and stone-built shops. Many streets are too narrow for large vans, and parking is extremely limited. The conservation area restricts some access and loading. The Burghley House estate is just to the south.
+
+Barnack to the south-east is a village known for its historic quarry (which supplied the limestone for many local buildings, including Peterborough Cathedral). Ketton to the east is a similar stone village. Both have narrow lanes but less traffic than Stamford itself.
+
+The A1 bypass runs east of the town, keeping most through-traffic away. The A43 connects to Corby and Northampton to the south. The A606 heads west to Oakham and Melton Mowbray.
+
+Stamford's popularity means traffic is heavy on summer weekends and during events at Burghley House (the Burghley Horse Trials in September are a major draw).
+
+Rates start from £19 per hour. Add full postcodes and detailed access notes for the narrow streets.`,
+    faq: [
+      {"q":"How much does a man and van cost in Stamford?","a":"Stamford moves start from £19 per hour. A local move typically costs £70–£140 due to the narrow streets. A full house move could be £300–£520."},
+      {"q":"Can a van access the town centre?","a":"Some streets in the conservation area are too narrow for large vans. A smaller van or careful approach may be needed. Add your exact postcode and access notes so the mover can plan accordingly."},
+      {"q":"How far is Stamford from Peterborough?","a":"About 12 miles east via the A47 and A1, taking roughly 20 minutes. A Stamford to Peterborough move typically costs £80–£150."},
+    ],
+    localAreaGuides: [
+      {title: "Stamford town centre", body: "Narrow medieval streets with Georgian limestone townhouses. Many streets are too narrow for large vans. Conservation area restrictions apply. Parking is very limited. Best to plan loading carefully with exact postcodes and access notes."},
+      {title: "Barnack and Ketton", body: "Stone villages with historic limestone buildings. Narrow village lanes but less traffic than Stamford. Barnack Hills and Holes is a nature reserve nearby.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Burghley House area", body: "The estate south of the town is a major visitor attraction. Traffic during events (especially September Horse Trials) can be very heavy. Plan moves outside event weekends."},
+      {title: "Stamford to Peterborough and Oakham", body: "Peterborough is about 12 miles east. Oakham is about 10 miles west. Both are common cross-county routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  gainsborough: {
+    title: "Man and Van Gainsborough | From £19",
+    description: "Man and van Gainsborough from £19/hr. DN21. Morton, Lea, Beckingham. Trentside. Call 0121 751 1269.",
+    h1: "Man and Van Gainsborough",
+    intro: "Need a man and van in Gainsborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Gainsborough move before quoting — no spam, no obligation.",
+    knowledge: "Gainsborough sits on the River Trent in north Lincolnshire, with the medieval Old Hall and the modern Marshall's Yard retail centre reflecting the town's long history and recent regeneration. The A631 Trent Bridge is a key crossing point that can slow moves, and the riverside location brings flood risk on the lowest streets.",
+    localMovingInfo: `Gainsborough is a market town in north Lincolnshire, about 20 miles north-west of Lincoln and 15 miles south-east of Doncaster. The town sits on the River Trent, which forms the border between Lincolnshire and Nottinghamshire.
+
+The town centre has the medieval Gainsborough Old Hall (one of the best-preserved timber-framed manor houses in England) alongside the modern Marshall's Yard retail centre. The contrast between old and new reflects the town's regeneration.
+
+The A631 crosses the Trent on Gainsborough Bridge, which is a key crossing point between Lincolnshire and Nottinghamshire/South Yorkshire. The bridge can be congested at rush hour. The A156 runs south to Lincoln, and the A159 heads north towards Scunthorpe.
+
+Morton to the south and Lea to the north are residential areas with a mix of housing types. Beckingham and Walkeringham are across the Trent in Nottinghamshire.
+
+The River Trent's flood plain means some low-lying roads near the river can flood after heavy rain. Properties near the river may have flood access issues in winter.
+
+Rates start from £19 per hour. Add full postcodes and access details, especially for riverside properties.`,
+    faq: [
+      {"q":"How much does a man and van cost in Gainsborough?","a":"Gainsborough moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"Is the Trent Bridge a bottleneck?","a":"The A631 Gainsborough Bridge can be congested at rush hour as it's the main crossing of the Trent for miles. Allow extra time if your route crosses the bridge."},
+      {"q":"How far is Gainsborough from Lincoln?","a":"About 20 miles south via the A156, taking roughly 30 minutes. A Gainsborough to Lincoln move typically costs £90–£160."},
+    ],
+    localAreaGuides: [
+      {title: "Gainsborough town centre", body: "The Old Hall area has narrow streets with limited parking. Marshall's Yard retail centre has good loading access. The riverside area has some flood-prone streets."},
+      {title: "Morton and Lea", body: "Residential areas with a mix of housing types. Better road access than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Riverside and flood areas", body: "Properties near the River Trent may have flood access issues in winter. Add detailed access notes if your property is in a flood zone."},
+      {title: "Gainsborough to Lincoln and Doncaster", body: "Lincoln is about 20 miles south on the A156 (30 minutes). Doncaster is about 15 miles west via the A631 and A19 (25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  sleaford: {
+    title: "Man and Van Sleaford | From £19",
+    description: "Man and van Sleaford from £19/hr. NG34. Quarrington, Greylees, Rauceby, Cranwell. Call 0121 751 1269.",
+    h1: "Man and Van Sleaford",
+    intro: "Need a man and van in Sleaford? Submit your postcodes, item list and access notes for free. One verified mover reviews your Sleaford move before quoting — no spam, no obligation.",
+    knowledge: "Sleaford is the main market town of south Lincolnshire, sitting where the A15 and A17 meet on the edge of the Lincolnshire Heath. The town has a growing population with new estates at Greylees, while the older streets near the market place and the River Slea need careful navigation. RAF Cranwell nearby adds rush-hour traffic.",
+    localMovingInfo: `Sleaford is a market town in south Lincolnshire, about 17 miles south-east of Lincoln. The town sits where the A15 (Lincoln to Peterborough) and A17 (King's Lynn to Newark) cross, making it a road transport hub for the area.
+
+The town centre has a mix of Georgian, Victorian and newer buildings around the market place and Southgate. The River Slea runs through the centre, and some streets near the river are narrow with limited parking. The market operates on Monday, Friday and Saturday.
+
+Greylees to the east is a large new-build development with modern road layouts and good van access. Holdingham to the north is similar. Quarrington to the east is an older village that has been absorbed into the town. Rauceby and Leasingham to the south are more rural.
+
+RAF Cranwell, the Royal Air Force's training college, is about 5 miles south-east. The RAF station adds to rush-hour traffic on the A15 and surrounding roads.
+
+The A15 gives fast access to Lincoln (about 25 minutes north) and the A17 connects to Newark (about 30 minutes west). The A52 heads east to Boston (about 25 minutes).
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Sleaford?","a":"Sleaford moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"Does RAF Cranwell traffic affect moves?","a":"RAF Cranwell adds to rush-hour traffic on the A15 and local roads, especially around shift-change times. Plan moves outside peak hours if possible."},
+      {"q":"How far is Sleaford from Lincoln?","a":"About 17 miles north via the A15, taking roughly 25 minutes. A Sleaford to Lincoln move typically costs £80–£150."},
+    ],
+    localAreaGuides: [
+      {title: "Sleaford town centre", body: "A mix of Georgian, Victorian and newer buildings around the market place. The River Slea runs through the centre with some narrow streets nearby. Market on Monday, Friday and Saturday."},
+      {title: "Greylees and Holdingham", body: "New-build developments with modern road layouts and good van access. Popular for family moves with more driveways and wider roads.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Rauceby and Cranwell area", body: "RAF Cranwell and the surrounding villages. The RAF station adds to rush-hour traffic. Rauceby has a mix of military and civilian housing."},
+      {title: "Sleaford to Lincoln and Boston", body: "Lincoln is about 17 miles north on the A15 (25 minutes). Boston is about 17 miles east on the A52 (25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  skegness: {
+    title: "Man and Van Skegness | From £19",
+    description: "Man and van Skegness from £19/hr. PE24/PE25. Ingoldmells, Chapel St Leonards, Winthorpe. Call 0121 751 1269.",
+    h1: "Man and Van Skegness",
+    intro: "Need a man and van in Skegness? Submit your postcodes, item list and access notes for free. One verified mover reviews your Skegness move before quoting — you only book if you're happy with the details.",
+    knowledge: "Skegness is Lincolnshire's premier seaside resort, famous for the Jolly Fisherman sign welcoming visitors to its sandy beach. The town's character changes dramatically with the seasons — packed in summer, quiet in winter — and the A52 and A158 bring heavy tourist traffic on sunny weekends that can significantly delay moves.",
+    localMovingInfo: `Skegness is a seaside resort on the Lincolnshire coast, about 40 miles east of Lincoln. The town is famous for its beach, the Jolly Fisherman mascot, and the Skegness Butlins resort.
+
+The town has two distinct characters: in summer it's packed with day-trippers and holidaymakers, with traffic on the A52 and A158 building up from mid-morning. In winter, it's much quieter with many businesses closing for the season.
+
+The town centre has a mix of Victorian guest houses, post-war bungalows and holiday apartments. Lumley Road is the main shopping street. The seafront has amusement arcades, fish and chip shops and guest houses with loading from the promenade.
+
+Ingoldmells and Chapel St Leonards to the north are popular holiday areas with caravan parks. Access roads to the larger parks can be narrow in summer with holiday traffic. Winthorpe to the south is more residential.
+
+The A52 connects to Boston (about 30 minutes west) and the A158 to Lincoln (about 50 minutes west). Both routes can be very busy on summer weekends — avoid moving during bank holidays if possible.
+
+Many properties in Skegness are holiday lets that change over on Saturdays during the season. This creates demand for furniture moves and key-change collections in the quieter months.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Skegness?","a":"Skegness moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500. Prices may be higher during summer peak weeks."},
+      {"q":"When is the best time to move in Skegness?","a":"Winter (October to March) is much quieter with less traffic. Summer weekends and bank holidays bring heavy tourist traffic on the A52 and A158. Weekday moves are easier in summer."},
+      {"q":"How far is Skegness from Lincoln?","a":"About 40 miles west via the A158, taking roughly 50–60 minutes. The A158 can be slow on summer weekends."},
+    ],
+    localAreaGuides: [
+      {title: "Skegness town centre and seafront", body: "Victorian guest houses and holiday apartments near the front. Loading from the promenade can be restricted in peak season. Lumley Road is the main shopping area."},
+      {title: "Ingoldmells and Chapel St Leonards", body: "Holiday areas to the north with many caravan parks. Access roads can be narrow and busy in summer. Popular for seasonal furniture moves in the off-season.", links: [{label: "Furniture delivery", href: "/furniture-delivery"}]},
+      {title: "Winthorpe and Burgh le Marsh", body: "More residential areas to the south and west. Better road access than the seafront. Common for permanent residents' moves."},
+      {title: "Skegness to Lincoln and Boston", body: "Lincoln is about 40 miles west on the A158 (50–60 minutes). Boston is about 20 miles south-west on the A52 (30 minutes). Both routes are busy on summer weekends.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  louth: {
+    title: "Man and Van Louth | From £19",
+    description: "Man and van Louth from £19/hr. LN11. Legbourne, Manby, North Thoresby. Lincolnshire Wolds. Call 0121 751 1269.",
+    h1: "Man and Van Louth",
+    intro: "Need a man and van in Louth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Louth move before quoting — no spam, no obligation.",
+    knowledge: "Louth sits at the western edge of the Lincolnshire Wolds Area of Outstanding Natural Beauty, a Georgian market town with narrow streets climbing gently towards the tall spire of St James' Church. The conservation area has some of the narrowest streets in Lincolnshire, and the Wolds lanes to the west need careful van navigation.",
+    localMovingInfo: `Louth is a market town in East Lindsey, about 16 miles south-east of Grimsby and 25 miles east of Lincoln. The town sits at the edge of the Lincolnshire Wolds, an Area of Outstanding Natural Beauty with rolling hills and narrow lanes.
+
+The town centre is Georgian, with the spire of St James' Church (the tallest parish church spire in England at 295 feet) dominating the skyline. The streets around the market place and Upgate are narrow with limited parking. Wednesday, Friday and Saturday are market days.
+
+The conservation area has some of the narrowest streets in the county — streets like Aswell Lane and Queen Street are very tight for vans. The town climbs gently uphill towards the church, so some properties are on gradients.
+
+Legbourne, Manby and North Thoresby to the east are villages on the road towards the coast. The former RAF Manby is now a business park. These villages have a mix of housing with better road access.
+
+The A16 runs through Louth, connecting to Grimsby to the north and Boston to the south. The A157 heads east to Mablethorpe on the coast. The Wolds lanes to the west — towards South Elkington, Fotherby and Donington on Bain — can be narrow and winding.
+
+Rates start from £19 per hour. Add full postcodes and access details, especially for Wolds villages with narrow lanes.`,
+    faq: [
+      {"q":"How much does a man and van cost in Louth?","a":"Louth moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Are the Wolds lanes difficult for vans?","a":"Some Wolds lanes are narrow and winding, particularly to the west of Louth. Add your exact postcode and access notes so the mover can judge whether a smaller van is needed."},
+      {"q":"How far is Louth from Grimsby?","a":"About 16 miles north via the A16, taking roughly 25 minutes. A Louth to Grimsby move typically costs £80–£150."},
+    ],
+    localAreaGuides: [
+      {title: "Louth town centre", body: "Georgian streets around the market place with the towering spire of St James' Church. Aswell Lane and Queen Street are very narrow. Market on Wednesday, Friday and Saturday. Limited parking near the centre."},
+      {title: "Legbourne and Manby", body: "Villages to the east towards the coast. Legbourne has a mix of housing with good road access. The former RAF Manby site has been redeveloped.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Lincolnshire Wolds villages", body: "Villages to the west in the AONB have narrow, winding lanes. Properties can be isolated with limited turning space. Add detailed access notes."},
+      {title: "Louth to Grimsby and the coast", body: "Grimsby is about 16 miles north on the A16 (25 minutes). Mablethorpe is about 10 miles east on the A157 (20 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — NORTHAMPTONSHIRE TOWNS
+  // ──────────────────────────────────────────
+
+  kettering: {
+    title: "Man and Van Kettering | From £19",
+    description: "Man and van Kettering from £19/hr. NN14/NN15/NN16. Rothwell, Desborough, Barton Seagrave. Call 0121 751 1269.",
+    h1: "Man and Van Kettering",
+    intro: "Need a man and van in Kettering? Submit your postcodes, item list and access notes for free. One verified mover reviews your Kettering move before quoting — no spam, no obligation.",
+    knowledge: "Kettering sits on the A14 corridor in north Northamptonshire, with the dual carriageway giving fast access to the M1, M6 and A1. The town grew around the boot and shoe industry, and its Victorian terraces and interwar semis sit on streets that can be tight for vans, especially near the town centre.",
+    localMovingInfo: `Kettering is a market town in north Northamptonshire, about 15 miles north of Northampton. The A14 runs just south of the town, giving fast dual-carriageway access to the M1 junction 15A (for Northampton and the south), the M6 (for Coventry and Birmingham), and the A1 (for Peterborough and the north).
+
+The town centre has Victorian terraces near the market place and the Newland Centre. Some of the older streets are narrow with on-street parking. The boot and shoe industry that once dominated Kettering left a legacy of narrow streets and back-to-back housing in the oldest areas.
+
+Barton Seagrave and Burton Latimer to the east are popular residential areas with newer estates and better road access. Rothwell and Desborough to the south-west are separate towns with their own character and street patterns.
+
+The A6 runs through Kettering north-south, connecting to Corby and Market Harborough. The A6003 heads north-east towards the A43. The A43 connects to Corby and Stamford.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Kettering?","a":"Kettering moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Kettering from Northampton?","a":"About 15 miles south via the A6 or A14 and M1, taking roughly 20–25 minutes. A Kettering to Northampton move typically costs £80–£150."},
+      {"q":"Does the A14 cause delays for local moves?","a":"The A14 is generally fast-moving, but junction 7 (Kettering) and junction 8 (Warrington) can be congested at rush hour. The A6 through the town is slower."},
+    ],
+    localAreaGuides: [
+      {title: "Kettering town centre", body: "Victorian terraces near the market place and Newland Centre. Some narrow streets with on-street parking. The boot and shoe heritage means tight street layouts in the oldest areas."},
+      {title: "Barton Seagrave and Burton Latimer", body: "Popular residential areas to the east with newer estates and better road access. Common destinations for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Rothwell and Desborough", body: "Separate towns to the south-west with their own housing mix. Rothwell has a historic market charter. Both have good A6 connections to Kettering and Northampton."},
+      {title: "Kettering to Corby and Northampton", body: "Corby is about 8 miles north-east via the A43 (15 minutes). Northampton is about 15 miles south via the A6 or M1 (20–25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  corby: {
+    title: "Man and Van Corby | From £19",
+    description: "Man and van Corby from £19/hr. NN17/NN18. Weldon, Gretton, Rockingham. Call 0121 751 1269.",
+    h1: "Man and Van Corby",
+    intro: "Need a man and van in Corby? Submit your postcodes, item list and access notes for free. One verified mover reviews your Corby move before quoting — you decide whether to book after seeing the details.",
+    knowledge: "Corby is Northamptonshire's steel town, with a distinctive Scottish heritage from the workers who came south to the ironworks in the 1930s. The town has a unique mix of Scottish-style tenements and post-war estates alongside rapid new-build development on the former steelworks sites, making every move different in character.",
+    localMovingInfo: `Corby is a town in north Northamptonshire, about 23 miles north-east of Northampton. The town grew dramatically in the 1930s when Scottish steelworkers came south to work at the Stewarts & Lloyds ironworks, and the town still celebrates its Scottish heritage with an annual Highland Gathering.
+
+The housing stock is unique: Scottish-style tenement blocks sit alongside post-war estates and rapid new-build development on the former steelworks and ironstone quarry sites. The tenements have communal stairwells and restricted parking — similar to Glasgow housing — which makes moving very different from a typical English town.
+
+The town centre has been regenerated with the Willow Place shopping centre and the Corby Cube (a striking modern civic building). The new-build estates spreading east and south have modern road layouts with good van access.
+
+Weldon and Gretton to the east are limestone villages with older housing and narrow lanes. Rockingham has the historic castle and village. East Carlton and Stanion are similar.
+
+The A43 connects to Kettering (about 8 miles south) and Stamford (about 12 miles north-east). The A6003 heads south-west to the A14 and M1.
+
+Rates start from £19 per hour. Add full postcodes, floor level (especially for tenements) and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Corby?","a":"Corby moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"Are the tenements difficult to move from?","a":"Corby's Scottish-style tenements have communal stairwells and limited parking — similar to Glasgow. Add floor level, number of stairs and parking notes so the mover can plan properly."},
+      {"q":"How far is Corby from Peterborough?","a":"About 25 miles east via the A43 and A47, taking roughly 30–35 minutes. A Corby to Peterborough move typically costs £100–£180."},
+    ],
+    localAreaGuides: [
+      {title: "Corby town centre and tenements", body: "The town centre has Scottish-style tenement blocks with communal stairs and limited parking. The new Willow Place development and Corby Cube have modern access. Add floor level and stair details for tenement moves.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "New-build estates", body: "Rapidly developing areas on former steelworks sites with modern road layouts and good van access. Popular for family moves with more driveways and wider roads."},
+      {title: "Weldon, Gretton and Rockingham", body: "Limestone villages to the east with older housing and narrow village lanes. Rockingham has the historic castle. Better for smaller moves with careful access planning."},
+      {title: "Corby to Kettering and Peterborough", body: "Kettering is about 8 miles south on the A43 (15 minutes). Peterborough is about 25 miles east (30–35 minutes). Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  wellingborough: {
+    title: "Man and Van Wellingborough | From £19",
+    description: "Man and van Wellingborough from £19/hr. NN8/NN9. Irthlingborough, Finedon, Earls Barton. Call 0121 751 1269.",
+    h1: "Man and Van Wellingborough",
+    intro: "Need a man and van in Wellingborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Wellingborough move before quoting — no spam, no obligation.",
+    knowledge: "Wellingborough sits on the River Nene in the heart of Northamptonshire, with the A45 dual carriageway giving fast access to Northampton and the M1. The town has a mix of Victorian terraces near the town centre and interwar semis spreading towards the Nene flood meadows, each with different access challenges.",
+    localMovingInfo: `Wellingborough is a market town in Northamptonshire, about 12 miles north-east of Northampton. The A45 dual carriageway runs just south of the town, giving fast access to Northampton (about 15 minutes), the M1 and the A14.
+
+The town centre has Victorian terraces around the Swansgate Centre and the market area. Some of the older streets near the town centre are narrow with on-street parking. The market operates on Tuesday, Friday and Saturday.
+
+The interwar semis and newer estates spreading north and east towards the Nene flood meadows have better road access and more driveways. Croyland and Queensway are popular residential areas.
+
+Irthlingborough and Finedon to the east are separate towns with their own character. Earls Barton to the south is a large village known for its Saxon church tower. Wollaston and Bozeat to the east sit on the A45 corridor towards Bedford.
+
+The A45 is the main route west to Northampton and east towards Bedford. The A509 heads north to Wellingborough's industrial areas and connects to the A14.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Wellingborough?","a":"Wellingborough moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Wellingborough from Northampton?","a":"About 12 miles south-west via the A45, taking roughly 15–20 minutes. A Wellingborough to Northampton move typically costs £80–£150."},
+      {"q":"Do the Nene flood meadows cause access problems?","a":"The roads near the Nene flood meadows are generally fine, but in winter after heavy rain, some low-lying routes near the river can be affected. Add access notes if your property is near the river."},
+    ],
+    localAreaGuides: [
+      {title: "Wellingborough town centre", body: "Victorian terraces around the Swansgate Centre and market area. Some narrow streets with on-street parking. Market on Tuesday, Friday and Saturday."},
+      {title: "Croyland and Queensway areas", body: "Popular residential areas with interwar semis and newer estates. Better road access and more driveways than the town centre. Common for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Irthlingborough, Finedon and Earls Barton", body: "Separate towns and villages to the east and south with their own housing mix. All have good road connections to the A45 and A509."},
+      {title: "Wellingborough to Northampton and Bedford", body: "Northampton is about 12 miles south-west on the A45 (15–20 minutes). Bedford is about 20 miles east on the A45/A428 (30 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  rushden: {
+    title: "Man and Van Rushden | From £19",
+    description: "Man and van Rushden from £19/hr. NN10. Higham Ferrers, Irthlingborough, Raunds. Call 0121 751 1269.",
+    h1: "Man and Van Rushden",
+    intro: "Need a man and van in Rushden? Submit your postcodes, item list and access notes for free. One verified mover reviews your Rushden move before quoting — you only book if you're happy with the details.",
+    knowledge: "Rushden grew up around the boot and shoe trade and now has the Rushden Lakes retail and leisure development on its doorstep. The town sits on the A45 between Northampton and Bedford, with Higham Ferrers as its historic neighbour and a network of shoe-town streets that need careful van navigation.",
+    localMovingInfo: `Rushden is a town in east Northamptonshire, about 10 miles east of Northampton on the A45. The town grew with the boot and shoe industry — at its peak, over 100 factories operated in the area. The heritage of narrow streets and back-to-back housing remains in the older areas.
+
+Higham Ferrers is a historic market town directly adjacent to Rushden, with its own town centre and a one-way system that can confuse visitors. The two towns form a continuous built-up area.
+
+The older shoe-industry areas of Rushden have narrow streets with terraces and on-street parking. The newer estates on the edges have better access. Rushden Lakes, a large retail and leisure development to the south, has modern road access.
+
+Raunds and Irthlingborough to the north are separate towns on the A4510 and A6. Stanwick to the south-east is a large village. Irchester to the north-west has Irchester Country Park.
+
+The A45 is the main route, connecting to Northampton (about 15 minutes west) and Bedford (about 25 minutes east). The A6 heads north to Kettering and south to Wellingborough.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Rushden?","a":"Rushden moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"Is Higham Ferrers separate from Rushden?","a":"They're adjacent but separate towns. Higham Ferrers has its own town centre with a one-way system that can be confusing. Add exact postcodes and access notes."},
+      {"q":"How far is Rushden from Northampton?","a":"About 10 miles west via the A45, taking roughly 15–20 minutes. A Rushden to Northampton move typically costs £80–£150."},
+    ],
+    localAreaGuides: [
+      {title: "Rushden town centre", body: "The older shoe-town areas have narrow streets with terraces and on-street parking. The newer estates have better access. Rushden Lakes retail development to the south has modern road layouts."},
+      {title: "Higham Ferrers", body: "A historic market town adjacent to Rushden with its own town centre and one-way system. Some narrow streets in the conservation area. Add exact postcodes for loading.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Raunds and Irthlingborough", body: "Separate towns to the north with their own housing mix and good A45 connections. Popular for family moves."},
+      {title: "Rushden to Northampton and Bedford", body: "Northampton is about 10 miles west on the A45 (15–20 minutes). Bedford is about 18 miles east (30 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  daventry: {
+    title: "Man and Van Daventry | From £19",
+    description: "Man and van Daventry from £19/hr. NN11. Weedon Bec, Long Buckby, Badby. Call 0121 751 1269.",
+    h1: "Man and Van Daventry",
+    intro: "Need a man and van in Daventry? Submit your postcodes, item list and access notes for free. One verified mover reviews your Daventry move before quoting — no spam, no obligation.",
+    knowledge: "Daventry is a market town in west Northamptonshire that has grown rapidly around its historic core, with the M1 junction 18 giving good access to Northampton and Coventry. The old town has Georgian streets around the market square, while the new estates spreading south and east have modern access roads.",
+    localMovingInfo: `Daventry is a market town in west Northamptonshire, about 13 miles west of Northampton and 15 miles east of Rugby. The M1 junction 18 is about 6 miles east via the A45, giving fast access to Northampton, Coventry and the wider motorway network.
+
+The old town centre has Georgian buildings around the market square and High Street. Some of the streets near the market are narrow with limited parking. The market operates on Tuesday and Saturday.
+
+The new estates spreading south and east — including the large Southbrook development — have modern road layouts with good van access, more driveways and wider streets. These areas are popular for family moves.
+
+Weedon Bec to the north is a large village with a mix of housing. Long Buckby to the north-east is similar. Badby to the south-west is a smaller village near Daventry Country Park. Staverton and Cogenhoe to the east are rural villages.
+
+The A45 connects Daventry to Northampton and the M1. The A425 heads west to Southam and Leamington Spa. The A361 runs north to Rugby and south to Banbury.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Daventry?","a":"Daventry moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Daventry from Northampton?","a":"About 13 miles east via the A45, taking roughly 20 minutes. A Daventry to Northampton move typically costs £80–£150."},
+      {"q":"Can a van access the old town centre?","a":"Some streets near the market square are narrow with limited parking. The newer estates have much better access. Add your exact postcode and access notes."},
+    ],
+    localAreaGuides: [
+      {title: "Daventry town centre", body: "Georgian buildings around the market square and High Street. Narrow streets with limited parking in the older areas. Market on Tuesday and Saturday."},
+      {title: "Southbrook and new estates", body: "Modern developments to the south and east with wider roads, more driveways and better van access. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Weedon Bec and Long Buckby", body: "Large villages to the north with a mix of housing. Good road connections. Long Buckby has a railway station on the Northampton line."},
+      {title: "Daventry to Northampton and Rugby", body: "Northampton is about 13 miles east on the A45 (20 minutes). Rugby is about 15 miles west via the A361 (25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — NOTTINGHAMSHIRE TOWNS
+  // ──────────────────────────────────────────
+
+  mansfield: {
+    title: "Man and Van Mansfield | From £19",
+    description: "Man and van Mansfield from £19/hr. NG18/NG19. Forest Town, Ladybrook, Shirebrook, Rainworth. Call 0121 751 1269.",
+    h1: "Man and Van Mansfield",
+    intro: "Need a man and van in Mansfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Mansfield move before quoting — you only book if you're happy with the details.",
+    knowledge: "Mansfield is the largest town in Nottinghamshire after the city itself, sitting on the edge of Sherwood Forest with a mining heritage that shaped its street layout. The Victorian terraces of the old town and the post-war estates of Forest Town each have different access patterns, and the A60 and A617 carry steady through-traffic.",
+    localMovingInfo: `Mansfield is a market town in north Nottinghamshire, about 15 miles north of Nottingham. The town sits at the edge of the former Sherwood Forest coalfield, and its street layout reflects the mining heritage.
+
+The town centre has Victorian terraces around the market place and the Four Seasons Centre. Some of the older streets are narrow with on-street parking. The market operates on Monday, Thursday, Friday and Saturday.
+
+Forest Town to the east is a large post-war estate with wider roads and more driveways — easier for van access than the town centre. Ladybrook and Bellamy Road to the south are similar residential areas.
+
+Shirebrook and Warsop to the north are former mining communities with narrower streets. Pleasley Hill to the east is similar. These areas need careful van navigation and detailed access notes.
+
+Rainworth to the south and Kirkby in Ashfield to the west are separate communities with their own housing mix.
+
+The A60 connects Mansfield to Nottingham (about 25 minutes south). The A617 heads east to the M1 junction 29 and Chesterfield (about 25 minutes). The A38 runs south to junction 28 for Derby.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Mansfield?","a":"Mansfield moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Mansfield from Nottingham?","a":"About 15 miles south via the A60, taking roughly 25 minutes. A Mansfield to Nottingham move typically costs £80–£160."},
+      {"q":"Are the mining-area streets difficult for vans?","a":"Some streets in Shirebrook, Warsop and other former mining areas are narrow with on-street parking. Add your exact postcode and access notes so the mover can plan the right vehicle size."},
+    ],
+    localAreaGuides: [
+      {title: "Mansfield town centre", body: "Victorian terraces around the market place and Four Seasons Centre. Some narrow streets with on-street parking. Market on Monday, Thursday, Friday and Saturday."},
+      {title: "Forest Town and Ladybrook", body: "Post-war estates with wider roads and more driveways. Better van access than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Shirebrook, Warsop and mining areas", body: "Former mining communities with narrower streets and on-street parking. Add detailed access notes and whether items need carrying from a distance.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Mansfield to Nottingham and Chesterfield", body: "Nottingham is about 15 miles south on the A60 (25 minutes). Chesterfield is about 15 miles north on the A617 (25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  "newark-on-trent": {
+    title: "Man and Van Newark on Trent | From £19",
+    description: "Man and van Newark on Trent from £19/hr. NG22/NG24. Balderton, Farndon, Coddington. Call 0121 751 1269.",
+    h1: "Man and Van Newark on Trent",
+    intro: "Need a man and van in Newark on Trent? Submit your postcodes, item list and access notes for free. One verified mover reviews your Newark move before quoting — no spam, no obligation.",
+    knowledge: "Newark on Trent sits where the A1 crosses the River Trent in Nottinghamshire, a market town with a fine castle and Georgian townhouses around the market square. The A1, A46 and A17 all meet at Newark, creating one of the East Midlands' busiest junctions that can delay moves at peak times.",
+    localMovingInfo: `Newark on Trent is a market town in east Nottinghamshire, about 20 miles east of Nottingham. The A1 runs just east of the town, and the A46 and A17 both meet the A1 at Newark, making it a major road junction.
+
+The town centre has Georgian townhouses around the market square and Newark Castle. The castle sits on the River Trent and the surrounding area has narrow streets with limited parking. Wednesday and Saturday are market days with extra traffic.
+
+Balderton to the south-east is a large village that's effectively a suburb of Newark with a mix of housing. Farndon to the south and Coddington to the east are similar. Winthorpe to the north is a smaller village.
+
+The A1 junctions at Newark can be congested, especially at rush hour. The A46 heads south-west to Lincoln and north to the A1 at the Nottingham/Lincoln boundary. The A17 runs east to King's Lynn.
+
+The East Coast Main Line crosses the Trent at Newark, and the level crossing at Northgate can add delays to moves that cross the railway.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Newark on Trent?","a":"Newark moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Do the A1 junctions cause delays?","a":"The A1 junctions at Newark (especially the A46/A1 roundabout) can be congested at rush hour. Allow extra time if your route involves the A1."},
+      {"q":"How far is Newark from Nottingham?","a":"About 20 miles east via the A46, taking roughly 30 minutes. A Newark to Nottingham move typically costs £90–£170."},
+    ],
+    localAreaGuides: [
+      {title: "Newark town centre and castle", body: "Georgian townhouses around the market square and castle. Narrow streets with limited parking. The castle area has restricted access. Wednesday and Saturday markets bring extra traffic."},
+      {title: "Balderton and Farndon", body: "Large villages that are effectively Newark suburbs with a mix of housing. Better road access than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Coddington and Winthorpe", body: "Villages to the east and north with a mix of housing. Good road connections to the A1 and A17."},
+      {title: "Newark to Nottingham and Lincoln", body: "Nottingham is about 20 miles west on the A46 (30 minutes). Lincoln is about 18 miles north on the A46 (25 minutes). Both are common cross-county routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  worksop: {
+    title: "Man and Van Worksop | From £19",
+    description: "Man and van Worksop from £19/hr. S80. Shireoaks, Carlton in Lindrick, Harworth, Creswell. Call 0121 751 1269.",
+    h1: "Man and Van Worksop",
+    intro: "Need a man and van in Worksop? Submit your postcodes, item list and access notes for free. One verified mover reviews your Worksop move before quoting — no spam, no obligation.",
+    knowledge: "Worksop sits on the A57 at the northern edge of Nottinghamshire where Sherwood Forest meets the industrial towns of the Dukeries. The town grew with mining and rail, and its Victorian terraces and post-war estates sit on streets that need careful navigation, especially in the older areas near the town centre.",
+    localMovingInfo: `Worksop is a market town in north Nottinghamshire, about 15 miles south-east of Sheffield and 20 miles north of Nottingham. The A57 runs through the town, connecting to Sheffield and the M1.
+
+The town centre has Victorian terraces around Bridge Street and the market place. Some of the older streets near the centre are narrow with on-street parking. The Priory Church and the remains of Worksop Manor are local landmarks.
+
+The post-war estates on the edges of town have better road access. Shireoaks to the north-west is a village with a mix of housing. Carlton in Lindrick to the north is similar.
+
+Harworth and Bircotes to the east are former mining communities on the Nottinghamshire-South Yorkshire border. Creswell to the south-east is known for Creswell Crags, the limestone gorge with Ice Age cave art.
+
+The A57 connects to Sheffield (about 25 minutes north-west) and the M1 junction 30 is about 5 miles west. The A60 heads south to Mansfield and Nottingham.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Worksop?","a":"Worksop moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Worksop from Sheffield?","a":"About 15 miles north-west via the A57, taking roughly 25–30 minutes. A Worksop to Sheffield move typically costs £80–£160."},
+      {"q":"How far is Worksop from Nottingham?","a":"About 20 miles south via the A60, taking roughly 30 minutes. A Worksop to Nottingham move typically costs £90–£170."},
+    ],
+    localAreaGuides: [
+      {title: "Worksop town centre", body: "Victorian terraces around Bridge Street and the market place. Some narrow streets with on-street parking. The Priory Church area has restricted access."},
+      {title: "Shireoaks and Carlton in Lindrick", body: "Villages to the north with a mix of housing. Better road access than the town centre. Good connections to the A57 and A1.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Harworth, Bircotes and Creswell", body: "Former mining areas to the east with narrower streets and on-street parking. Add detailed access notes."},
+      {title: "Worksop to Sheffield and Nottingham", body: "Sheffield is about 15 miles north-west on the A57 (25–30 minutes). Nottingham is about 20 miles south on the A60 (30 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  "sutton-in-ashfield": {
+    title: "Man and Van Sutton in Ashfield | From £19",
+    description: "Man and van Sutton in Ashfield from £19/hr. NG17. Kirkby in Ashfield, Huthwaite, Stanton Hill. Call 0121 751 1269.",
+    h1: "Man and Van Sutton in Ashfield",
+    intro: "Need a man and van in Sutton in Ashfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Sutton move before quoting — you decide whether to book.",
+    knowledge: "Sutton in Ashfield and its neighbour Kirkby in Ashfield form a built-up area in the Ashfield district of Nottinghamshire, with mining heritage visible in the street layouts. The A38 runs between the two towns, and the hilly terrain means some streets have gradients that affect van access.",
+    localMovingInfo: `Sutton in Ashfield is a town in the Ashfield district of north Nottinghamshire, about 5 miles south-west of Mansfield. It sits alongside Kirkby in Ashfield to the north, forming a continuous built-up area.
+
+The A38 runs between Sutton and Kirkby, connecting to Mansfield to the east and Derby to the south-west. The A617 heads east towards the M1 at junction 28.
+
+The town centre has Victorian terraces around the Idlewells Centre. Some of the older mining-heritage streets are narrow with on-street parking, and the hilly terrain means some streets have steep gradients.
+
+Huthwaite to the south is a separate village with a mix of housing. Stanton Hill and Teversal to the north-east are former mining villages with narrow streets. Annesley and Selston to the west are similar.
+
+The A38 gives fast access to Derby (about 30 minutes south) and the M1 junction 28. The A611 connects to Hucknall and Nottingham.
+
+Rates start from £19 per hour. Add full postcodes and access details, especially for hilly streets.`,
+    faq: [
+      {"q":"How much does a man and van cost in Sutton in Ashfield?","a":"Sutton in Ashfield moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Sutton in Ashfield from Nottingham?","a":"About 12 miles south-east via the A611 and A38, taking roughly 25 minutes. A Sutton to Nottingham move typically costs £80–£150."},
+      {"q":"Do the hills affect moving?","a":"Some streets in Sutton and Kirkby have noticeable gradients. Add details about steps, slopes and access so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Sutton town centre", body: "Victorian terraces around the Idlewells Centre. Some narrow streets with on-street parking. The hilly terrain means some streets are on gradients."},
+      {title: "Kirkby in Ashfield", body: "Adjacent town to the north with similar mining-heritage streets. The A38 separates the two towns. Some streets are narrow with on-street parking.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Huthwaite, Stanton Hill and Teversal", body: "Former mining villages to the south and north-east. Narrow streets with on-street parking. Teversal has the D.H. Lawrence connection and a castle ruin."},
+      {title: "Sutton to Mansfield and Nottingham", body: "Mansfield is about 5 miles east (10 minutes). Nottingham is about 12 miles south-east (25 minutes). Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  retford: {
+    title: "Man and Van Retford | From £19",
+    description: "Man and van Retford from £19/hr. DN22. Ordsall, Clayworth, Babworth. Historic market town. Call 0121 751 1269.",
+    h1: "Man and Van Retford",
+    intro: "Need a man and van in Retford? Submit your postcodes, item list and access notes for free. One verified mover reviews your Retford move before quoting — no spam, no obligation.",
+    knowledge: "Retford is a handsome market town in north Nottinghamshire where the A1 passes just to the east, giving good road access while keeping the worst through-traffic away from the town centre. Carolgate and the market square have narrow Georgian streets that need careful navigation, and the East Coast Main Line level crossing can add delays.",
+    localMovingInfo: `Retford (also known as East Retford) is a market town in north Nottinghamshire, about 25 miles north of Newark and 30 miles south-east of Sheffield. The A1 runs just east of the town, giving fast north-south access.
+
+The town centre is one of the finest Georgian townscapes in Nottinghamshire, with Carolgate and the market square lined with Georgian buildings. The streets here are narrow with limited parking, especially on Thursday and Saturday market days. The conservation area restricts some access.
+
+The East Coast Main Line crosses Retford on a level crossing at Northgate. The barriers come down regularly for high-speed trains between London and Edinburgh, and the delays can be 5–10 minutes each time. If your move route crosses the railway, plan for these delays.
+
+Ordsall to the south and Clayworth to the north are residential areas with a mix of housing. Babworth and Ranby to the south-east are villages on the A1 corridor.
+
+The A1 junction with the A620 gives access to the town. The A620 heads west to Worksop (about 8 miles). The A638 connects to Doncaster to the north.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Retford?","a":"Retford moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"Does the railway level crossing cause delays?","a":"Yes. The East Coast Main Line crossing at Northgate closes regularly for high-speed trains. Delays can be 5–10 minutes each time. Plan your move route to avoid the crossing if possible, or allow extra time."},
+      {"q":"How far is Retford from Doncaster?","a":"About 15 miles north via the A638 and A1, taking roughly 25 minutes. A Retford to Doncaster move typically costs £80–£150."},
+    ],
+    localAreaGuides: [
+      {title: "Retford town centre", body: "Georgian streets around Carolgate and the market square. Narrow streets with limited parking. Conservation area restrictions. Thursday and Saturday markets bring extra traffic. The level crossing at Northgate can add delays."},
+      {title: "Ordsall and Clayworth", body: "Residential areas with a mix of housing. Better road access than the town centre. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Babworth and Ranby", body: "Villages on the A1 corridor to the south-east. Babworth has a historic church. Both have reasonable road access."},
+      {title: "Retford to Worksop and Doncaster", body: "Worksop is about 8 miles west on the A620 (15 minutes). Doncaster is about 15 miles north via the A638 and A1 (25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  "kirkby-in-ashfield": {
+    title: "Man and Van Kirkby in Ashfield | From £19",
+    description: "Man and van Kirkby in Ashfield from £19/hr. NG17. Sutton in Ashfield, Huthwaite, Annesley. Call 0121 751 1269.",
+    h1: "Man and Van Kirkby in Ashfield",
+    intro: "Need a man and van in Kirkby in Ashfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Kirkby move before quoting — no spam, no obligation.",
+    knowledge: "Kirkby in Ashfield sits alongside Sutton in Ashfield in the Ashfield district, a former mining community that has seen significant regeneration. The A38 is the main road through the area, and the town's Victorian terraces and post-war estates sit on streets that reflect the area's industrial past.",
+    localMovingInfo: `Kirkby in Ashfield is a town in the Ashfield district of north Nottinghamshire, adjacent to Sutton in Ashfield. The two towns form a continuous built-up area separated by the A38.
+
+The town has a mix of Victorian terraces (built for the mining community) and post-war estates from the regeneration period. The older areas near the town centre have narrower streets with on-street parking. The newer estates have better access.
+
+Huthwaite to the south is a separate village with its own high street. Annesley and New Annesley to the west are near the site of the former Annesley Colliery. Selston to the west is a larger village.
+
+The A38 runs between Kirkby and Sutton, connecting to Mansfield to the east and Derby to the south-west. The A611 heads south to Hucknall and Nottingham. Sutton Parkway railway station is on the Robin Hood Line to Nottingham.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Kirkby in Ashfield?","a":"Kirkby in Ashfield moves start from £19 per hour. A local move typically costs £60–£120. A full house move could be £280–£480."},
+      {"q":"How far is Kirkby in Ashfield from Nottingham?","a":"About 12 miles south via the A611, taking roughly 25 minutes. A Kirkby to Nottingham move typically costs £80–£150."},
+      {"q":"Is Kirkby separate from Sutton in Ashfield?","a":"They're adjacent towns separated by the A38. The two form a continuous built-up area but each has its own town centre. Add exact postcodes for loading."},
+    ],
+    localAreaGuides: [
+      {title: "Kirkby town centre", body: "A mix of Victorian terraces and post-war housing near the town centre. Some narrow streets with on-street parking. The regeneration has brought newer developments with better access."},
+      {title: "Huthwaite and Annesley", body: "Huthwaite to the south has its own high street. Annesley and New Annesley to the west are near the former colliery site. Both have a mix of housing types.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Selston and Pinxton", body: "Larger villages to the west on the Derbyshire border. Good road connections to the A38 and A611."},
+      {title: "Kirkby to Mansfield and Nottingham", body: "Mansfield is about 4 miles east (8 minutes). Nottingham is about 12 miles south (25 minutes). Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // EAST MIDLANDS — RUTLAND
+  // ──────────────────────────────────────────
+
+  oakham: {
+    title: "Man and Van Oakham | From £19",
+    description: "Man and van Oakham from £19/hr. LE15. Uppingham, Ketton, Cottesmore, Rutland Water. Call 0121 751 1269.",
+    h1: "Man and Van Oakham",
+    intro: "Need a man and van in Oakham? Submit your postcodes, item list and access notes for free. One verified mover reviews your Oakham move before quoting — you only book if you're happy with the details.",
+    knowledge: "Oakham is the county town of England's smallest county, Rutland, sitting in attractive countryside between Stamford and Melton Mowbray. The town's High Street and market place have Georgian stone buildings on narrow streets, and Rutland Water nearby brings visitor traffic especially in summer.",
+    localMovingInfo: `Oakham is the county town of Rutland — England's smallest county. The town sits about 20 miles west of Peterborough and 18 miles east of Leicester, in attractive countryside between the Welland and Chater valleys.
+
+The town centre has Georgian stone buildings around the market place and High Street. Oakham Castle (actually a medieval great hall) is a local landmark. The streets near the market are narrow with limited parking, especially on Wednesday and Saturday market days. The Old Post Office and the Whipper-In Hotel are distinctive buildings.
+
+Uppingham to the south-east is Rutland's other market town, with a similar character and an independent school. Ketton to the east is a limestone village. Cottesmore and Whissendine to the north are rural villages. Empingham and Edith Weston are near Rutland Water.
+
+Rutland Water is the largest reservoir in England and a major visitor attraction. The roads around the reservoir (especially the A606 on the north shore) can be busy on summer weekends with cyclists and tourists.
+
+The A606 connects Oakham to Stamford to the east and Melton Mowbray to the west. The A6003 heads north to Uppingham and Corby. The A47 runs just south of the town.
+
+Rates start from £19 per hour. Add full postcodes and access details, especially for rural villages with narrow lanes.`,
+    faq: [
+      {"q":"How much does a man and van cost in Oakham?","a":"Oakham moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"Does Rutland Water traffic affect moves?","a":"The roads around Rutland Water can be busy on summer weekends with tourists and cyclists. Weekday moves are generally unaffected."},
+      {"q":"How far is Oakham from Peterborough?","a":"About 25 miles east via the A47 and A606, taking roughly 35 minutes. An Oakham to Peterborough move typically costs £100–£180."},
+    ],
+    localAreaGuides: [
+      {title: "Oakham town centre", body: "Georgian stone buildings around the market place and High Street. Oakham Castle is a local landmark. Narrow streets with limited parking. Wednesday and Saturday market days bring extra traffic."},
+      {title: "Uppingham", body: "Rutland's other market town to the south-east with a similar character. The independent school brings term-time traffic. Good road access via the A6003.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Rutland Water area", body: "Empingham, Edith Weston and North Luffenham are near the reservoir. Summer weekend traffic can be heavy. The reservoir is popular with cyclists and water sports."},
+      {title: "Oakham to Stamford and Corby", body: "Stamford is about 12 miles east on the A606 (20 minutes). Corby is about 15 miles south via the A6003 (25 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+
 };
