@@ -3659,7 +3659,579 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
       }
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
-  }
+  },
+
+  // ─── East Midlands expansion (38 new) ───
+  "chesterfield": {
+    ...baseSchema,
+    name: "Man and Van Club — Chesterfield",
+    description: "Free man and van quote request service in Chesterfield, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Brimington, Hasland, Staveley, Clay Cross and Dronfield.",
+    url: `${siteUrl}/man-and-van-chesterfield`,
+    areaServed: {
+      "@type": "City",
+      name: "Chesterfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "glossop": {
+    ...baseSchema,
+    name: "Man and Van Club — Glossop",
+    description: "Free man and van quote request service in Glossop, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Hadfield, Padfield, Simmondley and Whitfield.",
+    url: `${siteUrl}/man-and-van-glossop`,
+    areaServed: {
+      "@type": "City",
+      name: "Glossop",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ilkeston": {
+    ...baseSchema,
+    name: "Man and Van Club — Ilkeston",
+    description: "Free man and van quote request service in Ilkeston, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Cotmanhay, Kirk Hallam, Little Hallam and Stanley.",
+    url: `${siteUrl}/man-and-van-ilkeston`,
+    areaServed: {
+      "@type": "City",
+      name: "Ilkeston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "long-eaton": {
+    ...baseSchema,
+    name: "Man and Van Club — Long Eaton",
+    description: "Free man and van quote request service in Long Eaton, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Sawley, Borrowash, Breaston and Sandiacre.",
+    url: `${siteUrl}/man-and-van-long-eaton`,
+    areaServed: {
+      "@type": "City",
+      name: "Long Eaton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "belper": {
+    ...baseSchema,
+    name: "Man and Van Club — Belper",
+    description: "Free man and van quote request service in Belper, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Milford, Heage, Ripley and Swanwick.",
+    url: `${siteUrl}/man-and-van-belper`,
+    areaServed: {
+      "@type": "City",
+      name: "Belper",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "swadlincote": {
+    ...baseSchema,
+    name: "Man and Van Club — Swadlincote",
+    description: "Free man and van quote request service in Swadlincote, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Church Gresley, Newhall, Woodville and Midway.",
+    url: `${siteUrl}/man-and-van-swadlincote`,
+    areaServed: {
+      "@type": "City",
+      name: "Swadlincote",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "buxton": {
+    ...baseSchema,
+    name: "Man and Van Club — Buxton",
+    description: "Free man and van quote request service in Buxton, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Fairfield, Lightwood, Harpur Hill and Peak District.",
+    url: `${siteUrl}/man-and-van-buxton`,
+    areaServed: {
+      "@type": "City",
+      name: "Buxton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ripley": {
+    ...baseSchema,
+    name: "Man and Van Club — Ripley",
+    description: "Free man and van quote request service in Ripley, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Codnor, Heanor, Waingroves and Pentrich.",
+    url: `${siteUrl}/man-and-van-ripley`,
+    areaServed: {
+      "@type": "City",
+      name: "Ripley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "heanor": {
+    ...baseSchema,
+    name: "Man and Van Club — Heanor",
+    description: "Free man and van quote request service in Heanor, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Loscoe, Langley Mill, Marlpool and Shipley.",
+    url: `${siteUrl}/man-and-van-heanor`,
+    areaServed: {
+      "@type": "City",
+      name: "Heanor",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "alfreton": {
+    ...baseSchema,
+    name: "Man and Van Club — Alfreton",
+    description: "Free man and van quote request service in Alfreton, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Somercotes, Riddings, Ironville and Shirland.",
+    url: `${siteUrl}/man-and-van-alfreton`,
+    areaServed: {
+      "@type": "City",
+      name: "Alfreton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "matlock": {
+    ...baseSchema,
+    name: "Man and Van Club — Matlock",
+    description: "Free man and van quote request service in Matlock, Derbyshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Matlock Bath, Cromford, Darley Dale and Rowsley.",
+    url: `${siteUrl}/man-and-van-matlock`,
+    areaServed: {
+      "@type": "City",
+      name: "Matlock",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Derbyshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "loughborough": {
+    ...baseSchema,
+    name: "Man and Van Club — Loughborough",
+    description: "Free man and van quote request service in Loughborough, Leicestershire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Shepshed, Quorn, Mountsorrel and Nanpantan.",
+    url: `${siteUrl}/man-and-van-loughborough`,
+    areaServed: {
+      "@type": "City",
+      name: "Loughborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "coalville": {
+    ...baseSchema,
+    name: "Man and Van Club — Coalville",
+    description: "Free man and van quote request service in Coalville, Leicestershire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Whitwick, Hugglescote, Newhall and Ravenstone.",
+    url: `${siteUrl}/man-and-van-coalville`,
+    areaServed: {
+      "@type": "City",
+      name: "Coalville",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "hinckley": {
+    ...baseSchema,
+    name: "Man and Van Club — Hinckley",
+    description: "Free man and van quote request service in Hinckley, Leicestershire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Barwell, Earl Shilton, Burbage and Stoke Golding.",
+    url: `${siteUrl}/man-and-van-hinckley`,
+    areaServed: {
+      "@type": "City",
+      name: "Hinckley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "melton-mowbray": {
+    ...baseSchema,
+    name: "Man and Van Club — Melton Mowbray",
+    description: "Free man and van quote request service in Melton Mowbray, Leicestershire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Asfordby, Bottesford and Waltham on the Wolds.",
+    url: `${siteUrl}/man-and-van-melton-mowbray`,
+    areaServed: {
+      "@type": "City",
+      name: "Melton Mowbray",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "market-harborough": {
+    ...baseSchema,
+    name: "Man and Van Club — Market Harborough",
+    description: "Free man and van quote request service in Market Harborough, Leicestershire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Great Bowden, Little Bowden, Foxton and Kibworth.",
+    url: `${siteUrl}/man-and-van-market-harborough`,
+    areaServed: {
+      "@type": "City",
+      name: "Market Harborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ashby-de-la-zouch": {
+    ...baseSchema,
+    name: "Man and Van Club — Ashby de la Zouch",
+    description: "Free man and van quote request service in Ashby de la Zouch, Leicestershire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Moira, Donisthorpe, Measham and Packington.",
+    url: `${siteUrl}/man-and-van-ashby-de-la-zouch`,
+    areaServed: {
+      "@type": "City",
+      name: "Ashby de la Zouch",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "lutterworth": {
+    ...baseSchema,
+    name: "Man and Van Club — Lutterworth",
+    description: "Free man and van quote request service in Lutterworth, Leicestershire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Bitteswell, Gilmorton, Magna Park and Cotesbach.",
+    url: `${siteUrl}/man-and-van-lutterworth`,
+    areaServed: {
+      "@type": "City",
+      name: "Lutterworth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Leicestershire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "grantham": {
+    ...baseSchema,
+    name: "Man and Van Club — Grantham",
+    description: "Free man and van quote request service in Grantham, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Barrowby, Great Gonerby, Harlaxton and Belton.",
+    url: `${siteUrl}/man-and-van-grantham`,
+    areaServed: {
+      "@type": "City",
+      name: "Grantham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "boston": {
+    ...baseSchema,
+    name: "Man and Van Club — Boston",
+    description: "Free man and van quote request service in Boston, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Wyberton, Fishtoft, Freiston and Skirbeck.",
+    url: `${siteUrl}/man-and-van-boston`,
+    areaServed: {
+      "@type": "City",
+      name: "Boston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "spalding": {
+    ...baseSchema,
+    name: "Man and Van Club — Spalding",
+    description: "Free man and van quote request service in Spalding, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Pinchbeck, Cowbit, Gosberton and Donington.",
+    url: `${siteUrl}/man-and-van-spalding`,
+    areaServed: {
+      "@type": "City",
+      name: "Spalding",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "stamford": {
+    ...baseSchema,
+    name: "Man and Van Club — Stamford",
+    description: "Free man and van quote request service in Stamford, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Barnack, Easton on the Hill, Ketton and Wansford.",
+    url: `${siteUrl}/man-and-van-stamford`,
+    areaServed: {
+      "@type": "City",
+      name: "Stamford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "gainsborough": {
+    ...baseSchema,
+    name: "Man and Van Club — Gainsborough",
+    description: "Free man and van quote request service in Gainsborough, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Morton, Lea, Beckingham and Walkeringham.",
+    url: `${siteUrl}/man-and-van-gainsborough`,
+    areaServed: {
+      "@type": "City",
+      name: "Gainsborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "sleaford": {
+    ...baseSchema,
+    name: "Man and Van Club — Sleaford",
+    description: "Free man and van quote request service in Sleaford, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Quarrington, Greylees, Rauceby and Cranwell.",
+    url: `${siteUrl}/man-and-van-sleaford`,
+    areaServed: {
+      "@type": "City",
+      name: "Sleaford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "skegness": {
+    ...baseSchema,
+    name: "Man and Van Club — Skegness",
+    description: "Free man and van quote request service in Skegness, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Ingoldmells, Chapel St Leonards, Winthorpe and Addlethorpe.",
+    url: `${siteUrl}/man-and-van-skegness`,
+    areaServed: {
+      "@type": "City",
+      name: "Skegness",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "louth": {
+    ...baseSchema,
+    name: "Man and Van Club — Louth",
+    description: "Free man and van quote request service in Louth, Lincolnshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Legbourne, Manby, North Thoresby and Fotherby.",
+    url: `${siteUrl}/man-and-van-louth`,
+    areaServed: {
+      "@type": "City",
+      name: "Louth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lincolnshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "kettering": {
+    ...baseSchema,
+    name: "Man and Van Club — Kettering",
+    description: "Free man and van quote request service in Kettering, Northamptonshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Rothwell, Desborough, Barton Seagrave and Burton Latimer.",
+    url: `${siteUrl}/man-and-van-kettering`,
+    areaServed: {
+      "@type": "City",
+      name: "Kettering",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "corby": {
+    ...baseSchema,
+    name: "Man and Van Club — Corby",
+    description: "Free man and van quote request service in Corby, Northamptonshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Weldon, Gretton, Rockingham and East Carlton.",
+    url: `${siteUrl}/man-and-van-corby`,
+    areaServed: {
+      "@type": "City",
+      name: "Corby",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "wellingborough": {
+    ...baseSchema,
+    name: "Man and Van Club — Wellingborough",
+    description: "Free man and van quote request service in Wellingborough, Northamptonshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Irthlingborough, Finedon, Earls Barton and Wollaston.",
+    url: `${siteUrl}/man-and-van-wellingborough`,
+    areaServed: {
+      "@type": "City",
+      name: "Wellingborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "rushden": {
+    ...baseSchema,
+    name: "Man and Van Club — Rushden",
+    description: "Free man and van quote request service in Rushden, Northamptonshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Higham Ferrers, Irthlingborough, Raunds and Stanwick.",
+    url: `${siteUrl}/man-and-van-rushden`,
+    areaServed: {
+      "@type": "City",
+      name: "Rushden",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "daventry": {
+    ...baseSchema,
+    name: "Man and Van Club — Daventry",
+    description: "Free man and van quote request service in Daventry, Northamptonshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Weedon Bec, Long Buckby, Badby and Staverton.",
+    url: `${siteUrl}/man-and-van-daventry`,
+    areaServed: {
+      "@type": "City",
+      name: "Daventry",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Northamptonshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "mansfield": {
+    ...baseSchema,
+    name: "Man and Van Club — Mansfield",
+    description: "Free man and van quote request service in Mansfield, Nottinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Forest Town, Ladybrook, Shirebrook and Rainworth.",
+    url: `${siteUrl}/man-and-van-mansfield`,
+    areaServed: {
+      "@type": "City",
+      name: "Mansfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "newark-on-trent": {
+    ...baseSchema,
+    name: "Man and Van Club — Newark on Trent",
+    description: "Free man and van quote request service in Newark on Trent, Nottinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Balderton, Farndon, Coddington and Winthorpe.",
+    url: `${siteUrl}/man-and-van-newark-on-trent`,
+    areaServed: {
+      "@type": "City",
+      name: "Newark on Trent",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "worksop": {
+    ...baseSchema,
+    name: "Man and Van Club — Worksop",
+    description: "Free man and van quote request service in Worksop, Nottinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Shireoaks, Carlton in Lindrick, Harworth and Creswell.",
+    url: `${siteUrl}/man-and-van-worksop`,
+    areaServed: {
+      "@type": "City",
+      name: "Worksop",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "sutton-in-ashfield": {
+    ...baseSchema,
+    name: "Man and Van Club — Sutton in Ashfield",
+    description: "Free man and van quote request service in Sutton in Ashfield, Nottinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Kirkby in Ashfield, Huthwaite, Stanton Hill and Annesley.",
+    url: `${siteUrl}/man-and-van-sutton-in-ashfield`,
+    areaServed: {
+      "@type": "City",
+      name: "Sutton in Ashfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "retford": {
+    ...baseSchema,
+    name: "Man and Van Club — Retford",
+    description: "Free man and van quote request service in Retford, Nottinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Ordsall, Clayworth, Babworth and Ranby.",
+    url: `${siteUrl}/man-and-van-retford`,
+    areaServed: {
+      "@type": "City",
+      name: "Retford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "kirkby-in-ashfield": {
+    ...baseSchema,
+    name: "Man and Van Club — Kirkby in Ashfield",
+    description: "Free man and van quote request service in Kirkby in Ashfield, Nottinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Sutton in Ashfield, Huthwaite, Annesley and Selston.",
+    url: `${siteUrl}/man-and-van-kirkby-in-ashfield`,
+    areaServed: {
+      "@type": "City",
+      name: "Kirkby in Ashfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Nottinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "oakham": {
+    ...baseSchema,
+    name: "Man and Van Club — Oakham",
+    description: "Free man and van quote request service in Oakham, Rutland. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Uppingham, Ketton, Cottesmore and Rutland Water.",
+    url: `${siteUrl}/man-and-van-oakham`,
+    areaServed: {
+      "@type": "City",
+      name: "Oakham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Rutland"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {
