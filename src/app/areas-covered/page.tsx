@@ -6,20 +6,20 @@ const siteUrl = "https://www.manandvanclub.co.uk";
 export const metadata: Metadata = {
   title: "Areas Covered | UK-Wide Man and Van Services | Man and Van Club",
   description:
-    "Man and Van Club covers towns and cities across England, Scotland and Wales. Find your area, submit a free request and receive a quote from one verified mover before you book.",
+    "Man and Van Club covers towns and cities across England, Scotland, Wales and Northern Ireland. Find your area, submit a free request and receive a quote from one verified mover before you book.",
   alternates: {
     canonical: 'https://www.manandvanclub.co.uk/areas-covered',
   },
   openGraph: {
     title: "Areas Covered | UK-Wide Man and Van Services",
-    description: "Man and Van Club covers towns and cities across England, Scotland and Wales. Find your area and submit a free request.",
+    description: "Man and Van Club covers towns and cities across England, Scotland, Wales and Northern Ireland. Find your area and submit a free request.",
     url: 'https://www.manandvanclub.co.uk/areas-covered',
     images: [{ url: `${siteUrl}/api/og?title=${encodeURIComponent("Areas Covered")}&subtitle=${encodeURIComponent("UK-Wide Mover Coverage")}`, width: 1200, height: 630, alt: "Areas Covered — Man and Van Club" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Areas Covered | UK-Wide Man and Van Services",
-    description: "Man and Van Club covers towns and cities across England, Scotland and Wales.",
+    description: "Man and Van Club covers towns and cities across England, Scotland, Wales and Northern Ireland.",
     images: [`${siteUrl}/api/og?title=${encodeURIComponent("Areas Covered")}&subtitle=${encodeURIComponent("UK-Wide Mover Coverage")}`],
   },
 };

@@ -155,6 +155,61 @@ Your Birmingham request can include property type, access, parking, stairs, lift
   },
   // ──────────────────────────────────────────
   london: {
+    title: "Man and Van London | From £19 | Verified Local Movers Across All Boroughs",
+    description: "Man and van London from £19/hr. ULEZ-aware movers for flat moves, house removals, student moves and furniture delivery across all London boroughs. Call 0121 751 1269.",
+    faq: [
+      { q: "How much does a man and van cost in London?", a: "London man and van rates in 2026 start from £19 per hour for a self-loading service with a small van. A driver-helps service (the mover loads and carries) starts from £34 per hour. A 1-bed flat move within London typically costs £200–£400 depending on borough, access and parking. A full house move in London can range from £400–£800. London rates are generally higher than the rest of the UK due to ULEZ compliance costs, parking restrictions and congestion — but the self-loading option at £19/hr keeps it competitive." },
+      { q: "Do I need to worry about ULEZ for my London move?", a: "The Ultra Low Emission Zone covers all London boroughs. Non-compliant vans face a daily charge. Approved movers on Man and Van Club are aware of ULEZ requirements — include your postcodes so the mover can confirm their vehicle is compliant before quoting." },
+      { q: "Can I book a same-day man and van in London?", a: "Same-day moves may be possible depending on mover availability. London has high demand, especially at month-end and during student move weeks in June and September. Submit your request as early as possible — a verified mover can review it and quote if they have availability." },
+      { q: "How do parking restrictions affect a London move?", a: "Many London boroughs require resident permits or have timed loading windows — often 20 or 30 minutes. Some areas in Zone 1 and 2 have Controlled Parking Zones (CPZs) that restrict loading during peak hours. Add your parking notes and any permit details when submitting the request so the mover can plan around them." },
+      { q: "What areas of London do you cover?", a: "All London boroughs — from inner London (Camden, Islington, Kensington, Southwark, Tower Hamlets) to outer London (Croydon, Bromley, Enfield, Harrow, Hillingdon). Whether you're moving within the same borough or from one side of London to the other, submit your postcodes and a verified mover can review the route." },
+      { q: "Do I need to book the lift in my London building?", a: "If your building has a lift, it's strongly recommended to book it with building management in advance. Many high-rise developments in Canary Wharf, Stratford and the South Bank require advance lift bookings for moves. Add lift and access details to your request so the mover can quote accurately." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Inner London (Zones 1–2)",
+        body: "Moves in central and inner London often involve flats above shops, period conversions with narrow staircases, and strict CPZ parking. Postcodes in SW1, W1, EC1, N1 and SE1 typically require loading bay permits or timed loading windows. Add your full postcode and parking notes so the mover can plan access before quoting.",
+        links: [
+          { label: "Camden moves", href: "/man-and-van-london" },
+          { label: "Islington moves", href: "/man-and-van-london" },
+          { label: "Southwark moves", href: "/man-and-van-london" },
+        ],
+      },
+      {
+        title: "Man and van Outer London (Zones 3–6)",
+        body: "Outer London boroughs like Croydon, Bromley, Enfield and Harrow have more suburban layouts with driveways and wider roads, but some areas still have permit parking and CPZs during working hours. Moves here are often house-to-house with more furniture than an inner-London flat move. Include property type and driveway access in your request.",
+        links: [
+          { label: "Croydon moves", href: "/man-and-van-croydon" },
+          { label: "Bromley moves", href: "/man-and-van-bromley" },
+          { label: "Enfield moves", href: "/man-and-van-enfield" },
+        ],
+      },
+      {
+        title: "Student moves in London",
+        body: "Student moves in London cluster around Bloomsbury, Camden, Kingston, Holloway and Mile End. Most student properties are terraced houses or halls of residence with shared entrances. Book early for June and September — these are the busiest weeks. Add your university and accommodation details so the mover can find the right entrance.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+      {
+        title: "London Congestion Charge and ULEZ",
+        body: "The Congestion Charge zone covers central London (roughly within the Inner Ring Road) and operates Monday to Friday, 7am–6pm. The ULEZ covers all London boroughs, 24 hours a day. Both charges apply to non-compliant vehicles. Include your collection and delivery postcodes so a verified mover can confirm their vehicle compliance before quoting.",
+      },
+      {
+        title: "Man and van East London",
+        body: "East London moves in Stratford, Hackney, Shoreditch, Canning Town and Poplar often involve new-build apartments with concierge-managed loading bays and lift booking systems. Add building management contact details and any loading time restrictions to your request so the mover can coordinate access.",
+        links: [
+          { label: "Stratford moves", href: "/man-and-van-stratford" },
+        ],
+      },
+      {
+        title: "Man and van West London",
+        body: "West London moves in Ealing, Hounslow, Richmond, Acton and Chiswick tend to be family house moves with more furniture than inner-London flat moves. Parking is generally easier than central London, but some areas near high streets and stations have restricted loading. Add driveway or parking availability notes to your request.",
+        links: [
+          { label: "Ealing moves", href: "/man-and-van-ealing" },
+        ],
+      },
+    ],
     localMovingInfo: `London is one of the busiest moving markets in the UK, with unique challenges that local movers often need to account for. From narrow Victorian streets in Kensington and Islington to congestion zone restrictions and ULEZ charges, a London move requires careful planning and local knowledge.
 
 The Ultra Low Emission Zone (ULEZ) covers all London boroughs, meaning any large van entering the zone must be compliant or face a daily charge. The Congestion Charge zone covers central London postcodes and operates Monday to Friday. Many residential streets in Zone 1 and 2 require resident permits or have timed loading restrictions, often limited to 20-minute loading windows. If your building has a lift, booking it in advance is essential, particularly in high-rise developments in Canary Wharf, Shoreditch, and the South Bank. Student moves are common around Bloomsbury, Camden, and Kingston, while family relocations frequently move from inner London to outer boroughs like Bromley, Croydon, and Enfield.
