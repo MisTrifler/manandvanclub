@@ -191,7 +191,7 @@ export const ROUTES: RouteData[] = [
       { label: "London to Manchester", href: "/routes/london-to-manchester" },
       { label: "Manchester to Birmingham", href: "/routes/manchester-to-birmingham" },
       { label: "Manchester to Leeds", href: "/routes/manchester-to-leeds" },
-      { label: "Manchester to Bristol", href: "/routes/manchester-to-bristol" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
     ],
     cityALink: "/man-and-van-manchester",
     cityBLink: "/man-and-van-london"
@@ -231,7 +231,7 @@ export const ROUTES: RouteData[] = [
     relatedRoutes: [
       { label: "Leeds to London", href: "/routes/leeds-to-london" },
       { label: "London to Manchester", href: "/routes/london-to-manchester" },
-      { label: "Leeds to Birmingham", href: "/routes/leeds-to-birmingham" },
+      { label: "Birmingham to Leeds", href: "/routes/birmingham-to-leeds" },
       { label: "London to Sheffield", href: "/routes/london-to-sheffield" },
     ],
     cityALink: "/man-and-van-london",
@@ -271,7 +271,7 @@ export const ROUTES: RouteData[] = [
     relatedRoutes: [
       { label: "London to Leeds", href: "/routes/london-to-leeds" },
       { label: "Leeds to Manchester", href: "/routes/leeds-to-manchester" },
-      { label: "Leeds to Birmingham", href: "/routes/leeds-to-birmingham" },
+      { label: "Birmingham to Leeds", href: "/routes/birmingham-to-leeds" },
       { label: "Manchester to London", href: "/routes/manchester-to-london" },
     ],
     cityALink: "/man-and-van-leeds",
@@ -390,7 +390,7 @@ export const ROUTES: RouteData[] = [
       { q: "Is parking difficult in Bristol for removals?", a: "City-centre flats often have no parking. Areas like Clifton and Redland have residents' parking zones. Apply for a parking suspension from Bristol City Council at least 5 working days before the move." },
     ],
     relatedRoutes: [
-      { label: "Bristol to Birmingham", href: "/routes/bristol-to-birmingham" },
+      { label: "Birmingham to Bristol", href: "/routes/birmingham-to-bristol" },
       { label: "Birmingham to London", href: "/routes/birmingham-to-london" },
       { label: "Bristol to London", href: "/routes/bristol-to-london" },
       { label: "Birmingham to Manchester", href: "/routes/birmingham-to-manchester" },
@@ -431,10 +431,10 @@ export const ROUTES: RouteData[] = [
       { q: "Will ULEZ charges apply?", a: "If your delivery address is inside London's ULEZ zone (within the North and South Circular roads), a non-compliant vehicle would be charged. Most modern vans are ULEZ-compliant." },
     ],
     relatedRoutes: [
-      { label: "London to Bristol", href: "/routes/london-to-bristol" },
-      { label: "Bristol to Birmingham", href: "/routes/bristol-to-birmingham" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
+      { label: "Birmingham to Bristol", href: "/routes/birmingham-to-bristol" },
       { label: "London to Cardiff", href: "/routes/london-to-cardiff" },
-      { label: "Bristol to Manchester", href: "/routes/bristol-to-manchester" },
+      { label: "Manchester to London", href: "/routes/manchester-to-london" },
     ],
     cityALink: "/man-and-van-bristol",
     cityBLink: "/man-and-van-london"
@@ -471,10 +471,10 @@ export const ROUTES: RouteData[] = [
       { q: "How long does the drive from London to Cardiff take?", a: "About 2 hours 45 minutes via the M4 in clear traffic. The Brynglas Tunnels near Newport and the M4 around Reading are the main congestion points." },
     ],
     relatedRoutes: [
-      { label: "Cardiff to London", href: "/routes/cardiff-to-london" },
-      { label: "London to Bristol", href: "/routes/london-to-bristol" },
-      { label: "Cardiff to Birmingham", href: "/routes/cardiff-to-birmingham" },
-      { label: "London to Swansea", href: "/routes/london-to-swansea" },
+      { label: "London to Cardiff", href: "/routes/london-to-cardiff" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
+      { label: "Bristol to Cardiff", href: "/routes/bristol-to-cardiff" },
+      { label: "London to Cardiff", href: "/routes/london-to-cardiff" },
     ],
     cityALink: "/man-and-van-london",
     cityBLink: "/man-and-van-cardiff"
@@ -512,8 +512,8 @@ export const ROUTES: RouteData[] = [
       { q: "Is it cheaper to move to Edinburgh midweek?", a: "Yes. Midweek moves typically cost less due to lower demand. A 400-mile journey also benefits from lighter weekday motorway traffic." },
     ],
     relatedRoutes: [
-      { label: "Edinburgh to London", href: "/routes/edinburgh-to-london" },
-      { label: "London to Glasgow", href: "/routes/london-to-glasgow" },
+      { label: "London to Edinburgh", href: "/routes/london-to-edinburgh" },
+      { label: "London to Edinburgh", href: "/routes/london-to-edinburgh" },
       { label: "Edinburgh to Manchester", href: "/routes/edinburgh-to-manchester" },
       { label: "London to Leeds", href: "/routes/london-to-leeds" },
     ],
@@ -552,9 +552,9 @@ export const ROUTES: RouteData[] = [
       { q: "Does Liverpool have a Clean Air Zone?", a: "Yes. Liverpool has a Clean Air Zone covering the city centre. Most modern vans are exempt. Check your delivery postcode on Liverpool City Council's website." },
     ],
     relatedRoutes: [
-      { label: "Liverpool to London", href: "/routes/liverpool-to-london" },
+      { label: "London to Liverpool", href: "/routes/london-to-liverpool" },
       { label: "London to Manchester", href: "/routes/london-to-manchester" },
-      { label: "Liverpool to Birmingham", href: "/routes/liverpool-to-birmingham" },
+      { label: "Birmingham to Manchester", href: "/routes/birmingham-to-manchester" },
       { label: "Manchester to Liverpool", href: "/routes/manchester-to-liverpool" },
     ],
     cityALink: "/man-and-van-london",
@@ -591,10 +591,10 @@ export const ROUTES: RouteData[] = [
       { q: "When is the best time to move?", a: "Tuesday to Thursday mornings offer the lightest traffic. Avoid the M1 on Friday afternoons." },
     ],
     relatedRoutes: [
-      { label: "Leeds to Birmingham", href: "/routes/leeds-to-birmingham" },
+      { label: "Birmingham to Leeds", href: "/routes/birmingham-to-leeds" },
       { label: "Birmingham to Manchester", href: "/routes/birmingham-to-manchester" },
       { label: "Leeds to London", href: "/routes/leeds-to-london" },
-      { label: "Birmingham to Sheffield", href: "/routes/birmingham-to-sheffield" },
+      { label: "Birmingham to Leeds", href: "/routes/birmingham-to-leeds" },
     ],
     cityALink: "/man-and-van-birmingham",
     cityBLink: "/man-and-van-leeds"
@@ -710,7 +710,7 @@ export const ROUTES: RouteData[] = [
     relatedRoutes: [
       { label: "London to Birmingham", href: "/routes/london-to-birmingham" },
       { label: "London to Leicester", href: "/routes/london-to-leicester" },
-      { label: "London to Northampton", href: "/routes/london-to-northampton" },
+      { label: "London to Cambridge", href: "/routes/london-to-cambridge" },
       { label: "Birmingham to Coventry", href: "/routes/birmingham-to-coventry" },
     ],
     cityALink: "/man-and-van-london",
@@ -749,9 +749,9 @@ export const ROUTES: RouteData[] = [
     ],
     relatedRoutes: [
       { label: "Glasgow to Edinburgh", href: "/routes/glasgow-to-edinburgh" },
-      { label: "Edinburgh to London", href: "/routes/edinburgh-to-london" },
+      { label: "London to Edinburgh", href: "/routes/london-to-edinburgh" },
       { label: "Edinburgh to Manchester", href: "/routes/edinburgh-to-manchester" },
-      { label: "Glasgow to Manchester", href: "/routes/glasgow-to-manchester" },
+      { label: "Manchester to Edinburgh", href: "/routes/manchester-to-edinburgh" },
     ],
     cityALink: "/man-and-van-edinburgh",
     cityBLink: "/man-and-van-glasgow"
@@ -787,8 +787,8 @@ export const ROUTES: RouteData[] = [
     ],
     relatedRoutes: [
       { label: "Edinburgh to Glasgow", href: "/routes/edinburgh-to-glasgow" },
-      { label: "Glasgow to Manchester", href: "/routes/glasgow-to-manchester" },
-      { label: "Edinburgh to London", href: "/routes/edinburgh-to-london" },
+      { label: "Manchester to Edinburgh", href: "/routes/manchester-to-edinburgh" },
+      { label: "London to Edinburgh", href: "/routes/london-to-edinburgh" },
     ],
     cityALink: "/man-and-van-glasgow",
     cityBLink: "/man-and-van-edinburgh"
@@ -826,7 +826,7 @@ export const ROUTES: RouteData[] = [
       { label: "Liverpool to Manchester", href: "/routes/liverpool-to-manchester" },
       { label: "Manchester to Leeds", href: "/routes/manchester-to-leeds" },
       { label: "Manchester to Birmingham", href: "/routes/manchester-to-birmingham" },
-      { label: "Liverpool to London", href: "/routes/liverpool-to-london" },
+      { label: "London to Liverpool", href: "/routes/london-to-liverpool" },
     ],
     cityALink: "/man-and-van-manchester",
     cityBLink: "/man-and-van-liverpool"
@@ -862,7 +862,7 @@ export const ROUTES: RouteData[] = [
       { q: "How long does the drive from London to Nottingham take?", a: "About 2 hours 20 minutes via the M1 in clear traffic. The M1 around Luton and the M25 interchange can add 15–30 minutes at peak times." },
     ],
     relatedRoutes: [
-      { label: "Nottingham to London", href: "/routes/nottingham-to-london" },
+      { label: "London to Nottingham", href: "/routes/london-to-nottingham" },
       { label: "London to Birmingham", href: "/routes/london-to-birmingham" },
       { label: "London to Leicester", href: "/routes/london-to-leicester" },
       { label: "London to Leeds", href: "/routes/london-to-leeds" },
@@ -901,7 +901,7 @@ export const ROUTES: RouteData[] = [
       { q: "Does Sheffield have a Clean Air Zone?", a: "Yes. Sheffield has a Clean Air Zone covering the city centre. Most modern vans are exempt. Check your delivery postcode on Sheffield City Council's website." },
     ],
     relatedRoutes: [
-      { label: "Sheffield to London", href: "/routes/sheffield-to-london" },
+      { label: "London to Sheffield", href: "/routes/london-to-sheffield" },
       { label: "London to Leeds", href: "/routes/london-to-leeds" },
       { label: "London to Manchester", href: "/routes/london-to-manchester" },
       { label: "Sheffield to Birmingham", href: "/routes/sheffield-to-birmingham" },
@@ -1566,7 +1566,7 @@ export const ROUTES: RouteData[] = [
     ],
     relatedRoutes: [
       { label: "Brighton to London", href: "/routes/brighton-to-london" },
-      { label: "London to Bristol", href: "/routes/bristol-to-london" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
       { label: "London to Southampton", href: "/routes/london-to-southampton" },
     ],
     cityALink: "/man-and-van-london",
@@ -1788,7 +1788,7 @@ export const ROUTES: RouteData[] = [
     relatedRoutes: [
       { label: "Southampton to London", href: "/routes/southampton-to-london" },
       { label: "London to Brighton", href: "/routes/london-to-brighton" },
-      { label: "London to Bristol", href: "/routes/bristol-to-london" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
     ],
     cityALink: "/man-and-van-london",
     cityBLink: "/man-and-van-southampton"
@@ -1825,7 +1825,7 @@ export const ROUTES: RouteData[] = [
     relatedRoutes: [
       { label: "London to Southampton", href: "/routes/london-to-southampton" },
       { label: "London to Brighton", href: "/routes/london-to-brighton" },
-      { label: "London to Bristol", href: "/routes/bristol-to-london" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
     ],
     cityALink: "/man-and-van-southampton",
     cityBLink: "/man-and-van-london"
@@ -1861,7 +1861,7 @@ export const ROUTES: RouteData[] = [
     ],
     relatedRoutes: [
       { label: "Plymouth to London", href: "/routes/plymouth-to-london" },
-      { label: "London to Bristol", href: "/routes/bristol-to-london" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
       { label: "London to Southampton", href: "/routes/london-to-southampton" },
     ],
     cityALink: "/man-and-van-london",
@@ -3151,7 +3151,7 @@ export const ROUTES: RouteData[] = [
     relatedRoutes: [
       { label: "London to Cambridge", href: "/routes/london-to-cambridge" },
       { label: "London to Norwich", href: "/routes/london-to-norwich" },
-      { label: "London to Chelmsford", href: "/routes/london-to-chelmsford" },
+      { label: "London to Colchester", href: "/routes/london-to-colchester" },
     ],
     cityALink: "/man-and-van-london",
     cityBLink: "/man-and-van-colchester"
@@ -3224,8 +3224,8 @@ export const ROUTES: RouteData[] = [
     ],
     relatedRoutes: [
       { label: "Birmingham to Leeds", href: "/routes/birmingham-to-leeds" },
-      { label: "London to York", href: "/routes/london-to-york" },
-      { label: "Birmingham to Sheffield", href: "/routes/sheffield-to-birmingham" },
+      { label: "London to Leeds", href: "/routes/london-to-leeds" },
+      { label: "Birmingham to Leeds", href: "/routes/sheffield-to-birmingham" },
     ],
     cityALink: "/man-and-van-birmingham",
     cityBLink: "/man-and-van-york"
@@ -3260,7 +3260,7 @@ export const ROUTES: RouteData[] = [
     ],
     relatedRoutes: [
       { label: "Birmingham to York", href: "/routes/birmingham-to-york" },
-      { label: "Leeds to Birmingham", href: "/routes/birmingham-to-leeds" },
+      { label: "Birmingham to Leeds", href: "/routes/birmingham-to-leeds" },
       { label: "Leeds to Sheffield", href: "/routes/leeds-to-sheffield" },
     ],
     cityALink: "/man-and-van-york",
@@ -3553,7 +3553,7 @@ export const ROUTES: RouteData[] = [
     ],
     relatedRoutes: [
       { label: "London to Reading", href: "/routes/london-to-reading" },
-      { label: "London to Bristol", href: "/routes/bristol-to-london" },
+      { label: "Bristol to London", href: "/routes/bristol-to-london" },
       { label: "London to Oxford", href: "/routes/london-to-oxford" },
     ],
     cityALink: "/man-and-van-london",

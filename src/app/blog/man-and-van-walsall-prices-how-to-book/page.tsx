@@ -140,7 +140,7 @@ export default function BlogPost() {
             Go to <Link href="/man-and-van-walsall" className="text-accent font-bold hover:underline">manandvanclub.co.uk/walsall</Link>, enter your postcodes and item list, and a verified mover reviews your details before quoting. Free to submit, no obligation to accept. If you'd rather talk it through first, call <a href="tel:01217511269" className="text-accent font-bold hover:underline">0121 751 1269</a> — we're open 24/7.
           </p>
           <p>
-            Moving from Walsall to another city? We have <Link href="/routes" className="text-accent font-bold hover:underline">route pages</Link> for popular moves including <Link href="/routes/walsall-to-birmingham" className="text-accent font-bold hover:underline">Walsall to Birmingham</Link>, <Link href="/routes/walsall-to-london" className="text-accent font-bold hover:underline">Walsall to London</Link> and <Link href="/routes/walsall-to-coventry" className="text-accent font-bold hover:underline">Walsall to Coventry</Link>.
+            Moving from Walsall to another city? We have <Link href="/routes" className="text-accent font-bold hover:underline">route pages</Link> for popular moves including <Link href="/routes/walsall-to-birmingham" className="text-accent font-bold hover:underline">Walsall to Birmingham</Link>, <Link href="/routes/birmingham-to-london" className="text-accent font-bold hover:underline">Birmingham to London</Link> and <Link href="/routes/birmingham-to-coventry" className="text-accent font-bold hover:underline">Birmingham to Coventry</Link>.
           </p>
         </div>
       </BlogPostLayout>
