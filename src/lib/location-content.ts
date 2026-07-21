@@ -539,6 +539,26 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     "selby": ['YO8'],
     "whitby": ['YO21', 'YO22'],
     "malton": ['YO17'],
+    // South East expansion
+    "guildford": ['GU1', 'GU2', 'GU3', 'GU4'],
+    "woking": ['GU21', 'GU22', 'GU23'],
+    "watford": ['WD17', 'WD18', 'WD19', 'WD24', 'WD25'],
+    "high-wycombe": ['HP11', 'HP12', 'HP13'],
+    "hemel-hempstead": ['HP1', 'HP2', 'HP3'],
+    "stevenage": ['SG1', 'SG2'],
+    "st-albans": ['AL1', 'AL2', 'AL3'],
+    "eastbourne": ['BN20', 'BN21', 'BN22', 'BN23'],
+    "hastings": ['TN34', 'TN35', 'TN37', 'TN38'],
+    "chatham": ['ME4', 'ME5'],
+    "maidenhead": ['SL6'],
+    "bracknell": ['RG12', 'RG42'],
+    "aylesbury": ['HP19', 'HP20', 'HP21', 'HP22'],
+    "tonbridge": ['TN9', 'TN10', 'TN11'],
+    "tunbridge-wells": ['TN1', 'TN2', 'TN3', 'TN4'],
+    "farnborough": ['GU14', 'GU15'],
+    "aldershot": ['GU11', 'GU12'],
+    "hove": ['BN3', 'BN41', 'BN42'],
+    "burgess-hill": ['RH15', 'RH16'],
 
   };
 
@@ -816,6 +836,26 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   "selby": ["york", "leeds", "hull", "doncaster"],
   "whitby": ["scarborough", "middlesbrough"],
   "malton": ["york", "scarborough", "harrogate"],
+  // South East expansion
+  "guildford": ["woking", "farnham", "aldershot", "reading"],
+  "woking": ["guildford", "aldershot", "farnborough"],
+  "watford": ["st-albans", "hemel-hempstead", "london"],
+  "high-wycombe": ["maidenhead", "reading", "oxford"],
+  "hemel-hempstead": ["watford", "st-albans", "luton"],
+  "stevenage": ["st-albans", "watford", "cambridge"],
+  "st-albans": ["watford", "hemel-hempstead", "london"],
+  "eastbourne": ["hastings", "brighton", "lewes"],
+  "hastings": ["eastbourne", "bexhill"],
+  "chatham": ["gillingham", "rochester", "maidstone"],
+  "maidenhead": ["windsor", "slough", "reading", "bracknell"],
+  "bracknell": ["reading", "wokingham", "maidenhead"],
+  "aylesbury": ["high-wycombe", "oxford", "leighton-buzzard"],
+  "tonbridge": ["tunbridge-wells", "sevenoaks", "maidstone"],
+  "tunbridge-wells": ["tonbridge", "sevenoaks"],
+  "farnborough": ["aldershot", "woking", "guildford"],
+  "aldershot": ["farnborough", "farnham", "woking"],
+  "hove": ["brighton", "shoreham", "worthing"],
+  "burgess-hill": ["brighton", "horsham", "crawley"],
 
 };
 

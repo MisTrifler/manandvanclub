@@ -357,6 +357,26 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "selby",
   "whitby",
   "malton",
+  // ─── Phase 8: South East (19) ───
+  "guildford",
+  "woking",
+  "watford",
+  "high-wycombe",
+  "hemel-hempstead",
+  "stevenage",
+  "st-albans",
+  "eastbourne",
+  "hastings",
+  "chatham",
+  "maidenhead",
+  "bracknell",
+  "aylesbury",
+  "tonbridge",
+  "tunbridge-wells",
+  "farnborough",
+  "aldershot",
+  "hove",
+  "burgess-hill",
 ]);
 
 export function isSeoLaunchMode(): boolean {

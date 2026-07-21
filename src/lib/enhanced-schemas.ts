@@ -4947,6 +4947,293 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+
+  // ─── Phase 8: South East expansion (19 NEW) ───
+  "guildford": {
+    ...baseSchema,
+    name: "Man and Van Club — Guildford",
+    description: "Free man and van quote request service in Guildford, Surrey. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Onslow Village, Stoughton, Merrow, Burpham, Shalford.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-guildford",
+    areaServed: {
+      "@type": "City",
+      name: "Guildford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Surrey"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "woking": {
+    ...baseSchema,
+    name: "Man and Van Club — Woking",
+    description: "Free man and van quote request service in Woking, Surrey. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Horsell, Knaphill, Goldsworth Park, Maybury.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-woking",
+    areaServed: {
+      "@type": "City",
+      name: "Woking",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Surrey"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "watford": {
+    ...baseSchema,
+    name: "Man and Van Club — Watford",
+    description: "Free man and van quote request service in Watford, Hertfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Cassiobury, Nascot Wood, Oxhey, Garston, Bushey.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-watford",
+    areaServed: {
+      "@type": "City",
+      name: "Watford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Hertfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "high-wycombe": {
+    ...baseSchema,
+    name: "Man and Van Club — High Wycombe",
+    description: "Free man and van quote request service in High Wycombe, Buckinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Terriers, Booker, Downley, Hazlemere, Loudwater.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-high-wycombe",
+    areaServed: {
+      "@type": "City",
+      name: "High Wycombe",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Buckinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "hemel-hempstead": {
+    ...baseSchema,
+    name: "Man and Van Club — Hemel Hempstead",
+    description: "Free man and van quote request service in Hemel Hempstead, Hertfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Boxmoor, Bennetts End, Chaulden, Gadebridge.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-hemel-hempstead",
+    areaServed: {
+      "@type": "City",
+      name: "Hemel Hempstead",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Hertfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "stevenage": {
+    ...baseSchema,
+    name: "Man and Van Club — Stevenage",
+    description: "Free man and van quote request service in Stevenage, Hertfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Old Town, Broadwater, Great Ashby, Chells.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-stevenage",
+    areaServed: {
+      "@type": "City",
+      name: "Stevenage",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Hertfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "st-albans": {
+    ...baseSchema,
+    name: "Man and Van Club — St Albans",
+    description: "Free man and van quote request service in St Albans, Hertfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Marshalswick, Sandridge, Sopwell, London Colney.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-st-albans",
+    areaServed: {
+      "@type": "City",
+      name: "St Albans",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Hertfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "eastbourne": {
+    ...baseSchema,
+    name: "Man and Van Club — Eastbourne",
+    description: "Free man and van quote request service in Eastbourne, East Sussex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Meads, Old Town, Sovereign Harbour, Willingdon.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-eastbourne",
+    areaServed: {
+      "@type": "City",
+      name: "Eastbourne",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Sussex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "hastings": {
+    ...baseSchema,
+    name: "Man and Van Club — Hastings",
+    description: "Free man and van quote request service in Hastings, East Sussex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Old Town, St Leonards, Ore, Hollington.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-hastings",
+    areaServed: {
+      "@type": "City",
+      name: "Hastings",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Sussex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "chatham": {
+    ...baseSchema,
+    name: "Man and Van Club — Chatham",
+    description: "Free man and van quote request service in Chatham, Medway. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Rochester, Strood, Gillingham, Luton, Walderslade.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-chatham",
+    areaServed: {
+      "@type": "City",
+      name: "Chatham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Medway"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "maidenhead": {
+    ...baseSchema,
+    name: "Man and Van Club — Maidenhead",
+    description: "Free man and van quote request service in Maidenhead, Berkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Bray, Cookham, Pinkneys Green, Holyport, Taplow.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-maidenhead",
+    areaServed: {
+      "@type": "City",
+      name: "Maidenhead",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Berkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "bracknell": {
+    ...baseSchema,
+    name: "Man and Van Club — Bracknell",
+    description: "Free man and van quote request service in Bracknell, Berkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Great Hollands, Birch Hill, Hanworth, Crowthorne.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bracknell",
+    areaServed: {
+      "@type": "City",
+      name: "Bracknell",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Berkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "aylesbury": {
+    ...baseSchema,
+    name: "Man and Van Club — Aylesbury",
+    description: "Free man and van quote request service in Aylesbury, Buckinghamshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Walton Court, Bedgrove, Fairford Leys, Stone, Wendover.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-aylesbury",
+    areaServed: {
+      "@type": "City",
+      name: "Aylesbury",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Buckinghamshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "tonbridge": {
+    ...baseSchema,
+    name: "Man and Van Club — Tonbridge",
+    description: "Free man and van quote request service in Tonbridge, Kent. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Leigh, Haysden, Pembury, Higham, Southborough.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-tonbridge",
+    areaServed: {
+      "@type": "City",
+      name: "Tonbridge",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Kent"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "tunbridge-wells": {
+    ...baseSchema,
+    name: "Man and Van Club — Royal Tunbridge Wells",
+    description: "Free man and van quote request service in Royal Tunbridge Wells, Kent. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Pantiles, Mount Pleasant, Rusthall, Langton Green, Southborough.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-tunbridge-wells",
+    areaServed: {
+      "@type": "City",
+      name: "Royal Tunbridge Wells",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Kent"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "farnborough": {
+    ...baseSchema,
+    name: "Man and Van Club — Farnborough",
+    description: "Free man and van quote request service in Farnborough, Hampshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Cove, Southwood, North Camp, Frimley, Fleet.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-farnborough",
+    areaServed: {
+      "@type": "City",
+      name: "Farnborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Hampshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "aldershot": {
+    ...baseSchema,
+    name: "Man and Van Club — Aldershot",
+    description: "Free man and van quote request service in Aldershot, Hampshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Manor Park, Rowhill, Wellesley, North Town.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-aldershot",
+    areaServed: {
+      "@type": "City",
+      name: "Aldershot",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Hampshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "hove": {
+    ...baseSchema,
+    name: "Man and Van Club — Hove",
+    description: "Free man and van quote request service in Hove, East Sussex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Portslade, Aldrington, Hangleton, Poets Corner.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-hove",
+    areaServed: {
+      "@type": "City",
+      name: "Hove",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Sussex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "burgess-hill": {
+    ...baseSchema,
+    name: "Man and Van Club — Burgess Hill",
+    description: "Free man and van quote request service in Burgess Hill, West Sussex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers World's End, Hammonds Green, Franklands Village.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-burgess-hill",
+    areaServed: {
+      "@type": "City",
+      name: "Burgess Hill",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Sussex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {
