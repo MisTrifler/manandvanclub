@@ -302,6 +302,28 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
 
   // ─── East Midlands — Rutland (1 NEW) ───
   "oakham",
+
+  // ─── West Midlands expansion ───
+  "burton-upon-trent",
+
+  // ─── Greater Manchester expansion (18 NEW) ───
+  "warrington",
+  "sale",
+  "prestwich",
+  "middleton",
+  "eccles",
+  "swinton",
+  "walkden",
+  "failsworth",
+  "denton",
+  "droylsden",
+  "farnworth",
+  "horwich",
+  "westhoughton",
+  "radcliffe",
+  "heywood",
+  "ashton-in-makerfield",
+  "cheadle",
 ]);
 
 export function isSeoLaunchMode(): boolean {

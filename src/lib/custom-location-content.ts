@@ -4539,4 +4539,369 @@ Rates start from £19 per hour. Add full postcodes and access details, especiall
     ],
   },
 
+
+  "burton-upon-trent": {
+    title: "Man and Van Burton upon Trent | From £19",
+    description: "Man and van Burton upon Trent from £19/hr. DE13/DE14. Branston, Stretton, Winshill, Horninglow. Call 0121 751 1269.",
+    h1: "Man and Van Burton upon Trent",
+    intro: "Need a man and van in Burton upon Trent? Submit your postcodes, item list and access notes for free. One verified mover reviews your Burton move before quoting — no spam, no obligation.",
+    knowledge: "Burton upon Trent sits on the River Trent where Staffordshire meets Derbyshire. The A38 Trent Bridge can be congested at rush hour, and the brewery traffic around the town centre adds to the delays. Branston and Stretton to the south are popular residential areas with better road access.",
+    localMovingInfo: `Burton upon Trent is England's brewing capital, sitting on the A38 between Derby and Lichfield. The A38 runs through the town with the Trent Bridge being the main bottleneck at rush hour. The A5121 connects the town centre to the A38 and the A511 heads east towards Swadlincote.
+
+The town centre has Victorian terraces near the brewery area with narrow streets and limited parking. Branston to the south is a popular village with a mix of housing and better road access. Stretton and Horninglow are residential areas with good connections. Winshill sits across the river in Derbyshire.
+
+The A50 connects to the M1 at junction 3 for routes to Derby and Nottingham. The A38 heads north to Derby (about 12 miles) and south to Lichfield and Birmingham. Burton railway station is on the Cross Country line between Derby and Birmingham.
+
+Rates start from £19 per hour. Add full postcodes, floor level and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Burton upon Trent?","a":"Burton moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Burton upon Trent from Derby?","a":"About 12 miles north on the A38, taking roughly 15–20 minutes. A Burton to Derby move typically costs £80–£150."},
+      {"q":"Does the A38 Trent Bridge cause delays?","a":"Yes. The Trent Bridge on the A38 can be congested at rush hour, especially northbound towards Derby. Plan moves outside peak times if possible."},
+    ],
+    localAreaGuides: [
+      {title: "Burton town centre and brewery area", body: "Victorian terraces near the breweries with narrow streets and limited parking. The A5121 connects the centre to the A38. Some streets near the River Trent are narrow."},
+      {title: "Branston and Stretton", body: "Popular residential areas to the south with a mix of housing types and better road access. Branston has a village centre with local shops. Good connections to the A38.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Winshill and Horninglow", body: "Residential areas on different sides of the river. Winshill is across the Trent in Derbyshire with hillside properties. Horninglow is north of the centre with a mix of housing."},
+      {title: "Burton to Derby and Birmingham", body: "Derby is about 12 miles north on the A38 (15–20 minutes). Birmingham is about 25 miles south via the A38 (35–45 minutes). Both are common routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+  "warrington": {
+    title: "Man and Van Warrington | From £19",
+    description: "Man and van Warrington from £19/hr. WA1/WA2/WA4. Lymm, Stockton Heath, Birchwood, Culcheth. Call 0121 751 1269.",
+    h1: "Man and Van Warrington",
+    intro: "Need a man and van in Warrington? Submit your postcodes, item list and access notes for free. One verified mover reviews your Warrington move before quoting — no spam, no obligation.",
+    knowledge: "Warrington sits at the crossroads of the M62, M6 and M56, making it one of the best-connected towns in the North West. The Mersey Gateway Bridge has improved cross-river access. The town grew with wire and soap industries and now has a strong logistics economy.",
+    localMovingInfo: `Warrington is a large town in Cheshire, about 20 miles east of Liverpool and 20 miles west of Manchester. The M62 runs east-west through the town, the M6 runs north-south just to the east, and the M56 heads south towards Chester.
+
+The town centre has Victorian and Edwardian buildings around Bridge Street and the market. The Mersey divides the town, with the newer Mersey Gateway Bridge providing a fast crossing. The older Warrington Bridge can be congested.
+
+Lymm and Stockton Heath to the south are desirable areas with period properties and village centres. Culcheth and Woolston are popular residential areas. Birchwood to the east is a modern development with good road access and a business park.
+
+The A49 runs north-south through the town and the A57 heads east towards Irlam and Manchester. Warrington Central and Warrington Bank Quay stations connect to Liverpool, Manchester and beyond.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Warrington?","a":"Warrington moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Warrington from Manchester and Liverpool?","a":"Manchester is about 20 miles east on the M62 (25–30 minutes). Liverpool is about 20 miles west on the M62 (25–30 minutes)."},
+      {"q":"Does the Mersey Gateway Bridge have tolls?","a":"Yes. The Mersey Gateway Bridge has tolls for cross-river journeys. Plan your route to account for the toll if your move crosses the Mersey."},
+    ],
+    localAreaGuides: [
+      {title: "Warrington town centre", body: "Victorian and Edwardian buildings around Bridge Street and the market. The Mersey runs through the centre with two bridge crossings. Some streets near the river are narrow."},
+      {title: "Lymm and Stockton Heath", body: "Desirable areas to the south with period properties, village centres and restaurants. Lymm has a canal-side setting. Good road access via the A56 and A6144.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Birchwood and Culcheth", body: "Modern residential areas with good road access. Birchwood has a business park and retail centre. Culcheth is a village with a mix of housing types."},
+      {title: "Warrington to Manchester and Liverpool", body: "Manchester is about 20 miles east on the M62 (25–30 minutes). Liverpool is about 20 miles west on the M62 (25–30 minutes). Both are common cross-city routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+  "sale": {
+    title: "Man and Van Sale | From £19",
+    description: "Man and van Sale from £19/hr. M33. Ashton upon Mersey, Sale Moor, Brooklands. Trafford. Call 0121 751 1269.",
+    h1: "Man and Van Sale",
+    intro: "Need a man and van in Sale? Submit your postcodes, item list and access notes for free. One verified mover reviews your Sale move before quoting — no spam, no obligation.",
+    knowledge: "Sale is a popular residential town in Trafford, connected to Manchester by the Metrolink tram and the A56. The town has Victorian terraces near the centre, interwar semis in Brooklands and Sale Moor, and good transport links. The Metrolink makes it a commuter favourite.",
+    localMovingInfo: `Sale is a town in the Metropolitan Borough of Trafford, about 5 miles south-west of Manchester city centre. The Metrolink tram connects Sale to Manchester in about 20 minutes, and the A56 runs through the town towards Altrincham and Manchester.
+
+Ashton upon Mersey is the historic area near the River Mersey with some narrow streets and period properties. Brooklands is a popular residential area to the south with interwar semis and good road access. Sale Moor has a village feel with local shops and wider roads.
+
+The M60 junction 6 is close by, giving access to the orbital motorway. The A56 connects to Altrincham to the south and Manchester to the north. The M56 is a few miles south for routes to Chester and the M6.
+
+The Metrolink stations bring parking restrictions to some streets near the tram stops. Properties within walking distance of the tram can have limited parking.
+
+Rates start from £19 per hour. Add full postcodes and access details.`,
+    faq: [
+      {"q":"How much does a man and van cost in Sale?","a":"Sale moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Sale from Manchester city centre?","a":"About 5 miles south-west via the A56 or Metrolink, taking roughly 15–20 minutes by van. A Sale to Manchester move typically costs £70–£130."},
+      {"q":"Are there parking restrictions near the Metrolink?","a":"Yes. Streets near Sale and Brooklands Metrolink stations have permit parking zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Sale town centre", body: "Victorian and Edwardian buildings along the A56 with some narrow side streets. The Metrolink station area has parking restrictions. The Waterside arts centre is a local landmark."},
+      {title: "Ashton upon Mersey", body: "Historic area near the River Mersey with period properties. Some narrow streets near the river. Popular with families looking for character homes.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Brooklands and Sale Moor", body: "Residential areas to the south with interwar semis and better road access. Brooklands has the Metrolink station. Sale Moor has a village centre with shops."},
+      {title: "Sale to Manchester and Altrincham", body: "Manchester city centre is about 5 miles north (15–20 minutes). Altrincham is about 3 miles south (10 minutes). Both are common short routes.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+    ],
+  },
+  "prestwich": {
+    title: "Man and Van Prestwich | From £19",
+    description: "Man and van Prestwich from £19/hr. M25. Heaton Park, Sedgley Park, Besses o th Barn. Call 0121 751 1269.",
+    h1: "Man and Van Prestwich",
+    intro: "Need a man and van in Prestwich? Submit your postcodes, item list and access notes for free. One verified mover reviews your Prestwich move before quoting.",
+    knowledge: "Prestwich is a suburb of Bury in north Manchester, known for Heaton Park and its village centre along Bury New Road. The Metrolink connects to Manchester city centre. The narrow terraced streets near the village need careful van navigation.",
+    localMovingInfo: `Prestwich sits on the Bury New Road (A56) about 4 miles north of Manchester. Heaton Park — one of Europe's largest municipal parks — dominates the eastern side. Sedgley Park and Besses o' th' Barn are residential areas with interwar semis. The Metrolink connects to Manchester and Bury. Bury New Road carries steady traffic. Some streets near the village are narrow with on-street parking. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Prestwich?","a":"Prestwich moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Prestwich from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Prestwich to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Prestwich Village and Bury New Road", body: "Victorian terraces near the village centre with narrow streets. The A56 carries through-traffic. Metrolink station area has parking restrictions."},
+      {title: "Heaton Park area", body: "Larger properties near the park with better road access. Popular with families.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Prestwich to Manchester", body: "About 4 miles south via the A56 or Metrolink (15 minutes). A common commuter route.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+
+    ],
+  },
+  "middleton": {
+    title: "Man and Van Middleton | From £19",
+    description: "Man and van Middleton from £19/hr. M24. Alkrington, Langley, Boarshaw. Call 0121 751 1269.",
+    h1: "Man and Van Middleton",
+    intro: "Need a man and van in Middleton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Middleton move before quoting.",
+    knowledge: "Middleton sits between Rochdale and Oldham with the M60 junction 19 on its doorstep. Langley is a large post-war estate with wider roads. Alkrington has a mix of housing with good access. The A669 connects to Rochdale and the A627 to Oldham.",
+    localMovingInfo: `Middleton is a town in the Metropolitan Borough of Rochdale, about 5 miles north-east of Manchester. The M60 junction 19 gives fast access to the orbital motorway. The A669 heads north to Rochdale and the A627 heads east to Oldham. Langley is a large residential area with post-war housing. Alkrington has a mix of interwar and newer housing. Boarshaw is closer to the town centre with older terraces. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Middleton?","a":"Middleton moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Middleton from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Middleton to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Middleton town centre", body: "Older terraces near the centre with narrow streets. The A669 carries through-traffic."},
+      {title: "Langley and Alkrington", body: "Residential areas with wider roads and better van access. Popular for family moves.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Middleton to Manchester and Rochdale", body: "Manchester is about 5 miles south (15 minutes). Rochdale is about 5 miles north (15 minutes).", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
+
+    ],
+  },
+  "eccles": {
+    title: "Man and Van Eccles | From £19",
+    description: "Man and van Eccles from £19/hr. M30. Monton, Patricroft, Worsley, Ellesmere Park. Call 0121 751 1269.",
+    h1: "Man and Van Eccles",
+    intro: "Need a man and van in Eccles? Submit your postcodes, item list and access notes for free. One verified mover reviews your Eccles move before quoting.",
+    knowledge: "Eccles is famous for its cakes and sits at the western end of the M602 into Manchester. Monton Village is a desirable area with restaurants and bars. Worsley to the west has canal-side properties and the landmark Barton swing aqueduct. The Patricroft level crossing can add delays.",
+    localMovingInfo: `Eccles is a town in Salford, about 5 miles west of Manchester on the M602. The M602 gives direct access to Manchester city centre but is congested at rush hour. Monton Village to the north is a popular area with bars and restaurants. Ellesmere Park has interwar semis with good access. Patricroft has older terraces and a level crossing on the Liverpool-Manchester railway line that causes delays. Worsley to the west is one of Greater Manchester's most desirable areas with canal-side properties. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Eccles?","a":"Eccles moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Eccles from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Eccles to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Eccles town centre", body: "Victorian terraces near the market with some narrow streets. The M602 runs nearby with good loading access from the main roads."},
+      {title: "Monton and Ellesmere Park", body: "Desirable residential areas with interwar semis and better road access. Monton Village has popular restaurants and bars.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Worsley and the canal area", body: "Canal-side properties with character. Some narrow lanes near the Bridgewater Canal. The Barton swing aqueduct is a local landmark."},
+
+    ],
+  },
+  "swinton": {
+    title: "Man and Van Swinton | From £19",
+    description: "Man and van Swinton from £19/hr. M27. Worsley, Moorside, Pendlebury, Clifton. Call 0121 751 1269.",
+    h1: "Man and Van Swinton",
+    intro: "Need a man and van in Swinton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Swinton move before quoting.",
+    knowledge: "Swinton houses the Salford Civic Centre and sits on the A6 between Manchester and Bolton. Worsley to the west is one of Greater Manchester's most desirable areas with canal-side properties. The M60 junctions 13 and 14 give fast orbital access.",
+    localMovingInfo: `Swinton is a town in Salford, about 4 miles north-west of Manchester. The A6 runs through the town connecting to Manchester and Bolton. The Salford Civic Centre is the administrative headquarters. Worsley to the west has the Bridgewater Canal and desirable properties. Moorside and Wardley are residential areas with a mix of housing. Clifton and Pendlebury to the east have older terraces. The M60 gives orbital access. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Swinton?","a":"Swinton moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Swinton from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Swinton to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Swinton town centre", body: "Mix of housing near the civic centre. The A6 carries through-traffic. Some streets near the centre are narrow."},
+      {title: "Worsley and Roe Green", body: "Desirable areas with canal-side properties and period homes. Narrow lanes near the Bridgewater Canal.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Swinton to Manchester and Bolton", body: "Manchester is about 4 miles south (15 minutes). Bolton is about 6 miles north (15–20 minutes)."},
+
+    ],
+  },
+  "walkden": {
+    title: "Man and Van Walkden | From £19",
+    description: "Man and van Walkden from £19/hr. M28. Worsley, Little Hulton, Boothstown. Call 0121 751 1269.",
+    h1: "Man and Van Walkden",
+    intro: "Need a man and van in Walkden? Submit your postcodes, item list and access notes for free. One verified mover reviews your Walkden move before quoting.",
+    knowledge: "Walkden sits between Worsley and Little Hulton in Salford, with the A6 running through the centre. The A580 East Lancs Road provides fast east-west access. Little Hulton has narrower streets from its mining heritage, while Worsley has desirable canal-side properties.",
+    localMovingInfo: `Walkden is a town in Salford, about 6 miles west of Manchester. The A6 runs through the centre and the A580 East Lancs Road runs nearby giving fast access to Manchester and Liverpool. Little Hulton to the south has mining-heritage streets that can be narrow. Worsley to the north has canal-side properties with better road access. Boothstown is a residential area to the west. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Walkden?","a":"Walkden moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Walkden from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Walkden to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Walkden town centre", body: "Mix of housing types near the A6. The A580 gives fast access to Manchester and Liverpool."},
+      {title: "Little Hulton", body: "Former mining area with narrow terraced streets and on-street parking. Add detailed access notes.", links: [{label: "Flat removals", href: "/flat-removals"}]},
+      {title: "Worsley and Boothstown", body: "Desirable residential areas with better road access. Worsley has canal-side period properties."},
+
+    ],
+  },
+  "failsworth": {
+    title: "Man and Van Failsworth | From £19",
+    description: "Man and van Failsworth from £19/hr. M35. Hollinwood, Daisy Nook, Newton Heath. Call 0121 751 1269.",
+    h1: "Man and Van Failsworth",
+    intro: "Need a man and van in Failsworth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Failsworth move before quoting.",
+    knowledge: "Failsworth sits on the Oldham-Manchester border along the A62 Oldham Road, with the M60 running along its western edge. The famous Failsworth Pole marks the town centre. Daisy Nook Country Park to the south provides green space with narrow rural lanes.",
+    localMovingInfo: `Failsworth is a town between Oldham and Manchester, about 4 miles north-east of the city centre. The A62 Oldham Road runs through the town. The M60 junctions 22 and 23 give motorway access. Hollinwood has good connections to Oldham. Daisy Nook Country Park to the south has rural access roads. The terraced streets near the town centre can be narrow. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Failsworth?","a":"Failsworth moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Failsworth from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Failsworth to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Failsworth town centre", body: "Victorian terraces along the A62 with some narrow streets. The Failsworth Pole is the local landmark. The A62 carries steady traffic."},
+      {title: "Hollinwood and Woodhouses", body: "Residential areas with good connections to Oldham and the M60. Better road access than the older centre.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Failsworth to Manchester and Oldham", body: "Manchester is about 4 miles west (15 minutes). Oldham is about 3 miles east (10 minutes)."},
+
+    ],
+  },
+  "denton": {
+    title: "Man and Van Denton | From £19",
+    description: "Man and van Denton from £19/hr. M34. Haughton Green, Audenshaw, Dukinfield. Tameside. Call 0121 751 1269.",
+    h1: "Man and Van Denton",
+    intro: "Need a man and van in Denton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Denton move before quoting.",
+    knowledge: "Denton is a town in Tameside at the eastern end of the M67, known historically for hatting and now for the Denton retail park. The M67 gives direct access to Manchester, and the M60 junction 24 connects to the orbital motorway.",
+    localMovingInfo: `Denton is a town in Tameside, about 5 miles east of Manchester. The M67 starts at Denton and heads directly into Manchester city centre. The M60 junction 24 gives orbital access. Haughton Green is a residential area with narrow streets and limited parking. Audenshaw to the west has a mix of housing. Dane Bank to the north has interwar semis. Dukinfield is across the River Tame. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Denton?","a":"Denton moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Denton from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Denton to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Denton town centre", body: "Mix of housing near the M67 roundabout. The A57 Hyde Road carries through-traffic. Some narrow streets near the centre."},
+      {title: "Haughton Green and Dane Bank", body: "Residential areas with a mix of housing types. Haughton Green has some narrow streets with limited parking.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Denton to Manchester and Hyde", body: "Manchester is about 5 miles west via the M67 (15 minutes). Hyde is about 3 miles east (10 minutes)."},
+
+    ],
+  },
+  "droylsden": {
+    title: "Man and Van Droylsden | From £19",
+    description: "Man and van Droylsden from £19/hr. M43. Audenshaw, Clayton, Fairfield. Tameside. Call 0121 751 1269.",
+    h1: "Man and Van Droylsden",
+    intro: "Need a man and van in Droylsden? Submit your postcodes, item list and access notes for free. One verified mover reviews your Droylsden move before quoting.",
+    knowledge: "Droylsden sits on the eastern edge of Manchester along the A662 between the city and Ashton-under-Lyne. The M60 junction 23 is on its doorstep. The Ashton Canal runs through the area, and some properties near it have limited access.",
+    localMovingInfo: `Droylsden is a town in Tameside, about 4 miles east of Manchester. The A662 connects to Manchester and Ashton-under-Lyne. The M60 junction 23 gives motorway access. Littlemoss and Fairfield have better road access than the older centre. The Ashton Canal runs through the area. Clayton and Openshaw to the west are part of Manchester. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Droylsden?","a":"Droylsden moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Droylsden from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Droylsden to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Droylsden town centre", body: "Victorian terraces near the A662 with some narrow streets. The Ashton Canal runs nearby with limited access on some roads."},
+      {title: "Littlemoss and Fairfield", body: "Residential areas with a mix of housing. Better road access than the older centre.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Droylsden to Manchester and Ashton", body: "Manchester is about 4 miles west (15 minutes). Ashton-under-Lyne is about 3 miles east (10 minutes)."},
+
+    ],
+  },
+  "farnworth": {
+    title: "Man and Van Farnworth | From £19",
+    description: "Man and van Farnworth from £19/hr. BL4. Kearsley, Moses Gate, Great Lever. Call 0121 751 1269.",
+    h1: "Man and Van Farnworth",
+    intro: "Need a man and van in Farnworth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Farnworth move before quoting.",
+    knowledge: "Farnworth sits between Bolton and Salford on the A666 St Peter's Way. The town has a traditional market and Victorian terraces near the centre. Kearsley and Moses Gate to the south have better road access. The M61 junction 4 gives fast access to the motorway network.",
+    localMovingInfo: `Farnworth is a town between Bolton and Salford, about 3 miles south-east of Bolton. The A666 St Peter's Way runs through the town connecting to Bolton and the M61. The M61 junction 4 gives motorway access. Kearsley and Moses Gate to the south have interwar semis with better access. Great Lever to the west has a mix of housing. The market area has narrow streets with limited parking. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Farnworth?","a":"Farnworth moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Farnworth from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Farnworth to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Farnworth town centre and market", body: "Victorian terraces near the market with narrow streets and limited parking. The A666 carries through-traffic."},
+      {title: "Kearsley and Moses Gate", body: "Residential areas with interwar semis and better road access. Kearsley has a level crossing that can cause delays.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Farnworth to Bolton and Manchester", body: "Bolton is about 3 miles north (10 minutes). Manchester is about 8 miles south (20–25 minutes)."},
+
+    ],
+  },
+  "horwich": {
+    title: "Man and Van Horwich | From £19",
+    description: "Man and van Horwich from £19/hr. BL6. Rivington, Blackrod, Middlebrook. Call 0121 751 1269.",
+    h1: "Man and Van Horwich",
+    intro: "Need a man and van in Horwich? Submit your postcodes, item list and access notes for free. One verified mover reviews your Horwich move before quoting.",
+    knowledge: "Horwich sits at the foot of the West Pennine Moors, known for the Middlebrook retail complex and the University of Bolton Stadium. The M61 runs along its eastern edge, and Rivington Pike rises to the north-west with narrow moorland lanes.",
+    localMovingInfo: `Horwich is a town at the foot of the West Pennine Moors, about 5 miles north-west of Bolton. The M61 junction 6 gives motorway access. The Middlebrook retail and leisure complex is a major local employer. Rivington and the moorland lanes to the north-west are narrow and winding — some are single track. Blackrod and Adlington to the west have better road access. Lostock to the south has modern housing. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Horwich?","a":"Horwich moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Horwich from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Horwich to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Horwich town centre and Middlebrook", body: "The town centre has Victorian terraces. Middlebrook has modern retail and business park access with wide roads. The University of Bolton Stadium is nearby."},
+      {title: "Rivington and the moors", body: "Narrow, winding lanes up towards Rivington Pike and the reservoirs. Some roads are single track. Properties here can be isolated.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Horwich to Bolton and Wigan", body: "Bolton is about 5 miles south (15 minutes). Wigan is about 8 miles west (20 minutes)."},
+
+    ],
+  },
+  "westhoughton": {
+    title: "Man and Van Westhoughton | From £19",
+    description: "Man and van Westhoughton from £19/hr. BL5. Daisy Hill, Chew Moor, Wingates. Call 0121 751 1269.",
+    h1: "Man and Van Westhoughton",
+    intro: "Need a man and van in Westhoughton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Westhoughton move before quoting.",
+    knowledge: "Westhoughton sits between Bolton and Wigan on the A6, close to the M61. The town grew with coal mining and cotton, and its street layout reflects this heritage. Daisy Hill has a railway station on the Manchester-Bolton line.",
+    localMovingInfo: `Westhoughton is a town between Bolton and Wigan, about 5 miles south-west of Bolton. The A6 runs through the town and the M61 junction 5 gives motorway access. Daisy Hill to the south has a railway station and residential streets. Chew Moor and Wingates are more rural with narrow lanes. The mining-heritage streets near the centre can be narrow with on-street parking. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Westhoughton?","a":"Westhoughton moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Westhoughton from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Westhoughton to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Westhoughton town centre", body: "Mining-heritage streets with Victorian terraces near the A6. Some narrow streets with on-street parking."},
+      {title: "Daisy Hill and Chew Moor", body: "Daisy Hill has a railway station and residential streets with better access. Chew Moor is more rural with narrow lanes.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Westhoughton to Bolton and Wigan", body: "Bolton is about 5 miles north (15 minutes). Wigan is about 7 miles west (15–20 minutes)."},
+
+    ],
+  },
+  "radcliffe": {
+    title: "Man and Van Radcliffe | From £19",
+    description: "Man and van Radcliffe from £19/hr. BL9. Outwood, Ainsworth, Whitefield. Call 0121 751 1269.",
+    h1: "Man and Van Radcliffe",
+    intro: "Need a man and van in Radcliffe? Submit your postcodes, item list and access notes for free. One verified mover reviews your Radcliffe move before quoting.",
+    knowledge: "Radcliffe sits on the River Irwell between Bury and Manchester, connected by the Metrolink tram. Outwood Country Park to the east has narrow rural lanes. Ainsworth and Whitefield to the south have better road access with wider streets and more driveways.",
+    localMovingInfo: `Radcliffe is a town in Bury, about 7 miles north of Manchester. The Metrolink tram connects to Manchester and Bury. The A665 runs through the town and the M60 junction 16 gives orbital access. Outwood Country Park to the east has rural lanes that can be narrow. Ainsworth and Whitefield to the south have interwar semis with good road access. The Irwell valley runs through the area. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Radcliffe?","a":"Radcliffe moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Radcliffe from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Radcliffe to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Radcliffe town centre", body: "Victorian terraces near the A665 with some narrow streets. The Metrolink station area has parking restrictions."},
+      {title: "Outwood and Ainsworth", body: "Outwood has country park access and narrow rural lanes. Ainsworth has a mix of housing with better road access.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Radcliffe to Manchester and Bury", body: "Manchester is about 7 miles south (20 minutes). Bury is about 3 miles north (10 minutes)."},
+
+    ],
+  },
+  "heywood": {
+    title: "Man and Van Heywood | From £19",
+    description: "Man and van Heywood from £19/hr. OL10. Hopwood, Pilsworth, Birtle. Call 0121 751 1269.",
+    h1: "Man and Van Heywood",
+    intro: "Need a man and van in Heywood? Submit your postcodes, item list and access notes for free. One verified mover reviews your Heywood move before quoting.",
+    knowledge: "Heywood sits between Bury and Rochdale, close to the M62 and M66 interchange. The town grew with cotton and coal, and its Victorian terraces near the centre have the narrow streets typical of mill towns. The M62 junction 19 gives fast access to the Pennine crossings.",
+    localMovingInfo: `Heywood is a town between Bury and Rochdale, about 8 miles north of Manchester. The M62 junction 19 and M66 junction 3 are close by, giving fast access to the motorway network. The A58 runs through the town. Pilsworth and the business parks have good road access. Birtle and Ashworth to the north are more rural with narrow lanes. The terraced streets near the town centre can be tight for vans. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Heywood?","a":"Heywood moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Heywood from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Heywood to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Heywood town centre", body: "Victorian terraces with narrow streets typical of a mill town. The A58 carries through-traffic. Some streets are tight for larger vans."},
+      {title: "Pilsworth and Hopwood", body: "Business park area with good road access. Hopwood has a mix of housing types with better van access.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Heywood to Bury and Rochdale", body: "Bury is about 4 miles south (10 minutes). Rochdale is about 4 miles east (10 minutes)."},
+
+    ],
+  },
+  "ashton-in-makerfield": {
+    title: "Man and Van Ashton in Makerfield | From £19",
+    description: "Man and van Ashton in Makerfield from £19/hr. WN4. Haydock, Bryn, Newton le Willows. Call 0121 751 1269.",
+    h1: "Man and Van Ashton in Makerfield",
+    intro: "Need a man and van in Ashton in Makerfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ashton move before quoting.",
+    knowledge: "Ashton in Makerfield sits on the A49 between Wigan and St Helens, with the M6 junction 23 close by. The town grew with coal mining and has the narrow terraced streets typical of the Lancashire coalfield. Haydock Park Racecourse brings event-day traffic surges that can block local roads.",
+    localMovingInfo: `Ashton in Makerfield is a town in Wigan, about 5 miles south of Wigan. The A49 runs through the town connecting to Wigan and St Helens. The M6 junction 23 gives motorway access. Haydock Park Racecourse is nearby and on race days the local roads can be extremely busy. Newton le Willows has a railway station on the Liverpool-Manchester line. Bryn and Garswood are residential areas with a mix of housing. The mining-heritage streets near the centre are narrow with on-street parking. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ashton in Makerfield?","a":"Ashton in Makerfield moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Ashton in Makerfield from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Ashton in Makerfield to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Ashton town centre", body: "Mining-heritage terraces with narrow streets and on-street parking. The A49 carries through-traffic. Gerard Street is the main shopping area."},
+      {title: "Haydock and Newton le Willows", body: "Haydock has the racecourse and residential areas. Newton le Willows has a railway station and better road access. Avoid moving on race days.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Ashton to Wigan and St Helens", body: "Wigan is about 5 miles north (10–15 minutes). St Helens is about 5 miles west (10–15 minutes)."},
+
+    ],
+  },
+  "cheadle": {
+    title: "Man and Van Cheadle | From £19",
+    description: "Man and van Cheadle from £19/hr. SK8. Cheadle Hulme, Gatley, Heald Green. Call 0121 751 1269.",
+    h1: "Man and Van Cheadle",
+    intro: "Need a man and van in Cheadle? Submit your postcodes, item list and access notes for free. One verified mover reviews your Cheadle move before quoting.",
+    knowledge: "Cheadle is a desirable suburb of Stockport between Manchester Airport and Stockport town centre. The A34 Kingsway connects to Manchester and the M60 gives orbital access. Cheadle Hulme and Gatley are popular residential areas with excellent transport links.",
+    localMovingInfo: `Cheadle is a suburb of Stockport, about 6 miles south of Manchester city centre. The A34 Kingsway connects to Manchester and the A560 connects to Stockport. The M60 junction 3 gives orbital access. Cheadle Hulme has a railway station on the Manchester-Crewe line and a mix of interwar semis and modern housing. Gatley has another station and a village centre. Heald Green is close to Manchester Airport with good connections. Cheadle Village has some narrow streets with limited parking. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Cheadle?","a":"Cheadle moves start from £19 per hour. A local move typically costs £60–£130. A full house move could be £280–£500."},
+      {"q":"How far is Cheadle from Manchester?","a":"About 4–8 miles from Manchester city centre depending on the area (15–25 minutes). A Cheadle to Manchester move typically costs £70–£150."},
+      {"q":"Are there parking restrictions?","a":"Some streets near the town centre and Metrolink stations have permit zones. Add parking notes so the mover can plan accordingly."},
+    ],
+    localAreaGuides: [
+      {title: "Cheadle Village", body: "Period properties near the village centre with some narrow streets. The A560 carries through-traffic. Limited parking near the shops."},
+      {title: "Cheadle Hulme and Gatley", body: "Popular residential areas with interwar semis and modern housing. Both have railway stations. Better road access than the village.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Cheadle to Manchester and Stockport", body: "Manchester is about 6 miles north (20 minutes). Stockport is about 3 miles east (10 minutes). Manchester Airport is about 3 miles south (10 minutes)."},
+
+    ],
+  },
 };

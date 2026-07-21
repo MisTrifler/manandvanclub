@@ -486,6 +486,27 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     hull: ["HU1", "HU2", "HU3", "HU5", "HU6"],
     plymouth: ["PL1", "PL2", "PL3", "PL4"],
     york: ["YO1", "YO10", "YO23", "YO24", "YO30", "YO31"],
+    // West Midlands expansion
+    "burton-upon-trent": ['DE13', 'DE14', 'DE15'],
+    // Greater Manchester expansion
+    "warrington": ['WA1', 'WA2', 'WA3', 'WA4', 'WA5'],
+    "sale": ['M33'],
+    "prestwich": ['M25'],
+    "middleton": ['M24'],
+    "eccles": ['M30'],
+    "swinton": ['M27'],
+    "walkden": ['M28'],
+    "failsworth": ['M35'],
+    "denton": ['M34'],
+    "droylsden": ['M43'],
+    "farnworth": ['BL4', 'BL3'],
+    "horwich": ['BL6'],
+    "westhoughton": ['BL5'],
+    "radcliffe": ['BL9'],
+    "heywood": ['OL10'],
+    "ashton-in-makerfield": ['WN4'],
+    "cheadle": ['SK8'],
+
   };
 
   const postcodes = outwardBySlug[loc.slug] || [];
@@ -643,6 +664,12 @@ const COVERAGE_SIGNAL_SLUGS = new Set([
   'belper', 'ripley', 'matlock', 'swadlincote', 'buxton',
   'heanor', 'alfreton', 'long-eaton', 'glossop', 'louth',
   'lutterworth', 'sutton-in-ashfield', 'retford', 'kirkby-in-ashfield',
+  // West Midlands expansion
+  'burton-upon-trent',
+  // Greater Manchester expansion
+  'warrington', 'sale', 'prestwich', 'middleton', 'eccles', 'swinton',
+  'walkden', 'failsworth', 'denton', 'droylsden', 'farnworth', 'horwich',
+  'westhoughton', 'radcliffe', 'heywood', 'ashton-in-makerfield', 'cheadle',
 ]);
 
 // Cross-region nearby links for stronger internal linking (Step 3)
@@ -701,6 +728,26 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   "corby": ["northampton", "kettering", "peterborough"],
   "gainsborough": ["lincoln", "doncaster"],
   "oakham": ["stamford", "corby", "nottingham"],
+  // Greater Manchester expansion
+  "warrington": ["manchester", "liverpool", "wigan", "warrington"],
+  "sale": ["manchester", "altrincham", "stockport"],
+  "prestwich": ["manchester", "bury", "salford"],
+  "middleton": ["manchester", "rochdale", "oldham"],
+  "eccles": ["manchester", "salford", "wigan"],
+  "swinton": ["manchester", "salford", "bolton"],
+  "walkden": ["manchester", "salford", "bolton"],
+  "failsworth": ["manchester", "oldham"],
+  "denton": ["manchester", "hyde", "stockport"],
+  "droylsden": ["manchester", "ashton-under-lyne"],
+  "farnworth": ["manchester", "bolton", "salford"],
+  "horwich": ["manchester", "bolton", "wigan"],
+  "westhoughton": ["manchester", "bolton", "wigan"],
+  "radcliffe": ["manchester", "bury", "bolton"],
+  "heywood": ["manchester", "rochdale", "bury"],
+  "ashton-in-makerfield": ["manchester", "wigan", "st-helens"],
+  "cheadle": ["manchester", "stockport", "altrincham"],
+  "burton-upon-trent": ["derby", "lichfield", "tamworth"],
+
 };
 
 function getCrossRegionLinks(loc: LocationData): { slug: string; name: string }[] {

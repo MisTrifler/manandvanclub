@@ -4232,6 +4232,278 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+
+  // ─── Phase 1+2: West Midlands + Greater Manchester expansion (19 NEW) ───
+  "burton-upon-trent": {
+    ...baseSchema,
+    name: "Man and Van Club — Burton upon Trent",
+    description: "Free man and van quote request service in Burton upon Trent, Staffordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Branston, Stretton, Horninglow, Winshill.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-burton-upon-trent",
+    areaServed: {
+      "@type": "City",
+      name: "Burton upon Trent",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Staffordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "warrington": {
+    ...baseSchema,
+    name: "Man and Van Club — Warrington",
+    description: "Free man and van quote request service in Warrington, Cheshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Lymm, Stockton Heath, Birchwood, Culcheth.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-warrington",
+    areaServed: {
+      "@type": "City",
+      name: "Warrington",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cheshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "sale": {
+    ...baseSchema,
+    name: "Man and Van Club — Sale",
+    description: "Free man and van quote request service in Sale, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Ashton upon Mersey, Sale Moor, Brooklands.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-sale",
+    areaServed: {
+      "@type": "City",
+      name: "Sale",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "prestwich": {
+    ...baseSchema,
+    name: "Man and Van Club — Prestwich",
+    description: "Free man and van quote request service in Prestwich, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Heaton Park, Sedgley Park, Besses o th Barn.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-prestwich",
+    areaServed: {
+      "@type": "City",
+      name: "Prestwich",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "middleton": {
+    ...baseSchema,
+    name: "Man and Van Club — Middleton",
+    description: "Free man and van quote request service in Middleton, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Alkrington, Langley, Boarshaw.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-middleton",
+    areaServed: {
+      "@type": "City",
+      name: "Middleton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "eccles": {
+    ...baseSchema,
+    name: "Man and Van Club — Eccles",
+    description: "Free man and van quote request service in Eccles, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Monton, Patricroft, Worsley, Ellesmere Park.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-eccles",
+    areaServed: {
+      "@type": "City",
+      name: "Eccles",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "swinton": {
+    ...baseSchema,
+    name: "Man and Van Club — Swinton",
+    description: "Free man and van quote request service in Swinton, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Worsley, Moorside, Pendlebury, Clifton.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-swinton",
+    areaServed: {
+      "@type": "City",
+      name: "Swinton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "walkden": {
+    ...baseSchema,
+    name: "Man and Van Club — Walkden",
+    description: "Free man and van quote request service in Walkden, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Worsley, Little Hulton, Boothstown.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-walkden",
+    areaServed: {
+      "@type": "City",
+      name: "Walkden",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "failsworth": {
+    ...baseSchema,
+    name: "Man and Van Club — Failsworth",
+    description: "Free man and van quote request service in Failsworth, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Hollinwood, Daisy Nook, Newton Heath.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-failsworth",
+    areaServed: {
+      "@type": "City",
+      name: "Failsworth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "denton": {
+    ...baseSchema,
+    name: "Man and Van Club — Denton",
+    description: "Free man and van quote request service in Denton, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Haughton Green, Audenshaw, Dukinfield.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-denton",
+    areaServed: {
+      "@type": "City",
+      name: "Denton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "droylsden": {
+    ...baseSchema,
+    name: "Man and Van Club — Droylsden",
+    description: "Free man and van quote request service in Droylsden, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Audenshaw, Clayton, Fairfield.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-droylsden",
+    areaServed: {
+      "@type": "City",
+      name: "Droylsden",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "farnworth": {
+    ...baseSchema,
+    name: "Man and Van Club — Farnworth",
+    description: "Free man and van quote request service in Farnworth, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Kearsley, Moses Gate, Great Lever.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-farnworth",
+    areaServed: {
+      "@type": "City",
+      name: "Farnworth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "horwich": {
+    ...baseSchema,
+    name: "Man and Van Club — Horwich",
+    description: "Free man and van quote request service in Horwich, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Rivington, Blackrod, Middlebrook.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-horwich",
+    areaServed: {
+      "@type": "City",
+      name: "Horwich",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "westhoughton": {
+    ...baseSchema,
+    name: "Man and Van Club — Westhoughton",
+    description: "Free man and van quote request service in Westhoughton, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Daisy Hill, Chew Moor, Wingates.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-westhoughton",
+    areaServed: {
+      "@type": "City",
+      name: "Westhoughton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "radcliffe": {
+    ...baseSchema,
+    name: "Man and Van Club — Radcliffe",
+    description: "Free man and van quote request service in Radcliffe, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Outwood, Ainsworth, Whitefield.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-radcliffe",
+    areaServed: {
+      "@type": "City",
+      name: "Radcliffe",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "heywood": {
+    ...baseSchema,
+    name: "Man and Van Club — Heywood",
+    description: "Free man and van quote request service in Heywood, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Hopwood, Pilsworth, Birtle.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-heywood",
+    areaServed: {
+      "@type": "City",
+      name: "Heywood",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ashton-in-makerfield": {
+    ...baseSchema,
+    name: "Man and Van Club — Ashton in Makerfield",
+    description: "Free man and van quote request service in Ashton in Makerfield, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Haydock, Newton le Willows, Bryn.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ashton-in-makerfield",
+    areaServed: {
+      "@type": "City",
+      name: "Ashton in Makerfield",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "cheadle": {
+    ...baseSchema,
+    name: "Man and Van Club — Cheadle",
+    description: "Free man and van quote request service in Cheadle, Greater Manchester. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Cheadle Hulme, Gatley, Heald Green.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-cheadle",
+    areaServed: {
+      "@type": "City",
+      name: "Cheadle",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Greater Manchester"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {
