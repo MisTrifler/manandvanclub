@@ -324,6 +324,17 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "heywood",
   "ashton-in-makerfield",
   "cheadle",
+  // ─── Phase 3: Merseyside + Lancashire (10) ───
+  "ellesmere-port",
+  "bebington",
+  "preston",
+  "blackpool",
+  "blackburn",
+  "burnley",
+  "lytham-st-annes",
+  "chorley",
+  "skelmersdale",
+  "ormskirk",
 ]);
 
 export function isSeoLaunchMode(): boolean {

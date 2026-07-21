@@ -4504,6 +4504,158 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+
+  // ─── Phase 3: Merseyside + Lancashire expansion (10 NEW) ───
+  "ellesmere-port": {
+    ...baseSchema,
+    name: "Man and Van Club — Ellesmere Port",
+    description: "Free man and van quote request service in Ellesmere Port, Cheshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Whitby, Little Sutton, Great Sutton, Neston.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ellesmere-port",
+    areaServed: {
+      "@type": "City",
+      name: "Ellesmere Port",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cheshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "bebington": {
+    ...baseSchema,
+    name: "Man and Van Club — Bebington",
+    description: "Free man and van quote request service in Bebington, Merseyside. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Port Sunlight, Bromborough, Spital, Thornton Hough.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bebington",
+    areaServed: {
+      "@type": "City",
+      name: "Bebington",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merseyside"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "preston": {
+    ...baseSchema,
+    name: "Man and Van Club — Preston",
+    description: "Free man and van quote request service in Preston, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Fulwood, Ashton-on-Ribble, Ribbleton, Penwortham, Bamber Bridge.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-preston",
+    areaServed: {
+      "@type": "City",
+      name: "Preston",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "blackpool": {
+    ...baseSchema,
+    name: "Man and Van Club — Blackpool",
+    description: "Free man and van quote request service in Blackpool, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers North Shore, South Shore, Marton, Bispham, Cleveleys.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-blackpool",
+    areaServed: {
+      "@type": "City",
+      name: "Blackpool",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "blackburn": {
+    ...baseSchema,
+    name: "Man and Van Club — Blackburn",
+    description: "Free man and van quote request service in Blackburn, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Darwen, Mill Hill, Livesey, Pleasington, Roe Lee.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-blackburn",
+    areaServed: {
+      "@type": "City",
+      name: "Blackburn",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "burnley": {
+    ...baseSchema,
+    name: "Man and Van Club — Burnley",
+    description: "Free man and van quote request service in Burnley, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Padiham, Brierfield, Nelson, Cliviger, Worsthorne.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-burnley",
+    areaServed: {
+      "@type": "City",
+      name: "Burnley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "lytham-st-annes": {
+    ...baseSchema,
+    name: "Man and Van Club — Lytham St Annes",
+    description: "Free man and van quote request service in Lytham St Annes, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Lytham, St Annes, Ansdell, Fairhaven.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-lytham-st-annes",
+    areaServed: {
+      "@type": "City",
+      name: "Lytham St Annes",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "chorley": {
+    ...baseSchema,
+    name: "Man and Van Club — Chorley",
+    description: "Free man and van quote request service in Chorley, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Leyland, Euxton, Buckshaw Village, Adlington, Croston.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-chorley",
+    areaServed: {
+      "@type": "City",
+      name: "Chorley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "skelmersdale": {
+    ...baseSchema,
+    name: "Man and Van Club — Skelmersdale",
+    description: "Free man and van quote request service in Skelmersdale, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Digmoor, Tanhouse, Up Holland, Ormskirk.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-skelmersdale",
+    areaServed: {
+      "@type": "City",
+      name: "Skelmersdale",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ormskirk": {
+    ...baseSchema,
+    name: "Man and Van Club — Ormskirk",
+    description: "Free man and van quote request service in Ormskirk, Lancashire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Aughton, Burscough, Lathom, Scarisbrick.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ormskirk",
+    areaServed: {
+      "@type": "City",
+      name: "Ormskirk",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Lancashire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {

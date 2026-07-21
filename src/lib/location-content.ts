@@ -506,6 +506,17 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     "heywood": ['OL10'],
     "ashton-in-makerfield": ['WN4'],
     "cheadle": ['SK8'],
+    // Merseyside + Lancashire expansion
+    "ellesmere-port": ['CH65', 'CH66'],
+    "bebington": ['CH62', 'CH63'],
+    "preston": ['PR1', 'PR2', 'PR3', 'PR5'],
+    "blackpool": ['FY1', 'FY2', 'FY3', 'FY4'],
+    "blackburn": ['BB1', 'BB2', 'BB3'],
+    "burnley": ['BB10', 'BB11', 'BB12'],
+    "lytham-st-annes": ['FY8'],
+    "chorley": ['PR6', 'PR7'],
+    "skelmersdale": ['WN8'],
+    "ormskirk": ['L39', 'L40'],
 
   };
 
@@ -670,6 +681,9 @@ const COVERAGE_SIGNAL_SLUGS = new Set([
   'warrington', 'sale', 'prestwich', 'middleton', 'eccles', 'swinton',
   'walkden', 'failsworth', 'denton', 'droylsden', 'farnworth', 'horwich',
   'westhoughton', 'radcliffe', 'heywood', 'ashton-in-makerfield', 'cheadle',
+  // Merseyside + Lancashire expansion
+  'preston', 'blackpool', 'blackburn', 'burnley', 'lytham-st-annes',
+  'chorley', 'skelmersdale', 'ormskirk', 'ellesmere-port', 'bebington',
 ]);
 
 // Cross-region nearby links for stronger internal linking (Step 3)
@@ -747,6 +761,17 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   "ashton-in-makerfield": ["manchester", "wigan", "st-helens"],
   "cheadle": ["manchester", "stockport", "altrincham"],
   "burton-upon-trent": ["derby", "lichfield", "tamworth"],
+  // Merseyside + Lancashire expansion
+  "preston": ["blackpool", "blackburn", "liverpool", "manchester", "bolton"],
+  "blackpool": ["preston", "lytham-st-annes", "lancaster"],
+  "blackburn": ["preston", "burnley", "bolton", "manchester"],
+  "burnley": ["blackburn", "skipton", "manchester"],
+  "lytham-st-annes": ["blackpool", "preston"],
+  "chorley": ["preston", "blackburn", "bolton", "wigan"],
+  "skelmersdale": ["liverpool", "wigan", "preston"],
+  "ormskirk": ["liverpool", "preston", "southport"],
+  "ellesmere-port": ["liverpool", "chester", "birkenhead"],
+  "bebington": ["liverpool", "birkenhead", "chester"],
 
 };
 
