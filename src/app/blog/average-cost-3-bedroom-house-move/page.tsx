@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Average Cost of a 3-Bedroom House Move in the UK (2026) | Man and Van Club",
+  title: "3-Bed House Move Cost UK 2026 | Man and Van Club",
   description:
     "How much does it really cost to move a 3-bedroom house in the UK in 2026? Breakdown by distance, region, access and furniture volume. Real figures based on man and van quotes — not estimates from removal company websites.",
   alternates: {

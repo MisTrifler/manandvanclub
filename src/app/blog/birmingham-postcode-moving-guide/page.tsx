@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Birmingham Postcode Moving Guide | B-Postcode Areas Explained | Man and Van Club",
+  title: "Birmingham Postcode Guide | Man and Van Club",
   description:
     "Moving in Birmingham? Each B postcode area has different access, parking and route challenges. This guide covers B1 to B75 — what to tell your mover before moving day.",
   alternates: {

@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "AnyVan Review: Is It Worth It? Plus Cheaper Alternatives | Man and Van Club",
+  title: "AnyVan Review & Cheaper Alternatives | Man and Van Club",
   description:
     "An honest look at how AnyVan works — the pricing model, what customers say, where it works well and where it falls short. Plus a look at how the marketplace model works differently and when it might be the better option.",
   alternates: {

@@ -59,8 +59,8 @@ const servicePageData: Record<string, any> = {
   "house-removals": {
     name: "House Removals",
     formIntent: "house",
-    title: "House Removals & Moving Home | From £19 | Man and Van Club",
-    description: "Moving home? House removals from £19 across the UK. Submit bedrooms, access, packing and postcodes so an approved mover can review your home move before quoting. Call 0121 751 1269.",
+    title: "House Removals | From £19 | Man and Van Club",
+    description: "House removals from £19 across the UK. Submit bedrooms, access and postcodes. Verified mover reviews before quoting. Call 0121 751 1269.",
     badge: "Home Move Requests",
     h1: "Moving Home? Get a Verified Mover Quote",
     intro: "Moving your whole home? Man and Van Club can handle more than collections. Add bedrooms, property type, packing, stairs, lift access and postcodes so an approved mover can review the job properly before quoting.",
@@ -86,8 +86,8 @@ const servicePageData: Record<string, any> = {
   "flat-removals": {
     name: "Flat Removals",
     formIntent: "house",
-    title: "Flat Removals & Moving House | From £19 | Man and Van Club",
-    description: "Moving house or flat? Removals from £19 across the UK. Add lift access, parking restrictions and staircase details so an approved mover can quote accurately. Call 0121 751 1269.",
+    title: "Flat Removals | From £19 | Man and Van Club",
+    description: "Flat removals from £19 across the UK. Add lift access, parking and staircase details. Verified mover quotes accurately. Call 0121 751 1269.",
     badge: "Flat Move Requests",
     h1: "Moving House or Flat? Get a Verified Mover Quote",
     intro: "Moving from a flat or apartment? Add lift access, floor level, parking, shared entrances and postcodes so the mover can quote around the real access conditions.",
@@ -113,8 +113,8 @@ const servicePageData: Record<string, any> = {
   "student-removals": {
     name: "Student Removals",
     formIntent: "student",
-    title: "Student Removals | £12 Off via UNiDAYS | From £19 | Man and Van Club",
-    description: "Student moves from £19 across the UK. £12 off for UNiDAYS-verified students. Moving to or from university halls or a shared house? Submit your details so an approved mover can review the job before quoting. Call 0121 751 1269.",
+    title: "Student Removals | From £19 | Man and Van Club",
+    description: "Student moves from £19 across the UK. Verified mover reviews your job before quoting. Call 0121 751 1269.",
     badge: "Student Move Requests",
     h1: "Student Removals — £12 Off via UNiDAYS",
     intro: "Moving to halls, a shared house or back home for summer? Add your university, boxes, bags, small furniture and postcodes so a mover can review the student move quickly. UNiDAYS-verified students get £12 off — find your code on the UNiDAYS app.",
@@ -140,7 +140,7 @@ const servicePageData: Record<string, any> = {
   "office-removals": {
     name: "Office Removals",
     formIntent: "office",
-    title: "Office Removals | From £19 | Verified Business Mover Quotes | Man and Van Club",
+    title: "Office Removals | From £19 | Man and Van Club",
     description: "Office removal and business relocation quote requests across the UK from £19. Add access, timing and equipment details so an approved mover can review the job before quoting. Call 0121 751 1269.",
     badge: "Business Move Requests",
     h1: "Office Removals With Less Disruption",
@@ -167,7 +167,7 @@ const servicePageData: Record<string, any> = {
   "furniture-delivery": {
     name: "Furniture Delivery",
     formIntent: "single-item",
-    title: "Furniture Collection & Delivery | From £19 | Moving Van Service | Man and Van Club",
+    title: "Furniture Delivery | From £19 | Man and Van Club",
     description: "Furniture collection and delivery quote requests across the UK from £19. From one bulky item to multiple furniture pieces, submit details so an approved mover can review before quoting. Call 0121 751 1269.",
     badge: "Furniture Delivery Requests",
     h1: "Furniture Collection & Delivery",
@@ -194,7 +194,7 @@ const servicePageData: Record<string, any> = {
   "same-day-man-and-van": {
     name: "Same Day Man and Van",
     formIntent: "general",
-    title: "Same Day Man and Van | From £19 | Cheapest Urgent Moving Van | Man and Van Club",
+    title: "Same Day Man and Van | From £19 | Man and Van Club",
     description: "Need a same-day man and van from £19? Submit your move details for free, see a guide price and receive a quote from one verified mover before booking. Call 0121 751 1269.",
     badge: "Same-Day Move Requests",
     h1: "Same Day Man And Van",
@@ -221,7 +221,7 @@ const servicePageData: Record<string, any> = {
   "long-distance-removals": {
     name: "Long Distance Moves",
     formIntent: "general",
-    title: "Long Distance Removals | From £19 | UK-Wide Moving Services | Man and Van Club",
+    title: "Long Distance Removals | From £19 | Man and Van Club",
     description: "Long-distance move quote requests across the UK from £19. Moving from Birmingham to London, Manchester to Bristol or anywhere in between? Submit your details so an approved mover can review the route before quoting. Call 0121 751 1269.",
     badge: "UK-Wide Move Requests",
     h1: "Long Distance Moves Planned Properly",
@@ -248,7 +248,7 @@ const servicePageData: Record<string, any> = {
   "facebook-marketplace-collection": {
     name: "Facebook Marketplace Collection",
     formIntent: "single-item",
-    title: "Facebook Marketplace Collection & Delivery | From £19 | Man and Van Club",
+    title: "Marketplace Collection | From £19 | Man and Van Club",
     description: "Collection and delivery quote requests for Facebook Marketplace purchases across the UK from £19. Submit item and postcode details so an approved mover can review the job before quoting. Call 0121 751 1269.",
     badge: "Marketplace Collection Requests",
     h1: "Facebook Marketplace Collection",
@@ -303,7 +303,7 @@ const servicePageData: Record<string, any> = {
   "single-item-delivery": {
     name: "Single Item Delivery",
     formIntent: "single-item",
-    title: "Single Item Delivery | From £19 | One-Item Collection & Delivery | Man and Van Club",
+    title: "Single Item Delivery | From £19 | Man and Van Club",
     description: "Single item delivery quote requests across the UK from £19. Sofa, bed, TV, appliance or any single bulky item — submit details so a mover can review before quoting. Call 0121 751 1269.",
     badge: "Single Item Requests",
     h1: "Single Item Delivery Made Simple",

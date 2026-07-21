@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "London Borough Moving Guide | What to Know Before You Move | Man and Van Club",
+  title: "London Borough Moving Guide | Man and Van Club",
   description:
     "Moving in London? Each borough has different parking rules, congestion charges and access challenges. This guide covers the key things to tell your mover — from ULEZ to permit parking.",
   alternates: {

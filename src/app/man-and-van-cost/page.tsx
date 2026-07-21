@@ -5,7 +5,7 @@ import { Phone, ShieldCheck, CheckCircle2, ArrowUpRight, Clock, MapPin } from "l
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "How Much Does a Man and Van Cost? | Cheapest Moving Van Prices 2026 | Man and Van Club",
+  title: "Man and Van Cost | From £19 | Man and Van Club",
   description:
     "How much is a man and van in 2026? Cheapest moving van prices from £19/hr. Full cost breakdown by setup, move type, region and access. Call 0121 751 1269.",
   alternates: {

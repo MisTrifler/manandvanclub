@@ -5,7 +5,7 @@ import { ArrowUpRight, Phone, ShieldCheck, CheckCircle2, Scale, Users, Lock, Pou
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club vs AnyVan | Honest Comparison | Man and Van Club",
+  title: "Man and Van Club vs AnyVan | Man and Van Club",
   description: "Compare Man and Van Club with AnyVan. See how the marketplace models differ: driver selection, pricing transparency, commission structure and customer control. Make an informed choice.",
   alternates: {
     canonical: `${siteUrl}/vs-anyvan`,

@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "What Insurance Does Your Man and Van Need? | Man and Van Club",
+  title: "Man and Van Insurance Guide | Man and Van Club",
   description:
     "Goods in Transit, Public Liability, employer's liability — the insurance that movers need and the cover that customers should check before booking. A straightforward guide without the jargon.",
   alternates: {

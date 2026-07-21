@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van vs Removal Company: Which Is Right for You? | Man and Van Club",
+  title: "Man and Van vs Removal Company | Man and Van Club",
   description:
     "Understand when a man and van is the better choice over a full removal company, and when you might need the extra capacity, crew and packing services.",
   alternates: {

@@ -6,7 +6,7 @@ import { ArrowUpRight, Phone, ShieldCheck, CheckCircle2, Calculator, MapPin, Pou
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Moving Cost Calculator | Estimate Your Man and Van Price | Man and Van Club",
+  title: "Moving Cost Calculator | Man and Van Club",
   description:
     "Estimate your man and van cost in seconds. Select your move type, region and access level for an instant guide price. Free to submit — get a verified mover quote before you book.",
   alternates: {

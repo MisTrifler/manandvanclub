@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Cardiff: Prices & How to Book (2026) | Man and Van Club",
+  title: "Man and Van Cardiff Prices 2026 | Man and Van Club",
   description: "Man and van Cardiff prices for 2026. Hourly rates, what affects the cost, how to book a verified mover and what to have ready before your move day in Cardiff.",
   alternates: { canonical: `${baseUrl}/blog/man-and-van-cardiff-prices-how-to-book` },
   openGraph: {

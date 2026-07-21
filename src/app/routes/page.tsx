@@ -6,7 +6,7 @@ import { ROUTES } from "@/lib/route-data";
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Routes | City-to-City Move Quotes | Man and Van Club",
+  title: "Man and Van Routes | City-to-City Moves",
   description: "Man and van quotes for popular UK city-to-city moves. London to Birmingham, Manchester to Leeds, Edinburgh to Glasgow and more. Verified movers, transparent pricing.",
   alternates: {
     canonical: `${siteUrl}/routes`,

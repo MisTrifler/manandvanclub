@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "How to Prepare for Moving Day: Complete Checklist | Man and Van Club",
+  title: "How to Prepare for Moving Day | Man and Van Club",
   description:
     "A practical moving day checklist covering packing, access notes, parking arrangements and everything you need to do before, during and after your move.",
   alternates: {

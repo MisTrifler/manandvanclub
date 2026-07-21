@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Student Moving Guide: How to Move on a Budget | Man and Van Club",
+  title: "Student Moving Guide | Man and Van Club",
   description:
     "Practical advice for university students moving between term-time accommodation, including packing tips, timing, and how to keep man and van costs down.",
   alternates: {

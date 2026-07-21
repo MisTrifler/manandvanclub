@@ -4,20 +4,20 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "About Man and Van Club | Our Story & Mission",
+  title: "About Man and Van Club | Our Story",
   description: "We built Man and Van Club to make requesting a quote from an approved mover simple and transparent. Learn about our secure introduction marketplace.",
   alternates: {
     canonical: `${baseUrl}/about`,
   },
   openGraph: {
-    title: "About Man and Van Club | Our Story & Mission",
+    title: "About Man and Van Club | Our Story",
     description: "We built Man and Van Club to make requesting a quote from an approved mover simple and transparent. Learn about our secure introduction marketplace.",
     url: `${baseUrl}/about`,
     images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("About Man and Van Club")}&subtitle=${encodeURIComponent("UK-Wide Verified Movers")}`, width: 1200, height: 630, alt: "About Man and Van Club" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Man and Van Club | Our Story & Mission",
+    title: "About Man and Van Club | Our Story",
     description: "We built Man and Van Club to make requesting a quote from an approved mover simple and transparent.",
     images: [`${baseUrl}/api/og?title=${encodeURIComponent("About Man and Van Club")}&subtitle=${encodeURIComponent("UK-Wide Verified Movers")}`],
   },

@@ -69,7 +69,7 @@ Brownhills properties can vary from post-war semis and bungalows to terraced hom
   // BIRMINGHAM
   // ──────────────────────────────────────────
   birmingham: {
-    title: "Cheapest Man and Van Birmingham | From £19/hr | Verified Local Movers",
+    title: "Cheapest Man and Van Birmingham | From £19",
     description: "Cheapest man and van Birmingham from £19/hr. One verified mover quotes — no multiple companies. Edgbaston, Selly Oak, Moseley, Harborne, Sutton Coldfield. Call 0121 751 1269.",
     h1: "Man and Van Birmingham",
     intro: "Need a man and van in Birmingham? Submit your postcodes, move date, item list and access notes for free. You can see a guide price first, then one verified mover reviews your Birmingham move before you decide whether to book.",
@@ -155,8 +155,8 @@ Your Birmingham request can include property type, access, parking, stairs, lift
   },
   // ──────────────────────────────────────────
   london: {
-    title: "Man and Van London | From £19 | Verified Local Movers Across All Boroughs",
-    description: "Man and van London from £19/hr. ULEZ-aware movers for flat moves, house removals, student moves and furniture delivery across all London boroughs. Call 0121 751 1269.",
+    title: "Man and Van London | From £19 | All Boroughs",
+    description: "Man and van London from £19/hr. ULEZ-aware movers for flat, house and student moves across all boroughs. Call 0121 751 1269.",
     faq: [
       { q: "How much does a man and van cost in London?", a: "London man and van rates in 2026 start from £19 per hour for a self-loading service with a small van. A driver-helps service (the mover loads and carries) starts from £34 per hour. A 1-bed flat move within London typically costs £200–£400 depending on borough, access and parking. A full house move in London can range from £400–£800. London rates are generally higher than the rest of the UK due to ULEZ compliance costs, parking restrictions and congestion — but the self-loading option at £19/hr keeps it competitive." },
       { q: "Do I need to worry about ULEZ for my London move?", a: "The Ultra Low Emission Zone covers all London boroughs. Non-compliant vans face a daily charge. Approved movers on Man and Van Club are aware of ULEZ requirements — include your postcodes so the mover can confirm their vehicle is compliant before quoting." },
@@ -276,8 +276,8 @@ Wolverhampton moves can involve tight terraced streets, wider suburban roads or 
   // WALSALL
   // ──────────────────────────────────────────
   walsall: {
-    title: "Cheapest Man and Van Walsall | From £19/hr | Verified Local Movers",
-    description: "Cheapest man and van Walsall from £19/hr. One verified mover quotes — no multiple companies. Aldridge, Bloxwich, Willenhall, Darlaston, Pelsall. Call 0121 751 1269.",
+    title: "Cheapest Man and Van Walsall | From £19",
+    description: "Cheapest man and van Walsall from £19/hr. One verified mover quotes. Aldridge, Bloxwich, Willenhall. Call 0121 751 1269.",
     faq: [
       { q: "Do you cover all areas of Walsall?", a: "Yes. You can submit a move request for Town Centre, Aldridge, Bloxwich, Willenhall, Darlaston, Pelsall, Rushall and surrounding areas. A verified mover will see your request and can quote if they work in those areas." },
       { q: "How much does a man and van cost in Walsall?", a: "Walsall man and van rates in 2026 start from £19 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item collection (sofa, bed, appliance) starts from £19, while a full house move from a 3-bed Walsall property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first." },

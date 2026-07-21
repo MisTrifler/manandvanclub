@@ -4,7 +4,7 @@ import { Metadata } from "next";
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Areas Covered | UK-Wide Man and Van Services | Man and Van Club",
+  title: "Areas Covered | Man and Van Club",
   description:
     "Man and Van Club covers towns and cities across England, Scotland, Wales and Northern Ireland. Find your area, submit a free request and receive a quote from one verified mover before you book.",
   alternates: {

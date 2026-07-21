@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Office Relocation Checklist: What to Plan Before Moving Day | Man and Van Club",
+  title: "Office Relocation Checklist | Man and Van Club",
   description:
     "A practical office relocation checklist covering IT, furniture, comms, staff and logistics. Written for small and medium businesses moving premises — not a corporate handbook, just the things that actually matter.",
   alternates: {

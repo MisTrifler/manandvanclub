@@ -4,14 +4,14 @@ import HowItWorksContent from "./HowItWorksContent";
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "How It Works | Free Move Request Process | Man and Van Club",
+  title: "How It Works | Man and Van Club",
   description:
     "Submit a free move request in 5 simple steps. One verified mover reviews your anonymised details and sends a quote before you decide whether to book. No spam, no multiple sales calls.",
   alternates: {
     canonical: `${siteUrl}/how-it-works`,
   },
   openGraph: {
-    title: "How It Works | Free Move Request Process | Man and Van Club",
+    title: "How It Works | Man and Van Club",
     description:
       "Submit a free move request in 5 simple steps. One verified mover reviews your anonymised details and sends a quote before you decide whether to book.",
     url: `${siteUrl}/how-it-works`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How It Works | Free Move Request Process | Man and Van Club",
+    title: "How It Works | Man and Van Club",
     description:
       "Submit a free move request in 5 simple steps. One verified mover reviews your anonymised details and sends a quote before you decide whether to book.",
     images: [`${siteUrl}/api/og?title=${encodeURIComponent("How Man and Van Club Works")}&subtitle=${encodeURIComponent("Simple 3-Step Process")}`],

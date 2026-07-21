@@ -5,7 +5,7 @@ import { ArrowUpRight, Phone, ShieldCheck, CheckCircle2, Truck, Building2, Scale
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van vs Removal Company | Which Is Right for You? | Man and Van Club",
+  title: "Man and Van vs Removal Company | Man and Van Club",
   description:
     "Man and van vs removal company — compare costs, services, and when each option is better. Man and van is 30–50% cheaper for smaller moves. Full removals suit larger homes with packing services.",
   alternates: {

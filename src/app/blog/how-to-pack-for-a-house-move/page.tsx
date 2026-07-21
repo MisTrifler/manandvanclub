@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "How to Pack for a House Move: Room-by-Room Guide | Man and Van Club",
+  title: "How to Pack for a House Move | Man and Van Club",
   description:
     "A practical room-by-room packing guide for your house move. From kitchen glassware to bedroom wardrobes, learn what to pack first, what to leave to the movers, and how to avoid the common mistakes that slow everything down.",
   alternates: {

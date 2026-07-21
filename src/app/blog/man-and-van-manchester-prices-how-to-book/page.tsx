@@ -5,7 +5,7 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Manchester: Prices & How to Book (2026) | Man and Van Club",
+  title: "Man and Van Manchester Prices 2026 | Man and Van Club",
   description:
     "Man and van Manchester prices for 2026. Hourly rates, local area tips, how to book a verified mover and what to have ready before your move day in Manchester.",
   alternates: {
