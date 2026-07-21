@@ -3000,7 +3000,16 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
       containedInPlace: {
         "@type": "AdministrativeArea",
         name: "Warwickshire"
-      }
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Camp Hill" },
+        { "@type": "Neighborhood", name: "Weddington" },
+        { "@type": "Neighborhood", name: "Stockingford" },
+        { "@type": "Neighborhood", name: "Whitestone" },
+        { "@type": "Neighborhood", name: "St Nicolas Park" },
+        { "@type": "Neighborhood", name: "Galley Common" },
+        { "@type": "Neighborhood", name: "Attleborough" }
+      ]
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
   },

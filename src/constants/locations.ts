@@ -335,15 +335,15 @@ export const LOCATIONS: LocationData[] = [
     name: "Nuneaton",
     region: "West Midlands",
     county: "Warwickshire",
-    nearbyAreas: ["Bedworth", "Hinckley", "Atherstone", "Attleborough", "Whitestone"],
-    majorRoads: ["A5", "A444", "M69"],
-    propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
-    movingConsiderations: ["A5 traffic congestion", "narrow town centre streets", "hills towards Attleborough"],
-    intro: "Nuneaton is a Warwickshire town with a strong industrial past and modern suburban growth. Approved movers can take account of the Victorian terraces near the centre, the post-war estates, and the newer developments towards Bedworth and Attleborough.",
-    knowledge: "Approved movers serving Nuneaton can support move requests across the town centre, Camp Hill, and the newer estates. They can account for the A5 and A444 traffic patterns, the narrow access on older streets, and the best routes through this busy Warwickshire town.",
+    nearbyAreas: ["Bedworth", "Hinckley", "Atherstone", "Attleborough", "Whitestone", "Weddington", "Stockingford", "Bermuda", "Galley Common"],
+    majorRoads: ["A5", "A444", "M69", "A47"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "modern estates", "new-build developments"],
+    movingConsiderations: ["A5 traffic congestion", "narrow town centre streets", "hills towards Attleborough", "M6 junction 3 congestion"],
+    intro: "Nuneaton is the largest town in Warwickshire — bigger than Leamington Spa, bigger than Stratford-upon-Avon. From the Victorian terraces near the town centre to the newer estates in Weddington and St Nicolas Park, approved movers know the difference between a Camp Hill bedsit and a Galley Common family home. The A5, M69 and the nearby M6 all affect how a move plays out here.",
+    knowledge: "Approved movers serving Nuneaton are familiar with the CV10, CV11 and CV12 postcodes. They know the narrow terraces near the George Eliot area, the post-war semis in Stockingford and Whitestone, and the newer builds around St Nicolas Park and Weddington. The A5 through the town centre is a known bottleneck, and M6 junction 3 backs up badly during evening rush. Being in Warwickshire, moves from Nuneaton often head towards Coventry, Leamington Spa, Stratford-upon-Avon or Birmingham — all within a 30-minute drive.",
     badge: "Verified Movers in Nuneaton",
-    areas: ["Town Centre", "Bedworth", "Hinckley", "Atherstone", "Attleborough", "Camp Hill", "Stockingford"],
-    nearbyLocations: ["coventry", "rugby", "bedworth", "hinckley", "tamworth"]
+    areas: ["Town Centre", "Bedworth", "Weddington", "Stockingford", "Camp Hill", "Bermuda", "Attleborough", "Whitestone", "Galley Common", "St Nicolas Park"],
+    nearbyLocations: ["coventry", "rugby", "tamworth", "birmingham", "walsall"]
   },
   {
     slug: "tamworth",

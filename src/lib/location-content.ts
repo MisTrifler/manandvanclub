@@ -582,7 +582,7 @@ function getRegionCities(loc: LocationData): { name: string; slug: string }[] {
 // Top 20 priority locations for coverage signal (Step 2)
 const COVERAGE_SIGNAL_SLUGS = new Set([
   'birmingham', 'walsall', 'wolverhampton', 'coventry', 'dudley',
-  'solihull', 'west-bromwich', 'smethwick', 'nottingham', 'leicester', 'manchester',
+  'solihull', 'west-bromwich', 'smethwick', 'nuneaton', 'nottingham', 'leicester', 'manchester',
   'liverpool', 'leeds', 'bristol', 'sheffield', 'derby',
   'edinburgh', 'glasgow', 'cardiff', 'newcastle-upon-tyne', 'stoke-on-trent',
   // Nationwide expansion — new major cities
@@ -611,6 +611,7 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   'bristol': ['bath', 'cardiff', 'gloucester', 'swindon', 'exeter'],
   'sheffield': ['leeds', 'nottingham', 'manchester', 'doncaster', 'rotherham', 'barnsley'],
   'derby': ['nottingham', 'leicester', 'sheffield', 'birmingham', 'stoke-on-trent'],
+  'nuneaton': ['coventry', 'rugby', 'birmingham', 'tamworth'],
   'edinburgh': ['glasgow', 'dundee', 'aberdeen', 'stirling', 'livingston'],
   'glasgow': ['edinburgh', 'stirling', 'paisley', 'dundee', 'east-kilbride'],
   'cardiff': ['bristol', 'swansea', 'newport', 'hereford'],
