@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Phone } from "lucide-react";
 import { LOCATIONS, LOCATION_REGIONS } from "@/constants/locations";
 import { MapPin, ArrowUpRight, Search, X } from "lucide-react";
@@ -44,13 +44,6 @@ export default function AreasCoveredContent() {
         l.county.toLowerCase().includes(q) ||
         l.nearbyAreas.some((a) => a.toLowerCase().includes(q))
     ).slice(0, 12);
-  }, [searchQuery]);
-
-  // Auto-scroll to results when search changes
-  useEffect(() => {
-    if (searchQuery.trim() && resultsRef.current) {
-      resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
   }, [searchQuery]);
 
   const locationsByRegion = useMemo(() => {
