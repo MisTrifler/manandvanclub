@@ -349,6 +349,14 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "north-shields",
   "jarrow",
   "gosforth",
+  // ─── Phase 7: East Yorkshire / North Yorkshire (7) ───
+  "harrogate",
+  "scarborough",
+  "bridlington",
+  "beverley",
+  "selby",
+  "whitby",
+  "malton",
 ]);
 
 export function isSeoLaunchMode(): boolean {

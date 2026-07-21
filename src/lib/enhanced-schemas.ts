@@ -4840,6 +4840,113 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+
+  // ─── Phase 7: East Yorkshire / North Yorkshire (7 NEW) ───
+  "harrogate": {
+    ...baseSchema,
+    name: "Man and Van Club — Harrogate",
+    description: "Free man and van quote request service in Harrogate, North Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Knaresborough, Starbeck, Pannal, Bilton, Oatlands.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-harrogate",
+    areaServed: {
+      "@type": "City",
+      name: "Harrogate",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "scarborough": {
+    ...baseSchema,
+    name: "Man and Van Club — Scarborough",
+    description: "Free man and van quote request service in Scarborough, North Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers North Bay, South Bay, Peasholm, Scalby, Newby, Eastfield.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-scarborough",
+    areaServed: {
+      "@type": "City",
+      name: "Scarborough",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "bridlington": {
+    ...baseSchema,
+    name: "Man and Van Club — Bridlington",
+    description: "Free man and van quote request service in Bridlington, East Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Old Town, Sewerby, Bempton, Carnaby, Hilderthorpe.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bridlington",
+    areaServed: {
+      "@type": "City",
+      name: "Bridlington",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "beverley": {
+    ...baseSchema,
+    name: "Man and Van Club — Beverley",
+    description: "Free man and van quote request service in Beverley, East Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Molescroft, Walkington, Tickton, North Bar.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-beverley",
+    areaServed: {
+      "@type": "City",
+      name: "Beverley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "East Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "selby": {
+    ...baseSchema,
+    name: "Man and Van Club — Selby",
+    description: "Free man and van quote request service in Selby, North Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Barlby, Brayton, Thorpe Willoughby, Sherburn-in-Elmet.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-selby",
+    areaServed: {
+      "@type": "City",
+      name: "Selby",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "whitby": {
+    ...baseSchema,
+    name: "Man and Van Club — Whitby",
+    description: "Free man and van quote request service in Whitby, North Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers East Cliff, West Cliff, Sandsend, Robin Hood's Bay.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-whitby",
+    areaServed: {
+      "@type": "City",
+      name: "Whitby",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "malton": {
+    ...baseSchema,
+    name: "Man and Van Club — Malton",
+    description: "Free man and van quote request service in Malton, North Yorkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Norton, Old Malton, Broughton, Amotherby.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-malton",
+    areaServed: {
+      "@type": "City",
+      name: "Malton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Yorkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {

@@ -531,6 +531,14 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     "north-shields": ['NE29', 'NE30'],
     "jarrow": ['NE32'],
     "gosforth": ['NE3'],
+    // East Yorkshire / North Yorkshire
+    "harrogate": ['HG1', 'HG2', 'HG3'],
+    "scarborough": ['YO11', 'YO12'],
+    "bridlington": ['YO15', 'YO16'],
+    "beverley": ['HU17'],
+    "selby": ['YO8'],
+    "whitby": ['YO21', 'YO22'],
+    "malton": ['YO17'],
 
   };
 
@@ -800,6 +808,14 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   "north-shields": ["newcastle-upon-tyne", "south-shields", "whitley-bay"],
   "jarrow": ["south-shields", "newcastle-upon-tyne", "sunderland"],
   "gosforth": ["newcastle-upon-tyne", "sunderland", "gateshead"],
+  // East Yorkshire / North Yorkshire
+  "harrogate": ["york", "leeds", "bradford", "ripon"],
+  "scarborough": ["york", "whitby", "bridlington"],
+  "bridlington": ["hull", "scarborough", "beverley"],
+  "beverley": ["hull", "bridlington", "york"],
+  "selby": ["york", "leeds", "hull", "doncaster"],
+  "whitby": ["scarborough", "middlesbrough"],
+  "malton": ["york", "scarborough", "harrogate"],
 
 };
 
