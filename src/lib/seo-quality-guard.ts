@@ -55,6 +55,7 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "willenhall",
   "darlaston",
   "oldbury",
+  "smethwick",
   "tipton",
   "bilston",
   // ─── East Midlands (5) ───

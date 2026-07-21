@@ -151,6 +151,13 @@ Your Birmingham request can include property type, access, parking, stairs, lift
           { label: "Man and van Walsall", href: "/man-and-van-walsall" },
         ],
       },
+      {
+        title: "Man and van Smethwick — Birmingham's western neighbour",
+        body: "Smethwick sits right on Birmingham's western edge — you can walk from Cape Hill to Edgbaston in about fifteen minutes. It's outside the Clean Air Zone but has its own challenges: Victorian terraces with tight parking, permit zones near Cape Hill, and the busy A41. If you're moving between Smethwick and Birmingham, submit both postcodes for a quote.",
+        links: [
+          { label: "Man and van Smethwick", href: "/man-and-van-smethwick" },
+        ],
+      },
     ],
   },
   // ──────────────────────────────────────────
@@ -896,6 +903,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
         title: "Smethwick and Oldbury border moves",
         body: "Smethwick and Oldbury sit on the eastern side of West Bromwich and are tightly packed with Victorian and Edwardian terraces. Streets off the A457 Bearwood Road and Hollyhedge Road have limited parking and narrow entries. If your move is on the Smethwick side, note whether there's permit-only parking — it's common around the Soho area and near Lightwoods Park.",
         links: [
+          { label: "Man and van Smethwick", href: "/man-and-van-smethwick" },
           { label: "Man and van Birmingham", href: "/man-and-van-birmingham" },
         ],
       },
@@ -1244,6 +1252,49 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
     description: "Man and van Oldbury from £19/hr. One verified mover quotes. West Bromwich, Tipton, Smethwick, Rowley Regis.",
     localMovingInfo: "Oldbury is a Sandwell town with a mix of 1930s semis and newer developments. Approved local movers can take account of the hilly streets, the busy A457, and the best routes through the residential areas for a smooth move. Approved movers serving Oldbury regularly move families between the older housing near the town centre and the newer estates towards Langley and Brandhall. They can account for the steep gradients on some roads and plan around the peak traffic on the A457 and A4123. The A457, A4123 routes affect move timing, particularly during rush hour. steep hills on some estates. busy A457 during rush hour. A verified mover reviewing a Oldbury request will check property access, parking availability and A457 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of Oldbury?","a":"Yes. You can submit a move request for West Bromwich, Tipton, Smethwick, Rowley Regis, Langley and surrounding areas. Whether a mover is available for these areas depends on their current schedule — they review requests before quoting."},{"q":"How much does a man and van cost in Oldbury?","a":"In 2026, Oldbury man and van prices start at around £19 per hour. A straightforward local move usually comes in at £60–£130 — the exact cost depends on furniture volume, access (stairs, lifts, parking) and the A457 traffic at the time. A 3-bed house move in Oldbury could be £250–£500. Add your details for a guide price."},{"q":"Can I find a mover for a same-day move in Oldbury?","a":"Same-day help in Oldbury depends on mover availability. Submit your postcodes, item list and preferred time — a verified mover will check whether they can fit your job in and send a quote if they can."},{"q":"Will multiple movers contact me?","a":"No. Your Oldbury move request is shared with a single verified mover, not sold to a list of companies. This means no spam calls, no pressure and no shared contact details. Your information is only released after you accept a mover quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, submitting is completely free. If you accept a mover quote, you pay a booking deposit that counts towards the total — the mover receives the rest on moving day. Your Oldbury request includes postcodes, access details and your item list, which a verified mover reviews before quoting."},{"q":"How quickly will I be contacted?","a":"Your Oldbury request is reviewed by a verified mover who can see your postcodes, item list, access details and preferred timing. If they can help, they send quote options. Your contact information stays private until you accept a quote and pay the booking deposit. Movers covering the A457 and West Bromwich, Tipton, Smethwick area check for new requests regularly."},{"q":"Do you cover West Bromwich, Tipton, Smethwick?","a":"Yes. You can submit requests for West Bromwich, Tipton, Smethwick, Rowley Regis, Langley and nearby areas. Submit your request and a verified mover can respond with a quote if they cover those areas."},{"q":"Are approved Oldbury movers insured?","a":"All approved movers must provide Goods in Transit and Public Liability insurance. This is checked before they can see customer requests. When a mover sends you a quote for your Oldbury move, it is good practice to confirm their cover details directly before booking."},{"q":"What should I know about moving in Oldbury?","a":"Be aware of steep hills on some estates and busy A457 during rush hour. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Oldbury move."},{"q":"How much does a man and van cost from Oldbury to West Bromwich?","a":"A Oldbury to West Bromwich move in 2026 typically costs £80–£180 depending on load, access and timing. The A4123 Birmingham New Road is the main route between Oldbury and Birmingham, typically 20 minutes. The M5 junction 2 provides an alternative but is often congested at peak times. A single-item collection might start from £19–£80. Submit your postcodes and item list for a guide price."}],
+  },
+  smethwick: {
+    title: "Man and Van Smethwick | From £19",
+    description: "Man and van Smethwick from £19/hr. Cape Hill, Soho, Bearwood. B66/B67. Call 0121 751 1269.",
+    h1: "Man and Van Smethwick",
+    intro: `Smethwick is basically on Birmingham's doorstep — you can walk to Edgbaston from Cape Hill in about fifteen minutes. But moving here has its own challenges. The Victorian terraces off the A41 have tight parking, the streets around Soho and Hollyhedge are narrow, and if you're near the canal there are height restrictions to think about. Submit your postcodes, item list and access notes so a verified mover can review the details and send you quote options.`,
+    knowledge: `Moving in Smethwick depends a lot on which part of the B66 or B67 you're in. The terraces around Cape Hill and Victoria Park often have cars parked on both sides of the road — not ideal for a van. The Bearwood side towards Lightwoods Park has wider roads but some are permit-only. The A41 Birmingham New Road gets badly backed up during morning and evening rush, which can add twenty minutes to a move that should take five. A verified mover checks all of this before they quote.`,
+    localMovingInfo: `Smethwick occupies the B66 and B67 postcodes right on Birmingham's western border. The A41 Birmingham New Road cuts through the middle, connecting the M5 at junction 2 to Birmingham city centre in about ten minutes outside peak times — but it's one of the busiest commuter routes in the Black Country, so timing matters. The A457 Bearwood Road runs east into Edgbaston and Bearwood, which is handy for moves crossing the Birmingham border. Victorian terraces dominate the Cape Hill, Soho and Hollyhedge areas — these have on-street parking, often with cars on both sides, making van access a squeeze. Permit parking is common around Cape Hill and near Victoria Park. The Bearwood and Uplands side has more 1930s semis with driveways, which makes loading easier. Smethwick is outside Birmingham's Clean Air Zone, which is worth knowing if you're collecting from here and delivering into the city centre. The Birmingham Canal Navigations run through the town — if your property is near the canal, be aware that some bridge heights are under 2.1 metres. Smethwick Rolfe Street station connects to Birmingham New Street in about eight minutes, and the Midland Metro tram stops at Soho Benson Road, which is useful context for a mover planning the route rather than for the move itself.`,
+    faq: [
+      {q: "Do you cover all areas of Smethwick?", a: "Yes. You can submit a move request for Cape Hill, Soho, Bearwood, Hollyhedge, Victoria, Londonderry, Uplands and surrounding areas. Whether a mover is available depends on their current schedule — they review requests before quoting."},
+      {q: "How much does a man and van cost in Smethwick?", a: "Smethwick man and van rates in 2026 start from £19 per hour for self-loading. A local move within B66 — say from Cape Hill to Bearwood — typically costs £60–£120 depending on furniture, parking and how the A41 is running. A full house move from a 3-bed Smethwick terrace could range from £250–£450. Submit your postcodes and item list for a guide price."},
+      {q: "Can I find a mover for a same-day move in Smethwick?", a: "Same-day moves in the B66 and B67 area may be possible. Smethwick sits between Birmingham and the Black Country, so a mover already working in Edgbaston, Bearwood or West Bromwich might be nearby. Submit your request with postcodes and timing."},
+      {q: "Will multiple movers contact me?", a: "No. Your Smethwick request goes to one verified mover — not multiple companies. Your personal details remain hidden until you accept a quote and pay the booking deposit. No spam calls, no shared numbers."},
+      {q: "Is it free to submit a move request?", a: "Yes, submitting is free. You only pay a booking deposit if you accept a quote, and that deposit comes off the total. The mover collects the balance on moving day. A verified mover reviews your B66/B67 postcodes, access notes and item list before quoting."},
+      {q: "How quickly will I be contacted?", a: "After you submit, a verified mover reviews your Smethwick move details — postcodes, items, access, date — and sends quote options if they can help. Your contact details stay private until you accept. Movers working the A41 and A457 between Smethwick, Birmingham and West Bromwich check for new requests regularly."},
+      {q: "Is Smethwick inside Birmingham's Clean Air Zone?", a: "No. Smethwick is in Sandwell, not Birmingham, so the Clean Air Zone does not apply here. If you're moving from Smethwick into Birmingham city centre, the zone starts at the A4540 Middleway ring road. A mover will factor this into the route planning."},
+      {q: "Are approved Smethwick movers insured?", a: "All approved movers must carry Goods in Transit and Public Liability insurance. This is checked before they can see customer requests. When you receive a quote for your Smethwick move, confirm their insurance details before booking."},
+      {q: "What should I know about moving in Smethwick?", a: "Parking is the main thing. Cape Hill and Soho have narrow Victorian terraces with cars parked on both sides — mention whether there's a loading bay or driveway. The A41 gets very busy at rush hour, so mid-morning or early afternoon moves tend to run smoother. Add your access notes and parking details so the mover can quote accurately."},
+      {q: "How much does a man and van cost from Smethwick to Birmingham?", a: "A Smethwick to Birmingham move in 2026 typically costs £60–£150 depending on load, access and timing. Smethwick is only 3–4 miles from Birmingham city centre via the A41 — roughly 10–15 minutes outside rush hour. A single-item collection might start from £19–£70. Submit your postcodes and item list for a guide price."}
+    ],
+    localAreaGuides: [
+      {
+        title: "Cape Hill and Soho moves",
+        body: "Cape Hill is the busy heart of Smethwick — a long high street with Victorian terraces running off it in every direction. Parking is the biggest headache here. Most streets have cars parked on both sides, and there are permit zones near the high street itself. If your property is on a terraced road off Cape Hill, check whether there's space for a van to pull up. Soho, just to the north, has similar terraces but with slightly wider streets near Soho Road. Mention any parking restrictions in your request so the mover can plan accordingly.",
+        links: [
+          { label: "Man and van Birmingham", href: "/man-and-van-birmingham" },
+        ],
+      },
+      {
+        title: "Bearwood and Lightwoods Park moves",
+        body: "The Bearwood side of Smethwick is noticeably different — 1930s semis with driveways, wider roads, and Lightwoods Park as a landmark. If you're moving near the park, be aware that parking around Lightwoods Park Road and Adkins Lane can fill up at weekends. The A457 Bearwood Road is the main route into Edgbaston and Birmingham, and it gets busy during school drop-off and pick-up times near Bearwood's primary schools.",
+        links: [
+          { label: "Man and van West Bromwich", href: "/man-and-van-west-bromwich" },
+        ],
+      },
+      {
+        title: "Victoria Park and Hollyhedge moves",
+        body: "Victoria Park sits roughly in the middle of Smethwick, with streets of Victorian and Edwardian terraces on all sides. Hollyhedge Road runs north from the park and has some of the narrowest access points in the area — if your property is on a Hollyhedge side street, note whether there's a turning circle or if the van will need to reverse out. The canal passes just south of the park and some bridge heights on Factory Road and Brasshouse Lane are under 2.1 metres.",
+        links: [
+          { label: "Man and van Oldbury", href: "/man-and-van-oldbury" },
+        ],
+      },
+    ],
   },
   tipton: {
     intro: `Whether you are moving within Tipton or relocating to Dudley, West Bromwich, Oldbury, the details matter — canal bridge height limits, Victorian terraces and the A4034 can all change the scope of the job. A verified mover reviews your postcodes, item list and access notes before sending quote options.`,

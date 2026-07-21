@@ -582,7 +582,7 @@ function getRegionCities(loc: LocationData): { name: string; slug: string }[] {
 // Top 20 priority locations for coverage signal (Step 2)
 const COVERAGE_SIGNAL_SLUGS = new Set([
   'birmingham', 'walsall', 'wolverhampton', 'coventry', 'dudley',
-  'solihull', 'west-bromwich', 'nottingham', 'leicester', 'manchester',
+  'solihull', 'west-bromwich', 'smethwick', 'nottingham', 'leicester', 'manchester',
   'liverpool', 'leeds', 'bristol', 'sheffield', 'derby',
   'edinburgh', 'glasgow', 'cardiff', 'newcastle-upon-tyne', 'stoke-on-trent',
   // Nationwide expansion — new major cities
@@ -595,13 +595,14 @@ const COVERAGE_SIGNAL_SLUGS = new Set([
 // Cross-region nearby links for stronger internal linking (Step 3)
 // Key cities link to important cities in other regions, not just same-region
 const CROSS_REGION_MAP: Record<string, string[]> = {
-  'birmingham': ['walsall', 'wolverhampton', 'coventry', 'dudley', 'solihull', 'west-bromwich', 'nottingham', 'leicester', 'stoke-on-trent'],
-  'walsall': ['birmingham', 'wolverhampton', 'dudley', 'west-bromwich', 'coventry', 'stoke-on-trent'],
+  'birmingham': ['walsall', 'wolverhampton', 'coventry', 'dudley', 'solihull', 'west-bromwich', 'smethwick', 'nottingham', 'leicester', 'stoke-on-trent'],
+  'walsall': ['birmingham', 'wolverhampton', 'dudley', 'west-bromwich', 'smethwick', 'coventry', 'stoke-on-trent'],
   'wolverhampton': ['birmingham', 'walsall', 'dudley', 'stoke-on-trent', 'coventry'],
   'coventry': ['birmingham', 'solihull', 'leicester', 'nottingham', 'derby', 'northampton'],
-  'dudley': ['birmingham', 'walsall', 'wolverhampton', 'west-bromwich', 'stourbridge'],
+  'dudley': ['birmingham', 'walsall', 'wolverhampton', 'west-bromwich', 'smethwick', 'stourbridge'],
   'solihull': ['birmingham', 'coventry', 'leicester', 'stratford', 'redditch'],
-  'west-bromwich': ['birmingham', 'walsall', 'wolverhampton', 'dudley', 'wednesbury'],
+  'west-bromwich': ['birmingham', 'walsall', 'wolverhampton', 'dudley', 'smethwick', 'wednesbury'],
+  'smethwick': ['birmingham', 'west-bromwich', 'walsall', 'oldbury', 'dudley'],
   'nottingham': ['derby', 'leicester', 'sheffield', 'coventry', 'lincoln'],
   'leicester': ['nottingham', 'coventry', 'birmingham', 'derby', 'northampton'],
   'manchester': ['liverpool', 'leeds', 'sheffield', 'bolton', 'stockport', 'stoke-on-trent'],

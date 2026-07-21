@@ -3036,6 +3036,29 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
   },
+  smethwick: {
+    ...baseSchema,
+    name: "Man and Van Club — Smethwick",
+    description:
+      "Free man and van quote request service in Smethwick, West Midlands. Submit your move details and a verified mover reviews them before sending quote options. No obligation to book.",
+    url: `${siteUrl}/man-and-van-smethwick`,
+    areaServed: {
+      "@type": "City",
+      name: "Smethwick",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "West Midlands"
+      },
+      containsPlace: [
+        { "@type": "Neighborhood", name: "Cape Hill" },
+        { "@type": "Neighborhood", name: "Soho" },
+        { "@type": "Neighborhood", name: "Bearwood" },
+        { "@type": "Neighborhood", name: "Hollyhedge" },
+        { "@type": "Neighborhood", name: "Victoria" }
+      ]
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Furniture Delivery"]
+  },
   oldham: {
     ...baseSchema,
     name: "Man and Van Club — Oldham",

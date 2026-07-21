@@ -37,7 +37,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Birmingham movers can take account of city-centre access, parking around areas such as Edgbaston or Moseley, building restrictions, permit parking and busy routes such as the A38 and M6 when reviewing your request.",
     badge: "Verified Movers in Birmingham",
     areas: ["Jewellery Quarter", "Edgbaston", "Moseley", "Harborne", "Selly Oak", "Bournville", "Solihull", "Sutton Coldfield"],
-    nearbyLocations: ["solihull", "wolverhampton", "walsall", "coventry", "dudley"]
+    nearbyLocations: ["smethwick", "solihull", "wolverhampton", "walsall", "coventry", "dudley"]
   },
   {
     slug: "walsall",
@@ -157,7 +157,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving West Bromwich can account for the Sandwell road network, including the M5 and A41 corridors. They can take account of the parking restrictions near the town centre, the best access routes to the newer estates, and how to plan around match days at the Hawthorns.",
     badge: "West Bromwich Movers",
     areas: ["Town Centre", "Wednesbury", "Oldbury", "Tipton", "Smethwick", "Greets Green", "Charlemont"],
-    nearbyLocations: ["wednesbury", "oldbury", "dudley", "walsall", "birmingham"]
+    nearbyLocations: ["wednesbury", "oldbury", "smethwick", "dudley", "walsall", "birmingham"]
   },
   {
     slug: "oldbury",
@@ -173,6 +173,21 @@ export const LOCATIONS: LocationData[] = [
     badge: "Verified Movers in Oldbury",
     areas: ["Town Centre", "West Bromwich", "Tipton", "Smethwick", "Langley", "Brandhall", "Rowley Regis"],
     nearbyLocations: ["west-bromwich", "dudley", "tipton", "smethwick", "wednesbury"]
+  },
+  {
+    slug: "smethwick",
+    name: "Smethwick",
+    region: "West Midlands",
+    county: "West Midlands",
+    nearbyAreas: ["Cape Hill", "Soho", "Bearwood", "Hollyhedge", "Victoria", "Londonderry"],
+    majorRoads: ["A41", "A457", "M5"],
+    propertyTypes: ["Victorian terraces", "back-to-back houses", "post-war semis", "modern apartments"],
+    movingConsiderations: ["narrow Victorian terraces with limited parking", "permit parking near Cape Hill", "busy A41 Birmingham New Road at rush hour"],
+    intro: "Smethwick sits on Birmingham's western edge — close enough that you can see the city centre from Victoria Park, but with its own character entirely. From the terraces off Cape Hill to the semis towards Bearwood, approved movers know the parking rules, the one-way systems, and the best times to move in each part of the B66 and B67 postcodes.",
+    knowledge: "Approved movers serving Smethwick are familiar with the Victorian terraces around Cape Hill and Soho where parking is tight, the wider roads towards Bearwood and Lightwoods Park, and how the A41 and A457 affect move timing. Smethwick is outside Birmingham's Clean Air Zone, which can make it a more practical collection point for moves into the city.",
+    badge: "Verified Movers in Smethwick",
+    areas: ["Cape Hill", "Soho", "Bearwood", "Hollyhedge", "Victoria", "Londonderry", "Uplands"],
+    nearbyLocations: ["birmingham", "west-bromwich", "oldbury", "walsall", "dudley"]
   },
   {
     slug: "tipton",
