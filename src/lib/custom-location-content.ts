@@ -7214,4 +7214,774 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
+  // ──────────────────────────────────────────
+  // WORCESTER
+  // ──────────────────────────────────────────
+  "worcester": {
+    title: "Man and Van Worcester | From £19",
+    description: "Man and van Worcester from £19/hr. WR1-WR5. St John's, Barbourne, Warndon, Diglis. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Worcester",
+    intro: "Need a man and van in Worcester? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Worcester move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Worcester moves often come down to which side of the Severn you are on. A flat near the cathedral, a townhouse in St John's, a student move near the university or a family move out to Warndon can all need different timing around the A44, A449, A38 and M5 junctions 6 and 7.",
+    localMovingInfo: `Worcester is a cathedral city on the River Severn, with regular local movement between WR1, WR2, WR3, WR4, WR5, St John's, Barbourne, Warndon, Ronkswood, Battenhall and Diglis. It is a busy man and van search area because customers often need smaller flat moves, furniture collections, student moves and short-notice help without ringing round multiple removal companies.
+
+The A44 and A449 are the main through-routes, and the M5 at junctions 6 and 7 handles most longer-distance moves towards Birmingham, Kidderminster, Droitwich, Malvern, Gloucester and Cheltenham. Moves crossing the river between St John's and the city centre depend heavily on bridge traffic, and peak-time queues can turn a short hop into a slow one. Properties near the cathedral and along the riverside can also have restricted or limited parking, so loading access notes matter.
+
+Worcester properties range from Georgian townhouses and Victorian terraces in the centre and Barbourne to post-war semis and newer estates in Warndon and Ronkswood. Add floor level, stairs, lift access, driveway or parking notes, dismantling needs and bulky furniture details so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Worcester?", a: "Worcester man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Worcester typically costs £60-£140 depending on load size and access. A full 2-3 bed house move usually ranges from £250-£500. Your exact quote depends on postcodes, item list, stairs, parking and route time - submit your details for a guide price first." },
+      { q: "Do you cover St John's, Barbourne, Warndon and Diglis?", a: "Yes. You can submit a move request for any WR postcode area including St John's, Barbourne, Warndon, Ronkswood, Battenhall, Diglis and surrounding villages. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Worcester to Birmingham?", a: "A Worcester to Birmingham move in 2026 typically costs £90-£180 depending on load size, access at both addresses and time of day. The M5 makes it a direct route of around 30 miles. A single-item collection may cost £50-£90. Submit your postcodes and item list for a guide price." },
+      { q: "Can you help with student moves in Worcester?", a: "Yes. Student moves can be submitted for areas near the University of Worcester, including St John's and the city centre. Halls and shared houses usually mean smaller loads - add stairs, key collection times and term-date details so a mover can quote accurately." },
+      { q: "Will multiple movers contact me about my Worcester move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. It is free to submit your move request. You only pay a booking deposit if you accept a mover quote, and that deposit is deducted from the mover's quote. You pay the remaining balance directly to the mover on moving day." },
+      { q: "Can I find a mover for a same-day move in Worcester?", a: "Same-day moves may be possible in Worcester depending on mover availability. Submit your request with as much item and access detail as possible so a verified mover can quickly decide if they can help." },
+      { q: "What is the cheapest day to move in Worcester?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Worcester. Fridays and Saturdays are busiest and end-of-month dates carry a premium because of tenancy changeovers. Flexible dates usually mean better rates." },
+      { q: "Can you collect furniture from Marketplace or IKEA near Worcester?", a: "Yes. Furniture collection from Facebook Marketplace, eBay, Gumtree, IKEA (Wednesbury or Bristol), B&Q, Argos and charity shops is a common Worcester job. Submit the seller's postcode, your delivery postcode and item details - a verified mover collects and delivers." },
+      { q: "Does flooding risk affect moves near the River Severn in Worcester?", a: "It can do during severe weather. Riverside roads near Diglis, the cathedral and South Quay occasionally flood in winter. If your move is near the river in a flood-prone week, keep dates flexible where possible and tell the mover about access concerns so they can plan around road closures." },
+      { q: "Are approved Worcester movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Worcester city centre",
+        body: "City-centre moves near the cathedral, High Street and Foregate Street often involve limited parking, one-way streets and timed loading. Add parking and access notes so a mover can price the job properly before you book.",
+      },
+      {
+        title: "Man and van St John's",
+        body: "St John's sits west of the Severn with a mix of Victorian terraces and semis. Moves here cross the bridge into the city, so journey time depends on bridge traffic. Include both full postcodes and any driveway details.",
+      },
+      {
+        title: "Warndon, Ronkswood and Battenhall moves",
+        body: "The eastern and southern estates are mostly post-war and newer housing with generally good road access. These moves are usually quicker than city-centre jobs, but school-run traffic on the A44 and A422 can slow loading times.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+          { label: "Flat removals", href: "/flat-removals" },
+        ],
+      },
+      {
+        title: "University of Worcester student moves",
+        body: "Student moves around the St John's and city-centre campuses peak at the start and end of term. Smaller item lists, clear floor levels and flexible timing help a mover quote quickly.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+      {
+        title: "Worcester to Kidderminster, Droitwich or Malvern",
+        body: "Routes out of Worcester use the A449, A38 and M5. Add preferred times and any access restrictions so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Kidderminster", href: "/man-and-van-kidderminster" },
+          { label: "Man and van Droitwich", href: "/man-and-van-droitwich" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // KIDDERMINSTER
+  // ──────────────────────────────────────────
+  "kidderminster": {
+    title: "Man and Van Kidderminster | From £19",
+    description: "Man and van Kidderminster from £19/hr. DY10, DY11. Bewdley, Stourport, Spennells. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Kidderminster",
+    intro: "Need a man and van in Kidderminster? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Kidderminster move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Kidderminster moves range from terrace moves near the town centre to family homes in Spennells and Comberton, plus routes out to Bewdley, Stourport-on-Severn and the Wyre Forest villages. Timing often depends on the A442, A456 and A449, and on bridge traffic near Bewdley.",
+    localMovingInfo: `Kidderminster is a Worcestershire town famous for its carpet-making heritage, about 17 miles south-west of Birmingham. Local man and van demand covers DY10 and DY11, with regular movement between the town centre, Spennells, Comberton, Broadwaters, Horsefair, and the neighbouring towns of Bewdley and Stourport-on-Severn.
+
+The A442 runs through town towards Droitwich, while the A456 heads to Bewdley and the A449 to Worcester and Wolverhampton. Peak-time queues around the ring road and the Bewdley bridge can slow short moves, so access notes and preferred times help a mover plan. Town-centre streets near the Horsefair and the older carpet-district terraces can have tight parking compared with the suburban estates.
+
+Kidderminster properties range from Victorian terraces near the centre to post-war semis and newer estates on the edges. Add floor level, stairs, parking notes, dismantling needs and bulky furniture details so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Kidderminster?", a: "Kidderminster man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the DY area typically costs £60-£120. A 2-3 bed house move usually ranges from £240-£480 depending on access and load. Submit your details for a guide price first." },
+      { q: "Do you cover Bewdley and Stourport-on-Severn?", a: "Yes. You can submit move requests for Bewdley, Stourport-on-Severn and the Wyre Forest villages as well as Kidderminster itself. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Kidderminster to Birmingham?", a: "A Kidderminster to Birmingham move in 2026 typically costs £80-£150 depending on load size and access at both addresses. The route is around 17-20 miles via the A456 or A449 and M5. A single-item collection may cost £50-£90. Submit your postcodes and item list for a guide price." },
+      { q: "Will multiple movers contact me about my Kidderminster move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "Can I find a mover for a same-day move in Kidderminster?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "What is the cheapest day to move in Kidderminster?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Kidderminster. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Flexible dates usually mean better rates." },
+      { q: "Can you collect furniture I bought online near Kidderminster?", a: "Yes. Collection from Facebook Marketplace, eBay, Gumtree and local shops is a common job. Submit the seller's postcode, your delivery postcode and item details - a verified mover collects and delivers so you do not need your own transport." },
+      { q: "My street near the Horsefair has tight parking - can you still help?", a: "Usually yes. Add the parking situation, nearest legal loading spot and any time restrictions to your request. Movers regularly handle terraced streets and can plan van positioning and carrying distance before quoting." },
+      { q: "Are approved Kidderminster movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Kidderminster town centre",
+        body: "Town-centre and Horsefair moves often involve terraced streets, limited parking and loading near busy roads. Add parking and access notes so a mover can price the job properly before you book.",
+      },
+      {
+        title: "Spennells and Comberton moves",
+        body: "The suburban estates have mostly semis and detached homes with driveways, making loading quicker. School-run times can slow the local roads, so flexible timing helps.",
+      },
+      {
+        title: "Bewdley and Stourport moves",
+        body: "Moves to Bewdley and Stourport-on-Severn often involve riverside streets, holiday-season traffic and bridge queues. Add preferred times and any access restrictions so the mover can plan the route.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+        ],
+      },
+      {
+        title: "Furniture collection in Kidderminster",
+        body: "Sofas, beds, wardrobes and marketplace purchases need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" },
+        ],
+      },
+      {
+        title: "Kidderminster to Birmingham or Worcester",
+        body: "Longer local routes use the A456, A449 and M5. Add preferred times and access restrictions so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Birmingham", href: "/man-and-van-birmingham" },
+          { label: "Man and van Worcester", href: "/man-and-van-worcester" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // LEAMINGTON SPA
+  // ──────────────────────────────────────────
+  "leamington-spa": {
+    title: "Man and Van Leamington Spa | From £19",
+    description: "Man and van Leamington Spa from £19/hr. CV31-CV33. Whitnash, Sydenham, Milverton. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Leamington Spa",
+    intro: "Need a man and van in Leamington Spa? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Leamington move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Leamington Spa moves range from Regency townhouse flats around the Parade and Clarendon Square to family homes in Whitnash and Sydenham, plus student moves linked to the University of Warwick. Timing often depends on the A452, A425 and M40 junctions 13-15, and town-centre parking near the Parade is limited.",
+    localMovingInfo: `Royal Leamington Spa is a Regency spa town in Warwickshire, known for its grand terraces, the Parade, Jephson Gardens and a growing tech and gaming sector. Local man and van demand covers CV31, CV32 and CV33, with regular movement between the town centre, Milverton, Lillington, Whitnash, Sydenham and Brunswick.
+
+The A452 links Leamington to Warwick and the M40 (junctions 13-15), while the A425 heads towards Southam and Daventry. Moves between Leamington, Warwick and Coventry are the most common local routes. The town centre around the Parade, Regent Street and the crescents has limited parking and controlled zones, so loading notes matter more here than on the suburban estates.
+
+Leamington properties range from split-level Regency conversions and Victorian villas in the town's north and centre to newer estates on the south side. Upper-floor flats in converted townhouses often mean stairs and no lift, so add floor level, stair details, parking notes and dismantling needs. This lets an approved mover review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Leamington Spa?", a: "Leamington Spa man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£130. A 2-3 bed house move usually ranges from £250-£500 depending on stairs, parking and access. Submit your details for a guide price first." },
+      { q: "Do you cover Whitnash, Sydenham and Milverton?", a: "Yes. You can submit move requests for all CV31, CV32 and CV33 areas including Whitnash, Sydenham, Milverton, Lillington, Brunswick and Radford Semele. A verified mover can check the request and quote if they cover that area." },
+      { q: "Do you handle student moves for the University of Warwick?", a: "Yes. Many Leamington moves are student moves, as Leamington is the main off-campus living area for the University of Warwick. Add term dates, floor level and key collection details so a mover can quote accurately." },
+      { q: "How much is a man and van from Leamington Spa to Coventry?", a: "A Leamington to Coventry move typically costs £60-£110 depending on load size and access. The route is around 10 miles via the A445/A46 corridor. A single-item collection may cost £40-£70. Submit your postcodes and item list for a guide price." },
+      { q: "Will multiple movers contact me about my Leamington move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "Can I find a mover for a same-day move in Leamington Spa?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "What is the cheapest day to move in Leamington Spa?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Leamington. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Flexible dates usually mean better rates." },
+      { q: "I live in a top-floor Regency conversion with no lift - can you help?", a: "Yes, but stairs directly affect the time a job takes, so include the floor level, stair count and any tight turns in your request. Movers regularly handle the town's converted townhouses and can plan for the extra carrying time before quoting." },
+      { q: "Are approved Leamington Spa movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Leamington town centre",
+        body: "Moves around the Parade, Regent Street and the crescents often involve controlled parking zones, stairs in converted townhouses and narrow one-way streets. Add parking and floor details so a mover can price the job properly.",
+      },
+      {
+        title: "Whitnash and Sydenham moves",
+        body: "The southern suburbs are mostly semis and newer estates with driveways, making loading quicker than town-centre jobs. School-run traffic can slow the local roads at peak times.",
+      },
+      {
+        title: "Student moves between Leamington and campus",
+        body: "Leamington is the main student base for the University of Warwick. Smaller loads, shared houses and term-date rushes are normal - add stairs, parking and timing details for an accurate quote.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+      {
+        title: "Leamington to Warwick, Kenilworth or Stratford",
+        body: "The A46 and A452 connect Leamington to Warwick in minutes and Stratford-upon-Avon in about 20. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Warwick", href: "/man-and-van-warwick" },
+          { label: "Man and van Stratford-upon-Avon", href: "/man-and-van-stratford-upon-avon" },
+        ],
+      },
+      {
+        title: "Furniture delivery in Leamington Spa",
+        body: "Sofas, beds, wardrobes and marketplace purchases need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // WARWICK
+  // ──────────────────────────────────────────
+  "warwick": {
+    title: "Man and Van Warwick | From £19",
+    description: "Man and van Warwick from £19/hr. CV34, CV35. Bridge End, Emscote, Woodloes, Myton. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Warwick",
+    intro: "Need a man and van in Warwick? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Warwick move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Warwick moves range from period homes near the castle and town centre to family estates in Woodloes and Chase Meadow. The narrow medieval streets around the castle have limited access, while the A46 and M40 junction 15 handle most longer routes to Coventry, Leamington Spa and Birmingham.",
+    localMovingInfo: `Warwick is the county town of Warwickshire, known for its castle, racecourse and historic town centre. Local man and van demand covers CV34 and CV35, with regular movement between the town centre, Bridge End, Packmores, Emscote, Woodloes, Myton and the newer Chase Meadow estate.
+
+The A46 bypass links Warwick to Coventry and the M40 at junction 15, and most moves between Warwick, Leamington Spa and Kenilworth take minutes off-peak. The town centre has narrow medieval streets, and roads near the castle and racecourse can be slow on event days, so move timing matters. Castle-adjacent streets have restricted parking, while the suburban estates generally offer driveway access.
+
+Warwick properties range from Tudor and Georgian buildings in the centre to Victorian villas in Emscote and modern family homes on the outer estates. Add floor level, stairs, parking notes, dismantling needs and bulky furniture details so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Warwick?", a: "Warwick man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£120. A 2-3 bed house move usually ranges from £250-£480 depending on access and load. Submit your details for a guide price first." },
+      { q: "Do you cover Emscote, Woodloes and Chase Meadow?", a: "Yes. You can submit move requests for all CV34 and CV35 areas including Emscote, Woodloes, Myton, Packmores, Bridge End, Chase Meadow and surrounding villages. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Warwick to Leamington Spa?", a: "A Warwick to Leamington move typically costs £40-£80 - the towns are only about 2 miles apart. A single-item collection may cost £30-£50. Submit your postcodes and item list for a guide price." },
+      { q: "My house is in the old town near the castle - can a van get access?", a: "Usually yes, but some medieval streets are narrow or have restricted parking. Add the exact street, nearest loading spot and any time restrictions to your request so the mover can plan van positioning before quoting." },
+      { q: "Will multiple movers contact me about my Warwick move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Warwick?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Warwick. Avoid race days at Warwick Racecourse where possible, as roads around the course get congested. End-of-month dates cost more because of tenancy changeovers." },
+      { q: "Can I find a mover for a same-day move in Warwick?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "Can you collect furniture I bought online near Warwick?", a: "Yes. Collection from Facebook Marketplace, eBay, Gumtree and local shops is a common job. Submit the seller's postcode, your delivery postcode and item details - a verified mover collects and delivers." },
+      { q: "Are approved Warwick movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Warwick town centre",
+        body: "Town-centre moves near the castle, Market Square and Jury Street involve narrow medieval streets and limited parking. Add the nearest legal loading spot and timing notes so a mover can price the job properly.",
+      },
+      {
+        title: "Emscote, Myton and Bridge End moves",
+        body: "These areas mix Victorian villas and interwar semis with generally reasonable access. Bridge traffic into the town centre can slow short moves at peak times.",
+      },
+      {
+        title: "Woodloes and Chase Meadow moves",
+        body: "The newer estates have family homes with driveways, making loading faster. These are among the quickest Warwick moves when timed outside school-run hours.",
+      },
+      {
+        title: "Warwick to Leamington, Coventry or Stratford",
+        body: "The A46 and A4177 connect Warwick to Leamington, Coventry and Stratford-upon-Avon. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Leamington Spa", href: "/man-and-van-leamington-spa" },
+          { label: "Man and van Coventry", href: "/man-and-van-coventry" },
+        ],
+      },
+      {
+        title: "House removals in Warwick",
+        body: "Full house moves need an itemised list, floor levels and parking notes at both addresses. The more detail you add, the more accurate the quote before you book.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+          { label: "Moving checklist", href: "/moving-checklist" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // STRATFORD-UPON-AVON
+  // ──────────────────────────────────────────
+  "stratford-upon-avon": {
+    title: "Man and Van Stratford-upon-Avon | From £19",
+    description: "Man and van Stratford-upon-Avon from £19/hr. CV37. Shottery, Bridgetown, Tiddington. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Stratford-upon-Avon",
+    intro: "Need a man and van in Stratford-upon-Avon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Stratford move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Stratford-upon-Avon moves range from period cottages near the Shakespeare sights to family homes in Shottery, Bridgetown and Tiddington. Tourist-season traffic and the narrow historic streets around Henley Street shape timing, while the A46 and A3400 handle routes to Warwick, Birmingham and Evesham.",
+    localMovingInfo: `Stratford-upon-Avon is a historic market town on the River Avon, best known as Shakespeare's birthplace and home to the Royal Shakespeare Company theatres. Local man and van demand covers CV37, with regular movement between the town centre, Shottery, Bridgetown, Tiddington, Bishopton and villages like Wilmcote.
+
+The A46 bypass connects Stratford to the M40 at junction 15 and south towards Evesham, while the A3400 Birmingham Road and the A422 carry most local traffic. Summer tourist traffic and RSC performance times can slow the town centre considerably, and the oldest streets near Henley Street and the theatres are narrow with restricted access. Waterside and riverside areas also get busy on event days.
+
+Stratford properties range from timber-framed period buildings and Georgian townhouses in the centre to Victorian terraces and newer estates on the outskirts. Add floor level, stairs, parking notes, dismantling needs and bulky furniture details so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Stratford-upon-Avon?", a: "Stratford-upon-Avon man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£130. A 2-3 bed house move usually ranges from £250-£500 depending on access and load. Submit your details for a guide price first." },
+      { q: "Do you cover Shottery, Bridgetown and Tiddington?", a: "Yes. You can submit move requests for all CV37 areas including Shottery, Bridgetown, Tiddington, Bishopton, Wilmcote and surrounding villages. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Stratford to Birmingham?", a: "A Stratford-upon-Avon to Birmingham move in 2026 typically costs £100-£190 depending on load size and access at both addresses. The route is around 25-40 miles via the A46 and M40 or the A3400. A single-item collection may cost £50-£90. Submit your postcodes and item list for a guide price." },
+      { q: "Does tourist season affect moving in Stratford?", a: "It can. Summer weekends, RSC performance times and events bring heavy traffic to the town centre and Waterside. If your move is in the centre between April and September, weekday mornings are usually smoothest - add any timing constraints to your request so the mover can plan." },
+      { q: "Will multiple movers contact me about my Stratford move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Stratford-upon-Avon?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Stratford. Mid-week also avoids the worst tourist traffic. End-of-month dates cost more because of tenancy changeovers." },
+      { q: "Can I find a mover for a same-day move in Stratford?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "My cottage has no parking outside - can you still help?", a: "Usually yes. Add the nearest legal loading spot, walking distance to the van and any time restrictions to your request. Movers regularly handle Stratford's older streets and can plan carrying distance into the quote." },
+      { q: "Are approved Stratford movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Stratford town centre",
+        body: "Centre moves near Henley Street, Waterside and the theatres involve narrow streets, pedestrian zones and tourist traffic. Add the nearest loading spot and preferred times so a mover can price the job properly.",
+      },
+      {
+        title: "Shottery and Bishopton moves",
+        body: "These western areas mix period cottages and newer homes close to Anne Hathaway's Cottage. Village-style lanes can be tight for larger vans, so note access in your request.",
+      },
+      {
+        title: "Bridgetown and Tiddington moves",
+        body: "Across the river, Bridgetown and Tiddington offer easier access and parking than the centre. Bridge traffic is the main timing factor for moves into town.",
+      },
+      {
+        title: "Stratford to Warwick, Leamington or Evesham",
+        body: "The A46 links Stratford to Warwick and the M40 north, and Evesham to the south. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Warwick", href: "/man-and-van-warwick" },
+          { label: "Man and van Leamington Spa", href: "/man-and-van-leamington-spa" },
+        ],
+      },
+      {
+        title: "Furniture delivery in Stratford-upon-Avon",
+        body: "Sofas, beds, antiques and marketplace purchases need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
+          { label: "Single item delivery", href: "/single-item-delivery" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // TELFORD
+  // ──────────────────────────────────────────
+  "telford": {
+    title: "Man and Van Telford | From £19",
+    description: "Man and van Telford from £19/hr. TF1-TF5. Wellington, Dawley, Madeley, Oakengates. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Telford",
+    intro: "Need a man and van in Telford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Telford move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Telford is a New Town built around older communities like Wellington, Dawley, Madeley and Oakengates, so moves range from modern estates with easy access to older terraces. The M54 and A442 Queensway handle most routes, and the Ironbridge Gorge area has steeper, narrower roads.",
+    localMovingInfo: `Telford is a Shropshire New Town that grew around a cluster of older towns and villages. Local man and van demand covers TF1 to TF5, with regular movement between the town centre, Wellington, Dawley, Madeley, Oakengates, Stirchley, Lawley, Priorslee, Donnington and Ketley.
+
+The M54 (junctions 4-7) connects Telford to Wolverhampton and the M6, while the A442 Queensway is the main spine through the town. Because Telford was planned around the car, most estates have better van access and parking than older towns of similar size. The exception is the Ironbridge Gorge area, where steep, narrow roads and tourist traffic can slow moves, especially on weekends.
+
+Telford properties are mostly post-war and New Town housing: terraced and semi-detached estates, newer detached developments, plus older terraces in Wellington, Oakengates and Madeley. Add floor level, stairs, driveway or parking notes and dismantling needs so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Telford?", a: "Telford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£120. A 2-3 bed house move usually ranges from £240-£460 depending on access and load. Submit your details for a guide price first." },
+      { q: "Do you cover Wellington, Dawley, Madeley and Oakengates?", a: "Yes. You can submit move requests for all TF postcode areas including Wellington, Dawley, Madeley, Oakengates, Stirchley, Lawley, Priorslee, Donnington, Ketley and Ironbridge. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Telford to Wolverhampton?", a: "A Telford to Wolverhampton move typically costs £70-£130 depending on load size and access. The route is around 15 miles via the M54. A single-item collection may cost £40-£80. Submit your postcodes and item list for a guide price." },
+      { q: "How much is a man and van from Telford to Shrewsbury?", a: "A Telford to Shrewsbury move typically costs £60-£110 depending on load size and access. The route is around 13 miles via the M54 and A5. Submit your postcodes and item list for a guide price." },
+      { q: "Will multiple movers contact me about my Telford move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Telford?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Telford. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Flexible dates usually mean better rates." },
+      { q: "Can I find a mover for a same-day move in Telford?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "I am moving to a new-build estate that is not on sat-nav yet - can you help?", a: "Yes. Telford has many new developments. Add the full postcode plus the nearest established road or landmark, and a photo or directions if possible, so the mover can find the address without delays." },
+      { q: "Are approved Telford movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Telford town centre",
+        body: "Moves near the shopping centre and Town Park usually involve flats and newer developments with designated parking. Add parking bay details and any height restrictions so a mover can plan.",
+      },
+      {
+        title: "Wellington and Oakengates moves",
+        body: "The older parts of Telford have Victorian and Edwardian terraces with tighter street parking than the estates. Note the nearest loading spot in your request.",
+      },
+      {
+        title: "Dawley, Madeley and Ironbridge moves",
+        body: "The southern districts include the steep Ironbridge Gorge roads. Moves here can take longer than the distance suggests, so include access and gradient notes where relevant.",
+      },
+      {
+        title: "New estates in Lawley and Priorslee",
+        body: "New-build estates have the easiest van access in Telford, but some streets are still being adopted and may not show on all maps. Add nearby landmarks to your request.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+        ],
+      },
+      {
+        title: "Telford to Shrewsbury, Wolverhampton or Stoke",
+        body: "The M54 and A5 connect Telford east and west, and the A442 runs through town. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Shrewsbury", href: "/man-and-van-shrewsbury" },
+          { label: "Man and van Wolverhampton", href: "/man-and-van-wolverhampton" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // SHREWSBURY
+  // ──────────────────────────────────────────
+  "shrewsbury": {
+    title: "Man and Van Shrewsbury | From £19",
+    description: "Man and van Shrewsbury from £19/hr. SY1-SY3. Belle Vue, Kingsland, Meole Brace. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Shrewsbury",
+    intro: "Need a man and van in Shrewsbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Shrewsbury move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Shrewsbury moves range from medieval town-centre buildings inside the Severn loop to Victorian terraces in Belle Vue and Kingsland and newer estates in Radbrook and Bicton Heath. The A5 and A49 handle most routes, but the historic centre has narrow streets, one-way systems and restricted parking.",
+    localMovingInfo: `Shrewsbury is the county town of Shropshire, a historic market town almost encircled by the River Severn. Local man and van demand covers SY1, SY2 and SY3, with regular movement between the town centre, Belle Vue, Kingsland, Sutton, Meole Brace, Radbrook, Bicton Heath and Copthorne.
+
+The A5 bypass links Shrewsbury to Telford and the M54 in the east and towards North Wales in the west, while the A49 runs north to Whitchurch and south to Ludlow and Hereford. The town centre inside the river loop has medieval street layouts, a one-way system and limited parking, so moves there need more planning than the suburbs. The two historic crossings, English Bridge and Welsh Bridge, pinch traffic at peak times.
+
+Shrewsbury properties range from timber-framed and Georgian buildings in the centre to Victorian terraces in Belle Vue and Kingsland and modern family homes on the outer estates. Add floor level, stairs, parking notes, dismantling needs and bulky furniture details so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Shrewsbury?", a: "Shrewsbury man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£120. A 2-3 bed house move usually ranges from £240-£470 depending on access and load. Submit your details for a guide price first." },
+      { q: "Do you cover Belle Vue, Kingsland and Meole Brace?", a: "Yes. You can submit move requests for all SY1, SY2 and SY3 areas including Belle Vue, Kingsland, Sutton, Meole Brace, Radbrook, Bicton Heath, Copthorne and surrounding villages. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Shrewsbury to Telford?", a: "A Shrewsbury to Telford move typically costs £60-£110 depending on load size and access. The route is around 13 miles via the A5 and M54. A single-item collection may cost £40-£70. Submit your postcodes and item list for a guide price." },
+      { q: "Can a van reach the medieval streets in the town centre?", a: "Usually yes, but some streets inside the loop are very narrow or have time restrictions. Add the exact street, nearest loading point and any access hours to your request so the mover can plan van positioning before quoting." },
+      { q: "Will multiple movers contact me about my Shrewsbury move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Shrewsbury?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Shrewsbury. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Flexible dates usually mean better rates." },
+      { q: "Can I find a mover for a same-day move in Shrewsbury?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "I am moving to a village outside Shrewsbury - is that covered?", a: "Yes. Requests for villages around Shrewsbury can be submitted the same way. Rural lanes can be narrow, so include any access notes about gates, tight turns or long drives." },
+      { q: "Are approved Shrewsbury movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Shrewsbury town centre",
+        body: "Moves inside the Severn loop involve medieval streets, a one-way system and restricted parking. Add the nearest legal loading point and access hours so a mover can price the job properly.",
+      },
+      {
+        title: "Belle Vue and Kingsland moves",
+        body: "These Victorian terrace areas sit just south of the centre. Streets can be tightly parked, so include the nearest loading spot and any permit details in your request.",
+      },
+      {
+        title: "Meole Brace, Radbrook and Bicton Heath moves",
+        body: "The suburbs have semis and detached homes with driveways, making loading quicker. Retail-park traffic near Meole Brace can slow weekend moves.",
+      },
+      {
+        title: "Shrewsbury to Telford, Wolverhampton or Hereford",
+        body: "The A5 and A49 handle routes east, west and south. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Telford", href: "/man-and-van-telford" },
+          { label: "Man and van Hereford", href: "/man-and-van-hereford" },
+        ],
+      },
+      {
+        title: "Furniture delivery in Shrewsbury",
+        body: "Sofas, beds, antiques and marketplace purchases need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // HEREFORD
+  // ──────────────────────────────────────────
+  "hereford": {
+    title: "Man and Van Hereford | From £19",
+    description: "Man and van Hereford from £19/hr. HR1, HR2. Tupsley, Holmer, Whitecross, Redhill. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Hereford",
+    intro: "Need a man and van in Hereford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hereford move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Hereford moves range from city-centre flats to family homes in Tupsley, Holmer and Redhill, plus rural moves across Herefordshire's villages. With no motorway in the county, most routes use the A49, A438 and A465, and Wye Bridge traffic shapes timing across the city.",
+    localMovingInfo: `Hereford is a cathedral city on the River Wye and the commercial centre of a largely rural county. Local man and van demand covers HR1 and HR2, with regular movement between the city centre, Bartonsham, Whitecross, Aylestone Hill, Tupsley, Holmer, Redhill and Newton Farm - plus frequent rural moves to and from the surrounding villages.
+
+Herefordshire has no motorway, so the A49 (Shrewsbury to Ross-on-Wye), the A438 towards Ledbury and the M50, and the A465 towards Abergavenny carry all longer-distance moves. Wye Bridge and the A49 through-route create the main pinch points in the city, and peak-time queues can add significant time to short moves. Rural moves often involve narrow lanes, farms and longer walks from van to door.
+
+Hereford properties range from Georgian and Victorian homes in the centre and Aylestone Hill to post-war estates in Newton Farm and newer developments on the edges. Add floor level, stairs, parking notes, dismantling needs and bulky furniture details so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Hereford?", a: "Hereford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£120. A 2-3 bed house move usually ranges from £240-£470 depending on access and load. Submit your details for a guide price first." },
+      { q: "Do you cover Tupsley, Holmer and the surrounding villages?", a: "Yes. You can submit move requests for all HR1 and HR2 areas and villages across Herefordshire. A verified mover can check the request and quote if they cover that area - include lane and access notes for rural addresses." },
+      { q: "How much is a man and van from Hereford to Worcester?", a: "A Hereford to Worcester move typically costs £80-£150 depending on load size and access. The route is around 25 miles via the A4103 or through Ledbury and the M50/M5. A single-item collection may cost £50-£90. Submit your postcodes and item list for a guide price." },
+      { q: "Do you handle moves to and from rural addresses?", a: "Yes. Rural moves are common across Herefordshire. Include any notes about narrow lanes, farm tracks, gates, or long carries from the van so the mover can plan time and vehicle size before quoting." },
+      { q: "Will multiple movers contact me about my Hereford move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Hereford?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Hereford. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Flexible dates usually mean better rates." },
+      { q: "Can I find a mover for a same-day move in Hereford?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "Can you collect furniture I bought online near Hereford?", a: "Yes. Collection from Facebook Marketplace, eBay, Gumtree and local shops is a common job. Submit the seller's postcode, your delivery postcode and item details - a verified mover collects and delivers." },
+      { q: "Are approved Hereford movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Hereford city centre",
+        body: "Centre moves near the cathedral and High Town involve pedestrian areas and limited parking. Add the nearest loading point and timing notes so a mover can price the job properly.",
+      },
+      {
+        title: "Tupsley, Aylestone Hill and Whitecross moves",
+        body: "These eastern and central areas mix period homes and terraces. Streets can be tightly parked, so include the nearest loading spot in your request.",
+      },
+      {
+        title: "Holmer, Redhill and Newton Farm moves",
+        body: "The northern and southern estates have post-war and newer housing with generally good access. Peak-time queues on the A49 and A438 are the main timing factor.",
+      },
+      {
+        title: "Rural Herefordshire moves",
+        body: "Village and farm moves often involve narrow lanes and longer carries. Include photos or clear access notes so the mover can plan time and vehicle size before quoting.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+        ],
+      },
+      {
+        title: "Hereford to Worcester, Gloucester or Shrewsbury",
+        body: "The A49, A438 and A465 handle all longer routes, with the M50 linking towards the M5. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Worcester", href: "/man-and-van-worcester" },
+          { label: "Man and van Shrewsbury", href: "/man-and-van-shrewsbury" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // DARTFORD
+  // ──────────────────────────────────────────
+  "dartford": {
+    title: "Man and Van Dartford | From £19",
+    description: "Man and van Dartford from £19/hr. DA1, DA2. Crayford, Greenhithe, Swanscombe. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Dartford",
+    intro: "Need a man and van in Dartford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Dartford move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Dartford sits on the Kent-London border where the A2 meets the M25, and the Dartford Crossing queues shape move timing across the whole area. Moves range from Victorian terraces near the town centre to newer developments around Greenhithe, Ebbsfleet and Bluewater.",
+    localMovingInfo: `Dartford is a major commuter town in north-west Kent, right on the Greater London border. Local man and van demand covers DA1 and DA2, with regular movement between the town centre, Crayford, Wilmington, Hawley, Stone, Swanscombe and Greenhithe. It is a high-demand moving area because so many people relocate between Dartford, the London boroughs and the rest of Kent.
+
+The A2 and M25 are the main arteries, and the A282 Dartford Crossing handles routes north of the Thames - with a Dart Charge to pay and frequent peak-time queues that movers plan around. The newer developments around Ebbsfleet and Greenhithe bring steady moving demand, while older parts of Dartford and Crayford have tighter terraced streets. Town-centre parking is limited, so loading notes matter.
+
+Dartford properties range from Victorian terraces and interwar semis to modern riverside apartments and new-build estates. Add floor level, stairs, lift access, parking notes and dismantling needs so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Dartford?", a: "Dartford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£130. A 2-3 bed house move usually ranges from £250-£520 depending on access and load. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Dartford to London?", a: "A Dartford to inner London move in 2026 typically costs £90-£170 depending on load size, access and destination - central London costs more than the nearer boroughs. A single-item collection may cost £45-£85. Submit your postcodes and item list for a guide price." },
+      { q: "Do you cover Crayford, Greenhithe and Swanscombe?", a: "Yes. You can submit move requests for all DA1 and DA2 areas including Crayford, Greenhithe, Swanscombe, Stone, Wilmington, Hawley and Darenth. A verified mover can check the request and quote if they cover that area." },
+      { q: "Are Dartford moves affected by the Dartford Crossing?", a: "Moves south of the river are not, but any route using the crossing (A282) includes the Dart Charge and peak-time queues. If your move crosses the Thames, mention it in your request so the mover can plan timing and include the charge in the quote." },
+      { q: "Is Dartford inside the London ULEZ?", a: "Dartford itself sits just outside the ULEZ boundary, but neighbouring London boroughs like Bexley and Bromley are inside it. Most vans used by approved movers are compliant, but if your route enters London it is worth confirming with the mover when you receive your quote." },
+      { q: "Will multiple movers contact me about my Dartford move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Dartford?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Dartford. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. M25 traffic is also lighter mid-week, which helps on London routes." },
+      { q: "Can I find a mover for a same-day move in Dartford?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "Are approved Dartford movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Dartford town centre",
+        body: "Town-centre moves involve limited parking and one-way streets near the High Street. Add the nearest legal loading spot and timing notes so a mover can price the job properly.",
+      },
+      {
+        title: "Crayford and Stone moves",
+        body: "These areas mix terraced streets and interwar semis close to the London border. Moves heading into London should allow for A2 and M25 traffic at peak times.",
+      },
+      {
+        title: "Greenhithe, Swanscombe and Ebbsfleet moves",
+        body: "The newer riverside developments include apartments with lifts and allocated parking. Add loading bay or height restriction details so the mover can plan van access.",
+        links: [
+          { label: "Flat removals", href: "/flat-removals" },
+        ],
+      },
+      {
+        title: "Dartford to London moves",
+        body: "London-bound moves use the A2 or M25. Mention any ULEZ concerns, congestion zone addresses or controlled parking at the destination so the mover can quote accurately.",
+        links: [
+          { label: "Man and van London", href: "/man-and-van-london" },
+          { label: "Man and van Bexleyheath", href: "/man-and-van-bexleyheath" },
+        ],
+      },
+      {
+        title: "Furniture delivery in Dartford",
+        body: "Sofas, beds, wardrobes and marketplace purchases need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // SEVENOAKS
+  // ──────────────────────────────────────────
+  "sevenoaks": {
+    title: "Man and Van Sevenoaks | From £19",
+    description: "Man and van Sevenoaks from £19/hr. TN13-TN15. Otford, Kemsing, Riverhead. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Sevenoaks",
+    intro: "Need a man and van in Sevenoaks? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Sevenoaks move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Sevenoaks is an affluent Kent commuter town where moves often involve larger family homes, longer drives and valuable furniture. The A21, A25 and M25 junction 5 handle most routes, and town-centre parking near the High Street and Knole Park is limited.",
+    localMovingInfo: `Sevenoaks is one of Kent's most desirable commuter towns, set in the North Downs with direct trains to London. Local man and van demand covers TN13, TN14 and TN15, with regular movement between the town centre, Riverhead, Dunton Green, Otford, Kemsing, Sevenoaks Weald, Hildenborough and the surrounding villages.
+
+The A21 runs through town towards London and Hastings, the A25 follows the North Downs towards Westerham and Redhill, and the M25 at junction 5 links to the wider motorway network. Many moves are London-bound family relocations, so route timing around the M25 matters. The town also has steep approach roads and country lanes, and older streets near the High Street and Knole Park have restricted parking.
+
+Sevenoaks properties range from period cottages and Victorian villas to large detached family homes and executive estates. Bigger properties mean bigger loads, so a detailed item list is especially important here. Add floor level, stairs, driveway or parking notes and dismantling needs so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Sevenoaks?", a: "Sevenoaks man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£140. Larger family homes are common here, so a 3-4 bed house move usually ranges from £300-£600 depending on load and access. Submit your details for a guide price first." },
+      { q: "Do you cover Otford, Kemsing and Sevenoaks Weald?", a: "Yes. You can submit move requests for all TN13, TN14 and TN15 areas including Otford, Kemsing, Sevenoaks Weald, Hildenborough, Riverhead, Dunton Green and surrounding villages. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Sevenoaks to London?", a: "A Sevenoaks to London move in 2026 typically costs £100-£190 depending on load size, access and destination. The route is around 21-25 miles via the A21 or M25. A single-item collection may cost £50-£90. Submit your postcodes and item list for a guide price." },
+      { q: "Can you handle large family home moves?", a: "Yes. Many Sevenoaks moves are 3-5 bedroom family homes. Provide a full item list including garages, sheds, lofts and garden furniture, plus photos where useful, so the mover can size the van and crew correctly before quoting." },
+      { q: "Will multiple movers contact me about my Sevenoaks move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Sevenoaks?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Sevenoaks. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Mid-week M25 traffic is also lighter for London-bound moves." },
+      { q: "Can I find a mover for a same-day move in Sevenoaks?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "My house is down a narrow country lane - can a van reach it?", a: "Usually yes. Add lane width notes, tight turns, low branches or gated access to your request so the mover can choose the right van size and plan the approach before quoting." },
+      { q: "Are approved Sevenoaks movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking - especially for higher-value items." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Sevenoaks town centre",
+        body: "Moves near the High Street, London Road and Knole Park involve limited parking and steep approach roads. Add the nearest loading spot and timing notes so a mover can price the job properly.",
+      },
+      {
+        title: "Riverhead and Dunton Green moves",
+        body: "These northern areas sit near the M25 and A21 junctions, giving fast London access. Streets mix period cottages and newer homes with generally reasonable access.",
+      },
+      {
+        title: "Otford, Kemsing and Weald moves",
+        body: "Village moves in the Darent Valley and Weald often involve period properties, narrow lanes and longer carries. Include access photos or notes so the mover can plan the right vehicle.",
+      },
+      {
+        title: "Family home moves in Sevenoaks",
+        body: "Larger detached homes need detailed item lists including lofts, sheds and garden items. The more detail you add, the more accurate the quote before you book.",
+        links: [
+          { label: "House removals", href: "/house-removals" },
+          { label: "Moving checklist", href: "/moving-checklist" },
+        ],
+      },
+      {
+        title: "Sevenoaks to London, Tonbridge or Tunbridge Wells",
+        body: "The A21 and M25 handle London routes, while the A25 and B245 connect to Tonbridge and west Kent. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van London", href: "/man-and-van-london" },
+          { label: "Man and van Tunbridge Wells", href: "/man-and-van-tunbridge-wells" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // ST ANDREWS
+  // ──────────────────────────────────────────
+  "st-andrews": {
+    title: "Man and Van St Andrews | From £19",
+    description: "Man and van St Andrews from £19/hr. KY16. Town centre, Links, Strathkinness. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van St Andrews",
+    intro: "Need a man and van in St Andrews? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your St Andrews move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "St Andrews is a university and golf town on the Fife coast, so a large share of moves are student accommodation moves at the start and end of term. The medieval centre has narrow cobbled streets and limited parking, and summer golf events bring heavy visitor traffic.",
+    localMovingInfo: `St Andrews is a small historic town in Fife, famous for its university - the oldest in Scotland - and for the Old Course, the home of golf. Local man and van demand covers KY16, with regular movement between the town centre, the Links area, Canongate and newer housing on the town's edges, plus frequent routes to Dundee, Cupar, Leuchars and across the Tay.
+
+The A91 is the main road into town from the M90 and Stirling direction, while the A915 runs along the coast towards Leven and the A919/A914 connect towards Dundee. The town has no railway station of its own - the nearest is Leuchars, about 6 miles away - which keeps van-based moving demand strong. The three medieval main streets (North Street, Market Street and South Street) have narrow sections, cobbles and restricted parking, and any weekend with a major golf event brings congestion.
+
+St Andrews properties range from centuries-old stone buildings and Victorian villas in the centre to modern estates on the outskirts. University halls and student flats drive a large, predictable moving cycle in September and May-June. Add floor level, stairs, parking notes and key collection times so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in St Andrews?", a: "St Andrews man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£130. A 2-3 bed house move usually ranges from £250-£500 depending on access and load. Submit your details for a guide price first." },
+      { q: "Do you handle student moves at St Andrews University?", a: "Yes. Student moves are a large share of St Andrews jobs, including halls, shared flats and storage runs at the start and end of term. Add term dates, floor level and key collection times so a mover can quote accurately." },
+      { q: "How much is a man and van from St Andrews to Dundee?", a: "A St Andrews to Dundee move typically costs £60-£110 depending on load size and access. The route is around 13 miles over the Tay Road Bridge. A single-item collection may cost £40-£70. Submit your postcodes and item list for a guide price." },
+      { q: "How much is a man and van from St Andrews to Edinburgh?", a: "A St Andrews to Edinburgh move in 2026 typically costs £140-£260 depending on load size and access. The route is around 50 miles via the A91, M90 and Queensferry Crossing. Submit your postcodes and item list for a guide price." },
+      { q: "My flat is on a cobbled street in the old town - can a van get close?", a: "Usually yes, but some central streets have restricted vehicle access or limited parking. Add the nearest legal loading point and any time restrictions to your request so the mover can plan carrying distance before quoting." },
+      { q: "Will multiple movers contact me about my St Andrews move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in St Andrews?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in St Andrews. Fridays and Saturdays are busiest, and summer golf events push up demand further. End-of-month dates cost more because of tenancy changeovers." },
+      { q: "Can I find a mover for a same-day move in St Andrews?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "Are approved St Andrews movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van St Andrews town centre",
+        body: "Moves around North Street, Market Street and South Street involve cobbles, narrow sections and restricted parking. Add the nearest loading point and timing notes so a mover can price the job properly.",
+      },
+      {
+        title: "Student halls and flat moves",
+        body: "September and the end of May are peak student moving times. Smaller loads, clear floor levels and key collection details help a mover quote quickly.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+      {
+        title: "Links and Canongate moves",
+        body: "Streets near the golf courses can be busy during events, and access restrictions apply on championship weeks. Include preferred times so the mover can plan around golf traffic.",
+      },
+      {
+        title: "St Andrews to Dundee, Edinburgh or Perth",
+        body: "The A91, A915 and Tay Road Bridge handle most routes. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Dundee", href: "/man-and-van-dundee" },
+          { label: "Man and van Edinburgh", href: "/man-and-van-edinburgh" },
+        ],
+      },
+      {
+        title: "Furniture delivery in St Andrews",
+        body: "Sofas, beds, bikes and marketplace purchases need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
+          { label: "Single item delivery", href: "/single-item-delivery" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // CARDIFF BAY
+  // ──────────────────────────────────────────
+  "cardiff-bay": {
+    title: "Man and Van Cardiff Bay | From £19",
+    description: "Man and van Cardiff Bay from £19/hr. CF10, CF11. Butetown, Grangetown, Atlantic Wharf. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Cardiff Bay",
+    intro: "Need a man and van in Cardiff Bay? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cardiff Bay move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Cardiff Bay moves are dominated by waterfront apartments around Mermaid Quay, Atlantic Wharf and Butetown, so lift bookings, loading bays and building management rules matter as much as distance. The A4232 Bay Link and A48 handle routes to the city centre and the M4.",
+    localMovingInfo: `Cardiff Bay is the regenerated waterfront district south of Cardiff city centre, centred on Mermaid Quay, the Senedd and the Wales Millennium Centre. Local man and van demand covers CF10 and CF11, with regular movement between Mermaid Quay, Atlantic Wharf, Butetown, Grangetown and routes across the barrage to Penarth.
+
+The A4232 Bay Link connects the Bay to the A48 and M4, while the A4055 handles Grangetown and the west. Waterfront apartment blocks typically have underground or allocated parking with height restrictions, loading bays that must be booked, and lifts that need protecting or reserving through building management. These details make the difference between a smooth move and a long wait - include them in your request.
+
+Cardiff Bay properties are mostly modern apartments, converted warehouses and new-build flats, with some older terraces in Butetown and Grangetown. Add floor level, lift access, parking bay height limits, concierge contacts and dismantling needs so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Cardiff Bay?", a: "Cardiff Bay man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local apartment move typically costs £50-£120 depending on floors and access. Submit your details for a guide price first." },
+      { q: "Do you cover Butetown, Grangetown and Atlantic Wharf?", a: "Yes. You can submit move requests for all CF10 and CF11 areas including Butetown, Grangetown, Atlantic Wharf and Mermaid Quay. A verified mover can check the request and quote if they cover that area." },
+      { q: "How much is a man and van from Cardiff Bay to the city centre?", a: "A Cardiff Bay to city centre move typically costs £50-£90 depending on load size and access at both addresses - it is a short hop, so stairs and lift access matter more than mileage. Submit your postcodes and item list for a guide price." },
+      { q: "My apartment block needs lift and loading bay bookings - can you help?", a: "Yes, this is standard for Bay apartment moves. Book the lift and loading bay with your building management first, then include the reserved times, bay height limit and concierge details in your request so the mover can fit the job around your slot." },
+      { q: "Will multiple movers contact me about my Cardiff Bay move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Cardiff Bay?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Cardiff Bay. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Event days at the Principality Stadium or arena can also affect access." },
+      { q: "Can I find a mover for a same-day move in Cardiff Bay?", a: "Same-day moves may be possible depending on mover availability. Submit your request with clear item and access details so a verified mover can decide quickly if they can help." },
+      { q: "The underground car park has a height limit - is that a problem?", a: "Not usually, but the mover needs to know the limit before quoting. Many apartment moves load from the entrance or a booking bay rather than the underground car park. Include the height figure and any bay booking process in your request." },
+      { q: "Are approved Cardiff Bay movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Mermaid Quay and Butetown",
+        body: "Waterfront apartment moves centre on lift access, loading bays and concierge rules. Include the building name, bay booking times and car park height limit in your request.",
+      },
+      {
+        title: "Atlantic Wharf moves",
+        body: "The apartment complexes around Atlantic Wharf have gated access and allocated parking. Add gate codes and bay details so the mover can plan van positioning.",
+      },
+      {
+        title: "Grangetown moves",
+        body: "Grangetown's older terraces have tighter street parking than the waterfront blocks. Note the nearest loading spot in your request.",
+        links: [
+          { label: "Flat removals", href: "/flat-removals" },
+        ],
+      },
+      {
+        title: "Cardiff Bay to city centre, Penarth or the Valleys",
+        body: "The A4232 handles routes to the A48 and M4, and the barrage links to Penarth. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Cardiff", href: "/man-and-van-cardiff" },
+          { label: "Man and van Penarth", href: "/man-and-van-penarth" },
+        ],
+      },
+      {
+        title: "Furniture delivery in Cardiff Bay",
+        body: "New apartment furniture from IKEA Cardiff, Marketplace and local shops is a common Bay job. Add item sizes, floor and lift details so the mover can quote properly before you book.",
+        links: [
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" },
+        ],
+      },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  // CLIFTON (BRISTOL)
+  // ──────────────────────────────────────────
+  "bristol-clifton": {
+    title: "Man and Van Clifton Bristol | From £19",
+    description: "Man and van Clifton, Bristol from £19/hr. BS8. Clifton Village, Hotwells, Redland. One verified mover quotes. Call 0121 751 1269.",
+    h1: "Man and Van Clifton, Bristol",
+    intro: "Need a man and van in Clifton, Bristol? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Clifton move before sending a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Clifton moves involve Georgian and Victorian terraces, steep streets and resident parking zones. Many jobs are flat moves and student moves linked to the University of Bristol, plus family moves around the Downs and Westbury Park. The A4 Portway and A4018 Whiteladies Road are the main routes.",
+    localMovingInfo: `Clifton is one of Bristol's most distinctive districts, known for the suspension bridge, the Georgian terraces of Clifton Village and the open space of the Downs. Local man and van demand covers BS8, with regular movement between Clifton Village, Cliftonwood, Hotwells, Redland, Westbury Park and Cotham.
+
+The A4018 Whiteladies Road corridor connects Clifton to the city centre, while the A4 Portway runs under the bridge along the Avon Gorge towards the M5 at Avonmouth. Cliftonwood and Hotwells have some of the steepest residential streets in Bristol, and most of the area sits inside resident parking zones, so loading needs planning. The University of Bristol's Clifton campus and Stoke Bishop halls drive a busy student moving cycle each year.
+
+Clifton properties range from grand Regency terraces - many converted into flats - to colourful Victorian cottages in Cliftonwood and larger family homes near the Downs and in Westbury Park. Add floor level, stairs, permit or parking notes and dismantling needs so an approved mover can review the real work involved before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Clifton?", a: "Clifton man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local flat move typically costs £60-£130, with stairs and parking zones the main variables. A house move usually ranges from £250-£500. Submit your details for a guide price first." },
+      { q: "Do you cover Hotwells, Redland and Westbury Park?", a: "Yes. You can submit move requests for all BS8 areas including Clifton Village, Cliftonwood, Hotwells, Redland, Westbury Park, Cotham and Stoke Bishop. A verified mover can check the request and quote if they cover that area." },
+      { q: "Do you handle student moves for the University of Bristol?", a: "Yes. Student moves around Clifton, Redland and Stoke Bishop halls are common, especially in September and June. Add term dates, floor level and key collection details so a mover can quote accurately." },
+      { q: "How do Clifton's resident parking zones affect my move?", a: "Most Clifton streets are in resident parking zones, so the van may need a visitor permit or a dispensation for loading. Include your zone, permit options and the nearest loading spot in your request so the mover can plan before quoting." },
+      { q: "Is Clifton inside the Bristol Clean Air Zone?", a: "Most of Clifton sits just outside the central Bristol CAZ, but routes into the city centre cross it. Most vans used by approved movers are compliant, but confirm with the mover when you receive your quote if your route enters the centre." },
+      { q: "My street is steep - can a van still load outside?", a: "Usually yes. Cliftonwood and Hotwells have very steep streets, so include the gradient and nearest flat loading spot in your request. Movers regularly handle these streets and can plan carrying distance and parking before quoting." },
+      { q: "Will multiple movers contact me about my Clifton move?", a: "No. Your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from multiple competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a quote, and the deposit is deducted from the mover's price. You pay the balance directly to the mover on moving day." },
+      { q: "What is the cheapest day to move in Clifton?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Clifton. Fridays and Saturdays are busiest and end-of-month dates cost more because of tenancy changeovers. Flexible dates usually mean better rates." },
+      { q: "Are approved Clifton movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so check the quote details before booking." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Clifton Village",
+        body: "Village moves involve period conversions, resident parking zones and narrow streets. Include your permit options, floor level and the nearest loading spot so a mover can price the job properly.",
+      },
+      {
+        title: "Cliftonwood and Hotwells moves",
+        body: "These are among the steepest streets in Bristol, with colourful terraced cottages and tight parking. Add gradient and loading spot notes to your request.",
+      },
+      {
+        title: "Redland and Westbury Park moves",
+        body: "These areas mix larger Victorian semis and family homes with student flats. School-run traffic and parking zones shape timing more than distance.",
+      },
+      {
+        title: "Student moves near the university",
+        body: "September and June are peak times for moves around halls and shared flats. Smaller loads, clear floor levels and key collection details help a mover quote quickly.",
+        links: [
+          { label: "Student removals", href: "/student-removals" },
+        ],
+      },
+      {
+        title: "Clifton to central Bristol, Bath or Portishead",
+        body: "The A4018 and A4 handle city routes, with the Portway linking to the M5. Add preferred times so the mover can review route timing before quoting.",
+        links: [
+          { label: "Man and van Bristol", href: "/man-and-van-bristol" },
+          { label: "Man and van Portishead", href: "/man-and-van-portishead" },
+        ],
+      },
+    ],
+  },
+
 };

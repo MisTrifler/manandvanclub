@@ -478,7 +478,6 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
 
   // ─── Nationwide Expansion — 45 new towns/cities ───
   "amersham",
-  "ashford-kent",
   "bangor-ni",
   "bedworth",
   "caernarfon",
@@ -511,7 +510,6 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "penarth",
   "porthmadog",
   "redditch",
-  "royal-tunbridge-wells",
   "salisbury",
   "shrewsbury",
   "stratford-upon-avon",

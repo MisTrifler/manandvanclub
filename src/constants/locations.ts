@@ -37,7 +37,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Birmingham movers can take account of city-centre access, parking around areas such as Edgbaston or Moseley, building restrictions, permit parking and busy routes such as the A38 and M6 when reviewing your request.",
     badge: "Verified Movers in Birmingham",
     areas: ["Jewellery Quarter", "Edgbaston", "Moseley", "Harborne", "Selly Oak", "Bournville", "Solihull", "Sutton Coldfield"],
-    nearbyLocations: ["smethwick", "solihull", "wolverhampton", "walsall", "coventry", "dudley"]
+    nearbyLocations: ["smethwick", "solihull", "wolverhampton", "walsall", "coventry", "dudley", "west-bromwich", "great-barr", "perry-barr"]
   },
   {
     slug: "walsall",
@@ -52,7 +52,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Walsall regularly handle moves between the town centre, Aldridge, and Bloxwich. They can take account of the A34 corridor, the best routes around the M6 junctions, and how to navigate the tighter residential roads near the Arboretum and Walsall Wood.",
     badge: "Verified Movers in Walsall",
     areas: ["Town Centre", "Aldridge", "Bloxwich", "Willenhall", "Darlaston", "Pelsall", "Rushall", "Shelfield"],
-    nearbyLocations: ["brownhills", "aldridge", "bloxwich", "wolverhampton", "wednesbury"]
+    nearbyLocations: ["brownhills", "aldridge", "bloxwich", "wolverhampton", "wednesbury", "birmingham", "willenhall"]
   },
   {
     slug: "brownhills",
@@ -112,7 +112,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Willenhall regularly move customers between the older streets near the market place and the newer estates towards Bentley and Ashmore. They can take account of the one-way system, the industrial access routes, and the quietest residential roads for loading.",
     badge: "Verified Movers in Willenhall",
     areas: ["Town Centre", "Darlaston", "Wednesbury", "Bentley", "Ashmore", "Lane Head", "New Invention"],
-    nearbyLocations: ["walsall", "darlaston", "wednesbury", "wolverhampton", "bloxwich"]
+    nearbyLocations: ["walsall", "darlaston", "wednesbury", "wolverhampton", "bloxwich", "bilston"]
   },
   {
     slug: "darlaston",
@@ -127,7 +127,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Darlaston can account for the tight turns on the older terraced streets and the wider access on newer estates. They plan around the busy A462 and A454 junctions and know the best parking spots for efficient loading.",
     badge: "Verified Movers in Darlaston",
     areas: ["Town Centre", "Willenhall", "Wednesbury", "Bentley", "Moxley", "Kings Hill", "James Bridge"],
-    nearbyLocations: ["willenhall", "wednesbury", "walsall", "wolverhampton", "west-bromwich"]
+    nearbyLocations: ["willenhall", "wednesbury", "walsall", "wolverhampton", "west-bromwich", "bilston"]
   },
   {
     slug: "wednesbury",
@@ -142,7 +142,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wednesbury regularly handle moves between the town centre, Friar Park, and the newer estates. They can account for the M6 junction flow, the best times to avoid the A41 rush, and how to navigate the steeper residential roads with heavy loads.",
     badge: "Verified Movers in Wednesbury",
     areas: ["Town Centre", "West Bromwich", "Darlaston", "Willenhall", "Tipton", "Friar Park", "Wood Green"],
-    nearbyLocations: ["west-bromwich", "darlaston", "willenhall", "walsall", "dudley"]
+    nearbyLocations: ["west-bromwich", "darlaston", "willenhall", "walsall", "dudley", "bloxwich", "oldbury"]
   },
   {
     slug: "west-bromwich",
@@ -157,7 +157,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving West Bromwich can account for the Sandwell road network, including the M5 and A41 corridors. They can take account of the parking restrictions near the town centre, the best access routes to the newer estates, and how to plan around match days at the Hawthorns.",
     badge: "West Bromwich Movers",
     areas: ["Town Centre", "Wednesbury", "Oldbury", "Tipton", "Smethwick", "Greets Green", "Charlemont"],
-    nearbyLocations: ["wednesbury", "oldbury", "smethwick", "dudley", "walsall", "birmingham"]
+    nearbyLocations: ["wednesbury", "oldbury", "smethwick", "dudley", "walsall", "birmingham", "darlaston"]
   },
   {
     slug: "oldbury",
@@ -172,7 +172,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Oldbury regularly move families between the older housing near the town centre and the newer estates towards Langley and Brandhall. They can account for the steep gradients on some roads and plan around the peak traffic on the A457 and A4123.",
     badge: "Verified Movers in Oldbury",
     areas: ["Town Centre", "West Bromwich", "Tipton", "Smethwick", "Langley", "Brandhall", "Rowley Regis"],
-    nearbyLocations: ["west-bromwich", "dudley", "tipton", "smethwick", "wednesbury"]
+    nearbyLocations: ["west-bromwich", "dudley", "tipton", "smethwick", "wednesbury", "halesowen"]
   },
   {
     slug: "smethwick",
@@ -217,7 +217,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Dudley regularly handle moves between the historic terraces, the post-war estates, and the newer developments near the Merry Hill area. They can take account of the steep gradients, the best routes around the A461, and how to navigate the narrow streets near the castle grounds.",
     badge: "Verified Movers in Dudley",
     areas: ["Town Centre", "Stourbridge", "Halesowen", "Tipton", "Brierley Hill", "Netherton", "Kates Hill"],
-    nearbyLocations: ["stourbridge", "halesowen", "brierley-hill", "west-bromwich", "wolverhampton"]
+    nearbyLocations: ["stourbridge", "halesowen", "brierley-hill", "west-bromwich", "wolverhampton", "birmingham", "wednesbury", "sandwell"]
   },
   {
     slug: "stourbridge",
@@ -265,7 +265,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wolverhampton can support move requests across the city. They can take account of the M6 and M54 junctions, the city centre ring road, and the quieter residential streets in Penn and Wednesfield. They can also account for student housing areas near the university and access requirements around the i54 business park.",
     badge: "Verified Movers in Wolverhampton",
     areas: ["City Centre", "Tettenhall", "Penn", "Bilston", "Wednesfield", "Wombourne", "Codsall"],
-    nearbyLocations: ["walsall", "dudley", "stourbridge", "willenhall", "wednesfield"]
+    nearbyLocations: ["walsall", "dudley", "stourbridge", "willenhall", "wednesfield", "birmingham", "aldridge"]
   },
   {
     slug: "bilston",
@@ -313,7 +313,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Coventry can support move requests across the city. They can take account of the ring road system, the M6 and M69 junctions, and the best routes through the post-war estates. They can also account for student moving seasons around Coventry and Warwick Universities and business park access requirements.",
     badge: "Verified Movers in Coventry",
     areas: ["City Centre", "Tile Hill", "Earlsdon", "Stoke", "Binley", "Allesley", "Holbrooks"],
-    nearbyLocations: ["birmingham", "solihull", "nuneaton", "rugby", "leamington-spa"]
+    nearbyLocations: ["birmingham", "solihull", "nuneaton", "rugby", "leamington-spa", "leicester", "hinckley"]
   },
   {
     slug: "rugby",
@@ -328,7 +328,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Rugby regularly move families between the town centre, Hillmorton, and the newer developments. They can account for the M1 and M6 junction flows, the narrow access on some Victorian streets, and the best times to move in this busy Warwickshire town.",
     badge: "Rugby Movers",
     areas: ["Town Centre", "Hillmorton", "Bilton", "Newbold-on-Avon", "Brownsover", "Cawston", "Dunchurch"],
-    nearbyLocations: ["coventry", "nuneaton", "leamington-spa", "northampton", "lutterworth"]
+    nearbyLocations: ["coventry", "nuneaton", "leamington-spa", "northampton", "lutterworth", "daventry", "bedworth"]
   },
   {
     slug: "nuneaton",
@@ -343,7 +343,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Nuneaton are familiar with the CV10, CV11 and CV12 postcodes. They know the narrow terraces near the George Eliot area, the post-war semis in Stockingford and Whitestone, and the newer builds around St Nicolas Park and Weddington. The A5 through the town centre is a known bottleneck, and M6 junction 3 backs up badly during evening rush. Being in Warwickshire, moves from Nuneaton often head towards Coventry, Leamington Spa, Stratford-upon-Avon or Birmingham — all within a 30-minute drive.",
     badge: "Verified Movers in Nuneaton",
     areas: ["Town Centre", "Bedworth", "Weddington", "Stockingford", "Camp Hill", "Bermuda", "Attleborough", "Whitestone", "Galley Common", "St Nicolas Park"],
-    nearbyLocations: ["coventry", "rugby", "tamworth", "birmingham", "walsall"]
+    nearbyLocations: ["coventry", "rugby", "tamworth", "birmingham", "walsall", "hinckley", "bedworth"]
   },
   {
     slug: "tamworth",
@@ -388,7 +388,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Lichfield regularly handle moves between the historic centre, the Georgian streets, and the newer estates. They can account for the access challenges near the cathedral, the A38 traffic patterns, and the best parking solutions for moves in this historic Staffordshire city.",
     badge: "Lichfield Movers",
     areas: ["City Centre", "Burntwood", "Shenstone", "Streethay", "Boley Park", "Leomansley", "Nether Stowe"],
-    nearbyLocations: ["tamworth", "cannock", "walsall", "sutton-coldfield", "burton-upon-trent"]
+    nearbyLocations: ["tamworth", "cannock", "walsall", "sutton-coldfield", "burton-upon-trent", "brownhills"]
   },
   // ──────────────────────────────────────────
   // GREATER LONDON (24 locations)
@@ -427,7 +427,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Croydon regularly handle moves in the high-rise blocks near the town centre, the Victorian streets of Addiscombe, and the suburban roads of Purley and Coulsdon. They can account for the tram line restrictions, the A23 traffic patterns, and the best loading times for high-rise buildings.",
     badge: "Verified Movers in Croydon",
     areas: ["Town Centre", "Purley", "Coulsdon", "Thornton Heath", "Addiscombe", "Sanderstead", "Waddon"],
-    nearbyLocations: ["bromley", "sutton", "mitcham", "croydon", "beckenham"]
+    nearbyLocations: ["bromley", "sutton", "mitcham", "croydon", "beckenham", "london", "cheadle"]
   },
   {
     slug: "bromley",
@@ -442,7 +442,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bromley regularly move families between the town centre, Beckenham, and Orpington. They can account for the A21 commuter traffic, the narrow lanes in Chislehurst, and the best parking solutions for moves in this busy Kent town.",
     badge: "Bromley Movers",
     areas: ["Town Centre", "Beckenham", "Chislehurst", "Orpington", "Shortlands", "Bickley", "Sundridge"],
-    nearbyLocations: ["croydon", "bexley", "sutton", "orpington", "lewisham"]
+    nearbyLocations: ["croydon", "bexley", "sutton", "orpington", "lewisham", "london", "stratford"]
   },
   {
     slug: "romford",
@@ -457,7 +457,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Romford regularly handle moves across the town centre, Hornchurch, and the newer estates. They can account for the A12 traffic, the town centre one-way system, and the best access routes for the older terraced streets and modern developments alike.",
     badge: "Verified Movers in Romford",
     areas: ["Town Centre", "Hornchurch", "Upminster", "Rainham", "Collier Row", "Gidea Park", "Harold Hill"],
-    nearbyLocations: ["ilford", "bexley", "dagenham", "hornchurch", "upminster"]
+    nearbyLocations: ["ilford", "bexley", "dagenham", "hornchurch", "upminster", "basildon", "brentwood"]
   },
   {
     slug: "ilford",
@@ -487,7 +487,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wembley regularly handle moves around the stadium area, Kingsbury, and Neasden. They can account for the A406 traffic, the event day congestion patterns, and the best access routes for both the older terraced streets and the newer apartment blocks.",
     badge: "Verified Movers in Wembley",
     areas: ["Town Centre", "Harrow", "Kingsbury", "Neasden", "Sudbury", "Alperton", "Preston"],
-    nearbyLocations: ["harrow", "ealing", "brent", "acton", "edgware"]
+    nearbyLocations: ["harrow", "ealing", "brent", "acton", "edgware", "london"]
   },
   {
     slug: "ealing",
@@ -502,7 +502,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Ealing regularly handle moves between the town centre, Acton, and Southall. They can account for the A40 traffic, the town centre access restrictions, and the best routes through this busy West London borough for smooth, efficient moves.",
     badge: "Ealing Movers",
     areas: ["Town Centre", "Acton", "Hanwell", "Southall", "Greenford", "Northolt", "Perivale"],
-    nearbyLocations: ["wembley", "acton", "chiswick", "harrow", "hounslow"]
+    nearbyLocations: ["wembley", "acton", "chiswick", "harrow", "hounslow", "london", "twickenham"]
   },
   {
     slug: "harrow",
@@ -519,7 +519,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Harrow regularly move families between the town centre, Pinner, and Stanmore. They can account for the steep gradients near Harrow on the Hill, the A404 commuter traffic, and the narrow lanes in the older parts of Pinner.",
     badge: "Verified Movers in Harrow",
     areas: ["Town Centre", "Wembley", "Edgware", "Pinner", "Stanmore", "Kenton", "Wealdstone"],
-    nearbyLocations: ["wembley", "edgware", "barnet", "ealing", "pinner"]
+    nearbyLocations: ["wembley", "edgware", "barnet", "ealing", "pinner", "finchley", "watford"]
   },
   {
     slug: "hounslow",
@@ -549,7 +549,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Kingston regularly handle moves between the town centre, Surbiton, and New Malden. They can account for the A3 traffic, the riverside access restrictions, and the best loading arrangements for the narrow streets near the historic market place.",
     badge: "Verified Movers in Kingston",
     areas: ["Town Centre", "Surbiton", "New Malden", "Tolworth", "Hook", "Chessington", "Thames Ditton"],
-    nearbyLocations: ["twickenham", "richmond", "sutton", "wimbledon", "epsom"]
+    nearbyLocations: ["twickenham", "richmond", "sutton", "wimbledon", "epsom", "london", "hounslow"]
   },
   {
     slug: "twickenham",
@@ -579,7 +579,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Enfield regularly handle moves across the town centre, Palmers Green, and Southgate. They can account for the A10 traffic, the narrow access on older streets, and the best routes around the M25 junctions for efficient moves.",
     badge: "Verified Movers in Enfield",
     areas: ["Town Centre", "Barnet", "Walthamstow", "Southgate", "Palmers Green", "Edmonton", "Winchmore Hill"],
-    nearbyLocations: ["barnet", "walthamstow", "wood-green", "tottenham", "edgware"]
+    nearbyLocations: ["barnet", "walthamstow", "wood-green", "tottenham", "edgware", "london", "hertford", "potters-bar"]
   },
   {
     slug: "barnet",
@@ -594,7 +594,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Barnet regularly move families between the town centre, Finchley, and Edgware. They can account for the A1 traffic, the steep gradients near High Barnet, and the narrow lanes in the older parts of this Hertfordshire town.",
     badge: "Barnet Movers",
     areas: ["Town Centre", "Enfield", "Edgware", "Finchley", "Potters Bar", "Whetstone", "Arkley"],
-    nearbyLocations: ["enfield", "edgware", "finchley", "watford", "harrow"]
+    nearbyLocations: ["enfield", "edgware", "finchley", "watford", "harrow", "london"]
   },
   {
     slug: "finchley",
@@ -624,7 +624,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Edgware regularly move customers between the town centre, Stanmore, and Burnt Oak. They can account for the A5 traffic, the busy shopping area access, and the best routes for moves in this popular North London town.",
     badge: "Edgware Movers",
     areas: ["Town Centre", "Harrow", "Barnet", "Stanmore", "Burnt Oak", "Mill Hill", "Colindale"],
-    nearbyLocations: ["barnet", "harrow", "wembley", "stanmore", "finchley"]
+    nearbyLocations: ["barnet", "harrow", "wembley", "stanmore", "finchley", "enfield"]
   },
   {
     slug: "stratford",
@@ -642,7 +642,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Stratford regularly handle moves around the Olympic Park, Westfield, and the Victorian streets of Forest Gate. They can account for the A12 traffic, the event day congestion, and the best access routes for both modern apartment blocks and older terraced housing.",
     badge: "Verified Movers in Stratford",
     areas: ["Town Centre", "Hackney", "Leyton", "Forest Gate", "Bow", "Maryland", "Plaistow"],
-    nearbyLocations: ["ilford", "walthamstow", "bromley", "hackney", "barking"]
+    nearbyLocations: ["ilford", "walthamstow", "bromley", "hackney", "barking", "london"]
   },
   {
     slug: "lewisham",
@@ -689,7 +689,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bexley regularly move families between the town centre, Welling, and Sidcup. They can account for the A2 traffic, the narrow village lanes in the older parts, and the best parking solutions for moves in this popular South East London borough.",
     badge: "Bexley Movers",
     areas: ["Town Centre", "Bromley", "Dartford", "Welling", "Sidcup", "Crayford", "Albany Park"],
-    nearbyLocations: ["bromley", "dartford", "welling", "sidcup", "erith"]
+    nearbyLocations: ["bromley", "dartford", "welling", "sidcup", "erith", "romford", "bexleyheath"]
   },
   {
     slug: "sutton",
@@ -704,7 +704,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Sutton regularly handle moves between the town centre, Carshalton, and Mitcham. They can account for the A217 and A232 traffic, the town centre one-way system, and the best access routes for moves in this popular South London suburb.",
     badge: "Verified Movers in Sutton",
     areas: ["Town Centre", "Croydon", "Mitcham", "Carshalton", "Cheam", "Wallington", "Beddington"],
-    nearbyLocations: ["croydon", "mitcham", "carshalton", "wimbledon", "banstead"]
+    nearbyLocations: ["croydon", "mitcham", "carshalton", "wimbledon", "banstead", "bromley", "kingston"]
   },
   {
     slug: "mitcham",
@@ -734,7 +734,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Walthamstow regularly move customers between the town centre, Chingford, and Leyton. They can account for the A503 and A406 traffic, the narrow terraced street access, and the best loading times near the busy market area.",
     badge: "Verified Movers in Walthamstow",
     areas: ["Town Centre", "Wood Green", "Tottenham", "Leyton", "Chingford", "Highams Park", "Whipps Cross"],
-    nearbyLocations: ["wood-green", "tottenham", "stratford", "leyton", "chingford"]
+    nearbyLocations: ["wood-green", "tottenham", "stratford", "leyton", "chingford", "ilford", "enfield"]
   },
   {
     slug: "wood-green",
@@ -749,7 +749,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wood Green regularly handle moves between the town centre, Harringay, and Bounds Green. They can account for the A406 traffic, the busy shopping area access, and the best routes for moves in this popular North London area.",
     badge: "Wood Green Movers",
     areas: ["Town Centre", "Walthamstow", "Tottenham", "Harringay", "Bounds Green", "Muswell Hill", "Alexandra Park"],
-    nearbyLocations: ["walthamstow", "tottenham", "harringay", "finsbury-park", "bounds-green"]
+    nearbyLocations: ["walthamstow", "tottenham", "harringay", "finsbury-park", "bounds-green", "enfield"]
   },
   {
     slug: "tottenham",
@@ -764,7 +764,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Tottenham regularly move customers between the town centre, Edmonton, and Stamford Hill. They can account for the A10 traffic, the narrow terraced street access, and the best loading times for moves in this busy North London area.",
     badge: "Verified Movers in Tottenham",
     areas: ["Town Centre", "Wood Green", "Walthamstow", "Edmonton", "Stamford Hill", "Seven Sisters", "White Hart Lane"],
-    nearbyLocations: ["walthamstow", "wood-green", "edmonton", "stamford-hill", "hackney"]
+    nearbyLocations: ["walthamstow", "wood-green", "edmonton", "stamford-hill", "hackney", "enfield"]
   },
   {
     slug: "acton",
@@ -809,7 +809,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Richmond regularly handle moves between the town centre, Twickenham, and Kingston. They can account for the A307 and A316 traffic, the riverside access restrictions, and the best routes for moves in this historic and busy Surrey borough.",
     badge: "Richmond Movers",
     areas: ["Town Centre", "Twickenham", "Kingston", "Kew", "Barnes", "East Sheen", "Mortlake"],
-    nearbyLocations: ["twickenham", "kingston", "chiswick", "barnes", "wandsworth"]
+    nearbyLocations: ["twickenham", "kingston", "chiswick", "barnes", "wandsworth", "hounslow"]
   },
   // ──────────────────────────────────────────
   // GREATER MANCHESTER (14 locations)
@@ -848,7 +848,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Salford regularly move families between the city centre, Eccles, and Swinton. They can account for the M602 traffic, the MediaCityUK access restrictions, and the best routes for moves in this busy Greater Manchester city.",
     badge: "Verified Movers in Salford",
     areas: ["City Centre", "Eccles", "Swinton", "Pendleton", "Irlam", "Cadishead", "Weaste"],
-    nearbyLocations: ["manchester", "bolton", "wigan", "trafford", "eccles"]
+    nearbyLocations: ["manchester", "bolton", "wigan", "trafford", "eccles", "sale", "prestwich", "swinton"]
   },
   {
     slug: "bolton",
@@ -863,7 +863,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bolton regularly handle moves between the town centre, Farnworth, and Westhoughton. They can account for the A666 traffic, the hilly roads in some areas, and the best access routes for moves in this busy Greater Manchester town.",
     badge: "Bolton Movers",
     areas: ["Town Centre", "Bury", "Wigan", "Farnworth", "Horwich", "Westhoughton", "Little Lever"],
-    nearbyLocations: ["manchester", "bury", "wigan", "farnworth", "rochdale"]
+    nearbyLocations: ["manchester", "bury", "wigan", "farnworth", "rochdale", "salford", "leigh", "walkden"]
   },
   {
     slug: "bury",
@@ -878,7 +878,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bury regularly move customers between the town centre, Radcliffe, and Whitefield. They can account for the A56 and M66 traffic, the narrow town centre access, and the best routes for moves in this busy Greater Manchester town.",
     badge: "Verified Movers in Bury",
     areas: ["Town Centre", "Bolton", "Rochdale", "Heywood", "Radcliffe", "Whitefield", "Ramsbottom"],
-    nearbyLocations: ["bolton", "rochdale", "manchester", "oldham", "radcliffe"]
+    nearbyLocations: ["bolton", "rochdale", "manchester", "oldham", "radcliffe", "prestwich", "middleton"]
   },
   {
     slug: "rochdale",
@@ -893,7 +893,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Rochdale regularly handle moves between the town centre, Heywood, and Littleborough. They can account for the M62 junction traffic, the hilly roads in some areas, and the best access routes for moves in this busy Greater Manchester town.",
     badge: "Rochdale Movers",
     areas: ["Town Centre", "Bury", "Oldham", "Heywood", "Littleborough", "Whitworth", "Milnrow"],
-    nearbyLocations: ["bury", "oldham", "manchester", "heywood", "littleborough"]
+    nearbyLocations: ["bury", "oldham", "manchester", "heywood", "littleborough", "bolton", "prestwich"]
   },
   {
     slug: "oldham",
@@ -908,7 +908,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Oldham regularly handle moves between the town centre, Chadderton, and Shaw. They can account for the M60 traffic, the steep hilly roads, and the best access routes for moves in this busy Greater Manchester town.",
     badge: "Verified Movers in Oldham",
     areas: ["Town Centre", "Rochdale", "Ashton-under-Lyne", "Chadderton", "Shaw", "Royton", "Saddleworth"],
-    nearbyLocations: ["rochdale", "manchester", "ashton-under-lyne", "chadderton", "diggle"]
+    nearbyLocations: ["rochdale", "manchester", "ashton-under-lyne", "chadderton", "diggle", "bury", "middleton"]
   },
   {
     slug: "stockport",
@@ -923,7 +923,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Stockport regularly handle moves between the town centre, Cheadle, and Hazel Grove. They can account for the M60 traffic, the hilly roads in some areas, and the best access routes for moves in this busy Greater Manchester town.",
     badge: "Stockport Movers",
     areas: ["Town Centre", "Manchester", "Altrincham", "Cheadle", "Hazel Grove", "Bredbury", "Heaton Moor"],
-    nearbyLocations: ["manchester", "altrincham", "cheadle", "poynton", "didsbury"]
+    nearbyLocations: ["manchester", "altrincham", "cheadle", "poynton", "didsbury", "hyde", "buxton"]
   },
   {
     slug: "altrincham",
@@ -938,7 +938,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Altrincham regularly move families between the town centre, Hale, and Bowdon. They can account for the A56 traffic, the narrow town centre access, and the best routes for moves in this affluent Cheshire town.",
     badge: "Verified Movers in Altrincham",
     areas: ["Town Centre", "Stockport", "Sale", "Hale", "Bowdon", "Timperley", "Broadheath"],
-    nearbyLocations: ["stockport", "sale", "manchester", "wilmslow", "knutsford"]
+    nearbyLocations: ["stockport", "sale", "manchester", "wilmslow", "knutsford", "trafford", "cheadle"]
   },
   {
     slug: "trafford",
@@ -953,7 +953,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Trafford regularly handle moves between Stretford, Urmston, and Sale. They can account for the M60 traffic, the Trafford Centre event day congestion, and the best routes for moves in this busy Greater Manchester borough.",
     badge: "Trafford Movers",
     areas: ["Town Centre", "Manchester", "Sale", "Stretford", "Urmston", "Altrincham", "Davyhulme"],
-    nearbyLocations: ["manchester", "altrincham", "salford", "sale", "urmston"]
+    nearbyLocations: ["manchester", "altrincham", "salford", "sale", "urmston", "eccles"]
   },
   {
     slug: "wigan",
@@ -968,7 +968,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wigan regularly handle moves between the town centre, Leigh, and Standish. They can account for the M6 traffic, the narrow town centre access, and the best routes for moves in this busy Greater Manchester town.",
     badge: "Verified Movers in Wigan",
     areas: ["Town Centre", "Bolton", "Leigh", "St Helens", "Skelmersdale", "Standish", "Aspull"],
-    nearbyLocations: ["bolton", "leigh", "st-helens", "skelmersdale", "manchester"]
+    nearbyLocations: ["bolton", "leigh", "st-helens", "skelmersdale", "manchester", "salford", "widnes", "ashton-in-makerfield"]
   },
   {
     slug: "leigh",
@@ -983,7 +983,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Leigh regularly handle moves between the town centre, Atherton, and Tyldesley. They can account for the A580 traffic, the narrow town centre access, and the best routes for moves in this busy Greater Manchester town.",
     badge: "Leigh Movers",
     areas: ["Town Centre", "Wigan", "Bolton", "Atherton", "Tyldesley", "Golborne", "Lowton"],
-    nearbyLocations: ["wigan", "bolton", "atherton", "tyldesley", "manchester"]
+    nearbyLocations: ["wigan", "bolton", "atherton", "tyldesley", "manchester", "horwich", "westhoughton"]
   },
   {
     slug: "ashton-under-lyne",
@@ -998,7 +998,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Ashton-under-Lyne regularly handle moves between the town centre, Dukinfield, and Droylsden. They can account for the M60 traffic, the hilly roads in some areas, and the best access routes for moves in this busy Greater Manchester town.",
     badge: "Verified Movers in Ashton-under-Lyne",
     areas: ["Town Centre", "Oldham", "Stalybridge", "Dukinfield", "Droylsden", "Mossley", "Hurst"],
-    nearbyLocations: ["oldham", "manchester", "stalybridge", "dukfield", "droylden"]
+    nearbyLocations: ["oldham", "manchester", "stalybridge", "dukfield", "droylden", "hyde", "failsworth"]
   },
   {
     slug: "hyde",
@@ -1013,7 +1013,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Hyde regularly handle moves between the town centre, Denton, and Mottram. They can account for the M67 traffic, the hilly roads in some areas, and the best access routes for moves in this busy Greater Manchester town.",
     badge: "Hyde Movers",
     areas: ["Town Centre", "Stalybridge", "Dukinfield", "Denton", "Mottram", "Longdendale", "Newton"],
-    nearbyLocations: ["stalybridge", "ashton-under-lyne", "stockport", "glossop", "manchester"]
+    nearbyLocations: ["stalybridge", "ashton-under-lyne", "stockport", "glossop", "manchester", "denton"]
   },
   {
     slug: "stalybridge",
@@ -1049,7 +1049,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved local movers can account for Leeds' road network, including the inner ring road and the steep hills in some areas. They can take account of which buildings have restrictions, where parking is easiest, and how to plan moves around match days at Elland Road or Headingley.",
     badge: "Verified Movers in Leeds",
     areas: ["Headingley", "Roundhay", "Chapel Allerton", "Horsforth", "Alwoodley", "Morley", "Pudsey", "City Centre"],
-    nearbyLocations: ["bradford", "wakefield", "huddersfield", "halifax", "dewsbury"]
+    nearbyLocations: ["bradford", "wakefield", "huddersfield", "halifax", "dewsbury", "batley", "pudsey"]
   },
   {
     slug: "bradford",
@@ -1066,7 +1066,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bradford regularly move families between the city centre, Shipley, and Bingley. They can account for the M606 traffic, the hilly roads in some areas, and the best access routes for moves in this busy West Yorkshire city.",
     badge: "Verified Movers in Bradford",
     areas: ["City Centre", "Shipley", "Bingley", "Keighley", "Saltaire", "Thornton", "Allerton"],
-    nearbyLocations: ["leeds", "halifax", "huddersfield", "keighley", "skipton"]
+    nearbyLocations: ["leeds", "halifax", "huddersfield", "keighley", "skipton", "pudsey", "brighouse"]
   },
   {
     slug: "wakefield",
@@ -1081,7 +1081,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wakefield regularly handle moves between the city centre, Pontefract, and Ossett. They can account for the M1 traffic, the narrow city centre access, and the best routes for moves in this busy West Yorkshire city.",
     badge: "Wakefield Movers",
     areas: ["City Centre", "Pontefract", "Castleford", "Ossett", "Horbury", "Knottingley", "Sandal Magna"],
-    nearbyLocations: ["leeds", "pontefract", "castleford", "dewsbury", "barnsley"]
+    nearbyLocations: ["leeds", "pontefract", "castleford", "dewsbury", "barnsley", "batley", "morley"]
   },
   {
     slug: "huddersfield",
@@ -1098,7 +1098,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Huddersfield regularly move families between the town centre, Halifax, and Dewsbury. They can account for the M62 traffic, the hilly roads in some areas, and the best access routes for moves in this busy West Yorkshire town.",
     badge: "Verified Movers in Huddersfield",
     areas: ["Town Centre", "Halifax", "Dewsbury", "Holmfirth", "Slaithwaite", "Meltham", "Lindley"],
-    nearbyLocations: ["leeds", "bradford", "halifax", "dewsbury", "barnsley"]
+    nearbyLocations: ["leeds", "bradford", "halifax", "dewsbury", "barnsley", "brighouse", "cleckheaton"]
   },
   {
     slug: "halifax",
@@ -1113,7 +1113,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Halifax regularly handle moves between the town centre, Sowerby Bridge, and Elland. They can account for the steep hilly roads, the A58 traffic, and the best access routes for moves in this busy West Yorkshire town.",
     badge: "Halifax Movers",
     areas: ["Town Centre", "Huddersfield", "Bradford", "Sowerby Bridge", "Elland", "Hebden Bridge", "Queensbury"],
-    nearbyLocations: ["bradford", "huddersfield", "leeds", "elland", "sowerby-bridge"]
+    nearbyLocations: ["bradford", "huddersfield", "leeds", "elland", "sowerby-bridge", "keighley", "brighouse"]
   },
   {
     slug: "dewsbury",
@@ -1128,7 +1128,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Dewsbury regularly move families between the town centre, Batley, and Heckmondwike. They can account for the M62 traffic, the narrow town centre access, and the best routes for moves in this busy West Yorkshire town.",
     badge: "Verified Movers in Dewsbury",
     areas: ["Town Centre", "Batley", "Heckmondwike", "Mirfield", "Ossett", "Ravensthorpe", "Thornhill Lees"],
-    nearbyLocations: ["batley", "wakefield", "huddersfield", "leeds", "mirfield"]
+    nearbyLocations: ["batley", "wakefield", "huddersfield", "leeds", "mirfield", "morley", "brighouse"]
   },
   {
     slug: "batley",
@@ -1143,7 +1143,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Batley regularly handle moves between the town centre, Birstall, and Heckmondwike. They can account for the M62 traffic, the narrow town centre access, and the best routes for moves in this busy West Yorkshire town.",
     badge: "Batley Movers",
     areas: ["Town Centre", "Dewsbury", "Birstall", "Heckmondwike", "Morley", "Ossett", "Staincliffe"],
-    nearbyLocations: ["dewsbury", "birstall", "leeds", "morley", "wakefield"]
+    nearbyLocations: ["dewsbury", "birstall", "leeds", "morley", "wakefield", "cleckheaton", "ossett"]
   },
   {
     slug: "keighley",
@@ -1158,7 +1158,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Keighley regularly move families between the town centre, Silsden, and Steeton. They can account for the hilly roads, the A650 traffic, and the best access routes for moves in this busy West Yorkshire town.",
     badge: "Verified Movers in Keighley",
     areas: ["Town Centre", "Bingley", "Silsden", "Steeton", "Oakworth", "Haworth", "Utley"],
-    nearbyLocations: ["bradford", "skipton", "bingley", "halifax", "shipley"]
+    nearbyLocations: ["bradford", "skipton", "bingley", "halifax", "shipley", "ilkley"]
   },
   {
     slug: "pudsey",
@@ -1188,7 +1188,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Morley regularly move families between the town centre, Gildersome, and Churwell. They can account for the M62 traffic, the A650 corridor, and the best access routes for moves in this busy West Yorkshire town.",
     badge: "Verified Movers in Morley",
     areas: ["Town Centre", "Leeds", "Dewsbury", "Batley", "Gildersome", "Churwell", "Tingley"],
-    nearbyLocations: ["leeds", "dewsbury", "batley", "wakefield", "pudsey"]
+    nearbyLocations: ["leeds", "dewsbury", "batley", "wakefield", "pudsey", "cleckheaton", "ossett"]
   },
   {
     slug: "brighouse",
@@ -1218,7 +1218,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Shipley handle moves in Saltaire where the Victorian mill workers' houses have parking restrictions, as well as standard moves in Baildon and the Windhill area. They understand the A650 congestion heading into Bradford, the M606 link road, and the best routes to Keighley and Bingley.",
     badge: "Shipley Movers",
     areas: ["Town Centre", "Saltaire", "Baildon", "Windhill", "Cottingley", "Heaton"],
-    nearbyLocations: ["bradford", "bingley", "keighley", "leeds", "halifax"]
+    nearbyLocations: ["bradford", "bingley", "keighley", "leeds", "halifax", "ilkley"]
   },
   {
     slug: "bingley",
@@ -1278,7 +1278,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Ilkley handle moves in Victorian villas near the Grove and stone cottages up towards the moor. They understand the A65 traffic, the narrow lanes heading into Wharfedale villages, and the access challenges of rural properties around Addingham and Menston. Ilkley's properties tend to be larger so moves often need careful planning.",
     badge: "Ilkley Movers",
     areas: ["Town Centre", "Ben Rhydding", "Addingham", "Burley-in-Wharfedale", "Menston"],
-    nearbyLocations: ["bradford", "bingley", "keighley", "otley", "shipley"]
+    nearbyLocations: ["bradford", "bingley", "keighley", "otley", "shipley", "guiseley"]
   },
   // ──────────────────────────────────────────
   // MERSEYSIDE (11 locations)
@@ -1299,7 +1299,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved local movers can account for Liverpool's unique layout. They can take account of how to navigate the city centre, work around events at Anfield or Goodison, and handle moves in areas like Toxteth, Aigburth, and the waterfront with confidence.",
     badge: "Verified Movers in Liverpool",
     areas: ["City Centre", "Toxteth", "Aigburth", "Wavertree", "Everton", "Bootle", "Crosby", "Waterfront"],
-    nearbyLocations: ["bootle", "birkenhead", "wallasey", "southport", "st-helens"]
+    nearbyLocations: ["bootle", "birkenhead", "wallasey", "southport", "st-helens", "widnes", "prescot"]
   },
   {
     slug: "bootle",
@@ -1329,7 +1329,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Birkenhead regularly handle moves between the town centre, Prenton, and Bebington. They can account for the Mersey Tunnel traffic, the narrow town centre access, and the best routes for moves in this busy Merseyside town.",
     badge: "Verified Movers in Birkenhead",
     areas: ["Town Centre", "Wallasey", "Prenton", "Bebington", "Heswall", "Upton", "Woodchurch"],
-    nearbyLocations: ["liverpool", "wallasey", "prenton", "bebbington", "wirral"]
+    nearbyLocations: ["liverpool", "wallasey", "prenton", "bebbington", "wirral", "ellesmere-port", "bebington"]
   },
   {
     slug: "wallasey",
@@ -1344,7 +1344,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wallasey regularly move families between the town centre, New Brighton, and Leasowe. They can account for the A554 traffic, the coastal road access, and the best routes for moves in this busy Merseyside town.",
     badge: "Wallasey Movers",
     areas: ["Town Centre", "Birkenhead", "New Brighton", "Leasowe", "Moreton", "Liscard", "Poulton"],
-    nearbyLocations: ["birkenhead", "liverpool", "new-brighton", "hoylake", "wirral"]
+    nearbyLocations: ["birkenhead", "liverpool", "new-brighton", "hoylake", "wirral", "bootle", "ellesmere-port"]
   },
   {
     slug: "southport",
@@ -1359,7 +1359,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Southport regularly handle moves between the town centre, Birkdale, and Ainsdale. They can account for the A565 coastal traffic, the narrow town centre access, and the best routes for moves in this popular Merseyside seaside town.",
     badge: "Verified Movers in Southport",
     areas: ["Town Centre", "Birkdale", "Ainsdale", "Formby", "Churchtown", "Marshside", "Hillside"],
-    nearbyLocations: ["formby", "birkdale", "ainsdale", "ormskirk", "preston"]
+    nearbyLocations: ["formby", "birkdale", "ainsdale", "ormskirk", "preston", "liverpool"]
   },
   {
     slug: "st-helens",
@@ -1374,7 +1374,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving St Helens regularly move families between the town centre, Widnes, and Prescot. They can account for the M62 traffic, the narrow town centre access, and the best routes for moves in this busy Merseyside town.",
     badge: "St Helens Movers",
     areas: ["Town Centre", "Widnes", "Prescot", "Rainford", "Haydock", "Eccleston", "Sutton"],
-    nearbyLocations: ["liverpool", "widnes", "prescot", "warrington", "wigan"]
+    nearbyLocations: ["liverpool", "widnes", "prescot", "warrington", "wigan", "huyton", "skelmersdale"]
   },
   {
     slug: "widnes",
@@ -1389,7 +1389,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Widnes regularly handle moves between the town centre, Runcorn, and Warrington. They can account for the M62 traffic, the bridge access restrictions, and the best routes for moves in this busy Cheshire town.",
     badge: "Verified Movers in Widnes",
     areas: ["Town Centre", "St Helens", "Runcorn", "Warrington", "Halewood", "Cronton", "Farnworth"],
-    nearbyLocations: ["st-helens", "warrington", "runcorn", "liverpool", "wigan"]
+    nearbyLocations: ["st-helens", "warrington", "runcorn", "liverpool", "wigan", "ellesmere-port"]
   },
   {
     slug: "prescot",
@@ -1404,7 +1404,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Prescot regularly move families between the town centre, Huyton, and Whiston. They can account for the M62 traffic, the A58 corridor, and the best routes for moves in this busy Merseyside town.",
     badge: "Prescot Movers",
     areas: ["Town Centre", "St Helens", "Huyton", "Whiston", "Knowsley", "Eccleston Park", "Rainhill"],
-    nearbyLocations: ["st-helens", "liverpool", "huyton", "whiston", "warrington"]
+    nearbyLocations: ["st-helens", "liverpool", "huyton", "whiston", "warrington", "kirkby"]
   },
   {
     slug: "huyton",
@@ -1419,7 +1419,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Huyton regularly handle moves between the town centre, Prescot, and Whiston. They can account for the M62 traffic, the A57 corridor, and the best routes for moves in this busy Merseyside town.",
     badge: "Verified Movers in Huyton",
     areas: ["Town Centre", "Prescot", "Whiston", "Knotty Ash", "Page Moss", "Roby", "Fincham"],
-    nearbyLocations: ["liverpool", "prescot", "whiston", "st-helens", "warrington"]
+    nearbyLocations: ["liverpool", "prescot", "whiston", "st-helens", "warrington", "kirkby"]
   },
   {
     slug: "ellesmere-port",
@@ -1434,7 +1434,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Ellesmere Port regularly handle moves between the town centre, Little Sutton, and Great Sutton. They can account for the M53 traffic at junctions 8 and 9, the narrow streets near the canal basin, and the best routes to Chester and Wirral.",
     badge: "Ellesmere Port Movers",
     areas: ["Town Centre", "Whitby", "Little Sutton", "Great Sutton", "Neston", "Hooton", "Capenhurst"],
-    nearbyLocations: ["liverpool", "chester", "birkenhead", "wallasey", "widnes"]
+    nearbyLocations: ["liverpool", "chester", "birkenhead", "wallasey", "widnes", "bebington"]
   },
   {
     slug: "bebington",
@@ -1470,7 +1470,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Preston regularly handle moves between the city centre, Fulwood, and Penwortham. They understand the M6 junction 29 and 31 rush-hour patterns, the narrow one-way streets around the university, and the best routes through the Ring Road. Preston's mix of Victorian terraces and Docklands apartments keeps local movers experienced with every type of property.",
     badge: "Preston Movers",
     areas: ["City Centre", "Fulwood", "Ashton-on-Ribble", "Ribbleton", "Lostock Hall", "Bamber Bridge", "Penwortham", "Lea"],
-    nearbyLocations: ["blackpool", "blackburn", "chorley", "leyland", "lytham-st-annes"]
+    nearbyLocations: ["blackpool", "blackburn", "chorley", "leyland", "lytham-st-annes", "southport", "skelmersdale"]
   },
   {
     slug: "blackpool",
@@ -1485,7 +1485,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Blackpool handle everything from guest house furniture moves on the seafront to family relocations in Marton and Bispham. They understand the M55 approach road, the Promenade traffic during illuminations season, and the narrow back-street access in Claremont and Layton. Moves here often need careful timing around tourist peaks.",
     badge: "Blackpool Movers",
     areas: ["North Shore", "South Shore", "Marton", "Layton", "Claremont", "Bispham", "Cleveleys"],
-    nearbyLocations: ["preston", "lytham-st-annes", "chorley", "fleetwood"]
+    nearbyLocations: ["preston", "lytham-st-annes", "chorley", "fleetwood", "lancaster", "lytham", "cleveleys"]
   },
   {
     slug: "blackburn",
@@ -1502,7 +1502,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Blackburn regularly handle moves in the terraced streets around the town centre, where parking is tight and access is narrow. They understand the M65 junction 3-5 traffic, the steep roads towards Darwen, and the best routes to the rural villages around Pleasington and Roe Lee.",
     badge: "Blackburn Movers",
     areas: ["Town Centre", "Darwen", "Mill Hill", "Livesey", "Pleasington", "Roe Lee", "Ewood"],
-    nearbyLocations: ["burnley", "preston", "accrington", "chorley", "bolton"]
+    nearbyLocations: ["burnley", "preston", "accrington", "chorley", "bolton", "leyland"]
   },
   {
     slug: "burnley",
@@ -1532,7 +1532,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Lytham St Annes handle moves in Edwardian properties with wide staircases and seafront apartments with lift access. They understand the M55 weekend traffic, the restricted parking around Lytham Green during events, and the quiet residential roads in Ansdell and Fairhaven.",
     badge: "Lytham St Annes Movers",
     areas: ["Lytham", "St Annes", "Ansdell", "Fairhaven", "Wrea Green", "Freckleton"],
-    nearbyLocations: ["blackpool", "preston", "kirkham"]
+    nearbyLocations: ["blackpool", "preston", "kirkham", "ormskirk", "lytham", "cleveleys"]
   },
   {
     slug: "chorley",
@@ -1547,7 +1547,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Chorley regularly handle moves in Buckshaw Village, one of Lancashire's biggest new-build developments, as well as older properties in the town centre and surrounding villages. They can account for M6 junction 28 congestion, the A6 through-town traffic, and the narrow lanes around Whittle-le-Woods and Hoghton.",
     badge: "Chorley Movers",
     areas: ["Town Centre", "Leyland", "Euxton", "Buckshaw Village", "Adlington", "Whittle-le-Woods", "Croston"],
-    nearbyLocations: ["preston", "blackburn", "wigan", "bolton", "leyland"]
+    nearbyLocations: ["preston", "blackburn", "wigan", "bolton", "leyland", "blackpool"]
   },
   {
     slug: "skelmersdale",
@@ -1600,7 +1600,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved local movers can account for Bristol's unique layout. They can take account of how to handle moves in Clifton's steep streets, navigate the Clean Air Zone, and find practical solutions for parking and access in the city centre and surrounding areas.",
     badge: "Verified Movers in Bristol",
     areas: ["Clifton", "Bedminster", "Redland", "St George", "Bishopston", "Fishponds", "Horfield", "City Centre"],
-    nearbyLocations: ["bath", "weston-super-mare", "gloucester", "cheltenham", "swindon"]
+    nearbyLocations: ["bath", "weston-super-mare", "gloucester", "cheltenham", "swindon", "cardiff", "plymouth"]
   },
   {
     slug: "bath",
@@ -1618,7 +1618,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bath regularly move customers between the historic centre, Twerton, and Combe Down. They can account for the steep gradients, the Clean Air Zone requirements, and the narrow access on the older Georgian streets. Every move in Bath requires local knowledge and careful planning.",
     badge: "Verified Movers in Bath",
     areas: ["City Centre", "Larkhall", "Twerton", "Widcombe", "Combe Down", "Oldfield Park", "Bear Flat"],
-    nearbyLocations: ["bristol", "weston-super-mare", "frome", "trowbridge", "swindon"]
+    nearbyLocations: ["bristol", "weston-super-mare", "frome", "trowbridge", "swindon", "cheltenham", "salisbury"]
   },
   {
     slug: "weston-super-mare",
@@ -1633,7 +1633,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Weston-super-Mare regularly handle moves between the town centre, Worle, and Milton. They can account for the A370 coastal traffic, the seafront access restrictions, and the best routes for moves in this popular Somerset seaside town.",
     badge: "Weston-super-Mare Movers",
     areas: ["Town Centre", "Worle", "Milton", "Oldmixon", "Uphill", "Locking Castle", "Weston Village"],
-    nearbyLocations: ["bristol", "bath", "bridgwater", "burnham-on-sea", "taunton"]
+    nearbyLocations: ["bristol", "bath", "bridgwater", "burnham-on-sea", "taunton", "clevedon", "portishead"]
   },
   {
     slug: "bridgwater",
@@ -1663,7 +1663,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Taunton regularly handle moves between the town centre, Bishops Hull, and Norton Fitzwarren. They can account for the A358 traffic, the M5 junction access, and the best routes for moves in this busy Somerset county town.",
     badge: "Taunton Movers",
     areas: ["Town Centre", "Bishops Hull", "Norton Fitzwarren", "Galmington", "Priorswood", "Wilton", "Comeytrowe"],
-    nearbyLocations: ["bridgwater", "exeter", "yeovil", "weston-super-mare", "wellington"]
+    nearbyLocations: ["bridgwater", "exeter", "yeovil", "weston-super-mare", "wellington", "plymouth", "torquay"]
   },
   {
     slug: "yeovil",
@@ -1723,7 +1723,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Swindon regularly handle moves between the town centre, Highworth, and Wroughton. They can account for the M4 traffic, the A419 corridor, and the best routes for moves in this busy Wiltshire town.",
     badge: "Swindon Movers",
     areas: ["Town Centre", "Highworth", "Wroughton", "Cricklade", "Royal Wootton Bassett", "Blunsdon", "Stratton"],
-    nearbyLocations: ["bristol", "bath", "cheltenham", "gloucester", "reading"]
+    nearbyLocations: ["bristol", "bath", "cheltenham", "gloucester", "reading", "newbury"]
   },
   {
     slug: "cheltenham",
@@ -1740,7 +1740,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Cheltenham regularly handle moves between the town centre, Charlton Kings, and Leckhampton. They can account for the A40 traffic, the narrow historic street access, and the best routes for moves in this popular Gloucestershire spa town.",
     badge: "Verified Movers in Cheltenham",
     areas: ["Town Centre", "Charlton Kings", "Leckhampton", "Prestbury", "Winchcombe", "Bishops Cleeve", "Swindon Village"],
-    nearbyLocations: ["gloucester", "bath", "tewkesbury", "stratford-upon-avon", "bristol"]
+    nearbyLocations: ["gloucester", "bath", "tewkesbury", "stratford-upon-avon", "bristol", "swindon"]
   },
   {
     slug: "gloucester",
@@ -1755,7 +1755,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Gloucester regularly move families between the city centre, Stroud, and Tewkesbury. They can account for the M5 traffic, the A40 corridor, and the best routes for moves in this busy Gloucestershire cathedral city.",
     badge: "Gloucester Movers",
     areas: ["City Centre", "Cheltenham", "Stroud", "Tewkesbury", "Stonehouse", "Brockworth", "Quedgeley"],
-    nearbyLocations: ["cheltenham", "bristol", "stroud", "tewkesbury", "swindon"]
+    nearbyLocations: ["cheltenham", "bristol", "stroud", "tewkesbury", "swindon", "hereford"]
   },
   // ──────────────────────────────────────────
   // EAST MIDLANDS (Nottingham)
@@ -1816,7 +1816,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Sheffield movers are used to hill starts with a loaded van, tight terraced parking in Crookes and Hillsborough, and the tram-route restrictions through the centre. Student moves around both universities and family moves to Dronfield and Chapeltown are everyday work.",
     badge: "Verified Movers in Sheffield",
     areas: ["City Centre", "Ecclesall", "Hillsborough", "Crookes", "Walkley", "Kelham Island", "Broomhill", "Chapeltown"],
-    nearbyLocations: ["leeds", "bradford", "wakefield"]
+    nearbyLocations: ["leeds", "bradford", "wakefield", "newcastle-upon-tyne", "hull", "chesterfield", "glossop"]
   },
   {
     slug: "edinburgh",
@@ -1834,7 +1834,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Edinburgh movers handle tenement stairs every week, plan around the city's permit parking, and know when the A720 bypass beats cutting through town. Student moves around Marchmont and Newington, and flits between Leith and the New Town, are core local work.",
     badge: "Verified Movers in Edinburgh",
     areas: ["Leith", "Morningside", "Stockbridge", "Marchmont", "Bruntsfield", "New Town", "Old Town", "Portobello", "Corstorphine"],
-    nearbyLocations: ["glasgow", "dundee"]
+    nearbyLocations: ["glasgow", "dundee", "aberdeen", "stirling", "perth", "livingston", "falkirk"]
   },
   {
     slug: "glasgow",
@@ -1852,7 +1852,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Glasgow movers work tenement closes daily, know which West End streets need permits, and route around the M8's pinch points. Student moves around Glasgow Uni and Strathclyde, and family moves out to Paisley or Clydebank, are all familiar territory.",
     badge: "Verified Movers in Glasgow",
     areas: ["West End", "Shawlands", "Dennistoun", "Partick", "Hyndland", "Pollokshields", "Finnieston", "City Centre"],
-    nearbyLocations: ["edinburgh", "dundee"]
+    nearbyLocations: ["edinburgh", "dundee", "stirling", "paisley", "east-kilbride", "livingston", "falkirk"]
   },
   {
     slug: "cardiff",
@@ -1870,7 +1870,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Cardiff movers can take account of the terrace-lined streets of Cathays and Canton, the loading bays of the Bay's apartment blocks, and how to plan around stadium events. Moves out to Penarth, Barry and the Valleys via the A470 are regular runs.",
     badge: "Verified Movers in Cardiff",
     areas: ["Cathays", "Roath", "Canton", "Pontcanna", "Whitchurch", "Llandaff", "Cardiff Bay", "City Centre"],
-    nearbyLocations: ["swansea", "bristol"]
+    nearbyLocations: ["swansea", "bristol", "newport", "barry", "bridgend", "merthyr-tydfil", "caerphilly"]
   },
   {
     slug: "newcastle-upon-tyne",
@@ -1888,7 +1888,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Newcastle movers can account for Tyneside flat layouts, Jesmond's permit zones and the September student rush. Runs across the Tyne to Gateshead, along the coast to North Shields, and down the A1 are all standard local work.",
     badge: "Verified Movers in Newcastle",
     areas: ["Jesmond", "Heaton", "Gosforth", "Fenham", "Byker", "Quayside", "City Centre", "Gateshead"],
-    nearbyLocations: ["york", "leeds", "sheffield"]
+    nearbyLocations: ["york", "leeds", "sheffield", "sunderland", "middlesbrough", "gateshead", "darlington", "hexham"]
   },
   {
     slug: "southampton",
@@ -1906,7 +1906,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Southampton movers plan around cruise-ship days, know the Itchen Bridge and the M27's pinch points, and handle the Portswood student rush every year. Family moves out to Totton, Eastleigh and Hedge End are everyday jobs.",
     badge: "Verified Movers in Southampton",
     areas: ["Portswood", "Shirley", "Bitterne", "Woolston", "Ocean Village", "City Centre", "Totton", "Eastleigh"],
-    nearbyLocations: ["portsmouth", "reading"]
+    nearbyLocations: ["portsmouth", "reading", "bournemouth", "winchester", "eastleigh", "gosport"]
   },
   {
     slug: "portsmouth",
@@ -1924,7 +1924,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Portsmouth movers are used to narrow terraces, careful van positioning, and the one-road-in logistics of Portsea Island. Student moves around the university, Gunwharf apartment moves, and runs out to Fareham and Havant are all routine.",
     badge: "Verified Movers in Portsmouth",
     areas: ["Southsea", "Fratton", "North End", "Cosham", "Gunwharf", "City Centre", "Gosport", "Fareham"],
-    nearbyLocations: ["southampton", "reading"]
+    nearbyLocations: ["southampton", "reading", "chichester", "gosport"]
   },
   {
     slug: "oxford",
@@ -1942,7 +1942,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Oxford movers can take account of the bus-gate rules, the loading windows near the colleges, and the rhythm of student and academic moves. Runs out to Abingdon, Kidlington and Bicester via the A34 and A40 are part of the weekly routine.",
     badge: "Verified Movers in Oxford",
     areas: ["Headington", "Cowley", "Jericho", "Summertown", "Botley", "City Centre", "Kidlington", "Abingdon"],
-    nearbyLocations: ["reading", "london"]
+    nearbyLocations: ["reading", "london", "cambridge", "high-wycombe", "aylesbury"]
   },
   {
     slug: "cambridge",
@@ -1960,7 +1960,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Cambridge movers respect the core access rules, watch for the city's famous cycle traffic, and time college moves around term. The Science Park, Addenbrooke's and runs up the A10 to Ely are all familiar ground.",
     badge: "Verified Movers in Cambridge",
     areas: ["Cherry Hinton", "Chesterton", "Trumpington", "Mill Road", "City Centre", "Histon", "Girton", "Ely"],
-    nearbyLocations: ["london", "leicester", "oxford"]
+    nearbyLocations: ["london", "leicester", "oxford", "stevenage", "peterborough", "norwich", "ipswich", "ely"]
   },
   {
     slug: "reading",
@@ -1978,7 +1978,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Reading movers can take account of the IDR's timings, the loading rules around the station quarter, and the M4 corridor out to Bracknell and Wokingham. University moves around Earley and corporate relocations at Green Park are regular work.",
     badge: "Verified Movers in Reading",
     areas: ["Caversham", "Earley", "Woodley", "Tilehurst", "Whitley", "Town Centre", "Wokingham", "Bracknell"],
-    nearbyLocations: ["oxford", "london", "southampton"]
+    nearbyLocations: ["oxford", "london", "southampton", "swindon", "portsmouth", "slough", "guildford"]
   },
   {
     slug: "derby",
@@ -1996,7 +1996,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Derby movers can take account of the city's junction pinch points, match-day traffic around Pride Park, and the quickest routes to Nottingham along the A52. Moves up to Belper and across to Long Eaton are everyday runs.",
     badge: "Verified Movers in Derby",
     areas: ["Allestree", "Mickleover", "Littleover", "Chaddesden", "Spondon", "City Centre", "Belper", "Long Eaton"],
-    nearbyLocations: ["nottingham", "leicester", "chaddesden", "mickleover", "alvaston", "littleover"]
+    nearbyLocations: ["nottingham", "leicester", "chaddesden", "mickleover", "alvaston", "littleover", "stoke-on-trent"]
   },
   {
     slug: "stoke-on-trent",
@@ -2014,7 +2014,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Stoke movers navigate the six towns daily, know the steep terrace streets and the A500's rush hours, and handle student moves around Staffordshire University in Shelton. Runs to Newcastle-under-Lyme, Stone and Leek are routine.",
     badge: "Verified Movers in Stoke",
     areas: ["Hanley", "Burslem", "Longton", "Fenton", "Tunstall", "Trentham", "Newcastle-under-Lyme", "Stone"],
-    nearbyLocations: ["manchester", "wolverhampton", "derby"]
+    nearbyLocations: ["manchester", "wolverhampton", "derby", "shrewsbury", "telford"]
   },
   {
     slug: "hull",
@@ -2032,7 +2032,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Hull movers can take account of the tenfoots, the Avenues' parking patterns, and how to time the A63. Student moves around Cottingham Road, family moves out to Beverley and Hessle, and Humber Bridge runs south are all regular work.",
     badge: "Verified Movers in Hull",
     areas: ["The Avenues", "Anlaby", "Cottingham", "Hessle", "Willerby", "Marina", "City Centre", "Beverley"],
-    nearbyLocations: ["york", "leeds", "sheffield"]
+    nearbyLocations: ["york", "leeds", "sheffield", "bridlington", "beverley", "selby", "goole"]
   },
   {
     slug: "plymouth",
@@ -2050,7 +2050,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Plymouth movers handle the hills daily, know the student rhythm around the university, and plan Tamar Bridge crossings sensibly. Runs up the A38 to Ivybridge and beyond are part of the standard patch.",
     badge: "Verified Movers in Plymouth",
     areas: ["Mutley", "Peverell", "Plympton", "Plymstock", "Devonport", "Barbican", "City Centre", "Saltash"],
-    nearbyLocations: ["bristol", "taunton"]
+    nearbyLocations: ["bristol", "taunton", "exeter", "torquay", "truro", "teignmouth", "devonport"]
   },
   {
     slug: "swansea",
@@ -2068,7 +2068,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Swansea movers can take account of the hillside streets, the Uplands student cycle and the summer crawl along Mumbles Road. Moves along the M4 corridor to Llanelli, Neath and Port Talbot are regular runs.",
     badge: "Verified Movers in Swansea",
     areas: ["Uplands", "Sketty", "Mumbles", "Morriston", "Brynmill", "SA1 Waterfront", "City Centre", "Gorseinon"],
-    nearbyLocations: ["cardiff", "bristol"]
+    nearbyLocations: ["cardiff", "bristol", "newport", "bridgend", "neath", "port-talbot", "haverfordwest"]
   },
   {
     slug: "aberdeen",
@@ -2086,7 +2086,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Aberdeen movers handle granite tenement stairs, use the AWPR to skip city congestion, and cover the energy-industry churn around Dyce and Westhill. Coastal runs down to Stonehaven are standard work.",
     badge: "Verified Movers in Aberdeen",
     areas: ["Rosemount", "Ferryhill", "Old Aberdeen", "Cults", "Dyce", "Bridge of Don", "City Centre", "Westhill"],
-    nearbyLocations: ["dundee", "edinburgh"]
+    nearbyLocations: ["dundee", "edinburgh", "inverness", "elgin"]
   },
   {
     slug: "dundee",
@@ -2104,7 +2104,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Dundee movers can take account of the tenement stairs, the hills above the river and the timing of Tay Road Bridge crossings to Newport and Fife. Student moves around both universities keep the West End busy every summer.",
     badge: "Verified Movers in Dundee",
     areas: ["West End", "Broughty Ferry", "Lochee", "Stobswell", "Waterfront", "City Centre", "Monifieth", "Newport-on-Tay"],
-    nearbyLocations: ["edinburgh", "aberdeen", "glasgow"]
+    nearbyLocations: ["edinburgh", "aberdeen", "glasgow", "perth", "arbroath", "st-andrews"]
   },
   {
     slug: "york",
@@ -2122,7 +2122,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved York movers can take account of the footstreet timings, which bars a van can pass, and the riverside streets that flood. University moves around Heslington and runs along the A64 to Leeds or the coast are regular work.",
     badge: "Verified Movers in York",
     areas: ["Heworth", "Acomb", "Fulford", "Clifton", "Bishopthorpe", "Haxby", "City Centre", "Heslington"],
-    nearbyLocations: ["leeds", "hull", "newcastle-upon-tyne"]
+    nearbyLocations: ["leeds", "hull", "newcastle-upon-tyne", "harrogate", "scarborough", "beverley", "selby"]
   },
   {
     slug: "harrogate",
@@ -2139,7 +2139,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Harrogate handle moves in Victorian and Georgian properties that need careful handling of period features. They understand the Stray parking rules, the A61 rush-hour pattern, and the best routes to Knaresborough, Leeds and York. Harrogate's property prices mean moves here often involve valuable contents.",
     badge: "Harrogate Movers",
     areas: ["Town Centre", "Stray", "Starbeck", "Knaresborough", "Pannal", "Bilton", "Oatlands"],
-    nearbyLocations: ["york", "leeds", "bradford", "ripon", "wetherby"]
+    nearbyLocations: ["york", "leeds", "bradford", "ripon", "wetherby", "selby", "malton"]
   },
   {
     slug: "scarborough",
@@ -2169,7 +2169,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Bridlington handle moves in the Old Town conservation area and the seafront properties that were once guest houses. They understand the A165 traffic in summer, the harbour area access restrictions, and the residential areas of Carnaby and Hilderthorpe. Midweek and off-season moves are much easier.",
     badge: "Bridlington Movers",
     areas: ["Old Town", "North Beach", "South Beach", "Sewerby", "Bempton", "Carnaby"],
-    nearbyLocations: ["hull", "scarborough", "beverley", "driffield"]
+    nearbyLocations: ["hull", "scarborough", "beverley", "driffield", "hedon", "cottingham"]
   },
   {
     slug: "beverley",
@@ -2184,7 +2184,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Beverley handle moves in Georgian townhouses near the Minster with period features that need care. They understand the Saturday market parking restrictions, the race day traffic, and the best routes to Hull (about 8 miles south). Molescroft and Walkington are easier suburban areas.",
     badge: "Beverley Movers",
     areas: ["Town Centre", "North Bar", "Molescroft", "Woodmansey", "Tickton", "Walkington"],
-    nearbyLocations: ["hull", "bridlington", "driffield", "york"]
+    nearbyLocations: ["hull", "bridlington", "driffield", "york", "hedon", "willerby", "cottingham"]
   },
   {
     slug: "selby",
@@ -2229,7 +2229,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Malton handle moves in Georgian townhouses near the market place and in the surrounding Wolds villages reached by narrow lanes. They understand the A64 congestion between York and Scarborough, the Saturday market parking restrictions, and the best routes across the Wolds. Norton on the other side of the river is effectively part of the same town.",
     badge: "Malton Movers",
     areas: ["Town Centre", "Norton", "Old Malton", "Broughton", "Amotherby", "Slingsby"],
-    nearbyLocations: ["york", "scarborough", "harrogate", "pickering", "driffield"]
+    nearbyLocations: ["york", "scarborough", "harrogate", "pickering", "driffield", "haxby"]
   },
 
   // ──────────────────────────────────────────
@@ -2248,7 +2248,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Arnold regularly handle moves between the older streets near Daybrook and the newer estates towards Calverton and Bestwood. The A60 corridor creates rush-hour congestion, so movers plan around peak times. Residential crescents off Mansfield Road can have tight turning circles for larger vans.",
     badge: "Verified Movers in Arnold",
     areas: ["Town Centre", "Daybrook", "Sherwood", "Redhill", "Bestwood", "Calverton", "Woodthorpe", "Killisick"],
-    nearbyLocations: ["nottingham", "hucknall", "carlton"]
+    nearbyLocations: ["nottingham", "hucknall", "carlton", "west-bridgford"]
   },
   {
     slug: "beeston",
@@ -2266,7 +2266,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Beeston can account for the tram line crossing on Station Road, the parking patterns around the university campus, and the quickest routes to the A52 and M1. Student moves in Beeston Rylands and Dunkirk follow the academic calendar, while family moves tend to focus on Chilwell, Bramcote and Toton.",
     badge: "Verified Movers in Beeston",
     areas: ["Town Centre", "Chilwell", "Toton", "Bramcote", "Beeston Rylands", "Dunkirk", "Stapleford", "Wollaton"],
-    nearbyLocations: ["nottingham", "derby", "carlton"]
+    nearbyLocations: ["nottingham", "derby", "carlton", "west-bridgford"]
   },
   {
     slug: "carlton",
@@ -2281,7 +2281,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Carlton regularly handle moves between the terraced streets near Carlton Hill and the suburban estates towards Gedling and Burton Joyce. The A612 and B683 connect Carlton to the city centre and Netherfield, and movers plan around the busiest commuter times.",
     badge: "Verified Movers in Carlton",
     areas: ["Town Centre", "Gedling", "Netherfield", "Colwick", "Sneinton", "Mapperley", "Bakersfield", "Burton Joyce"],
-    nearbyLocations: ["nottingham", "arnold", "hucknall"]
+    nearbyLocations: ["nottingham", "arnold", "hucknall", "beeston"]
   },
   {
     slug: "west-bridgford",
@@ -2312,7 +2312,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Hucknall can take account of the A611 corridor congestion, the tram terminus area parking rules, and the best routes towards the M1 at junction 27. Moves towards Kirkby-in-Ashfield, Sutton-in-Ashfield and the wider Ashfield district are common runs from Hucknall.",
     badge: "Verified Movers in Hucknall",
     areas: ["Town Centre", "Bulwell", "Bestwood", "Annesley", "Linby", "Papplewick", "Calverton", "Kirkby-in-Ashfield"],
-    nearbyLocations: ["nottingham", "arnold", "derby"]
+    nearbyLocations: ["nottingham", "arnold", "derby", "carlton"]
   },
 
   // ──────────────────────────────────────────
@@ -2346,7 +2346,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wigston can account for the A5199 Welford Road commuter traffic, the narrower streets in South Wigston, and the residential estates towards Glen Parva and Countesthorpe. Moves between Wigston and Oadby are common, as are longer runs towards Blaby and the M1.",
     badge: "Verified Movers in Wigston",
     areas: ["Wigston Town Centre", "South Wigston", "Glen Parva", "Blaby", "Countesthorpe", "Whetstone", "Kibworth", "Enderby"],
-    nearbyLocations: ["leicester", "oadby", "braunstone"]
+    nearbyLocations: ["leicester", "oadby", "braunstone", "evington"]
   },
   {
     slug: "braunstone",
@@ -2532,7 +2532,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Northampton can account for the M1 junction 15 and 15A congestion, the town centre one-way system, and the A45 corridor towards the Brackmills industrial area. Family moves to Kingsthorpe, Duston and Hunsbury are common, as are furniture collections from the retail parks along the A45.",
     badge: "Verified Movers in Northampton",
     areas: ["Town Centre", "Kingsthorpe", "Duston", "Abington", "Wootton", "East Hunsbury", "West Hunsbury", "Delapre"],
-    nearbyLocations: ["leicester", "nottingham", "derby"]
+    nearbyLocations: ["leicester", "nottingham", "derby", "rugby", "kingsthorpe", "duston", "abington"]
   },
   {
     slug: "lincoln",
@@ -2550,7 +2550,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Lincoln can account for the Steep Hill and Cathedral Quarter access restrictions, the A46 bypass timing, and the best loading spots near the medieval streets. Student moves around the University of Lincoln at Brayford, family moves to North Hykeham and Bracebridge Heath, and rural runs towards Gainsborough and Sleaford are all standard work.",
     badge: "Verified Movers in Lincoln",
     areas: ["Cathedral Quarter", "Steep Hill", "Brayford", "Boultham", "North Hykeham", "Bracebridge Heath", "Waddington", "Skellingthorpe"],
-    nearbyLocations: ["nottingham", "derby", "leicester"]
+    nearbyLocations: ["nottingham", "derby", "leicester", "north-hykeham", "grantham", "boston", "spalding"]
   },
   // ──────────────────────────────────────────
   // EAST MIDLANDS — DERBYSHIRE TOWNS (11 new)
@@ -2569,7 +2569,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Chesterfield can account for the M1 junction 29 and 30 rush-hour patterns, the narrow streets around the Crooked Spire and market place, and the A61 corridor traffic. Family moves to Brimington, Hasland and Wingerworth are common, as are furniture collections from the retail parks along the A619 towards Dronfield.",
     badge: "Verified Movers in Chesterfield",
     areas: ["Town Centre", "Brimington", "Hasland", "Staveley", "Clay Cross", "Dronfield", "New Whittington", "Wingerworth"],
-    nearbyLocations: ["derby", "nottingham", "sheffield"]
+    nearbyLocations: ["derby", "nottingham", "sheffield", "matlock", "mansfield"]
   },
   {
     slug: "glossop",
@@ -2585,7 +2585,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Glossop understand the challenges of the narrow mill-town streets, the steep hillside roads in Whitfield and Simmondley, and the winter closures of the Snake Pass and Woodhead Pass. Moves between Glossop and Manchester are common, and the A57 gives a direct route when open.",
     badge: "Verified Movers in Glossop",
     areas: ["Glossop Town Centre", "Hadfield", "Padfield", "Simmondley", "Whitfield", "Dinting", "Charlesworth", "Gamesley"],
-    nearbyLocations: ["derby", "manchester", "sheffield"]
+    nearbyLocations: ["derby", "manchester", "sheffield", "hyde", "stalybridge"]
   },
   {
     slug: "ilkeston",
@@ -2601,7 +2601,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Ilkeston can account for the narrow terraced streets in the older mining communities, the M1 junction 25 access roads, and Bath Street traffic through the town centre. Family moves between Ilkeston and Derby, or Ilkeston and Nottingham, are regular runs.",
     badge: "Verified Movers in Ilkeston",
     areas: ["Town Centre", "Cotmanhay", "Kirk Hallam", "Little Hallam", "Stanley", "Awsworth", "Trowell", "Sandiacre"],
-    nearbyLocations: ["derby", "nottingham", "long-eaton"]
+    nearbyLocations: ["derby", "nottingham", "long-eaton", "heanor"]
   },
   {
     slug: "long-eaton",
@@ -2649,7 +2649,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Swadlincote can account for the A511 traffic towards Burton upon Trent, the narrow terraced streets in the older mining communities, and the varying access on new-build estates built on former clay pits. Moves between Swadlincote and Burton, or Swadlincote and Ashby, are regular work.",
     badge: "Verified Movers in Swadlincote",
     areas: ["Town Centre", "Church Gresley", "Midway", "Newhall", "Woodville", "Hartshorne", "Castle Gresley", "Albert Village"],
-    nearbyLocations: ["derby", "ashby-de-la-zouch"]
+    nearbyLocations: ["derby", "ashby-de-la-zouch", "burton-upon-trent"]
   },
   {
     slug: "buxton",
@@ -2681,7 +2681,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Ripley can account for the A38 junction 28 access roads, the A610 bypass traffic patterns, and the narrow streets in the older mining areas around Codnor and Waingroves. Family moves to Belper and Alfreton are common, as are runs down the A38 to Derby.",
     badge: "Verified Movers in Ripley",
     areas: ["Town Centre", "Codnor", "Heanor", "Waingroves", "Swanwick", "Pentrich", "Butterley", "Street Lane"],
-    nearbyLocations: ["derby", "belper", "heanor"]
+    nearbyLocations: ["derby", "belper", "heanor", "alfreton"]
   },
   {
     slug: "heanor",
@@ -2697,7 +2697,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Heanor understand the narrow terraced streets in Langley Mill and Loscoe, the A608 and A610 traffic patterns at rush hour, and the M1 junction 26 access roads. Moves between Heanor and Ilkeston, or Heanor and Derby, are regular runs.",
     badge: "Verified Movers in Heanor",
     areas: ["Town Centre", "Loscoe", "Langley Mill", "Marlpool", "Shipley", "Smalley", "Denby", "Cotmanhay"],
-    nearbyLocations: ["derby", "ilkeston", "nottingham"]
+    nearbyLocations: ["derby", "ilkeston", "nottingham", "ripley"]
   },
   {
     slug: "alfreton",
@@ -2751,7 +2751,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Loughborough understand the student move peaks in July and September, the M1 junction 23 rush-hour patterns, and the A6 through-traffic. Family moves to Quorn, Mountsorrel and Shepshed are common, as are student relocations around the Golden Triangle near the university campus.",
     badge: "Verified Movers in Loughborough",
     areas: ["Town Centre", "Golden Triangle", "Shepshed", "Quorn", "Mountsorrel", "Barrow upon Soar", "Nanpantan", "Woodhouse"],
-    nearbyLocations: ["leicester", "nottingham", "derby"]
+    nearbyLocations: ["leicester", "nottingham", "derby", "coalville"]
   },
   {
     slug: "coalville",
@@ -2831,7 +2831,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Ashby de la Zouch understand the A42 and A50 traffic patterns, the Saturday market day congestion, and the narrow streets near the castle and Market Street. Moves between Ashby and Coalville, Swadlincote or Burton upon Trent are regular runs.",
     badge: "Verified Movers in Ashby de la Zouch",
     areas: ["Town Centre", "Moira", "Donisthorpe", "Measham", "Packington", "Appleby Magna", "Normanton le Heath", "Oversetts"],
-    nearbyLocations: ["leicester", "swadlincote"]
+    nearbyLocations: ["leicester", "swadlincote", "coalville", "burton-upon-trent"]
   },
   {
     slug: "lutterworth",
@@ -2867,7 +2867,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Grantham understand the A1 junction access, the A52 and A607 traffic patterns, and the narrow streets in the town centre conservation area. Moves between Grantham and Nottingham via the A52, or Grantham and Lincoln via the A607, are regular runs.",
     badge: "Verified Movers in Grantham",
     areas: ["Town Centre", "Barrowby", "Great Gonerby", "Harlaxton", "Caythorpe", "Barkston", "Belton", "Manthorpe"],
-    nearbyLocations: ["nottingham", "lincoln", "melton-mowbray"]
+    nearbyLocations: ["nottingham", "lincoln", "melton-mowbray", "sleaford", "newark-on-trent"]
   },
   {
     slug: "boston",
@@ -2883,7 +2883,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Boston understand the A16 and A17 traffic patterns, the town centre one-way system near the Stump, and the fenland road conditions that can flood in winter. Moves between Boston and Lincoln, or Boston and Spalding along the A16, are standard runs.",
     badge: "Verified Movers in Boston",
     areas: ["Town Centre", "Wyberton", "Fishtoft", "Freiston", "Butterwick", "Benington", "Haven Village", "Skirbeck"],
-    nearbyLocations: ["lincoln", "spalding", "sleaford"]
+    nearbyLocations: ["lincoln", "spalding", "sleaford", "skegness"]
   },
   {
     slug: "spalding",
@@ -2915,7 +2915,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Stamford understand the conservation area restrictions, the narrow medieval street layout that limits van access, and the A1 bypass junctions. Moves to the surrounding limestone villages like Barnack and Ketton, or between Stamford and Peterborough, are standard work.",
     badge: "Verified Movers in Stamford",
     areas: ["Town Centre", "Barnack", "Easton on the Hill", "Wansford", "Uffington", "Bainton", "Ketton", "Tickencote"],
-    nearbyLocations: ["lincoln", "peterborough", "northampton"]
+    nearbyLocations: ["lincoln", "peterborough", "northampton", "oakham"]
   },
   {
     slug: "gainsborough",
@@ -2931,7 +2931,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Gainsborough understand the A631 Trent Bridge traffic patterns, the flood risk near the River Trent, and the narrow streets around the Old Hall and town centre. Moves between Gainsborough and Lincoln along the A156, or across the Trent to Doncaster, are regular work.",
     badge: "Verified Movers in Gainsborough",
     areas: ["Town Centre", "Morton", "Lea", "Beckingham", "Walkeringham", "Blyton", "Kexby", "Marton"],
-    nearbyLocations: ["lincoln", "doncaster"]
+    nearbyLocations: ["lincoln", "doncaster", "retford"]
   },
   {
     slug: "sleaford",
@@ -2999,7 +2999,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Kettering understand the A14 junction 7 and 8 traffic patterns, the A6 through-traffic, and the narrow streets in the older town centre areas. Moves between Kettering and Northampton along the A6, or Kettering and Corby, are common runs.",
     badge: "Verified Movers in Kettering",
     areas: ["Town Centre", "Rothwell", "Desborough", "Barton Seagrave", "Burton Latimer", "Isham", "Weekley", "Geddington"],
-    nearbyLocations: ["northampton", "corby", "wellingborough"]
+    nearbyLocations: ["northampton", "corby", "wellingborough", "rushden"]
   },
   {
     slug: "corby",
@@ -3015,7 +3015,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Corby understand the A43 link road traffic, the tenement-style access in the older areas, and the new-build estate road layouts that are still evolving. Moves between Corby and Kettering, or Corby and Peterborough, are regular runs.",
     badge: "Verified Movers in Corby",
     areas: ["Town Centre", "Weldon", "Gretton", "Rockingham", "East Carlton", "Great Oakley", "Stanion", "Cottingham"],
-    nearbyLocations: ["northampton", "kettering", "peterborough"]
+    nearbyLocations: ["northampton", "kettering", "peterborough", "market-harborough", "oakham"]
   },
   {
     slug: "wellingborough",
@@ -3031,7 +3031,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wellingborough understand the A45 and A509 traffic patterns, the narrow streets near the town centre and Swansgate Centre, and the different access conditions between older and newer estates. Moves between Wellingborough and Northampton, or Wellingborough and Kettering, are common.",
     badge: "Verified Movers in Wellingborough",
     areas: ["Town Centre", "Irthlingborough", "Finedon", "Earls Barton", "Wilby", "Great Doddington", "Wollaston", "Bozeat"],
-    nearbyLocations: ["northampton", "kettering"]
+    nearbyLocations: ["northampton", "kettering", "rushden"]
   },
   {
     slug: "rushden",
@@ -3083,7 +3083,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Mansfield understand the A60 and A617 traffic patterns, the narrow streets in the former mining areas, and the steep gradients in Forest Town. Moves between Mansfield and Nottingham along the A60, or Mansfield and Chesterfield via the A617, are regular runs.",
     badge: "Verified Movers in Mansfield",
     areas: ["Town Centre", "Forest Town", "Ladybrook", "Bellamy Road", "Pleasley Hill", "Shirebrook", "Warsop", "Rainworth"],
-    nearbyLocations: ["nottingham", "chesterfield", "sutton-in-ashfield"]
+    nearbyLocations: ["nottingham", "chesterfield", "sutton-in-ashfield", "alfreton", "worksop", "kirkby-in-ashfield"]
   },
   {
     slug: "newark-on-trent",
@@ -3115,7 +3115,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Worksop understand the A57 traffic towards Sheffield, the M1 junction 30 and 31 access, and the narrow streets in the mining-heritage areas. Moves between Worksop and Sheffield along the A57, or Worksop and Retford, are regular runs.",
     badge: "Verified Movers in Worksop",
     areas: ["Town Centre", "Shireoaks", "Whitwell", "Carlton in Lindrick", "Harworth", "Bircotes", "Hodsock", "Creswell"],
-    nearbyLocations: ["nottingham", "mansfield", "sheffield"]
+    nearbyLocations: ["nottingham", "mansfield", "sheffield", "retford"]
   },
   {
     slug: "sutton-in-ashfield",
@@ -3131,7 +3131,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Sutton in Ashfield understand the A38 traffic patterns, the narrow streets in the former mining areas, and the hilly terrain that can affect van access. Moves between Sutton and Mansfield, or Sutton and Nottingham via the A38 and M1, are common runs.",
     badge: "Verified Movers in Sutton in Ashfield",
     areas: ["Town Centre", "Kirkby in Ashfield", "Huthwaite", "Stanton Hill", "Teversal", "Annesley", "Selston", "Underwood"],
-    nearbyLocations: ["nottingham", "mansfield", "derby"]
+    nearbyLocations: ["nottingham", "mansfield", "derby", "kirkby-in-ashfield"]
   },
   {
     slug: "retford",
@@ -3222,7 +3222,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Warrington understand the M62 junction 9 and 10 congestion, the A49 Winwick Road traffic, and the Mersey Gateway tolls for cross-river moves. Birchwood and the eastern estates have good road access. Lymm and Stockton Heath to the south are desirable villages. Moves between Warrington and Manchester or Liverpool are common.",
     badge: "Verified Movers in Warrington",
     areas: ["Town Centre", "Lymm", "Culcheth", "Stockton Heath", "Great Sankey", "Penketh", "Birchwood", "Woolston"],
-    nearbyLocations: ["manchester", "liverpool", "wigan", "warrington"]
+    nearbyLocations: ["manchester", "liverpool", "wigan", "warrington", "st-helens", "widnes", "prescot"]
   },
   {
     slug: "sale",
@@ -3238,7 +3238,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Sale understand the M60 junction 6 congestion, the A56 through-traffic, and the parking restrictions near the Metrolink stations. Ashton upon Mersey has some narrow streets near the river. Brooklands and Sale Moor have better road access with more driveways.",
     badge: "Verified Movers in Sale",
     areas: ["Town Centre", "Brooklands", "Ashton upon Mersey", "Sale Moor", "Moorfield", "Woodheys", "Dane Road area", "Mersey Road area"],
-    nearbyLocations: ["manchester", "altrincham", "salford", "stockport"]
+    nearbyLocations: ["manchester", "altrincham", "salford", "stockport", "trafford", "timperley"]
   },
   {
     slug: "prestwich",
@@ -3254,7 +3254,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Prestwich understand the Bury New Road traffic, the M60 junction 17 congestion, and the narrow terraced streets near the village centre. Heaton Park area has wider roads and better access. The Metrolink stations bring parking restrictions to some streets.",
     badge: "Verified Movers in Prestwich",
     areas: ["Village Centre", "Sedgley Park", "Besses o' th' Barn", "Heaton Park", "Polefield", "Rainsough", "Simister", "Butterstile"],
-    nearbyLocations: ["manchester", "bury", "salford", "rochdale"]
+    nearbyLocations: ["manchester", "bury", "salford", "rochdale", "radcliffe", "whitefield"]
   },
   {
     slug: "middleton",
@@ -3334,7 +3334,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Failsworth understand the A62 Oldham Road traffic, the M60 junction 22 and 23 congestion, and the narrow terraced streets near the town centre. Daisy Nook Country Park to the south has rural access roads. Hollinwood has good connections to Oldham.",
     badge: "Verified Movers in Failsworth",
     areas: ["Town Centre", "Hollinwood", "Woodhouses", "Daisy Nook", "Newton Heath", "Moston", "Hollins", "Oldham Edge"],
-    nearbyLocations: ["manchester", "oldham", "rochdale", "ashton-under-lyne"]
+    nearbyLocations: ["manchester", "oldham", "rochdale", "ashton-under-lyne", "droylsden"]
   },
   {
     slug: "denton",
@@ -3497,7 +3497,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Belfast understand the city centre one-way system, the Holylands' narrow streets and parking restrictions near Queen's University, the Westlink congestion at rush hour, and the better access in South Belfast suburbs like Ballyhackamore and Ormeau.",
     badge: "Verified Movers in Belfast",
     areas: ["City Centre", "South Belfast", "East Belfast", "West Belfast", "Queens Quarter", "Titanic Quarter", "Botanic", "Ballyhackamore", "Ormeau", "Andersonstown"],
-    nearbyLocations: ["derry", "lisburn", "newry"]
+    nearbyLocations: ["derry", "lisburn", "newry", "carrickfergus", "coleraine", "omagh", "enniskillen"]
   },
   {
     slug: "derry",
@@ -3512,7 +3512,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Derry understand the walled city centre's access restrictions, the Foyle Bridge and Craigavon Bridge traffic patterns, and the suburban estates around Shantallow and Ballymagroarty. The A6 to Belfast and the A2 coastal route affect move timing.",
     badge: "Verified Movers in Derry",
     areas: ["City Centre", "Waterside", "Creggan", "Shantallow", "Ballymagroarty", "Foyle Bridge area", "Clooney", "Eglinton"],
-    nearbyLocations: ["belfast", "lisburn"]
+    nearbyLocations: ["belfast", "lisburn", "coleraine", "omagh"]
   },
   {
     slug: "lisburn",
@@ -3527,7 +3527,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Lisburn understand the M1 rush-hour congestion between Lisburn and Belfast, the A1 timing towards Newry and Dublin, and the rural access considerations around Hillsborough and Moira. Most Lisburn estates have good driveway access.",
     badge: "Verified Movers in Lisburn",
     areas: ["City Centre", "Hillsborough", "Moira", "Lambeg", "Knockmore", "Lisnasharragh", "Hilden", "Maze"],
-    nearbyLocations: ["belfast", "newry"]
+    nearbyLocations: ["belfast", "newry", "derry"]
   },
   {
     slug: "newry",
@@ -3542,7 +3542,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Newry understand the narrow streets near the canal basin, the A1 dual carriageway timing to Belfast and Dublin, and the rural access lanes around Crossmaglen and the Mournes. Newry's compact centre has limited loading zones.",
     badge: "Verified Movers in Newry",
     areas: ["City Centre", "Warrenpoint", "Crossmaglen", "Kilkeel", "Rostrevor", "Bessbrook", "Camlough", "Meigh"],
-    nearbyLocations: ["belfast", "lisburn"]
+    nearbyLocations: ["belfast", "lisburn", "armagh"]
   },
 
   // ─── NORTH EAST (11 cities — NEW) ───
@@ -3562,7 +3562,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Sunderland understand the tight terraced streets in Hendon, Millfield and Pallion, the A19 and A1(M) route timing towards Newcastle and Durham, the riverside developments with better access, and student moves around the University of Sunderland.",
     badge: "Verified Movers in Sunderland",
     areas: ["City Centre", "Roker", "Seaburn", "Hendon", "Millfield", "Ashbrooke", "Fulwell", "Barnes", "Thornhill", "Pallion"],
-    nearbyLocations: ["newcastle-upon-tyne", "middlesbrough", "gateshead"]
+    nearbyLocations: ["newcastle-upon-tyne", "middlesbrough", "gateshead", "durham", "hartlepool", "washington", "south-shields"]
   },
   {
     slug: "middlesbrough",
@@ -3580,7 +3580,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Middlesbrough understand the A19 interchange congestion, the narrow terraces near the town centre, the Tees crossings at rush hour, and the suburban access in Linthorpe and Marton. Student moves near Teesside University peak in June and September.",
     badge: "Verified Movers in Middlesbrough",
     areas: ["City Centre", "Linthorpe", "Acklam", "Marton", "Nunthorpe", "Billingham", "Stockton", "Redcar", "Guisborough"],
-    nearbyLocations: ["sunderland", "newcastle-upon-tyne", "darlington"]
+    nearbyLocations: ["sunderland", "newcastle-upon-tyne", "darlington", "whitby", "hartlepool", "stockton-on-tees"]
   },
   {
     slug: "gateshead",
@@ -3596,7 +3596,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Gateshead understand the Tyne Bridge and Swing Bridge rush-hour delays, the narrow terraces in Bensham and Deckham, the Team Valley industrial routes, and the suburban access in Low Fell and Whickham.",
     badge: "Verified Movers in Gateshead",
     areas: ["Town Centre", "Low Fell", "Gateshead Quays", "Bensham", "Saltwell", "Deckham", "Dunston", "Whickham", "Blaydon", "Rowlands Gill"],
-    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "durham"]
+    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "durham", "washington", "south-shields", "jarrow", "gosforth"]
   },
   {
     slug: "darlington",
@@ -3611,7 +3611,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Darlington understand the A1(M) junction 57 and 58 congestion, the narrow streets in the conservation area near the town centre, and the suburban estates with better driveway access. The A66 links to Middlesbrough and the A1(M) connects to Newcastle and Leeds.",
     badge: "Verified Movers in Darlington",
     areas: ["Town Centre", "Northgate", "Haughton", "Faverdale", "Brinkburn", "Cockerton", "Hurstworth", "Sadberge"],
-    nearbyLocations: ["middlesbrough", "newcastle-upon-tyne", "durham"]
+    nearbyLocations: ["middlesbrough", "newcastle-upon-tyne", "durham", "hartlepool", "ripon", "northallerton", "stockton-on-tees"]
   },
   {
     slug: "durham",
@@ -3628,7 +3628,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Durham understand the peninsular road restrictions, the narrow cobbled streets near the cathedral, student move peaks in June and September around the Viaduct area, and the A1(M) and A167 route timing.",
     badge: "Verified Movers in Durham",
     areas: ["City Centre", "Gilesgate", "Framwellgate Moor", "Nevilles Cross", "Claypath", "Belmont", "Aykley Heads", "Dragonville"],
-    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "darlington"]
+    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "darlington", "gateshead", "washington", "stockton-on-tees", "whickham"]
   },
   {
     slug: "hartlepool",
@@ -3673,7 +3673,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering South Shields handle moves in the Victorian terraces around the town centre and market area, where streets are narrow and parking is limited. They understand the A19 Tyne Tunnel queues, the seafront traffic in summer, and the suburban areas of Cleadon and Whitburn with better access.",
     badge: "South Shields Movers",
     areas: ["Town Centre", "Marsden", "Whitburn", "Cleadon", "Hebburn", "Jarrow"],
-    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "jarrow", "gateshead"]
+    nearbyLocations: ["newcastle-upon-tyne", "sunderland", "jarrow", "gateshead", "north-shields"]
   },
   {
     slug: "north-shields",
@@ -3688,7 +3688,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering North Shields handle moves in the narrow streets around the Fish Quay, the period properties in Tynemouth conservation area, and the suburban housing towards Whitley Bay. They understand the A193 access, the A1058 coastal road, and the Tyne Tunnel approach. Tynemouth Front Street has parking restrictions on market days.",
     badge: "North Shields Movers",
     areas: ["Tynemouth", "Whitley Bay", "Wallsend", "Percy Main", "Fish Quay", "Chirton"],
-    nearbyLocations: ["newcastle-upon-tyne", "south-shields", "whitley-bay", "wallsend"]
+    nearbyLocations: ["newcastle-upon-tyne", "south-shields", "whitley-bay", "wallsend", "gosforth"]
   },
   {
     slug: "jarrow",
@@ -3736,7 +3736,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Doncaster understand the M18/A1(M) interchange congestion, the narrow streets near the town centre, and the suburban estates with better access in Bessacarr and Edenthorpe. The M180 links east to Scunthorpe and the Humber ports.",
     badge: "Verified Movers in Doncaster",
     areas: ["Town Centre", "Bessacarr", "Wheatley", "Cantley", "Edenthorpe", "Armthorpe", "Hatfield", "Rossington", "Sprotbrough", "Finningley"],
-    nearbyLocations: ["sheffield", "rotherham", "barnsley"]
+    nearbyLocations: ["sheffield", "rotherham", "barnsley", "selby", "gainsborough", "mexborough", "wath-upon-dearne"]
   },
   {
     slug: "rotherham",
@@ -3751,7 +3751,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Rotherham understand the M1 junction 33 congestion, the narrow terraces near the town centre, and the suburban access in Wickersley and Bramley. Rotherham is 15 minutes from Sheffield via the A630.",
     badge: "Verified Movers in Rotherham",
     areas: ["Town Centre", "Wickersley", "Bramley", "Maltby", "Rawmarsh", "Wath-upon-Dearne", "Swinton", "Aston", "Thurcroft", "Kimberworth"],
-    nearbyLocations: ["sheffield", "doncaster", "barnsley"]
+    nearbyLocations: ["sheffield", "doncaster", "barnsley", "mexborough", "chapeltown", "wath-upon-dearne"]
   },
   {
     slug: "barnsley",
@@ -3766,7 +3766,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Barnsley understand the M1 junction 36 and 37 congestion, the narrow stone terraces near the town centre, and the Pennine hill routes towards Penistone. The A635 and A633 connect Barnsley to Sheffield, Rotherham and Wakefield.",
     badge: "Verified Movers in Barnsley",
     areas: ["Town Centre", "Dodworth", "Penistone", "Hoyland", "Wombwell", "Royston", "Cudworth", "Monk Bretton", "Goldthorpe", "Thurnscoe"],
-    nearbyLocations: ["sheffield", "rotherham", "doncaster", "wakefield"]
+    nearbyLocations: ["sheffield", "rotherham", "doncaster", "wakefield", "huddersfield", "mexborough", "chapeltown", "penistone"]
   },
   {
     slug: "mexborough",
@@ -3801,7 +3801,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Brighton understand the narrow Regency and Victorian terraces with no off-street parking, the controlled parking zones, the A27 and A23 rush-hour congestion, and student moves around the University of Sussex at Falmer and the University of Brighton.",
     badge: "Verified Movers in Brighton",
     areas: ["City Centre", "Kemptown", "Hove", "Preston Park", "Hanover", "Seven Dials", "Fiveways", "Queens Park", "Moulsecoomb", "Portslade"],
-    nearbyLocations: ["crawley", "horsham", "maidstone"]
+    nearbyLocations: ["crawley", "horsham", "maidstone", "medway", "eastbourne", "hove", "burgess-hill"]
   },
   {
     slug: "milton-keynes",
@@ -3817,7 +3817,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Milton Keynes understand the grid road system which requires local knowledge, the M1 junction 13 and 14 congestion, and the new-build estates with driveways and wider roads. Bletchley and Stony Stratford have older properties with different access.",
     badge: "Verified Movers in Milton Keynes",
     areas: ["City Centre", "Stony Stratford", "Wolverton", "Bletchley", "Newport Pagnell", "Olney", "Shenley Church End", "Great Linford", "Campbell Park", "Loughton"],
-    nearbyLocations: ["luton", "northampton"]
+    nearbyLocations: ["luton", "northampton", "peterborough", "bedford", "leighton-buzzard", "bletchley"]
   },
   {
     slug: "luton",
@@ -3835,7 +3835,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Luton understand the M1 junction 10 and 11 congestion, the narrow terraces in Biscot and High Town, the airport-area traffic, and student moves around the University of Bedfordshire.",
     badge: "Verified Movers in Luton",
     areas: ["Town Centre", "Biscot", "High Town", "Barton Hills", "Leagrave", "Limbury", "Stockwood Park", "Caddington", "Bramingham", "Sundon Park"],
-    nearbyLocations: ["milton-keynes", "northampton"]
+    nearbyLocations: ["milton-keynes", "northampton", "hemel-hempstead", "bedford", "dunstable", "hitchin"]
   },
   {
     slug: "bournemouth",
@@ -3853,7 +3853,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bournemouth understand the A338 Spur Road congestion, the narrow Victorian streets near Westbourne, the coastal road parking restrictions, and student moves around Bournemouth University in Winton and Talbot Woods.",
     badge: "Verified Movers in Bournemouth",
     areas: ["Town Centre", "Westbourne", "Boscombe", "Southbourne", "Winton", "Charminster", "Kinson", "Poole", "Christchurch", "Talbot Woods"],
-    nearbyLocations: ["southampton", "exeter"]
+    nearbyLocations: ["southampton", "exeter", "poole", "dorchester", "weymouth"]
   },
   {
     slug: "slough",
@@ -3869,7 +3869,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Slough understand the M4 junction 5 and 6 congestion, the M25 interchange delays, the Slough Trading Estate area traffic, and the narrow terraces near the High Street.",
     badge: "Verified Movers in Slough",
     areas: ["Town Centre", "Cippenham", "Langley", "Britwell", "Wexham", "Chalvey", "Upton", "Iver", "Colnbrook", "Datchet"],
-    nearbyLocations: ["reading", "windsor", "maidenhead"]
+    nearbyLocations: ["reading", "windsor", "maidenhead", "beaconsfield"]
   },
   {
     slug: "medway",
@@ -3903,7 +3903,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Crawley understand the M23 junction 9-11 congestion, Gatwick Airport area traffic, the new-town neighbourhood layouts with wider roads, and Manor Royal industrial area access.",
     badge: "Verified Movers in Crawley",
     areas: ["Town Centre", "Three Bridges", "Ifield", "Pound Hill", "Tilgate", "Broadfield", "Bewbush", "Gossops Green", "Southgate", "West Green"],
-    nearbyLocations: ["brighton", "horsham", "maidstone"]
+    nearbyLocations: ["brighton", "horsham", "maidstone", "medway", "guildford", "tonbridge", "burgess-hill"]
   },
   {
     slug: "maidstone",
@@ -3919,7 +3919,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Maidstone understand the M20 junction 5-7 congestion, the narrow streets near the town centre, and the rural lanes around Loose, Marden and Headcorn. The A229 connects to the M2 and Medway.",
     badge: "Verified Movers in Maidstone",
     areas: ["Town Centre", "Bearsted", "Loose", "Detling", "Marden", "Yalding", "Headcorn", "Birling", "Parkwood", "Shepway"],
-    nearbyLocations: ["medway", "crawley", "brighton"]
+    nearbyLocations: ["medway", "crawley", "brighton", "tonbridge", "tunbridge-wells", "ashford", "canterbury"]
   },
   {
     slug: "horsham",
@@ -3934,7 +3934,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Horsham understand the A24 rush-hour congestion, the narrow streets in the car-free town centre, and the rural lanes around Southwater, Billingshurst and Steyning.",
     badge: "Verified Movers in Horsham",
     areas: ["Town Centre", "Broadbridge Heath", "Southwater", "Billingshurst", "Henfield", "Steyning", "Pulborough", "Warnham", "Rusper"],
-    nearbyLocations: ["crawley", "brighton"]
+    nearbyLocations: ["crawley", "brighton", "burgess-hill", "worthing", "chichester", "dorking"]
   },
   {
     slug: "guildford",
@@ -3949,7 +3949,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Guildford handle moves in Georgian and Victorian properties near the High Street with parking restrictions. They understand the A3 Hog's Back queue, the level crossing delays at London Road station, and the suburban areas of Burpham and Merrow with better access.",
     badge: "Guildford Movers",
     areas: ["Town Centre", "Onslow Village", "Stoughton", "Merrow", "Shalford", "Wonersh", "Godalming", "Burpham"],
-    nearbyLocations: ["woking", "farnham", "aldershot", "reading", "crawley"]
+    nearbyLocations: ["woking", "farnham", "aldershot", "reading", "crawley", "farnborough", "reigate"]
   },
   {
     slug: "woking",
@@ -3964,7 +3964,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Woking handle moves in the town centre apartments near the station and the suburban areas of Horsell, Knaphill and Goldsworth Park. They understand the M3 junction 3 and 4 queues, the A320 rush-hour, and the best routes to Guildford and London.",
     badge: "Woking Movers",
     areas: ["Town Centre", "Horsell", "Knaphill", "Maybury", "Goldsworth Park", "St Johns"],
-    nearbyLocations: ["guildford", "aldershot", "farnborough", "staines", "walton-on-thames"]
+    nearbyLocations: ["guildford", "aldershot", "farnborough", "staines", "walton-on-thames", "leatherhead"]
   },
   {
     slug: "watford",
@@ -3979,7 +3979,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Watford handle moves in the conservation area of Cassiobury with parking restrictions, the Victorian terraces near the High Street, and the newer estates around Garston and Leavesden. They understand the M1 junction 5 queues and the M25 mayhem.",
     badge: "Watford Movers",
     areas: ["Town Centre", "Cassiobury", "Nascot Wood", "Oxhey", "Garston", "Leavesden", "Bushey"],
-    nearbyLocations: ["st-albans", "hemel-hempstead", "rickmansworth", "harrow", "borehamwood"]
+    nearbyLocations: ["st-albans", "hemel-hempstead", "rickmansworth", "harrow", "borehamwood", "barnet", "stevenage"]
   },
   {
     slug: "high-wycombe",
@@ -3994,7 +3994,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering High Wycombe handle moves in the town centre apartments and terraces with parking restrictions, and the suburban areas of Terriers and Downley with better access. They understand the M40 junction 3 and 4 queues and the A40 rush-hour.",
     badge: "High Wycombe Movers",
     areas: ["Town Centre", "Terriers", "Booker", "Downley", "Hazlemere", "Loudwater"],
-    nearbyLocations: ["marlow", "beaconsfield", "amersham", "reading", "oxford"]
+    nearbyLocations: ["marlow", "beaconsfield", "amersham", "reading", "oxford", "maidenhead", "aylesbury"]
   },
   {
     slug: "hemel-hempstead",
@@ -4024,7 +4024,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Stevenage handle moves in the Old Town with its older properties and narrow streets, and the newer estates with generally good access. They understand the A1(M) junction 7 and 8 queues and the pedestrianised town centre.",
     badge: "Stevenage Movers",
     areas: ["Old Town", "Broadwater", "Shephall", "St Nicholas", "Pin Green", "Chells", "Great Ashby"],
-    nearbyLocations: ["hitchin", "letchworth", "st-albans", "watford", "cambridge"]
+    nearbyLocations: ["hitchin", "letchworth", "st-albans", "watford", "cambridge", "harlow", "hertford", "welwyn-garden-city"]
   },
   {
     slug: "st-albans",
@@ -4039,7 +4039,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering St Albans handle moves in Victorian and Georgian properties near the Cathedral with parking restrictions and conservation rules. They understand the M1 and M25 congestion and the suburban areas of Marshalswick and Sandridge with better access.",
     badge: "St Albans Movers",
     areas: ["City Centre", "Marshalswick", "Sandridge", "Cunningham", "Sopwell", "Park Street"],
-    nearbyLocations: ["watford", "hemel-hempstead", "hatfield", "harpenden", "london"]
+    nearbyLocations: ["watford", "hemel-hempstead", "hatfield", "harpenden", "london", "stevenage", "hertford"]
   },
   {
     slug: "eastbourne",
@@ -4084,7 +4084,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Chatham handle moves in the dockyard apartment conversions, the Victorian terraces near the town centre, and the suburban areas of Luton and Walderslade. They understand the M2 and A2 access and the fact that Rochester, Gillingham and Strood are effectively next door.",
     badge: "Chatham Movers",
     areas: ["Town Centre", "Luton", "Walderslade", "Rochester", "Strood", "Gillingham"],
-    nearbyLocations: ["gillingham", "rochester", "maidenhead", "tonbridge"]
+    nearbyLocations: ["gillingham", "rochester", "maidenhead", "tonbridge", "gravesend", "dartford"]
   },
   {
     slug: "maidenhead",
@@ -4099,7 +4099,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Maidenhead handle moves in Georgian and Victorian properties near the river, the modern apartments around the Crossrail station, and the village properties in Cookham and Bray. They understand the M4 junction 6 queues and the proximity to Windsor and Slough.",
     badge: "Maidenhead Movers",
     areas: ["Town Centre", "Bray", "Pinkneys Green", "Cookham", "Holyport", "Taplow"],
-    nearbyLocations: ["windsor", "slough", "reading", "high-wycombe", "bracknell"]
+    nearbyLocations: ["windsor", "slough", "reading", "high-wycombe", "bracknell", "chatham", "caversham"]
   },
   {
     slug: "bracknell",
@@ -4129,7 +4129,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Aylesbury handle moves in the Georgian streets near the town centre, the post-war estates, and the newer developments at Fairford Leys and Walton Court. They understand the A41 congestion and the best routes to the M40.",
     badge: "Aylesbury Movers",
     areas: ["Town Centre", "Walton Court", "Bedgrove", "Fairford Leys", "Stone", "Wendover"],
-    nearbyLocations: ["high-wycombe", "oxford", "bicester", "leighton-buzzard", "tring"]
+    nearbyLocations: ["high-wycombe", "oxford", "bicester", "leighton-buzzard", "tring", "dunstable", "amersham"]
   },
   {
     slug: "tonbridge",
@@ -4144,7 +4144,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Tonbridge handle moves in Georgian and Victorian properties near the castle, the suburban estates, and surrounding villages like Leigh and Pembury. They understand the A21 congestion and the proximity to Tunbridge Wells, just 4 miles away.",
     badge: "Tonbridge Movers",
     areas: ["Town Centre", "Vauxhall", "Higham", "Leigh", "Haysden", "Pembury"],
-    nearbyLocations: ["tunbridge-wells", "sevenoaks", "maidstone", "crawley"]
+    nearbyLocations: ["tunbridge-wells", "sevenoaks", "maidstone", "crawley", "chatham"]
   },
   {
     slug: "tunbridge-wells",
@@ -4238,7 +4238,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Peterborough understand the A1(M) junction 17 congestion, the narrow terraces near the cathedral area, the new-build estates in Hampton with wider roads and driveways, and the A47 link to Leicester and Norwich.",
     badge: "Verified Movers in Peterborough",
     areas: ["City Centre", "Hampton", "Werrington", "Fletton", "Woodston", "Orton", "Bretton", "Paston", "Dogsthorpe", "Newborough"],
-    nearbyLocations: ["cambridge", "milton-keynes", "norwich"]
+    nearbyLocations: ["cambridge", "milton-keynes", "norwich", "spalding", "stamford", "corby", "kings-lynn"]
   },
   {
     slug: "norwich",
@@ -4256,7 +4256,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Norwich understand the medieval city centre access restrictions, the Golden Triangle and Eaton parking, the A47 southern bypass congestion, and student moves around the University of East Anglia.",
     badge: "Verified Movers in Norwich",
     areas: ["City Centre", "Eaton", "Cringleford", "Thorpe St Andrew", "Sprowston", "Hellesdon", "Costessey", "Taverham", "Lakenham", "Bowthorpe"],
-    nearbyLocations: ["ipswich", "colchester", "cambridge"]
+    nearbyLocations: ["ipswich", "colchester", "cambridge", "peterborough", "great-yarmouth", "kings-lynn", "lowestoft"]
   },
   {
     slug: "ipswich",
@@ -4274,7 +4274,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Ipswich understand the A14 and A12 rush-hour congestion, the narrow streets near the Waterfront and town centre, and the suburban estates with better driveway access. Felixstowe port traffic affects the A14.",
     badge: "Verified Movers in Ipswich",
     areas: ["Town Centre", "Felixstowe", "Woodbridge", "Kesgrave", "Rushmere St Andrew", "Claydon", "Pinewood", "Chantry", "Bramford", "Westerfield"],
-    nearbyLocations: ["norwich", "colchester", "cambridge"]
+    nearbyLocations: ["norwich", "colchester", "cambridge", "felixstowe", "diss", "woodbridge"]
   },
   {
     slug: "colchester",
@@ -4292,7 +4292,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Colchester understand the narrow Roman town centre streets, the A12 rush-hour congestion, the university area at Wivenhoe with student move peaks, and the garrison town traffic. The A120 connects to Stansted Airport.",
     badge: "Verified Movers in Colchester",
     areas: ["Town Centre", "Lexden", "Prettygate", "Stanway", "Greenstead", "Highwoods", "Tiptree", "Wivenhoe", "Layer-de-la-Haye", "Marks Tey"],
-    nearbyLocations: ["ipswich", "chelmsford", "norwich"]
+    nearbyLocations: ["ipswich", "chelmsford", "norwich", "clacton-on-sea", "diss", "woodbridge", "maldon"]
   },
   {
     slug: "basildon",
@@ -4323,7 +4323,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Bedford handle moves in Georgian townhouses near the river with some parking restrictions, the Victorian terraces near the town centre, and the newer estates at Great Denham. They understand the A6 through-traffic and the A421 link to the M1.",
     badge: "Bedford Movers",
     areas: ["Town Centre", "Kempston", "Bromham", "Great Denham", "Clapham", "Renhold", "Elstow"],
-    nearbyLocations: ["milton-keynes", "luton", "northampton", "cambridge"]
+    nearbyLocations: ["milton-keynes", "luton", "northampton", "cambridge", "bletchley"]
   },
   {
     slug: "chelmsford",
@@ -4341,7 +4341,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Chelmsford handle moves in city centre apartments and period properties near the cathedral. They understand the A12 rush-hour, the A414 corridor, and the suburban areas of Great Baddow and Writtle with better access.",
     badge: "Chelmsford Movers",
     areas: ["Town Centre", "Springfield", "Great Baddow", "Writtle", "Galleywood", "Danbury"],
-    nearbyLocations: ["southend-on-sea", "basildon", "brentwood", "colchester"]
+    nearbyLocations: ["southend-on-sea", "basildon", "brentwood", "colchester", "harlow", "clacton-on-sea", "maldon"]
   },
   {
     slug: "southend-on-sea",
@@ -4371,7 +4371,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Harlow handle moves in the new-town estates with generally good road access, the older properties in Old Harlow, and the new developments at Church Langley and Newhall. They understand the M11 junction 7 queues.",
     badge: "Harlow Movers",
     areas: ["Town Centre", "Old Harlow", "Church Langley", "Potter Street", "Newhall", "Sumners"],
-    nearbyLocations: ["bishops-stortford", "epping", "stevenage", "chelmsford"]
+    nearbyLocations: ["bishops-stortford", "epping", "stevenage", "chelmsford", "brentwood"]
   },
   {
     slug: "great-yarmouth",
@@ -4401,7 +4401,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering King's Lynn handle moves in the Georgian streets of the old town with some parking restrictions, the suburban estates, and the surrounding villages. They understand the A47 and A10 corridor traffic.",
     badge: "King's Lynn Movers",
     areas: ["Town Centre", "South Lynn", "North Lynn", "Gaywood", "Gayton", "Hunstanton"],
-    nearbyLocations: ["norwich", "peterborough", "wisbech"]
+    nearbyLocations: ["norwich", "peterborough", "wisbech", "thetford"]
   },
   {
     slug: "lowestoft",
@@ -4461,7 +4461,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Brentwood handle moves in period properties near the High Street and the suburban areas of Hutton and Warley with better access. They understand the M25 junction 28 queues and the A12 rush-hour.",
     badge: "Brentwood Movers",
     areas: ["Town Centre", "Shenfield", "Hutton", "Warley", "Ingatestone"],
-    nearbyLocations: ["chelmsford", "romford", "billericay", "harlow"]
+    nearbyLocations: ["chelmsford", "romford", "billericay", "harlow", "maldon"]
   },
   {
     slug: "dunstable",
@@ -4491,7 +4491,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Leighton Buzzard handle moves in period properties near the High Street, the residential areas of Linslade, and the villages of Heath and Reach. They understand the A5 through-traffic and level crossing delays.",
     badge: "Leighton Buzzard Movers",
     areas: ["Town Centre", "Linslade", "Heath and Reach", "Eggington", "Stanbridge"],
-    nearbyLocations: ["milton-keynes", "aylesbury", "dunstable"]
+    nearbyLocations: ["milton-keynes", "aylesbury", "dunstable", "bletchley"]
   },
   {
     slug: "ely",
@@ -4556,7 +4556,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Exeter understand the M5 junction 29 and 30 congestion, the narrow streets near the cathedral and quay, student move peaks around the University of Exeter, and the suburban estates with better driveway access.",
     badge: "Verified Movers in Exeter",
     areas: ["City Centre", "St Leonards", "Heavitree", "Pinhoe", "Alphington", "Topsham", "Cranbrook", "Countess Wear", "Whipton", "St Thomas"],
-    nearbyLocations: ["plymouth", "taunton", "torquay"]
+    nearbyLocations: ["plymouth", "taunton", "torquay", "yeovil", "bournemouth", "truro", "paignton", "barnstaple"]
   },
   {
     slug: "torquay",
@@ -4571,7 +4571,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Torbay understand the A380 congestion, the steep hills in Torquay that affect loading, the seafront parking restrictions, and the seasonal tourist traffic. Paignton and Brixham generally offer easier access than Torquay's hillside properties.",
     badge: "Verified Movers in Torbay",
     areas: ["Torquay", "Paignton", "Brixham", "Chelston", "Ellacombe", "St Marychurch", "Cockington", "Galmpton", "Maidenhall", "Goodrington"],
-    nearbyLocations: ["exeter", "plymouth", "taunton"]
+    nearbyLocations: ["exeter", "plymouth", "taunton", "paignton", "brixham", "teignmouth", "devonport"]
   },
   {
     slug: "truro",
@@ -4586,7 +4586,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Truro understand the narrow city centre streets with limited loading, the A30 and A39 route timing, and the rural lanes around Kenwyn, Malpas and Probus. Summer tourist traffic can significantly affect route times.",
     badge: "Verified Movers in Truro",
     areas: ["City Centre", "Newham", "Tregolls", "Highertown", "Kenwyn", "Malpas", "Shortlandsend", "Probus", "St Clement", "Feock"],
-    nearbyLocations: ["exeter", "plymouth"]
+    nearbyLocations: ["exeter", "plymouth", "newquay", "falmouth"]
   },
   {
     slug: "paignton",
@@ -4681,7 +4681,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Newport understand the M4 junction 24-28 congestion, the narrow terraces near the city centre, and the modern estates with better access in Caerleon and Rogerstone. The A449 connects to the Midlands.",
     badge: "Verified Movers in Newport",
     areas: ["City Centre", "Caerleon", "Bettws", "Maindee", "Baneswell", "Somerton", "Gaer", "Rogerstone", "Pillgwenlly", "Duffryn"],
-    nearbyLocations: ["cardiff", "swansea", "bristol"]
+    nearbyLocations: ["cardiff", "swansea", "bristol", "caerphilly"]
   },
   {
     slug: "wrexham",
@@ -4697,7 +4697,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wrexham understand the A483 bypass congestion, the narrow streets near the town centre, and the border-area routes to Chester, Shrewsbury and the M54. The M53 connects to Liverpool in roughly 45 minutes.",
     badge: "Verified Movers in Wrexham",
     areas: ["Town Centre", "Gresford", "Rhosddu", "Broughton", "Ruabon", "Chirk", "Coedpoeth", "Bangor-on-Dee", "Hightown", "Acton"],
-    nearbyLocations: ["chester", "shrewsbury", "liverpool"]
+    nearbyLocations: ["chester", "shrewsbury", "liverpool", "bangor"]
   },
   {
     slug: "bangor",
@@ -4714,7 +4714,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Bangor understand the steep hills in the city centre, the A55 expressway congestion, the Menai Bridge traffic to Anglesey, and student moves around Bangor University in Hirael and Upper Bangor.",
     badge: "Verified Movers in Bangor",
     areas: ["City Centre", "Hirael", "Garth", "Port Penrhyn", "Tregarth", "Bethel", "Llanberis", "Menai Bridge", "Beaumaris", "Caernarfon"],
-    nearbyLocations: ["wrexham", "llandudno", "caernarfon"]
+    nearbyLocations: ["wrexham", "llandudno", "caernarfon", "porthmadog", "menai-bridge"]
   },
   {
     slug: "aberystwyth",
@@ -4748,7 +4748,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Inverness understand the A9 single-carriageway delays, the Kessock Bridge rush-hour congestion, the compact city centre with limited loading, and the rural Highland access where single-track roads are common.",
     badge: "Verified Movers in Inverness",
     areas: ["City Centre", "Culloden", "Dingwall", "Nairn", "Beauly", "Drumnadrochit", "Fortrose", "Aviemore", "Munlochy", "Alness"],
-    nearbyLocations: ["aberdeen", "perth", "stirling"]
+    nearbyLocations: ["aberdeen", "perth", "stirling", "elgin"]
   },
   {
     slug: "stirling",
@@ -4765,7 +4765,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Stirling understand the narrow streets in the old town near the castle, the M9 junction 9-11 congestion, the A9 delays heading north, and student moves around the University of Stirling in Bridge of Allan.",
     badge: "Verified Movers in Stirling",
     areas: ["City Centre", "Bridge of Allan", "Dunblane", "Bannockburn", "Causewayhead", "Raploch", "St Ninians", "Fallin", "Cambusbarron", "Throsk"],
-    nearbyLocations: ["edinburgh", "glasgow", "perth"]
+    nearbyLocations: ["edinburgh", "glasgow", "perth", "inverness", "livingston", "falkirk", "dunfermline"]
   },
   {
     slug: "perth",
@@ -4780,7 +4780,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Perth understand the A9 dual-carriageway sections, the M90 junction 11 congestion, the narrow streets near the city centre, and the rural Perthshire lanes around Crieff and Auchterarder.",
     badge: "Verified Movers in Perth",
     areas: ["City Centre", "Scone", "Crieff", "Auchterarder", "Blairgowrie", "Coupar Angus", "Bridge of Earn", "Stanley", "Luncarty", "Muirton"],
-    nearbyLocations: ["edinburgh", "dundee", "stirling", "inverness"]
+    nearbyLocations: ["edinburgh", "dundee", "stirling", "inverness", "dunfermline", "st-andrews"]
   },
   {
     slug: "paisley",
@@ -4811,7 +4811,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving East Kilbride understand the A725 rush-hour congestion towards Glasgow, the new-town roundabout network, and the suburban estates with driveways and wider roads.",
     badge: "Verified Movers in East Kilbride",
     areas: ["Town Centre", "The Village", "Greenhills", "Stewartfield", "West Mains", "Calderwood", "Mossneuk", "Hairmyres", "Murray", "Whitehills"],
-    nearbyLocations: ["glasgow", "paisley", "hamilton"]
+    nearbyLocations: ["glasgow", "paisley", "hamilton", "kilmarnock"]
   },
   {
     slug: "livingston",
@@ -4843,7 +4843,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Falkirk understand the M9 junction 5-8 congestion, the Grangemouth refinery and port traffic, the narrow streets near the High Street, and the suburban estates with better access in Larbert and Denny.",
     badge: "Verified Movers in Falkirk",
     areas: ["Town Centre", "Grangemouth", "Larbert", "Denny", "Bonnybridge", "Polmont", "Camelon", "Bainsford", "Brightons", "Reddingmuirhead"],
-    nearbyLocations: ["stirling", "edinburgh", "glasgow"]
+    nearbyLocations: ["stirling", "edinburgh", "glasgow", "cumbernauld"]
   },
 
   // ─── Phase 11+12+13: Scotland (12) + Wales (8) + Northern Ireland (6) ───
@@ -4871,7 +4871,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A92", "A910", "A915"],
     propertyTypes: ["sandstone tenements", "post-war semis", "modern estates"],
     movingConsiderations: ["A92 congestion", "narrow streets in the old town", "one-way systems"],
-    intro: "Kirkcaldy is Fife's second largest town on the Firth of Forth. The A92 connects to Edinburgh and Dundee.",
+    intro: "Kirkcaldy is Fife's second largest town on the Firth of Forth. The A92 connects to Edinburgh and Dundee. Local moves cluster around Town Centre and Dysart, and the A92 keeps Kirkcaldy linked to nearby towns.",
     knowledge: "Approved movers covering Kirkcaldy handle moves in the old town tenements and the suburban estates. They understand the A92 traffic.",
     badge: "Kirkcaldy Movers",
     areas: ["Town Centre", "Dysart", "Pathhead", "Linktown", "Templehall", "Sinclairtown"],
@@ -4886,11 +4886,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M74", "A72", "A723"],
     propertyTypes: ["sandstone tenements", "post-war estates", "modern developments"],
     movingConsiderations: ["M74 junction 5-6 congestion", "A72 through-town traffic", "town centre one-way system"],
-    intro: "Hamilton is South Lanarkshire's main town with the M74 giving fast access to Glasgow.",
+    intro: "Hamilton is South Lanarkshire's main town with the M74 giving fast access to Glasgow. Most moves here run via the M74, with steady demand from Town Centre and Burnbank.",
     knowledge: "Approved movers covering Hamilton handle moves in the town centre and suburban estates. They understand the M74 junction queues.",
     badge: "Hamilton Movers",
     areas: ["Town Centre", "Burnbank", "Hillhouse", "Whitehill", "Fairhill", "Earnock"],
-    nearbyLocations: ["glasgow", "east-kilbride", "motherwell", "wishaw"]
+    nearbyLocations: ["glasgow", "east-kilbride", "motherwell", "wishaw", "kilmarnock"]
   },
   {
     slug: "ayr",
@@ -4901,7 +4901,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A77", "A79", "A719"],
     propertyTypes: ["sandstone tenements", "Victorian villas", "post-war semis"],
     movingConsiderations: ["A77 congestion", "seafront parking in summer", "narrow streets near the High Street"],
-    intro: "Ayr is a seaside town on the Ayrshire coast, famous for its racecourse and Robert Burns. The A77 connects to Glasgow.",
+    intro: "Ayr is a seaside town on the Ayrshire coast, famous for its racecourse and Robert Burns. The A77 connects to Glasgow. The A77 is the main route for moves between Town Centre, Seafront and the rest of South Ayrshire.",
     knowledge: "Approved movers covering Ayr handle moves in seafront villas, town centre tenements, and suburban estates. They understand the A77 traffic.",
     badge: "Ayr Movers",
     areas: ["Town Centre", "Seafront", "Prestwick", "Alloway", "Forehill", "Heathfield"],
@@ -4917,7 +4917,7 @@ export const LOCATIONS: LocationData[] = [
     propertyTypes: ["new-town estates", "post-war housing", "modern developments"],
     movingConsiderations: ["M80 junction 4 congestion", "new-town road layout", "A73 through-traffic"],
     intro: "Cumbernauld is a New Town between Glasgow and Falkirk with the M80 alongside. The new-town estates have good road access.",
-    knowledge: "Approved movers covering Cumbernauld handle moves in the new-town estates. They understand the M80 junction queues.",
+    knowledge: "Approved movers covering Cumbernauld handle moves in the new-town estates. They understand the M80 junction queues. Approved movers covering Cumbernauld plan around M80 traffic and parking in Town Centre.",
     badge: "Cumbernauld Movers",
     areas: ["Town Centre", "Kildrum", "Carrickstone", "Seafar", "Abronhill", "Condorrat"],
     nearbyLocations: ["glasgow", "falkirk", "stirling", "airdrie"]
@@ -4931,7 +4931,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M8", "A725", "A89"],
     propertyTypes: ["sandstone tenements", "post-war semis", "modern estates"],
     movingConsiderations: ["M8 junction 7 congestion", "A89 through-town traffic", "narrow tenement streets"],
-    intro: "Coatbridge is a North Lanarkshire town on the M8 corridor. The M8 gives fast access to Glasgow.",
+    intro: "Coatbridge is a North Lanarkshire town on the M8 corridor. The M8 gives fast access to Glasgow. Most moves here run via the M8, with steady demand from Town Centre and Greenend.",
     knowledge: "Approved movers covering Coatbridge handle moves in sandstone tenements and suburban estates. They understand the M8 junction 7 queues.",
     badge: "Coatbridge Movers",
     areas: ["Town Centre", "Greenend", "Gartsherrie", "Whifflet", "Cliftonville"],
@@ -4946,8 +4946,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M8", "A89", "A73"],
     propertyTypes: ["sandstone tenements", "post-war semis", "modern estates"],
     movingConsiderations: ["M8 junction 6 congestion", "A89 through-town traffic", "narrow tenement streets"],
-    intro: "Airdrie is a North Lanarkshire town just east of Coatbridge on the M8 corridor. The M8 gives fast access to Glasgow.",
-    knowledge: "Approved movers covering Airdrie handle moves in tenement streets and suburban estates. They understand the M8 access.",
+    intro: "Airdrie is a North Lanarkshire town just east of Coatbridge on the M8 corridor. The M8 gives fast access to Glasgow. Most moves here run via the M8, with steady demand from Town Centre and Cairnhill.",
+    knowledge: "Approved movers covering Airdrie handle moves in tenement streets and suburban estates. They understand the M8 access. Jobs range from sandstone tenements to larger family homes, with most van routes using the M8.",
     badge: "Airdrie Movers",
     areas: ["Town Centre", "Cairnhill", "Gartlea", "Chapelhall", "Caldercruix"],
     nearbyLocations: ["glasgow", "coatbridge", "motherwell", "cumbernauld"]
@@ -4961,11 +4961,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M8", "M74", "A721"],
     propertyTypes: ["sandstone tenements", "post-war estates", "modern developments"],
     movingConsiderations: ["M8 and M74 junction congestion", "A721 through-town traffic", "narrow streets near town centre"],
-    intro: "Motherwell is at the junction of the M8 and M74, giving fast access to Glasgow, Edinburgh and the south.",
+    intro: "Motherwell is at the junction of the M8 and M74, giving fast access to Glasgow, Edinburgh and the south. Most moves here run via the M8, with steady demand from Town Centre and Wishaw.",
     knowledge: "Approved movers covering Motherwell handle moves in the town centre and suburban estates. They understand the M8/M74 interchange.",
     badge: "Motherwell Movers",
     areas: ["Town Centre", "Wishaw", "Carfin", "Bellshill", "Bothwell"],
-    nearbyLocations: ["hamilton", "glasgow", "coatbridge"]
+    nearbyLocations: ["hamilton", "glasgow", "coatbridge", "airdrie", "wishaw"]
   },
   {
     slug: "wishaw",
@@ -4976,8 +4976,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M8", "A71", "A721"],
     propertyTypes: ["sandstone tenements", "post-war semis", "modern estates"],
     movingConsiderations: ["M8 junction 7-8 congestion", "A71 through-town traffic", "narrow streets near town centre"],
-    intro: "Wishaw is next to Motherwell, effectively part of the same urban area. The M8 gives fast access to Glasgow.",
-    knowledge: "Approved movers covering Wishaw handle moves in tenement streets and suburban estates. They understand the M8 access.",
+    intro: "Wishaw is next to Motherwell, effectively part of the same urban area. The M8 gives fast access to Glasgow. Demand is spread across Town Centre, Murdieston and the wider Wishaw area, with the M8 handling most van routes.",
+    knowledge: "Approved movers covering Wishaw handle moves in tenement streets and suburban estates. They understand the M8 access. Peak-time traffic on the M8 can affect timing, so flexible move windows help.",
     badge: "Wishaw Movers",
     areas: ["Town Centre", "Murdieston", "Cambusnethan", "Newmains", "Cleland"],
     nearbyLocations: ["motherwell", "hamilton", "glasgow"]
@@ -5006,7 +5006,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A96", "A941"],
     propertyTypes: ["sandstone buildings", "stone cottages", "post-war semis"],
     movingConsiderations: ["A96 congestion", "narrow streets near the Cathedral", "limited town centre parking"],
-    intro: "Elgin is the main town of Moray with a cathedral and compact centre. The A96 connects to Inverness and Aberdeen.",
+    intro: "Elgin is the main town of Moray with a cathedral and compact centre. The A96 connects to Inverness and Aberdeen. Most moves here run via the A96, with steady demand from Town Centre and New Elgin.",
     knowledge: "Approved movers covering Elgin handle moves in the town centre and surrounding villages. They understand the A96 traffic.",
     badge: "Elgin Movers",
     areas: ["Town Centre", "New Elgin", "Bishopmill", "Lossiemouth", "Lhanbryde"],
@@ -5017,14 +5017,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Arbroath",
     region: "Scotland",
     county: "Angus",
-    nearbyAreas: ["Town Centre", "Seafront", "Friockheim", "St Vigeans"],
+    nearbyAreas: ["Town Centre", "Seafront", "Friockheim", "St Vigeans", "Inverkeilor", "Arbirlot"],
     majorRoads: ["A92", "A933"],
     propertyTypes: ["sandstone tenements", "harbour cottages", "post-war semis"],
     movingConsiderations: ["A92 congestion", "narrow streets near the harbour", "seafront parking restrictions"],
-    intro: "Arbroath is a fishing town on the Angus coast, famous for the Arbroath Smokie. Dundee is about 15 miles south.",
+    intro: "Arbroath is a fishing town on the Angus coast, famous for the Arbroath Smokie. Dundee is about 15 miles south. The A92 is the main route for moves between Town Centre, Seafront and the rest of Angus.",
     knowledge: "Approved movers covering Arbroath handle moves in the harbour area and suburban estates. They understand the A92 traffic.",
     badge: "Arbroath Movers",
-    areas: ["Town Centre", "Seafront", "Friockheim", "St Vigeans"],
+    areas: ["Town Centre", "Seafront", "Friockheim", "St Vigeans", "Inverkeilor", "Arbirlot"],
     nearbyLocations: ["dundee", "montrose", "forfar"]
   },
   {
@@ -5040,7 +5040,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Barry handle moves in Victorian terraces, seafront apartments, and suburban areas. They understand the M4 junction 33 queues.",
     badge: "Barry Movers",
     areas: ["Town Centre", "Barry Island", "Cadoxton", "The Knap", "Sully", "Dinas Powys"],
-    nearbyLocations: ["cardiff", "penarth", "cowbridge"]
+    nearbyLocations: ["cardiff", "penarth", "cowbridge", "cardiff-bay"]
   },
   {
     slug: "bridgend",
@@ -5051,11 +5051,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M4", "A473", "A48"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["M4 junction 35-36 congestion", "A473 through-town traffic", "narrow streets near town centre"],
-    intro: "Bridgend sits on the M4 between Cardiff and Swansea. Porthcawl is a coastal resort 5 miles away.",
-    knowledge: "Approved movers covering Bridgend handle moves in the town centre and suburban estates. They understand the M4 traffic.",
+    intro: "Bridgend sits on the M4 between Cardiff and Swansea. Porthcawl is a coastal resort 5 miles away. Demand is spread across Town Centre, Brackla and the wider Bridgend area, with the M4 handling most van routes.",
+    knowledge: "Approved movers covering Bridgend handle moves in the town centre and suburban estates. They understand the M4 traffic. Peak-time traffic on the M4 can affect timing, so flexible move windows help.",
     badge: "Bridgend Movers",
     areas: ["Town Centre", "Brackla", "Bryntirion", "Pyle", "Porthcawl", "Maesteg"],
-    nearbyLocations: ["cardiff", "swansea", "neath", "port-talbot"]
+    nearbyLocations: ["cardiff", "swansea", "neath", "port-talbot", "penarth"]
   },
   {
     slug: "merthyr-tydfil",
@@ -5066,7 +5066,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A470", "A465"],
     propertyTypes: ["stone terraces", "post-war estates", "modern developments"],
     movingConsiderations: ["A470 congestion", "steep valley roads", "narrow terraced streets"],
-    intro: "Merthyr Tydfil sits at the head of the Taff Valley about 22 miles north of Cardiff. The A470 connects to Cardiff.",
+    intro: "Merthyr Tydfil sits at the head of the Taff Valley about 22 miles north of Cardiff. The A470 connects to Cardiff. Demand is spread across Town Centre, Pentrebach and the wider Merthyr Tydfil area, with the A470 handling most van routes.",
     knowledge: "Approved movers covering Merthyr Tydfil handle moves in narrow terraced streets and post-war estates. They understand the A470 traffic and steep valley roads.",
     badge: "Merthyr Tydfil Movers",
     areas: ["Town Centre", "Pentrebach", "Troed-y-rhiw", "Dowlais", "Gurnos", "Treharris"],
@@ -5081,7 +5081,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M4", "A474", "A465"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["M4 junction 43 congestion", "A474 through-town traffic", "narrow streets near the market"],
-    intro: "Neath is a market town on the M4 between Swansea and Port Talbot. The M4 gives fast access to Swansea (about 6 miles).",
+    intro: "Neath is a market town on the M4 between Swansea and Port Talbot. The M4 gives fast access to Swansea (about 6 miles). Most moves here run via the M4, with steady demand from Town Centre and Bryncoch.",
     knowledge: "Approved movers covering Neath handle moves in Victorian terraces near the market and suburban estates. They understand the M4 junction 43 traffic.",
     badge: "Neath Movers",
     areas: ["Town Centre", "Bryncoch", "Cadoxton", "Tonna", "Skewen", "Briton Ferry"],
@@ -5096,7 +5096,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M4", "A48", "A4241"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["M4 congestion near the steelworks", "A48 through-town traffic", "narrow streets in older areas"],
-    intro: "Port Talbot is an industrial town on the M4 corridor. Aberavon has a seafront with a long beach.",
+    intro: "Port Talbot is an industrial town on the M4 corridor. Aberavon has a seafront with a long beach. Most moves here run via the M4, with steady demand from Town Centre and Aberavon.",
     knowledge: "Approved movers covering Port Talbot handle moves in older terraced areas and seafront properties. They understand the M4 traffic.",
     badge: "Port Talbot Movers",
     areas: ["Town Centre", "Aberavon", "Taibach", "Margam", "Baglan", "Sandfields"],
@@ -5111,11 +5111,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A469", "A468"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["A469 congestion", "narrow streets near the castle", "parking restrictions near town centre"],
-    intro: "Caerphilly is famous for its castle, the largest in Wales. The A469 connects to Cardiff (about 7 miles).",
+    intro: "Caerphilly is famous for its castle, the largest in Wales. The A469 connects to Cardiff (about 7 miles). Most moves here run via the A469, with steady demand from Town Centre and Castle area.",
     knowledge: "Approved movers covering Caerphilly handle moves in period properties near the castle and suburban estates. They understand the A469 rush-hour.",
     badge: "Caerphilly Movers",
     areas: ["Town Centre", "Castle area", "Hendredenny", "Penyrheol", "Trethomas", "Machen"],
-    nearbyLocations: ["cardiff", "pontypridd", "newport"]
+    nearbyLocations: ["cardiff", "pontypridd", "newport", "llandaff"]
   },
   {
     slug: "pontypridd",
@@ -5145,7 +5145,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Llandudno handle moves in Victorian seafront hotel conversions and residential areas. They understand the A55 traffic and seasonal parking.",
     badge: "Llandudno Movers",
     areas: ["Town Centre", "West Shore", "Great Orme", "Deganwy", "Penrhyn Bay", "Llandudno Junction"],
-    nearbyLocations: ["conwy", "colwyn-bay", "bangor"]
+    nearbyLocations: ["conwy", "colwyn-bay", "bangor", "caernarfon", "porthmadog", "menai-bridge"]
   },
   {
     slug: "carrickfergus",
@@ -5160,7 +5160,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Carrickfergus handle moves in the old town and suburban areas. They understand the A2 Belfast commuter traffic.",
     badge: "Carrickfergus Movers",
     areas: ["Town Centre", "Greenisland", "Knockagh", "Whitehead", "Eden"],
-    nearbyLocations: ["belfast", "larne", "newtownabbey"]
+    nearbyLocations: ["belfast", "larne", "newtownabbey", "bangor-ni"]
   },
   {
     slug: "coleraine",
@@ -5187,10 +5187,10 @@ export const LOCATIONS: LocationData[] = [
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "post-war semis"],
     movingConsiderations: ["narrow streets near the Cathedral", "limited city centre parking", "A3 through-traffic"],
     intro: "Armagh is the ecclesiastical capital of Ireland with two cathedrals and Georgian architecture. The A3 connects to Portadown and the M1.",
-    knowledge: "Approved movers covering Armagh handle moves in Georgian properties near the cathedrals and residential estates.",
+    knowledge: "Approved movers covering Armagh handle moves in Georgian properties near the cathedrals and residential estates. Peak-time traffic on the A3 can affect timing, so flexible move windows help.",
     badge: "Armagh Movers",
     areas: ["City Centre", "Cathedral area", "The Mall", "Richmond", "Killylea"],
-    nearbyLocations: ["newry", "portadown", "craigavon"]
+    nearbyLocations: ["newry", "portadown", "craigavon", "lurgan", "dungannon"]
   },
   {
     slug: "omagh",
@@ -5201,25 +5201,25 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A5", "A505", "A32"],
     propertyTypes: ["stone-built terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["A5 through-town traffic", "narrow streets near town centre", "limited parking"],
-    intro: "Omagh is the county town of Tyrone on the A5 corridor. The A5 connects to Derry (about 30 miles) and the M1.",
+    intro: "Omagh is the county town of Tyrone on the A5 corridor. The A5 connects to Derry (about 30 miles) and the M1. Local moves cluster around Town Centre and Strathroy, and the A5 keeps Omagh linked to nearby towns.",
     knowledge: "Approved movers covering Omagh handle moves in the town centre and surrounding villages. They understand the A5 traffic.",
     badge: "Omagh Movers",
     areas: ["Town Centre", "Strathroy", "Gortin", "Fintona", "Beragh"],
-    nearbyLocations: ["derry", "enniskillen", "belfast"]
+    nearbyLocations: ["derry", "enniskillen", "belfast", "dungannon"]
   },
   {
     slug: "enniskillen",
     name: "Enniskillen",
     region: "Northern Ireland",
     county: "County Fermanagh",
-    nearbyAreas: ["Town Centre", "Castle Coole", "Killyhevlin", "Lisbellaw"],
+    nearbyAreas: ["Town Centre", "Castle Coole", "Killyhevlin", "Lisbellaw", "Irvinestown"],
     majorRoads: ["A4", "A32", "A46"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "lakeside properties"],
     movingConsiderations: ["A4 through-town traffic", "narrow streets on the island", "limited town centre parking"],
-    intro: "Enniskillen sits on an island between Upper and Lower Lough Erne. The town centre streets on the island are narrow.",
-    knowledge: "Approved movers covering Enniskillen handle moves in the narrow town centre streets and lakeside properties.",
+    intro: "Enniskillen sits on an island between Upper and Lower Lough Erne. The town centre streets on the island are narrow. Local moves cluster around Town Centre and Castle Coole, and the A4 keeps Enniskillen linked to nearby towns.",
+    knowledge: "Approved movers covering Enniskillen handle moves in the narrow town centre streets and lakeside properties. Peak-time traffic on the A4 can affect timing, so flexible move windows help.",
     badge: "Enniskillen Movers",
-    areas: ["Town Centre", "Castle Coole", "Killyhevlin", "Lisbellaw"],
+    areas: ["Town Centre", "Castle Coole", "Killyhevlin", "Lisbellaw", "Irvinestown"],
     nearbyLocations: ["belfast", "omagh"]
   },
   {
@@ -5227,14 +5227,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Lurgan",
     region: "Northern Ireland",
     county: "County Armagh",
-    nearbyAreas: ["Town Centre", "Brownlow", "Shankill", "Waringstown"],
+    nearbyAreas: ["Town Centre", "Brownlow", "Shankill", "Waringstown", "Dollingstown"],
     majorRoads: ["M1", "A3"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["M1 junction 10 congestion", "A3 through-town traffic", "narrow streets near Market Street"],
     intro: "Lurgan is a town in County Armagh close to Portadown on the M1 corridor. The M1 junction 10 gives fast access to Belfast (about 20 miles).",
     knowledge: "Approved movers covering Lurgan handle moves in the town centre and suburban estates. They understand the M1 junction 10 queues.",
     badge: "Lurgan Movers",
-    areas: ["Town Centre", "Brownlow", "Shankill", "Waringstown"],
+    areas: ["Town Centre", "Brownlow", "Shankill", "Waringstown", "Dollingstown"],
     nearbyLocations: ["portadown", "craigavon", "belfast", "armagh"]
   },
   {
@@ -5246,7 +5246,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A6135", "A61", "M1"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["M1 junction 35 congestion", "A6135 through-town traffic", "residential parking restrictions"],
-    intro: "Chapeltown sits on the northern edge of Sheffield, about 6 miles from the city centre. The M1 junction 35 is close by.",
+    intro: "Chapeltown sits on the northern edge of Sheffield, about 6 miles from the city centre. The M1 junction 35 is close by. The A6135 is the main route for moves between Chapeltown Centre, High Green and the rest of South Yorkshire.",
     knowledge: "Approved movers covering Chapeltown handle moves in the residential estates and nearby villages. They understand the M1 junction 35 traffic and A6135 congestion at peak times.",
     badge: "Chapeltown Movers",
     areas: ["Chapeltown Centre", "High Green", "Grenoside", "Thorpe Hesley", "Ecclesfield"],
@@ -5276,7 +5276,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A633", "A635", "M1"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["M1 junction 36 congestion", "A633 through-town traffic", "limited parking near town centre"],
-    intro: "Wath-upon-Dearne is a town in the Dearne Valley, about 7 miles north of Rotherham. The M1 junction 36 is nearby.",
+    intro: "Wath-upon-Dearne is a town in the Dearne Valley, about 7 miles north of Rotherham. The M1 junction 36 is nearby. Local moves cluster around Town Centre and West Melton, and the A633 keeps Wath-upon-Dearne linked to nearby towns.",
     knowledge: "Approved movers covering Wath-upon-Dearne handle moves in the Dearne Valley towns. They understand the M1 junction 36 queues and A633 congestion.",
     badge: "Wath-upon-Dearne Movers",
     areas: ["Town Centre", "West Melton", "Brampton Bierlow", "Swinton", "Kilnhurst"],
@@ -5291,7 +5291,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A10", "A414", "A119"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A414 congestion", "narrow streets near the castle", "limited town centre parking"],
-    intro: "Hertford is the county town of Hertfordshire, about 20 miles north of London. The A10 connects to London and Cambridge.",
+    intro: "Hertford is the county town of Hertfordshire, about 20 miles north of London. The A10 connects to London and Cambridge. Demand is spread across Town Centre, Bengeo and the wider Hertford area, with the A10 handling most van routes.",
     knowledge: "Approved movers covering Hertford handle moves in Georgian properties near the castle and suburban estates. They understand the A10 and A414 traffic.",
     badge: "Hertford Movers",
     areas: ["Town Centre", "Bengeo", "Hertingfordbury", "Ware", "Hoddesdon"],
@@ -5306,7 +5306,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A505", "A602", "A1(M)"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A1(M) junction 8 congestion", "narrow streets near market square", "limited town centre parking"],
-    intro: "Hitchin is a historic market town in North Hertfordshire, about 15 miles north of Luton. The A1(M) is nearby.",
+    intro: "Hitchin is a historic market town in North Hertfordshire, about 15 miles north of Luton. The A1(M) is nearby. Most moves here run via the A505, with steady demand from Town Centre and Walsworth.",
     knowledge: "Approved movers covering Hitchin handle moves in Georgian town centre properties and suburban estates. They understand the A1(M) and A505 traffic.",
     badge: "Hitchin Movers",
     areas: ["Town Centre", "Walsworth", "Highbury", "Westmill", "Purwell"],
@@ -5321,7 +5321,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A1(M)", "A1000", "A414"],
     propertyTypes: ["Garden city houses", "art deco apartments", "modern estates"],
     movingConsiderations: ["A1(M) congestion at junctions 4-6", "parking restrictions in town centre", "wide boulevards but limited loading bays"],
-    intro: "Welwyn Garden City is a planned town between Hatfield and Stevenage. The A1(M) gives fast access to London.",
+    intro: "Welwyn Garden City is a planned town between Hatfield and Stevenage. The A1(M) gives fast access to London. The A1(M) is the main route for moves between Town Centre, Panshanger and the rest of Hertfordshire.",
     knowledge: "Approved movers covering Welwyn Garden City handle moves in garden city properties with their distinctive architecture. The A1(M) and A414 provide good road links.",
     badge: "Welwyn Garden City Movers",
     areas: ["Town Centre", "Panshanger", "Digswell", "Oaklands", "Howlands"],
@@ -5332,14 +5332,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Potters Bar",
     region: "Hertfordshire",
     county: "Hertfordshire",
-    nearbyAreas: ["Town Centre", "South Mimms", "Furzefield", "Darkes Lane area"],
+    nearbyAreas: ["Town Centre", "South Mimms", "Furzefield", "Darkes Lane area", "Little Heath"],
     majorRoads: ["A1(M)", "M25", "A1000"],
     propertyTypes: ["interwar semis", "post-war estates", "modern flats"],
     movingConsiderations: ["M25 junction 23 congestion", "A1(M) traffic", "residential parking restrictions"],
-    intro: "Potters Bar sits on the London-Hertfordshire border at the M25/A1(M) junction, about 13 miles north of central London.",
+    intro: "Potters Bar sits on the London-Hertfordshire border at the M25/A1(M) junction, about 13 miles north of central London. The A1(M) is the main route for moves between Town Centre, South Mimms and the rest of Hertfordshire.",
     knowledge: "Approved movers covering Potters Bar handle moves in suburban properties with good motorway access. The M25 and A1(M) junction can be very congested.",
     badge: "Potters Bar Movers",
-    areas: ["Town Centre", "South Mimms", "Furzefield", "Darkes Lane area"],
+    areas: ["Town Centre", "South Mimms", "Furzefield", "Darkes Lane area", "Little Heath"],
     nearbyLocations: ["enfield", "watford", "st-albans"]
   },
   {
@@ -5355,7 +5355,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Dover handle moves in the hillside town and port area. The A20 port traffic can be heavy. The M20 can be severely disrupted by Operation Stack.",
     badge: "Dover Movers",
     areas: ["Town Centre", "Western Heights", "Maxton", "River", "Whitfield"],
-    nearbyLocations: ["ashford", "folkstone", "canterbury"]
+    nearbyLocations: ["ashford", "folkstone", "canterbury", "folkestone"]
   },
   {
     slug: "ashford",
@@ -5370,7 +5370,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Ashford handle moves in the expanding town and surrounding countryside. The M20 can be affected by Operation Stack.",
     badge: "Ashford Movers",
     areas: ["Town Centre", "Kennington", "Willesborough", "Singleton", "Park Farm"],
-    nearbyLocations: ["maidstone", "canterbury", "folkestone"]
+    nearbyLocations: ["maidstone", "canterbury", "folkestone", "dover"]
   },
   {
     slug: "canterbury",
@@ -5381,7 +5381,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A2", "A28", "A290"],
     propertyTypes: ["medieval timber-framed", "Georgian townhouses", "Victorian terraces"],
     movingConsiderations: ["extremely narrow medieval streets", "pedestrian zone restrictions", "limited city centre parking"],
-    intro: "Canterbury is a cathedral city and UNESCO World Heritage Site. The medieval city centre has extremely narrow streets with vehicle restrictions.",
+    intro: "Canterbury is a cathedral city and UNESCO World Heritage Site. The medieval city centre has extremely narrow streets with vehicle restrictions. The A2 and City Centre areas see the most regular moving demand.",
     knowledge: "Approved movers covering Canterbury handle moves in the pedestrianised medieval centre and surrounding residential areas. The city centre streets are among the narrowest in England.",
     badge: "Canterbury Movers",
     areas: ["City Centre", "St Dunstan's", "Wincheap", "St Stephen's", "Blean"],
@@ -5396,7 +5396,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M20", "A20", "A259"],
     propertyTypes: ["Victorian terraces", "Edwardian semis", "modern flats"],
     movingConsiderations: ["M20 Operation Stack", "Channel Tunnel freight traffic", "steep streets near The Leas"],
-    intro: "Folkestone is a Channel port town at the foot of the North Downs. The Channel Tunnel terminal is just outside town.",
+    intro: "Folkestone is a Channel port town at the foot of the North Downs. The Channel Tunnel terminal is just outside town. Local moves cluster around Town Centre and The Leas, and the M20 keeps Folkestone linked to nearby towns.",
     knowledge: "Approved movers covering Folkestone handle moves in the hillside town and coastal areas. The M20 Operation Stack can cause major disruption. The Channel Tunnel terminal brings freight traffic.",
     badge: "Folkestone Movers",
     areas: ["Town Centre", "The Leas", "Cheriton", "Sandgate", "Hawkinge"],
@@ -5415,7 +5415,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Lewes handle moves in the medieval town centre with its narrow streets and steep hills. The A27 connects to Brighton and Eastbourne.",
     badge: "Lewes Movers",
     areas: ["Town Centre", "Southover", "Cliffe", "Malling", "Offham"],
-    nearbyLocations: ["brighton", "eastbourne", "hove"]
+    nearbyLocations: ["brighton", "eastbourne", "hove", "haywards-heath"]
   },
   {
     slug: "bexhill",
@@ -5441,11 +5441,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A24", "A27", "A259"],
     propertyTypes: ["Victorian terraces", "Edwardian semis", "modern estates"],
     movingConsiderations: ["A27 congestion", "coastal road summer traffic", "limited town centre parking"],
-    intro: "Worthing is the largest town in West Sussex, a seaside town about 10 miles west of Brighton on the A27.",
+    intro: "Worthing is the largest town in West Sussex, a seaside town about 10 miles west of Brighton on the A27. Local moves cluster around Town Centre and Broadwater, and the A24 keeps Worthing linked to nearby towns.",
     knowledge: "Approved movers covering Worthing handle moves in the seaside town. The A27 can be very congested. Goring and Durrington are residential areas. Brighton is about 10 miles east.",
     badge: "Worthing Movers",
     areas: ["Town Centre", "Broadwater", "Goring-by-Sea", "Durrington", "Lancing"],
-    nearbyLocations: ["brighton", "hove", "horsham"]
+    nearbyLocations: ["brighton", "hove", "horsham", "chichester"]
   },
   {
     slug: "chichester",
@@ -5456,7 +5456,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A27", "A285", "A259"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["narrow streets within city walls", "limited city centre parking", "A27 congestion"],
-    intro: "Chichester is a cathedral city at the foot of the South Downs, about 20 miles east of Portsmouth. The city walls enclose a compact centre with narrow streets.",
+    intro: "Chichester is a cathedral city at the foot of the South Downs, about 20 miles east of Portsmouth. The city walls enclose a compact centre with narrow streets. The A27 and City Centre areas see the most regular moving demand.",
     knowledge: "Approved movers covering Chichester handle moves in the Georgian city centre and surrounding areas. The city walls create a compact centre with narrow streets.",
     badge: "Chichester Movers",
     areas: ["City Centre", "Summerstown", "Portfield", "Fishbourne", "Lavant"],
@@ -5475,7 +5475,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Reigate handle moves in the town centre and on Reigate Hill. The M25 junction 8 provides motorway access. Redhill is effectively next door.",
     badge: "Reigate Movers",
     areas: ["Town Centre", "Reigate Hill", "South Park", "Woodhatch", "Meath Green"],
-    nearbyLocations: ["redhill", "guildford", "croydon"]
+    nearbyLocations: ["redhill", "guildford", "croydon", "dorking", "leatherhead"]
   },
   {
     slug: "epsom",
@@ -5501,7 +5501,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A244", "A3050", "M3"],
     propertyTypes: ["Victorian villas", "interwar semis", "modern flats"],
     movingConsiderations: ["M3 junction 1 congestion", "A244 through-town traffic", "limited riverside parking"],
-    intro: "Walton-on-Thames is a riverside town about 15 miles south-west of London. The M3 and A244 provide road links.",
+    intro: "Walton-on-Thames is a riverside town about 15 miles south-west of London. The M3 and A244 provide road links. Most moves here run via the A244, with steady demand from Town Centre and Ashley Park.",
     knowledge: "Approved movers covering Walton-on-Thames handle moves in the riverside town and suburban areas. Weybridge is next door. Kingston is about 4 miles east.",
     badge: "Walton-on-Thames Movers",
     areas: ["Town Centre", "Ashley Park", "Hersham", "Oatlands", "Walton-on-the-Hill"],
@@ -5516,11 +5516,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M4", "A332", "A308", "A355"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["tourist traffic near the castle", "M4 junction 6 congestion", "limited town centre parking"],
-    intro: "Windsor is a royal town famous for its castle, about 20 miles west of London. The M4 junction 6 is nearby.",
+    intro: "Windsor is a royal town famous for its castle, about 20 miles west of London. The M4 junction 6 is nearby. The M4 is the main route for moves between Town Centre, Eton and the rest of Berkshire.",
     knowledge: "Approved movers covering Windsor handle moves in the tourist town and surrounding areas. The castle brings constant visitor traffic. Eton is across the river. The M4 provides fast London access.",
     badge: "Windsor Movers",
     areas: ["Town Centre", "Eton", "Datchet", "Old Windsor", "Clewer"],
-    nearbyLocations: ["slough", "maidenhead", "staines"]
+    nearbyLocations: ["slough", "maidenhead", "staines", "caversham"]
   },
   {
     slug: "newbury",
@@ -5531,7 +5531,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A34", "M4", "A339"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A34 congestion", "M4 junction 13 queues", "Greenham Common access"],
-    intro: "Newbury is a market town in West Berkshire on the A34, about 20 miles west of Reading. The M4 junction 13 is nearby.",
+    intro: "Newbury is a market town in West Berkshire on the A34, about 20 miles west of Reading. The M4 junction 13 is nearby. Demand is spread across Town Centre, Greenham and the wider Newbury area, with the A34 handling most van routes.",
     knowledge: "Approved movers covering Newbury handle moves in the market town and surrounding villages. The A34 runs north-south and can be very congested. The M4 gives east-west access.",
     badge: "Newbury Movers",
     areas: ["Town Centre", "Greenham", "Speen", "Wash Common", "Thatcham"],
@@ -5546,7 +5546,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M40", "A355", "A40"],
     propertyTypes: ["Georgian houses", "Victorian villas", "executive homes"],
     movingConsiderations: ["M40 junction 2 congestion", "A355 through Old Town", "limited parking in Old Town"],
-    intro: "Beaconsfield is an affluent town in South Buckinghamshire on the M40, about 23 miles west of London.",
+    intro: "Beaconsfield is an affluent town in South Buckinghamshire on the M40, about 23 miles west of London. Local moves cluster around Old Town and New Town, and the M40 keeps Beaconsfield linked to nearby towns.",
     knowledge: "Approved movers covering Beaconsfield handle moves in the Old Town and New Town areas. The M40 junction 2 provides motorway access. The Old Town has narrow streets and period properties.",
     badge: "Beaconsfield Movers",
     areas: ["Old Town", "New Town", "Holtspur", "Knotty Green", "Seer Green"],
@@ -5565,7 +5565,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Winchester handle moves in the historic city centre and surrounding areas. The cathedral area has very narrow streets. The M3 provides fast access to London and Southampton.",
     badge: "Winchester Movers",
     areas: ["City Centre", "Weeke", "Stanmore", "Highbury", "Badger Farm"],
-    nearbyLocations: ["southampton", "basingstoke", "eastleigh"]
+    nearbyLocations: ["southampton", "basingstoke", "eastleigh", "andover", "salisbury"]
   },
   {
     slug: "basingstoke",
@@ -5580,7 +5580,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Basingstoke handle moves in the expanded town and surrounding villages. The M3 provides fast London access. Chineham and Hatch Warren are large residential areas.",
     badge: "Basingstoke Movers",
     areas: ["Town Centre", "Chineham", "Hatch Warren", "Lychpit", "Beggarwood"],
-    nearbyLocations: ["reading", "winchester", "farnborough"]
+    nearbyLocations: ["reading", "winchester", "farnborough", "newbury", "andover", "eastleigh"]
   },
   {
     slug: "andover",
@@ -5591,7 +5591,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A303", "A30", "A343"],
     propertyTypes: ["post-war semis", "modern estates", "Victorian terraces"],
     movingConsiderations: ["A303 congestion", "limited town centre parking", "garrison traffic"],
-    intro: "Andover is a market town on the A303 about 18 miles west of Basingstoke. The A303 connects to the M3 and London.",
+    intro: "Andover is a market town on the A303 about 18 miles west of Basingstoke. The A303 connects to the M3 and London. The A303 is the main route for moves between Town Centre, Augustine Park and the rest of Hampshire.",
     knowledge: "Approved movers covering Andover handle moves in the town and surrounding villages. The A303 is the main road link. The garrison brings military families who move frequently.",
     badge: "Andover Movers",
     areas: ["Town Centre", "Augustine Park", "East Anton", "King Arthur's Way", "Picket Piece"],
@@ -5621,11 +5621,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A1033", "A165"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["narrow streets near the church", "A1033 congestion", "Hull commuter traffic"],
-    intro: "Hedon is a small market town about 5 miles east of Hull. The A1033 connects to Hull city centre.",
+    intro: "Hedon is a small market town about 5 miles east of Hull. The A1033 connects to Hull city centre. Local moves cluster around Town Centre and Sutton-on-Hull, and the A1033 keeps Hedon linked to nearby towns.",
     knowledge: "Approved movers covering Hedon handle moves in the small town and surrounding Holderness villages. The town has a medieval church and narrow streets. Hull is just 5 miles away.",
     badge: "Hedon Movers",
     areas: ["Town Centre", "Sutton-on-Hull", "Preston", "Thorngumbald", "Keyingham"],
-    nearbyLocations: ["hull", "beverley", "bridlington"]
+    nearbyLocations: ["hull", "beverley", "bridlington", "willerby", "cottingham"]
   },
   {
     slug: "ripon",
@@ -5636,7 +5636,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A61", "A6108", "A1(M)"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A1(M) junction 50 queues", "narrow streets near the cathedral", "limited city centre parking"],
-    intro: "Ripon is a small cathedral city about 11 miles north of Harrogate. The A1(M) is nearby.",
+    intro: "Ripon is a small cathedral city about 11 miles north of Harrogate. The A1(M) is nearby. The A61 is the main route for moves between City Centre, Boroughbridge Road and the rest of North Yorkshire.",
     knowledge: "Approved movers covering Ripon handle moves in the compact city centre and surrounding villages. The A1(M) junction 50 provides motorway access. Harrogate is 11 miles south.",
     badge: "Ripon Movers",
     areas: ["City Centre", "Boroughbridge Road", "Sharow", "Bishop Monkton", "Boroughbridge"],
@@ -5651,7 +5651,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A168", "A684", "A1(M)"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A1(M) junction 51 congestion", "A168 through-town traffic", "limited town centre parking"],
-    intro: "Northallerton is the county town of North Yorkshire, about 8 miles south of the A1(M).",
+    intro: "Northallerton is the county town of North Yorkshire, about 8 miles south of the A1(M). The A168 is the main route for moves between Town Centre, Romanby and the rest of North Yorkshire.",
     knowledge: "Approved movers covering Northallerton handle moves in the county town and surrounding villages. The A1(M) junction 51 is nearby. Darlington is about 15 miles north.",
     badge: "Northallerton Movers",
     areas: ["Town Centre", "Romanby", "Brompton", "Pickhill", "Leeming"],
@@ -5666,7 +5666,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M6", "A6", "A589", "A588"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["M6 junction 33-34 congestion", "narrow streets near the castle", "Lune bridge traffic"],
-    intro: "Lancaster is a historic city on the River Lune, about 20 miles north of Preston. The M6 passes nearby.",
+    intro: "Lancaster is a historic city on the River Lune, about 20 miles north of Preston. The M6 passes nearby. Local moves cluster around City Centre and Bailrigg, and the M6 keeps Lancaster linked to nearby towns.",
     knowledge: "Approved movers covering Lancaster handle moves in the historic city and surrounding areas. The M6 junctions 33 and 34 provide motorway access. The castle area has narrow streets. The university at Bailrigg brings student moves.",
     badge: "Lancaster Movers",
     areas: ["City Centre", "Bailrigg", "Skerton", "Galgate", "Heysham"],
@@ -5730,21 +5730,21 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Sutton Coldfield handle moves in the affluent residential areas and town centre. Four Oaks and Mere Green are residential areas. Sutton Park is the largest urban park in Europe.",
     badge: "Sutton Coldfield Movers",
     areas: ["Town Centre", "Four Oaks", "Mere Green", "Wylde Green", "Boldmere"],
-    nearbyLocations: ["birmingham", "tamworth", "lichfield"]
+    nearbyLocations: ["birmingham", "tamworth", "lichfield", "aldridge"]
   },
   {
     slug: "caversham",
     name: "Caversham",
     region: "Berkshire",
     county: "Berkshire",
-    nearbyAreas: ["Caversham Heights", "Caversham Park", "Emmer Green", "Lower Caversham"],
+    nearbyAreas: ["Caversham Heights", "Caversham Park", "Emmer Green", "Lower Caversham", "Mapledurham"],
     majorRoads: ["A4158", "A4074"],
     propertyTypes: ["Victorian villas", "Edwardian semis", "modern estates"],
     movingConsiderations: ["Reading Bridge traffic", "A4074 congestion", "limited riverside parking"],
-    intro: "Caversham is an affluent area north of the River Thames in Reading, about 1 mile from the town centre.",
+    intro: "Caversham is an affluent area north of the River Thames in Reading, about 1 mile from the town centre. Most moves here run via the A4158, with steady demand from Caversham Heights and Caversham Park.",
     knowledge: "Approved movers covering Caversham handle moves in the affluent residential area north of the Thames. Caversham Heights has steep roads.",
     badge: "Caversham Movers",
-    areas: ["Caversham Heights", "Caversham Park", "Emmer Green", "Lower Caversham"],
+    areas: ["Caversham Heights", "Caversham Park", "Emmer Green", "Lower Caversham", "Mapledurham"],
     nearbyLocations: ["reading", "maidenhead", "windsor"]
   },
   {
@@ -5752,14 +5752,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Bletchley",
     region: "Buckinghamshire",
     county: "Buckinghamshire",
-    nearbyAreas: ["Bletchley Town", "Fenny Stratford", "Water Eaton", "Newton Longville"],
+    nearbyAreas: ["Bletchley Town", "Fenny Stratford", "Water Eaton", "Newton Longville", "Far Bletchley"],
     majorRoads: ["A5", "A4146", "M1"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A5 through-town traffic", "M1 junction 13 queues", "railway area parking"],
     intro: "Bletchley is the historic southern part of Milton Keynes, famous for Bletchley Park codebreaking centre. The A5 and M1 provide road links.",
     knowledge: "Approved movers covering Bletchley handle moves in the older part of Milton Keynes. Bletchley Park can cause local tourist traffic.",
     badge: "Bletchley Movers",
-    areas: ["Bletchley Town", "Fenny Stratford", "Water Eaton", "Newton Longville"],
+    areas: ["Bletchley Town", "Fenny Stratford", "Water Eaton", "Newton Longville", "Far Bletchley"],
     nearbyLocations: ["milton-keynes", "leighton-buzzard", "bedford"]
   },
   {
@@ -5786,7 +5786,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A32", "A3"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern flats"],
     movingConsiderations: ["A32 congestion at rush hour", "Gosport Ferry queue traffic", "limited town centre parking"],
-    intro: "Gosport is a town on the Hampshire coast opposite Portsmouth Harbour. The A32 connects to the M27.",
+    intro: "Gosport is a town on the Hampshire coast opposite Portsmouth Harbour. The A32 connects to the M27. Most moves here run via the A32, with steady demand from Town Centre and Lee-on-the-Solent.",
     knowledge: "Approved movers covering Gosport handle moves in the coastal town. The A32 is the only major road in and can be very congested. The ferry provides pedestrian access to Portsmouth.",
     badge: "Gosport Movers",
     areas: ["Town Centre", "Lee-on-the-Solent", "Alverstoke", "Bridgemary", "Rowner"],
@@ -5801,11 +5801,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A35", "A3049", "A31"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "modern flats"],
     movingConsiderations: ["A35 congestion", "Poole Bridge traffic", "limited old town parking"],
-    intro: "Poole is a port town next to Bournemouth, famous for its natural harbour and Sandbanks peninsula.",
+    intro: "Poole is a port town next to Bournemouth, famous for its natural harbour and Sandbanks peninsula. Most moves here run via the A35, with steady demand from Poole Town and Parkstone.",
     knowledge: "Approved movers covering Poole handle moves in the harbour town and affluent Sandbanks area. Poole Quay has narrow streets. Sandbanks has some of the most expensive properties in the UK.",
     badge: "Poole Movers",
     areas: ["Poole Town", "Parkstone", "Broadstone", "Canford Cliffs", "Sandbanks"],
-    nearbyLocations: ["bournemouth", "christchurch"]
+    nearbyLocations: ["bournemouth", "christchurch", "dorchester", "weymouth"]
   },
   {
     slug: "leyland",
@@ -5816,7 +5816,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A6", "M6", "M65", "A49"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["M6 junction 28-29 congestion", "A6 through-town traffic", "M65 terminal roundabout queues"],
-    intro: "Leyland is a town about 5 miles south of Preston, famous for Leyland Motors. The M6 and M65 provide motorway links.",
+    intro: "Leyland is a town about 5 miles south of Preston, famous for Leyland Motors. The M6 and M65 provide motorway links. Demand is spread across Town Centre, Worden and the wider Leyland area, with the A6 handling most van routes.",
     knowledge: "Approved movers covering Leyland handle moves in the residential town. The M6 junction 28 and M65 provide motorway access. Chorley is 3 miles south.",
     badge: "Leyland Movers",
     areas: ["Town Centre", "Worden", "Farington", "Moss Side", "Whittle-le-Woods"],
@@ -5827,15 +5827,15 @@ export const LOCATIONS: LocationData[] = [
     name: "Cleveleys",
     region: "Lancashire",
     county: "Lancashire",
-    nearbyAreas: ["Cleveleys Town", "Thornton", "Poulton-le-Fylde", "Fleetwood"],
+    nearbyAreas: ["Cleveleys Town", "Thornton", "Poulton-le-Fylde", "Fleetwood", "Bispham"],
     majorRoads: ["A587", "A585", "M55"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern estates"],
     movingConsiderations: ["A587 coastal road summer traffic", "M55 junction 3 queues", "limited seafront parking"],
-    intro: "Cleveleys is a seaside town about 3 miles north of Blackpool on the Fylde Coast.",
+    intro: "Cleveleys is a seaside town about 3 miles north of Blackpool on the Fylde Coast. The A587 is the main route for moves between Cleveleys Town, Thornton and the rest of Lancashire.",
     knowledge: "Approved movers covering Cleveleys handle moves in the coastal town. Fleetwood is 4 miles north. Poulton-le-Fylde is 2 miles inland.",
     badge: "Cleveleys Movers",
-    areas: ["Cleveleys Town", "Thornton", "Poulton-le-Fylde", "Fleetwood"],
-    nearbyLocations: ["blackpool", "lytham-st-annes", "preston"]
+    areas: ["Cleveleys Town", "Thornton", "Poulton-le-Fylde", "Fleetwood", "Bispham"],
+    nearbyLocations: ["blackpool", "lytham-st-annes", "preston", "fleetwood", "poulton-le-fylde"]
   },
   {
     slug: "diss",
@@ -5861,11 +5861,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A12", "A1152"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "modern estates"],
     movingConsiderations: ["A12 congestion", "narrow streets near the river", "limited town centre parking"],
-    intro: "Woodbridge is a riverside market town about 8 miles north-east of Ipswich on the River Deben.",
+    intro: "Woodbridge is a riverside market town about 8 miles north-east of Ipswich on the River Deben. Local moves cluster around Town Centre and Melton, and the A12 keeps Woodbridge linked to nearby towns.",
     knowledge: "Approved movers covering Woodbridge handle moves in the affluent riverside town. The town has Georgian buildings along the riverfront. Melton and Martlesham are residential areas.",
     badge: "Woodbridge Movers",
     areas: ["Town Centre", "Melton", "Martlesham", "Kesgrave", "Bromeswell"],
-    nearbyLocations: ["ipswich", "colchester", "norwich"]
+    nearbyLocations: ["ipswich", "colchester", "norwich", "felixstowe"]
   },
   {
     slug: "haxby",
@@ -5876,7 +5876,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A19", "A1036"],
     propertyTypes: ["interwar semis", "post-war estates", "modern housing"],
     movingConsiderations: ["A19 congestion at peak times", "York outer ring road traffic", "residential parking"],
-    intro: "Haxby is a residential town about 4 miles north of York city centre. The A19 connects to York.",
+    intro: "Haxby is a residential town about 4 miles north of York city centre. The A19 connects to York. Most moves here run via the A19, with steady demand from Haxby and Wigginton.",
     knowledge: "Approved movers covering Haxby handle moves in the residential suburb. Wigginton is adjacent. New Earswick has Joseph Rowntree Housing Trust properties.",
     badge: "Haxby Movers",
     areas: ["Haxby", "Wigginton", "New Earswick", "Huntington", "Strensall"],
@@ -5906,11 +5906,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A164", "A1109", "A63"],
     propertyTypes: ["interwar semis", "post-war estates", "executive homes"],
     movingConsiderations: ["A164 congestion at peak times", "A63 Hessle junction queues", "residential parking"],
-    intro: "Willerby is an affluent suburb about 4 miles west of Hull city centre. The A164 connects to the A63 and Humber Bridge.",
+    intro: "Willerby is an affluent suburb about 4 miles west of Hull city centre. The A164 connects to the A63 and Humber Bridge. Most moves here run via the A164, with steady demand from Willerby and Kirk Ella.",
     knowledge: "Approved movers covering Willerby handle moves in the affluent western suburbs of Hull. Kirk Ella and Anlaby are adjacent residential areas.",
     badge: "Willerby Movers",
     areas: ["Willerby", "Kirk Ella", "Anlaby", "Hessle", "Cottingham"],
-    nearbyLocations: ["hull", "beverley", "hedon"]
+    nearbyLocations: ["hull", "beverley", "hedon", "hessle"]
   },
 
   // ──────────────────────────────────────────
@@ -5925,38 +5925,23 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A404", "A413", "M40"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "modern estates"],
     movingConsiderations: ["A404 through Old Amersham", "limited old town parking", "narrow High Street"],
-    intro: "Amersham is an affluent town in the Chilterns about 25 miles north-west of London, with an historic old town and a newer Met Line station area.",
+    intro: "Amersham is an affluent town in the Chilterns about 25 miles north-west of London, with an historic old town and a newer Met Line station area. The A404 and Old Amersham areas see the most regular moving demand.",
     knowledge: "Approved movers covering Amersham handle moves across the affluent Chiltern town. The old High Street has narrow access for larger vans.",
     badge: "Amersham Movers",
     areas: ["Old Amersham", "Amersham-on-the-Hill", "Chesham", "Little Chalfont", "Chalfont St Peter"],
-    nearbyLocations: ["high-wycombe", "beaconsfield", "aylesbury"]
-  },
-  {
-    slug: "ashford-kent",
-    name: "Ashford",
-    region: "Kent",
-    county: "Kent",
-    nearbyAreas: ["Town Centre", "Singleton", "Kennington", "Repton Park", "Willesborough"],
-    majorRoads: ["M20", "A292", "A2042"],
-    propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
-    movingConsiderations: ["M20 congestion at J9-10", "A292 ring road traffic", "new development areas access"],
-    intro: "Ashford is a growing town in Kent about 60 miles south-east of London. The M20 provides direct motorway links to the capital and the coast.",
-    knowledge: "Approved movers covering Ashford handle moves across the expanding town, from older Victorian areas near the centre to newer estates in Repton Park and Singleton.",
-    badge: "Ashford Movers",
-    areas: ["Town Centre", "Singleton", "Kennington", "Repton Park", "Willesborough"],
-    nearbyLocations: ["canterbury", "maidstone", "folkestone", "dover"]
+    nearbyLocations: ["high-wycombe", "beaconsfield", "aylesbury", "hemel-hempstead"]
   },
   {
     slug: "bangor-ni",
-    name: "Bangor",
+    name: "Bangor, County Down",
     region: "Northern Ireland",
     county: "County Down",
     nearbyAreas: ["Town Centre", "Dufferin", "Ballyholme", "Donaghadee", "Groomsport"],
     majorRoads: ["A2", "A21", "A55"],
     propertyTypes: ["Victorian villas", "modern estates", "holiday apartments"],
     movingConsiderations: ["A2 coast road traffic", "limited seafront parking", "town centre one-way system"],
-    intro: "Bangor is a seaside town in County Down about 12 miles east of Belfast on the A2 coast road.",
-    knowledge: "Approved movers covering Bangor handle moves in the coastal town. The A2 provides fast Belfast links.",
+    intro: "Bangor is a seaside town in County Down about 12 miles east of Belfast on the A2 coast road. Demand is spread across Town Centre, Dufferin and the wider Bangor, County Down area, with the A2 handling most van routes.",
+    knowledge: "Approved movers covering Bangor handle moves in the coastal town. The A2 provides fast Belfast links. Approved movers covering Bangor, County Down plan around A2 traffic and parking in Town Centre.",
     badge: "Bangor Movers",
     areas: ["Town Centre", "Dufferin", "Ballyholme", "Donaghadee", "Groomsport"],
     nearbyLocations: ["belfast", "newtownards", "carrickfergus"]
@@ -5970,7 +5955,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A444", "A4254", "M6"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A444 through-town traffic", "M6 junction 3 queues", "limited town centre parking"],
-    intro: "Bedworth is a town about 5 miles north of Coventry in the Nuneaton-Bedworth conurbation.",
+    intro: "Bedworth is a town about 5 miles north of Coventry in the Nuneaton-Bedworth conurbation. Demand is spread across Town Centre, Bulkington and the wider Bedworth area, with the A444 handling most van routes.",
     knowledge: "Approved movers covering Bedworth handle moves in the residential town between Coventry and Nuneaton. The A444 connects both.",
     badge: "Bedworth Movers",
     areas: ["Town Centre", "Bulkington", "Exhall", "Ash Green", "Goodyers End"],
@@ -5985,11 +5970,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A487", "A4086", "A499"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A487 through-town traffic", "narrow streets near the castle", "limited old town parking"],
-    intro: "Caernarfon is a historic town in North Wales about 8 miles south of Bangor, famous for its medieval castle.",
+    intro: "Caernarfon is a historic town in North Wales about 8 miles south of Bangor, famous for its medieval castle. Demand is spread across Town Centre, Seiont and the wider Caernarfon area, with the A487 handling most van routes.",
     knowledge: "Approved movers covering Caernarfon handle moves in the castle town. The old town streets near the castle walls are narrow and limit van access.",
     badge: "Caernarfon Movers",
     areas: ["Town Centre", "Seiont", "Bontnewydd", "Caeathro", "Llanbeblig"],
-    nearbyLocations: ["bangor", "llandudno", "porthmadog"]
+    nearbyLocations: ["bangor", "llandudno", "porthmadog", "menai-bridge"]
   },
   {
     slug: "cottingham",
@@ -6000,11 +5985,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A164", "A1109", "A63"],
     propertyTypes: ["Victorian villas", "interwar semis", "modern estates"],
     movingConsiderations: ["A164 peak-time congestion", "A63 Hessle junction queues", "residential street parking"],
-    intro: "Cottingham is a large village about 4 miles north-west of Hull, popular with university staff and professionals.",
+    intro: "Cottingham is a large village about 4 miles north-west of Hull, popular with university staff and professionals. The A164 is the main route for moves between Cottingham Village, Willerby and the rest of East Riding of Yorkshire.",
     knowledge: "Approved movers covering Cottingham handle moves in the affluent village and its neighbouring suburbs Willerby and Kirk Ella.",
     badge: "Cottingham Movers",
     areas: ["Cottingham Village", "Willerby", "Hessle", "Anlaby", "Kirk Ella"],
-    nearbyLocations: ["hull", "beverley", "hedon", "bridlington"]
+    nearbyLocations: ["hull", "beverley", "hedon", "bridlington", "hessle"]
   },
   {
     slug: "dorchester",
@@ -6015,7 +6000,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A35", "A37", "A346"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A35 through-town traffic", "limited town centre parking", "Poundbury new development access"],
-    intro: "Dorchester is the county town of Dorset, about 8 miles north of Weymouth. Hardy's cottage country surrounds the town.",
+    intro: "Dorchester is the county town of Dorset, about 8 miles north of Weymouth. Hardy's cottage country surrounds the town. Local moves cluster around Town Centre and Poundbury, and the A35 keeps Dorchester linked to nearby towns.",
     knowledge: "Approved movers covering Dorchester handle moves in the historic county town and Poundbury development. The Georgian town centre has narrow streets.",
     badge: "Dorchester Movers",
     areas: ["Town Centre", "Poundbury", "Charminster", "Frome Whitfield", "Martinstown"],
@@ -6030,7 +6015,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A24", "A25", "A2005"],
     propertyTypes: ["Victorian villas", "Georgian townhouses", "modern estates"],
     movingConsiderations: ["A24 Dorking bypass traffic", "A25 narrow through village", "limited town centre parking"],
-    intro: "Dorking is a market town in Surrey at the foot of the North Downs, about 25 miles south of London.",
+    intro: "Dorking is a market town in Surrey at the foot of the North Downs, about 25 miles south of London. Most moves here run via the A24, with steady demand from Town Centre and North Holmwood.",
     knowledge: "Approved movers covering Dorking handle moves in the market town surrounded by Box Hill and the Surrey Hills. Steep lanes can limit van access.",
     badge: "Dorking Movers",
     areas: ["North Holmwood", "South Holmwood", "Meadvale", "Westcott"],
@@ -6045,8 +6030,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A38", "A450", "M5"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A38 through-town traffic", "M5 junction 5 queues", "limited town centre parking"],
-    intro: "Droitwich Spa is a spa town in Worcestershire about 7 miles north of Worcester on the A38.",
-    knowledge: "Approved movers covering Droitwich handle moves in the spa town. The M5 provides fast links to Birmingham.",
+    intro: "Droitwich Spa is a spa town in Worcestershire about 7 miles north of Worcester on the A38. Local moves cluster around Town Centre and Westlands, and the A38 keeps Droitwich Spa linked to nearby towns.",
+    knowledge: "Approved movers covering Droitwich handle moves in the spa town. The M5 provides fast links to Birmingham. Access and parking vary between Town Centre and Westlands, so notes on stairs and loading help movers quote accurately.",
     badge: "Droitwich Movers",
     areas: ["Westlands", "Hadzor", "Copcut", "Ombersley"],
     nearbyLocations: ["worcester", "kidderminster", "birmingham"]
@@ -6060,8 +6045,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A4", "A29", "M1"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A4 through-town traffic", "M1 junction 14 queues", "limited town centre parking"],
-    intro: "Dungannon is a town in County Tyrone about 35 miles west of Belfast on the A4.",
-    knowledge: "Approved movers covering Dungannon handle moves in the Tyrone town. The M1 provides Belfast links.",
+    intro: "Dungannon is a town in County Tyrone about 35 miles west of Belfast on the A4. Demand is spread across Town Centre, Killyman and the wider Dungannon area, with the A4 handling most van routes.",
+    knowledge: "Approved movers covering Dungannon handle moves in the Tyrone town. The M1 provides Belfast links. Jobs range from victorian terraces to larger family homes, with most van routes using the A4.",
     badge: "Dungannon Movers",
     areas: ["Killyman", "Thomas Clare", "Cavancourt", "Ranaghan"],
     nearbyLocations: ["omagh", "belfast", "armagh"]
@@ -6075,8 +6060,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A585", "A587", "M55"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern flats"],
     movingConsiderations: ["A585 Amounderness Way traffic", "limited dock area parking", "M55 junction 3 queues"],
-    intro: "Fleetwood is a port town at the north end of the Fylde Coast, about 7 miles north of Blackpool.",
-    knowledge: "Approved movers covering Fleetwood handle moves in the port town. The ferry to Knott End provides a local crossing.",
+    intro: "Fleetwood is a port town at the north end of the Fylde Coast, about 7 miles north of Blackpool. Most moves here run via the A585, with steady demand from Town Centre and Mount.",
+    knowledge: "Approved movers covering Fleetwood handle moves in the port town. The ferry to Knott End provides a local crossing. Approved movers covering Fleetwood plan around A585 traffic and parking in Town Centre.",
     badge: "Fleetwood Movers",
     areas: ["Mount", "Docklands", "Rossall", "Larkholme"],
     nearbyLocations: ["blackpool", "cleveleys", "preston"]
@@ -6086,14 +6071,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Formby",
     region: "Merseyside",
     county: "Merseyside",
-    nearbyAreas: ["Formby Village", "Freshfield", "Ainsdale", "Little Formby"],
+    nearbyAreas: ["Formby Village", "Freshfield", "Ainsdale", "Little Formby", "Hightown"],
     majorRoads: ["A565", "M57"],
     propertyTypes: ["Victorian villas", "interwar semis", "executive homes"],
     movingConsiderations: ["A565 coastal road traffic", "limited village parking", "pinewood access lanes"],
-    intro: "Formby is an affluent coastal village about 10 miles north of Liverpool, known for its pinewoods and red squirrel reserve.",
+    intro: "Formby is an affluent coastal village about 10 miles north of Liverpool, known for its pinewoods and red squirrel reserve. The A565 and Formby Village areas see the most regular moving demand.",
     knowledge: "Approved movers covering Formby handle moves in the affluent coastal suburb. The pinewoods area has narrow access lanes.",
     badge: "Formby Movers",
-    areas: ["Formby Village", "Freshfield", "Ainsdale", "Little Formby"],
+    areas: ["Formby Village", "Freshfield", "Ainsdale", "Little Formby", "Hightown"],
     nearbyLocations: ["liverpool", "southport", "kirkby"]
   },
   {
@@ -6105,8 +6090,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A7", "A72", "A6091"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A7 narrow through town", "limited town centre parking", "Borders Railway area"],
-    intro: "Galashiels is the largest town in the Scottish Borders, about 33 miles south of Edinburgh on the A7.",
-    knowledge: "Approved movers covering Galashiels handle moves in the Borders town. The railway provides Edinburgh links.",
+    intro: "Galashiels is the largest town in the Scottish Borders, about 33 miles south of Edinburgh on the A7. Most moves here run via the A7, with steady demand from Town Centre and Langlee.",
+    knowledge: "Approved movers covering Galashiels handle moves in the Borders town. The railway provides Edinburgh links. Access and parking vary between Town Centre and Langlee, so notes on stairs and loading help movers quote accurately.",
     badge: "Galashiels Movers",
     areas: ["Langlee", "Old Town", "Netherdale"],
     nearbyLocations: ["edinburgh", "hawick"]
@@ -6120,7 +6105,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A2", "A289", "M2"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A2 through-town traffic", "Medway Tunnel queues", "limited town centre parking"],
-    intro: "Gillingham is part of the Medway conurbation in Kent, about 30 miles south-east of London.",
+    intro: "Gillingham is part of the Medway conurbation in Kent, about 30 miles south-east of London. Local moves cluster around Town Centre and Rainham, and the A2 keeps Gillingham linked to nearby towns.",
     knowledge: "Approved movers covering Gillingham handle moves in the Medway towns, navigating the mix of Victorian naval-era streets and newer estates.",
     badge: "Gillingham Movers",
     areas: ["Town Centre", "Rainham", "Twydall", "Brompton", "Hempstead"],
@@ -6135,11 +6120,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A361", "A39", "B3151"],
     propertyTypes: ["Victorian terraces", "traditional cottages", "modern housing"],
     movingConsiderations: ["A361 through-town traffic", "limited town centre parking", "Tor area narrow lanes"],
-    intro: "Glastonbury is a town in Somerset about 15 miles south of Bristol, famous for the Tor and the music festival.",
-    knowledge: "Approved movers covering Glastonbury handle moves in the town near the Tor. Narrow hill lanes limit van access.",
+    intro: "Glastonbury is a town in Somerset about 15 miles south of Bristol, famous for the Tor and the music festival. The A361 is the main route for moves between Town Centre, Street and the rest of Somerset.",
+    knowledge: "Approved movers covering Glastonbury handle moves in the town near the Tor. Narrow hill lanes limit van access. Peak-time traffic on the A361 can affect timing, so flexible move windows help.",
     badge: "Glastonbury Movers",
     areas: ["Street", "West Pennard", "Baltonsborough", "Butleigh"],
-    nearbyLocations: ["wells", "bristol", "taunton"]
+    nearbyLocations: ["wells", "bristol", "taunton", "bridgwater"]
   },
   {
     slug: "gravesend",
@@ -6150,11 +6135,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A2", "A226", "M25"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern developments"],
     movingConsiderations: ["A2 congestion", "M25 Dartford Crossing queues", "limited riverside parking"],
-    intro: "Gravesend is a town on the Thames estuary about 20 miles east of London. The Dartford Crossing is nearby.",
+    intro: "Gravesend is a town on the Thames estuary about 20 miles east of London. The Dartford Crossing is nearby. Local moves cluster around Town Centre and Northfleet, and the A2 keeps Gravesend linked to nearby towns.",
     knowledge: "Approved movers covering Gravesend handle moves in the Thames-side town. The Dartford Crossing can add delays for moves heading north.",
     badge: "Gravesend Movers",
     areas: ["Northfleet", "Singlewell", "Riverview", "Windmill Hill"],
-    nearbyLocations: ["gillingham", "chatham", "maidstone"]
+    nearbyLocations: ["gillingham", "chatham", "maidstone", "dartford"]
   },
   {
     slug: "haverfordwest",
@@ -6165,8 +6150,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A40", "A477", "A487"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A40 through-town traffic", "limited town centre parking", "narrow castle-area streets"],
-    intro: "Haverfordwest is the county town of Pembrokeshire in West Wales, about 80 miles west of Swansea.",
-    knowledge: "Approved movers covering Haverfordwest handle moves in the riverside county town. The A40 provides east-west links.",
+    intro: "Haverfordwest is the county town of Pembrokeshire in West Wales, about 80 miles west of Swansea. Demand is spread across Town Centre, Merlins Bridge and the wider Haverfordwest area, with the A40 handling most van routes.",
+    knowledge: "Approved movers covering Haverfordwest handle moves in the riverside county town. The A40 provides east-west links. Peak-time traffic on the A40 can affect timing, so flexible move windows help.",
     badge: "Haverfordwest Movers",
     areas: ["Merlins Bridge", "Cartlett", "Prendergast", "Uzmaston"],
     nearbyLocations: ["swansea", "cardiff", "tenby"]
@@ -6180,8 +6165,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A7", "A6089", "B709"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A7 narrow roads", "limited town centre parking", "steep hill streets"],
-    intro: "Hawick is a town in the Scottish Borders about 50 miles south of Edinburgh, known for its knitwear industry.",
-    knowledge: "Approved movers covering Hawick handle moves in the mill town. The steep streets can challenge larger vans.",
+    intro: "Hawick is a town in the Scottish Borders about 50 miles south of Edinburgh, known for its knitwear industry. Demand is spread across Town Centre, Wilton and the wider Hawick area, with the A7 handling most van routes.",
+    knowledge: "Approved movers covering Hawick handle moves in the mill town. The steep streets can challenge larger vans. Access and parking vary between Town Centre and Wilton, so notes on stairs and loading help movers quote accurately.",
     badge: "Hawick Movers",
     areas: ["Wilton", "Burnfoot", "West End", "North End"],
     nearbyLocations: ["galashiels", "edinburgh"]
@@ -6195,8 +6180,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A272", "A23", "B2116"],
     propertyTypes: ["Victorian villas", "post-war semis", "modern estates"],
     movingConsiderations: ["A23 commuter traffic", "limited town centre parking", "railway station area congestion"],
-    intro: "Haywards Heath is a commuter town mid-way between Brighton and London, about 12 miles north of Brighton.",
-    knowledge: "Approved movers covering Haywards Heath handle moves in this commuter town. The A23 provides Brighton and London links.",
+    intro: "Haywards Heath is a commuter town mid-way between Brighton and London, about 12 miles north of Brighton. Demand is spread across Town Centre, Bolnore and the wider Haywards Heath area, with the A272 handling most van routes.",
+    knowledge: "Approved movers covering Haywards Heath handle moves in this commuter town. The A23 provides Brighton and London links. Jobs range from victorian villas to larger family homes, with most van routes using the A272.",
     badge: "Haywards Heath Movers",
     areas: ["Bolnore", "Franklands", "Muster Green", "New England"],
     nearbyLocations: ["brighton", "crawley", "lewes", "burgess-hill"]
@@ -6210,8 +6195,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A49", "A438", "A465"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A49 through-city traffic", "limited town centre parking", "Wye Bridge queues"],
-    intro: "Hereford is the county town of Herefordshire about 40 miles south-west of Birmingham on the A49.",
-    knowledge: "Approved movers covering Hereford handle moves in the cathedral city on the River Wye.",
+    intro: "Hereford is the county town of Herefordshire about 40 miles south-west of Birmingham on the A49. Demand is spread across Town Centre, Bartonsham and the wider Hereford area, with the A49 handling most van routes.",
+    knowledge: "Approved movers covering Hereford handle moves in the cathedral city on the River Wye. Peak-time traffic on the A49 can affect timing, so flexible move windows help.",
     badge: "Hereford Movers",
     areas: ["Bartonsham", "Hinton", "Whitecross", "Aylestone Hill"],
     nearbyLocations: ["worcester", "malvern", "gloucester"]
@@ -6225,7 +6210,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A63", "A1079", "A1166"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern estates"],
     movingConsiderations: ["A63 congestion at Humber Bridge approach", "town centre parking", "Humber Bridge toll area queues"],
-    intro: "Hessle is a town on the north bank of the Humber about 4 miles west of Hull, adjacent to the Humber Bridge.",
+    intro: "Hessle is a town on the north bank of the Humber about 4 miles west of Hull, adjacent to the Humber Bridge. Most moves here run via the A63, with steady demand from Hessle Haven and North Ferriby.",
     knowledge: "Approved movers covering Hessle handle moves in the town near the Humber Bridge. The A63 provides fast access to Hull and York.",
     badge: "Hessle Movers",
     areas: ["Hessle Haven", "North Ferriby", "Swanland", "Welton"],
@@ -6240,8 +6225,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A69", "A695", "B6305"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A69 congestion at rush hour", "limited town centre parking", "narrow Market Street"],
-    intro: "Hexham is a market town in Northumberland about 20 miles west of Newcastle on the A69.",
-    knowledge: "Approved movers covering Hexham handle moves in the historic market town. The A69 provides Newcastle links.",
+    intro: "Hexham is a market town in Northumberland about 20 miles west of Newcastle on the A69. Local moves cluster around Town Centre and Acomb, and the A69 keeps Hexham linked to nearby towns.",
+    knowledge: "Approved movers covering Hexham handle moves in the historic market town. The A69 provides Newcastle links. Approved movers covering Hexham plan around A69 traffic and parking in Town Centre.",
     badge: "Hexham Movers",
     areas: ["Acomb", "Hexhamshire", "Leazes", "St John's"],
     nearbyLocations: ["newcastle-upon-tyne", "corbridge", "prudhoe"]
@@ -6255,11 +6240,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A442", "A456", "A449"],
     propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
     movingConsiderations: ["A442 through-town traffic", "A456 Bewdley bridge queues", "limited town centre parking"],
-    intro: "Kidderminster is a town in Worcestershire about 17 miles south-west of Birmingham, known for the Severn Valley Railway.",
+    intro: "Kidderminster is a town in Worcestershire about 17 miles south-west of Birmingham, known for the Severn Valley Railway. Local moves cluster around Town Centre and Bewdley, and the A442 keeps Kidderminster linked to nearby towns.",
     knowledge: "Approved movers covering Kidderminster handle moves in the Wyre Forest town. Bewdley and Stourport are nearby and have narrow riverside streets.",
     badge: "Kidderminster Movers",
     areas: ["Town Centre", "Bewdley", "Stourport-on-Severn", "Comberton", "Spennells"],
-    nearbyLocations: ["birmingham", "worcester", "droitwich"]
+    nearbyLocations: ["birmingham", "worcester", "droitwich", "redditch"]
   },
   {
     slug: "kilmarnock",
@@ -6270,8 +6255,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A71", "A76", "A77"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A71 through-town traffic", "A77 rush-hour queues", "limited town centre parking"],
-    intro: "Kilmarnock is a town in East Ayrshire about 12 miles south of Glasgow, known as the home of Johnnie Walker whisky.",
-    knowledge: "Approved movers covering Kilmarnock handle moves in the town and surrounding areas. The A77 provides Glasgow links.",
+    intro: "Kilmarnock is a town in East Ayrshire about 12 miles south of Glasgow, known as the home of Johnnie Walker whisky. Demand is spread across Town Centre, Onthank and the wider Kilmarnock area, with the A71 handling most van routes.",
+    knowledge: "Approved movers covering Kilmarnock handle moves in the town and surrounding areas. The A77 provides Glasgow links. Access and parking vary between Town Centre and Onthank, so notes on stairs and loading help movers quote accurately.",
     badge: "Kilmarnock Movers",
     areas: ["Onthank", "Riccarton", "Shortlees", "Hurlford"],
     nearbyLocations: ["glasgow", "ayr", "hamilton", "east-kilbride"]
@@ -6285,11 +6270,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A570", "A506", "M57"],
     propertyTypes: ["post-war estates", "modern housing", "council terraces"],
     movingConsiderations: ["M57 junction 1-2 queues", "A570 through-town traffic", "residential parking on estates"],
-    intro: "Kirkby is a town about 6 miles north-east of Liverpool, part of Knowsley borough. The M57 provides road links.",
+    intro: "Kirkby is a town about 6 miles north-east of Liverpool, part of Knowsley borough. The M57 provides road links. Local moves cluster around Town Centre and Northwood, and the A570 keeps Kirkby linked to nearby towns.",
     knowledge: "Approved movers covering Kirkby handle moves across the residential estates. The M57 provides fast Liverpool and M62 access.",
     badge: "Kirkby Movers",
     areas: ["Northwood", "Whitefield", "Simonswood", "Old Rough"],
-    nearbyLocations: ["liverpool", "st-helens", "prescot", "huyton"]
+    nearbyLocations: ["liverpool", "st-helens", "prescot", "huyton", "formby"]
   },
   {
     slug: "knaresborough",
@@ -6300,7 +6285,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A59", "A168", "B6160"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "modern estates"],
     movingConsiderations: ["A59 through-town traffic", "narrow riverside streets", "limited town centre parking"],
-    intro: "Knaresborough is a historic market town about 3 miles east of Harrogate, perched above the River Nidd.",
+    intro: "Knaresborough is a historic market town about 3 miles east of Harrogate, perched above the River Nidd. Demand is spread across Town Centre, Bilton and the wider Knaresborough area, with the A59 handling most van routes.",
     knowledge: "Approved movers covering Knaresborough handle moves in the riverside town. The viaduct area has narrow streets and limited van access.",
     badge: "Knaresborough Movers",
     areas: ["Bilton", "Chapel Allerton", "Scotton", "Boroughbridge Road"],
@@ -6315,11 +6300,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A452", "A425", "M40"],
     propertyTypes: ["Regency townhouses", "Victorian villas", "modern estates"],
     movingConsiderations: ["A452 through-town traffic", "M40 junction 15 queues", "limited Parade area parking"],
-    intro: "Leamington Spa is an elegant spa town in Warwickshire about 9 miles south of Coventry. The Regency architecture and tree-lined avenues make it a distinctive move destination.",
+    intro: "Leamington Spa is an elegant spa town in Warwickshire about 9 miles south of Coventry. The Regency architecture and tree-lined avenues make it a distinctive move destination. The A452 and Town Centre areas see the most regular moving demand.",
     knowledge: "Approved movers covering Leamington Spa handle moves in the Regency town. The tree-lined avenues can have parking restrictions.",
     badge: "Leamington Spa Movers",
     areas: ["Newbold Comyn", "Whitnash", "Sydenham", "Brunswick"],
-    nearbyLocations: ["warwick", "coventry", "stratford-upon-avon"]
+    nearbyLocations: ["warwick", "coventry", "stratford-upon-avon", "rugby", "kenilworth"]
   },
   {
     slug: "leatherhead",
@@ -6330,7 +6315,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["M25", "A24", "A243"],
     propertyTypes: ["Victorian villas", "interwar semis", "executive homes"],
     movingConsiderations: ["M25 junction 9 queues", "A24 through-town traffic", "limited town centre parking"],
-    intro: "Leatherhead is a small market town in Surrey about 18 miles south of London, near the M25.",
+    intro: "Leatherhead is a small market town in Surrey about 18 miles south of London, near the M25. Most moves here run via the M25, with steady demand from Town Centre and Bookham.",
     knowledge: "Approved movers covering Leatherhead handle moves in this commuter town. Fetcham and Bookham are affluent residential areas.",
     badge: "Leatherhead Movers",
     areas: ["Bookham", "Fetcham", "Mickleham", "Commonside"],
@@ -6345,8 +6330,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A449", "B4218", "A4103"],
     propertyTypes: ["Victorian villas", "Edwardian houses", "modern estates"],
     movingConsiderations: ["steep hill streets", "limited town centre parking", "narrow lanes on the hills"],
-    intro: "Great Malvern is a spa town at the foot of the Malvern Hills about 8 miles south-west of Worcester.",
-    knowledge: "Approved movers covering Malvern handle moves in the hillside spa town. The steep streets can challenge larger vans.",
+    intro: "Great Malvern is a spa town at the foot of the Malvern Hills about 8 miles south-west of Worcester. Local moves cluster around Great Malvern and Malvern Link, and the A449 keeps Great Malvern linked to nearby towns.",
+    knowledge: "Approved movers covering Malvern handle moves in the hillside spa town. The steep streets can challenge larger vans. Access and parking vary between Great Malvern and Malvern Link, so notes on stairs and loading help movers quote accurately.",
     badge: "Malvern Movers",
     areas: ["Malvern Link", "Malvern Wells", "West Malvern", "Little Malvern"],
     nearbyLocations: ["worcester", "hereford", "ledbury"]
@@ -6360,8 +6345,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A589", "A5105", "M6"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern flats"],
     movingConsiderations: ["A589 coastal road summer traffic", "limited seafront parking", "narrow streets in West End"],
-    intro: "Morecambe is a seaside town on the Lancashire coast next to Lancaster, about 3 miles west of Lancaster on the A589.",
-    knowledge: "Approved movers covering Morecambe handle moves in the coastal town. The West End has narrow Victorian streets.",
+    intro: "Morecambe is a seaside town on the Lancashire coast next to Lancaster, about 3 miles west of Lancaster on the A589. Local moves cluster around West End and East End, and the A589 keeps Morecambe linked to nearby towns.",
+    knowledge: "Approved movers covering Morecambe handle moves in the coastal town. The West End has narrow Victorian streets. Access and parking vary between West End and East End, so notes on stairs and loading help movers quote accurately.",
     badge: "Morecambe Movers",
     areas: ["West End", "East End", "Poulton-le-Sands", "Central", "Heysham"],
     nearbyLocations: ["lancaster", "preston", "blackpool"]
@@ -6375,8 +6360,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A20", "A21", "A26"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern housing"],
     movingConsiderations: ["A20 through-town traffic", "limited town centre parking", "Comber road queues"],
-    intro: "Newtownards is a town at the head of Strangford Lough about 10 miles east of Belfast.",
-    knowledge: "Approved movers covering Newtownards handle moves in the market town. The A20 provides Belfast links.",
+    intro: "Newtownards is a town at the head of Strangford Lough about 10 miles east of Belfast. Demand is spread across Town Centre, Scrabo and the wider Newtownards area, with the A20 handling most van routes.",
+    knowledge: "Approved movers covering Newtownards handle moves in the market town. The A20 provides Belfast links. Jobs range from victorian terraces to larger family homes, with most van routes using the A20.",
     badge: "Newtownards Movers",
     areas: ["Scrabo", "Ballyalton", "West Winds", "Conlig"],
     nearbyLocations: ["belfast", "bangor-ni"]
@@ -6390,11 +6375,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A4055", "A4160", "A4058"],
     propertyTypes: ["Victorian villas", "Edwardian terraces", "modern flats"],
     movingConsiderations: ["A4055 rush-hour traffic", "limited seafront parking", "steep hill streets"],
-    intro: "Penarth is an affluent seaside town about 4 miles south of Cardiff, known as the Garden by the Sea.",
+    intro: "Penarth is an affluent seaside town about 4 miles south of Cardiff, known as the Garden by the Sea. Local moves cluster around Town Centre and Penarth Heights, and the A4055 keeps Penarth linked to nearby towns.",
     knowledge: "Approved movers covering Penarth handle moves in the affluent Victorian suburb. The steep hill streets require careful navigation.",
     badge: "Penarth Movers",
     areas: ["Penarth Heights", "Lavernock", "Sully", "Dinas Powys"],
-    nearbyLocations: ["cardiff", "barry", "bridgend"]
+    nearbyLocations: ["cardiff", "barry", "bridgend", "llandaff", "cardiff-bay"]
   },
   {
     slug: "porthmadog",
@@ -6405,8 +6390,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A487", "A497", "A4981"],
     propertyTypes: ["Victorian terraces", "modern holiday homes", "traditional Welsh cottages"],
     movingConsiderations: ["A487 summer tourist traffic", "limited harbour parking", "narrow High Street"],
-    intro: "Porthmadog is a coastal town in Gwynedd, famous as the terminus of the Ffestiniog Railway.",
-    knowledge: "Approved movers covering Porthmadog handle moves in the tourist town. Summer traffic can add delays.",
+    intro: "Porthmadog is a coastal town in Gwynedd, famous as the terminus of the Ffestiniog Railway. Most moves here run via the A487, with steady demand from Town Centre and Borth-y-Gest.",
+    knowledge: "Approved movers covering Porthmadog handle moves in the tourist town. Summer traffic can add delays. Jobs range from victorian terraces to larger family homes, with most van routes using the A487.",
     badge: "Porthmadog Movers",
     areas: ["Borth-y-Gest", "Morfa Bychan", "Penrhyndeudraeth", "Tremadog"],
     nearbyLocations: ["caernarfon", "llandudno", "bangor"]
@@ -6420,26 +6405,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A441", "A4023", "M42"],
     propertyTypes: ["post-war estates", "modern housing", "New Town developments"],
     movingConsiderations: ["M42 junction 2 queues", "A441 through-town traffic", "New Town ring road system"],
-    intro: "Redditch is a New Town in Worcestershire about 15 miles south of Birmingham near the M42.",
+    intro: "Redditch is a New Town in Worcestershire about 15 miles south of Birmingham near the M42. Most moves here run via the A441, with steady demand from Town Centre and Church Hill.",
     knowledge: "Approved movers covering Redditch handle moves across the New Town estates. The ring road system can confuse outsiders — local movers know the best routes.",
     badge: "Redditch Movers",
     areas: ["Church Hill", "Winyates", "Batchley", "Greenlands"],
     nearbyLocations: ["birmingham", "solihull", "kidderminster", "worcester"]
-  },
-  {
-    slug: "royal-tunbridge-wells",
-    name: "Royal Tunbridge Wells",
-    region: "Kent",
-    county: "Kent",
-    nearbyAreas: ["Town Centre", "Pantiles", "Southborough", "Rusthall", "Langton Green", "Groombridge"],
-    majorRoads: ["A21", "A26", "A264"],
-    propertyTypes: ["Regency townhouses", "Victorian villas", "executive homes"],
-    movingConsiderations: ["A21 through-town traffic", "limited Pantiles area parking", "narrow spa-town streets"],
-    intro: "Royal Tunbridge Wells is an elegant spa town in Kent about 35 miles south-east of London. The Pantiles and surrounding Regency architecture make it distinctive.",
-    knowledge: "Approved movers covering Tunbridge Wells handle moves in the affluent spa town. The Pantiles area has very narrow streets.",
-    badge: "Tunbridge Wells Movers",
-    areas: ["Pantiles", "Southborough", "Rusthall", "Langton Green", "Groombridge"],
-    nearbyLocations: ["tonbridge", "maidstone", "crawley", "horsham"]
   },
   {
     slug: "salisbury",
@@ -6450,11 +6420,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A36", "A30", "A345"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A36 through-town traffic", "limited cathedral close parking", "narrow medieval streets"],
-    intro: "Salisbury is a cathedral city in Wiltshire about 30 miles west of Winchester. The medieval centre has very narrow streets.",
+    intro: "Salisbury is a cathedral city in Wiltshire about 30 miles west of Winchester. The medieval centre has very narrow streets. The A36 and Town Centre areas see the most regular moving demand.",
     knowledge: "Approved movers covering Salisbury handle moves near the cathedral close. The medieval street layout limits van access in the centre.",
     badge: "Salisbury Movers",
     areas: ["Bishopdown", "Harnham", "Milford", "Fisherstown"],
-    nearbyLocations: ["winchester", "bath", "bristol"]
+    nearbyLocations: ["winchester", "bath", "bristol", "andover"]
   },
   {
     slug: "shrewsbury",
@@ -6465,11 +6435,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A5", "A49", "A5124"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A5 through-town traffic", "limited town centre parking", "narrow medieval streets near river"],
-    intro: "Shrewsbury is the county town of Shropshire about 40 miles north-west of Birmingham, a medieval town looped by the River Severn.",
+    intro: "Shrewsbury is the county town of Shropshire about 40 miles north-west of Birmingham, a medieval town looped by the River Severn. The A5 and Town Centre areas see the most regular moving demand.",
     knowledge: "Approved movers covering Shrewsbury handle moves in the medieval riverside town. The town centre streets inside the river loop are narrow.",
     badge: "Shrewsbury Movers",
     areas: ["Kingsland", "Belle Vue", "Sutton", "Meole Brace"],
-    nearbyLocations: ["telford", "wolverhampton", "stoke-on-trent"]
+    nearbyLocations: ["telford", "wolverhampton", "stoke-on-trent", "wrexham"]
   },
   {
     slug: "stratford-upon-avon",
@@ -6480,11 +6450,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A46", "A3400", "A422"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A46 through-town traffic", "limited town centre parking", "narrow Shakespeare-area streets"],
-    intro: "Stratford-upon-Avon is a market town in Warwickshire, Shakespeare's birthplace, about 8 miles south of Warwick.",
+    intro: "Stratford-upon-Avon is a market town in Warwickshire, Shakespeare's birthplace, about 8 miles south of Warwick. The A46 is the main route for moves between Town Centre, Shottery and the rest of Warwickshire.",
     knowledge: "Approved movers covering Stratford handle moves in the tourist town. The medieval centre has very narrow streets near Shakespeare's houses.",
     badge: "Stratford-upon-Avon Movers",
     areas: ["Shottery", "Bridgetown", "Tiddington", "Wilmcote"],
-    nearbyLocations: ["warwick", "leamington-spa", "coventry"]
+    nearbyLocations: ["warwick", "leamington-spa", "coventry", "cheltenham"]
   },
   {
     slug: "telford",
@@ -6510,8 +6480,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A478", "A4132", "A476"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "holiday flats"],
     movingConsiderations: ["A478 summer tourist traffic", "limited old town parking", "narrow medieval streets"],
-    intro: "Tenby is a popular seaside resort in Pembrokeshire with medieval walls and Georgian architecture.",
-    knowledge: "Approved movers covering Tenby handle moves in the tourist town. The medieval walled centre has very narrow streets.",
+    intro: "Tenby is a popular seaside resort in Pembrokeshire with medieval walls and Georgian architecture. Local moves cluster around Town Centre and North Beach, and the A478 keeps Tenby linked to nearby towns.",
+    knowledge: "Approved movers covering Tenby handle moves in the tourist town. The medieval walled centre has very narrow streets. Access and parking vary between Town Centre and North Beach, so notes on stairs and loading help movers quote accurately.",
     badge: "Tenby Movers",
     areas: ["North Beach", "South Beach", "St Julian's", "Penally"],
     nearbyLocations: ["haverfordwest", "swansea", "cardiff"]
@@ -6525,11 +6495,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A46", "A41", "M40"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "modern estates"],
     movingConsiderations: ["A46 through-town traffic", "limited castle area parking", "narrow medieval streets"],
-    intro: "Warwick is the county town of Warwickshire about 8 miles south of Coventry, famous for its castle.",
+    intro: "Warwick is the county town of Warwickshire about 8 miles south of Coventry, famous for its castle. Most moves here run via the A46, with steady demand from Town Centre and Bridge End.",
     knowledge: "Approved movers covering Warwick handle moves near the castle town. The medieval streets in the centre have limited van access.",
     badge: "Warwick Movers",
     areas: ["Bridge End", "Packmores", "Emscote"],
-    nearbyLocations: ["leamington-spa", "coventry", "stratford-upon-avon"]
+    nearbyLocations: ["leamington-spa", "coventry", "stratford-upon-avon", "kenilworth"]
   },
   {
     slug: "wells",
@@ -6540,7 +6510,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A39", "A371", "A359"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "modern estates"],
     movingConsiderations: ["A39 narrow through town", "limited cathedral area parking", "narrow Market Street"],
-    intro: "Wells is England's smallest city, in Somerset about 20 miles south of Bristol, famous for its cathedral.",
+    intro: "Wells is England's smallest city, in Somerset about 20 miles south of Bristol, famous for its cathedral. Most moves here run via the A39, with steady demand from Town Centre and East Wells.",
     knowledge: "Approved movers covering Wells handle moves in the cathedral city. The medieval streets near the cathedral have limited van access.",
     badge: "Wells Movers",
     areas: ["East Wells", "West Wells", "Priory", "Wookey"],
@@ -6555,7 +6525,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A58", "A1(M)", "B1224"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "executive homes"],
     movingConsiderations: ["A1(M) junction 46 queues", "A58 through-town traffic", "limited town centre parking"],
-    intro: "Wetherby is a market town on the A1(M) corridor about 12 miles north-east of Leeds.",
+    intro: "Wetherby is a market town on the A1(M) corridor about 12 miles north-east of Leeds. Most moves here run via the A58, with steady demand from Town Centre and Linton.",
     knowledge: "Approved movers covering Wetherby handle moves in this affluent commuter town. The A1(M) provides fast north-south links.",
     badge: "Wetherby Movers",
     areas: ["Linton", "Collingham", "Thorp Arch", "Boston Spa"],
@@ -6570,8 +6540,8 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A354", "A353", "A3054"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "holiday flats"],
     movingConsiderations: ["A354 through-town traffic", "limited seafront parking", "summer tourist congestion"],
-    intro: "Weymouth is a seaside town in Dorset about 8 miles south of Dorchester on the Jurassic Coast.",
-    knowledge: "Approved movers covering Weymouth handle moves in the seaside town. Summer tourist traffic can add delays.",
+    intro: "Weymouth is a seaside town in Dorset about 8 miles south of Dorchester on the Jurassic Coast. Local moves cluster around Town Centre and Melcombe Regis, and the A354 keeps Weymouth linked to nearby towns.",
+    knowledge: "Approved movers covering Weymouth handle moves in the seaside town. Summer tourist traffic can add delays. Jobs range from georgian townhouses to larger family homes, with most van routes using the A354.",
     badge: "Weymouth Movers",
     areas: ["Melcombe Regis", "Wyke Regis", "Preston", "Littlemoor"],
     nearbyLocations: ["dorchester", "poole", "bournemouth"]
@@ -6585,11 +6555,11 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A44", "A449", "M5"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A44 through-city traffic", "M5 junction 6-7 queues", "limited cathedral area parking"],
-    intro: "Worcester is the county town of Worcestershire about 30 miles south-west of Birmingham on the M5 corridor.",
+    intro: "Worcester is the county town of Worcestershire about 30 miles south-west of Birmingham on the M5 corridor. Local moves cluster around Town Centre and St Johns, and the A44 keeps Worcester linked to nearby towns.",
     knowledge: "Approved movers covering Worcester handle moves in the cathedral city. The river crossing and cathedral area have narrow streets.",
     badge: "Worcester Movers",
     areas: ["St Johns", "Barbourne", "Broomhall", "Tudor Grange"],
-    nearbyLocations: ["kidderminster", "droitwich", "birmingham", "malvern"]
+    nearbyLocations: ["kidderminster", "droitwich", "birmingham", "malvern", "hereford", "redditch"]
   },
 
   // ──────────────────────────────────────────
@@ -6603,9 +6573,9 @@ export const LOCATIONS: LocationData[] = [
     nearbyAreas: ["West Bromwich", "Oldbury", "Smethwick", "Tipton", "Wednesbury"],
     majorRoads: ["M5", "A41"],
     propertyTypes: ["Victorian terraces", "post-war estates"],
-    movingConsiderations: ["M5 junction 1 queues", "limited town centre parking"],
-    intro: "Sandwell covers the borough between Birmingham and Wolverhampton, including West Bromwich, Oldbury and Smethwick.",
-    knowledge: "Approved movers covering Sandwell handle moves across the metropolitan borough between Birmingham and Wolverhampton.",
+    movingConsiderations: ["M5 junction 1 queues", "limited town centre parking", "A41 Black Country Route congestion"],
+    intro: "Sandwell covers the borough between Birmingham and Wolverhampton, including West Bromwich, Oldbury and Smethwick. Local moves cluster around West Bromwich and Oldbury, and the M5 keeps Sandwell linked to nearby towns.",
+    knowledge: "Approved movers covering Sandwell handle moves across the metropolitan borough between Birmingham and Wolverhampton. Jobs range from victorian terraces to larger family homes, with most van routes using the M5.",
     badge: "Sandwell Movers",
     areas: ["West Bromwich", "Oldbury", "Smethwick", "Tipton", "Wednesbury"],
     nearbyLocations: ["birmingham", "walsall", "wolverhampton", "dudley"]
@@ -6615,14 +6585,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Kenilworth",
     region: "West Midlands",
     county: "Warwickshire",
-    nearbyAreas: ["Abbey Fields", "Knightlow", "Crackley", "Town Centre"],
+    nearbyAreas: ["Abbey Fields", "Knightlow", "Crackley", "Town Centre", "Leek Wootton"],
     majorRoads: ["A429", "A452", "M40"],
     propertyTypes: ["Victorian villas", "executive homes"],
-    movingConsiderations: ["A429 through-town traffic", "limited town centre parking"],
-    intro: "Kenilworth is a small town in Warwickshire about 5 miles south of Coventry, known for Kenilworth Castle.",
-    knowledge: "Approved movers covering Kenilworth handle moves in the historic castle town. The A429 connects to Warwick.",
+    movingConsiderations: ["A429 through-town traffic", "limited town centre parking", "A46 bypass junction traffic"],
+    intro: "Kenilworth is a small town in Warwickshire about 5 miles south of Coventry, known for Kenilworth Castle. Demand is spread across Abbey Fields, Knightlow and the wider Kenilworth area, with the A429 handling most van routes.",
+    knowledge: "Approved movers covering Kenilworth handle moves in the historic castle town. The A429 connects to Warwick. Access and parking vary between Abbey Fields and Knightlow, so notes on stairs and loading help movers quote accurately.",
     badge: "Kenilworth Movers",
-    areas: ["Abbey Fields", "Knightlow", "Crackley"],
+    areas: ["Abbey Fields", "Knightlow", "Crackley", "Leek Wootton"],
     nearbyLocations: ["warwick", "leamington-spa", "coventry"]
   },
   {
@@ -6633,9 +6603,9 @@ export const LOCATIONS: LocationData[] = [
     nearbyAreas: ["Llandaff Village", "Llandaff North", "Radyr", "Danescourt", "Fairwater"],
     majorRoads: ["A4119", "A48"],
     propertyTypes: ["Victorian villas", "Edwardian terraces", "modern estates"],
-    movingConsiderations: ["A48 Cardiff traffic", "limited village parking"],
-    intro: "Llandaff is an affluent suburb of Cardiff about 3 miles north-west of the city centre, known for its cathedral.",
-    knowledge: "Approved movers covering Llandaff handle moves in the affluent cathedral suburb of Cardiff.",
+    movingConsiderations: ["A48 Cardiff traffic", "limited village parking", "narrow lanes around the cathedral green"],
+    intro: "Llandaff is an affluent suburb of Cardiff about 3 miles north-west of the city centre, known for its cathedral. The A4119 is the main route for moves between Llandaff Village, Llandaff North and the rest of Cardiff.",
+    knowledge: "Approved movers covering Llandaff handle moves in the affluent cathedral suburb of Cardiff. Jobs range from victorian villas to larger family homes, with most van routes using the A4119.",
     badge: "Llandaff Movers",
     areas: ["Llandaff Village", "Radyr", "Danescourt", "Fairwater"],
     nearbyLocations: ["cardiff", "penarth", "caerphilly"]
@@ -6649,7 +6619,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A4232", "A48", "A470"],
     propertyTypes: ["modern apartments", "converted warehouses", "new-build flats"],
     movingConsiderations: ["A4232 Cardiff Bay Link road traffic", "limited waterfront parking", "apartment block loading bay restrictions"],
-    intro: "Cardiff Bay is a regenerated waterfront district about 2 miles south of Cardiff city centre with modern apartments and converted warehouses.",
+    intro: "Cardiff Bay is a regenerated waterfront district about 2 miles south of Cardiff city centre with modern apartments and converted warehouses. The A4232 and Mermaid Quay areas see the most regular moving demand.",
     knowledge: "Approved movers covering Cardiff Bay handle moves in the modern waterfront district. Apartment blocks often have loading bay restrictions.",
     badge: "Cardiff Bay Movers",
     areas: ["Mermaid Quay", "Atlantic Wharf", "Pontcanna", "Butetown", "Grangetown"],
@@ -6660,14 +6630,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Whickham",
     region: "North East",
     county: "Gateshead",
-    nearbyAreas: ["Whickham Village", "Swalwell", "Fellside", "Front Street area"],
+    nearbyAreas: ["Whickham Village", "Swalwell", "Fellside", "Front Street area", "Dunston"],
     majorRoads: ["A1", "A692"],
     propertyTypes: ["interwar semis", "executive homes", "modern estates"],
-    movingConsiderations: ["A1 western bypass traffic", "residential parking"],
-    intro: "Whickham is an affluent suburb about 4 miles west of Gateshead on the A692.",
-    knowledge: "Approved movers covering Whickham handle moves in the affluent suburb. Fellside has steep hill access.",
+    movingConsiderations: ["A1 western bypass traffic", "residential parking", "steep hill routes towards Dunston"],
+    intro: "Whickham is an affluent suburb about 4 miles west of Gateshead on the A692. Local moves cluster around Whickham Village and Swalwell, and the A1 keeps Whickham linked to nearby towns.",
+    knowledge: "Approved movers covering Whickham handle moves in the affluent suburb. Fellside has steep hill access. Approved movers covering Whickham plan around A1 traffic and parking in Whickham Village.",
     badge: "Whickham Movers",
-    areas: ["Whickham Village", "Swalwell", "Fellside"],
+    areas: ["Whickham Village", "Swalwell", "Fellside", "Dunston"],
     nearbyLocations: ["gateshead", "newcastle-upon-tyne", "durham"]
   },
   {
@@ -6675,14 +6645,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Guiseley",
     region: "West Yorkshire",
     county: "West Yorkshire",
-    nearbyAreas: ["Yeadon", "Rawdon", "Menston", "Horsforth"],
+    nearbyAreas: ["Yeadon", "Rawdon", "Menston", "Horsforth", "Esholt"],
     majorRoads: ["A65", "A653"],
     propertyTypes: ["interwar semis", "executive homes", "modern estates"],
-    movingConsiderations: ["A65 commuter traffic", "limited village parking"],
-    intro: "Guiseley is a suburb about 8 miles north-west of Leeds on the A65 between Leeds and Ilkley.",
-    knowledge: "Approved movers covering Guiseley handle moves in the residential suburb. Yeadon and Rawdon are adjacent.",
+    movingConsiderations: ["A65 commuter traffic", "limited village parking", "retail park weekend traffic"],
+    intro: "Guiseley is a suburb about 8 miles north-west of Leeds on the A65 between Leeds and Ilkley. Most moves here run via the A65, with steady demand from Yeadon and Rawdon.",
+    knowledge: "Approved movers covering Guiseley handle moves in the residential suburb. Yeadon and Rawdon are adjacent. Jobs range from interwar semis to larger family homes, with most van routes using the A65.",
     badge: "Guiseley Movers",
-    areas: ["Yeadon", "Rawdon", "Menston", "Horsforth"],
+    areas: ["Yeadon", "Rawdon", "Menston", "Horsforth", "Esholt"],
     nearbyLocations: ["leeds", "ilkley", "bradford"]
   },
   {
@@ -6690,14 +6660,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Teignmouth",
     region: "South West",
     county: "Devon",
-    nearbyAreas: ["Shaldon", "Dawlish", "Newton Abbot"],
+    nearbyAreas: ["Shaldon", "Dawlish", "Newton Abbot", "Bishopsteignton", "Holcombe"],
     majorRoads: ["A379", "A381"],
     propertyTypes: ["Victorian terraces", "Georgian townhouses", "holiday flats"],
     movingConsiderations: ["A379 coastal road traffic", "limited seafront parking", "summer tourist congestion"],
-    intro: "Teignmouth is a seaside town on the south Devon coast about 14 miles south of Exeter.",
-    knowledge: "Approved movers covering Teignmouth handle moves in the coastal town. Summer tourist traffic can add delays.",
+    intro: "Teignmouth is a seaside town on the south Devon coast about 14 miles south of Exeter. The A379 is the main route for moves between Shaldon, Dawlish and the rest of Devon.",
+    knowledge: "Approved movers covering Teignmouth handle moves in the coastal town. Summer tourist traffic can add delays. Peak-time traffic on the A379 can affect timing, so flexible move windows help.",
     badge: "Teignmouth Movers",
-    areas: ["Shaldon", "Dawlish", "Newton Abbot"],
+    areas: ["Shaldon", "Dawlish", "Newton Abbot", "Bishopsteignton", "Holcombe"],
     nearbyLocations: ["exeter", "torquay", "plymouth"]
   },
   {
@@ -6709,7 +6679,7 @@ export const LOCATIONS: LocationData[] = [
     majorRoads: ["A4", "A4018"],
     propertyTypes: ["Georgian terraces", "Victorian villas", "Regency houses"],
     movingConsiderations: ["A4 Portway traffic", "limited Clifton Village parking", "steep hill streets"],
-    intro: "Clifton is an affluent suburb of Bristol about 2 miles west of the city centre, known for the suspension bridge and Georgian architecture.",
+    intro: "Clifton is an affluent suburb of Bristol about 2 miles west of the city centre, known for the suspension bridge and Georgian architecture. The A4 and Clifton Village areas see the most regular moving demand.",
     knowledge: "Approved movers covering Clifton handle moves in the affluent suburb. The steep streets and suspension bridge area have limited van access.",
     badge: "Clifton Movers",
     areas: ["Clifton Village", "Clifton Downs", "Hotwells", "Westbury Park", "Redland"],
@@ -6720,29 +6690,29 @@ export const LOCATIONS: LocationData[] = [
     name: "Clevedon",
     region: "South West",
     county: "North Somerset",
-    nearbyAreas: ["Walton", "Clevedon Pier area", "Kenn"],
+    nearbyAreas: ["Walton", "Clevedon Pier area", "Kenn", "Tickenham", "Nailsea"],
     majorRoads: ["A370", "M5"],
     propertyTypes: ["Victorian villas", "Edwardian terraces", "modern estates"],
     movingConsiderations: ["A370 coastal traffic", "limited seafront parking", "M5 junction 20 queues"],
-    intro: "Clevedon is a seaside town on the North Somerset coast about 13 miles west of Bristol.",
-    knowledge: "Approved movers covering Clevedon handle moves in the coastal town near Bristol. The M5 provides Bristol links.",
+    intro: "Clevedon is a seaside town on the North Somerset coast about 13 miles west of Bristol. Most moves here run via the A370, with steady demand from Walton and Clevedon Pier area.",
+    knowledge: "Approved movers covering Clevedon handle moves in the coastal town near Bristol. The M5 provides Bristol links. Access and parking vary between Walton and Clevedon Pier area, so notes on stairs and loading help movers quote accurately.",
     badge: "Clevedon Movers",
-    areas: ["Walton", "Clevedon Pier area", "Kenn"],
-    nearbyLocations: ["bristol", "weston-super-mare", "portishead"]
+    areas: ["Walton", "Clevedon Pier area", "Kenn", "Tickenham", "Nailsea"],
+    nearbyLocations: ["bristol", "weston-super-mare", "portishead", "bristol-clifton"]
   },
   {
     slug: "portishead",
     name: "Portishead",
     region: "South West",
     county: "North Somerset",
-    nearbyAreas: ["Portishead Marina", "Nursery", "Redcliffe Bay"],
+    nearbyAreas: ["Portishead Marina", "Nursery", "Redcliffe Bay", "Portbury", "Weston-in-Gordano"],
     majorRoads: ["A369", "M5"],
     propertyTypes: ["modern apartments", "Victorian terraces", "executive homes"],
     movingConsiderations: ["A369 Portbury Hundred traffic", "limited marina parking", "M5 junction 19 queues"],
-    intro: "Portishead is a coastal town about 8 miles west of Bristol on the A369, with a regenerated marina.",
-    knowledge: "Approved movers covering Portishead handle moves in the coastal town with marina apartments.",
+    intro: "Portishead is a coastal town about 8 miles west of Bristol on the A369, with a regenerated marina. Most moves here run via the A369, with steady demand from Portishead Marina and Nursery.",
+    knowledge: "Approved movers covering Portishead handle moves in the coastal town with marina apartments. Approved movers covering Portishead plan around A369 traffic and parking in Portishead Marina.",
     badge: "Portishead Movers",
-    areas: ["Portishead Marina", "Nursery", "Redcliffe Bay"],
+    areas: ["Portishead Marina", "Nursery", "Redcliffe Bay", "Portbury", "Weston-in-Gordano"],
     nearbyLocations: ["bristol", "clevedon", "weston-super-mare"]
   },
   {
@@ -6750,59 +6720,59 @@ export const LOCATIONS: LocationData[] = [
     name: "Bexleyheath",
     region: "Greater London",
     county: "London",
-    nearbyAreas: ["Crayford", "Barnehurst", "Albany Park", "Upton"],
+    nearbyAreas: ["Crayford", "Barnehurst", "Albany Park", "Upton", "Blendon"],
     majorRoads: ["A2", "A207", "A220"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern estates"],
-    movingConsiderations: ["A2 through-town traffic", "limited town centre parking"],
-    intro: "Bexleyheath is a suburban town in south-east London about 12 miles from the city centre on the A2.",
-    knowledge: "Approved movers covering Bexleyheath handle moves in the south-east London suburb.",
+    movingConsiderations: ["A2 through-town traffic", "limited town centre parking", "Broadway shopping area congestion"],
+    intro: "Bexleyheath is a suburban town in south-east London about 12 miles from the city centre on the A2. Most moves here run via the A2, with steady demand from Crayford and Barnehurst.",
+    knowledge: "Approved movers covering Bexleyheath handle moves in the south-east London suburb. Access and parking vary between Crayford and Barnehurst, so notes on stairs and loading help movers quote accurately.",
     badge: "Bexleyheath Movers",
-    areas: ["Crayford", "Barnehurst", "Albany Park", "Upton"],
-    nearbyLocations: ["bexley", "romford", "croydon"]
+    areas: ["Crayford", "Barnehurst", "Albany Park", "Upton", "Blendon"],
+    nearbyLocations: ["bexley", "romford", "croydon", "dartford", "sidcup"]
   },
   {
     slug: "dartford",
     name: "Dartford",
     region: "Greater London",
     county: "Kent",
-    nearbyAreas: ["Crayford", "Swanscombe", "Stone", "Greenhithe"],
+    nearbyAreas: ["Crayford", "Swanscombe", "Stone", "Greenhithe", "Wilmington"],
     majorRoads: ["A2", "M25", "A282"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern estates"],
     movingConsiderations: ["A2 through-town traffic", "M25 Dartford Crossing queues", "limited town centre parking"],
-    intro: "Dartford is a town in north Kent about 16 miles east of London, adjacent to the Dartford Crossing.",
-    knowledge: "Approved movers covering Dartford handle moves near the Dartford Crossing. The A2 and M25 provide London links.",
+    intro: "Dartford is a town in north Kent about 16 miles east of London, adjacent to the Dartford Crossing. The A2 is the main route for moves between Crayford, Swanscombe and the rest of Kent.",
+    knowledge: "Approved movers covering Dartford handle moves near the Dartford Crossing. The A2 and M25 provide London links. Jobs range from victorian terraces to larger family homes, with most van routes using the A2.",
     badge: "Dartford Movers",
-    areas: ["Crayford", "Swanscombe", "Stone", "Greenhithe"],
-    nearbyLocations: ["gravesend", "bexleyheath", "chatham"]
+    areas: ["Crayford", "Swanscombe", "Stone", "Greenhithe", "Wilmington"],
+    nearbyLocations: ["gravesend", "bexleyheath", "chatham", "bexley", "sevenoaks"]
   },
   {
     slug: "sevenoaks",
     name: "Sevenoaks",
     region: "Kent",
     county: "Kent",
-    nearbyAreas: ["Otford", "Kemsing", "Sevenoaks Weald", "Hildenborough"],
+    nearbyAreas: ["Otford", "Kemsing", "Sevenoaks Weald", "Hildenborough", "Riverhead"],
     majorRoads: ["A21", "A225", "M25"],
     propertyTypes: ["Georgian townhouses", "Victorian villas", "executive homes"],
     movingConsiderations: ["A21 through-town traffic", "M25 junction 5 queues", "limited town centre parking"],
-    intro: "Sevenoaks is an affluent town in Kent about 22 miles south-east of London near the M25.",
-    knowledge: "Approved movers covering Sevenoaks handle moves in the affluent commuter town.",
+    intro: "Sevenoaks is an affluent town in Kent about 22 miles south-east of London near the M25. Most moves here run via the A21, with steady demand from Otford and Kemsing.",
+    knowledge: "Approved movers covering Sevenoaks handle moves in the affluent commuter town. Peak-time traffic on the A21 can affect timing, so flexible move windows help.",
     badge: "Sevenoaks Movers",
-    areas: ["Otford", "Kemsing", "Sevenoaks Weald", "Hildenborough"],
-    nearbyLocations: ["tonbridge", "maidstone", "dartford"]
+    areas: ["Otford", "Kemsing", "Sevenoaks Weald", "Hildenborough", "Riverhead"],
+    nearbyLocations: ["tonbridge", "maidstone", "dartford", "tunbridge-wells"]
   },
   {
     slug: "sidcup",
     name: "Sidcup",
     region: "Greater London",
     county: "London",
-    nearbyAreas: ["Lamorbey", "Longlands", "Halfway Street"],
+    nearbyAreas: ["Lamorbey", "Longlands", "Halfway Street", "Foots Cray", "Blackfen"],
     majorRoads: ["A20", "A211", "A221"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern estates"],
-    movingConsiderations: ["A20 commuter traffic", "residential parking zones"],
-    intro: "Sidcup is a suburb in south-east London about 11 miles from the city centre on the A20.",
-    knowledge: "Approved movers covering Sidcup handle moves in the south-east London suburb.",
+    movingConsiderations: ["A20 commuter traffic", "residential parking zones", "A20 Sidcup Bypass queues"],
+    intro: "Sidcup is a suburb in south-east London about 11 miles from the city centre on the A20. The A20 is the main route for moves between Lamorbey, Longlands and the rest of London.",
+    knowledge: "Approved movers covering Sidcup handle moves in the south-east London suburb. Jobs range from victorian terraces to larger family homes, with most van routes using the A20.",
     badge: "Sidcup Movers",
-    areas: ["Lamorbey", "Longlands", "Halfway Street"],
+    areas: ["Lamorbey", "Longlands", "Halfway Street", "Foots Cray", "Blackfen"],
     nearbyLocations: ["bexley", "bexleyheath", "romford"]
   },
   {
@@ -6810,14 +6780,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Maldon",
     region: "East of England",
     county: "Essex",
-    nearbyAreas: ["Heybridge", "South Maldon", "Fullbridge"],
+    nearbyAreas: ["Heybridge", "South Maldon", "Fullbridge", "Heybridge Basin", "Langford"],
     majorRoads: ["A414", "B1018"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "modern estates"],
     movingConsiderations: ["A414 through-town traffic", "limited quayside parking", "narrow High Street"],
-    intro: "Maldon is a historic town on the River Chelmer in Essex about 30 miles north-east of London, famous for its sea salt.",
-    knowledge: "Approved movers covering Maldon handle moves in the riverside town. The quayside area has narrow streets.",
+    intro: "Maldon is a historic town on the River Chelmer in Essex about 30 miles north-east of London, famous for its sea salt. The A414 is the main route for moves between Heybridge, South Maldon and the rest of Essex.",
+    knowledge: "Approved movers covering Maldon handle moves in the riverside town. The quayside area has narrow streets. Approved movers covering Maldon plan around A414 traffic and parking in Heybridge.",
     badge: "Maldon Movers",
-    areas: ["Heybridge", "South Maldon", "Fullbridge"],
+    areas: ["Heybridge", "South Maldon", "Fullbridge", "Heybridge Basin", "Langford"],
     nearbyLocations: ["chelmsford", "colchester", "brentwood"]
   },
   {
@@ -6825,14 +6795,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Whitefield",
     region: "Greater Manchester",
     county: "Greater Manchester",
-    nearbyAreas: ["Prestwich", "Unsworth", "Hollins"],
+    nearbyAreas: ["Prestwich", "Unsworth", "Hollins", "Radcliffe", "Besses o' th' Barn"],
     majorRoads: ["A56", "M60"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern estates"],
-    movingConsiderations: ["A56 through-town traffic", "M60 junction 17 queues"],
-    intro: "Whitefield is a suburb about 6 miles north of Manchester on the A56 near the M60.",
-    knowledge: "Approved movers covering Whitefield handle moves in the suburb between Bury and Prestwich.",
+    movingConsiderations: ["A56 through-town traffic", "M60 junction 17 queues", "A56 Bury New Road congestion"],
+    intro: "Whitefield is a suburb about 6 miles north of Manchester on the A56 near the M60. Most moves here run via the A56, with steady demand from Prestwich and Unsworth.",
+    knowledge: "Approved movers covering Whitefield handle moves in the suburb between Bury and Prestwich. Jobs range from victorian terraces to larger family homes, with most van routes using the A56.",
     badge: "Whitefield Movers",
-    areas: ["Prestwich", "Unsworth", "Hollins"],
+    areas: ["Prestwich", "Unsworth", "Hollins", "Radcliffe", "Besses o' th' Barn"],
     nearbyLocations: ["bury", "prestwich", "manchester"]
   },
   {
@@ -6840,14 +6810,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Timperley",
     region: "Greater Manchester",
     county: "Greater Manchester",
-    nearbyAreas: ["Hale", "Baguley", "Brooklands"],
+    nearbyAreas: ["Hale", "Baguley", "Brooklands", "Altrincham", "Bowdon"],
     majorRoads: ["A56", "A560", "M56"],
     propertyTypes: ["interwar semis", "executive homes", "modern estates"],
     movingConsiderations: ["A56 through-village traffic", "M56 junction 6 queues", "limited village parking"],
-    intro: "Timperley is an affluent suburb about 7 miles south-west of Manchester, adjacent to Altrincham.",
-    knowledge: "Approved movers covering Timperley handle moves in the affluent suburb near Altrincham.",
+    intro: "Timperley is an affluent suburb about 7 miles south-west of Manchester, adjacent to Altrincham. Most moves here run via the A56, with steady demand from Hale and Baguley.",
+    knowledge: "Approved movers covering Timperley handle moves in the affluent suburb near Altrincham. Jobs range from interwar semis to larger family homes, with most van routes using the A56.",
     badge: "Timperley Movers",
-    areas: ["Hale", "Baguley", "Brooklands"],
+    areas: ["Hale", "Baguley", "Brooklands", "Altrincham", "Bowdon"],
     nearbyLocations: ["altrincham", "sale", "manchester"]
   },
   {
@@ -6855,14 +6825,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Poulton-le-Fylde",
     region: "Lancashire",
     county: "Lancashire",
-    nearbyAreas: ["Hardhorn", "Staining", "Little Poulton"],
+    nearbyAreas: ["Hardhorn", "Staining", "Little Poulton", "Carleton", "Singleton"],
     majorRoads: ["A586", "A585"],
     propertyTypes: ["Victorian terraces", "interwar semis", "modern estates"],
-    movingConsiderations: ["A586 through-town traffic", "limited town centre parking"],
-    intro: "Poulton-le-Fylde is a market town about 3 miles inland from Blackpool on the Fylde Coast.",
-    knowledge: "Approved movers covering Poulton-le-Fylde handle moves in the affluent market town inland from Blackpool.",
+    movingConsiderations: ["A586 through-town traffic", "limited town centre parking", "town centre one-way system"],
+    intro: "Poulton-le-Fylde is a market town about 3 miles inland from Blackpool on the Fylde Coast. The A586 is the main route for moves between Hardhorn, Staining and the rest of Lancashire.",
+    knowledge: "Approved movers covering Poulton-le-Fylde handle moves in the affluent market town inland from Blackpool. Access and parking vary between Hardhorn and Staining, so notes on stairs and loading help movers quote accurately.",
     badge: "Poulton-le-Fylde Movers",
-    areas: ["Hardhorn", "Staining", "Little Poulton"],
+    areas: ["Hardhorn", "Staining", "Little Poulton", "Carleton", "Singleton"],
     nearbyLocations: ["blackpool", "cleveleys", "preston"]
   },
   {
@@ -6870,14 +6840,14 @@ export const LOCATIONS: LocationData[] = [
     name: "St Andrews",
     region: "Scotland",
     county: "Fife",
-    nearbyAreas: ["North Street", "South Street", "St Andrews Links"],
+    nearbyAreas: ["North Street", "South Street", "St Andrews Links", "Canongate", "Strathkinness"],
     majorRoads: ["A91", "A918", "A915"],
     propertyTypes: ["Victorian villas", "traditional cottages", "modern housing"],
     movingConsiderations: ["A91 narrow through town", "limited old town parking", "summer tourist congestion"],
-    intro: "St Andrews is a historic university town in Fife about 30 miles north-east of Edinburgh, famous for golf and the oldest university in Scotland.",
+    intro: "St Andrews is a historic university town in Fife about 30 miles north-east of Edinburgh, famous for golf and the oldest university in Scotland. The A91 and North Street areas see the most regular moving demand.",
     knowledge: "Approved movers covering St Andrews handle moves in the university town. The medieval streets near the cathedral have limited van access.",
     badge: "St Andrews Movers",
-    areas: ["North Street", "South Street", "St Andrews Links"],
+    areas: ["North Street", "South Street", "St Andrews Links", "Canongate", "Strathkinness"],
     nearbyLocations: ["dundee", "edinburgh", "perth"]
   },
   {
@@ -6885,14 +6855,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Berkhamsted",
     region: "Hertfordshire",
     county: "Hertfordshire",
-    nearbyAreas: ["Northchurch", "Castle Hill", "West Berkhamsted"],
+    nearbyAreas: ["Northchurch", "Castle Hill", "West Berkhamsted", "Potten End", "Frithsden"],
     majorRoads: ["A4250", "A41", "M25"],
     propertyTypes: ["Georgian townhouses", "Victorian terraces", "executive homes"],
     movingConsiderations: ["A41 through-town traffic", "M25 junction 20 queues", "limited High Street parking"],
-    intro: "Berkhamsted is an affluent market town in Hertfordshire about 26 miles north-west of London on the A41.",
+    intro: "Berkhamsted is an affluent market town in Hertfordshire about 26 miles north-west of London on the A41. Demand is spread across Northchurch, Castle Hill and the wider Berkhamsted area, with the A4250 handling most van routes.",
     knowledge: "Approved movers covering Berkhamsted handle moves in the affluent Chiltern town. The narrow High Street limits van access.",
     badge: "Berkhamsted Movers",
-    areas: ["Northchurch", "Castle Hill", "West Berkhamsted"],
+    areas: ["Northchurch", "Castle Hill", "West Berkhamsted", "Potten End", "Frithsden"],
     nearbyLocations: ["hemel-hempstead", "watford", "st-albans"]
   },
   {
@@ -6900,14 +6870,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Menai Bridge",
     region: "Wales",
     county: "Anglesey",
-    nearbyAreas: ["Beaumaris", "Llanfairpwll", "Pentraeth"],
+    nearbyAreas: ["Beaumaris", "Llanfairpwll", "Pentraeth", "Llandegfan", "Gaerwen"],
     majorRoads: ["A5", "A55"],
     propertyTypes: ["Victorian villas", "traditional Welsh cottages", "holiday homes"],
     movingConsiderations: ["A5 Menai Suspension Bridge traffic", "limited town parking", "island access via A55 bridge"],
-    intro: "Menai Bridge is a town on the Isle of Anglesey in North Wales, connected to Bangor by the famous Menai Suspension Bridge.",
+    intro: "Menai Bridge is a town on the Isle of Anglesey in North Wales, connected to Bangor by the famous Menai Suspension Bridge. The A5 and Beaumaris areas see the most regular moving demand.",
     knowledge: "Approved movers covering Menai Bridge handle moves on the island. The Menai Suspension Bridge can restrict larger vehicles.",
     badge: "Menai Bridge Movers",
-    areas: ["Beaumaris", "Llanfairpwll", "Pentraeth"],
+    areas: ["Beaumaris", "Llanfairpwll", "Pentraeth", "Llandegfan", "Gaerwen"],
     nearbyLocations: ["bangor", "llandudno", "caernarfon"]
   },
   {
@@ -6915,14 +6885,14 @@ export const LOCATIONS: LocationData[] = [
     name: "Devonport",
     region: "South West",
     county: "Devon",
-    nearbyAreas: ["Keyham", "Stoke", "Morice Town"],
+    nearbyAreas: ["Keyham", "Stoke", "Morice Town", "Stonehouse", "Milehouse"],
     majorRoads: ["A374", "A3064"],
     propertyTypes: ["Victorian terraces", "post-war estates", "modern flats"],
-    movingConsiderations: ["dockyard area access restrictions", "limited parking near the dockyard"],
-    intro: "Devonport is a historic dockyard district in Plymouth about 1 mile west of the city centre.",
+    movingConsiderations: ["dockyard area access restrictions", "limited parking near the dockyard", "dockyard shift-time traffic"],
+    intro: "Devonport is a historic dockyard district in Plymouth about 1 mile west of the city centre. Local moves cluster around Keyham and Stoke, and the A374 keeps Devonport linked to nearby towns.",
     knowledge: "Approved movers covering Devonport handle moves near the historic dockyard. The naval area has some access restrictions.",
     badge: "Devonport Movers",
-    areas: ["Keyham", "Stoke", "Morice Town"],
+    areas: ["Keyham", "Stoke", "Morice Town", "Stonehouse", "Milehouse"],
     nearbyLocations: ["plymouth", "exeter", "torquay"]
   },
 

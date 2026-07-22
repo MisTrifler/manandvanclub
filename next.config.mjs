@@ -27,6 +27,17 @@ const nextConfig = {
         destination: '/apply-to-join',
         permanent: true,
       },
+      {
+        // Duplicate town pages consolidated — canonical pages kept at the original slugs
+        source: '/man-and-van-ashford-kent',
+        destination: '/man-and-van-ashford',
+        permanent: true,
+      },
+      {
+        source: '/man-and-van-royal-tunbridge-wells',
+        destination: '/man-and-van-tunbridge-wells',
+        permanent: true,
+      },
     ];
   },
 };

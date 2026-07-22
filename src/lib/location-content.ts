@@ -675,7 +675,6 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
 
     // ─── Nationwide Expansion — 45 new towns/cities postcodes ───
     "amersham": ['HP6', 'HP7'],
-    "ashford-kent": ['TN24', 'TN25'],
     "bangor-ni": ['BT19', 'BT20'],
     "bedworth": ['CV12'],
     "caernarfon": ['LL54', 'LL55'],
@@ -708,7 +707,6 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     "penarth": ['CF64'],
     "porthmadog": ['LL49'],
     "redditch": ['B97', 'B98'],
-    "royal-tunbridge-wells": ['TN1', 'TN2', 'TN3', 'TN4'],
     "salisbury": ['SP1', 'SP2'],
     "shrewsbury": ['SY1', 'SY2', 'SY3'],
     "stratford-upon-avon": ['CV37'],
@@ -1015,14 +1013,14 @@ const COVERAGE_SIGNAL_SLUGS = new Set([
   'willerby',
 
   // ─── Nationwide Expansion — 45 new towns/cities ───
-  'amersham', 'ashford-kent', 'bangor-ni', 'bedworth', 'caernarfon',
+  'amersham', 'bangor-ni', 'bedworth', 'caernarfon',
   'cottingham', 'dorchester', 'dorking', 'droitwich', 'dungannon',
   'fleetwood', 'formby', 'galashiels', 'gillingham', 'glastonbury',
   'gravesend', 'haverfordwest', 'hawick', 'haywards-heath', 'hereford',
   'hessle', 'hexham', 'kidderminster', 'kilmarnock', 'kirkby',
   'knaresborough', 'leamington-spa', 'leatherhead', 'malvern', 'morecambe',
-  'newtownards', 'penarth', 'porthmadog', 'redditch', 'royal-tunbridge-wells',
-  'salisbury', 'shrewsbury', 'stratford-upon-avon', 'telford', 'tenby',
+  'newtownards', 'penarth', 'porthmadog', 'redditch', 'salisbury',
+  'shrewsbury', 'stratford-upon-avon', 'telford', 'tenby',
   'warwick', 'wells', 'wetherby', 'weymouth', 'worcester',
 
   // ─── Deep Coverage — 22 smaller towns/districts ───
@@ -1259,7 +1257,6 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
 
   // ─── Nationwide Expansion — 45 new towns cross-regions ───
   'amersham': ['high-wycombe', 'beaconsfield', 'aylesbury', 'hemel-hempstead'],
-  'ashford-kent': ['canterbury', 'maidstone', 'folkestone', 'brighton'],
   'bangor-ni': ['belfast', 'carrickfergus', 'newtownards'],
   'bedworth': ['nuneaton', 'coventry', 'rugby', 'birmingham'],
   'caernarfon': ['bangor', 'llandudno', 'porthmadog'],
@@ -1292,7 +1289,6 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   'penarth': ['cardiff', 'barry', 'bridgend'],
   'porthmadog': ['caernarfon', 'llandudno', 'bangor'],
   'redditch': ['birmingham', 'solihull', 'worcester'],
-  'royal-tunbridge-wells': ['tonbridge', 'maidstone', 'crawley', 'horsham'],
   'salisbury': ['winchester', 'bath', 'bristol'],
   'shrewsbury': ['telford', 'wolverhampton', 'stoke-on-trent'],
   'stratford-upon-avon': ['warwick', 'leamington-spa', 'coventry'],
