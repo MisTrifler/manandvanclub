@@ -643,6 +643,23 @@ function generatePostcodeCoverage(loc: LocationData): { area: string; postcodes:
     "lancaster": ['LA1', 'LA2', 'LA3'],
     "lytham": ['FY8'],
 
+    // Batch 3: Priority city suburbs
+    "great-barr": ['B42', 'B43', 'B44'],
+    "perry-barr": ['B20', 'B42'],
+    "sutton-coldfield": ['B72', 'B73', 'B74', 'B75', 'B76'],
+    "caversham": ['RG4'],
+    "bletchley": ['MK1', 'MK2', 'MK3'],
+    "eastleigh": ['SO50', 'SO53'],
+    "gosport": ['PO12', 'PO13'],
+    "poole": ['BH12', 'BH13', 'BH14', 'BH15'],
+    "leyland": ['PR25', 'PR26'],
+    "cleveleys": ['FY5'],
+    "diss": ['IP21', 'IP22'],
+    "woodbridge": ['IP12', 'IP13'],
+    "haxby": ['YO32'],
+    "stockton-on-tees": ['TS16', 'TS17', 'TS18', 'TS19', 'TS20'],
+    "willerby": ['HU10', 'HU11'],
+
   };
 
   const postcodes = outwardBySlug[loc.slug] || [];
@@ -865,6 +882,21 @@ const COVERAGE_SIGNAL_SLUGS = new Set([
   'northallerton',
   'lancaster',
   'lytham',
+  'great-barr',
+  'perry-barr',
+  'sutton-coldfield',
+  'caversham',
+  'bletchley',
+  'eastleigh',
+  'gosport',
+  'poole',
+  'leyland',
+  'cleveleys',
+  'diss',
+  'woodbridge',
+  'haxby',
+  'stockton-on-tees',
+  'willerby',
 ]);
 
 // Cross-region nearby links for stronger internal linking (Step 3)
@@ -1074,6 +1106,22 @@ const CROSS_REGION_MAP: Record<string, string[]> = {
   'northallerton': ['darlington', 'york', 'harrogate', 'ripon'],
   'lancaster': ['preston', 'blackpool', 'kendal'],
   'lytham': ['blackpool', 'preston', 'chorley'],
+
+  "great-barr": ['birmingham', 'walsall', 'west-bromwich', 'smethwick'],
+  "perry-barr": ['birmingham', 'west-bromwich', 'walsall'],
+  "sutton-coldfield": ['birmingham', 'tamworth', 'lichfield'],
+  'caversham': ['reading', 'maidenhead', 'windsor'],
+  'bletchley': ['milton-keynes', 'bedford', 'leighton-buzzard'],
+  'eastleigh': ['southampton', 'winchester', 'basingstoke'],
+  'gosport': ['portsmouth', 'southampton', 'chichester'],
+  'poole': ['bournemouth', 'exeter', 'southampton'],
+  'leyland': ['preston', 'chorley', 'blackburn'],
+  'cleveleys': ['blackpool', 'preston', 'lytham-st-annes'],
+  'diss': ['norwich', 'ipswich', 'colchester'],
+  'woodbridge': ['ipswich', 'colchester', 'norwich'],
+  'haxby': ['york', 'harrogate', 'ripon'],
+  "stockton-on-tees": ['middlesbrough', 'darlington', 'durham'],
+  'willerby': ['hull', 'beverley', 'goole'],
 
 };
 

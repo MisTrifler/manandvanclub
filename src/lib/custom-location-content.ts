@@ -6943,4 +6943,244 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
+  "great-barr": {
+    title: "Man and Van Great Barr | From £19",
+    description: "Man and van Great Barr from £19/hr. B42, B43, B44. Great Barr, Beech Lanes, Hames Hall, Pheasey, Yew Tree. Call 0121 751 1269.",
+    h1: "Man and Van Great Barr",
+    intro: "Need a man and van in Great Barr? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Great Barr move before quoting.",
+    knowledge: "Approved movers covering Great Barr handle moves in the suburban estates. The M6 junction 7 and A34 provide good road links. Scott Arms is the main shopping area.",
+    localMovingInfo: `Great Barr is about 5 miles north-west of Birmingham on the A34. The M6 junction 7 gives motorway access. Scott Arms is the main shopping area. Walsall is about 4 miles north. West Bromwich is 3 miles south. The residential estates have standard suburban access. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Great Barr?","a":"Great Barr moves start from £19 per hour. A local move typically costs £60-£120. A move to Birmingham city centre is usually £70-£110."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Great Barr, Beech Lanes, Hames Hall, Pheasey, Yew Tree."},
+    ],
+  },
+
+  "perry-barr": {
+    title: "Man and Van Perry Barr | From £19",
+    description: "Man and van Perry Barr from £19/hr. B20, B42. Perry Barr, One Stop area, Aston, Handsworth, Witton. Call 0121 751 1269.",
+    h1: "Man and Van Perry Barr",
+    intro: "Need a man and van in Perry Barr? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Perry Barr move before quoting.",
+    knowledge: "Approved movers covering Perry Barr handle moves in the mixed terraced and suburban housing. The A34 can be congested near the university.",
+    localMovingInfo: `Perry Barr is about 3 miles north of Birmingham city centre on the A34. The M6 junction 6 is nearby. Aston and Handsworth are adjacent. The Alexander Stadium is a local landmark. The area has Victorian terraces and newer builds. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Perry Barr?","a":"Perry Barr moves start from £19 per hour. A local move typically costs £60-£120. A move to Birmingham city centre is usually £60-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Perry Barr, One Stop area, Aston, Handsworth, Witton."},
+    ],
+  },
+
+  "sutton-coldfield": {
+    title: "Man and Van Sutton Coldfield | From £19",
+    description: "Man and van Sutton Coldfield from £19/hr. B72, B73, B74, B75, B76. Town Centre, Four Oaks, Mere Green, Wylde Green, Boldmere. Call 0121 751 1269.",
+    h1: "Man and Van Sutton Coldfield",
+    intro: "Need a man and van in Sutton Coldfield? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Sutton Coldfield move before quoting.",
+    knowledge: "Approved movers covering Sutton Coldfield handle moves in the affluent residential areas and town centre. Four Oaks and Mere Green are residential areas. Sutton Park is the largest urban park in Europe.",
+    localMovingInfo: `Sutton Coldfield is about 8 miles north-east of Birmingham. The M42 junction 9 is nearby. Four Oaks and Mere Green are residential areas. Lichfield is about 6 miles east. The town has period properties and modern estates. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Sutton Coldfield?","a":"Sutton Coldfield moves start from £19 per hour. A local move typically costs £60-£120. A move to Birmingham city centre is usually £80-£120."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Four Oaks, Mere Green, Wylde Green, Boldmere."},
+    ],
+  },
+
+  "caversham": {
+    title: "Man and Van Caversham | From £19",
+    description: "Man and van Caversham from £19/hr. RG4. Caversham Heights, Caversham Park, Emmer Green, Lower Caversham. Call 0121 751 1269.",
+    h1: "Man and Van Caversham",
+    intro: "Need a man and van in Caversham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Caversham move before quoting.",
+    knowledge: "Approved movers covering Caversham handle moves in the affluent residential area north of the Thames. Caversham Heights has steep roads.",
+    localMovingInfo: `Caversham is just north of Reading across the River Thames. Caversham Heights is an elevated residential area. Maidenhead is about 8 miles east. The area has mainly Victorian and Edwardian properties. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Caversham?","a":"Caversham moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £100-£170."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Caversham Heights, Caversham Park, Emmer Green, Lower Caversham."},
+    ],
+  },
+
+  "bletchley": {
+    title: "Man and Van Bletchley | From £19",
+    description: "Man and van Bletchley from £19/hr. MK1, MK2, MK3. Bletchley Town, Fenny Stratford, Water Eaton, Newton Longville. Call 0121 751 1269.",
+    h1: "Man and Van Bletchley",
+    intro: "Need a man and van in Bletchley? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bletchley move before quoting.",
+    knowledge: "Approved movers covering Bletchley handle moves in the older part of Milton Keynes. Bletchley Park can cause local tourist traffic.",
+    localMovingInfo: `Bletchley is the southern part of Milton Keynes. Bletchley Park is a famous landmark. Fenny Stratford is adjacent. Leighton Buzzard is about 6 miles south. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Bletchley?","a":"Bletchley moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £120-£180."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Bletchley Town, Fenny Stratford, Water Eaton, Newton Longville."},
+    ],
+  },
+
+  "eastleigh": {
+    title: "Man and Van Eastleigh | From £19",
+    description: "Man and van Eastleigh from £19/hr. SO50, SO53. Town Centre, Bishopstoke, Chandler's Ford, Hiltingbury, Fair Oak. Call 0121 751 1269.",
+    h1: "Man and Van Eastleigh",
+    intro: "Need a man and van in Eastleigh? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Eastleigh move before quoting.",
+    knowledge: "Approved movers covering Eastleigh handle moves in the railway town. Chandler's Ford is an affluent residential area. Southampton Airport is at Eastleigh.",
+    localMovingInfo: `Eastleigh is about 5 miles north of Southampton on the M3 corridor. Southampton Airport is here. Chandler's Ford is an affluent residential area. Winchester is about 7 miles north. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Eastleigh?","a":"Eastleigh moves start from £19 per hour. A local move typically costs £60-£120. A move to Southampton is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Bishopstoke, Chandler's Ford, Hiltingbury, Fair Oak."},
+    ],
+  },
+
+  "gosport": {
+    title: "Man and Van Gosport | From £19",
+    description: "Man and van Gosport from £19/hr. PO12, PO13. Town Centre, Lee-on-the-Solent, Alverstoke, Bridgemary, Rowner. Call 0121 751 1269.",
+    h1: "Man and Van Gosport",
+    intro: "Need a man and van in Gosport? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Gosport move before quoting.",
+    knowledge: "Approved movers covering Gosport handle moves in the coastal town. The A32 is the only major road in and can be very congested. The ferry provides pedestrian access to Portsmouth.",
+    localMovingInfo: `Gosport is across the harbour from Portsmouth. The A32 connects to the M27 but can be very congested. The Gosport Ferry crosses to Portsmouth in 5 minutes. Lee-on-the-Solent is a coastal area. Fareham is 4 miles north. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Gosport?","a":"Gosport moves start from £19 per hour. A local move typically costs £60-£120. A move to Portsmouth is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Lee-on-the-Solent, Alverstoke, Bridgemary, Rowner."},
+    ],
+  },
+
+  "poole": {
+    title: "Man and Van Poole | From £19",
+    description: "Man and van Poole from £19/hr. BH12, BH13, BH14, BH15. Poole Town, Parkstone, Broadstone, Canford Cliffs, Sandbanks. Call 0121 751 1269.",
+    h1: "Man and Van Poole",
+    intro: "Need a man and van in Poole? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Poole move before quoting.",
+    knowledge: "Approved movers covering Poole handle moves in the harbour town and affluent Sandbanks area. Poole Quay has narrow streets. Sandbanks has some of the most expensive properties in the UK.",
+    localMovingInfo: `Poole is about 4 miles west of Bournemouth on the A35. The natural harbour is the largest in Europe. Sandbanks has some of the UK's most expensive property. Parkstone and Broadstone are residential areas. The A31 connects to the M27. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Poole?","a":"Poole moves start from £19 per hour. A local move typically costs £60-£120. A move to Bournemouth is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Poole Town, Parkstone, Broadstone, Canford Cliffs, Sandbanks."},
+    ],
+  },
+
+  "leyland": {
+    title: "Man and Van Leyland | From £19",
+    description: "Man and van Leyland from £19/hr. PR25, PR26. Town Centre, Worden, Farington, Moss Side, Whittle-le-Woods. Call 0121 751 1269.",
+    h1: "Man and Van Leyland",
+    intro: "Need a man and van in Leyland? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Leyland move before quoting.",
+    knowledge: "Approved movers covering Leyland handle moves in the residential town. The M6 junction 28 and M65 provide motorway access. Chorley is 3 miles south.",
+    localMovingInfo: `Leyland is about 5 miles south of Preston on the A6. The M6 junction 28 is nearby. Chorley is 3 miles south. The M65 connects east to Blackburn. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Leyland?","a":"Leyland moves start from £19 per hour. A local move typically costs £60-£120. A move to Preston is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Worden, Farington, Moss Side, Whittle-le-Woods."},
+    ],
+  },
+
+  "cleveleys": {
+    title: "Man and Van Cleveleys | From £19",
+    description: "Man and van Cleveleys from £19/hr. FY5. Cleveleys Town, Thornton, Poulton-le-Fylde, Fleetwood. Call 0121 751 1269.",
+    h1: "Man and Van Cleveleys",
+    intro: "Need a man and van in Cleveleys? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Cleveleys move before quoting.",
+    knowledge: "Approved movers covering Cleveleys handle moves in the coastal town. Fleetwood is 4 miles north. Poulton-le-Fylde is 2 miles inland.",
+    localMovingInfo: `Cleveleys is about 3 miles north of Blackpool on the A587. Fleetwood is 4 miles north. Poulton-le-Fylde is 2 miles inland. The M55 connects to Preston. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Cleveleys?","a":"Cleveleys moves start from £19 per hour. A local move typically costs £60-£120. A move to Blackpool is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Cleveleys Town, Thornton, Poulton-le-Fylde, Fleetwood."},
+    ],
+  },
+
+  "diss": {
+    title: "Man and Van Diss | From £19",
+    description: "Man and van Diss from £19/hr. IP21, IP22. Town Centre, Diss Mere, Roydon, Burston, Scole. Call 0121 751 1269.",
+    h1: "Man and Van Diss",
+    intro: "Need a man and van in Diss? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Diss move before quoting.",
+    knowledge: "Approved movers covering Diss handle moves in the market town and surrounding villages. The town centre has Georgian buildings near the Mere with some narrow streets.",
+    localMovingInfo: `Diss is about 22 miles south of Norwich on the A143. Ipswich is about 20 miles south. The town has a mere (lake) in the centre with Georgian buildings. The railway connects to Norwich and London. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Diss?","a":"Diss moves start from £19 per hour. A local move typically costs £60-£120. A move to Norwich is usually £100-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Diss Mere, Roydon, Burston, Scole."},
+    ],
+  },
+
+  "woodbridge": {
+    title: "Man and Van Woodbridge | From £19",
+    description: "Man and van Woodbridge from £19/hr. IP12, IP13. Town Centre, Melton, Martlesham, Kesgrave, Bromeswell. Call 0121 751 1269.",
+    h1: "Man and Van Woodbridge",
+    intro: "Need a man and van in Woodbridge? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Woodbridge move before quoting.",
+    knowledge: "Approved movers covering Woodbridge handle moves in the affluent riverside town. The town has Georgian buildings along the riverfront. Melton and Martlesham are residential areas.",
+    localMovingInfo: `Woodbridge is about 8 miles north-east of Ipswich on the A12. The town sits on the River Deben with Georgian buildings. Martlesham has BT's research campus. The A12 connects south to Colchester. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Woodbridge?","a":"Woodbridge moves start from £19 per hour. A local move typically costs £60-£120. A move to Ipswich is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Melton, Martlesham, Kesgrave, Bromeswell."},
+    ],
+  },
+
+  "haxby": {
+    title: "Man and Van Haxby | From £19",
+    description: "Man and van Haxby from £19/hr. YO32. Haxby, Wigginton, New Earswick, Huntington, Strensall. Call 0121 751 1269.",
+    h1: "Man and Van Haxby",
+    intro: "Need a man and van in Haxby? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Haxby move before quoting.",
+    knowledge: "Approved movers covering Haxby handle moves in the residential suburb. Wigginton is adjacent. New Earswick has Joseph Rowntree Housing Trust properties.",
+    localMovingInfo: `Haxby is about 4 miles north of York on the A19. Wigginton is adjacent. Huntington is nearby. Harrogate is about 15 miles west. The area has mainly interwar and post-war housing. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Haxby?","a":"Haxby moves start from £19 per hour. A local move typically costs £60-£120. A move to York city centre is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Haxby, Wigginton, New Earswick, Huntington, Strensall."},
+    ],
+  },
+
+  "stockton-on-tees": {
+    title: "Man and Van Stockton-on-Tees | From £19",
+    description: "Man and van Stockton-on-Tees from £19/hr. TS16, TS17, TS18, TS19, TS20. Town Centre, Norton, Billingham, Thornaby, Ingleby Barwick. Call 0121 751 1269.",
+    h1: "Man and Van Stockton-on-Tees",
+    intro: "Need a man and van in Stockton-on-Tees? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Stockton-on-Tees move before quoting.",
+    knowledge: "Approved movers covering Stockton handle moves in the market town and surrounding areas. Billingham and Thornaby are large residential areas. Ingleby Barwick is a large modern housing development.",
+    localMovingInfo: `Stockton is about 5 miles south-west of Middlesbrough on the A19/A66. Billingham is a large residential area. Thornaby is across the river. Ingleby Barwick is a large modern development. Darlington is about 15 miles south. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Stockton-on-Tees?","a":"Stockton-on-Tees moves start from £19 per hour. A local move typically costs £60-£120. A move to Middlesbrough is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Norton, Billingham, Thornaby, Ingleby Barwick."},
+    ],
+  },
+
+  "willerby": {
+    title: "Man and Van Willerby | From £19",
+    description: "Man and van Willerby from £19/hr. HU10, HU11. Willerby, Kirk Ella, Anlaby, Hessle, Cottingham. Call 0121 751 1269.",
+    h1: "Man and Van Willerby",
+    intro: "Need a man and van in Willerby? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Willerby move before quoting.",
+    knowledge: "Approved movers covering Willerby handle moves in the affluent western suburbs of Hull. Kirk Ella and Anlaby are adjacent residential areas.",
+    localMovingInfo: `Willerby is about 4 miles west of Hull in the affluent western suburbs. Kirk Ella and Anlaby are adjacent. Cottingham is 2 miles north. Hessle is near the Humber Bridge. Hull city centre is a 10-minute drive. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Willerby?","a":"Willerby moves start from £19 per hour. A local move typically costs £60-£120. A move to Hull city centre is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Willerby, Kirk Ella, Anlaby, Hessle, Cottingham."},
+    ],
+  },
+
 };

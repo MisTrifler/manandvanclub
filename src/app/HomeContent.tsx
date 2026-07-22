@@ -500,7 +500,7 @@ export default function HomeContent() {
           </div>
           <div className="text-center mt-4">
             <Link href="/areas-covered" className="text-xs font-black text-accent hover:underline">
-              View all 355 areas →
+              View all 370 areas →
             </Link>
           </div>
         </div>

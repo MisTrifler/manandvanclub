@@ -459,6 +459,22 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "northallerton",
   "lancaster",
   "lytham",
+  // ─── Batch 3: Priority city suburbs (15 NEW) ───
+  "great-barr",
+  "perry-barr",
+  "sutton-coldfield",
+  "caversham",
+  "bletchley",
+  "eastleigh",
+  "gosport",
+  "poole",
+  "leyland",
+  "cleveleys",
+  "diss",
+  "woodbridge",
+  "haxby",
+  "stockton-on-tees",
+  "willerby",
 ]);
 
 export function isSeoLaunchMode(): boolean {
