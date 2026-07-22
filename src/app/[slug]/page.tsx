@@ -52,7 +52,11 @@ const baseServiceLinks = [
       { title: "Student Moves", href: "/student-removals" },
       { title: "Furniture Delivery", href: "/furniture-delivery" },
       { title: "Long Distance Moves", href: "/long-distance-removals" },
-      { title: "Same Day Moves", href: "/same-day-man-and-van" }
+      { title: "Same Day Moves", href: "/same-day-man-and-van" },
+      { title: "Help Me Move", href: "/help-me-move" },
+      { title: "Cheap Man and Van", href: "/cheap-man-and-van" },
+      { title: "Van + Driver", href: "/cheap-van-hire-with-driver" },
+      { title: "Moving Home", href: "/moving-home" },
     ];
 
 const servicePageData: Record<string, any> = {

@@ -356,6 +356,18 @@ export default function ManAndVanCostPage() {
             <span>Prices from £19</span>
             <span>Open 24/7</span>
           </div>
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
+            {[
+              { name: "Help Me Move", href: "/help-me-move" },
+              { name: "Cheap Man and Van", href: "/cheap-man-and-van" },
+              { name: "Van Hire with Driver", href: "/cheap-van-hire-with-driver" },
+              { name: "Furniture Delivery", href: "/furniture-delivery-service" },
+              { name: "Moving Home", href: "/moving-home" },
+              { name: "Cheapest Moving Van", href: "/cheapest-moving-van" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="text-xs font-bold text-accent hover:underline bg-accent/5 px-3 py-1.5 rounded-full">{link.name}</Link>
+            ))}
+          </div>
         </div>
       </section>
 

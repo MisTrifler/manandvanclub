@@ -247,6 +247,29 @@ export default function MovingHomePage() {
         </div>
       </section>
 
+      {/* Related services */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tight">Related services</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+            {[
+              { name: "Help Me Move", href: "/help-me-move", desc: "Moving help for any situation" },
+              { name: "Cheap Man and Van", href: "/cheap-man-and-van", desc: "From £19/hr — cheapest rates" },
+              { name: "Van Hire with Driver", href: "/cheap-van-hire-with-driver", desc: "Cheaper than self-drive" },
+              { name: "Furniture Delivery", href: "/furniture-delivery-service", desc: "IKEA, Marketplace, eBay" },
+              { name: "Cheapest Moving Van", href: "/cheapest-moving-van", desc: "Budget van service UK" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="bg-[#F9F9F7] rounded-xl border border-border p-5 text-center hover:border-accent transition-all">
+                <span className="text-sm font-black text-primary block">{link.name}</span>
+                <span className="text-xs text-text-secondary block mt-1">{link.desc}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 text-center space-y-6">
