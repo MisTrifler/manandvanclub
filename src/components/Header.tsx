@@ -78,6 +78,7 @@ export default function Header() {
     { name: "Office Relocations", href: "/office-removals" },
     { name: "Long Distance", href: "/long-distance-removals" },
     { name: "Same Day", href: "/same-day-man-and-van" },
+    { name: "Moving Home", href: "/moving-home" },
     { name: "Cost Calculator", href: "/moving-cost-calculator" },
   ];
 

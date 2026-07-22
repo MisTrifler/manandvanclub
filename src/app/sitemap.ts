@@ -183,6 +183,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/man-and-van-suffolk', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-cambridgeshire', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-cost', priority: 0.95, freq: 'monthly' as const },
+    { route: '/moving-home', priority: 0.95, freq: 'monthly' as const },
+    { route: '/cheapest-moving-van', priority: 0.95, freq: 'monthly' as const },
     { route: '/blog', priority: 0.8, freq: 'weekly' as const },
     { route: '/blog/cost-guides', priority: 0.8, freq: 'monthly' as const },
     { route: '/blog/area-guides', priority: 0.8, freq: 'monthly' as const },

@@ -34,10 +34,45 @@ function allowUnknownLaunchDrivers(): boolean {
   return flag === "true";
 }
 
-// Core West Midlands launch prefixes only. Keep the shared pool focused
-// so early movers do not see broad non-launch-region leads. Expand this
-// list deliberately when onboarding coverage beyond the West Midlands.
-const WEST_MIDLANDS_CORE = ["B", "CV", "DY", "WS", "WV", "ST", "TF", "WR"];
+// ─────────────────────────────────────────────────────────────────────
+// Postcode prefixes covered by Man and Van Club.
+// Originally West Midlands only. Now expanded nationwide to cover all
+// 355+ locations across England, Scotland, Wales and Northern Ireland.
+// Any lead that starts OR ends in a covered postcode area is visible
+// to approved movers in the shared launch pool.
+// ─────────────────────────────────────────────────────────────────────
+const COVERED_POSTCODE_PREFIXES = [
+  // West Midlands
+  "B", "CV", "DY", "WS", "WV", "ST", "TF", "WR",
+  // East Midlands
+  "DE", "LE", "NG", "NN", "LN", "PE", "DN",
+  // Greater Manchester
+  "M", "BL", "OL", "SK", "WA", "WN",
+  // Greater London
+  "CR", "BR", "RM", "IG", "HA", "W", "TW", "KT", "EN", "N", "E", "SE", "DA", "SM", "SW",
+  // West Yorkshire
+  "BD", "WF", "HD", "HX", "LS",
+  // Merseyside / Lancashire
+  "L", "CH", "PR", "FY", "BB", "LA",
+  // South West
+  "BA", "BS", "TA", "SN", "GL", "EX", "PL", "TQ", "TR",
+  // South Yorkshire / North East
+  "S", "NE",
+  // Scotland
+  "EH", "G", "AB", "DD", "FK", "KY", "ML", "KA", "PA", "IV", "HS", "KW", "ZE", "TD", "DG",
+  // Wales
+  "CF", "SA", "NP", "LD", "SY", "LL",
+  // Northern Ireland
+  "BT",
+  // South East
+  "SO", "PO", "OX", "CB", "RG", "SL", "GU", "HP", "SG", "AL", "BN", "TN", "ME", "RH", "KT",
+  // East of England
+  "MK", "CM", "SS", "NR", "IP", "CO",
+  // North Yorkshire / East Yorkshire
+  "HG", "YO", "HU",
+  // Hertfordshire / Home Counties
+  "WD", "UB",
+];
 
 function postcodeArea(postcode?: string | null): string | null {
   const cleaned = String(postcode || "").trim().toUpperCase().replace(/\s+/g, "");
@@ -46,15 +81,16 @@ function postcodeArea(postcode?: string | null): string | null {
 }
 
 export function isWestMidlandsPostcode(postcode?: string | null): boolean {
+  const wmPrefixes = ["B", "CV", "DY", "WS", "WV", "ST", "TF", "WR"];
   const area = postcodeArea(postcode);
   if (!area) return false;
-  return WEST_MIDLANDS_CORE.includes(area);
+  return wmPrefixes.includes(area);
 }
 
 function isLaunchPoolPostcode(postcode?: string | null): boolean {
   const area = postcodeArea(postcode);
   if (!area) return false;
-  return WEST_MIDLANDS_CORE.includes(area);
+  return COVERED_POSTCODE_PREFIXES.includes(area);
 }
 
 /** A lead belongs to the launch pool if its route starts OR ends in coverage. */
@@ -84,13 +120,19 @@ export function driverIsInLaunchPool(driver: {
   if (driver.status !== "approved") return false;
 
   const cov = String(driver.coverage_area || "").toLowerCase();
-  const wmSignals = [
-    "west midlands", "birmingham", "walsall", "wolverhampton", "dudley",
-    "coventry", "solihull", "sutton coldfield", "west bromwich", "stourbridge",
-    "halesowen", "tamworth", "lichfield", "cannock", "stafford", "stoke",
-    "telford", "worcester", "midlands", "uk", "england", "nationwide",
+  // Nationwide signals — any approved driver declaring coverage anywhere
+  // in the UK qualifies for the launch pool. The pool now covers all
+  // 355+ locations across England, Scotland, Wales and Northern Ireland.
+  const coverageSignals = [
+    "west midlands", "east midlands", "north west", "north east",
+    "south east", "south west", "east of england", "yorkshire",
+    "london", "scotland", "wales", "northern ireland",
+    "birmingham", "manchester", "liverpool", "leeds", "sheffield",
+    "bristol", "nottingham", "leicester", "coventry", "cardiff",
+    "edinburgh", "glasgow", "belfast", "walsall", "wolverhampton",
+    "midlands", "uk", "england", "nationwide", "national",
   ];
-  if (wmSignals.some((s) => cov.includes(s))) return true;
+  if (coverageSignals.some((s) => cov.includes(s))) return true;
   if (isLaunchPoolPostcode(driver.postcode)) return true;
 
   // Launch fallback: approved driver with no clear region data can still
