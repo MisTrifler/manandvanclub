@@ -35,7 +35,7 @@ Brownhills properties can vary from post-war semis and bungalows to terraced hom
         title: "Furniture collection in Brownhills",
         body: "Sofas, beds, wardrobes, appliances and marketplace purchases often need clear size, floor and access details. Add whether items need dismantling so the mover can quote properly before you book.",
         links: [
-          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
           { label: "Same-day man and van", href: "/same-day-man-and-van" }
         ],
       },
@@ -95,6 +95,10 @@ Your Birmingham request can include property type, access, parking, stairs, lift
       { q: "Are approved Birmingham movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so we recommend checking the quote details before booking." },
       { q: "Does Birmingham's Clean Air Zone affect my move?", a: "Yes. Birmingham city centre has a Clean Air Zone (CAZ) that charges non-compliant vehicles £8 per day. Most modern vans used by approved movers are CAZ-compliant, but it is worth confirming this when you receive your quote. Moves in B1–B5 postcodes are most likely to be affected. Suburban moves in Sutton Coldfield, Moseley, Harborne and Edgbaston fall outside the zone." },
       { q: "How much does a man and van cost from Birmingham to Walsall?", a: "A Birmingham to Walsall man and van move in 2026 typically costs £80–£180 depending on load size, access at both addresses and time of day. The A34 corridor connects the two directly, making it a common route. A single-item collection might start from £19–£80. Submit your postcodes and item list for a guide price." },
+      { q: "Can I hire a van with a driver in Birmingham?", a: "Yes. Every booking includes a van and a professional driver — you do not need to drive. Choose self-loading at £19/hr (you load, driver transports) or driver-helps at £34/hr (driver assists with carrying). No driving licence needed, no self-drive hire paperwork, no credit card deposit. The driver brings the van, blankets, straps and equipment to your collection address." },
+      { q: "What is the cheapest day to move in Birmingham?", a: "Tuesdays and Wednesdays are typically the cheapest days to move in Birmingham. Fridays and Saturdays are the busiest and most expensive — everyone wants to move on the weekend. End-of-month dates carry a premium because of tenancy changeovers. If you can be flexible with dates, mid-week moves often get better rates." },
+      { q: "Can you collect furniture from Marketplace or IKEA in Birmingham?", a: "Yes. Furniture collection from Facebook Marketplace, eBay, Gumtree, IKEA (Wednesbury), B&Q, Argos and charity shops is one of the most common Birmingham jobs. Submit the seller's postcode, your delivery postcode and the item details. A verified mover collects and delivers — you do not need your own transport." },
+      { q: "What is the difference between a man and van and a removal company in Birmingham?", a: "A man and van is usually one driver with a van — ideal for flats, student moves, furniture collections and smaller house moves from £19/hr. A removal company sends a larger team with a lorry, packing materials and a full packing service — typically £80–£120/hr. Most Birmingham moves do not need a full removal company. A man and van from £19/hr can handle 1–3 bedroom properties for a fraction of the cost." },
     ],
     localAreaGuides: [
       {
@@ -117,7 +121,7 @@ Your Birmingham request can include property type, access, parking, stairs, lift
         title: "Furniture collection in Birmingham",
         body: "Single-item collections around Birmingham are often sofas, wardrobes, beds, appliances or marketplace purchases. A clear item list, collection postcode and access notes help avoid underquoting.",
         links: [
-          { label: "Furniture collection service", href: "/furniture-delivery" },
+          { label: "Furniture collection service", href: "/furniture-delivery-service" },
           { label: "Same-day man and van", href: "/same-day-man-and-van" }
         ],
       },
@@ -156,6 +160,30 @@ Your Birmingham request can include property type, access, parking, stairs, lift
         body: "Smethwick sits right on Birmingham's western edge — you can walk from Cape Hill to Edgbaston in about fifteen minutes. It's outside the Clean Air Zone but has its own challenges: Victorian terraces with tight parking, permit zones near Cape Hill, and the busy A41. If you're moving between Smethwick and Birmingham, submit both postcodes for a quote.",
         links: [
           { label: "Man and van Smethwick", href: "/man-and-van-smethwick" },
+        ],
+      },
+      {
+        title: "Van hire with driver in Birmingham",
+        body: "If you are thinking about renting a van yourself from Enterprise, Hertz or Europcar, consider a van with a driver instead. Self-drive hire costs £50–£80 per day plus fuel, insurance and deposit — and you have to drive a larger vehicle through Birmingham's one-way systems, Clean Air Zone and busy roundabouts. A man and van with driver from £19/hr means a professional drives, fuel is included, insurance is included, and you do not need a licence or credit card.",
+        links: [
+          { label: "Van hire with driver", href: "/cheap-van-hire-with-driver" },
+          { label: "Cheap man and van", href: "/cheap-man-and-van" },
+        ],
+      },
+      {
+        title: "Furniture delivery in Birmingham",
+        body: "Need a sofa collected from Facebook Marketplace in Kings Heath? A wardrobe delivered from IKEA Wednesbury? A bed frame from B&Q in Minworth? Birmingham furniture deliveries are one of the most requested services. Submit the collection postcode, your postcode and item dimensions. If you need the driver to carry it upstairs, choose the driver-helps service at £34/hr.",
+        links: [
+          { label: "Furniture delivery service", href: "/furniture-delivery-service" },
+          { label: "Same-day man and van", href: "/same-day-man-and-van" },
+        ],
+      },
+      {
+        title: "Man and van Great Barr, Perry Barr and Aston",
+        body: "Great Barr and Perry Barr are popular residential areas north of Birmingham city centre. Properties range from 1930s semis to newer estates, with the A34 and Walsall Road providing main route access. Parking is usually available on drives or residential streets. Include driveway or on-street parking details, and any furniture dismantling needs. Moves towards Walsall, West Bromwich and Sutton Coldfield are common from these areas.",
+        links: [
+          { label: "Man and van Great Barr", href: "/man-and-van-great-barr" },
+          { label: "Man and van Perry Barr", href: "/man-and-van-perry-barr" },
         ],
       },
     ],
@@ -296,6 +324,9 @@ Bristol moves can involve steep streets, narrow access, Clean Air Zone planning 
       { q: "Are approved Walsall movers insured?", a: "Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so we recommend checking the quote details before booking." },
       { q: "How much does a man and van cost from Walsall to Birmingham?", a: "A Walsall to Birmingham man and van move in 2026 typically costs £80–£180 depending on load size, access at both addresses and time of day. The A34 corridor connects Walsall and Birmingham directly, making it a common route. A single-item collection might start from £19–£80. Submit your postcodes and item list for a guide price." },
       { q: "How much does a man and van cost from Walsall to Wolverhampton?", a: "A Walsall to Wolverhampton move in 2026 typically costs £70–£150 depending on load size and access. The two towns are close, so route time is usually short. Submit your postcodes for a guide price." },
+      { q: "Can I hire a van with a driver in Walsall?", a: "Yes. Every booking includes a van and professional driver — you do not need to drive. Choose self-loading at £19/hr (you load, driver transports) or driver-helps at £34/hr (driver assists with carrying). No driving licence needed, no self-drive hire paperwork, no credit card deposit. The driver brings the van, blankets, straps and equipment." },
+      { q: "What is the cheapest day to move in Walsall?", a: "Tuesdays and Wednesdays are typically the cheapest days to move. Fridays and Saturdays are the busiest — everyone wants to move on the weekend. End-of-month dates carry a premium because of tenancy changeovers. If you can be flexible with dates, mid-week moves often get better rates." },
+      { q: "Can you collect furniture from Marketplace or eBay in Walsall?", a: "Yes. Furniture collection from Facebook Marketplace, eBay, Gumtree, IKEA (Wednesbury), B&Q and local charity shops is one of the most common Walsall jobs. Submit the seller's postcode, your delivery postcode and the item details. A verified mover collects and delivers." },
     ],
     localMovingInfo: `Walsall is a Black Country town with a strong industrial heritage and a mix of housing types, from post-war semis to newer estates. From Bloxwich to Aldridge, Brownhills to Pelsall, Walsall moves require a mover who understands the local road network, estate layouts, and the town centre's one-way system. The A34 and A454 create heavy traffic during rush hours, and the town centre has controlled parking zones that complicate loading.
 
@@ -332,7 +363,7 @@ Walsall moves can differ by postcode, from town centre terraces to Bloxwich semi
         title: "Furniture collection in Walsall",
         body: "Single-item collections around Walsall are often sofas, beds, wardrobes, appliances and Facebook Marketplace purchases. Add item size, collection postcode and access notes for an accurate quote.",
         links: [
-          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
           { label: "Same-day man and van", href: "/same-day-man-and-van" },
         ],
       },
@@ -552,7 +583,7 @@ Derby moves can differ greatly by postcode, from Normanton Road terraces to Alle
         title: "Furniture collection in Derby",
         body: "Single-item collections around Derby are often sofas, beds, wardrobes and Marketplace purchases. Add item size, collection postcode and access notes for an accurate quote.",
         links: [
-          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
         ],
       },
     ],
@@ -1702,7 +1733,7 @@ Mitcham is popular with first-time buyers moving out from Croydon and Tooting, s
         title: "Furniture deliveries and single-item pickups in N22",
         body: "N22 covers Wood Green and parts of Alexandra Palace. For furniture collections from Facebook Marketplace or eBay sellers in N22, include the full postcode, whether there are stairs or a lift, and whether the item is already dismantled. A verified mover checks these details before sending a quote — it means the price reflects the actual work rather than a guess.",
         links: [
-          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
           { label: "Start a request", href: "/get-started" },
         ],
       },
@@ -1855,7 +1886,7 @@ Mitcham is popular with first-time buyers moving out from Croydon and Tooting, s
         title: "Furniture deliveries along the M60 corridor",
         body: "Ashton sits right on the M60, which is handy for larger furniture collections from retailers or marketplace pickups further afield. But the M60 between junctions 23 and 25 can crawl at peak times. Give the mover both postcodes and a time window so they can plan around the motorway rather than sitting in queuing traffic.",
         links: [
-          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
           { label: "Start a request", href: "/get-started" },
         ],
       },
@@ -2022,7 +2053,7 @@ Pudsey moves are typically family-sized, with the grammar school drawing parents
         title: "Furniture collections and deliveries in WA10 and WA11",
         body: "For single-item pickups or deliveries in the WA10 and WA11 postcodes — whether it's a sofa from a shop on the retail park off Boundary Road or a washing machine from a seller in Thatto Heath — include the full postcode and whether the item needs carrying up stairs. A verified mover reviews these details before quoting.",
         links: [
-          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
           { label: "Start a request", href: "/get-started" },
         ],
       },
@@ -2096,7 +2127,7 @@ A verified mover reviewing a Weston request will check whether the property is a
         title: "Marketplace pickups and furniture deliveries in BS22–BS24",
         body: "Single-item collections and furniture deliveries in the BS22 and BS24 postcodes are common — from sellers near the Sovereign Centre to pickups from the retail parks along the A370. Give both postcodes and add whether the item needs dismantling. A verified mover checks these details before quoting so there are no surprises on the day.",
         links: [
-          { label: "Furniture delivery", href: "/furniture-delivery" },
+          { label: "Furniture delivery", href: "/furniture-delivery-service" },
           { label: "Start a request", href: "/get-started" },
         ],
       },
@@ -2333,7 +2364,7 @@ Property types vary a lot. A Castle Court apartment, a Falls Road terrace, a Hol
       {title: "Belfast city centre and Titanic Quarter", body: "City-centre moves usually involve apartments with lifts, loading bays and controlled access. Add your floor level, lift booking details and parking arrangements so the mover can judge time on site accurately."},
       {title: "South Belfast and the Lisburn Road", body: "The Lisburn Road, Ormeau Road and University area have Victorian terraces with narrow entries, on-street permit parking and tight staircases. Add parking and access notes so the mover can plan properly."},
       {title: "Student moves in the Holyland", body: "Holyland student moves are usually smaller loads but access is notoriously tight. One-way streets, residents-only parking and narrow staircases mean clear details on the form help the mover quote accurately.", links: [{label: "Student removals", href: "/student-removals"}]},
-      {title: "Furniture collection in Belfast", body: "Sofas, beds and marketplace purchases from Belfast sellers need clear item size, floor level and parking details. A sofa from a Lisburn Road flat needs different planning than one from a Newtownabbey driveway.", links: [{label: "Furniture delivery", href: "/furniture-delivery"}]},
+      {title: "Furniture collection in Belfast", body: "Sofas, beds and marketplace purchases from Belfast sellers need clear item size, floor level and parking details. A sofa from a Lisburn Road flat needs different planning than one from a Newtownabbey driveway.", links: [{label: "Furniture delivery", href: "/furniture-delivery-service"}]},
     ],
   },
 
@@ -4132,7 +4163,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
     localAreaGuides: [
       {title: "Skegness town centre and seafront", body: "Victorian guest houses and holiday apartments near the front. Loading from the promenade can be restricted in peak season. Lumley Road is the main shopping area."},
-      {title: "Ingoldmells and Chapel St Leonards", body: "Holiday areas to the north with many caravan parks. Access roads can be narrow and busy in summer. Popular for seasonal furniture moves in the off-season.", links: [{label: "Furniture delivery", href: "/furniture-delivery"}]},
+      {title: "Ingoldmells and Chapel St Leonards", body: "Holiday areas to the north with many caravan parks. Access roads can be narrow and busy in summer. Popular for seasonal furniture moves in the off-season.", links: [{label: "Furniture delivery", href: "/furniture-delivery-service"}]},
       {title: "Winthorpe and Burgh le Marsh", body: "More residential areas to the south and west. Better road access than the seafront. Common for permanent residents' moves."},
       {title: "Skegness to Lincoln and Boston", body: "Lincoln is about 40 miles west on the A158 (50–60 minutes). Boston is about 20 miles south-west on the A52 (30 minutes). Both routes are busy on summer weekends.", links: [{label: "Long distance removals", href: "/long-distance-removals"}]},
     ],
@@ -5031,7 +5062,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     localAreaGuides: [
       {title: "Lytham Green and town centre", body: "Edwardian villas and seafront properties with some parking restrictions. The Green has limited van parking during events. Clifton Drive properties often have driveways.", links: [{label: "House removals", href: "/house-removals"}]},
       {title: "St Annes", body: "Seafront apartments and family housing around the square and pier area. Generally better parking than Lytham centre. The A584 connects to Blackpool."},
-      {title: "Ansdell and Fairhaven", body: "Quiet residential areas between Lytham and St Annes. A mix of semis and larger properties. Good road access and usually easy for moves.", links: [{label: "Furniture delivery", href: "/furniture-delivery"}]},
+      {title: "Ansdell and Fairhaven", body: "Quiet residential areas between Lytham and St Annes. A mix of semis and larger properties. Good road access and usually easy for moves.", links: [{label: "Furniture delivery", href: "/furniture-delivery-service"}]},
     ],
   },
   "chorley": {
@@ -5195,7 +5226,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     localAreaGuides: [
       {title: "The Grove and town centre", body: "Victorian villas and boutique shops around the famous Grove. Parking is limited, especially on weekends. Properties here tend to be large and valuable — careful handling is important.", links: [{label: "House removals", href: "/house-removals"}]},
       {title: "Ben Rhydding", body: "A suburban area to the east with a mix of semis and modern housing. Better parking and wider roads than the town centre. Has its own railway station."},
-      {title: "Wharfedale villages", body: "Addingham, Burley-in-Wharfedale and Menston are charming villages along the valley. Some properties are reached by narrow lanes. Worth mentioning access details in your quote.", links: [{label: "Furniture delivery", href: "/furniture-delivery"}]},
+      {title: "Wharfedale villages", body: "Addingham, Burley-in-Wharfedale and Menston are charming villages along the valley. Some properties are reached by narrow lanes. Worth mentioning access details in your quote.", links: [{label: "Furniture delivery", href: "/furniture-delivery-service"}]},
     ],
   },
 
