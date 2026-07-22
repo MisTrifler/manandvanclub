@@ -6463,4 +6463,484 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
+  "chapeltown": {
+    title: "Man and Van Chapeltown | From £19",
+    description: "Man and van Chapeltown from £19/hr. S35. Chapeltown Centre, High Green, Grenoside, Thorpe Hesley, Ecclesfield. Call 0121 751 1269.",
+    h1: "Man and Van Chapeltown",
+    intro: "Need a man and van in Chapeltown? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chapeltown move before quoting.",
+    knowledge: "Approved movers covering Chapeltown handle moves in the residential estates and nearby villages. They understand the M1 junction 35 traffic and A6135 congestion at peak times.",
+    localMovingInfo: `Chapeltown is about 6 miles north of Sheffield on the A6135. The M1 junction 35 gives excellent motorway access. Ecclesfield and High Green are nearby villages. Rotherham is about 5 miles east. The residential estates have standard suburban access. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Chapeltown?","a":"Chapeltown moves start from £19 per hour. A local move typically costs £60-£120. A move to Sheffield city centre is usually £70-£110."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Chapeltown Centre, High Green, Grenoside, Thorpe Hesley, Ecclesfield."},
+    ],
+  },
+
+  "penistone": {
+    title: "Man and Van Penistone | From £19",
+    description: "Man and van Penistone from £19/hr. S36. Town Centre, Thurlstone, Hoylandswaine, Denby Dale, Silkstone. Call 0121 751 1269.",
+    h1: "Man and Van Penistone",
+    intro: "Need a man and van in Penistone? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Penistone move before quoting.",
+    knowledge: "Approved movers covering Penistone handle moves in stone-built properties and rural villages. They understand the A628 Trans-Pennine route and narrow country lanes.",
+    localMovingInfo: `Penistone is about 8 miles west of Barnsley on the A628. The Woodhead Pass connects to Manchester, about 25 miles west. The town has stone-built properties and narrow lanes. Thurlstone and Silkstone are nearby villages. Huddersfield is about 10 miles north. The A628 can be slow in winter. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Penistone?","a":"Penistone moves start from £19 per hour. A local move typically costs £60-£120. A move to Manchester across the Pennines is usually £150-£220."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Thurlstone, Hoylandswaine, Denby Dale, Silkstone."},
+    ],
+  },
+
+  "wath-upon-dearne": {
+    title: "Man and Van Wath-upon-Dearne | From £19",
+    description: "Man and van Wath-upon-Dearne from £19/hr. S63. Town Centre, West Melton, Brampton Bierlow, Swinton, Kilnhurst. Call 0121 751 1269.",
+    h1: "Man and Van Wath-upon-Dearne",
+    intro: "Need a man and van in Wath-upon-Dearne? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Wath-upon-Dearne move before quoting.",
+    knowledge: "Approved movers covering Wath-upon-Dearne handle moves in the Dearne Valley towns. They understand the M1 junction 36 queues and A633 congestion.",
+    localMovingInfo: `Wath-upon-Dearne is about 7 miles north of Rotherham on the A633. The M1 junction 36 is nearby. Mexborough is 4 miles east. Barnsley is 6 miles west. The Dearne Valley has mainly post-war housing with good road access. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Wath-upon-Dearne?","a":"Wath-upon-Dearne moves start from £19 per hour. A local move typically costs £60-£120. A move to Sheffield is usually £80-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, West Melton, Brampton Bierlow, Swinton, Kilnhurst."},
+    ],
+  },
+
+  "hertford": {
+    title: "Man and Van Hertford | From £19",
+    description: "Man and van Hertford from £19/hr. SG13, SG14. Town Centre, Bengeo, Hertingfordbury, Ware, Hoddesdon. Call 0121 751 1269.",
+    h1: "Man and Van Hertford",
+    intro: "Need a man and van in Hertford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hertford move before quoting.",
+    knowledge: "Approved movers covering Hertford handle moves in Georgian properties near the castle and suburban estates. They understand the A10 and A414 traffic.",
+    localMovingInfo: `Hertford is about 20 miles north of London on the A10. The town has Georgian properties near the castle. Bengeo is a residential area. Ware is 2 miles east. The A10 connects to London and Cambridge. The A414 links to Chelmsford. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Hertford?","a":"Hertford moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £100-£170."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Bengeo, Hertingfordbury, Ware, Hoddesdon."},
+    ],
+  },
+
+  "hitchin": {
+    title: "Man and Van Hitchin | From £19",
+    description: "Man and van Hitchin from £19/hr. SG4, SG5. Town Centre, Walsworth, Highbury, Westmill, Purwell. Call 0121 751 1269.",
+    h1: "Man and Van Hitchin",
+    intro: "Need a man and van in Hitchin? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hitchin move before quoting.",
+    knowledge: "Approved movers covering Hitchin handle moves in Georgian town centre properties and suburban estates. They understand the A1(M) and A505 traffic.",
+    localMovingInfo: `Hitchin is about 15 miles north of Luton and 35 miles north of London. The A1(M) junction 8 is nearby. Stevenage is 5 miles south. Bedford is about 12 miles west. The town centre has Georgian buildings around the market square. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Hitchin?","a":"Hitchin moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £120-£180."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Walsworth, Highbury, Westmill, Purwell."},
+    ],
+  },
+
+  "welwyn-garden-city": {
+    title: "Man and Van Welwyn Garden City | From £19",
+    description: "Man and van Welwyn Garden City from £19/hr. AL7, AL8. Town Centre, Panshanger, Digswell, Oaklands, Howlands. Call 0121 751 1269.",
+    h1: "Man and Van Welwyn Garden City",
+    intro: "Need a man and van in Welwyn Garden City? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Welwyn Garden City move before quoting.",
+    knowledge: "Approved movers covering Welwyn Garden City handle moves in garden city properties with their distinctive architecture. The A1(M) and A414 provide good road links.",
+    localMovingInfo: `Welwyn Garden City is about 20 miles north of London on the A1(M). The town has wide boulevards and distinctive garden city architecture. Hatfield is 3 miles west. Stevenage is 5 miles north. The A1(M) can be very congested at junctions 4-6. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Welwyn Garden City?","a":"Welwyn Garden City moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £100-£160."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Panshanger, Digswell, Oaklands, Howlands."},
+    ],
+  },
+
+  "potters-bar": {
+    title: "Man and Van Potters Bar | From £19",
+    description: "Man and van Potters Bar from £19/hr. EN6. Town Centre, South Mimms, Furzefield, Darkes Lane area. Call 0121 751 1269.",
+    h1: "Man and Van Potters Bar",
+    intro: "Need a man and van in Potters Bar? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Potters Bar move before quoting.",
+    knowledge: "Approved movers covering Potters Bar handle moves in suburban properties with good motorway access. The M25 and A1(M) junction can be very congested.",
+    localMovingInfo: `Potters Bar is about 13 miles north of central London at the M25/A1(M) junction. Enfield is 4 miles south. St Albans is 7 miles west. The M25 and A1(M) can be heavily congested. The town has mainly interwar and post-war housing. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Potters Bar?","a":"Potters Bar moves start from £19 per hour. A local move typically costs £60-£120. A move into central London is usually £100-£160."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, South Mimms, Furzefield, Darkes Lane area."},
+    ],
+  },
+
+  "dover": {
+    title: "Man and Van Dover | From £19",
+    description: "Man and van Dover from £19/hr. CT15, CT16, CT17. Town Centre, Western Heights, Maxton, River, Whitfield. Call 0121 751 1269.",
+    h1: "Man and Van Dover",
+    intro: "Need a man and van in Dover? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Dover move before quoting.",
+    knowledge: "Approved movers covering Dover handle moves in the hillside town and port area. The A20 port traffic can be heavy. The M20 can be severely disrupted by Operation Stack.",
+    localMovingInfo: `Dover is about 75 miles south-east of London on the A20/M20. The port brings heavy freight traffic on the A20. The town is built on steep hills. Folkestone is about 8 miles west. Canterbury is about 15 miles north-west. The M20 can suffer Operation Stack. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Dover?","a":"Dover moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £180-£260 due to the 75-mile distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Western Heights, Maxton, River, Whitfield."},
+    ],
+  },
+
+  "ashford": {
+    title: "Man and Van Ashford | From £19",
+    description: "Man and van Ashford from £19/hr. TN23, TN24, TN25. Town Centre, Kennington, Willesborough, Singleton, Park Farm. Call 0121 751 1269.",
+    h1: "Man and Van Ashford",
+    intro: "Need a man and van in Ashford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ashford move before quoting.",
+    knowledge: "Approved movers covering Ashford handle moves in the expanding town and surrounding countryside. The M20 can be affected by Operation Stack.",
+    localMovingInfo: `Ashford is about 60 miles south-east of London on the M20. The town has expanded significantly with new housing. Canterbury is about 15 miles north. Folkestone is 12 miles south. The M20 can suffer Operation Stack. The town centre has a mix of older and modern buildings. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ashford?","a":"Ashford moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £150-£220."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Kennington, Willesborough, Singleton, Park Farm."},
+    ],
+  },
+
+  "canterbury": {
+    title: "Man and Van Canterbury | From £19",
+    description: "Man and van Canterbury from £19/hr. CT1, CT2. City Centre, St Dunstan's, Wincheap, St Stephen's, Blean. Call 0121 751 1269.",
+    h1: "Man and Van Canterbury",
+    intro: "Need a man and van in Canterbury? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Canterbury move before quoting.",
+    knowledge: "Approved movers covering Canterbury handle moves in the pedestrianised medieval centre and surrounding residential areas. The city centre streets are among the narrowest in England.",
+    localMovingInfo: `Canterbury is about 55 miles south-east of London. The city centre is medieval with extremely narrow streets and pedestrian zones. St Dunstan's and Wincheap are just outside the walls with better access. The A2 connects to Dover. The university brings student moves. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Canterbury?","a":"Canterbury moves start from £19 per hour. A local move typically costs £60-£120. City centre moves may cost more due to access restrictions. A move to London is usually £150-£220."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. City Centre, St Dunstan's, Wincheap, St Stephen's, Blean."},
+    ],
+  },
+
+  "folkestone": {
+    title: "Man and Van Folkestone | From £19",
+    description: "Man and van Folkestone from £19/hr. CT18, CT19, CT20. Town Centre, The Leas, Cheriton, Sandgate, Hawkinge. Call 0121 751 1269.",
+    h1: "Man and Van Folkestone",
+    intro: "Need a man and van in Folkestone? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Folkestone move before quoting.",
+    knowledge: "Approved movers covering Folkestone handle moves in the hillside town and coastal areas. The M20 Operation Stack can cause major disruption. The Channel Tunnel terminal brings freight traffic.",
+    localMovingInfo: `Folkestone is about 70 miles south-east of London on the M20. The Channel Tunnel terminal is at Cheriton. Dover is 8 miles east. The M20 can suffer Operation Stack. The Leas has steep streets. The Creative Quarter has regenerated the old town. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Folkestone?","a":"Folkestone moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £170-£240."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, The Leas, Cheriton, Sandgate, Hawkinge."},
+    ],
+  },
+
+  "lewes": {
+    title: "Man and Van Lewes | From £19",
+    description: "Man and van Lewes from £19/hr. BN7. Town Centre, Southover, Cliffe, Malling, Offham. Call 0121 751 1269.",
+    h1: "Man and Van Lewes",
+    intro: "Need a man and van in Lewes? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lewes move before quoting.",
+    knowledge: "Approved movers covering Lewes handle moves in the medieval town centre with its narrow streets and steep hills. The A27 connects to Brighton and Eastbourne.",
+    localMovingInfo: `Lewes is about 8 miles north-east of Brighton on the A27. The town has narrow medieval streets and steep hills. Parking in the town centre is very limited. Brighton is a short drive south. Eastbourne is 18 miles east. The town has many period properties. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Lewes?","a":"Lewes moves start from £19 per hour. A local move typically costs £60-£120. A move to Brighton is usually £70-£110."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Southover, Cliffe, Malling, Offham."},
+    ],
+  },
+
+  "bexhill": {
+    title: "Man and Van Bexhill | From £19",
+    description: "Man and van Bexhill from £19/hr. TN39, TN40. Town Centre, Little Common, Sidley, Collington, Cooden. Call 0121 751 1269.",
+    h1: "Man and Van Bexhill",
+    intro: "Need a man and van in Bexhill? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bexhill move before quoting.",
+    knowledge: "Approved movers covering Bexhill handle moves in the seaside town with its mix of Victorian villas and retirement flats. The A259 can be slow in summer.",
+    localMovingInfo: `Bexhill is about 5 miles west of Eastbourne on the A259. Hastings is about 5 miles further west. The town has Victorian and Edwardian properties. Little Common is a popular residential area. The A259 coastal road can be slow in summer. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Bexhill?","a":"Bexhill moves start from £19 per hour. A local move typically costs £60-£120. A move to Eastbourne is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Little Common, Sidley, Collington, Cooden."},
+    ],
+  },
+
+  "worthing": {
+    title: "Man and Van Worthing | From £19",
+    description: "Man and van Worthing from £19/hr. BN11, BN12, BN13, BN14. Town Centre, Broadwater, Goring-by-Sea, Durrington, Lancing. Call 0121 751 1269.",
+    h1: "Man and Van Worthing",
+    intro: "Need a man and van in Worthing? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Worthing move before quoting.",
+    knowledge: "Approved movers covering Worthing handle moves in the seaside town. The A27 can be very congested. Goring and Durrington are residential areas. Brighton is about 10 miles east.",
+    localMovingInfo: `Worthing is about 10 miles west of Brighton on the A27 and A259. The town has a seafront with Victorian properties. Goring-by-Sea and Durrington are residential areas. Horsham is about 14 miles north. The A27 is the main link but can be very congested. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Worthing?","a":"Worthing moves start from £19 per hour. A local move typically costs £60-£120. A move to Brighton is usually £70-£110."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Broadwater, Goring-by-Sea, Durrington, Lancing."},
+    ],
+  },
+
+  "chichester": {
+    title: "Man and Van Chichester | From £19",
+    description: "Man and van Chichester from £19/hr. PO19. City Centre, Summerstown, Portfield, Fishbourne, Lavant. Call 0121 751 1269.",
+    h1: "Man and Van Chichester",
+    intro: "Need a man and van in Chichester? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chichester move before quoting.",
+    knowledge: "Approved movers covering Chichester handle moves in the Georgian city centre and surrounding areas. The city walls create a compact centre with narrow streets.",
+    localMovingInfo: `Chichester is about 20 miles east of Portsmouth on the A27. The city centre within the Roman walls has Georgian buildings and narrow streets. Goodwood is just north. Portsmouth is 20 miles west. The A27 is the main coastal route. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Chichester?","a":"Chichester moves start from £19 per hour. A local move typically costs £60-£120. A move to Portsmouth is usually £100-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. City Centre, Summerstown, Portfield, Fishbourne, Lavant."},
+    ],
+  },
+
+  "reigate": {
+    title: "Man and Van Reigate | From £19",
+    description: "Man and van Reigate from £19/hr. RH2. Town Centre, Reigate Hill, South Park, Woodhatch, Meath Green. Call 0121 751 1269.",
+    h1: "Man and Van Reigate",
+    intro: "Need a man and van in Reigate? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Reigate move before quoting.",
+    knowledge: "Approved movers covering Reigate handle moves in the town centre and on Reigate Hill. The M25 junction 8 provides motorway access. Redhill is effectively next door.",
+    localMovingInfo: `Reigate is about 20 miles south of London near the M25 junction 8. Redhill is immediately east. The town centre has Georgian buildings. Reigate Hill has steep residential roads. The M25 and A217 give good access. Croydon is about 8 miles north. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Reigate?","a":"Reigate moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £100-£160."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Reigate Hill, South Park, Woodhatch, Meath Green."},
+    ],
+  },
+
+  "epsom": {
+    title: "Man and Van Epsom | From £19",
+    description: "Man and van Epsom from £19/hr. KT17, KT18, KT19. Town Centre, Epsom Downs, Stoneleigh, Wells, Langley Vale. Call 0121 751 1269.",
+    h1: "Man and Van Epsom",
+    intro: "Need a man and van in Epsom? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Epsom move before quoting.",
+    knowledge: "Approved movers covering Epsom handle moves in the town centre and surrounding areas. Derby Day and race meetings bring heavy traffic. The A24 and M25 junction 9 provide road links.",
+    localMovingInfo: `Epsom is about 14 miles south-west of London on the A24. The M25 junction 9 is nearby. Epsom Downs racecourse is a landmark. Kingston is about 6 miles north. Croydon is about 8 miles east. Derby Day brings major traffic disruption. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Epsom?","a":"Epsom moves start from £19 per hour. A local move typically costs £60-£120. A move into London is usually £80-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Epsom Downs, Stoneleigh, Wells, Langley Vale."},
+    ],
+  },
+
+  "walton-on-thames": {
+    title: "Man and Van Walton-on-Thames | From £19",
+    description: "Man and van Walton-on-Thames from £19/hr. KT12. Town Centre, Ashley Park, Hersham, Oatlands, Walton-on-the-Hill. Call 0121 751 1269.",
+    h1: "Man and Van Walton-on-Thames",
+    intro: "Need a man and van in Walton-on-Thames? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Walton-on-Thames move before quoting.",
+    knowledge: "Approved movers covering Walton-on-Thames handle moves in the riverside town and suburban areas. Weybridge is next door. Kingston is about 4 miles east.",
+    localMovingInfo: `Walton-on-Thames is about 15 miles south-west of London near the M3. Kingston is 4 miles east. Weybridge is next door. The town has riverside properties and suburban housing. Woking is about 5 miles south. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Walton-on-Thames?","a":"Walton-on-Thames moves start from £19 per hour. A local move typically costs £60-£120. A move into London is usually £90-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Ashley Park, Hersham, Oatlands, Walton-on-the-Hill."},
+    ],
+  },
+
+  "windsor": {
+    title: "Man and Van Windsor | From £19",
+    description: "Man and van Windsor from £19/hr. SL4. Town Centre, Eton, Datchet, Old Windsor, Clewer. Call 0121 751 1269.",
+    h1: "Man and Van Windsor",
+    intro: "Need a man and van in Windsor? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Windsor move before quoting.",
+    knowledge: "Approved movers covering Windsor handle moves in the tourist town and surrounding areas. The castle brings constant visitor traffic. Eton is across the river. The M4 provides fast London access.",
+    localMovingInfo: `Windsor is about 20 miles west of London near the M4 junction 6. The castle brings heavy tourist traffic. Eton is across the Thames. Slough is 3 miles east. Maidenhead is 5 miles west. The town centre has narrow streets near the castle. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Windsor?","a":"Windsor moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £90-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Eton, Datchet, Old Windsor, Clewer."},
+    ],
+  },
+
+  "newbury": {
+    title: "Man and Van Newbury | From £19",
+    description: "Man and van Newbury from £19/hr. RG14, RG20. Town Centre, Greenham, Speen, Wash Common, Thatcham. Call 0121 751 1269.",
+    h1: "Man and Van Newbury",
+    intro: "Need a man and van in Newbury? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Newbury move before quoting.",
+    knowledge: "Approved movers covering Newbury handle moves in the market town and surrounding villages. The A34 runs north-south and can be very congested. The M4 gives east-west access.",
+    localMovingInfo: `Newbury is about 20 miles west of Reading on the A34. The M4 junction 13 is nearby. Basingstoke is about 14 miles south. Swindon is about 20 miles west. The town centre has a market square and Georgian buildings. The A34 can be very congested. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Newbury?","a":"Newbury moves start from £19 per hour. A local move typically costs £60-£120. A move to Reading is usually £90-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Greenham, Speen, Wash Common, Thatcham."},
+    ],
+  },
+
+  "beaconsfield": {
+    title: "Man and Van Beaconsfield | From £19",
+    description: "Man and van Beaconsfield from £19/hr. HP9. Old Town, New Town, Holtspur, Knotty Green, Seer Green. Call 0121 751 1269.",
+    h1: "Man and Van Beaconsfield",
+    intro: "Need a man and van in Beaconsfield? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Beaconsfield move before quoting.",
+    knowledge: "Approved movers covering Beaconsfield handle moves in the Old Town and New Town areas. The M40 junction 2 provides motorway access. The Old Town has narrow streets and period properties.",
+    localMovingInfo: `Beaconsfield is about 23 miles west of London near the M40 junction 2. The Old Town has narrow streets and Georgian buildings. The New Town is more modern with better access. High Wycombe is about 5 miles west. Slough is about 5 miles south. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Beaconsfield?","a":"Beaconsfield moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £90-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Old Town, New Town, Holtspur, Knotty Green, Seer Green."},
+    ],
+  },
+
+  "winchester": {
+    title: "Man and Van Winchester | From £19",
+    description: "Man and van Winchester from £19/hr. SO22, SO23. City Centre, Weeke, Stanmore, Highbury, Badger Farm. Call 0121 751 1269.",
+    h1: "Man and Van Winchester",
+    intro: "Need a man and van in Winchester? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Winchester move before quoting.",
+    knowledge: "Approved movers covering Winchester handle moves in the historic city centre and surrounding areas. The cathedral area has very narrow streets. The M3 provides fast access to London and Southampton.",
+    localMovingInfo: `Winchester is about 60 miles south-west of London on the M3. Southampton is about 12 miles south. Basingstoke is about 15 miles north. The city centre has narrow streets near the cathedral. Weeke and Badger Farm are residential areas. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Winchester?","a":"Winchester moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £150-£220."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. City Centre, Weeke, Stanmore, Highbury, Badger Farm."},
+    ],
+  },
+
+  "basingstoke": {
+    title: "Man and Van Basingstoke | From £19",
+    description: "Man and van Basingstoke from £19/hr. RG21, RG22, RG23, RG24. Town Centre, Chineham, Hatch Warren, Lychpit, Beggarwood. Call 0121 751 1269.",
+    h1: "Man and Van Basingstoke",
+    intro: "Need a man and van in Basingstoke? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Basingstoke move before quoting.",
+    knowledge: "Approved movers covering Basingstoke handle moves in the expanded town and surrounding villages. The M3 provides fast London access. Chineham and Hatch Warren are large residential areas.",
+    localMovingInfo: `Basingstoke is about 45 miles south-west of London on the M3. Reading is about 15 miles north. Winchester is about 15 miles south. Farnborough is about 10 miles east. Chineham and Hatch Warren are popular residential areas. The M3 gives fast London access. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Basingstoke?","a":"Basingstoke moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £120-£180."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Chineham, Hatch Warren, Lychpit, Beggarwood."},
+    ],
+  },
+
+  "andover": {
+    title: "Man and Van Andover | From £19",
+    description: "Man and van Andover from £19/hr. SP10, SP11. Town Centre, Augustine Park, East Anton, King Arthur's Way, Picket Piece. Call 0121 751 1269.",
+    h1: "Man and Van Andover",
+    intro: "Need a man and van in Andover? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Andover move before quoting.",
+    knowledge: "Approved movers covering Andover handle moves in the town and surrounding villages. The A303 is the main road link. The garrison brings military families who move frequently.",
+    localMovingInfo: `Andover is about 18 miles west of Basingstoke on the A303. Winchester is about 18 miles south-east. The A303 connects to the M3. The town has expanded with new estates. The garrison brings military family moves. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Andover?","a":"Andover moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £150-£220."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Augustine Park, East Anton, King Arthur's Way, Picket Piece."},
+    ],
+  },
+
+  "goole": {
+    title: "Man and Van Goole | From £19",
+    description: "Man and van Goole from £19/hr. DN14. Town Centre, Airmyn, Rawcliffe, Hook, Howdendyke. Call 0121 751 1269.",
+    h1: "Man and Van Goole",
+    intro: "Need a man and van in Goole? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Goole move before quoting.",
+    knowledge: "Approved movers covering Goole handle moves in the port town and surrounding villages. The M62 junction 36 provides excellent motorway access. The port brings HGV traffic.",
+    localMovingInfo: `Goole is about 25 miles west of Hull at the M62/A19 intersection. The M62 connects to Leeds (about 25 miles west). Doncaster is about 20 miles south. The port brings heavy goods traffic. The town has Victorian terraces near the docks. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Goole?","a":"Goole moves start from £19 per hour. A local move typically costs £60-£120. A move to Hull is usually £80-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Airmyn, Rawcliffe, Hook, Howdendyke."},
+    ],
+  },
+
+  "hedon": {
+    title: "Man and Van Hedon | From £19",
+    description: "Man and van Hedon from £19/hr. HU12. Town Centre, Sutton-on-Hull, Preston, Thorngumbald, Keyingham. Call 0121 751 1269.",
+    h1: "Man and Van Hedon",
+    intro: "Need a man and van in Hedon? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hedon move before quoting.",
+    knowledge: "Approved movers covering Hedon handle moves in the small town and surrounding Holderness villages. The town has a medieval church and narrow streets. Hull is just 5 miles away.",
+    localMovingInfo: `Hedon is about 5 miles east of Hull on the A1033. The town has a famous medieval church. Beverley is about 7 miles north. The narrow streets near the church can be tricky for large vans. Hull commuter traffic affects the A1033. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Hedon?","a":"Hedon moves start from £19 per hour. A local move typically costs £60-£120. A move to Hull is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Sutton-on-Hull, Preston, Thorngumbald, Keyingham."},
+    ],
+  },
+
+  "ripon": {
+    title: "Man and Van Ripon | From £19",
+    description: "Man and van Ripon from £19/hr. HG4. City Centre, Boroughbridge Road, Sharow, Bishop Monkton, Boroughbridge. Call 0121 751 1269.",
+    h1: "Man and Van Ripon",
+    intro: "Need a man and van in Ripon? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ripon move before quoting.",
+    knowledge: "Approved movers covering Ripon handle moves in the compact city centre and surrounding villages. The A1(M) junction 50 provides motorway access. Harrogate is 11 miles south.",
+    localMovingInfo: `Ripon is about 11 miles north of Harrogate on the A61. The A1(M) junction 50 is nearby. York is about 24 miles south-east. The city has a cathedral and market square with Georgian buildings. Harrogate is the nearest major town. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ripon?","a":"Ripon moves start from £19 per hour. A local move typically costs £60-£120. A move to Harrogate is usually £70-£110."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. City Centre, Boroughbridge Road, Sharow, Bishop Monkton, Boroughbridge."},
+    ],
+  },
+
+  "northallerton": {
+    title: "Man and Van Northallerton | From £19",
+    description: "Man and van Northallerton from £19/hr. DL6, DL7. Town Centre, Romanby, Brompton, Pickhill, Leeming. Call 0121 751 1269.",
+    h1: "Man and Van Northallerton",
+    intro: "Need a man and van in Northallerton? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Northallerton move before quoting.",
+    knowledge: "Approved movers covering Northallerton handle moves in the county town and surrounding villages. The A1(M) junction 51 is nearby. Darlington is about 15 miles north.",
+    localMovingInfo: `Northallerton is about 15 miles south of Darlington near the A1(M) junction 51. York is about 25 miles south. Harrogate is about 20 miles south-west. The town has a wide high street with Georgian buildings. The A1(M) gives fast access north and south. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Northallerton?","a":"Northallerton moves start from £19 per hour. A local move typically costs £60-£120. A move to Darlington is usually £80-£120."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Romanby, Brompton, Pickhill, Leeming."},
+    ],
+  },
+
+  "lancaster": {
+    title: "Man and Van Lancaster | From £19",
+    description: "Man and van Lancaster from £19/hr. LA1, LA2, LA3. City Centre, Bailrigg, Skerton, Galgate, Heysham. Call 0121 751 1269.",
+    h1: "Man and Van Lancaster",
+    intro: "Need a man and van in Lancaster? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lancaster move before quoting.",
+    knowledge: "Approved movers covering Lancaster handle moves in the historic city and surrounding areas. The M6 junctions 33 and 34 provide motorway access. The castle area has narrow streets. The university at Bailrigg brings student moves.",
+    localMovingInfo: `Lancaster is about 20 miles north of Preston near the M6. The city has a castle and Georgian architecture. Morecambe is across the river. The university at Bailrigg brings student moves. The M6 junctions 33-34 provide motorway access. Kendal is about 20 miles north. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Lancaster?","a":"Lancaster moves start from £19 per hour. A local move typically costs £60-£120. A move to Preston is usually £80-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. City Centre, Bailrigg, Skerton, Galgate, Heysham."},
+    ],
+  },
+
+  "lytham": {
+    title: "Man and Van Lytham | From £19",
+    description: "Man and van Lytham from £19/hr. FY8. Lytham Town Centre, St Annes, Ansdell, Fairhaven, Wrea Green. Call 0121 751 1269.",
+    h1: "Man and Van Lytham",
+    intro: "Need a man and van in Lytham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lytham move before quoting.",
+    knowledge: "Approved movers covering Lytham handle moves in the affluent seaside town. The town has Victorian villas and a distinctive green. St Annes is effectively next door. Blackpool is about 6 miles north.",
+    localMovingInfo: `Lytham is about 6 miles south of Blackpool on the Fylde Coast. The town is known for its green, windmill, and Victorian villas. St Annes is next door. Preston is about 10 miles east. The coastal road can be busy in summer. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Lytham?","a":"Lytham moves start from £19 per hour. A local move typically costs £60-£120. A move to Blackpool is usually £70-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Lytham Town Centre, St Annes, Ansdell, Fairhaven, Wrea Green."},
+    ],
+  },
+
 };
