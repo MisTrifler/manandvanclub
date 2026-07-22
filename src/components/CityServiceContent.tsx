@@ -881,7 +881,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                      ))}
                   </div>
                   <p className="text-2xl font-black text-primary">5.0 / 5.0</p>
-                  <p className="text-xs font-bold text-primary/50 uppercase tracking-widest mt-1">10 verified reviews</p>
+                  <p className="text-xs font-bold text-primary/50 uppercase tracking-widest mt-1">11 verified reviews</p>
                </div>
             </aside>
 

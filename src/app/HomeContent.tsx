@@ -23,6 +23,11 @@ const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: st
 
 const REVIEW_CARDS = [
   {
+    name: "Anku G.",
+    platform: "Google",
+    text: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Can't thank you enough. Recommended company!",
+  },
+  {
     name: "Mansi B.",
     platform: "Google",
     text: "Amazing service, easy and seamless. Adrian was punctual and got the job done fast. Definitely would use again!",
@@ -366,7 +371,7 @@ export default function HomeContent() {
             What our customers say
           </h2>
           <p className="text-sm text-text-secondary mt-1">
-            5.0 / 5.0 across 10 verified reviews on Google, Trustpilot & Yell
+            5.0 / 5.0 across 11 verified reviews on Google, Trustpilot & Yell
           </p>
         </div>
 

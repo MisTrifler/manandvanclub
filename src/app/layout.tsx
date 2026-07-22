@@ -278,10 +278,17 @@ const aggregateRatingSchema = {
     "ratingValue": "5.0",
     "bestRating": "5",
     "worstRating": "1",
-    "ratingCount": "10",
-    "reviewCount": "10"
+    "ratingCount": "11",
+    "reviewCount": "11"
   },
   "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Anku G." },
+      "datePublished": "2026-07-23",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Can't thank you enough. Recommended company!"
+    },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "S.J." },
