@@ -25,7 +25,7 @@ const REVIEW_CARDS = [
   {
     name: "Anku G.",
     platform: "Google",
-    text: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Can't thank you enough. Recommended company!",
+    text: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Cant thank you enough. Recommended company!",
   },
   {
     name: "Mansi B.",
