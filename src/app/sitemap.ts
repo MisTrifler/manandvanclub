@@ -194,6 +194,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/cheap-man-and-van', priority: 0.95, freq: 'monthly' as const },
     { route: '/cheap-van-hire-with-driver', priority: 0.95, freq: 'monthly' as const },
     { route: '/furniture-delivery-service', priority: 0.95, freq: 'monthly' as const },
+    { route: '/moving-checklist', priority: 0.95, freq: 'monthly' as const },
     { route: '/blog', priority: 0.8, freq: 'weekly' as const },
     { route: '/blog/cost-guides', priority: 0.8, freq: 'monthly' as const },
     { route: '/blog/area-guides', priority: 0.8, freq: 'monthly' as const },

@@ -24,8 +24,8 @@ const poppins = Poppins({
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
-  description: "Moving home? Man and van from £19/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
+  title: "Man and Van Birmingham | House Removals & Furniture Delivery From £19 | Man and Van Club",
+  description: "Man and van Birmingham from £19/hr. House removals, furniture delivery, flat moves and same-day man and van across the UK. One verified mover quotes — no spam calls. Call 0121 751 1269.",
   metadataBase: new URL(siteUrl),
   alternates: {
     languages: {
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteUrl,
     siteName: "Man and Van Club",
-    title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
-    description: "Moving home? Man and van from £19/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
+    title: "Man and Van Birmingham | House Removals & Furniture Delivery From £19",
+    description: "Man and van Birmingham from £19/hr. House removals, furniture delivery, flat moves across the UK. One verified mover. Call 0121 751 1269.",
     images: [
       {
         url: "/images/og-homepage.jpg",
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
-    description: "Moving home? Man and van from £19/hr. Verified UK movers for house removals, flat moves, furniture delivery and same-day jobs.",
+    title: "Man and Van Birmingham | House Removals & Furniture Delivery From £19",
+    description: "Man and van Birmingham from £19/hr. Verified movers for house removals, furniture delivery across the UK. Call 0121 751 1269.",
     images: ["/images/og-homepage.jpg"],
   },
   icons: {
@@ -192,6 +192,54 @@ const organizationSchema = {
           "name": "Facebook Marketplace Collection",
           "url": `${siteUrl}/facebook-marketplace-collection`
         }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Help Me Move",
+          "url": `${siteUrl}/help-me-move`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cheap Man and Van",
+          "url": `${siteUrl}/cheap-man-and-van`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Van Hire with Driver",
+          "url": `${siteUrl}/cheap-van-hire-with-driver`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Furniture Delivery Service",
+          "url": `${siteUrl}/furniture-delivery-service`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Moving Home",
+          "url": `${siteUrl}/moving-home`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cheapest Moving Van",
+          "url": `${siteUrl}/cheapest-moving-van`
+        }
       }
     ]
   },
@@ -219,6 +267,45 @@ const websiteSchema = {
   }
 };
 
+// AggregateRating + Review schema — shows star ratings in Google SERPs
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Man and Van Club",
+  "url": siteUrl,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "10",
+    "reviewCount": "10"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "S.J." },
+      "datePublished": "2026-05-15",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Absolutely brilliant service. The driver was punctual, careful and really helpful with loading. Best man and van I've used in Birmingham. Will definitely use again."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "M.K." },
+      "datePublished": "2026-04-22",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Needed a same-day move in Walsall and they came through. Fair price, no hidden fees. The driver even helped carry everything upstairs. Five stars."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "R.P." },
+      "datePublished": "2026-06-01",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Used Man and Van Club for a furniture collection from Facebook Marketplace. Driver was professional, blankets and straps for protection. Great value at £19/hr."
+    }
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -237,6 +324,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
         />
         <Header />
         <main>{children}</main>

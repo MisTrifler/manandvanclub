@@ -84,6 +84,7 @@ export default function Header() {
     { name: "Cheap Man and Van", href: "/cheap-man-and-van" },
     { name: "Van + Driver", href: "/cheap-van-hire-with-driver" },
     { name: "Cost Calculator", href: "/moving-cost-calculator" },
+    { name: "Moving Checklist", href: "/moving-checklist" },
   ];
 
   const areaSections = [
