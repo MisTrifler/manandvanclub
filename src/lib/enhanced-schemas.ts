@@ -6464,3 +6464,55 @@ export function getLocalBusinessSchema(locationKey: string): Record<string, any>
 
   return null;
 }
+
+/**
+ * VideoObject schema generator for location pages.
+ * Use when video content is embedded on a location page.
+ * Upload videos to /videos/{slug}-moving-guide.mp4 and thumbnails to /images/video-thumbnails/{slug}.jpg
+ */
+export function getVideoSchema(locationKey: string, videoData?: {
+  name?: string;
+  description?: string;
+  duration?: string;
+  uploadDate?: string;
+  thumbnailUrl?: string;
+  contentUrl?: string;
+}): Record<string, any> | null {
+  const location = getLocationDisplayName(locationKey);
+  if (!location) return null;
+
+  const data = videoData || {};
+  const slug = locationKey;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: data.name || `How to move in ${location} — Man and Van Club guide`,
+    description: data.description || `Moving in ${location}? Watch our guide on how to submit a free man and van request. From £19/hr. One verified mover reviews your move before you book.`,
+    duration: data.duration || "PT2M",
+    uploadDate: data.uploadDate || "2026-07-22",
+    thumbnailUrl: data.thumbnailUrl || `https://www.manandvanclub.co.uk/images/video-thumbnails/${slug}.jpg`,
+    contentUrl: data.contentUrl || `https://www.manandvanclub.co.uk/videos/${slug}-moving-guide.mp4`,
+    embedUrl: `https://www.manandvanclub.co.uk/man-and-van-${slug}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Man and Van Club",
+      url: "https://www.manandvanclub.co.uk",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.manandvanclub.co.uk/icon.png"
+      }
+    }
+  };
+}
+
+function getLocationDisplayName(slug: string): string | null {
+  // Simple lookup for video schema — uses the LOCATIONS array
+  try {
+    const { LOCATIONS } = require("@/constants/locations");
+    const loc = LOCATIONS.find((l: any) => l.slug === slug);
+    return loc ? loc.name : null;
+  } catch {
+    return null;
+  }
+}

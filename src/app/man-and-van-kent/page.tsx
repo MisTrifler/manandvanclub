@@ -13,16 +13,16 @@ export const metadata: Metadata = {
     title: hub.title,
     description: hub.description,
     url: `${baseUrl}/man-and-van-${hub.slug}`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van kent")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: `Man and Van ${hub.name} | Man and Van Club` }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Kent")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: `Man and Van ${hub.name} | Man and Van Club` }],
   },
   twitter: {
     card: "summary_large_image",
     title: hub.title,
     description: hub.description,
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van kent")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Kent")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
   },
 };
 
-export default function KentPage() {
+export default function kentPage() {
   return <HubPageContent hub={hub} />;
 }

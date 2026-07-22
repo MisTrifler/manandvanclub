@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { HUB_PAGES } from "@/lib/hub-page-data";
 import HubPageContent from "@/components/HubPageContent";
 
-const hub = HUB_PAGES["hertfordshire"]!;
+const hub = HUB_PAGES["wales"]!;
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
@@ -13,16 +13,16 @@ export const metadata: Metadata = {
     title: hub.title,
     description: hub.description,
     url: `${baseUrl}/man-and-van-${hub.slug}`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Hertfordshire")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: `Man and Van ${hub.name} | Man and Van Club` }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Wales")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: `Man and Van ${hub.name} | Man and Van Club` }],
   },
   twitter: {
     card: "summary_large_image",
     title: hub.title,
     description: hub.description,
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Hertfordshire")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Wales")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
   },
 };
 
-export default function hertfordshirePage() {
+export default function walesPage() {
   return <HubPageContent hub={hub} />;
 }
