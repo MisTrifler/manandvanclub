@@ -5234,6 +5234,308 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+
+  // ─── Phase 9+10: South West + East of England (20 NEW) ───
+  "bedford": {
+    ...baseSchema,
+    name: "Man and Van Club — Bedford",
+    description: "Free man and van quote request service in Bedford, Bedfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Kempston, Bromham, Great Denham, Clapham, Renhold, Elstow.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bedford",
+    areaServed: {
+      "@type": "City",
+      name: "Bedford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Bedfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "chelmsford": {
+    ...baseSchema,
+    name: "Man and Van Club — Chelmsford",
+    description: "Free man and van quote request service in Chelmsford, Essex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Springfield, Great Baddow, Writtle, Galleywood, Danbury.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-chelmsford",
+    areaServed: {
+      "@type": "City",
+      name: "Chelmsford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Essex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "southend-on-sea": {
+    ...baseSchema,
+    name: "Man and Van Club — Southend-on-Sea",
+    description: "Free man and van quote request service in Southend-on-Sea, Essex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Westcliff, Leigh-on-Sea, Eastwood, Thorpe Bay, Shoeburyness.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-southend-on-sea",
+    areaServed: {
+      "@type": "City",
+      name: "Southend-on-Sea",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Essex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "harlow": {
+    ...baseSchema,
+    name: "Man and Van Club — Harlow",
+    description: "Free man and van quote request service in Harlow, Essex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Old Harlow, Church Langley, Potter Street, Newhall.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-harlow",
+    areaServed: {
+      "@type": "City",
+      name: "Harlow",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Essex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "great-yarmouth": {
+    ...baseSchema,
+    name: "Man and Van Club — Great Yarmouth",
+    description: "Free man and van quote request service in Great Yarmouth, Norfolk. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Southtown, Bradwell, Caister, Gorleston.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-great-yarmouth",
+    areaServed: {
+      "@type": "City",
+      name: "Great Yarmouth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Norfolk"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "kings-lynn": {
+    ...baseSchema,
+    name: "Man and Van Club — King's Lynn",
+    description: "Free man and van quote request service in King's Lynn, Norfolk. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers South Lynn, North Lynn, Gaywood, Gayton, Hunstanton.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-kings-lynn",
+    areaServed: {
+      "@type": "City",
+      name: "King's Lynn",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Norfolk"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "lowestoft": {
+    ...baseSchema,
+    name: "Man and Van Club — Lowestoft",
+    description: "Free man and van quote request service in Lowestoft, Suffolk. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Kirkley, Oulton Broad, Pakefield, Carlton Colville.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-lowestoft",
+    areaServed: {
+      "@type": "City",
+      name: "Lowestoft",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Suffolk"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "clacton-on-sea": {
+    ...baseSchema,
+    name: "Man and Van Club — Clacton-on-Sea",
+    description: "Free man and van quote request service in Clacton-on-Sea, Essex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Holland-on-Sea, Jaywick, Frinton-on-Sea, Walton-on-the-Naze.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-clacton-on-sea",
+    areaServed: {
+      "@type": "City",
+      name: "Clacton-on-Sea",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Essex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "felixstowe": {
+    ...baseSchema,
+    name: "Man and Van Club — Felixstowe",
+    description: "Free man and van quote request service in Felixstowe, Suffolk. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Old Felixstowe, Trimley, Kirton.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-felixstowe",
+    areaServed: {
+      "@type": "City",
+      name: "Felixstowe",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Suffolk"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "brentwood": {
+    ...baseSchema,
+    name: "Man and Van Club — Brentwood",
+    description: "Free man and van quote request service in Brentwood, Essex. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Shenfield, Hutton, Warley, Ingatestone.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-brentwood",
+    areaServed: {
+      "@type": "City",
+      name: "Brentwood",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Essex"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "dunstable": {
+    ...baseSchema,
+    name: "Man and Van Club — Dunstable",
+    description: "Free man and van quote request service in Dunstable, Bedfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Houghton Regis, Kensworth, Totternhoe.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-dunstable",
+    areaServed: {
+      "@type": "City",
+      name: "Dunstable",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Bedfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "leighton-buzzard": {
+    ...baseSchema,
+    name: "Man and Van Club — Leighton Buzzard",
+    description: "Free man and van quote request service in Leighton Buzzard, Bedfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Linslade, Heath and Reach, Eggington, Stanbridge.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-leighton-buzzard",
+    areaServed: {
+      "@type": "City",
+      name: "Leighton Buzzard",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Bedfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ely": {
+    ...baseSchema,
+    name: "Man and Van Club — Ely",
+    description: "Free man and van quote request service in Ely, Cambridgeshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Stuntsey, Little Downham, Witchford, Soham, Haddenham.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ely",
+    areaServed: {
+      "@type": "City",
+      name: "Ely",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cambridgeshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "thetford": {
+    ...baseSchema,
+    name: "Man and Van Club — Thetford",
+    description: "Free man and van quote request service in Thetford, Norfolk. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Brettenham, Kilverstone, Snetterton, East Harling, Mundford.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-thetford",
+    areaServed: {
+      "@type": "City",
+      name: "Thetford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Norfolk"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "bishops-stortford": {
+    ...baseSchema,
+    name: "Man and Van Club — Bishop's Stortford",
+    description: "Free man and van quote request service in Bishop's Stortford, Hertfordshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Havers, Bishop's Park, Thorley, Much Hadham, Sawbridgeworth.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bishops-stortford",
+    areaServed: {
+      "@type": "City",
+      name: "Bishop's Stortford",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Hertfordshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "paignton": {
+    ...baseSchema,
+    name: "Man and Van Club — Paignton",
+    description: "Free man and van quote request service in Paignton, Devon. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Goodrington, Preston, Blatchford, Collaton St Mary.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-paignton",
+    areaServed: {
+      "@type": "City",
+      name: "Paignton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Devon"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "brixham": {
+    ...baseSchema,
+    name: "Man and Van Club — Brixham",
+    description: "Free man and van quote request service in Brixham, Devon. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Higher Brixham, Churston Ferrers, Galmpton, Berry Head.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-brixham",
+    areaServed: {
+      "@type": "City",
+      name: "Brixham",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Devon"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "newquay": {
+    ...baseSchema,
+    name: "Man and Van Club — Newquay",
+    description: "Free man and van quote request service in Newquay, Cornwall. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Fistral, Towan, Porth, Watergate Bay, Crantock.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-newquay",
+    areaServed: {
+      "@type": "City",
+      name: "Newquay",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cornwall"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "falmouth": {
+    ...baseSchema,
+    name: "Man and Van Club — Falmouth",
+    description: "Free man and van quote request service in Falmouth, Cornwall. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers The Moor, Penryn, Flushing, Mawnan Smith, Budock Water.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-falmouth",
+    areaServed: {
+      "@type": "City",
+      name: "Falmouth",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Cornwall"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "barnstaple": {
+    ...baseSchema,
+    name: "Man and Van Club — Barnstaple",
+    description: "Free man and van quote request service in Barnstaple, Devon. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Pilton, Roundswell, Bickington, Bishops Tawton, Landkey.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-barnstaple",
+    areaServed: {
+      "@type": "City",
+      name: "Barnstaple",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Devon"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {

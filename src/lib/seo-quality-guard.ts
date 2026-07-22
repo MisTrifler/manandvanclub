@@ -377,6 +377,27 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "aldershot",
   "hove",
   "burgess-hill",
+  // ─── Phase 9+10: South West + East of England (20) ───
+  "bedford",
+  "chelmsford",
+  "southend-on-sea",
+  "harlow",
+  "great-yarmouth",
+  "kings-lynn",
+  "lowestoft",
+  "clacton-on-sea",
+  "felixstowe",
+  "brentwood",
+  "dunstable",
+  "leighton-buzzard",
+  "ely",
+  "thetford",
+  "bishops-stortford",
+  "paignton",
+  "brixham",
+  "newquay",
+  "falmouth",
+  "barnstaple",
 ]);
 
 export function isSeoLaunchMode(): boolean {

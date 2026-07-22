@@ -5726,4 +5726,325 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
       {title: "Surrounding areas", body: "Residential areas with generally good road access. World's End, Hammonds Green, Franklands Village, Ditchling Common."},
     ],
   },
+  // ─── Phase 9+10: South West + East of England (20) ───
+
+  "bedford": {
+    title: "Man and Van Bedford | From £19",
+    description: "Man and van Bedford from £19/hr. MK40, MK41, MK42, MK43. Kempston, Bromham, Great Denham, Clapham, Renhold, Elstow, Wootton. Call 0121 751 1269.",
+    h1: "Man and Van Bedford",
+    intro: "Need a man and van in Bedford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bedford move before quoting.",
+    knowledge: "Bedford is a historic market town on the Great Ouse with a Georgian riverside, a castle mound, and growing new developments at Great Denham. The Embankment area has parking restrictions. Kempston is effectively part of the same urban area. The A6 and A421 give good road links to Milton Keynes and the M1.",
+    localMovingInfo: `Bedford is about 50 miles north of London. The A6 runs through the town and can be slow. The A421 connects to the M1 at junction 13 (about 15 minutes). The town centre has Georgian streets near the river with some parking restrictions. Kempston is a residential area to the south with better access. Great Denham is a new development to the west. Bedford station has trains to St Pancras in about 40 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Bedford?","a":"Bedford moves start from £19 per hour. A local move typically costs £60-£120. A move to Milton Keynes or Luton is usually £80-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Kempston, Bromham, Great Denham, Clapham, Renhold, Elstow, Wootton."},
+    ],
+  },
+
+  "chelmsford": {
+    title: "Man and Van Chelmsford | From £19",
+    description: "Man and van Chelmsford from £19/hr. CM1, CM2, CM3. Springfield, Great Baddow, Writtle, Galleywood, Danbury. Call 0121 751 1269.",
+    h1: "Man and Van Chelmsford",
+    intro: "Need a man and van in Chelmsford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chelmsford move before quoting.",
+    knowledge: "Chelmsford is Essex's only city, with a cathedral, a university, and fast trains to Liverpool Street. The A12 queues badly at rush hour. The city centre has been redeveloped with modern apartments. Springfield and Great Baddow are established residential areas with good access.",
+    localMovingInfo: `Chelmsford is about 30 miles north-east of London. The A12 is the main road link and can be very slow at peak times. The city centre has modern apartments near the station and period properties near the cathedral. Springfield and Great Baddow are suburban with better parking. Writtle is a village to the west. Chelmsford station has trains to Liverpool Street in about 35 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Chelmsford?","a":"Chelmsford moves start from £19 per hour. A local move typically costs £70-£130. A move to London or Colchester is usually £90-£170."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Springfield, Great Baddow, Writtle, Galleywood, Danbury."},
+    ],
+  },
+
+  "southend-on-sea": {
+    title: "Man and Van Southend-on-Sea | From £19",
+    description: "Man and van Southend-on-Sea from £19/hr. SS0, SS1, SS2, SS3. Westcliff, Leigh-on-Sea, Eastwood, Thorpe Bay, Shoeburyness. Call 0121 751 1269.",
+    h1: "Man and Van Southend-on-Sea",
+    intro: "Need a man and van in Southend-on-Sea? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Southend-on-Sea move before quoting.",
+    knowledge: "Southend-on-Sea is Essex's largest town, famous for the world's longest pleasure pier. The seafront has Victorian apartment blocks. Leigh-on-Sea to the west is a desirable village area with a conservation zone. The A13 and A127 connect to London but can queue badly.",
+    localMovingInfo: `Southend is about 35 miles east of London on the A13/A127. The seafront has apartments and Victorian terraces. Leigh-on-Sea is a desirable area with a conservation zone and narrow streets near the Old Town. Thorpe Bay and Eastwood are suburban with better access. Southend Victoria station has trains to Liverpool Street in about 50 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Southend?","a":"Southend moves start from £19 per hour. A local move typically costs £60-£130. A move to Chelmsford or London is usually £90-£170."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Westcliff, Leigh-on-Sea, Eastwood, Thorpe Bay, Shoeburyness."},
+    ],
+  },
+
+  "harlow": {
+    title: "Man and Van Harlow | From £19",
+    description: "Man and van Harlow from £19/hr. CM17, CM18, CM19, CM20. Old Harlow, Church Langley, Potter Street, Newhall, Sumners. Call 0121 751 1269.",
+    h1: "Man and Van Harlow",
+    intro: "Need a man and van in Harlow? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Harlow move before quoting.",
+    knowledge: "Harlow is a New Town in Essex with the M11 running alongside. Old Harlow is the original village with period properties and narrow streets. The new-town estates have good road access. Church Langley and Newhall are modern developments. The M11 junction 7 gives fast access to London and Cambridge.",
+    localMovingInfo: `Harlow is about 25 miles north-east of London on the M11. Old Harlow has period properties with some narrow streets. The new-town estates are spacious with good access. Church Langley and Newhall are modern developments. Bishop's Stortford is 7 miles north. Harlow Town station has trains to Liverpool Street in about 35 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Harlow?","a":"Harlow moves start from £19 per hour. A local move typically costs £60-£110. A move to London or Cambridge is usually £80-£160."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Old Harlow, Church Langley, Potter Street, Newhall, Sumners."},
+    ],
+  },
+
+  "great-yarmouth": {
+    title: "Man and Van Great Yarmouth | From £19",
+    description: "Man and van Great Yarmouth from £19/hr. NR30, NR31. Seafront, Southtown, Bradwell, Caister, Gorleston. Call 0121 751 1269.",
+    h1: "Man and Van Great Yarmouth",
+    intro: "Need a man and van in Great Yarmouth? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Great Yarmouth move before quoting.",
+    knowledge: "Great Yarmouth is a Norfolk seaside town with the historic Rows, some of the narrowest streets in England. The Rows are genuinely challenging for moves — some barely fit a person. The seafront has guest house conversions. Gorleston to the south has easier suburban access.",
+    localMovingInfo: `Great Yarmouth is about 20 miles east of Norwich on the A47. The Rows in the town centre are extremely narrow — some are barely wider than a person. The seafront has guest house conversions with seasonal parking. Bradwell and Caister are suburban with better access. Gorleston is a separate town to the south. Norwich is about 30 minutes via the A47. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Great Yarmouth?","a":"Great Yarmouth moves start from £19 per hour. A local move typically costs £60-£120. A move to Norwich is usually £80-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Seafront, Southtown, Bradwell, Caister, Gorleston."},
+    ],
+  },
+
+  "kings-lynn": {
+    title: "Man and Van King's Lynn | From £19",
+    description: "Man and van King's Lynn from £19/hr. PE30, PE31, PE32. South Lynn, North Lynn, Gaywood, Gayton, Hunstanton. Call 0121 751 1269.",
+    h1: "Man and Van King's Lynn",
+    intro: "Need a man and van in King's Lynn? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your King's Lynn move before quoting.",
+    knowledge: "King's Lynn is a historic port town at the mouth of the Great Ouse, with a Georgian old town. The old town streets near the Custom House are narrow with limited parking. The A10 connects to Cambridge and the A47 to Norwich. The surrounding Fenland is flat with long straight roads.",
+    localMovingInfo: `King's Lynn is about 40 miles west of Norwich on the A47 and about 40 miles north of Cambridge on the A10. The old town has Georgian streets near the Custom House with parking restrictions. North Lynn and Gaywood are residential areas with better access. The A10 and A47 give good road links. Hunstanton is a coastal resort about 15 miles north. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in King's Lynn?","a":"King's Lynn moves start from £19 per hour. A local move typically costs £60-£120. A move to Norwich or Cambridge is usually £120-£200."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. South Lynn, North Lynn, Gaywood, Gayton, Hunstanton."},
+    ],
+  },
+
+  "lowestoft": {
+    title: "Man and Van Lowestoft | From £19",
+    description: "Man and van Lowestoft from £19/hr. NR32, NR33. North Lowestoft, Kirkley, Oulton Broad, Pakefield, Carlton Colville. Call 0121 751 1269.",
+    h1: "Man and Van Lowestoft",
+    intro: "Need a man and van in Lowestoft? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lowestoft move before quoting.",
+    knowledge: "Lowestoft is England's most easterly town, a fishing port with the Bascule Bridge that lifts to let boats through and can delay traffic. The old town near the harbour has narrow streets. Oulton Broad and Carlton Colville are suburban with better access. Great Yarmouth is just up the coast.",
+    localMovingInfo: `Lowestoft is about 25 miles south of Great Yarmouth on the A12. The Bascule Bridge in the town centre lifts for boat traffic and can cause delays. The old town near the harbour has narrow streets. Oulton Broad is a residential area with better access. Pakefield is to the south. Norwich is about 25 miles west via the A146. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Lowestoft?","a":"Lowestoft moves start from £19 per hour. A local move typically costs £60-£120. A move to Great Yarmouth or Norwich is usually £80-£160."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. North Lowestoft, Kirkley, Oulton Broad, Pakefield, Carlton Colville."},
+    ],
+  },
+
+  "clacton-on-sea": {
+    title: "Man and Van Clacton-on-Sea | From £19",
+    description: "Man and van Clacton-on-Sea from £19/hr. CO15, CO16. Holland-on-Sea, Jaywick, Frinton-on-Sea, Walton-on-the-Naze. Call 0121 751 1269.",
+    h1: "Man and Van Clacton-on-Sea",
+    intro: "Need a man and van in Clacton-on-Sea? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Clacton-on-Sea move before quoting.",
+    knowledge: "Clacton-on-Sea is an Essex seaside town with a pier and a seafront of guest houses. The streets near the pier are tight. Frinton-on-Sea and Walton-on-the-Naze are quieter neighbours with larger properties and conservation areas. The A133 connects to the A120 and Colchester.",
+    localMovingInfo: `Clacton is about 15 miles south-east of Colchester on the A133. The seafront has guest house conversions with seasonal parking. The town centre near the pier has narrow streets. Frinton and Walton are desirable coastal villages to the north with better access. Colchester is about 20 minutes via the A133. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Clacton?","a":"Clacton moves start from £19 per hour. A local move typically costs £60-£110. A move to Colchester is usually £70-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Holland-on-Sea, Jaywick, Frinton-on-Sea, Walton-on-the-Naze."},
+    ],
+  },
+
+  "felixstowe": {
+    title: "Man and Van Felixstowe | From £19",
+    description: "Man and van Felixstowe from £19/hr. IP11. Old Felixstowe, Trimley, Kirton, Brantham. Call 0121 751 1269.",
+    h1: "Man and Van Felixstowe",
+    intro: "Need a man and van in Felixstowe? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Felixstowe move before quoting.",
+    knowledge: "Felixstowe is a Suffolk seaside town next to the UK's largest container port. The port traffic on the A14 can be heavy. The seafront has Victorian villas and apartments. Old Felixstowe has period properties. The town is compact and Ipswich is just 10 miles away.",
+    localMovingInfo: `Felixstowe is about 10 miles south-east of Ipswich on the A14. The container port creates heavy lorry traffic on the A14. The seafront has period properties with some parking restrictions. Old Felixstowe is a desirable area with larger homes. Trimley and Kirton are villages with good access. The A14 connects to the M25 and London. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Felixstowe?","a":"Felixstowe moves start from £19 per hour. A local move typically costs £60-£110. A move to Ipswich is usually £70-£120."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Old Felixstowe, Trimley, Kirton, Brantham."},
+    ],
+  },
+
+  "brentwood": {
+    title: "Man and Van Brentwood | From £19",
+    description: "Man and van Brentwood from £19/hr. CM13, CM14, CM15. Shenfield, Hutton, Warley, Ingatestone, Pilgrims Hatch. Call 0121 751 1269.",
+    h1: "Man and Van Brentwood",
+    intro: "Need a man and van in Brentwood? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Brentwood move before quoting.",
+    knowledge: "Brentwood is a desirable Essex town on the M25/A12 corridor. Shenfield is the Elizabeth line terminus with fast trains to central London. The High Street has period properties with some parking restrictions. The M25 junction 28 can be congested.",
+    localMovingInfo: `Brentwood is about 20 miles east of central London. The M25 junction 28 and A12 give road access. The High Street has period properties with some parking restrictions. Shenfield is the Elizabeth line terminus. Hutton and Warley are suburban with better access. Ingatestone is a village to the south. Trains to Liverpool Street take about 30 minutes from Shenfield. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Brentwood?","a":"Brentwood moves start from £19 per hour. A local move typically costs £70-£130. A move to London or Chelmsford is usually £80-£160."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Shenfield, Hutton, Warley, Ingatestone, Pilgrims Hatch."},
+    ],
+  },
+
+  "dunstable": {
+    title: "Man and Van Dunstable | From £19",
+    description: "Man and van Dunstable from £19/hr. LU5, LU6. Houghton Regis, Kensworth, Totternhoe, Sewell. Call 0121 751 1269.",
+    h1: "Man and Van Dunstable",
+    intro: "Need a man and van in Dunstable? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Dunstable move before quoting.",
+    knowledge: "Dunstable sits at the foot of the Chilterns on the A5, with the M1 running alongside. Houghton Regis is a large neighbouring area with new developments. The M1 junction 11 gives fast access to London and the north. Luton is just 5 miles away.",
+    localMovingInfo: `Dunstable is about 30 miles north-west of London. The A5 runs through the town and the M1 junction 11 is nearby. Houghton Regis has newer developments with good access. The town centre has Victorian terraces with some narrow streets. Luton is 5 miles east. Dunstable Downs to the south has rural lanes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Dunstable?","a":"Dunstable moves start from £19 per hour. A local move typically costs £60-£110. A move to Luton is very short, usually £60-£100."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Houghton Regis, Kensworth, Totternhoe, Sewell."},
+    ],
+  },
+
+  "leighton-buzzard": {
+    title: "Man and Van Leighton Buzzard | From £19",
+    description: "Man and van Leighton Buzzard from £19/hr. LU7. Linslade, Heath and Reach, Eggington, Stanbridge. Call 0121 751 1269.",
+    h1: "Man and Van Leighton Buzzard",
+    intro: "Need a man and van in Leighton Buzzard? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Leighton Buzzard move before quoting.",
+    knowledge: "Leighton Buzzard is a market town on the A5 with Linslade across the Grand Union Canal. The High Street has period properties with some parking restrictions. The level crossing can delay moves. Well-placed between Milton Keynes and Aylesbury.",
+    localMovingInfo: `Leighton Buzzard is about 35 miles north-west of London on the A5. The level crossing in the town centre can delay traffic. Linslade is across the canal with residential areas and better parking. Heath and Reach is a village nearby. Milton Keynes is about 10 miles north. Aylesbury is about 12 miles south. Trains to Euston take about 35 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Leighton Buzzard?","a":"Leighton Buzzard moves start from £19 per hour. A local move typically costs £60-£110. A move to Milton Keynes or Aylesbury is usually £70-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Linslade, Heath and Reach, Eggington, Stanbridge."},
+    ],
+  },
+
+  "ely": {
+    title: "Man and Van Ely | From £19",
+    description: "Man and van Ely from £19/hr. CB6, CB7. Stuntney, Little Downham, Witchford, Soham, Haddenham. Call 0121 751 1269.",
+    h1: "Man and Van Ely",
+    intro: "Need a man and van in Ely? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ely move before quoting.",
+    knowledge: "Ely is a tiny cathedral city in the Cambridgeshire Fens, dominated by its magnificent Cathedral visible for miles across the flat landscape. The streets near the Cathedral are narrow with limited parking. Cambridge is about 15 miles south. The surrounding Fenland is flat with long straight roads.",
+    localMovingInfo: `Ely is about 15 miles north of Cambridge on the A10. The Cathedral area has narrow streets with limited parking. The city is very small so most moves are short-distance. The surrounding Fenland villages like Soham and Witchford have rural access. The A10 connects to Cambridge and King's Lynn. Trains to Cambridge take about 15 minutes and to King's Cross about 70 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ely?","a":"Ely moves start from £19 per hour. A local move typically costs £60-£110. A move to Cambridge is usually £70-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Stuntney, Little Downham, Witchford, Soham, Haddenham."},
+    ],
+  },
+
+  "thetford": {
+    title: "Man and Van Thetford | From £19",
+    description: "Man and van Thetford from £19/hr. IP24, IP25. Brettenham, Kilverstone, Snetterton, East Harling, Mundford. Call 0121 751 1269.",
+    h1: "Man and Van Thetford",
+    intro: "Need a man and van in Thetford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Thetford move before quoting.",
+    knowledge: "Thetford sits on the A11 corridor in the Brecks between Norwich and Cambridge. The town centre has Victorian terraces with some narrow streets. Snetterton race circuit nearby creates event-day traffic. The A11 gives fast access to both Norwich and Cambridge.",
+    localMovingInfo: `Thetford is about 30 miles south-west of Norwich on the A11. The town centre has Victorian terraces with some narrow streets. The A11 connects to Norwich (about 30 minutes) and Cambridge (about 30 minutes). Snetterton circuit creates traffic on race days. The Brecks area has sandy heaths and forest. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Thetford?","a":"Thetford moves start from £19 per hour. A local move typically costs £60-£110. A move to Norwich or Cambridge is usually £100-£180."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Brettenham, Kilverstone, Snetterton, East Harling, Mundford."},
+    ],
+  },
+
+  "bishops-stortford": {
+    title: "Man and Van Bishop's Stortford | From £19",
+    description: "Man and van Bishop's Stortford from £19/hr. CM22, CM23. Havers, Bishop's Park, Thorley, Much Hadham, Sawbridgeworth. Call 0121 751 1269.",
+    h1: "Man and Van Bishop's Stortford",
+    intro: "Need a man and van in Bishop's Stortford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bishop's Stortford move before quoting.",
+    knowledge: "Bishop's Stortford is a market town on the Essex-Hertfordshire border with the M11 running alongside. The town centre has period properties near the River Stort with some parking restrictions. The M11 junction 8 and A120 give fast access to London, Cambridge and Stansted Airport.",
+    localMovingInfo: `Bishop's Stortford is about 25 miles north of London on the M11. The M11 junction 8 is nearby. The town centre has period properties near the river with some parking restrictions. Thorley and Bishop's Park are suburban with better access. Stansted Airport is about 8 miles east. Harlow is 7 miles south. Trains to Liverpool Street take about 35 minutes. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Bishop's Stortford?","a":"Bishop's Stortford moves start from £19 per hour. A local move typically costs £70-£130. A move to London or Cambridge is usually £90-£170."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Havers, Bishop's Park, Thorley, Much Hadham, Sawbridgeworth."},
+    ],
+  },
+
+  "paignton": {
+    title: "Man and Van Paignton | From £19",
+    description: "Man and van Paignton from £19/hr. TQ3, TQ4. Goodrington, Preston, Blatchford, Collaton St Mary. Call 0121 751 1269.",
+    h1: "Man and Van Paignton",
+    intro: "Need a man and van in Paignton? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Paignton move before quoting.",
+    knowledge: "Paignton is the middle of the English Riviera with a seafront, harbour, and generally easier access than hilly Torquay. The town centre has Victorian terraces. Goodrington has a popular beach. The A380 connects to the M5 and Exeter.",
+    localMovingInfo: `Paignton is about 25 miles south of Exeter on the A380. The town centre has Victorian terraces near the seafront. Goodrington and Preston are residential areas with better access. The A380 connects to the M5. Torquay is just next door. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Paignton?","a":"Paignton moves start from £19 per hour. A local move typically costs £60-£120. A move to Torquay or Exeter is usually £70-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Goodrington, Preston, Blatchford, Collaton St Mary."},
+    ],
+  },
+
+  "brixham": {
+    title: "Man and Van Brixham | From £19",
+    description: "Man and van Brixham from £19/hr. TQ5. Harbour, Higher Brixham, Churston Ferrers, Galmpton, Berry Head. Call 0121 751 1269.",
+    h1: "Man and Van Brixham",
+    intro: "Need a man and van in Brixham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Brixham move before quoting.",
+    knowledge: "Brixham is a fishing port at the southern end of Torbay, famous for its heritage harbour and the Golden Hind. The streets near the harbour are extremely narrow and steep. Higher Brixham and Churston Ferrers are more conventional suburban areas with better access.",
+    localMovingInfo: `Brixham is about 5 miles south of Paignton. The harbour area has extremely narrow and steep streets — some properties can only be reached on foot. Higher Brixham and Churston Ferrers are suburban with standard access. Galmpton is a village nearby. The A3022 and A379 connect to Paignton and Torquay. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Brixham?","a":"Brixham moves start from £19 per hour. A local move typically costs £60-£120. The harbour area may cost more due to access challenges."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Harbour, Higher Brixham, Churston Ferrers, Galmpton, Berry Head."},
+    ],
+  },
+
+  "newquay": {
+    title: "Man and Van Newquay | From £19",
+    description: "Man and van Newquay from £19/hr. TR7. Fistral, Towan, Porth, Watergate Bay, Crantock. Call 0121 751 1269.",
+    h1: "Man and Van Newquay",
+    intro: "Need a man and van in Newquay? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Newquay move before quoting.",
+    knowledge: "Newquay is Cornwall's surfing capital with famous beaches like Fistral and Watergate Bay. The town centre has narrow streets with limited parking in summer. The surf culture means lots of flat and house shares with frequent smaller moves. The A30 gives the main road link east.",
+    localMovingInfo: `Newquay is about 12 miles north of Truro on the A3058/A392. The town centre has narrow streets with limited summer parking. Fistral and Towan are near the beaches. The A30 connects to the M5 at Exeter (about 80 miles). Summer brings heavy tourist traffic. Winter is much quieter for moves. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Newquay?","a":"Newquay moves start from £19 per hour. A local move typically costs £60-£120. A move to Truro or Redruth is usually £70-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Fistral, Towan, Porth, Watergate Bay, Crantock."},
+    ],
+  },
+
+  "falmouth": {
+    title: "Man and Van Falmouth | From £19",
+    description: "Man and van Falmouth from £19/hr. TR10, TR11. The Moor, Penryn, Flushing, Mawnan Smith, Budock Water. Call 0121 751 1269.",
+    h1: "Man and Van Falmouth",
+    intro: "Need a man and van in Falmouth? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Falmouth move before quoting.",
+    knowledge: "Falmouth is a historic port town on the Fal estuary. The harbour area has Georgian streets that are genuinely narrow. Falmouth University brings student moves. Penryn is effectively part of the same town with better access for vans.",
+    localMovingInfo: `Falmouth is about 10 miles south of Truro on the A39. The harbour area has narrow Georgian streets with limited parking. Falmouth University brings student moves in September and June. Penryn is a town just north with better van access. The A39 connects to Truro and the A30. The town is compact. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Falmouth?","a":"Falmouth moves start from £19 per hour. A local move typically costs £60-£120. A move to Truro is usually £70-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. The Moor, Penryn, Flushing, Mawnan Smith, Budock Water."},
+    ],
+  },
+
+  "barnstaple": {
+    title: "Man and Van Barnstaple | From £19",
+    description: "Man and van Barnstaple from £19/hr. EX31, EX32. Pilton, Roundswell, Bickington, Bishops Tawton, Landkey. Call 0121 751 1269.",
+    h1: "Man and Van Barnstaple",
+    intro: "Need a man and van in Barnstaple? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Barnstaple move before quoting.",
+    knowledge: "Barnstaple is North Devon's main town on the River Taw. The town centre has Georgian streets near the Pannier Market with some narrow access. The A361 North Devon Link Road connects to the M5 at Tiverton, about 45 minutes away. North Devon is somewhat isolated from the motorway network.",
+    localMovingInfo: `Barnstaple is about 50 miles north-west of Exeter. The A361 North Devon Link Road connects to the M5 at Tiverton (about 45 minutes). The town centre has period properties near the Pannier Market. Roundswell and Bickington are suburban with better access. Bideford is 8 miles west. Ilfracombe is 10 miles north. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Barnstaple?","a":"Barnstaple moves start from £19 per hour. A local move typically costs £60-£120. A move to Exeter is usually £120-£200 due to the distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Pilton, Roundswell, Bickington, Bishops Tawton, Landkey."},
+    ],
+  },
 };
