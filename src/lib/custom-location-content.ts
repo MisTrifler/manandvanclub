@@ -16,7 +16,7 @@ export const customLocationContentOverrides: Record<string, Partial<{
   // BROWNHILLS
   // ──────────────────────────────────────────
   brownhills: {
-    title: "Man and Van Brownhills | From £19",
+    title: "Man and Van Brownhills From £19/hr | Free Quotes",
     description: "Man and van Brownhills from £19/hr. WS8. Clayhanger, Stonnall, Walsall Wood. Call 0121 751 1269.",
     h1: "Man and Van Brownhills",
     intro: "Need a man and van in Brownhills? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Brownhills move before sending a quote, so you decide whether to book after seeing the details.",
@@ -390,7 +390,7 @@ Walsall moves can differ by postcode, from town centre terraces to Bloxwich semi
   // COVENTRY
   // ──────────────────────────────────────────
   coventry: {
-    title: "Man and Van Coventry | From £19",
+    title: "Man and Van Coventry From £19/hr | Free Quotes",
     h1: "Man and Van Coventry",
     description: "Man and van Coventry from £19/hr. CV1-CV6. Earlsdon, Tile Hill, Kenilworth. Call 0121 751 1269.",
     intro: `Coventry is a city that's been reinvented more than once — bombed in the Blitz, rebuilt in the fifties, and now transforming again with city-centre apartments and student blocks going up alongside the medieval Spon Street timber frames. The ring road is the main thing to understand: everything inside it is tight, one-way and often congested. Everything outside is suburban and mostly straightforward. Submit your postcodes, item list and access notes so a verified mover can plan the route and send you quote options.`,
@@ -883,7 +883,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   // BLOXWICH (Walsall WS3)
   // ──────────────────────────────────────────
   bloxwich: {
-    title: "Man and Van Bloxwich | From £19",
+    title: "Man and Van Bloxwich From £19/hr | Free Quotes",
     h1: "Man and Van Bloxwich",
     description: "Man and van Bloxwich from £19/hr. WS3. Leamore, Blakenall, Walsall Wood. Call 0121 751 1269.",
     intro: `Bloxwich has some of the narrowest Victorian terraces in the Walsall area — streets off the High Street where two cars can barely pass, let alone a van and oncoming traffic. The newer estates towards Leamore and Blakenall are easier, but the older part of town needs careful planning. The A34 runs right through and connects to Walsall in about five minutes. Submit your postcodes, item list and access notes so a verified mover knows what access they're dealing with.`,
@@ -907,7 +907,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   // WEDNESBURY (Sandwell WS10)
   // ──────────────────────────────────────────
   wednesbury: {
-    title: "Man and Van Wednesbury | From £19",
+    title: "Man and Van Wednesbury From £19/hr | Free Quotes",
     description: "Man and van Wednesbury from £19/hr. WS10. West Bromwich, Darlaston, Tipton. Call 0121 751 1269.",
     localMovingInfo: `Wednesbury sits in the WS10 postcode between the M6 and the A41, with a mix of Victorian terraces near the town centre and post-war semis on the surrounding estates. The M6 at junctions 9 and 10 is a major route consideration — it carries traffic between the Black Country and Birmingham, and congestion is common during peak hours and after incidents. The A41 Black Country New Road provides an alternative but can also be busy. Wednesbury's older terraced streets near the market area and around Friar Park have narrow access with on-street parking, while the newer estates towards Wood Green and Moxley offer wider roads but still have some tight cul-de-sacs. The hilly terrain on some residential roads can make loading a van more challenging. A verified mover reviewing a Wednesbury request will check whether the M6 junctions affect the route and whether the property is on a hillside terrace or a flatter estate road.`,
     faq: [
@@ -928,7 +928,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   // WEST BROMWICH (Sandwell B70/B71)
   // ──────────────────────────────────────────
   "west-bromwich": {
-    title: "Man and Van West Bromwich | From £19",
+    title: "Man and Van West Bromwich From £19/hr | Free Quotes",
     description: "Man and van West Bromwich from £19/hr. One verified mover quotes. Smethwick, Oldbury, Great Barr, Sandwell.",
     h1: "Man and Van Wednesbury",
     intro: "Need a man and van in West Bromwich? Submit your postcodes, move date, item list and access notes for free. One verified mover reviews your West Bromwich move before you decide whether to book.",
@@ -985,7 +985,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   // DUDLEY (DY1–DY3)
   // ──────────────────────────────────────────
   dudley: {
-    title: "Man and Van Dudley | From £19",
+    title: "Man and Van Dudley From £19/hr | Free Quotes",
     h1: "Man and Van Dudley",
     description: "Man and van Dudley from £19/hr. DY1-DY3. Stourbridge, Halesowen, Brierley Hill. Call 0121 751 1269.",
     intro: `Dudley sits at the heart of the Black Country with a castle on a hill and some of the steepest residential streets in the West Midlands. The town centre is hemmed in by one-way systems and the zoo car park, while the suburbs spread out towards Brierley Hill, Netherton and the Merry Hill area. Hills and tight terraces are the main challenge here — not the distance. Submit your postcodes, item list and access notes so a verified mover can plan around the gradients and send you quote options.`,
@@ -1032,7 +1032,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   // STOURBRIDGE (DY7–DY9)
   // ──────────────────────────────────────────
   stourbridge: {
-    title: "Man and Van Stourbridge | From £19",
+    title: "Man and Van Stourbridge From £19/hr | Free Quotes",
     h1: "Man and Van Stourbridge",
     description: "Man and van Stourbridge from £19/hr. DY7-DY9. Kingswinford, Wordsley, Amblecote. Call 0121 751 1269.",
     intro: `Stourbridge is where the Black Country starts to feel like rural Worcestershire. The town itself has the usual mix of Victorian terraces and post-war semis, but head towards Kinver or the Clent Hills and you're into narrow country lanes, stone cottages and properties with no roadside parking at all. Submit your postcodes, item list and access notes so a verified mover knows what kind of access they're dealing with before they quote.`,
@@ -1056,7 +1056,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   // HALESOWEN (B62/B63)
   // ──────────────────────────────────────────
   halesowen: {
-    title: "Man and Van Halesowen | From £19",
+    title: "Man and Van Halesowen From £19/hr | Free Quotes",
     description: "Man and van Halesowen from £19/hr. B62-B63. Cradley, Hasbury, Quinton. Call 0121 751 1269.",
     localMovingInfo: `Halesowen occupies the B62 and B63 postcodes on the southern edge of the Black Country, in the shadow of the Clent Hills. The A456 is the main route through Halesowen and the dominant factor in move timing — it carries commuter traffic between Birmingham and Kidderminster, and congestion near the town centre and the M5 junction 3 is common during peak hours. Properties near the town centre have Victorian terraces with on-street parking and narrower access, while the suburban areas towards Hayley Green, Hasbury and Lapal have larger inter-war semis with driveways but more furniture volume. The roads towards the Clent Hills can be steep and narrow, particularly in the Cradley and Romsley areas. Hasbury and Lapal are popular family areas with larger loads but good driveway access. A verified mover reviewing a Halesowen request will check whether the property is on a steep hillside road (needs careful positioning) or in the flatter suburban streets (easier access, larger loads).`,
     faq: [
@@ -1077,7 +1077,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   // SOLIHULL (B91–B94)
   // ──────────────────────────────────────────
   solihull: {
-    title: "Man and Van Solihull | From £19",
+    title: "Man and Van Solihull From £19/hr | Free Quotes",
     h1: "Man and Van Halesowen",
     description: "Man and van Solihull from £19/hr. B91-B94. Knowle, Dorridge, Shirley. Call 0121 751 1269.",
     intro: `Solihull isn't like the rest of the West Midlands. It's the bit where the suburbs turn into Warwickshire countryside — Tudor Grange Park, Malvern Park, and roads lined with mature oaks rather than terraced houses. The properties here range from 1930s semis in Shirley to £1m+ homes off Warwick Road, and that changes what a move looks like entirely. Submit your postcodes, item list and access notes so a verified mover can review the details and send you quote options.`,
@@ -1338,7 +1338,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   aldridge: {
     intro: `Aldridge is one of those places that feels more like a village than a suburb — tree-lined crescents, a high street with actual shops, and a golf course. The 1930s semis are the dominant housing, most with driveways, which makes van access easier than most Black Country towns. The A454 runs through the middle and connects to Walsall in about ten minutes. Submit your postcodes, item list and access notes so a verified mover can plan the route and send you quote options.`,
     knowledge: `Aldridge sits in the WS9 postcode and is one of the more straightforward areas in the Walsall borough for a move. Most properties have driveways, the roads are wider than in Walsall town centre, and there aren't the tight terraced streets you find in Bloxwich or Willenhall. The main challenge is the A454 during rush hour — it's the only direct route into Walsall and it backs up between Aldridge and the M6. Streetly, on the Sutton Coldfield border, has larger properties and some private roads that need permission for van access. A verified mover checks driveway availability and A454 timing before quoting.`,
-    title: "Man and Van Aldridge | From £19",
+    title: "Man and Van Aldridge From £19/hr | Free Quotes",
     h1: "Man and Van Aldridge",
     description: "Man and van Aldridge from £19/hr. WS9. Walsall Wood, Pelsall, Streetly. Call 0121 751 1269.",
     localMovingInfo: "Aldridge is a popular suburban village with leafy streets and a mix of 1930s semis and modern developments. Approved local movers can take account of every crescent and cul-de-sac, making light work of moves in this well-established community. Approved movers serving Aldridge regularly handle moves along the A454 and into the quieter estates near the golf course. They can account for the challenges of parking on tree-lined residential roads and plan around the busiest times on the main commuter routes. The A454, A5 routes affect move timing, particularly during rush hour. tree-lined streets with narrow access. busy A454 during rush hour. A verified mover reviewing a Aldridge request will check property access, parking availability and A454 route timing before quoting.",
@@ -1347,7 +1347,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   willenhall: {
     intro: `Willenhall grew on lock-making — the kind of town where every other street is named after a factory or a foundry. The Victorian terraces near the town centre are tight, the one-way system near the market is confusing if you don't know it, and the A454 running through the middle carries all the traffic between Walsall and Wolverhampton. Submit your postcodes, item list and access notes so a verified mover can plan the route and send you quote options.`,
     knowledge: `The WV12 and WV13 postcodes in Willenhall are dominated by Victorian terraces near the centre and post-war estates on the outskirts. The one-way system around the market area catches out drivers who don't know it — if your property is near the High Street, mention which direction the van should approach from. The A454 runs through Willenhall and connects Walsall to Wolverhampton, and it's busy during rush hour. Darlaston and Bentley are neighbouring areas with similar housing. New Invention, on the northern edge, has more post-war semis with driveways.`,
-    title: "Man and Van Willenhall | From £19",
+    title: "Man and Van Willenhall From £19/hr | Free Quotes",
     h1: "Man and Van Willenhall",
     description: "Man and van Willenhall from £19/hr. WV12-WV13. Darlaston, Bentley, Ashmore. Call 0121 751 1269.",
     localMovingInfo: "Willenhall is a historic Black Country town known for its lock-making heritage. From Victorian terraces near the town centre to modern homes on the outskirts, approved movers serving Willenhall can account for the local road network and access challenges. Approved movers serving Willenhall regularly move customers between the older streets near the market place and the newer estates towards Bentley and Ashmore. They can take account of the one-way system, the industrial access routes, and the quietest residential roads for loading. The A454, A462 routes affect move timing, particularly during rush hour. busy town centre one-way system. industrial estate access near the A454. A verified mover reviewing a Willenhall request will check property access, parking availability and A454 route timing before quoting.",
@@ -1356,7 +1356,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   darlaston: {
     intro: `Darlaston is a compact Black Country town that sits between Walsall, Wednesbury and Willenhall — close enough to all three that a mover working any of them could be available at short notice. The Victorian terraces near the centre have the usual parking issues, but the newer estates towards Kings Hill are easier for van access. Submit your postcodes, item list and access notes for a verified mover to review before quoting.`,
     knowledge: `The WS10 postcode covers Darlaston, which is small but densely built. The older streets near the town centre — around Victoria Park and the A462 — have Victorian terraces with on-street parking. Moxley to the west has similar housing. The Kings Hill development on the eastern edge is modern, with driveways and wider roads. The A462 and A454 are the main routes through the area, and both connect to Walsall in under ten minutes. A verified mover checks whether the property is on the older or newer side of town before planning the route.`,
-    title: "Man and Van Darlaston | From £19",
+    title: "Man and Van Darlaston From £19/hr | Free Quotes",
     h1: "Man and Van Darlaston",
     description: "Man and van Darlaston from £19/hr. WS10. Willenhall, Wednesbury, Bentley, Moxley. Call 0121 751 1269.",
     localMovingInfo: "Darlaston is a compact Black Country town with a strong community feel. Approved local movers can take account of the Victorian streets near the centre and the newer developments towards Moxley, handling everything from single-item collections to full house removals. Approved movers serving Darlaston can account for the tight turns on the older terraced streets and the wider access on newer estates. They plan around the busy A462 and A454 junctions and know the best parking spots for efficient loading. The A462, A454 routes affect move timing, particularly during rush hour. narrow access in older streets. busy A462 junctions. A verified mover reviewing a Darlaston request will check property access, parking availability and A462 route timing before quoting.",
@@ -1365,14 +1365,14 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   oldbury: {
     intro: `Oldbury sits right in the middle of Sandwell, sandwiched between West Bromwich, Smethwick and Tipton. The A457 runs through the town and connects to Birmingham in about fifteen minutes, but it's one of the busiest commuter routes in the area. The older streets near the town centre have tight terraces with on-street parking, while the estates towards Langley and Brandhall have more semis with driveways. Submit your postcodes, item list and access notes so a verified mover can review the details and send you quote options.`,
     knowledge: `The B68 and B69 postcodes in Oldbury are a mix of 1930s semis and Victorian terraces. The town centre area around the A457 and the roundabout by the library is busy with traffic and has limited parking. Langley and Brandhall to the east have larger interwar and post-war semis with driveways — much easier for van access. Rowley Regis, just to the south, has its own mix of older and newer housing. The A4123 Birmingham New Road is the fastest route into Birmingham but it backs up during rush. A verified mover checks road width and parking before quoting an Oldbury job.`,
-    title: "Man and Van Oldbury | From £19",
+    title: "Man and Van Oldbury From £19/hr | Free Quotes",
     h1: "Man and Van Oldbury",
     description: "Man and van Oldbury from £19/hr. B68-B69. West Bromwich, Tipton, Smethwick. Call 0121 751 1269.",
     localMovingInfo: "Oldbury is a Sandwell town with a mix of 1930s semis and newer developments. Approved local movers can take account of the hilly streets, the busy A457, and the best routes through the residential areas for a smooth move. Approved movers serving Oldbury regularly move families between the older housing near the town centre and the newer estates towards Langley and Brandhall. They can account for the steep gradients on some roads and plan around the peak traffic on the A457 and A4123. The A457, A4123 routes affect move timing, particularly during rush hour. steep hills on some estates. busy A457 during rush hour. A verified mover reviewing a Oldbury request will check property access, parking availability and A457 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of Oldbury?","a":"Yes. You can submit a move request for West Bromwich, Tipton, Smethwick, Rowley Regis, Langley and surrounding areas. Whether a mover is available for these areas depends on their current schedule — they review requests before quoting."},{"q":"How much does a man and van cost in Oldbury?","a":"In 2026, Oldbury man and van prices start at around £19 per hour. A straightforward local move usually comes in at £60–£130 — the exact cost depends on furniture volume, access (stairs, lifts, parking) and the A457 traffic at the time. A 3-bed house move in Oldbury could be £250–£500. Add your details for a guide price."},{"q":"Can I find a mover for a same-day move in Oldbury?","a":"Same-day help in Oldbury depends on mover availability. Submit your postcodes, item list and preferred time — a verified mover will check whether they can fit your job in and send a quote if they can."},{"q":"Will multiple movers contact me?","a":"No. Your Oldbury move request is shared with a single verified mover, not sold to a list of companies. This means no spam calls, no pressure and no shared contact details. Your information is only released after you accept a mover quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, submitting is completely free. If you accept a mover quote, you pay a booking deposit that counts towards the total — the mover receives the rest on moving day. Your Oldbury request includes postcodes, access details and your item list, which a verified mover reviews before quoting."},{"q":"How quickly will I be contacted?","a":"Your Oldbury request is reviewed by a verified mover who can see your postcodes, item list, access details and preferred timing. If they can help, they send quote options. Your contact information stays private until you accept a quote and pay the booking deposit. Movers covering the A457 and West Bromwich, Tipton, Smethwick area check for new requests regularly."},{"q":"Do you cover West Bromwich, Tipton, Smethwick?","a":"Yes. You can submit requests for West Bromwich, Tipton, Smethwick, Rowley Regis, Langley and nearby areas. Submit your request and a verified mover can respond with a quote if they cover those areas."},{"q":"Are approved Oldbury movers insured?","a":"All approved movers must provide Goods in Transit and Public Liability insurance. This is checked before they can see customer requests. When a mover sends you a quote for your Oldbury move, it is good practice to confirm their cover details directly before booking."},{"q":"What should I know about moving in Oldbury?","a":"Be aware of steep hills on some estates and busy A457 during rush hour. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Oldbury move."},{"q":"How much does a man and van cost from Oldbury to West Bromwich?","a":"A Oldbury to West Bromwich move in 2026 typically costs £80–£180 depending on load, access and timing. The A4123 Birmingham New Road is the main route between Oldbury and Birmingham, typically 20 minutes. The M5 junction 2 provides an alternative but is often congested at peak times. A single-item collection might start from £19–£80. Submit your postcodes and item list for a guide price."}],
   },
   smethwick: {
-    title: "Man and Van Smethwick | From £19",
+    title: "Man and Van Smethwick From £19/hr | Free Quotes",
     description: "Man and van Smethwick from £19/hr. Cape Hill, Soho, Bearwood. B66/B67. Call 0121 751 1269.",
     h1: "Man and Van Smethwick",
     intro: `Smethwick is basically on Birmingham's doorstep — you can walk to Edgbaston from Cape Hill in about fifteen minutes. But moving here has its own challenges. The Victorian terraces off the A41 have tight parking, the streets around Soho and Hollyhedge are narrow, and if you're near the canal there are height restrictions to think about. Submit your postcodes, item list and access notes so a verified mover can review the details and send you quote options.`,
@@ -1417,7 +1417,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   tipton: {
     intro: `Tipton is a proper canal town — the Birmingham Canal Navigations run right through it, and some of the bridges have height restrictions that catch out taller vans. The Victorian terraces near the centre are as tight as anywhere in the Black Country, and the A457 and A4034 both carry heavy commuter traffic. Great Bridge, on the Dudley border, is a bit more open. Submit your postcodes, item list and access notes so a verified mover can check the bridge heights and parking before quoting.`,
     knowledge: `The DY4 postcode covers Tipton and it's one of the more challenging areas for a mover who doesn't know it. The canal bridges on Factory Road, Bloomfield Road and some side streets are under 2.1 metres — too low for a standard Luton van. The Victorian terraces near the High Street and the A4034 have on-street parking and narrow entries. Great Bridge, at the Dudley border, is a busy junction area but the streets nearby are slightly wider. Coseley, on the eastern side, has a similar mix. A verified mover checks canal bridge heights and road width before quoting a Tipton job.`,
-    title: "Man and Van Tipton | From £19",
+    title: "Man and Van Tipton From £19/hr | Free Quotes",
     h1: "Man and Van Tipton",
     description: "Man and van Tipton from £19/hr. DY4. Dudley, West Bromwich, Oldbury, Coseley. Call 0121 751 1269.",
     localMovingInfo: "Tipton is a historic canal town with a mix of Victorian terraces and post-war estates. Approved movers can take account of the canal bridges, the tight streets near the centre, and the wider roads on the newer estates. Approved movers serving Tipton handle moves across the town centre, Great Bridge, and the newer estates. They can take account of the canal bridge clearances, the best routes to avoid the busiest stretches of the A457, and how to park safely on the narrower residential streets. The A4034, A457 routes affect move timing, particularly during rush hour. canal bridge height limits. narrow terraced streets. A verified mover reviewing a Tipton request will check property access, parking availability and A4034 route timing before quoting.",
@@ -1426,7 +1426,7 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   bilston: {
     intro: `Bilston grew around steel and iron — the kind of town where the industrial heritage is still visible in the street layout. The A463 runs through the middle and connects to Wolverhampton in about ten minutes, but it's a busy road that slows during rush hour. The older terraces near the town centre are tight; the estates towards Ettingshall and Wednesfield are easier for a van. Submit your postcodes, item list and access notes so a verified mover can plan the route and send you quote options.`,
     knowledge: `The WV14 postcode covers Bilston, which is effectively part of Wolverhampton's built-up area. The town centre has Victorian terraces with on-street parking and narrow streets. Ettingshall and the estates towards Wednesfield have post-war housing with better access. The A463 is the main route into Wolverhampton and gets busy at peak times. The A41 runs nearby and connects south to Birmingham. A verified mover checks whether the property is on the older or newer side of town and plans the route around the A463 traffic patterns.`,
-    title: "Man and Van Bilston | From £19",
+    title: "Man and Van Bilston From £19/hr | Free Quotes",
     h1: "Man and Van Bilston",
     description: "Man and van Bilston from £19/hr. WV14. Wolverhampton, Wednesfield, Coseley. Call 0121 751 1269.",
     localMovingInfo: "Bilston is a historic Black Country town with a proud industrial heritage. Approved local movers can take account of the Victorian terraces near the centre and the newer estates towards Ettingshall and Wednesfield, handling everything from furniture collections to full house moves. Approved movers serving Bilston regularly handle moves along the A463 and A454 corridors. They can take account of the industrial access routes, the best residential streets for parking, and how to avoid the busiest traffic periods on the main roads into Wolverhampton. The A463, A454 routes affect move timing, particularly during rush hour. busy A463 traffic. narrow streets in the town centre. A verified mover reviewing a Bilston request will check property access, parking availability and A463 route timing before quoting.",
@@ -1435,13 +1435,13 @@ Lincoln moves can differ by postcode, from Cathedral Quarter restrictions to Nor
   rugby: {
     intro: `Rugby is the town that gave the sport its name — the school where William Webb Ellis picked up the ball is still there. But for moving house, what matters more is that Rugby sits at the junction of the M1, M6 and A5, which makes it one of the best-connected towns in Warwickshire. The Victorian terraces near the centre are tight, but the newer estates towards Brownsover and Bilton have better access. Submit your postcodes, item list and access notes so a verified mover can plan the route and send you quote options.`,
     knowledge: `Rugby's CV21-CV23 postcodes cover a town that's half historic market town, half modern commuter hub. The centre has Victorian terraces near the famous school and the High Street, with on-street parking. Hillmorton and Bilton to the south and east have interwar and post-war semis — most with driveways. Brownsover and the newer estates to the north have modern housing with good access. The M1 and M6 meet just east of Rugby, and junction 1 of the M6 is a regular bottleneck. The A428 connects to Northampton and the A4071 runs to Leamington Spa. A verified mover checks M1/M6 junction timing before quoting.`,
-    title: "Man and Van Rugby | From £19",
+    title: "Man and Van Rugby From £19/hr | Free Quotes",
     description: "Man and van Rugby from £19/hr. CV21-CV23. Hillmorton, Bilton, Brownsover. Call 0121 751 1269.",
     localMovingInfo: "Rugby is a historic market town famous for its school and railway heritage. Approved movers can take account of the Victorian streets near the centre, the newer estates towards Brownsover and Bilton, and the best routes around the M1 and M6. Approved movers serving Rugby regularly move families between the town centre, Hillmorton, and the newer developments. They can account for the M1 and M6 junction flows, the narrow access on some Victorian streets, and the best times to move in this busy Warwickshire town. The M1, M6, A428 routes affect move timing, particularly during rush hour. M1 and M6 junction traffic. narrow streets in the town centre. A verified mover reviewing a Rugby request will check property access, parking availability and M1 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of Rugby?","a":"Yes. You can submit a move request for Hillmorton, Bilton, Newbold-on-Avon, Brownsover, Dunchurch and surrounding areas. Availability depends on verified movers reviewing the move details."},{"q":"How much does a man and van cost in Rugby?","a":"In 2026, Rugby man and van prices start at around £19 per hour. A straightforward local move usually comes in at £60–£130 — the exact cost depends on furniture volume, access (stairs, lifts, parking) and the M1 traffic at the time. A 3-bed house move in Rugby could be £250–£500. Add your details for a guide price."},{"q":"Can I find a mover for a same-day move in Rugby?","a":"Same-day moves in the Rugby area may be possible if a verified mover is available. Include both postcodes, your preferred timing and any access details, and a mover can review the request if they have capacity."},{"q":"Will multiple movers contact me?","a":"No. Man and Van Club is not a lead-generation site. When you submit a Rugby move request, one verified mover reviews it — not a list of competing companies. Your phone number and email stay confidential until you accept their quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, you can submit your Rugby move request at no cost. If a verified mover sends a quote you want to accept, you pay a booking deposit that reduces the total. The mover collects the remaining balance directly on moving day. Your postcodes, item list and access notes are reviewed before any quote is sent."},{"q":"How quickly will I be contacted?","a":"A verified mover can review your Rugby enquiry after submission and send quote options. The review covers your postcodes, item list, access notes and date. Your personal details are not visible until you accept a quote and pay the booking deposit. Movers on the M1 route review Rugby area requests throughout the day."},{"q":"Do you cover Hillmorton, Bilton, Newbold-on-Avon?","a":"Yes. You can submit requests for Hillmorton, Bilton, Newbold-on-Avon, Brownsover, Dunchurch and nearby areas. A verified mover will see your request and can quote if they work in those areas."},{"q":"Are approved Rugby movers insured?","a":"All approved movers must provide Goods in Transit and Public Liability insurance. This is checked before they can see customer requests. When a mover sends you a quote for your Rugby move, it is good practice to confirm their cover details directly before booking."},{"q":"What should I know about moving in Rugby?","a":"Be aware of M1 and M6 junction traffic and narrow streets in the town centre. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Rugby move."},{"q":"How much does a man and van cost from Rugby to Coventry?","a":"A Rugby to Coventry move in 2026 typically costs £80–£180 depending on load, access and timing. Rugby sits on the A428 and M6 corridor roughly 20 minutes from Coventry. Movers regularly cover the route between the two. A single-item collection might start from £19–£80. Submit your postcodes and item list for a guide price."}],
   },
   nuneaton: {
-    title: "Man and Van Nuneaton | From £19",
+    title: "Man and Van Nuneaton From £19/hr | Free Quotes",
     description: "Man and van Nuneaton from £19/hr. CV10, CV11, CV12. Bedworth, Hinckley, Atherstone. Call 0121 751 1269.",
     h1: "Man and Van Rugby",
     intro: `Nuneaton is the biggest town in Warwickshire — most people don't realise that. Bigger than Leamington Spa, bigger than Stratford-upon-Avon, and with a housing stock to match. The Victorian terraces near the town centre have completely different access to the new-build estates in Weddington, and the A5 through the middle of town has a habit of backing up at the worst possible time. Submit your postcodes, item list and access notes so a verified mover can review the details and send you quote options.`,
@@ -1498,7 +1498,7 @@ Moving from Nuneaton to Leamington Spa is a common route — about 25 miles sout
   tamworth: {
     intro: `Tamworth has a castle in the middle of town — a proper motte-and-bailey that's been there since the Normans. The streets near it are narrow and winding, which makes moving day interesting. The newer estates around Amington, Wilnecote and Dosthill are easier for a van, with driveways and wider roads. The M42 passes right by, connecting to Birmingham in about 20 minutes. Submit your postcodes, item list and access notes so a verified mover can plan the route and send you quote options.`,
     knowledge: `The B77-B79 postcodes cover Tamworth, which straddles the Staffordshire/Warwickshire border. The town centre and the streets around the castle are the trickiest — narrow, one-way in places, and with limited parking. Amington and Wilnecote to the east have post-war and newer housing with better access. Dosthill to the south is similar. The M42 is the main route south to Birmingham, and junction 10 connects to the A5 which runs through the town. The A51 heads north towards Lichfield. A verified mover checks whether the property is near the castle area or on a modern estate before quoting.`,
-    title: "Man and Van Tamworth | From £19",
+    title: "Man and Van Tamworth From £19/hr | Free Quotes",
     h1: "Man and Van Tamworth",
     description: "Man and van Tamworth from £19/hr. B77-B79. Amington, Wilnecote, Dosthill. Call 0121 751 1269.",
     localMovingInfo: "Tamworth is a historic Staffordshire town with a castle at its heart and excellent M42 links. Approved local movers can take account of the Victorian streets near the centre, the newer estates towards Amington and Wilnecote, and the best routes around the A5. Approved movers serving Tamworth regularly handle moves between the town centre, Amington, and the newer estates near Dosthill. They can account for the M42 junction flows, the narrow access near the castle, and the best routes through this growing Staffordshire town. The M42, A5, A51 routes affect move timing, particularly during rush hour. M42 junction traffic. narrow streets near the castle. A verified mover reviewing a Tamworth request will check property access, parking availability and M42 route timing before quoting.",
@@ -1507,7 +1507,7 @@ Moving from Nuneaton to Leamington Spa is a common route — about 25 miles sout
   cannock: {
     intro: `Cannock sits in the gap between the West Midlands conurbation and Staffordshire's open countryside — close enough to Birmingham and Wolverhampton for an easy commute, far enough out that the housing is mostly post-war semis with driveways rather than tight Victorian terraces. The M6 Toll and the A5 run right past, which makes longer-distance moves straightforward. Submit your postcodes, item list and access notes so a verified mover can plan the route and send you quote options.`,
     knowledge: `The WS11 and WS12 postcodes cover Cannock and its surrounding towns. Cannock town centre has a mix of older terraces and post-war semis, with on-street parking in the older parts. Hednesford and Great Wyrley are similar. The newer estates on the outskirts — including the ongoing development at Eastern Way — have modern housing with driveways. The M6 Toll runs just south of Cannock and provides a fast route to Birmingham, though it carries a toll. The A5 runs east-west through the area. Rugeley, further north, is a separate town with its own mix of housing. A verified mover checks whether the property is in the older or newer part of Cannock before quoting.`,
-    title: "Man and Van Cannock | From £19",
+    title: "Man and Van Cannock From £19/hr | Free Quotes",
     h1: "Man and Van Cannock",
     description: "Man and van Cannock from £19/hr. WS11-WS12. Hednesford, Great Wyrley, Rugeley. Call 0121 751 1269.",
     localMovingInfo: "Cannock is a Staffordshire town surrounded by greenbelt and heathland. Approved movers can take account of the post-war estates near the town centre, the newer developments towards Great Wyrley, and the best routes around the M6 Toll and A5. Approved movers serving Cannock regularly handle moves between the town centre, Hednesford, and the newer estates. They can account for the M6 Toll access, the narrow lanes on the rural edges, and the best times to avoid the A5 commuter traffic through this busy Staffordshire town. The M6 Toll, A5, A34 routes affect move timing, particularly during rush hour. M6 Toll access routes. narrow lanes in rural edges. A verified mover reviewing a Cannock request will check property access, parking availability and M6 Toll route timing before quoting.",
@@ -1516,7 +1516,7 @@ Moving from Nuneaton to Leamington Spa is a common route — about 25 miles sout
   lichfield: {
     intro: `Lichfield is a cathedral city with three spires that you can see from miles around — and streets around the cathedral that were designed for horses, not vans. The Georgian townhouses on Beacon Street and Dam Street are stunning to look at but challenging to move in and out of, with narrow entries and permit-only parking. The newer estates towards Boley Park and Streethay are much more straightforward. Submit your postcodes, item list and access notes so a verified mover knows what kind of access they're dealing with.`,
     knowledge: `The WS13 and WS14 postcodes cover Lichfield, which is one of the smallest cities in England and one of the most picturesque. The cathedral quarter has Georgian and medieval buildings with tight street access and conservation-area parking restrictions. Boley Park and the estates towards Streethay have post-war and modern housing with driveways — much easier for a van. The A38 runs past Lichfield and connects to Birmingham and Derby. The A51 heads south towards Tamworth. Burntwood, a few miles west, is a separate town with more typical Staffordshire housing. A verified mover checks whether the property is in the conservation area before quoting.`,
-    title: "Man and Van Lichfield | From £19",
+    title: "Man and Van Lichfield From £19/hr | Free Quotes",
     h1: "Man and Van Lichfield",
     description: "Man and van Lichfield from £19/hr. WS13-WS14. Burntwood, Shenstone, Streethay. Call 0121 751 1269.",
     localMovingInfo: "Lichfield is a cathedral city with Georgian elegance and a rich history. Approved movers can take account of the narrow streets near the cathedral, the wider modern estates towards Boley Park and Streethay, and the best routes along the A38. Approved movers serving Lichfield regularly handle moves between the historic centre, the Georgian streets, and the newer estates. They can account for the access challenges near the cathedral, the A38 traffic patterns, and the best parking solutions for moves in this historic Staffordshire city. The A38, A51, M6 Toll routes affect move timing, particularly during rush hour. narrow historic streets near the cathedral. A38 traffic. A verified mover reviewing a Lichfield request will check property access, parking availability and A38 route timing before quoting.",
@@ -2282,7 +2282,7 @@ A verified mover reviewing a Weston request will check whether the property is a
     h1: "Man and Van Stoke-on-Trent",
     intro: `Stoke-on-Trent is really six towns stitched together — Hanley, Burslem, Tunstall, Longton, Fenton and Stoke itself — each with its own centre, its own character and its own moving challenges. The bottle kilns are the landmarks, the terraces built for the pottery workers are the housing, and the A500 is the road that connects everything. Submit your postcodes, item list and access notes so a verified mover knows which of the six towns they're dealing with and can plan accordingly.`,
     knowledge: `The ST1-ST6 postcodes cover the six towns of Stoke-on-Trent, and the housing varies from one to the next. Hanley, the city centre, has modern apartments alongside older terraces. Burslem and Tunstall to the north have Victorian terraces built for the pottery industry — narrow streets, on-street parking, tight entries. Longton and Fenton to the south are similar. The A500 runs east-west through the city and is the main route for moves heading towards the M6. The M6 junctions 15 and 16 are the key connections. Tunstall and the northern towns are closer to the M6; Longton and the southern towns are closer to the A50 towards Derby. A verified mover checks which of the six towns the property is in and plans the route around the A500.`,
-    title: "Man and Van Stoke-on-Trent | From £19",
+    title: "Man and Van Stoke-on-Trent From £19/hr | Free Quotes",
     description: "Man and van Stoke-on-Trent from £19/hr. ST1-ST6. Hanley, Burslem, Tunstall, Longton. Call 0121 751 1269.",
     localMovingInfo: "Stoke-on-Trent is really six towns in one, and moving here means knowing them all: Hanley's centre, Burslem and Tunstall's terraces, Longton and Fenton's potteries heritage, and the family streets of Trentham. The A500 'D-road' ties it all together. Matched Stoke movers navigate the six towns daily, know the steep terrace streets and the A500's rush hours, and handle student moves around Staffordshire University in Shelton. Runs to Newcastle-under-Lyme, Stone and Leek are routine. The A50, A500, M6 routes affect move timing, particularly during rush hour. Student moves around Shelton and Hartshill peak in June, July and September when parking near university buildings is most restricted. six-towns layout spreads moves out. A500 D-road congestion. A verified mover reviewing a Stoke-on-Trent request will check property access, parking availability and A50 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of Stoke-on-Trent?","a":"Yes. You can submit a move request for Hanley, Burslem, Longton, Fenton, Tunstall and surrounding areas. A verified mover can check the request and send quote options if they cover that area."},{"q":"How much does a man and van cost in Stoke-on-Trent?","a":"For Stoke-on-Trent man and van services, 2026 hourly rates start at £50. Budget £60–£130 for a local move — factors like parking restrictions, furniture quantity, stairs and A50 congestion all affect the total. A full 3-bedroom house move in Stoke-on-Trent typically costs £250–£500. Submit your postcodes and items for a guide price."},{"q":"Can I find a mover for a same-day move in Stoke-on-Trent?","a":"Same-day moves in the Stoke-on-Trent area may be possible if a verified mover is available. Include both postcodes, your preferred timing and any access details, and a mover can review the request if they have capacity."},{"q":"Will multiple movers contact me?","a":"No. Your Stoke-on-Trent move request is shared with a single verified mover, not sold to a list of companies. This means no spam calls, no pressure and no shared contact details. Your information is only released after you accept a mover quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, submitting is completely free. If you accept a mover quote, you pay a booking deposit that counts towards the total — the mover receives the rest on moving day. Your Stoke-on-Trent request includes postcodes, access details and your item list, which a verified mover reviews before quoting."},{"q":"How quickly will I be contacted?","a":"Your Stoke-on-Trent request is reviewed by a verified mover who can see your postcodes, item list, access details and preferred timing. If they can help, they send quote options. Your contact information stays private until you accept a quote and pay the booking deposit. Movers covering the A50 and Hanley, Burslem, Longton area check for new requests regularly."},{"q":"Do you cover Hanley, Burslem, Longton?","a":"Yes. You can submit requests for Hanley, Burslem, Longton, Fenton, Tunstall and nearby areas. Availability depends on verified movers reviewing the move details."},{"q":"Are approved Stoke-on-Trent movers insured?","a":"Approved movers are required to hold both Goods in Transit and Public Liability insurance as a condition of joining the platform. You can verify a mover's cover when they quote on your Stoke-on-Trent job — just ask them to confirm before you accept."},{"q":"Can you help with student moves in Stoke-on-Trent?","a":"Yes. Student moves can be submitted for areas near Shelton and Hartshill. Peak demand is June, July and September. Add your item list, access notes and preferred dates for a verified mover to review."},{"q":"What should I know about moving in Stoke-on-Trent?","a":"Be aware of six-towns layout spreads moves out and A500 d-road congestion. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Stoke-on-Trent move."},{"q":"How much does a man and van cost from Stoke-on-Trent to Manchester?","a":"A Stoke-on-Trent to Manchester move in 2026 typically costs £80–£180 depending on load, access and timing. Stoke-on-Trent connects to Manchester via the A500 and M6, roughly 45–60 minutes depending on M6 traffic through Cheshire. A single-item collection might start from £19–£80. Submit your postcodes and item list for a guide price."}],
@@ -3443,7 +3443,7 @@ There is no Clean Air Zone. Rates start from £19 per hour. Moves between Wrexha
   // ──────────────────────────────────────────
 
   chesterfield: {
-    title: "Man and Van Chesterfield | From £19",
+    title: "Man and Van Chesterfield From £19/hr | Free Quotes",
     description: "Man and van Chesterfield from £19/hr. S40/S41. Brimington, Hasland, Staveley, Clay Cross. Call 0121 751 1269.",
     h1: "Man and Van Chesterfield",
     intro: "Need a man and van in Chesterfield? Submit your postcodes, move date, item list and access notes for free. One verified mover reviews your Chesterfield move before sending a quote, so you decide whether to book after seeing the details.",
@@ -3468,7 +3468,7 @@ Rates start from £19 per hour. Add full postcodes, floor level, stairs, drivewa
   },
 
   glossop: {
-    title: "Man and Van Glossop | From £19",
+    title: "Man and Van Glossop From £19/hr | Free Quotes",
     description: "Man and van Glossop from £19/hr. SK13. Hadfield, Padfield, Simmondley, Whitfield. Peak District edge. Call 0121 751 1269.",
     h1: "Man and Van Glossop",
     intro: "Need a man and van in Glossop? Submit your collection and delivery postcodes, move date, item list and access notes for free. One verified mover reviews your Glossop move before sending a quote — you only book if you're happy with the details.",
@@ -3495,7 +3495,7 @@ Winter weather can be a real factor — the Snake Pass closes several times a ye
   },
 
   ilkeston: {
-    title: "Man and Van Ilkeston | From £19",
+    title: "Man and Van Ilkeston From £19/hr | Free Quotes",
     description: "Man and van Ilkeston from £19/hr. DE7. Cotmanhay, Kirk Hallam, Little Hallam, Stanley. Call 0121 751 1269.",
     h1: "Man and Van Ilkeston",
     intro: "Need a man and van in Ilkeston? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ilkeston move before quoting — no spam, no obligation, no ten companies calling at once.",
@@ -3521,7 +3521,7 @@ Rates start from £19 per hour. Include full postcodes, floor level, stairs, dri
   },
 
   "long-eaton": {
-    title: "Man and Van Long Eaton | From £19",
+    title: "Man and Van Long Eaton From £19/hr | Free Quotes",
     description: "Man and van Long Eaton from £19/hr. NG10. Sawley, Borrowash, Breaston, Sandiacre. Call 0121 751 1269.",
     h1: "Man and Van Long Eaton",
     intro: "Need a man and van in Long Eaton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Long Eaton move before quoting — no spam, no obligation.",
@@ -3549,7 +3549,7 @@ Rates start from £19 per hour. Include full postcodes and access details.`,
   },
 
   belper: {
-    title: "Man and Van Belper | From £19",
+    title: "Man and Van Belper From £19/hr | Free Quotes",
     description: "Man and van Belper from £19/hr. DE56. Milford, Heage, Ripley, Swanwick. Derwent Valley. Call 0121 751 1269.",
     h1: "Man and Van Belper",
     intro: "Need a man and van in Belper? Submit your postcodes, item list and access notes for free. One verified mover reviews your Belper move before quoting — you only book if you're happy with the price and details.",
@@ -3577,7 +3577,7 @@ Rates start from £19 per hour. Add full postcodes and any notes about steep acc
   },
 
   swadlincote: {
-    title: "Man and Van Swadlincote | From £19",
+    title: "Man and Van Swadlincote From £19/hr | Free Quotes",
     description: "Man and van Swadlincote from £19/hr. DE11/DE12. Church Gresley, Newhall, Woodville, Midway. Call 0121 751 1269.",
     h1: "Man and Van Swadlincote",
     intro: "Need a man and van in Swadlincote? Submit your postcodes, item list and access notes for free. One verified mover reviews your move before quoting — no spam, no obligation.",
@@ -3605,7 +3605,7 @@ Rates start from £19 per hour. Add full postcodes and access details so the mov
   },
 
   buxton: {
-    title: "Man and Van Buxton | From £19",
+    title: "Man and Van Buxton From £19/hr | Free Quotes",
     description: "Man and van Buxton from £19/hr. SK17. Fairfield, Lightwood, Harpur Hill. Peak District spa town. Call 0121 751 1269.",
     h1: "Man and Van Buxton",
     intro: "Need a man and van in Buxton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Buxton move before quoting — you decide whether to book after seeing the details.",
@@ -3633,7 +3633,7 @@ Rates start from £19 per hour. Add full postcodes, access notes and whether the
   },
 
   ripley: {
-    title: "Man and Van Ripley | From £19",
+    title: "Man and Van Ripley From £19/hr | Free Quotes",
     description: "Man and van Ripley from £19/hr. DE5. Codnor, Heanor, Waingroves, Pentrich. Amber Valley. Call 0121 751 1269.",
     h1: "Man and Van Ripley",
     intro: "Need a man and van in Ripley? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ripley move before quoting — no spam, no obligation.",
@@ -3661,7 +3661,7 @@ Rates start from £19 per hour. Add full postcodes, floor level and access detai
   },
 
   heanor: {
-    title: "Man and Van Heanor | From £19",
+    title: "Man and Van Heanor From £19/hr | Free Quotes",
     description: "Man and van Heanor from £19/hr. DE75. Loscoe, Langley Mill, Marlpool, Shipley. Call 0121 751 1269.",
     h1: "Man and Van Heanor",
     intro: "Need a man and van in Heanor? Submit your postcodes, item list and access notes for free. One verified mover reviews your Heanor move before quoting — you decide whether to book.",
@@ -3689,7 +3689,7 @@ Rates start from £19 per hour. Add full postcodes, floor level and access notes
   },
 
   alfreton: {
-    title: "Man and Van Alfreton | From £19",
+    title: "Man and Van Alfreton From £19/hr | Free Quotes",
     description: "Man and van Alfreton from £19/hr. DE55. Somercotes, Riddings, Ironville, Shirland. Call 0121 751 1269.",
     h1: "Man and Van Alfreton",
     intro: "Need a man and van in Alfreton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Alfreton move before quoting — no spam, no obligation.",
@@ -3719,7 +3719,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   matlock: {
-    title: "Man and Van Matlock | From £19",
+    title: "Man and Van Matlock From £19/hr | Free Quotes",
     description: "Man and van Matlock from £19/hr. DE4. Matlock Bath, Cromford, Darley Dale, Rowsley. Derwent Valley. Call 0121 751 1269.",
     h1: "Man and Van Matlock",
     intro: "Need a man and van in Matlock? Submit your postcodes, item list and access notes for free. One verified mover reviews your Matlock move before quoting — you only book if you're happy with the details.",
@@ -3754,7 +3754,7 @@ Rates start from £19 per hour. Include full postcodes and any notes about steep
   // ──────────────────────────────────────────
 
   loughborough: {
-    title: "Man and Van Loughborough | From £19",
+    title: "Man and Van Loughborough From £19/hr | Free Quotes",
     description: "Man and van Loughborough from £19/hr. LE11/LE12. Shepshed, Quorn, Mountsorrel, Nanpantan. Call 0121 751 1269.",
     h1: "Man and Van Loughborough",
     intro: "Need a man and van in Loughborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Loughborough move before quoting — you only book if you're happy with the details.",
@@ -3782,7 +3782,7 @@ Rates start from £19 per hour. For student moves, book early for July and Septe
   },
 
   coalville: {
-    title: "Man and Van Coalville | From £19",
+    title: "Man and Van Coalville From £19/hr | Free Quotes",
     description: "Man and van Coalville from £19/hr. LE67. Whitwick, Hugglescote, Newhall, Ravenstone. Call 0121 751 1269.",
     h1: "Man and Van Coalville",
     intro: "Need a man and van in Coalville? Submit your postcodes, item list and access notes for free. One verified mover reviews your Coalville move before quoting — no spam, no obligation.",
@@ -3810,7 +3810,7 @@ Rates start from £19 per hour. Add full postcodes and access notes so the mover
   },
 
   hinckley: {
-    title: "Man and Van Hinckley | From £19",
+    title: "Man and Van Hinckley From £19/hr | Free Quotes",
     description: "Man and van Hinckley from £19/hr. LE10. Barwell, Earl Shilton, Burbage, Stoke Golding. Call 0121 751 1269.",
     h1: "Man and Van Hinckley",
     intro: "Need a man and van in Hinckley? Submit your postcodes, item list and access notes for free. One verified mover reviews your Hinckley move before quoting — no spam, no obligation.",
@@ -3840,7 +3840,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "melton-mowbray": {
-    title: "Man and Van Melton Mowbray | From £19",
+    title: "Man and Van Melton Mowbray From £19/hr | Free Quotes",
     description: "Man and van Melton Mowbray from £19/hr. LE13. Asfordby, Bottesford, Waltham on the Wolds. Call 0121 751 1269.",
     h1: "Man and Van Melton Mowbray",
     intro: "Need a man and van in Melton Mowbray? Submit your postcodes, item list and access notes for free. One verified mover reviews your Melton move before quoting — you decide whether to book.",
@@ -3868,7 +3868,7 @@ Rates start from £19 per hour. Add full postcodes and access details, especiall
   },
 
   "market-harborough": {
-    title: "Man and Van Market Harborough | From £19",
+    title: "Man and Van Market Harborough From £19/hr | Free Quotes",
     description: "Man and van Market Harborough from £19/hr. LE16. Great Bowden, Foxton, Kibworth. Call 0121 751 1269.",
     h1: "Man and Van Market Harborough",
     intro: "Need a man and van in Market Harborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your move before quoting — no spam, no obligation.",
@@ -3896,7 +3896,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "ashby-de-la-zouch": {
-    title: "Man and Van Ashby de la Zouch | From £19",
+    title: "Man and Van Ashby de la Zouch From £19/hr | Free Quotes",
     description: "Man and van Ashby de la Zouch from £19/hr. LE65. Moira, Measham, Packington. Call 0121 751 1269.",
     h1: "Man and Van Ashby de la Zouch",
     intro: "Need a man and van in Ashby de la Zouch? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ashby move before quoting — you only book if you're happy with the details.",
@@ -3926,7 +3926,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   lutterworth: {
-    title: "Man and Van Lutterworth | From £19",
+    title: "Man and Van Lutterworth From £19/hr | Free Quotes",
     description: "Man and van Lutterworth from £19/hr. LE17. Magna Park, Bitteswell, Gilmorton. Call 0121 751 1269.",
     h1: "Man and Van Lutterworth",
     intro: "Need a man and van in Lutterworth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Lutterworth move before quoting — no spam, no obligation.",
@@ -3960,7 +3960,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   // ──────────────────────────────────────────
 
   grantham: {
-    title: "Man and Van Grantham | From £19",
+    title: "Man and Van Grantham From £19/hr | Free Quotes",
     description: "Man and van Grantham from £19/hr. NG31/NG32. Barrowby, Harlaxton, Belton, Caythorpe. Call 0121 751 1269.",
     h1: "Man and Van Grantham",
     intro: "Need a man and van in Grantham? Submit your postcodes, item list and access notes for free. One verified mover reviews your Grantham move before quoting — you only book if you're happy with the details.",
@@ -3988,7 +3988,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   boston: {
-    title: "Man and Van Boston | From £19",
+    title: "Man and Van Boston From £19/hr | Free Quotes",
     description: "Man and van Boston from £19/hr. PE20/PE21. Wyberton, Fishtoft, Freiston, Skirbeck. Call 0121 751 1269.",
     h1: "Man and Van Boston",
     intro: "Need a man and van in Boston? Submit your postcodes, item list and access notes for free. One verified mover reviews your Boston move before quoting — no spam, no obligation.",
@@ -4018,7 +4018,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   spalding: {
-    title: "Man and Van Spalding | From £19",
+    title: "Man and Van Spalding From £19/hr | Free Quotes",
     description: "Man and van Spalding from £19/hr. PE11. Pinchbeck, Cowbit, Gosberton, Donington. Call 0121 751 1269.",
     h1: "Man and Van Spalding",
     intro: "Need a man and van in Spalding? Submit your postcodes, item list and access notes for free. One verified mover reviews your Spalding move before quoting — no spam, no obligation.",
@@ -4048,7 +4048,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   stamford: {
-    title: "Man and Van Stamford | From £19",
+    title: "Man and Van Stamford From £19/hr | Free Quotes",
     description: "Man and van Stamford from £19/hr. PE9. Barnack, Ketton, Easton on the Hill. Stone town. Call 0121 751 1269.",
     h1: "Man and Van Stamford",
     intro: "Need a man and van in Stamford? Submit your postcodes, item list and access notes for free. One verified mover reviews your Stamford move before quoting — you only book if you're happy with the details.",
@@ -4078,7 +4078,7 @@ Rates start from £19 per hour. Add full postcodes and detailed access notes for
   },
 
   gainsborough: {
-    title: "Man and Van Gainsborough | From £19",
+    title: "Man and Van Gainsborough From £19/hr | Free Quotes",
     description: "Man and van Gainsborough from £19/hr. DN21. Morton, Lea, Beckingham. Trentside. Call 0121 751 1269.",
     h1: "Man and Van Gainsborough",
     intro: "Need a man and van in Gainsborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Gainsborough move before quoting — no spam, no obligation.",
@@ -4108,7 +4108,7 @@ Rates start from £19 per hour. Add full postcodes and access details, especiall
   },
 
   sleaford: {
-    title: "Man and Van Sleaford | From £19",
+    title: "Man and Van Sleaford From £19/hr | Free Quotes",
     description: "Man and van Sleaford from £19/hr. NG34. Quarrington, Greylees, Rauceby, Cranwell. Call 0121 751 1269.",
     h1: "Man and Van Sleaford",
     intro: "Need a man and van in Sleaford? Submit your postcodes, item list and access notes for free. One verified mover reviews your Sleaford move before quoting — no spam, no obligation.",
@@ -4138,7 +4138,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   skegness: {
-    title: "Man and Van Skegness | From £19",
+    title: "Man and Van Skegness From £19/hr | Free Quotes",
     description: "Man and van Skegness from £19/hr. PE24/PE25. Ingoldmells, Chapel St Leonards, Winthorpe. Call 0121 751 1269.",
     h1: "Man and Van Skegness",
     intro: "Need a man and van in Skegness? Submit your postcodes, item list and access notes for free. One verified mover reviews your Skegness move before quoting — you only book if you're happy with the details.",
@@ -4170,7 +4170,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   louth: {
-    title: "Man and Van Louth | From £19",
+    title: "Man and Van Louth From £19/hr | Free Quotes",
     description: "Man and van Louth from £19/hr. LN11. Legbourne, Manby, North Thoresby. Lincolnshire Wolds. Call 0121 751 1269.",
     h1: "Man and Van Louth",
     intro: "Need a man and van in Louth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Louth move before quoting — no spam, no obligation.",
@@ -4205,7 +4205,7 @@ Rates start from £19 per hour. Add full postcodes and access details, especiall
   // ──────────────────────────────────────────
 
   kettering: {
-    title: "Man and Van Kettering | From £19",
+    title: "Man and Van Kettering From £19/hr | Free Quotes",
     description: "Man and van Kettering from £19/hr. NN14/NN15/NN16. Rothwell, Desborough, Barton Seagrave. Call 0121 751 1269.",
     h1: "Man and Van Kettering",
     intro: "Need a man and van in Kettering? Submit your postcodes, item list and access notes for free. One verified mover reviews your Kettering move before quoting — no spam, no obligation.",
@@ -4233,7 +4233,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   corby: {
-    title: "Man and Van Corby | From £19",
+    title: "Man and Van Corby From £19/hr | Free Quotes",
     description: "Man and van Corby from £19/hr. NN17/NN18. Weldon, Gretton, Rockingham. Call 0121 751 1269.",
     h1: "Man and Van Corby",
     intro: "Need a man and van in Corby? Submit your postcodes, item list and access notes for free. One verified mover reviews your Corby move before quoting — you decide whether to book after seeing the details.",
@@ -4263,7 +4263,7 @@ Rates start from £19 per hour. Add full postcodes, floor level (especially for 
   },
 
   wellingborough: {
-    title: "Man and Van Wellingborough | From £19",
+    title: "Man and Van Wellingborough From £19/hr | Free Quotes",
     description: "Man and van Wellingborough from £19/hr. NN8/NN9. Irthlingborough, Finedon, Earls Barton. Call 0121 751 1269.",
     h1: "Man and Van Wellingborough",
     intro: "Need a man and van in Wellingborough? Submit your postcodes, item list and access notes for free. One verified mover reviews your Wellingborough move before quoting — no spam, no obligation.",
@@ -4293,7 +4293,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   rushden: {
-    title: "Man and Van Rushden | From £19",
+    title: "Man and Van Rushden From £19/hr | Free Quotes",
     description: "Man and van Rushden from £19/hr. NN10. Higham Ferrers, Irthlingborough, Raunds. Call 0121 751 1269.",
     h1: "Man and Van Rushden",
     intro: "Need a man and van in Rushden? Submit your postcodes, item list and access notes for free. One verified mover reviews your Rushden move before quoting — you only book if you're happy with the details.",
@@ -4323,7 +4323,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   daventry: {
-    title: "Man and Van Daventry | From £19",
+    title: "Man and Van Daventry From £19/hr | Free Quotes",
     description: "Man and van Daventry from £19/hr. NN11. Weedon Bec, Long Buckby, Badby. Call 0121 751 1269.",
     h1: "Man and Van Daventry",
     intro: "Need a man and van in Daventry? Submit your postcodes, item list and access notes for free. One verified mover reviews your Daventry move before quoting — no spam, no obligation.",
@@ -4357,7 +4357,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   // ──────────────────────────────────────────
 
   mansfield: {
-    title: "Man and Van Mansfield | From £19",
+    title: "Man and Van Mansfield From £19/hr | Free Quotes",
     description: "Man and van Mansfield from £19/hr. NG18/NG19. Forest Town, Ladybrook, Shirebrook, Rainworth. Call 0121 751 1269.",
     h1: "Man and Van Mansfield",
     intro: "Need a man and van in Mansfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Mansfield move before quoting — you only book if you're happy with the details.",
@@ -4389,7 +4389,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "newark-on-trent": {
-    title: "Man and Van Newark on Trent | From £19",
+    title: "Man and Van Newark on Trent From £19/hr | Free Quotes",
     description: "Man and van Newark on Trent from £19/hr. NG22/NG24. Balderton, Farndon, Coddington. Call 0121 751 1269.",
     h1: "Man and Van Newark on Trent",
     intro: "Need a man and van in Newark on Trent? Submit your postcodes, item list and access notes for free. One verified mover reviews your Newark move before quoting — no spam, no obligation.",
@@ -4419,7 +4419,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   worksop: {
-    title: "Man and Van Worksop | From £19",
+    title: "Man and Van Worksop From £19/hr | Free Quotes",
     description: "Man and van Worksop from £19/hr. S80. Shireoaks, Carlton in Lindrick, Harworth, Creswell. Call 0121 751 1269.",
     h1: "Man and Van Worksop",
     intro: "Need a man and van in Worksop? Submit your postcodes, item list and access notes for free. One verified mover reviews your Worksop move before quoting — no spam, no obligation.",
@@ -4449,7 +4449,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "sutton-in-ashfield": {
-    title: "Man and Van Sutton in Ashfield | From £19",
+    title: "Man and Van Sutton in Ashfield From £19/hr | Free Quotes",
     description: "Man and van Sutton in Ashfield from £19/hr. NG17. Kirkby in Ashfield, Huthwaite, Stanton Hill. Call 0121 751 1269.",
     h1: "Man and Van Sutton in Ashfield",
     intro: "Need a man and van in Sutton in Ashfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Sutton move before quoting — you decide whether to book.",
@@ -4479,7 +4479,7 @@ Rates start from £19 per hour. Add full postcodes and access details, especiall
   },
 
   retford: {
-    title: "Man and Van Retford | From £19",
+    title: "Man and Van Retford From £19/hr | Free Quotes",
     description: "Man and van Retford from £19/hr. DN22. Ordsall, Clayworth, Babworth. Historic market town. Call 0121 751 1269.",
     h1: "Man and Van Retford",
     intro: "Need a man and van in Retford? Submit your postcodes, item list and access notes for free. One verified mover reviews your Retford move before quoting — no spam, no obligation.",
@@ -4509,7 +4509,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "kirkby-in-ashfield": {
-    title: "Man and Van Kirkby in Ashfield | From £19",
+    title: "Man and Van Kirkby in Ashfield From £19/hr | Free Quotes",
     description: "Man and van Kirkby in Ashfield from £19/hr. NG17. Sutton in Ashfield, Huthwaite, Annesley. Call 0121 751 1269.",
     h1: "Man and Van Kirkby in Ashfield",
     intro: "Need a man and van in Kirkby in Ashfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Kirkby move before quoting — no spam, no obligation.",
@@ -4541,7 +4541,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   // ──────────────────────────────────────────
 
   oakham: {
-    title: "Man and Van Oakham | From £19",
+    title: "Man and Van Oakham From £19/hr | Free Quotes",
     description: "Man and van Oakham from £19/hr. LE15. Uppingham, Ketton, Cottesmore, Rutland Water. Call 0121 751 1269.",
     h1: "Man and Van Oakham",
     intro: "Need a man and van in Oakham? Submit your postcodes, item list and access notes for free. One verified mover reviews your Oakham move before quoting — you only book if you're happy with the details.",
@@ -4572,7 +4572,7 @@ Rates start from £19 per hour. Add full postcodes and access details, especiall
 
 
   "burton-upon-trent": {
-    title: "Man and Van Burton upon Trent | From £19",
+    title: "Man and Van Burton upon Trent From £19/hr | Free Quotes",
     description: "Man and van Burton upon Trent from £19/hr. DE13/DE14. Branston, Stretton, Winshill, Horninglow. Call 0121 751 1269.",
     h1: "Man and Van Burton upon Trent",
     intro: "Need a man and van in Burton upon Trent? Submit your postcodes, item list and access notes for free. One verified mover reviews your Burton move before quoting — no spam, no obligation.",
@@ -4597,7 +4597,7 @@ Rates start from £19 per hour. Add full postcodes, floor level and access detai
     ],
   },
   "warrington": {
-    title: "Man and Van Warrington | From £19",
+    title: "Man and Van Warrington From £19/hr | Free Quotes",
     description: "Man and van Warrington from £19/hr. WA1/WA2/WA4. Lymm, Stockton Heath, Birchwood, Culcheth. Call 0121 751 1269.",
     h1: "Man and Van Warrington",
     intro: "Need a man and van in Warrington? Submit your postcodes, item list and access notes for free. One verified mover reviews your Warrington move before quoting — no spam, no obligation.",
@@ -4624,7 +4624,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "sale": {
-    title: "Man and Van Sale | From £19",
+    title: "Man and Van Sale From £19/hr | Free Quotes",
     description: "Man and van Sale from £19/hr. M33. Ashton upon Mersey, Sale Moor, Brooklands. Trafford. Call 0121 751 1269.",
     h1: "Man and Van Sale",
     intro: "Need a man and van in Sale? Submit your postcodes, item list and access notes for free. One verified mover reviews your Sale move before quoting — no spam, no obligation.",
@@ -4651,7 +4651,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "prestwich": {
-    title: "Man and Van Prestwich | From £19",
+    title: "Man and Van Prestwich From £19/hr | Free Quotes",
     description: "Man and van Prestwich from £19/hr. M25. Heaton Park, Sedgley Park, Besses o th Barn. Call 0121 751 1269.",
     h1: "Man and Van Prestwich",
     intro: "Need a man and van in Prestwich? Submit your postcodes, item list and access notes for free. One verified mover reviews your Prestwich move before quoting.",
@@ -4670,7 +4670,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "middleton": {
-    title: "Man and Van Middleton | From £19",
+    title: "Man and Van Middleton From £19/hr | Free Quotes",
     description: "Man and van Middleton from £19/hr. M24. Alkrington, Langley, Boarshaw. Call 0121 751 1269.",
     h1: "Man and Van Middleton",
     intro: "Need a man and van in Middleton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Middleton move before quoting.",
@@ -4689,7 +4689,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "eccles": {
-    title: "Man and Van Eccles | From £19",
+    title: "Man and Van Eccles From £19/hr | Free Quotes",
     description: "Man and van Eccles from £19/hr. M30. Monton, Patricroft, Worsley, Ellesmere Park. Call 0121 751 1269.",
     h1: "Man and Van Eccles",
     intro: "Need a man and van in Eccles? Submit your postcodes, item list and access notes for free. One verified mover reviews your Eccles move before quoting.",
@@ -4708,7 +4708,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "swinton": {
-    title: "Man and Van Swinton | From £19",
+    title: "Man and Van Swinton From £19/hr | Free Quotes",
     description: "Man and van Swinton from £19/hr. M27. Worsley, Moorside, Pendlebury, Clifton. Call 0121 751 1269.",
     h1: "Man and Van Swinton",
     intro: "Need a man and van in Swinton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Swinton move before quoting.",
@@ -4727,7 +4727,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "walkden": {
-    title: "Man and Van Walkden | From £19",
+    title: "Man and Van Walkden From £19/hr | Free Quotes",
     description: "Man and van Walkden from £19/hr. M28. Worsley, Little Hulton, Boothstown. Call 0121 751 1269.",
     h1: "Man and Van Walkden",
     intro: "Need a man and van in Walkden? Submit your postcodes, item list and access notes for free. One verified mover reviews your Walkden move before quoting.",
@@ -4746,7 +4746,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "failsworth": {
-    title: "Man and Van Failsworth | From £19",
+    title: "Man and Van Failsworth From £19/hr | Free Quotes",
     description: "Man and van Failsworth from £19/hr. M35. Hollinwood, Daisy Nook, Newton Heath. Call 0121 751 1269.",
     h1: "Man and Van Failsworth",
     intro: "Need a man and van in Failsworth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Failsworth move before quoting.",
@@ -4765,7 +4765,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "denton": {
-    title: "Man and Van Denton | From £19",
+    title: "Man and Van Denton From £19/hr | Free Quotes",
     description: "Man and van Denton from £19/hr. M34. Haughton Green, Audenshaw, Dukinfield. Tameside. Call 0121 751 1269.",
     h1: "Man and Van Denton",
     intro: "Need a man and van in Denton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Denton move before quoting.",
@@ -4784,7 +4784,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "droylsden": {
-    title: "Man and Van Droylsden | From £19",
+    title: "Man and Van Droylsden From £19/hr | Free Quotes",
     description: "Man and van Droylsden from £19/hr. M43. Audenshaw, Clayton, Fairfield. Tameside. Call 0121 751 1269.",
     h1: "Man and Van Droylsden",
     intro: "Need a man and van in Droylsden? Submit your postcodes, item list and access notes for free. One verified mover reviews your Droylsden move before quoting.",
@@ -4803,7 +4803,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "farnworth": {
-    title: "Man and Van Farnworth | From £19",
+    title: "Man and Van Farnworth From £19/hr | Free Quotes",
     description: "Man and van Farnworth from £19/hr. BL4. Kearsley, Moses Gate, Great Lever. Call 0121 751 1269.",
     h1: "Man and Van Farnworth",
     intro: "Need a man and van in Farnworth? Submit your postcodes, item list and access notes for free. One verified mover reviews your Farnworth move before quoting.",
@@ -4822,7 +4822,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "horwich": {
-    title: "Man and Van Horwich | From £19",
+    title: "Man and Van Horwich From £19/hr | Free Quotes",
     description: "Man and van Horwich from £19/hr. BL6. Rivington, Blackrod, Middlebrook. Call 0121 751 1269.",
     h1: "Man and Van Horwich",
     intro: "Need a man and van in Horwich? Submit your postcodes, item list and access notes for free. One verified mover reviews your Horwich move before quoting.",
@@ -4841,7 +4841,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "westhoughton": {
-    title: "Man and Van Westhoughton | From £19",
+    title: "Man and Van Westhoughton From £19/hr | Free Quotes",
     description: "Man and van Westhoughton from £19/hr. BL5. Daisy Hill, Chew Moor, Wingates. Call 0121 751 1269.",
     h1: "Man and Van Westhoughton",
     intro: "Need a man and van in Westhoughton? Submit your postcodes, item list and access notes for free. One verified mover reviews your Westhoughton move before quoting.",
@@ -4860,7 +4860,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "radcliffe": {
-    title: "Man and Van Radcliffe | From £19",
+    title: "Man and Van Radcliffe From £19/hr | Free Quotes",
     description: "Man and van Radcliffe from £19/hr. BL9. Outwood, Ainsworth, Whitefield. Call 0121 751 1269.",
     h1: "Man and Van Radcliffe",
     intro: "Need a man and van in Radcliffe? Submit your postcodes, item list and access notes for free. One verified mover reviews your Radcliffe move before quoting.",
@@ -4879,7 +4879,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "heywood": {
-    title: "Man and Van Heywood | From £19",
+    title: "Man and Van Heywood From £19/hr | Free Quotes",
     description: "Man and van Heywood from £19/hr. OL10. Hopwood, Pilsworth, Birtle. Call 0121 751 1269.",
     h1: "Man and Van Heywood",
     intro: "Need a man and van in Heywood? Submit your postcodes, item list and access notes for free. One verified mover reviews your Heywood move before quoting.",
@@ -4898,7 +4898,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "ashton-in-makerfield": {
-    title: "Man and Van Ashton in Makerfield | From £19",
+    title: "Man and Van Ashton in Makerfield From £19/hr | Free Quotes",
     description: "Man and van Ashton in Makerfield from £19/hr. WN4. Haydock, Bryn, Newton le Willows. Call 0121 751 1269.",
     h1: "Man and Van Ashton in Makerfield",
     intro: "Need a man and van in Ashton in Makerfield? Submit your postcodes, item list and access notes for free. One verified mover reviews your Ashton move before quoting.",
@@ -4917,7 +4917,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "cheadle": {
-    title: "Man and Van Cheadle | From £19",
+    title: "Man and Van Cheadle From £19/hr | Free Quotes",
     description: "Man and van Cheadle from £19/hr. SK8. Cheadle Hulme, Gatley, Heald Green. Call 0121 751 1269.",
     h1: "Man and Van Cheadle",
     intro: "Need a man and van in Cheadle? Submit your postcodes, item list and access notes for free. One verified mover reviews your Cheadle move before quoting.",
@@ -4938,7 +4938,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
 
   // ─── Phase 3: Merseyside expansion ───
   "ellesmere-port": {
-    title: "Man and Van Ellesmere Port | From £19",
+    title: "Man and Van Ellesmere Port From £19/hr | Free Quotes",
     description: "Man and van Ellesmere Port from £19/hr. CH65, CH66. Whitby, Little Sutton, Great Sutton, Neston. Call 0121 751 1269.",
     h1: "Man and Van Ellesmere Port",
     intro: "Need a man and van in Ellesmere Port? Tell us your postcodes, what you're moving, and any access details. One verified mover reviews your Ellesmere Port move before quoting.",
@@ -4956,7 +4956,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "bebington": {
-    title: "Man and Van Bebington | From £19",
+    title: "Man and Van Bebington From £19/hr | Free Quotes",
     description: "Man and van Bebington from £19/hr. CH62, CH63. Port Sunlight, Bromborough, Spital, Thornton Hough. Call 0121 751 1269.",
     h1: "Man and Van Bebington",
     intro: "Need a man and van in Bebington? Share your postcodes, what needs moving, and any access notes. One verified mover checks your Bebington move details before quoting.",
@@ -4976,7 +4976,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
 
   // ─── Phase 3: Lancashire — new region ───
   "preston": {
-    title: "Man and Van Preston | From £19",
+    title: "Man and Van Preston From £19/hr | Free Quotes",
     description: "Man and van Preston from £19/hr. PR1, PR2, PR3, PR5. Fulwood, Ashton-on-Ribble, Ribbleton, Penwortham, Bamber Bridge. Call 0121 751 1269.",
     h1: "Man and Van Preston",
     intro: "Need a man and van in Preston? Give us your postcodes, what you're moving, and any access details. One verified mover reviews your Preston move before quoting — no spam, no obligation.",
@@ -4994,7 +4994,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "blackpool": {
-    title: "Man and Van Blackpool | From £19",
+    title: "Man and Van Blackpool From £19/hr | Free Quotes",
     description: "Man and van Blackpool from £19/hr. FY1, FY2, FY3, FY4. North Shore, South Shore, Marton, Bispham, Cleveleys. Call 0121 751 1269.",
     h1: "Man and Van Blackpool",
     intro: "Need a man and van in Blackpool? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Blackpool move before quoting.",
@@ -5012,7 +5012,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "blackburn": {
-    title: "Man and Van Blackburn | From £19",
+    title: "Man and Van Blackburn From £19/hr | Free Quotes",
     description: "Man and van Blackburn from £19/hr. BB1, BB2, BB3. Darwen, Mill Hill, Pleasington, Roe Lee, Ewood. Call 0121 751 1269.",
     h1: "Man and Van Blackburn",
     intro: "Need a man and van in Blackburn? Tell us your postcodes, what you're moving, and any access details. One verified mover checks your Blackburn move before quoting.",
@@ -5030,7 +5030,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "burnley": {
-    title: "Man and Van Burnley | From £19",
+    title: "Man and Van Burnley From £19/hr | Free Quotes",
     description: "Man and van Burnley from £19/hr. BB10, BB11, BB12. Padiham, Brierfield, Nelson, Cliviger, Worsthorne. Call 0121 751 1269.",
     h1: "Man and Van Burnley",
     intro: "Need a man and van in Burnley? Share your postcodes, item list and access details. One verified mover looks at your Burnley move before quoting — no obligation.",
@@ -5048,7 +5048,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "lytham-st-annes": {
-    title: "Man and Van Lytham St Annes | From £19",
+    title: "Man and Van Lytham St Annes From £19/hr | Free Quotes",
     description: "Man and van Lytham St Annes from £19/hr. FY8. Lytham, St Annes, Ansdell, Fairhaven, Wrea Green. Call 0121 751 1269.",
     h1: "Man and Van Lytham St Annes",
     intro: "Need a man and van in Lytham St Annes? Share your postcodes, what needs moving, and any access notes. One verified mover reviews your Lytham St Annes move before quoting.",
@@ -5066,7 +5066,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "chorley": {
-    title: "Man and Van Chorley | From £19",
+    title: "Man and Van Chorley From £19/hr | Free Quotes",
     description: "Man and van Chorley from £19/hr. PR6, PR7. Leyland, Euxton, Buckshaw Village, Adlington, Croston. Call 0121 751 1269.",
     h1: "Man and Van Chorley",
     intro: "Need a man and van in Chorley? Tell us your postcodes, what you need moving, and any access details. One verified mover reviews your Chorley move before quoting.",
@@ -5084,7 +5084,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "skelmersdale": {
-    title: "Man and Van Skelmersdale | From £19",
+    title: "Man and Van Skelmersdale From £19/hr | Free Quotes",
     description: "Man and van Skelmersdale from £19/hr. WN8. Digmoor, Tanhouse, Up Holland, Ormskirk. Call 0121 751 1269.",
     h1: "Man and Van Skelmersdale",
     intro: "Need a man and van in Skelmersdale? Share your postcodes, what you're moving, and any access notes. One verified mover checks your Skelmersdale move before quoting.",
@@ -5102,7 +5102,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "ormskirk": {
-    title: "Man and Van Ormskirk | From £19",
+    title: "Man and Van Ormskirk From £19/hr | Free Quotes",
     description: "Man and van Ormskirk from £19/hr. L39, L40. Aughton, Burscough, Skelmersdale, Scarisbrick. Call 0121 751 1269.",
     h1: "Man and Van Ormskirk",
     intro: "Need a man and van in Ormskirk? Tell us your postcodes, what needs moving, and any access details. One verified mover reviews your Ormskirk move before quoting.",
@@ -5122,7 +5122,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
 
   // ─── Phase 4: West Yorkshire expansion ───
   "brighouse": {
-    title: "Man and Van Brighouse | From £19",
+    title: "Man and Van Brighouse From £19/hr | Free Quotes",
     description: "Man and van Brighouse from £19/hr. HD6. Rastrick, Hipperholme, Lightcliffe, Clifton. Call 0121 751 1269.",
     h1: "Man and Van Brighouse",
     intro: "Need a man and van in Brighouse? Share your postcodes, what you need moving, and any access details. One verified mover reviews your Brighouse move before quoting.",
@@ -5140,7 +5140,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "shipley": {
-    title: "Man and Van Shipley | From £19",
+    title: "Man and Van Shipley From £19/hr | Free Quotes",
     description: "Man and van Shipley from £19/hr. BD17, BD18. Saltaire, Baildon, Windhill, Cottingley. Call 0121 751 1269.",
     h1: "Man and Van Shipley",
     intro: "Need a man and van in Shipley? Tell us your postcodes, what you're moving, and any access notes. One verified mover reviews your Shipley move before quoting.",
@@ -5158,7 +5158,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "bingley": {
-    title: "Man and Van Bingley | From £19",
+    title: "Man and Van Bingley From £19/hr | Free Quotes",
     description: "Man and van Bingley from £19/hr. BD16. Eldwick, Crossflatts, Cottingley, Micklethwaite. Call 0121 751 1269.",
     h1: "Man and Van Bingley",
     intro: "Need a man and van in Bingley? Share your postcodes, item list and access details. One verified mover reviews your Bingley move before quoting.",
@@ -5176,7 +5176,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "cleckheaton": {
-    title: "Man and Van Cleckheaton | From £19",
+    title: "Man and Van Cleckheaton From £19/hr | Free Quotes",
     description: "Man and van Cleckheaton from £19/hr. BD19. Birkenshaw, Gomersal, Scholes, Hunsworth, Mirfield. Call 0121 751 1269.",
     h1: "Man and Van Cleckheaton",
     intro: "Need a man and van in Cleckheaton? Tell us your postcodes, what needs moving, and any access details. One verified mover reviews your Cleckheaton move before quoting.",
@@ -5194,7 +5194,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "ossett": {
-    title: "Man and Van Ossett | From £19",
+    title: "Man and Van Ossett From £19/hr | Free Quotes",
     description: "Man and van Ossett from £19/hr. WF5. Horbury, Gawthorpe, South Ossett, Alverthorpe. Call 0121 751 1269.",
     h1: "Man and Van Ossett",
     intro: "Need a man and van in Ossett? Share your postcodes, what you're moving, and any access notes. One verified mover checks your Ossett move before quoting.",
@@ -5212,7 +5212,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "ilkley": {
-    title: "Man and Van Ilkley | From £19",
+    title: "Man and Van Ilkley From £19/hr | Free Quotes",
     description: "Man and van Ilkley from £19/hr. LS29. Ben Rhydding, Addingham, Burley-in-Wharfedale, Menston. Call 0121 751 1269.",
     h1: "Man and Van Ilkley",
     intro: "Need a man and van in Ilkley? Tell us your postcodes, what you need moved, and any access details. One verified mover reviews your Ilkley move before quoting.",
@@ -5232,7 +5232,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
 
   // ─── Phase 5: South Yorkshire expansion ───
   "mexborough": {
-    title: "Man and Van Mexborough | From £19",
+    title: "Man and Van Mexborough From £19/hr | Free Quotes",
     description: "Man and van Mexborough from £19/hr. S64. Denaby Main, Conisbrough, Swinton, Wath-upon-Dearne. Call 0121 751 1269.",
     h1: "Man and Van Mexborough",
     intro: "Need a man and van in Mexborough? Tell us your postcodes, what you're moving, and any access details. One verified mover reviews your Mexborough move before quoting.",
@@ -5252,7 +5252,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
 
   // ─── Phase 6: North East expansion ───
   "washington": {
-    title: "Man and Van Washington | From £19",
+    title: "Man and Van Washington From £19/hr | Free Quotes",
     description: "Man and van Washington from £19/hr. NE37, NE38. Concord, Oxclose, Glebe, Rickleton, Barmston. Call 0121 751 1269.",
     h1: "Man and Van Washington",
     intro: "Need a man and van in Washington? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Washington move before quoting.",
@@ -5270,7 +5270,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "south-shields": {
-    title: "Man and Van South Shields | From £19",
+    title: "Man and Van South Shields From £19/hr | Free Quotes",
     description: "Man and van South Shields from £19/hr. NE33, NE34. Marsden, Cleadon, Hebburn, Whitburn, Jarrow. Call 0121 751 1269.",
     h1: "Man and Van South Shields",
     intro: "Need a man and van in South Shields? Tell us your postcodes, what you're moving, and any access details. One verified mover checks your South Shields move before quoting.",
@@ -5288,7 +5288,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "north-shields": {
-    title: "Man and Van North Shields | From £19",
+    title: "Man and Van North Shields From £19/hr | Free Quotes",
     description: "Man and van North Shields from £19/hr. NE29, NE30. Tynemouth, Whitley Bay, Wallsend, Fish Quay. Call 0121 751 1269.",
     h1: "Man and Van North Shields",
     intro: "Need a man and van in North Shields? Share your postcodes, what needs moving, and any access details. One verified mover reviews your North Shields move before quoting.",
@@ -5306,7 +5306,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "jarrow": {
-    title: "Man and Van Jarrow | From £19",
+    title: "Man and Van Jarrow From £19/hr | Free Quotes",
     description: "Man and van Jarrow from £19/hr. NE32. Hebburn, South Shields, Boldon, Harton. Call 0121 751 1269.",
     h1: "Man and Van Jarrow",
     intro: "Need a man and van in Jarrow? Tell us your postcodes, what you need moving, and any access notes. One verified mover reviews your Jarrow move before quoting.",
@@ -5324,7 +5324,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "gosforth": {
-    title: "Man and Van Gosforth | From £19",
+    title: "Man and Van Gosforth From £19/hr | Free Quotes",
     description: "Man and van Gosforth from £19/hr. NE3. High Gosforth, Gosforth Park, Kingston Park, Kenton, Fawdon. Call 0121 751 1269.",
     h1: "Man and Van Gosforth",
     intro: "Need a man and van in Gosforth? Share your postcodes, what you're moving, and any access details. One verified mover reviews your Gosforth move before quoting.",
@@ -5344,7 +5344,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
 
   // ─── Phase 7: East Yorkshire / North Yorkshire ───
   "harrogate": {
-    title: "Man and Van Harrogate | From £19",
+    title: "Man and Van Harrogate From £19/hr | Free Quotes",
     description: "Man and van Harrogate from £19/hr. HG1, HG2, HG3. Knaresborough, Starbeck, Pannal, Bilton, Oatlands. Call 0121 751 1269.",
     h1: "Man and Van Harrogate",
     intro: "Need a man and van in Harrogate? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Harrogate move before quoting.",
@@ -5362,7 +5362,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "scarborough": {
-    title: "Man and Van Scarborough | From £19",
+    title: "Man and Van Scarborough From £19/hr | Free Quotes",
     description: "Man and van Scarborough from £19/hr. YO11, YO12. North Bay, South Bay, Peasholm, Scalby, Newby, Eastfield. Call 0121 751 1269.",
     h1: "Man and Van Scarborough",
     intro: "Need a man and van in Scarborough? Tell us your postcodes, what you're moving, and any access details. One verified mover checks your Scarborough move before quoting.",
@@ -5380,7 +5380,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "bridlington": {
-    title: "Man and Van Bridlington | From £19",
+    title: "Man and Van Bridlington From £19/hr | Free Quotes",
     description: "Man and van Bridlington from £19/hr. YO15, YO16. Old Town, Sewerby, Bempton, Carnaby. Call 0121 751 1269.",
     h1: "Man and Van Bridlington",
     intro: "Need a man and van in Bridlington? Share your postcodes, item list and access details. One verified mover reviews your Bridlington move before quoting.",
@@ -5398,7 +5398,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "beverley": {
-    title: "Man and Van Beverley | From £19",
+    title: "Man and Van Beverley From £19/hr | Free Quotes",
     description: "Man and van Beverley from £19/hr. HU17. Molescroft, Walkington, Tickton, North Bar. Call 0121 751 1269.",
     h1: "Man and Van Beverley",
     intro: "Need a man and van in Beverley? Tell us your postcodes, what needs moving, and any access notes. One verified mover reviews your Beverley move before quoting.",
@@ -5416,7 +5416,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "selby": {
-    title: "Man and Van Selby | From £19",
+    title: "Man and Van Selby From £19/hr | Free Quotes",
     description: "Man and van Selby from £19/hr. YO8. Barlby, Brayton, Thorpe Willoughby, Sherburn-in-Elmet. Call 0121 751 1269.",
     h1: "Man and Van Selby",
     intro: "Need a man and van in Selby? Share your postcodes, what you're moving, and any access details. One verified mover reviews your Selby move before quoting.",
@@ -5434,7 +5434,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "whitby": {
-    title: "Man and Van Whitby | From £19",
+    title: "Man and Van Whitby From £19/hr | Free Quotes",
     description: "Man and van Whitby from £19/hr. YO21, YO22. East Cliff, West Cliff, Sandsend, Robin Hood's Bay. Call 0121 751 1269.",
     h1: "Man and Van Whitby",
     intro: "Need a man and van in Whitby? Tell us your postcodes, what you need moved, and any access notes. One verified mover reviews your Whitby move before quoting.",
@@ -5452,7 +5452,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "malton": {
-    title: "Man and Van Malton | From £19",
+    title: "Man and Van Malton From £19/hr | Free Quotes",
     description: "Man and van Malton from £19/hr. YO17. Norton, Old Malton, Broughton, Amotherby, Slingsby. Call 0121 751 1269.",
     h1: "Man and Van Malton",
     intro: "Need a man and van in Malton? Share your postcodes, what you need moved, and any access details. One verified mover reviews your Malton move before quoting.",
@@ -5471,7 +5471,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
   // ─── Phase 8: South East expansion (19) ───
   "guildford": {
-    title: "Man and Van Guildford | From £19",
+    title: "Man and Van Guildford From £19/hr | Free Quotes",
     description: "Man and van Guildford from £19/hr. GU1, GU2, GU3. Onslow Village, Stoughton, Merrow, Burpham. Call 0121 751 1269.",
     h1: "Man and Van Guildford",
     intro: "Need a man and van in Guildford? Tell us your postcodes, what you're moving, and any access details. One verified mover reviews your Guildford move before quoting.",
@@ -5487,7 +5487,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "woking": {
-    title: "Man and Van Woking | From £19",
+    title: "Man and Van Woking From £19/hr | Free Quotes",
     description: "Man and van Woking from £19/hr. GU21, GU22. Horsell, Knaphill, Goldsworth Park, Maybury. Call 0121 751 1269.",
     h1: "Man and Van Woking",
     intro: "Need a man and van in Woking? Share your postcodes, what you need moved, and any access notes. One verified mover checks your Woking move before quoting.",
@@ -5502,7 +5502,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "watford": {
-    title: "Man and Van Watford | From £19",
+    title: "Man and Van Watford From £19/hr | Free Quotes",
     description: "Man and van Watford from £19/hr. WD17, WD18, WD24, WD25. Cassiobury, Nascot Wood, Bushey, Garston. Call 0121 751 1269.",
     h1: "Man and Van Watford",
     intro: "Need a man and van in Watford? Tell us your postcodes, what you're moving, and any access details. One verified mover reviews your Watford move before quoting.",
@@ -5518,7 +5518,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "high-wycombe": {
-    title: "Man and Van High Wycombe | From £19",
+    title: "Man and Van High Wycombe From £19/hr | Free Quotes",
     description: "Man and van High Wycombe from £19/hr. HP11, HP12, HP13. Terriers, Booker, Downley, Hazlemere, Loudwater. Call 0121 751 1269.",
     h1: "Man and Van High Wycombe",
     intro: "Need a man and van in High Wycombe? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your High Wycombe move before quoting.",
@@ -5533,7 +5533,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "hemel-hempstead": {
-    title: "Man and Van Hemel Hempstead | From £19",
+    title: "Man and Van Hemel Hempstead From £19/hr | Free Quotes",
     description: "Man and van Hemel Hempstead from £19/hr. HP1, HP2, HP3. Boxmoor, Bennetts End, Chaulden, Gadebridge, Kings Langley. Call 0121 751 1269.",
     h1: "Man and Van Hemel Hempstead",
     intro: "Need a man and van in Hemel Hempstead? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hemel Hempstead move before quoting.",
@@ -5548,7 +5548,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "stevenage": {
-    title: "Man and Van Stevenage | From £19",
+    title: "Man and Van Stevenage From £19/hr | Free Quotes",
     description: "Man and van Stevenage from £19/hr. SG1, SG2. Old Town, Broadwater, Great Ashby, Chells, Shephall. Call 0121 751 1269.",
     h1: "Man and Van Stevenage",
     intro: "Need a man and van in Stevenage? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Stevenage move before quoting.",
@@ -5563,7 +5563,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "st-albans": {
-    title: "Man and Van St Albans | From £19",
+    title: "Man and Van St Albans From £19/hr | Free Quotes",
     description: "Man and van St Albans from £19/hr. AL1, AL2, AL3. Marshalswick, Sandridge, Sopwell, London Colney. Call 0121 751 1269.",
     h1: "Man and Van St Albans",
     intro: "Need a man and van in St Albans? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your St Albans move before quoting.",
@@ -5578,7 +5578,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "eastbourne": {
-    title: "Man and Van Eastbourne | From £19",
+    title: "Man and Van Eastbourne From £19/hr | Free Quotes",
     description: "Man and van Eastbourne from £19/hr. BN20, BN21, BN22. Meads, Old Town, Sovereign Harbour, Willingdon, Polegate. Call 0121 751 1269.",
     h1: "Man and Van Eastbourne",
     intro: "Need a man and van in Eastbourne? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Eastbourne move before quoting.",
@@ -5593,7 +5593,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "hastings": {
-    title: "Man and Van Hastings | From £19",
+    title: "Man and Van Hastings From £19/hr | Free Quotes",
     description: "Man and van Hastings from £19/hr. TN34, TN35, TN37. Old Town, St Leonards, Ore, Hollington, Silverhill. Call 0121 751 1269.",
     h1: "Man and Van Hastings",
     intro: "Need a man and van in Hastings? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hastings move before quoting.",
@@ -5608,7 +5608,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "chatham": {
-    title: "Man and Van Chatham | From £19",
+    title: "Man and Van Chatham From £19/hr | Free Quotes",
     description: "Man and van Chatham from £19/hr. ME4, ME5. Rochester, Strood, Gillingham, Luton, Walderslade. Call 0121 751 1269.",
     h1: "Man and Van Chatham",
     intro: "Need a man and van in Chatham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chatham move before quoting.",
@@ -5623,7 +5623,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "maidenhead": {
-    title: "Man and Van Maidenhead | From £19",
+    title: "Man and Van Maidenhead From £19/hr | Free Quotes",
     description: "Man and van Maidenhead from £19/hr. SL6. Bray, Cookham, Pinkneys Green, Holyport, Taplow. Call 0121 751 1269.",
     h1: "Man and Van Maidenhead",
     intro: "Need a man and van in Maidenhead? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Maidenhead move before quoting.",
@@ -5638,7 +5638,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "bracknell": {
-    title: "Man and Van Bracknell | From £19",
+    title: "Man and Van Bracknell From £19/hr | Free Quotes",
     description: "Man and van Bracknell from £19/hr. RG12, RG42. Great Hollands, Birch Hill, Hanworth, Crowthorne, Winkfield. Call 0121 751 1269.",
     h1: "Man and Van Bracknell",
     intro: "Need a man and van in Bracknell? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bracknell move before quoting.",
@@ -5653,7 +5653,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "aylesbury": {
-    title: "Man and Van Aylesbury | From £19",
+    title: "Man and Van Aylesbury From £19/hr | Free Quotes",
     description: "Man and van Aylesbury from £19/hr. HP19, HP20, HP21. Walton Court, Bedgrove, Fairford Leys, Stone, Wendover. Call 0121 751 1269.",
     h1: "Man and Van Aylesbury",
     intro: "Need a man and van in Aylesbury? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Aylesbury move before quoting.",
@@ -5668,7 +5668,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "tonbridge": {
-    title: "Man and Van Tonbridge | From £19",
+    title: "Man and Van Tonbridge From £19/hr | Free Quotes",
     description: "Man and van Tonbridge from £19/hr. TN9, TN10, TN11. Leigh, Haysden, Pembury, Higham, Southborough. Call 0121 751 1269.",
     h1: "Man and Van Tonbridge",
     intro: "Need a man and van in Tonbridge? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Tonbridge move before quoting.",
@@ -5683,7 +5683,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "tunbridge-wells": {
-    title: "Man and Van Royal Tunbridge Wells | From £19",
+    title: "Man and Van Royal Tunbridge Wells From £19/hr | Free Quotes",
     description: "Man and van Royal Tunbridge Wells from £19/hr. TN1, TN2, TN4. Pantiles, Mount Pleasant, Rusthall, Langton Green, Southborough. Call 0121 751 1269.",
     h1: "Man and Van Royal Tunbridge Wells",
     intro: "Need a man and van in Royal Tunbridge Wells? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Royal Tunbridge Wells move before quoting.",
@@ -5698,7 +5698,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "farnborough": {
-    title: "Man and Van Farnborough | From £19",
+    title: "Man and Van Farnborough From £19/hr | Free Quotes",
     description: "Man and van Farnborough from £19/hr. GU14, GU15. Cove, Southwood, North Camp, Frimley, Fleet. Call 0121 751 1269.",
     h1: "Man and Van Farnborough",
     intro: "Need a man and van in Farnborough? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Farnborough move before quoting.",
@@ -5713,7 +5713,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "aldershot": {
-    title: "Man and Van Aldershot | From £19",
+    title: "Man and Van Aldershot From £19/hr | Free Quotes",
     description: "Man and van Aldershot from £19/hr. GU11, GU12. Manor Park, Rowhill, Wellesley, North Town. Call 0121 751 1269.",
     h1: "Man and Van Aldershot",
     intro: "Need a man and van in Aldershot? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Aldershot move before quoting.",
@@ -5728,7 +5728,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "hove": {
-    title: "Man and Van Hove | From £19",
+    title: "Man and Van Hove From £19/hr | Free Quotes",
     description: "Man and van Hove from £19/hr. BN3, BN41, BN42. Portslade, Aldrington, Hangleton, Poets Corner. Call 0121 751 1269.",
     h1: "Man and Van Hove",
     intro: "Need a man and van in Hove? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hove move before quoting.",
@@ -5743,7 +5743,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "burgess-hill": {
-    title: "Man and Van Burgess Hill | From £19",
+    title: "Man and Van Burgess Hill From £19/hr | Free Quotes",
     description: "Man and van Burgess Hill from £19/hr. RH15, RH16. World's End, Hammonds Green, Franklands Village, Ditchling Common. Call 0121 751 1269.",
     h1: "Man and Van Burgess Hill",
     intro: "Need a man and van in Burgess Hill? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Burgess Hill move before quoting.",
@@ -5760,7 +5760,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   // ─── Phase 9+10: South West + East of England (20) ───
 
   "bedford": {
-    title: "Man and Van Bedford | From £19",
+    title: "Man and Van Bedford From £19/hr | Free Quotes",
     description: "Man and van Bedford from £19/hr. MK40, MK41, MK42, MK43. Kempston, Bromham, Great Denham, Clapham, Renhold, Elstow, Wootton. Call 0121 751 1269.",
     h1: "Man and Van Bedford",
     intro: "Need a man and van in Bedford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bedford move before quoting.",
@@ -5776,7 +5776,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "chelmsford": {
-    title: "Man and Van Chelmsford | From £19",
+    title: "Man and Van Chelmsford From £19/hr | Free Quotes",
     description: "Man and van Chelmsford from £19/hr. CM1, CM2, CM3. Springfield, Great Baddow, Writtle, Galleywood, Danbury. Call 0121 751 1269.",
     h1: "Man and Van Chelmsford",
     intro: "Need a man and van in Chelmsford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chelmsford move before quoting.",
@@ -5792,7 +5792,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "southend-on-sea": {
-    title: "Man and Van Southend-on-Sea | From £19",
+    title: "Man and Van Southend-on-Sea From £19/hr | Free Quotes",
     description: "Man and van Southend-on-Sea from £19/hr. SS0, SS1, SS2, SS3. Westcliff, Leigh-on-Sea, Eastwood, Thorpe Bay, Shoeburyness. Call 0121 751 1269.",
     h1: "Man and Van Southend-on-Sea",
     intro: "Need a man and van in Southend-on-Sea? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Southend-on-Sea move before quoting.",
@@ -5808,7 +5808,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "harlow": {
-    title: "Man and Van Harlow | From £19",
+    title: "Man and Van Harlow From £19/hr | Free Quotes",
     description: "Man and van Harlow from £19/hr. CM17, CM18, CM19, CM20. Old Harlow, Church Langley, Potter Street, Newhall, Sumners. Call 0121 751 1269.",
     h1: "Man and Van Harlow",
     intro: "Need a man and van in Harlow? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Harlow move before quoting.",
@@ -5824,7 +5824,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "great-yarmouth": {
-    title: "Man and Van Great Yarmouth | From £19",
+    title: "Man and Van Great Yarmouth From £19/hr | Free Quotes",
     description: "Man and van Great Yarmouth from £19/hr. NR30, NR31. Seafront, Southtown, Bradwell, Caister, Gorleston. Call 0121 751 1269.",
     h1: "Man and Van Great Yarmouth",
     intro: "Need a man and van in Great Yarmouth? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Great Yarmouth move before quoting.",
@@ -5840,7 +5840,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "kings-lynn": {
-    title: "Man and Van King's Lynn | From £19",
+    title: "Man and Van King's Lynn From £19/hr | Free Quotes",
     description: "Man and van King's Lynn from £19/hr. PE30, PE31, PE32. South Lynn, North Lynn, Gaywood, Gayton, Hunstanton. Call 0121 751 1269.",
     h1: "Man and Van King's Lynn",
     intro: "Need a man and van in King's Lynn? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your King's Lynn move before quoting.",
@@ -5856,7 +5856,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "lowestoft": {
-    title: "Man and Van Lowestoft | From £19",
+    title: "Man and Van Lowestoft From £19/hr | Free Quotes",
     description: "Man and van Lowestoft from £19/hr. NR32, NR33. North Lowestoft, Kirkley, Oulton Broad, Pakefield, Carlton Colville. Call 0121 751 1269.",
     h1: "Man and Van Lowestoft",
     intro: "Need a man and van in Lowestoft? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lowestoft move before quoting.",
@@ -5872,7 +5872,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "clacton-on-sea": {
-    title: "Man and Van Clacton-on-Sea | From £19",
+    title: "Man and Van Clacton-on-Sea From £19/hr | Free Quotes",
     description: "Man and van Clacton-on-Sea from £19/hr. CO15, CO16. Holland-on-Sea, Jaywick, Frinton-on-Sea, Walton-on-the-Naze. Call 0121 751 1269.",
     h1: "Man and Van Clacton-on-Sea",
     intro: "Need a man and van in Clacton-on-Sea? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Clacton-on-Sea move before quoting.",
@@ -5888,7 +5888,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "felixstowe": {
-    title: "Man and Van Felixstowe | From £19",
+    title: "Man and Van Felixstowe From £19/hr | Free Quotes",
     description: "Man and van Felixstowe from £19/hr. IP11. Old Felixstowe, Trimley, Kirton, Brantham. Call 0121 751 1269.",
     h1: "Man and Van Felixstowe",
     intro: "Need a man and van in Felixstowe? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Felixstowe move before quoting.",
@@ -5904,7 +5904,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "brentwood": {
-    title: "Man and Van Brentwood | From £19",
+    title: "Man and Van Brentwood From £19/hr | Free Quotes",
     description: "Man and van Brentwood from £19/hr. CM13, CM14, CM15. Shenfield, Hutton, Warley, Ingatestone, Pilgrims Hatch. Call 0121 751 1269.",
     h1: "Man and Van Brentwood",
     intro: "Need a man and van in Brentwood? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Brentwood move before quoting.",
@@ -5920,7 +5920,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "dunstable": {
-    title: "Man and Van Dunstable | From £19",
+    title: "Man and Van Dunstable From £19/hr | Free Quotes",
     description: "Man and van Dunstable from £19/hr. LU5, LU6. Houghton Regis, Kensworth, Totternhoe, Sewell. Call 0121 751 1269.",
     h1: "Man and Van Dunstable",
     intro: "Need a man and van in Dunstable? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Dunstable move before quoting.",
@@ -5936,7 +5936,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "leighton-buzzard": {
-    title: "Man and Van Leighton Buzzard | From £19",
+    title: "Man and Van Leighton Buzzard From £19/hr | Free Quotes",
     description: "Man and van Leighton Buzzard from £19/hr. LU7. Linslade, Heath and Reach, Eggington, Stanbridge. Call 0121 751 1269.",
     h1: "Man and Van Leighton Buzzard",
     intro: "Need a man and van in Leighton Buzzard? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Leighton Buzzard move before quoting.",
@@ -5952,7 +5952,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "ely": {
-    title: "Man and Van Ely | From £19",
+    title: "Man and Van Ely From £19/hr | Free Quotes",
     description: "Man and van Ely from £19/hr. CB6, CB7. Stuntney, Little Downham, Witchford, Soham, Haddenham. Call 0121 751 1269.",
     h1: "Man and Van Ely",
     intro: "Need a man and van in Ely? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ely move before quoting.",
@@ -5968,7 +5968,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "thetford": {
-    title: "Man and Van Thetford | From £19",
+    title: "Man and Van Thetford From £19/hr | Free Quotes",
     description: "Man and van Thetford from £19/hr. IP24, IP25. Brettenham, Kilverstone, Snetterton, East Harling, Mundford. Call 0121 751 1269.",
     h1: "Man and Van Thetford",
     intro: "Need a man and van in Thetford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Thetford move before quoting.",
@@ -5984,7 +5984,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "bishops-stortford": {
-    title: "Man and Van Bishop's Stortford | From £19",
+    title: "Man and Van Bishop's Stortford From £19/hr | Free Quotes",
     description: "Man and van Bishop's Stortford from £19/hr. CM22, CM23. Havers, Bishop's Park, Thorley, Much Hadham, Sawbridgeworth. Call 0121 751 1269.",
     h1: "Man and Van Bishop's Stortford",
     intro: "Need a man and van in Bishop's Stortford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bishop's Stortford move before quoting.",
@@ -6000,7 +6000,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "paignton": {
-    title: "Man and Van Paignton | From £19",
+    title: "Man and Van Paignton From £19/hr | Free Quotes",
     description: "Man and van Paignton from £19/hr. TQ3, TQ4. Goodrington, Preston, Blatchford, Collaton St Mary. Call 0121 751 1269.",
     h1: "Man and Van Paignton",
     intro: "Need a man and van in Paignton? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Paignton move before quoting.",
@@ -6016,7 +6016,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "brixham": {
-    title: "Man and Van Brixham | From £19",
+    title: "Man and Van Brixham From £19/hr | Free Quotes",
     description: "Man and van Brixham from £19/hr. TQ5. Harbour, Higher Brixham, Churston Ferrers, Galmpton, Berry Head. Call 0121 751 1269.",
     h1: "Man and Van Brixham",
     intro: "Need a man and van in Brixham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Brixham move before quoting.",
@@ -6032,7 +6032,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "newquay": {
-    title: "Man and Van Newquay | From £19",
+    title: "Man and Van Newquay From £19/hr | Free Quotes",
     description: "Man and van Newquay from £19/hr. TR7. Fistral, Towan, Porth, Watergate Bay, Crantock. Call 0121 751 1269.",
     h1: "Man and Van Newquay",
     intro: "Need a man and van in Newquay? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Newquay move before quoting.",
@@ -6048,7 +6048,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "falmouth": {
-    title: "Man and Van Falmouth | From £19",
+    title: "Man and Van Falmouth From £19/hr | Free Quotes",
     description: "Man and van Falmouth from £19/hr. TR10, TR11. The Moor, Penryn, Flushing, Mawnan Smith, Budock Water. Call 0121 751 1269.",
     h1: "Man and Van Falmouth",
     intro: "Need a man and van in Falmouth? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Falmouth move before quoting.",
@@ -6064,7 +6064,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "barnstaple": {
-    title: "Man and Van Barnstaple | From £19",
+    title: "Man and Van Barnstaple From £19/hr | Free Quotes",
     description: "Man and van Barnstaple from £19/hr. EX31, EX32. Pilton, Roundswell, Bickington, Bishops Tawton, Landkey. Call 0121 751 1269.",
     h1: "Man and Van Barnstaple",
     intro: "Need a man and van in Barnstaple? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Barnstaple move before quoting.",
@@ -6079,7 +6079,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "dunfermline": {
-    title: "Man and Van Dunfermline | From £19",
+    title: "Man and Van Dunfermline From £19/hr | Free Quotes",
     description: "Man and van Dunfermline from £19/hr. KY11, KY12. Town Centre, Rosyth, Inverkeithing, Dalgety Bay, Crossgates. Call 0121 751 1269.",
     h1: "Man and Van Dunfermline",
     intro: "Need a man and van in Dunfermline? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Dunfermline move before quoting.",
@@ -6095,7 +6095,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "kirkcaldy": {
-    title: "Man and Van Kirkcaldy | From £19",
+    title: "Man and Van Kirkcaldy From £19/hr | Free Quotes",
     description: "Man and van Kirkcaldy from £19/hr. KY1, KY2. Town Centre, Gallatown, Linktown, Pathhead, Templehall. Call 0121 751 1269.",
     h1: "Man and Van Kirkcaldy",
     intro: "Need a man and van in Kirkcaldy? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Kirkcaldy move before quoting.",
@@ -6111,7 +6111,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "hamilton": {
-    title: "Man and Van Hamilton | From £19",
+    title: "Man and Van Hamilton From £19/hr | Free Quotes",
     description: "Man and van Hamilton from £19/hr. ML3. Town Centre, Hillhouse, Whitehill, Fairhill, Earnock. Call 0121 751 1269.",
     h1: "Man and Van Hamilton",
     intro: "Need a man and van in Hamilton? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hamilton move before quoting.",
@@ -6127,7 +6127,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "ayr": {
-    title: "Man and Van Ayr | From £19",
+    title: "Man and Van Ayr From £19/hr | Free Quotes",
     description: "Man and van Ayr from £19/hr. KA7, KA8. Town Centre, Seafield, Alloway, Prestwick, Heathfield. Call 0121 751 1269.",
     h1: "Man and Van Ayr",
     intro: "Need a man and van in Ayr? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ayr move before quoting.",
@@ -6143,7 +6143,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "cumbernauld": {
-    title: "Man and Van Cumbernauld | From £19",
+    title: "Man and Van Cumbernauld From £19/hr | Free Quotes",
     description: "Man and van Cumbernauld from £19/hr. G67, G68. Town Centre, Condorrat, Carbrain, Abronhill, Kildrum. Call 0121 751 1269.",
     h1: "Man and Van Cumbernauld",
     intro: "Need a man and van in Cumbernauld? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Cumbernauld move before quoting.",
@@ -6159,7 +6159,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "coatbridge": {
-    title: "Man and Van Coatbridge | From £19",
+    title: "Man and Van Coatbridge From £19/hr | Free Quotes",
     description: "Man and van Coatbridge from £19/hr. ML5. Town Centre, Greenend, Dunbeth, Langloan, Summerlee. Call 0121 751 1269.",
     h1: "Man and Van Coatbridge",
     intro: "Need a man and van in Coatbridge? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Coatbridge move before quoting.",
@@ -6175,7 +6175,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "airdrie": {
-    title: "Man and Van Airdrie | From £19",
+    title: "Man and Van Airdrie From £19/hr | Free Quotes",
     description: "Man and van Airdrie from £19/hr. ML6. Town Centre, Chapelhall, Caldercruix, Gartlea, Cairnhill. Call 0121 751 1269.",
     h1: "Man and Van Airdrie",
     intro: "Need a man and van in Airdrie? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Airdrie move before quoting.",
@@ -6191,7 +6191,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "motherwell": {
-    title: "Man and Van Motherwell | From £19",
+    title: "Man and Van Motherwell From £19/hr | Free Quotes",
     description: "Man and van Motherwell from £19/hr. ML1. Town Centre, Wishaw, Carfin, New Stevenston, Bellshill. Call 0121 751 1269.",
     h1: "Man and Van Motherwell",
     intro: "Need a man and van in Motherwell? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Motherwell move before quoting.",
@@ -6207,7 +6207,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "wishaw": {
-    title: "Man and Van Wishaw | From £19",
+    title: "Man and Van Wishaw From £19/hr | Free Quotes",
     description: "Man and van Wishaw from £19/hr. ML2. Town Centre, Newmains, Wishawhill, Gowkthrapple, Cleland. Call 0121 751 1269.",
     h1: "Man and Van Wishaw",
     intro: "Need a man and van in Wishaw? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Wishaw move before quoting.",
@@ -6223,7 +6223,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "greenock": {
-    title: "Man and Van Greenock | From £19",
+    title: "Man and Van Greenock From £19/hr | Free Quotes",
     description: "Man and van Greenock from £19/hr. PA15, PA16. Town Centre, Gourock, Port Glasgow, Wemyss Bay, Inverkip. Call 0121 751 1269.",
     h1: "Man and Van Greenock",
     intro: "Need a man and van in Greenock? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Greenock move before quoting.",
@@ -6239,7 +6239,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "elgin": {
-    title: "Man and Van Elgin | From £19",
+    title: "Man and Van Elgin From £19/hr | Free Quotes",
     description: "Man and van Elgin from £19/hr. IV30, IV31. Town Centre, New Elgin, Bishopmill, Lossiemouth, Lhanbryde. Call 0121 751 1269.",
     h1: "Man and Van Elgin",
     intro: "Need a man and van in Elgin? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Elgin move before quoting.",
@@ -6255,7 +6255,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "arbroath": {
-    title: "Man and Van Arbroath | From £19",
+    title: "Man and Van Arbroath From £19/hr | Free Quotes",
     description: "Man and van Arbroath from £19/hr. DD11. Town Centre, Seaton, Gayfield, Ladyloan, Westway. Call 0121 751 1269.",
     h1: "Man and Van Arbroath",
     intro: "Need a man and van in Arbroath? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Arbroath move before quoting.",
@@ -6271,7 +6271,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "barry": {
-    title: "Man and Van Barry | From £19",
+    title: "Man and Van Barry From £19/hr | Free Quotes",
     description: "Man and van Barry from £19/hr. CF62, CF63. Town Centre, Barry Island, Cadoxton, Buttrills, Holton Road. Call 0121 751 1269.",
     h1: "Man and Van Barry",
     intro: "Need a man and van in Barry? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Barry move before quoting.",
@@ -6287,7 +6287,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "bridgend": {
-    title: "Man and Van Bridgend | From £19",
+    title: "Man and Van Bridgend From £19/hr | Free Quotes",
     description: "Man and van Bridgend from £19/hr. CF31, CF32, CF35. Town Centre, Brackla, Broadlands, Pencoed, Pyle. Call 0121 751 1269.",
     h1: "Man and Van Bridgend",
     intro: "Need a man and van in Bridgend? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bridgend move before quoting.",
@@ -6303,7 +6303,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "merthyr-tydfil": {
-    title: "Man and Van Merthyr Tydfil | From £19",
+    title: "Man and Van Merthyr Tydfil From £19/hr | Free Quotes",
     description: "Man and van Merthyr Tydfil from £19/hr. CF47, CF48. Town Centre, Pentre-bach, Heolgerrig, Dowlais, Gurnos. Call 0121 751 1269.",
     h1: "Man and Van Merthyr Tydfil",
     intro: "Need a man and van in Merthyr Tydfil? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Merthyr Tydfil move before quoting.",
@@ -6319,7 +6319,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "neath": {
-    title: "Man and Van Neath | From £19",
+    title: "Man and Van Neath From £19/hr | Free Quotes",
     description: "Man and van Neath from £19/hr. SA10, SA11. Town Centre, Bryncoch, Cadoxton, Skewen, Briton Ferry. Call 0121 751 1269.",
     h1: "Man and Van Neath",
     intro: "Need a man and van in Neath? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Neath move before quoting.",
@@ -6335,7 +6335,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "port-talbot": {
-    title: "Man and Van Port Talbot | From £19",
+    title: "Man and Van Port Talbot From £19/hr | Free Quotes",
     description: "Man and van Port Talbot from £19/hr. SA12, SA13. Town Centre, Aberavon, Sandfields, Margam, Baglan. Call 0121 751 1269.",
     h1: "Man and Van Port Talbot",
     intro: "Need a man and van in Port Talbot? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Port Talbot move before quoting.",
@@ -6351,7 +6351,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "caerphilly": {
-    title: "Man and Van Caerphilly | From £19",
+    title: "Man and Van Caerphilly From £19/hr | Free Quotes",
     description: "Man and van Caerphilly from £19/hr. CF83. Town Centre, Castle area, St Martins, Virginia Park, Watford Park. Call 0121 751 1269.",
     h1: "Man and Van Caerphilly",
     intro: "Need a man and van in Caerphilly? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Caerphilly move before quoting.",
@@ -6367,7 +6367,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "pontypridd": {
-    title: "Man and Van Pontypridd | From £19",
+    title: "Man and Van Pontypridd From £19/hr | Free Quotes",
     description: "Man and van Pontypridd from £19/hr. CF37, CF38. Town Centre, Treforest, Rhydyfelin, Graig, Hawthorn. Call 0121 751 1269.",
     h1: "Man and Van Pontypridd",
     intro: "Need a man and van in Pontypridd? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Pontypridd move before quoting.",
@@ -6383,7 +6383,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "llandudno": {
-    title: "Man and Van Llandudno | From £19",
+    title: "Man and Van Llandudno From £19/hr | Free Quotes",
     description: "Man and van Llandudno from £19/hr. LL30, LL31. Town Centre, West Shore, Craig-y-Don, Deganwy, Penrhyn Bay. Call 0121 751 1269.",
     h1: "Man and Van Llandudno",
     intro: "Need a man and van in Llandudno? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Llandudno move before quoting.",
@@ -6399,7 +6399,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "carrickfergus": {
-    title: "Man and Van Carrickfergus | From £19",
+    title: "Man and Van Carrickfergus From £19/hr | Free Quotes",
     description: "Man and van Carrickfergus from £19/hr. BT38. Town Centre, Greenisland, Knockagh, Whitehead, Eden. Call 0121 751 1269.",
     h1: "Man and Van Carrickfergus",
     intro: "Need a man and van in Carrickfergus? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Carrickfergus move before quoting.",
@@ -6415,7 +6415,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "coleraine": {
-    title: "Man and Van Coleraine | From £19",
+    title: "Man and Van Coleraine From £19/hr | Free Quotes",
     description: "Man and van Coleraine from £19/hr. BT51, BT52. Town Centre, University area, Killowen, Portrush, Portstewart. Call 0121 751 1269.",
     h1: "Man and Van Coleraine",
     intro: "Need a man and van in Coleraine? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Coleraine move before quoting.",
@@ -6431,7 +6431,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "armagh": {
-    title: "Man and Van Armagh | From £19",
+    title: "Man and Van Armagh From £19/hr | Free Quotes",
     description: "Man and van Armagh from £19/hr. BT60, BT61. City Centre, Cathedral area, The Mall, Richmond, Killylea. Call 0121 751 1269.",
     h1: "Man and Van Armagh",
     intro: "Need a man and van in Armagh? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Armagh move before quoting.",
@@ -6447,7 +6447,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "omagh": {
-    title: "Man and Van Omagh | From £19",
+    title: "Man and Van Omagh From £19/hr | Free Quotes",
     description: "Man and van Omagh from £19/hr. BT78, BT79. Town Centre, Strathroy, Gortin, Fintona, Beragh. Call 0121 751 1269.",
     h1: "Man and Van Omagh",
     intro: "Need a man and van in Omagh? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Omagh move before quoting.",
@@ -6463,7 +6463,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "enniskillen": {
-    title: "Man and Van Enniskillen | From £19",
+    title: "Man and Van Enniskillen From £19/hr | Free Quotes",
     description: "Man and van Enniskillen from £19/hr. BT74. Town Centre, Castle Coole, Killyhevlin, Lisbellaw. Call 0121 751 1269.",
     h1: "Man and Van Enniskillen",
     intro: "Need a man and van in Enniskillen? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Enniskillen move before quoting.",
@@ -6479,7 +6479,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "lurgan": {
-    title: "Man and Van Lurgan | From £19",
+    title: "Man and Van Lurgan From £19/hr | Free Quotes",
     description: "Man and van Lurgan from £19/hr. BT66, BT67. Town Centre, Brownlow, Shankill, Waringstown. Call 0121 751 1269.",
     h1: "Man and Van Lurgan",
     intro: "Need a man and van in Lurgan? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lurgan move before quoting.",
@@ -6495,7 +6495,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "chapeltown": {
-    title: "Man and Van Chapeltown | From £19",
+    title: "Man and Van Chapeltown From £19/hr | Free Quotes",
     description: "Man and van Chapeltown from £19/hr. S35. Chapeltown Centre, High Green, Grenoside, Thorpe Hesley, Ecclesfield. Call 0121 751 1269.",
     h1: "Man and Van Chapeltown",
     intro: "Need a man and van in Chapeltown? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chapeltown move before quoting.",
@@ -6511,7 +6511,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "penistone": {
-    title: "Man and Van Penistone | From £19",
+    title: "Man and Van Penistone From £19/hr | Free Quotes",
     description: "Man and van Penistone from £19/hr. S36. Town Centre, Thurlstone, Hoylandswaine, Denby Dale, Silkstone. Call 0121 751 1269.",
     h1: "Man and Van Penistone",
     intro: "Need a man and van in Penistone? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Penistone move before quoting.",
@@ -6527,7 +6527,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "wath-upon-dearne": {
-    title: "Man and Van Wath-upon-Dearne | From £19",
+    title: "Man and Van Wath-upon-Dearne From £19/hr | Free Quotes",
     description: "Man and van Wath-upon-Dearne from £19/hr. S63. Town Centre, West Melton, Brampton Bierlow, Swinton, Kilnhurst. Call 0121 751 1269.",
     h1: "Man and Van Wath-upon-Dearne",
     intro: "Need a man and van in Wath-upon-Dearne? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Wath-upon-Dearne move before quoting.",
@@ -6543,7 +6543,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "hertford": {
-    title: "Man and Van Hertford | From £19",
+    title: "Man and Van Hertford From £19/hr | Free Quotes",
     description: "Man and van Hertford from £19/hr. SG13, SG14. Town Centre, Bengeo, Hertingfordbury, Ware, Hoddesdon. Call 0121 751 1269.",
     h1: "Man and Van Hertford",
     intro: "Need a man and van in Hertford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hertford move before quoting.",
@@ -6559,7 +6559,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "hitchin": {
-    title: "Man and Van Hitchin | From £19",
+    title: "Man and Van Hitchin From £19/hr | Free Quotes",
     description: "Man and van Hitchin from £19/hr. SG4, SG5. Town Centre, Walsworth, Highbury, Westmill, Purwell. Call 0121 751 1269.",
     h1: "Man and Van Hitchin",
     intro: "Need a man and van in Hitchin? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hitchin move before quoting.",
@@ -6575,7 +6575,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "welwyn-garden-city": {
-    title: "Man and Van Welwyn Garden City | From £19",
+    title: "Man and Van Welwyn Garden City From £19/hr | Free Quotes",
     description: "Man and van Welwyn Garden City from £19/hr. AL7, AL8. Town Centre, Panshanger, Digswell, Oaklands, Howlands. Call 0121 751 1269.",
     h1: "Man and Van Welwyn Garden City",
     intro: "Need a man and van in Welwyn Garden City? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Welwyn Garden City move before quoting.",
@@ -6591,7 +6591,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "potters-bar": {
-    title: "Man and Van Potters Bar | From £19",
+    title: "Man and Van Potters Bar From £19/hr | Free Quotes",
     description: "Man and van Potters Bar from £19/hr. EN6. Town Centre, South Mimms, Furzefield, Darkes Lane area. Call 0121 751 1269.",
     h1: "Man and Van Potters Bar",
     intro: "Need a man and van in Potters Bar? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Potters Bar move before quoting.",
@@ -6607,7 +6607,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "dover": {
-    title: "Man and Van Dover | From £19",
+    title: "Man and Van Dover From £19/hr | Free Quotes",
     description: "Man and van Dover from £19/hr. CT15, CT16, CT17. Town Centre, Western Heights, Maxton, River, Whitfield. Call 0121 751 1269.",
     h1: "Man and Van Dover",
     intro: "Need a man and van in Dover? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Dover move before quoting.",
@@ -6623,7 +6623,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "ashford": {
-    title: "Man and Van Ashford | From £19",
+    title: "Man and Van Ashford From £19/hr | Free Quotes",
     description: "Man and van Ashford from £19/hr. TN23, TN24, TN25. Town Centre, Kennington, Willesborough, Singleton, Park Farm. Call 0121 751 1269.",
     h1: "Man and Van Ashford",
     intro: "Need a man and van in Ashford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ashford move before quoting.",
@@ -6639,7 +6639,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "canterbury": {
-    title: "Man and Van Canterbury | From £19",
+    title: "Man and Van Canterbury From £19/hr | Free Quotes",
     description: "Man and van Canterbury from £19/hr. CT1, CT2. City Centre, St Dunstan's, Wincheap, St Stephen's, Blean. Call 0121 751 1269.",
     h1: "Man and Van Canterbury",
     intro: "Need a man and van in Canterbury? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Canterbury move before quoting.",
@@ -6655,7 +6655,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "folkestone": {
-    title: "Man and Van Folkestone | From £19",
+    title: "Man and Van Folkestone From £19/hr | Free Quotes",
     description: "Man and van Folkestone from £19/hr. CT18, CT19, CT20. Town Centre, The Leas, Cheriton, Sandgate, Hawkinge. Call 0121 751 1269.",
     h1: "Man and Van Folkestone",
     intro: "Need a man and van in Folkestone? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Folkestone move before quoting.",
@@ -6671,7 +6671,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "lewes": {
-    title: "Man and Van Lewes | From £19",
+    title: "Man and Van Lewes From £19/hr | Free Quotes",
     description: "Man and van Lewes from £19/hr. BN7. Town Centre, Southover, Cliffe, Malling, Offham. Call 0121 751 1269.",
     h1: "Man and Van Lewes",
     intro: "Need a man and van in Lewes? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lewes move before quoting.",
@@ -6687,7 +6687,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "bexhill": {
-    title: "Man and Van Bexhill | From £19",
+    title: "Man and Van Bexhill From £19/hr | Free Quotes",
     description: "Man and van Bexhill from £19/hr. TN39, TN40. Town Centre, Little Common, Sidley, Collington, Cooden. Call 0121 751 1269.",
     h1: "Man and Van Bexhill",
     intro: "Need a man and van in Bexhill? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bexhill move before quoting.",
@@ -6703,7 +6703,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "worthing": {
-    title: "Man and Van Worthing | From £19",
+    title: "Man and Van Worthing From £19/hr | Free Quotes",
     description: "Man and van Worthing from £19/hr. BN11, BN12, BN13, BN14. Town Centre, Broadwater, Goring-by-Sea, Durrington, Lancing. Call 0121 751 1269.",
     h1: "Man and Van Worthing",
     intro: "Need a man and van in Worthing? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Worthing move before quoting.",
@@ -6719,7 +6719,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "chichester": {
-    title: "Man and Van Chichester | From £19",
+    title: "Man and Van Chichester From £19/hr | Free Quotes",
     description: "Man and van Chichester from £19/hr. PO19. City Centre, Summerstown, Portfield, Fishbourne, Lavant. Call 0121 751 1269.",
     h1: "Man and Van Chichester",
     intro: "Need a man and van in Chichester? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chichester move before quoting.",
@@ -6735,7 +6735,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "reigate": {
-    title: "Man and Van Reigate | From £19",
+    title: "Man and Van Reigate From £19/hr | Free Quotes",
     description: "Man and van Reigate from £19/hr. RH2. Town Centre, Reigate Hill, South Park, Woodhatch, Meath Green. Call 0121 751 1269.",
     h1: "Man and Van Reigate",
     intro: "Need a man and van in Reigate? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Reigate move before quoting.",
@@ -6751,7 +6751,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "epsom": {
-    title: "Man and Van Epsom | From £19",
+    title: "Man and Van Epsom From £19/hr | Free Quotes",
     description: "Man and van Epsom from £19/hr. KT17, KT18, KT19. Town Centre, Epsom Downs, Stoneleigh, Wells, Langley Vale. Call 0121 751 1269.",
     h1: "Man and Van Epsom",
     intro: "Need a man and van in Epsom? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Epsom move before quoting.",
@@ -6767,7 +6767,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "walton-on-thames": {
-    title: "Man and Van Walton-on-Thames | From £19",
+    title: "Man and Van Walton-on-Thames From £19/hr | Free Quotes",
     description: "Man and van Walton-on-Thames from £19/hr. KT12. Town Centre, Ashley Park, Hersham, Oatlands, Walton-on-the-Hill. Call 0121 751 1269.",
     h1: "Man and Van Walton-on-Thames",
     intro: "Need a man and van in Walton-on-Thames? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Walton-on-Thames move before quoting.",
@@ -6783,7 +6783,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "windsor": {
-    title: "Man and Van Windsor | From £19",
+    title: "Man and Van Windsor From £19/hr | Free Quotes",
     description: "Man and van Windsor from £19/hr. SL4. Town Centre, Eton, Datchet, Old Windsor, Clewer. Call 0121 751 1269.",
     h1: "Man and Van Windsor",
     intro: "Need a man and van in Windsor? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Windsor move before quoting.",
@@ -6799,7 +6799,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "newbury": {
-    title: "Man and Van Newbury | From £19",
+    title: "Man and Van Newbury From £19/hr | Free Quotes",
     description: "Man and van Newbury from £19/hr. RG14, RG20. Town Centre, Greenham, Speen, Wash Common, Thatcham. Call 0121 751 1269.",
     h1: "Man and Van Newbury",
     intro: "Need a man and van in Newbury? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Newbury move before quoting.",
@@ -6815,7 +6815,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "beaconsfield": {
-    title: "Man and Van Beaconsfield | From £19",
+    title: "Man and Van Beaconsfield From £19/hr | Free Quotes",
     description: "Man and van Beaconsfield from £19/hr. HP9. Old Town, New Town, Holtspur, Knotty Green, Seer Green. Call 0121 751 1269.",
     h1: "Man and Van Beaconsfield",
     intro: "Need a man and van in Beaconsfield? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Beaconsfield move before quoting.",
@@ -6831,7 +6831,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "winchester": {
-    title: "Man and Van Winchester | From £19",
+    title: "Man and Van Winchester From £19/hr | Free Quotes",
     description: "Man and van Winchester from £19/hr. SO22, SO23. City Centre, Weeke, Stanmore, Highbury, Badger Farm. Call 0121 751 1269.",
     h1: "Man and Van Winchester",
     intro: "Need a man and van in Winchester? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Winchester move before quoting.",
@@ -6847,7 +6847,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "basingstoke": {
-    title: "Man and Van Basingstoke | From £19",
+    title: "Man and Van Basingstoke From £19/hr | Free Quotes",
     description: "Man and van Basingstoke from £19/hr. RG21, RG22, RG23, RG24. Town Centre, Chineham, Hatch Warren, Lychpit, Beggarwood. Call 0121 751 1269.",
     h1: "Man and Van Basingstoke",
     intro: "Need a man and van in Basingstoke? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Basingstoke move before quoting.",
@@ -6863,7 +6863,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "andover": {
-    title: "Man and Van Andover | From £19",
+    title: "Man and Van Andover From £19/hr | Free Quotes",
     description: "Man and van Andover from £19/hr. SP10, SP11. Town Centre, Augustine Park, East Anton, King Arthur's Way, Picket Piece. Call 0121 751 1269.",
     h1: "Man and Van Andover",
     intro: "Need a man and van in Andover? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Andover move before quoting.",
@@ -6879,7 +6879,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "goole": {
-    title: "Man and Van Goole | From £19",
+    title: "Man and Van Goole From £19/hr | Free Quotes",
     description: "Man and van Goole from £19/hr. DN14. Town Centre, Airmyn, Rawcliffe, Hook, Howdendyke. Call 0121 751 1269.",
     h1: "Man and Van Goole",
     intro: "Need a man and van in Goole? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Goole move before quoting.",
@@ -6895,7 +6895,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "hedon": {
-    title: "Man and Van Hedon | From £19",
+    title: "Man and Van Hedon From £19/hr | Free Quotes",
     description: "Man and van Hedon from £19/hr. HU12. Town Centre, Sutton-on-Hull, Preston, Thorngumbald, Keyingham. Call 0121 751 1269.",
     h1: "Man and Van Hedon",
     intro: "Need a man and van in Hedon? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hedon move before quoting.",
@@ -6911,7 +6911,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "ripon": {
-    title: "Man and Van Ripon | From £19",
+    title: "Man and Van Ripon From £19/hr | Free Quotes",
     description: "Man and van Ripon from £19/hr. HG4. City Centre, Boroughbridge Road, Sharow, Bishop Monkton, Boroughbridge. Call 0121 751 1269.",
     h1: "Man and Van Ripon",
     intro: "Need a man and van in Ripon? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ripon move before quoting.",
@@ -6927,7 +6927,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "northallerton": {
-    title: "Man and Van Northallerton | From £19",
+    title: "Man and Van Northallerton From £19/hr | Free Quotes",
     description: "Man and van Northallerton from £19/hr. DL6, DL7. Town Centre, Romanby, Brompton, Pickhill, Leeming. Call 0121 751 1269.",
     h1: "Man and Van Northallerton",
     intro: "Need a man and van in Northallerton? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Northallerton move before quoting.",
@@ -6943,7 +6943,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "lancaster": {
-    title: "Man and Van Lancaster | From £19",
+    title: "Man and Van Lancaster From £19/hr | Free Quotes",
     description: "Man and van Lancaster from £19/hr. LA1, LA2, LA3. City Centre, Bailrigg, Skerton, Galgate, Heysham. Call 0121 751 1269.",
     h1: "Man and Van Lancaster",
     intro: "Need a man and van in Lancaster? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lancaster move before quoting.",
@@ -6959,7 +6959,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "lytham": {
-    title: "Man and Van Lytham | From £19",
+    title: "Man and Van Lytham From £19/hr | Free Quotes",
     description: "Man and van Lytham from £19/hr. FY8. Lytham Town Centre, St Annes, Ansdell, Fairhaven, Wrea Green. Call 0121 751 1269.",
     h1: "Man and Van Lytham",
     intro: "Need a man and van in Lytham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lytham move before quoting.",
@@ -6975,7 +6975,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "great-barr": {
-    title: "Man and Van Great Barr | From £19",
+    title: "Man and Van Great Barr From £19/hr | Free Quotes",
     description: "Man and van Great Barr from £19/hr. B42, B43, B44. Great Barr, Beech Lanes, Hames Hall, Pheasey, Yew Tree. Call 0121 751 1269.",
     h1: "Man and Van Great Barr",
     intro: "Need a man and van in Great Barr? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Great Barr move before quoting.",
@@ -6991,7 +6991,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "perry-barr": {
-    title: "Man and Van Perry Barr | From £19",
+    title: "Man and Van Perry Barr From £19/hr | Free Quotes",
     description: "Man and van Perry Barr from £19/hr. B20, B42. Perry Barr, One Stop area, Aston, Handsworth, Witton. Call 0121 751 1269.",
     h1: "Man and Van Perry Barr",
     intro: "Need a man and van in Perry Barr? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Perry Barr move before quoting.",
@@ -7007,7 +7007,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "sutton-coldfield": {
-    title: "Man and Van Sutton Coldfield | From £19",
+    title: "Man and Van Sutton Coldfield From £19/hr | Free Quotes",
     description: "Man and van Sutton Coldfield from £19/hr. B72, B73, B74, B75, B76. Town Centre, Four Oaks, Mere Green, Wylde Green, Boldmere. Call 0121 751 1269.",
     h1: "Man and Van Sutton Coldfield",
     intro: "Need a man and van in Sutton Coldfield? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Sutton Coldfield move before quoting.",
@@ -7023,7 +7023,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "caversham": {
-    title: "Man and Van Caversham | From £19",
+    title: "Man and Van Caversham From £19/hr | Free Quotes",
     description: "Man and van Caversham from £19/hr. RG4. Caversham Heights, Caversham Park, Emmer Green, Lower Caversham. Call 0121 751 1269.",
     h1: "Man and Van Caversham",
     intro: "Need a man and van in Caversham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Caversham move before quoting.",
@@ -7039,7 +7039,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "bletchley": {
-    title: "Man and Van Bletchley | From £19",
+    title: "Man and Van Bletchley From £19/hr | Free Quotes",
     description: "Man and van Bletchley from £19/hr. MK1, MK2, MK3. Bletchley Town, Fenny Stratford, Water Eaton, Newton Longville. Call 0121 751 1269.",
     h1: "Man and Van Bletchley",
     intro: "Need a man and van in Bletchley? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bletchley move before quoting.",
@@ -7055,7 +7055,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "eastleigh": {
-    title: "Man and Van Eastleigh | From £19",
+    title: "Man and Van Eastleigh From £19/hr | Free Quotes",
     description: "Man and van Eastleigh from £19/hr. SO50, SO53. Town Centre, Bishopstoke, Chandler's Ford, Hiltingbury, Fair Oak. Call 0121 751 1269.",
     h1: "Man and Van Eastleigh",
     intro: "Need a man and van in Eastleigh? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Eastleigh move before quoting.",
@@ -7071,7 +7071,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "gosport": {
-    title: "Man and Van Gosport | From £19",
+    title: "Man and Van Gosport From £19/hr | Free Quotes",
     description: "Man and van Gosport from £19/hr. PO12, PO13. Town Centre, Lee-on-the-Solent, Alverstoke, Bridgemary, Rowner. Call 0121 751 1269.",
     h1: "Man and Van Gosport",
     intro: "Need a man and van in Gosport? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Gosport move before quoting.",
@@ -7087,7 +7087,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "poole": {
-    title: "Man and Van Poole | From £19",
+    title: "Man and Van Poole From £19/hr | Free Quotes",
     description: "Man and van Poole from £19/hr. BH12, BH13, BH14, BH15. Poole Town, Parkstone, Broadstone, Canford Cliffs, Sandbanks. Call 0121 751 1269.",
     h1: "Man and Van Poole",
     intro: "Need a man and van in Poole? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Poole move before quoting.",
@@ -7103,7 +7103,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "leyland": {
-    title: "Man and Van Leyland | From £19",
+    title: "Man and Van Leyland From £19/hr | Free Quotes",
     description: "Man and van Leyland from £19/hr. PR25, PR26. Town Centre, Worden, Farington, Moss Side, Whittle-le-Woods. Call 0121 751 1269.",
     h1: "Man and Van Leyland",
     intro: "Need a man and van in Leyland? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Leyland move before quoting.",
@@ -7119,7 +7119,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "cleveleys": {
-    title: "Man and Van Cleveleys | From £19",
+    title: "Man and Van Cleveleys From £19/hr | Free Quotes",
     description: "Man and van Cleveleys from £19/hr. FY5. Cleveleys Town, Thornton, Poulton-le-Fylde, Fleetwood. Call 0121 751 1269.",
     h1: "Man and Van Cleveleys",
     intro: "Need a man and van in Cleveleys? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Cleveleys move before quoting.",
@@ -7135,7 +7135,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "diss": {
-    title: "Man and Van Diss | From £19",
+    title: "Man and Van Diss From £19/hr | Free Quotes",
     description: "Man and van Diss from £19/hr. IP21, IP22. Town Centre, Diss Mere, Roydon, Burston, Scole. Call 0121 751 1269.",
     h1: "Man and Van Diss",
     intro: "Need a man and van in Diss? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Diss move before quoting.",
@@ -7151,7 +7151,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "woodbridge": {
-    title: "Man and Van Woodbridge | From £19",
+    title: "Man and Van Woodbridge From £19/hr | Free Quotes",
     description: "Man and van Woodbridge from £19/hr. IP12, IP13. Town Centre, Melton, Martlesham, Kesgrave, Bromeswell. Call 0121 751 1269.",
     h1: "Man and Van Woodbridge",
     intro: "Need a man and van in Woodbridge? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Woodbridge move before quoting.",
@@ -7167,7 +7167,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "haxby": {
-    title: "Man and Van Haxby | From £19",
+    title: "Man and Van Haxby From £19/hr | Free Quotes",
     description: "Man and van Haxby from £19/hr. YO32. Haxby, Wigginton, New Earswick, Huntington, Strensall. Call 0121 751 1269.",
     h1: "Man and Van Haxby",
     intro: "Need a man and van in Haxby? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Haxby move before quoting.",
@@ -7183,7 +7183,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "stockton-on-tees": {
-    title: "Man and Van Stockton-on-Tees | From £19",
+    title: "Man and Van Stockton-on-Tees From £19/hr | Free Quotes",
     description: "Man and van Stockton-on-Tees from £19/hr. TS16, TS17, TS18, TS19, TS20. Town Centre, Norton, Billingham, Thornaby, Ingleby Barwick. Call 0121 751 1269.",
     h1: "Man and Van Stockton-on-Tees",
     intro: "Need a man and van in Stockton-on-Tees? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Stockton-on-Tees move before quoting.",
@@ -7199,7 +7199,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   },
 
   "willerby": {
-    title: "Man and Van Willerby | From £19",
+    title: "Man and Van Willerby From £19/hr | Free Quotes",
     description: "Man and van Willerby from £19/hr. HU10, HU11. Willerby, Kirk Ella, Anlaby, Hessle, Cottingham. Call 0121 751 1269.",
     h1: "Man and Van Willerby",
     intro: "Need a man and van in Willerby? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Willerby move before quoting.",
@@ -7218,7 +7218,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
   // WORCESTER
   // ──────────────────────────────────────────
   "worcester": {
-    title: "Man and Van Worcester | From £19",
+    title: "Man and Van Worcester From £19/hr | Free Quotes",
     description: "Man and van Worcester from £19/hr. WR1-WR5. St John's, Barbourne, Warndon, Diglis. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Worcester",
     intro: "Need a man and van in Worcester? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Worcester move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7280,7 +7280,7 @@ Worcester properties range from Georgian townhouses and Victorian terraces in th
   // KIDDERMINSTER
   // ──────────────────────────────────────────
   "kidderminster": {
-    title: "Man and Van Kidderminster | From £19",
+    title: "Man and Van Kidderminster From £19/hr | Free Quotes",
     description: "Man and van Kidderminster from £19/hr. DY10, DY11. Bewdley, Stourport, Spennells. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Kidderminster",
     intro: "Need a man and van in Kidderminster? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Kidderminster move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7341,7 +7341,7 @@ Kidderminster properties range from Victorian terraces near the centre to post-w
   // LEAMINGTON SPA
   // ──────────────────────────────────────────
   "leamington-spa": {
-    title: "Man and Van Leamington Spa | From £19",
+    title: "Man and Van Leamington Spa From £19/hr | Free Quotes",
     description: "Man and van Leamington Spa from £19/hr. CV31-CV33. Whitnash, Sydenham, Milverton. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Leamington Spa",
     intro: "Need a man and van in Leamington Spa? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Leamington move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7402,7 +7402,7 @@ Leamington properties range from split-level Regency conversions and Victorian v
   // WARWICK
   // ──────────────────────────────────────────
   "warwick": {
-    title: "Man and Van Warwick | From £19",
+    title: "Man and Van Warwick From £19/hr | Free Quotes",
     description: "Man and van Warwick from £19/hr. CV34, CV35. Bridge End, Emscote, Woodloes, Myton. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Warwick",
     intro: "Need a man and van in Warwick? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Warwick move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7460,7 +7460,7 @@ Warwick properties range from Tudor and Georgian buildings in the centre to Vict
   // STRATFORD-UPON-AVON
   // ──────────────────────────────────────────
   "stratford-upon-avon": {
-    title: "Man and Van Stratford-upon-Avon | From £19",
+    title: "Man and Van Stratford-upon-Avon From £19/hr | Free Quotes",
     description: "Man and van Stratford-upon-Avon from £19/hr. CV37. Shottery, Bridgetown, Tiddington. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Stratford-upon-Avon",
     intro: "Need a man and van in Stratford-upon-Avon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Stratford move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7518,7 +7518,7 @@ Stratford properties range from timber-framed period buildings and Georgian town
   // TELFORD
   // ──────────────────────────────────────────
   "telford": {
-    title: "Man and Van Telford | From £19",
+    title: "Man and Van Telford From £19/hr | Free Quotes",
     description: "Man and van Telford from £19/hr. TF1-TF5. Wellington, Dawley, Madeley, Oakengates. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Telford",
     intro: "Need a man and van in Telford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Telford move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7575,7 +7575,7 @@ Telford properties are mostly post-war and New Town housing: terraced and semi-d
   // SHREWSBURY
   // ──────────────────────────────────────────
   "shrewsbury": {
-    title: "Man and Van Shrewsbury | From £19",
+    title: "Man and Van Shrewsbury From £19/hr | Free Quotes",
     description: "Man and van Shrewsbury from £19/hr. SY1-SY3. Belle Vue, Kingsland, Meole Brace. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Shrewsbury",
     intro: "Need a man and van in Shrewsbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Shrewsbury move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7633,7 +7633,7 @@ Shrewsbury properties range from timber-framed and Georgian buildings in the cen
   // HEREFORD
   // ──────────────────────────────────────────
   "hereford": {
-    title: "Man and Van Hereford | From £19",
+    title: "Man and Van Hereford From £19/hr | Free Quotes",
     description: "Man and van Hereford from £19/hr. HR1, HR2. Tupsley, Holmer, Whitecross, Redhill. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Hereford",
     intro: "Need a man and van in Hereford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hereford move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7690,7 +7690,7 @@ Hereford properties range from Georgian and Victorian homes in the centre and Ay
   // DARTFORD
   // ──────────────────────────────────────────
   "dartford": {
-    title: "Man and Van Dartford | From £19",
+    title: "Man and Van Dartford From £19/hr | Free Quotes",
     description: "Man and van Dartford from £19/hr. DA1, DA2. Crayford, Greenhithe, Swanscombe. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Dartford",
     intro: "Need a man and van in Dartford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Dartford move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7751,7 +7751,7 @@ Dartford properties range from Victorian terraces and interwar semis to modern r
   // SEVENOAKS
   // ──────────────────────────────────────────
   "sevenoaks": {
-    title: "Man and Van Sevenoaks | From £19",
+    title: "Man and Van Sevenoaks From £19/hr | Free Quotes",
     description: "Man and van Sevenoaks from £19/hr. TN13-TN15. Otford, Kemsing, Riverhead. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Sevenoaks",
     intro: "Need a man and van in Sevenoaks? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Sevenoaks move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7809,7 +7809,7 @@ Sevenoaks properties range from period cottages and Victorian villas to large de
   // ST ANDREWS
   // ──────────────────────────────────────────
   "st-andrews": {
-    title: "Man and Van St Andrews | From £19",
+    title: "Man and Van St Andrews From £19/hr | Free Quotes",
     description: "Man and van St Andrews from £19/hr. KY16. Town centre, Links, Strathkinness. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van St Andrews",
     intro: "Need a man and van in St Andrews? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your St Andrews move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7870,7 +7870,7 @@ St Andrews properties range from centuries-old stone buildings and Victorian vil
   // CARDIFF BAY
   // ──────────────────────────────────────────
   "cardiff-bay": {
-    title: "Man and Van Cardiff Bay | From £19",
+    title: "Man and Van Cardiff Bay From £19/hr | Free Quotes",
     description: "Man and van Cardiff Bay from £19/hr. CF10, CF11. Butetown, Grangetown, Atlantic Wharf. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Cardiff Bay",
     intro: "Need a man and van in Cardiff Bay? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cardiff Bay move before sending a quote, so you decide whether to book after seeing the details.",
@@ -7931,7 +7931,7 @@ Cardiff Bay properties are mostly modern apartments, converted warehouses and ne
   // CLIFTON (BRISTOL)
   // ──────────────────────────────────────────
   "bristol-clifton": {
-    title: "Man and Van Clifton Bristol | From £19",
+    title: "Man and Van Clifton Bristol From £19/hr | Free Quotes",
     description: "Man and van Clifton, Bristol from £19/hr. BS8. Clifton Village, Hotwells, Redland. One verified mover quotes. Call 0121 751 1269.",
     h1: "Man and Van Clifton, Bristol",
     intro: "Need a man and van in Clifton, Bristol? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Clifton move before sending a quote, so you decide whether to book after seeing the details.",

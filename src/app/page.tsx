@@ -4,16 +4,16 @@ import { Metadata } from "next";
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
+  title: "Man and Van Hire Nationwide From £19/hr | Man and Van Club",
   description:
-    "Moving home? Man and van from £19/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book. Call 0121 751 1269.",
+    "Man with a van nationwide from £19/hr. House removals, flat moves, furniture delivery and same-day jobs. One verified mover quotes — no spam calls. Rated 5.0 from 11 reviews. Call 0121 751 1269.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
+    title: "Man and Van Hire Nationwide From £19/hr | Man and Van Club",
     description:
-      "Moving home? Man and van from £19/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK. One approved mover reviews your details before you book.",
+      "Man with a van nationwide from £19/hr. House removals, flat moves, furniture delivery and same-day jobs. One verified mover quotes — no spam calls.",
     url: siteUrl,
     images: [
       {
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Club | Moving Home From £19 | Verified UK Movers",
+    title: "Man and Van Hire Nationwide From £19/hr | Man and Van Club",
     description:
-      "Moving home? Man and van from £19/hr. Verified movers for house removals, flat moves, furniture delivery and same-day jobs across the UK.",
+      "Man with a van nationwide from £19/hr. House removals, flat moves, furniture delivery and same-day jobs. One verified mover quotes — no spam calls.",
     images: ["/images/og-homepage.jpg"],
   },
 };

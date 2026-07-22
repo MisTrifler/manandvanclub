@@ -347,6 +347,9 @@ export default function HomeContent() {
               Man and Van Club is a UK marketplace that connects you with independent, verified local movers. Whether you&apos;re moving a single sofa across town or an entire flat to another city, you submit one free request and a checked-and-approved mover reviews your details before quoting. No comparison tables, no five companies ringing you — just one quote from one verified mover.
             </p>
             <p>
+              Looking for a man with a van near you? That&apos;s exactly what this is — a man and van service where the van and driver come to you. People also call it a man in a van or a van with a driver: whatever the name, you get one checked local mover, one clear quote and no ringing round.
+            </p>
+            <p>
               Prices start from £19/hr. Every mover on the platform holds Goods in Transit and Public Liability insurance, and their business details are verified before they can access any move requests. You stay in control: review the quote, accept or walk away, no obligation.
             </p>
           </div>
@@ -471,6 +474,82 @@ export default function HomeContent() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* ──────────────────── FAQs ──────────────────── */}
+      <section className="py-12 lg:py-14 bg-white border-b border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter text-center mb-8">
+            Man and van — your questions answered
+          </h2>
+          <div className="space-y-6 max-w-2xl mx-auto">
+            <div>
+              <h3 className="text-sm font-black text-primary mb-1">How much does a man with a van cost in the UK?</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">Prices start from £19 per hour for a self-loading service (you carry, the driver drives), or from £34 per hour with a driver who helps with loading. Most local moves take 1-4 hours, so a typical small move costs £60-£140. Longer distances, stairs and larger loads increase the total — submit your postcodes and item list for a free guide price.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-black text-primary mb-1">How does Man and Van Club work?</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">Submit one free request with your collection and delivery postcodes, move date, item list and access notes. One verified mover reviews the details and sends quote options if they can help. You only pay a booking deposit if you accept a quote, and the balance goes directly to the mover on moving day.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-black text-primary mb-1">Will lots of moving companies contact me?</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">No. That is exactly what makes us different. Your request is offered to one mover at a time and your contact details stay protected until you accept a quote. No flood of calls, no spam.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-black text-primary mb-1">Do you cover my area?</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">We cover 435 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-black text-primary mb-1">Can I get a same-day man and van?</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">Same-day moves are often possible depending on mover availability. Submit your request with as much item and access detail as possible, including your time window, so a verified mover can quickly decide if they can help.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-black text-primary mb-1">Are the movers insured?</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">Every approved mover must provide Goods in Transit and Public Liability insurance before joining the network, and their business details are verified. Cover can vary by mover, so check the details on your quote before booking.</p>
+            </div>
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "How much does a man with a van cost in the UK?",
+                  acceptedAnswer: { "@type": "Answer", text: "Prices start from £19 per hour for a self-loading service (you carry, the driver drives), or from £34 per hour with a driver who helps with loading. Most local moves take 1-4 hours, so a typical small move costs £60-£140. Longer distances, stairs and larger loads increase the total - submit your postcodes and item list for a free guide price." },
+                },
+                {
+                  "@type": "Question",
+                  name: "How does Man and Van Club work?",
+                  acceptedAnswer: { "@type": "Answer", text: "Submit one free request with your collection and delivery postcodes, move date, item list and access notes. One verified mover reviews the details and sends quote options if they can help. You only pay a booking deposit if you accept a quote, and the balance goes directly to the mover on moving day." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Will lots of moving companies contact me?",
+                  acceptedAnswer: { "@type": "Answer", text: "No. That is exactly what makes us different. Your request is offered to one mover at a time and your contact details stay protected until you accept a quote. No flood of calls, no spam." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Do you cover my area?",
+                  acceptedAnswer: { "@type": "Answer", text: "We cover 435 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I get a same-day man and van?",
+                  acceptedAnswer: { "@type": "Answer", text: "Same-day moves are often possible depending on mover availability. Submit your request with as much item and access detail as possible, including your time window, so a verified mover can quickly decide if they can help." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Are the movers insured?",
+                  acceptedAnswer: { "@type": "Answer", text: "Every approved mover must provide Goods in Transit and Public Liability insurance before joining the network, and their business details are verified. Cover can vary by mover, so check the details on your quote before booking." },
+                },
+              ],
+            }),
+          }}
+        />
       </section>
 
       {/* ──────────────────── Popular Areas ──────────────────── */}

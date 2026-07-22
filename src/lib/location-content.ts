@@ -1459,10 +1459,10 @@ export function getLocationPageData(slug: string): LocationPageData | null {
 
   const baseData = {
     name: loc.name,
-    title: `Man and Van ${loc.name} | From £19`,
+    title: `Man and Van ${loc.name} From £19/hr | Free Quotes`,
     description: loc.region === 'Greater London'
-      ? `Man and van ${loc.name} from £55/hr. One verified mover quotes. Free to submit, no multiple companies. Call 0121 751 1269.`
-      : `Man and van ${loc.name} from £19/hr. One verified mover quotes. Free to submit, no multiple companies. Call 0121 751 1269.`,
+      ? `Man with a van in ${loc.name} from £55/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 11 reviews.`
+      : `Man with a van in ${loc.name} from £19/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 11 reviews.`,
     badge: `Verified movers in ${loc.name}`,
     intro: generateBusinessModelIntro(loc),
     knowledge: generateBusinessModelKnowledge(loc),
