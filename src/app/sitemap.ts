@@ -192,6 +192,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/cheapest-moving-van', priority: 0.95, freq: 'monthly' as const },
     { route: '/help-me-move', priority: 0.95, freq: 'monthly' as const },
     { route: '/cheap-man-and-van', priority: 0.95, freq: 'monthly' as const },
+    { route: '/man-with-a-van', priority: 0.95, freq: 'monthly' as const },
     { route: '/cheap-van-hire-with-driver', priority: 0.95, freq: 'monthly' as const },
     { route: '/furniture-delivery-service', priority: 0.95, freq: 'monthly' as const },
     { route: '/moving-checklist', priority: 0.95, freq: 'monthly' as const },

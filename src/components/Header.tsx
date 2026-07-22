@@ -82,6 +82,7 @@ export default function Header() {
     { name: "Help Me Move", href: "/help-me-move" },
     { name: "Furniture Delivery", href: "/furniture-delivery-service" },
     { name: "Cheap Man and Van", href: "/cheap-man-and-van" },
+    { name: "Man With a Van", href: "/man-with-a-van" },
     { name: "Van + Driver", href: "/cheap-van-hire-with-driver" },
     { name: "Cost Calculator", href: "/moving-cost-calculator" },
     { name: "Moving Checklist", href: "/moving-checklist" },
