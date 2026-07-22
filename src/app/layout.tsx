@@ -24,8 +24,8 @@ const poppins = Poppins({
 const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Birmingham | House Removals & Furniture Delivery From £19 | Man and Van Club",
-  description: "Man and van Birmingham from £19/hr. House removals, furniture delivery, flat moves and same-day man and van across the UK. One verified mover quotes — no spam calls. Call 0121 751 1269.",
+  title: "Man and Van UK | House Removals & Furniture Delivery From £19 | Man and Van Club",
+  description: "Man and van across the UK from £19/hr. House removals, furniture delivery, flat moves and same-day man and van in 437+ areas. One verified mover quotes — no spam calls. Call 0121 751 1269.",
   metadataBase: new URL(siteUrl),
   alternates: {
     languages: {
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteUrl,
     siteName: "Man and Van Club",
-    title: "Man and Van Birmingham | House Removals & Furniture Delivery From £19",
-    description: "Man and van Birmingham from £19/hr. House removals, furniture delivery, flat moves across the UK. One verified mover. Call 0121 751 1269.",
+    title: "Man and Van UK | House Removals & Furniture Delivery From £19",
+    description: "Man and van across the UK from £19/hr. House removals, furniture delivery, flat moves in 437+ areas. One verified mover. Call 0121 751 1269.",
     images: [
       {
         url: "/images/og-homepage.jpg",
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Birmingham | House Removals & Furniture Delivery From £19",
-    description: "Man and van Birmingham from £19/hr. Verified movers for house removals, furniture delivery across the UK. Call 0121 751 1269.",
+    title: "Man and Van UK | House Removals & Furniture Delivery From £19",
+    description: "Man and van across the UK from £19/hr. Verified movers for house removals, furniture delivery in 437+ areas. Call 0121 751 1269.",
     images: ["/images/og-homepage.jpg"],
   },
   icons: {
