@@ -48,9 +48,14 @@ const SERVICE_LINKS = [
   { title: "Flat Removals", href: "/flat-removals" },
   { title: "Office Removals", href: "/office-removals" },
   { title: "Student Moves", href: "/student-removals" },
-  { title: "Furniture Collection", href: "/furniture-delivery" },
+  { title: "Furniture Collection", href: "/furniture-delivery-service" },
   { title: "Long Distance Moves", href: "/long-distance-removals" },
   { title: "Same Day Moves", href: "/same-day-man-and-van" },
+  { title: "Moving Home", href: "/moving-home" },
+  { title: "Help Me Move", href: "/help-me-move" },
+  { title: "Cheap Man and Van", href: "/cheap-man-and-van" },
+  { title: "Van Hire with Driver", href: "/cheap-van-hire-with-driver" },
+  { title: "Cheapest Moving Van", href: "/cheapest-moving-van" },
 ];
 
 const TRUST_POINTS = [
@@ -81,14 +86,14 @@ const MOVING_CHECKLIST = [
 
 function generateBusinessModelIntro(loc: LocationData): string {
   const areas = loc.nearbyAreas.slice(0, 3).join(", ");
-  return `${loc.name} moves can vary by postcode, property type, parking and access. Whether your move is around ${areas || loc.name} or elsewhere nearby, Man and Van Club lets you submit a free request for a verified mover to review before sending quote options.`;
+  return `Need a man and van in ${loc.name}? Whether you are moving a few items, a full flat or collecting furniture from ${areas || loc.name}, submit your postcodes, move date, item list and access notes for free. A verified mover reviews your ${loc.name} move before sending a quote — so you see the details before deciding whether to book. From £19/hr self-loading, £34/hr with driver help.`;
 }
 
 function generateBusinessModelKnowledge(loc: LocationData): string {
   const roads = loc.majorRoads.slice(0, 3).join(", ");
   const properties = loc.propertyTypes.slice(0, 3).join(", ");
   const considerations = loc.movingConsiderations.slice(0, 3).join("; ");
-  return `A good ${loc.name} quote depends on more than mileage. Postcodes, item list, parking, stairs, lifts, access and timing can all affect the work involved. Your request gives a verified mover the details they need to account for ${roads ? `${roads} routes, ` : ""}${properties || "local property types"}${considerations ? ` and local issues such as ${considerations}` : ""} before you decide whether to book.`;
+  return `A good ${loc.name} quote depends on more than mileage. Postcodes, item list, parking, stairs, lifts, access and timing can all affect the work involved. Your request gives a verified mover the details they need to account for ${roads ? `${roads} routes, ` : ""}${properties || "local property types"}${considerations ? ` and local issues such as ${considerations}` : ""} before you decide whether to book. Most ${loc.name} moves fall between 1 and 4 hours — a studio or 1-bed flat move is typically 1–2 hours, while a 2–3 bed house is 3–5 hours. Furniture collections from Marketplace, IKEA or local shops are often under 1 hour. Submit your details for a free guide price first.`;
 }
 
 // Popular move destinations by region (for generic generation)
@@ -169,20 +174,28 @@ function generateLocalMovingInfo(loc: LocationData): string {
   let info = `Moving in ${loc.name} can involve different parking, access and route considerations depending on the postcode and property type. `;
 
   if (loc.hasStudentAreas && loc.studentAreas) {
-    info += `With student areas like ${loc.studentAreas.slice(0, 2).join(" and ")}, peak moving periods align with academic term dates. `;
+    info += `With student areas like ${loc.studentAreas.slice(0, 2).join(" and ")}, peak moving periods align with academic term dates — June and September are the busiest months. Student moves are usually smaller loads (boxes, suitcases, a mattress and small furniture) and self-loading at £19/hr keeps them affordable. `;
+    if (loc.studentAreas.length > 2) {
+      info += `Other popular student postcodes include ${loc.studentAreas.slice(2, 4).join(" and ")}. `;
+    }
   }
 
   if (loc.businessDistricts) {
-    info += `Business relocations in ${loc.businessDistricts.slice(0, 2).join(" and ")} often need evening or weekend slots to minimise disruption. `;
+    info += `Business relocations in ${loc.businessDistricts.slice(0, 2).join(" and ")} often need evening or weekend slots to minimise disruption. Office moves typically involve desks, chairs, IT equipment and filing cabinets — include a full inventory so the mover can allocate enough time and van space. `;
   }
 
   info += `A verified mover can review details such as the ${roads} corridors and local property types, from ${properties}. `;
 
   if (considerations.length > 0) {
-    info += `Common moving considerations in ${loc.name} include ${considerations.slice(0, 3).join("; ")}. `;
+    info += `Common moving considerations in ${loc.name} include ${considerations.slice(0, 3).join("; ")}. These factors can change the time a move takes and the final quote — which is why submitting accurate access notes and item details matters. `;
   }
 
-  info += `Whether you are moving within ${loc.name} or relocating to a neighbouring town, your request stays protected while a mover reviews the details and prepares quote options.`;
+  info += `Whether you are moving within ${loc.name} or relocating to a neighbouring town, your request stays protected while a mover reviews the details and prepares quote options. `;
+
+  // Add keyword-rich practical detail that competitors miss
+  info += `For furniture collections in ${loc.name}, include the seller's full postcode, item dimensions, and whether you need the driver to carry the item upstairs or into a specific room. For flat moves, mention the floor level, whether there is a lift, and any parking restrictions outside the building. For house moves, include driveway access, any narrow hallways or doorways, and whether furniture needs dismantling before the mover arrives. `;
+
+  info += `If you are comparing options, a man and van from £19/hr is typically the cheapest way to move in ${loc.name}. Self-drive van hire might look cheaper on paper at £50-80 per day, but add fuel, insurance and the time spent driving an unfamiliar vehicle, and a man and van with a professional driver works out better value — especially for local moves under 3 hours.`;
 
   return info;
 }
@@ -769,6 +782,38 @@ function generateFAQ(loc: LocationData): { q: string; a: string }[] {
   faq.push({
     q: `Are approved ${loc.name} movers insured?`,
     a: `Approved movers must provide Goods in Transit and Public Liability insurance before joining the network. Cover can vary by mover, so we recommend checking the quote details before booking.`,
+  });
+
+  // Keyword-rich FAQs — answer real search queries people type before finding a mover
+
+  faq.push({
+    q: `What is the difference between a man and van and a removal company in ${loc.name}?`,
+    a: `A man and van is usually one driver with a Transit or Luton van, ideal for smaller moves, single-item collections, student moves and flat relocations. A removal company sends a larger team with a lorry, packing materials and a full packing service — which costs significantly more. Most ${loc.name} moves do not need a full removal company. A man and van from £19/hr can handle flats, terraced houses and furniture deliveries for a fraction of the cost.`,
+  });
+
+  faq.push({
+    q: `Can I hire a van with a driver in ${loc.name}?`,
+    a: `Yes. Every booking includes a van and a professional driver — you do not need to drive anything yourself. The driver brings the van, blankets, straps and equipment to your collection address. You choose self-loading at £19/hr (you load, driver transports) or driver-helps at £34/hr (driver assists with carrying). No driving licence needed, no deposit, no self-drive hire paperwork.`,
+  });
+
+  faq.push({
+    q: `Can you collect furniture from Marketplace or eBay in ${loc.name}?`,
+    a: `Yes. Furniture collection from Facebook Marketplace, eBay, Gumtree, IKEA, B&Q, Argos and charity shops is one of the most common jobs. Submit the seller's postcode, your delivery postcode and the item details. A verified mover collects and delivers — you do not need your own transport or a favour from a friend with a van.`,
+  });
+
+  faq.push({
+    q: `How far in advance should I book a man and van in ${loc.name}?`,
+    a: `Book 3–7 days ahead if possible. End-of-month and weekends are busiest, especially the last Friday of the month when tenancies end. If you are moving on a completion day, book at least a week ahead. Same-day moves may be possible depending on mover availability — submit your request and a mover will check their schedule.`,
+  });
+
+  faq.push({
+    q: `What information does the mover need for a ${loc.name} quote?`,
+    a: `Your collection and delivery postcodes, a full item list (number of boxes, furniture pieces, white goods), whether you need the driver to help load and unload, access details (stairs, lifts, parking restrictions, narrow doorways), and your preferred moving date. The more detail you provide, the more accurate the quote. Vague requests lead to estimates; detailed requests lead to firm quotes.`,
+  });
+
+  faq.push({
+    q: `Can I move on a Sunday or bank holiday in ${loc.name}?`,
+    a: `Yes. The service operates 24 hours a day, 7 days a week, including bank holidays. Sunday moves can sometimes be easier because parking restrictions are often relaxed and roads are quieter. Standard rates apply — there is no weekend or bank holiday surcharge.`,
   });
 
   return faq;

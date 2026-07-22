@@ -79,6 +79,10 @@ export default function Header() {
     { name: "Long Distance", href: "/long-distance-removals" },
     { name: "Same Day", href: "/same-day-man-and-van" },
     { name: "Moving Home", href: "/moving-home" },
+    { name: "Help Me Move", href: "/help-me-move" },
+    { name: "Furniture Delivery", href: "/furniture-delivery-service" },
+    { name: "Cheap Man and Van", href: "/cheap-man-and-van" },
+    { name: "Van + Driver", href: "/cheap-van-hire-with-driver" },
     { name: "Cost Calculator", href: "/moving-cost-calculator" },
   ];
 

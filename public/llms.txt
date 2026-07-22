@@ -84,17 +84,27 @@
 - https://www.manandvanclub.co.uk/man-and-van-walsall — Walsall: Bloxwich, Aldridge, Brownhills
 - 174 total location pages across all UK regions — see https://www.manandvanclub.co.uk/areas-covered
 
-### Service Pages (10)
+### Service Pages (14)
 - https://www.manandvanclub.co.uk/house-removals
 - https://www.manandvanclub.co.uk/flat-removals
 - https://www.manandvanclub.co.uk/student-removals
 - https://www.manandvanclub.co.uk/office-removals
 - https://www.manandvanclub.co.uk/furniture-delivery
+- https://www.manandvanclub.co.uk/furniture-delivery-service — Furniture delivery from £19/hr (IKEA, Marketplace, eBay collections)
 - https://www.manandvanclub.co.uk/same-day-man-and-van
 - https://www.manandvanclub.co.uk/long-distance-removals
 - https://www.manandvanclub.co.uk/facebook-marketplace-collection
 - https://www.manandvanclub.co.uk/piano-removals
 - https://www.manandvanclub.co.uk/single-item-delivery
+
+### Keyword & Intent Pages (7)
+- https://www.manandvanclub.co.uk/moving-home — Targets "moving home" queries. Pricing, home move types, popular areas
+- https://www.manandvanclub.co.uk/cheapest-moving-van — Targets "cheapest moving van" queries. Price comparison, self-drive vs man and van
+- https://www.manandvanclub.co.uk/help-me-move — Targets "help me move" queries. Moving situations, same-day, lifting help
+- https://www.manandvanclub.co.uk/cheap-man-and-van — Targets "cheap man and van" queries. Price comparison table, what's included for £19/hr
+- https://www.manandvanclub.co.uk/cheap-van-hire-with-driver — Targets "van hire with driver" queries. Self-drive vs van+driver comparison
+- https://www.manandvanclub.co.uk/man-and-van-near-me — Find a man and van near you
+- https://www.manandvanclub.co.uk/man-and-van-vs-removal-company — Man and van vs removal company
 
 ### Route Pages (100 city-to-city moves)
 - https://www.manandvanclub.co.uk/routes — Full index of all 100 routes with pricing
@@ -139,8 +149,6 @@
 - https://www.manandvanclub.co.uk/moving-cost-calculator — Free moving cost calculator
 - https://www.manandvanclub.co.uk/man-and-van-prices — UK 2026 pricing guide
 - https://www.manandvanclub.co.uk/man-and-van-cost — How much does a man and van cost
-- https://www.manandvanclub.co.uk/man-and-van-near-me — Find a man and van near you
-- https://www.manandvanclub.co.uk/man-and-van-vs-removal-company — Man and van vs removal company
 - https://www.manandvanclub.co.uk/vs-anyvan — Man and Van Club vs AnyVan comparison
 
 ## Pricing (2026 UK)
