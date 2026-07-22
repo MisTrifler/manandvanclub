@@ -398,6 +398,36 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "newquay",
   "falmouth",
   "barnstaple",
+
+  // ─── Phase 11: Scotland expansion (12 NEW) ───
+  "dunfermline",
+  "kirkcaldy",
+  "hamilton",
+  "ayr",
+  "cumbernauld",
+  "coatbridge",
+  "airdrie",
+  "motherwell",
+  "wishaw",
+  "greenock",
+  "elgin",
+  "arbroath",
+  // ─── Phase 12: Wales expansion (8 NEW) ───
+  "barry",
+  "bridgend",
+  "merthyr-tydfil",
+  "neath",
+  "port-talbot",
+  "caerphilly",
+  "pontypridd",
+  "llandudno",
+  // ─── Phase 13: Northern Ireland expansion (6 NEW) ───
+  "carrickfergus",
+  "coleraine",
+  "armagh",
+  "omagh",
+  "enniskillen",
+  "lurgan",
 ]);
 
 export function isSeoLaunchMode(): boolean {

@@ -6047,4 +6047,420 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
       {title: "Surrounding areas", body: "Residential areas with generally good road access. Pilton, Roundswell, Bickington, Bishops Tawton, Landkey."},
     ],
   },
+  "dunfermline": {
+    title: "Man and Van Dunfermline | From £19",
+    description: "Man and van Dunfermline from £19/hr. KY11, KY12. Town Centre, Rosyth, Inverkeithing, Dalgety Bay, Crossgates. Call 0121 751 1269.",
+    h1: "Man and Van Dunfermline",
+    intro: "Need a man and van in Dunfermline? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Dunfermline move before quoting.",
+    knowledge: "Dunfermline sits on the north side of the Firth of Forth about 3 miles from the Queensferry Crossing. The A985 connects to the Kincardine Bridge. The town centre has narrow streets near the Abbey. Rosyth has the naval dockyard. Dalgety Bay is a newer coastal settlement. The Forth bridges can queue badly in peak hours — movers plan around this.",
+    localMovingInfo: `Dunfermline is about 17 miles north-west of Edinburgh via the Forth bridges. The A985 and M90 are the main routes. The town centre has older stone buildings near the Abbey. Rosyth and Inverkeithing are ports. Dalgety Bay is residential. The Forth crossing queues can add 30+ minutes at peak times. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Dunfermline?","a":"Dunfermline moves start from £19 per hour. A local move typically costs £60-£120. A move to Edinburgh across the Forth is usually £80-£150."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Rosyth, Inverkeithing, Dalgety Bay, Crossgates."},
+    ],
+  },
+
+  "kirkcaldy": {
+    title: "Man and Van Kirkcaldy | From £19",
+    description: "Man and van Kirkcaldy from £19/hr. KY1, KY2. Town Centre, Gallatown, Linktown, Pathhead, Templehall. Call 0121 751 1269.",
+    h1: "Man and Van Kirkcaldy",
+    intro: "Need a man and van in Kirkcaldy? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Kirkcaldy move before quoting.",
+    knowledge: "Kirkcaldy stretches along the Fife coast with a long High Street. The A92 connects to Dundee (about 25 miles north) and the Forth bridges to Edinburgh. The Esplanade seafront is flat. The town centre has a mix of traditional stone tenements and newer builds. Gallatown and Linktown are residential areas. The A921 coastal road can be slow in summer.",
+    localMovingInfo: `Kirkcaldy is about 12 miles east of Dunfermline on the A92. The town stretches along the coast — the 'Lang Toun'. The High Street is one of the longest in Scotland. The A92 connects north to Dundee. Edinburgh is across the Forth via the A921 or M90. The town centre has stone tenements. Pathhead and Gallatown are older areas. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Kirkcaldy?","a":"Kirkcaldy moves start from £19 per hour. A local move typically costs £60-£120. A move to Edinburgh is usually £80-£150 depending on Forth crossing traffic."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Gallatown, Linktown, Pathhead, Templehall."},
+    ],
+  },
+
+  "hamilton": {
+    title: "Man and Van Hamilton | From £19",
+    description: "Man and van Hamilton from £19/hr. ML3. Town Centre, Hillhouse, Whitehill, Fairhill, Earnock. Call 0121 751 1269.",
+    h1: "Man and Van Hamilton",
+    intro: "Need a man and van in Hamilton? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hamilton move before quoting.",
+    knowledge: "Hamilton sits at the junction of the M74 and M73, making it a key road hub south of Glasgow. The town centre has a mix of older stone buildings and modern retail. The Hamilton Palace grounds (Chatelherault) are a landmark. Hillhouse and Whitehill are large residential estates. The M74 connects directly to the M8 for Glasgow city centre in about 20 minutes.",
+    localMovingInfo: `Hamilton is about 10 miles south-east of Glasgow on the M74. The M73 connects to the M8. The town centre has a mix of traditional and modern buildings. Hillhouse and Whitehill are large estates. Motherwell is just 4 miles east. East Kilbride is 6 miles south. The motorway access is excellent for moves. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Hamilton?","a":"Hamilton moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£130 given the short motorway run."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Hillhouse, Whitehill, Fairhill, Earnock."},
+    ],
+  },
+
+  "ayr": {
+    title: "Man and Van Ayr | From £19",
+    description: "Man and van Ayr from £19/hr. KA7, KA8. Town Centre, Seafield, Alloway, Prestwick, Heathfield. Call 0121 751 1269.",
+    h1: "Man and Van Ayr",
+    intro: "Need a man and van in Ayr? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ayr move before quoting.",
+    knowledge: "Ayr is a classic west coast seaside town with a sandy beach and racecourse. The A77 runs north to Glasgow (about 35 miles). Alloway is Burns' birthplace and a quieter village area. Prestwick is effectively joined to Ayr and has the airport. Seafield is near the racecourse. The A77 is being upgraded but still has single-carriageway sections that can slow moves.",
+    localMovingInfo: `Ayr is about 35 miles south-west of Glasgow on the A77. Prestwick airport is next door. The town has a seafront, racecourse and sandy beach. Alloway is a village suburb famous for Burns Cottage. The A77 connects north but has slow sections. Kilmarnock is about 12 miles east. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Ayr?","a":"Ayr moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £100-£170 due to the 35-mile distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Seafield, Alloway, Prestwick, Heathfield."},
+    ],
+  },
+
+  "cumbernauld": {
+    title: "Man and Van Cumbernauld | From £19",
+    description: "Man and van Cumbernauld from £19/hr. G67, G68. Town Centre, Condorrat, Carbrain, Abronhill, Kildrum. Call 0121 751 1269.",
+    h1: "Man and Van Cumbernauld",
+    intro: "Need a man and van in Cumbernauld? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Cumbernauld move before quoting.",
+    knowledge: "Cumbernauld was built in the 1960s as an overspill for Glasgow. The M80 runs right through it, giving fast access to Glasgow (about 12 miles south) and Stirling (about 14 miles north). The town is mostly suburban housing estates. Carbrain and Abronhill are residential areas. The town centre was rebuilt in 2021 after the old megastructure was demolished. Roads are wide and access is generally good.",
+    localMovingInfo: `Cumbernauld is about 12 miles north-east of Glasgow on the M80. The motorway access is excellent. The town is mostly post-war housing estates with good road access. Falkirk is about 10 miles east. Stirling is about 14 miles north. The town centre was rebuilt recently. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Cumbernauld?","a":"Cumbernauld moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£120 via the M80."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Condorrat, Carbrain, Abronhill, Kildrum."},
+    ],
+  },
+
+  "coatbridge": {
+    title: "Man and Van Coatbridge | From £19",
+    description: "Man and van Coatbridge from £19/hr. ML5. Town Centre, Greenend, Dunbeth, Langloan, Summerlee. Call 0121 751 1269.",
+    h1: "Man and Van Coatbridge",
+    intro: "Need a man and van in Coatbridge? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Coatbridge move before quoting.",
+    knowledge: "Coatbridge sits just east of Glasgow on the A89 corridor. The M8 is accessible from multiple junctions. The town has a mix of older tenements and post-war housing. The Summerlee Heritage Park marks the industrial past. Airdrie is effectively next door — the two towns run into each other. The A89 can be slow through both towns at peak times.",
+    localMovingInfo: `Coatbridge is about 8 miles east of Glasgow on the A89. The M8 is accessible nearby. Airdrie is next door. Motherwell is about 5 miles south. The town has older tenements near the centre and newer estates further out. The A89 through the town can be congested. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Coatbridge?","a":"Coatbridge moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£110 via the M8."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Greenend, Dunbeth, Langloan, Summerlee."},
+    ],
+  },
+
+  "airdrie": {
+    title: "Man and Van Airdrie | From £19",
+    description: "Man and van Airdrie from £19/hr. ML6. Town Centre, Chapelhall, Caldercruix, Gartlea, Cairnhill. Call 0121 751 1269.",
+    h1: "Man and Van Airdrie",
+    intro: "Need a man and van in Airdrie? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Airdrie move before quoting.",
+    knowledge: "Airdrie sits on the A89 about 10 miles east of Glasgow. The M8 junction 6 is nearby. The town centre has a traditional high street. Chapelhall and Caldercruix are outlying villages. Gartlea is a residential area. Airdrie and Coatbridge run into each other — many addresses overlap. The railway connects to Glasgow Queen Street in about 25 minutes.",
+    localMovingInfo: `Airdrie is about 10 miles east of Glasgow on the A89/M8 corridor. Coatbridge is immediately west. Cumbernauld is about 5 miles north. The town centre has traditional stone buildings. Chapelhall and Caldercruix are satellite villages. The M8 gives fast Glasgow access. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Airdrie?","a":"Airdrie moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£110 via the M8."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Chapelhall, Caldercruix, Gartlea, Cairnhill."},
+    ],
+  },
+
+  "motherwell": {
+    title: "Man and Van Motherwell | From £19",
+    description: "Man and van Motherwell from £19/hr. ML1. Town Centre, Wishaw, Carfin, New Stevenston, Bellshill. Call 0121 751 1269.",
+    h1: "Man and Van Motherwell",
+    intro: "Need a man and van in Motherwell? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Motherwell move before quoting.",
+    knowledge: "Motherwell sits at the junction of the M8 and M74 motorways — one of the best-connected towns in central Scotland. The former steelworks site has been redeveloped. The town centre has a mix of older stone and modern retail. Carfin and New Stevenston are residential areas to the east. Hamilton is just 3 miles south. The motorway access makes moves straightforward.",
+    localMovingInfo: `Motherwell is about 12 miles south-east of Glasgow at the M8/M74 junction. Hamilton is 3 miles south. Wishaw is 3 miles east. The motorway access is excellent for any direction. The town centre has traditional stone buildings. Carfin and New Stevenston are residential. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Motherwell?","a":"Motherwell moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£120 via the M8 or M74."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Wishaw, Carfin, New Stevenston, Bellshill."},
+    ],
+  },
+
+  "wishaw": {
+    title: "Man and Van Wishaw | From £19",
+    description: "Man and van Wishaw from £19/hr. ML2. Town Centre, Newmains, Wishawhill, Gowkthrapple, Cleland. Call 0121 751 1269.",
+    h1: "Man and Van Wishaw",
+    intro: "Need a man and van in Wishaw? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Wishaw move before quoting.",
+    knowledge: "Wishaw sits about 2 miles east of Motherwell — the two are effectively one urban area. The A71 runs east-west through the town. Newmains is a village about 3 miles east. Cleland is north. The town has a traditional main street. Access to the M8 is via Motherwell (about 3 miles). The A71 can be slow through the town centre.",
+    localMovingInfo: `Wishaw is about 15 miles south-east of Glasgow, immediately east of Motherwell. The A71 is the main road. Newmains is 3 miles east. The M8 is about 3 miles north via Motherwell. The town has traditional buildings on the main street. Cleland and Gowkthrapple are residential areas. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Wishaw?","a":"Wishaw moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £80-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Newmains, Wishawhill, Gowkthrapple, Cleland."},
+    ],
+  },
+
+  "greenock": {
+    title: "Man and Van Greenock | From £19",
+    description: "Man and van Greenock from £19/hr. PA15, PA16. Town Centre, Gourock, Port Glasgow, Wemyss Bay, Inverkip. Call 0121 751 1269.",
+    h1: "Man and Van Greenock",
+    intro: "Need a man and van in Greenock? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Greenock move before quoting.",
+    knowledge: "Greenock sits at the end of the Firth of Clyde with dramatic views across to the Argyll hills. The A8/M8 connects to Glasgow (about 25 miles east). Gourock is at the end of the line with ferries to Dunoon. Port Glasgow is effectively part of the same urban area to the east. The steep hillside means some properties have difficult access with narrow lanes and steps. The town centre has traditional stone tenements.",
+    localMovingInfo: `Greenock is about 25 miles west of Glasgow on the A8/M8. Gourock is at the end of the line with CalMac ferries. Port Glasgow is 3 miles east. The hillside streets can be steep and narrow — some properties have steps only access. The town centre has stone tenements. The M8 gives good access east. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Greenock?","a":"Greenock moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £100-£160 due to the 25-mile distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Gourock, Port Glasgow, Wemyss Bay, Inverkip."},
+    ],
+  },
+
+  "elgin": {
+    title: "Man and Van Elgin | From £19",
+    description: "Man and van Elgin from £19/hr. IV30, IV31. Town Centre, New Elgin, Bishopmill, Lossiemouth, Lhanbryde. Call 0121 751 1269.",
+    h1: "Man and Van Elgin",
+    intro: "Need a man and van in Elgin? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Elgin move before quoting.",
+    knowledge: "Elgin is the main town of Moray with a cathedral, several distilleries, and a traditional high street. The A96 connects to Inverness (about 35 miles west) and Aberdeen (about 65 miles east). Lossiemouth is a coastal town 5 miles north. New Elgin and Bishopmill are residential areas. The A96 is the only major road — it can be slow with agricultural traffic. The town centre has older stone buildings with some narrow lanes.",
+    localMovingInfo: `Elgin is about 35 miles east of Inverness on the A96. Aberdeen is about 65 miles east. Lossiemouth is 5 miles north. The A96 is the main road — single carriageway in parts. The town centre has traditional stone buildings near the cathedral. New Elgin and Bishopmill are residential. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Elgin?","a":"Elgin moves start from £19 per hour. A local move typically costs £60-£120. A move to Inverness is usually £120-£180 due to the 35-mile distance on the A96."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, New Elgin, Bishopmill, Lossiemouth, Lhanbryde."},
+    ],
+  },
+
+  "arbroath": {
+    title: "Man and Van Arbroath | From £19",
+    description: "Man and van Arbroath from £19/hr. DD11. Town Centre, Seaton, Gayfield, Ladyloan, Westway. Call 0121 751 1269.",
+    h1: "Man and Van Arbroath",
+    intro: "Need a man and van in Arbroath? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Arbroath move before quoting.",
+    knowledge: "Arbroath is a historic fishing town on the Angus coast. The A92 connects to Dundee (about 15 miles south-west). The harbour area has narrow streets typical of Scottish fishing towns. The town is known for Arbroath smokies (smoked haddock) and the Abbey which hosted the Declaration of Arbroath. Seaton and Westway are residential areas. The A92 is the main road — it bypasses the town centre which is generally accessible for vans.",
+    localMovingInfo: `Arbroath is about 15 miles north-east of Dundee on the A92. The town is famous for its smokies and the Declaration of Arbroath. The harbour area has narrow streets. The town centre is reasonably accessible. Montrose is about 10 miles north. The A92 bypass helps keep traffic moving. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Arbroath?","a":"Arbroath moves start from £19 per hour. A local move typically costs £60-£120. A move to Dundee is usually £80-£130."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Seaton, Gayfield, Ladyloan, Westway."},
+    ],
+  },
+
+  "barry": {
+    title: "Man and Van Barry | From £19",
+    description: "Man and van Barry from £19/hr. CF62, CF63. Town Centre, Barry Island, Cadoxton, Buttrills, Holton Road. Call 0121 751 1269.",
+    h1: "Man and Van Barry",
+    intro: "Need a man and van in Barry? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Barry move before quoting.",
+    knowledge: "Barry is the largest town in the Vale of Glamorgan with a seafront, docks, and the famous Barry Island. The A4050 and A4226 connect to the M4 at junctions 33 and 34. Cardiff is about 7 miles north-east. The town centre has a mix of Victorian and post-war buildings. Barry Island is a tourist area. Cadoxton has older terraces. The docks area is industrial with wide roads. Access is generally good.",
+    localMovingInfo: `Barry is about 7 miles south-west of Cardiff. The A4050 and A4226 connect to the M4. Barry Island is the tourist area at the south end. Cadoxton has older terraces near the railway. Penarth is 4 miles east. The docks area has wide roads. The town centre has Victorian buildings. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Barry?","a":"Barry moves start from £19 per hour. A local move typically costs £60-£120. A move to Cardiff is usually £70-£120 given the short distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Barry Island, Cadoxton, Buttrills, Holton Road."},
+    ],
+  },
+
+  "bridgend": {
+    title: "Man and Van Bridgend | From £19",
+    description: "Man and van Bridgend from £19/hr. CF31, CF32, CF35. Town Centre, Brackla, Broadlands, Pencoed, Pyle. Call 0121 751 1269.",
+    h1: "Man and Van Bridgend",
+    intro: "Need a man and van in Bridgend? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bridgend move before quoting.",
+    knowledge: "Bridgend sits on the M4 at junctions 35 and 36, roughly halfway between Cardiff (20 miles east) and Swansea (22 miles west). The town centre has a mix of older stone and modern retail. Brackla and Broadlands are large residential estates. Pencoed and Pyle are satellite villages. The M4 access is excellent. The town has grown significantly with new housing estates on the outskirts.",
+    localMovingInfo: `Bridgend is about 20 miles west of Cardiff and 22 miles east of Swansea on the M4. The motorway access is excellent. Brackla and Broadlands are large residential areas. Pencoed is 5 miles east. The town centre has traditional and modern buildings. New housing estates surround the town. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Bridgend?","a":"Bridgend moves start from £19 per hour. A local move typically costs £60-£120. A move to Cardiff is usually £80-£130 via the M4."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Brackla, Broadlands, Pencoed, Pyle."},
+    ],
+  },
+
+  "merthyr-tydfil": {
+    title: "Man and Van Merthyr Tydfil | From £19",
+    description: "Man and van Merthyr Tydfil from £19/hr. CF47, CF48. Town Centre, Pentre-bach, Heolgerrig, Dowlais, Gurnos. Call 0121 751 1269.",
+    h1: "Man and Van Merthyr Tydfil",
+    intro: "Need a man and van in Merthyr Tydfil? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Merthyr Tydfil move before quoting.",
+    knowledge: "Merthyr Tydfil is the largest town in the Heads of the Valleys area. The A470 runs north-south to Cardiff (about 23 miles). Dowlais is a former ironworks village to the east. The town centre sits in a valley with steep hillsides. Some properties on the valley sides have steep access roads. The A465 Heads of the Valleys road connects east to Abergavenny. The Brecon Beacons are just to the north.",
+    localMovingInfo: `Merthyr Tydfil is about 23 miles north of Cardiff on the A470. The A465 Heads of the Valleys road connects east. The town sits in a steep valley — some hillside properties have difficult access. Dowlais and Heolgerrig are satellite areas. Pontypridd is about 10 miles south. The A470 is the main route to Cardiff. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Merthyr Tydfil?","a":"Merthyr Tydfil moves start from £19 per hour. A local move typically costs £60-£120. A move to Cardiff is usually £100-£160 due to the 23-mile distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Pentre-bach, Heolgerrig, Dowlais, Gurnos."},
+    ],
+  },
+
+  "neath": {
+    title: "Man and Van Neath | From £19",
+    description: "Man and van Neath from £19/hr. SA10, SA11. Town Centre, Bryncoch, Cadoxton, Skewen, Briton Ferry. Call 0121 751 1269.",
+    h1: "Man and Van Neath",
+    intro: "Need a man and van in Neath? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Neath move before quoting.",
+    knowledge: "Neath sits at the confluence of the River Neath and the Tennant Canal. The M4 junction 43 is nearby. Swansea is about 6 miles south-west. Port Talbot is 5 miles east. The town centre has a traditional market and older stone buildings. Bryncoch is a residential area on the hillside. The A465 heads north into the valleys. Neath Canal runs through the town.",
+    localMovingInfo: `Neath is about 6 miles north-east of Swansea on the M4 corridor. Port Talbot is 5 miles east. The town centre has a traditional market and stone buildings. Bryncoch and Cadoxton are residential areas. The A465 connects north into the valleys. The M4 gives fast access to Swansea and Cardiff. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Neath?","a":"Neath moves start from £19 per hour. A local move typically costs £60-£120. A move to Swansea is usually £70-£110 given the short distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Bryncoch, Cadoxton, Skewen, Briton Ferry."},
+    ],
+  },
+
+  "port-talbot": {
+    title: "Man and Van Port Talbot | From £19",
+    description: "Man and van Port Talbot from £19/hr. SA12, SA13. Town Centre, Aberavon, Sandfields, Margam, Baglan. Call 0121 751 1269.",
+    h1: "Man and Van Port Talbot",
+    intro: "Need a man and van in Port Talbot? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Port Talbot move before quoting.",
+    knowledge: "Port Talbot is dominated by the Tata Steel works — one of the largest in the UK. The M4 runs through the town with junctions 38-41. Aberavon has a long sandy beach. Sandfields is a residential area. Margam has the country park and ruins. The steelworks traffic can affect local roads at shift change times. The town centre is compact with a mix of older and newer buildings.",
+    localMovingInfo: `Port Talbot is about 8 miles east of Swansea on the M4. The steelworks is the dominant feature. Aberavon has a long beach. Margam Country Park is a local landmark. The M4 junctions 38-41 serve the town. Neath is 5 miles west. Bridgend is about 12 miles east. Steelworks shift traffic can slow local roads. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Port Talbot?","a":"Port Talbot moves start from £19 per hour. A local move typically costs £60-£120. A move to Swansea is usually £70-£110 via the M4."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Aberavon, Sandfields, Margam, Baglan."},
+    ],
+  },
+
+  "caerphilly": {
+    title: "Man and Van Caerphilly | From £19",
+    description: "Man and van Caerphilly from £19/hr. CF83. Town Centre, Castle area, St Martins, Virginia Park, Watford Park. Call 0121 751 1269.",
+    h1: "Man and Van Caerphilly",
+    intro: "Need a man and van in Caerphilly? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Caerphilly move before quoting.",
+    knowledge: "Caerphilly is dominated by its castle, which is the second largest in Britain after Windsor. The A469 connects south to Cardiff (about 7 miles). The A468 connects east to Newport (about 10 miles). Pontypridd is about 6 miles west. The town centre sits below the castle with traditional stone buildings. The residential areas spread up the surrounding hillsides. Some hillside streets are steep.",
+    localMovingInfo: `Caerphilly is about 7 miles north of Cardiff on the A469. The castle is the town's centrepiece — second largest in Britain. Newport is 10 miles east. Pontypridd is 6 miles west. The town centre has stone buildings below the castle. Hillside residential areas can have steep access. The A469 connects directly to Cardiff. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Caerphilly?","a":"Caerphilly moves start from £19 per hour. A local move typically costs £60-£120. A move to Cardiff is usually £70-£110 given the short distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Castle area, St Martins, Virginia Park, Watford Park."},
+    ],
+  },
+
+  "pontypridd": {
+    title: "Man and Van Pontypridd | From £19",
+    description: "Man and van Pontypridd from £19/hr. CF37, CF38. Town Centre, Treforest, Rhydyfelin, Graig, Hawthorn. Call 0121 751 1269.",
+    h1: "Man and Van Pontypridd",
+    intro: "Need a man and van in Pontypridd? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Pontypridd move before quoting.",
+    knowledge: "Pontypridd is the gateway to the Rhondda valleys. The A470 runs north-south connecting to Cardiff (about 12 miles south) and Merthyr Tydfil (about 10 miles north). The town centre sits on a narrow strip of land between the rivers. Treforest has the university. Rhydyfelin and Graig are residential areas. The A470 can be congested at peak times. The town centre has some narrow streets near the old bridge.",
+    localMovingInfo: `Pontypridd is about 12 miles north-west of Cardiff on the A470. It's the gateway to the Rhondda valleys. The A470 connects south to Cardiff and north to Merthyr Tydfil. Treforest has the University of South Wales. The town centre has narrow streets near the old bridge. Caerphilly is 6 miles east. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Pontypridd?","a":"Pontypridd moves start from £19 per hour. A local move typically costs £60-£120. A move to Cardiff is usually £80-£130 via the A470."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Treforest, Rhydyfelin, Graig, Hawthorn."},
+    ],
+  },
+
+  "llandudno": {
+    title: "Man and Van Llandudno | From £19",
+    description: "Man and van Llandudno from £19/hr. LL30, LL31. Town Centre, West Shore, Craig-y-Don, Deganwy, Penrhyn Bay. Call 0121 751 1269.",
+    h1: "Man and Van Llandudno",
+    intro: "Need a man and van in Llandudno? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Llandudno move before quoting.",
+    knowledge: "Llandudno is a Victorian seaside resort between two limestone headlands. The promenade curves along the North Shore beach. The Great Orme has a tramway and cable car. The A55 North Wales Expressway connects to Chester (about 40 miles east). Bangor is about 15 miles west. The town centre has wide Victorian streets — generally good for van access. West Shore is quieter. Deganwy is across the estuary. The A55 is the main road link.",
+    localMovingInfo: `Llandudno is about 40 miles west of Chester on the A55. The town sits on a crescent bay between the Great Orme and Little Orme. The promenade is the main feature. The A55 North Wales Expressway is the key road. Bangor is 15 miles west. The Victorian streets are generally wide and accessible. West Shore is the quieter side. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Llandudno?","a":"Llandudno moves start from £19 per hour. A local move typically costs £60-£120. A move to Chester is usually £120-£180 due to the 40-mile distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, West Shore, Craig-y-Don, Deganwy, Penrhyn Bay."},
+    ],
+  },
+
+  "carrickfergus": {
+    title: "Man and Van Carrickfergus | From £19",
+    description: "Man and van Carrickfergus from £19/hr. BT38. Town Centre, Greenisland, Knockagh, Whitehead, Eden. Call 0121 751 1269.",
+    h1: "Man and Van Carrickfergus",
+    intro: "Need a man and van in Carrickfergus? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Carrickfergus move before quoting.",
+    knowledge: "Carrickfergus has one of the best-preserved Norman castles in the UK sitting right on the harbour. The A2 coastal road connects to Belfast (about 10 miles south-west). The harbour area has narrow streets. Greenisland is a residential area on the lough shore. The A2 can be congested in the Belfast commuter rush. The town centre has a mix of older and modern buildings.",
+    localMovingInfo: `Carrickfergus is about 10 miles north-east of Belfast on the A2. The Norman castle is the centrepiece. The A2 connects to Belfast in about 15-20 minutes outside peak hours. Greenisland is a residential area. Larne is about 10 miles north. The harbour area has narrow streets. The town centre is reasonably accessible. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Carrickfergus?","a":"Carrickfergus moves start from £19 per hour. A local move typically costs £60-£120. A move to Belfast is usually £70-£110 via the A2."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Greenisland, Knockagh, Whitehead, Eden."},
+    ],
+  },
+
+  "coleraine": {
+    title: "Man and Van Coleraine | From £19",
+    description: "Man and van Coleraine from £19/hr. BT51, BT52. Town Centre, University area, Killowen, Portrush, Portstewart. Call 0121 751 1269.",
+    h1: "Man and Van Coleraine",
+    intro: "Need a man and van in Coleraine? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Coleraine move before quoting.",
+    knowledge: "Coleraine sits on the River Bann about 30 miles north-west of Belfast. The A26 connects south and the A29 north. The University of Ulster campus brings student moves in September and June. Portrush (5 miles north) and Portstewart (4 miles north-west) are popular seaside towns. The town centre has traditional buildings near the Diamond. The A26 can be busy with tourist traffic in summer.",
+    localMovingInfo: `Coleraine is about 30 miles north-west of Belfast on the A26. The University of Ulster campus brings student moves. Portrush is 5 miles north on the Causeway Coast. Portstewart is 4 miles north-west. Derry/Londonderry is about 30 miles west. The A26 is the main route south. The Diamond area has narrow streets. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Coleraine?","a":"Coleraine moves start from £19 per hour. A local move typically costs £60-£120. A move to Belfast is usually £120-£180 due to the 30-mile distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, University area, Killowen, Portrush, Portstewart."},
+    ],
+  },
+
+  "armagh": {
+    title: "Man and Van Armagh | From £19",
+    description: "Man and van Armagh from £19/hr. BT60, BT61. City Centre, Cathedral area, The Mall, Richmond, Killylea. Call 0121 751 1269.",
+    h1: "Man and Van Armagh",
+    intro: "Need a man and van in Armagh? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Armagh move before quoting.",
+    knowledge: "Armagh is unique in having two St Patrick's cathedrals — one Church of Ireland, one Catholic — facing each other on opposing hills. The city has fine Georgian architecture around The Mall. The A3 connects to Portadown (about 10 miles north) and the M1 for Belfast. The cathedral area has narrow streets with limited parking. The city centre is compact and generally accessible. Killylea and Richhill are nearby villages.",
+    localMovingInfo: `Armagh is about 35 miles south-west of Belfast via the A3/M1. The city is known for its two cathedrals and Georgian architecture. The Mall is a Georgian square. The A3 connects north to Portadown and the M1. Newry is about 15 miles south. The cathedral area has some narrow streets. The city centre is compact. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Armagh?","a":"Armagh moves start from £19 per hour. A local move typically costs £60-£120. A move to Belfast is usually £120-£170 via the A3 and M1."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. City Centre, Cathedral area, The Mall, Richmond, Killylea."},
+    ],
+  },
+
+  "omagh": {
+    title: "Man and Van Omagh | From £19",
+    description: "Man and van Omagh from £19/hr. BT78, BT79. Town Centre, Strathroy, Gortin, Fintona, Beragh. Call 0121 751 1269.",
+    h1: "Man and Van Omagh",
+    intro: "Need a man and van in Omagh? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Omagh move before quoting.",
+    knowledge: "Omagh sits on the A5 about 30 miles south of Derry/Londonderry. The A5 is the main north-south route in the west. The A505 connects east to Cookstown and the M1. The town centre has a mix of traditional and modern buildings. Strathroy is a large residential area. The Sperrin Mountains are nearby to the north-east. The A5 can be busy with agricultural traffic.",
+    localMovingInfo: `Omagh is about 30 miles south of Derry on the A5. Belfast is about 70 miles east via the A505 and M1. The town centre is compact. Strathroy is the main residential area. Enniskillen is about 30 miles south-west. The A5 is the main road — single carriageway and can be slow. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Omagh?","a":"Omagh moves start from £19 per hour. A local move typically costs £60-£120. A move to Derry is usually £120-£170 via the A5."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Strathroy, Gortin, Fintona, Beragh."},
+    ],
+  },
+
+  "enniskillen": {
+    title: "Man and Van Enniskillen | From £19",
+    description: "Man and van Enniskillen from £19/hr. BT74. Town Centre, Castle Coole, Killyhevlin, Lisbellaw. Call 0121 751 1269.",
+    h1: "Man and Van Enniskillen",
+    intro: "Need a man and van in Enniskillen? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Enniskillen move before quoting.",
+    knowledge: "Enniskillen is unique in being built on an island between two loughs. The town centre streets are narrow with limited parking. The A4 connects east to the M1 for Belfast (about 80 miles). The A32 connects north to Omagh. Castle Coole is a National Trust property on the edge of town. The loughs mean some properties are only accessible via small roads. The bridge connections to the island can cause bottlenecks.",
+    localMovingInfo: `Enniskillen sits on an island between Upper and Lower Lough Erne. The town centre streets on the island are narrow with limited parking. The A4 connects east to Belfast (about 80 miles). The A32 connects north to Omagh (about 30 miles). Castle Coole is a local landmark. The island location creates access challenges in the centre. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Enniskillen?","a":"Enniskillen moves start from £19 per hour. A local move typically costs £60-£120. A move to Belfast is usually £150-£220 due to the 80-mile distance."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Castle Coole, Killyhevlin, Lisbellaw."},
+    ],
+  },
+
+  "lurgan": {
+    title: "Man and Van Lurgan | From £19",
+    description: "Man and van Lurgan from £19/hr. BT66, BT67. Town Centre, Brownlow, Shankill, Waringstown. Call 0121 751 1269.",
+    h1: "Man and Van Lurgan",
+    intro: "Need a man and van in Lurgan? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lurgan move before quoting.",
+    knowledge: "Lurgan sits on the M1 about 20 miles south-west of Belfast. Junction 10 provides direct motorway access. Portadown is about 3 miles south — the two towns are very close. Craigavon is effectively between them. The town centre has a traditional main street. Brownlow is a residential area. The M1 makes moves to Belfast straightforward. Lurgan Park is one of the largest urban parks in Northern Ireland.",
+    localMovingInfo: `Lurgan is about 20 miles south-west of Belfast on the M1 at junction 10. Portadown is 3 miles south. Craigavon is between them. The town centre has a traditional main street. Brownlow and Shankill are residential areas. The M1 gives excellent Belfast access. Armagh is about 12 miles south. Rates from £19/hr.`,
+    faq: [
+      {"q":"How much does a man and van cost in Lurgan?","a":"Lurgan moves start from £19 per hour. A local move typically costs £60-£120. A move to Belfast is usually £80-£130 via the M1."},
+    ],
+    localAreaGuides: [
+      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
+      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Brownlow, Shankill, Waringstown."},
+    ],
+  },
+
 };

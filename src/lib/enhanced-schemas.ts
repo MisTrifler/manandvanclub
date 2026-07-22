@@ -5536,6 +5536,396 @@ export const enhancedServiceSchemas: Record<string, Record<string, any>> = {
     },
     serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
   },
+  "dunfermline": {
+    ...baseSchema,
+    name: "Man and Van Club — Dunfermline",
+    description: "Free man and van quote request service in Dunfermline, Fife. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Rosyth, Inverkeithing, Dalgety Bay, Crossgates.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-dunfermline",
+    areaServed: {
+      "@type": "City",
+      name: "Dunfermline",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Fife"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "kirkcaldy": {
+    ...baseSchema,
+    name: "Man and Van Club — Kirkcaldy",
+    description: "Free man and van quote request service in Kirkcaldy, Fife. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Gallatown, Linktown, Pathhead, Templehall.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-kirkcaldy",
+    areaServed: {
+      "@type": "City",
+      name: "Kirkcaldy",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Fife"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "hamilton": {
+    ...baseSchema,
+    name: "Man and Van Club — Hamilton",
+    description: "Free man and van quote request service in Hamilton, South Lanarkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Hillhouse, Whitehill, Fairhill, Earnock.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-hamilton",
+    areaServed: {
+      "@type": "City",
+      name: "Hamilton",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "South Lanarkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "ayr": {
+    ...baseSchema,
+    name: "Man and Van Club — Ayr",
+    description: "Free man and van quote request service in Ayr, South Ayrshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Seafield, Alloway, Prestwick, Heathfield.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-ayr",
+    areaServed: {
+      "@type": "City",
+      name: "Ayr",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "South Ayrshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "cumbernauld": {
+    ...baseSchema,
+    name: "Man and Van Club — Cumbernauld",
+    description: "Free man and van quote request service in Cumbernauld, North Lanarkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Condorrat, Carbrain, Abronhill, Kildrum.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-cumbernauld",
+    areaServed: {
+      "@type": "City",
+      name: "Cumbernauld",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Lanarkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "coatbridge": {
+    ...baseSchema,
+    name: "Man and Van Club — Coatbridge",
+    description: "Free man and van quote request service in Coatbridge, North Lanarkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Greenend, Dunbeth, Langloan, Summerlee.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-coatbridge",
+    areaServed: {
+      "@type": "City",
+      name: "Coatbridge",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Lanarkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "airdrie": {
+    ...baseSchema,
+    name: "Man and Van Club — Airdrie",
+    description: "Free man and van quote request service in Airdrie, North Lanarkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Chapelhall, Caldercruix, Gartlea, Cairnhill.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-airdrie",
+    areaServed: {
+      "@type": "City",
+      name: "Airdrie",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Lanarkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "motherwell": {
+    ...baseSchema,
+    name: "Man and Van Club — Motherwell",
+    description: "Free man and van quote request service in Motherwell, North Lanarkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Wishaw, Carfin, New Stevenston, Bellshill.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-motherwell",
+    areaServed: {
+      "@type": "City",
+      name: "Motherwell",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Lanarkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "wishaw": {
+    ...baseSchema,
+    name: "Man and Van Club — Wishaw",
+    description: "Free man and van quote request service in Wishaw, North Lanarkshire. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Newmains, Wishawhill, Gowkthrapple, Cleland.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-wishaw",
+    areaServed: {
+      "@type": "City",
+      name: "Wishaw",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "North Lanarkshire"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "greenock": {
+    ...baseSchema,
+    name: "Man and Van Club — Greenock",
+    description: "Free man and van quote request service in Greenock, Inverclyde. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Gourock, Port Glasgow, Wemyss Bay, Inverkip.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-greenock",
+    areaServed: {
+      "@type": "City",
+      name: "Greenock",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Inverclyde"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "elgin": {
+    ...baseSchema,
+    name: "Man and Van Club — Elgin",
+    description: "Free man and van quote request service in Elgin, Moray. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, New Elgin, Bishopmill, Lossiemouth, Lhanbryde.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-elgin",
+    areaServed: {
+      "@type": "City",
+      name: "Elgin",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Moray"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "arbroath": {
+    ...baseSchema,
+    name: "Man and Van Club — Arbroath",
+    description: "Free man and van quote request service in Arbroath, Angus. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Seaton, Gayfield, Ladyloan, Westway.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-arbroath",
+    areaServed: {
+      "@type": "City",
+      name: "Arbroath",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Angus"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "barry": {
+    ...baseSchema,
+    name: "Man and Van Club — Barry",
+    description: "Free man and van quote request service in Barry, Vale of Glamorgan. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Barry Island, Cadoxton, Buttrills, Holton Road.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-barry",
+    areaServed: {
+      "@type": "City",
+      name: "Barry",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Vale of Glamorgan"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "bridgend": {
+    ...baseSchema,
+    name: "Man and Van Club — Bridgend",
+    description: "Free man and van quote request service in Bridgend, Bridgend. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Brackla, Broadlands, Pencoed, Pyle.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-bridgend",
+    areaServed: {
+      "@type": "City",
+      name: "Bridgend",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Bridgend"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "merthyr-tydfil": {
+    ...baseSchema,
+    name: "Man and Van Club — Merthyr Tydfil",
+    description: "Free man and van quote request service in Merthyr Tydfil, Merthyr Tydfil. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Pentre-bach, Heolgerrig, Dowlais, Gurnos.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-merthyr-tydfil",
+    areaServed: {
+      "@type": "City",
+      name: "Merthyr Tydfil",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Merthyr Tydfil"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "neath": {
+    ...baseSchema,
+    name: "Man and Van Club — Neath",
+    description: "Free man and van quote request service in Neath, Neath Port Talbot. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Bryncoch, Cadoxton, Skewen, Briton Ferry.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-neath",
+    areaServed: {
+      "@type": "City",
+      name: "Neath",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Neath Port Talbot"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "port-talbot": {
+    ...baseSchema,
+    name: "Man and Van Club — Port Talbot",
+    description: "Free man and van quote request service in Port Talbot, Neath Port Talbot. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Aberavon, Sandfields, Margam, Baglan.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-port-talbot",
+    areaServed: {
+      "@type": "City",
+      name: "Port Talbot",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Neath Port Talbot"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "caerphilly": {
+    ...baseSchema,
+    name: "Man and Van Club — Caerphilly",
+    description: "Free man and van quote request service in Caerphilly, Caerphilly. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Castle area, St Martins, Virginia Park, Watford Park.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-caerphilly",
+    areaServed: {
+      "@type": "City",
+      name: "Caerphilly",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Caerphilly"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "pontypridd": {
+    ...baseSchema,
+    name: "Man and Van Club — Pontypridd",
+    description: "Free man and van quote request service in Pontypridd, Rhondda Cynon Taf. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Treforest, Rhydyfelin, Graig, Hawthorn.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-pontypridd",
+    areaServed: {
+      "@type": "City",
+      name: "Pontypridd",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Rhondda Cynon Taf"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "llandudno": {
+    ...baseSchema,
+    name: "Man and Van Club — Llandudno",
+    description: "Free man and van quote request service in Llandudno, Conwy. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, West Shore, Craig-y-Don, Deganwy, Penrhyn Bay.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-llandudno",
+    areaServed: {
+      "@type": "City",
+      name: "Llandudno",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Conwy"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "carrickfergus": {
+    ...baseSchema,
+    name: "Man and Van Club — Carrickfergus",
+    description: "Free man and van quote request service in Carrickfergus, County Antrim. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Greenisland, Knockagh, Whitehead, Eden.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-carrickfergus",
+    areaServed: {
+      "@type": "City",
+      name: "Carrickfergus",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Antrim"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "coleraine": {
+    ...baseSchema,
+    name: "Man and Van Club — Coleraine",
+    description: "Free man and van quote request service in Coleraine, County Londonderry. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, University area, Killowen, Portrush, Portstewart.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-coleraine",
+    areaServed: {
+      "@type": "City",
+      name: "Coleraine",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Londonderry"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "armagh": {
+    ...baseSchema,
+    name: "Man and Van Club — Armagh",
+    description: "Free man and van quote request service in Armagh, County Armagh. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers City Centre, Cathedral area, The Mall, Richmond, Killylea.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-armagh",
+    areaServed: {
+      "@type": "City",
+      name: "Armagh",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Armagh"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "omagh": {
+    ...baseSchema,
+    name: "Man and Van Club — Omagh",
+    description: "Free man and van quote request service in Omagh, County Tyrone. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Strathroy, Gortin, Fintona, Beragh.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-omagh",
+    areaServed: {
+      "@type": "City",
+      name: "Omagh",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Tyrone"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "enniskillen": {
+    ...baseSchema,
+    name: "Man and Van Club — Enniskillen",
+    description: "Free man and van quote request service in Enniskillen, County Fermanagh. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Castle Coole, Killyhevlin, Lisbellaw.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-enniskillen",
+    areaServed: {
+      "@type": "City",
+      name: "Enniskillen",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Fermanagh"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
+  "lurgan": {
+    ...baseSchema,
+    name: "Man and Van Club — Lurgan",
+    description: "Free man and van quote request service in Lurgan, County Armagh. A verified mover reviews your postcodes, item list, access and route details before sending quote options. Covers Town Centre, Brownlow, Shankill, Waringstown.",
+    url: "https://www.manandvanclub.co.uk/man-and-van-lurgan",
+    areaServed: {
+      "@type": "City",
+      name: "Lurgan",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "County Armagh"
+      }
+    },
+    serviceType: ["Man and Van Services", "House Removals", "Flat Removals", "Office Relocations", "Furniture Delivery"]
+  },
 };
 
 export function getEnhancedServiceSchema(locationKey: string): Record<string, any> | null {
