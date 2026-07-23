@@ -576,6 +576,18 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "wisbech",
   "beccles",
   "totnes",
+  "burnham-on-sea",
+  "westbury",
+  "warminster",
+  "redruth",
+  "portadown",
+  "craigavon",
+  "beckenham",
+  "orpington",
+  "hornchurch",
+  "upminster",
+  "woolwich",
+  "tooting",
 ]);
 
 export function isSeoLaunchMode(): boolean {

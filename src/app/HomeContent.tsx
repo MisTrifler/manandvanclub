@@ -210,7 +210,7 @@ export default function HomeContent() {
           </h1>
 
           <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
-            From £19/hr · Verified movers · 464 UK areas · Free to submit · No spam
+            From £19/hr · Verified movers · 476 UK areas · Free to submit · No spam
           </p>
 
           {/* Move Type Selector */}
@@ -503,7 +503,7 @@ export default function HomeContent() {
             </div>
             <div>
               <h3 className="text-sm font-black text-primary mb-1">Do you cover my area?</h3>
-              <p className="text-sm text-text-secondary leading-relaxed">We cover 464 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route.</p>
+              <p className="text-sm text-text-secondary leading-relaxed">We cover 476 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route.</p>
             </div>
             <div>
               <h3 className="text-sm font-black text-primary mb-1">Can I get a same-day man and van?</h3>
@@ -540,7 +540,7 @@ export default function HomeContent() {
                 {
                   "@type": "Question",
                   name: "Do you cover my area?",
-                  acceptedAnswer: { "@type": "Answer", text: "We cover 464 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route." },
+                  acceptedAnswer: { "@type": "Answer", text: "We cover 476 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route." },
                 },
                 {
                   "@type": "Question",
@@ -590,7 +590,7 @@ export default function HomeContent() {
           </div>
           <div className="text-center mt-4">
             <Link href="/areas-covered" className="text-xs font-black text-accent hover:underline">
-              View all 464 areas →
+              View all 476 areas →
             </Link>
           </div>
 

@@ -10033,4 +10033,484 @@ Stairs and carries define pricing here. Tall houses on Fore Street have entries 
     ],
   },
 
+  "burnham-on-sea": {
+    description: "Man with a van in Burnham-on-Sea from £19/hr. Berrow, Highbridge, Brean. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Burnham-on-Sea? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Somerset coast move and send a quote before you decide whether to book.",
+    knowledge: "Burnham-on-Sea moves run between the Victorian seafront terraces and apartments, the bungalow streets of Berrow and Brean along the dunes, and the Highbridge half of town. The M5 at junction 22 is minutes away for Taunton and Bristol, and summer holiday traffic along the A38 corridor is the main timing factor.",
+    localMovingInfo: `Burnham-on-Sea is a classic Somerset resort town at the mouth of the River Parrett, famous for its low wooden lighthouse standing on legs in the sand. The town is really two halves - the Victorian seafront and centre, then Highbridge a mile inland - with the holiday parks of Berrow and Brean strung along the dunes to the north. Retiree downsizes, holiday-let furniture swaps and end-of-season pack-downs make up much of the local work.
+
+The M5 at junction 22 at Edithmead is only a few minutes from the seafront, putting Taunton about half an hour south and Bristol around 40 minutes north. The A38 is the local spine to Highbridge and beyond. Summer Saturdays bring heavy park changeover traffic on the roads into Berrow and Brean, so weekday or evening slots are worth taking if the date is flexible.
+
+Homes range from seafront guest-house conversions and retirement apartments with stairs and lifts, to 1930s bungalows in Berrow, park homes on the coastal sites, and newer estates on the Highbridge side. Note any park site rules about van size or access times when you submit. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Burnham-on-Sea?", a: "Burnham-on-Sea man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£120. A full 2-3 bed house move usually ranges from £220-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Burnham-on-Sea to Weston-super-Mare?", a: "Burnham-on-Sea to Weston-super-Mare is about 10 miles up the coast. A typical small move costs £55-£110, with single items often from £40-£60. Outside the summer season the run along the coast road is quick." },
+      { q: "Do you handle holiday-let and park home furniture moves?", a: "Yes. Owners at the Berrow and Brean parks regularly request furniture swaps, pack-downs and storage runs at the season ends. List every item and mention the site name and pitch access - parks often have rules on van size and arrival times." },
+      { q: "Do you cover Town Centre, Highbridge, Berrow, Brean and Edithmead?", a: "Yes. Move requests can be submitted for Town Centre, Highbridge, Berrow, Brean and Edithmead and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Seafront flats and retirement moves",
+        body: "The seafront's apartments and guest-house conversions often mean stairs, narrow halls and resident parking. Note the floor level and where a van can stop - it directly affects the quote.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "North to Weston-super-Mare",
+        body: "Weston is about 10 miles up the coast - the most common short hop from Burnham for work moves and larger houses.",
+        links: [{ label: "Man and van Weston-super-Mare", href: "/man-and-van-weston-super-mare" }],
+      },
+      {
+        title: "Inland to Bridgwater",
+        body: "Bridgwater is around 9 miles inland via the A38 corridor, a quick run for part-loads and marketplace collections.",
+        links: [{ label: "Man and van Bridgwater", href: "/man-and-van-bridgwater" }],
+      },
+      {
+        title: "Moves across Somerset",
+        body: "The M5 at junction 22 puts Taunton, Bristol and the rest of Somerset within easy single-run range.",
+        links: [{ label: "Man and van Somerset", href: "/man-and-van-somerset" }, { label: "Man and van Taunton", href: "/man-and-van-taunton" }],
+      },
+    ],
+  },
+  "westbury": {
+    description: "Man with a van in Westbury from £19/hr. Dilton Marsh, Bratton, Westbury Leigh. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Westbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wiltshire move and send a quote before you decide whether to book.",
+    knowledge: "Westbury moves cover the stone-built streets around the Town Centre market place, estates at Dilton Marsh and North Bradley, and the villages of Bratton beneath the White Horse and Westbury Leigh. The A350 is the main north-south route, meeting the A36 towards Bath and Salisbury.",
+    localMovingInfo: `Westbury is a Wiltshire market town sitting beneath the famous White Horse carved into the chalk escarpment of Salisbury Plain. The West Wilts Trading Estate on the town's edge keeps employment moves steady, while the station - a useful mainline junction - pulls commuters. Most local work is families trading between the town's stone cottages and newer estates, with village moves at Dilton Marsh and Bratton close behind.
+
+The A350 runs through the middle of town as the main north-south spine towards Trowbridge and Warminster, and meets the A36 for Bath and Salisbury. Peak-time congestion through the town centre is real, so mid-morning loading helps. The lanes climbing the escarpment around Bratton and towards the White Horse are narrow with grass verges - smaller shuttle vans sometimes beat one large Luton on village jobs.
+
+Housing spans stone cottages and Victorian terraces around the Market Place, 1970s estates on the town edges, and period farms and cottages down the village lanes. Older stone stairs and low doorways are common - photograph awkward items when you submit. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Westbury?", a: "Westbury man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£120. A full 2-3 bed house move usually ranges from £220-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Westbury to Trowbridge?", a: "Westbury to Trowbridge is about 4 miles on the A350. A typical small move costs £45-£85, with single items often from £35-£55. It is one of the shortest hops in the county, but town-centre traffic can add time at rush hour." },
+      { q: "Can you reach village properties down narrow lanes?", a: "Yes. Jobs at Bratton, Westbury Leigh and the escarpment farms are routine. Describe the lane width and turning space or send photos when you submit, so the mover brings a van that fits rather than the largest available." },
+      { q: "Do you cover Town Centre, Westbury Leigh, Dilton Marsh, Bratton and North Bradley?", a: "Yes. Move requests can be submitted for Town Centre, Westbury Leigh, Dilton Marsh, Bratton and North Bradley and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town centre stone cottages",
+        body: "The cottage streets around the Market Place have narrow fronts, stone stairs and limited on-street stopping. Flag any awkward furniture early - dismantling on the day is easier when the mover knows.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Four miles to Trowbridge",
+        body: "Trowbridge is the county town just north on the A350 - the most frequent short route from Westbury for family moves and part-loads.",
+        links: [{ label: "Man and van Trowbridge", href: "/man-and-van-trowbridge" }],
+      },
+      {
+        title: "East to Frome",
+        body: "Frome is roughly 7 miles east, a quick run over the hill for singles and small loads between the two towns.",
+        links: [{ label: "Man and van Frome", href: "/man-and-van-frome" }],
+      },
+      {
+        title: "Moves across Wiltshire",
+        body: "Westbury's position on the A350/A36 junction puts Warminster, Salisbury and the rest of Wiltshire on single-run pricing.",
+        links: [{ label: "Man and van Wiltshire", href: "/man-and-van-wiltshire" }, { label: "Man and van Warminster", href: "/man-and-van-warminster" }],
+      },
+    ],
+  },
+  "warminster": {
+    description: "Man with a van in Warminster from £19/hr. West End, Boreham, Bishopstrow. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Warminster? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wiltshire move and send a quote before you decide whether to book.",
+    knowledge: "Warminster moves often involve military relocations to and from the Salisbury Plain garrisons, plus civilian moves between the Town Centre, the West End, Boreham and Bishopstrow. The A36 links Bath and Salisbury, the A350 runs north to Westbury and Trowbridge, and the A362 heads east towards Frome.",
+    localMovingInfo: `Warminster is a garrison town at the western edge of Salisbury Plain, home to the Land Warfare Centre at Battlesbury Barracks, so forces relocations are a constant part of local life - postings in and out all year, with kit-heavy loads and tight report dates. The town also sits a couple of miles from Longleat, which brings tourist traffic in season. Civilian moves run between the stone cottages around the Market Place, the Victorian streets of the West End and newer estates on the edges.
+
+The A36 is the main route, running south-east to Salisbury and north-west to Bath, with real rush-hour congestion in both directions. The A350 climbs north to Westbury and Trowbridge, and the A362 heads to Frome. Coaches and cars for Longleat slow the A362 corridor at weekends and school holidays.
+
+Housing mixes stone cottages and period terraces around the centre, army quarters and ex-military housing, bungalows in Bishopstrow and newer family estates. Forces moves are usually fast turnaround - submit your dates early and note any quarter-clearance deadlines. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Warminster?", a: "Warminster man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£125. A full 2-3 bed house move usually ranges from £225-£455. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Warminster to Salisbury?", a: "Warminster to Salisbury is about 17 miles on the A36. A typical small move costs £60-£120, with single items often from £40-£65. The A36 is the natural route and clear most of the day outside rush hours." },
+      { q: "Do you handle forces relocation moves?", a: "Yes. Postings in and out of the Plain garrisons are regular work - quarter clearances, part-loads to storage, and full family moves to the next base. Give your report date when you submit so the mover can plan backwards from it." },
+      { q: "Do you cover Town Centre, West End, Boreham, Bishopstrow and Copheap?", a: "Yes. Move requests can be submitted for Town Centre, West End, Boreham, Bishopstrow and Copheap and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Garrison moves and quarter clearances",
+        body: "Army relocations dominate local demand. Label gear by room and note collection windows - moss moves turn around quickly when the item list is complete.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "South-east to Salisbury",
+        body: "Salisbury is about 17 miles down the A36 - the most common longer route from Warminster for civilian and service movers alike.",
+        links: [{ label: "Man and van Salisbury", href: "/man-and-van-salisbury" }],
+      },
+      {
+        title: "North to Westbury and Trowbridge",
+        body: "Westbury is just 4 miles north on the A350, with Trowbridge the county town beyond - quick hops for part-loads and single items.",
+        links: [{ label: "Man and van Westbury", href: "/man-and-van-westbury" }, { label: "Man and van Trowbridge", href: "/man-and-van-trowbridge" }],
+      },
+      {
+        title: "Moves across Wiltshire",
+        body: "Warminster's place in the south-west corner of the county puts Frome and the rest of Wiltshire within easy reach via the A362 and A36.",
+        links: [{ label: "Man and van Wiltshire", href: "/man-and-van-wiltshire" }, { label: "Man and van Frome", href: "/man-and-van-frome" }],
+      },
+    ],
+  },
+  "redruth": {
+    description: "Man with a van in Redruth from £19/hr. Pool, Illogan, Carn Brea. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Redruth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cornwall move and send a quote before you decide whether to book.",
+    knowledge: "Redruth moves cover the granite terraces around Fore Street and the Town Centre, estates towards Illogan and Treleigh, and the adjoining Pool industrial area between Redruth and Camborne. The A30 bypass gives quick access to Truro and the rest of Cornwall, and the A3047 runs through to Camborne.",
+    localMovingInfo: `Redruth was once the capital of the world's copper-mining industry, and its streets still form part of the Cornish Mining World Heritage Site, with Carn Brea hill and its monument overlooking the town. It runs into Camborne with the Pool industrial and retail area between them, so moves hop constantly between the three. The town is one of the more affordable parts of Cornwall, drawing first-time buyers and relocating trades.
+
+The A30 dual carriageway bypasses the town to the north, giving quick runs to Truro, Bodmin and the M5 corridor - though summer holiday traffic fills it on changeover Saturdays. The A3047, the old route, threads through Redruth, Pool and Camborne. Steep streets climb towards Carn Brea and Illogan, and winter weather bites earlier up there than on the coast.
+
+Housing is dominated by granite and Victorian terraces - many with rear-lane or no rear access - miners' cottages in the outlying villages, plus ex-council estates and newer builds on the town edges. Mention lane access and stepped paths when you submit, as they change how the crew works. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Redruth?", a: "Redruth man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£120. A full 2-3 bed house move usually ranges from £220-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Redruth to Truro?", a: "Redruth to Truro is about 9 miles via the A3047 and A30. A typical small move costs £50-£95, with single items often from £35-£55. The A30 makes the route quick outside holiday Saturdays." },
+      { q: "Can you handle terraces with rear-lane access only?", a: "Yes. Many Redruth terraces load from back lanes or steep stepped paths. Note the arrangement when you submit, with photos if you can - the mover plans the carry and crew size around it." },
+      { q: "Do you cover Town Centre, Pool, Treleigh, Illogan and Carn Brea?", a: "Yes. Move requests can be submitted for Town Centre, Pool, Treleigh, Illogan and Carn Brea and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Granite terraces and lane access",
+        body: "The town's older terraces often have garden-level back doors and no vehicle access at the rear. Flag the loading side early - it decides both the van size and the quote.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "East to Truro",
+        body: "Truro is about 9 miles east - the main route for movers trading Redruth value for city jobs and the college.",
+        links: [{ label: "Man and van Truro", href: "/man-and-van-truro" }],
+      },
+      {
+        title: "South coast to Falmouth",
+        body: "Falmouth is roughly 10 miles south, a regular run for movers heading to the harbour town and university campuses.",
+        links: [{ label: "Man and van Falmouth", href: "/man-and-van-falmouth" }],
+      },
+      {
+        title: "Moves across Cornwall",
+        body: "The A30 on the doorstep puts Newquay, Bodmin and the rest of the county on single-run pricing outside the summer peak.",
+        links: [{ label: "Man and van Cornwall", href: "/man-and-van-cornwall" }, { label: "Man and van Newquay", href: "/man-and-van-newquay" }],
+      },
+    ],
+  },
+  "portadown": {
+    description: "Man with a van in Portadown from £19/hr. Killicomaine, Edenderry, Garvaghy. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Portadown? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your County Armagh move and send a quote before you decide whether to book.",
+    knowledge: "Portadown moves run between the terraced streets around the High Street and The Meadows Centre, the Killicomaine, Garvaghy and Edenderry estates, and newer developments near the Bann. The M1 puts Belfast about 30 miles east, the A3 links Armagh city, and the A27 crosses towards Craigavon.",
+    localMovingInfo: `Portadown grew rich as a railway junction on the Dublin-Belfast line and sits on the River Bann between Lurgan and Armagh. The Meadows shopping centre and the long High Street anchor the town centre, while big estates like Killicomaine - one of the largest in Northern Ireland - and Garvaghy spread around the edges. Family moves within the estates and relocations along the Bann corridor dominate local work.
+
+The M1 motorway runs just north of the town, putting Belfast around 30 miles east and Dungannon the other way. The A3 links Armagh city to the south-west, and the A27 crosses the Bann towards Craigavon and its Rushmere retail area. Rush hour queues form where the one-way system meets the bridge and the town centre car parks.
+
+Housing runs from Victorian and Edwardian terraces near the centre, through the post-war semis of Killicomaine and Edenderry, to new-build developments along the Bann and towards the M1 junctions. Estate moves are usually short hops - honest item lists keep the price tight. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Portadown?", a: "Portadown man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£120. A full 2-3 bed house move usually ranges from £220-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Portadown to Belfast?", a: "Portadown to Belfast is about 28 miles up the M1. A typical small move costs £70-£150, with single items often from £50-£80. The motorway makes it a fast single run most of the day." },
+      { q: "Do you cover the big estates like Killicomaine?", a: "Yes, daily. Estate moves are the most common local job - short hops between Killicomaine, Garvaghy and Edenderry with driveway or kerbside loading. Note any one-way streets near the shopping centre when you submit." },
+      { q: "Do you cover Town Centre, Killicomaine, Edenderry, Garvaghy and Corcrain?", a: "Yes. Move requests can be submitted for Town Centre, Killicomaine, Edenderry, Garvaghy and Corcrain and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Estate semis and family moves",
+        body: "The estates around Killicomaine and Edenderry are classic semis with gardens and driveway parking - quick jobs when the item list is complete.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "West to Armagh city",
+        body: "Armagh is about 8 miles south-west on the A3, a short hop for cathedral-city period homes and school moves.",
+        links: [{ label: "Man and van Armagh", href: "/man-and-van-armagh" }],
+      },
+      {
+        title: "Over the Bann to Lurgan and Craigavon",
+        body: "Lurgan is just 4 miles across the river, with Craigavon's Rushmere centre and planned areas directly adjacent - the most frequent short routes of all.",
+        links: [{ label: "Man and van Lurgan", href: "/man-and-van-lurgan" }, { label: "Man and van Craigavon", href: "/man-and-van-craigavon" }],
+      },
+      {
+        title: "Belfast and the M1 corridor",
+        body: "Belfast is under an hour up the M1 - work relocations both ways are priced as single runs.",
+        links: [{ label: "Man and van Belfast", href: "/man-and-van-belfast" }, { label: "Man and van Northern Ireland", href: "/man-and-van-northern-ireland" }],
+      },
+    ],
+  },
+  "craigavon": {
+    description: "Man with a van in Craigavon from £19/hr. Brownlow, Moyraverty, Tullygally. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Craigavon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your County Armagh move and send a quote before you decide whether to book.",
+    knowledge: "Craigavon moves cover Central, Brownlow, Moyraverty, Tullygally and Drumgor - each a few miles apart on the planned road system. The M1 and A3 link Belfast, Lurgan and Portadown, and most jobs are short hops between the planned neighbourhoods or the two older towns either side.",
+    localMovingInfo: `Craigavon was designated a new town in 1965, planned around the existing villages of Lurgan and Portadown with new neighbourhoods at Brownlow and Central in between. Sixty years on it is a practical, spread-out town: the Rushmere shopping centre on the Lurgan side, the lakes at Craigavon City Park, and housing areas laid out on a roundabout-and-dual-carriageway system that confuses sat-navs used to street grids.
+
+The M1 runs along the town's northern edge - Belfast is about 25 miles east - while the A3 crosses through towards Armagh. Internally, jobs often surprise people: Moyraverty to Drumgor can be three miles of roundabouts, so movers price Craigavon hops like inter-town runs rather than street-to-street moves. Include both full postcodes every time.
+
+Housing mixes 1960s and 70s new-town terraces with their distinctive footpath layouts, later estates in Tullygally and Drumgor, and modern developments around the edges of Lurgan and Portadown. Some older areas have parking courts away from the front door - tell the mover how far the carry is. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Craigavon?", a: "Craigavon man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£125. A full 2-3 bed house move usually ranges from £225-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Craigavon to Belfast?", a: "Craigavon to Belfast is about 25 miles up the M1. A typical small move costs £70-£140, with single items often from £50-£80. The motorway keeps the run fast outside commuter hours." },
+      { q: "Do you cover all the planned areas - Moyraverty, Tullygally, Drumgor and beyond?", a: "Yes. Jobs between the Craigavon neighbourhoods are everyday work. Distances inside the town can be a few miles, so include both postcodes and the mover prices the run correctly." },
+      { q: "Do you cover Central, Brownlow, Moyraverty, Tullygally and Drumgor?", a: "Yes. Move requests can be submitted for Central, Brownlow, Moyraverty, Tullygally and Drumgor and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "New-town terraces and parking courts",
+        body: "1960s layouts often mean footpath-only fronts and shared parking courts. Tell the mover the walking distance from van to door - it shapes both the quote and the crew.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Next door to Lurgan",
+        body: "Lurgan borders Craigavon directly to the north-west - market-town streets, estate moves and the shortest local hops of all.",
+        links: [{ label: "Man and van Lurgan", href: "/man-and-van-lurgan" }],
+      },
+      {
+        title: "Across to Portadown and Armagh",
+        body: "Portadown is minutes south-east across the Bann, with Armagh city beyond on the A3 - regular routes for family moves.",
+        links: [{ label: "Man and van Portadown", href: "/man-and-van-portadown" }, { label: "Man and van Armagh", href: "/man-and-van-armagh" }],
+      },
+      {
+        title: "Belfast on the M1",
+        body: "Belfast is about 25 miles up the motorway - single-run pricing for work relocations both ways.",
+        links: [{ label: "Man and van Belfast", href: "/man-and-van-belfast" }, { label: "Man and van Northern Ireland", href: "/man-and-van-northern-ireland" }],
+      },
+    ],
+  },
+  "beckenham": {
+    description: "Man with a van in Beckenham from £26/hr. Clock House, Elmers End, Eden Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Beckenham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-east London move and send a quote before you decide whether to book.",
+    knowledge: "Beckenham moves centre on the Victorian streets around the High Street and Clock House, the mansion flats at Shortlands, and interwar semis at Eden Park and Elmers End. The A222 links Croydon and Bromley, the A234 runs south-west, and the A21 towards Lewisham is the main northbound route.",
+    localMovingInfo: `Beckenham is one of south-east London's most settled family suburbs, with a proper high street, Kelsey Park's lawns and lake, and a cluster of stations feeding London Bridge, Victoria and the City. The Tramlink stop at Beckenham Junction ties it to Croydon, while the Chinese Garage roundabout is the local landmark everyone navigates by. Moves are mostly families trading between the Victorian villas near the centre and the 1930s semis further out, plus downsizers leaving the bigger houses.
+
+The A222 runs through the town linking Croydon and Bromley, the A234 heads south-west towards Penge, and the A21 corridor via Bromley is the route towards Lewisham and the City. Controlled parking zones wrap around the High Street and stations, and ULEZ applies across the whole area, so movers factor permit-suspension advice and compliant vans into the job from the start.
+
+Homes range from grand Victorian villas and mansion flats at Shortlands - often without lifts - to interwar semis at Eden Park and Elmers End, and newer apartment blocks near Beckenham Junction. Mansion-block stairs with no lift change the crew plan significantly, so floor level and lift status are the two details that matter most. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Beckenham?", a: "Beckenham man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £250-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Beckenham to Bromley?", a: "Beckenham to Bromley is about 3 miles on the A222. A typical small move costs £45-£85, with single items often from £35-£55. It is a quick hop outside the school-run and station traffic." },
+      { q: "Can you move mansion flats with no lift?", a: "Yes - it is everyday work in Shortlands and around the High Street. Give the floor number and staircase description when you submit; a tighter stair turn can change both the crew size and the time the job takes." },
+      { q: "Do you cover Town Centre, Clock House, Elmers End, Eden Park and Shortlands?", a: "Yes. Move requests can be submitted for Town Centre, Clock House, Elmers End, Eden Park and Shortlands and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Villas, semis and no-lift mansion blocks",
+        body: "Beckenham's older properties often have wide bay-fronted ground floors but tight upper stairs. Window-out moves are rare but known - mention anything that came in that way.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Three miles to Bromley",
+        body: "Bromley town centre is a 10-minute hop on the A222 - the most common short move from Beckenham for families upsizing.",
+        links: [{ label: "Man and van Bromley", href: "/man-and-van-bromley" }],
+      },
+      {
+        title: "Tramlink side: Croydon",
+        body: "Croydon is a quick run west along the A222 or the tram corridor, a steady route for flat moves between the two town centres.",
+        links: [{ label: "Man and van Croydon", href: "/man-and-van-croydon" }],
+      },
+      {
+        title: "South-east London and beyond",
+        body: "Catford and the A21 corridor link Beckenham to Lewisham and the rest of London on single-run pricing.",
+        links: [{ label: "Man and van Catford", href: "/man-and-van-catford" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "orpington": {
+    description: "Man with a van in Orpington from £26/hr. Petts Wood, Crofton, Locksbottom. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Orpington? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-east London move and send a quote before you decide whether to book.",
+    knowledge: "Orpington moves cover the 1930s semis of Crofton and Petts Wood, the Town Centre apartments near the station, and the village edges at Chelsfield. The A21 is the spine through Locksbottom towards Bromley, the A224 runs north to Sidcup, and the M25 at junction 4 puts Kent within easy reach.",
+    localMovingInfo: `Orpington is a commuter town on London's south-east edge, built largely between the wars around the station and The Walnuts shopping centre, with Priory Gardens providing the green heart of the town. Fast trains into Victoria and London Bridge pull a constant flow of movers in and out, while families climb the ladder from 1930s semis in Crofton to the detached roads of Petts Wood. The M25 fringe means Kent-bound relocations are as common as London-bound ones.
+
+The A21 is the main spine, running from Bromley through Locksbottom and over the M25 at junction 4 towards Sevenoaks. The A224 heads north to Sidcup. Junction 4 of the M25 clogs badly at peaks - movers schedule around it - and the hilly lanes towards Chelsfield and the Downs are narrow with limited passing space.
+
+Housing is dominated by 1930s semis with bay windows and driveways, larger detached houses in Petts Wood, ex-council maisonettes around the fringes, and newer apartment blocks near the station. Most streets offer sensible van access; the common snag is commuter parking near the station filling side roads by 8am. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Orpington?", a: "Orpington man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Orpington to Bromley?", a: "Orpington to Bromley is about 5 miles up the A21. A typical small move costs £50-£95, with single items often from £35-£60. Avoiding the M25 junction 4 peak keeps the run quick." },
+      { q: "Do you handle moves out into Kent?", a: "Yes - it is one of the most common patterns, with families trading Orpington semis for more space in Sevenoaks and the villages. Submit both postcodes and the full item list for accurate single-run pricing." },
+      { q: "Do you cover Town Centre, Crofton, Petts Wood, Locksbottom and Chelsfield?", a: "Yes. Move requests can be submitted for Town Centre, Crofton, Petts Wood, Locksbottom and Chelsfield and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "1930s semis and ladder moves",
+        body: "Crofton's semis are the classic first and second homes here. Driveway parking makes loading easy - the A21 peak is the main timing factor.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Up the A21 to Bromley",
+        body: "Bromley is about 5 miles north - the destination for most upsizing moves within the borough.",
+        links: [{ label: "Man and van Bromley", href: "/man-and-van-bromley" }],
+      },
+      {
+        title: "North to Sidcup",
+        body: "Sidcup is around 5 miles north on the A224, another common hop for families staying within commuting range of the same stations.",
+        links: [{ label: "Man and van Sidcup", href: "/man-and-van-sidcup" }],
+      },
+      {
+        title: "Out to Sevenoaks and Kent",
+        body: "Sevenoaks is roughly 8 miles south over the M25 - priced as a quick single run most of the day.",
+        links: [{ label: "Man and van Sevenoaks", href: "/man-and-van-sevenoaks" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "hornchurch": {
+    description: "Man with a van in Hornchurch from £26/hr. Emerson Park, Elm Park, Ardleigh Green. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Hornchurch? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
+    knowledge: "Hornchurch moves cover the interwar streets around the High Street, the Elm Park estate, and the detached roads of Emerson Park towards Upminster Bridge. The A127 is the fast route to the M25 at junction 29, and the A124 runs west through Romford towards Barking.",
+    localMovingInfo: `Hornchurch is a settled east London town around the Queen's Theatre and Langtons Gardens, with the prestigious Emerson Park estate on one side and the vast Elm Park estate on the other. It has an older-than-average population, so downsizing moves - big family house to bungalow - are as common as the usual upsizing ladder between the interwar semis. Families sell in inner East London and buy here for the gardens and schools.
+
+The A127 is the east-west artery, running to the M25 at junction 29 and west towards Romford and the A12 corridor. The A124 threads through the town to Barking. Rush-hour queues on the A127 are the main timing factor, and controlled parking zones sit around the station and High Street.
+
+Housing is dominated by 1930s semis with driveways, the larger detached houses of Emerson Park, ex-council maisonettes on Elm Park, and newer infill flats near the station. Loft conversions and extensions mean 1930s houses here are often far bigger than they look from the street - describe the room count honestly for the right van size. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Hornchurch?", a: "Hornchurch man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Hornchurch to Romford?", a: "Hornchurch to Romford is about 3 miles. A typical small move costs £45-£85, with single items often from £35-£55. It is one of the shortest hops in the area outside A127 rush hours." },
+      { q: "Do you handle downsizer moves and part-loads?", a: "Yes - downsizing is a huge share of Hornchurch work, often a part-load to the new bungalow plus furniture delivered to family nearby. List everything, including second-drop items, so the mover plans one efficient run." },
+      { q: "Do you cover Town Centre, Emerson Park, Elm Park, Ardleigh Green and Upminster Bridge?", a: "Yes. Move requests can be submitted for Town Centre, Emerson Park, Elm Park, Ardleigh Green and Upminster Bridge and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Interwar semis and downsizers",
+        body: "The 1930s stock here is bigger than it looks - extensions and lofts are standard. Count the actual rooms and the loft contents for an honest quote.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Three miles to Romford",
+        body: "Romford town centre is the next big stop west - shops, schools and the most common short move from Hornchurch.",
+        links: [{ label: "Man and van Romford", href: "/man-and-van-romford" }],
+      },
+      {
+        title: "One stop on: Upminster",
+        body: "Upminster borders Hornchurch to the east - a five-minute hop for movers chasing its station and village feel.",
+        links: [{ label: "Man and van Upminster", href: "/man-and-van-upminster" }],
+      },
+      {
+        title: "West to Dagenham and London",
+        body: "Dagenham and Barking lie west along the A124, with the rest of London beyond on single-run pricing.",
+        links: [{ label: "Man and van Dagenham", href: "/man-and-van-dagenham" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "upminster": {
+    description: "Man with a van in Upminster from £26/hr. Cranham, Corbets Tey, North Ockendon. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Upminster? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
+    knowledge: "Upminster moves run between the streets around Station Road and the Town Centre, the larger plots of Cranham and Corbets Tey, and the semi-rural lanes towards North Ockendon. The A127 and the M25 at junction 29 give fast access east to Brentwood and west into the rest of London.",
+    localMovingInfo: `Upminster sits at London's very eastern edge - the District line's last stop and a c2c terminus into Fenchurch Street - with the restored Upminster Windmill as its landmark and green belt directly beyond. The Station Road shops give it a village feel, while Cranham's wide detached streets and the cottages of Corbets Tey attract movers trading up from Hornchurch and Romford. Commuters dominate; movers see a steady two-way flow with Brentwood and Essex.
+
+The A127 runs east towards the M25 at junction 29 and on to Southend; junction queues around 8am and 5pm are the main timing factor. The A124 links west through Hornchurch. Lanes towards North Ockendon are narrow and rural - vans can reach the farms and cottages, but turning space needs describing when you submit.
+
+Housing runs from 1930s semis near the station, to generous detached plots in Cranham, period cottages in Corbets Tey, and farm conversions out towards North Ockendon. Larger plots mean garden machinery, outbuildings and workshop contents - list them, as they fill van space fast. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Upminster?", a: "Upminster man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Upminster to Brentwood?", a: "Upminster to Brentwood is about 6 miles via the A127. A typical small move costs £50-£90, with single items often from £35-£60. Avoiding the junction 29 peak keeps the run quick." },
+      { q: "Can you reach farm properties and rural cottages?", a: "Yes. Moves out towards North Ockendon are routine - describe the lane, any low branches and the turning space, so the mover sends the right size van rather than the biggest." },
+      { q: "Do you cover Town Centre, Cranham, Corbets Tey, Upminster Bridge and North Ockendon?", a: "Yes. Move requests can be submitted for Town Centre, Cranham, Corbets Tey, Upminster Bridge and North Ockendon and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Larger plots and outbuildings",
+        body: "Cranham's detached houses come with garages, sheds and workshops. Garden machinery and tools take real van space - list them separately for an accurate load plan.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Back west to Romford",
+        body: "Romford is about 4 miles west on the A124 - the busiest short route from Upminster for family moves.",
+        links: [{ label: "Man and van Romford", href: "/man-and-van-romford" }],
+      },
+      {
+        title: "Next stop: Hornchurch",
+        body: "Hornchurch borders Upminster immediately to the west, a few minutes' hop between the two town centres.",
+        links: [{ label: "Man and van Hornchurch", href: "/man-and-van-hornchurch" }],
+      },
+      {
+        title: "East to Brentwood and Essex",
+        body: "Brentwood is around 6 miles east via the A127 - the natural direction for movers leaving London for Essex.",
+        links: [{ label: "Man and van Brentwood", href: "/man-and-van-brentwood" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "woolwich": {
+    description: "Man with a van in Woolwich from £26/hr. Woolwich Arsenal, Plumstead, Shooters Hill. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Woolwich? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-east London move and send a quote before you decide whether to book.",
+    knowledge: "Woolwich moves range from Royal Arsenal riverside apartments with concierge rules, to Victorian terraces in Plumstead and houses up towards Shooters Hill. The A206 runs along the river towards Greenwich, the A205 South Circular crosses south, and the A207 climbs the hill towards Abbey Wood.",
+    localMovingInfo: `Woolwich has been transformed by the Elizabeth line - the station opened in 2022 - and the Royal Arsenal Riverside development, which turned the old munitions complex into thousands of riverfront apartments with their own shops and pier. The covered market stalls around Beresford Square and the free Woolwich Ferry keep the older town alive alongside it. Moves split between young professionals in the Arsenal blocks and families in the Plumstead terraces and on Shooters Hill.
+
+The A206 Woolwich Road runs west along the river towards Greenwich and east towards Thamesmead, while the A205 South Circular crosses south through the foot tunnel approaches. The A207 climbs towards Shooters Hill and Abbey Wood. Ferry queueing and the Blackwall Tunnel approaches clog at rush hour - movers plan river-adjacent jobs for mid-morning.
+
+Housing contrasts sharply: Arsenal apartments with concierge desks, lift bookings and underground parking versus Plumstead's Victorian terraces with on-street parking and bay fronts, plus ex-council flats on the slopes. For the Arsenal blocks, book the lift and loading bay through the concierge in advance - movers ask for the confirmation time. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Woolwich?", a: "Woolwich man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £250-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Woolwich to Greenwich?", a: "Woolwich to Greenwich is about 4 miles along the A206. A typical small move costs £50-£90, with single items often from £35-£60. River-road traffic around the ferry and tunnel approaches is the main timing factor." },
+      { q: "Can you move apartments in the Royal Arsenal blocks?", a: "Yes, constantly. Concierge-managed blocks need a lift and loading bay booking - arrange it with your building and note the slot time when you submit, so the mover arrives within your window." },
+      { q: "Do you cover Town Centre, Woolwich Arsenal, Plumstead, Shooters Hill and Abbey Wood?", a: "Yes. Move requests can be submitted for Town Centre, Woolwich Arsenal, Plumstead, Shooters Hill and Abbey Wood and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Arsenal apartments and lift bookings",
+        body: "Every concierge block on the riverside has its own move-in rules - lift slots, loading bays, deposits. Confirm yours before moving day and pass the details on.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Along the river to Greenwich",
+        body: "Greenwich is about 4 miles west on the A206 - the most common route for movers upgrading from Woolwich flats.",
+        links: [{ label: "Man and van Greenwich", href: "/man-and-van-greenwich" }],
+      },
+      {
+        title: "East to Bexley side",
+        body: "Bexley and Bexleyheath lie a few miles east - regular hops for families trading Plumstead terraces for leafier semis.",
+        links: [{ label: "Man and van Bexley", href: "/man-and-van-bexley" }, { label: "Man and van Bexleyheath", href: "/man-and-van-bexleyheath" }],
+      },
+      {
+        title: "South-east London and beyond",
+        body: "The Elizabeth line and South Circular put the rest of London in reach - single-run pricing across the city.",
+        links: [{ label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "tooting": {
+    description: "Man with a van in Tooting from £26/hr. Tooting Bec, Furzedown, Broadway. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Tooting? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-west London move and send a quote before you decide whether to book.",
+    knowledge: "Tooting moves concentrate on the Victorian terraces between Tooting Broadway and Upper Tooting along the A24, the Furzedown estates, and Summerstown by the river. The A24 is the main artery into central London, and the A205 South Circular skirts Tooting Bec Common.",
+    localMovingInfo: `Tooting is one of south London's busiest young-professional districts - two covered markets at the Broadway and Tooting Market, the Northern line, and St George's Hospital as the area's big employer, which means constant graduate and medic moves. Terraced streets in a strict grid make up most of the housing between Tooting Broadway and Tooting Bec, with Tooting Bec Lido on the common as the local landmark. Flat-shares trading up and first-time buyers arriving from Clapham and Balham drive the market.
+
+The A24 runs straight through from Clapham to Sutton - the artery for every northbound move - while the A205 South Circular skirts Tooting Bec Common towards Streatham. Controlled parking zones cover the grid streets, and the one-way system around the Broadway slows everything at peaks. Mid-morning Monday to Thursday is the sweet spot.
+
+Housing is overwhelmingly Victorian and Edwardian terraces, most converted into two or three flats with steep stairs and no lifts, plus ex-council maisonettes at Furzedown and newer blocks at Summerstown. Shared-house moves are usually part-loads - a room of furniture plus boxes - which suits man-and-van pricing perfectly. Describe which flat in the conversion, the stairs and the door width. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Tooting?", a: "Tooting man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Tooting to Wimbledon?", a: "Tooting to Wimbledon is about 4 miles west. A typical small move costs £50-£90, with single items often from £35-£60. Mid-morning slots avoid the A24 commuter flow into town." },
+      { q: "Do you handle flat-share and St George's staff moves?", a: "Yes - room-by-room moves are daily work here. A typical graduate or hospital-staff load fits a single van run, even including a bike and desk. Label boxes by room and book early around student and rotation changeover dates." },
+      { q: "Do you cover Tooting Broadway, Tooting Bec, Furzedown, Upper Tooting and Summerstown?", a: "Yes. Move requests can be submitted for Tooting Broadway, Tooting Bec, Furzedown, Upper Tooting and Summerstown and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Conversion flats and grid-street access",
+        body: "The terraced grid has narrow stairs, communal halls and CPZ bays. Note which floor your flat is on and whether the van can stop within a few doors - those two facts set the price.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "West to Wimbledon",
+        body: "Wimbledon is about 4 miles west - a classic ladder move for Tooting renters buying their first flat.",
+        links: [{ label: "Man and van Wimbledon", href: "/man-and-van-wimbledon" }],
+      },
+      {
+        title: "South to Mitcham",
+        body: "Mitcham borders Tooting to the south along the A217 side - cheap short hops for movers staying near the Northern line.",
+        links: [{ label: "Man and van Mitcham", href: "/man-and-van-mitcham" }],
+      },
+      {
+        title: "Croydon and the rest of London",
+        body: "Croydon is around 4 miles south, and the A24 carries everything north into the City on single-run pricing.",
+        links: [{ label: "Man and van Croydon", href: "/man-and-van-croydon" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
 };
