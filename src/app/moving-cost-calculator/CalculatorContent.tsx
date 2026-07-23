@@ -212,7 +212,7 @@ export default function CalculatorContent() {
           <Link href="/man-and-van-near-me" className="text-sm text-accent font-bold hover:underline">Find a Mover Near You</Link>
           <Link href="/house-removals" className="text-sm text-accent font-bold hover:underline">House Removals</Link>
           <Link href="/flat-removals" className="text-sm text-accent font-bold hover:underline">Flat Moves</Link>
-          <Link href="/furniture-delivery" className="text-sm text-accent font-bold hover:underline">Furniture Delivery</Link>
+          <Link href="/furniture-delivery-service" className="text-sm text-accent font-bold hover:underline">Furniture Delivery</Link>
         </div>
       </div>
     </div>

@@ -106,21 +106,23 @@ export default function Footer() {
               <li><Link href="/man-and-van-milton-keynes" className="hover:text-accent transition-colors">Milton Keynes</Link></li>
               <li><Link href="/man-and-van-bournemouth" className="hover:text-accent transition-colors">Bournemouth</Link></li>
             </ul>
-            <h4 className="font-bold text-sm mb-3 mt-6">Regional Hubs</h4>
+            <h4 className="font-bold text-sm mb-3 mt-6">Counties &amp; Regions</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-text-secondary text-sm">
               <li><Link href="/man-and-van-west-midlands" className="hover:text-accent transition-colors">West Midlands</Link></li>
               <li><Link href="/man-and-van-east-midlands" className="hover:text-accent transition-colors">East Midlands</Link></li>
-              <li><Link href="/man-and-van-london" className="hover:text-accent transition-colors">London</Link></li>
-              <li><Link href="/man-and-van-manchester" className="hover:text-accent transition-colors">Greater Manchester</Link></li>
-              <li><Link href="/man-and-van-leeds" className="hover:text-accent transition-colors">West Yorkshire</Link></li>
-              <li><Link href="/man-and-van-liverpool" className="hover:text-accent transition-colors">Merseyside</Link></li>
-              <li><Link href="/man-and-van-bristol" className="hover:text-accent transition-colors">South West</Link></li>
-              <li><Link href="/man-and-van-sheffield" className="hover:text-accent transition-colors">South Yorkshire</Link></li>
-              <li><Link href="/man-and-van-glasgow" className="hover:text-accent transition-colors">Scotland</Link></li>
-              <li><Link href="/man-and-van-cardiff" className="hover:text-accent transition-colors">Wales</Link></li>
-              <li><Link href="/man-and-van-newcastle-upon-tyne" className="hover:text-accent transition-colors">North East</Link></li>
-              <li><Link href="/man-and-van-belfast" className="hover:text-accent transition-colors">Northern Ireland</Link></li>
-              <li><Link href="/man-and-van-brighton" className="hover:text-accent transition-colors">South East</Link></li>
+              <li><Link href="/man-and-van-kent" className="hover:text-accent transition-colors">Kent</Link></li>
+              <li><Link href="/man-and-van-essex" className="hover:text-accent transition-colors">Essex</Link></li>
+              <li><Link href="/man-and-van-hampshire" className="hover:text-accent transition-colors">Hampshire</Link></li>
+              <li><Link href="/man-and-van-surrey" className="hover:text-accent transition-colors">Surrey</Link></li>
+              <li><Link href="/man-and-van-devon" className="hover:text-accent transition-colors">Devon</Link></li>
+              <li><Link href="/man-and-van-cornwall" className="hover:text-accent transition-colors">Cornwall</Link></li>
+              <li><Link href="/man-and-van-lancashire" className="hover:text-accent transition-colors">Lancashire</Link></li>
+              <li><Link href="/man-and-van-yorkshire" className="hover:text-accent transition-colors">Yorkshire</Link></li>
+              <li><Link href="/man-and-van-staffordshire" className="hover:text-accent transition-colors">Staffordshire</Link></li>
+              <li><Link href="/man-and-van-cheshire" className="hover:text-accent transition-colors">Cheshire</Link></li>
+              <li><Link href="/man-and-van-scotland" className="hover:text-accent transition-colors">Scotland</Link></li>
+              <li><Link href="/man-and-van-wales" className="hover:text-accent transition-colors">Wales</Link></li>
+              <li><Link href="/man-and-van-northern-ireland" className="hover:text-accent transition-colors">N. Ireland</Link></li>
               <li><Link href="/areas-covered" className="hover:text-accent transition-colors font-semibold">All Areas →</Link></li>
             </ul>
           </div>
@@ -133,7 +135,7 @@ export default function Footer() {
               <li><Link href="/flat-removals" className="hover:text-accent transition-colors">Flat Moves</Link></li>
               <li><Link href="/student-removals" className="hover:text-accent transition-colors">Student Moves</Link></li>
               <li><Link href="/office-removals" className="hover:text-accent transition-colors">Office Relocations</Link></li>
-              <li><Link href="/furniture-delivery" className="hover:text-accent transition-colors">Furniture Delivery</Link></li>
+              <li><Link href="/furniture-delivery-service" className="hover:text-accent transition-colors">Furniture Delivery</Link></li>
               <li><Link href="/piano-removals" className="hover:text-accent transition-colors">Piano Removals</Link></li>
               <li><Link href="/single-item-delivery" className="hover:text-accent transition-colors">Single Item Delivery</Link></li>
               <li><Link href="/same-day-man-and-van" className="hover:text-accent transition-colors">Same Day</Link></li>

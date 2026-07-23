@@ -6,20 +6,20 @@ import { ArrowUpRight, CheckCircle2, MapPin, Package, Route, ShieldCheck } from 
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Edinburgh | Verified Mover Quotes from £19",
-  description: "Submit a free man and van request in Edinburgh. One verified mover reviews your details before you book. From £19/hr.",
+  title: "Man and Van Edinburgh From £19/hr | Free Quotes",
+  description: "Man with a van in Edinburgh from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
   alternates: { canonical: `${baseUrl}/man-and-van-edinburgh` },
   openGraph: {
-    title: "Man and Van Edinburgh | Verified Mover Quotes from £19",
-    description: "Submit a free man and van request in Edinburgh. One verified mover reviews your details before you book. From £19/hr.",
+    title: "Man and Van Edinburgh From £19/hr | Free Quotes",
+    description: "Man with a van in Edinburgh from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
     url: `${baseUrl}/man-and-van-edinburgh`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Edinburgh")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £19")}`, width: 1200, height: 630, alt: "Man and Van Edinburgh | Verified Mover Quotes from £19" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Edinburgh")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`, width: 1200, height: 630, alt: "Man and Van Edinburgh From £19/hr | Free Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Edinburgh | Verified Mover Quotes from £19",
-    description: "Submit a free man and van request in Edinburgh. One verified mover reviews your details before you book. From £19/hr.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Edinburgh")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £19")}`],
+    title: "Man and Van Edinburgh From £19/hr | Free Quotes",
+    description: "Man with a van in Edinburgh from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Edinburgh")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`],
   },
 };
 

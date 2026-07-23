@@ -22,6 +22,7 @@ export interface LocationPageData {
   faqSchema: Record<string, any>;
   region: string;
   pageType: "location";
+  countyHub?: { slug: string; name: string };
   // NEW: rich content sections
   areasWeCover: string[];
   localMovingInfo: string;
@@ -42,6 +43,113 @@ export interface LocationPageData {
   routeLinks?: { slug: string; cityA: string; cityB: string; distance: string; price: string }[];
 }
 
+
+// ─── County / region hub map ───
+// Maps a location's `county` to the hub page that covers it, so every town page
+// links up to its parent hub (hub-and-spoke internal linking).
+const COUNTY_HUBS: Record<string, { slug: string; name: string }> = {
+  // Direct county hubs (HUB_PAGES)
+  "Kent": { slug: "kent", name: "Kent" },
+  "Derbyshire": { slug: "derbyshire", name: "Derbyshire" },
+  "Lancashire": { slug: "lancashire", name: "Lancashire" },
+  "Surrey": { slug: "surrey", name: "Surrey" },
+  "Nottinghamshire": { slug: "nottinghamshire", name: "Nottinghamshire" },
+  "Leicestershire": { slug: "leicestershire", name: "Leicestershire" },
+  "Essex": { slug: "essex", name: "Essex" },
+  "Hertfordshire": { slug: "hertfordshire", name: "Hertfordshire" },
+  "Northamptonshire": { slug: "northamptonshire", name: "Northamptonshire" },
+  "Hampshire": { slug: "hampshire", name: "Hampshire" },
+  "Somerset": { slug: "somerset", name: "Somerset" },
+  "North Somerset": { slug: "somerset", name: "Somerset" },
+  "Devon": { slug: "devon", name: "Devon" },
+  "Warwickshire": { slug: "warwickshire", name: "Warwickshire" },
+  "Berkshire": { slug: "berkshire", name: "Berkshire" },
+  "Buckinghamshire": { slug: "buckinghamshire", name: "Buckinghamshire" },
+  "Worcestershire": { slug: "worcestershire", name: "Worcestershire" },
+  "Staffordshire": { slug: "staffordshire", name: "Staffordshire" },
+  "Norfolk": { slug: "norfolk", name: "Norfolk" },
+  "Suffolk": { slug: "suffolk", name: "Suffolk" },
+  "Dorset": { slug: "dorset", name: "Dorset" },
+  "Cheshire": { slug: "cheshire", name: "Cheshire" },
+  "Wiltshire": { slug: "wiltshire", name: "Wiltshire" },
+  "Cornwall": { slug: "cornwall", name: "Cornwall" },
+  "Cambridgeshire": { slug: "cambridgeshire", name: "Cambridgeshire" },
+  "Shropshire": { slug: "shropshire", name: "Shropshire" },
+  "Gloucestershire": { slug: "gloucestershire", name: "Gloucestershire" },
+  "Herefordshire": { slug: "herefordshire", name: "Herefordshire" },
+  "Oxfordshire": { slug: "oxfordshire", name: "Oxfordshire" },
+  "Medway": { slug: "kent", name: "Kent" },
+  // London conurbation
+  "London": { slug: "london", name: "London" },
+  "Greater London": { slug: "london", name: "London" },
+  "Middlesex": { slug: "london", name: "London" },
+  // Regional hubs
+  "West Midlands": { slug: "west-midlands", name: "West Midlands" },
+  "West Yorkshire": { slug: "yorkshire", name: "Yorkshire" },
+  "South Yorkshire": { slug: "yorkshire", name: "Yorkshire" },
+  "North Yorkshire": { slug: "yorkshire", name: "Yorkshire" },
+  "East Riding of Yorkshire": { slug: "yorkshire", name: "Yorkshire" },
+  "East Yorkshire": { slug: "yorkshire", name: "Yorkshire" },
+  "Greater Manchester": { slug: "manchester", name: "Greater Manchester" },
+  "Merseyside": { slug: "liverpool", name: "Merseyside" },
+  "Tyne and Wear": { slug: "newcastle-upon-tyne", name: "the North East" },
+  "Northumberland": { slug: "newcastle-upon-tyne", name: "the North East" },
+  "County Durham": { slug: "newcastle-upon-tyne", name: "the North East" },
+  "Gateshead": { slug: "newcastle-upon-tyne", name: "the North East" },
+  // City-county hubs
+  "Bristol": { slug: "bristol", name: "Bristol" },
+  "Cardiff": { slug: "cardiff", name: "Cardiff" },
+  "City of Glasgow": { slug: "glasgow", name: "Glasgow" },
+  "City of Edinburgh": { slug: "edinburgh", name: "Edinburgh" },
+  "Dundee City": { slug: "dundee", name: "Dundee" },
+  "Aberdeenshire": { slug: "aberdeen", name: "Aberdeen" },
+  // Scotland
+  "North Lanarkshire": { slug: "scotland", name: "Scotland" },
+  "South Lanarkshire": { slug: "scotland", name: "Scotland" },
+  "Fife": { slug: "scotland", name: "Scotland" },
+  "Scottish Borders": { slug: "scotland", name: "Scotland" },
+  "West Lothian": { slug: "scotland", name: "Scotland" },
+  "Stirling": { slug: "scotland", name: "Scotland" },
+  "South Ayrshire": { slug: "scotland", name: "Scotland" },
+  "East Ayrshire": { slug: "scotland", name: "Scotland" },
+  "Renfrewshire": { slug: "scotland", name: "Scotland" },
+  "Perth and Kinross": { slug: "scotland", name: "Scotland" },
+  "Moray": { slug: "scotland", name: "Scotland" },
+  "Inverclyde": { slug: "scotland", name: "Scotland" },
+  "Highland": { slug: "scotland", name: "Scotland" },
+  "Falkirk": { slug: "scotland", name: "Scotland" },
+  "Angus": { slug: "scotland", name: "Scotland" },
+  // Wales
+  "Gwynedd": { slug: "wales", name: "Wales" },
+  "Vale of Glamorgan": { slug: "wales", name: "Wales" },
+  "Pembrokeshire": { slug: "wales", name: "Wales" },
+  "Neath Port Talbot": { slug: "wales", name: "Wales" },
+  "West Glamorgan": { slug: "wales", name: "Wales" },
+  "South Glamorgan": { slug: "wales", name: "Wales" },
+  "Rhondda Cynon Taf": { slug: "wales", name: "Wales" },
+  "Merthyr Tydfil": { slug: "wales", name: "Wales" },
+  "Gwent": { slug: "wales", name: "Wales" },
+  "Conwy": { slug: "wales", name: "Wales" },
+  "Clwyd": { slug: "wales", name: "Wales" },
+  "Ceredigion": { slug: "wales", name: "Wales" },
+  "Caerphilly": { slug: "wales", name: "Wales" },
+  "Bridgend": { slug: "wales", name: "Wales" },
+  "Anglesey": { slug: "wales", name: "Wales" },
+  // Northern Ireland
+  "County Down": { slug: "northern-ireland", name: "Northern Ireland" },
+  "County Antrim": { slug: "northern-ireland", name: "Northern Ireland" },
+  "County Tyrone": { slug: "northern-ireland", name: "Northern Ireland" },
+  "County Londonderry": { slug: "northern-ireland", name: "Northern Ireland" },
+  "County Armagh": { slug: "northern-ireland", name: "Northern Ireland" },
+  "County Fermanagh": { slug: "northern-ireland", name: "Northern Ireland" },
+};
+
+function getCountyHub(loc: LocationData): { slug: string; name: string } | undefined {
+  const hub = COUNTY_HUBS[loc.county];
+  // Don't link a hub to itself (e.g. the london location vs london hub are different pages, keep that)
+  if (hub && hub.slug !== loc.slug) return hub;
+  return undefined;
+}
 
 const SERVICE_LINKS = [
   { title: "House Removals", href: "/house-removals" },
@@ -1489,6 +1597,7 @@ export function getLocationPageData(slug: string): LocationPageData | null {
     postcodeCoverage: generatePostcodeCoverage(loc),
     region: loc.region,
     pageType: "location" as const,
+    countyHub: getCountyHub(loc),
     coverageSignal: COVERAGE_SIGNAL_SLUGS.has(loc.slug),
     crossRegionLinks: getCrossRegionLinks(loc),
     routeLinks: getRouteLinksForCity(loc.name),

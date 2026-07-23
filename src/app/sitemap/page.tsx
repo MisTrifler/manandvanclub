@@ -18,7 +18,7 @@ const SERVICES = [
   { name: "Flat Removals", href: "/flat-removals" },
   { name: "Student Removals", href: "/student-removals" },
   { name: "Office Removals", href: "/office-removals" },
-  { name: "Furniture Delivery", href: "/furniture-delivery" },
+  { name: "Furniture Delivery", href: "/furniture-delivery-service" },
   { name: "Same-Day Man and Van", href: "/same-day-man-and-van" },
   { name: "Long-Distance Removals", href: "/long-distance-removals" },
   { name: "Facebook Marketplace Collection", href: "/facebook-marketplace-collection" },

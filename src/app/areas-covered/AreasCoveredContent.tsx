@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useMemo, useRef } from "react";
 import { Phone } from "lucide-react";
 import { LOCATIONS, LOCATION_REGIONS } from "@/constants/locations";
+import { HUB_PAGES } from "@/lib/hub-page-data";
 import { MapPin, ArrowUpRight, Search, X } from "lucide-react";
 
 export default function AreasCoveredContent() {
@@ -219,6 +220,38 @@ export default function AreasCoveredContent() {
                   </div>
                   <ArrowUpRight size={18} className="text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" />
                 </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* County Hub Pages */}
+      <section className="py-16 border-b border-border bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+            <span className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.28em] border border-accent/20">
+              <MapPin size={12} /> County Guides
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight">
+              Browse by County
+            </h2>
+            <p className="text-text-secondary font-medium leading-relaxed">
+              Each county guide covers its towns, road access and typical man and van prices from £19/hr.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {Object.values(HUB_PAGES).map((hub) => (
+              <Link
+                key={hub.slug}
+                href={`/man-and-van-${hub.slug}`}
+                className="group bg-[#F9F9F7] rounded-2xl border border-border p-5 hover:border-accent hover:bg-white hover:shadow-lg transition-all"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-sm font-black uppercase tracking-tight text-primary group-hover:text-accent transition-colors">{hub.name}</h3>
+                  <ArrowUpRight size={16} className="text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" />
+                </div>
+                <p className="text-xs text-text-secondary font-medium leading-relaxed mt-2">{hub.neighborhoods.slice(0, 3).join(", ")}</p>
               </Link>
             ))}
           </div>

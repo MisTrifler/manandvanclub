@@ -28,6 +28,12 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // Duplicate service page consolidated — canonical page is /furniture-delivery-service
+        source: '/furniture-delivery',
+        destination: '/furniture-delivery-service',
+        permanent: true,
+      },
+      {
         // Duplicate town pages consolidated — canonical pages kept at the original slugs
         source: '/man-and-van-ashford-kent',
         destination: '/man-and-van-ashford',

@@ -34,7 +34,7 @@ export const SERVICES: Service[] = [
     t: "Furniture Collection", 
     d: "Single items from shops or private sellers", 
     i: <Sofa size={24} />, 
-    h: "/furniture-delivery", 
+    h: "/furniture-delivery-service", 
     img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" 
   },
   { 

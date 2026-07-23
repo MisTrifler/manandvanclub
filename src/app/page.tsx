@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     description:
       "Man with a van nationwide from £19/hr. House removals, flat moves, furniture delivery and same-day jobs. One verified mover quotes — no spam calls.",
     url: siteUrl,
+    type: "website",
+    locale: "en_GB",
+    siteName: "Man and Van Club",
     images: [
       {
         url: "/images/og-homepage.jpg",

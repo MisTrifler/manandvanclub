@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Man and Van London From £26/hr | Man and Van Club",
-    description: "Man and van London from £26/hr self-loading, £34/hr driver-helps. AnyVan-matching prices across all boroughs. One verified mover quotes — no spam. Call 0121 751 1269.",
+    description: "Man and van London from £26/hr self-loading, £34/hr driver-helps. Among the most competitive rates in the capital. One verified mover quotes — no spam. Call 0121 751 1269.",
     url: `${baseUrl}/man-and-van-london`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: "Man and Van London | Verified Mover Quotes" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("From £26/hr, Free Quotes")}`, width: 1200, height: 630, alt: "Man and Van London | Verified Mover Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van London From £26/hr | Man and Van Club",
     description: "Submit a free man and van request across London. From Croydon to Wembley, one verified mover reviews your details before you book.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("From £26/hr, Free Quotes")}`],
   },
 };
 
@@ -78,7 +78,7 @@ const services = [
   { title: "House removals", href: "/house-removals", icon: Truck },
   { title: "Flat moves", href: "/flat-removals", icon: Building2 },
   { title: "Student moves", href: "/student-removals", icon: GraduationCap },
-  { title: "Furniture collection", href: "/furniture-delivery", icon: Sofa },
+  { title: "Furniture collection", href: "/furniture-delivery-service", icon: Sofa },
   { title: "Same-day man and van", href: "/same-day-man-and-van", icon: Route },
 ];
 

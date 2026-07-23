@@ -587,6 +587,54 @@ export default function HomeContent() {
               View all 435 areas →
             </Link>
           </div>
+
+          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter text-center mb-6 mt-12">
+            Browse by region
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {[
+              { name: "West Midlands", slug: "man-and-van-west-midlands" },
+              { name: "East Midlands", slug: "man-and-van-east-midlands" },
+              { name: "Kent", slug: "man-and-van-kent" },
+              { name: "Essex", slug: "man-and-van-essex" },
+              { name: "Yorkshire", slug: "man-and-van-yorkshire" },
+              { name: "Lancashire", slug: "man-and-van-lancashire" },
+              { name: "Scotland", slug: "man-and-van-scotland" },
+              { name: "Wales", slug: "man-and-van-wales" },
+            ].map((hub) => (
+              <Link
+                key={hub.slug}
+                href={`/${hub.slug}`}
+                className="text-xs font-bold text-primary hover:text-accent py-2 px-3 bg-[#F9F9F7] rounded-lg hover:bg-accent/5 transition-colors text-left"
+              >
+                {hub.name} <ArrowRight size={10} className="inline text-accent ml-1" />
+              </Link>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-black text-primary uppercase tracking-tighter text-center mb-6 mt-12">
+            Moving guides
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {[
+              { name: "How much does a man and van cost?", slug: "blog/how-much-does-man-and-van-cost" },
+              { name: "UK house moving checklist 2026", slug: "blog/house-moving-checklist-uk" },
+              { name: "Same-day move guide", slug: "blog/same-day-move-guide" },
+            ].map((post) => (
+              <Link
+                key={post.slug}
+                href={`/${post.slug}`}
+                className="text-xs font-bold text-primary hover:text-accent py-2 px-3 bg-[#F9F9F7] rounded-lg hover:bg-accent/5 transition-colors text-left"
+              >
+                {post.name} <ArrowRight size={10} className="inline text-accent ml-1" />
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-4">
+            <Link href="/blog" className="text-xs font-black text-accent hover:underline">
+              All moving tips &amp; guides →
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -20,9 +20,9 @@ import {
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van West Midlands | Verified Mover Quotes",
+  title: "Man and Van West Midlands From £19/hr | Free Quotes",
   description:
-    "Submit a free man and van request in the West Midlands. Get a guide price, keep your details private, and receive a quote from one verified mover before you book.",
+    "Man with a van in the West Midlands from £19/hr. Get a guide price, keep your details private, and receive a quote from one verified mover before you book. Rated 5.0/5 from 11 reviews.",
   alternates: {
     canonical: `${baseUrl}/man-and-van-west-midlands`,
   },
@@ -55,7 +55,7 @@ const services = [
   { title: "House removals", href: "/house-removals", icon: Truck },
   { title: "Flat moves", href: "/flat-removals", icon: Building2 },
   { title: "Student moves", href: "/student-removals", icon: GraduationCap },
-  { title: "Furniture collection", href: "/furniture-delivery", icon: Sofa },
+  { title: "Furniture collection", href: "/furniture-delivery-service", icon: Sofa },
   { title: "Same-day man and van", href: "/same-day-man-and-van", icon: Route },
 ];
 

@@ -776,6 +776,19 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                 </div>
               )}
 
+              {/* ── County/Region Hub — Internal Linking ── */}
+              {data.countyHub && (
+                <div className="space-y-10">
+                  <Link
+                    href={`/man-and-van-${data.countyHub.slug}`}
+                    className="group flex items-center justify-between bg-primary text-white p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
+                  >
+                    <span className="font-black uppercase text-[11px] tracking-widest group-hover:text-accent transition-colors">Man and Van {data.countyHub.name} — Full Area Guide</span>
+                    <ArrowUpRight size={18} className="text-white/60 group-hover:text-accent transition-colors" />
+                  </Link>
+                </div>
+              )}
+
               {/* ── Region Cities ── */}
               {data.regionCities && data.regionCities.length > 0 && (
                 <div className="space-y-10">

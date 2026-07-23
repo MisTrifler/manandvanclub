@@ -37,7 +37,6 @@ const serviceSlugs = [
   "flat-removals",
   "student-removals",
   "office-removals",
-  "furniture-delivery",
   "same-day-man-and-van",
   "long-distance-removals",
   "facebook-marketplace-collection",
@@ -50,7 +49,7 @@ const baseServiceLinks = [
       { title: "Flat Moves", href: "/flat-removals" },
       { title: "Office Relocations", href: "/office-removals" },
       { title: "Student Moves", href: "/student-removals" },
-      { title: "Furniture Delivery", href: "/furniture-delivery" },
+      { title: "Furniture Delivery", href: "/furniture-delivery-service" },
       { title: "Long Distance Moves", href: "/long-distance-removals" },
       { title: "Same Day Moves", href: "/same-day-man-and-van" },
       { title: "Help Me Move", href: "/help-me-move" },
@@ -166,33 +165,6 @@ const servicePageData: Record<string, any> = {
       { q: "Do you handle IT equipment?", a: "Add IT equipment, monitors, servers or fragile electronics to your request so the mover can confirm what they can handle before quoting." },
       { q: "How much notice do you need for an office move?", a: "We recommend at least 1–2 weeks' notice for office moves to ensure proper planning and availability." },
       { q: "How much does an office removal cost?", a: "In 2026, UK office removal costs typically range from £300–£600 for a small office (1–5 desks), £600–£1,500 for a medium office (5–20 desks), and £1,500+ for larger offices. Prices depend on the amount of equipment, IT infrastructure, access, loading bay availability and whether the move happens outside business hours. Submit your details for a guide price first." }
-    ]
-  },
-  "furniture-delivery": {
-    name: "Furniture Delivery",
-    formIntent: "single-item",
-    title: "Furniture Delivery | From £19 | Man and Van Club",
-    description: "Furniture collection and delivery quote requests across the UK from £19. From one bulky item to multiple furniture pieces, submit details so an approved mover can review before quoting. Call 0121 751 1269.",
-    badge: "Furniture Delivery Requests",
-    h1: "Furniture Collection & Delivery",
-    intro: "Need a sofa, bed, wardrobe, appliance or online purchase collected? Add item size, pickup and delivery postcodes, stairs and helpers so a mover can quote accurately.",
-    knowledge: "Furniture jobs depend on item size, access and handling. A wardrobe up two flights of stairs is different from a boxed item collected from a shop, so the request form asks for the details that matter.",
-    proofQuote: "Best for single items, Facebook Marketplace buys, shop collections and bulky furniture loads that need the right van and handling.",
-    requestTypesHeading: "Common Furniture Delivery Requests",
-    areas: ["Sofas", "Beds", "Wardrobes", "Dining Sets", "Appliances", "Online Purchases"],
-    featureCards: [
-      { t: "Item Size Matters", d: "Add dimensions, weight and photos if needed so the mover can judge the handling.", icon: "furniture" },
-      { t: "Pickup & Drop-Off", d: "Collection and delivery postcodes help calculate the route and guide price.", icon: "route" },
-      { t: "Access Notes", d: "Stairs, lifts, tight turns and parking details help avoid failed collections.", icon: "access" },
-      { t: "Item Or Load Friendly", d: "Useful for one-off items or several bulky pieces without filling in a full house-removal request.", icon: "package" }
-    ],
-    serviceLinks: baseServiceLinks.filter((item) => item.href !== "/furniture-delivery"),
-    popularLocations,
-    faq: [
-      { q: "Can you collect from a shop or seller?", a: "Yes. Collections from shops, private sellers or auction houses can be submitted. Provide the collection postcode and item details so the mover can quote accurately." },
-      { q: "How much does furniture collection cost?", a: "In 2026, UK single-item furniture collection prices start from £19 for a local collection (sofa, bed, wardrobe or appliance). Multi-item collections or longer distances cost more. Prices depend on distance, item size, access, stairs and whether extra help is needed. Use the form to see a guide price first." },
-      { q: "Will my furniture be protected?", a: "Movers typically use protective blankets and straps as standard. Movers must provide Goods in Transit and Public Liability insurance before they are approved, and we recommend confirming cover details directly with your mover." },
-      { q: "How much does a Facebook Marketplace collection cost?", a: "Marketplace collections in 2026 start from £19 for a single local item. Sofa and bed collections are at the higher end due to size and handling. Add item dimensions and access details for an accurate guide price." }
     ]
   },
   "same-day-man-and-van": {

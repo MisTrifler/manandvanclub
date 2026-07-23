@@ -4018,5 +4018,6 @@ export function getRouteBySlug(slug: string): RouteData | undefined {
 
 // All route slugs for static generation
 export function getAllRouteSlugs(): string[] {
-  return ROUTES.map(r => r.slug);
+  // Deduplicated — ROUTES contains a small number of duplicated entries
+  return Array.from(new Set(ROUTES.map(r => r.slug)));
 }

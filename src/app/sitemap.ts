@@ -129,13 +129,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const services = [
     "house-removals", "flat-removals", "student-removals",
-    "office-removals", "furniture-delivery", "same-day-man-and-van",
+    "office-removals", "furniture-delivery-service", "same-day-man-and-van",
     "long-distance-removals", "facebook-marketplace-collection"
   ];
 
   const highIntentServiceSlugs = new Set([
     'same-day-man-and-van',
-    'furniture-delivery',
     'student-removals',
   ]);
 
@@ -184,8 +183,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/man-and-van-scotland', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-wales', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-northern-ireland', priority: 0.9, freq: 'monthly' as const },
-    { route: '/man-and-van-hertfordshire', priority: 0.9, freq: 'monthly' as const },
-    { route: '/man-and-van-kent', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-cambridgeshire', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-cost', priority: 0.95, freq: 'monthly' as const },
     { route: '/moving-home', priority: 0.95, freq: 'monthly' as const },
@@ -236,7 +233,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/flat-removals', priority: 0.8, freq: 'monthly' as const },
     { route: '/student-removals', priority: 0.8, freq: 'monthly' as const },
     { route: '/office-removals', priority: 0.8, freq: 'monthly' as const },
-    { route: '/furniture-delivery', priority: 0.8, freq: 'monthly' as const },
     { route: '/same-day-man-and-van', priority: 0.8, freq: 'weekly' as const },
     { route: '/long-distance-removals', priority: 0.8, freq: 'monthly' as const },
     { route: '/facebook-marketplace-collection', priority: 0.75, freq: 'monthly' as const },

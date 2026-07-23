@@ -18,23 +18,23 @@ import {
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van Liverpool | Verified Mover Quotes from £19",
+  title: "Man and Van Liverpool From £19/hr | Free Quotes",
   description:
-    "Submit a free man and van request across Merseyside. From Liverpool city centre to Bootle, Birkenhead and Southport, one verified mover reviews your details before you book.",
+    "Man with a van across Merseyside from £19/hr. From Liverpool city centre to Bootle, Birkenhead and Southport, one verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
   alternates: {
     canonical: `${baseUrl}/man-and-van-liverpool`,
   },
   openGraph: {
-    title: "Man and Van Liverpool | Verified Mover Quotes from £19",
-    description: "Submit a free man and van request across Merseyside. From Liverpool city centre to Bootle, Birkenhead and Southport, one verified mover reviews your details before you book.",
+    title: "Man and Van Liverpool From £19/hr | Free Quotes",
+    description: "Man with a van across Merseyside from £19/hr. From Liverpool city centre to Bootle, Birkenhead and Southport, one verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
     url: `${baseUrl}/man-and-van-liverpool`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Liverpool")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: "Man and Van Liverpool | Verified Mover Quotes" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Liverpool")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`, width: 1200, height: 630, alt: "Man and Van Liverpool From £19/hr | Free Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van Liverpool | Verified Mover Quotes from £19",
-    description: "Submit a free man and van request across Merseyside. One verified mover reviews your details before you book.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Liverpool")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
+    title: "Man and Van Liverpool From £19/hr | Free Quotes",
+    description: "Man with a van across Merseyside from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Liverpool")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`],
   },
 };
 
@@ -57,7 +57,7 @@ const services = [
   { title: "House removals", href: "/house-removals", icon: Truck },
   { title: "Flat moves", href: "/flat-removals", icon: Building2 },
   { title: "Student moves", href: "/student-removals", icon: GraduationCap },
-  { title: "Furniture collection", href: "/furniture-delivery", icon: Sofa },
+  { title: "Furniture collection", href: "/furniture-delivery-service", icon: Sofa },
   { title: "Same-day man and van", href: "/same-day-man-and-van", icon: Route },
 ];
 

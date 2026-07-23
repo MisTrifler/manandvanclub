@@ -7,20 +7,20 @@ import { ArrowUpRight, CheckCircle2, MapPin, Package, Route, ShieldCheck, Truck,
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van York | Verified Mover Quotes from £19",
-  description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £19/hr. City centre, Acomb, Haxby, Fulford.",
+  title: "Man and Van York From £19/hr | Free Quotes",
+  description: "Man with a van in York from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews. City centre, Acomb, Haxby, Fulford.",
   alternates: { canonical: `${baseUrl}/man-and-van-york` },
   openGraph: {
-    title: "Man and Van York | Verified Mover Quotes from £19",
-    description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £19/hr.",
+    title: "Man and Van York From £19/hr | Free Quotes",
+    description: "Man with a van in York from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
     url: `${baseUrl}/man-and-van-york`,
-    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £19")}`, width: 1200, height: 630, alt: "Man and Van York | Verified Mover Quotes from £19" }],
+    images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`, width: 1200, height: 630, alt: "Man and Van York From £19/hr | Free Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van York | Verified Mover Quotes from £19",
-    description: "Submit a free man and van request in York. One verified mover reviews your details before you book. From £19/hr.",
-    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("Verified Mover Quotes from £19")}`],
+    title: "Man and Van York From £19/hr | Free Quotes",
+    description: "Man with a van in York from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
+    images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van York")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`],
   },
 };
 
@@ -121,7 +121,7 @@ const services = [
   { icon: <Truck size={24} />, title: "House Removals", desc: "Family homes, period properties and suburban relocations across York.", href: "/house-removals" },
   { icon: <Building2 size={24} />, title: "Flat Moves", desc: "City-centre apartments, Georgian terraces and riverside flats.", href: "/flat-removals" },
   { icon: <GraduationCap size={24} />, title: "Student Moves", desc: "University of York student moves, June to September.", href: "/student-removals" },
-  { icon: <Sofa size={24} />, title: "Furniture Delivery", desc: "Single-item collections, antique deliveries and marketplace pickups.", href: "/furniture-delivery" },
+  { icon: <Sofa size={24} />, title: "Furniture Delivery", desc: "Single-item collections, antique deliveries and marketplace pickups.", href: "/furniture-delivery-service" },
   { icon: <Clock size={24} />, title: "Same Day", desc: "Urgent local moves and last-minute collections when available.", href: "/same-day-man-and-van" },
   { icon: <Users size={24} />, title: "Office Moves", desc: "Small office relocations, IT equipment and business clearing.", href: "/office-removals" },
 ];

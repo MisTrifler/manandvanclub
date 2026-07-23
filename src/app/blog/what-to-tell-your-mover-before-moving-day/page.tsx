@@ -142,7 +142,7 @@ export default function BlogPost() {
               <div className="flex flex-wrap gap-3">
                 <Link href="/house-removals" className="text-sm text-accent font-bold hover:underline">House Removals</Link>
                 <Link href="/flat-removals" className="text-sm text-accent font-bold hover:underline">Flat Moves</Link>
-                <Link href="/furniture-delivery" className="text-sm text-accent font-bold hover:underline">Furniture Delivery</Link>
+                <Link href="/furniture-delivery-service" className="text-sm text-accent font-bold hover:underline">Furniture Delivery</Link>
                 <Link href="/man-and-van-near-me" className="text-sm text-accent font-bold hover:underline">Find a Mover Near You</Link>
                 <Link href="/man-and-van-prices" className="text-sm text-accent font-bold hover:underline">Man and Van Prices</Link>
               </div>

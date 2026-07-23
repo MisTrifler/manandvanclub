@@ -5,9 +5,9 @@ import { Metadata } from "next";
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van vs Removal Company | Man and Van Club",
+  title: "Man and Van or Removal Company? Cost & How to Choose (2026)",
   description:
-    "Understand when a man and van is the better choice over a full removal company, and when you might need the extra capacity, crew and packing services.",
+    "Understand when a man and van is the better choice over a full removal company, and when you might need the extra capacity, crew and packing services. UK cost guide for 2026.",
   alternates: {
     canonical: `${baseUrl}/blog/man-and-van-vs-removal-company-guide`,
   },
@@ -142,7 +142,7 @@ export default function BlogPost() {
                 <Link href="/man-and-van-prices" className="text-sm text-accent font-bold hover:underline">Man and Van Prices</Link>
                 <Link href="/house-removals" className="text-sm text-accent font-bold hover:underline">House Removals</Link>
                 <Link href="/flat-removals" className="text-sm text-accent font-bold hover:underline">Flat Moves</Link>
-                <Link href="/furniture-delivery" className="text-sm text-accent font-bold hover:underline">Furniture Delivery</Link>
+                <Link href="/furniture-delivery-service" className="text-sm text-accent font-bold hover:underline">Furniture Delivery</Link>
               </div>
             </div>
           </div>

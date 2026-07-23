@@ -2,6 +2,7 @@ import Link from "next/link";
 import FAQ from "@/components/FAQ";
 import { ArrowUpRight, CheckCircle2, MapPin, Route, ShieldCheck, Truck, Building2, GraduationCap, Sofa, Clock, Users, Phone } from "lucide-react";
 import { HubPageData } from "@/lib/hub-page-data";
+import { LOCATIONS } from "@/constants/locations";
 import { isLocationIndexable } from "@/lib/seo-quality-guard";
 
 const baseUrl = "https://www.manandvanclub.co.uk";
@@ -10,7 +11,7 @@ const services = [
   { icon: <Truck size={24} />, title: "House Removals", desc: "Family homes, terraced houses and suburban relocations.", href: "/house-removals" },
   { icon: <Building2 size={24} />, title: "Flat Moves", desc: "City-centre apartments and new-build moves.", href: "/flat-removals" },
   { icon: <GraduationCap size={24} />, title: "Student Moves", desc: "University moves, June to September.", href: "/student-removals" },
-  { icon: <Sofa size={24} />, title: "Furniture Delivery", desc: "Single-item collections, marketplace pickups.", href: "/furniture-delivery" },
+  { icon: <Sofa size={24} />, title: "Furniture Delivery", desc: "Single-item collections, marketplace pickups.", href: "/furniture-delivery-service" },
   { icon: <Clock size={24} />, title: "Same Day", desc: "Urgent local moves when available.", href: "/same-day-man-and-van" },
   { icon: <Users size={24} />, title: "Office Moves", desc: "Small office relocations and business clearing.", href: "/office-removals" },
 ];
@@ -19,6 +20,15 @@ export default function HubPageContent({ hub }: { hub: HubPageData }) {
   const nearbyAreas = hub.nearbyAreas
     .filter(area => isLocationIndexable(area.slug))
     .map(area => ({ ...area, href: `/man-and-van-${area.slug}` }));
+
+  // Towns & cities within this hub's area — real links so equity flows hub → town
+  const hubTowns = LOCATIONS
+    .filter(l => l.slug !== hub.slug && isLocationIndexable(l.slug) && (
+      l.county === hub.name || hub.neighborhoods.includes(l.name)
+    ))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const visibleTowns = hubTowns.slice(0, 16);
+  const extraTownCount = hubTowns.length - visibleTowns.length;
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -166,6 +176,32 @@ export default function HubPageContent({ hub }: { hub: HubPageData }) {
           </div>
         </div>
       </section>
+
+      {/* Towns & Cities in this hub — internal linking hub → town */}
+      {visibleTowns.length > 0 && (
+        <section className="py-16 bg-white border-b border-border">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-10">
+              <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.35em]">Area Guides</span>
+              <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight mt-4">Man and Van in {hub.name} Towns</h2>
+              <p className="text-text-secondary mt-3 text-sm max-w-xl mx-auto">Free move requests in every {hub.name} town below — one verified mover quotes before you decide whether to book.</p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {visibleTowns.map((town) => (
+                <Link key={town.slug} href={`/man-and-van-${town.slug}`} className="group flex items-center justify-between bg-[#F9F9F7] rounded-2xl border border-border p-5 hover:border-accent hover:shadow-md transition-all">
+                  <span className="font-black text-primary text-xs uppercase tracking-tight group-hover:text-accent transition-colors">Man and Van {town.name}</span>
+                  <ArrowUpRight size={14} className="text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+            {extraTownCount > 0 && (
+              <p className="text-center mt-6 text-sm text-text-secondary">
+                Plus {extraTownCount} more areas — <Link href="/areas-covered" className="text-accent font-bold hover:underline">see all areas we cover →</Link>
+              </p>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Nearby Areas */}
       {nearbyAreas.length > 0 && (
