@@ -1554,14 +1554,6 @@ Moving from Nuneaton to Leamington Spa is a common route — about 25 miles sout
     localMovingInfo: "Ilford is a vibrant East London town with a diverse community and busy high street. Approved movers can take account of the Victorian terraces, the semis towards Barkingside, and the best routes along the A12 and A118 through this bustling Essex town. Approved movers serving Ilford regularly move customers between the town centre, Seven Kings, and Goodmayes. They can account for the A12 traffic patterns, the narrow access on terraced streets, and the best loading times near the busy high street. The A12, A118, M11 routes affect move timing, particularly during rush hour. A12 traffic. narrow terraced streets. A verified mover reviewing a Ilford request will check property access, parking availability and A12 route timing before quoting.",
     faq: [{"q":"Do you cover all areas of Ilford?","a":"Yes. You can submit a move request for Barkingside, Goodmayes, Seven Kings, Redbridge, Gants Hill and surrounding areas. A verified mover will see your request and can quote if they work in those areas."},{"q":"How much does a man and van cost in Ilford?","a":"Man and van hire in Ilford starts from £26/hr in 2026. Most local moves fall between £60 and £130, with the final cost depending on load size, parking, access and whether the A12 is busy. Moving a full 3-bedroom house in Ilford tends to cost £300–£550. Submit your postcodes and item list for an initial guide price."},{"q":"Can I find a mover for a same-day move in Ilford?","a":"Same-day help in Ilford depends on mover availability. Submit your postcodes, item list and preferred time — a verified mover will check whether they can fit your job in and send a quote if they can."},{"q":"Will multiple movers contact me?","a":"No. Your Ilford move request is shared with a single verified mover, not sold to a list of companies. This means no spam calls, no pressure and no shared contact details. Your information is only released after you accept a mover quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, the submission process is free with no obligation. The only cost is a booking deposit if you accept a mover quote — this is taken off the total, and the mover is paid the balance on moving day. Before any payment, a verified mover reviews your Ilford move details including postcodes, items and access."},{"q":"How quickly will I be contacted?","a":"Once you submit, a verified mover can review your Ilford move details — postcodes, item list, access notes and preferred date — and send quote options. Your contact details remain hidden until you accept a quote and pay the booking deposit. Movers working the A12 corridor check local requests regularly."},{"q":"Do you cover Barkingside, Goodmayes, Seven Kings?","a":"Yes. You can submit requests for Barkingside, Goodmayes, Seven Kings, Redbridge, Gants Hill and nearby areas. A verified mover will see your request and can quote if they work in those areas."},{"q":"Are approved Ilford movers insured?","a":"Approved movers are required to hold both Goods in Transit and Public Liability insurance as a condition of joining the platform. You can verify a mover's cover when they quote on your Ilford job — just ask them to confirm before you accept."},{"q":"What should I know about moving in Ilford?","a":"Be aware of A12 traffic and narrow terraced streets. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Ilford move."},{"q":"How much does a man and van cost from Ilford to Romford?","a":"A Ilford to Romford move in 2026 typically costs £80–£180 depending on load, access and timing. Ilford and Romford are connected by the A125 and A118, roughly 15–20 minutes apart in east London. A single-item collection might start from £26–£60. Submit your postcodes and item list for a guide price."}],
   },
-  wembley: {
-    intro: `Moving in Wembley means planning around A406 North Circular traffic, the A406 corridor and a mix of 1930s semis. Whether your move is within Wembley or heading to Harrow, Kingsbury, Neasden, adding accurate postcodes, access details and your item list helps a verified mover review the job and quote appropriately before you decide whether to book.`,
-    knowledge: `The cost of moving in Wembley varies with load size, property access, parking and whether the A406 is busy. By submitting postcodes, item list and access notes, you give a verified mover the information they need to quote accurately before you commit.`,
-    title: "Man and Van Wembley From £26/hr | Free Quotes",
-    description: "Man and van Wembley from £26/hr. One verified mover quotes. Harrow, Kingsbury, Neasden, Sudbury.",
-    localMovingInfo: "Wembley is world-famous for its stadium and arena, but it's also a busy residential area with a mix of 1930s semis and modern flats. Approved Wembley movers can take account of the event day traffic, the A406 North Circular, and the best routes through this popular North West London area. Approved movers serving Wembley regularly handle moves around the stadium area, Kingsbury, and Neasden. They can account for the A406 traffic, the event day congestion patterns, and the best access routes for both the older terraced streets and the newer apartment blocks. The A406, A4088, M1 routes affect move timing, particularly during rush hour. A406 North Circular traffic. event day congestion near the stadium. A verified mover reviewing a Wembley request will check property access, parking availability and A406 route timing before quoting.",
-    faq: [{"q":"Do you cover all areas of Wembley?","a":"Yes. You can submit a move request for Harrow, Kingsbury, Neasden, Sudbury, Alperton and surrounding areas. Submit your request and a verified mover can respond with a quote if they cover those areas."},{"q":"How much does a man and van cost in Wembley?","a":"Hourly rates for Wembley man and van services in 2026 begin at £26. A typical local job costs £60–£130, though stairs, heavy furniture and restricted parking can push this up. A complete house move from a 3-bed Wembley home generally ranges from £300–£550. Enter your details for a guide price before a verified mover quotes."},{"q":"Can I find a mover for a same-day move in Wembley?","a":"If you need a same-day mover in Wembley, submit your request with postcodes and timing. A verified mover can review it if they are free — availability varies by day, but short-notice jobs are common on the A406 corridor."},{"q":"Will multiple movers contact me?","a":"No. Man and Van Club is not a lead-generation site. When you submit a Wembley move request, one verified mover reviews it — not a list of competing companies. Your phone number and email stay confidential until you accept their quote and pay the booking deposit."},{"q":"Is it free to submit a move request?","a":"Yes, submitting is completely free. If you accept a mover quote, you pay a booking deposit that counts towards the total — the mover receives the rest on moving day. Your Wembley request includes postcodes, access details and your item list, which a verified mover reviews before quoting."},{"q":"How quickly will I be contacted?","a":"Once you submit, a verified mover can review your Wembley move details — postcodes, item list, access notes and preferred date — and send quote options. Your contact details remain hidden until you accept a quote and pay the booking deposit. Movers working the A406 corridor check local requests regularly."},{"q":"Do you cover Harrow, Kingsbury, Neasden?","a":"Yes. You can submit requests for Harrow, Kingsbury, Neasden, Sudbury, Alperton and nearby areas. Submit your request and a verified mover can respond with a quote if they cover those areas."},{"q":"Are approved Wembley movers insured?","a":"Yes. Every mover on the platform must hold Goods in Transit and Public Liability insurance — this is a requirement, not optional. Before you book your Wembley move, ask the quoting mover to confirm their policy details so you know exactly what is covered."},{"q":"What should I know about moving in Wembley?","a":"Be aware of A406 north circular traffic and event day congestion near the stadium. Add your property access notes, parking details and any stairs so the mover can quote accurately for your Wembley move."},{"q":"How much does a man and van cost from Wembley to Harrow?","a":"A Wembley to Harrow move in 2026 typically costs £80–£180 depending on load, access and timing. Wembley and Harrow are neighbouring boroughs connected by the A404 and A4107, roughly 10–15 minutes apart. A single-item collection might start from £26–£60. Submit your postcodes and item list for a guide price."}],
-  },
   ealing: {
     intro: `Ealing has a range of Victorian terraces, and A40 Western Avenue traffic can affect move timing, particularly around the A40. Your request gives a verified mover the postcodes, item list and access details they need before sending a quote. You decide whether to book after seeing the options.`,
     knowledge: `Moving costs in Ealing are driven by the specifics: how much furniture, whether there are stairs or lifts, A40 Western Avenue traffic, and the A40 route on the day. A verified mover reviews all of this before quoting, so your price reflects the actual move rather than a ballpark.`,
@@ -10811,6 +10803,526 @@ Housing is overwhelmingly Victorian and Edwardian terraces, most converted into 
         title: "Croydon and the rest of London",
         body: "Croydon is around 4 miles south, and the A24 carries everything north into the City on single-run pricing.",
         links: [{ label: "Man and van Croydon", href: "/man-and-van-croydon" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "wembley": {
+    description: "Man with a van in Wembley from £26/hr. Wembley Park, Alperton, Sudbury. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Wembley? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-west London move and send a quote before you decide whether to book.",
+    knowledge: "Wembley moves split between the new towers of Wembley Park by the stadium and the interwar family streets of Sudbury, Alperton and North Wembley. The A406 North Circular skirts the area, the A404 Harrow Road crosses the centre, and match and concert days bring their own controlled parking zone.",
+    localMovingInfo: `Wembley has two rhythms. The regenerated quarter around Wembley Park - stadium, arena, Boxpark and the London Designer Outlet - is full of new towers with concierge desks and weekly moves in and out by young renters. Around it, Wembley Central, Alperton, Sudbury and North Wembley keep the older Wembley: interwar semis with drives, shopping parades, and families trading up the same streets their parents moved to. The transport is exceptional for the price - Jubilee, Metropolitan, Bakerloo and Overground lines all converge.
+
+Event days bring their own physics: a special controlled parking zone and road closures wrap around the stadium whenever there is a match or concert, and the A406 North Circular on the edge clogs at peaks. Moves near Wembley Park are always timed around the events calendar - check your street's zone when you submit.
+
+Homes range from tower apartments that need a lift slot and a loading bay booked in advance, to semis with straightforward driveway loading in Sudbury, and ex-council maisonettes towards Tokynton. For the towers, confirm the move-in rules with your building manager first - they usually want notice, a deposit protection form and a fixed time window. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wembley?", a: "Wembley man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wembley to Harrow?", a: "Wembley to Harrow is about 4 miles. A typical small move costs £45-£85, with single items often from £35-£60. Avoiding stadium event days and A406 peaks keeps the run quick and cheap." },
+      { q: "Do you move into the Wembley Park towers?", a: "Yes, weekly. Every block has its own concierge rules - book your lift slot and loading bay with the building first, then put the window and floor number in your submission so the mover arrives inside it." },
+      { q: "Do you cover Wembley Park, Wembley Central, Alperton, Sudbury and North Wembley?", a: "Yes. Move requests can be submitted for Wembley Park, Wembley Central, Alperton, Sudbury and North Wembley and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Tower apartments and event-day timing",
+        body: "Concierge blocks need lift and bay bookings, and event-day parking zones wrap the stadium. Give the mover your time window and street zone - both shape the quote.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Semis of Sudbury and Alperton",
+        body: "The interwar heartland is classic ladder territory - straightforward driveway jobs where an honest item list keeps the price tight.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Over to Ealing",
+        body: "Ealing is a few miles south across the borough line - a constant route for families upsizing or chasing the Elizabeth line.",
+        links: [{ label: "Man and van Ealing", href: "/man-and-van-ealing" }],
+      },
+      {
+        title: "North-west London mesh",
+        body: "Harrow, Edgware and Acton all border Wembley - short hops at single-run prices in every direction.",
+        links: [{ label: "Man and van Harrow", href: "/man-and-van-harrow" }, { label: "Man and van Edgware", href: "/man-and-van-edgware" }],
+      },
+    ],
+  },
+  "camden": {
+    description: "Man with a van in Camden from £26/hr. Camden Town, Chalk Farm, Kentish Town. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Camden? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
+    knowledge: "Camden moves weave around the market quarter - Camden Town, the Lock, Chalk Farm, Mornington Crescent and Kentish Town - where Georgian terraces meet large ex-council estates. The A400 runs north-south through the High Street, and the A503 crosses towards Holloway. Market weekends reshape the roads completely.",
+    localMovingInfo: `Camden Town has been a market district since the 1970s, when craft stalls opened around the Lock; today the markets pull millions of visitors a year and the Roundhouse keeps the music heritage loud. Behind the tourist streets this is a genuinely transient place to live - flat-shares in subdivided Georgian terraces, tenants cycling through the big estates of Somers Town, and canal-side apartments turning over constantly. Everyday local life clusters in Kentish Town and Chalk Farm on the quieter edges.
+
+The A400 Camden High Street and Kentish Town Road is the spine - slow all weekend and closed-off in stretches around market peaks. Regent's Canal towpaths mean some addresses are easier to reach on foot than by van, and the controlled parking zones are borough-wide with ULEZ on top. Movers who know Camden schedule market-side jobs for Monday to Thursday mornings.
+
+Homes run from tall Georgian terraces carved into flats - steep shared stairs, no lifts - to ex-council blocks with parking schemes, and newer canal-side builds with concierge desks. Shared-house and one-bedroom moves dominate, which suits man-and-van pricing exactly: a room's furniture and boxes fills one van run. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Camden?", a: "Camden man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £250-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Camden to Finchley?", a: "Camden to Finchley is about 5 miles north. A typical small move costs £50-£95, with single items often from £35-£60. The Northern line corridor is the natural route - quick outside rush hours." },
+      { q: "Can movers work around market-weekend road closures?", a: "Yes - it is routine local knowledge. Market-side jobs are scheduled for weekday mornings when the High Street is passable. Note your street and any building access codes when you submit." },
+      { q: "Do you cover Camden Town, Kentish Town, Chalk Farm, Mornington Crescent and Somers Town?", a: "Yes. Move requests can be submitted for Camden Town, Kentish Town, Chalk Farm, Mornington Crescent and Somers Town and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Georgian conversions and flat-shares",
+        body: "Subdivided terraces mean shared stairs, tight turns and no lifts. Count your floor and the door widths - those two details set the crew size and price.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Up the Northern line to Finchley",
+        body: "Finchley is about 5 miles north - the classic escape route when Camden renters buy their first place.",
+        links: [{ label: "Man and van Finchley", href: "/man-and-van-finchley" }],
+      },
+      {
+        title: "East to Hackney",
+        body: "Hackney sits a short run east across Islington - a steady two-way flow of flat-movers between the boroughs.",
+        links: [{ label: "Man and van Hackney", href: "/man-and-van-hackney" }],
+      },
+      {
+        title: "The north London village network",
+        body: "Finsbury Park and the rest of north London are all short hops on single-run pricing.",
+        links: [{ label: "Man and van Finsbury Park", href: "/man-and-van-finsbury-park" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "wandsworth": {
+    description: "Man with a van in Wandsworth from £26/hr. Earlsfield, Southfields, Wandsworth Common. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Wandsworth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-west London move and send a quote before you decide whether to book.",
+    knowledge: "Wandsworth moves centre on the Victorian terrace grids between Wandsworth Common and the river: Earlsfield, Southfields and the streets off Old York Road. The A3 runs through towards Surrey, the A205 South Circular crosses it, and the A217 heads south to Tooting.",
+    localMovingInfo: `Wandsworth is where south-west London's young professionals become families - the 'Nappy Valley' nickname around Bellevue Road says it all. The Old York Road village of independents anchors the town side, the common gives it its green heart, and the River Wandle threads past converted brewery buildings. Moves are a conveyor: couples arrive from Clapham and Battersea, trade from flat to terrace, terrace to bigger terrace, and eventually out towards Richmond or Surrey when the push for space wins.
+
+The A3 carves through towards Kingston and the M25, the A205 South Circular crosses at the southern edge, and the A217 runs down to Tooting. The Town Hall gyratory is the local timing trap, and CPZ wraps the station and common-side streets at all useful hours.
+
+Homes are overwhelmingly Victorian and Edwardian terraces - bay-fronted, often already loft-converted - plus mansion flats near the common, the Tonsleys' village streets, and new riverside apartments by the Wandle's mouth. Converted terraces mean steep stairs and narrow halls; measure the sofa against the turn before moving day, not during it. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wandsworth?", a: "Wandsworth man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £250-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wandsworth to Tooting?", a: "Wandsworth to Tooting is about 4 miles down the A217. A typical small move costs £50-£90, with single items often from £35-£60. It is a quick hop outside the commuter flow." },
+      { q: "Do you handle family moves to and from the area?", a: "Yes - that is most of the local market: flat-to-terrace upsizing, plus the eventual push out to Surrey. Give both postcodes and a full room list for an accurate single-run price in either direction." },
+      { q: "Do you cover Town Centre, Earlsfield, Southfields, Wandsworth Common and Old York Road?", a: "Yes. Move requests can be submitted for Town Centre, Earlsfield, Southfields, Wandsworth Common and Old York Road and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Terrace grids and loft conversions",
+        body: "Wandsworth terraces hide their size - lofts, extensions and cellar conversions add a room or two. Count actual rooms for the right van.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "South to Tooting",
+        body: "Tooting is a few miles down the A217 - a regular hop for movers keeping the Northern line in reach.",
+        links: [{ label: "Man and van Tooting", href: "/man-and-van-tooting" }],
+      },
+      {
+        title: "Over the common to Richmond",
+        body: "Richmond lies a short run across the Wandle valley side - the classic next step for growing families.",
+        links: [{ label: "Man and van Richmond", href: "/man-and-van-richmond" }],
+      },
+      {
+        title: "Wimbledon and the rest of south-west London",
+        body: "Wimbledon is minutes west; the whole patch prices as single runs.",
+        links: [{ label: "Man and van Wimbledon", href: "/man-and-van-wimbledon" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "shepherds-bush": {
+    description: "Man with a van in Shepherd's Bush from £26/hr. White City, Askew Road, The Green. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Shepherd's Bush? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your west London move and send a quote before you decide whether to book.",
+    knowledge: "Shepherd's Bush moves range across the mansion blocks around The Green, the new towers at White City, the market streets and the Askew Road terraces. The A3220 Wood Lane gyratory shapes local timing, the A4020 Uxbridge Road runs east-west, and the A40 Westway sits on the edge.",
+    localMovingInfo: `Shepherd's Bush condensed a whole city district into one postcode: Westfield, one of Europe's largest urban shopping centres, the old market under the railway arches, the Green with its Central line stop, and the BBC's Television Centre reborn as apartments and studios. Rentals churn constantly - mansion-flat sharers near the Green, terraces down Askew Road, and a wave of new towers at White City where concierges run the move-in rules.
+
+The A3220 Wood Lane gyratory circles the new quarter and clogs at Westfield peaks, the A4020 Uxbridge Road grinds east-west, and the A40 Westway sits minutes north for routes out of the city. Weekend football at QPR just up the road adds another layer of timing to plan around.
+
+Homes range from red-brick mansion blocks where stairs replace lifts, through Victorian terraces with tight halls, to glass towers with booked loading bays and freight lifts. The range of building types means the details you submit - floor, lift, concierge, stairs width - are what the quote is genuinely built on here. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Shepherd's Bush?", a: "Shepherd's Bush man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £250-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Shepherd's Bush to Hammersmith?", a: "Shepherd's Bush to Hammersmith is about 2 miles. A typical small move costs £45-£80, with single items often from £35-£55. One of the shortest hops in west London outside the gyratory peaks." },
+      { q: "Do you move into the Television Centre and White City towers?", a: "Yes, regularly. These blocks run on concierge rules - freight lift slots, loading bays, protection for communal areas. Book your window with the building and include it in the submission." },
+      { q: "Do you cover The Green, White City, Shepherd's Bush Market, Wood Lane and Askew Road?", a: "Yes. Move requests can be submitted for The Green, White City, Shepherd's Bush Market, Wood Lane and Askew Road and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Mansion blocks and no-lift stairs",
+        body: "The older blocks have wide stairs but no lifts. Floor number plus stair description is the pairing that prices the job accurately.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Two miles to Hammersmith",
+        body: "Hammersmith is next door - the most common short move from W12 for renters sliding west along the tubes.",
+        links: [{ label: "Man and van Hammersmith", href: "/man-and-van-hammersmith" }],
+      },
+      {
+        title: "North and east to Acton",
+        body: "Acton borders Shepherd's Bush directly to the west - quick hops between the two for part-loads and single items.",
+        links: [{ label: "Man and van Acton", href: "/man-and-van-acton" }],
+      },
+      {
+        title: "Chiswick and the west London mesh",
+        body: "Chiswick's period streets are minutes away - priced as quick single runs.",
+        links: [{ label: "Man and van Chiswick", href: "/man-and-van-chiswick" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "edmonton": {
+    description: "Man with a van in Edmonton from £26/hr. Angel Edmonton, Ponders End, Meridian Water. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Edmonton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
+    knowledge: "Edmonton moves run along the A1010 Fore Street through Edmonton Green and Angel Edmonton, across the estates of Upper and Lower Edmonton, and into the new phases of Meridian Water by the river. The A406 North Circular marks the southern edge and clogs in the peaks.",
+    localMovingInfo: `Edmonton is mid-transformation: the historic Fore Street spine through Edmonton Green, the Angel side streets where Keats once served his apprenticeship, the estates of Upper and Lower Edmonton - and now Meridian Water, one of London's biggest regeneration programmes, bringing thousands of new homes up by the Lea. That mix keeps every kind of move flowing: estate-to-estate family hops, first-time buyers arriving from inner London for the prices, and renters cycling the new blocks as each phase completes.
+
+The A406 North Circular forms the southern boundary - fast at 10am, miserable at 8am - and the A1010 Fore Street is the main local artery down to Tottenham. Side streets off Fore Street get tight with parked cars at school-run times, and the estate parking schemes need the right permit note in your submission.
+
+Homes span post-war estates with parking courts, Victorian terraces near the Green, and brand-new Meridian Water apartments with lift access and management offices. The new-build phases can confuse sat-navs before roads are adopted - a dropped pin gets the driver to the right door first time. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Edmonton?", a: "Edmonton man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £240-£470. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Edmonton to Enfield?", a: "Edmonton to Enfield is about 3 miles north. A typical small move costs £45-£85, with single items often from £35-£55. It is a quick hop along the A1010 corridor." },
+      { q: "Do you move into the new Meridian Water blocks?", a: "Yes - increasingly so. Unadopted roads and phase numbers confuse sat-navs, so include a map pin and your building name. Lift and loading arrangements come through the management office." },
+      { q: "Do you cover Edmonton Green, Angel Edmonton, Ponders End, Upper Edmonton and Lower Edmonton?", a: "Yes. Move requests can be submitted for Edmonton Green, Angel Edmonton, Ponders End, Upper Edmonton and Lower Edmonton and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Estate moves and part-loads",
+        body: "Post-war estates mean parking-court carries and honest item lists - smaller loads price best here, and accuracy keeps them cheap.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "North to Enfield",
+        body: "Enfield town is about 3 miles north - the most frequent short route from Edmonton for family moves.",
+        links: [{ label: "Man and van Enfield", href: "/man-and-van-enfield" }],
+      },
+      {
+        title: "South to Tottenham",
+        body: "Tottenham is next along the A1010 - constant two-way movement between the two districts.",
+        links: [{ label: "Man and van Tottenham", href: "/man-and-van-tottenham" }],
+      },
+      {
+        title: "The Lea valley network",
+        body: "Chingford's forest edge and the rest of north London price as single runs from Edmonton.",
+        links: [{ label: "Man and van Chingford", href: "/man-and-van-chingford" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "leyton": {
+    description: "Man with a van in Leyton from £26/hr. Bakers Arms, Francis Road, Leyton Marshes. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Leyton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
+    knowledge: "Leyton moves concentrate on the terrace grids off the A112 High Road, around Bakers Arms and through the Francis Road pocket, with the A104 Lea Bridge Road marking the Hackney edge and the marshes opening towards the Olympic Park.",
+    localMovingInfo: `Leyton is the frontier district where Hackney prices push east: Leyton Orient's Brisbane Road ground on one side, the Francis Road cafe-village at its heart, and the marshes rolling towards the Olympic Park. First-time buyers and young families price out of Hackney and Walthamstow arrive constantly, so the Victorian terraces turn over fast - flat-to-house upsizing is the signature local move.
+
+The A112 High Road connects Leyton to Walthamstow in one direction and Leytonstone in the other, and the A104 Lea Bridge Road is the route towards Hackney - slow in the peaks, quick mid-morning. Match-day parking restrictions around Brisbane Road matter if your street borders the ground, and the side streets CPZ by the tube.
+
+Homes are mostly small Victorian terraces - two-up two-downs with tight stairs and converted lofts - plus ex-council estates towards the marshes and small infill blocks springing up on brownfield plots. The terraces look compact from the street but hide extensions; count every room including the loft for an honest van size. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Leyton?", a: "Leyton man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Leyton to Stratford?", a: "Leyton to Stratford is about 2 miles. A typical small move costs £45-£80, with single items often from £35-£55. It is a short hop across the marshes outside Lea Bridge Road peaks." },
+      { q: "Do you handle flat-to-house first-time-buyer moves?", a: "Yes - that is the dominant local pattern. A one-bed flat's contents into a two-bed terrace is usually one van and half a day. List everything including bikes and garden bits for a tight quote." },
+      { q: "Do you cover Leyton High Road, Bakers Arms, Francis Road, Lea Bridge Road and Leyton Marshes?", a: "Yes. Move requests can be submitted for Leyton High Road, Bakers Arms, Francis Road, Lea Bridge Road and Leyton Marshes and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Compact terraces and tight stairs",
+        body: "Leyton's two-up two-downs have turned staircases and narrow halls. Note anything that came in via window delivery - it needs the same trick going out.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Across the marshes to Stratford",
+        body: "Stratford is about 2 miles away - the classic route for movers chasing Elizabeth line speeds and Westfield convenience.",
+        links: [{ label: "Man and van Stratford", href: "/man-and-van-stratford" }],
+      },
+      {
+        title: "North to Walthamstow",
+        body: "Walthamstow borders Leyton directly north - the two districts swap movers constantly along the A112.",
+        links: [{ label: "Man and van Walthamstow", href: "/man-and-van-walthamstow" }],
+      },
+      {
+        title: "Back towards Hackney",
+        body: "Hackney lies just over the marshes - where many Leyton buyers arrive from, and some return.",
+        links: [{ label: "Man and van Hackney", href: "/man-and-van-hackney" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "chingford": {
+    description: "Man with a van in Chingford from £26/hr. Chingford Mount, North Chingford, Friday Hill. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Chingford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-east London move and send a quote before you decide whether to book.",
+    knowledge: "Chingford moves run between the shopping parades of Chingford Mount, the 1930s semis of South Chingford and Chingford Hatch, and the forest-edge roads of North Chingford and Friday Hill. The A112 links south to Walthamstow as the main local artery.",
+    localMovingInfo: `Chingford is London's forest edge: Queen Elizabeth's Hunting Lodge has stood watch since Tudor times, Epping Forest begins at the end of the street, and Pole Hill hides the hut T. E. Lawrence once owned. North Chingford feels like a village that happens to have a terminus station to Liverpool Street; Chingford Mount is the working high street to the south. Moves here are families staying for the forest, downsizers leaving the detached houses, and commuters arriving from busier north London.
+
+The A112 runs south to Walthamstow as the main route out - slow at school-run times. North Chingford's Station Road winds up to the terminus with commuter parking filling the side streets early, and the forest-edge lanes narrow to single track in places.
+
+Homes span 1930s semis through South Chingford and Chingford Hatch, detached houses and cottages edging the forest in North Chingford and Friday Hill, and newer infill tucked behind the parades. Forest-side properties often have sloping drives and steps - mention the gradient, as it changes the carry plan. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Chingford?", a: "Chingford man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Chingford to Walthamstow?", a: "Chingford to Walthamstow is about 3 miles down the A112. A typical small move costs £45-£80, with single items often from £35-£55. Mid-morning avoids the school-run crawl." },
+      { q: "Can movers reach forest-edge cottages down narrow lanes?", a: "Yes. Note the lane width and where a van can turn or wait - forest roads are tight. A smaller van with a bit of shuttling usually beats one oversized Luton here." },
+      { q: "Do you cover Chingford Mount, North Chingford, South Chingford, Chingford Hatch and Friday Hill?", a: "Yes. Move requests can be submitted for Chingford Mount, North Chingford, South Chingford, Chingford Hatch and Friday Hill and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Forest-side houses and sloping drives",
+        body: "North Chingford properties sit on gradients with steps to the door. Describe the approach - it sets both crew size and timing.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Down to Walthamstow",
+        body: "Walthamstow is 3 miles down the A112 - the most frequent short move from Chingford in either direction.",
+        links: [{ label: "Man and van Walthamstow", href: "/man-and-van-walthamstow" }],
+      },
+      {
+        title: "Across the Lea to Edmonton",
+        body: "Edmonton sits just west over the river valley - a quick cross-borough hop at single-run prices.",
+        links: [{ label: "Man and van Edmonton", href: "/man-and-van-edmonton" }],
+      },
+      {
+        title: "South along the A112 to Leyton",
+        body: "Leyton lies straight down the corridor - regular moves between the forest edge and the east London terraces.",
+        links: [{ label: "Man and van Leyton", href: "/man-and-van-leyton" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "finsbury-park": {
+    description: "Man with a van in Finsbury Park from £26/hr. Stroud Green, Blackstock Road, Manor House. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Finsbury Park? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
+    knowledge: "Finsbury Park moves cover the railway-era terraces and mansion blocks of Stroud Green, the Fonthill Road fashion quarter, Blackstock Road towards Highbury and Brownswood by the park. The A105 Green Lanes and the A503 Seven Sisters Road frame the area on two sides.",
+    localMovingInfo: `Finsbury Park sits on one of London's busiest interchanges - Victoria and Piccadilly lines plus National Rail - with its namesake 110-acre Victorian park as the lung. The streets around are pure rental country: Stroud Green's terraces carved into flats, the wholesale fashion warehouses of Fonthill Road, the Turkish grocers and cafes along Blackstock Road, and the Emirates Stadium a mile south in whose match-day shadow the whole district lives twice a week.
+
+The A105 Green Lanes runs north through Harringay, and the A503 Seven Sisters Road cuts east-west past the station - both slow most of the day. On Arsenal match days, roads within the stadium zone close to non-locals; movers who know the area simply route or time around the fixtures. CPZ covers the surrounding grids.
+
+Homes are largely mansion blocks and converted terraces - flights of stairs, shared halls, no lifts - with ex-council estates and some newer builds by the station. Flat shares and one-bedroom moves dominate: a room or small flat's contents in a single van run is the day's work here. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Finsbury Park?", a: "Finsbury Park man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£140. A full 2-3 bed house move usually ranges from £245-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Finsbury Park to Hackney?", a: "Finsbury Park to Hackney is about 3 miles. A typical small move costs £50-£90, with single items often from £35-£60. Quick except on Emirates match days, when local routing takes over." },
+      { q: "Do you work around match-day road closures?", a: "Yes - local movers track the fixture list like traffic news. Submit your date normally; the mover schedules around closures and tells you the realistic window." },
+      { q: "Do you cover Stroud Green, Manor House, Fonthill Road, Blackstock Road and Brownswood?", a: "Yes. Move requests can be submitted for Stroud Green, Manor House, Fonthill Road, Blackstock Road and Brownswood and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Mansion flats and rental churn",
+        body: "No-lift blocks and shared stairs are the daily pattern here. Floor number and stair turns set the crew and the price.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "North up Green Lanes",
+        body: "Wood Green lies straight up the A105 corridor - a constant short hop for renters.",
+        links: [{ label: "Man and van Wood Green", href: "/man-and-van-wood-green" }],
+      },
+      {
+        title: "Across to Harringay",
+        body: "Harringay's Ladder starts just over the rails - minutes away and priced as the same neighbourhood run.",
+        links: [{ label: "Man and van Harringay", href: "/man-and-van-harringay" }],
+      },
+      {
+        title: "East to Hackney",
+        body: "Hackney is about 3 miles east - a steady two-way rental flow between the boroughs.",
+        links: [{ label: "Man and van Hackney", href: "/man-and-van-hackney" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "harringay": {
+    description: "Man with a van in Harringay from £26/hr. The Ladder, Green Lanes, The Gardens. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Harringay? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
+    knowledge: "Harringay moves split three ways: the tight Ladder terraces between the A105 Green Lanes and Wightman Road, the larger Edwardian houses of The Gardens, and warehouse conversions in the old industrial belt. The A503 Seven Sisters Road closes the southern edge.",
+    localMovingInfo: `Harringay is two streets that show up on every map: Green Lanes - London's famous Turkish, Greek and Kurdish food strip - and the railway line, with 21 rungs of small Victorian terraces between them known everywhere as the Ladder. East of the rails, The Gardens gives bigger Edwardian houses; west, the Warehouse District's old factories, including the Chocolate Factory artist studios, have become flats and live-work spaces. Arena Shopping Park stands on the site of the 1930s Harringay Arena. It is one of the tightest-knit moving markets in north London - people trade flat to flat within the same rung.
+
+The A105 Green Lanes is slow for most of the day, Wightman Road and the rungs are one-way and parked solid, and the A503 Seven Sisters Road frames the southern edge. Vans load from the road here: there is almost no off-street parking on the Ladder, so timing and a clear carry path are everything.
+
+Homes are small bay-fronted terraces - many in flats - larger square-fronted houses in The Gardens, and big-volume warehouse conversions. Ladder flats keep moves small and frequent: two rooms and thirty boxes is a typical job. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Harringay?", a: "Harringay man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Harringay to Wood Green?", a: "Harringay to Wood Green is about a mile. A typical small move costs £40-£75, with single items often from £30-£50 - one of the cheapest hops in north London outside Green Lanes peaks." },
+      { q: "Do you move flats within the Ladder itself?", a: "Constantly. Same-street and next-rung moves are the local speciality - often a single van and a couple of hours. Tell the mover which floor and which rung, since parking positions differ hugely street to street." },
+      { q: "Do you cover The Ladder, Green Lanes, The Gardens, Warehouse District and Manor House?", a: "Yes. Move requests can be submitted for The Ladder, Green Lanes, The Gardens, Warehouse District and Manor House and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Ladder terraces and parked-solid streets",
+        body: "No driveways here - the van works from the road. Early slots before the rungs fill are the local trick for a fast load.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "A mile to Wood Green",
+        body: "Wood Green's parades and tube are a mile up the A105 - the busiest short hop in the district.",
+        links: [{ label: "Man and van Wood Green", href: "/man-and-van-wood-green" }],
+      },
+      {
+        title: "South to Finsbury Park and the Emirates zone",
+        body: "Finsbury Park borders Harringay to the south along Seven Sisters Road - same-neighbourhood pricing.",
+        links: [{ label: "Man and van Finsbury Park", href: "/man-and-van-finsbury-park" }],
+      },
+      {
+        title: "East to Tottenham",
+        body: "Tottenham lies just beyond the rails - regular moves in both directions along the corridor.",
+        links: [{ label: "Man and van Tottenham", href: "/man-and-van-tottenham" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "stanmore": {
+    description: "Man with a van in Stanmore from £26/hr. Stanmore Hill, Broadway, Canons Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Stanmore? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-west London move and send a quote before you decide whether to book.",
+    knowledge: "Stanmore moves run between the Broadway shops, the big detached plots of Stanmore Hill and Old Church Lane, Canons Park by the station and the Belmont borders. The A410 is the local spine, and the M1 at junction 4, a short hop away at Edgware, gives fast routes out of London.",
+    localMovingInfo: `Stanmore is suburbia at its leafiest: the Broadway's parade at its heart, Stanmore Hill climbing to the old village core, Canons spread around the Jubilee line terminus - and Bentley Priory, the former RAF Fighter Command headquarters from which the Battle of Britain was directed, now a museum ringed by a luxury estate of converted and new homes. The Royal National Orthopaedic Hospital brings staff and patients from across the country. Moves here tend to be big: families trading detached houses, downsizers leaving decades of accumulated lofts and garages, and hospital staff relocating in.
+
+The A410 is the main route through to Edgware and Harrow, with the M1 at junction 4 a few minutes away for anything leaving London. The hill streets are steep, private estates have gates and their own access rules, and school times clog the Broadway.
+
+Homes range from 1930s semis to very large detached houses behind hedges - high-value furniture, pianos, gym equipment, hot tubs and garden machinery are the norm on the bigger jobs, so full inventories matter more here than anywhere. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Stanmore?", a: "Stanmore man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£145. A full 2-3 bed house move usually ranges from £250-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Stanmore to Edgware?", a: "Stanmore to Edgware is about 2 miles. A typical small move costs £45-£80, with single items often from £35-£55. A quick hop between the two Jubilee side stations outside school peaks." },
+      { q: "Can you handle large detached houses with pianos and gym equipment?", a: "Yes - Stanmore jobs like this are routine. List heavy and high-value items individually with photos, so the crew brings the right protection, piano equipment and power tools for dismantling." },
+      { q: "Do you cover Stanmore Hill, The Common, Broadway, Canons Park and the Belmont borders?", a: "Yes. Move requests can be submitted for Stanmore Hill, The Common, Broadway, Canons Park and the Belmont borders and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Big plots and full inventories",
+        body: "Detached-house moves here fill two vans easily once garages, sheds and gardens are counted. List outbuildings - they are where the load hides.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Two miles to Edgware",
+        body: "Edgware is the next stop along - constant short hops between the Broadway and Edgware's Broadwalk centre.",
+        links: [{ label: "Man and van Edgware", href: "/man-and-van-edgware" }],
+      },
+      {
+        title: "South to Harrow",
+        body: "Harrow town lies a few miles south - regular moves for families trading between the hilltop suburbs.",
+        links: [{ label: "Man and van Harrow", href: "/man-and-van-harrow" }],
+      },
+      {
+        title: "Across to Pinner's village",
+        body: "Pinner sits just west - moving between the two leafy Metroland villages is a weekly pattern.",
+        links: [{ label: "Man and van Pinner", href: "/man-and-van-pinner" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "pinner": {
+    description: "Man with a van in Pinner from £26/hr. Hatch End, Nower Hill, High Street. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Pinner? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-west London move and send a quote before you decide whether to book.",
+    knowledge: "Pinner moves centre on the village High Street's timbered fronts, the 1930s streets of Hatch End and Nower Hill, Pinner Green to the south and the East End towards the park. The A404 is the main route through, linking Harrow to the Metroland suburbs north.",
+    localMovingInfo: `Pinner guards its village identity fiercely: the timbered High Street, the Memorial Park with its duck pond and the Heath Robinson Museum, and a fair granted by charter over 600 years ago that still closes the streets once a year. Metroland grew it between the wars, so 1930s semis dominate through Hatch End and Nower Hill, with older cottages near the core and bungalows scattered throughout - which makes it downsizer country as much as family-commuter country.
+
+The A404 is the only real through-route, so it carries everything: school traffic, station runs and the fair-day closures. The High Street is narrow with tight restrictions, and the station's commuter parking soaks up the nearby bays before 8am.
+
+Homes are period cottages near the High Street, bay-windowed semis across the interwar streets, and older peoples' bungalows near the park. Downsizing is a huge share of local work - often a part-load to the new flat plus furniture drops to family around Metroland. List every instrument and garden item; these houses accumulate decades. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Pinner?", a: "Pinner man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Pinner to Harrow?", a: "Pinner to Harrow is about 3 miles. A typical small move costs £45-£80, with single items often from £35-£55. A short run down the A404 outside school hours." },
+      { q: "Do you handle downsizer moves with multiple drop-offs?", a: "Yes - it is everyday work here. A part-load to the new bungalow plus furniture delivered to children nearby fits one efficient run when every item is listed by destination." },
+      { q: "Do you cover High Street, Pinner Green, Hatch End, Nower Hill and East End?", a: "Yes. Move requests can be submitted for High Street, Pinner Green, Hatch End, Nower Hill and East End and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Cottages, semis and long accumulations",
+        body: "Pinner homes are lived in for decades. Lofts, sheds and garages carry serious volume - count them for an honest van size.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Three miles to Harrow",
+        body: "Harrow town is a straight run down the A404 - the busiest short route from Pinner in both directions.",
+        links: [{ label: "Man and van Harrow", href: "/man-and-van-harrow" }],
+      },
+      {
+        title: "Over the hill to Stanmore",
+        body: "Stanmore lies just east - moving between the two villages is a weekly pattern here.",
+        links: [{ label: "Man and van Stanmore", href: "/man-and-van-stanmore" }],
+      },
+      {
+        title: "South-east to Wembley",
+        body: "Wembley's new towers and old semis are a short hop across the borough - single-run pricing.",
+        links: [{ label: "Man and van Wembley", href: "/man-and-van-wembley" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "stamford-hill": {
+    description: "Man with a van in Stamford Hill from £26/hr. Clapton Common, Woodberry Down, Broadway. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Stamford Hill? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-east London move and send a quote before you decide whether to book.",
+    knowledge: "Stamford Hill moves run along the A10 corridor through the Broadway to Clapton Common, across the estates towards South Tottenham, and into the regenerating Woodberry Down by the reservoirs. The A503 Seven Sisters Road forms the southern boundary with Manor House.",
+    localMovingInfo: `Stamford Hill is one of London's most distinctive districts - home to one of Europe's largest Haredi Jewish communities, with its own schools, synagogues and shops along the Broadway. Beside it, Woodberry Down is regenerating block by block into new towers, and the Woodberry Wetlands nature reserve, opened in 2016, turned the old reservoirs into a public oasis. Family moves within the community, regeneration relocations, and renters moving along the A10 corridor all feed the market at once.
+
+The A10 - the old Roman Ermine Street - runs straight through as the main artery, carrying traffic all day between the City and the north. The A503 Seven Sisters Road forms the southern edge. School-run streets narrow to a crawl twice a day, and CPZ covers the district.
+
+Homes span Victorian terraces - many extended for large families - ex-council estates, and the brand-new Woodberry Down towers with concierge desks and underground parking. Larger households mean genuinely larger loads than the street suggests: count beds, cots and buggies for an accurate van size. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Stamford Hill?", a: "Stamford Hill man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Stamford Hill to Tottenham?", a: "Stamford Hill to Tottenham is about 2 miles. A typical small move costs £45-£85, with single items often from £35-£55. Quick outside the A10 school-run and commuter peaks." },
+      { q: "Do you move into the new Woodberry Down towers?", a: "Yes - each phase has its own concierge and loading rules. Book the lift and bay with your management office, then note the window and the underground parking entrance height when you submit." },
+      { q: "Do you cover Clapton Common, Stamford Hill Broadway, Woodberry Down, South Tottenham and the Manor House borders?", a: "Yes. Move requests can be submitted for Clapton Common, Stamford Hill Broadway, Woodberry Down, South Tottenham and the Manor House borders and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Large-family terraces and honest lists",
+        body: "Extended Victorian houses here hide serious volume. Count every bed, cot and wardrobe - accurate lists are what keep the quote sharp.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "North to Tottenham",
+        body: "Tottenham is 2 miles up the A10-side streets - the most frequent short route from the Broadway.",
+        links: [{ label: "Man and van Tottenham", href: "/man-and-van-tottenham" }],
+      },
+      {
+        title: "South and east to Hackney",
+        body: "Hackney's centre lies just south - constant movement between the borough's districts.",
+        links: [{ label: "Man and van Hackney", href: "/man-and-van-hackney" }],
+      },
+      {
+        title: "West to Finsbury Park",
+        body: "Finsbury Park is minutes west along Seven Sisters Road - interchange access and quick single-run moves.",
+        links: [{ label: "Man and van Finsbury Park", href: "/man-and-van-finsbury-park" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+  "bounds-green": {
+    description: "Man with a van in Bounds Green from £26/hr. Bounds Green Road, The North Circular borders, Bowes Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Bounds Green? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
+    knowledge: "Bounds Green moves cover the interwar terraces around the tube stop and Bounds Green Road, the Bowes Park grids by the New River, and the streets edging Wood Green. The A109 and the A406 North Circular cross close by.",
+    localMovingInfo: `Bounds Green is the quiet Piccadilly line pocket between Wood Green and Muswell Hill - interwar terraces, the New River threading through as a green footpath, and Bowes Park's grids holding some of the most affordable family houses in this part of north London. Buyers who stall at Wood Green or Muswell Hill prices land here, so the ladder moves never stop: one-bed flats to maisonettes, maisonettes to three-bed terraces.
+
+The A109 Bounds Green Road is the local spine, meeting the A406 North Circular at the edge of the district - the road you schedule around for any move heading out of London. The residential grids have resident parking schemes at day times.
+
+Homes are 1930s terraces, interwar maisonettes with their own front doors, and the odd mansion block near the tube. Maisonette moves are the local staple - upper or lower, with the stairs and shared side-passage questions that change the carry. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Bounds Green?", a: "Bounds Green man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£135. A full 2-3 bed house move usually ranges from £245-£475. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Bounds Green to Wood Green?", a: "Bounds Green to Wood Green is about a mile. A typical small move costs £40-£75, with single items often from £30-£50. A quick hop on any street outside the A406 peaks." },
+      { q: "Do you handle maisonette moves with shared passages?", a: "Yes - the classic Bounds Green job. Note whether you are the upper or lower maisonette and whether the passage is yours or shared; it shapes the carry and the crew plan." },
+      { q: "Do you cover Bounds Green Road, the North Circular borders, Bowes Park and the neighbouring grids?", a: "Yes. Move requests can be submitted across Bounds Green and Bowes Park and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Interwar terraces and maisonettes",
+        body: "Purpose-built maisonettes ask two questions - upper or lower, shared passage or own front path. Answer both in your notes for a precise quote.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "A mile to Wood Green",
+        body: "Wood Green's shops and tube are a mile east - the constant short hop that keeps Bounds Green's ladder moving.",
+        links: [{ label: "Man and van Wood Green", href: "/man-and-van-wood-green" }],
+      },
+      {
+        title: "Over to Finchley",
+        body: "Finchley lies a couple of miles west across the North Circular corridor - quick crossover moves between the family grids.",
+        links: [{ label: "Man and van Finchley", href: "/man-and-van-finchley" }],
+      },
+      {
+        title: "South towards Harringay",
+        body: "Harringay's Ladder sits just beyond the rails to the south - priced as a same-neighbourhood run.",
+        links: [{ label: "Man and van Harringay", href: "/man-and-van-harringay" }, { label: "Man and van London", href: "/man-and-van-london" }],
       },
     ],
   },

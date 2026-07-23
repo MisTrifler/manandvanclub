@@ -588,6 +588,18 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "upminster",
   "woolwich",
   "tooting",
+  "camden",
+  "wandsworth",
+  "shepherds-bush",
+  "edmonton",
+  "leyton",
+  "chingford",
+  "finsbury-park",
+  "harringay",
+  "stanmore",
+  "pinner",
+  "stamford-hill",
+  "bounds-green",
 ]);
 
 export function isSeoLaunchMode(): boolean {
