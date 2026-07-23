@@ -196,11 +196,6 @@ export default function HomeContent() {
 
         <div className="relative z-10 w-full max-w-lg mx-auto px-5 py-10 text-center">
 
-          {/* Google reviews pill - static in the hero, in front of the van image (AnyVan pattern) */}
-          <div className="mb-5 flex justify-center">
-            <GoogleRatingBadge />
-          </div>
-
           {/* Headline */}
           <h1
             className="font-black tracking-tight text-white"
@@ -258,9 +253,12 @@ export default function HomeContent() {
 
         </div>
 
+        {/* Google reviews pill - bottom-left of the hero, in front of the van image.
+            Absolute (not fixed): stays on the hero, does not follow the page scroll. */}
+        <div className="absolute bottom-6 left-4 sm:left-6 z-20">
+          <GoogleRatingBadge />
+        </div>
       </section>
-
-      {/* ──────────────────── Quote Form Section ──────────────────── */}
       <section
         id="quote-form"
         className="py-10 lg:py-14 bg-white border-b border-border scroll-mt-16 lg:scroll-mt-20"
