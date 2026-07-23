@@ -196,6 +196,11 @@ export default function HomeContent() {
 
         <div className="relative z-10 w-full max-w-lg mx-auto px-5 py-10 text-center">
 
+          {/* Google reviews pill - static in the hero, in front of the van image (AnyVan pattern) */}
+          <div className="mb-5 flex justify-center">
+            <GoogleRatingBadge />
+          </div>
+
           {/* Headline */}
           <h1
             className="font-black tracking-tight text-white"
@@ -254,11 +259,6 @@ export default function HomeContent() {
         </div>
 
       </section>
-
-      {/* Google reviews badge - fixed bottom-left, bottom edge level with the Ask AI widget (fixed bottom-6 right-4 sm:right-6) */}
-      <div className="fixed bottom-6 left-4 sm:left-6 z-[150]">
-        <GoogleRatingBadge />
-      </div>
 
       {/* ──────────────────── Quote Form Section ──────────────────── */}
       <section
