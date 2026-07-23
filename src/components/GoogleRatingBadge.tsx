@@ -105,16 +105,16 @@ export default function GoogleRatingBadge({ className = "" }: { className?: stri
       rel="noopener noreferrer"
       title="Read our reviews on Google"
       className={`inline-flex items-center gap-2 sm:gap-2.5 bg-white rounded-full pl-3 pr-3.5 py-2.5 sm:pl-4 sm:pr-5 sm:py-3 shadow-xl ring-1 ring-black/5 hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 ${className}`}
-      aria-label={`Rated ${clamped.toFixed(1)} out of 5 from ${data.count} Google reviews. Read the reviews on Google.`}
+      aria-label={`Rated ${clamped.toFixed(1)} out of 5 on Google. Read the reviews on Google.`}
       data-live-rating={data.live ? "true" : "false"}
     >
       <GoogleG className="w-[18px] h-[18px] sm:w-[22px] sm:h-[22px]" />
       <span className="hidden min-[420px]:inline text-sm sm:text-base font-semibold text-[#1f1f1f] tracking-tight leading-none">
         Google
       </span>
-      <span className="text-xs sm:text-sm font-medium text-[#70757a] tabular-nums leading-none">
-        {data.count.toLocaleString("en-GB")}
-      </span>
+      {/* Review count intentionally hidden while < 20 reviews (owner, 2026-07-23).
+          To restore: re-add <span>{data.count.toLocaleString("en-GB")}</span> here
+          and add the count back to the aria-label. */}
       <span className="relative inline-flex ml-0.5 sm:ml-1" aria-hidden="true">
         <StarRow fill={STAR_EMPTY} />
         <span className="absolute inset-0 overflow-hidden" style={{ width: `${fillPct}%` }}>
