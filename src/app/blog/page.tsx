@@ -207,6 +207,15 @@ const blogPosts = [
     category: "Cost Guides",
   },
   {
+    slug: "man-and-van-nottingham-prices-how-to-book",
+    title: "Man and Van Nottingham: Prices & How to Book (2026)",
+    description:
+      "Current Nottingham man and van prices, what affects the cost — terraces, the Trent crossings and two universities — and how to book a verified mover for your next move in Nottingham.",
+    date: "2026-07-23",
+    readTime: "7 min read",
+    category: "Cost Guides",
+  },
+  {
     slug: "man-and-van-walsall-prices-how-to-book",
     title: "Man and Van Walsall: Prices & How to Book (2026)",
     description:

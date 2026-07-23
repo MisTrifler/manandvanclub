@@ -560,6 +560,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                   "cardiff": { title: "Man and Van Cardiff: Prices & How to Book (2026)", href: "/blog/man-and-van-cardiff-prices-how-to-book" },
                   "newcastle-upon-tyne": { title: "Man and Van Newcastle upon Tyne: Prices & How to Book (2026)", href: "/blog/man-and-van-newcastle-prices-how-to-book" },
                   "glasgow": { title: "Man and Van Glasgow: Prices & How to Book (2026)", href: "/blog/man-and-van-glasgow-prices-how-to-book" },
+                  "nottingham": { title: "Man and Van Nottingham: Prices & How to Book (2026)", href: "/blog/man-and-van-nottingham-prices-how-to-book" },
                 };
                 const blogLink = blogLinks[data.slug?.replace("man-and-van-", "") || ""];
                 return blogLink ? (
