@@ -198,6 +198,15 @@ const blogPosts = [
     category: "Cost Guides",
   },
   {
+    slug: "man-and-van-glasgow-prices-how-to-book",
+    title: "Man and Van Glasgow: Prices & How to Book (2026)",
+    description:
+      "Current Glasgow man and van prices, what affects the cost — tenements, permits and the M8 — and how to book a verified mover for your next move in Glasgow.",
+    date: "2026-07-23",
+    readTime: "7 min read",
+    category: "Cost Guides",
+  },
+  {
     slug: "man-and-van-walsall-prices-how-to-book",
     title: "Man and Van Walsall: Prices & How to Book (2026)",
     description:

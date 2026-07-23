@@ -275,7 +275,7 @@ export default function GlasgowPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-text-secondary text-center mt-6">Prices are typical ranges for 2026. Your final quote depends on postcodes, item list, access, stairs, parking and timing. <Link href="/man-and-van-prices" className="text-accent font-bold hover:underline">See full pricing guide →</Link></p>
+          <p className="text-xs text-text-secondary text-center mt-6">Prices are typical ranges for 2026. Your final quote depends on postcodes, item list, access, stairs, parking and timing. <Link href="/man-and-van-prices" className="text-accent font-bold hover:underline">See full pricing guide →</Link> Read our <Link href="/blog/man-and-van-glasgow-prices-how-to-book" className="text-accent font-bold hover:underline">Glasgow prices & how to book guide →</Link></p>
         </div>
       </section>
 
