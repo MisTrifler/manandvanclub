@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, MapPin, Clock, User, Phone } from "lucide-react";
+import { CITY_PRICE_GUIDES } from "@/lib/city-price-guides";
 
 interface BlogPostProps {
   title: string;
@@ -9,6 +10,7 @@ interface BlogPostProps {
   readTime?: string;
   children: React.ReactNode;
   breadcrumbs?: { label: string; href: string }[];
+  cityGuideHref?: string;
 }
 
 export default function BlogPostLayout({
@@ -19,6 +21,7 @@ export default function BlogPostLayout({
   readTime = "5 min read",
   children,
   breadcrumbs,
+  cityGuideHref,
 }: BlogPostProps) {
   return (
     <main className="bg-white min-h-screen selection:bg-accent selection:text-white">
@@ -82,6 +85,29 @@ export default function BlogPostLayout({
           </article>
         </div>
       </section>
+
+      {/* Related city price guides (interlinking mesh on city guide posts) */}
+      {cityGuideHref && (
+        <section className="py-10 border-t border-border">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl font-black text-primary uppercase tracking-tight mb-6">
+              More city price guides
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {CITY_PRICE_GUIDES.filter((guide) => guide.href !== cityGuideHref).map((guide) => (
+                <Link
+                  key={guide.href}
+                  href={guide.href}
+                  className="text-xs font-bold text-primary hover:text-accent py-2.5 px-3 bg-[#F9F9F7] rounded-lg hover:bg-accent/5 transition-colors flex items-center justify-between"
+                >
+                  Man and van {guide.city}: prices &amp; how to book
+                  <ArrowUpRight size={12} className="text-accent shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-16 bg-[#F9F9F7] border-t border-border">

@@ -191,6 +191,8 @@ export default function HomeContent() {
             src="/images/hero-man-and-van.jpg"
             alt="Man and van service — verified mover ready to help with your move"
             fill
+            sizes="100vw"
+            quality={60}
             className="object-cover object-center opacity-25"
             priority
           />
@@ -208,7 +210,7 @@ export default function HomeContent() {
           </h1>
 
           <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
-            From £19/hr · Verified movers · 438 UK areas · Free to submit · No spam
+            From £19/hr · Verified movers · 452 UK areas · Free to submit · No spam
           </p>
 
           {/* Move Type Selector */}
@@ -501,7 +503,7 @@ export default function HomeContent() {
             </div>
             <div>
               <h3 className="text-sm font-black text-primary mb-1">Do you cover my area?</h3>
-              <p className="text-sm text-text-secondary leading-relaxed">We cover 438 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route.</p>
+              <p className="text-sm text-text-secondary leading-relaxed">We cover 452 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route.</p>
             </div>
             <div>
               <h3 className="text-sm font-black text-primary mb-1">Can I get a same-day man and van?</h3>
@@ -538,7 +540,7 @@ export default function HomeContent() {
                 {
                   "@type": "Question",
                   name: "Do you cover my area?",
-                  acceptedAnswer: { "@type": "Answer", text: "We cover 438 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route." },
+                  acceptedAnswer: { "@type": "Answer", text: "We cover 452 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route." },
                 },
                 {
                   "@type": "Question",
@@ -588,7 +590,7 @@ export default function HomeContent() {
           </div>
           <div className="text-center mt-4">
             <Link href="/areas-covered" className="text-xs font-black text-accent hover:underline">
-              View all 438 areas →
+              View all 452 areas →
             </Link>
           </div>
 
@@ -624,6 +626,9 @@ export default function HomeContent() {
               { name: "How much does a man and van cost?", slug: "blog/how-much-does-man-and-van-cost" },
               { name: "UK house moving checklist 2026", slug: "blog/house-moving-checklist-uk" },
               { name: "Same-day move guide", slug: "blog/same-day-move-guide" },
+              { name: "Man and van London prices", slug: "blog/man-and-van-london-prices-how-to-book" },
+              { name: "Man and van Glasgow prices", slug: "blog/man-and-van-glasgow-prices-how-to-book" },
+              { name: "Man and van Nottingham prices", slug: "blog/man-and-van-nottingham-prices-how-to-book" },
             ].map((post) => (
               <Link
                 key={post.slug}

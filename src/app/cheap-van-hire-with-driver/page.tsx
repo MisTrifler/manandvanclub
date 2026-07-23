@@ -267,7 +267,7 @@ export default function CheapVanHireWithDriverPage() {
             ))}
           </div>
           <div className="text-center">
-            <Link href="/areas-covered" className="text-sm font-bold text-accent hover:underline">View all 438 areas →</Link>
+            <Link href="/areas-covered" className="text-sm font-bold text-accent hover:underline">View all 452 areas →</Link>
           </div>
         </div>
       </section>

@@ -59,6 +59,7 @@ export default function BlogPost() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <BlogPostLayout
+        cityGuideHref="/blog/man-and-van-birmingham-prices-how-to-book"
         title="Man and Van Birmingham: Prices & How to Book (2026)"
         description="Current Birmingham man and van prices, what affects the cost, and how to book a verified mover for your next move in Birmingham."
         date="2026-07-16"

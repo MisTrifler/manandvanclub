@@ -8623,4 +8623,487 @@ Property varies from stone terraces in town to riverside cottages around St Dogm
     ],
   },
 
+  "aberaeron": {
+    description: "Man with a van in Aberaeron from £19/hr. Aberarth, Llanon, Ciliau Aeron. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Aberaeron? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Ceredigion coast move and send a quote before you decide whether to book.",
+    knowledge: "Aberaeron moves concentrate around the harbour and Alban Square, where Georgian terraces have tight access, and across villages like Aberarth and Llanon. The A487 coast road links Aberystwyth and Cardigan, and the A482 runs inland to Lampeter.",
+    localMovingInfo: `Aberaeron is a small Georgian harbour town on the Ceredigion coast, famous for its pastel-painted terraces around Alban Square. The moving market is small but steady: families and retirees drawn to the harbour, holiday-cottage changeovers, and constant short hops along the coast to Aberystwyth and down the A482 to Lampeter.
+
+Two roads matter. The A487 is the coast road - about 16 miles to Aberystwyth northbound and around 26 to Cardigan southbound - and it packs up with visitor traffic from June to September. The A482 is the only route inland, running to Lampeter through the Aeron valley, with single-track stretches off the main line for the smaller hamlets.
+
+Property is dominated by Georgian and Victorian terraces with no driveways, so most loading happens from the street or the square's edges, plus harbour-side cottages with stepped access and newer bungalows on the Cardigan road. Note the nearest loading spot, any stairs and access quirks in your request so an approved mover can review the job properly. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Aberaeron?", a: "Aberaeron man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move along the coast typically costs £50-£120. A full 2-3 bed house move usually ranges from £220-£440. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Aberaeron to Aberystwyth?", a: "Aberaeron to Aberystwyth is about 16 miles on the A487 coast road. A typical small move costs £50-£95, with single items often from £35-£60. Add both postcodes for a guide price." },
+      { q: "Can you handle narrow harbour streets and no parking?", a: "Yes. Around the harbour and Alban Square, movers usually load from the street edge with a permit or an early slot. Note the narrowest point of the route and any steps so the mover can plan vehicle size and timing." },
+      { q: "Do you cover the Town Centre, Aberarth, Llanon, Ciliau Aeron and Ffosyffin?", a: "Yes. Move requests can be submitted for the Town Centre, Aberarth, Llanon, Ciliau Aeron and Ffosyffin and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Harbour and Alban Square terraces",
+        body: "The Georgian terraces around the square have no driveways and tight hallways. Early-morning slots before visitor traffic are the norm for loading here - mention the nearest legal stopping point in your request.",
+      },
+      {
+        title: "Coastal hops to Aberystwyth and Cardigan",
+        body: "Aberystwyth is 16 miles north and Cardigan about 26 south, both on the A487. Outside the summer season these are quick, cheap runs; in peak weeks, book a weekday morning.",
+        links: [{ label: "Man and van Aberystwyth", href: "/man-and-van-aberystwyth" }, { label: "Man and van Cardigan", href: "/man-and-van-cardigan" }],
+      },
+      {
+        title: "Inland via the A482 to Lampeter",
+        body: "Lampeter is around 15 miles inland through the Aeron valley on the A482. Smaller hamlets en route have single-track lanes - flag this early so the right sized van attends.",
+        links: [{ label: "Man and van Lampeter", href: "/man-and-van-lampeter" }, { label: "Man and van Wales", href: "/man-and-van-wales" }],
+      },
+    ],
+  },
+
+  "lampeter": {
+    description: "Man with a van in Lampeter from £19/hr. Falcondale, Cellan, Cwrtnewydd. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Lampeter? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Teifi valley move and send a quote before you decide whether to book.",
+    knowledge: "Lampeter moves often involve rural access - properties around Falcondale, Cellan and Cwrtnewydd sit on country lanes. The A485 is the main road running south to Carmarthen and north to Aberystwyth, with the A482 over the hill to Aberaeron and the coast.",
+    localMovingInfo: `Lampeter is a small university market town deep in the Teifi valley - one of the oldest university towns in Wales. The moving pattern mixes university staff and students around the College area, families in the town itself, and a genuinely rural hinterland of farms and smallholdings across Falcondale, Cellan and Cwrtnewydd.
+
+Everything runs on the A485: south to Carmarthen in about 26 miles, and north to Aberystwyth around 28 miles away. The A482 crosses to the coast at Aberaeron, and the A475 heads east towards the Carmarthenshire villages. All of them are single-carriageway, and journey times stretch behind farm traffic and in wet weather.
+
+In town, Victorian terraces near the High Street load from the road, while the university quarter mixes halls and converted houses. Outside town, farms and smallholdings often sit down unmade tracks - say exactly what the last half mile looks like so the mover brings a suitable vehicle. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Lampeter?", a: "Lampeter man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£120. A full 2-3 bed house move usually ranges from £220-£440. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Lampeter to Aberystwyth?", a: "Lampeter to Aberystwyth is about 28 miles on the A485. A typical small move costs £65-£120, with single items often from £45-£70. Add both postcodes for a guide price." },
+      { q: "Can you collect from farms and smallholdings?", a: "Yes, this is standard around Lampeter. Describe the access honestly - unmade track, farmyard turning space, narrow bridge or gate width - so the mover can choose a van that will actually reach the door." },
+      { q: "Do you cover the Town Centre, Falcondale, Cellan, Llanfair Clydogau and Cwrtnewydd?", a: "Yes. Move requests can be submitted for the Town Centre, Falcondale, Cellan, Llanfair Clydogau and Cwrtnewydd and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town centre and College area",
+        body: "Victorian terraces near the High Street load from the road, while university properties may have term-time rules. Midweek, mid-morning slots avoid both market-day congestion and lecture-changeover surges.",
+      },
+      {
+        title: "North and south on the A485",
+        body: "Aberystwyth is about 28 miles north and Carmarthen about 26 south. Both are the main long-distance routes from Lampeter, priced on time for the single-carriageway stretches.",
+        links: [{ label: "Man and van Aberystwyth", href: "/man-and-van-aberystwyth" }, { label: "Man and van Wales", href: "/man-and-van-wales" }],
+      },
+      {
+        title: "Over the hill to the coast",
+        body: "The A482 climbs to Aberaeron in about 15 miles, and Cardigan lies further up the Teifi. These coast links are the most common relocations out of the valley.",
+        links: [{ label: "Man and van Aberaeron", href: "/man-and-van-aberaeron" }, { label: "Man and van Cardigan", href: "/man-and-van-cardigan" }],
+      },
+    ],
+  },
+
+  "brierley-hill": {
+    description: "Man with a van in Brierley Hill from £19/hr. Merry Hill, Quarry Bank, Brockmoor. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Brierley Hill? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Black Country move and send a quote before you decide whether to book.",
+    knowledge: "Brierley Hill moves split between the hillside terraces around Quarry Bank and Brockmoor, where loading happens from the street, and the Waterfront apartments near Merry Hill with their parking and lift rules. The A461 and A4036 are the two main routes.",
+    localMovingInfo: `Brierley Hill sits between Dudley and Stourbridge, famous for the huge Merry Hill centre built on the old Round Oak steelworks site. That split personality drives the local moving market: modern apartments at The Waterfront and around the retail park on one side, and tight Black Country terraces climbing the hills around Quarry Bank and Brockmoor on the other.
+
+The A461 through the town is the spine, linking Dudley to the north with Stourbridge to the south, and it backs up badly at weekends with Merry Hill traffic. The A4036 runs east through Level Street towards Halesowen. For longer moves, the M5 at junction 2 or junction 3 is the usual gateway via the A461 or the bypass.
+
+Terraced streets here were built around factories, not cars - expect on-street loading, tight corners and in places steep gradients between front door and road. Waterfront flats usually need a parking space booked with building management and a lift reserved. Note floor level, parking and any shared access in your request so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Brierley Hill?", a: "Brierley Hill man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £50-£125. A full 2-3 bed house move usually ranges from £220-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Brierley Hill to Dudley?", a: "Brierley Hill to Dudley town centre is about two miles on the A461. A typical small move costs £40-£75, and single items are often from £30-£55. It is one of the shortest runs in the Black Country." },
+      { q: "Can you handle Waterfront apartment moves with no parking?", a: "Yes. Blocks at The Waterfront usually have loading arrangements through building management - book the bay or lift in advance where required and put the details in your request. The mover prices far more accurately with access agreed upfront." },
+      { q: "Do you cover the Town Centre, Merry Hill, Quarry Bank, Brockmoor and Pensnett?", a: "Yes. Move requests can be submitted for the Town Centre, Merry Hill, Quarry Bank, Brockmoor and Pensnett and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Quarry Bank and Brockmoor terraces",
+        body: "The classic Black Country terraces here load from the road, often on slopes. End-of-row access and rear entries can cut the carry dramatically - flag either one in your request notes.",
+      },
+      {
+        title: "Waterfront and Merry Hill apartments",
+        body: "Flats around the Waterfront and the retail park have managed parking and sometimes move-in slots. Confirm arrangements with building management first and pass them on - it avoids paid waiting time.",
+      },
+      {
+        title: "Across the Black Country",
+        body: "Dudley is two miles north, Stourbridge about three south and Halesowen four east. Almost every move from Brierley Hill is a short Black Country hop, priced on time and access rather than distance.",
+        links: [{ label: "Man and van Dudley", href: "/man-and-van-dudley" }, { label: "Man and van Stourbridge", href: "/man-and-van-stourbridge" }, { label: "Man and van Halesowen", href: "/man-and-van-halesowen" }, { label: "Man and van West Midlands", href: "/man-and-van-west-midlands" }],
+      },
+    ],
+  },
+
+  "chester": {
+    description: "Man with a van in Chester from £19/hr. Hoole, Handbridge, Upton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Chester? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cheshire move and send a quote before you decide whether to book.",
+    knowledge: "Chester moves centre on the permit-parked streets of Hoole and Handbridge, the period stock inside the City Centre walls, and the newer estates of Upton and Blacon. The A41, A55 and A483 handle almost everything in and out.",
+    localMovingInfo: `Chester is a compact cathedral city where the historic core creates the moving challenges. Inside the walls, the famous Rows, one-way system and permit zones rule out casual van parking, so central jobs are planned around loading windows. Outside the walls, the city opens into the classic Victorian terraces of Hoole, the riverside streets of Handbridge and newer estates at Upton and Blacon.
+
+The A41 runs north to Birkenhead and the M53, the A55 south-west across the North Wales coast, and the A483 down to Wrexham - all carry heavy peak traffic. Race days at the Roodee can close streets around the city with little notice, so movers plan around the Chester race calendar.
+
+Property ranges from period townhouses and flats near the Rows to redbrick terraces in Hoole where parking is almost all permitted, plus student housing around the Garden Quarter. Give the floor level, permit zone and nearest realistic loading spot in your request, and whether your street is affected on race days. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Chester?", a: "Chester man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the city typically costs £55-£130. A full 2-3 bed house move usually ranges from £240-£470. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Chester to Liverpool?", a: "Chester to Liverpool is about 25 miles via the M53 or the tunnel. A typical small move costs £70-£130, with single items often from £45-£75 - allow for tunnel tolls on that route." },
+      { q: "Can you manage moves on Chester race days?", a: "Yes, but tell the mover if either address is near the Roodee or the city centre. Race meetings close roads and fill car parks, so an early start or an alternative date is usually agreed in advance rather than on the day." },
+      { q: "Do you cover the City Centre, Handbridge, Boughton, Hoole, Upton and Blacon?", a: "Yes. Move requests can be submitted for the City Centre, Handbridge, Boughton, Hoole, Upton and Blacon and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Inside the walls and the Rows",
+        body: "Central Chester moves happen around one-way streets, loading bays and permit zones, with some properties reachable only on foot over cobbles. Check your council loading rules and put the agreed window in your request.",
+      },
+      {
+        title: "Hoole, Handbridge and the Garden Quarter",
+        body: "The Victorian grid of Hoole and the Garden Quarter is permit-parked almost everywhere; Handbridge adds tight riverside streets. A visitor permit or a space saved with bins the night before genuinely speeds up the job and cuts the price.",
+      },
+      {
+        title: "Out along the A55 and A483",
+        body: "Wrexham is about 12 miles south on the A483 and Ellesmere Port around 10 north. These are the two most common inter-town moves from Chester, quick outside rush hour.",
+        links: [{ label: "Man and van Wrexham", href: "/man-and-van-wrexham" }, { label: "Man and van Ellesmere Port", href: "/man-and-van-ellesmere-port" }, { label: "Man and van Liverpool", href: "/man-and-van-liverpool" }, { label: "Man and van Cheshire", href: "/man-and-van-cheshire" }],
+      },
+    ],
+  },
+
+  "skipton": {
+    description: "Man with a van in Skipton from £19/hr. Gargrave, Embsay, Carleton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Skipton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Craven move and send a quote before you decide whether to book.",
+    knowledge: "Skipton moves spread between terraces near the Town Centre and canal, the villages of Gargrave and Embsay, and Dales properties down unmade tracks. The A65, A59 and A629 are the three arteries, all single-carriageway for stretches.",
+    localMovingInfo: `Skipton is the gateway to the Yorkshire Dales, a proper working market town on the Leeds and Liverpool Canal. The moving pattern is a mix of town-centre terraces, canal-side cottages with stepped access, the villages of Gargrave, Embsay and Carleton, and remote properties out towards Malham and the Dales lanes.
+
+Three roads carry everything: the A65 west towards Kendal and south to Leeds, the A59 east to Harrogate and York, and the A629 into Keighley. All three slow right down behind farm traffic, and the High Street's market days - Monday, Wednesday, Friday and Saturday - restrict loading around the town centre stalls.
+
+Housing is largely stone-built: weavers' cottages and terraces around the canal basin, bigger Victorian houses towards the castle end of the High Street, and post-war semis on the edges. Many lanes off the main roads are single track with passing places. Describe the last stretch of access honestly - an unmade Dales track changes the vehicle choice. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Skipton?", a: "Skipton man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£125. A full 2-3 bed house move usually ranges from £230-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Skipton to Leeds?", a: "Skipton to Leeds is about 26 miles on the A65. A typical small move costs £70-£130, with single items often from £45-£70. Add both postcodes for a guide price." },
+      { q: "Can you collect from Dales farms and rural cottages?", a: "Yes. Rural collections are standard from Skipton. Describe track access, gates and turning space so the mover can bring a van that reaches the door rather than carrying items hundreds of metres." },
+      { q: "Do you cover the Town Centre, Gargrave, Embsay, Carleton and Sutton-in-Craven?", a: "Yes. Move requests can be submitted for the Town Centre, Gargrave, Embsay, Carleton and Sutton-in-Craven and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town centre, canal basin and market days",
+        body: "Loading near the High Street is best avoided on market days - Monday, Wednesday, Friday and Saturday - when stalls and coaches fill the centre. Canal-side cottages often have stepped or towpath access, so describe the approach carefully.",
+      },
+      {
+        title: "South to Keighley and Bradford",
+        body: "Keighley is about eight miles south on the A629 and Bradford around 18 - the most common direction for Skipton moves, with steady A629 traffic at peak times.",
+        links: [{ label: "Man and van Keighley", href: "/man-and-van-keighley" }, { label: "Man and van Bradford", href: "/man-and-van-bradford" }],
+      },
+      {
+        title: "West to Burnley and east to Harrogate",
+        body: "Burnley sits about 15 miles west over the hills and Harrogate around 20 east on the A59. Both routes are scenic and slow-moving - time estimates rather than distance drive the quote.",
+        links: [{ label: "Man and van Burnley", href: "/man-and-van-burnley" }, { label: "Man and van Harrogate", href: "/man-and-van-harrogate" }],
+      },
+    ],
+  },
+
+  "driffield": {
+    description: "Man with a van in Driffield from £19/hr. Nafferton, Lowthorpe, Kelleythorpe. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Driffield? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wolds move and send a quote before you decide whether to book.",
+    knowledge: "Driffield moves range across the market town around Middle Street and out to Wolds villages like Nafferton and Lowthorpe, where lanes are narrow and farms sit down tracks. The A614 and A166 are the main roads, with the B1249 towards Malton.",
+    localMovingInfo: `Driffield calls itself the Capital of the Wolds, and it lives up to it: a working agricultural market town surrounded by villages threaded together by narrow lanes. Moves here split three ways - within the town itself, out to the Wolds villages like Nafferton, Lowthorpe and Hutton Cranswick, and longer runs to the coast at Bridlington or inland to Beverley and York.
+
+The A614 runs north to Bridlington and south to Market Weighton, the A166 south-west towards York, and the B1249 to Malton. The level crossing on the A614 can hold traffic at train times, and harvest season puts slow convoys on every lane from late summer into autumn.
+
+Property is a mix of brick terraces near Middle Street, interwar semis on the edges, and farms and converted barns across the Wolds with yard or track access. Mention the level of rural access - a farmyard with turning space versus a narrow gated track changes the plan. Add your postcodes and item list so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Driffield?", a: "Driffield man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £50-£120. A full 2-3 bed house move usually ranges from £220-£440. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Driffield to Beverley?", a: "Driffield to Beverley is about 13 miles via the A1174 and minor roads. A typical small move costs £50-£95, with single items often from £35-£60. Add both postcodes for a guide price." },
+      { q: "Can you reach Wolds farms and villages?", a: "Yes, this is everyday work from Driffield. Harvest season can slow the back roads, so mention any fixed deadline. Describe gates, tracks and yard space so the right sized van attends." },
+      { q: "Do you cover the Town Centre, Nafferton, Lowthorpe, Little Driffield and Kelleythorpe?", a: "Yes. Move requests can be submitted for the Town Centre, Nafferton, Lowthorpe, Little Driffield and Kelleythorpe and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Market town core around Middle Street",
+        body: "Terraces near Middle Street load from the road and the Thursday market limits central parking. The level crossing on the A614 is the main local hold-up - allow slack at train times.",
+      },
+      {
+        title: "Coast-bound moves to Bridlington",
+        body: "Bridlington is about 12 miles north on the A614 - the single most common longer move from Driffield, usually under two hours door to door outside summer traffic.",
+        links: [{ label: "Man and van Bridlington", href: "/man-and-van-bridlington" }],
+      },
+      {
+        title: "Inland to Beverley and Malton",
+        body: "Beverley is about 13 miles south and Malton around 18 north-west on the B1249. These cross-Wolds runs are priced on time, and flexible midweek slots tend to come in cheapest.",
+        links: [{ label: "Man and van Beverley", href: "/man-and-van-beverley" }, { label: "Man and van Malton", href: "/man-and-van-malton" }],
+      },
+    ],
+  },
+
+  "wednesfield": {
+    description: "Man with a van in Wednesfield from £19/hr. Ashmore Park, Wood End, Fallings Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Wednesfield? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wolverhampton move and send a quote before you decide whether to book.",
+    knowledge: "Wednesfield moves mostly run along the A4124 into Wolverhampton or across to Bilston and Willenhall. The High Street and Fallings Park have older rows loading from the road, while Ashmore Park and Wood End are post-war estates with mixed driveway access.",
+    localMovingInfo: `Wednesfield is a self-contained town on the north east edge of Wolverhampton, centred on its own High Street and the Bentley Bridge retail park. The moving market is steady family work: first-time buyers into the post-war semis of Ashmore Park and Wood End, people trading down from bigger Wolverhampton homes, and short hops to Bilston and Willenhall along the A4124.
+
+The A4124 runs straight through the town as the Birmingham Road and slows at peaks around the Bentley Bridge junctions. The A463 links south towards the M54 at junction 2. Inside the estates, most roads are easy for vans, though some newer pockets have shared drives worth mentioning.
+
+Property ranges from 1930s terraces near the High Street to post-war and newer estates. Older rows load from the street, which suits early-morning starts before parking fills up. Add your postcodes, item list and any shared-access notes so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wednesfield?", a: "Wednesfield man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £50-£125. A full 2-3 bed house move usually ranges from £220-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wednesfield to Wolverhampton?", a: "Wednesfield to Wolverhampton city centre is about three miles on the A4124. A typical small move costs £40-£80, with single items often from £30-£55. It is one of the shortest regular runs in the city." },
+      { q: "Can you handle estate houses with shared drives?", a: "Yes. Shared drive arrangements are common around Ashmore Park and Wood End. Mention which drive is yours and whether the van can wait on the road, so the mover can plan loading without disputes on the day." },
+      { q: "Do you cover the Town Centre, Ashmore Park, Wood End, Fallings Park and Bentley Bridge?", a: "Yes. Move requests can be submitted for the Town Centre, Ashmore Park, Wood End, Fallings Park and Bentley Bridge and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "High Street and Fallings Park rows",
+        body: "The terraces near the High Street and around Fallings Park load from the road, best done mid-morning once the school-run traffic clears. Rear access, where it exists, is worth flagging.",
+      },
+      {
+        title: "Ashmore Park and Wood End semis",
+        body: "The post-war semis here are the bread and butter of Wednesfield moves - driveways, gardens and side access keep loading quick. These are some of the cheapest per-hour jobs in Wolverhampton.",
+      },
+      {
+        title: "Along the A4124 to Wolverhampton, Bilston and Willenhall",
+        body: "Wolverhampton city centre is three miles one way, Bilston and Willenhall the other. Most Wednesfield moves stay within this triangle and are done in a morning.",
+        links: [{ label: "Man and van Wolverhampton", href: "/man-and-van-wolverhampton" }, { label: "Man and van Bilston", href: "/man-and-van-bilston" }, { label: "Man and van Willenhall", href: "/man-and-van-willenhall" }, { label: "Man and van Walsall", href: "/man-and-van-walsall" }],
+      },
+    ],
+  },
+
+  "dagenham": {
+    description: "Man with a van in Dagenham from £26/hr. Becontree, Becontree Heath, Heathway. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Dagenham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
+    knowledge: "Dagenham moves are dominated by the vast Becontree estate - long interwar streets with on-street parking - plus flats near the Heathway and newer pockets around Castle Green. The A13 and A406 frame the area, with the A124 through the middle.",
+    localMovingInfo: `Dagenham is defined by the Becontree estate, once the largest council estate in the world, and its endless grid of interwar houses still makes up most of the local moving market. The moving pattern is classic east London churn: families trading between Barking, Dagenham and Romford, renters moving through Heathway flats, and long-time residents heading out of London altogether.
+
+The A13 along the southern edge is the fast route - east to Rainham and the M25, west through Barking into Docklands - while the A406 North Circular crosses at the Goresbrook interchange, a regular bottleneck. The A124 runs east-west through the estate towards Romford. Peak-time queues at the A13 Lodge Avenue flyover are the main timing issue for moves.
+
+Housing is predominantly interwar semis and maisonettes on the estate, Victorian terraces towards Chadwell Heath, and newer developments around Castle Green and the Heathway. Most streets have on-street parking only, so the van parks where it can and the carry varies - note the nearest junction or space you can hold in your request so an approved mover can review the job. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Dagenham?", a: "Dagenham man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£145. A full 2-3 bed house move usually ranges from £260-£520. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Dagenham to Romford?", a: "Dagenham to Romford is about four miles via the A124. A typical small move costs £50-£95, with single items often from £35-£60. Short east London hops like this are priced mainly on load and stairs." },
+      { q: "Do you charge extra for ULEZ or parking?", a: "Movers factor any chargeable costs into the quote you review before deciding - there are no surprise extras on the day. Mentioning CPZ streets and the nearest legal loading spot keeps the quote accurate." },
+      { q: "Do you cover the Town Centre, Becontree, Becontree Heath, Chadwell Heath and Heathway?", a: "Yes. Move requests can be submitted for the Town Centre, Becontree, Becontree Heath, Chadwell Heath and Heathway and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Becontree estate streets",
+        body: "The interwar grid loads from the road and parking is competitive from mid-morning. Holding a space with bins the night before or booking an early slot genuinely shortens the job.",
+      },
+      {
+        title: "Heathway and Chadwell Heath",
+        body: "Flats above shops near the Heathway involve stairs and limited stopping space; Chadwell Heath terraces offer slightly easier loading. Detail floor levels in your request for the sharpest quote.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "East and west along the A13",
+        body: "Barking is three miles west and Rainham a similar distance east, with Romford four miles north. Almost every Dagenham move stays within this east London triangle.",
+        links: [{ label: "Man and van Barking", href: "/man-and-van-barking" }, { label: "Man and van Romford", href: "/man-and-van-romford" }, { label: "Man and van Ilford", href: "/man-and-van-ilford" }],
+      },
+    ],
+  },
+
+  "barking": {
+    description: "Man with a van in Barking from £26/hr. Barking Riverside, Upney, Gascoigne. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Barking? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
+    knowledge: "Barking moves split between the older terraces near the Town Centre, the regenerated Gascoigne quarter, and the new riverside blocks at Barking Riverside with their booking-only loading bays. The A13 and A406 meet on its edges.",
+    localMovingInfo: `Barking is one of east London's fastest-changing areas. The old town centre and its Victorian terraces now sit next to the rebuilt Gascoigne neighbourhood and the sprawling new Barking Riverside development on the Thames. That mix means very different jobs: stairs and street loading in the older quarter, and managed, book-ahead moves in the new riverside blocks.
+
+The A13 along the south edge is the corridor - west into Docklands and the City, east to Dagenham, Rainham and the M25. The A406 North Circular crosses to the west towards Ilford and Edmonton. Traffic around the Town Centre one-way system and the A13 flyover punctuates every peak hour, so most movers quote by time with off-peak discounts effectively built in.
+
+Property ranges from Victorian terraces around Barking station, to council maisonettes around Gascoigne and Thames View, to new-build flats at Riverside where loading bays, lifts and concierge slots are the norm. For the newer blocks, confirm the building's move-in process first and put it in your request. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Barking?", a: "Barking man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£145. A full 2-3 bed property usually ranges from £260-£520. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Barking to Ilford?", a: "Barking to Ilford is about three miles via the A124 or A406. A typical small move costs £50-£90, with single items often from £35-£60. The exact junction delays on the A406 usually matter more than the mileage." },
+      { q: "Can you handle Barking Riverside apartment moves?", a: "Yes. Riverside blocks typically need a loading bay booking, a lift reservation and sometimes a certificate from the movers. Confirm your building's move-in requirements first and include them in your request so the job runs to schedule." },
+      { q: "Do you cover the Town Centre, Barking Riverside, Upney, Castle Green and Gascoigne?", a: "Yes. Move requests can be submitted for the Town Centre, Barking Riverside, Upney, Castle Green and Gascoigne and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town centre terraces and station area",
+        body: "The older streets around the station and East Street load from the road under CPZ rules. An agreed loading window with the council, or an early Sunday slot, avoids circling for space.",
+      },
+      {
+        title: "Barking Riverside new builds",
+        body: "Riverside moves are paperwork-led: bay bookings, lift slots and concierge notice. Get the building's move-in rules first - a confirmed slot means the van never waits and the quote stays at the floor price.",
+      },
+      {
+        title: "Ilford, Romford and Dagenham triangle",
+        body: "Ilford is three miles north, Romford five and Dagenham three east - nearly all Barking moves live in this triangle, done in half a day outside peak A406 traffic.",
+        links: [{ label: "Man and van Ilford", href: "/man-and-van-ilford" }, { label: "Man and van Romford", href: "/man-and-van-romford" }, { label: "Man and van Dagenham", href: "/man-and-van-dagenham" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+
+  "wimbledon": {
+    description: "Man with a van in Wimbledon from £26/hr. Village, South Wimbledon, Raynes Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Wimbledon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your SW19 move and send a quote before you decide whether to book.",
+    knowledge: "Wimbledon moves range from period conversions in the Village with stairs and steep lanes, to flats around the Broadway and family semis in Raynes Park and South Wimbledon. The A3 borders the area, with the A219 and A236 running through it.",
+    localMovingInfo: `Wimbledon is really two places. The Village up the hill has grand period houses and cottagey lanes, permit parking and high-value moves. Down by the Broadway and out towards Colliers Wood, South Wimbledon and Raynes Park, the stock is conversions and interwar semis with a faster, rental-driven churn. Championship fortnight each summer changes everything - parking suspensions, road closures and visitor chaos mean almost no moves happen in the Village for two weeks.
+
+The A3 runs along the northern edge with junctions at Wimbledon Common and Kingston bypass - the fast escape to the M25 and to central London. The A219 climbs through Broadway towards Putney, and the A236 links to Croydon. In rush hour all three crawl; mid-mornings are the sweet spot for pricing.
+
+Conversions dominate: Victorian and Edwardian houses split into flats with shared halls, steep stairs and sash windows. Parking is CPZ almost everywhere, so suspensions or visitor permits matter and should be arranged before moving day. Note floor level, flight count and the permit situation in your request so an approved mover can review the real job. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wimbledon?", a: "Wimbledon man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local flat move typically costs £60-£150. A full 2-3 bed property usually ranges from £270-£540 given the stairs and parking involved. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wimbledon to Kingston?", a: "Wimbledon to Kingston is about five miles, usually via the A3 or through Raynes Park. A typical small move costs £55-£100, with single items often from £40-£65." },
+      { q: "Can you move during the tennis championships?", a: "Yes, but almost only outside the immediate queue and closure zones, and with planning - parking suspensions are restricted and roads near the All England Club close or clog. If your date is flexible, the fortnight before or after is far cheaper and simpler." },
+      { q: "Do you cover the Town Centre, Wimbledon Village, South Wimbledon, Colliers Wood and Raynes Park?", a: "Yes. Move requests can be submitted for the Town Centre, Wimbledon Village, South Wimbledon, Colliers Wood and Raynes Park and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Village lanes and period conversions",
+        body: "The Village means steep narrow lanes, permits and tall period properties with stairs. Parking suspensions are essential and lift-share or van size sometimes needs tailoring - give every access detail up front.",
+      },
+      {
+        title: "Broadway, South Wimbledon and Colliers Wood flats",
+        body: "The busy lower-town streets have heavy traffic and CPZ rules but better road access than the Village. Mid-morning weekday slots are rarely affected and usually the cheapest.",
+      },
+      {
+        title: "South to Sutton and Kingston",
+        body: "Kingston is five miles west and Sutton about five south - the two most common destinations for Wimbledon movers. The A3 makes both quick outside rush hour.",
+        links: [{ label: "Man and van Kingston", href: "/man-and-van-kingston" }, { label: "Man and van Sutton", href: "/man-and-van-sutton" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+
+  "hackney": {
+    description: "Man with a van in Hackney from £26/hr. Dalston, Stoke Newington, Clapton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Hackney? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
+    knowledge: "Hackney moves mean stairs, narrow shared halls and CPZ streets around Dalston, London Fields and Clapton, plus lift rules in newer blocks near Hackney Wick. The A10, A12 and A104 are the main routes in and out.",
+    localMovingInfo: `Hackney is the archetype of converted east London: grand but tight Victorian terraces divided into flats around London Fields and Broadway Market, ex-local blocks around Homerton, warehouse lofts near Hackney Wick, and period squares in Stoke Newington. The rental churn here is among the highest in the capital, so same-week and same-day requests are the norm.
+
+The A10 runs south down Kingsland High Street into the City - slow at almost any hour - while the A12 crosses the south of the borough at Hackney Wick, and the A104 connects towards Walthamstow and Woodford. Most side streets are controlled zones where a parking suspension from the council is needed for a stress-free load.
+
+Flat-dwellers dominate: second and third-floor conversions with one narrow stair and no lift. The carrying distance from van to door is the single biggest cost driver here, so note your floor, the hallway width and the nearest legal loading point in the request. Booking a CPZ suspension a few days ahead usually pays for itself in saved time. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Hackney?", a: "Hackney man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local flat move typically costs £60-£150. A full 2-3 bed property usually ranges from £270-£540 given the stairs involved. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Hackney to Stratford?", a: "Hackney to Stratford is about three miles via the A12 or A104. A typical small move costs £50-£95, with single items often from £35-£60. Much depends on stairs at each end." },
+      { q: "Do I need a parking suspension?", a: "For most Hackney streets, yes - or at least a visitor permit plan. A suspension reserves the bay outside your door, cuts loading time and keeps the quote at the low end. The mover can advise, but you will usually book it with the council directly." },
+      { q: "Do you cover Hackney Central, Dalston, Stoke Newington, Homerton and Clapton?", a: "Yes. Move requests can be submitted for Hackney Central, Dalston, Stoke Newington, Homerton and Clapton and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "London Fields and Broadway Market conversions",
+        body: "Tall conversions with one stair and no lift are the standard job here. Tell the mover your exact floor, any tight turns in the hall, and book a suspension - it usually saves more than it costs.",
+      },
+      {
+        title: "Hackney Wick lofts and new blocks",
+        body: "Warehouse conversions and newer blocks around the Wick often need lift bookings and have loading bays. Confirm arrangements with building management and pass the slot to the mover.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Stratford, Tottenham and the A10 corridor",
+        body: "Stratford is three miles east and Tottenham about four north. Most Hackney moves stay within inner east London, where traffic matters more than distance.",
+        links: [{ label: "Man and van Stratford", href: "/man-and-van-stratford" }, { label: "Man and van Tottenham", href: "/man-and-van-tottenham" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+
+  "hammersmith": {
+    description: "Man with a van in Hammersmith from £26/hr. Brook Green, Ravenscourt Park, Fulham Reach. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Hammersmith? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your west London move and send a quote before you decide whether to book.",
+    knowledge: "Hammersmith moves mean CPZ streets, mansion-block stairs around Brook Green and Ravenscourt Park, or portered riverside apartments at Fulham Reach with lift bookings. The A4, A40, A219 and A315 are the main routes out.",
+    localMovingInfo: `Hammersmith is a dense west London hub where almost every property is a flat or a terrace under controlled parking. The mansion blocks around Brook Green, the Victorian terraces off King Street and the riverside apartments towards Fulham Reach all generate constant move requests, driven by the district line, the Broadway offices and the flyover corridor.
+
+The A4 and the A40 are the two west-east escape routes, both prone to works and queues around the flyover and gyratory. The A219 heads south to Putney over the bridge, and the A315 (King Street) runs west to Chiswick. On Hammersmith Bridge's restricted status, some southbound journeys detour via Putney or Barnes - worth flagging for cross-river moves.
+
+Portered mansion blocks often require notice for move-in slots and lift protection; newer riverside developments book loading bays in advance. Terraces around Brackenbury Village load from the road with a suspension. Spell out floor, lift, porter rules and parking zone in your request so an approved mover can review the real work. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Hammersmith?", a: "Hammersmith man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local flat move typically costs £60-£150. A full 2-3 bed property usually ranges from £270-£540. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Hammersmith to Chiswick?", a: "Hammersmith to Chiswick is about two miles along King Street. A typical small move costs £45-£85, with single items often from £35-£60. Stairs, not mileage, set the price." },
+      { q: "Do you handle portered mansion-block moves?", a: "Yes, routinely. Most portered blocks want move dates confirmed, lift padding booked and sometimes a deposit. Confirm with building management first and include the slot in your request so the mover arrives when access is actually available." },
+      { q: "Do you cover the Town Centre, Brook Green, Ravenscourt Park, Brackenbury Village and Fulham Reach?", a: "Yes. Move requests can be submitted for the Town Centre, Brook Green, Ravenscourt Park, Brackenbury Village and Fulham Reach and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Brook Green and the mansion blocks",
+        body: "Brook Green's blocks involve porters, narrow lifts and scheduled slots. The winning formula: confirm the building slot, book a CPZ suspension, and share both with the mover in your request notes.",
+      },
+      {
+        title: "King Street terraces and Brackenbury Village",
+        body: "The terraces here load directly from CPZ streets, which makes early starts and suspensions the norm. Rear garden access through the block, where available, cuts the carry meaningfully.",
+      },
+      {
+        title: "West to Chiswick and Acton",
+        body: "Chiswick is two miles west along the A315 and Acton three north. These are short hops, but the A4 and A40 corridor traffic decides the timing of the day.",
+        links: [{ label: "Man and van Chiswick", href: "/man-and-van-chiswick" }, { label: "Man and van Acton", href: "/man-and-van-acton" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+
+  "catford": {
+    description: "Man with a van in Catford from £26/hr. Rushey Green, Bellingham, Downham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Catford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south east London move and send a quote before you decide whether to book.",
+    knowledge: "Catford moves divide between Victorian terraces near Rushey Green and Blythe Hill, and the interwar estate blocks of Bellingham and Downham with their lifts and stairwells. The A21 and the A205 South Circular cross at the town centre gyratory.",
+    localMovingInfo: `Catford sits in south east London where the A21 meets the South Circular, with the famous cat sculpture keeping watch over the Broadway. The moving market mixes period terraces near Rushey Green and Blythe Hill, maisonettes around Perry Hill, and the big interwar estates of Bellingham and Downham, where block access and parking distance vary street by street.
+
+The A21 south to Bromley and the M25 is the main escape route south; the A205 South Circular drags cross-London traffic through the one-way gyratory at peak times. Moves timed mid-morning largely avoid the crawl and that is where the cheapest slots sit.
+
+Housing ranges from tall, undivided Victorian houses near Blythe Hill (stairs from street level are common) to flat blocks with lifts or external stairwells on the estates. Note which applies at both ends - a lift block versus a stairwell block changes the time estimate completely. Add postcodes, floor and parking notes so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Catford?", a: "Catford man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move typically costs £60-£145. A full 2-3 bed property usually ranges from £260-£520. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Catford to Bromley?", a: "Catford to Bromley is about four miles on the A21. A typical small move costs £50-£95, with single items often from £35-£60. Peak queues at the gyratory matter more than the mileage." },
+      { q: "Can you handle estate blocks with no lift?", a: "Yes. State the floor and whether it is a lift block or stairwell access. On the Bellingham and Downham estates, the nearest practical stopping point can also be a short walk from the block - noting it upfront keeps the quote tight." },
+      { q: "Do you cover the Town Centre, Rushey Green, Bellingham, Downham and Perry Hill?", a: "Yes. Move requests can be submitted for the Town Centre, Rushey Green, Bellingham, Downham and Perry Hill and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Rushey Green, Blythe Hill and the terraces",
+        body: "Period terraces here often sit above street level with steep front steps and split-level interiors. Photographs of the stair run are worth as much as a paragraph of description to the mover.",
+      },
+      {
+        title: "Bellingham and Downham estates",
+        body: "Estate moves hinge on block access: which floor, lift or stairs, and how far the van can stop from the entrance. Council suspension or an agreed loading window keeps everything predictable.",
+      },
+      {
+        title: "A21 and South Circular runs",
+        body: "Lewisham is two miles north, Greenwich four and Bromley four south-east - Catford moves are nearly all short hops where the gyratory timing decides the price.",
+        links: [{ label: "Man and van Lewisham", href: "/man-and-van-lewisham" }, { label: "Man and van Greenwich", href: "/man-and-van-greenwich" }, { label: "Man and van Bromley", href: "/man-and-van-bromley" }],
+      },
+    ],
+  },
+
+  "wirral": {
+    description: "Man with a van in Wirral from £19/hr. Heswall, West Kirby, Hoylake. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van across the Wirral? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your peninsula move and send a quote before you decide whether to book.",
+    knowledge: "Wirral moves cross the peninsula on the M53 and A552, from Birkenhead terraces and Wallasey semis to the Dee-side towns of Heswall, Hoylake and West Kirby. Anything into Liverpool factors in the Mersey tunnel tolls and peak queues.",
+    localMovingInfo: `The Wirral is a peninsula of two halves. Along the Mersey, Birkenhead and Wallasey are dense and urban - terraces, semis and blocks with quick turnover. On the Dee side, Heswall, Hoylake and West Kirby feel like coastal towns with period villas and bigger gardens. The M53 bisects the peninsula and almost every move uses it at some point.
+
+Two things define Wirral moving logistics. First, the Mersey tunnels: any move into Liverpool crosses them, and tolls plus peak queues at the entrances are part of the pricing - mention if your route involves the tunnel. Second, the summer season: New Brighton, West Kirby and Hoylake seafronts clog with visitors at weekends, which slows everything on promenade-adjacent streets.
+
+Property is everything from Birkenhead's tight terrace rows loading from the street, through Wallasey's interwar semis with driveways, to large period houses in Heswall and seafront conversions in New Brighton. Cover the parking and floor situation at both ends in your request so an approved mover can review the real job. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wirral?", a: "Wirral man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the peninsula typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wirral to Liverpool?", a: "Wirral to Liverpool city centre is 3-8 miles depending on the start point, via the Mersey tunnels. A typical small move costs £55-£110 including toll considerations, with single items often from £40-£65." },
+      { q: "Are tunnel tolls included in the quote?", a: "Any toll or chargeable cost is factored into the quote you review before deciding - nothing is added on the day. The quote is fixed for the job as described, which is why accurate postcodes matter." },
+      { q: "Do you cover Birkenhead, Wallasey, Heswall, West Kirby and Hoylake?", a: "Yes. Move requests can be submitted for Birkenhead, Wallasey, Heswall, West Kirby and Hoylake and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Birkenhead and Wallasey urban moves",
+        body: "Terrace rows load from the street and parking is competitive near the centres. Early starts and rear-access flags make these among the quickest, cheapest jobs on the peninsula.",
+        links: [{ label: "Man and van Birkenhead", href: "/man-and-van-birkenhead" }, { label: "Man and van Wallasey", href: "/man-and-van-wallasey" }],
+      },
+      {
+        title: "Dee-side towns: Heswall, Hoylake, West Kirby",
+        body: "Larger period houses and coastal conversions with driveways dominate here. Seafront streets get summer congestion - weekday bookings and morning slots keep the job tight.",
+      },
+      {
+        title: "Through the tunnel to Liverpool",
+        body: "Crossing the Mersey adds tolls and peak queues, so these moves are priced with timings in mind. Flexible off-peak slots land the best rates for tunnel jobs.",
+        links: [{ label: "Man and van Liverpool", href: "/man-and-van-liverpool" }],
+      },
+    ],
+  },
+
 };

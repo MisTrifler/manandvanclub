@@ -56,6 +56,7 @@ export default function BlogPost() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <BlogPostLayout
+        cityGuideHref="/blog/man-and-van-edinburgh-prices-how-to-book"
         title="Man and Van Edinburgh: Prices & How to Book (2026)"
         description="Current Edinburgh man and van prices, what affects the cost, and how to book a verified mover for your next move in Edinburgh."
         date="2026-07-16"

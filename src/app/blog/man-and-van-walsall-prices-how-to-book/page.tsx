@@ -59,6 +59,7 @@ export default function BlogPost() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <BlogPostLayout
+        cityGuideHref="/blog/man-and-van-walsall-prices-how-to-book"
         title="Man and Van Walsall: Prices & How to Book (2026)"
         description="Current Walsall man and van prices, what affects the cost, and how to book a verified mover for your move in Walsall and surrounding areas."
         date="2026-07-16"

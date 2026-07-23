@@ -548,6 +548,21 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "burntwood",
   "machynlleth",
   "cardigan",
+  "aberaeron",
+  "lampeter",
+  // 2026-07-23 suburb batch — revived dead-slug nearbyLocation references
+  "brierley-hill",
+  "chester",
+  "skipton",
+  "driffield",
+  "wednesfield",
+  "dagenham",
+  "barking",
+  "wimbledon",
+  "hackney",
+  "hammersmith",
+  "catford",
+  "wirral",
 ]);
 
 export function isSeoLaunchMode(): boolean {

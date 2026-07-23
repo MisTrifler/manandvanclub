@@ -59,6 +59,7 @@ export default function BlogPost() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <BlogPostLayout
+        cityGuideHref="/blog/man-and-van-london-prices-how-to-book"
         title="Man and Van London: Prices & How to Book (2026)"
         description="Current London man and van prices, what affects the cost by borough, and how to book a verified mover."
         date="2026-07-16"
