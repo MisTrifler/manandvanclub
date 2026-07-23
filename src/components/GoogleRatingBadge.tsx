@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 type RatingData = { rating: number; count: number; live: boolean };
 
-const FALLBACK: RatingData = { rating: 5.0, count: 11, live: false };
+const FALLBACK: RatingData = { rating: 5.0, count: 5, live: false };
 
 // Direct link to the Man and Van Club Google Business Profile (same URL used
 // in the site's Organisation schema sameAs) so visitors land on Google itself.

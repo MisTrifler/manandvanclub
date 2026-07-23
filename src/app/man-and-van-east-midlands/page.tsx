@@ -22,7 +22,7 @@ const baseUrl = "https://www.manandvanclub.co.uk";
 export const metadata: Metadata = {
   title: "Man and Van East Midlands From £19/hr | Free Quotes",
   description:
-    "Man with a van in the East Midlands from £19/hr. Get a guide price, keep your details private, and receive a quote from one verified mover before you book. Rated 5.0/5 from 11 reviews. Covers Nottingham, Leicester, Derby, Northampton, Lincoln and surrounding areas.",
+    "Man with a van in the East Midlands from £19/hr. Get a guide price, keep your details private, and receive a quote from one verified mover before you book. Rated 5.0/5 from 5 reviews. Covers Nottingham, Leicester, Derby, Northampton, Lincoln and surrounding areas.",
   alternates: {
     canonical: `${baseUrl}/man-and-van-east-midlands`,
   },

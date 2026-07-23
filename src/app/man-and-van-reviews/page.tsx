@@ -8,7 +8,7 @@ const GOOGLE_REVIEWS_URL = "https://share.google/xemGXWRByHBK5PSbN";
 export const metadata: Metadata = {
   title: "Man and Van Club Reviews | Rated 5.0/5 | Real Customer Reviews",
   description:
-    "Read real customer reviews for Man and Van Club. Rated 5.0 out of 5 across 11 reviews. See what movers' customers say about price, punctuality and care.",
+    "Read real customer reviews for Man and Van Club. Rated 5.0 out of 5 across 5 reviews. See what movers' customers say about price, punctuality and care.",
   alternates: { canonical: `${baseUrl}/man-and-van-reviews` },
   openGraph: {
     title: "Man and Van Club Reviews | Rated 5.0/5",
@@ -75,7 +75,7 @@ export default function ReviewsPage() {
                     <Star key={i} size={18} fill="#00B67A" className="text-[#00B67A]" strokeWidth={0} />
                   ))}
                 </div>
-                <p className="mt-1 text-xs font-bold text-text-secondary">Across 11 verified reviews</p>
+                <p className="mt-1 text-xs font-bold text-text-secondary">Across 5 verified reviews</p>
               </div>
             </div>
             <a

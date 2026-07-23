@@ -8,18 +8,18 @@ const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
   title: "Man and Van Swansea From £19/hr | Free Quotes",
-  description: "Man with a van in Swansea from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews. City centre, Uplands, Sketty, Mumbles.",
+  description: "Man with a van in Swansea from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 5 reviews. City centre, Uplands, Sketty, Mumbles.",
   alternates: { canonical: `${baseUrl}/man-and-van-swansea` },
   openGraph: {
     title: "Man and Van Swansea From £19/hr | Free Quotes",
-    description: "Man with a van in Swansea from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
+    description: "Man with a van in Swansea from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 5 reviews.",
     url: `${baseUrl}/man-and-van-swansea`,
     images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Swansea")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`, width: 1200, height: 630, alt: "Man and Van Swansea From £19/hr | Free Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Swansea From £19/hr | Free Quotes",
-    description: "Man with a van in Swansea from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 11 reviews.",
+    description: "Man with a van in Swansea from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 5 reviews.",
     images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Swansea")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`],
   },
 };

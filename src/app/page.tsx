@@ -6,7 +6,7 @@ const siteUrl = "https://www.manandvanclub.co.uk";
 export const metadata: Metadata = {
   title: "Man and Van Hire Nationwide From £19/hr | Man and Van Club",
   description:
-    "Man with a van nationwide from £19/hr. House removals, flat moves, furniture delivery and same-day jobs. One verified mover quotes — no spam calls. Rated 5.0 from 11 reviews. Call 0121 751 1269.",
+    "Man with a van nationwide from £19/hr. House removals, flat moves, furniture delivery and same-day jobs. One verified mover quotes — no spam calls. Rated 5.0 from 5 reviews. Call 0121 751 1269.",
   alternates: {
     canonical: siteUrl,
   },

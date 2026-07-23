@@ -22,7 +22,7 @@ const baseUrl = "https://www.manandvanclub.co.uk";
 export const metadata: Metadata = {
   title: "Man and Van West Midlands From £19/hr | Free Quotes",
   description:
-    "Man with a van in the West Midlands from £19/hr. Get a guide price, keep your details private, and receive a quote from one verified mover before you book. Rated 5.0/5 from 11 reviews.",
+    "Man with a van in the West Midlands from £19/hr. Get a guide price, keep your details private, and receive a quote from one verified mover before you book. Rated 5.0/5 from 5 reviews.",
   alternates: {
     canonical: `${baseUrl}/man-and-van-west-midlands`,
   },

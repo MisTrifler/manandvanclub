@@ -4,7 +4,6 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Phone,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
@@ -256,15 +255,6 @@ export default function HomeContent() {
             </button>
           </div>
 
-          {/* Call option */}
-          <a
-            href="tel:01217511269"
-            className="inline-flex items-center gap-2 mt-6 text-sm font-black text-white/90 hover:text-accent transition-colors"
-          >
-            <Phone size={16} />
-            0121 751 1269
-          </a>
-
         </div>
 
       </section>
@@ -387,7 +377,7 @@ export default function HomeContent() {
             What our customers say
           </h2>
           <p className="text-sm text-text-secondary mt-1">
-            5.0 / 5.0 across 11 verified reviews on Google, Trustpilot & Yell
+            5.0 / 5.0 across verified reviews on Google, Trustpilot &amp; Yell
           </p>
         </div>
 

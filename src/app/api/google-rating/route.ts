@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 export const revalidate = 86400;
 
 const STATIC_RATING = 5.0;
-const STATIC_COUNT = 11;
+const STATIC_COUNT = 5;
 
 export async function GET() {
   const key = process.env.GOOGLE_PLACES_API_KEY;

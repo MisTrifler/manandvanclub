@@ -1572,8 +1572,8 @@ export function getLocationPageData(slug: string): LocationPageData | null {
       ? `Man and Van ${loc.name} From £26/hr | Free Quotes`
       : `Man and Van ${loc.name} From £19/hr | Free Quotes`,
     description: loc.region === 'Greater London'
-      ? `Man with a van in ${loc.name} from £26/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 11 reviews.`
-      : `Man with a van in ${loc.name} from £19/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 11 reviews.`,
+      ? `Man with a van in ${loc.name} from £26/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 5 reviews.`
+      : `Man with a van in ${loc.name} from £19/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 5 reviews.`,
     badge: `Verified movers in ${loc.name}`,
     intro: generateBusinessModelIntro(loc),
     knowledge: generateBusinessModelKnowledge(loc),

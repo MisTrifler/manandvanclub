@@ -5479,7 +5479,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
   "woking": {
-    description: "Man with a van in Woking from £19/hr. Horsell, Knaphill, St Johns. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Woking from £19/hr. Horsell, Knaphill, St Johns. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Woking? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Surrey move and send a quote before you decide whether to book.",
     knowledge: "Woking moves run between the town-centre towers, the Victorian streets of Horsell and St Johns, and the estates at Knaphill, Maybury and Goldsworth Park. H. G. Wells landed his Martians on Horsell Common here. The A320 is the through-route to Guildford, with the M3 one junction away.",
     localMovingInfo: `Woking is one of Surrey's busiest commuter towns - fast trains reach Waterloo in under half an hour - with a striking recent skyline of town-centre towers. H. G. Wells wrote The War of the Worlds here and set the Martian landing on Horsell Common, commemorated by the town's famous Martian sculpture; McLaren's headquarters adds a modern engineering identity. The Shah Jahan Mosque of 1889 was the first purpose-built mosque in Britain. That mix pulls young professionals into the centre while families spread to Horsell, St Johns, Knaphill and Goldsworth Park.
@@ -5565,7 +5565,7 @@ Homes range from the new high-rise apartments - all with concierge and loading-b
     ],
   },
   "stevenage": {
-    description: "Man with a van in Stevenage from £19/hr. Old Town, Chells, Great Ashby. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Stevenage from £19/hr. Old Town, Chells, Great Ashby. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Stevenage? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hertfordshire move and send a quote before you decide whether to book.",
     knowledge: "Stevenage moves split between the period streets of the Old Town and the new-town neighbourhoods - Broadwater, Shephall, St Nicholas, Pin Green, Chells and Great Ashby - laid out on the post-war plan. The A1(M) runs past the town between junctions 7 and 8, with the A602 across it and the A1072 and A1177 as the internal spines.",
     localMovingInfo: `Stevenage was the first of Britain's post-war New Towns, designated in 1946, and its town centre was the country's first purpose-built pedestrianised shopping zone. That history shapes the moving market: distinct new-town neighbourhoods each with their own parade, an Old Town High Street with period cottages, and a big modern employer base - Airbus builds Mars rovers in the town. Regeneration apartments are transforming the centre, adding lift-booking moves to the steady neighbourhood-to-neighbourhood traffic.
@@ -5620,7 +5620,7 @@ Housing is mostly new-town stock - 1950s-70s terraces and semis with front green
     ],
   },
   "eastbourne": {
-    description: "Man with a van in Eastbourne from £19/hr. Meads, Old Town, Sovereign Harbour. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Eastbourne from £19/hr. Meads, Old Town, Sovereign Harbour. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Eastbourne? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Sunshine Coast move and send a quote before you decide whether to book.",
     knowledge: "Eastbourne moves span the Victorian seafront hotels-to-flats, the lanes of Old Town, the family estates of Willingdon and Polegate, and the new-build marina at Sovereign Harbour. The A22, A27 and A259 coast road are the three arteries.",
     localMovingInfo: `Eastbourne is a genteel Victorian resort with a moving market driven by retirees, families and summer-season churn. The seafront's grand hotels-turned-flats, the calm Meads village, the Old Town lanes around the Lamb Inn, and the family suburbs of Ratton, Willingdon and Polegate all move at different rhythms - plus Sovereign Harbour, the big marina development whose apartment blocks have their own access rules.
@@ -5653,7 +5653,7 @@ Property runs from regency and Victorian seafront conversions (stairs, sash wind
     ],
   },
   "hastings": {
-    description: "Man with a van in Hastings from £19/hr. Old Town, St Leonards, Ore. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hastings from £19/hr. Old Town, St Leonards, Ore. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hastings? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your East Sussex coast move and send a quote before you decide whether to book.",
     knowledge: "Hastings moves span the tightly packed Old Town fishing quarter, Victorian and Edwardian streets in St Leonards, and post-war estates at Ore and Hollington. The A21 is the main route north towards London, the A259 coast road links Bexhill and Eastbourne to the west, and the A28 heads inland towards Ashford.",
     localMovingInfo: `Hastings is a historic fishing and seaside town on the East Sussex coast, famous for the 1066 battlefield just inland, the beach-launched fishing fleet in the Old Town and its cliff-side funicular railways. A lively arts and music scene pulls relocators down from London, while families move constantly between St Leonards, Silverhill, Ore and Hollington. Retirement downsizes along the seafront are another steady source of moves.
@@ -5693,7 +5693,7 @@ Housing ranges from fishermen's net lofts and timbered cottages in the Old Town,
     ],
   },
   "chatham": {
-    description: "Man with a van in Chatham from £19/hr. Luton, Walderslade, Rochester. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Chatham from £19/hr. Luton, Walderslade, Rochester. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Chatham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Medway move and send a quote before you decide whether to book.",
     knowledge: "Chatham moves cover the tight Victorian terraces near the Town Centre and dockyard, the estates of Luton and Walderslade, and constant movement between the Medway towns themselves. The M2 at junction 3 and the A2 are the main routes out, with the A289 Medway Tunnel linking the river communities.",
     localMovingInfo: `Chatham sits at the heart of the Medway towns, a continuous built-up area with Gillingham, Rochester, Strood and Rainham, so a large share of jobs are short hops between the five towns rather than long-distance moves. The universities at the Medway campus and the Historic Dockyard's apartment conversions keep the rental market busy, especially at the start and end of term.
@@ -5727,7 +5727,7 @@ Victorian terraces near the dockyard and town centre have steep stories, no fron
     ],
   },
   "maidenhead": {
-    description: "Man with a van in Maidenhead from £19/hr. Bray, Cookham, Pinkneys Green. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Maidenhead from £19/hr. Bray, Cookham, Pinkneys Green. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Maidenhead? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Thames-side move and send a quote before you decide whether to book.",
     knowledge: "Maidenhead moves span the Town Centre, the riverside villages of Bray and Cookham, and the family estates of Pinkneys Green and Holyport. The M4 at junction 8/9, the A4 and the A308 to Windsor are the main routes.",
     localMovingInfo: `Maidenhead is a prosperous Thames-side town with the Elizabeth line putting it inside the London commute shed, which keeps its moving market busy year-round. Movement splits between flats near the Town Centre and station, period property in the riverside villages of Bray and Cookham, and the big family estates of Pinkneys Green, Holyport and Furze Platt.
@@ -5760,7 +5760,7 @@ Period riverside property in Bray - a conservation village with narrow lanes and
     ],
   },
   "bracknell": {
-    description: "Man with a van in Bracknell from £19/hr. Birch Hill, Great Hollands, Crowthorne. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Bracknell from £19/hr. Birch Hill, Great Hollands, Crowthorne. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Bracknell? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Berkshire move and send a quote before you decide whether to book.",
     knowledge: "Bracknell moves centre on the new-town estates - Birch Hill, Hanworth, Great Hollands and Wildridings - plus family houses out towards Crowthorne and Winkfield. The M3 at junction 3 and the A329(M) give fast access to Reading and the M4, and the regeneration around The Lexicon has added apartment blocks with lift and loading-bay rules.",
     localMovingInfo: `Bracknell is a post-war New Town in east Berkshire, about 30 miles west of London, that has been heavily regenerated in recent years. The Lexicon shopping and leisure scheme transformed the town centre, and the apartment buildings around it now turn over steadily alongside the 1960s and 1970s estates. Commuter demand is strong - trains to London Waterloo take about an hour - so young professionals and families move in and out year-round.
@@ -5800,7 +5800,7 @@ Homes range from new apartments near the town centre with booking systems for li
     ],
   },
   "aylesbury": {
-    description: "Man with a van in Aylesbury from £19/hr. Bedgrove, Fairford Leys, Walton Court. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Aylesbury from £19/hr. Bedgrove, Fairford Leys, Walton Court. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Aylesbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Buckinghamshire move and send a quote before you decide whether to book.",
     knowledge: "Aylesbury moves span the old town streets around the Town Centre, estates like Walton Court and Bedgrove, and the newer developments at Fairford Leys and out towards Stone and Wendover in the Chiltern shadow. The A41, A418, A413 and A4010 radiate from the town in four directions.",
     localMovingInfo: `Aylesbury is the county town of Buckinghamshire, birthplace of the Paralympic movement at Stoke Mandeville just south of the town, and still growing fast at its edges with estates like Fairford Leys and the newer northern developments. The old town keeps a tight centre around the market square, while families spread through Bedgrove, Elmhurst and the southern estates. Commuter trains to Marylebone keep a steady flow of London movers in both directions.
@@ -5840,7 +5840,7 @@ Housing ranges from Victorian terraces near the station and centre, through 1970
     ],
   },
   "tonbridge": {
-    description: "Man with a van in Tonbridge from £19/hr. Vauxhall, Higham, Hilden Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Tonbridge from £19/hr. Vauxhall, Higham, Hilden Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Tonbridge? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your west Kent move and send a quote before you decide whether to book.",
     knowledge: "Tonbridge moves range across the Town Centre near the castle, the estates of Vauxhall, Higham and Hilden Park, and villages like Leigh and Haysden. The A21 and M26 are the fast routes, with the A26 to Tunbridge Wells and Maidstone.",
     localMovingInfo: `Tonbridge is a classic Kent commuter town on the Medway, with the castle at its heart and a moving market powered by London-linked families. Movement splits between the compact period core around Castle Street, the post-war estates of Vauxhall, Higham and Hilden Park, and the villages strung along the river - Leigh, Haysden and beyond.
@@ -5888,7 +5888,7 @@ Property runs from small medieval-adjacent cottages near the castle to Victorian
     ],
   },
   "farnborough": {
-    description: "Man with a van in Farnborough from £19/hr. Cove, Southwood, North Camp. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Farnborough from £19/hr. Cove, Southwood, North Camp. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Farnborough? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north east Hampshire move and send a quote before you decide whether to book.",
     knowledge: "Farnborough moves run between the Victorian terraces of North Camp, the interwar semis of Cove, the modern estates at Southwood, and neighbouring Frimley and Fleet. The M3 at junction 4 is the fast route out, with the A325 and A331 handling local traffic.",
     localMovingInfo: `Farnborough is famous for its airport and airshow, but day to day it is a busy working town built around aerospace and tech business parks. That means a steady churn of professionals and contractors moving in and out of rentals near the business areas, families settling in Cove and Southwood, and constant cross-border movement with Aldershot, Fleet and Frimley.
@@ -5922,7 +5922,7 @@ North Camp has dense Victorian and Edwardian terraces with on-street parking, Co
     ],
   },
   "aldershot": {
-    description: "Man with a van in Aldershot from £19/hr. North Town, Manor Park, Wellesley. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Aldershot from £19/hr. North Town, Manor Park, Wellesley. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Aldershot? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your home-of-the-British-Army move and send a quote before you decide whether to book.",
     knowledge: "Aldershot moves mix Victorian terraces near the Garrison, post-war estates at Manor Park and Rowhill, and the big new Wellesley development. The A323, A325 and A331 connect to Farnborough, Fleet and the M3.",
     localMovingInfo: `Aldershot is the home of the British Army, and postings still power its moving market - service families rotating in and out on fixed dates, alongside the civilian churn of a growing town. The moving map runs from the Victorian terraces around the Garrison and North Town, through post-war estates at Manor Park and Rowhill, to Wellesley, the major redevelopment reshaping the south of town.
@@ -5955,7 +5955,7 @@ Terraces near the Garrison mean on-street loading and narrow halls; the estates 
     ],
   },
   "hove": {
-    description: "Man with a van in Hove from £19/hr. Portslade, Aldrington, Poets Corner. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hove from £19/hr. Portslade, Aldrington, Poets Corner. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hove? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your city-by-the-sea move and send a quote before you decide whether to book.",
     knowledge: "Hove moves cluster around the Regency squares of Central Hove, the Victorian terraces of Poets Corner and Aldrington, and the family streets of West Hove, Hangleton and Portslade. Parking zones, conservation rules and the A27 are the three factors that shape most quotes.",
     localMovingInfo: `Hove is Brighton's quieter half, but its moving market is just as busy: renters cycling through seafront mansion flats, families settling in Poets Corner and Hangleton, and downsizers swapping tall Regency houses for apartments in Aldrington or Portslade. Almost everything here is flats and terraces, so access detail drives pricing.
@@ -6038,7 +6038,7 @@ Property is dominated by Regency and Victorian conversions - high ceilings, shar
   },
 
   "southend-on-sea": {
-    description: "Man with a van in Southend-on-Sea from £19/hr. Westcliff, Leigh-on-Sea, Thorpe Bay. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Southend-on-Sea from £19/hr. Westcliff, Leigh-on-Sea, Thorpe Bay. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Southend-on-Sea? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Essex coast move and send a quote before you decide whether to book.",
     knowledge: "Southend-on-Sea moves stretch along the seafront from Westcliff past the Town Centre to Thorpe Bay and Shoeburyness, with Leigh-on-Sea and Eastwood inland. The city - granted city status in 2022 - sits between the A13 and A127 corridors into London, linked locally by the A1159.",
     localMovingInfo: `Southend is a classic estuary resort that became a city in 2022 - home to the longest pleasure pier in the world, airport on its northern edge, and the shellfish sheds and pubs of old Leigh. Commuter lines to Liverpool Street and Fenchurch Street pull London movers steadily, while local life cycles between the interwar semis of Eastwood, the seafront flats of Westcliff and Thorpe Bay, and family houses towards Shoeburyness.
@@ -6143,7 +6143,7 @@ Homes range from Victorian and Edwardian terraces near the centre, to characterf
   },
 
   "clacton-on-sea": {
-    description: "Man with a van in Clacton-on-Sea from £19/hr. Holland-on-Sea, Jaywick, Frinton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Clacton-on-Sea from £19/hr. Holland-on-Sea, Jaywick, Frinton. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Clacton-on-Sea? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Essex Sunshine Coast move and send a quote before you decide whether to book.",
     knowledge: "Clacton moves span the pier-and-seafront quarter, the retirement estates of Holland-on-Sea, and the neighbouring resorts of Frinton-on-Sea and Walton-on-the-Naze. The A133 and A120 are the only real roads in and out.",
     localMovingInfo: `Clacton-on-Sea sits at the end of the Essex Sunshine Coast - literally: the A133 and A120 are the two routes in, and both feed every move. The town's market is shaped by retirees and second-homers: the pier quarter and the town centre churn with flat moves, Holland-on-Sea has calm bungalow-and-chalet streets, and Frinton and Walton next door add their own quieter rhythm.
@@ -6177,7 +6177,7 @@ Housing spans chalet bungalows and park homes, seafront flats above shops, inter
   },
 
   "felixstowe": {
-    description: "Man with a van in Felixstowe from £19/hr. Seafront, Old Felixstowe, Trimley. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Felixstowe from £19/hr. Seafront, Old Felixstowe, Trimley. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Felixstowe? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Suffolk coast move and send a quote before you decide whether to book.",
     knowledge: "Felixstowe moves cover the Edwardian seafront streets, the Town Centre, Old Felixstowe towards the ferry, and the villages of Trimley and Kirton to the west. The A14 starts at the container port on the town's southern edge and runs to Ipswich and the Midlands, with port lorries sharing the local roads.",
     localMovingInfo: `Felixstowe is a seaside town on the Suffolk coast between the Orwell and Deben estuaries, paired with the UK's largest container port on its southern shore. The town keeps its Edwardian resort character - promenade, seafront gardens and Martello towers - and attracts retirees, port and logistics workers, and families relocating from Ipswich and the Midlands. Port staff postings bring steady turnover.
@@ -6218,7 +6218,7 @@ Housing ranges from Edwardian terraces and villas near the Seafront promenade, t
   },
 
   "brentwood": {
-    description: "Man with a van in Brentwood from £19/hr. Shenfield, Hutton, Warley. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Brentwood from £19/hr. Shenfield, Hutton, Warley. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Brentwood? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Essex move and send a quote before you decide whether to book.",
     knowledge: "Brentwood moves cover the Town Centre around the High Street, the station-side apartments at Shenfield - now the Elizabeth line's eastern terminus - and the suburbs of Hutton, Warley, Ingatestone and Pilgrims Hatch. The M25 at junction 28 and the A12 frame the town, with the A1023 and A128 crossing it.",
     localMovingInfo: `Brentwood is an affluent Essex commuter town on the edge of the M25, with a high street of independents, the country park on its doorstep, and fast links that changed gear when Shenfield became the Elizabeth line's eastern terminus - the West End is now under an hour direct. That connectivity pulls constant London relocators, while established families move between Hutton, Warley and the Hutton Mount private estate. Ingatestone and Pilgrims Hatch add village-edge moves.
@@ -6259,7 +6259,7 @@ Housing spans period cottages around the High Street and Warley, 1930s semis in 
   },
 
   "dunstable": {
-    description: "Man with a van in Dunstable from £19/hr. Houghton Regis, Kensworth, Totternhoe. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Dunstable from £19/hr. Houghton Regis, Kensworth, Totternhoe. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Dunstable? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Bedfordshire move and send a quote before you decide whether to book.",
     knowledge: "Dunstable moves run between Town Centre terraces, the adjoining Houghton Regis estates, and the Chiltern villages of Kensworth, Totternhoe and Sewell. The A5 (Watling Street) passes the town centre, the M1 at junction 11 serves the south, and the A505 crosses to Luton just four miles away.",
     localMovingInfo: `Dunstable is a Roman-road market town on the Bedfordshire edge of the Chilterns, sitting where the A5 crosses the ancient Icknield Way beneath the chalk escarpment of Dunstable Downs. The town and adjoining Houghton Regis form one urban area, with Luton immediately to the east. Moves are driven by families trading between estates, first-time buyers priced out of Luton and London, and logistics workers along the M1 corridor.
@@ -6332,7 +6332,7 @@ Housing ranges from Victorian terraces near the centre, to interwar semis, large
   },
 
   "thetford": {
-    description: "Man with a van in Thetford from £19/hr. Brettenham, Mundford, East Harling. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Thetford from £19/hr. Brettenham, Mundford, East Harling. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Thetford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Norfolk move and send a quote before you decide whether to book.",
     knowledge: "Thetford moves run between the Town Centre streets, the estates at Brettenham and Kilverstone, and villages like Mundford, East Harling and Snetterton on the forest edge. The A11 dual carriageway links Norwich and Cambridge, the A134 heads south to Bury St Edmunds, and the A1088 leaves for Diss side.",
     localMovingInfo: `Thetford is an ancient border town on the Norfolk-Suffolk line - capital of the Iceni in Boudica's day - set beside the country's largest lowland pine forest. The Dad's Army connection lives on at the local museum, and Snetterton race circuit a few miles east brings event-weekend traffic. Housing is a mix of flint and brick period streets around the centre, post-war estates at Brettenham and Kilverstone, and newer infill near the station. Forestry, logistics and commuting along the A11 drive the market.
@@ -6389,7 +6389,7 @@ Homes run from period terraces with narrow rear lanes in the centre, through 197
   },
 
   "paignton": {
-    description: "Man with a van in Paignton from £19/hr. Goodrington, Preston, Blatchford. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Paignton from £19/hr. Goodrington, Preston, Blatchford. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Paignton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Torbay move and send a quote before you decide whether to book.",
     knowledge: "Paignton moves cover the seafront and pier area, the lanes near the harbour, and the family estates of Goodrington, Preston and Blatchford. The A380 to Exeter and Newton Abbot, the A3022 Torbay ring and the A385 to Totnes are the main routes.",
     localMovingInfo: `Paignton is the family-friendly heart of Torbay, a traditional seaside town between Torquay and Brixham where red cliffs meet retirement bungalows. The moving market runs on retirees arriving from inland, seasonal hospitality churn, and steady local movement between the seafront quarter and the estates of Goodrington, Preston, Blatchford and Collaton St Mary.
@@ -6423,7 +6423,7 @@ Property mixes interwar semis and bungalows (the classic Paignton move), older t
   },
 
   "brixham": {
-    description: "Man with a van in Brixham from £19/hr. Harbour, Higher Brixham, Galmpton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Brixham from £19/hr. Harbour, Higher Brixham, Galmpton. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Brixham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Devon move and send a quote before you decide whether to book.",
     knowledge: "Brixham moves climb from the tightly packed Harbour and Town Centre cottages up to Higher Brixham, with villages at Churston Ferrers and Galmpton and the headland of Berry Head beyond. The A3022 is the route to Paignton and Torquay, with the A379 heading inland.",
     localMovingInfo: `Brixham is a working fishing port first and a resort second - its fish market lands the most valuable catch in England - wrapped in rows of pastel harbour cottages that climb the hillsides. The Mayflower replica in the harbour nods to the Pilgrim Fathers link, and Berry Head's Napoleonic forts and nature reserve cap the headland. Moves here range from holiday-let furniture swaps around the harbour, to retiree downsizes, to family moves up in Higher Brixham where the estates are newer.
@@ -6464,7 +6464,7 @@ Homes are colourful terraced fishermen's cottages around the Harbour - many step
   },
 
   "newquay": {
-    description: "Man with a van in Newquay from £19/hr. Fistral, Porth, Watergate Bay. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Newquay from £19/hr. Fistral, Porth, Watergate Bay. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Newquay? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cornwall move and send a quote before you decide whether to book.",
     knowledge: "Newquay moves stretch from the town centre and harbour out to Fistral and the Pentire headland, and along the coast to Porth, Watergate Bay and Crantock. The A3058 is the spine in from the A30 at Indian Queens, while the A392 links south towards Truro. Summer visitor traffic on the A30 corridor is the biggest seasonal factor.",
     localMovingInfo: `Newquay is Cornwall's best-known surf and resort town, built around sandy bays and a working harbour. Behind the holiday image sits a normal year-round town: families in the streets above Towan, surf-lifestyle movers arriving from across the UK, and seasonal lets turning over every autumn and spring. Many moves involve part-loads to and from flats near the beaches.
@@ -6505,7 +6505,7 @@ Housing ranges from compact flats and conversions near Towan and the harbour, to
   },
 
   "falmouth": {
-    description: "Man with a van in Falmouth from £19/hr. Penryn, The Moor, Flushing. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Falmouth from £19/hr. Penryn, The Moor, Flushing. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Falmouth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cornwall harbour-town move and send a quote before you decide whether to book.",
     knowledge: "Falmouth moves run between the harbour-side town centre and The Moor, student streets around Penryn near Falmouth University, and waterside villages like Flushing and Mawnan Smith. The A39 from Truro is the main route in. Student term dates and summer visitors are the two big seasonal factors.",
     localMovingInfo: `Falmouth is a harbour town on Cornwall's south coast, home to Falmouth University, the shared Penryn Campus and a working port alongside its independent shops and galleries. Its creative courses pull students, lecturers and remote workers from across the UK, so September and June bring sharp student moving peaks on top of the usual year-round family and retiree market.
@@ -6546,7 +6546,7 @@ Housing ranges from harbour-view Georgian and Victorian terraces, to converted t
   },
 
   "barnstaple": {
-    description: "Man with a van in Barnstaple from £19/hr. Pilton, Roundswell, Landkey. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Barnstaple from £19/hr. Pilton, Roundswell, Landkey. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Barnstaple? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Devon move and send a quote before you decide whether to book.",
     knowledge: "Barnstaple moves centre on the Town Centre streets around the Pannier Market and Long Bridge, the old riverside quarter of Pilton, the Roundswell retail and business side, and villages like Bickington, Bishops Tawton and Landkey. The A361 North Devon Link Road is the route out to the M5.",
     localMovingInfo: `Barnstaple is North Devon's working capital - the Pannier Market on the high street, the medieval Long Bridge over the Taw, and the Tarka Trail running through on the old railway line. It serves a huge rural hinterland, so moves flow in from the coast villages and out to Exeter and beyond, with Roundswell's retail and business parks providing local employment. The town is growing eastwards with new estates on the fringes.
@@ -7002,7 +7002,7 @@ Housing spans period terraces in Pilton with cottages climbing their cobbled lan
   },
 
   "chapeltown": {
-    description: "Man with a van in Chapeltown from £19/hr. High Green, Grenoside, Ecclesfield. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Chapeltown from £19/hr. High Green, Grenoside, Ecclesfield. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Chapeltown? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north Sheffield move and send a quote before you decide whether to book.",
     knowledge: "Chapeltown moves are mostly between the semis and newer estates around the centre, High Green, Grenoside, Thorpe Hesley and Ecclesfield. The A6135 runs south into Sheffield, the M1 at junction 35 is a few minutes away, and the A61 crosses towards Barnsley. School-run and rush-hour traffic on the A6135 is the main local timing factor.",
     localMovingInfo: `Chapeltown is a busy suburb about 7 miles north of Sheffield city centre, grown from an old mining and steel community into one of the main commuter bases for the north of the city. Most moves are family relocations between semis and modern estates, with first-time buyers arriving from Sheffield city districts and movers trading up within the suburb itself.
@@ -7043,7 +7043,7 @@ Housing mixes 1930s semis with bay windows, older terraces around Ecclesfield, a
   },
 
   "penistone": {
-    description: "Man with a van in Penistone from £19/hr. Thurlstone, Silkstone, Denby Dale. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Penistone from £19/hr. Thurlstone, Silkstone, Denby Dale. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Penistone? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your South Yorkshire move and send a quote before you decide whether to book.",
     knowledge: "Penistone is a Pennine market town where moves run between stone-built properties near the town centre and the villages of Thurlstone, Hoylandswaine, Silkstone and Denby Dale. The A628 Trans-Pennine route over the Woodhead Pass links west towards Manchester, while the A629 heads north to Huddersfield. Narrow lanes around the villages need realistic van sizes.",
     localMovingInfo: `Penistone sits on the edge of the Pennines about 8 miles west of Barnsley, a traditional market town known for its cattle market and showground. Many moves are local family relocations between the town centre and villages such as Thurlstone, Hoylandswaine and Silkstone, plus downsizers leaving larger stone houses. The Trans Pennine Trail and easy countryside access keep the area popular with outdoor-minded movers.
@@ -7084,7 +7084,7 @@ Housing is largely stone-built - weavers' cottages, converted farmhouses, terrac
   },
 
   "wath-upon-dearne": {
-    description: "Man with a van in Wath-upon-Dearne from £19/hr. West Melton, Brampton Bierlow, Swinton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Wath-upon-Dearne from £19/hr. West Melton, Brampton Bierlow, Swinton. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Wath-upon-Dearne? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Dearne Valley move and send a quote before you decide whether to book.",
     knowledge: "Wath-upon-Dearne moves run between the former pit villages of the Dearne Valley - West Melton, Brampton Bierlow, Swinton and Kilnhurst - and the nearby towns of Rotherham and Barnsley. The A633 and A635 are the local spines, with the M1 at junction 36 for longer journeys.",
     localMovingInfo: `Wath-upon-Dearne anchors a string of close-knit former mining communities between Rotherham, Barnsley and Doncaster, so the moving pattern is short-range: families moving between the terraces and semis of Wath itself, West Melton, Brampton Bierlow, Swinton, Kilnhurst and Manvers. The regenerated Manvers lakeside area adds newer developments and apartment blocks to the mix.
@@ -7153,7 +7153,7 @@ Housing is dominated by pre-war brick terraces around the old pit centres plus i
   },
 
   "dover": {
-    description: "Man with a van in Dover from £19/hr. Western Heights, Whitfield, River. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Dover from £19/hr. Western Heights, Whitfield, River. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Dover? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Kent move and send a quote before you decide whether to book.",
     knowledge: "Dover moves cover the Town Centre terraces in the Dour valley, the steep streets below Western Heights, and the newer estates of Whitfield and River on the valley sides. The A20 serves the port, the A2 runs to Canterbury, and the M20 at Folkestone links to London - where lorry queues can reshape timings completely.",
     localMovingInfo: `Dover is England's busiest ferry port, sitting in a narrow chalk valley beneath the castle and the White Cliffs. The town's housing climbs the valley sides, with the fortified Western Heights above the town, the suburb of River up the Dour valley, and Whitfield's newer estates on the northern rim. Port and logistics work drives steady turnover, along with retiree and downsizer moves within the valley.
@@ -7194,7 +7194,7 @@ Homes range from tall Georgian and Victorian terraces with basement flats in the
   },
 
   "ashford": {
-    description: "Man with a van in Ashford from £19/hr. Kennington, Willesborough, Park Farm. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Ashford from £19/hr. Kennington, Willesborough, Park Farm. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Ashford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Kent move and send a quote before you decide whether to book.",
     knowledge: "Ashford moves cover the Victorian core near the Town Centre, the interwar streets of Kennington and Willesborough, and the fast-growing newer estates at Singleton, Park Farm, Repton and Finberry. The M20, A28 and A2070 connect every side of town.",
     localMovingInfo: `Ashford is one of the fastest-growing towns in the south east, driven by the International station's high-speed link to London and endless new development on the southern and eastern edges. The moving market is young and active: first-time buyers on the new estates at Park Farm, Singleton, Repton and Finberry, renters near the town centre, and families upsizing within the expanding suburbs.
@@ -7228,7 +7228,7 @@ Property ranges from Victorian terraces and railway cottages near the centre, to
   },
 
   "canterbury": {
-    description: "Man with a van in Canterbury from £19/hr. St Dunstan's, Wincheap, Blean. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Canterbury from £19/hr. St Dunstan's, Wincheap, Blean. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Canterbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Kent move and send a quote before you decide whether to book.",
     knowledge: "Canterbury moves weave around the medieval core - the pedestrianised streets below the cathedral - and out to St Dunstan's, Wincheap, St Stephen's and the Blean-side suburbs. The A2 runs to Dover and London, the A28 to Ashford, and the A290 to Whitstable.",
     localMovingInfo: `Canterbury is one of England's great small cities - the cathedral, St Augustine's Abbey and St Martin's Church together form a World Heritage Site, all inside Roman walls with the medieval street plan intact. It is also very much a student city, with the University of Kent on the hill and Canterbury Christ Church near the walls, so September and June bring sharp term-time moving peaks on top of the everyday market of families, hospital staff and London-leavers drawn by that heritage.
@@ -7270,7 +7270,7 @@ Housing runs from timbered medieval terraces and Victorian streets just outside 
   },
 
   "folkestone": {
-    description: "Man with a van in Folkestone from £19/hr. The Leas, Cheriton, Sandgate. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Folkestone from £19/hr. The Leas, Cheriton, Sandgate. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Folkestone? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Channel-coast move and send a quote before you decide whether to book.",
     knowledge: "Folkestone moves range from the steep Regency streets of The Leas down to the creative Quarter around the Harbour arm, and out to Cheriton, Sandgate and Hawkinge. The M20, A20 and A259 handle journeys, with Channel freight a real factor.",
     localMovingInfo: `Folkestone is a Channel port reinventing itself - the regenerated Harbour and creative Quarter up to the grand but faded Leas, with Cheriton, Sandgate and the Hawkinge estate spreading behind. Its moving market mixes London leavers on the high-speed train, families trading between the hills, and constant tenancies in the period conversions.
@@ -7305,7 +7305,7 @@ Property ranges from Regency and Victorian terraces around The Leas - steep, tal
 
 
   "bexhill": {
-    description: "Man with a van in Bexhill from £19/hr. Little Common, Sidley, Collington. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Bexhill from £19/hr. Little Common, Sidley, Collington. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Bexhill? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your East Sussex coast move and send a quote before you decide whether to book.",
     knowledge: "Bexhill moves are mostly between the retirement flats and villas around the seafront, the semis of Little Common and Sidley, and homes near Collington and Cooden stations. The A259 seafront road is the main local route, with the A269 heading north towards Battle.",
     localMovingInfo: `Bexhill-on-Sea has one of the oldest age profiles of any town in the country, so a large share of moves here are downsizers leaving larger family homes for seafront flats and bungalows, plus furniture collections between relatives along the coast. The De La Warr Pavilion seafront and the estates around Little Common and Sidley see steady year-round movement rather than student-style peaks.
@@ -7340,7 +7340,7 @@ Homes range from Victorian and Edwardian villas near the seafront with tight hal
   },
 
   "worthing": {
-    description: "Man with a van in Worthing from £19/hr. Broadwater, Goring-by-Sea, Durrington. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Worthing from £19/hr. Broadwater, Goring-by-Sea, Durrington. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Worthing? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your West Sussex move and send a quote before you decide whether to book.",
     knowledge: "Worthing moves range across the seafront flats, the Regency streets near the Town Centre, and the family estates of Broadwater, Goring-by-Sea, Durrington and Lancing. The A27 runs along the northern edge, with the A259 coast road and the A24 towards London.",
     localMovingInfo: `Worthing is the largest town in West Sussex, strung along the coast between Brighton and Littlehampton with the South Downs rising behind it. The local moving pattern mixes retirees arriving for the seafront, young families trading up within Broadwater and Durrington, and commuters cycling in and out of Brighton and London. Seafront apartment blocks and Regency squares near the pier see constant rental turnover.
@@ -7376,7 +7376,7 @@ Property spans grand Regency terraces near the Town Centre, Victorian and Edward
 
 
   "reigate": {
-    description: "Man with a van in Reigate from £19/hr. Reigate Hill, Woodhatch, South Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Reigate from £19/hr. Reigate Hill, Woodhatch, South Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Reigate? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Surrey move and send a quote before you decide whether to book.",
     knowledge: "Reigate moves concentrate on the period houses around the town centre and South Park, the slopes of Reigate Hill, and the estates at Woodhatch and Meath Green near the M25. The A25 runs east-west through the town, the A217 heads north towards London, and M25 junction 8 sits just north of the High Street.",
     localMovingInfo: `Reigate is a historic Surrey market town at the foot of the North Downs, centred on its castle grounds, Priory Park and a busy one-way High Street. It is popular with families trading period houses, downsizers leaving larger North Downs properties, and commuters using Reigate and neighbouring stations into London. Gatwick is just south, so airport and aviation staff moves are a steady stream.
@@ -7417,7 +7417,7 @@ Housing includes Georgian and Victorian houses near the centre, 1930s semis in S
   },
 
   "epsom": {
-    description: "Man with a van in Epsom from £19/hr. Stoneleigh, Epsom Downs, Wells. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Epsom from £19/hr. Stoneleigh, Epsom Downs, Wells. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Epsom? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Surrey move and send a quote before you decide whether to book.",
     knowledge: "Epsom moves run between town centre flats, 1930s semis in Stoneleigh, and larger houses up towards Epsom Downs and Langley Vale. The A24 heads north towards London, the A232 crosses to Sutton and Croydon, and the M25 at junction 9 links to Leatherhead. Derby weekend in early June brings road closures around the racecourse.",
     localMovingInfo: `Epsom is a prosperous Surrey market town famous for the Derby at Epsom Downs Racecourse, on the southern edge of the London commuter belt. The town centre has flats above shops and newer apartment blocks, while Stoneleigh and the Wells are settled family suburbs. Fast trains to Waterloo, Victoria and London Bridge pull a steady stream of London movers in and out, which keeps the local market busy year-round.
@@ -7459,7 +7459,7 @@ Property ranges from converted Victorian villas near the centre, to the sought-a
 
 
   "windsor": {
-    description: "Man with a van in Windsor from £19/hr. Eton, Datchet, Clewer. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Windsor from £19/hr. Eton, Datchet, Clewer. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Windsor? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Royal Berkshire move and send a quote before you decide whether to book.",
     knowledge: "Windsor moves split between the tight tourist-zone streets near the castle and Eton, and the family estates of Clewer, Dedworth, Datchet and Old Windsor. The M4 at junction 6 is the main artery, with the A332 and A308 handling local movement.",
     localMovingInfo: `Windsor is a compact, high-value market town where the castle dictates the traffic. Tourist coaches and event closures around the Long Walk and town centre mean moves near the centre need careful timing, while most actual movement happens in the quieter streets of Clewer, Dedworth, Eton Wick, Datchet and Old Windsor. Commuter churn to and from London keeps the market moving year-round.
@@ -7493,7 +7493,7 @@ Property ranges from Georgian and Victorian terraces in the conservation areas a
   },
 
   "newbury": {
-    description: "Man with a van in Newbury from £19/hr. Speen, Wash Common, Thatcham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Newbury from £19/hr. Speen, Wash Common, Thatcham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Newbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your West Berkshire move and send a quote before you decide whether to book.",
     knowledge: "Newbury moves cluster around the market town centre, the interwar and post-war estates of Speen, Wash Common and Greenham, and the neighbouring town of Thatcham. The A34 and the M4 at junction 13 dominate longer journeys, while the A339 serves local traffic.",
     localMovingInfo: `Newbury is a prosperous market town on the Kennet and Avon canal, and its moving market runs on tech and telecoms employers, race-week residents, and families trading up within West Berkshire. Much of the movement is local: between the town centre terraces, the Speen and Wash Common estates, Greenham, and Thatcham a few miles east.
@@ -7527,7 +7527,7 @@ Housing splits into Victorian terraces near the centre and the Wharf, 1930s and 
   },
 
   "beaconsfield": {
-    description: "Man with a van in Beaconsfield from £19/hr. Old Town, Holtspur, Knotty Green. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Beaconsfield from £19/hr. Old Town, Holtspur, Knotty Green. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Beaconsfield? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Buckinghamshire move and send a quote before you decide whether to book.",
     knowledge: "Beaconsfield splits into the period Old Town around the coaching inns of London End and the newer New Town by the station, with Holtspur and Knotty Green on the edges. The M40 at junction 2 is minutes away, the A355 links both parts of the town, and the A40 runs parallel towards High Wycombe and London.",
     localMovingInfo: `Beaconsfield is one of the most expensive market towns in England, sitting on the edge of the Chilterns with fast trains to London Marylebone. The Old Town keeps its coaching-inn streetscape and period cottages, while the New Town grew around the station with 1930s houses and substantial detached homes. Moves here often involve high-value furniture, pianos and contents from large gardens and outbuildings.
@@ -7568,7 +7568,7 @@ Housing spans listed cottages and Georgian fronts in the Old Town, family houses
   },
 
   "winchester": {
-    description: "Man with a van in Winchester from £19/hr. Weeke, Stanmore, Badger Farm. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Winchester from £19/hr. Weeke, Stanmore, Badger Farm. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Winchester? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hampshire move and send a quote before you decide whether to book.",
     knowledge: "Winchester moves span the narrow historic streets around the City Centre and cathedral, and the family estates of Weeke, Stanmore, Highbury and Badger Farm. The M3 junctions 9-11, the A34 and the A3090 handle almost all movement in and out.",
     localMovingInfo: `Winchester is a small, affluent cathedral city with a big moving market: families chasing school catchments, professionals commuting into London, and students heading to and from the university and the School of Art. The medieval street plan around the cathedral and the one-way system make central access the main challenge, not distance.
@@ -7603,7 +7603,7 @@ Georgian and Victorian terraces dominate the centre, often with permit parking a
   },
 
   "basingstoke": {
-    description: "Man with a van in Basingstoke from £19/hr. Chineham, Hatch Warren, Lychpit. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Basingstoke from £19/hr. Chineham, Hatch Warren, Lychpit. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Basingstoke? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north Hampshire move and send a quote before you decide whether to book.",
     knowledge: "Basingstoke moves run through the ring-road estates - Chineham, Hatch Warren, Lychpit, Beggarwood - and Festival Place in the Town Centre. The M3 junctions 6-7, the A33 to Reading and the A30 are the main routes.",
     localMovingInfo: `Basingstoke is famous for two things: roundabouts and growth. The expanded town is a series of planned estates ringing the centre, and the moving market reflects it - constant family moves between the estates, London and M3-corridor commuters, and steady tenancy turnover near Festival Place and the station.
@@ -7637,7 +7637,7 @@ Estates like Chineham, Hatch Warren, Lychpit and Beggarwood are dominated by 198
   },
 
   "andover": {
-    description: "Man with a van in Andover from £19/hr. Augustine Park, East Anton, Picket Piece. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Andover from £19/hr. Augustine Park, East Anton, Picket Piece. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Andover? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hampshire move and send a quote before you decide whether to book.",
     knowledge: "Andover moves run between the Town Centre estates, the new developments at Augustine Park, East Anton and Picket Piece, and the army quarters around the garrison. The A303 is the main artery west towards Stonehenge and the West Country, with the A343 to Salisbury and the A30 serving the south side.",
     localMovingInfo: `Andover is a north Hampshire market and garrison town whose recent growth has been north of the river - the Augustine Park development, East Anton and Picket Piece have added thousands of homes in the last two decades. Army Headquarters sits on the town's edge, so forces relocations in and out are a constant share of local moves, alongside civilian families trading up within the new estates and downsizers leaving the older roads closer to the Town Centre.
@@ -7679,7 +7679,7 @@ Housing spans 1960s-80s estates around the Town Centre, the modern detached and 
 
 
   "hedon": {
-    description: "Man with a van in Hedon from £19/hr. Preston, Thorngumbald, Keyingham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hedon from £19/hr. Preston, Thorngumbald, Keyingham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hedon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Holderness move and send a quote before you decide whether to book.",
     knowledge: "Hedon moves link the small market town and the Holderness villages - Preston, Thorngumbald, Keyingham and Patrington - with Hull five miles west. The A1033 is the main road in, with the A165 serving the coast towards Bridlington.",
     localMovingInfo: `Hedon is a small medieval market town on the edge of Hull, known for the tall tower of St Augustine's Church and a maze of narrow streets around the market place. Its moving market mixes families commuting into Hull, retirees settling out on the Holderness plain, and steady movement between the town and the surrounding villages.
@@ -7714,7 +7714,7 @@ Property in the old core near the church is tight: narrow frontages, short garde
   },
 
   "ripon": {
-    description: "Man with a van in Ripon from £19/hr. Sharow, Bishop Monkton, Boroughbridge. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Ripon from £19/hr. Sharow, Bishop Monkton, Boroughbridge. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Ripon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your cathedral-city move and send a quote before you decide whether to book.",
     knowledge: "Ripon moves cover the cathedral quarter and market square, the estates along Boroughbridge Road, and villages like Sharow and Bishop Monkton. The A61 to Harrogate, the A6108 and the A1(M) at junction 50 are the main routes.",
     localMovingInfo: `Ripon is one of England's smallest cities - a market town with a cathedral, a hornblower, and a deeply local moving market. Movement runs between the period core around the market square and cathedral, the 20th-century estates off Boroughbridge Road, and the villages and stud farms strung along the Ure towards Boroughbridge.
@@ -7748,7 +7748,7 @@ Property ranges from Georgian fronts around the square, through Victorian terrac
   },
 
   "northallerton": {
-    description: "Man with a van in Northallerton from £19/hr. Romanby, Brompton, Leeming. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Northallerton from £19/hr. Romanby, Brompton, Leeming. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Northallerton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Yorkshire move and send a quote before you decide whether to book.",
     knowledge: "Northallerton moves run through the town centre along the A168, out to the A1(M) at junction 51, and west to Romanby and the villages towards the A684. As the county town, it sees constant moves between the market town core and the surrounding villages.",
     localMovingInfo: `Northallerton is the county town of North Yorkshire, sitting on the A168 between the A1(M) at junction 51 and Teesside. Moves here are a steady mix of families relocating with the hospital and council offices, service postings at nearby bases, and people trading the village commute into town or out of it. The high street's market days on Wednesdays and Saturdays bring extra traffic and delivery vehicles to the centre.
@@ -7783,7 +7783,7 @@ Property is a mix of Victorian terraces near the station, interwar and post-war 
   },
 
   "lancaster": {
-    description: "Man with a van in Lancaster from £19/hr. Skerton, Galgate, Heysham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Lancaster from £19/hr. Skerton, Galgate, Heysham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Lancaster? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Lune-valley move and send a quote before you decide whether to book.",
     knowledge: "Lancaster moves split between the historic core near the castle, the student districts feeding the university campus at Bailrigg, and the practical estates of Skerton, Galgate and Heysham. The M6 at junctions 33-34 and the A6 are the main routes.",
     localMovingInfo: `Lancaster is a small, stacked city: a castle and museum quarter on the hill, Georgian streets below, the River Lune threading through, and tens of thousands of students flowing through the Bailrigg campus each year. The moving calendar peaks hard in June and September, but year-round there is steady movement between the city, Morecambe and the Lune valley villages.
@@ -7818,7 +7818,7 @@ Property splits between period terraces in the city - many divided into student 
   },
 
   "lytham": {
-    description: "Man with a van in Lytham from £19/hr. St Annes, Ansdell, Fairhaven. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Lytham from £19/hr. St Annes, Ansdell, Fairhaven. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Lytham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Lancashire coast move and send a quote before you decide whether to book.",
     knowledge: "Lytham moves cover the genteel streets around the Green and windmill, St Annes and Ansdell along the coast, Fairhaven on the estuary side, and the village of Wrea Green inland. The A584 runs the coast to Blackpool, and the A5234 connects towards the M55 and Preston.",
     localMovingInfo: `Lytham is the genteel half of the Lytham St Annes resort - Georgian fronts on the Green, the windmill on the seafront, and Royal Lytham & St Annes golf club, an Open Championship venue, just inland. It has one of the oldest population profiles on the Fylde, so retiree relocations from across the north west and downsizes from big houses to seafront flats are the backbone of local work. The summer festivals on the Green bring a few days of road closures to plan around.
@@ -7911,7 +7911,7 @@ Housing ranges from grand Victorian and Edwardian villas near the Green - many n
 
 
   "poole": {
-    description: "Man with a van in Poole from £19/hr. Parkstone, Broadstone, Canford Cliffs. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Poole from £19/hr. Parkstone, Broadstone, Canford Cliffs. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Poole? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Dorset harbour move and send a quote before you decide whether to book.",
     knowledge: "Poole moves range from the old town and Quay to the Edwardian avenues of Parkstone, the hills of Broadstone, and the premium coast at Canford Cliffs and Sandbanks. The A35, A3049 and A31 handle journeys in and out.",
     localMovingInfo: `Poole wraps around one of the world's largest natural harbours, and its moving market mirrors that spread: workaday flats and terraces in Poole Town and the Quay, big Edwardian family houses in Parkstone, suburban estates at Broadstone, and the high-value strip out to Canford Cliffs and Sandbanks. Neighbouring Bournemouth merges seamlessly to the east, so cross-conurbation moves are everyday work.
@@ -7947,7 +7947,7 @@ Access varies hugely by area. The Quay and old town are narrow and permit-contro
 
 
   "diss": {
-    description: "Man with a van in Diss from £19/hr. Roydon, Burston, Scole. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Diss from £19/hr. Roydon, Burston, Scole. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Diss? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Waveney-border move and send a quote before you decide whether to book.",
     knowledge: "Diss moves centre on the market town around the Mere, where narrow streets meet the A1066 and A143, and out to villages like Roydon, Burston and Scole. The A140 runs north to Norwich and south towards Ipswich.",
     localMovingInfo: `Diss sits right on the Norfolk-Suffolk border, a handsome market town built around its spring-fed Mere. It is a genuinely local moving market: families trading between the town and its villages, retirees drawn by the rail link to London, and steady countryside movement across Roydon, Burston, Scole and the parishes beyond.
@@ -7984,7 +7984,7 @@ Property mixes Georgian fronts around the market place, Victorian terraces on th
 
 
   "stockton-on-tees": {
-    description: "Man with a van in Stockton-on-Tees from £19/hr. Norton, Thornaby, Ingleby Barwick. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Stockton-on-Tees from £19/hr. Norton, Thornaby, Ingleby Barwick. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Stockton-on-Tees? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Teesside move and send a quote before you decide whether to book.",
     knowledge: "Stockton moves span the Georgian high street and town centre terraces, older suburbs like Norton, and the large modern estates at Ingleby Barwick. The A19 crosses the Tees on the viaduct towards Middlesbrough, the A66 runs east-west through the borough, and the A1130 links Thornaby to the A19.",
     localMovingInfo: `Stockton-on-Tees is a market town on the River Tees with one of the widest high streets in England, still hosting its long-running market. Moves range from terraces and ex-council houses near the centre, to period streets in Norton, and the big 1990s and 2000s estates at Ingleby Barwick - among the largest private housing developments in Europe. Families trade up within the borough and commuters arrive for jobs across Teesside.
@@ -8797,7 +8797,7 @@ Clifton properties range from grand Regency terraces - many converted into flats
 
 
   "burntwood": {
-    description: "Man with a van in Burntwood from £19/hr. Chase Terrace, Chasetown, Sankey's Corner. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Burntwood from £19/hr. Chase Terrace, Chasetown, Sankey's Corner. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Burntwood? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Burntwood move and send a quote, so you decide whether to book after seeing the details.",
     knowledge: "Burntwood moves are usually short hops between Chase Terrace, Chasetown and Burntwood Green, or runs along the A5190 towards Lichfield and the A5 towards Cannock. Most homes are post-war semis with driveways, though some newer estates around Boney Hay have shared parking that is worth noting in your request.",
     localMovingInfo: `Burntwood is a Staffordshire town between Brownhills and Lichfield, made up of Chase Terrace, Chasetown, Burntwood Green, Sankey's Corner, Hammerwich, Edial and Boney Hay. Local moves tend to be practical jobs: families upsizing between estates, single-item collections from Marketplace sellers, and downsizing moves into bungalows and newer developments.
@@ -8839,7 +8839,7 @@ Most Burntwood properties are post-war and interwar semis with driveways, which 
   },
 
   "cleveleys": {
-    description: "Man with a van in Cleveleys from £19/hr. Thornton, Poulton-le-Fylde, Fleetwood. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Cleveleys from £19/hr. Thornton, Poulton-le-Fylde, Fleetwood. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Cleveleys? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Fylde coast move and send a quote before you decide whether to book.",
     knowledge: "Cleveleys moves often run along the A587 coastal road between Fleetwood and Blackpool, or inland via the A585 towards Poulton-le-Fylde and the M55. Summer seafront traffic and limited parking near the promenade are the two things worth noting in your request.",
     localMovingInfo: `Cleveleys sits on the Fylde coast between Blackpool and Fleetwood, centred on Victoria Road West and the seafront promenade. Most local moves are between the interwar semis of Thornton and Cleveleys town, smaller flat moves near the seafront, and collection jobs from shops and Marketplace sellers across the Fylde.
@@ -8874,7 +8874,7 @@ Properties are a mix of Victorian terraces near the town centre, larger interwar
   },
 
   "haxby": {
-    description: "Man with a van in Haxby from £19/hr. Wigginton, New Earswick, Huntington. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Haxby from £19/hr. Wigginton, New Earswick, Huntington. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Haxby? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your York move and send a quote before you decide whether to book.",
     knowledge: "Haxby moves are usually into or out of York, four miles south via the A1036, or between the villages along the A19 corridor. Most homes are interwar semis and post-war estates with driveways, so access is rarely complicated - but A19 and ring-road traffic shape journey times.",
     localMovingInfo: `Haxby is a large village suburb about four miles north of York city centre, sitting alongside Wigginton with New Earswick, Huntington and Strensall close by. Most moves here are families upsizing within the village, first-time buyers heading out of York terraces, and downsizers moving closer to family.
@@ -8909,7 +8909,7 @@ Housing is mostly interwar semis and post-war estates with driveways and garages
   },
 
   "walton-on-thames": {
-    description: "Man with a van in Walton-on-Thames from £19/hr. Hersham, Oatlands, Ashley Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Walton-on-Thames from £19/hr. Hersham, Oatlands, Ashley Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Walton-on-Thames? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Elmbridge move and send a quote before you decide whether to book.",
     knowledge: "Walton-on-Thames moves usually split into riverside flats, Victorian villas near the centre and interwar semis towards Hersham and Oatlands. The A244 through the town and around Walton Bridge is the main bottleneck, and riverside parking needs planning.",
     localMovingInfo: `Walton-on-Thames sits on the Surrey bank of the Thames between Shepperton and Molesey, close to Weybridge and about 15 miles from central London. Local movement is constant: renters cycling through riverside apartments, families moving between streets around Ashley Park and Oatlands, and London leavers buying in Elmbridge.
@@ -8944,7 +8944,7 @@ Property varies a lot within a small area: Victorian villas and terraces near th
   },
 
   "leyland": {
-    description: "Man with a van in Leyland from £19/hr. Worden, Farington, Moss Side. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Leyland from £19/hr. Worden, Farington, Moss Side. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Leyland? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your South Ribble move and send a quote before you decide whether to book.",
     knowledge: "Leyland moves usually run along the A49 between Preston and Chorley, or out to the M6 at junction 28. Streets around Worden and the town centre are Victorian terraces, while Farington, Moss Side and the newer estates have driveways and easier loading.",
     localMovingInfo: `Leyland is the main town in South Ribble, about five miles south of Preston, known historically for Leyland Trucks. It is a busy moving area: first homes on the newer estates, family moves between Farington, Moss Side and Whittle-le-Woods, and plenty of Marketplace and retail collections along the A49 corridor.
@@ -8979,7 +8979,7 @@ Housing ranges from Victorian terraces near the centre and around Worden Park to
   },
 
   "eastleigh": {
-    description: "Man with a van in Eastleigh from £19/hr. Bishopstoke, Chandler's Ford, Fair Oak. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Eastleigh from £19/hr. Bishopstoke, Chandler's Ford, Fair Oak. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Eastleigh? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Eastleigh move and send a quote before you decide whether to book.",
     knowledge: "Eastleigh moves often run between the railway town terraces, Bishopstoke and Chandler's Ford, or down the A335 towards Southampton. M3 junctions 12 and 13 handle most longer-distance moves, and station-area parking is the detail worth noting.",
     localMovingInfo: `Eastleigh is a railway town between Southampton and Winchester, next to Southampton Airport Parkway station. The moving mix is typical of a well-connected Hampshire town: renters around the town centre, families trading between Bishopstoke, Chandler's Ford, Hiltingbury and Fair Oak, and airport-area flat moves.
@@ -9014,7 +9014,7 @@ Property types range from Victorian railway terraces in the older town to interw
   },
 
   "chichester": {
-    description: "Man with a van in Chichester from £19/hr. Fishbourne, Portfield, Lavant. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Chichester from £19/hr. Fishbourne, Portfield, Lavant. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Chichester? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Chichester move and send a quote before you decide whether to book.",
     knowledge: "Chichester moves split into tight streets within the old city walls - where parking and access need planning - and straightforward semi and estate moves in Summerstown, Portfield, Fishbourne and Lavant. The A27 is the main route in and out.",
     localMovingInfo: `Chichester is a cathedral city in West Sussex between Portsmouth and Brighton, with Goodwood on its doorstep and Chichester Harbour to the south. Movement is steady: downsizers heading into the city, families moving out to the villages, and renters around the Festival Theatre and canal areas.
@@ -9049,7 +9049,7 @@ Property ranges from Georgian townhouses and flint cottages in the centre to pos
   },
 
   "gosport": {
-    description: "Man with a van in Gosport from £19/hr. Lee-on-the-Solent, Alverstoke, Bridgemary. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Gosport from £19/hr. Lee-on-the-Solent, Alverstoke, Bridgemary. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Gosport? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Gosport move and send a quote before you decide whether to book.",
     knowledge: "Gosport moves are shaped by geography: a peninsula town reached by the A32 or the Gosport Ferry to Portsmouth. Rush-hour queues on the Fareham Road and ferry timings are the two details that change how a Gosport move is planned.",
     localMovingInfo: `Gosport is a naval town on the peninsula across the harbour from Portsmouth, reached by a single main road - the A32 from Fareham - or the passenger Gosport Ferry. That geography shapes everything about moving here: most vans come in and out via the A32, and rush-hour queues along the Fareham Road can add real time.
@@ -9084,7 +9084,7 @@ Property is mostly Victorian and Edwardian terraces near the front, post-war est
   },
 
   "caversham": {
-    description: "Man with a van in Caversham from £19/hr. Caversham Heights, Emmer Green, Mapledurham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Caversham from £19/hr. Caversham Heights, Emmer Green, Mapledurham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Caversham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Caversham move and send a quote before you decide whether to book.",
     knowledge: "Caversham sits across the Thames from Reading town centre, so most moves cross one of the two bridges - and bridge traffic decides journey times. Caversham Heights, Emmer Green and Mapledurham have larger homes and driveways, while Lower Caversham has tighter terraced streets.",
     localMovingInfo: `Caversham is the part of Reading north of the Thames, technically in Berkshire but functionally a Reading suburb. Moves here split between the period villas and Edwardian semis of Caversham Heights, the family estates of Emmer Green, tight terraced streets in Lower Caversham and the riverside lanes towards Mapledurham.
@@ -9120,7 +9120,7 @@ Off-street parking is common on the hill but rare in Lower Caversham, where move
 
 
   "woodbridge": {
-    description: "Man with a van in Woodbridge from £19/hr. Melton, Martlesham, Kesgrave. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Woodbridge from £19/hr. Melton, Martlesham, Kesgrave. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Woodbridge? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Woodbridge move and send a quote before you decide whether to book.",
     knowledge: "Woodbridge moves usually involve period properties around the town centre and the River Deben, or newer estates towards Martlesham and Kesgrave. The A12 is the main route, and the narrow streets near the river and Tide Mill need loading plans.",
     localMovingInfo: `Woodbridge is a Suffolk market town on the River Deben, famous for its Tide Mill and with Sutton Hoo just across the river. Eight miles from Ipswich, it attracts downsizers, London leavers and families alike, so there is constant movement between the period core and the newer western estates.
@@ -9155,7 +9155,7 @@ Property ranges from Georgian townhouses and Victorian villas near the centre to
   },
 
   "hitchin": {
-    description: "Man with a van in Hitchin from £19/hr. Walsworth, Highbury, Westmill. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hitchin from £19/hr. Walsworth, Highbury, Westmill. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hitchin? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hitchin move and send a quote before you decide whether to book.",
     knowledge: "Hitchin moves often centre on the market square and the period streets around it, where parking is tight, or on 1930s and newer estates towards the A505 and A1(M) junction 8. Commuter demand keeps the town busy.",
     localMovingInfo: `Hitchin is a Hertfordshire market town between Letchworth and Stevenage, popular with London commuters for its fast trains to Kings Cross. The moving mix reflects that: young families arriving from London, renters around the centre, and constant turnover in the period streets near the market square.
@@ -9190,7 +9190,7 @@ Property ranges from Georgian townhouses and Victorian terraces in the centre to
   },
 
   "hertford": {
-    description: "Man with a van in Hertford from £19/hr. Bengeo, Hertingfordbury, Ware. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hertford from £19/hr. Bengeo, Hertingfordbury, Ware. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hertford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hertford move and send a quote before you decide whether to book.",
     knowledge: "Hertford moves split between the period streets near the castle and town centre - where parking is limited - and the hillier residential areas like Bengeo. The A414 and A10 are the main routes, and Ware next door shares much of the same moving traffic.",
     localMovingInfo: `Hertford is the county town of Hertfordshire, sitting on four rivers and about 25 miles north of London, with Hertford East and Hertford North stations serving the commuter belt. Movement is steady between the town centre period streets, Bengeo on the hill, outlying Hertingfordbury and neighbouring Ware.
@@ -9225,7 +9225,7 @@ Property ranges from Georgian townhouses and Victorian terraces in the centre to
   },
 
   "lewes": {
-    description: "Man with a van in Lewes from £19/hr. Southover, Cliffe, Malling. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Lewes from £19/hr. Southover, Cliffe, Malling. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Lewes? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Lewes move and send a quote before you decide whether to book.",
     knowledge: "Lewes moves are defined by the town itself: steep hills, narrow medieval and Georgian streets, and limited parking in the centre, with easier access in Malling, Offham and the newer estates. The A27 and A26 are the routes in and out.",
     localMovingInfo: `Lewes is the county town of East Sussex, set in the South Downs about eight miles from Brighton, famous for its castle, bonfire traditions and steep historic streets. It attracts London leavers and Brighton movers alike, so movement in and out is constant.
@@ -9260,7 +9260,7 @@ Away from the centre, Malling, Offham and the Landport and Nevill estates have m
   },
 
   "willerby": {
-    description: "Man with a van in Willerby from £19/hr. Kirk Ella, Anlaby, Cottingham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Willerby from £19/hr. Kirk Ella, Anlaby, Cottingham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Willerby? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Willerby move and send a quote before you decide whether to book.",
     knowledge: "Willerby moves are mostly family jobs between the west Hull suburbs - Kirk Ella, Anlaby, Hessle and Cottingham - using the A164. Most homes are interwar semis and newer estates with driveways, and the A63 Hessle junction is the main congestion point.",
     localMovingInfo: `Willerby is the biggest of Hull's western suburbs, about five miles from the city centre, sitting between Anlaby, Kirk Ella and Cottingham with Hessle and the Humber Bridge to the south. It is overwhelmingly a family moving area: upsizing between estates, downsizing into bungalows, and Marketplace collections between the suburbs.
@@ -9295,7 +9295,7 @@ Housing is mostly interwar semis, post-war estates and newer executive developme
   },
 
   "bletchley": {
-    description: "Man with a van in Bletchley from £19/hr. Fenny Stratford, Water Eaton, Newton Longville. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Bletchley from £19/hr. Fenny Stratford, Water Eaton, Newton Longville. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Bletchley? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Bletchley move and send a quote before you decide whether to book.",
     knowledge: "Bletchley moves run along the A5 and A4146 between Milton Keynes districts, or out to the M1 at junction 13. Streets near Bletchley Park and the station are tighter terraces, while Fenny Stratford, Far Bletchley and the newer estates have easier access.",
     localMovingInfo: `Bletchley is the southern district of Milton Keynes, known worldwide for Bletchley Park and its wartime codebreakers, and sitting on the West Coast Main Line. Its moving scene is shaped by value: first-time buyers and renters priced out of north Milton Keynes, plus constant cross-city moves between districts.
@@ -9330,7 +9330,7 @@ Housing ranges from Victorian railway terraces near the station and Fenny Stratf
   },
 
   "goole": {
-    description: "Man with a van in Goole from £19/hr. Airmyn, Rawcliffe, Hook. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Goole from £19/hr. Airmyn, Rawcliffe, Hook. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Goole? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Goole move and send a quote before you decide whether to book.",
     knowledge: "Goole moves usually run between the town, Old Goole and the riverside villages like Hook, Airmyn and Rawcliffe, with the M62 at junction 36 handling longer-distance jobs. Port traffic around the docks is the main local congestion point.",
     localMovingInfo: `Goole is an inland port town on the River Ouse in the East Riding of Yorkshire, about 25 miles from Hull and 20 from Doncaster. Despite being 50 miles from the sea it handles serious shipping, and the docks and their lorry traffic shape the road network around the town.
@@ -9365,7 +9365,7 @@ Housing is mostly Victorian and Edwardian terraces near the centre and Old Goole
   },
 
   "machynlleth": {
-    description: "Man with a van in Machynlleth from £19/hr. Corris, Pennal, Derwenlas. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Machynlleth from £19/hr. Corris, Pennal, Derwenlas. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Machynlleth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Powys move and send a quote before you decide whether to book.",
     knowledge: "Machynlleth moves are rural by nature: stone cottages along the Dovey valley, farm properties on unmade tracks and terraces around Maengwyn Street. The A487 and A489 are the lifelines, and narrow lanes around Corris and Pennal shape vehicle choice.",
     localMovingInfo: `Machynlleth is a market town in the Dovey valley in southern Powys, about 18 miles east of Aberystwyth, known for its long Wednesday market and as a gateway to southern Snowdonia. Moves here are rural jobs: cottages and smallholdings along the valley, terraces near the town centre and farm properties up the side lanes.
@@ -9400,7 +9400,7 @@ Property is largely stone-built: terraces and Victorian houses near Maengwyn Str
   },
 
   "cardigan": {
-    description: "Man with a van in Cardigan from £19/hr. St Dogmaels, Llechryd, Cilgerran. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Cardigan from £19/hr. St Dogmaels, Llechryd, Cilgerran. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Cardigan? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Ceredigion move and send a quote before you decide whether to book.",
     knowledge: "Cardigan moves spread across the Teifi valley and coast: stone terraces near the High Street, riverside cottages in St Dogmaels and Llechryd, and rural properties towards Cilgerran and Aberporth. The A487 is the main artery along the coast.",
     localMovingInfo: `Cardigan is a market town on the River Teifi where Ceredigion meets Pembrokeshire, with the coast two miles away at Gwbert and Cardigan Island. Moving here is a mix of town jobs - terraces near the High Street and Quay Street - and rural runs to villages and smallholdings across the valley.
@@ -9435,7 +9435,7 @@ Property varies from stone terraces in town to riverside cottages around St Dogm
   },
 
   "aberaeron": {
-    description: "Man with a van in Aberaeron from £19/hr. Aberarth, Llanon, Ciliau Aeron. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Aberaeron from £19/hr. Aberarth, Llanon, Ciliau Aeron. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Aberaeron? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Ceredigion coast move and send a quote before you decide whether to book.",
     knowledge: "Aberaeron moves concentrate around the harbour and Alban Square, where Georgian terraces have tight access, and across villages like Aberarth and Llanon. The A487 coast road links Aberystwyth and Cardigan, and the A482 runs inland to Lampeter.",
     localMovingInfo: `Aberaeron is a small Georgian harbour town on the Ceredigion coast, famous for its pastel-painted terraces around Alban Square. The moving market is small but steady: families and retirees drawn to the harbour, holiday-cottage changeovers, and constant short hops along the coast to Aberystwyth and down the A482 to Lampeter.
@@ -9470,7 +9470,7 @@ Property is dominated by Georgian and Victorian terraces with no driveways, so m
   },
 
   "lampeter": {
-    description: "Man with a van in Lampeter from £19/hr. Falcondale, Cellan, Cwrtnewydd. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Lampeter from £19/hr. Falcondale, Cellan, Cwrtnewydd. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Lampeter? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Teifi valley move and send a quote before you decide whether to book.",
     knowledge: "Lampeter moves often involve rural access - properties around Falcondale, Cellan and Cwrtnewydd sit on country lanes. The A485 is the main road running south to Carmarthen and north to Aberystwyth, with the A482 over the hill to Aberaeron and the coast.",
     localMovingInfo: `Lampeter is a small university market town deep in the Teifi valley - one of the oldest university towns in Wales. The moving pattern mixes university staff and students around the College area, families in the town itself, and a genuinely rural hinterland of farms and smallholdings across Falcondale, Cellan and Cwrtnewydd.
@@ -9505,7 +9505,7 @@ In town, Victorian terraces near the High Street load from the road, while the u
   },
 
   "brierley-hill": {
-    description: "Man with a van in Brierley Hill from £19/hr. Merry Hill, Quarry Bank, Brockmoor. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Brierley Hill from £19/hr. Merry Hill, Quarry Bank, Brockmoor. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Brierley Hill? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Black Country move and send a quote before you decide whether to book.",
     knowledge: "Brierley Hill moves split between the hillside terraces around Quarry Bank and Brockmoor, where loading happens from the street, and the Waterfront apartments near Merry Hill with their parking and lift rules. The A461 and A4036 are the two main routes.",
     localMovingInfo: `Brierley Hill sits between Dudley and Stourbridge, famous for the huge Merry Hill centre built on the old Round Oak steelworks site. That split personality drives the local moving market: modern apartments at The Waterfront and around the retail park on one side, and tight Black Country terraces climbing the hills around Quarry Bank and Brockmoor on the other.
@@ -9539,7 +9539,7 @@ Terraced streets here were built around factories, not cars - expect on-street l
   },
 
   "chester": {
-    description: "Man with a van in Chester from £19/hr. Hoole, Handbridge, Upton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Chester from £19/hr. Hoole, Handbridge, Upton. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Chester? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cheshire move and send a quote before you decide whether to book.",
     knowledge: "Chester moves centre on the permit-parked streets of Hoole and Handbridge, the period stock inside the City Centre walls, and the newer estates of Upton and Blacon. The A41, A55 and A483 handle almost everything in and out.",
     localMovingInfo: `Chester is a compact cathedral city where the historic core creates the moving challenges. Inside the walls, the famous Rows, one-way system and permit zones rule out casual van parking, so central jobs are planned around loading windows. Outside the walls, the city opens into the classic Victorian terraces of Hoole, the riverside streets of Handbridge and newer estates at Upton and Blacon.
@@ -9573,7 +9573,7 @@ Property ranges from period townhouses and flats near the Rows to redbrick terra
   },
 
   "skipton": {
-    description: "Man with a van in Skipton from £19/hr. Gargrave, Embsay, Carleton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Skipton from £19/hr. Gargrave, Embsay, Carleton. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Skipton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Craven move and send a quote before you decide whether to book.",
     knowledge: "Skipton moves spread between terraces near the Town Centre and canal, the villages of Gargrave and Embsay, and Dales properties down unmade tracks. The A65, A59 and A629 are the three arteries, all single-carriageway for stretches.",
     localMovingInfo: `Skipton is the gateway to the Yorkshire Dales, a proper working market town on the Leeds and Liverpool Canal. The moving pattern is a mix of town-centre terraces, canal-side cottages with stepped access, the villages of Gargrave, Embsay and Carleton, and remote properties out towards Malham and the Dales lanes.
@@ -9608,7 +9608,7 @@ Housing is largely stone-built: weavers' cottages and terraces around the canal 
   },
 
   "driffield": {
-    description: "Man with a van in Driffield from £19/hr. Nafferton, Lowthorpe, Kelleythorpe. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Driffield from £19/hr. Nafferton, Lowthorpe, Kelleythorpe. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Driffield? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wolds move and send a quote before you decide whether to book.",
     knowledge: "Driffield moves range across the market town around Middle Street and out to Wolds villages like Nafferton and Lowthorpe, where lanes are narrow and farms sit down tracks. The A614 and A166 are the main roads, with the B1249 towards Malton.",
     localMovingInfo: `Driffield calls itself the Capital of the Wolds, and it lives up to it: a working agricultural market town surrounded by villages threaded together by narrow lanes. Moves here split three ways - within the town itself, out to the Wolds villages like Nafferton, Lowthorpe and Hutton Cranswick, and longer runs to the coast at Bridlington or inland to Beverley and York.
@@ -9643,7 +9643,7 @@ Property is a mix of brick terraces near Middle Street, interwar semis on the ed
   },
 
   "wednesfield": {
-    description: "Man with a van in Wednesfield from £19/hr. Ashmore Park, Wood End, Fallings Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Wednesfield from £19/hr. Ashmore Park, Wood End, Fallings Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Wednesfield? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wolverhampton move and send a quote before you decide whether to book.",
     knowledge: "Wednesfield moves mostly run along the A4124 into Wolverhampton or across to Bilston and Willenhall. The High Street and Fallings Park have older rows loading from the road, while Ashmore Park and Wood End are post-war estates with mixed driveway access.",
     localMovingInfo: `Wednesfield is a self-contained town on the north east edge of Wolverhampton, centred on its own High Street and the Bentley Bridge retail park. The moving market is steady family work: first-time buyers into the post-war semis of Ashmore Park and Wood End, people trading down from bigger Wolverhampton homes, and short hops to Bilston and Willenhall along the A4124.
@@ -9677,7 +9677,7 @@ Property ranges from 1930s terraces near the High Street to post-war and newer e
   },
 
   "dagenham": {
-    description: "Man with a van in Dagenham from £26/hr. Becontree, Becontree Heath, Heathway. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Dagenham from £26/hr. Becontree, Becontree Heath, Heathway. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Dagenham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
     knowledge: "Dagenham moves are dominated by the vast Becontree estate - long interwar streets with on-street parking - plus flats near the Heathway and newer pockets around Castle Green. The A13 and A406 frame the area, with the A124 through the middle.",
     localMovingInfo: `Dagenham is defined by the Becontree estate, once the largest council estate in the world, and its endless grid of interwar houses still makes up most of the local moving market. The moving pattern is classic east London churn: families trading between Barking, Dagenham and Romford, renters moving through Heathway flats, and long-time residents heading out of London altogether.
@@ -9712,7 +9712,7 @@ Housing is predominantly interwar semis and maisonettes on the estate, Victorian
   },
 
   "barking": {
-    description: "Man with a van in Barking from £26/hr. Barking Riverside, Upney, Gascoigne. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Barking from £26/hr. Barking Riverside, Upney, Gascoigne. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Barking? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
     knowledge: "Barking moves split between the older terraces near the Town Centre, the regenerated Gascoigne quarter, and the new riverside blocks at Barking Riverside with their booking-only loading bays. The A13 and A406 meet on its edges.",
     localMovingInfo: `Barking is one of east London's fastest-changing areas. The old town centre and its Victorian terraces now sit next to the rebuilt Gascoigne neighbourhood and the sprawling new Barking Riverside development on the Thames. That mix means very different jobs: stairs and street loading in the older quarter, and managed, book-ahead moves in the new riverside blocks.
@@ -9746,7 +9746,7 @@ Property ranges from Victorian terraces around Barking station, to council maiso
   },
 
   "wimbledon": {
-    description: "Man with a van in Wimbledon from £26/hr. Village, South Wimbledon, Raynes Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Wimbledon from £26/hr. Village, South Wimbledon, Raynes Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Wimbledon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your SW19 move and send a quote before you decide whether to book.",
     knowledge: "Wimbledon moves range from period conversions in the Village with stairs and steep lanes, to flats around the Broadway and family semis in Raynes Park and South Wimbledon. The A3 borders the area, with the A219 and A236 running through it.",
     localMovingInfo: `Wimbledon is really two places. The Village up the hill has grand period houses and cottagey lanes, permit parking and high-value moves. Down by the Broadway and out towards Colliers Wood, South Wimbledon and Raynes Park, the stock is conversions and interwar semis with a faster, rental-driven churn. Championship fortnight each summer changes everything - parking suspensions, road closures and visitor chaos mean almost no moves happen in the Village for two weeks.
@@ -9780,7 +9780,7 @@ Conversions dominate: Victorian and Edwardian houses split into flats with share
   },
 
   "hackney": {
-    description: "Man with a van in Hackney from £26/hr. Dalston, Stoke Newington, Clapton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hackney from £26/hr. Dalston, Stoke Newington, Clapton. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hackney? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
     knowledge: "Hackney moves mean stairs, narrow shared halls and CPZ streets around Dalston, London Fields and Clapton, plus lift rules in newer blocks near Hackney Wick. The A10, A12 and A104 are the main routes in and out.",
     localMovingInfo: `Hackney is the archetype of converted east London: grand but tight Victorian terraces divided into flats around London Fields and Broadway Market, ex-local blocks around Homerton, warehouse lofts near Hackney Wick, and period squares in Stoke Newington. The rental churn here is among the highest in the capital, so same-week and same-day requests are the norm.
@@ -9815,7 +9815,7 @@ Flat-dwellers dominate: second and third-floor conversions with one narrow stair
   },
 
   "hammersmith": {
-    description: "Man with a van in Hammersmith from £26/hr. Brook Green, Ravenscourt Park, Fulham Reach. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hammersmith from £26/hr. Brook Green, Ravenscourt Park, Fulham Reach. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hammersmith? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your west London move and send a quote before you decide whether to book.",
     knowledge: "Hammersmith moves mean CPZ streets, mansion-block stairs around Brook Green and Ravenscourt Park, or portered riverside apartments at Fulham Reach with lift bookings. The A4, A40, A219 and A315 are the main routes out.",
     localMovingInfo: `Hammersmith is a dense west London hub where almost every property is a flat or a terrace under controlled parking. The mansion blocks around Brook Green, the Victorian terraces off King Street and the riverside apartments towards Fulham Reach all generate constant move requests, driven by the district line, the Broadway offices and the flyover corridor.
@@ -9849,7 +9849,7 @@ Portered mansion blocks often require notice for move-in slots and lift protecti
   },
 
   "catford": {
-    description: "Man with a van in Catford from £26/hr. Rushey Green, Bellingham, Downham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Catford from £26/hr. Rushey Green, Bellingham, Downham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Catford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south east London move and send a quote before you decide whether to book.",
     knowledge: "Catford moves divide between Victorian terraces near Rushey Green and Blythe Hill, and the interwar estate blocks of Bellingham and Downham with their lifts and stairwells. The A21 and the A205 South Circular cross at the town centre gyratory.",
     localMovingInfo: `Catford sits in south east London where the A21 meets the South Circular, with the famous cat sculpture keeping watch over the Broadway. The moving market mixes period terraces near Rushey Green and Blythe Hill, maisonettes around Perry Hill, and the big interwar estates of Bellingham and Downham, where block access and parking distance vary street by street.
@@ -9883,7 +9883,7 @@ Housing ranges from tall, undivided Victorian houses near Blythe Hill (stairs fr
   },
 
   "wirral": {
-    description: "Man with a van in Wirral from £19/hr. Heswall, West Kirby, Hoylake. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Wirral from £19/hr. Heswall, West Kirby, Hoylake. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van across the Wirral? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your peninsula move and send a quote before you decide whether to book.",
     knowledge: "Wirral moves cross the peninsula on the M53 and A552, from Birkenhead terraces and Wallasey semis to the Dee-side towns of Heswall, Hoylake and West Kirby. Anything into Liverpool factors in the Mersey tunnel tolls and peak queues.",
     localMovingInfo: `The Wirral is a peninsula of two halves. Along the Mersey, Birkenhead and Wallasey are dense and urban - terraces, semis and blocks with quick turnover. On the Dee side, Heswall, Hoylake and West Kirby feel like coastal towns with period villas and bigger gardens. The M53 bisects the peninsula and almost every move uses it at some point.
@@ -9918,7 +9918,7 @@ Property is everything from Birkenhead's tight terrace rows loading from the str
   },
 
   "brentford": {
-    description: "Man with a van in Brentford from £26/hr. Brentford Dock, Kew Bridge, Syon. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Brentford from £26/hr. Brentford Dock, Kew Bridge, Syon. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Brentford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your west London move and send a quote before you decide whether to book.",
     knowledge: "Brentford moves split between terraces near the Town Centre, media and studio spaces along the Great West Road, and new-build apartments at Kew Bridge and Brentford Dock with managed loading bays. The A4, M4 and A205 frame every journey.",
     localMovingInfo: `Brentford is in the middle of a transformation. The old town around the High Street and the creative quarter still has Victorian terraces, workshops and warehouse studios, while the riverfront between Kew Bridge and Brentford Dock is now lined with apartment towers. Moving here means two very different jobs: stairs and street loading in the old quarter, and concierge-booked bays and lift slots in the new blocks.
@@ -9952,7 +9952,7 @@ For the towers around Brentford Lock and Kew Bridge, the pattern is fixed: book 
   },
 
   "deptford": {
-    description: "Man with a van in Deptford from £26/hr. High Street, Pepys Estate, St Johns. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Deptford from £26/hr. High Street, Pepys Estate, St Johns. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Deptford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south east London move and send a quote before you decide whether to book.",
     knowledge: "Deptford moves range across market-day streets near Deptford High Street, estate blocks around Evelyn and Deptford Park, and new riverside developments towards the Creek with concierge rules. The A2, A200 and A20 are the main routes.",
     localMovingInfo: `Deptford has energy to spare: the famous High Street market, Goldsmiths students on its borders, council estates around Evelyn and the Pepys Estate, and glossy new developments rising along Deptford Creek. The moving churn is constant - renters, first-time buyers, and creative businesses arriving and expanding.
@@ -9986,7 +9986,7 @@ Housing mixes Victorian terraces in the conservation streets, estates with stair
   },
 
   "staines": {
-    description: "Man with a van in Staines-upon-Thames from £19/hr. Stanwell, Laleham, Thorpe. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Staines-upon-Thames from £19/hr. Stanwell, Laleham, Thorpe. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Staines-upon-Thames? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north Surrey move and send a quote before you decide whether to book.",
     knowledge: "Staines moves centre on the Town Centre and Two Rivers area, the riverside developments, and the villages of Stanwell, Laleham and Thorpe. The A30 runs through town to the M25 at junction 13, and the A308 links towards Windsor and Kingston.",
     localMovingInfo: `Staines-upon-Thames sits where the M25 crosses the Thames, which makes it one of the best-connected towns in Surrey - and one of the busiest. The moving market combines terraces around the Town Centre and Two Rivers shopping area, modern riverside apartments, and family streets across Stanwell, Laleham and Thorpe, with Heathrow and Royal Holloway keeping demand steady year-round.
@@ -10020,7 +10020,7 @@ Property is a full mix: Victorian terraces near the station, interwar semis in S
   },
 
   "hatfield": {
-    description: "Man with a van in Hatfield from £19/hr. Old Hatfield, Ellenbrook, Birchwood. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hatfield from £19/hr. Old Hatfield, Ellenbrook, Birchwood. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hatfield? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hertfordshire move and send a quote before you decide whether to book.",
     knowledge: "Hatfield moves split between 1950s new-town estates, the period streets of Old Hatfield, and constant student turnover around the College Lane and de Havilland campuses. The A1(M) at junctions 2-4 and the A414 carry most journeys.",
     localMovingInfo: `Hatfield is a new town with an old heart and a huge university. The University of Hertfordshire's College Lane and de Havilland campuses dominate the moving calendar - thousands of students arriving, switching houses and leaving each year - while family movement plays out across the planned estates of Birchwood, Ellenbrook and Oxlease, and older cottages in Old Hatfield.
@@ -10055,7 +10055,7 @@ New-town design means cul-de-sacs and footpath-served houses where the van canno
   },
 
   "camberley": {
-    description: "Man with a van in Camberley from £19/hr. Yorktown, Old Dean, Heatherside. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Camberley from £19/hr. Yorktown, Old Dean, Heatherside. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Camberley? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Surrey Heath move and send a quote before you decide whether to book.",
     knowledge: "Camberley moves run along the A30 London Road corridor and out to the M3 at junctions 3-4 via the A331. The town mixes older streets around Yorktown and Old Dean with newer estates towards Heatherside, plus regular service-family relocations.",
     localMovingInfo: `Camberley is a classic Surrey commuter town reshaped by The Square and the Atrium, with Sandhurst's military presence just next door. That means a brisk, practical moving market: professionals rotating through flats near the Town Centre, families settling across Yorktown and Heatherside, and service families moving to and from the area on posting cycles.
@@ -10089,7 +10089,7 @@ Property spans Victorian terraces around Yorktown, mid-century stock on the Old 
   },
 
   "farnham": {
-    description: "Man with a van in Farnham from £19/hr. Upper Hale, Heath End, Wrecclesham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Farnham from £19/hr. Upper Hale, Heath End, Wrecclesham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Farnham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Waverley move and send a quote before you decide whether to book.",
     knowledge: "Farnham moves range through the historic centre with its one-way system, the steeper streets of Upper Hale and Hale, and outlying villages off the A287. The A31 to Guildford and Winchester and the A325 to Farnborough are the main routes.",
     localMovingInfo: `Farnham is one of Surrey's handsomest market towns - Georgian Castle Street, the castle keep above, and craft studios in the yards behind West Street. Its moving market is affluent and steady: families trading within Waverley, London leavers, and downsizers swapping period townhouses for the villages or vice versa.
@@ -10123,7 +10123,7 @@ Property mixes Georgian townhouses with mews entrances, Victorian cottages up th
   },
 
   "tewkesbury": {
-    description: "Man with a van in Tewkesbury from £19/hr. Newtown, Priors Park, Walton Cardiff. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Tewkesbury from £19/hr. Newtown, Priors Park, Walton Cardiff. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Tewkesbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Severn-side move and send a quote before you decide whether to book.",
     knowledge: "Tewkesbury moves cover the tight historic core near the Abbey and High Street, the post-war estates of Newtown and Priors Park, and riverside streets where access varies. The M5 at junction 9, the A38 and the A46 link to Cheltenham, Gloucester and Worcestershire.",
     localMovingInfo: `Tewkesbury is a jewel-box of a medieval town - the Abbey, timber-framed fronts on the High Street, and lanes down to where the Avon meets the Severn. It is also a working town with a big trading estate at Ashchurch, so moves range from Tudor cottages to new builds at Walton Cardiff and everything between.
@@ -10157,7 +10157,7 @@ Riverside properties deserve an honest access note: some lanes near the Ham and 
   },
 
   "accrington": {
-    description: "Man with a van in Accrington from £19/hr. Spring Hill, Huncoat, Clayton-le-Moors. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Accrington from £19/hr. Spring Hill, Huncoat, Clayton-le-Moors. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Accrington? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hyndburn move and send a quote before you decide whether to book.",
     knowledge: "Accrington moves are dominated by stone terraces - street loading, ginnels and back entries - plus estates around Milnshaw and Huncoat. The M65 at junctions 7-8 and the A56 handle most journeys to Blackburn, Burnley and Manchester.",
     localMovingInfo: `Accrington is a proper Lancashire mill town - grid after grid of stone terraces climbing the hills around the centre, with the M65 giving it a fast link east and west. The moving market is local and practical: families moving between terraces, first-time buyers into Spring Hill or Peel, and hops to Blackburn and Burnley along the motorway.
@@ -10191,7 +10191,7 @@ Terrace logistics are the skill here. Many rows load from the street, and a ginn
   },
 
   "whiston": {
-    description: "Man with a van in Whiston from £19/hr. Halsnead, Rainhill, Windy Arbor. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Whiston from £19/hr. Halsnead, Rainhill, Windy Arbor. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Whiston? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Knowsley move and send a quote before you decide whether to book.",
     knowledge: "Whiston moves mostly run along the A57 towards Prescot and Liverpool or out to the M62 at junction 6. Streets around Halsnead, Rainhill and Windy Arbor are post-war estates with mixed driveway access, and hospital shifts shape the traffic.",
     localMovingInfo: `Whiston is built around its hospital - one of the busiest in the North West - and its position between Liverpool and Manchester. That combination gives it a characteristically practical moving market: NHS staff moving on rotations, families relocating within Knowsley, and commuter moves along the M62 corridor.
@@ -10225,7 +10225,7 @@ Housing is mostly post-war semis with gardens, terraced rows nearer the centre, 
   },
 
   "wisbech": {
-    description: "Man with a van in Wisbech from £19/hr. North Brink, South Brink, Leverington. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Wisbech from £19/hr. North Brink, South Brink, Leverington. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Wisbech? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Fenland move and send a quote before you decide whether to book.",
     knowledge: "Wisbech moves range across the Georgian brinks by the Nene, the Town Centre streets around the HorseFair, and fen-edge villages like Elm and Friday Bridge. The A47 to Kings Lynn and Peterborough and the A1101 are the main routes.",
     localMovingInfo: `Wisbech is the capital of the Fens - a merchant town whose Georgian wealth survives along North Brink and South Brink on the River Nene. The moving market mixes grand townhouse moves on the brinks, town-centre terraces, newer estates at Leverington and Walsoken, and genuinely rural properties down the long droves towards Elm and Friday Bridge.
@@ -10259,7 +10259,7 @@ Property spans riverside Georgiana with steps up from the road, Victorian terrac
   },
 
   "beccles": {
-    description: "Man with a van in Beccles from £19/hr. Worlingham, North Cove, Ringsfield. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Beccles from £19/hr. Worlingham, North Cove, Ringsfield. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Beccles? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Waveney valley move and send a quote before you decide whether to book.",
     knowledge: "Beccles moves spread between the historic core around Bell Hill and Smallgate, the estates at Worlingham and Ringsfield, and riverside homes near the staithe. The A146 links Norwich and Lowestoft, the A145 runs south, and the A143 to Great Yarmouth.",
     localMovingInfo: `Beccles is a handsome Waveney-valley market town on the edge of the Broads, with a famously steep centre at Bell Hill and Georgian streets around Smallgate and Blyburgate. Moving here splits three ways: within the town's older core, out to the estates at Worlingham and Ringsfield, and along the river to staithe-side properties and Broads villages.
@@ -10293,7 +10293,7 @@ The older core is steep and narrow in places - Bell Hill itself is a challenge f
   },
 
   "totnes": {
-    description: "Man with a van in Totnes from £19/hr. Bridgetown, Dartington, Follaton. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Totnes from £19/hr. Bridgetown, Dartington, Follaton. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Totnes? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your South Hams move and send a quote before you decide whether to book.",
     knowledge: "Totnes moves involve steep streets like Fore Street and the Narrows, riverside spots at Bridgetown, and lanes around the Dartington estate. The A385 to Paignton and Torquay and the A381 to Newton Abbot and Kingsbridge are the main routes.",
     localMovingInfo: `Totnes is one of England's oldest boroughs and one of its steepest market towns - Fore Street climbs from the Plains to the Eastgate arch, and the surrounding lanes are no flatter. The moving market is famously eclectic: Elizabethan townhouses, cottages across the river at Bridgetown, estate homes at Follaton and Highfields, and rural properties threaded through the Dart valley lanes.
@@ -10327,7 +10327,7 @@ Stairs and carries define pricing here. Tall houses on Fore Street have entries 
   },
 
   "burnham-on-sea": {
-    description: "Man with a van in Burnham-on-Sea from £19/hr. Berrow, Highbridge, Brean. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Burnham-on-Sea from £19/hr. Berrow, Highbridge, Brean. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Burnham-on-Sea? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Somerset coast move and send a quote before you decide whether to book.",
     knowledge: "Burnham-on-Sea moves run between the Victorian seafront terraces and apartments, the bungalow streets of Berrow and Brean along the dunes, and the Highbridge half of town. The M5 at junction 22 is minutes away for Taunton and Bristol, and summer holiday traffic along the A38 corridor is the main timing factor.",
     localMovingInfo: `Burnham-on-Sea is a classic Somerset resort town at the mouth of the River Parrett, famous for its low wooden lighthouse standing on legs in the sand. The town is really two halves - the Victorian seafront and centre, then Highbridge a mile inland - with the holiday parks of Berrow and Brean strung along the dunes to the north. Retiree downsizes, holiday-let furniture swaps and end-of-season pack-downs make up much of the local work.
@@ -10367,7 +10367,7 @@ Homes range from seafront guest-house conversions and retirement apartments with
     ],
   },
   "westbury": {
-    description: "Man with a van in Westbury from £19/hr. Dilton Marsh, Bratton, Westbury Leigh. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Westbury from £19/hr. Dilton Marsh, Bratton, Westbury Leigh. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Westbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wiltshire move and send a quote before you decide whether to book.",
     knowledge: "Westbury moves cover the stone-built streets around the Town Centre market place, estates at Dilton Marsh and North Bradley, and the villages of Bratton beneath the White Horse and Westbury Leigh. The A350 is the main north-south route, meeting the A36 towards Bath and Salisbury.",
     localMovingInfo: `Westbury is a Wiltshire market town sitting beneath the famous White Horse carved into the chalk escarpment of Salisbury Plain. The West Wilts Trading Estate on the town's edge keeps employment moves steady, while the station - a useful mainline junction - pulls commuters. Most local work is families trading between the town's stone cottages and newer estates, with village moves at Dilton Marsh and Bratton close behind.
@@ -10407,7 +10407,7 @@ Housing spans stone cottages and Victorian terraces around the Market Place, 197
     ],
   },
   "warminster": {
-    description: "Man with a van in Warminster from £19/hr. West End, Boreham, Bishopstrow. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Warminster from £19/hr. West End, Boreham, Bishopstrow. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Warminster? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wiltshire move and send a quote before you decide whether to book.",
     knowledge: "Warminster moves often involve military relocations to and from the Salisbury Plain garrisons, plus civilian moves between the Town Centre, the West End, Boreham and Bishopstrow. The A36 links Bath and Salisbury, the A350 runs north to Westbury and Trowbridge, and the A362 heads east towards Frome.",
     localMovingInfo: `Warminster is a garrison town at the western edge of Salisbury Plain, home to the Land Warfare Centre at Battlesbury Barracks, so forces relocations are a constant part of local life - postings in and out all year, with kit-heavy loads and tight report dates. The town also sits a couple of miles from Longleat, which brings tourist traffic in season. Civilian moves run between the stone cottages around the Market Place, the Victorian streets of the West End and newer estates on the edges.
@@ -10447,7 +10447,7 @@ Housing mixes stone cottages and period terraces around the centre, army quarter
     ],
   },
   "redruth": {
-    description: "Man with a van in Redruth from £19/hr. Pool, Illogan, Carn Brea. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Redruth from £19/hr. Pool, Illogan, Carn Brea. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Redruth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cornwall move and send a quote before you decide whether to book.",
     knowledge: "Redruth moves cover the granite terraces around Fore Street and the Town Centre, estates towards Illogan and Treleigh, and the adjoining Pool industrial area between Redruth and Camborne. The A30 bypass gives quick access to Truro and the rest of Cornwall, and the A3047 runs through to Camborne.",
     localMovingInfo: `Redruth was once the capital of the world's copper-mining industry, and its streets still form part of the Cornish Mining World Heritage Site, with Carn Brea hill and its monument overlooking the town. It runs into Camborne with the Pool industrial and retail area between them, so moves hop constantly between the three. The town is one of the more affordable parts of Cornwall, drawing first-time buyers and relocating trades.
@@ -10487,7 +10487,7 @@ Housing is dominated by granite and Victorian terraces - many with rear-lane or 
     ],
   },
   "portadown": {
-    description: "Man with a van in Portadown from £19/hr. Killicomaine, Edenderry, Garvaghy. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Portadown from £19/hr. Killicomaine, Edenderry, Garvaghy. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Portadown? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your County Armagh move and send a quote before you decide whether to book.",
     knowledge: "Portadown moves run between the terraced streets around the High Street and The Meadows Centre, the Killicomaine, Garvaghy and Edenderry estates, and newer developments near the Bann. The M1 puts Belfast about 30 miles east, the A3 links Armagh city, and the A27 crosses towards Craigavon.",
     localMovingInfo: `Portadown grew rich as a railway junction on the Dublin-Belfast line and sits on the River Bann between Lurgan and Armagh. The Meadows shopping centre and the long High Street anchor the town centre, while big estates like Killicomaine - one of the largest in Northern Ireland - and Garvaghy spread around the edges. Family moves within the estates and relocations along the Bann corridor dominate local work.
@@ -10527,7 +10527,7 @@ Housing runs from Victorian and Edwardian terraces near the centre, through the 
     ],
   },
   "craigavon": {
-    description: "Man with a van in Craigavon from £19/hr. Brownlow, Moyraverty, Tullygally. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Craigavon from £19/hr. Brownlow, Moyraverty, Tullygally. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Craigavon? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your County Armagh move and send a quote before you decide whether to book.",
     knowledge: "Craigavon moves cover Central, Brownlow, Moyraverty, Tullygally and Drumgor - each a few miles apart on the planned road system. The M1 and A3 link Belfast, Lurgan and Portadown, and most jobs are short hops between the planned neighbourhoods or the two older towns either side.",
     localMovingInfo: `Craigavon was designated a new town in 1965, planned around the existing villages of Lurgan and Portadown with new neighbourhoods at Brownlow and Central in between. Sixty years on it is a practical, spread-out town: the Rushmere shopping centre on the Lurgan side, the lakes at Craigavon City Park, and housing areas laid out on a roundabout-and-dual-carriageway system that confuses sat-navs used to street grids.
@@ -10567,7 +10567,7 @@ Housing mixes 1960s and 70s new-town terraces with their distinctive footpath la
     ],
   },
   "beckenham": {
-    description: "Man with a van in Beckenham from £26/hr. Clock House, Elmers End, Eden Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Beckenham from £26/hr. Clock House, Elmers End, Eden Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Beckenham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-east London move and send a quote before you decide whether to book.",
     knowledge: "Beckenham moves centre on the Victorian streets around the High Street and Clock House, the mansion flats at Shortlands, and interwar semis at Eden Park and Elmers End. The A222 links Croydon and Bromley, the A234 runs south-west, and the A21 towards Lewisham is the main northbound route.",
     localMovingInfo: `Beckenham is one of south-east London's most settled family suburbs, with a proper high street, Kelsey Park's lawns and lake, and a cluster of stations feeding London Bridge, Victoria and the City. The Tramlink stop at Beckenham Junction ties it to Croydon, while the Chinese Garage roundabout is the local landmark everyone navigates by. Moves are mostly families trading between the Victorian villas near the centre and the 1930s semis further out, plus downsizers leaving the bigger houses.
@@ -10607,7 +10607,7 @@ Homes range from grand Victorian villas and mansion flats at Shortlands - often 
     ],
   },
   "orpington": {
-    description: "Man with a van in Orpington from £26/hr. Petts Wood, Crofton, Locksbottom. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Orpington from £26/hr. Petts Wood, Crofton, Locksbottom. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Orpington? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-east London move and send a quote before you decide whether to book.",
     knowledge: "Orpington moves cover the 1930s semis of Crofton and Petts Wood, the Town Centre apartments near the station, and the village edges at Chelsfield. The A21 is the spine through Locksbottom towards Bromley, the A224 runs north to Sidcup, and the M25 at junction 4 puts Kent within easy reach.",
     localMovingInfo: `Orpington is a commuter town on London's south-east edge, built largely between the wars around the station and The Walnuts shopping centre, with Priory Gardens providing the green heart of the town. Fast trains into Victoria and London Bridge pull a constant flow of movers in and out, while families climb the ladder from 1930s semis in Crofton to the detached roads of Petts Wood. The M25 fringe means Kent-bound relocations are as common as London-bound ones.
@@ -10647,7 +10647,7 @@ Housing is dominated by 1930s semis with bay windows and driveways, larger detac
     ],
   },
   "hornchurch": {
-    description: "Man with a van in Hornchurch from £26/hr. Emerson Park, Elm Park, Ardleigh Green. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Hornchurch from £26/hr. Emerson Park, Elm Park, Ardleigh Green. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Hornchurch? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
     knowledge: "Hornchurch moves cover the interwar streets around the High Street, the Elm Park estate, and the detached roads of Emerson Park towards Upminster Bridge. The A127 is the fast route to the M25 at junction 29, and the A124 runs west through Romford towards Barking.",
     localMovingInfo: `Hornchurch is a settled east London town around the Queen's Theatre and Langtons Gardens, with the prestigious Emerson Park estate on one side and the vast Elm Park estate on the other. It has an older-than-average population, so downsizing moves - big family house to bungalow - are as common as the usual upsizing ladder between the interwar semis. Families sell in inner East London and buy here for the gardens and schools.
@@ -10687,7 +10687,7 @@ Housing is dominated by 1930s semis with driveways, the larger detached houses o
     ],
   },
   "upminster": {
-    description: "Man with a van in Upminster from £26/hr. Cranham, Corbets Tey, North Ockendon. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Upminster from £26/hr. Cranham, Corbets Tey, North Ockendon. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Upminster? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
     knowledge: "Upminster moves run between the streets around Station Road and the Town Centre, the larger plots of Cranham and Corbets Tey, and the semi-rural lanes towards North Ockendon. The A127 and the M25 at junction 29 give fast access east to Brentwood and west into the rest of London.",
     localMovingInfo: `Upminster sits at London's very eastern edge - the District line's last stop and a c2c terminus into Fenchurch Street - with the restored Upminster Windmill as its landmark and green belt directly beyond. The Station Road shops give it a village feel, while Cranham's wide detached streets and the cottages of Corbets Tey attract movers trading up from Hornchurch and Romford. Commuters dominate; movers see a steady two-way flow with Brentwood and Essex.
@@ -10727,7 +10727,7 @@ Housing runs from 1930s semis near the station, to generous detached plots in Cr
     ],
   },
   "woolwich": {
-    description: "Man with a van in Woolwich from £26/hr. Woolwich Arsenal, Plumstead, Shooters Hill. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Woolwich from £26/hr. Woolwich Arsenal, Plumstead, Shooters Hill. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Woolwich? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-east London move and send a quote before you decide whether to book.",
     knowledge: "Woolwich moves range from Royal Arsenal riverside apartments with concierge rules, to Victorian terraces in Plumstead and houses up towards Shooters Hill. The A206 runs along the river towards Greenwich, the A205 South Circular crosses south, and the A207 climbs the hill towards Abbey Wood.",
     localMovingInfo: `Woolwich has been transformed by the Elizabeth line - the station opened in 2022 - and the Royal Arsenal Riverside development, which turned the old munitions complex into thousands of riverfront apartments with their own shops and pier. The covered market stalls around Beresford Square and the free Woolwich Ferry keep the older town alive alongside it. Moves split between young professionals in the Arsenal blocks and families in the Plumstead terraces and on Shooters Hill.
@@ -10767,7 +10767,7 @@ Housing contrasts sharply: Arsenal apartments with concierge desks, lift booking
     ],
   },
   "tooting": {
-    description: "Man with a van in Tooting from £26/hr. Tooting Bec, Furzedown, Broadway. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Tooting from £26/hr. Tooting Bec, Furzedown, Broadway. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Tooting? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-west London move and send a quote before you decide whether to book.",
     knowledge: "Tooting moves concentrate on the Victorian terraces between Tooting Broadway and Upper Tooting along the A24, the Furzedown estates, and Summerstown by the river. The A24 is the main artery into central London, and the A205 South Circular skirts Tooting Bec Common.",
     localMovingInfo: `Tooting is one of south London's busiest young-professional districts - two covered markets at the Broadway and Tooting Market, the Northern line, and St George's Hospital as the area's big employer, which means constant graduate and medic moves. Terraced streets in a strict grid make up most of the housing between Tooting Broadway and Tooting Bec, with Tooting Bec Lido on the common as the local landmark. Flat-shares trading up and first-time buyers arriving from Clapham and Balham drive the market.
@@ -10807,7 +10807,7 @@ Housing is overwhelmingly Victorian and Edwardian terraces, most converted into 
     ],
   },
   "wembley": {
-    description: "Man with a van in Wembley from £26/hr. Wembley Park, Alperton, Sudbury. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Wembley from £26/hr. Wembley Park, Alperton, Sudbury. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Wembley? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-west London move and send a quote before you decide whether to book.",
     knowledge: "Wembley moves split between the new towers of Wembley Park by the stadium and the interwar family streets of Sudbury, Alperton and North Wembley. The A406 North Circular skirts the area, the A404 Harrow Road crosses the centre, and match and concert days bring their own controlled parking zone.",
     localMovingInfo: `Wembley has two rhythms. The regenerated quarter around Wembley Park - stadium, arena, Boxpark and the London Designer Outlet - is full of new towers with concierge desks and weekly moves in and out by young renters. Around it, Wembley Central, Alperton, Sudbury and North Wembley keep the older Wembley: interwar semis with drives, shopping parades, and families trading up the same streets their parents moved to. The transport is exceptional for the price - Jubilee, Metropolitan, Bakerloo and Overground lines all converge.
@@ -10847,7 +10847,7 @@ Homes range from tower apartments that need a lift slot and a loading bay booked
     ],
   },
   "camden": {
-    description: "Man with a van in Camden from £26/hr. Camden Town, Chalk Farm, Kentish Town. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Camden from £26/hr. Camden Town, Chalk Farm, Kentish Town. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Camden? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
     knowledge: "Camden moves weave around the market quarter - Camden Town, the Lock, Chalk Farm, Mornington Crescent and Kentish Town - where Georgian terraces meet large ex-council estates. The A400 runs north-south through the High Street, and the A503 crosses towards Holloway. Market weekends reshape the roads completely.",
     localMovingInfo: `Camden Town has been a market district since the 1970s, when craft stalls opened around the Lock; today the markets pull millions of visitors a year and the Roundhouse keeps the music heritage loud. Behind the tourist streets this is a genuinely transient place to live - flat-shares in subdivided Georgian terraces, tenants cycling through the big estates of Somers Town, and canal-side apartments turning over constantly. Everyday local life clusters in Kentish Town and Chalk Farm on the quieter edges.
@@ -10887,7 +10887,7 @@ Homes run from tall Georgian terraces carved into flats - steep shared stairs, n
     ],
   },
   "wandsworth": {
-    description: "Man with a van in Wandsworth from £26/hr. Earlsfield, Southfields, Wandsworth Common. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Wandsworth from £26/hr. Earlsfield, Southfields, Wandsworth Common. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Wandsworth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-west London move and send a quote before you decide whether to book.",
     knowledge: "Wandsworth moves centre on the Victorian terrace grids between Wandsworth Common and the river: Earlsfield, Southfields and the streets off Old York Road. The A3 runs through towards Surrey, the A205 South Circular crosses it, and the A217 heads south to Tooting.",
     localMovingInfo: `Wandsworth is where south-west London's young professionals become families - the 'Nappy Valley' nickname around Bellevue Road says it all. The Old York Road village of independents anchors the town side, the common gives it its green heart, and the River Wandle threads past converted brewery buildings. Moves are a conveyor: couples arrive from Clapham and Battersea, trade from flat to terrace, terrace to bigger terrace, and eventually out towards Richmond or Surrey when the push for space wins.
@@ -10927,7 +10927,7 @@ Homes are overwhelmingly Victorian and Edwardian terraces - bay-fronted, often a
     ],
   },
   "shepherds-bush": {
-    description: "Man with a van in Shepherd's Bush from £26/hr. White City, Askew Road, The Green. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Shepherd's Bush from £26/hr. White City, Askew Road, The Green. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Shepherd's Bush? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your west London move and send a quote before you decide whether to book.",
     knowledge: "Shepherd's Bush moves range across the mansion blocks around The Green, the new towers at White City, the market streets and the Askew Road terraces. The A3220 Wood Lane gyratory shapes local timing, the A4020 Uxbridge Road runs east-west, and the A40 Westway sits on the edge.",
     localMovingInfo: `Shepherd's Bush condensed a whole city district into one postcode: Westfield, one of Europe's largest urban shopping centres, the old market under the railway arches, the Green with its Central line stop, and the BBC's Television Centre reborn as apartments and studios. Rentals churn constantly - mansion-flat sharers near the Green, terraces down Askew Road, and a wave of new towers at White City where concierges run the move-in rules.
@@ -10967,7 +10967,7 @@ Homes range from red-brick mansion blocks where stairs replace lifts, through Vi
     ],
   },
   "edmonton": {
-    description: "Man with a van in Edmonton from £26/hr. Angel Edmonton, Ponders End, Meridian Water. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Edmonton from £26/hr. Angel Edmonton, Ponders End, Meridian Water. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Edmonton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
     knowledge: "Edmonton moves run along the A1010 Fore Street through Edmonton Green and Angel Edmonton, across the estates of Upper and Lower Edmonton, and into the new phases of Meridian Water by the river. The A406 North Circular marks the southern edge and clogs in the peaks.",
     localMovingInfo: `Edmonton is mid-transformation: the historic Fore Street spine through Edmonton Green, the Angel side streets where Keats once served his apprenticeship, the estates of Upper and Lower Edmonton - and now Meridian Water, one of London's biggest regeneration programmes, bringing thousands of new homes up by the Lea. That mix keeps every kind of move flowing: estate-to-estate family hops, first-time buyers arriving from inner London for the prices, and renters cycling the new blocks as each phase completes.
@@ -11007,7 +11007,7 @@ Homes span post-war estates with parking courts, Victorian terraces near the Gre
     ],
   },
   "leyton": {
-    description: "Man with a van in Leyton from £26/hr. Bakers Arms, Francis Road, Leyton Marshes. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Leyton from £26/hr. Bakers Arms, Francis Road, Leyton Marshes. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Leyton? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your east London move and send a quote before you decide whether to book.",
     knowledge: "Leyton moves concentrate on the terrace grids off the A112 High Road, around Bakers Arms and through the Francis Road pocket, with the A104 Lea Bridge Road marking the Hackney edge and the marshes opening towards the Olympic Park.",
     localMovingInfo: `Leyton is the frontier district where Hackney prices push east: Leyton Orient's Brisbane Road ground on one side, the Francis Road cafe-village at its heart, and the marshes rolling towards the Olympic Park. First-time buyers and young families price out of Hackney and Walthamstow arrive constantly, so the Victorian terraces turn over fast - flat-to-house upsizing is the signature local move.
@@ -11047,7 +11047,7 @@ Homes are mostly small Victorian terraces - two-up two-downs with tight stairs a
     ],
   },
   "chingford": {
-    description: "Man with a van in Chingford from £26/hr. Chingford Mount, North Chingford, Friday Hill. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Chingford from £26/hr. Chingford Mount, North Chingford, Friday Hill. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Chingford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-east London move and send a quote before you decide whether to book.",
     knowledge: "Chingford moves run between the shopping parades of Chingford Mount, the 1930s semis of South Chingford and Chingford Hatch, and the forest-edge roads of North Chingford and Friday Hill. The A112 links south to Walthamstow as the main local artery.",
     localMovingInfo: `Chingford is London's forest edge: Queen Elizabeth's Hunting Lodge has stood watch since Tudor times, Epping Forest begins at the end of the street, and Pole Hill hides the hut T. E. Lawrence once owned. North Chingford feels like a village that happens to have a terminus station to Liverpool Street; Chingford Mount is the working high street to the south. Moves here are families staying for the forest, downsizers leaving the detached houses, and commuters arriving from busier north London.
@@ -11087,7 +11087,7 @@ Homes span 1930s semis through South Chingford and Chingford Hatch, detached hou
     ],
   },
   "finsbury-park": {
-    description: "Man with a van in Finsbury Park from £26/hr. Stroud Green, Blackstock Road, Manor House. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Finsbury Park from £26/hr. Stroud Green, Blackstock Road, Manor House. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Finsbury Park? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
     knowledge: "Finsbury Park moves cover the railway-era terraces and mansion blocks of Stroud Green, the Fonthill Road fashion quarter, Blackstock Road towards Highbury and Brownswood by the park. The A105 Green Lanes and the A503 Seven Sisters Road frame the area on two sides.",
     localMovingInfo: `Finsbury Park sits on one of London's busiest interchanges - Victoria and Piccadilly lines plus National Rail - with its namesake 110-acre Victorian park as the lung. The streets around are pure rental country: Stroud Green's terraces carved into flats, the wholesale fashion warehouses of Fonthill Road, the Turkish grocers and cafes along Blackstock Road, and the Emirates Stadium a mile south in whose match-day shadow the whole district lives twice a week.
@@ -11127,7 +11127,7 @@ Homes are largely mansion blocks and converted terraces - flights of stairs, sha
     ],
   },
   "harringay": {
-    description: "Man with a van in Harringay from £26/hr. The Ladder, Green Lanes, The Gardens. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Harringay from £26/hr. The Ladder, Green Lanes, The Gardens. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Harringay? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
     knowledge: "Harringay moves split three ways: the tight Ladder terraces between the A105 Green Lanes and Wightman Road, the larger Edwardian houses of The Gardens, and warehouse conversions in the old industrial belt. The A503 Seven Sisters Road closes the southern edge.",
     localMovingInfo: `Harringay is two streets that show up on every map: Green Lanes - London's famous Turkish, Greek and Kurdish food strip - and the railway line, with 21 rungs of small Victorian terraces between them known everywhere as the Ladder. East of the rails, The Gardens gives bigger Edwardian houses; west, the Warehouse District's old factories, including the Chocolate Factory artist studios, have become flats and live-work spaces. Arena Shopping Park stands on the site of the 1930s Harringay Arena. It is one of the tightest-knit moving markets in north London - people trade flat to flat within the same rung.
@@ -11167,7 +11167,7 @@ Homes are small bay-fronted terraces - many in flats - larger square-fronted hou
     ],
   },
   "stanmore": {
-    description: "Man with a van in Stanmore from £26/hr. Stanmore Hill, Broadway, Canons Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Stanmore from £26/hr. Stanmore Hill, Broadway, Canons Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Stanmore? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-west London move and send a quote before you decide whether to book.",
     knowledge: "Stanmore moves run between the Broadway shops, the big detached plots of Stanmore Hill and Old Church Lane, Canons Park by the station and the Belmont borders. The A410 is the local spine, and the M1 at junction 4, a short hop away at Edgware, gives fast routes out of London.",
     localMovingInfo: `Stanmore is suburbia at its leafiest: the Broadway's parade at its heart, Stanmore Hill climbing to the old village core, Canons spread around the Jubilee line terminus - and Bentley Priory, the former RAF Fighter Command headquarters from which the Battle of Britain was directed, now a museum ringed by a luxury estate of converted and new homes. The Royal National Orthopaedic Hospital brings staff and patients from across the country. Moves here tend to be big: families trading detached houses, downsizers leaving decades of accumulated lofts and garages, and hospital staff relocating in.
@@ -11207,7 +11207,7 @@ Homes range from 1930s semis to very large detached houses behind hedges - high-
     ],
   },
   "pinner": {
-    description: "Man with a van in Pinner from £26/hr. Hatch End, Nower Hill, High Street. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Pinner from £26/hr. Hatch End, Nower Hill, High Street. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Pinner? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-west London move and send a quote before you decide whether to book.",
     knowledge: "Pinner moves centre on the village High Street's timbered fronts, the 1930s streets of Hatch End and Nower Hill, Pinner Green to the south and the East End towards the park. The A404 is the main route through, linking Harrow to the Metroland suburbs north.",
     localMovingInfo: `Pinner guards its village identity fiercely: the timbered High Street, the Memorial Park with its duck pond and the Heath Robinson Museum, and a fair granted by charter over 600 years ago that still closes the streets once a year. Metroland grew it between the wars, so 1930s semis dominate through Hatch End and Nower Hill, with older cottages near the core and bungalows scattered throughout - which makes it downsizer country as much as family-commuter country.
@@ -11247,7 +11247,7 @@ Homes are period cottages near the High Street, bay-windowed semis across the in
     ],
   },
   "stamford-hill": {
-    description: "Man with a van in Stamford Hill from £26/hr. Clapton Common, Woodberry Down, Broadway. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Stamford Hill from £26/hr. Clapton Common, Woodberry Down, Broadway. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Stamford Hill? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-east London move and send a quote before you decide whether to book.",
     knowledge: "Stamford Hill moves run along the A10 corridor through the Broadway to Clapton Common, across the estates towards South Tottenham, and into the regenerating Woodberry Down by the reservoirs. The A503 Seven Sisters Road forms the southern boundary with Manor House.",
     localMovingInfo: `Stamford Hill is one of London's most distinctive districts - home to one of Europe's largest Haredi Jewish communities, with its own schools, synagogues and shops along the Broadway. Beside it, Woodberry Down is regenerating block by block into new towers, and the Woodberry Wetlands nature reserve, opened in 2016, turned the old reservoirs into a public oasis. Family moves within the community, regeneration relocations, and renters moving along the A10 corridor all feed the market at once.
@@ -11287,7 +11287,7 @@ Homes span Victorian terraces - many extended for large families - ex-council es
     ],
   },
   "bounds-green": {
-    description: "Man with a van in Bounds Green from £26/hr. Bounds Green Road, The North Circular borders, Bowes Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    description: "Man with a van in Bounds Green from £26/hr. Bounds Green Road, The North Circular borders, Bowes Park. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
     intro: "Need a man and van in Bounds Green? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
     knowledge: "Bounds Green moves cover the interwar terraces around the tube stop and Bounds Green Road, the Bowes Park grids by the New River, and the streets edging Wood Green. The A109 and the A406 North Circular cross close by.",
     localMovingInfo: `Bounds Green is the quiet Piccadilly line pocket between Wood Green and Muswell Hill - interwar terraces, the New River threading through as a green footpath, and Bowes Park's grids holding some of the most affordable family houses in this part of north London. Buyers who stall at Wood Green or Muswell Hill prices land here, so the ladder moves never stop: one-bed flats to maisonettes, maisonettes to three-bed terraces.
