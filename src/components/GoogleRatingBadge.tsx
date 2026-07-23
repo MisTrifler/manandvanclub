@@ -6,9 +6,13 @@ type RatingData = { rating: number; count: number; live: boolean };
 
 const FALLBACK: RatingData = { rating: 5.0, count: 5, live: false };
 
-// Direct link to the Man and Van Club Google Business Profile (same URL used
-// in the site's Organisation schema sameAs) so visitors land on Google itself.
-const GOOGLE_REVIEWS_URL = "https://share.google/xemGXWRByHBK5PSbN";
+// Customer-facing "read our reviews" link: a Google search for the business
+// reviews, which opens Google itself with the business panel and reviews in
+// view - per owner (2026-07-23). The Organisation schema sameAs keeps the
+// canonical share.google profile link. Upgrade path once GOOGLE_PLACE_ID is
+// set: https://search.google.com/local/reviews?placeid=PLACE_ID (opens the
+// reviews dialog directly).
+const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=man+and+van+club+reviews";
 
 const STAR_FILLED = "#FBBC04"; // Google star amber
 const STAR_EMPTY = "#E4E5E7"; // Google's empty-star gray
