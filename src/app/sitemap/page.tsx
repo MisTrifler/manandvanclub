@@ -58,6 +58,7 @@ const BLOG_POSTS = [
   { name: "Man and Van Glasgow: Prices & How to Book", href: "/blog/man-and-van-glasgow-prices-how-to-book" },
   { name: "Man and Van Nottingham: Prices & How to Book", href: "/blog/man-and-van-nottingham-prices-how-to-book" },
   { name: "Man and Van Leicester: Prices & How to Book", href: "/blog/man-and-van-leicester-prices-how-to-book" },
+  { name: "Man and Van Derby: Prices & How to Book", href: "/blog/man-and-van-derby-prices-how-to-book" },
 ];
 
 const OTHER_PAGES = [

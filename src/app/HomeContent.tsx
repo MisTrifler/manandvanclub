@@ -609,6 +609,7 @@ export default function HomeContent() {
               { name: "Man and van Glasgow prices", slug: "blog/man-and-van-glasgow-prices-how-to-book" },
               { name: "Man and van Nottingham prices", slug: "blog/man-and-van-nottingham-prices-how-to-book" },
               { name: "Man and van Leicester prices", slug: "blog/man-and-van-leicester-prices-how-to-book" },
+              { name: "Man and van Derby prices", slug: "blog/man-and-van-derby-prices-how-to-book" },
             ].map((post) => (
               <Link
                 key={post.slug}
