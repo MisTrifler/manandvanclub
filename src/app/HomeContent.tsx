@@ -254,8 +254,11 @@ export default function HomeContent() {
         </div>
 
         {/* Google reviews pill - bottom-left of the hero, in front of the van image.
-            Absolute (not fixed): stays on the hero, does not follow the page scroll. */}
-        <div className="absolute bottom-6 left-4 sm:left-6 z-20">
+            Absolute (not fixed): stays on the hero, does not follow the page scroll.
+            Mobile bottom-16 so it sits level with the Ask AI bubble (hero bottom on
+            phones dips under the browser toolbar); desktop hero = exactly one screen
+            so bottom-6 mirrors Ask AI's bottom-6 precisely. */}
+        <div className="absolute bottom-16 left-4 sm:bottom-6 sm:left-6 z-20">
           <GoogleRatingBadge />
         </div>
       </section>
