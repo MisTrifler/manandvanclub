@@ -244,9 +244,13 @@ export default function HomeContent() {
               ))}
             </div>
 
-            <p className="mt-5 text-sm text-white/60 font-medium">
-              Not sure? Choose <strong className="text-accent">Man &amp; Van</strong>.
-            </p>
+            <button
+              type="button"
+              onClick={() => handleTileClick("general")}
+              className="mt-5 text-sm text-white/60 font-medium hover:text-white transition-colors cursor-pointer"
+            >
+              Not sure? Choose <strong className="text-accent underline underline-offset-2 decoration-accent/50">Man &amp; Van</strong>.
+            </button>
           </div>
 
           {/* Call option */}
