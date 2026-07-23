@@ -448,7 +448,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4 text-center mt-8">
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="https://www.google.com/search?q=man+and+van+club+reviews"
+              href="https://share.google/8j6rvk5uR924kNX7k"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors"

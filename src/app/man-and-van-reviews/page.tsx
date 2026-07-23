@@ -3,7 +3,7 @@ import { Star, ExternalLink, Phone } from "lucide-react";
 import Link from "next/link";
 
 const baseUrl = "https://www.manandvanclub.co.uk";
-const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=man+and+van+club+reviews";
+const GOOGLE_REVIEWS_URL = "https://share.google/8j6rvk5uR924kNX7k";
 
 export const metadata: Metadata = {
   title: "Man and Van Club Reviews | Rated 5.0/5 | Real Customer Reviews",

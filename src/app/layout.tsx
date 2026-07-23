@@ -247,7 +247,7 @@ const organizationSchema = {
     "https://www.facebook.com/profile.php?id=61590898873944",
     "https://www.yell.com/biz/man-and-van-club-walsall-11043227/",
     "https://uk.trustpilot.com/review/manandvanclub.co.uk",
-    "https://share.google/xemGXWRByHBK5PSbN"
+    "https://share.google/8j6rvk5uR924kNX7k"
   ]
 };
 
