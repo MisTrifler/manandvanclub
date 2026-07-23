@@ -207,7 +207,7 @@ export default function HomeContent() {
             style={{ fontSize: "clamp(28px, 6.5vw, 44px)", lineHeight: "1.05" }}
             data-speakable="hero-heading"
           >
-            Man and Van Hire
+            Man <span className="text-accent">and</span> Van <span className="text-accent">Hire</span>
           </h1>
 
           <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
@@ -215,7 +215,7 @@ export default function HomeContent() {
           </p>
 
           {/* Move Type Selector */}
-          <div className="mt-8">
+          <div className="mt-5">
             <h2
               className="font-black text-white tracking-tight mb-1"
               style={{ fontSize: "clamp(18px, 3.5vw, 24px)" }}
@@ -269,8 +269,8 @@ export default function HomeContent() {
 
       </section>
 
-      {/* Google reviews badge - fixed bottom-left, opposite the Ask AI widget (bottom right) */}
-      <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[150]">
+      {/* Google reviews badge - fixed bottom-left, bottom edge level with the Ask AI widget (fixed bottom-6 right-4 sm:right-6) */}
+      <div className="fixed bottom-6 left-4 sm:left-6 z-[150]">
         <GoogleRatingBadge />
       </div>
 
