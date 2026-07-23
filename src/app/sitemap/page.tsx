@@ -65,6 +65,7 @@ const OTHER_PAGES = [
   { name: "How It Works", href: "/how-it-works" },
   { name: "Get Started", href: "/get-started" },
   { name: "Man and Van Prices", href: "/man-and-van-prices" },
+  { name: "Man and Van Club Reviews", href: "/man-and-van-reviews" },
   { name: "How Much Does a Man and Van Cost?", href: "/man-and-van-cost" },
   { name: "Man and Van Near Me", href: "/man-and-van-near-me" },
   { name: "Man and Van vs Removal Company", href: "/man-and-van-vs-removal-company" },

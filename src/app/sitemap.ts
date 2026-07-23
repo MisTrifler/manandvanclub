@@ -246,6 +246,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/get-started', priority: 0.8, freq: 'monthly' as const },
     { route: '/for-businesses', priority: 0.6, freq: 'monthly' as const },
     { route: '/about', priority: 0.6, freq: 'monthly' as const },
+    { route: '/man-and-van-reviews', priority: 0.6, freq: 'weekly' as const },
     { route: '/areas-covered', priority: 0.7, freq: 'monthly' as const },
     { route: '/pricing', priority: 0.6, freq: 'monthly' as const },
     { route: '/contact', priority: 0.6, freq: 'monthly' as const },

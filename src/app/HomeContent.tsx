@@ -214,8 +214,8 @@ export default function HomeContent() {
             From £19/hr · Verified movers · 488 UK areas · Free to submit · No spam
           </p>
 
-          {/* Google reviews badge - refreshes to live Google numbers once the Places key is set */}
-          <div className="mt-4 flex justify-center">
+          {/* Google reviews badge - mobile/tablet sits under the subheadline */}
+          <div className="mt-4 flex justify-center lg:hidden">
             <GoogleRatingBadge />
           </div>
 
@@ -270,6 +270,11 @@ export default function HomeContent() {
             0121 751 1269
           </a>
 
+        </div>
+
+        {/* Google reviews badge - desktop: parked on the right of the hero picture */}
+        <div className="hidden lg:block absolute right-8 xl:right-14 top-1/2 -translate-y-1/2 z-20">
+          <GoogleRatingBadge />
         </div>
       </section>
 
