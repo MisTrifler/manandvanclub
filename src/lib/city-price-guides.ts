@@ -12,6 +12,7 @@ export const CITY_PRICE_GUIDES: { city: string; href: string }[] = [
   { city: "Edinburgh", href: "/blog/man-and-van-edinburgh-prices-how-to-book" },
   { city: "Newcastle upon Tyne", href: "/blog/man-and-van-newcastle-prices-how-to-book" },
   { city: "Nottingham", href: "/blog/man-and-van-nottingham-prices-how-to-book" },
+  { city: "Leicester", href: "/blog/man-and-van-leicester-prices-how-to-book" },
   { city: "Cardiff", href: "/blog/man-and-van-cardiff-prices-how-to-book" },
   { city: "Walsall", href: "/blog/man-and-van-walsall-prices-how-to-book" },
 ];

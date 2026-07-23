@@ -227,6 +227,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/blog/man-and-van-newcastle-prices-how-to-book', priority: 0.9, freq: 'monthly' as const },
     { route: '/blog/man-and-van-glasgow-prices-how-to-book', priority: 0.9, freq: 'monthly' as const },
     { route: '/blog/man-and-van-nottingham-prices-how-to-book', priority: 0.9, freq: 'monthly' as const },
+    { route: '/blog/man-and-van-leicester-prices-how-to-book', priority: 0.9, freq: 'monthly' as const },
     { route: '/man-and-van-prices', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-near-me', priority: 0.85, freq: 'weekly' as const },
     { route: '/man-and-van-vs-removal-company', priority: 0.85, freq: 'weekly' as const },

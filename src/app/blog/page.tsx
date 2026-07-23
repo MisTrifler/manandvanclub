@@ -207,6 +207,15 @@ const blogPosts = [
     category: "Cost Guides",
   },
   {
+    slug: "man-and-van-leicester-prices-how-to-book",
+    title: "Man and Van Leicester: Prices & How to Book (2026)",
+    description:
+      "Current Leicester man and van prices, what affects the cost — terraces, two universities and match-day traffic — and how to book a verified mover for your next move in Leicester.",
+    date: "2026-07-23",
+    readTime: "7 min read",
+    category: "Cost Guides",
+  },
+  {
     slug: "man-and-van-nottingham-prices-how-to-book",
     title: "Man and Van Nottingham: Prices & How to Book (2026)",
     description:

@@ -627,8 +627,11 @@ export default function HomeContent() {
               { name: "UK house moving checklist 2026", slug: "blog/house-moving-checklist-uk" },
               { name: "Same-day move guide", slug: "blog/same-day-move-guide" },
               { name: "Man and van London prices", slug: "blog/man-and-van-london-prices-how-to-book" },
+              { name: "Man and van Birmingham prices", slug: "blog/man-and-van-birmingham-prices-how-to-book" },
+              { name: "Man and van Manchester prices", slug: "blog/man-and-van-manchester-prices-how-to-book" },
               { name: "Man and van Glasgow prices", slug: "blog/man-and-van-glasgow-prices-how-to-book" },
               { name: "Man and van Nottingham prices", slug: "blog/man-and-van-nottingham-prices-how-to-book" },
+              { name: "Man and van Leicester prices", slug: "blog/man-and-van-leicester-prices-how-to-book" },
             ].map((post) => (
               <Link
                 key={post.slug}
