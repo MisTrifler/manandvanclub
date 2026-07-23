@@ -24,32 +24,32 @@ const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: st
 const REVIEW_CARDS = [
   {
     name: "Anku G.",
-    platform: "Google",
+    platform: "Verified",
     text: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Cant thank you enough. Recommended company!",
   },
   {
     name: "Mansi B.",
-    platform: "Google",
+    platform: "Verified",
     text: "Amazing service, easy and seamless. Adrian was punctual and got the job done fast. Definitely would use again!",
   },
   {
     name: "Umar M.",
-    platform: "Google",
+    platform: "Verified",
     text: "Very pleased with the service. The booking process was straightforward and communication was clear throughout.",
   },
   {
     name: "Parmod C.",
-    platform: "Google",
+    platform: "Verified",
     text: "Good price and customer service! Very pleased.",
   },
   {
     name: "Harman S.",
-    platform: "Google",
+    platform: "Verified",
     text: "Amazing! Thank you for the help.",
   },
   {
     name: "VC-17",
-    platform: "Yell",
+    platform: "Verified",
     text: "Great experience with Man and Van Club. Simple easy booking by calling, got matched with a surprisingly low fee compared to other services. Definitely will use again!",
   },
 ];
@@ -377,7 +377,7 @@ export default function HomeContent() {
             What our customers say
           </h2>
           <p className="text-sm text-text-secondary mt-1">
-            5.0 / 5.0 across verified reviews on Google, Trustpilot &amp; Yell
+            5.0 / 5.0 across 5 verified Google reviews
           </p>
         </div>
 
@@ -391,7 +391,7 @@ export default function HomeContent() {
           <button
             type="button"
             onClick={() => scrollByCard("left")}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-primary/5 border border-border text-primary/60 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-primary/5 border border-border text-primary/60 hover:bg-accent hover:text-white hover:border-accent transition-all hidden md:flex md:opacity-60 md:group-hover/scroll:opacity-100 items-center justify-center"
             aria-label="Scroll reviews left"
           >
             <ChevronLeft size={20} />
@@ -400,7 +400,7 @@ export default function HomeContent() {
           <button
             type="button"
             onClick={() => scrollByCard("right")}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-primary/5 border border-border text-primary/60 hover:bg-accent hover:text-white hover:border-accent transition-all opacity-0 group-hover/scroll:opacity-100 flex items-center justify-center"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-primary/5 border border-border text-primary/60 hover:bg-accent hover:text-white hover:border-accent transition-all hidden md:flex md:opacity-60 md:group-hover/scroll:opacity-100 items-center justify-center"
             aria-label="Scroll reviews right"
           >
             <ChevronRight size={20} />
@@ -449,24 +449,6 @@ export default function HomeContent() {
 
         <div className="container mx-auto px-4 text-center mt-8">
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="https://uk.trustpilot.com/review/manandvanclub.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors"
-            >
-              Trustpilot →
-            </a>
-            <span className="text-primary/20">·</span>
-            <a
-              href="https://www.yell.com/biz/man-and-van-club-walsall-11043227/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-accent transition-colors"
-            >
-              Yell →
-            </a>
-            <span className="text-primary/20">·</span>
             <a
               href="https://share.google/xemGXWRByHBK5PSbN"
               target="_blank"
@@ -655,7 +637,7 @@ export default function HomeContent() {
               Looking for a <Link href="/house-removals" className="font-bold text-accent hover:underline">house removal</Link>, <Link href="/flat-removals" className="font-bold text-accent hover:underline">flat move</Link>, <Link href="/furniture-delivery-service" className="font-bold text-accent hover:underline">furniture delivery</Link>, <Link href="/student-removals" className="font-bold text-accent hover:underline">student move</Link>, <Link href="/same-day-man-and-van" className="font-bold text-accent hover:underline">same-day pickup</Link> or <Link href="/long-distance-removals" className="font-bold text-accent hover:underline">long-distance relocation</Link>? <Link href="/moving-home" className="font-bold text-accent hover:underline">Moving home</Link>? Need the <Link href="/cheapest-moving-van" className="font-bold text-accent hover:underline">cheapest moving van</Link>? <Link href="/help-me-move" className="font-bold text-accent hover:underline">Help me move</Link>? Looking for a <Link href="/cheap-man-and-van" className="font-bold text-accent hover:underline">cheap man and van</Link> or <Link href="/cheap-van-hire-with-driver" className="font-bold text-accent hover:underline">van hire with driver</Link>? Use our <Link href="/moving-checklist" className="font-bold text-accent hover:underline">moving checklist</Link>. Submit one free request and a verified mover quotes you — no spam, no obligation. Prices from £19/hr. Call 0121 751 1269 any day of the week.
             </p>
             <p>
-              Areas covered: <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link>, <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link> and <Link href="/areas-covered" className="font-bold text-accent hover:underline">287 more UK towns and cities</Link>. Not sure if you need a man and van or a full removal firm? Read our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">comparison guide</Link> or check our <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">how we compare page</Link>.
+              Areas covered: <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link>, <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link> and <Link href="/areas-covered" className="font-bold text-accent hover:underline">482 more UK towns and cities</Link>. Not sure if you need a man and van or a full removal firm? Read our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">comparison guide</Link> or check our <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">how we compare page</Link>.
             </p>
           </div>
         </div>
