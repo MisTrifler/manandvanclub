@@ -214,11 +214,6 @@ export default function HomeContent() {
             From £19/hr · Verified movers · 488 UK areas · Free to submit · No spam
           </p>
 
-          {/* Google reviews badge - mobile/tablet sits under the subheadline */}
-          <div className="mt-4 flex justify-center lg:hidden">
-            <GoogleRatingBadge />
-          </div>
-
           {/* Move Type Selector */}
           <div className="mt-8">
             <h2
@@ -272,11 +267,12 @@ export default function HomeContent() {
 
         </div>
 
-        {/* Google reviews badge - desktop: parked on the right of the hero picture */}
-        <div className="hidden lg:block absolute right-8 xl:right-14 top-1/2 -translate-y-1/2 z-20">
-          <GoogleRatingBadge />
-        </div>
       </section>
+
+      {/* Google reviews badge - fixed bottom-left, opposite the Ask AI widget (bottom right) */}
+      <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[150]">
+        <GoogleRatingBadge />
+      </div>
 
       {/* ──────────────────── Quote Form Section ──────────────────── */}
       <section
