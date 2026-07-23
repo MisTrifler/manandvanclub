@@ -829,7 +829,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                <div className="bg-white p-10 rounded-[2.5rem] border border-border/50 space-y-6">
                   <MapPin size={28} className="text-accent" />
                   <p className="text-primary font-black uppercase tracking-tighter leading-tight text-sm">
-                    UK-Wide Coverage
+                    Nationwide
                   </p>
                   <p className="text-xs text-text-secondary font-medium leading-relaxed">
                     {isServicePage

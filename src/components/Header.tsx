@@ -165,7 +165,7 @@ export default function Header() {
             </a>
             <div className="flex items-center gap-2">
               <MapPin size={10} className="text-accent" />
-              <span>UK-Wide Coverage</span>
+              <span>Nationwide</span>
             </div>
           </div>
           <div className="flex gap-6">
