@@ -373,7 +373,7 @@ export default function HomeContent() {
             What our customers say
           </h2>
           <p className="text-sm text-text-secondary mt-1">
-            5.0 / 5.0 across 5 verified Google reviews
+            5/5 Google reviews
           </p>
         </div>
 

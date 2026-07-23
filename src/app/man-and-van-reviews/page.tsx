@@ -80,7 +80,7 @@ export default function ReviewsPage() {
                     <Star key={i} size={18} fill="#00B67A" className="text-[#00B67A]" strokeWidth={0} />
                   ))}
                 </div>
-                <p className="mt-1 text-xs font-bold text-text-secondary">Across 5 verified reviews</p>
+                <p className="mt-1 text-xs font-bold text-text-secondary">Across all 5 Google reviews</p>
               </div>
             </div>
             <a
