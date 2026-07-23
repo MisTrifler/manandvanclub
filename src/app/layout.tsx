@@ -25,7 +25,7 @@ const siteUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
   title: "Man and Van UK | House Removals & Furniture Delivery From £19 | Man and Van Club",
-  description: "Man with a van across the UK from £19/hr. House removals, furniture delivery, flat moves and same-day man and van in 435+ areas. One verified mover quotes — no spam calls. Call 0121 751 1269.",
+  description: "Man with a van across the UK from £19/hr. House removals, furniture delivery, flat moves and same-day man and van in 438+ areas. One verified mover quotes — no spam calls. Call 0121 751 1269.",
   metadataBase: new URL(siteUrl),
   alternates: {
     languages: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Man and Van Club",
     title: "Man and Van UK | House Removals & Furniture Delivery From £19",
-    description: "Man with a van across the UK from £19/hr. House removals, furniture delivery, flat moves in 435+ areas. One verified mover. Call 0121 751 1269.",
+    description: "Man with a van across the UK from £19/hr. House removals, furniture delivery, flat moves in 438+ areas. One verified mover. Call 0121 751 1269.",
     images: [
       {
         url: "/images/og-homepage.jpg",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Man and Van UK | House Removals & Furniture Delivery From £19",
-    description: "Man with a van across the UK from £19/hr. Verified movers for house removals, furniture delivery in 435+ areas. Call 0121 751 1269.",
+    description: "Man with a van across the UK from £19/hr. Verified movers for house removals, furniture delivery in 438+ areas. Call 0121 751 1269.",
     images: ["/images/og-homepage.jpg"],
   },
   icons: {

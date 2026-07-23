@@ -544,6 +544,10 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "berkhamsted",
   "menai-bridge",
   "devonport",
+  // 2026-07-23 additions: GSC-demand town + Mid/West Wales coverage
+  "burntwood",
+  "machynlleth",
+  "cardigan",
 ]);
 
 export function isSeoLaunchMode(): boolean {

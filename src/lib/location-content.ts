@@ -120,6 +120,7 @@ const COUNTY_HUBS: Record<string, { slug: string; name: string }> = {
   "Falkirk": { slug: "scotland", name: "Scotland" },
   "Angus": { slug: "scotland", name: "Scotland" },
   // Wales
+  "Powys": { slug: "wales", name: "Wales" },
   "Gwynedd": { slug: "wales", name: "Wales" },
   "Vale of Glamorgan": { slug: "wales", name: "Wales" },
   "Pembrokeshire": { slug: "wales", name: "Wales" },

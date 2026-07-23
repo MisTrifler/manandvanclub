@@ -67,7 +67,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "A Brownhills man and van quote can change depending on the A5, A452, A461, M6 Toll access, parking outside the property, stairs, bulky furniture and whether the route heads towards Walsall, Birmingham, Cannock, Lichfield or Sutton Coldfield. Your request gives the mover those local details before you decide whether to book.",
     badge: "Approved Movers in Brownhills",
     areas: ["Brownhills Town Centre", "WS8", "Walsall Wood", "Clayhanger", "Pelsall", "Aldridge", "Burntwood", "Cannock", "Lichfield", "Sutton Coldfield"],
-    nearbyLocations: ["walsall", "aldridge", "bloxwich", "cannock", "lichfield"]
+    nearbyLocations: ["walsall", "aldridge", "bloxwich", "cannock", "lichfield", "burntwood"]
   },
   {
     slug: "aldridge",
@@ -373,7 +373,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Cannock regularly handle moves between the town centre, Hednesford, and the newer estates. They can account for the M6 Toll access, the narrow lanes on the rural edges, and the best times to avoid the A5 commuter traffic through this busy Staffordshire town.",
     badge: "Verified Movers in Cannock",
     areas: ["Town Centre", "Hednesford", "Great Wyrley", "Bridgtown", "Chadsmoor", "Norton Canes", "Heath Hayes"],
-    nearbyLocations: ["walsall", "brownhills", "lichfield", "stafford", "rugeley"]
+    nearbyLocations: ["walsall", "brownhills", "lichfield", "stafford", "rugeley", "burntwood"]
   },
   {
     slug: "lichfield",
@@ -388,7 +388,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Lichfield regularly handle moves between the historic centre, the Georgian streets, and the newer estates. They can account for the access challenges near the cathedral, the A38 traffic patterns, and the best parking solutions for moves in this historic Staffordshire city.",
     badge: "Lichfield Movers",
     areas: ["City Centre", "Burntwood", "Shenstone", "Streethay", "Boley Park", "Leomansley", "Nether Stowe"],
-    nearbyLocations: ["tamworth", "cannock", "walsall", "sutton-coldfield", "burton-upon-trent", "brownhills"]
+    nearbyLocations: ["tamworth", "cannock", "walsall", "sutton-coldfield", "burton-upon-trent", "brownhills", "burntwood"]
   },
   // ──────────────────────────────────────────
   // GREATER LONDON (24 locations)
@@ -6896,6 +6896,57 @@ export const LOCATIONS: LocationData[] = [
     nearbyLocations: ["plymouth", "exeter", "torquay"]
   },
 
+  // ──────────────────────────────────────────
+  // NEW (2026-07-23) — GSC-demand town + Mid/West Wales coverage
+  // ──────────────────────────────────────────
+  {
+    slug: "burntwood",
+    name: "Burntwood",
+    region: "West Midlands",
+    county: "Staffordshire",
+    nearbyAreas: ["Chase Terrace", "Chasetown", "Burntwood Green", "Sankey's Corner", "Hammerwich", "Boney Hay"],
+    majorRoads: ["A5190", "A5", "M6 Toll"],
+    propertyTypes: ["post-war semis", "terraced homes", "modern estates"],
+    businessDistricts: ["Sankey's Corner", "Chasetown High Street"],
+    movingConsiderations: ["A5190 through Sankey's Corner slows at school-run times", "newer estates around Boney Hay and Fulfen have shared driveways", "many ex-mining semis have narrow side access for larger furniture", "Chasewater Country Park events add weekend traffic on the A5190"],
+    intro: "Moving in Burntwood? Whether it is a family move near Chasetown High Street, a flat near Sankey's Corner or furniture heading along the A5190 towards Lichfield, submit your postcodes, item list and access notes for free. A verified mover reviews the job before quoting.",
+    knowledge: "Burntwood sits between Brownhills and Lichfield, with most local moves running along the A5190 and the A5 towards the M6 Toll. Streets around Chase Terrace and Burntwood Green are mostly post-war semis with driveways, while newer estates around Boney Hay can have tighter access and shared parking.",
+    badge: "Verified Movers in Burntwood",
+    areas: ["Town Centre", "Chase Terrace", "Chasetown", "Burntwood Green", "Sankey's Corner", "Hammerwich", "Boney Hay", "Edial"],
+    nearbyLocations: ["brownhills", "lichfield", "cannock"],
+  },
+  {
+    slug: "machynlleth",
+    name: "Machynlleth",
+    region: "Wales",
+    county: "Powys",
+    nearbyAreas: ["Corris", "Pennal", "Derwenlas", "Cemmaes Road", "Glantwymyn"],
+    majorRoads: ["A487", "A489", "A493"],
+    propertyTypes: ["stone cottages", "Victorian terraces", "rural farmhouses"],
+    businessDistricts: ["Maengwyn Street", "Heol Pentrerhedyn"],
+    movingConsiderations: ["narrow lanes around Corris and Pennal need smaller vans or careful routing", "limited parking near the Wednesday market on Maengwyn Street", "rural properties often have long unmade farm tracks", "A487 Dovey valley road can be slow behind farm traffic"],
+    intro: "Moving in or out of Machynlleth? From stone cottages near Maengwyn Street to farmhouses along the A487 Dovey valley, submit your postcodes, item list and access notes for free. A verified mover reviews your Powys move before quoting.",
+    knowledge: "Machynlleth moves often involve rural access — properties around Corris, Pennal and Derwenlas sit on narrow lanes where larger vans need planning. The A487 and A489 are the main routes towards Aberystwyth and Newtown, and journey times can stretch behind farm traffic.",
+    badge: "Verified Movers in Machynlleth",
+    areas: ["Town Centre", "Corris", "Pennal", "Derwenlas", "Cemmaes Road", "Glantwymyn"],
+    nearbyLocations: ["aberystwyth"],
+  },
+  {
+    slug: "cardigan",
+    name: "Cardigan",
+    region: "Wales",
+    county: "Ceredigion",
+    nearbyAreas: ["St Dogmaels", "Gwbert", "Llechryd", "Cilgerran", "Aberporth"],
+    majorRoads: ["A487", "A484", "A478"],
+    propertyTypes: ["stone terraces", "riverside cottages", "modern estates"],
+    businessDistricts: ["High Street", "Quay Street"],
+    movingConsiderations: ["some streets near the castle and Bridge Street are tight for larger vans", "riverside cottages around St Dogmaels can have stepped or restricted access", "summer visitor traffic on the A487 coastal road", "spread-out rural properties mean longer travel between jobs"],
+    intro: "Moving in Cardigan or along the Teifi valley? Whether it is a terrace near the High Street, a cottage in St Dogmaels or furniture heading down the A487 towards Aberystwyth, submit your details for free and a verified mover can review the job before quoting.",
+    knowledge: "Cardigan moves spread across the town and surrounding villages. Properties in Llechryd, Cilgerran and Gwbert often sit on rural lanes, while terraces around the town centre can have limited parking. The A487, A484 and A478 connect Cardigan to Aberystwyth, Carmarthen and the south.",
+    badge: "Verified Movers in Cardigan",
+    areas: ["Town Centre", "St Dogmaels", "Gwbert", "Llechryd", "Cilgerran", "Aberporth"],
+    nearbyLocations: ["aberystwyth"],
+  },
 ];
 
 export const LOCATION_SLUGS = LOCATIONS.map((l) => l.slug);

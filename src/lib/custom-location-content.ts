@@ -6542,37 +6542,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "hertford": {
-    title: "Man and Van Hertford From £19/hr | Free Quotes",
-    description: "Man and van Hertford from £19/hr. SG13, SG14. Town Centre, Bengeo, Hertingfordbury, Ware, Hoddesdon. Call 0121 751 1269.",
-    h1: "Man and Van Hertford",
-    intro: "Need a man and van in Hertford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hertford move before quoting.",
-    knowledge: "Approved movers covering Hertford handle moves in Georgian properties near the castle and suburban estates. They understand the A10 and A414 traffic.",
-    localMovingInfo: `Hertford is about 20 miles north of London on the A10. The town has Georgian properties near the castle. Bengeo is a residential area. Ware is 2 miles east. The A10 connects to London and Cambridge. The A414 links to Chelmsford. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Hertford?","a":"Hertford moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £100-£170."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Bengeo, Hertingfordbury, Ware, Hoddesdon."},
-    ],
-  },
 
-  "hitchin": {
-    title: "Man and Van Hitchin From £19/hr | Free Quotes",
-    description: "Man and van Hitchin from £19/hr. SG4, SG5. Town Centre, Walsworth, Highbury, Westmill, Purwell. Call 0121 751 1269.",
-    h1: "Man and Van Hitchin",
-    intro: "Need a man and van in Hitchin? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Hitchin move before quoting.",
-    knowledge: "Approved movers covering Hitchin handle moves in Georgian town centre properties and suburban estates. They understand the A1(M) and A505 traffic.",
-    localMovingInfo: `Hitchin is about 15 miles north of Luton and 35 miles north of London. The A1(M) junction 8 is nearby. Stevenage is 5 miles south. Bedford is about 12 miles west. The town centre has Georgian buildings around the market square. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Hitchin?","a":"Hitchin moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £120-£180."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Walsworth, Highbury, Westmill, Purwell."},
-    ],
-  },
 
   "welwyn-garden-city": {
     title: "Man and Van Welwyn Garden City From £19/hr | Free Quotes",
@@ -6670,21 +6640,6 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "lewes": {
-    title: "Man and Van Lewes From £19/hr | Free Quotes",
-    description: "Man and van Lewes from £19/hr. BN7. Town Centre, Southover, Cliffe, Malling, Offham. Call 0121 751 1269.",
-    h1: "Man and Van Lewes",
-    intro: "Need a man and van in Lewes? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Lewes move before quoting.",
-    knowledge: "Approved movers covering Lewes handle moves in the medieval town centre with its narrow streets and steep hills. The A27 connects to Brighton and Eastbourne.",
-    localMovingInfo: `Lewes is about 8 miles north-east of Brighton on the A27. The town has narrow medieval streets and steep hills. Parking in the town centre is very limited. Brighton is a short drive south. Eastbourne is 18 miles east. The town has many period properties. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Lewes?","a":"Lewes moves start from £19 per hour. A local move typically costs £60-£120. A move to Brighton is usually £70-£110."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Southover, Cliffe, Malling, Offham."},
-    ],
-  },
 
   "bexhill": {
     title: "Man and Van Bexhill From £19/hr | Free Quotes",
@@ -6718,21 +6673,6 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "chichester": {
-    title: "Man and Van Chichester From £19/hr | Free Quotes",
-    description: "Man and van Chichester from £19/hr. PO19. City Centre, Summerstown, Portfield, Fishbourne, Lavant. Call 0121 751 1269.",
-    h1: "Man and Van Chichester",
-    intro: "Need a man and van in Chichester? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chichester move before quoting.",
-    knowledge: "Approved movers covering Chichester handle moves in the Georgian city centre and surrounding areas. The city walls create a compact centre with narrow streets.",
-    localMovingInfo: `Chichester is about 20 miles east of Portsmouth on the A27. The city centre within the Roman walls has Georgian buildings and narrow streets. Goodwood is just north. Portsmouth is 20 miles west. The A27 is the main coastal route. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Chichester?","a":"Chichester moves start from £19 per hour. A local move typically costs £60-£120. A move to Portsmouth is usually £100-£150."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. City Centre, Summerstown, Portfield, Fishbourne, Lavant."},
-    ],
-  },
 
   "reigate": {
     title: "Man and Van Reigate From £19/hr | Free Quotes",
@@ -6766,21 +6706,6 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "walton-on-thames": {
-    title: "Man and Van Walton-on-Thames From £19/hr | Free Quotes",
-    description: "Man and van Walton-on-Thames from £19/hr. KT12. Town Centre, Ashley Park, Hersham, Oatlands, Walton-on-the-Hill. Call 0121 751 1269.",
-    h1: "Man and Van Walton-on-Thames",
-    intro: "Need a man and van in Walton-on-Thames? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Walton-on-Thames move before quoting.",
-    knowledge: "Approved movers covering Walton-on-Thames handle moves in the riverside town and suburban areas. Weybridge is next door. Kingston is about 4 miles east.",
-    localMovingInfo: `Walton-on-Thames is about 15 miles south-west of London near the M3. Kingston is 4 miles east. Weybridge is next door. The town has riverside properties and suburban housing. Woking is about 5 miles south. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Walton-on-Thames?","a":"Walton-on-Thames moves start from £19 per hour. A local move typically costs £60-£120. A move into London is usually £90-£150."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Ashley Park, Hersham, Oatlands, Walton-on-the-Hill."},
-    ],
-  },
 
   "windsor": {
     title: "Man and Van Windsor From £19/hr | Free Quotes",
@@ -6878,21 +6803,6 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "goole": {
-    title: "Man and Van Goole From £19/hr | Free Quotes",
-    description: "Man and van Goole from £19/hr. DN14. Town Centre, Airmyn, Rawcliffe, Hook, Howdendyke. Call 0121 751 1269.",
-    h1: "Man and Van Goole",
-    intro: "Need a man and van in Goole? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Goole move before quoting.",
-    knowledge: "Approved movers covering Goole handle moves in the port town and surrounding villages. The M62 junction 36 provides excellent motorway access. The port brings HGV traffic.",
-    localMovingInfo: `Goole is about 25 miles west of Hull at the M62/A19 intersection. The M62 connects to Leeds (about 25 miles west). Doncaster is about 20 miles south. The port brings heavy goods traffic. The town has Victorian terraces near the docks. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Goole?","a":"Goole moves start from £19 per hour. A local move typically costs £60-£120. A move to Hull is usually £80-£130."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Airmyn, Rawcliffe, Hook, Howdendyke."},
-    ],
-  },
 
   "hedon": {
     title: "Man and Van Hedon From £19/hr | Free Quotes",
@@ -7022,69 +6932,9 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "caversham": {
-    title: "Man and Van Caversham From £19/hr | Free Quotes",
-    description: "Man and van Caversham from £19/hr. RG4. Caversham Heights, Caversham Park, Emmer Green, Lower Caversham. Call 0121 751 1269.",
-    h1: "Man and Van Caversham",
-    intro: "Need a man and van in Caversham? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Caversham move before quoting.",
-    knowledge: "Approved movers covering Caversham handle moves in the affluent residential area north of the Thames. Caversham Heights has steep roads.",
-    localMovingInfo: `Caversham is just north of Reading across the River Thames. Caversham Heights is an elevated residential area. Maidenhead is about 8 miles east. The area has mainly Victorian and Edwardian properties. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Caversham?","a":"Caversham moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £100-£170."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Caversham Heights, Caversham Park, Emmer Green, Lower Caversham."},
-    ],
-  },
 
-  "bletchley": {
-    title: "Man and Van Bletchley From £19/hr | Free Quotes",
-    description: "Man and van Bletchley from £19/hr. MK1, MK2, MK3. Bletchley Town, Fenny Stratford, Water Eaton, Newton Longville. Call 0121 751 1269.",
-    h1: "Man and Van Bletchley",
-    intro: "Need a man and van in Bletchley? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Bletchley move before quoting.",
-    knowledge: "Approved movers covering Bletchley handle moves in the older part of Milton Keynes. Bletchley Park can cause local tourist traffic.",
-    localMovingInfo: `Bletchley is the southern part of Milton Keynes. Bletchley Park is a famous landmark. Fenny Stratford is adjacent. Leighton Buzzard is about 6 miles south. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Bletchley?","a":"Bletchley moves start from £19 per hour. A local move typically costs £60-£120. A move to London is usually £120-£180."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Bletchley Town, Fenny Stratford, Water Eaton, Newton Longville."},
-    ],
-  },
 
-  "eastleigh": {
-    title: "Man and Van Eastleigh From £19/hr | Free Quotes",
-    description: "Man and van Eastleigh from £19/hr. SO50, SO53. Town Centre, Bishopstoke, Chandler's Ford, Hiltingbury, Fair Oak. Call 0121 751 1269.",
-    h1: "Man and Van Eastleigh",
-    intro: "Need a man and van in Eastleigh? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Eastleigh move before quoting.",
-    knowledge: "Approved movers covering Eastleigh handle moves in the railway town. Chandler's Ford is an affluent residential area. Southampton Airport is at Eastleigh.",
-    localMovingInfo: `Eastleigh is about 5 miles north of Southampton on the M3 corridor. Southampton Airport is here. Chandler's Ford is an affluent residential area. Winchester is about 7 miles north. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Eastleigh?","a":"Eastleigh moves start from £19 per hour. A local move typically costs £60-£120. A move to Southampton is usually £70-£100."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Bishopstoke, Chandler's Ford, Hiltingbury, Fair Oak."},
-    ],
-  },
 
-  "gosport": {
-    title: "Man and Van Gosport From £19/hr | Free Quotes",
-    description: "Man and van Gosport from £19/hr. PO12, PO13. Town Centre, Lee-on-the-Solent, Alverstoke, Bridgemary, Rowner. Call 0121 751 1269.",
-    h1: "Man and Van Gosport",
-    intro: "Need a man and van in Gosport? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Gosport move before quoting.",
-    knowledge: "Approved movers covering Gosport handle moves in the coastal town. The A32 is the only major road in and can be very congested. The ferry provides pedestrian access to Portsmouth.",
-    localMovingInfo: `Gosport is across the harbour from Portsmouth. The A32 connects to the M27 but can be very congested. The Gosport Ferry crosses to Portsmouth in 5 minutes. Lee-on-the-Solent is a coastal area. Fareham is 4 miles north. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Gosport?","a":"Gosport moves start from £19 per hour. A local move typically costs £60-£120. A move to Portsmouth is usually £70-£100."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Lee-on-the-Solent, Alverstoke, Bridgemary, Rowner."},
-    ],
-  },
 
   "poole": {
     title: "Man and Van Poole From £19/hr | Free Quotes",
@@ -7102,37 +6952,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "leyland": {
-    title: "Man and Van Leyland From £19/hr | Free Quotes",
-    description: "Man and van Leyland from £19/hr. PR25, PR26. Town Centre, Worden, Farington, Moss Side, Whittle-le-Woods. Call 0121 751 1269.",
-    h1: "Man and Van Leyland",
-    intro: "Need a man and van in Leyland? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Leyland move before quoting.",
-    knowledge: "Approved movers covering Leyland handle moves in the residential town. The M6 junction 28 and M65 provide motorway access. Chorley is 3 miles south.",
-    localMovingInfo: `Leyland is about 5 miles south of Preston on the A6. The M6 junction 28 is nearby. Chorley is 3 miles south. The M65 connects east to Blackburn. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Leyland?","a":"Leyland moves start from £19 per hour. A local move typically costs £60-£120. A move to Preston is usually £70-£100."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Worden, Farington, Moss Side, Whittle-le-Woods."},
-    ],
-  },
 
-  "cleveleys": {
-    title: "Man and Van Cleveleys From £19/hr | Free Quotes",
-    description: "Man and van Cleveleys from £19/hr. FY5. Cleveleys Town, Thornton, Poulton-le-Fylde, Fleetwood. Call 0121 751 1269.",
-    h1: "Man and Van Cleveleys",
-    intro: "Need a man and van in Cleveleys? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Cleveleys move before quoting.",
-    knowledge: "Approved movers covering Cleveleys handle moves in the coastal town. Fleetwood is 4 miles north. Poulton-le-Fylde is 2 miles inland.",
-    localMovingInfo: `Cleveleys is about 3 miles north of Blackpool on the A587. Fleetwood is 4 miles north. Poulton-le-Fylde is 2 miles inland. The M55 connects to Preston. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Cleveleys?","a":"Cleveleys moves start from £19 per hour. A local move typically costs £60-£120. A move to Blackpool is usually £70-£100."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Cleveleys Town, Thornton, Poulton-le-Fylde, Fleetwood."},
-    ],
-  },
 
   "diss": {
     title: "Man and Van Diss From £19/hr | Free Quotes",
@@ -7150,37 +6970,7 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "woodbridge": {
-    title: "Man and Van Woodbridge From £19/hr | Free Quotes",
-    description: "Man and van Woodbridge from £19/hr. IP12, IP13. Town Centre, Melton, Martlesham, Kesgrave, Bromeswell. Call 0121 751 1269.",
-    h1: "Man and Van Woodbridge",
-    intro: "Need a man and van in Woodbridge? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Woodbridge move before quoting.",
-    knowledge: "Approved movers covering Woodbridge handle moves in the affluent riverside town. The town has Georgian buildings along the riverfront. Melton and Martlesham are residential areas.",
-    localMovingInfo: `Woodbridge is about 8 miles north-east of Ipswich on the A12. The town sits on the River Deben with Georgian buildings. Martlesham has BT's research campus. The A12 connects south to Colchester. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Woodbridge?","a":"Woodbridge moves start from £19 per hour. A local move typically costs £60-£120. A move to Ipswich is usually £70-£100."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Melton, Martlesham, Kesgrave, Bromeswell."},
-    ],
-  },
 
-  "haxby": {
-    title: "Man and Van Haxby From £19/hr | Free Quotes",
-    description: "Man and van Haxby from £19/hr. YO32. Haxby, Wigginton, New Earswick, Huntington, Strensall. Call 0121 751 1269.",
-    h1: "Man and Van Haxby",
-    intro: "Need a man and van in Haxby? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Haxby move before quoting.",
-    knowledge: "Approved movers covering Haxby handle moves in the residential suburb. Wigginton is adjacent. New Earswick has Joseph Rowntree Housing Trust properties.",
-    localMovingInfo: `Haxby is about 4 miles north of York on the A19. Wigginton is adjacent. Huntington is nearby. Harrogate is about 15 miles west. The area has mainly interwar and post-war housing. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Haxby?","a":"Haxby moves start from £19 per hour. A local move typically costs £60-£120. A move to York city centre is usually £70-£100."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Haxby, Wigginton, New Earswick, Huntington, Strensall."},
-    ],
-  },
 
   "stockton-on-tees": {
     title: "Man and Van Stockton-on-Tees From £19/hr | Free Quotes",
@@ -7198,21 +6988,6 @@ Rates start from £19 per hour. Add full postcodes and access details.`,
     ],
   },
 
-  "willerby": {
-    title: "Man and Van Willerby From £19/hr | Free Quotes",
-    description: "Man and van Willerby from £19/hr. HU10, HU11. Willerby, Kirk Ella, Anlaby, Hessle, Cottingham. Call 0121 751 1269.",
-    h1: "Man and Van Willerby",
-    intro: "Need a man and van in Willerby? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Willerby move before quoting.",
-    knowledge: "Approved movers covering Willerby handle moves in the affluent western suburbs of Hull. Kirk Ella and Anlaby are adjacent residential areas.",
-    localMovingInfo: `Willerby is about 4 miles west of Hull in the affluent western suburbs. Kirk Ella and Anlaby are adjacent. Cottingham is 2 miles north. Hessle is near the Humber Bridge. Hull city centre is a 10-minute drive. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Willerby?","a":"Willerby moves start from £19 per hour. A local move typically costs £60-£120. A move to Hull city centre is usually £70-£100."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Willerby, Kirk Ella, Anlaby, Hessle, Cottingham."},
-    ],
-  },
 
   // ──────────────────────────────────────────
   // WORCESTER
@@ -7980,6 +7755,645 @@ Clifton properties range from grand Regency terraces - many converted into flats
           { label: "Man and van Bristol", href: "/man-and-van-bristol" },
           { label: "Man and van Portishead", href: "/man-and-van-portishead" },
         ],
+      },
+    ],
+  },
+
+
+  "burntwood": {
+    description: "Man with a van in Burntwood from £19/hr. Chase Terrace, Chasetown, Sankey's Corner. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Burntwood? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Burntwood move and send a quote, so you decide whether to book after seeing the details.",
+    knowledge: "Burntwood moves are usually short hops between Chase Terrace, Chasetown and Burntwood Green, or runs along the A5190 towards Lichfield and the A5 towards Cannock. Most homes are post-war semis with driveways, though some newer estates around Boney Hay have shared parking that is worth noting in your request.",
+    localMovingInfo: `Burntwood is a Staffordshire town between Brownhills and Lichfield, made up of Chase Terrace, Chasetown, Burntwood Green, Sankey's Corner, Hammerwich, Edial and Boney Hay. Local moves tend to be practical jobs: families upsizing between estates, single-item collections from Marketplace sellers, and downsizing moves into bungalows and newer developments.
+
+The A5190 is the main spine through town, linking Sankey's Corner with Lichfield to the east and the A5 and M6 Toll to the west. Moves heading south towards Walsall and Birmingham typically join the A5 or M6 Toll, and rush-hour queues around Sankey's Corner can add fifteen minutes to a short hop, so timing notes help a mover plan.
+
+Most Burntwood properties are post-war and interwar semis with driveways, which keeps loading simple. The exception is newer estates around Boney Hay and Fulfen, where shared driveways and limited visitor parking can slow things down. Add floor levels, stairs, shed and garage contents, and any large furniture so an approved mover can review the real work before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Burntwood?", a: "Burntwood man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Burntwood typically costs £50-£120 depending on load size and access. A full 2-3 bed house move usually ranges from £220-£450. Your exact quote depends on postcodes, item list, stairs and parking - submit your details for a guide price first." },
+      { q: "How much is a man and van from Burntwood to Lichfield?", a: "Burntwood to Lichfield is only about four miles along the A5190, so a typical small move costs £45-£90 depending on load and access. Single-item collections are often at the lower end. Add both full postcodes for a guide price." },
+      { q: "How much is a man and van from Burntwood to Birmingham?", a: "A Burntwood to Birmingham move in 2026 typically costs £80-£160 depending on load size, property access and time of day. The route is around 16 miles via the A5 or M6 Toll. Submit your postcodes and item list for a guide price before you decide." },
+      { q: "Can you collect furniture from Marketplace sellers in Burntwood?", a: "Yes. Single-item collection from Facebook Marketplace, eBay and Gumtree sellers is a common Burntwood job, along with collections from shops in Lichfield and Cannock. Submit the seller postcode, your delivery postcode and item details." },
+      { q: "Do moves run to Chasewater and the surrounding villages?", a: "Yes. Requests can be submitted for addresses around Chasewater Country Park, Hammerwich, Edial and the rural edges towards Gentleshaw. Mention any narrow lanes or farm-track access so the mover can plan vehicle choice." },
+      { q: "Do you cover Chase Terrace, Chasetown, Burntwood Green, Sankey's Corner, Hammerwich and Boney Hay?", a: "Yes. Move requests can be submitted for Chase Terrace, Chasetown, Burntwood Green, Sankey's Corner, Hammerwich and Boney Hay and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Burntwood town and Sankey's Corner",
+        body: "Sankey's Corner is the main shopping area and the busiest junction in town. Collections from flats and terraces nearby are quick jobs, but parking directly outside shops is limited, so loading notes help. The A5190 through the corner slows at school-run times.",
+      },
+      {
+        title: "Chase Terrace and Chasetown moves",
+        body: "These are the oldest parts of Burntwood with straightforward streets of semis and terraces, most with driveways. Moves between Chase Terrace, Chasetown and nearby Brownhills are among the shortest and cheapest local jobs on the A5 corridor.",
+        links: [{ label: "Man and van Brownhills", href: "/man-and-van-brownhills" }],
+      },
+      {
+        title: "Boney Hay, Fulfen and the newer estates",
+        body: "Newer developments on the south side have shared driveways, narrow internal roads and limited visitor parking. Tell the mover which block or courtyard you are in and whether there is allocated parking - it genuinely changes the loading plan.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Burntwood to Lichfield, Cannock and Walsall",
+        body: "Runs to Lichfield take around 10-15 minutes on the A5190, Cannock is 15 minutes via the A5 and Walsall about 20 minutes. These short routes are priced by time, so accurate postcodes keep the quote tight.",
+        links: [{ label: "Man and van Lichfield", href: "/man-and-van-lichfield" }, { label: "Man and van Cannock", href: "/man-and-van-cannock" }, { label: "Man and van Walsall", href: "/man-and-van-walsall" }],
+      },
+    ],
+  },
+
+  "cleveleys": {
+    description: "Man with a van in Cleveleys from £19/hr. Thornton, Poulton-le-Fylde, Fleetwood. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Cleveleys? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Fylde coast move and send a quote before you decide whether to book.",
+    knowledge: "Cleveleys moves often run along the A587 coastal road between Fleetwood and Blackpool, or inland via the A585 towards Poulton-le-Fylde and the M55. Summer seafront traffic and limited parking near the promenade are the two things worth noting in your request.",
+    localMovingInfo: `Cleveleys sits on the Fylde coast between Blackpool and Fleetwood, centred on Victoria Road West and the seafront promenade. Most local moves are between the interwar semis of Thornton and Cleveleys town, smaller flat moves near the seafront, and collection jobs from shops and Marketplace sellers across the Fylde.
+
+The A587 coastal road links Cleveleys with Bispham and Blackpool to the south and Fleetwood to the north, and it gets genuinely slow on summer weekends and bank holidays. Inland, the A585 runs through Poulton-le-Fylde to the M55 at junction 3, which is the route most longer-distance moves take towards Preston and the M6.
+
+Properties are a mix of Victorian terraces near the town centre, larger interwar semis heading inland and newer estates towards Thornton. Parking near the promenade is limited and often disc-restricted, so mention the nearest side street and any loading space. Add stairs, floor levels and large-item details so an approved mover can review the job properly before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Cleveleys?", a: "Cleveleys man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the Fylde coast typically costs £55-£130 depending on load and access. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Cleveleys to Preston?", a: "Cleveleys to Preston is around 15 miles via the A585 and M55. A typical small move costs £60-£110, with single items often from £40-£70. Add both postcodes and your item list for a guide price." },
+      { q: "Can you do moves to Fleetwood and Blackpool?", a: "Yes. Moves between Cleveleys, Fleetwood, Bispham and Blackpool are short coastal runs. Summer traffic on the A587 can add time on weekends, so flexible timing can help keep costs down." },
+      { q: "Do you cover Cleveleys Town, Thornton, Poulton-le-Fylde, Fleetwood and Bispham?", a: "Yes. Move requests can be submitted for Cleveleys Town, Thornton, Poulton-le-Fylde, Fleetwood and Bispham and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Man and van Cleveleys seafront and promenade",
+        body: "Flats and conversions near the promenade often mean stairs and disc-zone parking rather than driveways. Note the nearest side street for loading and whether the flat is above ground floor - both affect the quote.",
+      },
+      {
+        title: "Thornton and the A585 corridor",
+        body: "Thornton has larger semis and newer estates with driveways, making loading straightforward. The A585 is the main route out towards Poulton-le-Fylde and junction 3 of the M55 for moves heading to Preston, Manchester and beyond.",
+        links: [{ label: "Man and van Poulton-le-Fylde", href: "/man-and-van-poulton-le-fylde" }],
+      },
+      {
+        title: "Moves to Blackpool and Fleetwood",
+        body: "Blackpool is about four miles south on the tramway corridor, Fleetwood about three miles north. These short hops are usually the cheapest moves in the area when timed outside summer peak traffic.",
+        links: [{ label: "Man and van Blackpool", href: "/man-and-van-blackpool" }, { label: "Man and van Fleetwood", href: "/man-and-van-fleetwood" }],
+      },
+    ],
+  },
+
+  "haxby": {
+    description: "Man with a van in Haxby from £19/hr. Wigginton, New Earswick, Huntington. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Haxby? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your York move and send a quote before you decide whether to book.",
+    knowledge: "Haxby moves are usually into or out of York, four miles south via the A1036, or between the villages along the A19 corridor. Most homes are interwar semis and post-war estates with driveways, so access is rarely complicated - but A19 and ring-road traffic shape journey times.",
+    localMovingInfo: `Haxby is a large village suburb about four miles north of York city centre, sitting alongside Wigginton with New Earswick, Huntington and Strensall close by. Most moves here are families upsizing within the village, first-time buyers heading out of York terraces, and downsizers moving closer to family.
+
+The A1036 (Malton Road) is the direct route into York, while the A19 and the York outer ring road handle moves towards Thirsk, Leeds and the rest of Yorkshire. Peak-time congestion on the A19 and around the ring-road roundabouts can add twenty minutes to a short journey, so morning starts are popular for Haxby moves.
+
+Housing is mostly interwar semis and post-war estates with driveways and garages - good access for loading, though garage clearances often add volume people forget in their item list. Newer cul-de-sacs can be tight for larger vans to turn in. Add postcodes, an honest item list and any access notes so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Haxby?", a: "Haxby man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move between Haxby and York typically costs £55-£130. A full 2-3 bed house move usually ranges from £240-£470. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Haxby to York?", a: "Haxby to York city centre is about four miles on the A1036. A typical small move costs £45-£90, and single-item collections are often from £35-£60 depending on the item and access." },
+      { q: "Can you help with moves to Strensall, Stockton-on-the-Forest and the villages?", a: "Yes. Requests for the villages around Haxby are common, including rural lanes where access notes matter. Mention gravel drives, farm tracks or tight gates so the mover can plan vehicle choice." },
+      { q: "Do you cover Haxby, Wigginton, New Earswick, Huntington and Strensall?", a: "Yes. Move requests can be submitted for Haxby, Wigginton, New Earswick, Huntington and Strensall and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Family moves within Haxby and Wigginton",
+        body: "Most Haxby streets are semis and detached homes with driveways, which keeps loading quick. The busiest moving window is late spring and summer around school catchment changes - book earlier in the week where possible for better rates.",
+      },
+      {
+        title: "Haxby to York city centre",
+        body: "York is four miles away, and moves into the city often involve terraces with restricted parking rather than driveways. If you are moving into a city-centre street, check resident permit rules before moving day.",
+        links: [{ label: "Man and van York", href: "/man-and-van-york" }],
+      },
+      {
+        title: "Moves along the A19 corridor",
+        body: "Heading north towards Thirsk or south to the ring road, the A19 is the main artery. Peak congestion around the outer ring road junctions is the main timing factor for longer-distance moves from Haxby.",
+        links: [{ label: "Long distance removals", href: "/long-distance-removals" }],
+      },
+    ],
+  },
+
+  "walton-on-thames": {
+    description: "Man with a van in Walton-on-Thames from £19/hr. Hersham, Oatlands, Ashley Park. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Walton-on-Thames? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Elmbridge move and send a quote before you decide whether to book.",
+    knowledge: "Walton-on-Thames moves usually split into riverside flats, Victorian villas near the centre and interwar semis towards Hersham and Oatlands. The A244 through the town and around Walton Bridge is the main bottleneck, and riverside parking needs planning.",
+    localMovingInfo: `Walton-on-Thames sits on the Surrey bank of the Thames between Shepperton and Molesey, close to Weybridge and about 15 miles from central London. Local movement is constant: renters cycling through riverside apartments, families moving between streets around Ashley Park and Oatlands, and London leavers buying in Elmbridge.
+
+The A244 is the main route through town and across Walton Bridge towards Esher, and it backs up badly at peak times. The A3050 runs towards Kingston, and the M3 at junction 1 (Sunbury) handles most longer-distance moves towards the south west and the M25.
+
+Property varies a lot within a small area: Victorian villas and terraces near the centre, 1930s semis in Hersham, and modern apartment blocks along the river where lifts, loading bays and permit zones all matter. Add floor level, lift access and parking details so an approved mover can review the real work before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Walton-on-Thames?", a: "Walton-on-Thames man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Elmbridge typically costs £60-£140. A full 2-3 bed house move usually ranges from £250-£500. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Walton-on-Thames to Kingston?", a: "Walton to Kingston-upon-Thames is about five miles on the A3050. A typical small move costs £55-£100, with single items often from £40-£65. Add both postcodes for a guide price." },
+      { q: "Can you help with riverside apartment moves?", a: "Yes. Apartment moves along the river usually need lift and loading-bay details, and sometimes a booking slot with building management. Add these notes to your request so the mover can plan timing and equipment." },
+      { q: "Do you cover the Town Centre, Ashley Park, Hersham, Oatlands and Walton-on-the-Hill?", a: "Yes. Move requests can be submitted for the Town Centre, Ashley Park, Hersham, Oatlands and Walton-on-the-Hill and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Riverside apartments and The Heart area",
+        body: "Blocks near the river and The Heart development often have managed loading bays and permit zones. Check your building rules first - many require notice for moving hours - and include this in your request notes.",
+      },
+      {
+        title: "Hersham, Oatlands and Ashley Park semis",
+        body: "The interwar semis across Hersham and Oatlands usually have driveways and side access, which keeps moves quick. These are some of the most straightforward family moves in Surrey when the A244 behaves.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Walton to Weybridge, Kingston and London",
+        body: "Weybridge is about three miles, Kingston five, and central London around 15. London-bound moves often use the A3 or M3 junction 1, and starting early avoids the worst of the A244.",
+        links: [{ label: "Man and van Kingston", href: "/man-and-van-kingston" }],
+      },
+    ],
+  },
+
+  "leyland": {
+    description: "Man with a van in Leyland from £19/hr. Worden, Farington, Moss Side. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Leyland? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your South Ribble move and send a quote before you decide whether to book.",
+    knowledge: "Leyland moves usually run along the A49 between Preston and Chorley, or out to the M6 at junction 28. Streets around Worden and the town centre are Victorian terraces, while Farington, Moss Side and the newer estates have driveways and easier loading.",
+    localMovingInfo: `Leyland is the main town in South Ribble, about five miles south of Preston, known historically for Leyland Trucks. It is a busy moving area: first homes on the newer estates, family moves between Farington, Moss Side and Whittle-le-Woods, and plenty of Marketplace and retail collections along the A49 corridor.
+
+The A49 runs straight through town between Preston and Chorley, the M6 at junction 28 handles most longer-distance moves, and the M65 eastern terminal roundabout links moves towards Blackburn and Burnley. Junction queues at peak times are the main timing hazard - the M6 junction 28 and 29 area regularly slows on weekday mornings.
+
+Housing ranges from Victorian terraces near the centre and around Worden Park to post-war semis and large modern estates. Most have driveways, which keeps loading simple. Add postcodes, stairs, garage and shed contents so an approved mover can review the real job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Leyland?", a: "Leyland man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within South Ribble typically costs £50-£120. A full 2-3 bed house move usually ranges from £230-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Leyland to Preston?", a: "Leyland to Preston is about five miles up the A49. A typical small move costs £45-£85, and single items are often from £35-£60. Add both postcodes for a guide price." },
+      { q: "Can you collect from the retail parks along the A49?", a: "Yes. Collections from furniture and appliance retailers along the A49 and around Farington are common jobs, as are Marketplace pickups. Submit the seller postcode, delivery postcode and item details." },
+      { q: "Do you cover the Town Centre, Worden, Farington, Moss Side and Whittle-le-Woods?", a: "Yes. Move requests can be submitted for the Town Centre, Worden, Farington, Moss Side and Whittle-le-Woods and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town centre and Worden terraces",
+        body: "The older streets around Worden Park and the town centre are terraces with on-street parking. A quick note about the nearest junction or ginnel helps the mover plan where to load.",
+      },
+      {
+        title: "Farington, Moss Side and the newer estates",
+        body: "These areas are mostly semis and detached homes with driveways - straightforward loading and usually the quickest jobs in Leyland. School-run traffic around estate entrances is the only regular slowdown.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Leyland to Preston, Chorley and Buckshaw Village",
+        body: "Preston is five miles north, Chorley four miles south, and Buckshaw Village just up the M61. These short hops along the A49 and M6 corridor are the most common routes from Leyland.",
+        links: [{ label: "Man and van Preston", href: "/man-and-van-preston" }, { label: "Man and van Chorley", href: "/man-and-van-chorley" }],
+      },
+    ],
+  },
+
+  "eastleigh": {
+    description: "Man with a van in Eastleigh from £19/hr. Bishopstoke, Chandler's Ford, Fair Oak. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Eastleigh? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Eastleigh move and send a quote before you decide whether to book.",
+    knowledge: "Eastleigh moves often run between the railway town terraces, Bishopstoke and Chandler's Ford, or down the A335 towards Southampton. M3 junctions 12 and 13 handle most longer-distance moves, and station-area parking is the detail worth noting.",
+    localMovingInfo: `Eastleigh is a railway town between Southampton and Winchester, next to Southampton Airport Parkway station. The moving mix is typical of a well-connected Hampshire town: renters around the town centre, families trading between Bishopstoke, Chandler's Ford, Hiltingbury and Fair Oak, and airport-area flat moves.
+
+The M3 at junctions 12 and 13 and the M27 are the arteries for longer-distance moves, while the A335 handles most local runs into Southampton. Peak-time congestion around the junctions and the station area is the main planning factor, and terraced streets near the station often have resident permit zones.
+
+Property types range from Victorian railway terraces in the older town to interwar semis and newer estates towards Fair Oak. Most homes outside the very centre have driveways. Add parking details, floor levels and any large items so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Eastleigh?", a: "Eastleigh man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Eastleigh typically costs £55-£125. A full 2-3 bed house move usually ranges from £240-£470. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Eastleigh to Southampton?", a: "Eastleigh to Southampton is about five miles on the A335. A typical small move costs £50-£95, and single items are often from £38-£60. Add both postcodes and your item list for a guide price." },
+      { q: "Can you help with moves near Southampton Airport Parkway?", a: "Yes. Flat moves around the station and airport area are common. Include floor level, lift access and any permit-zone parking notes so the mover can plan loading properly." },
+      { q: "Do you cover the Town Centre, Bishopstoke, Chandler's Ford, Hiltingbury and Fair Oak?", a: "Yes. Move requests can be submitted for the Town Centre, Bishopstoke, Chandler's Ford, Hiltingbury and Fair Oak and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Railway town terraces and permits",
+        body: "The older terraces near the station often sit in resident permit zones. If your street is permit-only, arrange a visitor permit or suspension where possible - it keeps loading time and cost down.",
+      },
+      {
+        title: "Chandler's Ford, Hiltingbury and Fair Oak",
+        body: "The leafier north and east sides are mostly semis and detached homes with driveways - the simplest moves in the area. School-run traffic on the A335 and through Chandler's Ford is the main timing factor.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Eastleigh to Southampton and Winchester",
+        body: "Southampton is five miles down the A335, Winchester about eight miles up the M3. Both are regular routes, and early starts dodge the junction 13 queues.",
+        links: [{ label: "Man and van Southampton", href: "/man-and-van-southampton" }, { label: "Man and van Winchester", href: "/man-and-van-winchester" }],
+      },
+    ],
+  },
+
+  "chichester": {
+    description: "Man with a van in Chichester from £19/hr. Fishbourne, Portfield, Lavant. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Chichester? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Chichester move and send a quote before you decide whether to book.",
+    knowledge: "Chichester moves split into tight streets within the old city walls - where parking and access need planning - and straightforward semi and estate moves in Summerstown, Portfield, Fishbourne and Lavant. The A27 is the main route in and out.",
+    localMovingInfo: `Chichester is a cathedral city in West Sussex between Portsmouth and Brighton, with Goodwood on its doorstep and Chichester Harbour to the south. Movement is steady: downsizers heading into the city, families moving out to the villages, and renters around the Festival Theatre and canal areas.
+
+The A27 is the spine - east towards Arundel and Brighton, west towards Havant and Portsmouth, with regular congestion at peak times and during Goodwood events. The A259 runs along the coast and the A285 heads north towards Petworth. Narrow streets within the Roman city walls mean city-centre moves need loading plans and sometimes permit arrangements.
+
+Property ranges from Georgian townhouses and flint cottages in the centre to post-war semis in Portfield and newer estates towards Fishbourne and Lavant. Add parking notes, stairs and item details so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Chichester?", a: "Chichester man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Chichester typically costs £60-£135. A full 2-3 bed house move usually ranges from £250-£490. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Chichester to Portsmouth?", a: "Chichester to Portsmouth is about 15 miles on the A27. A typical small move costs £65-£120, with single items often from £45-£70. Add both postcodes for a guide price." },
+      { q: "Do Goodwood events affect moving times?", a: "Yes. During the Festival of Speed, Revival and race meetings, roads north of the city get very busy and some have closures or one-way systems. If your move falls on a Goodwood event weekend, flag it so timing can be planned around the event traffic." },
+      { q: "Do you cover the City Centre, Summerstown, Portfield, Fishbourne and Lavant?", a: "Yes. Move requests can be submitted for the City Centre, Summerstown, Portfield, Fishbourne and Lavant and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Inside the city walls",
+        body: "The centre has narrow one-way streets, timed loading bays and permit zones. City-centre moves go smoothly when you note the exact street, nearest car park and any time restrictions in your request.",
+      },
+      {
+        title: "Portfield, Fishbourne and the estates",
+        body: "Outside the walls, most homes are semis and modern estates with driveways - the easiest Chichester moves. Fishbourne sits right on the A27, so timing around peak congestion matters for longer runs.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Chichester to Portsmouth, Worthing and the harbour villages",
+        body: "Portsmouth is 15 miles west and Worthing about 20 miles east on the A27. Village moves down to the harbour use the A259 and country lanes where access notes make a real difference.",
+        links: [{ label: "Man and van Portsmouth", href: "/man-and-van-portsmouth" }, { label: "Man and van Worthing", href: "/man-and-van-worthing" }],
+      },
+    ],
+  },
+
+  "gosport": {
+    description: "Man with a van in Gosport from £19/hr. Lee-on-the-Solent, Alverstoke, Bridgemary. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Gosport? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Gosport move and send a quote before you decide whether to book.",
+    knowledge: "Gosport moves are shaped by geography: a peninsula town reached by the A32 or the Gosport Ferry to Portsmouth. Rush-hour queues on the Fareham Road and ferry timings are the two details that change how a Gosport move is planned.",
+    localMovingInfo: `Gosport is a naval town on the peninsula across the harbour from Portsmouth, reached by a single main road - the A32 from Fareham - or the passenger Gosport Ferry. That geography shapes everything about moving here: most vans come in and out via the A32, and rush-hour queues along the Fareham Road can add real time.
+
+The moving mix is steady: naval families on posting cycles, renters around the town centre and marina areas, and families trading between Alverstoke, Bridgemary, Rowner and Lee-on-the-Solent. The A32 handles everything north towards Fareham, the M27 and beyond.
+
+Property is mostly Victorian and Edwardian terraces near the front, post-war estates inland and newer flats near the marina and Lee-on-the-Solent promenade. Terraced streets near the town centre have tight parking, while the estates usually have driveways. Add stairs, floor levels, parking details and large items so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Gosport?", a: "Gosport man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Gosport typically costs £55-£125. A full 2-3 bed house move usually ranges from £235-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Gosport to Portsmouth?", a: "By road via the A32 and M27 it is about 15 miles, so a typical small move costs £60-£115. The Gosport Ferry is passengers only, so vans always take the road route. Add both postcodes for a guide price." },
+      { q: "Can you time a move around the ferry or rush hour?", a: "Yes. Where timing matters - for example meeting keys or avoiding the worst A32 queues - put the constraints in your request notes so the mover can plan departure and arrival windows." },
+      { q: "Do you cover the Town Centre, Lee-on-the-Solent, Alverstoke, Bridgemary and Rowner?", a: "Yes. Move requests can be submitted for the Town Centre, Lee-on-the-Solent, Alverstoke, Bridgemary and Rowner and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town centre terraces and the marina",
+        body: "Older streets near the high street are terraces with on-street parking, while marina flats have managed loading areas. Either way, a parking note in your request keeps the load quick.",
+      },
+      {
+        title: "Alverstoke, Lee-on-the-Solent and the south side",
+        body: "Closer to the Solent there are larger period homes, bungalows and newer flats. These moves are straightforward for access but busy in summer when beach traffic builds on the seafront roads.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Gosport to Fareham and Portsmouth",
+        body: "Fareham is about five miles and Portsmouth 15 by road. Almost every longer move starts on the A32, so joining before the morning peak makes a noticeable difference to time-based quotes.",
+        links: [{ label: "Man and van Hampshire", href: "/man-and-van-hampshire" }, { label: "Man and van Portsmouth", href: "/man-and-van-portsmouth" }],
+      },
+    ],
+  },
+
+  "caversham": {
+    description: "Man with a van in Caversham from £19/hr. Caversham Heights, Emmer Green, Mapledurham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Caversham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Caversham move and send a quote before you decide whether to book.",
+    knowledge: "Caversham sits across the Thames from Reading town centre, so most moves cross one of the two bridges - and bridge traffic decides journey times. Caversham Heights, Emmer Green and Mapledurham have larger homes and driveways, while Lower Caversham has tighter terraced streets.",
+    localMovingInfo: `Caversham is the part of Reading north of the Thames, technically in Berkshire but functionally a Reading suburb. Moves here split between the period villas and Edwardian semis of Caversham Heights, the family estates of Emmer Green, tight terraced streets in Lower Caversham and the riverside lanes towards Mapledurham.
+
+Everything crosses or avoids the river: Reading Bridge and Caversham Bridge both get slow at peak times, and the A4074 towards Oxford and the A415 into Reading carry the through traffic. For longer-distance moves, junctions with the A329M and M4 (junctions 10 and 11) are the usual routes out.
+
+Off-street parking is common on the hill but rare in Lower Caversham, where moves need loading plans and sometimes permit arrangements. Add stairs, floor levels, parking notes and large items so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Caversham?", a: "Caversham man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the Caversham and Reading area typically costs £55-£130. A full 2-3 bed house move usually ranges from £240-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Caversham to Reading town centre?", a: "Caversham to Reading centre is only about a mile across the bridge. A typical small move costs £40-£80, with single items often from £30-£55. Bridge traffic at peak times is the main timing factor." },
+      { q: "Can you collect from shops in Reading for delivery in Caversham?", a: "Yes. Collections from Reading retailers and Marketplace sellers across RG postcodes are common Caversham jobs. Submit the seller postcode, your postcode and item details for a guide price." },
+      { q: "Do you cover Caversham Heights, Caversham Park, Emmer Green, Lower Caversham and Mapledurham?", a: "Yes. Move requests can be submitted for Caversham Heights, Caversham Park, Emmer Green, Lower Caversham and Mapledurham and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Lower Caversham terraces",
+        body: "The terraced grid south of the shopping area has narrow streets and limited parking. Note the nearest loading spot and any permit rules in your request - it keeps the move quick and the quote tight.",
+      },
+      {
+        title: "Caversham Heights and Emmer Green",
+        body: "Up the hill, larger semis and detached homes with driveways make for the simplest loads in the area. Steep drives and steps up to front doors are common, so mention them for accurate timing.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Caversham to Reading and Oxford",
+        body: "Reading centre is a mile over the bridge and Oxford about 25 miles up the A4074. Both are regular routes - the Oxford run is priced on distance, so accurate item lists keep the quote honest.",
+        links: [{ label: "Man and van Reading", href: "/man-and-van-reading" }, { label: "Man and van Oxford", href: "/man-and-van-oxford" }],
+      },
+    ],
+  },
+
+
+  "woodbridge": {
+    description: "Man with a van in Woodbridge from £19/hr. Melton, Martlesham, Kesgrave. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Woodbridge? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Woodbridge move and send a quote before you decide whether to book.",
+    knowledge: "Woodbridge moves usually involve period properties around the town centre and the River Deben, or newer estates towards Martlesham and Kesgrave. The A12 is the main route, and the narrow streets near the river and Tide Mill need loading plans.",
+    localMovingInfo: `Woodbridge is a Suffolk market town on the River Deben, famous for its Tide Mill and with Sutton Hoo just across the river. Eight miles from Ipswich, it attracts downsizers, London leavers and families alike, so there is constant movement between the period core and the newer western estates.
+
+The A12 is the main artery - south towards Ipswich and London, north towards Lowestoft - and the A1152 serves Melton and the villages towards Rendlesham. Traffic on the A12 around the Melton lights is the usual congestion point, and the lanes near the river and along the Thoroughfare are tight for larger vans at busy times.
+
+Property ranges from Georgian townhouses and Victorian villas near the centre to modern estates at Martlesham and Kesgrave. Period homes often mean stairs, low doorways and on-street loading, while the estates have driveways. Add these details plus your item list so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Woodbridge?", a: "Woodbridge man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Woodbridge typically costs £55-£130. A full 2-3 bed house move usually ranges from £240-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Woodbridge to Ipswich?", a: "Woodbridge to Ipswich is about eight miles on the A12. A typical small move costs £50-£95, with single items often from £38-£60. Add both postcodes for a guide price." },
+      { q: "Can you manage moves in the narrow streets near the river?", a: "Yes, with planning. Streets near the Tide Mill, Quayside and the Thoroughfare are tight for larger vans, especially on market days. Note your exact address and nearest wider street in the request so the mover can plan vehicle and loading point." },
+      { q: "Do you cover the Town Centre, Melton, Martlesham, Kesgrave and Bromeswell?", a: "Yes. Move requests can be submitted for the Town Centre, Melton, Martlesham, Kesgrave and Bromeswell and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Period moves near the Thoroughfare and Quayside",
+        body: "The oldest part of town has beautiful but tight streets, period staircases and limited loading space. Mention floor levels, narrow doorways and the nearest loading point - they genuinely change the plan.",
+      },
+      {
+        title: "Martlesham, Kesgrave and the newer estates",
+        body: "The western estates are modern homes with driveways and wide internal roads - the quickest moves in the area. Routes here usually join the A12 at Martlesham Heath for Ipswich and the south.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Woodbridge to Ipswich, Felixstowe and the coast",
+        body: "Ipswich is eight miles and Felixstowe about 15. Coastal moves add summer traffic on the A12 and A14, so early starts help. Sutton Hoo area lanes need access notes for rural properties.",
+        links: [{ label: "Man and van Ipswich", href: "/man-and-van-ipswich" }, { label: "Man and van Felixstowe", href: "/man-and-van-felixstowe" }],
+      },
+    ],
+  },
+
+  "hitchin": {
+    description: "Man with a van in Hitchin from £19/hr. Walsworth, Highbury, Westmill. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Hitchin? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hitchin move and send a quote before you decide whether to book.",
+    knowledge: "Hitchin moves often centre on the market square and the period streets around it, where parking is tight, or on 1930s and newer estates towards the A505 and A1(M) junction 8. Commuter demand keeps the town busy.",
+    localMovingInfo: `Hitchin is a Hertfordshire market town between Letchworth and Stevenage, popular with London commuters for its fast trains to Kings Cross. The moving mix reflects that: young families arriving from London, renters around the centre, and constant turnover in the period streets near the market square.
+
+The A505 runs east-west through town towards Luton and the A1(M) at junction 8, which handles most longer-distance moves. The A602 heads to Stevenage. Peak-time queues around junction 8 and the town centre one-way system are the main planning points, and streets near the market square have limited and often timed parking.
+
+Property ranges from Georgian townhouses and Victorian terraces in the centre to 1930s semis in Walsworth and Highbury and newer estates towards the edges. Add parking details, floor levels and item lists so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Hitchin?", a: "Hitchin man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Hitchin typically costs £55-£130. A full 2-3 bed house move usually ranges from £240-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Hitchin to Luton?", a: "Hitchin to Luton is about eight miles on the A505. A typical small move costs £50-£95, with single items often from £38-£60. Add both postcodes and your item list for a guide price." },
+      { q: "Can you help with moves from London to Hitchin?", a: "Yes. London-to-Hitchin moves are common given the commuter link, usually via the A1(M) at junction 8. A one-bed flat move from north London typically costs £120-£220 depending on access at both ends." },
+      { q: "Do you cover the Town Centre, Walsworth, Highbury, Westmill and Purwell?", a: "Yes. Move requests can be submitted for the Town Centre, Walsworth, Highbury, Westmill and Purwell and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Market square and the period streets",
+        body: "The streets around the market square and St Mary's have timed restrictions and narrow bays. Note the exact street and market day - it changes where a van can load and how long it takes.",
+      },
+      {
+        title: "Walsworth, Highbury and the 1930s estates",
+        body: "The interwar semis off the Walsworth Road and around Highbury have driveways and side access - straightforward family moves, and the most common job type in Hitchin.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Hitchin to Luton, Stevenage and London",
+        body: "Luton is eight miles west on the A505, Stevenage six miles east on the A602, and London around 35 miles via the A1(M). Junction 8 queues are the main variable on longer runs.",
+        links: [{ label: "Man and van Luton", href: "/man-and-van-luton" }, { label: "Man and van Stevenage", href: "/man-and-van-stevenage" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+
+  "hertford": {
+    description: "Man with a van in Hertford from £19/hr. Bengeo, Hertingfordbury, Ware. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Hertford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hertford move and send a quote before you decide whether to book.",
+    knowledge: "Hertford moves split between the period streets near the castle and town centre - where parking is limited - and the hillier residential areas like Bengeo. The A414 and A10 are the main routes, and Ware next door shares much of the same moving traffic.",
+    localMovingInfo: `Hertford is the county town of Hertfordshire, sitting on four rivers and about 25 miles north of London, with Hertford East and Hertford North stations serving the commuter belt. Movement is steady between the town centre period streets, Bengeo on the hill, outlying Hertingfordbury and neighbouring Ware.
+
+The A414 is the spine through town towards Hatfield and Chelmsford, and the A10 handles moves south towards Enfield and London. Peak-time congestion on the A414 around the town centre and the Gascoyne Way junctions is the main timing factor, and older streets near the castle have very limited parking.
+
+Property ranges from Georgian townhouses and Victorian terraces in the centre to larger period homes in Bengeo and newer developments on the edges. Add parking notes, stairs and item details so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Hertford?", a: "Hertford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Hertford typically costs £55-£130. A full 2-3 bed house move usually ranges from £250-£490. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Hertford to Ware?", a: "Hertford to Ware is about two miles - one of the cheapest moves in the area. A typical small move costs £40-£75, with single items often from £30-£50. Add both postcodes for a guide price." },
+      { q: "Can you help with London to Hertford moves?", a: "Yes. Moves from north and east London up the A10 are common for commuters. A one-bed flat from London typically costs £130-£240 depending on volume and access at both ends." },
+      { q: "Do you cover the Town Centre, Bengeo, Hertingfordbury, Ware and Hoddesdon?", a: "Yes. Move requests can be submitted for the Town Centre, Bengeo, Hertingfordbury, Ware and Hoddesdon and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Castle streets and the town centre",
+        body: "The oldest streets around Hertford Castle and Parliament Square have tight turns, period staircases and very limited parking. Accurate street-level notes are the difference between a one-hour and three-hour load.",
+      },
+      {
+        title: "Bengeo and the northern slopes",
+        body: "Bengeo has larger period semis and some steep drives. Most homes have off-street parking, making these among the smoother Hertford moves - mention steep access for accurate timing.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Hertford to Ware, Hoddesdon and London",
+        body: "Ware is two miles, Hoddesdon six, and north London about 20-25 miles down the A10. The A414 west links to the A1(M) for moves further afield.",
+        links: [{ label: "Man and van Enfield", href: "/man-and-van-enfield" }, { label: "Man and van St Albans", href: "/man-and-van-st-albans" }],
+      },
+    ],
+  },
+
+  "lewes": {
+    description: "Man with a van in Lewes from £19/hr. Southover, Cliffe, Malling. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Lewes? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Lewes move and send a quote before you decide whether to book.",
+    knowledge: "Lewes moves are defined by the town itself: steep hills, narrow medieval and Georgian streets, and limited parking in the centre, with easier access in Malling, Offham and the newer estates. The A27 and A26 are the routes in and out.",
+    localMovingInfo: `Lewes is the county town of East Sussex, set in the South Downs about eight miles from Brighton, famous for its castle, bonfire traditions and steep historic streets. It attracts London leavers and Brighton movers alike, so movement in and out is constant.
+
+Mobility shapes every move here. The centre is a web of narrow, often steep streets - School Hill, the High Street and the twittens between them - where parking is scarce and larger vans need careful positioning. The A27 runs east-west along the valley towards Eastbourne and Brighton, and the A26 climbs north to Uckfield and the London road. Both get slow at peak times and on summer weekends with Downs visitors.
+
+Away from the centre, Malling, Offham and the Landport and Nevill estates have more conventional semis and driveways, which make far simpler loads. Add floor levels, stairs, door widths and parking notes so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Lewes?", a: "Lewes man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Lewes typically costs £60-£135. A full 2-3 bed house move usually ranges from £250-£490. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Lewes to Brighton?", a: "Lewes to Brighton is about eight miles on the A27. A typical small move costs £55-£100, with single items often from £40-£65. Falmer and the A27 queues at peak times are the main variable." },
+      { q: "Can movers manage the steep and narrow central streets?", a: "Yes, with the right vehicle choice and loading plan. Tell the mover your exact street, whether a van can stop outside, and any steps or narrow doorways - central Lewes moves are priced on time, so accuracy keeps the quote right." },
+      { q: "Do you cover the Town Centre, Southover, Cliffe, Malling and Offham?", a: "Yes. Move requests can be submitted for the Town Centre, Southover, Cliffe, Malling and Offham and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "High Street, Cliffe and the twittens",
+        body: "The medieval and Georgian core is beautiful but awkward for loading: narrow pavements, steps and twittens between streets. Note the nearest van-sized stopping point and any internal stairs in your request.",
+      },
+      {
+        title: "Malling, Offham and the estates",
+        body: "North and east of the centre, streets are conventional semis and terraces with driveways. These are the quickest Lewes moves, and most runs join the A26 or A27 within minutes.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Lewes to Brighton, Eastbourne and London",
+        body: "Brighton is eight miles west and Eastbourne 17 east on the A27. London-bound moves use the A26 or A27 to the A23/M23 - typically 55-60 miles and priced on distance and time.",
+        links: [{ label: "Man and van Brighton", href: "/man-and-van-brighton" }, { label: "Man and van Eastbourne", href: "/man-and-van-eastbourne" }],
+      },
+    ],
+  },
+
+  "willerby": {
+    description: "Man with a van in Willerby from £19/hr. Kirk Ella, Anlaby, Cottingham. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Willerby? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Willerby move and send a quote before you decide whether to book.",
+    knowledge: "Willerby moves are mostly family jobs between the west Hull suburbs - Kirk Ella, Anlaby, Hessle and Cottingham - using the A164. Most homes are interwar semis and newer estates with driveways, and the A63 Hessle junction is the main congestion point.",
+    localMovingInfo: `Willerby is the biggest of Hull's western suburbs, about five miles from the city centre, sitting between Anlaby, Kirk Ella and Cottingham with Hessle and the Humber Bridge to the south. It is overwhelmingly a family moving area: upsizing between estates, downsizing into bungalows, and Marketplace collections between the suburbs.
+
+The A164 is the spine through the area towards Beverley and the A1079, while the A63 at Hessle handles moves into Hull, over the Humber Bridge and east towards the docks. Peak-time congestion on the A164 and around the A63 Hessle junction is the main timing variable for Willerby moves.
+
+Housing is mostly interwar semis, post-war estates and newer executive developments, almost all with driveways - some of the easiest loading conditions in East Yorkshire. Add postcodes, garage and shed contents, stairs and large items so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Willerby?", a: "Willerby man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the west Hull suburbs typically costs £50-£120. A full 2-3 bed house move usually ranges from £230-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Willerby to Hull city centre?", a: "Willerby to Hull centre is about five miles. A typical small move costs £45-£85, with single items often from £35-£55. Add both postcodes for a guide price." },
+      { q: "Can you do moves over the Humber Bridge?", a: "Yes. Moves to Barton, Hessle side and further into North Lincolnshire run via the A63 and Humber Bridge. Note that bridge tolls for vans may apply on some vehicle classes - the mover confirms this in the quote." },
+      { q: "Do you cover Willerby, Kirk Ella, Anlaby, Hessle and Cottingham?", a: "Yes. Move requests can be submitted for Willerby, Kirk Ella, Anlaby, Hessle and Cottingham and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Willerby and Kirk Ella estates",
+        body: "The interwar and newer estates here have driveways, garages and wide streets - quick, simple loads. Garage clearances often add forgotten volume, so count them in your item list.",
+      },
+      {
+        title: "Anlaby, Hessle and the A63 corridor",
+        body: "Anlaby and Hessle mix period terraces near the centres with newer estates at the edges. The A63 junction is the chokepoint - early starts save real time on longer runs.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Willerby to Hull, Beverley and Cottingham",
+        body: "Hull centre is five miles, Beverley about ten and Cottingham just next door. These are the most common routes, all short hops priced on time.",
+        links: [{ label: "Man and van Hull", href: "/man-and-van-hull" }, { label: "Man and van Beverley", href: "/man-and-van-beverley" }],
+      },
+    ],
+  },
+
+  "bletchley": {
+    description: "Man with a van in Bletchley from £19/hr. Fenny Stratford, Water Eaton, Newton Longville. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Bletchley? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Bletchley move and send a quote before you decide whether to book.",
+    knowledge: "Bletchley moves run along the A5 and A4146 between Milton Keynes districts, or out to the M1 at junction 13. Streets near Bletchley Park and the station are tighter terraces, while Fenny Stratford, Far Bletchley and the newer estates have easier access.",
+    localMovingInfo: `Bletchley is the southern district of Milton Keynes, known worldwide for Bletchley Park and its wartime codebreakers, and sitting on the West Coast Main Line. Its moving scene is shaped by value: first-time buyers and renters priced out of north Milton Keynes, plus constant cross-city moves between districts.
+
+The A5 (Watling Street) forms the western edge and takes most longer-distance traffic, the A4146 runs through town towards Leighton Buzzard, and the M1 at junction 13 handles moves towards London and the midlands. Queues at junction 13 and through-town traffic on the A5 are the regular timing factors.
+
+Housing ranges from Victorian railway terraces near the station and Fenny Stratford to post-war estates and newer developments towards Newton Longville and Water Eaton. Most post-war and newer homes have driveways. Add parking notes, floor levels and item details so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Bletchley?", a: "Bletchley man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Milton Keynes typically costs £50-£120. A full 2-3 bed house move usually ranges from £230-£450. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Bletchley to central Milton Keynes?", a: "Bletchley to Milton Keynes centre is about three miles. A typical small move costs £40-£80, with single items often from £30-£55. Add both postcodes for a guide price." },
+      { q: "Can you help with moves along the West Coast Main Line towns?", a: "Yes. Moves between Bletchley, Leighton Buzzard, Milton Keynes and towards Northampton run along the A5 and A4146 corridor regularly. Submit both postcodes and your item list for an accurate quote." },
+      { q: "Do you cover Bletchley Town, Fenny Stratford, Water Eaton, Newton Longville and Far Bletchley?", a: "Yes. Move requests can be submitted for Bletchley Town, Fenny Stratford, Water Eaton, Newton Longville and Far Bletchley and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Station and Fenny Stratford terraces",
+        body: "The railway-era terraces near Bletchley station and along Fenny Stratford have on-street parking and narrow pavements. A loading note with the nearest corner or bay keeps these quick.",
+      },
+      {
+        title: "Far Bletchley, Water Eaton and the newer estates",
+        body: "Newer developments south and west of the centre have driveways and wide roads - the simplest moves in Bletchley. Most join the A5 or A421 within minutes for longer runs.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Bletchley to Milton Keynes, Leighton Buzzard and Bedford",
+        body: "Central MK is three miles, Leighton Buzzard eight on the A4146 and Bedford about 15 via the A421. These are the most common routes out of Bletchley.",
+        links: [{ label: "Man and van Milton Keynes", href: "/man-and-van-milton-keynes" }, { label: "Man and van Leighton Buzzard", href: "/man-and-van-leighton-buzzard" }, { label: "Man and van Bedford", href: "/man-and-van-bedford" }],
+      },
+    ],
+  },
+
+  "goole": {
+    description: "Man with a van in Goole from £19/hr. Airmyn, Rawcliffe, Hook. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Goole? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Goole move and send a quote before you decide whether to book.",
+    knowledge: "Goole moves usually run between the town, Old Goole and the riverside villages like Hook, Airmyn and Rawcliffe, with the M62 at junction 36 handling longer-distance jobs. Port traffic around the docks is the main local congestion point.",
+    localMovingInfo: `Goole is an inland port town on the River Ouse in the East Riding of Yorkshire, about 25 miles from Hull and 20 from Doncaster. Despite being 50 miles from the sea it handles serious shipping, and the docks and their lorry traffic shape the road network around the town.
+
+The M62 at junction 36 is the gateway for moves towards Leeds, Manchester and the M18 south, while the A614 runs north towards Howden and Market Weighton and the A19 crosses south towards Doncaster. Moves within town are short hops, but port-area traffic near the docks can slow the western approaches at shift times.
+
+Housing is mostly Victorian and Edwardian terraces near the centre and Old Goole, post-war semis, and newer estates towards Rawcliffe. Village properties in Hook, Airmyn and Howdendyke often have larger plots and longer drives. Add postcodes, stairs, parking notes and item lists so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Goole?", a: "Goole man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within Goole typically costs £50-£115. A full 2-3 bed house move usually ranges from £220-£440. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Goole to Hull?", a: "Goole to Hull is about 25 miles via the M62. A typical small move costs £70-£130, with single items often from £50-£80. Add both postcodes for a guide price." },
+      { q: "How much is a man and van from Goole to Doncaster?", a: "Goole to Doncaster is about 20 miles via the A19 or M18. A typical small move costs £65-£120. The route choice depends on address location - the mover confirms the best option in the quote." },
+      { q: "Do you cover the Town Centre, Airmyn, Rawcliffe, Hook and Howdendyke?", a: "Yes. Move requests can be submitted for the Town Centre, Airmyn, Rawcliffe, Hook and Howdendyke and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town centre and Old Goole terraces",
+        body: "The period terraces near the centre and docks have on-street parking and straightforward layouts. Loading is usually quick when parking is close - note your nearest available space in the request.",
+      },
+      {
+        title: "Hook, Airmyn and Rawcliffe",
+        body: "The riverside villages have larger plots, longer drives and quiet lanes. Access is easy for vans, but distances between properties add time - accurate postcodes keep the quote right.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Goole to Hull, Doncaster and Leeds",
+        body: "Hull is 25 miles east, Doncaster 20 south and Leeds about 30 west on the M62 corridor - the main long-distance route by far. Junction 36 gets busy at peak times.",
+        links: [{ label: "Man and van Hull", href: "/man-and-van-hull" }, { label: "Man and van Doncaster", href: "/man-and-van-doncaster" }, { label: "Man and van Leeds", href: "/man-and-van-leeds" }],
+      },
+    ],
+  },
+
+  "machynlleth": {
+    description: "Man with a van in Machynlleth from £19/hr. Corris, Pennal, Derwenlas. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Machynlleth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Powys move and send a quote before you decide whether to book.",
+    knowledge: "Machynlleth moves are rural by nature: stone cottages along the Dovey valley, farm properties on unmade tracks and terraces around Maengwyn Street. The A487 and A489 are the lifelines, and narrow lanes around Corris and Pennal shape vehicle choice.",
+    localMovingInfo: `Machynlleth is a market town in the Dovey valley in southern Powys, about 18 miles east of Aberystwyth, known for its long Wednesday market and as a gateway to southern Snowdonia. Moves here are rural jobs: cottages and smallholdings along the valley, terraces near the town centre and farm properties up the side lanes.
+
+The A487 runs through town towards Aberystwyth and Dolgellau, the A489 heads east to Newtown, and the A493 serves the coast road towards Tywyn. Journey times stretch behind farm traffic, and properties around Corris, Pennal and Derwenlas often sit on narrow lanes where a large van needs planning - sometimes a smaller vehicle and a second trip is the cheaper answer.
+
+Property is largely stone-built: terraces and Victorian houses near Maengwyn Street, cottages along the lanes and farmhouses on long unmade tracks. Add honest access notes - gate widths, track surfaces, turning space - so an approved mover can review the real job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Machynlleth?", a: "Machynlleth man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. Rural travel adds time, so a local move typically costs £60-£140. A full 2-3 bed move usually ranges from £250-£500. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Machynlleth to Aberystwyth?", a: "Machynlleth to Aberystwyth is about 18 miles on the A487. A typical small move costs £60-£110, with single items often from £45-£75. Add both postcodes for a guide price." },
+      { q: "Can movers reach farms and properties on unmade tracks?", a: "Usually, yes - but access notes are essential. Describe the track surface, gates, gradients and turning space. Where access is genuinely difficult, the mover may suggest a smaller vehicle and adjust the quote accordingly." },
+      { q: "Do you cover the Town Centre, Corris, Pennal, Derwenlas, Cemmaes Road and Glantwymyn?", a: "Yes. Move requests can be submitted for the Town Centre, Corris, Pennal, Derwenlas, Cemmaes Road and Glantwymyn and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Maengwyn Street and the town centre",
+        body: "Terraces near the centre have limited parking, especially on the Wednesday market day when the street fills with stalls. If possible, schedule loading outside market hours and note it in your request.",
+      },
+      {
+        title: "Corris, Pennal and the valley lanes",
+        body: "Cottages along the side valleys sit on narrow lanes with passing places. Accurate directions and access notes - including which end of the lane to approach from - save significant time on moving day.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Machynlleth to Aberystwyth and Newtown",
+        body: "Aberystwyth is 18 miles west on the A487 and Newtown about 25 miles east on the A489 - the two most common longer routes. Moves to England usually continue towards Shrewsbury.",
+        links: [{ label: "Man and van Aberystwyth", href: "/man-and-van-aberystwyth" }, { label: "Long distance removals", href: "/long-distance-removals" }],
+      },
+    ],
+  },
+
+  "cardigan": {
+    description: "Man with a van in Cardigan from £19/hr. St Dogmaels, Llechryd, Cilgerran. One verified mover quotes. Rated 5.0/5 from 11 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Cardigan? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Ceredigion move and send a quote before you decide whether to book.",
+    knowledge: "Cardigan moves spread across the Teifi valley and coast: stone terraces near the High Street, riverside cottages in St Dogmaels and Llechryd, and rural properties towards Cilgerran and Aberporth. The A487 is the main artery along the coast.",
+    localMovingInfo: `Cardigan is a market town on the River Teifi where Ceredigion meets Pembrokeshire, with the coast two miles away at Gwbert and Cardigan Island. Moving here is a mix of town jobs - terraces near the High Street and Quay Street - and rural runs to villages and smallholdings across the valley.
+
+The A487 is the coastal spine, running north towards Aberystwyth (about 38 miles) and south towards Fishguard, while the A484 heads to Carmarthen and the A478 into Pembrokeshire. Summer visitor traffic slows the coast road, and some streets near the castle and Bridge Street are tight for larger vans.
+
+Property varies from stone terraces in town to riverside cottages around St Dogmaels and Llechryd - sometimes with stepped or restricted access - and spread-out rural properties where travel between addresses adds time. Add honest access notes and your item list so an approved mover can review the job before quoting. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Cardigan?", a: "Cardigan man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the Teifi valley typically costs £60-£140. A full 2-3 bed move usually ranges from £250-£500. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Cardigan to Aberystwyth?", a: "Cardigan to Aberystwyth is about 38 miles on the A487 coast road. A typical small move costs £90-£160, with single items often from £60-£100. Add both postcodes for a guide price." },
+      { q: "Can movers manage riverside cottages with restricted access?", a: "Usually, yes. Cottages around St Dogmaels and Llechryd sometimes have steps, narrow gates or no direct vehicle access. Describe the access honestly in your request and the mover can plan equipment and timing accordingly." },
+      { q: "Do you cover the Town Centre, St Dogmaels, Gwbert, Llechryd, Cilgerran and Aberporth?", a: "Yes. Move requests can be submitted for the Town Centre, St Dogmaels, Gwbert, Llechryd, Cilgerran and Aberporth and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "High Street, Quay Street and the town centre",
+        body: "The town centre terraces have on-street parking and some tight junctions near the castle and Bridge Street. Note the nearest loading space and any time restrictions in your request.",
+      },
+      {
+        title: "St Dogmaels, Gwbert and the coast",
+        body: "Coastal properties around the estuary have narrow lanes and summer visitor traffic. Off-season and early-morning moves are noticeably quicker along this stretch.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Cardigan to Aberystwyth and Carmarthen",
+        body: "Aberystwyth is 38 miles north on the A487 and Carmarthen about 26 miles south east on the A484 - the two main long-distance routes from Cardigan.",
+        links: [{ label: "Man and van Aberystwyth", href: "/man-and-van-aberystwyth" }, { label: "Man and van Wales", href: "/man-and-van-wales" }],
       },
     ],
   },

@@ -56,7 +56,7 @@ const faqItems = [
   },
   {
     q: "Do you have a man with a van near me?",
-    a: "We cover 435 areas across England, Scotland, Wales and Northern Ireland — from major cities to smaller towns and suburbs. Submit your collection and delivery postcodes for free and a verified local mover can check the route and send quote options.",
+    a: "We cover 438 areas across England, Scotland, Wales and Northern Ireland — from major cities to smaller towns and suburbs. Submit your collection and delivery postcodes for free and a verified local mover can check the route and send quote options.",
   },
 ];
 
@@ -210,7 +210,7 @@ export default function ManWithAVanPage() {
       <section className="py-12 lg:py-14 bg-white border-b border-border">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-2xl font-black text-primary uppercase tracking-tighter text-center mb-3">A man with a van near you</h2>
-          <p className="text-sm text-text-secondary text-center max-w-2xl mx-auto mb-8 font-medium">435 UK areas covered — from city centres to smaller towns and suburbs. These are some of the busiest:</p>
+          <p className="text-sm text-text-secondary text-center max-w-2xl mx-auto mb-8 font-medium">438 UK areas covered — from city centres to smaller towns and suburbs. These are some of the busiest:</p>
           <div className="flex flex-wrap justify-center gap-2">
             {popularAreas.map((a) => (
               <Link key={a.href} href={a.href} className="inline-flex items-center gap-1.5 bg-[#F9F9F7] border border-border rounded-full px-4 py-2 text-xs font-black text-primary hover:border-accent hover:text-accent transition-colors">
@@ -218,7 +218,7 @@ export default function ManWithAVanPage() {
               </Link>
             ))}
             <Link href="/areas-covered" className="inline-flex items-center gap-1.5 bg-accent text-white rounded-full px-4 py-2 text-xs font-black hover:opacity-90 transition-opacity">
-              View all 435 areas <ArrowUpRight size={12} />
+              View all 438 areas <ArrowUpRight size={12} />
             </Link>
           </div>
         </div>
