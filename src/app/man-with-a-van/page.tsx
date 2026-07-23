@@ -36,7 +36,7 @@ const faqItems = [
   },
   {
     q: "How much does a man with a van cost?",
-    a: "Man with a van prices start from £19 per hour for a self-loading service (you carry, the driver transports), or from £34 per hour with a driver who helps with loading. London moves start from £55 per hour because of ULEZ, parking and travel time. Most local moves take 1-4 hours, so a typical small move costs £60-£140. Submit your postcodes for a free guide price.",
+    a: "Man with a van prices start from £19 per hour for a self-loading service (you carry, the driver transports), or from £34 per hour with a driver who helps with loading. London moves start from £26 per hour for self-loading — matched to the biggest names in London. Most local moves take 1-4 hours, so a typical small move costs £60-£140. Submit your postcodes for a free guide price.",
   },
   {
     q: "What can a man with a van move?",
@@ -169,7 +169,7 @@ export default function ManWithAVanPage() {
                     <tr><td className="py-3 pr-4 font-bold text-primary">1-bed flat</td><td className="py-3 pr-4">2-3 hrs</td><td className="py-3 font-black text-primary">£60</td></tr>
                     <tr><td className="py-3 pr-4 font-bold text-primary">2-bed house</td><td className="py-3 pr-4">3-4 hrs</td><td className="py-3 font-black text-primary">£100</td></tr>
                     <tr><td className="py-3 pr-4 font-bold text-primary">3-bed house</td><td className="py-3 pr-4">4-6 hrs</td><td className="py-3 font-black text-primary">£150</td></tr>
-                    <tr><td className="py-3 pr-4 font-bold text-primary">London moves</td><td className="py-3 pr-4">Varies</td><td className="py-3 font-black text-primary">£55/hr</td></tr>
+                    <tr><td className="py-3 pr-4 font-bold text-primary">London moves</td><td className="py-3 pr-4">Varies</td><td className="py-3 font-black text-primary">£26/hr</td></tr>
                   </tbody>
                 </table>
               </div>

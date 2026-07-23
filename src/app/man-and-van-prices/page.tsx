@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much does a man and van cost per hour in the UK?",
-    a: "In 2026, UK man and van hourly rates typically range from £19 to £70 per hour. West Midlands rates average £19–£70/hr, London rates average £55–£80/hr, and other regions fall between £19–£70/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
+    a: "In 2026, UK man and van hourly rates typically range from £19 to £70 per hour. West Midlands rates average £19–£70/hr, London rates start from £26/hr, and other regions fall between £19–£70/hr. Rates depend on van size, number of helpers, distance, access and time of day.",
   },
   {
     q: "How much does a man and van cost for a full day?",
@@ -167,7 +167,7 @@ export default function ManAndVanPricesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { region: "West Midlands", rate: "£19–£70/hr", fullDay: "£350–£500", cities: ["Birmingham", "Walsall", "Wolverhampton", "Coventry"] },
-              { region: "Greater London", rate: "£55–£80/hr", fullDay: "£400–£600", cities: ["London", "Croydon", "Stratford", "Richmond"] },
+              { region: "Greater London", rate: "£26–£60/hr", fullDay: "£200–£450", cities: ["London", "Croydon", "Stratford", "Richmond"] },
               { region: "Other UK Regions", rate: "£19–£70/hr", fullDay: "£350–£500", cities: ["Manchester", "Leeds", "Bristol", "Liverpool"] },
             ].map((region) => (
               <div key={region.region} className="bg-white rounded-2xl border border-border p-8 space-y-4">

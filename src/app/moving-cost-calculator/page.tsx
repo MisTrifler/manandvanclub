@@ -31,7 +31,7 @@ const faqItems = [
   { q: "Why does London cost more?", a: "London man and van rates are typically 15–25% higher than the rest of the UK due to higher operating costs, congestion charges, the ULEZ expansion, Controlled Parking Zones and longer journey times in traffic. Our London estimates reflect these additional costs." },
   { q: "What is the booking deposit?", a: "The booking deposit secures your accepted mover quote and releases your contact details to that mover only. It is deducted from the mover's total quote, so your overall move cost stays the same. The remaining balance is paid directly to the mover on moving day." },
   { q: "Why does same-day cost more?", a: "Same-day moves typically carry a 15–30% premium because the mover may need to rearrange their schedule, and availability is more limited. Same-day man and van rates in 2026 start from £55 per hour, compared to £19 for standard bookings." },
-  { q: "How much does a man and van cost per hour in the UK?", a: "In 2026, UK man and van hourly rates typically range from £19 to £70 per hour outside London, and £55 to £80 per hour in London. Rates depend on van size, number of helpers, distance, access and time of day." },
+  { q: "How much does a man and van cost per hour in the UK?", a: "In 2026, UK man and van hourly rates typically range from £19 to £70 per hour outside London, and from £26 to £60 per hour in London. Rates depend on van size, number of helpers, distance, access and time of day." },
   { q: "Is it free to get an actual quote?", a: "Yes. Submitting a move request on Man and Van Club is free. A verified mover reviews your details and sends a quote. You only pay a booking deposit if you choose to accept the quote, and the deposit is deducted from the total." },
 ];
 

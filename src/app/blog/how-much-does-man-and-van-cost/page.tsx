@@ -77,7 +77,7 @@ export default function BlogPost() {
           <ul className="list-disc pl-6 space-y-2">
             <li><strong className="text-primary">West Midlands</strong> — from £19 per hour. Birmingham, Walsall, Wolverhampton and Coventry typically fall in this range.</li>
             <li><strong className="text-primary">East Midlands</strong> — from £19 per hour. Nottingham, Leicester, Derby and Northampton.</li>
-            <li><strong className="text-primary">London</strong> — from £55 per hour. The higher rate accounts for Congestion Charge zones, ULEZ fees, Controlled Parking Zones and longer travel times between properties.</li>
+            <li><strong className="text-primary">London</strong> — from £26 per hour for self-loading (£34/hr driver-helps), matched to the most competitive London providers. Congestion Charge, ULEZ and Controlled Parking Zones can affect quotes on central routes.</li>
             <li><strong className="text-primary">Greater Manchester</strong> — from £19 per hour. Manchester, Salford, Stockport and Bolton.</li>
             <li><strong className="text-primary">Other UK cities</strong> — from £19 per hour. Leeds, Liverpool, Bristol, Sheffield, Edinburgh, Glasgow, Cardiff and most other UK towns and cities.</li>
           </ul>
@@ -106,11 +106,11 @@ export default function BlogPost() {
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Example move costs</h2>
           <p>These are representative examples, not fixed prices:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Studio flat, same city</strong> — typically 1–2 hours from £19–£110 (or from £55–£120 in London)</li>
+            <li><strong className="text-primary">Studio flat, same city</strong> — typically 1–2 hours from £19–£110 (or from £26–£80 in London)</li>
             <li><strong className="text-primary">One-bedroom flat, same city</strong> — typically 2–3 hours from £100–£165 (or from £110–£180 in London)</li>
             <li><strong className="text-primary">Two-bedroom house, same city</strong> — typically 3–5 hours from £150–£275</li>
             <li><strong className="text-primary">Three-bedroom house, same city</strong> — typically 5–8 hours from £250–£440</li>
-            <li><strong className="text-primary">Single item collection</strong> — typically 1 hour from £19 (or from £55 in London)</li>
+            <li><strong className="text-primary">Single item collection</strong> — typically 1 hour from £19 (or from £26 in London)</li>
           </ul>
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">How to keep your move costs down</h2>

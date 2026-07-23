@@ -97,7 +97,7 @@ export default function WhatAffectsPricesPost() {
           <p>Man and van rates vary by region across the UK:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong className="text-primary">West Midlands:</strong> From £19/hr — competitive rates due to high mover availability</li>
-            <li><strong className="text-primary">London:</strong> From £55/hr — ULEZ, Congestion Charge and higher operating costs</li>
+            <li><strong className="text-primary">London:</strong> From £26/hr — matched to the most competitive London providers; ULEZ and Congestion Charge may apply on central routes</li>
             <li><strong className="text-primary">North West (Manchester, Liverpool):</strong> From £19/hr</li>
             <li><strong className="text-primary">Scotland (Edinburgh, Glasgow):</strong> From £19/hr</li>
             <li><strong className="text-primary">South West (Bristol, Bath):</strong> From £19/hr</li>

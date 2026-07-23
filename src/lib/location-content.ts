@@ -785,7 +785,7 @@ function generateCostAnswer(loc: LocationData): string {
     return `Man and van rates in the West Midlands in 2026 start from £19 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £19, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
   }
   if (loc.region === "Greater London") {
-    return `Man and van rates in London in 2026 start from £55 per hour, with full-day costs around £400–£600. Congestion Charge and ULEZ may apply to central London moves. A single-item collection starts from £55. Submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
+    return `Man and van rates in London in 2026 start from £26 per hour, with full-day costs around £200–£400. Congestion Charge and ULEZ may apply to central London moves. A single-item collection starts from £26. Submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
   }
   if (loc.region === "East Midlands") {
     return `Man and van rates in the East Midlands in 2026 start from £19 per hour, with full-day costs around £350–£500 depending on van size, crew, stairs, parking and access. A single-item furniture collection starts from £19, while a full house move from a 3-bed property could range from £250–£500. Your final quote depends on postcodes, item list, route time, helpers, parking and access — submit your details for a guide price first, then a verified mover reviews the job before quoting.`;
@@ -1460,10 +1460,10 @@ export function getLocationPageData(slug: string): LocationPageData | null {
   const baseData = {
     name: loc.name,
     title: loc.region === 'Greater London'
-      ? `Man and Van ${loc.name} From £55/hr | Free Quotes`
+      ? `Man and Van ${loc.name} From £26/hr | Free Quotes`
       : `Man and Van ${loc.name} From £19/hr | Free Quotes`,
     description: loc.region === 'Greater London'
-      ? `Man with a van in ${loc.name} from £55/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 11 reviews.`
+      ? `Man with a van in ${loc.name} from £26/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 11 reviews.`
       : `Man with a van in ${loc.name} from £19/hr. One verified mover quotes — free to submit, no spam calls. Rated 5.0/5 from 11 reviews.`,
     badge: `Verified movers in ${loc.name}`,
     intro: generateBusinessModelIntro(loc),

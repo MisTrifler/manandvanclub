@@ -72,10 +72,10 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-black text-primary uppercase tracking-tight mt-10 mb-4">Man and van London prices in 2026</h2>
           <p>
-            London man and van rates start from <strong className="text-primary">£55 per hour</strong> — higher than the rest of the UK because of Congestion Charge, ULEZ, parking costs and longer travel times between jobs. Here's what typical London moves cost:
+            London man and van rates start from <strong className="text-primary">£26 per hour</strong> for self-loading — matched to the most competitive prices of any London provider, despite the Congestion Charge, ULEZ and parking costs movers contend with. Here's what typical London moves cost:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong className="text-primary">Single item collection</strong> — from £55. A sofa from a shop on Old Kent Road to a flat in Brixton, for example.</li>
+            <li><strong className="text-primary">Single item collection</strong> — from £26. A sofa from a shop on Old Kent Road to a flat in Brixton, for example.</li>
             <li><strong className="text-primary">Studio or 1-bed flat move</strong> — from £180–£320. The wide range comes down to which borough, floor number and parking.</li>
             <li><strong className="text-primary">2–3 bedroom house or flat</strong> — from £350–£650. More items, more time, and potentially a Luton van.</li>
             <li><strong className="text-primary">London to Birmingham</strong> — from £350–£500 for a full van load. See our <Link href="/routes/london-to-birmingham" className="text-accent font-bold hover:underline">London to Birmingham route page</Link> for detailed pricing and access notes.</li>

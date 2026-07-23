@@ -18,21 +18,21 @@ import {
 const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
-  title: "Man and Van London | Verified Mover Quotes from £55",
+  title: "Man and Van London From £26/hr | Man and Van Club",
   description:
-    "Submit a free man and van request across London. From Croydon to Wembley, one verified mover reviews your details before you book. From £55/hr.",
+    "Man and van London from £26/hr self-loading, £34/hr driver-helps — among the most competitive rates in the capital. One verified mover quotes. Call 0121 751 1269.",
   alternates: {
     canonical: `${baseUrl}/man-and-van-london`,
   },
   openGraph: {
-    title: "Man and Van London | Verified Mover Quotes from £55",
-    description: "Submit a free man and van request across London. From Croydon to Wembley, one verified mover reviews your details before you book. From £55/hr.",
+    title: "Man and Van London From £26/hr | Man and Van Club",
+    description: "Man and van London from £26/hr self-loading, £34/hr driver-helps. AnyVan-matching prices across all boroughs. One verified mover quotes — no spam. Call 0121 751 1269.",
     url: `${baseUrl}/man-and-van-london`,
     images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`, width: 1200, height: 630, alt: "Man and Van London | Verified Mover Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Man and Van London | Verified Mover Quotes from £55",
+    title: "Man and Van London From £26/hr | Man and Van Club",
     description: "Submit a free man and van request across London. From Croydon to Wembley, one verified mover reviews your details before you book.",
     images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van London")}&subtitle=${encodeURIComponent("Verified Mover Quotes")}`],
   },
@@ -110,7 +110,7 @@ const postcodeCoverage = [
 const faqItems = [
   {
     q: "How much does a man and van cost in London?",
-    a: "London moves typically start from £55 per hour. The final quote depends on the postcodes, distance, item list, helpers required, stairs, parking and access. You can see a guide price first, then a verified mover reviews the details and sends a quote before you decide whether to book.",
+    a: "London moves start from £26 per hour for self-loading, or £34 per hour with driver help — matched to the most competitive London rates. The final quote depends on the postcodes, distance, item list, helpers required, stairs, parking and access. You can see a guide price first, then a verified mover reviews the details and sends a quote before you decide whether to book.",
   },
   {
     q: "Do you cover all London boroughs?",
@@ -247,14 +247,14 @@ export default function LondonPage() {
                   Man and Van <span className="text-accent italic">London</span>
                 </h1>
                 <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
-                  Submit a free London move request, see a guide price and let one verified mover review your details before you decide whether to book. From £55/hr.
+                  Submit a free London move request, see a guide price and let one verified mover review your details before you decide whether to book. From £26/hr.
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-white rounded-2xl border border-border p-5 text-center">
                   <Package size={22} className="text-accent mx-auto mb-2" />
                   <span className="text-[9px] font-black uppercase tracking-widest text-primary/50 block">From</span>
-                  <span className="text-2xl font-black text-primary">£55<span className="text-sm font-bold text-text-secondary">/hr</span></span>
+                  <span className="text-2xl font-black text-primary">£26<span className="text-sm font-bold text-text-secondary">/hr</span></span>
                 </div>
                 <div className="bg-white rounded-2xl border border-border p-5 text-center">
                   <CheckCircle2 size={22} className="text-accent mx-auto mb-2" />

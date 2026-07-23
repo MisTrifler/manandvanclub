@@ -32,7 +32,7 @@ const faqItems = [
   },
   {
     q: "How much does a man and van cost per hour in the UK?",
-    a: "In 2026, UK man and van rates start from £19 per hour outside London. London rates start from £55 per hour due to Congestion Charge, ULEZ and higher parking costs. Most local moves take 2–4 hours, so you're typically looking at £100–£280 for a straightforward job.",
+    a: "In 2026, UK man and van rates start from £19 per hour outside London, and from £26 per hour in London — the same as the best-known national names — with driver-helps at £34 per hour. Most local moves take 2–4 hours, so you're typically looking at £60–£280 for a straightforward job.",
   },
   {
     q: "How much does a full house move cost with a man and van?",
@@ -169,7 +169,7 @@ export default function ManAndVanCostPage() {
               <tbody className="divide-y divide-border/50">
                 {[
                   { type: "Hourly rate (outside London)", price: "From £19/hr" },
-                  { type: "Hourly rate (London)", price: "From £55/hr" },
+                  { type: "Hourly rate (London)", price: "From £26/hr" },
                   { type: "Single item collection/delivery", price: "From £19" },
                   { type: "Studio or 1-bed flat move", price: "£150–£320" },
                   { type: "2-bed flat or small house move", price: "£220–£450" },
@@ -270,7 +270,7 @@ export default function ManAndVanCostPage() {
             {[
               { region: "West Midlands", rate: "From £19/hr", cities: "Birmingham, Walsall, Wolverhampton, Coventry, Dudley", note: "Generally the most affordable area in the UK for man and van hire. Good road access via M6/M5/A38." },
               { region: "East Midlands", rate: "From £19/hr", cities: "Nottingham, Leicester, Derby, Northampton", note: "Comparable to West Midlands. Student areas (Nottingham, Leicester) see peak demand June–September." },
-              { region: "Greater London", rate: "From £55/hr", cities: "London, Croydon, Bromley, Stratford, Ealing", note: "Higher rates due to Congestion Charge (£15/day), ULEZ (£12.50/day for non-compliant vehicles) and Controlled Parking Zones." },
+              { region: "Greater London", rate: "From £26/hr", cities: "London, Croydon, Bromley, Stratford, Ealing", note: "Priced to match the most competitive London providers. Congestion Charge (central zone) and ULEZ-non-compliant vehicle fees may apply to some routes — confirmed on your quote." },
               { region: "Greater Manchester", rate: "From £19/hr", cities: "Manchester, Salford, Bolton, Stockport, Oldham", note: "City centre parking and M60 congestion can add time. Suburban areas like Altrincham and Stockport are usually cheaper." },
               { region: "Yorkshire", rate: "From £19/hr", cities: "Leeds, Sheffield, Bradford, Hull, Huddersfield", note: "Competitive pricing across Yorkshire. Back-to-back terraces in Leeds and Bradford slow loading down." },
               { region: "Scotland", rate: "From £19/hr", cities: "Edinburgh, Glasgow, Aberdeen, Dundee", note: "Edinburgh Old Town and Glasgow West End have narrow streets and permit zones. Aberdeen and Dundee are typically cheaper." },

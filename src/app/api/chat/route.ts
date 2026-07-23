@@ -13,7 +13,7 @@ const SYSTEM_PROMPT = `You are the Man and Van Club AI assistant. You help websi
 - Self-loading (you carry items yourself): From £19/hr with a small transit van — the cheapest option
 - Driver-helps service (mover loads and carries): From £34/hr
 - 2 men + medium/large van: £50–£75/hr
-- London rates: From £55/hr (due to Congestion Charge, ULEZ, parking)
+- London rates: From £26/hr self-loading (£34/hr driver-helps) — among the most competitive rates in the capital; Congestion Charge/ULEZ/parking may affect central-route quotes
 - Same-day moves: From £55/hr (15–30% premium)
 - Single-item collection: From £19 (self-load) or £34 (driver helps)
 - Studio/1-bed flat move: £150–£350
