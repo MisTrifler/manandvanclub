@@ -5534,21 +5534,6 @@ Homes range from the new high-rise apartments - all with concierge and loading-b
       {title: "Garston and Leavesden", body: "More affordable areas with newer housing and better van access. Good M1 and M25 links."},
     ],
   },
-  "high-wycombe": {
-    title: "Man and Van High Wycombe From £19/hr | Free Quotes",
-    description: "Man and van High Wycombe from £19/hr. HP11, HP12, HP13. Terriers, Booker, Downley, Hazlemere, Loudwater. Call 0121 751 1269.",
-    h1: "Man and Van High Wycombe",
-    intro: "Need a man and van in High Wycombe? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your High Wycombe move before quoting.",
-    knowledge: "High Wycombe sits in a Chilterns valley with the M40 running past. The town centre has been regenerated but older streets remain tight. Terriers and Booker are suburban with better access. The hills can be challenging for moves.",
-    localMovingInfo: `High Wycombe is about 30 miles west of London on the M40. The town centre has narrow older streets. Terriers and Downley are suburban on the hills. Hazlemere to the north has larger properties. M40 junctions 3 and 4 connect to London and Oxford. Trains to Marylebone take about 35 minutes. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in High Wycombe?","a":"High Wycombe moves start from £19 per hour. A local move typically costs £60-£130. Longer-distance moves depend on the distance and load size."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Terriers, Booker, Downley, Hazlemere, Loudwater."},
-    ],
-  },
   "hemel-hempstead": {
     title: "Man and Van Hemel Hempstead From £19/hr | Free Quotes",
     description: "Man and van Hemel Hempstead from £19/hr. HP1, HP2, HP3. Boxmoor, Bennetts End, Chaulden, Gadebridge, Kings Langley. Call 0121 751 1269.",
@@ -5602,21 +5587,6 @@ Housing is mostly new-town stock - 1950s-70s terraces and semis with front green
         body: "The A1(M) and rail line make St Albans, Watford and the rest of the county simple single runs.",
         links: [{ label: "Man and van Hertfordshire", href: "/man-and-van-hertfordshire" }, { label: "Man and van St Albans", href: "/man-and-van-st-albans" }],
       },
-    ],
-  },
-  "st-albans": {
-    title: "Man and Van St Albans From £19/hr | Free Quotes",
-    description: "Man and van St Albans from £19/hr. AL1, AL2, AL3. Marshalswick, Sandridge, Sopwell, London Colney. Call 0121 751 1269.",
-    h1: "Man and Van St Albans",
-    intro: "Need a man and van in St Albans? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your St Albans move before quoting.",
-    knowledge: "St Albans is a cathedral city with Roman roots and expensive postcodes. The Verulamium area has conservation restrictions. The M1 and M25 are both close. Marshalswick and Sandridge are easier suburban areas.",
-    localMovingInfo: `St Albans is about 20 miles north of London. The Cathedral and Verulamium areas have conservation restrictions. Marshalswick and Sandridge are suburban with better access. Harpenden is 5 miles north. The M1 junction 6 and M25 junction 21a are nearby. Trains to St Pancras take about 20 minutes. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in St Albans?","a":"St Albans moves start from £19 per hour. A local move typically costs £60-£130. Longer-distance moves depend on the distance and load size."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Marshalswick, Sandridge, Sopwell, London Colney."},
     ],
   },
   "eastbourne": {
@@ -5988,21 +5958,6 @@ Property is dominated by Regency and Victorian conversions - high ceilings, shar
       },
     ],
   },
-  "burgess-hill": {
-    title: "Man and Van Burgess Hill From £19/hr | Free Quotes",
-    description: "Man and van Burgess Hill from £19/hr. RH15, RH16. World's End, Hammonds Green, Franklands Village, Ditchling Common. Call 0121 751 1269.",
-    h1: "Man and Van Burgess Hill",
-    intro: "Need a man and van in Burgess Hill? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Burgess Hill move before quoting.",
-    knowledge: "Burgess Hill is a growing Mid Sussex town between Brighton and Haywards Heath. The A2300 connects to the A23 and M23. Brighton is about 10 miles south. The town is compact and well-connected.",
-    localMovingInfo: `Burgess Hill is about 10 miles north of Brighton and 40 miles south of London. The A2300 connects to the A23 and M23. Franklands Village and Hammonds Green are residential with good access. Haywards Heath is 5 miles north. Trains to Victoria take about 45 minutes. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Burgess Hill?","a":"Burgess Hill moves start from £19 per hour. A local move typically costs £60-£130. Longer-distance moves depend on the distance and load size."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. World's End, Hammonds Green, Franklands Village, Ditchling Common."},
-    ],
-  },
   // ─── Phase 9+10: South West + East of England (20) ───
 
   "bedford": {
@@ -6021,21 +5976,6 @@ Property is dominated by Regency and Victorian conversions - high ceilings, shar
     ],
   },
 
-  "chelmsford": {
-    title: "Man and Van Chelmsford From £19/hr | Free Quotes",
-    description: "Man and van Chelmsford from £19/hr. CM1, CM2, CM3. Springfield, Great Baddow, Writtle, Galleywood, Danbury. Call 0121 751 1269.",
-    h1: "Man and Van Chelmsford",
-    intro: "Need a man and van in Chelmsford? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Chelmsford move before quoting.",
-    knowledge: "Chelmsford is Essex's only city, with a cathedral, a university, and fast trains to Liverpool Street. The A12 queues badly at rush hour. The city centre has been redeveloped with modern apartments. Springfield and Great Baddow are established residential areas with good access.",
-    localMovingInfo: `Chelmsford is about 30 miles north-east of London. The A12 is the main road link and can be very slow at peak times. The city centre has modern apartments near the station and period properties near the cathedral. Springfield and Great Baddow are suburban with better parking. Writtle is a village to the west. Chelmsford station has trains to Liverpool Street in about 35 minutes. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Chelmsford?","a":"Chelmsford moves start from £19 per hour. A local move typically costs £70-£130. A move to London or Colchester is usually £90-£170."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Springfield, Great Baddow, Writtle, Galleywood, Danbury."},
-    ],
-  },
 
   "southend-on-sea": {
     description: "Man with a van in Southend-on-Sea from £19/hr. Westcliff, Leigh-on-Sea, Thorpe Bay. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
@@ -6315,21 +6255,6 @@ Housing ranges from Victorian terraces near the centre, to interwar semis, large
     ],
   },
 
-  "ely": {
-    title: "Man and Van Ely From £19/hr | Free Quotes",
-    description: "Man and van Ely from £19/hr. CB6, CB7. Stuntney, Little Downham, Witchford, Soham, Haddenham. Call 0121 751 1269.",
-    h1: "Man and Van Ely",
-    intro: "Need a man and van in Ely? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Ely move before quoting.",
-    knowledge: "Ely is a tiny cathedral city in the Cambridgeshire Fens, dominated by its magnificent Cathedral visible for miles across the flat landscape. The streets near the Cathedral are narrow with limited parking. Cambridge is about 15 miles south. The surrounding Fenland is flat with long straight roads.",
-    localMovingInfo: `Ely is about 15 miles north of Cambridge on the A10. The Cathedral area has narrow streets with limited parking. The city is very small so most moves are short-distance. The surrounding Fenland villages like Soham and Witchford have rural access. The A10 connects to Cambridge and King's Lynn. Trains to Cambridge take about 15 minutes and to King's Cross about 70 minutes. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Ely?","a":"Ely moves start from £19 per hour. A local move typically costs £60-£110. A move to Cambridge is usually £70-£130."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Stuntney, Little Downham, Witchford, Soham, Haddenham."},
-    ],
-  },
 
   "thetford": {
     description: "Man with a van in Thetford from £19/hr. Brettenham, Mundford, East Harling. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
@@ -6649,85 +6574,10 @@ Housing spans period terraces in Pilton with cottages climbing their cobbled lan
     ],
   },
 
-  "cumbernauld": {
-    title: "Man and Van Cumbernauld From £19/hr | Free Quotes",
-    description: "Man and van Cumbernauld from £19/hr. G67, G68. Town Centre, Condorrat, Carbrain, Abronhill, Kildrum. Call 0121 751 1269.",
-    h1: "Man and Van Cumbernauld",
-    intro: "Need a man and van in Cumbernauld? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Cumbernauld move before quoting.",
-    knowledge: "Cumbernauld was built in the 1960s as an overspill for Glasgow. The M80 runs right through it, giving fast access to Glasgow (about 12 miles south) and Stirling (about 14 miles north). The town is mostly suburban housing estates. Carbrain and Abronhill are residential areas. The town centre was rebuilt in 2021 after the old megastructure was demolished. Roads are wide and access is generally good.",
-    localMovingInfo: `Cumbernauld is about 12 miles north-east of Glasgow on the M80. The motorway access is excellent. The town is mostly post-war housing estates with good road access. Falkirk is about 10 miles east. Stirling is about 14 miles north. The town centre was rebuilt recently. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Cumbernauld?","a":"Cumbernauld moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£120 via the M80."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Condorrat, Carbrain, Abronhill, Kildrum."},
-    ],
-  },
 
-  "coatbridge": {
-    title: "Man and Van Coatbridge From £19/hr | Free Quotes",
-    description: "Man and van Coatbridge from £19/hr. ML5. Town Centre, Greenend, Dunbeth, Langloan, Summerlee. Call 0121 751 1269.",
-    h1: "Man and Van Coatbridge",
-    intro: "Need a man and van in Coatbridge? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Coatbridge move before quoting.",
-    knowledge: "Coatbridge sits just east of Glasgow on the A89 corridor. The M8 is accessible from multiple junctions. The town has a mix of older tenements and post-war housing. The Summerlee Heritage Park marks the industrial past. Airdrie is effectively next door — the two towns run into each other. The A89 can be slow through both towns at peak times.",
-    localMovingInfo: `Coatbridge is about 8 miles east of Glasgow on the A89. The M8 is accessible nearby. Airdrie is next door. Motherwell is about 5 miles south. The town has older tenements near the centre and newer estates further out. The A89 through the town can be congested. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Coatbridge?","a":"Coatbridge moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£110 via the M8."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Greenend, Dunbeth, Langloan, Summerlee."},
-    ],
-  },
 
-  "airdrie": {
-    title: "Man and Van Airdrie From £19/hr | Free Quotes",
-    description: "Man and van Airdrie from £19/hr. ML6. Town Centre, Chapelhall, Caldercruix, Gartlea, Cairnhill. Call 0121 751 1269.",
-    h1: "Man and Van Airdrie",
-    intro: "Need a man and van in Airdrie? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Airdrie move before quoting.",
-    knowledge: "Airdrie sits on the A89 about 10 miles east of Glasgow. The M8 junction 6 is nearby. The town centre has a traditional high street. Chapelhall and Caldercruix are outlying villages. Gartlea is a residential area. Airdrie and Coatbridge run into each other — many addresses overlap. The railway connects to Glasgow Queen Street in about 25 minutes.",
-    localMovingInfo: `Airdrie is about 10 miles east of Glasgow on the A89/M8 corridor. Coatbridge is immediately west. Cumbernauld is about 5 miles north. The town centre has traditional stone buildings. Chapelhall and Caldercruix are satellite villages. The M8 gives fast Glasgow access. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Airdrie?","a":"Airdrie moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£110 via the M8."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Chapelhall, Caldercruix, Gartlea, Cairnhill."},
-    ],
-  },
 
-  "motherwell": {
-    title: "Man and Van Motherwell From £19/hr | Free Quotes",
-    description: "Man and van Motherwell from £19/hr. ML1. Town Centre, Wishaw, Carfin, New Stevenston, Bellshill. Call 0121 751 1269.",
-    h1: "Man and Van Motherwell",
-    intro: "Need a man and van in Motherwell? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Motherwell move before quoting.",
-    knowledge: "Motherwell sits at the junction of the M8 and M74 motorways — one of the best-connected towns in central Scotland. The former steelworks site has been redeveloped. The town centre has a mix of older stone and modern retail. Carfin and New Stevenston are residential areas to the east. Hamilton is just 3 miles south. The motorway access makes moves straightforward.",
-    localMovingInfo: `Motherwell is about 12 miles south-east of Glasgow at the M8/M74 junction. Hamilton is 3 miles south. Wishaw is 3 miles east. The motorway access is excellent for any direction. The town centre has traditional stone buildings. Carfin and New Stevenston are residential. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Motherwell?","a":"Motherwell moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £70-£120 via the M8 or M74."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Wishaw, Carfin, New Stevenston, Bellshill."},
-    ],
-  },
 
-  "wishaw": {
-    title: "Man and Van Wishaw From £19/hr | Free Quotes",
-    description: "Man and van Wishaw from £19/hr. ML2. Town Centre, Newmains, Wishawhill, Gowkthrapple, Cleland. Call 0121 751 1269.",
-    h1: "Man and Van Wishaw",
-    intro: "Need a man and van in Wishaw? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Wishaw move before quoting.",
-    knowledge: "Wishaw sits about 2 miles east of Motherwell — the two are effectively one urban area. The A71 runs east-west through the town. Newmains is a village about 3 miles east. Cleland is north. The town has a traditional main street. Access to the M8 is via Motherwell (about 3 miles). The A71 can be slow through the town centre.",
-    localMovingInfo: `Wishaw is about 15 miles south-east of Glasgow, immediately east of Motherwell. The A71 is the main road. Newmains is 3 miles east. The M8 is about 3 miles north via Motherwell. The town has traditional buildings on the main street. Cleland and Gowkthrapple are residential areas. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Wishaw?","a":"Wishaw moves start from £19 per hour. A local move typically costs £60-£120. A move to Glasgow is usually £80-£130."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Newmains, Wishawhill, Gowkthrapple, Cleland."},
-    ],
-  },
 
   "greenock": {
     title: "Man and Van Greenock From £19/hr | Free Quotes",
@@ -6761,21 +6611,6 @@ Housing spans period terraces in Pilton with cottages climbing their cobbled lan
     ],
   },
 
-  "arbroath": {
-    title: "Man and Van Arbroath From £19/hr | Free Quotes",
-    description: "Man and van Arbroath from £19/hr. DD11. Town Centre, Seaton, Gayfield, Ladyloan, Westway. Call 0121 751 1269.",
-    h1: "Man and Van Arbroath",
-    intro: "Need a man and van in Arbroath? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Arbroath move before quoting.",
-    knowledge: "Arbroath is a historic fishing town on the Angus coast. The A92 connects to Dundee (about 15 miles south-west). The harbour area has narrow streets typical of Scottish fishing towns. The town is known for Arbroath smokies (smoked haddock) and the Abbey which hosted the Declaration of Arbroath. Seaton and Westway are residential areas. The A92 is the main road — it bypasses the town centre which is generally accessible for vans.",
-    localMovingInfo: `Arbroath is about 15 miles north-east of Dundee on the A92. The town is famous for its smokies and the Declaration of Arbroath. The harbour area has narrow streets. The town centre is reasonably accessible. Montrose is about 10 miles north. The A92 bypass helps keep traffic moving. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Arbroath?","a":"Arbroath moves start from £19 per hour. A local move typically costs £60-£120. A move to Dundee is usually £80-£130."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, Seaton, Gayfield, Ladyloan, Westway."},
-    ],
-  },
 
   "barry": {
     title: "Man and Van Barry From £19/hr | Free Quotes",
@@ -7136,21 +6971,6 @@ Housing is dominated by pre-war brick terraces around the old pit centres plus i
     ],
   },
 
-  "potters-bar": {
-    title: "Man and Van Potters Bar From £19/hr | Free Quotes",
-    description: "Man and van Potters Bar from £19/hr. EN6. Town Centre, South Mimms, Furzefield, Darkes Lane area. Call 0121 751 1269.",
-    h1: "Man and Van Potters Bar",
-    intro: "Need a man and van in Potters Bar? Share your postcodes, what you need moved, and any access notes. One verified mover reviews your Potters Bar move before quoting.",
-    knowledge: "Approved movers covering Potters Bar handle moves in suburban properties with good motorway access. The M25 and A1(M) junction can be very congested.",
-    localMovingInfo: `Potters Bar is about 13 miles north of central London at the M25/A1(M) junction. Enfield is 4 miles south. St Albans is 7 miles west. The M25 and A1(M) can be heavily congested. The town has mainly interwar and post-war housing. Rates from £19/hr.`,
-    faq: [
-      {"q":"How much does a man and van cost in Potters Bar?","a":"Potters Bar moves start from £19 per hour. A local move typically costs £60-£120. A move into central London is usually £100-£160."},
-    ],
-    localAreaGuides: [
-      {title: "Town centre", body: "A mix of property types with varying access. Best moved early morning.", links: [{label: "House removals", href: "/house-removals"}]},
-      {title: "Surrounding areas", body: "Residential areas with generally good road access. Town Centre, South Mimms, Furzefield, Darkes Lane area."},
-    ],
-  },
 
   "dover": {
     description: "Man with a van in Dover from £19/hr. Western Heights, Whitfield, River. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
@@ -11323,6 +11143,487 @@ Homes are 1930s terraces, interwar maisonettes with their own front doors, and t
         title: "South towards Harringay",
         body: "Harringay's Ladder sits just beyond the rails to the south - priced as a same-neighbourhood run.",
         links: [{ label: "Man and van Harringay", href: "/man-and-van-harringay" }, { label: "Man and van London", href: "/man-and-van-london" }],
+      },
+    ],
+  },
+
+  "airdrie": {
+    description: "Man with a van in Airdrie from £19/hr. Town Centre, Cairnhill, Gartlea. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Airdrie? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Lanarkshire move and send a quote before you decide whether to book.",
+    knowledge: "Airdrie moves run along the A89 through-town axis with the M8 at junction 6 to the south and the A73 climbing north to Cumbernauld. Expect sandstone tenements around the Town Centre, post-war semis at Cairnhill and Gartlea, and newer estates out at Chapelhall and Caldercruix.",
+    localMovingInfo: `Airdrie grew up on coal and ironstone on the ridge east of Glasgow, and its centre still runs along the A89 as Main Street. Drumpellier Country Park and the Monkland Canal sit on the Coatbridge side, and the two stations - Airdrie and Drumgelloch - both run into Glasgow Queen Street, which keeps the town busy with commuter, family and downsize moves.
+
+The M8 junction 6 roundabout queues up at rush hour, so movers plan Airdrie jobs around it, and the A73 is the natural run north through Chapelhall to Cumbernauld. Town centre streets around the old closes are tight, while the estates at Gartlea and Cairnhill are mostly straightforward van-to-door work.
+
+Housing stock is sandstone tenements near the centre, post-war semis through Gartlea and Cairnhill, and modern estates at Chapelhall and Caldercruix. One van handles most Airdrie jobs in a single trip. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Airdrie?", a: "Airdrie man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Airdrie to Glasgow?", a: "Airdrie to Glasgow is about 12 miles via the A89 and M8. A typical small move costs £50-£100, with single items often from £35-£65. It is a fast motorway run outside rush hour." },
+      { q: "Can movers handle town centre tenement flats?", a: "Yes. Give the floor level, close or stair details and any Main Street parking notes when you submit - Airdrie movers quote tenement moves routinely and price stair work properly once they know it is there." },
+      { q: "Do you cover Town Centre, Cairnhill, Gartlea, Chapelhall and Caldercruix?", a: "Yes. Move requests can be submitted for Town Centre, Cairnhill, Gartlea, Chapelhall and Caldercruix and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Tenement flats around Main Street",
+        body: "Airdrie's older core is classic sandstone tenement stock with close entries and narrow stairs. The right mover brings the crew plan for the stairwell, not just the van.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Estate moves at Gartlea and Cairnhill",
+        body: "Post-war semis with driveways make these the town's quickest jobs - most clear in one van and a morning.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "West to Glasgow on the A89",
+        body: "About 12 miles into the city centre - one of the most regular commuter routes movers price from Airdrie.",
+        links: [{ label: "Man and van Glasgow", href: "/man-and-van-glasgow" }, { label: "Man and van Coatbridge", href: "/man-and-van-coatbridge" }],
+      },
+      {
+        title: "North up the A73",
+        body: "Chapelhall, then straight on to Cumbernauld - new-estate access is easy, and quotes stack well on the way to the M80.",
+        links: [{ label: "Man and van Cumbernauld", href: "/man-and-van-cumbernauld" }, { label: "Man and van Motherwell", href: "/man-and-van-motherwell" }],
+      },
+    ],
+  },
+  "wishaw": {
+    description: "Man with a van in Wishaw from £19/hr. Town Centre, Murdieston, Cambusnethan. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Wishaw? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Lanarkshire move and send a quote before you decide whether to book.",
+    knowledge: "Wishaw moves follow the A71 through-town route, with the A721 running out to the M74 and M8 junctions 7 and 8 nearby. The centre mixes sandstone tenements and terraced rows; Murdieston and Cambusnethan are mostly semis, with Newmains and Cleland as ex-industrial village moves.",
+    localMovingInfo: `Wishaw is one of the old Clyde Valley steel towns - Ravenscraig shut in the 1990s, but the grid of the town centre and the tenement stock around it remain, with Cambusnethan Priory in its gothic shell by the Clyde to the east. The station runs direct trains to Glasgow Central, keeping commuter-priced moves brisk.
+
+The A71 is the spine through the town, and the A721 links out to the motorway network - M74 for the south, M8 for Glasgow and Edinburgh. Movers plan around the junction 7 and 8 queues at peak time and know the through-town traffic rhythm on the A71.
+
+Houses run from tenements and terraces around the Town Centre to post-war semis at Murdieston and Cambusnethan, with straightforward village moves at Newmains and Cleland. Most Wishaw moves are single-van jobs. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wishaw?", a: "Wishaw man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wishaw to Glasgow?", a: "Wishaw to Glasgow is about 16 miles via the A71 and M74 or M8. A typical small move costs £55-£115, with single items often from £40-£70." },
+      { q: "Can you do short village moves, Newmains to the town centre?", a: "Yes - short hops between Newmains, Cleland and the wider Wishaw area are everyday jobs. Two hours usually covers a small flat or part-load, so the minimum stay is modest." },
+      { q: "Do you cover Town Centre, Murdieston, Cambusnethan, Newmains and Cleland?", a: "Yes. Move requests can be submitted for Town Centre, Murdieston, Cambusnethan, Newmains and Cleland and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Steel-town terraces and tenements",
+        body: "The centre's older rows mean close entries and on-street parking - note your stair and parking situation when you submit so the quote covers it first time.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Village moves at Newmains and Cleland",
+        body: "Compact ex-industrial villages with simple van access - quick part-load and small-house runs.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Glasgow via the A71",
+        body: "Roughly 16 miles into the city - movers combine Wishaw jobs with Motherwell and Hamilton runs most days.",
+        links: [{ label: "Man and van Glasgow", href: "/man-and-van-glasgow" }, { label: "Man and van Motherwell", href: "/man-and-van-motherwell" }],
+      },
+      {
+        title: "Out to the motorways",
+        body: "The A721 puts the M74 and M8 within a few miles - long-distance quotes from Wishaw are priced off a fast motorway start.",
+        links: [{ label: "Man and van Hamilton", href: "/man-and-van-hamilton" }, { label: "Man and van Scotland", href: "/man-and-van-scotland" }],
+      },
+    ],
+  },
+  "ely": {
+    description: "Man with a van in Ely from £19/hr. City Centre, Stuntney, Little Downham. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Ely? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cambridgeshire move and send a quote before you decide whether to book.",
+    knowledge: "Ely moves centre on the A10 Cambridge to King's Lynn axis, with the A142 out to Newmarket and the A14 nearby to the south. Around the City Centre and the Cathedral the streets are narrow; Stuntney, Little Downham, Witchford and Haddenham are fen-edge village moves on rural lanes.",
+    localMovingInfo: `Ely is the little cathedral city of the Fens - the Cathedral of the Holy and Undivided Trinity rises over streets that were once an island in the marshes, and the riverside by the Great Ouse is lined with Georgian and Victorian houses. It sits on the A10 between Cambridge and King's Lynn with fast rail into Cambridge and London.
+
+Through-traffic on the A10 is the main timing factor, along with the narrow streets near the Cathedral and limited town centre parking. Beyond the bypass, moves spread to the fen villages - Stuntney, Little Downham, Witchford, Haddenham and Soham - where rural lane access and farm traffic set the pace.
+
+Housing runs from Georgian townhouses and Victorian terraces near the centre to rural stone cottages and modern estates on the city edge. One van covers most Ely moves in a day. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Ely?", a: "Ely man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the city typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Ely to Cambridge?", a: "Ely to Cambridge is about 16 miles down the A10. A typical small move costs £55-£110, with single items often from £40-£65. It is a straight fen-road run most of the day." },
+      { q: "Can movers reach fen-edge villages like Little Downham?", a: "Yes - village moves around Witchford, Haddenham and Little Downham are routine. Mention any narrow lane or limited turning at your property when you submit so the right van size is assigned." },
+      { q: "Do you cover City Centre, Stuntney, Little Downham, Witchford and Soham?", a: "Yes. Move requests can be submitted for City Centre, Stuntney, Little Downham, Witchford and Soham and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Cathedral quarter parking",
+        body: "The medieval streets by the Cathedral and the riverside have tight access windows and limited parking - flag your street and any restriction notices when you submit.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Fen-edge village moves",
+        body: "Little Downham, Witchford and Haddenham moves run on narrow fen lanes - local movers plan van size and turning space accordingly.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "South to Cambridge on the A10",
+        body: "About 16 miles - Ely-Cambridge is one of the busiest moving corridors in the county, especially around university term dates.",
+        links: [{ label: "Man and van Cambridge", href: "/man-and-van-cambridge" }, { label: "Man and van Cambridgeshire", href: "/man-and-van-cambridgeshire" }],
+      },
+      {
+        title: "North to Wisbech",
+        body: "Up the A10 through the Fens - direct rural pricing for market-town hops.",
+        links: [{ label: "Man and van Wisbech", href: "/man-and-van-wisbech" }],
+      },
+    ],
+  },
+  "high-wycombe": {
+    description: "Man with a van in High Wycombe from £19/hr. Terriers, Booker, Downley. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in High Wycombe? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Buckinghamshire move and send a quote before you decide whether to book.",
+    knowledge: "High Wycombe moves work around the M40 junctions 3 and 4 and the A40 through town, with the A4010 and A4128 climbing into the Chilterns. The terrain is genuinely hilly at Downley, Terriers and Marlow Hill; expect Victorian terraces near the centre and interwar semis up the slopes.",
+    localMovingInfo: `High Wycombe is the old chair-making town in the Wye valley - for two centuries High Wycombe chairs left here for the world, and the furniture trade left big mill buildings now converted to flats, plus a town that still moves more sofas than most. It sits in the M40 corridor between London and Oxford with fast rail to Marylebone.
+
+The M40 junctions 3 and 4 queue at peak times, and the A40 through town can be slow going. The ground rises steeply out of the valley floor - Downley, Terriers and Marlow Hill moves often mean steep drives, steps up to the front door, or lanes where a big luton will not turn, so van size gets chosen on access, not just load.
+
+Housing runs from Victorian terraces near the centre to interwar semis, modern apartments and new-build estates at the edges. Most in-town moves are single-van jobs. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in High Wycombe?", a: "High Wycombe man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£135. A full 2-3 bed house move usually ranges from £230-£470. Submit your details for a guide price first." },
+      { q: "How much is a man and van from High Wycombe to Oxford?", a: "High Wycombe to Oxford is about 26 miles on the A40. A typical small move costs £95-£160, with single items often from £55-£85. Allow a little extra around M40 peak times." },
+      { q: "Can movers manage the steep streets at Downley or Terriers?", a: "Yes, but detail matters - say if the drive is steep, the approach is stepped, or the lane is tight when you submit. Local movers pick van size and crew for the hill before quoting." },
+      { q: "Do you cover Terriers, Booker, Downley, Hazlemere and Loudwater?", a: "Yes. Move requests can be submitted for Terriers, Booker, Downley, Hazlemere and Loudwater and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Mill conversions and terraces",
+        body: "The old furniture mills are now apartment blocks with lifts and loading bays - share the building's access rules and any booking slots when you submit.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Furniture town instinct",
+        body: "A town built on chair-making takes furniture seriously - single-item antiques and workshop pieces are everyday Wycombe jobs.",
+        links: [{ label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "West to Oxford on the A40",
+        body: "About 26 miles through the Chilterns gap - a familiar route with straightforward pricing off the A40.",
+        links: [{ label: "Man and van Aylesbury", href: "/man-and-van-aylesbury" }, { label: "Man and van Buckinghamshire", href: "/man-and-van-buckinghamshire" }],
+      },
+      {
+        title: "East to Beaconsfield on the M40",
+        body: "Two junctions down the motorway - quick commuter-belt hops with easy stacking for part-loads.",
+        links: [{ label: "Man and van Beaconsfield", href: "/man-and-van-beaconsfield" }, { label: "Man and van Amersham", href: "/man-and-van-amersham" }],
+      },
+    ],
+  },
+  "coatbridge": {
+    description: "Man with a van in Coatbridge from £19/hr. Town Centre, Greenend, Gartsherrie. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Coatbridge? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Lanarkshire move and send a quote before you decide whether to book.",
+    knowledge: "Coatbridge moves sit right on the M8 at junction 7, with the A725 running south to the M74 and the A89 through town. The Iron Burgh's sandstone tenements cluster near the Town Centre and Whifflet, with post-war semis at Greenend, Cliftonville and Gartsherrie.",
+    localMovingInfo: `Coatbridge earned the name Iron Burgh on the back of the Baird family's furnaces, and that Victorian boom left a dense grid of sandstone tenements around the centre. Summerlee Museum of Scottish Industrial Life sits by the old Monkland Canal basin, and Drumpellier Country Park marks the western edge.
+
+The M8 junction 7 roundabout is the local clock - busy at rush hour, easy the rest of the day. The A725 drops south to the M74 at Raith, and the A89 runs west into Glasgow and east to Airdrie. Movers price Coatbridge work off fast motorway access most of the day.
+
+Housing is sandstone tenements near the Town Centre and Whifflet, post-war semis through Greenend, Gartsherrie and Cliftonville, and pockets of newer estates. One van handles most Coatbridge jobs in a single trip. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Coatbridge?", a: "Coatbridge man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Coatbridge to Glasgow?", a: "Coatbridge to Glasgow is about 10 miles on the M8 or A89. A typical small move costs £50-£95, with single items often from £35-£60." },
+      { q: "Can movers handle Whifflet tenement closes?", a: "Yes - mention the close entry, floor and any on-street parking limits when you submit. Tenement moves are bread and butter locally and get priced with the stairs included." },
+      { q: "Do you cover Town Centre, Greenend, Gartsherrie, Whifflet and Cliftonville?", a: "Yes. Move requests can be submitted for Town Centre, Greenend, Gartsherrie, Whifflet and Cliftonville and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Iron Burgh tenements",
+        body: "Close entries, shared stairs and on-street parking are the norm near the centre - the detail you give on access is what keeps the quote accurate.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Semis at Greenend and Gartsherrie",
+        body: "Post-war semis with driveways - the town's fastest jobs, usually one van and done before lunch.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "West to Glasgow on the M8",
+        body: "About 10 miles - one of the shortest city runs in Lanarkshire, priced accordingly outside rush hour.",
+        links: [{ label: "Man and van Glasgow", href: "/man-and-van-glasgow" }, { label: "Man and van Airdrie", href: "/man-and-van-airdrie" }],
+      },
+      {
+        title: "South on the A725",
+        body: "Down to the M74 and Motherwell in minutes - movers stack Coatbridge work with the whole M8 corridor.",
+        links: [{ label: "Man and van Motherwell", href: "/man-and-van-motherwell" }, { label: "Man and van Scotland", href: "/man-and-van-scotland" }],
+      },
+    ],
+  },
+  "st-albans": {
+    description: "Man with a van in St Albans from £19/hr. City Centre, Marshalswick, Sandridge. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in St Albans? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hertfordshire move and send a quote before you decide whether to book.",
+    knowledge: "St Albans moves balance the Roman core - the Cathedral quarter and Verulamium conservation area - against fast roads: the M1 to the east, the A414 to Hatfield and Hemel, and the A5183 through town on the old Watling Street line. Parking restrictions near the Cathedral shape city-centre loading.",
+    localMovingInfo: `St Albans is Roman Verulamium - Britain's third-biggest Roman town - and the city still runs on its bones: the Cathedral above the medieval core, the remains in Verulamium Park, and the A5183 tracking Watling Street straight through. It is one of Hertfordshire's most in-demand commuter cities with fast trains to St Pancras, so the moving market tilts heavily toward London movers-in and families trading up.
+
+The M1 and M25 congestion circle the city, and the A414 clogs at rush hour toward Hatfield. Inside the centre, the conservation area and Cathedral-quarter parking rules set loading windows - moves on streets like Fishpool Street need timing and often smaller vehicles for the narrows.
+
+Housing ranges from Victorian villas and Georgian townhouses near the centre to interwar semis at Marshalswick and Cunningham and modern apartments around the station and Park Street. Premium stock means careful handling expectations - movers quote protection and dismantling precisely once they know the inventory. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in St Albans?", a: "St Albans man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the city typically costs £55-£140. A full 2-3 bed house move usually ranges from £240-£480. Submit your details for a guide price first." },
+      { q: "How much is a man and van from St Albans to London?", a: "St Albans to London is about 25 miles via the A5183 or M1. A typical small move costs £110-£200, with single items often from £70-£110. London-side movers work from £26 per hour, which the quote reflects." },
+      { q: "Can movers work in the conservation area?", a: "Yes - give the street, any permit or loading-bay rules, and the access window. Cathedral-quarter moves are routine for experienced local movers; the plan matters more than the paperwork." },
+      { q: "Do you cover City Centre, Marshalswick, Sandridge, Cunningham and Sopwell?", a: "Yes. Move requests can be submitted for City Centre, Marshalswick, Sandridge, Cunningham and Sopwell and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Cathedral quarter access",
+        body: "Narrow medieval streets and permit zones set the loading plan - share your street name and any restriction notices when you submit for an accurate quote.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Family semis at Marshalswick",
+        body: "Interwar semis with drives and gardens - the classic St Albans family move, usually one van and a day.",
+        links: [{ label: "Man and van Hertfordshire", href: "/man-and-van-hertfordshire" }],
+      },
+      {
+        title: "South to London",
+        body: "About 25 miles into the capital - one of the busiest routes movers price from the city, with London-side rates from £26/hr.",
+        links: [{ label: "Man and van London", href: "/man-and-van-london" }, { label: "Man and van Watford", href: "/man-and-van-watford" }],
+      },
+      {
+        title: "West on the A414",
+        body: "Hatfield one way, Hemel Hempstead the other - short county hops with easy same-day availability most weeks.",
+        links: [{ label: "Man and van Hemel Hempstead", href: "/man-and-van-hemel-hempstead" }],
+      },
+    ],
+  },
+  "chelmsford": {
+    description: "Man with a van in Chelmsford from £19/hr. Town Centre, Springfield, Great Baddow. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Chelmsford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Essex move and send a quote before you decide whether to book.",
+    knowledge: "Chelmsford moves run off the A12 with the A414 out to the M11 and Harlow, and the A130 and A131 serving the south and east. The narrow streets near the cathedral and parking near the station shape town-centre jobs; new estates at Beaulieu and Channels are on the Springfield side.",
+    localMovingInfo: `Chelmsford is the county city of Essex and the birthplace of radio - Marconi built the world's first radio factory here in 1899 - with Anglia Ruskin University's Chelmsford campus adding a real student moving market to the commuter base toward London Liverpool Street.
+
+The A12 queues at rush hour either side of the city, and the A414 through town toward the M11 is the other pressure point. Movers time Chelmsford jobs around those peaks; the town centre near the cathedral has narrow streets, and station-side parking is tight at commuter hours.
+
+Housing runs from Victorian terraces near the centre to interwar semis at Great Baddow and Writtle, modern apartments, and big new-build estates at Beaulieu, Channels and Chelmer Village. Student rooms around ARU are usually part-loads. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Chelmsford?", a: "Chelmsford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the city typically costs £55-£135. A full 2-3 bed house move usually ranges from £230-£470. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Chelmsford to Colchester?", a: "Chelmsford to Colchester is about 23 miles on the A12. A typical small move costs £90-£150, with single items often from £50-£80. The dual carriageway makes it a predictable run outside peak times." },
+      { q: "Do you handle ARU student moves?", a: "Yes - the two big windows are September and June. A student room moves in one van run; book early for end-of-term weekends and give halls any loading-bay booking details when you submit." },
+      { q: "Do you cover Town Centre, Springfield, Great Baddow, Writtle and Galleywood?", a: "Yes. Move requests can be submitted for Town Centre, Springfield, Great Baddow, Writtle and Galleywood and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Student moves at ARU Chelmsford",
+        body: "Campus-side rooms and shared houses turn over at term dates - label boxes by room and split a van across a house-share to share the cost.",
+        links: [{ label: "Student removals", href: "/student-removals" }],
+      },
+      {
+        title: "New estates at Beaulieu and Channels",
+        body: "Big new-build streets with fresh addresses - drop the full street name and any developer access notes when you submit.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "North-east to Colchester on the A12",
+        body: "About 23 miles - direct dual-carriageway pricing for garrison-town hops.",
+        links: [{ label: "Man and van Colchester", href: "/man-and-van-colchester" }, { label: "Man and van Essex", href: "/man-and-van-essex" }],
+      },
+      {
+        title: "South-west to Brentwood",
+        body: "Down the A12 toward the M25 - commuter-corridor moves stack neatly most days.",
+        links: [{ label: "Man and van Brentwood", href: "/man-and-van-brentwood" }, { label: "Man and van Basildon", href: "/man-and-van-basildon" }],
+      },
+    ],
+  },
+  "arbroath": {
+    description: "Man with a van in Arbroath from £19/hr. Town Centre, Seafront, Friockheim. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Arbroath? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Angus move and send a quote before you decide whether to book.",
+    knowledge: "Arbroath moves follow the A92 coastal road between Dundee and Montrose, with the A933 inland toward Brechin. The harbour and old town have narrow streets; the Seafront has parking restrictions at busy times; Friockheim, St Vigeans, Inverkeilor and Arbirlot are village moves inland.",
+    localMovingInfo: `Arbroath is the Abbey town of the Angus coast - the Declaration of Arbroath was signed here in 1320 - and it is still a working harbour, famous for the Arbroath smokie smoked haddock. The old town clusters tight around the harbour, with the town centre stretching back from the sea and newer streets toward the cliffs.
+
+The A92 is the lifeline - Dundee one way, Montrose the other - and the A933 runs inland to Brechin. Movers time jobs around A92 congestion and know the seafront parking windows; harbour-side addresses often mean narrow access and a short carry from a marked bay.
+
+Housing runs from sandstone tenements and harbour cottages near the old town to post-war semis inland. Most Arbroath moves are single-van day jobs. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Arbroath?", a: "Arbroath man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Arbroath to Dundee?", a: "Arbroath to Dundee is about 17 miles down the A92. A typical small move costs £55-£115, with single items often from £40-£70. It is one of the shortest city runs in the region." },
+      { q: "Can movers manage the narrow harbour streets?", a: "Yes - the old town and harbour lanes are routine work. Note the nearest loading bay or parking option and any tight turning when you submit your move details." },
+      { q: "Do you cover Town Centre, Seafront, Friockheim, St Vigeans and Inverkeilor?", a: "Yes. Move requests can be submitted for Town Centre, Seafront, Friockheim, St Vigeans and Inverkeilor and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Old town and harbour lanes",
+        body: "Cottages and tenements around the harbour mean short carries from marked bays - flag the lane width and nearest bay when you submit.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Seafront and clifftop moves",
+        body: "Post-war streets toward the cliffs have easier access - most are one-van half-day jobs.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "South-west to Dundee on the A92",
+        body: "About 17 miles - the most regular route movers price from Arbroath, easy to stack any day of the week.",
+        links: [{ label: "Man and van Dundee", href: "/man-and-van-dundee" }, { label: "Man and van Scotland", href: "/man-and-van-scotland" }],
+      },
+      {
+        title: "Inland to the Angus villages",
+        body: "Friockheim, St Vigeans and Arbirlot moves run on farm lanes - mention access and turning space at both ends.",
+        links: [{ label: "Long-distance removals", href: "/long-distance-removals" }],
+      },
+    ],
+  },
+  "potters-bar": {
+    description: "Man with a van in Potters Bar from £19/hr. Town Centre, South Mimms, Furzefield. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Potters Bar? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Hertfordshire move and send a quote before you decide whether to book.",
+    knowledge: "Potters Bar moves sit on the London fringe: the M25 at junction 23, the A1(M) just west, and the A1000 - the old Great North Road - through Darkes Lane and the Town Centre. Homes are mostly interwar semis with post-war estates and modern flats near the station.",
+    localMovingInfo: `Potters Bar grew as a railway suburb on the Great Northern line into King's Cross, and Darkes Lane still runs as the high street over the bridge. Just outside the town the M25 junction 23 at South Mimms meets the A1(M), which is why the town is a staging post for moves in and out of north London.
+
+The M25 junction 23 roundabout and A1(M) traffic set the timing, and residential parking restrictions near the Town Centre and station shape loading. Many Potters Bar moves head south into Enfield and Barnet, where London-side pricing from £26 per hour applies.
+
+Housing is mostly interwar semis around Furzefield and Little Heath, post-war estates, and modern flats near the station. Most jobs are one van, and short London-fringe hops are priced tightly. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Potters Bar?", a: "Potters Bar man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Potters Bar to Watford?", a: "Potters Bar to Watford is about 12 miles via the A1000 and M25 or local roads. A typical small move costs £55-£105, with single items often from £35-£60." },
+      { q: "I am moving in to London - does that change the price?", a: "Only the London end of the job matters - moves into Enfield, Barnet and the wider capital are quoted with London-side mover rates from £26 per hour, which you will see clearly in the quote before you decide." },
+      { q: "Do you cover Town Centre, South Mimms, Furzefield, Darkes Lane area and Little Heath?", a: "Yes. Move requests can be submitted for Town Centre, South Mimms, Furzefield, Darkes Lane area and Little Heath and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Interwar semis around Furzefield",
+        body: "The town's classic stock - drives, gardens and straightforward access make these quick one-van moves.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Station-side flats",
+        body: "Modern blocks near the station have lifts and booking slots - share the building's move-in rules when you submit.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "South into London",
+        body: "Enfield and Barnet are minutes down the A1000 - the busiest run from town, with London-side rates from £26/hr.",
+        links: [{ label: "Man and van London", href: "/man-and-van-london" }, { label: "Man and van Enfield", href: "/man-and-van-enfield" }],
+      },
+      {
+        title: "The M25 junction 23 corridor",
+        body: "South Mimms services sit where the M25 meets the A1(M) - long-distance moves from Potters Bar start fast in every direction.",
+        links: [{ label: "Man and van Hertfordshire", href: "/man-and-van-hertfordshire" }, { label: "Man and van Watford", href: "/man-and-van-watford" }],
+      },
+    ],
+  },
+  "burgess-hill": {
+    description: "Man with a van in Burgess Hill from £19/hr. Town Centre, World's End, Hammonds Green. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Burgess Hill? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your West Sussex move and send a quote before you decide whether to book.",
+    knowledge: "Burgess Hill moves hinge on the A2300 link road up to the A23 and M23, with the A273 to Haywards Heath and rural lanes out to the surrounding villages. The town mixes post-war semis at World's End and Hammonds Green with big new-build developments toward Franklands Village and Ditchling Common.",
+    localMovingInfo: `Burgess Hill sits in Mid Sussex between the South Downs and the High Weald, on the London to Brighton railway - which is why so many moves here are families trading between the coast and the capital. World's End and Hammonds Green are established estates; the north side keeps growing with new-build developments toward Ditchling Common.
+
+The A2300 is the essential few miles up to the A23 and M23 - busy at commuter times - and the B2036 threads south toward the Downs. New-build addresses sometimes lag satnavs, so pinning the exact street and developer access notes when you submit matters on the newest estates.
+
+Housing runs from post-war semis and terraced housing to modern estates and new-build developments. Most Burgess Hill moves are single-van jobs, and Brighton-side hops are short. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Burgess Hill?", a: "Burgess Hill man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Burgess Hill to Brighton?", a: "Burgess Hill to Brighton is about 11 miles via the A2300 and A23. A typical small move costs £50-£100, with single items often from £35-£60." },
+      { q: "My new-build street is not on the satnav - is that a problem?", a: "No - give the full street name plus the developer's site and phase details when you submit, and the mover will pin it on their planning map before moving day." },
+      { q: "Do you cover Town Centre, World's End, Hammonds Green, Franklands Village and Ditchling Common?", a: "Yes. Move requests can be submitted for Town Centre, World's End, Hammonds Green, Franklands Village and Ditchling Common and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "New-build estate moves",
+        body: "Fresh addresses and shared driveways need exact details - the developer phase and any snagging-day traffic are worth noting.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Established estates at World's End",
+        body: "Post-war semis with drives - the town's bread-and-butter moves, usually one van and a morning.",
+        links: [{ label: "Same-day man and van", href: "/same-day-man-and-van" }],
+      },
+      {
+        title: "South to Brighton on the A23",
+        body: "About 11 miles to the coast - one of the shortest city runs in Sussex, priced tightly most days.",
+        links: [{ label: "Man and van Brighton", href: "/man-and-van-brighton" }, { label: "Man and van Haywards Heath", href: "/man-and-van-haywards-heath" }],
+      },
+      {
+        title: "North to Crawley and the M23",
+        body: "Up the A23 toward Gatwick - commuter-belt moves stack well morning or evening.",
+        links: [{ label: "Man and van Crawley", href: "/man-and-van-crawley" }],
+      },
+    ],
+  },
+  "motherwell": {
+    description: "Man with a van in Motherwell from £19/hr. Town Centre, Carfin, Bellshill. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Motherwell? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Lanarkshire move and send a quote before you decide whether to book.",
+    knowledge: "Motherwell moves work around the M8 and M74 junctions, with the A721 through town. The centre has sandstone tenements, Bellshill and Carfin are post-war estates, and the Ravenscraig site is filling with new developments. Fir Park match days change the traffic pattern.",
+    localMovingInfo: `Motherwell was the steel capital of Scotland - Ravenscraig's skyline once defined the Clyde Valley - and the site is now the biggest regeneration in the region, with new streets rising where the furnaces stood. Fir Park, home of Motherwell FC, and Strathclyde Park by the M74 give the town its landmarks.
+
+The M8 and M74 junctions on the doorstep set the timing - busy at peaks, fast the rest of the day - and the A721 runs through the town to Wishaw. Movers stack Motherwell work with Hamilton and Wishaw runs most days, and know to avoid Fir Park around kick-off on match days.
+
+Housing runs from sandstone tenements near the Town Centre to post-war estates at Carfin and Bellshill and modern developments on the Ravenscraig site. Most Motherwell moves are single-van jobs. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Motherwell?", a: "Motherwell man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Motherwell to Glasgow?", a: "Motherwell to Glasgow is about 14 miles on the M8 or M74. A typical small move costs £55-£110, with single items often from £40-£65." },
+      { q: "Can movers find the new Ravenscraig streets?", a: "Yes - the development is new enough that movers confirm the exact plot and phase before moving day. Give the full street name and developer estate name when you submit." },
+      { q: "Do you cover Town Centre, Wishaw, Carfin, Bellshill and Bothwell?", a: "Yes. Move requests can be submitted for Town Centre, Wishaw, Carfin, Bellshill and Bothwell and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Tenements near the centre",
+        body: "Close entries and on-street parking are normal - the stair and parking notes you give when submitting keep the quote accurate.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Ravenscraig new-builds",
+        body: "Brand-new streets with plot references rather than old post codes - share the phase and developer name for a clean access plan.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "West to Glasgow on the M8",
+        body: "About 14 miles - movers combine Motherwell jobs with the whole Glasgow corridor most days.",
+        links: [{ label: "Man and van Glasgow", href: "/man-and-van-glasgow" }, { label: "Man and van Hamilton", href: "/man-and-van-hamilton" }],
+      },
+      {
+        title: "South to Wishaw on the A721",
+        body: "Two minutes down the road - town-pair quotes between Motherwell and Wishaw are among the cheapest in the region.",
+        links: [{ label: "Man and van Wishaw", href: "/man-and-van-wishaw" }, { label: "Man and van Scotland", href: "/man-and-van-scotland" }],
+      },
+    ],
+  },
+  "cumbernauld": {
+    description: "Man with a van in Cumbernauld from £19/hr. Town Centre, Kildrum, Carrickstone. One verified mover quotes. Rated 5.0/5 from 5 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Cumbernauld? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Lanarkshire move and send a quote before you decide whether to book.",
+    knowledge: "Cumbernauld moves use the M80 at junction 4 and the A73 through town. The new-town layout - the famous central megastructure and streets built round the car - means moves cluster by estate: Kildrum, Carrickstone, Seafar, Abronhill and Condorrat, the older absorbed villages.",
+    localMovingInfo: `Cumbernauld was designated a new town in the 1950s to take Glasgow's overspill, and its centre - the megastructure locals call the Centre, once the world's biggest building of its kind - is still a landmark of brutalist ambition. The villages of Abronhill and Condorrat were folded into the town, and estates like Seafar and Kildrum fan out from the core.
+
+The M80 junction 4 queues at peak times and the A73 threads south through the town. The new-town road layout keeps houses off main roads - you reach most homes by estate roads and underpasses - so movers pin the exact court or street before moving day rather than trusting the satnav alone.
+
+Housing is new-town estates and post-war housing with modern developments around the edges. Most Cumbernauld moves are single-van jobs, and Glasgow runs are short. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Cumbernauld?", a: "Cumbernauld man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Cumbernauld to Glasgow?", a: "Cumbernauld to Glasgow is about 15 miles on the M80 and M8. A typical small move costs £55-£110, with single items often from £40-£65." },
+      { q: "The estate layout confuses my satnav - how do movers find my street?", a: "Give the full street name and estate area - Kildrum, Seafar, Abronhill and so on - when you submit. Movers working the town plan by estate rather than by main road, because houses sit off the arterial routes." },
+      { q: "Do you cover Town Centre, Kildrum, Carrickstone, Seafar and Abronhill?", a: "Yes. Move requests can be submitted for Town Centre, Kildrum, Carrickstone, Seafar and Abronhill and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "New-town estate access",
+        body: "Homes sit off the main roads behind underpasses - the estate name plus street name in your request gets the van to the right door first time.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Village pockets at Abronhill and Condorrat",
+        body: "The absorbed villages move like small towns - quiet streets, easy parking, one van half-day jobs.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "West to Glasgow on the M80",
+        body: "About 15 miles - fast motorway access makes Cumbernauld-Glasgow one of the region's cheapest city runs.",
+        links: [{ label: "Man and van Glasgow", href: "/man-and-van-glasgow" }, { label: "Man and van Airdrie", href: "/man-and-van-airdrie" }],
+      },
+      {
+        title: "East to Falkirk and Stirling",
+        body: "The M80 and local roads put both within easy reach - everyday part-load and full-move routes.",
+        links: [{ label: "Man and van Falkirk", href: "/man-and-van-falkirk" }, { label: "Man and van Stirling", href: "/man-and-van-stirling" }],
       },
     ],
   },
