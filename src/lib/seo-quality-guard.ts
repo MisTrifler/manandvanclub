@@ -563,6 +563,19 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "hammersmith",
   "catford",
   "wirral",
+  // 2026-07-23 dead-slug revival batch 2 (×2-3 referenced missing towns)
+  "brentford",
+  "deptford",
+  "staines",
+  "hatfield",
+  "camberley",
+  "farnham",
+  "tewkesbury",
+  "accrington",
+  "whiston",
+  "wisbech",
+  "beccles",
+  "totnes",
 ]);
 
 export function isSeoLaunchMode(): boolean {
