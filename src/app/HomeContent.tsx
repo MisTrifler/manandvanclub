@@ -10,6 +10,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import GoogleRatingBadge from "@/components/GoogleRatingBadge";
 import type { IntentType } from "@/lib/intent-detection";
 
 const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: string }[] = [
@@ -212,6 +213,11 @@ export default function HomeContent() {
           <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
             From £19/hr · Verified movers · 476 UK areas · Free to submit · No spam
           </p>
+
+          {/* Google reviews badge - refreshes to live Google numbers once the Places key is set */}
+          <div className="mt-4 flex justify-center">
+            <GoogleRatingBadge />
+          </div>
 
           {/* Move Type Selector */}
           <div className="mt-8">
