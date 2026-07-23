@@ -285,30 +285,37 @@ const aggregateRatingSchema = {
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Anku G." },
-      "datePublished": "2026-07-23",
+      "datePublished": "2026-07-22",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
       "reviewBody": "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Cant thank you enough. Recommended company!"
     },
     {
       "@type": "Review",
-      "author": { "@type": "Person", "name": "S.J." },
-      "datePublished": "2026-05-15",
+      "author": { "@type": "Person", "name": "Harman S." },
+      "datePublished": "2026-07-20",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Absolutely brilliant service. The driver was punctual, careful and really helpful with loading. Best man and van I've used in Birmingham. Will definitely use again."
+      "reviewBody": "Amazing! Thank you for the help"
     },
     {
       "@type": "Review",
-      "author": { "@type": "Person", "name": "M.K." },
-      "datePublished": "2026-04-22",
+      "author": { "@type": "Person", "name": "Mansi B." },
+      "datePublished": "2026-07-17",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Needed a same-day move in Walsall and they came through. Fair price, no hidden fees. The driver even helped carry everything upstairs. Five stars."
+      "reviewBody": "Amazing Service easy and seamless. Adrian was punctual and got the job done fast thank you!!!! Definitely would use again!"
     },
     {
       "@type": "Review",
-      "author": { "@type": "Person", "name": "R.P." },
-      "datePublished": "2026-06-01",
+      "author": { "@type": "Person", "name": "Umar M." },
+      "datePublished": "2026-07-17",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Used Man and Van Club for a furniture collection from Facebook Marketplace. Driver was professional, blankets and straps for protection. Great value at £19/hr."
+      "reviewBody": "Very pleased with the service. The booking process was straightforward, communication was clear throughout."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Parmod C." },
+      "datePublished": "2026-07-16",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Good price and customer service! Very pleased"
     }
   ]
 };

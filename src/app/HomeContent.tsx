@@ -24,33 +24,28 @@ const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: st
 const REVIEW_CARDS = [
   {
     name: "Anku G.",
-    platform: "Verified",
+    platform: "Google",
     text: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Cant thank you enough. Recommended company!",
   },
   {
+    name: "Harman S.",
+    platform: "Google",
+    text: "Amazing! Thank you for the help",
+  },
+  {
     name: "Mansi B.",
-    platform: "Verified",
-    text: "Amazing service, easy and seamless. Adrian was punctual and got the job done fast. Definitely would use again!",
+    platform: "Google",
+    text: "Amazing Service easy and seamless. Adrian was punctual and got the job done fast thank you!!!! Definitely would use again!",
   },
   {
     name: "Umar M.",
-    platform: "Verified",
-    text: "Very pleased with the service. The booking process was straightforward and communication was clear throughout.",
+    platform: "Google",
+    text: "Very pleased with the service. The booking process was straightforward, communication was clear throughout.",
   },
   {
     name: "Parmod C.",
-    platform: "Verified",
-    text: "Good price and customer service! Very pleased.",
-  },
-  {
-    name: "Harman S.",
-    platform: "Verified",
-    text: "Amazing! Thank you for the help.",
-  },
-  {
-    name: "VC-17",
-    platform: "Verified",
-    text: "Great experience with Man and Van Club. Simple easy booking by calling, got matched with a surprisingly low fee compared to other services. Definitely will use again!",
+    platform: "Google",
+    text: "Good price and customer service! Very pleased",
   },
 ];
 
@@ -170,7 +165,8 @@ export default function HomeContent() {
   const scrollByCard = useCallback((direction: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const cardWidth = 324; // 300px card + 24px gap
+    const card = el.querySelector<HTMLElement>("[data-review-card]");
+    const cardWidth = card ? card.offsetWidth + 24 : 324; // card width + 24px gap
     el.scrollBy({ left: direction === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
     // Pause briefly then resume
     userPaused.current = true;
@@ -424,7 +420,8 @@ export default function HomeContent() {
                 {REVIEW_CARDS.map((review, i) => (
                   <div
                     key={`${set}-${i}`}
-                    className="w-[300px] shrink-0 bg-[#F9F9F7] border border-border/50 rounded-2xl p-6 flex flex-col"
+                    data-review-card
+                    className="w-[300px] lg:w-[340px] shrink-0 bg-[#F9F9F7] border border-border/50 rounded-2xl p-6 flex flex-col"
                   >
                     <div className="flex items-center gap-1 mb-3">
                       {[1,2,3,4,5].map((s) => (

@@ -17,28 +17,33 @@ export const metadata: Metadata = {
   },
 };
 
-// Verbatim customer reviews (unchanged, including typos) - mirrored in the
-// site's Organisation Review schema.
+// Verbatim Google Business Profile reviews (all 5 currently on the profile,
+// unchanged including typos) - mirrored in the site's Organisation Review schema.
 const REVIEWS: { author: string; date: string; body: string }[] = [
   {
     author: "Anku G.",
-    date: "23 July 2026",
+    date: "22 July 2026",
     body: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Cant thank you enough. Recommended company!",
   },
   {
-    author: "S.J.",
-    date: "15 May 2026",
-    body: "Absolutely brilliant service. The driver was punctual, careful and really helpful with loading. Best man and van I've used in Birmingham. Will definitely use again.",
+    author: "Harman S.",
+    date: "20 July 2026",
+    body: "Amazing! Thank you for the help",
   },
   {
-    author: "M.K.",
-    date: "22 April 2026",
-    body: "Needed a same-day move in Walsall and they came through. Fair price, no hidden fees. The driver even helped carry everything upstairs. Five stars.",
+    author: "Mansi B.",
+    date: "17 July 2026",
+    body: "Amazing Service easy and seamless. Adrian was punctual and got the job done fast thank you!!!! Definitely would use again!",
   },
   {
-    author: "R.P.",
-    date: "1 June 2026",
-    body: "Used Man and Van Club for a furniture collection from Facebook Marketplace. Driver was professional, blankets and straps for protection. Great value at £19/hr.",
+    author: "Umar M.",
+    date: "17 July 2026",
+    body: "Very pleased with the service. The booking process was straightforward, communication was clear throughout.",
+  },
+  {
+    author: "Parmod C.",
+    date: "16 July 2026",
+    body: "Good price and customer service! Very pleased",
   },
 ];
 
