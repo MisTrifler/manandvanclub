@@ -24,32 +24,26 @@ const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: st
 const REVIEW_CARDS = [
   {
     name: "Pratham T.",
-    platform: "Google",
     text: "Honest company as they didn't have any approved movers near me however sourced one for me instead. Definitely got me a bargain compared to these big companies.",
   },
   {
     name: "Anku G.",
-    platform: "Google",
     text: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Cant thank you enough. Recommended company!",
   },
   {
     name: "Harman S.",
-    platform: "Google",
     text: "Amazing! Thank you for the help",
   },
   {
     name: "Mansi B.",
-    platform: "Google",
     text: "Amazing Service easy and seamless. Adrian was punctual and got the job done fast thank you!!!! Definitely would use again!",
   },
   {
     name: "Umar M.",
-    platform: "Google",
     text: "Very pleased with the service. The booking process was straightforward, communication was clear throughout.",
   },
   {
     name: "Parmod C.",
-    platform: "Google",
     text: "Good price and customer service! Very pleased",
   },
 ];
@@ -171,7 +165,7 @@ export default function HomeContent() {
     const el = scrollRef.current;
     if (!el) return;
     const card = el.querySelector<HTMLElement>("[data-review-card]");
-    const cardWidth = card ? card.offsetWidth + 24 : 324; // card width + 24px gap
+    const cardWidth = card ? card.offsetWidth + 16 : 316; // card width + 16px gap
     el.scrollBy({ left: direction === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
     // Pause briefly then resume
     userPaused.current = true;
@@ -408,7 +402,7 @@ export default function HomeContent() {
           {/* Scroll container — triplicate for seamless infinite loop */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-none cursor-grab select-none"
+            className="flex gap-4 overflow-x-auto scrollbar-none cursor-grab select-none"
             style={{ WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
             onMouseDown={onMouseDown}
             onMouseMove={onMouseMove}
@@ -419,7 +413,7 @@ export default function HomeContent() {
             onTouchEnd={onTouchEnd}
           >
             {[1, 2, 3].map((set) => (
-              <div key={set} className="flex gap-6 shrink-0">
+              <div key={set} className="flex gap-4 shrink-0">
                 {REVIEW_CARDS.map((review, i) => (
                   <div
                     key={`${set}-${i}`}
@@ -434,11 +428,8 @@ export default function HomeContent() {
                     <p className="text-sm text-text-secondary leading-relaxed flex-1">
                       &ldquo;{review.text}&rdquo;
                     </p>
-                    <div className="mt-4 flex items-center justify-between">
+                    <div className="mt-4">
                       <span className="text-xs font-black text-primary/70">{review.name}</span>
-                      <span className="text-[9px] font-black uppercase tracking-widest text-accent bg-accent/10 px-2 py-0.5 rounded-full">
-                        {review.platform}
-                      </span>
                     </div>
                   </div>
                 ))}
