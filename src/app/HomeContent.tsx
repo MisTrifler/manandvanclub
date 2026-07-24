@@ -378,9 +378,6 @@ export default function HomeContent() {
           <h2 className="text-2xl font-black text-primary uppercase tracking-tighter">
             What our customers say
           </h2>
-          <p className="text-sm text-text-secondary mt-1">
-            5/5 Google reviews
-          </p>
         </div>
 
         {/* Scrollable review cards — auto-scrolls, drag/swipe, arrow buttons */}
