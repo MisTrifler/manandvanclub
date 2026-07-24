@@ -11627,4 +11627,605 @@ Housing is new-town estates and post-war housing with modern developments around
       },
     ],
   },
+  "kingswinford": {
+    description: "Man with a van in Kingswinford from £19/hr. Wall Heath, Himley, Pensnett. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Kingswinford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Black Country move and send a quote before you decide whether to book.",
+    knowledge: "Kingswinford moves run on the A491 between Stourbridge and Wolverhampton, with the A4101 cutting east to Dudley and Merry Hill and the A449 passing Stourton. Homes cluster around the Cross and Market Street, then spread into Wall Heath, Himley, Pensnett and the Cotwall End lanes.",
+    localMovingInfo: `Kingswinford grew from a village of forges and chain-makers on the old route between Stourbridge and Wolverhampton, and it still works like a large village - the Cross and Market Street at the middle, with Wall Heath and Himley as distinct pockets around it. The Charter Trustees keep the word town in play, but locals still say the village.
+
+The A491 is the spine, and it queues hard at school-run and commuting times towards both Stourbridge and Kingswinford's Merry Hill side. Estates at Wall Heath and Himley are laid out in closes and crescents, so movers park on the through-road and confirm the exact close before moving day. The A4101 gives a straight run to Dudley and the Waterfront developments.
+
+Housing is mostly post-war semis and detached family homes with newer infill estates. Most Kingswinford moves are single-van jobs to Stourbridge, Dudley or Wolverhampton, with regular longer runs into Birmingham. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Kingswinford?", a: "Kingswinford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Kingswinford to Birmingham?", a: "Kingswinford to Birmingham is about 12 miles via the A459 and Halesowen. A typical small move costs £50-£100, with single items often from £35-£65." },
+      { q: "My estate is all closes and crescents - how does the van find me?", a: "Give the house number and the nearest through-road when you submit, plus any gated or narrow turns. Movers working Wall Heath and Himley plan the parking spot in advance, because many closes have no turning room for a Luton van." },
+      { q: "Do you cover Town Centre, Wall Heath, Himley, Pensnett and Swindon?", a: "Yes. Move requests can be submitted for Town Centre, Wall Heath, Himley, Pensnett and Swindon and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Village-centre parking around the Cross",
+        body: "Loading near the Cross and Market Street is easier early or mid-morning - mention shop-front or main-road access in your request so the mover can plan the stop.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Wall Heath and Himley family estates",
+        body: "Post-war closes and crescents mean the van often parks on the through-road - note any long carries and the mover builds it into the quote.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "North to Wolverhampton on the A491",
+        body: "A straight run up the A491 and A449 puts Wolverhampton within easy reach - an everyday part-load route.",
+        links: [{ label: "Man and van Wolverhampton", href: "/man-and-van-wolverhampton" }, { label: "Man and van Stourbridge", href: "/man-and-van-stourbridge" }],
+      },
+      {
+        title: "East to Dudley and Merry Hill",
+        body: "The A4101 gives quick access to Dudley, Brierley Hill and the Waterfront - short hops that suit hourly bookings.",
+        links: [{ label: "Man and van Dudley", href: "/man-and-van-dudley" }, { label: "Man and van Brierley Hill", href: "/man-and-van-brierley-hill" }],
+      },
+    ],
+  },
+  "stafford": {
+    description: "Man with a van in Stafford from £19/hr. Highfields, Wildwood, Doxey. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Stafford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Staffordshire move and send a quote before you decide whether to book.",
+    knowledge: "Stafford moves work off M6 junctions 13 and 14, with the A34 carrying traffic north to Stoke and south to Cannock. The town runs from the castle mound and Victoria Park out to Highfields, Wildwood, Rowley Park, Baswich and Doxey, with new estates filling the gaps along the A518 to Weston.",
+    localMovingInfo: `Stafford has been the county town since Saxon burh days, and its centre still runs on medieval bones - Gaolgate, Greengate and the market square beneath the castle mound. Around it the town has spread in waves: Victorian terraces near the station, inter-war streets at Rowley Park, and big post-war and modern estates at Highfields, Wildwood, Doxey and Baswich.
+
+The M6 is the town's main line - junction 14 for the north side, 13 for the south - and both clog at peak times, so movers pick the junction by estate rather than habit. The town centre has permit bays and a one-way system around Gaolgate, which is worth noting in your access details. The A34 and A518 carry most everything else.
+
+Housing ranges from town-centre terraces to family semis and new-build detached plots. Stafford to Stoke-on-Trent and the M6 corridor moves are everyday work, with Telford and Cannock close behind. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Stafford?", a: "Stafford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Stafford to Stoke-on-Trent?", a: "Stafford to Stoke-on-Trent is about 17 miles up the M6 and A500. A typical small move costs £55-£115, with single items often from £40-£70." },
+      { q: "I am in a town-centre terrace with no drive - what should I note?", a: "Flag the permit street and the nearest loading point when you submit - the station side and Gaolgate area have time-limited bays. Movers working the centre plan a short early stop or a spot on an adjacent street to keep carry distance down." },
+      { q: "Do you cover Town Centre, Highfields, Wildwood, Rowley Park and Baswich?", a: "Yes. Move requests can be submitted for Town Centre, Highfields, Wildwood, Rowley Park and Baswich and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town-centre permits and the one-way system",
+        body: "Market days and the Gaolgate loop limit stopping - early slots and clear access notes keep town-centre moves quick.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Highfields, Wildwood and Doxey estates",
+        body: "Big modern estates with shaped parking courts - the exact court name in your request gets the van to the right door.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "North to Stoke on the M6 corridor",
+        body: "About 17 miles - the A34 and M6 make Stafford-Stoke one of the county's most regular van runs.",
+        links: [{ label: "Man and van Stoke-on-Trent", href: "/man-and-van-stoke-on-trent" }, { label: "Man and van Staffordshire", href: "/man-and-van-staffordshire" }],
+      },
+      {
+        title: "South to Cannock, Rugeley and Telford",
+        body: "Everyday short-hop routes in all directions - part-loads and single items move cheaply on these corridors.",
+        links: [{ label: "Man and van Cannock", href: "/man-and-van-cannock" }, { label: "Man and van Telford", href: "/man-and-van-telford" }],
+      },
+    ],
+  },
+  "rugeley": {
+    description: "Man with a van in Rugeley from £19/hr. Brereton, Etchinghill, Armitage. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Rugeley? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Cannock Chase move and send a quote before you decide whether to book.",
+    knowledge: "Rugeley moves run on the A51 between Lichfield and Stone, with the A460 south to Cannock and the Chase on the doorstep. Homes range from town-centre terraces to the Brereton and Etchinghill estates, with Armitage, Longdon and Slitting Mill as outlying pockets.",
+    localMovingInfo: `Rugeley boomed on coal and power - the Lea Hall and Brereton collieries and the twin power stations shaped the town for a century. With both gone, the towers down and the sites being remade, the town keeps its practical layout: a compact centre by the Trent and Mersey Canal, Brereton and Etchinghill estates on the rise, and veterans of the old colliery rows still in the terraced streets.
+
+The A51 threads the town and queues through Brereton at peak times; the A460 is the fast way south to Cannock and the M6 Toll. Etchinghill's estate roads sit on a slope with courts off the main drag, so movers confirm the exact block before the day. Cannock Chase parking on sunny weekends is the other local traffic trap.
+
+Housing is terraced rows, post-war semis and newer infill estates. Most Rugeley moves are short runs to Cannock, Stafford or Lichfield, with student and city moves down to Birmingham. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Rugeley?", a: "Rugeley man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Rugeley to Stafford?", a: "Rugeley to Stafford is about 9 miles via Wolseley and the A34. A typical small move costs £50-£100, with single items often from £35-£65." },
+      { q: "My street has no front parking - what do movers do?", a: "Terraced streets near the centre usually mean a short carry from the nearest junction or side street. Note the closest legal stopping place when you submit - movers working the town expect this and plan around it." },
+      { q: "Do you cover Town Centre, Brereton, Etchinghill, Armitage and Longdon?", a: "Yes. Move requests can be submitted for Town Centre, Brereton, Etchinghill, Armitage and Longdon and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town-centre terraces and canal-side streets",
+        body: "Short carries and early slots work best near the centre - flag the nearest stopping place in your request.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Brereton and Etchinghill estates",
+        body: "Sloped estate roads with courts off the main route - the exact street and block name saves time on the day.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "North-east to Lichfield on the A51",
+        body: "A short, cheap corridor run - single items and part-loads move between Rugeley and Lichfield daily.",
+        links: [{ label: "Man and van Lichfield", href: "/man-and-van-lichfield" }],
+      },
+      {
+        title: "West and south to Stafford and Cannock",
+        body: "Stafford via Wolseley or Cannock on the A460 - both inside the cheapest local-move band.",
+        links: [{ label: "Man and van Stafford", href: "/man-and-van-stafford" }, { label: "Man and van Cannock", href: "/man-and-van-cannock" }],
+      },
+    ],
+  },
+  "erdington": {
+    description: "Man with a van in Erdington from £19/hr. Pype Hayes, Stockland Green, Gravelly Hill. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Erdington? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Birmingham move and send a quote before you decide whether to book.",
+    knowledge: "Erdington moves run on the A38 and A5127 into town, with the M6 at junction 6 - Spaghetti Junction - on the edge of Gravelly Hill. Homes cluster around the High Street and Six Ways, then spread into Pype Hayes, Stockland Green, Short Heath and the Slade Road terraces.",
+    localMovingInfo: `Erdington was a village on the Lichfield road before Birmingham swallowed it, and it still has its own centre - the High Street, Six Ways island and the market tradition going back to its manor days. Around it, the housing tells Birmingham's expansion story: Victorian and Edwardian terraces near the middle, then the huge inter-war estates at Pype Hayes and Stockland Green.
+
+Spaghetti Junction dominates the south side - when junction 6 snarls, local moves switch to the A5127 and back doubles through Great Barr. The High Street has loading bays that fill at peak times, and many of the terraces off Slade Road have rear entries that change how a van is loaded. Movers who know the area ask which side of the house the door is on.
+
+Housing is terraces, 1930s semis and estate stock, keeping most moves in the one-van band. Runs into Birmingham city centre, Sutton Coldfield and Walsall are the everyday flows. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Erdington?", a: "Erdington man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Erdington to Birmingham city centre?", a: "Erdington to the city centre is about 5 miles down the A38 or A5127. A typical small move costs £45-£95, with single items often from £30-£60." },
+      { q: "Does Spaghetti Junction traffic affect my moving slot?", a: "Yes - mergers around junction 6 can add serious time in the peaks. Movers working Erdington often suggest a 9:30am start after the rush, or route via the A5127 when the M6 is blocked. Put any time constraints in your request." },
+      { q: "Do you cover High Street, Pype Hayes, Stockland Green, Gravelly Hill and Short Heath?", a: "Yes. Move requests can be submitted for High Street, Pype Hayes, Stockland Green, Gravelly Hill and Short Heath and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "High Street loading bays",
+        body: "The bays fill from mid-morning - an early slot or a side-street stop keeps High Street moves fast and legal.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Pype Hayes and Stockland Green estates",
+        body: "Inter-war estate layouts with green fronts - the exact road and house number matters, because addresses repeat across crescents.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "Into the city on the A38",
+        body: "About 5 miles - Erdington to the city centre is a classic short Birmingham move, cheapest outside the peaks.",
+        links: [{ label: "Man and van Birmingham", href: "/man-and-van-birmingham" }, { label: "Cheap man and van", href: "/cheap-man-and-van" }],
+      },
+      {
+        title: "North to Sutton Coldfield and Walsall",
+        body: "Quick hops up the A5127 and A34 - part-loads and single items move daily in both directions.",
+        links: [{ label: "Man and van Sutton Coldfield", href: "/man-and-van-sutton-coldfield" }, { label: "Man and van Walsall", href: "/man-and-van-walsall" }],
+      },
+    ],
+  },
+  "kings-heath": {
+    description: "Man with a van in Kings Heath from £19/hr. York Road, Billesley, Brandwood. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Kings Heath? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south Birmingham move and send a quote before you decide whether to book.",
+    knowledge: "Kings Heath moves centre on the A435 Alcester Road High Street and the A4040 outer circle, with the 50 bus corridor carrying traffic into town. Homes run from the York Road terraces behind the High Street out to Billesley, Brandwood and the Moseley and Stirchley borders.",
+    localMovingInfo: `Kings Heath grew from a heath-side hamlet on the Alcester turnpike into one of Birmingham's liveliest suburbs - the High Street, the Hare and Hounds and the Victorian park all date from its 19th-century boom. York Road behind the High Street has become its indie shopping mile, and the terraces around it are some of south Birmingham's most in-demand moves.
+
+The A435 is the artery and it crawls at school-run times; resident permit bays cover much of the York Road grid, so movers load from the front where a bay exists or note the nearest side street. Flats above High Street shops mean stairs and rear access lanes - both worth a line in your request.
+
+Housing is Victorian terraces, Edwardian semis and inter-war estates towards Billesley. Moves into central Birmingham are five-mile jobs, and Shirley, Solihull and Moseley are minutes away. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Kings Heath?", a: "Kings Heath man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Kings Heath to Birmingham city centre?", a: "Kings Heath to the city centre is about 5 miles up the A435. A typical small move costs £45-£95, with single items often from £30-£60." },
+      { q: "My flat is above a shop on the High Street - is that a problem?", a: "Not with notice. Mention the stairs and whether the entrance is on the High Street or the rear lane when you submit - movers plan the stop around loading restrictions and bring the right crew for upper-floor carries." },
+      { q: "Do you cover High Street, York Road, Billesley, Brandwood and Stirchley borders?", a: "Yes. Move requests can be submitted for High Street, York Road, Billesley, Brandwood and Stirchley borders and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "High Street and York Road loading",
+        body: "Permit bays and peak loading limits rule the centre - morning beats everything, and your access notes decide the stop.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Billesley and Brandwood family homes",
+        body: "Inter-war semis and estate streets with easier parking - most jobs here are single-van half-days.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Long distance removals", href: "/long-distance-removals" }],
+      },
+      {
+        title: "Into the city on the A435",
+        body: "Five miles of bus-lane corridor straight to the centre - the classic Kings Heath move, priced by the hour.",
+        links: [{ label: "Man and van Birmingham", href: "/man-and-van-birmingham" }],
+      },
+      {
+        title: "South to Solihull, Shirley and Redditch",
+        body: "Down the A34 and A435 corridor - short hops that keep costs in the local band.",
+        links: [{ label: "Man and van Solihull", href: "/man-and-van-solihull" }, { label: "Man and van Redditch", href: "/man-and-van-redditch" }],
+      },
+    ],
+  },
+  "didsbury": {
+    description: "Man with a van in Didsbury from £19/hr. West Didsbury, the Village, East Didsbury. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Didsbury? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south Manchester move and send a quote before you decide whether to book.",
+    knowledge: "Didsbury moves run on the A34 Kingsway and the A5103 Princess Parkway, with the M60 at junction 5 for everything further. Homes split between West Didsbury's mansion conversions around Burton Road, Didsbury Village cottages and terraces, and East Didsbury's semis towards Parrs Wood.",
+    localMovingInfo: `Didsbury was a Cheshire village on the Mersey before Manchester's suburbs reached it, and the Village core around the old parish church still feels separate from the city. Victorian merchants built the big villas along Palatine Road and Burton Road; most are flats now, which makes Didsbury one of the country's most moved-in postcodes.
+
+Burton Road and the Village are parking-controlled, and mansion conversions mean top-floor stairs with no lift - floor and access notes genuinely change the quote here. The A34 and A5103 are fast outside school-run windows, and the Metrolink corridor marks the eastern edge at East Didsbury and Parrs Wood.
+
+Housing is villas-to-flats, inter-war semis and some grand detached survivors. Moves into Manchester city centre run about six miles, with Stockport and the airport corridor close behind. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Didsbury?", a: "Didsbury man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Didsbury to Manchester city centre?", a: "Didsbury to the city centre is about 6 miles via the A34 and Princess Parkway. A typical small move costs £45-£95, with single items often from £30-£60." },
+      { q: "I am on the top floor of a converted villa - what should I flag?", a: "The floor, the stair count and whether there is a lift, plus any parking restrictions on your road. West Didsbury conversions often need two sets of stairs worth of carrying, and the quote is more accurate when the mover knows before the day." },
+      { q: "Do you cover Didsbury Village, West Didsbury, East Didsbury, Withington borders and Burnage?", a: "Yes. Move requests can be submitted for Didsbury Village, West Didsbury, East Didsbury, Withington borders and Burnage and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "West Didsbury mansion flats",
+        body: "Converted villa stairs and permit streets are the norm - floor, lift and bay details in your request get an accurate quote first time.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "The Village and Fletcher Moss",
+        body: "Cottages and period terraces near the green - narrow pavements and short bays favour early slots.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "Into Manchester on the A34",
+        body: "About 6 miles - city flats and student lets move up and down this corridor every day.",
+        links: [{ label: "Man and van Manchester", href: "/man-and-van-manchester" }, { label: "Student removals", href: "/student-removals" }],
+      },
+      {
+        title: "South to Stockport via the Kingsway",
+        body: "A quick run down the A34 - part-loads and single items stay cheap between Didsbury and Stockport.",
+        links: [{ label: "Man and van Stockport", href: "/man-and-van-stockport" }],
+      },
+    ],
+  },
+  "wythenshawe": {
+    description: "Man with a van in Wythenshawe from £19/hr. Northenden, Baguley, Benchill. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Wythenshawe? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Wythenshawe move and send a quote before you decide whether to book.",
+    knowledge: "Wythenshawe moves run on the M56 at junctions 3 and 4, the A5103 Princess Parkway and the A560 across the estate. Homes sit in garden-city courts off the main drags - Benchill, Baguley, Newall Green, Sharston and Woodhouse Park - with Northenden's older village streets by the Mersey.",
+    localMovingInfo: `Wythenshawe was built from 1931 as Manchester's garden city - cottages with gardens laid out on strict garden-suburb lines, greens and wedges everywhere, and the Civic Centre and the Forum at its heart. That layout still shapes every move: houses sit behind hedges and greens, and the front door often faces away from the road.
+
+Movers working the estate ask two questions - which court, and which side the door is on - because satnavs send vans down the wrong spur. The M56 puts the airport five minutes away, which is a jobs engine for the area and a traffic trap at the Sharston junctions in the peaks. Northenden, with its mill-village centre on the Mersey, moves like a different place entirely.
+
+Housing is garden-city brick, post-war top-ups and newer infill. Most Wythenshawe moves are family semis within south Manchester, with steady flows to Sale, Stockport and the city centre. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wythenshawe?", a: "Wythenshawe man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wythenshawe to Manchester city centre?", a: "Wythenshawe to the city centre is about 10 miles up the A5103. A typical small move costs £50-£100, with single items often from £35-£65." },
+      { q: "My house faces a green, not a road - where does the van park?", a: "Common on garden-city streets. Give the court name and the nearest vehicle access point when you submit - movers usually park on the closest road and trolley across the green, so the carry distance matters for the quote." },
+      { q: "Do you cover Civic Centre, Benchill, Northenden, Newall Green and Baguley?", a: "Yes. Move requests can be submitted for Civic Centre, Benchill, Northenden, Newall Green and Baguley and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Garden-city courts off the main roads",
+        body: "Homes face greens and walkways - the court name and nearest access road in your request gets the van as close as it can get.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Northenden village streets",
+        body: "Older terraces and mill-village lanes by the Mersey - tighter turns, so access notes matter more here than on the estate.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Up the Parkway to Manchester",
+        body: "About 10 miles on the A5103 - flats and family moves run this corridor daily, cheapest after the morning peak.",
+        links: [{ label: "Man and van Manchester", href: "/man-and-van-manchester" }, { label: "Student removals", href: "/student-removals" }],
+      },
+      {
+        title: "M56 west to Sale and east to Stockport",
+        body: "The motorway makes both neighbours a quick hop - single items and part-loads stay in the lowest price band.",
+        links: [{ label: "Man and van Sale", href: "/man-and-van-sale" }, { label: "Man and van Stockport", href: "/man-and-van-stockport" }],
+      },
+    ],
+  },
+  "stretford": {
+    description: "Man with a van in Stretford from £19/hr. Gorse Hill, Firswood, Lostock. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Stretford? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Trafford move and send a quote before you decide whether to book.",
+    knowledge: "Stretford moves run on the A56 Chester Road into Manchester, with the M60 at junction 7 for longer runs. Homes are brick terraces in Gorse Hill and Firswood, inter-war semis towards Lostock, and new apartments by the Quays borders - with matchday rules around Old Trafford to plan around.",
+    localMovingInfo: `Stretford grew on the Bridgewater Canal and the Chester Road, and its name still marks the old Roman ford - hence Longford and the Sevenways junction. Today it is Manchester's next-door suburb, famous for Old Trafford football ground and the cricket ground over the border, and for some of south Manchester's best-value terraces.
+
+Matchday is the big planning factor: when United are at home, streets around the ground are resident-permit or closed, so movers check fixtures before confirming a slot. Otherwise the grid of Gorse Hill and Firswood is straightforward van work - on-street parking, short carries - and the A56 runs straight to Deansgate in about 15 minutes outside the peaks.
+
+Housing is terraces, inter-war semis toward Lostock and newer flats near the Quays edge. Moves into Manchester city centre are about 4 miles, with Sale and Eccles close in the other direction. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Stretford?", a: "Stretford man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Stretford to Manchester city centre?", a: "Stretford to the city centre is about 4 miles up the A56. A typical small move costs £45-£90, with single items often from £30-£55." },
+      { q: "Can I move on a United matchday?", a: "Usually yes, but access near Old Trafford is restricted from a few hours before kick-off. Mention your street when you submit - movers working Stretford check the fixture list and will suggest an early-morning or next-day slot if closures apply." },
+      { q: "Do you cover Town Centre, Gorse Hill, Old Trafford borders, Lostock and Firswood?", a: "Yes. Move requests can be submitted for Town Centre, Gorse Hill, Old Trafford borders, Lostock and Firswood and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Matchday rules near Old Trafford",
+        body: "Resident-permit and road closures kick in before kick-off - movers confirm fixtures when you book a slot.",
+        links: [{ label: "Man and van Manchester", href: "/man-and-van-manchester" }],
+      },
+      {
+        title: "Gorse Hill and Firswood terraces",
+        body: "On-street parking and quick carries make these some of the fastest one-van moves in Trafford.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "Chester Road into the city",
+        body: "Four miles straight up the A56 to Deansgate - same-day and evening slots are common on this run.",
+        links: [{ label: "Same-day man and van", href: "/same-day-man-and-van" }],
+      },
+      {
+        title: "West to Sale and Eccles",
+        body: "Both neighbours are short hops across the M60 - part-loads and single items move cheaply in both directions.",
+        links: [{ label: "Man and van Sale", href: "/man-and-van-sale" }, { label: "Man and van Eccles", href: "/man-and-van-eccles" }],
+      },
+    ],
+  },
+  "crosby": {
+    description: "Man with a van in Crosby from £19/hr. Waterloo, Blundellsands, Great Crosby. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Crosby? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Sefton move and send a quote before you decide whether to book.",
+    knowledge: "Crosby moves run on the A565 South Road and Liverpool Road into the city, with the docks route at Seaforth handling the heavy traffic. Homes are villas in Blundellsands, inter-war semis around Great Crosby and the Village, and seafront flats at Waterloo and Brighton-le-Sands.",
+    localMovingInfo: `Crosby grew from an overspill township of Liverpool into Sefton's most sought-after suburb, and its beach is now world-famous for Antony Gormley's Another Place - a hundred iron men looking out to sea from Burbo Bank. Inland, the Village and Great Crosby grew around the station and the Liverpool Road, while Blundellsands kept its big Victorian and Edwardian villas.
+
+The A565 is the spine south into Liverpool via Waterloo and Bootle, and it crawls through the Village at school-run times. Inter-war semis often share drives, which decides which side of the hedge the van loads from - worth a line in your access notes. Seafront apartments at Brighton-le-Sands mean lifts and bay loading by Marine Terrace.
+
+Housing is villas, semis and seafront flats, keeping most moves in the one-van family band. Liverpool city centre is about 8 miles, with Bootle next door and Formby and Southport up the coast. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Crosby?", a: "Crosby man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Crosby to Liverpool city centre?", a: "Crosby to the city centre is about 8 miles down the A565. A typical small move costs £45-£95, with single items often from £30-£60." },
+      { q: "My semi shares a drive with the neighbours - does that matter?", a: "It decides where the van can sit. Note the shared drive and any access from the rear or side when you submit - movers working Great Crosby and Blundellsands see this daily and plan the load around it." },
+      { q: "Do you cover Crosby Village, Waterloo, Blundellsands, Great Crosby and Thornton?", a: "Yes. Move requests can be submitted for Crosby Village, Waterloo, Blundellsands, Great Crosby and Thornton and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Village and station-area parking",
+        body: "Loading near the shops is easier before 10am - mention bay or side-street options in your request.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Blundellsands villas and seafront flats",
+        body: "Big conversions with stairs, and apartment lifts by Marine Terrace - floor and access notes get an accurate quote.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Long distance removals", href: "/long-distance-removals" }],
+      },
+      {
+        title: "South to Liverpool on the A565",
+        body: "About 8 miles - Crosby to city-centre flats is an everyday Merseyside move, cheapest mid-morning.",
+        links: [{ label: "Man and van Liverpool", href: "/man-and-van-liverpool" }, { label: "Student removals", href: "/student-removals" }],
+      },
+      {
+        title: "North to Formby and Southport",
+        body: "Up the coast road - family moves and downsizers run this route in both directions all year.",
+        links: [{ label: "Man and van Southport", href: "/man-and-van-southport" }, { label: "Man and van Bootle", href: "/man-and-van-bootle" }],
+      },
+    ],
+  },
+  "wallsend": {
+    description: "Man with a van in Wallsend from £19/hr. Howdon, Battle Hill, High Farm. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Wallsend? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your North Tyneside move and send a quote before you decide whether to book.",
+    knowledge: "Wallsend moves run on the A1058 Coast Road into Newcastle and the A193 east to North Shields, with the A19 and Tyne Tunnel at Howdon for everything south of the river. Homes are terraces near the town centre and station, and big post-war estates at Battle Hill, High Farm and Rosehill.",
+    localMovingInfo: `Wallsend literally gave the Wall its end - Segedunum, the fort at the eastern tip of Hadrian's Wall, still stands above the Tyne. Later came the ships: Swan Hunter launched some of the world's most famous vessels from these yards, and the town's terraces and estates grew with the river trade. The yard cranes are gone, but the Metro keeps the town ten minutes from Newcastle.
+
+The A1058 Coast Road is the quick way west, and it is slow at rush hour; the Tyne Tunnel at Howdon is the only way south without a long detour, and it queues on Friday afternoons. Streets down towards the riverside at Willington Quay are steep with tight turns - movers plan the approach, not just the address.
+
+Housing is terraced rows, post-war semis and newer estates at Hadrian Park. Newcastle city centre is about 4 miles, North Shields is next along, and South Shields is the tunnel away. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Wallsend?", a: "Wallsend man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Wallsend to Newcastle city centre?", a: "Wallsend to the city centre is about 4 miles down the Coast Road. A typical small move costs £45-£90, with single items often from £30-£55." },
+      { q: "My street is steep with tight turns near the river - can a Luton van reach it?", a: "Usually yes, but the approach matters. Mention the gradient and any narrow corners when you submit - movers working Willington Quay and the riverside pick their route in advance, sometimes using a smaller van for steep streets." },
+      { q: "Do you cover Town Centre, Howdon, Willington Quay, Battle Hill and High Farm?", a: "Yes. Move requests can be submitted for Town Centre, Howdon, Willington Quay, Battle Hill and High Farm and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Station-area terraces",
+        body: "On-street parking and short carries - early slots beat the Coast Road rush for town-centre moves.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Battle Hill and High Farm estates",
+        body: "Post-war estates with shaped closes - the exact street and a landmark nearby gets the van straight to the door.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "Coast Road into Newcastle",
+        body: "About 4 miles - one of Tyneside's busiest van corridors, fastest after the morning peak.",
+        links: [{ label: "Man and van Newcastle", href: "/man-and-van-newcastle-upon-tyne" }, { label: "Man and van Gateshead", href: "/man-and-van-gateshead" }],
+      },
+      {
+        title: "Tyne Tunnel south to the Shields",
+        body: "The tunnel at Howdon makes South Shields a 15-minute hop - book outside Friday-afternoon tunnel traffic.",
+        links: [{ label: "Man and van North Shields", href: "/man-and-van-north-shields" }, { label: "Man and van South Shields", href: "/man-and-van-south-shields" }],
+      },
+    ],
+  },
+  "horsforth": {
+    description: "Man with a van in Horsforth from £19/hr. Town Street, Cragg Hill, Newlay. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Horsforth? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north-west Leeds move and send a quote before you decide whether to book.",
+    knowledge: "Horsforth moves run on the A6120 ring road and the A65 at Newlay, with the station corridor down to Kirkstall for city runs. Homes range from stone terraces around Town Street to big inter-war semis climbing Cragg Hill, with Leeds Trinity University and student lets along Brownberrie Lane.",
+    localMovingInfo: `Horsforth kept its town identity after Leeds absorbed it - the conservation stretch of Town Street with its stone pubs and shops still works as a village high street. The town climbs from the Aire at Newlay up through Cragg Hill, and its 19th-century claim to fame was having the most chapels per head in Yorkshire - a few are now flats.
+
+The ring-road roundabout is the local chokepoint, and flyers heading to Leeds Bradford Airport share the same junctions. Stone terraces near Town Street have long thin back gardens and rear access lanes, while the Cragg Hill and Hawksworth semis sit on gradients that reward a mover who reads the approach. Leeds Trinity adds a tidy line in small student moves each term.
+
+Housing is stone terraces, inter-war semis and newer estates at Hall Park. Leeds city centre is about 6 miles, with Pudsey next door and Bradford an easy run west. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Horsforth?", a: "Horsforth man and van rates start from £19 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the town typically costs £55-£130. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Horsforth to Leeds city centre?", a: "Horsforth to the city centre is about 6 miles past Kirkstall. A typical small move costs £45-£95, with single items often from £30-£60." },
+      { q: "I am a Leeds Trinity student with a room of stuff - is that too small a job?", a: "No - student moves are some of the most common requests here. List your boxes, bags and any furniture, note the campus or flat address, and a mover can quote for a one-van job sized to exactly that." },
+      { q: "Do you cover Town Street, Newlay, Cragg Hill, Hawksworth and Brownberrie?", a: "Yes. Move requests can be submitted for Town Street, Newlay, Cragg Hill, Hawksworth and Brownberrie and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Town Street conservation stretch",
+        body: "Stone terraces with rear lanes and limited front parking - access notes decide whether the van loads from the front or the back lane.",
+        links: [{ label: "House removals", href: "/house-removals" }],
+      },
+      {
+        title: "Leeds Trinity student terms",
+        body: "September and June bring a rush of room-sized moves - book early for term-change weekends.",
+        links: [{ label: "Student removals", href: "/student-removals" }],
+      },
+      {
+        title: "Into Leeds past Kirkstall",
+        body: "About 6 miles - city flats and offices move along this corridor daily, quickest outside ring-road peaks.",
+        links: [{ label: "Man and van Leeds", href: "/man-and-van-leeds" }, { label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "West to Pudsey and Bradford",
+        body: "Short hops over the boundary - family moves and single items stay in the local price band.",
+        links: [{ label: "Man and van Pudsey", href: "/man-and-van-pudsey" }, { label: "Man and van Bradford", href: "/man-and-van-bradford" }],
+      },
+    ],
+  },
+  "islington": {
+    description: "Man with a van in Islington from £26/hr. Angel, Highbury, Canonbury. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Islington? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your north London move and send a quote before you decide whether to book.",
+    knowledge: "Islington moves work around the A1 - Upper Street and Holloway Road - with the A503 crossing to Camden and the A104 down Essex Road. Homes range from Georgian terraces in Canonbury and Barnsbury to Highbury conversions, Holloway estates and mansion blocks around Finsbury Park.",
+    localMovingInfo: `Islington has been London's village in the city since the Georgian terraces went up around Canonbury and Barnsbury, and Upper Street and the Angel anchor it today. The borough is almost completely conversion territory - grand period houses split into flats - which means some of the city's steepest shared stairwells and most competitive parking bays.
+
+The whole borough is a controlled parking zone, and bays turn over fast, so movers plan the nearest legal stop before arrival - a suspended bay or an early start decides many quotes. The A1 bogs down at the Angel and Archway in the peaks, and matchday traffic drifts over from the Emirates on Arsenal weekends. Chapel Market days bring their own closures.
+
+Housing is Georgian and Victorian terraces, conversions and ex-council estates. Moves into the City or the West End are a few miles, with Camden, Hackney and Finsbury Park the daily local flows. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Islington?", a: "Islington man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the borough typically costs £60-£140. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Islington to the City?", a: "Islington to the Square Mile is about 3 miles down City Road. A typical small move costs £60-£120, with single items often from £40-£75." },
+      { q: "How do movers handle parking in a borough-wide CPZ?", a: "Movers plan the nearest legal bay or a quick loading stop, and you can apply to the council for a bay suspension for bigger moves. Put your street and any bay situation in the request - it is the single biggest factor in a smooth Islington move." },
+      { q: "Do you cover Angel, Highbury, Canonbury, Barnsbury and Holloway?", a: "Yes. Move requests can be submitted for Angel, Highbury, Canonbury, Barnsbury and Holloway and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "CPZ bays around the Angel and Upper Street",
+        body: "Bays fill from 8am - early slots or a suspension make central-street moves far quicker.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }, { label: "Same-day man and van", href: "/same-day-man-and-van" }],
+      },
+      {
+        title: "Canonbury and Barnsbury conversions",
+        body: "Georgian stairs and top-floor flats - floor, lift and stair notes in your request shape the crew size.",
+        links: [{ label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "North up the A1 to Finsbury Park and Archway",
+        body: "The Holloway Road corridor is a daily flow of flat moves in both directions.",
+        links: [{ label: "Man and van Finsbury Park", href: "/man-and-van-finsbury-park" }, { label: "Man and van Camden", href: "/man-and-van-camden" }],
+      },
+      {
+        title: "East to Hackney and the City fringe",
+        body: "Short hops across the border - part-loads and single items move cheaply all week.",
+        links: [{ label: "Man and van Hackney", href: "/man-and-van-hackney" }, { label: "Office removals", href: "/office-removals" }],
+      },
+    ],
+  },
+  "new-cross": {
+    description: "Man with a van in New Cross from £26/hr. Telegraph Hill, New Cross Gate, Hatcham. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in New Cross? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south-east London move and send a quote before you decide whether to book.",
+    knowledge: "New Cross moves work the A2 New Cross Road between London Bridge and Lewisham, with the A20 at New Cross Gate and the one-way loop around the station. Homes are Victorian terraces on Telegraph Hill, mansion blocks off the main road and estates around Hatcham and New Cross Gate.",
+    localMovingInfo: `New Cross took off with the railways and never slowed down - the New Cross Inn and the coaching route to Dover came first, then the terraces, then Goldsmiths, which has pulsed students through the area since 1891. Telegraph Hill's steep grid was built as the Haberdashers' estate, and its hilltop park still looks out over the whole of London.
+
+The one-way system around the station catches out unfamiliar drivers, and mansion blocks on the hill mean stairs - three and four storeys with no lift are normal. September is the crunch month, when student lets around Goldsmiths all turn over at once, so van slots book out early. The A2 west is the express route to London Bridge outside the peaks.
+
+Housing is terraces, mansion flats and estates, with a constant churn of shared houses. London Bridge is about 4 miles, and Lewisham, Deptford and Greenwich are the everyday local moves. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in New Cross?", a: "New Cross man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from New Cross to London Bridge?", a: "New Cross to London Bridge is about 4 miles up the A2. A typical small move costs £60-£120, with single items often from £40-£75." },
+      { q: "I am moving into a student house near Goldsmiths in September - any advice?", a: "Book as early as you can - the last two weeks of September are the busiest student moving window of the year. Give both addresses, floors and any awkward items, and the mover can size the van and slot to a room-or-flat move." },
+      { q: "Do you cover New Cross Gate, Telegraph Hill, Hatcham, St Johns borders and Brockley borders?", a: "Yes. Move requests can be submitted for New Cross Gate, Telegraph Hill, Hatcham, St Johns borders and Brockley borders and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "Goldsmiths and student term turns",
+        body: "Room-scale moves peak in September - early booking and a clear item list get the sharpest quote.",
+        links: [{ label: "Student removals", href: "/student-removals" }, { label: "Same-day man and van", href: "/same-day-man-and-van" }],
+      },
+      {
+        title: "Telegraph Hill steps and stairs",
+        body: "Mansion blocks and hill terraces mean carries - floor and stair notes decide the crew and the quote.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "West to London Bridge on the A2",
+        body: "About 4 miles - a daily corridor for flat and office moves into the centre.",
+        links: [{ label: "Man and van London", href: "/man-and-van-london" }, { label: "Man and van Deptford", href: "/man-and-van-deptford" }],
+      },
+      {
+        title: "South-east to Lewisham and Greenwich",
+        body: "Quick local hops in every direction - most stay in the cheapest hourly band.",
+        links: [{ label: "Man and van Lewisham", href: "/man-and-van-lewisham" }, { label: "Man and van Greenwich", href: "/man-and-van-greenwich" }],
+      },
+    ],
+  },
+  "streatham": {
+    description: "Man with a van in Streatham from £26/hr. Streatham Hill, the Common, Streatham Vale. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Streatham? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your south London move and send a quote before you decide whether to book.",
+    knowledge: "Streatham moves run up and down the A23 High Road - red route, so loading windows matter - with the A205 South Circular crossing at Streatham Vale. Homes are Edwardian terraces and conversions by the Common, inter-war mansion blocks on the hill, and family streets out towards Furzedown.",
+    localMovingInfo: `Streatham was a spa village on the Brighton road - society came for the wells in the 18th century - and the A23 has defined it ever since. The High Road stretches over two miles, once infamous and now steadily regenerated, with the Common and the Rookery gardens giving the area its green core.
+
+The red route is the big planning fact: loading on the High Road is limited to bays and off-peak windows, so timing and notes decide how long the van can stop. Side streets off it hold the housing stock - Edwardian terraces and villas split into flats, with raised ground floors and long front paths adding carry time that honest quotes account for.
+
+Housing is conversions, mansion blocks and family semis toward the Common and Furzedown. Central London is about 7 miles up the A23, with Croydon south and Tooting west as the constant local flows. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Streatham?", a: "Streatham man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Streatham to the West End?", a: "Streatham to the West End is about 7 miles up the A23 and through Brixton. A typical small move costs £65-£130, with single items often from £45-£80." },
+      { q: "What are the rules for loading on the High Road?", a: "The A23 is a red route - the van can only stop in marked bays or outside restricted hours. Note whether your entrance is on the High Road or a side street when you submit, and movers will schedule a legal loading window around it." },
+      { q: "Do you cover Streatham Hill, Streatham Common, Streatham Vale, Streatham Wells and Furzedown borders?", a: "Yes. Move requests can be submitted for Streatham Hill, Streatham Common, Streatham Vale, Streatham Wells and Furzedown borders and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "High Road red-route windows",
+        body: "Loading only in bays or off-peak on the A23 - say which side of the building your door is on and the mover plans the stop.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }, { label: "Same-day man and van", href: "/same-day-man-and-van" }],
+      },
+      {
+        title: "Common-side houses and conversions",
+        body: "Big period houses with raised floors and long paths - carry distance notes make the quote accurate.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "North up the A23 towards town",
+        body: "About 7 miles to the West End - flats move up this corridor daily, quickest outside the peaks.",
+        links: [{ label: "Man and van London", href: "/man-and-van-london" }, { label: "Man and van Tooting", href: "/man-and-van-tooting" }],
+      },
+      {
+        title: "South to Croydon",
+        body: "Down the A23 - one of south London's busiest man-and-van runs, staying in the local price band.",
+        links: [{ label: "Man and van Croydon", href: "/man-and-van-croydon" }],
+      },
+    ],
+  },
+  "muswell-hill": {
+    description: "Man with a van in Muswell Hill from £26/hr. The Broadway, Fortis Green, Cranley Gardens. One verified mover quotes. Rated 5.0/5 from 6 reviews. Call 0121 751 1269.",
+    intro: "Need a man and van in Muswell Hill? Submit your collection and delivery postcodes, move date, item list and access notes for free. A suitable approved independent mover can review your Muswell Hill move and send a quote before you decide whether to book.",
+    knowledge: "Muswell Hill moves climb - the Broadway sits on the ridge, with streets dropping to Highgate, East Finchley and the A406 at Bounds Green. Homes are Edwardian redbrick terraces and conversions around Fortis Green and Cranley Gardens, with mansion flats near Alexandra Palace.",
+    localMovingInfo: `Muswell Hill was fields and a medieval holy well until the Edwardians built it out as a garden suburb - the Broadway's redbrick parades date from that single burst and give the area its uniform look. Alexandra Palace, the People's Palace, crowns the ridge with its park, and the views from the top streets run from the City to the Downs.
+
+The defining quirk for moving is the hill plus no tube - van trips matter more here than almost anywhere in zone 3, and the Broadway's bays are always in demand. Raised ground floors are the norm on the slopes, so flights of front steps get counted in quotes, and the older estate roads around Cranley Gardens have tight corners that suit smaller vans.
+
+Housing is Edwardian conversions, mansion flats and inter-war semis. Central London is about 7 miles, and the everyday moves run to Wood Green, Finchley, Highgate borders and Finsbury Park. Your contact details stay protected until you accept a quote and book.`,
+    faq: [
+      { q: "How much does a man and van cost in Muswell Hill?", a: "Muswell Hill man and van rates start from £26 per hour for self-loading, or from £34 per hour with a driver who helps carry. A local move within the area typically costs £60-£140. A full 2-3 bed house move usually ranges from £230-£460. Submit your details for a guide price first." },
+      { q: "How much is a man and van from Muswell Hill to central London?", a: "Muswell Hill to the West End is about 7 miles via Archway or Highgate. A typical small move costs £65-£135, with single items often from £45-£85." },
+      { q: "My flat has steps up to a raised ground floor - does that change the quote?", a: "It can do - most Muswell Hill conversions have a front flight before you reach the door, which adds carrying time. Note the step count and floor when you submit, and the mover prices the carry correctly rather than guessing on the day." },
+      { q: "Do you cover The Broadway, Fortis Green, Cranley Gardens, Alexandra Park borders and Highgate borders?", a: "Yes. Move requests can be submitted for The Broadway, Fortis Green, Cranley Gardens, Alexandra Park borders and Highgate borders and the surrounding areas. A verified mover checks whether they cover your exact addresses before quoting, and you see the details before deciding whether to book." },
+      { q: "Will multiple movers contact me?", a: "No. your enquiry is offered to one mover at a time. You will not receive a flood of calls or emails from competing companies." },
+      { q: "Is it free to submit a move request?", a: "Yes. Submitting your move request is free. You only pay a booking deposit if you accept a mover quote, and that deposit comes off the mover price. The remaining balance is paid directly to the mover on moving day." },
+    ],
+    localAreaGuides: [
+      {
+        title: "The Broadway and parking bays",
+        body: "Shop parades and permit bays mean early slots - note the nearest side street and the mover plans the stop.",
+        links: [{ label: "Flat removals", href: "/flat-removals" }],
+      },
+      {
+        title: "Edwardian conversions with front steps",
+        body: "Raised floors and shared stairs are the norm - step and floor counts in your request make the quote exact.",
+        links: [{ label: "House removals", href: "/house-removals" }, { label: "Furniture delivery", href: "/furniture-delivery-service" }],
+      },
+      {
+        title: "Alexandra Palace and the ridge roads",
+        body: "Event days at the Palace close or clog the top streets - movers check the events calendar before confirming slots.",
+        links: [{ label: "Man and van Wood Green", href: "/man-and-van-wood-green" }],
+      },
+      {
+        title: "North to Finchley and the North Circular",
+        body: "Down the A1000 or across to the A406 - short hops that stay in the local band.",
+        links: [{ label: "Man and van Finchley", href: "/man-and-van-finchley" }, { label: "Man and van Finsbury Park", href: "/man-and-van-finsbury-park" }],
+      },
+    ],
+  },
+
 };

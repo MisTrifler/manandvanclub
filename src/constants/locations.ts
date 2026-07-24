@@ -37,7 +37,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved Birmingham movers can take account of city-centre access, parking around areas such as Edgbaston or Moseley, building restrictions, permit parking and busy routes such as the A38 and M6 when reviewing your request.",
     badge: "Verified Movers in Birmingham",
     areas: ["Jewellery Quarter", "Edgbaston", "Moseley", "Harborne", "Selly Oak", "Bournville", "Solihull", "Sutton Coldfield"],
-    nearbyLocations: ["smethwick", "solihull", "wolverhampton", "walsall", "coventry", "dudley", "west-bromwich", "great-barr", "perry-barr"]
+    nearbyLocations: ["smethwick", "solihull", "wolverhampton", "walsall", "coventry", "dudley", "west-bromwich", "great-barr", "perry-barr", "erdington", "kings-heath"]
   },
   {
     slug: "walsall",
@@ -217,7 +217,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Dudley regularly handle moves between the historic terraces, the post-war estates, and the newer developments near the Merry Hill area. They can take account of the steep gradients, the best routes around the A461, and how to navigate the narrow streets near the castle grounds.",
     badge: "Verified Movers in Dudley",
     areas: ["Town Centre", "Stourbridge", "Halesowen", "Tipton", "Brierley Hill", "Netherton", "Kates Hill"],
-    nearbyLocations: ["stourbridge", "halesowen", "brierley-hill", "west-bromwich", "wolverhampton", "birmingham", "wednesbury", "sandwell"]
+    nearbyLocations: ["stourbridge", "halesowen", "brierley-hill", "west-bromwich", "wolverhampton", "birmingham", "wednesbury", "sandwell", "kingswinford"]
   },
   {
     slug: "stourbridge",
@@ -295,7 +295,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Solihull regularly handle high-end moves in the Knowle, Dorridge, and Balsall Common areas. They can account for the access requirements for gated drives, the best routes to avoid the M42 rush, and how to navigate the tree-lined residential roads with care.",
     badge: "Verified Movers in Solihull",
     areas: ["Town Centre", "Birmingham", "Knowle", "Dorridge", "Balsall Common", "Shirley", "Olton"],
-    nearbyLocations: ["birmingham", "coventry", "redditch", "dorridge", "knowle"]
+    nearbyLocations: ["birmingham", "coventry", "redditch", "dorridge", "knowle", "kings-heath"]
   },
   {
     slug: "coventry",
@@ -388,7 +388,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Lichfield regularly handle moves between the historic centre, the Georgian streets, and the newer estates. They can account for the access challenges near the cathedral, the A38 traffic patterns, and the best parking solutions for moves in this historic Staffordshire city.",
     badge: "Lichfield Movers",
     areas: ["City Centre", "Burntwood", "Shenstone", "Streethay", "Boley Park", "Leomansley", "Nether Stowe"],
-    nearbyLocations: ["tamworth", "cannock", "walsall", "sutton-coldfield", "burton-upon-trent", "brownhills", "burntwood"]
+    nearbyLocations: ["tamworth", "cannock", "walsall", "sutton-coldfield", "burton-upon-trent", "brownhills", "burntwood", "rugeley"]
   },
   // ──────────────────────────────────────────
   // GREATER LONDON (24 locations)
@@ -427,7 +427,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Croydon regularly handle moves in the high-rise blocks near the town centre, the Victorian streets of Addiscombe, and the suburban roads of Purley and Coulsdon. They can account for the tram line restrictions, the A23 traffic patterns, and the best loading times for high-rise buildings.",
     badge: "Verified Movers in Croydon",
     areas: ["Town Centre", "Purley", "Coulsdon", "Thornton Heath", "Addiscombe", "Sanderstead", "Waddon"],
-    nearbyLocations: ["bromley", "sutton", "mitcham", "croydon", "beckenham", "london", "cheadle"]
+    nearbyLocations: ["bromley", "sutton", "mitcham", "croydon", "beckenham", "london", "cheadle", "streatham"]
   },
   {
     slug: "bromley",
@@ -594,7 +594,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Finchley regularly handle moves between East Finchley, North Finchley, and the surrounding areas. They can account for the A1 and A406 traffic, the narrow residential streets, and the best loading times for moves in this busy North London suburb.",
     badge: "Verified Movers in Finchley",
     areas: ["Town Centre", "Barnet", "Hendon", "Golders Green", "Muswell Hill", "East Finchley", "North Finchley"],
-    nearbyLocations: ["barnet", "harrow", "edgware", "camden", "highgate"]
+    nearbyLocations: ["barnet", "harrow", "edgware", "camden", "highgate", "muswell-hill"]
   },
   {
     slug: "edgware",
@@ -659,7 +659,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Greenwich regularly handle moves between the historic centre, Charlton, and Woolwich. They can account for the A2 traffic, the narrow access near the park and Cutty Sark, and the best routes for moves in this historic and busy riverside borough.",
     badge: "Verified Movers in Greenwich",
     areas: ["Town Centre", "Lewisham", "Deptford", "Charlton", "Woolwich", "Eltham", "Blackheath"],
-    nearbyLocations: ["lewisham", "bromley", "woolwich", "deptford", "catford"]
+    nearbyLocations: ["lewisham", "bromley", "woolwich", "deptford", "catford", "new-cross"]
   },
   {
     slug: "bexley",
@@ -734,7 +734,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Wood Green regularly handle moves between the town centre, Harringay, and Bounds Green. They can account for the A406 traffic, the busy shopping area access, and the best routes for moves in this popular North London area.",
     badge: "Wood Green Movers",
     areas: ["Town Centre", "Walthamstow", "Tottenham", "Harringay", "Bounds Green", "Muswell Hill", "Alexandra Park"],
-    nearbyLocations: ["walthamstow", "tottenham", "harringay", "finsbury-park", "bounds-green", "enfield"]
+    nearbyLocations: ["walthamstow", "tottenham", "harringay", "finsbury-park", "bounds-green", "enfield", "muswell-hill"]
   },
   {
     slug: "tottenham",
@@ -815,7 +815,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved local movers can take account of Manchester's unique layout. They can take account of how to navigate the Mancunian Way, find parking in the city centre, and work around events at the Etihad or Old Trafford. Whether you're moving a flat in Salford Quays or a house in Prestwich, they can review the route and access details before quoting.",
     badge: "Verified Movers in Manchester",
     areas: ["Northern Quarter", "Didsbury", "Chorlton", "Ancoats", "Salford Quays", "Prestwich", "Stockport", "Altrincham"],
-    nearbyLocations: ["salford", "bolton", "bury", "rochdale", "oldham", "stockport", "altrincham", "trafford"]
+    nearbyLocations: ["salford", "bolton", "bury", "rochdale", "oldham", "stockport", "altrincham", "trafford", "didsbury", "wythenshawe", "stretford"]
   },
   {
     slug: "salford",
@@ -908,7 +908,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Stockport regularly handle moves between the town centre, Cheadle, and Hazel Grove. They can account for the M60 traffic, the hilly roads in some areas, and the best access routes for moves in this busy Greater Manchester town.",
     badge: "Stockport Movers",
     areas: ["Town Centre", "Manchester", "Altrincham", "Cheadle", "Hazel Grove", "Bredbury", "Heaton Moor"],
-    nearbyLocations: ["manchester", "altrincham", "cheadle", "poynton", "didsbury", "hyde", "buxton"]
+    nearbyLocations: ["manchester", "altrincham", "cheadle", "poynton", "didsbury", "hyde", "buxton", "wythenshawe"]
   },
   {
     slug: "altrincham",
@@ -1034,7 +1034,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved local movers can account for Leeds' road network, including the inner ring road and the steep hills in some areas. They can take account of which buildings have restrictions, where parking is easiest, and how to plan moves around match days at Elland Road or Headingley.",
     badge: "Verified Movers in Leeds",
     areas: ["Headingley", "Roundhay", "Chapel Allerton", "Horsforth", "Alwoodley", "Morley", "Pudsey", "City Centre"],
-    nearbyLocations: ["bradford", "wakefield", "huddersfield", "halifax", "dewsbury", "batley", "pudsey"]
+    nearbyLocations: ["bradford", "wakefield", "huddersfield", "halifax", "dewsbury", "batley", "pudsey", "horsforth"]
   },
   {
     slug: "bradford",
@@ -1158,7 +1158,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Pudsey regularly handle moves between the town centre, Farsley, and Calverley. They can account for the M62 traffic, the A647 corridor, and the best access routes for moves in this busy West Yorkshire town.",
     badge: "Pudsey Movers",
     areas: ["Town Centre", "Leeds", "Bradford", "Farsley", "Calverley", "Swillington", "Tyersal"],
-    nearbyLocations: ["leeds", "bradford", "farsley", "calverley", "morley"]
+    nearbyLocations: ["leeds", "bradford", "farsley", "calverley", "morley", "horsforth"]
   },
   {
     slug: "morley",
@@ -1284,7 +1284,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved local movers can account for Liverpool's unique layout. They can take account of how to navigate the city centre, work around events at Anfield or Goodison, and handle moves in areas like Toxteth, Aigburth, and the waterfront with confidence.",
     badge: "Verified Movers in Liverpool",
     areas: ["City Centre", "Toxteth", "Aigburth", "Wavertree", "Everton", "Bootle", "Crosby", "Waterfront"],
-    nearbyLocations: ["bootle", "birkenhead", "wallasey", "southport", "st-helens", "widnes", "prescot"]
+    nearbyLocations: ["bootle", "birkenhead", "wallasey", "southport", "st-helens", "widnes", "prescot", "crosby"]
   },
   {
     slug: "bootle",
@@ -1344,7 +1344,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Southport regularly handle moves between the town centre, Birkdale, and Ainsdale. They can account for the A565 coastal traffic, the narrow town centre access, and the best routes for moves in this popular Merseyside seaside town.",
     badge: "Verified Movers in Southport",
     areas: ["Town Centre", "Birkdale", "Ainsdale", "Formby", "Churchtown", "Marshside", "Hillside"],
-    nearbyLocations: ["formby", "birkdale", "ainsdale", "ormskirk", "preston", "liverpool"]
+    nearbyLocations: ["formby", "birkdale", "ainsdale", "ormskirk", "preston", "liverpool", "crosby"]
   },
   {
     slug: "st-helens",
@@ -1873,7 +1873,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Newcastle movers can account for Tyneside flat layouts, Jesmond's permit zones and the September student rush. Runs across the Tyne to Gateshead, along the coast to North Shields, and down the A1 are all standard local work.",
     badge: "Verified Movers in Newcastle",
     areas: ["Jesmond", "Heaton", "Gosforth", "Fenham", "Byker", "Quayside", "City Centre", "Gateshead"],
-    nearbyLocations: ["york", "leeds", "sheffield", "sunderland", "middlesbrough", "gateshead", "darlington", "hexham"]
+    nearbyLocations: ["york", "leeds", "sheffield", "sunderland", "middlesbrough", "gateshead", "darlington", "hexham", "wallsend"]
   },
   {
     slug: "southampton",
@@ -1999,7 +1999,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Matched Stoke movers navigate the six towns daily, know the steep terrace streets and the A500's rush hours, and handle student moves around Staffordshire University in Shelton. Runs to Newcastle-under-Lyme, Stone and Leek are routine.",
     badge: "Verified Movers in Stoke",
     areas: ["Hanley", "Burslem", "Longton", "Fenton", "Tunstall", "Trentham", "Newcastle-under-Lyme", "Stone"],
-    nearbyLocations: ["manchester", "wolverhampton", "derby", "shrewsbury", "telford"]
+    nearbyLocations: ["manchester", "wolverhampton", "derby", "shrewsbury", "telford", "stafford"]
   },
   {
     slug: "hull",
@@ -3223,7 +3223,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Sale understand the M60 junction 6 congestion, the A56 through-traffic, and the parking restrictions near the Metrolink stations. Ashton upon Mersey has some narrow streets near the river. Brooklands and Sale Moor have better road access with more driveways.",
     badge: "Verified Movers in Sale",
     areas: ["Town Centre", "Brooklands", "Ashton upon Mersey", "Sale Moor", "Moorfield", "Woodheys", "Dane Road area", "Mersey Road area"],
-    nearbyLocations: ["manchester", "altrincham", "salford", "stockport", "trafford", "timperley"]
+    nearbyLocations: ["manchester", "altrincham", "salford", "stockport", "trafford", "timperley", "wythenshawe", "stretford"]
   },
   {
     slug: "prestwich",
@@ -3271,7 +3271,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers serving Eccles understand the M602 rush-hour congestion into Manchester, the Patricroft level crossing delays, and the narrow streets near the town centre. Monton and Ellesmere Park have wider roads and better access. Worsley to the west is a desirable village with canal-side properties.",
     badge: "Verified Movers in Eccles",
     areas: ["Town Centre", "Patricroft", "Winton", "Monton", "Barton upon Irwell", "Worsley", "Ellesmere Park", "Peel Green"],
-    nearbyLocations: ["manchester", "salford", "wigan", "trafford"]
+    nearbyLocations: ["manchester", "salford", "wigan", "trafford", "stretford"]
   },
   {
     slug: "swinton",
@@ -5685,7 +5685,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Great Barr handle moves in the suburban estates. The M6 junction 7 and A34 provide good road links. Scott Arms is the main shopping area.",
     badge: "Great Barr Movers",
     areas: ["Great Barr", "Beech Lanes", "Hames Hall", "Pheasey", "Yew Tree"],
-    nearbyLocations: ["birmingham", "walsall", "west-bromwich"]
+    nearbyLocations: ["birmingham", "walsall", "west-bromwich", "erdington"]
   },
   {
     slug: "perry-barr",
@@ -5715,7 +5715,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Sutton Coldfield handle moves in the affluent residential areas and town centre. Four Oaks and Mere Green are residential areas. Sutton Park is the largest urban park in Europe.",
     badge: "Sutton Coldfield Movers",
     areas: ["Town Centre", "Four Oaks", "Mere Green", "Wylde Green", "Boldmere"],
-    nearbyLocations: ["birmingham", "tamworth", "lichfield", "aldridge"]
+    nearbyLocations: ["birmingham", "tamworth", "lichfield", "aldridge", "erdington"]
   },
   {
     slug: "caversham",
@@ -6454,7 +6454,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Approved movers covering Telford handle moves across the New Town. The older areas like Dawley, Madeley and Wellington have different access patterns.",
     badge: "Telford Movers",
     areas: ["Dawley", "Madeley", "Oakengates", "Wellington", "Stirchley", "Lawley"],
-    nearbyLocations: ["shrewsbury", "wolverhampton", "stoke-on-trent"]
+    nearbyLocations: ["shrewsbury", "wolverhampton", "stoke-on-trent", "stafford"]
   },
   {
     slug: "tenby",
@@ -6984,7 +6984,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Brierley Hill moves often involve hillside terraces around Quarry Bank and Brockmoor, where loading happens from the street, and Waterfront apartments with lift and parking rules. The A461 links to Dudley and Merry Hill, and the A4036 is the main route towards Halesowen.",
     badge: "Verified Movers in Brierley Hill",
     areas: ["Town Centre", "Merry Hill", "Quarry Bank", "Brockmoor", "Pensnett", "Withymoor Village", "Buckpool"],
-    nearbyLocations: ["dudley", "stourbridge", "halesowen"],
+    nearbyLocations: ["dudley", "stourbridge", "halesowen", "kingswinford"],
   },
   {
     slug: "chester",
@@ -7113,7 +7113,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Hackney moves usually involve stairs, narrow shared halls and CPZ streets around Dalston, London Fields and Clapton, plus lift rules in newer blocks. The A10 runs south into the City, and the A12 at Hackney Wick links east to Stratford and the A406.",
     badge: "Verified Movers in Hackney",
     areas: ["Hackney Central", "Dalston", "Stoke Newington", "Homerton", "Clapton", "Hackney Wick", "London Fields"],
-    nearbyLocations: ["stratford", "tottenham"],
+    nearbyLocations: ["stratford", "tottenham", "islington"],
   },
   {
     slug: "hammersmith",
@@ -7196,7 +7196,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Deptford moves range across market-day-choked streets near the High Street, estate blocks around Evelyn and Deptford Park, and newer developments towards the Creek with loading bays and concierge rules. The A2 and A200 carry most journeys, with the A20 nearby for moves towards Kent.",
     badge: "Verified Movers in Deptford",
     areas: ["Deptford High Street", "Evelyn", "St Johns", "Pepys Estate", "Deptford Park", "Brookmill"],
-    nearbyLocations: ["lewisham", "greenwich", "catford"],
+    nearbyLocations: ["lewisham", "greenwich", "catford", "new-cross"],
   },
   {
     slug: "staines",
@@ -7550,7 +7550,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Tooting moves concentrate on the Victorian terraces between Tooting Broadway and Upper Tooting along the A24, the Furzedown estates, and Summerstown by the river. The A24 is the main artery into central London, and the A205 South Circular skirts Tooting Bec Common.",
     badge: "Verified Movers in Tooting",
     areas: ["Tooting Broadway", "Tooting Bec", "Furzedown", "Upper Tooting", "Summerstown", "Graveney", "Springfield"],
-    nearbyLocations: ["mitcham", "wimbledon", "croydon"],
+    nearbyLocations: ["mitcham", "wimbledon", "croydon", "streatham"],
   },
   {
     slug: "wembley",
@@ -7582,7 +7582,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Camden moves weave around the market quarter - Camden Town and the Lock, Chalk Farm, Mornington Crescent and Kentish Town - where Georgian terraces sit next to large estates. The A400 runs north-south through the High Street, and the A503 crosses towards Holloway.",
     badge: "Verified Movers in Camden",
     areas: ["Camden Town", "Kentish Town", "Chalk Farm", "Mornington Crescent", "Somers Town", "Camden Lock", "Primrose Hill borders"],
-    nearbyLocations: ["finchley", "hackney", "finsbury-park"],
+    nearbyLocations: ["finchley", "hackney", "finsbury-park", "islington"],
   },
   {
     slug: "wandsworth",
@@ -7678,7 +7678,7 @@ export const LOCATIONS: LocationData[] = [
     knowledge: "Finsbury Park moves cover the railway-era terraces and mansion blocks of Stroud Green, the Fonthill Road fashion quarter, Blackstock Road towards Highbury and Brownswood by the park. The A105 Green Lanes and A503 Seven Sisters Road frame the area on two sides.",
     badge: "Verified Movers in Finsbury Park",
     areas: ["Stroud Green", "Manor House", "Fonthill Road", "Blackstock Road", "Brownswood", "Gillespie Road", "Seven Sisters Road"],
-    nearbyLocations: ["wood-green", "harringay", "hackney"],
+    nearbyLocations: ["wood-green", "harringay", "hackney", "islington", "muswell-hill"],
   },
   {
     slug: "harringay",
@@ -7759,6 +7759,237 @@ export const LOCATIONS: LocationData[] = [
     badge: "Verified Movers in Bounds Green",
     areas: ["Bounds Green Road", "Bowes Park", "North Circular borders", "The Grids", "Bounds Green station", "New River side", "Brownlow Road"],
     nearbyLocations: ["wood-green", "finchley", "harringay"],
+  },
+  {
+    slug: "kingswinford",
+    name: "Kingswinford",
+    region: "West Midlands",
+    county: "West Midlands",
+    nearbyAreas: ["Town Centre", "Wall Heath", "Himley", "Pensnett", "Swindon", "Cotwall End"],
+    majorRoads: ["A491", "A4101", "A449"],
+    propertyTypes: ["post-war semis", "modern estates", "1930s detached houses"],
+    movingConsiderations: ["limited parking on older closes around the Cross", "rush-hour queues on the A491 towards Stourbridge", "cul-de-sac estates needing longer carries"],
+    intro: "Kingswinford sits between Stourbridge and Dudley on the edge of the Black Country - a big village in feel but a busy commuter base in practice. From period cottages near the Cross to post-war estates at Wall Heath and Himley, approved local movers can take account of estate parking and the A491 rush when reviewing your request.",
+    knowledge: "Approved movers serving Kingswinford regularly handle moves around the Cross, Wall Heath, Himley and Pensnett. They can take account of the A491 between Stourbridge and Wolverhampton, the A4101 towards Dudley and Merry Hill, and cul-de-sac estates where the van parks on the through-road.",
+    badge: "Verified Movers in Kingswinford",
+    areas: ["Town Centre", "Wall Heath", "Himley", "Pensnett", "Swindon", "Cotwall End", "Ashwood borders", "Summerhill"],
+    nearbyLocations: ["stourbridge", "dudley", "brierley-hill", "wolverhampton"],
+  },
+  {
+    slug: "stafford",
+    name: "Stafford",
+    region: "Staffordshire",
+    county: "Staffordshire",
+    nearbyAreas: ["Town Centre", "Highfields", "Wildwood", "Rowley Park", "Baswich", "Doxey"],
+    majorRoads: ["M6", "A34", "A518"],
+    propertyTypes: ["Victorian terraces", "post-war semis", "modern estates"],
+    businessDistricts: ["Town Centre", "Greyfriars", "Gaolgate"],
+    movingConsiderations: ["permit parking around the town centre", "peak queues at M6 junctions 13 and 14", "Saturday traffic on the Gaolgate one-way system"],
+    intro: "Stafford is the county town between the M6 and Cannock Chase, mixing town-centre terraces with large modern estates in Highfields, Wildwood and Doxey. A suitable approved independent mover can review the route, the parking and the best junction for your Stafford move before quoting.",
+    knowledge: "Approved Stafford movers can take account of permit parking around the town centre, Saturday traffic on the Gaolgate one-way system, and peak queues at M6 junctions 13 and 14. Regular runs go north to Stoke-on-Trent on the A34 and south to Cannock, Rugeley and Lichfield.",
+    badge: "Verified Movers in Stafford",
+    areas: ["Town Centre", "Highfields", "Wildwood", "Rowley Park", "Baswich", "Doxey", "Weeping Cross", "Castlefields"],
+    nearbyLocations: ["cannock", "stoke-on-trent", "telford", "rugeley"],
+  },
+  {
+    slug: "rugeley",
+    name: "Rugeley",
+    region: "Staffordshire",
+    county: "Staffordshire",
+    nearbyAreas: ["Town Centre", "Brereton", "Etchinghill", "Armitage", "Longdon", "Slitting Mill"],
+    majorRoads: ["A51", "A460", "A513"],
+    propertyTypes: ["miners' cottages and terraces", "post-war semis", "modern estates"],
+    movingConsiderations: ["parking on terraced streets near the town centre", "peak traffic on the A51 through Brereton", "steep estate roads at Etchinghill"],
+    intro: "Rugeley sits under Cannock Chase on the A51 corridor, with older terraces near the town centre, former colliery estates in Brereton and Etchinghill, and newer developments filling in between. One mover reviews your move details and sends a quote before you decide.",
+    knowledge: "Approved Rugeley movers can take account of parking on the terraced streets near the town centre, estate layouts at Brereton and Etchinghill, and peak traffic on the A51 and A460. Common runs go west to Stafford, north-east to Lichfield and south to Cannock.",
+    badge: "Verified Movers in Rugeley",
+    areas: ["Town Centre", "Brereton", "Etchinghill", "Armitage", "Longdon", "Slitting Mill", "Hagley borders", "Wolseley borders"],
+    nearbyLocations: ["cannock", "lichfield", "stafford"],
+  },
+  {
+    slug: "erdington",
+    name: "Erdington",
+    region: "West Midlands",
+    county: "West Midlands",
+    nearbyAreas: ["High Street", "Pype Hayes", "Stockland Green", "Gravelly Hill", "Short Heath", "Slade Road"],
+    majorRoads: ["A38", "A5127", "M6"],
+    propertyTypes: ["Victorian terraces", "1930s semis", "council estates"],
+    movingConsiderations: ["loading bays on the High Street at peak times", "M6 junction 6 congestion around Spaghetti Junction", "terraced streets with rear entries"],
+    intro: "Erdington is one of north Birmingham's busiest suburbs - a proper High Street, Victorian terraces off Slade Road, big 1930s estates at Pype Hayes and Stockland Green, and Spaghetti Junction on the doorstep. Submit your postcodes and a verified mover checks the access before quoting.",
+    knowledge: "Approved Erdington movers can take account of loading bays on the High Street, terraced streets around Gravelly Hill and Stockland Green, and M6 junction 6 congestion. The A38 and A5127 carry most local runs into Birmingham city centre, Sutton Coldfield and Great Barr.",
+    badge: "Verified Movers in Erdington",
+    areas: ["High Street", "Pype Hayes", "Stockland Green", "Gravelly Hill", "Short Heath", "Slade Road", "New Oscott borders", "Fort Dunlop borders"],
+    nearbyLocations: ["birmingham", "sutton-coldfield", "walsall", "great-barr"],
+  },
+  {
+    slug: "kings-heath",
+    name: "Kings Heath",
+    region: "West Midlands",
+    county: "West Midlands",
+    nearbyAreas: ["High Street", "York Road", "Billesley", "Brandwood", "Stirchley borders", "Moseley borders"],
+    majorRoads: ["A435", "A4040"],
+    propertyTypes: ["Victorian terraces", "Edwardian semis", "inter-war council estates"],
+    movingConsiderations: ["resident permit bays around York Road", "High Street loading restrictions at peak", "school-run traffic on the A435 Alcester Road"],
+    intro: "Kings Heath is a south Birmingham suburb with a famous High Street, Victorian terraces off York Road, and family housing stretching to Billesley and Brandwood. A suitable approved independent mover can review parking and timing before quoting your move.",
+    knowledge: "Approved Kings Heath movers can take account of High Street loading restrictions, resident permit bays around York Road, and school-run traffic on the A435 Alcester Road. Regular runs go north into Birmingham along the busy bus corridor and south towards Shirley and Solihull.",
+    badge: "Verified Movers in Kings Heath",
+    areas: ["High Street", "York Road", "Billesley", "Brandwood", "Stirchley borders", "Moseley borders", "All Saints", "Dads Lane"],
+    nearbyLocations: ["birmingham", "solihull", "redditch"],
+  },
+  {
+    slug: "didsbury",
+    name: "Didsbury",
+    region: "Greater Manchester",
+    county: "Greater Manchester",
+    nearbyAreas: ["Didsbury Village", "West Didsbury", "East Didsbury", "Withington borders", "Burnage", "Fletcher Moss"],
+    majorRoads: ["A34", "A5103", "M60"],
+    propertyTypes: ["Victorian villas", "mansion-block flats", "inter-war semis"],
+    movingConsiderations: ["controlled parking around Burton Road and the Village", "school-run queues on Wilmslow Road", "stairs in converted villas with no lift"],
+    intro: "Didsbury is south Manchester's cafe-quarter suburb - Victorian villas and mansion flats in West Didsbury, family semis in East Didsbury, and the Village at its heart. A verified mover reviews stairs, parking and time windows before quoting.",
+    knowledge: "Approved Didsbury movers can take account of controlled parking around Burton Road and the Village, school-run queues on Wilmslow Road, and mansion-block stairs in converted villas. The A34 Kingsway and A5103 Princess Parkway carry most runs into Manchester and out to the M60.",
+    badge: "Verified Movers in Didsbury",
+    areas: ["Didsbury Village", "West Didsbury", "East Didsbury", "Withington borders", "Burnage", "Fletcher Moss", "Parrs Wood", "Fog Lane"],
+    nearbyLocations: ["manchester", "stockport"],
+  },
+  {
+    slug: "wythenshawe",
+    name: "Wythenshawe",
+    region: "Greater Manchester",
+    county: "Greater Manchester",
+    nearbyAreas: ["Civic Centre", "Benchill", "Northenden", "Newall Green", "Baguley", "Sharston"],
+    majorRoads: ["M56", "A5103", "A560"],
+    propertyTypes: ["1930s garden-city houses", "post-war semis", "modern infill estates"],
+    movingConsiderations: ["court layouts set back from main roads", "airport traffic on the M56 at peak", "narrow drives on garden-suburb streets"],
+    intro: "Wythenshawe is one of Europe's largest garden-city estates - courts and cul-de-sacs set back from main roads around the Civic Centre, plus Northenden's village streets by the Mersey. Submit your move details and a mover plans the right estate entrance before quoting.",
+    knowledge: "Approved Wythenshawe movers can take account of court and green layouts where homes sit behind arterial roads, airport traffic on the M56, and peak queues at the Sharston junctions. Regular runs go up the A5103 and the Metrolink corridor into Manchester and across to Sale and Stockport.",
+    badge: "Verified Movers in Wythenshawe",
+    areas: ["Civic Centre", "Benchill", "Northenden", "Newall Green", "Baguley", "Sharston", "Woodhouse Park", "Peel Hall"],
+    nearbyLocations: ["manchester", "sale", "stockport"],
+  },
+  {
+    slug: "stretford",
+    name: "Stretford",
+    region: "Greater Manchester",
+    county: "Greater Manchester",
+    nearbyAreas: ["Town Centre", "Gorse Hill", "Old Trafford borders", "Lostock", "Firswood", "Longford Park"],
+    majorRoads: ["A56", "A5181", "M60"],
+    propertyTypes: ["Victorian and Edwardian terraces", "inter-war semis", "modern apartments"],
+    movingConsiderations: ["matchday parking restrictions around Old Trafford", "on-street terraces in Gorse Hill", "M60 junction 7 queues at peak"],
+    intro: "Stretford sits beside Old Trafford on the A56 Chester Road corridor - brick terraces in Gorse Hill and Firswood, family streets towards Lostock, and two stadiums that shape moving-day timing. A verified mover checks the fixture list as well as the postcode.",
+    knowledge: "Approved Stretford movers can take account of matchday parking restrictions around Old Trafford, on-street terraces in Gorse Hill and Firswood, and M60 junction 7 traffic. Most runs go along the A56 into Manchester or west to Sale, Urmston and Eccles.",
+    badge: "Verified Movers in Stretford",
+    areas: ["Town Centre", "Gorse Hill", "Old Trafford borders", "Lostock", "Firswood", "Longford Park", "Humphrey Park", "Sevenways"],
+    nearbyLocations: ["manchester", "sale", "eccles"],
+  },
+  {
+    slug: "crosby",
+    name: "Crosby",
+    region: "Merseyside",
+    county: "Merseyside",
+    nearbyAreas: ["Crosby Village", "Waterloo", "Blundellsands", "Great Crosby", "Thornton", "Little Crosby"],
+    majorRoads: ["A565", "A5036"],
+    propertyTypes: ["Victorian and Edwardian villas", "inter-war semis", "seafront apartments"],
+    movingConsiderations: ["parking around Crosby Village shops", "shared drives on inter-war semis", "seafront loading near Marine Terrace"],
+    intro: "Crosby is Sefton's seaside suburb - Victorian and Edwardian villas in Blundellsands, inter-war semis around Great Crosby and the Village, and Gormley's Another Place statues on the beach. A mover reviews parking and access before quoting.",
+    knowledge: "Approved Crosby movers can take account of parking around Crosby Village and Waterloo, shared drives on inter-war semis, and seafront loading near Marine Terrace and Burbo Bank. The A565 carries most runs south into Liverpool via Bootle and north towards Formby and Southport.",
+    badge: "Verified Movers in Crosby",
+    areas: ["Crosby Village", "Waterloo", "Blundellsands", "Great Crosby", "Thornton", "Little Crosby", "Brighton-le-Sands", "Moor Lane"],
+    nearbyLocations: ["liverpool", "bootle", "southport"],
+  },
+  {
+    slug: "wallsend",
+    name: "Wallsend",
+    region: "Tyne and Wear",
+    county: "Tyne and Wear",
+    nearbyAreas: ["Town Centre", "Howdon", "Willington Quay", "Battle Hill", "High Farm", "Rosehill"],
+    majorRoads: ["A1058", "A193", "A19"],
+    propertyTypes: ["terraced rows", "post-war estates", "modern riverside apartments"],
+    movingConsiderations: ["Coast Road peak traffic on the A1058", "Tyne Tunnel queues on the A19", "steep streets down to the riverside"],
+    intro: "Wallsend is a North Tyneside town at the end of Hadrian's Wall - older terraces near the Metro station, post-war estates at Battle Hill and High Farm, and the Tyne Tunnel close by at Howdon. A mover checks the route tides and tunnel traffic before quoting.",
+    knowledge: "Approved Wallsend movers can take account of Coast Road (A1058) peak traffic, Tyne Tunnel queues on the A19, and terraced streets around the town centre and station. Regular runs go west into Newcastle and east to North Shields, with South Shields a short tunnel hop.",
+    badge: "Verified Movers in Wallsend",
+    areas: ["Town Centre", "Howdon", "Willington Quay", "Battle Hill", "High Farm", "Rosehill", "Hadrian Park", "Churchill borders"],
+    nearbyLocations: ["newcastle-upon-tyne", "north-shields", "gateshead", "south-shields"],
+  },
+  {
+    slug: "horsforth",
+    name: "Horsforth",
+    region: "West Yorkshire",
+    county: "West Yorkshire",
+    nearbyAreas: ["Town Street", "Newlay", "Cragg Hill", "Hawksworth", "Brownberrie", "West Park borders"],
+    majorRoads: ["A6120", "A65"],
+    propertyTypes: ["stone terraces", "inter-war semis", "modern family estates"],
+    hasStudentAreas: true,
+    studentAreas: ["Leeds Trinity area", "Brownberrie Lane"],
+    movingConsiderations: ["parking on the Town Street conservation stretch", "hilly estate roads at Cragg Hill", "ring-road queues at the Horsforth roundabout"],
+    intro: "Horsforth is a proper Leeds town with a village-feel Town Street, stone terraces and big inter-war semis climbing to Cragg Hill, and a busy station on the Harrogate line. Leeds Trinity University adds a steady flow of student moves.",
+    knowledge: "Approved Horsforth movers can take account of parking on the Town Street conservation stretch, hilly estates towards Cragg Hill and Hawksworth, and Leeds Outer Ring Road (A6120) traffic at the Horsforth roundabout. Regular runs go into Leeds past Kirkstall and west to Pudsey and Bradford.",
+    badge: "Verified Movers in Horsforth",
+    areas: ["Town Street", "Newlay", "Cragg Hill", "Hawksworth", "Brownberrie", "West Park borders", "Clayton borders", "Hall Park"],
+    nearbyLocations: ["leeds", "pudsey", "bradford"],
+  },
+  {
+    slug: "islington",
+    name: "Islington",
+    region: "Greater London",
+    county: "Greater London",
+    nearbyAreas: ["Angel", "Highbury", "Canonbury", "Barnsbury", "Holloway", "Finsbury Park"],
+    majorRoads: ["A1", "A104", "A503"],
+    propertyTypes: ["Georgian terraces", "Victorian conversions", "ex-council estates"],
+    businessDistricts: ["Angel", "Upper Street"],
+    movingConsiderations: ["borough-wide CPZ with short visitor bays", "conversions with tight stairs and no lift", "market-day traffic around Chapel Market"],
+    intro: "Islington runs from the Angel up the Holloway Road - Georgian squares in Canonbury and Barnsbury, conversions around Highbury, and some of London's tightest parking. One mover reviews your item list and access notes before quoting.",
+    knowledge: "Approved Islington movers can take account of borough-wide controlled parking, market-day traffic around Chapel Market and the Angel, and stairs in split-level conversions. The A1 carries runs up Holloway Road to Archway, with regular hops to Camden, Hackney and Finsbury Park.",
+    badge: "Verified Movers in Islington",
+    areas: ["Angel", "Highbury", "Canonbury", "Barnsbury", "Holloway", "Finsbury Park", "Tufnell Park borders", "Archway borders"],
+    nearbyLocations: ["camden", "hackney", "finsbury-park"],
+  },
+  {
+    slug: "new-cross",
+    name: "New Cross",
+    region: "Greater London",
+    county: "Greater London",
+    nearbyAreas: ["New Cross Gate", "Telegraph Hill", "Hatcham", "St Johns borders", "Brockley borders", "Queens Road borders"],
+    majorRoads: ["A2", "A20", "A205"],
+    propertyTypes: ["Victorian terraces", "mansion blocks", "post-war estates"],
+    hasStudentAreas: true,
+    studentAreas: ["Goldsmiths area", "New Cross Gate"],
+    movingConsiderations: ["one-way system around the station", "September student-move peaks around Goldsmiths", "mansion-block stairs without lifts"],
+    intro: "New Cross is a young, busy corner of south-east London - Goldsmiths students, Victorian terraces off the A2, and estates around New Cross Gate. Submit your details and a mover plans around the one-way system before quoting.",
+    knowledge: "Approved New Cross movers can take account of the A2 and the one-way streets around the station, September peaks around Goldsmiths, and mansion-block stairs on Telegraph Hill. Regular runs go west to London Bridge, south to Lewisham and east to Greenwich and Deptford.",
+    badge: "Verified Movers in New Cross",
+    areas: ["New Cross Gate", "Telegraph Hill", "Hatcham", "St Johns borders", "Brockley borders", "Cold Blow Lane borders", "Surrey Canal borders", "Monson Road"],
+    nearbyLocations: ["lewisham", "deptford", "greenwich"],
+  },
+  {
+    slug: "streatham",
+    name: "Streatham",
+    region: "Greater London",
+    county: "Greater London",
+    nearbyAreas: ["Streatham Hill", "Streatham Common", "Streatham Vale", "Streatham Wells", "Furzedown borders", "Leigham Court"],
+    majorRoads: ["A23", "A205", "A214"],
+    propertyTypes: ["Edwardian terraces", "inter-war mansion blocks", "Victorian villas split to flats"],
+    movingConsiderations: ["red-route loading windows on the High Road", "long front-path carries in split conversions", "South Circular bottlenecks at Streatham Vale"],
+    intro: "Streatham stretches along the A23 High Road from Streatham Hill to Streatham Vale - big Edwardian houses, many now flats, mansion blocks, and family homes around the Common. A mover checks red-route timing before quoting.",
+    knowledge: "Approved Streatham movers can take account of red-route loading windows on the High Road, long front-path carries in split conversions, and the South Circular junctions at Streatham Vale. Regular runs go north towards Brixton and central London and south to Croydon.",
+    badge: "Verified Movers in Streatham",
+    areas: ["Streatham Hill", "Streatham Common", "Streatham Vale", "Streatham Wells", "Furzedown borders", "Leigham Court", "Rookery borders", "Gleneldon Road"],
+    nearbyLocations: ["croydon", "tooting"],
+  },
+  {
+    slug: "muswell-hill",
+    name: "Muswell Hill",
+    region: "Greater London",
+    county: "Greater London",
+    nearbyAreas: ["The Broadway", "Fortis Green", "Cranley Gardens", "Alexandra Park borders", "Highgate borders", "Colney Hatch borders"],
+    majorRoads: ["A406", "A1000"],
+    propertyTypes: ["Edwardian redbrick conversions", "inter-war semis", "period mansion flats"],
+    movingConsiderations: ["steep hill streets with steps to raised floors", "no tube station - parking competition on the Broadway", "narrow turns on older estate roads"],
+    intro: "Muswell Hill is north London's hill-top village - Edwardian shopping parades on the Broadway, big redbrick conversions, Alexandra Palace on the shoulder, and no tube, which keeps vans busy. One mover reviews your access notes before quoting.",
+    knowledge: "Approved Muswell Hill movers can take account of steep streets and steps to raised ground-floor flats, parking on and around the Broadway, and approach runs on the A406 at Bounds Green and the A1000 through East Finchley. Regular hops go south to Crouch End borders and Finsbury Park and north to Finchley.",
+    badge: "Verified Movers in Muswell Hill",
+    areas: ["The Broadway", "Fortis Green", "Cranley Gardens", "Alexandra Park borders", "Highgate borders", "Colney Hatch borders", "St James borders", "Queen's Avenue"],
+    nearbyLocations: ["wood-green", "finchley", "finsbury-park"],
   },
 ];
 

@@ -205,7 +205,7 @@ export default function HomeContent() {
           </h1>
 
           <p className="mt-3 text-sm font-bold text-white/80 tracking-wide" data-speakable="hero-description">
-            From £19/hr · Verified movers · 488 UK areas · Free to submit · No spam
+            From £19/hr · Verified movers · 503 UK areas · Free to submit · No spam
           </p>
 
           {/* Move Type Selector */}
@@ -473,7 +473,7 @@ export default function HomeContent() {
             </div>
             <div>
               <h3 className="text-sm font-black text-primary mb-1">Do you cover my area?</h3>
-              <p className="text-sm text-text-secondary leading-relaxed">We cover 488 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route.</p>
+              <p className="text-sm text-text-secondary leading-relaxed">We cover 503 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route.</p>
             </div>
             <div>
               <h3 className="text-sm font-black text-primary mb-1">Can I get a same-day man and van?</h3>
@@ -510,7 +510,7 @@ export default function HomeContent() {
                 {
                   "@type": "Question",
                   name: "Do you cover my area?",
-                  acceptedAnswer: { "@type": "Answer", text: "We cover 488 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route." },
+                  acceptedAnswer: { "@type": "Answer", text: "We cover 503 areas across England, Scotland, Wales and Northern Ireland, from major cities to smaller towns and suburbs. Submit your postcodes for free and a verified mover can check the route." },
                 },
                 {
                   "@type": "Question",
@@ -560,7 +560,7 @@ export default function HomeContent() {
           </div>
           <div className="text-center mt-4">
             <Link href="/areas-covered" className="text-xs font-black text-accent hover:underline">
-              View all 488 areas →
+              View all 503 areas →
             </Link>
           </div>
 
@@ -629,7 +629,7 @@ export default function HomeContent() {
               Looking for a <Link href="/house-removals" className="font-bold text-accent hover:underline">house removal</Link>, <Link href="/flat-removals" className="font-bold text-accent hover:underline">flat move</Link>, <Link href="/furniture-delivery-service" className="font-bold text-accent hover:underline">furniture delivery</Link>, <Link href="/student-removals" className="font-bold text-accent hover:underline">student move</Link>, <Link href="/same-day-man-and-van" className="font-bold text-accent hover:underline">same-day pickup</Link> or <Link href="/long-distance-removals" className="font-bold text-accent hover:underline">long-distance relocation</Link>? <Link href="/moving-home" className="font-bold text-accent hover:underline">Moving home</Link>? Need the <Link href="/cheapest-moving-van" className="font-bold text-accent hover:underline">cheapest moving van</Link>? <Link href="/help-me-move" className="font-bold text-accent hover:underline">Help me move</Link>? Looking for a <Link href="/cheap-man-and-van" className="font-bold text-accent hover:underline">cheap man and van</Link> or <Link href="/cheap-van-hire-with-driver" className="font-bold text-accent hover:underline">van hire with driver</Link>? Use our <Link href="/moving-checklist" className="font-bold text-accent hover:underline">moving checklist</Link>. Submit one free request and a verified mover quotes you — no spam, no obligation. Prices from £19/hr. Call 0121 751 1269 any day of the week.
             </p>
             <p>
-              Areas covered: <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link>, <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link> and <Link href="/areas-covered" className="font-bold text-accent hover:underline">482 more UK towns and cities</Link>. Not sure if you need a man and van or a full removal firm? Read our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">comparison guide</Link> or check our <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">how we compare page</Link>.
+              Areas covered: <Link href="/man-and-van-birmingham" className="font-bold text-accent hover:underline">Birmingham</Link>, <Link href="/man-and-van-walsall" className="font-bold text-accent hover:underline">Walsall</Link>, <Link href="/man-and-van-london" className="font-bold text-accent hover:underline">London</Link>, <Link href="/man-and-van-manchester" className="font-bold text-accent hover:underline">Manchester</Link>, <Link href="/man-and-van-leeds" className="font-bold text-accent hover:underline">Leeds</Link>, <Link href="/man-and-van-liverpool" className="font-bold text-accent hover:underline">Liverpool</Link> and <Link href="/areas-covered" className="font-bold text-accent hover:underline">497 more UK towns and cities</Link>. Not sure if you need a man and van or a full removal firm? Read our <Link href="/man-and-van-vs-removal-company" className="font-bold text-accent hover:underline">comparison guide</Link> or check our <Link href="/vs-anyvan" className="font-bold text-accent hover:underline">how we compare page</Link>.
             </p>
           </div>
         </div>

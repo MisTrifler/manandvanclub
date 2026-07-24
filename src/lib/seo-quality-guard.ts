@@ -600,6 +600,21 @@ const LAUNCH_INDEXABLE_LOCATION_SLUGS = new Set([
   "pinner",
   "stamford-hill",
   "bounds-green",
+  "kingswinford",
+  "stafford",
+  "rugeley",
+  "erdington",
+  "kings-heath",
+  "didsbury",
+  "wythenshawe",
+  "stretford",
+  "crosby",
+  "wallsend",
+  "horsforth",
+  "islington",
+  "new-cross",
+  "streatham",
+  "muswell-hill",
 ]);
 
 export function isSeoLaunchMode(): boolean {
