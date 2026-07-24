@@ -196,7 +196,7 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
 
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.3em] border border-primary/20">
                 <span className="text-accent font-black text-sm leading-none">£</span>
-                Prices from £19
+                Prices from {data.region === "Greater London" ? "£26" : "£19"}
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-primary uppercase tracking-tighter leading-[0.95]">
@@ -289,6 +289,47 @@ export default function CityServiceContent({ data, faqItems, formIntent }: { dat
                      “{data.proofQuote || "Submit one clear request. An approved mover can review the details and send quote options before you decide whether to book."}”
                    </p>
                  </div>
+              </div>
+
+              {/* ── Typical Prices (semantic table - SERP snippet friendly) ── */}
+              <div className="space-y-5 lg:space-y-8">
+                 <h2 className="text-3xl lg:text-4xl font-black text-primary uppercase tracking-tight leading-none">
+                   {isServicePage ? "Man and Van Prices" : `Man and Van Prices in ${data.name}`}
+                 </h2>
+                 <div className="overflow-x-auto rounded-2xl border border-border/60 bg-white">
+                   <table className="w-full text-sm lg:text-base">
+                     <thead>
+                       <tr className="bg-primary/5 text-primary text-left">
+                         <th scope="col" className="font-black uppercase tracking-tight px-5 py-4">Service</th>
+                         <th scope="col" className="font-black uppercase tracking-tight px-5 py-4">From</th>
+                         <th scope="col" className="font-black uppercase tracking-tight px-5 py-4">Good for</th>
+                       </tr>
+                     </thead>
+                     <tbody className="text-text-secondary font-medium">
+                       <tr className="border-t border-border/50">
+                         <td className="px-5 py-4">Van + driver, self-loading - you carry</td>
+                         <td className="px-5 py-4 font-black text-primary whitespace-nowrap">{data.region === "Greater London" ? "£26" : "£19"}/hr</td>
+                         <td className="px-5 py-4">Single items, part-loads, cheapest option</td>
+                       </tr>
+                       <tr className="border-t border-border/50">
+                         <td className="px-5 py-4">Van + driver who helps carry</td>
+                         <td className="px-5 py-4 font-black text-primary whitespace-nowrap">£34/hr</td>
+                         <td className="px-5 py-4">Flats, stairs, heavier items</td>
+                       </tr>
+                       <tr className="border-t border-border/50">
+                         <td className="px-5 py-4">Small local move (1-4 hours)</td>
+                         <td className="px-5 py-4 font-black text-primary whitespace-nowrap">£60-£140</td>
+                         <td className="px-5 py-4">Most jobs within {data.name}</td>
+                       </tr>
+                       <tr className="border-t border-border/50">
+                         <td className="px-5 py-4">2-3 bed house move</td>
+                         <td className="px-5 py-4 font-black text-primary whitespace-nowrap">£300-£550</td>
+                         <td className="px-5 py-4">Load, stairs and timing set the quote</td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
+                 <p className="text-sm text-text-secondary font-medium">Guide prices only - a verified mover reviews your exact postcodes, items, stairs and parking before quoting, so the number you accept is the number you pay minus your deposit.</p>
               </div>
 
               {/* ── Feature Cards ── */}
