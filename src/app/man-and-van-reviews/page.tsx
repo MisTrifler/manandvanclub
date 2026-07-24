@@ -8,7 +8,7 @@ const GOOGLE_REVIEWS_URL = "https://share.google/8j6rvk5uR924kNX7k";
 export const metadata: Metadata = {
   title: "Man and Van Club Reviews | Rated 5.0/5 | Real Customer Reviews",
   description:
-    "Read real customer reviews for Man and Van Club. Rated 5.0 out of 5 across 5 reviews. See what movers' customers say about price, punctuality and care.",
+    "Read real customer reviews for Man and Van Club. Rated 5.0 out of 5 across 6 reviews. See what movers' customers say about price, punctuality and care.",
   alternates: { canonical: `${baseUrl}/man-and-van-reviews` },
   openGraph: {
     title: "Man and Van Club Reviews | Rated 5.0/5",
@@ -17,9 +17,14 @@ export const metadata: Metadata = {
   },
 };
 
-// Verbatim Google Business Profile reviews (all 5 currently on the profile,
+// Verbatim Google Business Profile reviews (all 6 currently on the profile,
 // unchanged including typos) - mirrored in the site's Organisation Review schema.
 const REVIEWS: { author: string; date: string; body: string }[] = [
+  {
+    author: "Pratham T.",
+    date: "23 July 2026",
+    body: "Honest company as they didn't have any approved movers near me however sourced one for me instead. Definitely got me a bargain compared to these big companies.",
+  },
   {
     author: "Anku G.",
     date: "22 July 2026",
@@ -80,7 +85,7 @@ export default function ReviewsPage() {
                     <Star key={i} size={18} fill="#00B67A" className="text-[#00B67A]" strokeWidth={0} />
                   ))}
                 </div>
-                <p className="mt-1 text-xs font-bold text-text-secondary">Across all 5 Google reviews</p>
+                <p className="mt-1 text-xs font-bold text-text-secondary">Across all 6 Google reviews</p>
               </div>
             </div>
             <a

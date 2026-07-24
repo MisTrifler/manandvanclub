@@ -261,7 +261,7 @@ export default function ManWithAVanPage() {
               <a href="tel:01217511269" className="bg-white/10 border border-white/20 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-widest text-xs inline-flex items-center gap-3 hover:bg-white/20 transition-all"><Phone size={16} /> 0121 751 1269</a>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 pt-2">
-              {["Free to submit", "One mover quotes", "Details protected", "Rated 5.0 from 5 reviews"].map((t) => (
+              {["Free to submit", "One mover quotes", "Details protected", "Rated 5.0 from 6 reviews"].map((t) => (
                 <span key={t} className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-white/50"><CheckCircle2 size={12} className="text-accent" /> {t}</span>
               ))}
             </div>

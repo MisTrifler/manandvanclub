@@ -278,10 +278,17 @@ const aggregateRatingSchema = {
     "ratingValue": "5.0",
     "bestRating": "5",
     "worstRating": "1",
-    "ratingCount": "5",
-    "reviewCount": "5"
+    "ratingCount": "6",
+    "reviewCount": "6"
   },
   "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Pratham T." },
+      "datePublished": "2026-07-23",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Honest company as they didn't have any approved movers near me however sourced one for me instead. Definitely got me a bargain compared to these big companies."
+    },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Anku G." },

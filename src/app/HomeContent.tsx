@@ -23,6 +23,11 @@ const MOVE_TYPES: { label: string; emoji: string; intent: IntentType; badge?: st
 
 const REVIEW_CARDS = [
   {
+    name: "Pratham T.",
+    platform: "Google",
+    text: "Honest company as they didn't have any approved movers near me however sourced one for me instead. Definitely got me a bargain compared to these big companies.",
+  },
+  {
     name: "Anku G.",
     platform: "Google",
     text: "Great price. I had an excellent experience. I needed to move from Leicester to Glasgow and was getting ridiculous prices everywhere. But soon as I called them up and told my situation the staff were really understanding and provided me with a great alternative and cut my costs! Cant thank you enough. Recommended company!",

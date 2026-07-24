@@ -8,18 +8,18 @@ const baseUrl = "https://www.manandvanclub.co.uk";
 
 export const metadata: Metadata = {
   title: "Man and Van Aberdeen From £19/hr | Free Quotes",
-  description: "Man with a van in Aberdeen from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 5 reviews. City centre, West End, Bridge of Don, Cults.",
+  description: "Man with a van in Aberdeen from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 6 reviews. City centre, West End, Bridge of Don, Cults.",
   alternates: { canonical: `${baseUrl}/man-and-van-aberdeen` },
   openGraph: {
     title: "Man and Van Aberdeen From £19/hr | Free Quotes",
-    description: "Man with a van in Aberdeen from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 5 reviews.",
+    description: "Man with a van in Aberdeen from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 6 reviews.",
     url: `${baseUrl}/man-and-van-aberdeen`,
     images: [{ url: `${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Aberdeen")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`, width: 1200, height: 630, alt: "Man and Van Aberdeen From £19/hr | Free Quotes" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Man and Van Aberdeen From £19/hr | Free Quotes",
-    description: "Man with a van in Aberdeen from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 5 reviews.",
+    description: "Man with a van in Aberdeen from £19/hr. One verified mover reviews your details before you book. Rated 5.0/5 from 6 reviews.",
     images: [`${baseUrl}/api/og?title=${encodeURIComponent("Man and Van Aberdeen")}&subtitle=${encodeURIComponent("From £19/hr, Free Quotes")}`],
   },
 };
